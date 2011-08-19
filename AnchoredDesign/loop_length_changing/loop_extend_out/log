@@ -1,0 +1,1790 @@
+core.init: Mini-Rosetta version 40504:40507M from https://svn.rosettacommons.org/source/trunk/mini
+core.init: command: /home/smlewis/AnchorFinder/bin/loopmodel.linuxgccrelease @options -database /home/smlewis/MINI_CRON/minirosetta_database/
+core.init: 'RNG device' seed mode, using '/dev/urandom', seed=1127037490 seed_offset=0 real_seed=1127037490
+core.init.random: RandomGenerator:init: Normal mode, seed=1127037490 RG_type=mt19937
+protocols::loopbuild: ==== Loop protocol: =================================================
+protocols::loopbuild:  remodel        perturb_kic
+protocols::loopbuild:  intermedrelax  no
+protocols::loopbuild:  refine         refine_kic
+protocols::loopbuild:  relax          no
+core.chemical.ResidueTypeSet: Finished initializing fa_standard residue type set.  Created 7533 residue types
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  CB  on residue ALA 22
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  CB  on residue ALA 23
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  CB  on residue ALA 24
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  CB  on residue ALA 25
+core.pack.task: Packer task: initialize from command line() 
+core.pack.pack_missing_sidechains: packing residue number 22 because of missing atom number 5 atom name  CB 
+core.pack.pack_missing_sidechains: packing residue number 23 because of missing atom number 5 atom name  CB 
+core.pack.pack_missing_sidechains: packing residue number 24 because of missing atom number 5 atom name  CB 
+core.pack.pack_missing_sidechains: packing residue number 25 because of missing atom number 5 atom name  CB 
+core.scoring.etable: Starting energy table calculation
+core.scoring.etable: smooth_etable: changing atr/rep split to bottom of energy well
+core.scoring.etable: smooth_etable: spline smoothing lj etables (maxdis = 6)
+core.scoring.etable: smooth_etable: spline smoothing solvation etables (max_dis = 6)
+core.scoring.etable: Finished calculating energy tables.
+basic.io.database: Database file opened: /home/smlewis/MINI_CRON/minirosetta_database/pdb_pair_stats_fine
+basic.io.database: Database file opened: /home/smlewis/MINI_CRON/minirosetta_database/scoring/score_functions/hbonds/standard_params/HBPoly1D.csv
+basic.io.database: Database file opened: /home/smlewis/MINI_CRON/minirosetta_database/scoring/score_functions/hbonds/standard_params/HBFadeIntervals.csv
+basic.io.database: Database file opened: /home/smlewis/MINI_CRON/minirosetta_database/scoring/score_functions/hbonds/standard_params/HBEval.csv
+basic.io.database: Database file opened: /home/smlewis/MINI_CRON/minirosetta_database/env_log.txt
+basic.io.database: Database file opened: /home/smlewis/MINI_CRON/minirosetta_database/cbeta_den.txt
+basic.io.database: Database file opened: /home/smlewis/MINI_CRON/minirosetta_database/pair_log.txt
+basic.io.database: Database file opened: /home/smlewis/MINI_CRON/minirosetta_database/cenpack_log.txt
+basic.io.database: Database file opened: /home/smlewis/MINI_CRON/minirosetta_database/env_log.txt
+basic.io.database: Database file opened: /home/smlewis/MINI_CRON/minirosetta_database/cbeta_den.txt
+basic.io.database: Database file opened: /home/smlewis/MINI_CRON/minirosetta_database/pair_log.txt
+basic.io.database: Database file opened: /home/smlewis/MINI_CRON/minirosetta_database/cenpack_log.txt
+basic.io.database: Database file opened: /home/smlewis/MINI_CRON/minirosetta_database/CEN6_mem_env_log.txt
+basic.io.database: Database file opened: /home/smlewis/MINI_CRON/minirosetta_database/CEN10_mem_env_log.txt
+basic.io.database: Database file opened: /home/smlewis/MINI_CRON/minirosetta_database/memcbeta_den.txt
+basic.io.database: Database file opened: /home/smlewis/MINI_CRON/minirosetta_database/mem_pair_log.txt
+basic.io.database: Database file opened: /home/smlewis/MINI_CRON/minirosetta_database/P_AA
+basic.io.database: Database file opened: /home/smlewis/MINI_CRON/minirosetta_database/P_AA_n
+basic.io.database: Database file opened: /home/smlewis/MINI_CRON/minirosetta_database/P_AA_pp
+basic.io.database: Database file opened: /home/smlewis/MINI_CRON/minirosetta_database/Rama_smooth_dyn.dat_ss_6.4
+core.pack.dunbrack: Dunbrack library took 0.02 seconds to load from binary
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.pack.pack_rotamers: built 4 rotamers at 4 positions.
+core.pack.pack_rotamers: IG: 4104 bytes
+core.pose.util: Cannot open psipred_ss2 file tt
+protocols.loops.loops_main: can not open DSSP file tt
+protocols.loops.loops_main: Frag libraries debug 1FNA_AAAAinsert_9mer.gz 9
+core.io.fragments: reading fragments from file: 1FNA_AAAAinsert_9mer.gz ... 
+core.io.fragments: rosetta++ fileformat detected! Calling legacy reader... 
+core.fragments.ConstantLengthFragSet: finished reading top 200 9mer fragments from file 1FNA_AAAAinsert_9mer.gz
+protocols.loops.loops_main: Frag libraries debug 1FNA_AAAAinsert_3mer.gz 3
+core.io.fragments: reading fragments from file: 1FNA_AAAAinsert_3mer.gz ... 
+core.io.fragments: rosetta++ fileformat detected! Calling legacy reader... 
+core.fragments.ConstantLengthFragSet: finished reading top 200 3mer fragments from file 1FNA_AAAAinsert_3mer.gz
+protocols.loops.loops_main: Fragment libraries: 3   18600
+protocols.loops.loops_main: Fragment libraries: 9   17400
+protocols::loopbuild: Annotated sequence of start_pose: R[ARG_p:NtermProteinFull]DLEVVAATPTSLLISWDAPAAAAAVTVRYYRITYGETGGNSPVQEFTVPGSKSTATISGLKPGVDYTITVYAVTGRGDSPASSKPISINYRT[THR_p:CtermProteinFull]
+loops: LOOP formats were recently reconciled - with *some* backwards compatibility. Please check your definition files!
+loops: Please check that this is what you intended to read in: 
+loops: LOOP  begin  end  cut  skip_rate  extended
+loops: LOOP 18 28 21 0 0
+protocols.jobdist.JobDistributors: Looking for an available job: 1 1 S 1
+basic.io.database: Database file opened: /home/smlewis/MINI_CRON/minirosetta_database/env_log.txt
+basic.io.database: Database file opened: /home/smlewis/MINI_CRON/minirosetta_database/cbeta_den.txt
+basic.io.database: Database file opened: /home/smlewis/MINI_CRON/minirosetta_database/pair_log.txt
+basic.io.database: Database file opened: /home/smlewis/MINI_CRON/minirosetta_database/cenpack_log.txt
+core.scoring.ScoreFunctionFactory: SCOREFUNCTION: standard
+core.scoring.ScoreFunctionFactory: SCOREFUNCTION PATCH: score12
+protocols.looprelax: ==== Loop protocol: =================================================
+protocols.looprelax:  remodel        perturb_kic
+protocols.looprelax:  intermedrelax  no
+protocols.looprelax:  refine         refine_kic
+protocols.looprelax:  relax          no
+core.chemical.ResidueTypeSet: Finished initializing centroid residue type set.  Created 1202 residue types
+protocols.looprelax: ====================================================================================
+protocols.looprelax: ===
+protocols.looprelax: ===   Initial Building     
+protocols.looprelax: ===
+protocol.loops.LoopMover: ALL_LOOPS:LOOP  begin  end  cut  skip_rate  extended
+protocol.loops.LoopMover: LOOP 18 28 21 0 0
+protocol.loops.LoopMover: 
+protocol.loops.LoopMover: SELECTEDLOOPS:LOOP  begin  end  cut  skip_rate  extended
+protocol.loops.LoopMover: LOOP 18 28 21 0 0
+protocol.loops.LoopMover: 
+protocol.loops.LoopMover: Building Loop: LOOP 18 28 21 0 0
+protocol.loops.LoopMover: Building Loop attempt: 0
+protocol.loops.LoopMover: ***** CCD CLOSURE *****
+protocols.loops.loops_main: Pose fold tree FOLD_TREE  EDGE 1 16 -1  EDGE 16 21 -1  EDGE 16 30 1  EDGE 30 22 -1  EDGE 30 93 -1 
+protocols.loops.loops_main: 
+protocol.loops.LoopMover: Number of cycles: cycles2 and cycles3 2 55
+protocol.loops.LoopMover:  vdw               hbond_sr_bb       hbond_lr_bb       pair              rama              env               cbeta             rg                chainbreak       
+protocol.loops.LoopMover:   925.928  122.220   -4.687  -41.753  -20.790    0.503  -24.046   32.423   26.896  835.163
+protocol.loops.LoopMover:   -26.857    0.000   -7.617  -41.998  -21.390    1.211  -17.213   31.933   28.144    0.074
+protocol.loops.LoopMover: FragCount: 220
+protocol.loops.LoopMover: Looptime 2
+protocol.loops.LoopMover: ------------------------------------------------------------
+ Scores                       Weight   Raw Score Wghtd.Score
+------------------------------------------------------------
+ vdw                          1.000       0.774       0.774
+ hbond_sr_bb                  1.000      -6.488      -6.488
+ hbond_lr_bb                  1.000     -42.488     -42.488
+ pair                         1.000     -21.909     -21.909
+ rama                         0.100      21.122       2.112
+ env                          1.000     -18.880     -18.880
+ cbeta                        1.000      31.576      31.576
+ rg                           2.000      13.918      27.836
+ chainbreak                   1.000       0.240       0.240
+---------------------------------------------------
+ Total weighted score:                      -27.227
+-------------------------
+protocols.moves.MonteCarlo:              unk trials=    220;  accepts= 0.1545;  energy_drop/trial=  -4.33252
+protocol.loops.LoopMover: Chainbreak: 0.239782 Max: 0.2
+protocol.loops.LoopMover: Loopstat:    18   28   18   28   11  time   2.0    0  time   0.0  -27.2268   noext 
+protocols::checkpoint: Deleting checkpoints of InitialBuild
+protocols.looprelax: ====================================================================================
+protocols.looprelax: ===
+protocols.looprelax: ===   Remodel    
+protocols.looprelax: ===
+protocol.loops.LoopMover: ALL_LOOPS:LOOP  begin  end  cut  skip_rate  extended
+protocol.loops.LoopMover: LOOP 18 28 21 0 0
+protocol.loops.LoopMover: 
+protocol.loops.LoopMover: SELECTEDLOOPS:LOOP  begin  end  cut  skip_rate  extended
+protocol.loops.LoopMover: LOOP 18 28 21 0 0
+protocol.loops.LoopMover: 
+protocol.loops.LoopMover: Building Loop: LOOP 18 28 21 0 0
+protocol.loops.LoopMover: Building Loop attempt: 0
+protocol.loops.LoopMover: perturb_one_loop_with_KIC: 18 11
+protocol.loops.LoopMover: remodel init temp: 2
+protocol.loops.LoopMover: remodel final temp: 1
+protocol.loops.LoopMover: kinematic initial perturb with start_res: 18  middle res: 23  end_res: 28
+protocol.loops.LoopMover: loop rmsd before initial kinematic perturbation:27.3108
+protocol.loops.LoopMover: not performing initial kinematic perturbation
+protocols.moves.MonteCarlo: MonteCarlo:: last_accepted_score,lowest_score: -27.2259 -27.2259
+protocol.loops.LoopMover: new centroid perturb rmsd: 27.3935
+protocol.loops.LoopMover: new centroid perturb rmsd: 27.4054
+protocol.loops.LoopMover: new centroid perturb rmsd: 27.391
+protocol.loops.LoopMover: new centroid perturb rmsd: 27.4114
+protocol.loops.LoopMover: new centroid perturb rmsd: 27.4405
+protocol.loops.LoopMover: new centroid perturb rmsd: 27.4599
+protocol.loops.LoopMover: new centroid perturb rmsd: 27.4359
+protocol.loops.LoopMover: new centroid perturb rmsd: 27.4547
+protocol.loops.LoopMover: new centroid perturb rmsd: 27.4423
+protocol.loops.LoopMover: new centroid perturb rmsd: 27.4653
+protocol.loops.LoopMover: new centroid perturb rmsd: 27.4615
+protocol.loops.LoopMover: new centroid perturb rmsd: 27.4579
+protocol.loops.LoopMover: new centroid perturb rmsd: 27.4343
+protocol.loops.LoopMover: new centroid perturb rmsd: 27.4358
+protocol.loops.LoopMover: new centroid perturb rmsd: 27.437
+protocol.loops.LoopMover: new centroid perturb rmsd: 27.4315
+protocol.loops.LoopMover: new centroid perturb rmsd: 27.4363
+protocol.loops.LoopMover: new centroid perturb rmsd: 27.4322
+protocol.loops.LoopMover: new centroid perturb rmsd: 27.4232
+protocol.loops.LoopMover: new centroid perturb rmsd: 27.4335
+protocol.loops.LoopMover: new centroid perturb rmsd: 27.4364
+protocol.loops.LoopMover: new centroid perturb rmsd: 27.4357
+protocol.loops.LoopMover: new centroid perturb rmsd: 27.4085
+protocol.loops.LoopMover: new centroid perturb rmsd: 29.0375
+protocol.loops.LoopMover: new centroid perturb rmsd: 29.0487
+protocol.loops.LoopMover: new centroid perturb rmsd: 29.0369
+protocol.loops.LoopMover: new centroid perturb rmsd: 28.9836
+protocol.loops.LoopMover: new centroid perturb rmsd: 28.9622
+protocol.loops.LoopMover: new centroid perturb rmsd: 28.9843
+protocol.loops.LoopMover: new centroid perturb rmsd: 28.9705
+protocol.loops.LoopMover: new centroid perturb rmsd: 29.063
+protocol.loops.LoopMover: new centroid perturb rmsd: 27.4991
+protocol.loops.LoopMover: new centroid perturb rmsd: 27.5003
+protocol.loops.LoopMover: new centroid perturb rmsd: 27.4511
+protocol.loops.LoopMover: new centroid perturb rmsd: 27.4102
+protocol.loops.LoopMover: new centroid perturb rmsd: 27.4052
+protocol.loops.LoopMover: new centroid perturb rmsd: 27.4061
+protocol.loops.LoopMover: new centroid perturb rmsd: 27.4068
+protocol.loops.LoopMover: new centroid perturb rmsd: 27.3893
+protocol.loops.LoopMover: new centroid perturb rmsd: 27.0426
+protocol.loops.LoopMover: new centroid perturb rmsd: 27.8157
+protocol.loops.LoopMover: new centroid perturb rmsd: 27.3427
+protocol.loops.LoopMover: new centroid perturb rmsd: 27.3173
+protocol.loops.LoopMover: new centroid perturb rmsd: 27.3443
+protocol.loops.LoopMover: new centroid perturb rmsd: 27.3324
+protocol.loops.LoopMover: new centroid perturb rmsd: 27.3321
+protocol.loops.LoopMover: new centroid perturb rmsd: 27.264
+protocol.loops.LoopMover: new centroid perturb rmsd: 27.3168
+protocol.loops.LoopMover: new centroid perturb rmsd: 27.1194
+protocol.loops.LoopMover: new centroid perturb rmsd: 27.0966
+protocol.loops.LoopMover: new centroid perturb rmsd: 27.3272
+protocol.loops.LoopMover: new centroid perturb rmsd: 27.4123
+protocol.loops.LoopMover: new centroid perturb rmsd: 27.3531
+protocol.loops.LoopMover: new centroid perturb rmsd: 27.3011
+protocol.loops.LoopMover: new centroid perturb rmsd: 27.2908
+protocol.loops.LoopMover: new centroid perturb rmsd: 27.293
+protocol.loops.LoopMover: new centroid perturb rmsd: 27.2856
+protocol.loops.LoopMover: new centroid perturb rmsd: 27.276
+protocol.loops.LoopMover: new centroid perturb rmsd: 27.2768
+protocol.loops.LoopMover: new centroid perturb rmsd: 27.2715
+protocol.loops.LoopMover: new centroid perturb rmsd: 27.2582
+protocol.loops.LoopMover: new centroid perturb rmsd: 27.0162
+protocol.loops.LoopMover: new centroid perturb rmsd: 26.9528
+protocol.loops.LoopMover: new centroid perturb rmsd: 26.9412
+protocol.loops.LoopMover: new centroid perturb rmsd: 26.9448
+protocol.loops.LoopMover: new centroid perturb rmsd: 26.9412
+protocol.loops.LoopMover: new centroid perturb rmsd: 26.9369
+protocol.loops.LoopMover: new centroid perturb rmsd: 26.9203
+protocol.loops.LoopMover: new centroid perturb rmsd: 26.907
+protocol.loops.LoopMover: new centroid perturb rmsd: 26.8957
+protocol.loops.LoopMover: new centroid perturb rmsd: 26.8866
+protocol.loops.LoopMover: new centroid perturb rmsd: 26.8917
+protocol.loops.LoopMover: new centroid perturb rmsd: 26.8513
+protocol.loops.LoopMover: new centroid perturb rmsd: 26.8149
+protocol.loops.LoopMover: new centroid perturb rmsd: 26.8128
+protocol.loops.LoopMover: new centroid perturb rmsd: 26.8494
+protocol.loops.LoopMover: new centroid perturb rmsd: 26.8387
+protocol.loops.LoopMover: new centroid perturb rmsd: 26.8737
+protocol.loops.LoopMover: new centroid perturb rmsd: 26.7401
+protocol.loops.LoopMover: new centroid perturb rmsd: 26.7404
+protocol.loops.LoopMover: new centroid perturb rmsd: 26.7739
+protocol.loops.LoopMover: new centroid perturb rmsd: 26.4846
+protocol.loops.LoopMover: new centroid perturb rmsd: 26.5177
+protocol.loops.LoopMover: new centroid perturb rmsd: 26.5366
+protocol.loops.LoopMover: new centroid perturb rmsd: 26.4693
+protocol.loops.LoopMover: new centroid perturb rmsd: 26.4864
+protocol.loops.LoopMover: new centroid perturb rmsd: 26.4054
+protocol.loops.LoopMover: new centroid perturb rmsd: 28.4046
+protocol.loops.LoopMover: new centroid perturb rmsd: 28.3955
+protocol.loops.LoopMover: new centroid perturb rmsd: 28.4191
+protocol.loops.LoopMover: new centroid perturb rmsd: 28.4029
+protocol.loops.LoopMover: new centroid perturb rmsd: 28.4164
+protocol.loops.LoopMover: new centroid perturb rmsd: 28.4147
+protocol.loops.LoopMover: new centroid perturb rmsd: 28.3961
+protocol.loops.LoopMover: new centroid perturb rmsd: 28.3998
+protocol.loops.LoopMover: new centroid perturb rmsd: 28.3686
+protocol.loops.LoopMover: new centroid perturb rmsd: 28.4554
+protocol.loops.LoopMover: new centroid perturb rmsd: 28.4611
+protocol.loops.LoopMover: new centroid perturb rmsd: 28.4722
+protocol.loops.LoopMover: new centroid perturb rmsd: 28.4749
+protocol.loops.LoopMover: new centroid perturb rmsd: 28.84
+protocol.loops.LoopMover: new centroid perturb rmsd: 28.5014
+protocol.loops.LoopMover: new centroid perturb rmsd: 28.4358
+protocol.loops.LoopMover: new centroid perturb rmsd: 28.4903
+protocol.loops.LoopMover: new centroid perturb rmsd: 28.552
+protocol.loops.LoopMover: new centroid perturb rmsd: 28.5321
+protocol.loops.LoopMover: new centroid perturb rmsd: 28.5149
+protocol.loops.LoopMover: new centroid perturb rmsd: 28.5619
+protocol.loops.LoopMover: new centroid perturb rmsd: 28.5814
+protocol.loops.LoopMover: new centroid perturb rmsd: 28.5982
+protocol.loops.LoopMover: new centroid perturb rmsd: 28.5931
+protocol.loops.LoopMover: new centroid perturb rmsd: 28.548
+protocol.loops.LoopMover: new centroid perturb rmsd: 28.5474
+protocol.loops.LoopMover: new centroid perturb rmsd: 28.5484
+protocol.loops.LoopMover: new centroid perturb rmsd: 28.5431
+protocol.loops.LoopMover: new centroid perturb rmsd: 27.481
+protocol.loops.LoopMover: new centroid perturb rmsd: 27.4811
+protocol.loops.LoopMover: new centroid perturb rmsd: 27.4172
+protocol.loops.LoopMover: new centroid perturb rmsd: 27.4342
+protocol.loops.LoopMover: new centroid perturb rmsd: 27.4125
+protocol.loops.LoopMover: new centroid perturb rmsd: 27.5113
+protocol.loops.LoopMover: new centroid perturb rmsd: 27.5063
+protocol.loops.LoopMover: new centroid perturb rmsd: 27.5081
+protocol.loops.LoopMover: new centroid perturb rmsd: 27.4538
+protocol.loops.LoopMover: new centroid perturb rmsd: 27.461
+protocol.loops.LoopMover: new centroid perturb rmsd: 27.4556
+protocol.loops.LoopMover: new centroid perturb rmsd: 27.444
+protocol.loops.LoopMover: new centroid perturb rmsd: 27.8159
+protocol.loops.LoopMover: new centroid perturb rmsd: 27.703
+protocol.loops.LoopMover: new centroid perturb rmsd: 27.3745
+protocol.loops.LoopMover: new centroid perturb rmsd: 27.5471
+protocol.loops.LoopMover: new centroid perturb rmsd: 27.0466
+protocol.loops.LoopMover: new centroid perturb rmsd: 27.0535
+protocol.loops.LoopMover: new centroid perturb rmsd: 27.0031
+protocol.loops.LoopMover: new centroid perturb rmsd: 27.1838
+protocol.loops.LoopMover: new centroid perturb rmsd: 27.1501
+protocol.loops.LoopMover: new centroid perturb rmsd: 27.136
+protocol.loops.LoopMover: new centroid perturb rmsd: 27.1312
+protocol.loops.LoopMover: new centroid perturb rmsd: 27.135
+protocol.loops.LoopMover: new centroid perturb rmsd: 27.134
+protocol.loops.LoopMover: new centroid perturb rmsd: 27.1298
+protocol.loops.LoopMover: new centroid perturb rmsd: 27.1243
+protocol.loops.LoopMover: new centroid perturb rmsd: 26.8891
+protocol.loops.LoopMover: new centroid perturb rmsd: 26.5919
+protocol.loops.LoopMover: new centroid perturb rmsd: 26.6115
+protocol.loops.LoopMover: new centroid perturb rmsd: 26.6086
+protocol.loops.LoopMover: new centroid perturb rmsd: 26.6096
+protocol.loops.LoopMover: new centroid perturb rmsd: 26.6323
+protocol.loops.LoopMover: new centroid perturb rmsd: 26.6436
+protocol.loops.LoopMover: new centroid perturb rmsd: 26.2427
+protocol.loops.LoopMover: new centroid perturb rmsd: 26.238
+protocol.loops.LoopMover: new centroid perturb rmsd: 26.2413
+protocol.loops.LoopMover: new centroid perturb rmsd: 26.1847
+protocol.loops.LoopMover: new centroid perturb rmsd: 26.1858
+protocol.loops.LoopMover: new centroid perturb rmsd: 26.723
+protocol.loops.LoopMover: new centroid perturb rmsd: 26.727
+protocol.loops.LoopMover: new centroid perturb rmsd: 26.7078
+protocol.loops.LoopMover: new centroid perturb rmsd: 26.4627
+protocol.loops.LoopMover: new centroid perturb rmsd: 26.4456
+protocol.loops.LoopMover: new centroid perturb rmsd: 25.739
+protocol.loops.LoopMover: new centroid perturb rmsd: 25.8307
+protocol.loops.LoopMover: new centroid perturb rmsd: 25.8536
+protocol.loops.LoopMover: new centroid perturb rmsd: 25.7885
+protocol.loops.LoopMover: new centroid perturb rmsd: 25.8016
+protocol.loops.LoopMover: new centroid perturb rmsd: 25.8185
+protocol.loops.LoopMover: new centroid perturb rmsd: 25.7925
+protocol.loops.LoopMover: new centroid perturb rmsd: 25.7106
+protocol.loops.LoopMover: new centroid perturb rmsd: 25.7059
+protocol.loops.LoopMover: new centroid perturb rmsd: 25.7003
+protocol.loops.LoopMover: new centroid perturb rmsd: 25.5124
+protocol.loops.LoopMover: new centroid perturb rmsd: 25.5035
+protocol.loops.LoopMover: new centroid perturb rmsd: 25.4686
+protocol.loops.LoopMover: new centroid perturb rmsd: 25.4645
+protocol.loops.LoopMover: new centroid perturb rmsd: 25.3384
+protocol.loops.LoopMover: new centroid perturb rmsd: 24.2133
+protocol.loops.LoopMover: new centroid perturb rmsd: 24.2419
+protocol.loops.LoopMover: new centroid perturb rmsd: 24.2444
+protocol.loops.LoopMover: new centroid perturb rmsd: 25.0184
+protocol.loops.LoopMover: new centroid perturb rmsd: 25.023
+protocol.loops.LoopMover: new centroid perturb rmsd: 24.3481
+protocol.loops.LoopMover: new centroid perturb rmsd: 26.1624
+protocol.loops.LoopMover: new centroid perturb rmsd: 26.4621
+protocol.loops.LoopMover: new centroid perturb rmsd: 26.4592
+protocol.loops.LoopMover: new centroid perturb rmsd: 26.5066
+protocol.loops.LoopMover: new centroid perturb rmsd: 26.464
+protocol.loops.LoopMover: new centroid perturb rmsd: 26.4391
+protocol.loops.LoopMover: new centroid perturb rmsd: 26.4564
+protocol.loops.LoopMover: new centroid perturb rmsd: 26.1138
+protocol.loops.LoopMover: new centroid perturb rmsd: 26.1497
+protocol.loops.LoopMover: new centroid perturb rmsd: 26.2518
+protocol.loops.LoopMover: new centroid perturb rmsd: 26.2653
+protocol.loops.LoopMover: new centroid perturb rmsd: 26.2593
+protocol.loops.LoopMover: new centroid perturb rmsd: 26.227
+protocol.loops.LoopMover: new centroid perturb rmsd: 26.2399
+protocol.loops.LoopMover: new centroid perturb rmsd: 26.2334
+protocol.loops.LoopMover: new centroid perturb rmsd: 26.2366
+protocol.loops.LoopMover: new centroid perturb rmsd: 26.2451
+protocol.loops.LoopMover: new centroid perturb rmsd: 26.2442
+protocol.loops.LoopMover: new centroid perturb rmsd: 26.2377
+protocol.loops.LoopMover: new centroid perturb rmsd: 26.2809
+protocol.loops.LoopMover: new centroid perturb rmsd: 26.3717
+protocol.loops.LoopMover: new centroid perturb rmsd: 26.1401
+protocol.loops.LoopMover: new centroid perturb rmsd: 26.1539
+protocol.loops.LoopMover: new centroid perturb rmsd: 26.1546
+protocol.loops.LoopMover: new centroid perturb rmsd: 26.14
+protocol.loops.LoopMover: new centroid perturb rmsd: 26.1739
+protocol.loops.LoopMover: new centroid perturb rmsd: 26.1584
+protocol.loops.LoopMover: new centroid perturb rmsd: 26.1604
+protocol.loops.LoopMover: new centroid perturb rmsd: 26.1619
+protocol.loops.LoopMover: new centroid perturb rmsd: 26.1585
+protocol.loops.LoopMover: new centroid perturb rmsd: 26.1657
+protocol.loops.LoopMover: new centroid perturb rmsd: 26.1566
+protocol.loops.LoopMover: new centroid perturb rmsd: 26.1552
+protocol.loops.LoopMover: new centroid perturb rmsd: 26.1567
+protocol.loops.LoopMover: new centroid perturb rmsd: 26.1767
+protocol.loops.LoopMover: new centroid perturb rmsd: 26.1833
+protocol.loops.LoopMover: new centroid perturb rmsd: 26.1203
+protocol.loops.LoopMover: new centroid perturb rmsd: 26.1169
+protocol.loops.LoopMover: new centroid perturb rmsd: 26.129
+protocol.loops.LoopMover: new centroid perturb rmsd: 26.1245
+protocol.loops.LoopMover: new centroid perturb rmsd: 26.1196
+protocol.loops.LoopMover: new centroid perturb rmsd: 25.9961
+protocol.loops.LoopMover: new centroid perturb rmsd: 26.1039
+protocol.loops.LoopMover: new centroid perturb rmsd: 26.1027
+protocol.loops.LoopMover: new centroid perturb rmsd: 26.0851
+protocol.loops.LoopMover: new centroid perturb rmsd: 26.0349
+protocol.loops.LoopMover: new centroid perturb rmsd: 25.9631
+protocol.loops.LoopMover: new centroid perturb rmsd: 25.9491
+protocol.loops.LoopMover: new centroid perturb rmsd: 25.9395
+protocol.loops.LoopMover: new centroid perturb rmsd: 25.9337
+protocol.loops.LoopMover: new centroid perturb rmsd: 25.957
+protocol.loops.LoopMover: new centroid perturb rmsd: 25.9547
+protocol.loops.LoopMover: new centroid perturb rmsd: 27.0865
+protocol.loops.LoopMover: new centroid perturb rmsd: 27.0794
+protocol.loops.LoopMover: new centroid perturb rmsd: 27.1557
+protocol.loops.LoopMover: new centroid perturb rmsd: 27.1707
+protocol.loops.LoopMover: new centroid perturb rmsd: 27.1721
+protocol.loops.LoopMover: new centroid perturb rmsd: 27.1733
+protocol.loops.LoopMover: new centroid perturb rmsd: 27.1362
+protocol.loops.LoopMover: new centroid perturb rmsd: 27.1441
+protocol.loops.LoopMover: new centroid perturb rmsd: 27.1451
+protocol.loops.LoopMover: new centroid perturb rmsd: 28.1196
+protocol.loops.LoopMover: new centroid perturb rmsd: 28.099
+protocol.loops.LoopMover: new centroid perturb rmsd: 28.1098
+protocol.loops.LoopMover: new centroid perturb rmsd: 28.0975
+protocol.loops.LoopMover: new centroid perturb rmsd: 28.1071
+protocol.loops.LoopMover: new centroid perturb rmsd: 28.2687
+protocol.loops.LoopMover: new centroid perturb rmsd: 28.1402
+protocol.loops.LoopMover: new centroid perturb rmsd: 27.5924
+protocol.loops.LoopMover: new centroid perturb rmsd: 27.6441
+protocol.loops.LoopMover: new centroid perturb rmsd: 27.6196
+protocol.loops.LoopMover: new centroid perturb rmsd: 27.6913
+protocol.loops.LoopMover: new centroid perturb rmsd: 27.7765
+protocol.loops.LoopMover: new centroid perturb rmsd: 27.8375
+protocol.loops.LoopMover: new centroid perturb rmsd: 27.3213
+protocol.loops.LoopMover: new centroid perturb rmsd: 26.8542
+protocol.loops.LoopMover: new centroid perturb rmsd: 27.5939
+protocol.loops.LoopMover: new centroid perturb rmsd: 27.6749
+protocol.loops.LoopMover: new centroid perturb rmsd: 27.6955
+protocol.loops.LoopMover: new centroid perturb rmsd: 27.702
+protocol.loops.LoopMover: new centroid perturb rmsd: 23.538
+protocol.loops.LoopMover: new centroid perturb rmsd: 23.5878
+protocol.loops.LoopMover: new centroid perturb rmsd: 23.5876
+protocol.loops.LoopMover: new centroid perturb rmsd: 23.5799
+protocol.loops.LoopMover: new centroid perturb rmsd: 23.5797
+protocol.loops.LoopMover: new centroid perturb rmsd: 23.5823
+protocol.loops.LoopMover: new centroid perturb rmsd: 23.5797
+protocol.loops.LoopMover: new centroid perturb rmsd: 23.5722
+protocol.loops.LoopMover: new centroid perturb rmsd: 23.5741
+protocol.loops.LoopMover: new centroid perturb rmsd: 23.621
+protocol.loops.LoopMover: new centroid perturb rmsd: 23.8808
+protocol.loops.LoopMover: new centroid perturb rmsd: 23.8561
+protocol.loops.LoopMover: new centroid perturb rmsd: 23.9125
+protocol.loops.LoopMover: new centroid perturb rmsd: 23.9118
+protocol.loops.LoopMover: new centroid perturb rmsd: 23.7822
+protocol.loops.LoopMover: new centroid perturb rmsd: 26.7493
+protocol.loops.LoopMover: new centroid perturb rmsd: 26.7778
+protocol.loops.LoopMover: new centroid perturb rmsd: 26.8256
+protocol.loops.LoopMover: new centroid perturb rmsd: 26.8469
+protocol.loops.LoopMover: new centroid perturb rmsd: 26.8286
+protocol.loops.LoopMover: new centroid perturb rmsd: 26.8353
+protocol.loops.LoopMover: new centroid perturb rmsd: 27.5774
+protocol.loops.LoopMover: new centroid perturb rmsd: 27.567
+protocol.loops.LoopMover: new centroid perturb rmsd: 27.5795
+protocol.loops.LoopMover: new centroid perturb rmsd: 27.6087
+protocol.loops.LoopMover: new centroid perturb rmsd: 27.6296
+protocol.loops.LoopMover: new centroid perturb rmsd: 27.6116
+protocol.loops.LoopMover: new centroid perturb rmsd: 27.6393
+protocol.loops.LoopMover: new centroid perturb rmsd: 27.6879
+protocol.loops.LoopMover: new centroid perturb rmsd: 27.7263
+protocol.loops.LoopMover: new centroid perturb rmsd: 27.7065
+protocol.loops.LoopMover: new centroid perturb rmsd: 27.6325
+protocol.loops.LoopMover: new centroid perturb rmsd: 27.6118
+protocol.loops.LoopMover: new centroid perturb rmsd: 26.8178
+protocol.loops.LoopMover: new centroid perturb rmsd: 26.8174
+protocol.loops.LoopMover: new centroid perturb rmsd: 26.8268
+protocol.loops.LoopMover: new centroid perturb rmsd: 26.8286
+protocol.loops.LoopMover: new centroid perturb rmsd: 26.8161
+protocol.loops.LoopMover: new centroid perturb rmsd: 26.8169
+protocol.loops.LoopMover: new centroid perturb rmsd: 26.8094
+protocol.loops.LoopMover: new centroid perturb rmsd: 26.8126
+protocol.loops.LoopMover: new centroid perturb rmsd: 26.7671
+protocol.loops.LoopMover: new centroid perturb rmsd: 26.775
+protocol.loops.LoopMover: new centroid perturb rmsd: 26.8142
+protocol.loops.LoopMover: new centroid perturb rmsd: 26.8488
+protocol.loops.LoopMover: new centroid perturb rmsd: 26.842
+protocol.loops.LoopMover: new centroid perturb rmsd: 26.8753
+protocol.loops.LoopMover: new centroid perturb rmsd: 26.8485
+protocol.loops.LoopMover: new centroid perturb rmsd: 26.85
+protocol.loops.LoopMover: new centroid perturb rmsd: 26.8652
+protocol.loops.LoopMover: new centroid perturb rmsd: 26.8694
+protocol.loops.LoopMover: new centroid perturb rmsd: 26.8552
+protocol.loops.LoopMover: new centroid perturb rmsd: 26.8545
+protocol.loops.LoopMover: new centroid perturb rmsd: 26.8585
+protocol.loops.LoopMover: new centroid perturb rmsd: 26.8494
+protocol.loops.LoopMover: new centroid perturb rmsd: 26.7884
+protocol.loops.LoopMover: new centroid perturb rmsd: 26.8003
+protocol.loops.LoopMover: new centroid perturb rmsd: 26.7921
+protocol.loops.LoopMover: new centroid perturb rmsd: 26.7755
+protocol.loops.LoopMover: new centroid perturb rmsd: 26.7429
+protocol.loops.LoopMover: new centroid perturb rmsd: 26.7735
+protocol.loops.LoopMover: new centroid perturb rmsd: 26.8083
+protocol.loops.LoopMover: new centroid perturb rmsd: 26.8667
+protocol.loops.LoopMover: new centroid perturb rmsd: 26.8691
+protocol.loops.LoopMover: new centroid perturb rmsd: 26.8476
+protocol.loops.LoopMover: new centroid perturb rmsd: 26.8403
+protocol.loops.LoopMover: new centroid perturb rmsd: 26.8325
+protocol.loops.LoopMover: new centroid perturb rmsd: 26.8371
+protocol.loops.LoopMover: new centroid perturb rmsd: 26.9073
+protocol.loops.LoopMover: new centroid perturb rmsd: 26.9133
+protocol.loops.LoopMover: new centroid perturb rmsd: 26.9083
+protocol.loops.LoopMover: new centroid perturb rmsd: 26.8985
+protocol.loops.LoopMover: new centroid perturb rmsd: 27.1685
+protocol.loops.LoopMover: new centroid perturb rmsd: 27.1572
+protocol.loops.LoopMover: new centroid perturb rmsd: 27.1605
+protocol.loops.LoopMover: new centroid perturb rmsd: 27.1906
+protocol.loops.LoopMover: new centroid perturb rmsd: 27.2041
+protocol.loops.LoopMover: new centroid perturb rmsd: 27.1961
+protocol.loops.LoopMover: new centroid perturb rmsd: 27.1741
+protocol.loops.LoopMover: new centroid perturb rmsd: 27.1299
+protocol.loops.LoopMover: new centroid perturb rmsd: 27.133
+protocol.loops.LoopMover: new centroid perturb rmsd: 27.1547
+protocol.loops.LoopMover: new centroid perturb rmsd: 27.1769
+protocol.loops.LoopMover: new centroid perturb rmsd: 27.1004
+protocol.loops.LoopMover: new centroid perturb rmsd: 27.102
+protocol.loops.LoopMover: new centroid perturb rmsd: 27.1051
+protocol.loops.LoopMover: new centroid perturb rmsd: 24.4792
+protocol.loops.LoopMover: new centroid perturb rmsd: 24.6496
+protocol.loops.LoopMover: new centroid perturb rmsd: 24.6554
+protocol.loops.LoopMover: new centroid perturb rmsd: 25.6055
+protocol.loops.LoopMover: new centroid perturb rmsd: 25.6169
+protocol.loops.LoopMover: new centroid perturb rmsd: 25.6427
+protocol.loops.LoopMover: new centroid perturb rmsd: 25.5573
+protocol.loops.LoopMover: new centroid perturb rmsd: 25.8843
+protocol.loops.LoopMover: new centroid perturb rmsd: 25.9248
+protocol.loops.LoopMover: new centroid perturb rmsd: 25.9252
+protocol.loops.LoopMover: new centroid perturb rmsd: 26.0132
+protocol.loops.LoopMover: new centroid perturb rmsd: 26.0022
+protocol.loops.LoopMover: new centroid perturb rmsd: 26.0031
+protocol.loops.LoopMover: new centroid perturb rmsd: 25.9558
+protocol.loops.LoopMover: new centroid perturb rmsd: 25.959
+protocol.loops.LoopMover: new centroid perturb rmsd: 25.9585
+protocol.loops.LoopMover: new centroid perturb rmsd: 25.9697
+protocol.loops.LoopMover: new centroid perturb rmsd: 25.9575
+protocol.loops.LoopMover: new centroid perturb rmsd: 25.9588
+protocol.loops.LoopMover: new centroid perturb rmsd: 25.9584
+protocol.loops.LoopMover: new centroid perturb rmsd: 25.9538
+protocol.loops.LoopMover: new centroid perturb rmsd: 25.9608
+protocol.loops.LoopMover: new centroid perturb rmsd: 25.9931
+protocol.loops.LoopMover: new centroid perturb rmsd: 25.9807
+protocol.loops.LoopMover: new centroid perturb rmsd: 25.9934
+protocol.loops.LoopMover: new centroid perturb rmsd: 25.9681
+protocol.loops.LoopMover: new centroid perturb rmsd: 25.9648
+protocol.loops.LoopMover: new centroid perturb rmsd: 25.9647
+protocol.loops.LoopMover: new centroid perturb rmsd: 25.9231
+protocol.loops.LoopMover: new centroid perturb rmsd: 25.9238
+protocol.loops.LoopMover: new centroid perturb rmsd: 25.9163
+protocol.loops.LoopMover: new centroid perturb rmsd: 25.9039
+protocol.loops.LoopMover: new centroid perturb rmsd: 25.899
+protocol.loops.LoopMover: new centroid perturb rmsd: 25.8807
+protocol.loops.LoopMover: new centroid perturb rmsd: 25.8772
+protocol.loops.LoopMover: new centroid perturb rmsd: 25.7803
+protocol.loops.LoopMover: new centroid perturb rmsd: 25.7874
+protocol.loops.LoopMover: new centroid perturb rmsd: 25.7885
+protocol.loops.LoopMover: new centroid perturb rmsd: 25.7968
+protocol.loops.LoopMover: new centroid perturb rmsd: 25.6653
+protocol.loops.LoopMover: new centroid perturb rmsd: 25.6634
+protocol.loops.LoopMover: new centroid perturb rmsd: 25.6374
+protocol.loops.LoopMover: new centroid perturb rmsd: 25.6272
+protocol.loops.LoopMover: new centroid perturb rmsd: 25.6167
+protocol.loops.LoopMover: new centroid perturb rmsd: 25.6074
+protocol.loops.LoopMover: new centroid perturb rmsd: 25.6543
+protocol.loops.LoopMover: new centroid perturb rmsd: 25.6874
+protocol.loops.LoopMover: new centroid perturb rmsd: 25.7345
+protocol.loops.LoopMover: new centroid perturb rmsd: 25.735
+protocol.loops.LoopMover: new centroid perturb rmsd: 25.7177
+protocol.loops.LoopMover: new centroid perturb rmsd: 25.6968
+protocol.loops.LoopMover: new centroid perturb rmsd: 25.7022
+protocol.loops.LoopMover: new centroid perturb rmsd: 25.695
+protocol.loops.LoopMover: new centroid perturb rmsd: 25.6847
+protocol.loops.LoopMover: new centroid perturb rmsd: 25.6883
+protocol.loops.LoopMover: new centroid perturb rmsd: 25.8118
+protocol.loops.LoopMover: new centroid perturb rmsd: 26.1433
+protocol.loops.LoopMover: new centroid perturb rmsd: 26.1246
+protocol.loops.LoopMover: new centroid perturb rmsd: 26.2915
+protocol.loops.LoopMover: new centroid perturb rmsd: 26.132
+protocol.loops.LoopMover: new centroid perturb rmsd: 26.1383
+protocol.loops.LoopMover: new centroid perturb rmsd: 26.1464
+protocol.loops.LoopMover: new centroid perturb rmsd: 26.1441
+protocol.loops.LoopMover: new centroid perturb rmsd: 26.3924
+protocol.loops.LoopMover: new centroid perturb rmsd: 26.3739
+protocol.loops.LoopMover: new centroid perturb rmsd: 26.3289
+protocol.loops.LoopMover: new centroid perturb rmsd: 26.3271
+protocol.loops.LoopMover: new centroid perturb rmsd: 26.33
+protocol.loops.LoopMover: new centroid perturb rmsd: 26.3297
+protocol.loops.LoopMover: new centroid perturb rmsd: 26.3311
+protocol.loops.LoopMover: new centroid perturb rmsd: 26.3307
+protocol.loops.LoopMover: new centroid perturb rmsd: 26.3799
+protocol.loops.LoopMover: new centroid perturb rmsd: 26.3753
+protocol.loops.LoopMover: new centroid perturb rmsd: 26.3775
+protocol.loops.LoopMover: new centroid perturb rmsd: 26.3788
+protocol.loops.LoopMover: new centroid perturb rmsd: 26.5564
+protocol.loops.LoopMover: new centroid perturb rmsd: 26.5512
+protocol.loops.LoopMover: new centroid perturb rmsd: 24.8568
+protocol.loops.LoopMover: new centroid perturb rmsd: 24.8652
+protocol.loops.LoopMover: new centroid perturb rmsd: 24.8054
+protocol.loops.LoopMover: new centroid perturb rmsd: 24.8003
+protocol.loops.LoopMover: new centroid perturb rmsd: 24.7305
+protocol.loops.LoopMover: new centroid perturb rmsd: 26.4234
+protocol.loops.LoopMover: new centroid perturb rmsd: 26.4268
+protocol.loops.LoopMover: new centroid perturb rmsd: 26.4206
+protocol.loops.LoopMover: new centroid perturb rmsd: 26.4266
+protocol.loops.LoopMover: new centroid perturb rmsd: 26.1483
+protocol.loops.LoopMover: new centroid perturb rmsd: 24.8762
+protocol.loops.LoopMover: new centroid perturb rmsd: 24.8654
+protocol.loops.LoopMover: new centroid perturb rmsd: 24.8649
+protocol.loops.LoopMover: new centroid perturb rmsd: 24.8669
+protocol.loops.LoopMover: new centroid perturb rmsd: 24.7345
+protocol.loops.LoopMover: new centroid perturb rmsd: 24.6221
+protocol.loops.LoopMover: new centroid perturb rmsd: 24.6224
+protocol.loops.LoopMover: new centroid perturb rmsd: 24.6329
+protocol.loops.LoopMover: new centroid perturb rmsd: 28.9956
+protocol.loops.LoopMover: new centroid perturb rmsd: 28.9918
+protocol.loops.LoopMover: new centroid perturb rmsd: 25.9775
+protocol.loops.LoopMover: new centroid perturb rmsd: 25.6505
+protocol.loops.LoopMover: new centroid perturb rmsd: 25.6569
+protocol.loops.LoopMover: new centroid perturb rmsd: 25.6632
+protocol.loops.LoopMover: new centroid perturb rmsd: 25.6637
+protocol.loops.LoopMover: new centroid perturb rmsd: 25.5933
+protocol.loops.LoopMover: new centroid perturb rmsd: 25.5818
+protocol.loops.LoopMover: new centroid perturb rmsd: 25.6045
+protocol.loops.LoopMover: new centroid perturb rmsd: 25.6009
+protocol.loops.LoopMover: new centroid perturb rmsd: 25.5872
+protocol.loops.LoopMover: Loopstat:    18   28   18   28   11  time  23.0    0  time   0.0  -29.8142   noext 
+protocols::checkpoint: Deleting checkpoints of Remodel
+protocols.looprelax: Buildtime: 23
+protocols.looprelax: FOLD_TREE  EDGE 1 93 -1 
+protocols.looprelax: 
+protocols.looprelax: ====================================================================================
+protocols.looprelax: ===
+protocols.looprelax: ===   Fullatom 
+protocols.looprelax: ===
+protocols.looprelax: Annotated sequence before fa switch: R[ARG_p:NtermProteinFull]DLEVVAATPTSLLISWDAPAAAAAVTVRYYRITYGETGGNSPVQEFTVPGSKSTATISGLKPGVDYTITVYAVTGRGDSPASSKPISINYRT[THR_p:CtermProteinFull]
+protocols.looprelax: No repacking required
+protocols.looprelax: ====================================================================================
+protocols.looprelax: ===
+protocols.looprelax: ===   Refine 
+protocols.looprelax: ===
+protocols.looprelax: fold_tree_before_refine FOLD_TREE  EDGE 1 17 -1  EDGE 17 29 1  EDGE 17 21 -1  EDGE 29 22 -1  EDGE 29 93 -1 
+protocols.looprelax: 
+protocol.loops.LoopMover: refine init temp: 1.5
+protocol.loops.LoopMover: refine final temp: 0.5
+core.pack.task: Packer task: initialize from command line() 
+protocol.loops.LoopMover: Not designing
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.pack.pack_rotamers: built 567 rotamers at 37 positions.
+core.pack.pack_rotamers: IG: 343128 bytes
+core.pack.task: Packer task: initialize from command line() 
+protocols.moves.MonteCarlo: MonteCarlo:: last_accepted_score,lowest_score: -137.471 -137.471
+protocol.loops.LoopMover: cycle: 1  -137.471
+protocol.loops.LoopMover: refinement cycle (outer/inner): 1/3 1/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 26.7496
+protocol.loops.LoopMover: energy after accepted move: -138.233
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 26.7605
+protocol.loops.LoopMover: energy after accepted move: -139.136
+protocol.loops.LoopMover: refinement cycle (outer/inner): 1/3 2/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 26.8486
+protocol.loops.LoopMover: energy after accepted move: -137.756
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 26.5403
+protocol.loops.LoopMover: energy after accepted move: -139.522
+protocol.loops.LoopMover: refinement cycle (outer/inner): 1/3 3/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 26.5664
+protocol.loops.LoopMover: energy after accepted move: -139.411
+protocol.loops.LoopMover: refinement cycle (outer/inner): 1/3 4/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 26.56
+protocol.loops.LoopMover: energy after accepted move: -139.581
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 26.565
+protocol.loops.LoopMover: energy after accepted move: -138.914
+protocol.loops.LoopMover: refinement cycle (outer/inner): 1/3 5/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 26.5025
+protocol.loops.LoopMover: energy after accepted move: -138.616
+protocol.loops.LoopMover: refinement cycle (outer/inner): 1/3 6/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 26.6875
+protocol.loops.LoopMover: energy after accepted move: -138.816
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 26.6921
+protocol.loops.LoopMover: energy after accepted move: -139.085
+protocol.loops.LoopMover: refinement cycle (outer/inner): 1/3 7/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 26.3057
+protocol.loops.LoopMover: energy after accepted move: -140.206
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 26.2958
+protocol.loops.LoopMover: energy after accepted move: -140.457
+protocol.loops.LoopMover: refinement cycle (outer/inner): 1/3 8/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 26.0845
+protocol.loops.LoopMover: energy after accepted move: -141.101
+protocol.loops.LoopMover: refinement cycle (outer/inner): 1/3 9/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 26.3148
+protocol.loops.LoopMover: energy after accepted move: -142.763
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 26.3047
+protocol.loops.LoopMover: energy after accepted move: -142.893
+protocol.loops.LoopMover: refinement cycle (outer/inner): 1/3 10/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 26.4217
+protocol.loops.LoopMover: energy after accepted move: -143.431
+protocol.loops.LoopMover: refinement cycle (outer/inner): 1/3 11/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 26.4117
+protocol.loops.LoopMover: energy after accepted move: -143.441
+protocol.loops.LoopMover: refinement cycle (outer/inner): 1/3 12/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 26.4265
+protocol.loops.LoopMover: energy after accepted move: -143.399
+protocol.loops.LoopMover: refinement cycle (outer/inner): 1/3 13/110 
+protocol.loops.LoopMover: refinement cycle (outer/inner): 1/3 14/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 26.4325
+protocol.loops.LoopMover: energy after accepted move: -143.551
+protocol.loops.LoopMover: refinement cycle (outer/inner): 1/3 15/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 26.5714
+protocol.loops.LoopMover: energy after accepted move: -143.691
+protocol.loops.LoopMover: refinement cycle (outer/inner): 1/3 16/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 26.5844
+protocol.loops.LoopMover: energy after accepted move: -143.269
+protocol.loops.LoopMover: refinement cycle (outer/inner): 1/3 17/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 26.5892
+protocol.loops.LoopMover: energy after accepted move: -141.833
+protocol.loops.LoopMover: refinement cycle (outer/inner): 1/3 18/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 27.6763
+protocol.loops.LoopMover: energy after accepted move: -142.091
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 27.6469
+protocol.loops.LoopMover: energy after accepted move: -141.806
+protocol.loops.LoopMover: refinement cycle (outer/inner): 1/3 19/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 27.6608
+protocol.loops.LoopMover: energy after accepted move: -142.008
+protocol.loops.LoopMover: refinement cycle (outer/inner): 1/3 20/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 27.6561
+protocol.loops.LoopMover: energy after accepted move: -141.586
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 27.5793
+protocol.loops.LoopMover: energy after accepted move: -142.047
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.pack.pack_rotamers: built 607 rotamers at 37 positions.
+core.pack.pack_rotamers: IG: 373284 bytes
+protocol.loops.LoopMover: energy after design: -142.052
+protocols.moves.MonteCarlo: MonteCarlo:: last_accepted_score,lowest_score: -142.052 -143.691
+protocol.loops.LoopMover: energy after repack: -142.052
+protocol.loops.LoopMover: refinement cycle (outer/inner): 1/3 21/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 27.6584
+protocol.loops.LoopMover: energy after accepted move: -141.01
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 27.5909
+protocol.loops.LoopMover: energy after accepted move: -140.75
+protocol.loops.LoopMover: refinement cycle (outer/inner): 1/3 22/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 27.5829
+protocol.loops.LoopMover: energy after accepted move: -140.847
+protocol.loops.LoopMover: refinement cycle (outer/inner): 1/3 23/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 27.5847
+protocol.loops.LoopMover: energy after accepted move: -140.742
+protocol.loops.LoopMover: refinement cycle (outer/inner): 1/3 24/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 27.5183
+protocol.loops.LoopMover: energy after accepted move: -142.379
+protocol.loops.LoopMover: refinement cycle (outer/inner): 1/3 25/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 27.6119
+protocol.loops.LoopMover: energy after accepted move: -141.822
+protocol.loops.LoopMover: refinement cycle (outer/inner): 1/3 26/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 27.4989
+protocol.loops.LoopMover: energy after accepted move: -141.971
+protocol.loops.LoopMover: refinement cycle (outer/inner): 1/3 27/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 27.0758
+protocol.loops.LoopMover: energy after accepted move: -141.888
+protocol.loops.LoopMover: refinement cycle (outer/inner): 1/3 28/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 26.953
+protocol.loops.LoopMover: energy after accepted move: -142.11
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 26.9681
+protocol.loops.LoopMover: energy after accepted move: -142.478
+protocol.loops.LoopMover: refinement cycle (outer/inner): 1/3 29/110 
+protocol.loops.LoopMover: refinement cycle (outer/inner): 1/3 30/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 27.0103
+protocol.loops.LoopMover: energy after accepted move: -141.758
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 27.2168
+protocol.loops.LoopMover: energy after accepted move: -142.501
+protocol.loops.LoopMover: refinement cycle (outer/inner): 1/3 31/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 27.2153
+protocol.loops.LoopMover: energy after accepted move: -142.545
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 27.2225
+protocol.loops.LoopMover: energy after accepted move: -142.559
+protocol.loops.LoopMover: refinement cycle (outer/inner): 1/3 32/110 
+protocol.loops.LoopMover: refinement cycle (outer/inner): 1/3 33/110 
+protocol.loops.LoopMover: refinement cycle (outer/inner): 1/3 34/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 27.2197
+protocol.loops.LoopMover: energy after accepted move: -142.06
+protocol.loops.LoopMover: refinement cycle (outer/inner): 1/3 35/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 27.2323
+protocol.loops.LoopMover: energy after accepted move: -141.415
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 27.3204
+protocol.loops.LoopMover: energy after accepted move: -142.149
+protocol.loops.LoopMover: refinement cycle (outer/inner): 1/3 36/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 27.3603
+protocol.loops.LoopMover: energy after accepted move: -141.692
+protocol.loops.LoopMover: refinement cycle (outer/inner): 1/3 37/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 27.3604
+protocol.loops.LoopMover: energy after accepted move: -142.067
+protocol.loops.LoopMover: refinement cycle (outer/inner): 1/3 38/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 27.3791
+protocol.loops.LoopMover: energy after accepted move: -141.313
+protocol.loops.LoopMover: refinement cycle (outer/inner): 1/3 39/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 27.3783
+protocol.loops.LoopMover: energy after accepted move: -142.012
+protocol.loops.LoopMover: refinement cycle (outer/inner): 1/3 40/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 27.3586
+protocol.loops.LoopMover: energy after accepted move: -141.836
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 27.362
+protocol.loops.LoopMover: energy after accepted move: -140.927
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.pack.pack_rotamers: built 620 rotamers at 37 positions.
+core.pack.pack_rotamers: IG: 383484 bytes
+protocol.loops.LoopMover: energy after design: -140.927
+protocols.moves.MonteCarlo: MonteCarlo:: last_accepted_score,lowest_score: -140.927 -143.691
+protocol.loops.LoopMover: energy after repack: -140.927
+protocol.loops.LoopMover: refinement cycle (outer/inner): 1/3 41/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 27.3588
+protocol.loops.LoopMover: energy after accepted move: -141.521
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 27.3648
+protocol.loops.LoopMover: energy after accepted move: -141.253
+protocol.loops.LoopMover: refinement cycle (outer/inner): 1/3 42/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 27.7504
+protocol.loops.LoopMover: energy after accepted move: -140.764
+protocol.loops.LoopMover: refinement cycle (outer/inner): 1/3 43/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 27.6596
+protocol.loops.LoopMover: energy after accepted move: -141.314
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 27.6576
+protocol.loops.LoopMover: energy after accepted move: -141.362
+protocol.loops.LoopMover: refinement cycle (outer/inner): 1/3 44/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 27.6613
+protocol.loops.LoopMover: energy after accepted move: -140.549
+protocol.loops.LoopMover: refinement cycle (outer/inner): 1/3 45/110 
+protocol.loops.LoopMover: refinement cycle (outer/inner): 1/3 46/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 27.6456
+protocol.loops.LoopMover: energy after accepted move: -140.929
+protocol.loops.LoopMover: refinement cycle (outer/inner): 1/3 47/110 
+protocol.loops.LoopMover: refinement cycle (outer/inner): 1/3 48/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 27.6222
+protocol.loops.LoopMover: energy after accepted move: -141.491
+protocol.loops.LoopMover: refinement cycle (outer/inner): 1/3 49/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 27.6184
+protocol.loops.LoopMover: energy after accepted move: -141.528
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 27.6181
+protocol.loops.LoopMover: energy after accepted move: -141.547
+protocol.loops.LoopMover: refinement cycle (outer/inner): 1/3 50/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 27.7206
+protocol.loops.LoopMover: energy after accepted move: -141.054
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 27.5225
+protocol.loops.LoopMover: energy after accepted move: -141.415
+protocol.loops.LoopMover: refinement cycle (outer/inner): 1/3 51/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 27.52
+protocol.loops.LoopMover: energy after accepted move: -141.368
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 27.3348
+protocol.loops.LoopMover: energy after accepted move: -139.99
+protocol.loops.LoopMover: refinement cycle (outer/inner): 1/3 52/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 27.3484
+protocol.loops.LoopMover: energy after accepted move: -140.4
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 27.2623
+protocol.loops.LoopMover: energy after accepted move: -136.907
+protocol.loops.LoopMover: refinement cycle (outer/inner): 1/3 53/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 27.2877
+protocol.loops.LoopMover: energy after accepted move: -139.613
+protocol.loops.LoopMover: refinement cycle (outer/inner): 1/3 54/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 26.0262
+protocol.loops.LoopMover: energy after accepted move: -142.952
+protocol.loops.LoopMover: refinement cycle (outer/inner): 1/3 55/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 26.0252
+protocol.loops.LoopMover: energy after accepted move: -142.944
+protocol.loops.LoopMover: refinement cycle (outer/inner): 1/3 56/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 25.9958
+protocol.loops.LoopMover: energy after accepted move: -141.869
+protocol.loops.LoopMover: refinement cycle (outer/inner): 1/3 57/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 26.2246
+protocol.loops.LoopMover: energy after accepted move: -142.354
+protocol.loops.LoopMover: refinement cycle (outer/inner): 1/3 58/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 26.2273
+protocol.loops.LoopMover: energy after accepted move: -142.61
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 26.3682
+protocol.loops.LoopMover: energy after accepted move: -142.01
+protocol.loops.LoopMover: refinement cycle (outer/inner): 1/3 59/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 26.3907
+protocol.loops.LoopMover: energy after accepted move: -141.826
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 26.3731
+protocol.loops.LoopMover: energy after accepted move: -140.681
+protocol.loops.LoopMover: refinement cycle (outer/inner): 1/3 60/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 26.4938
+protocol.loops.LoopMover: energy after accepted move: -143.053
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 26.6466
+protocol.loops.LoopMover: energy after accepted move: -142.893
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.pack.pack_rotamers: built 759 rotamers at 37 positions.
+core.pack.pack_rotamers: IG: 540844 bytes
+protocol.loops.LoopMover: energy after design: -142.893
+protocols.moves.MonteCarlo: MonteCarlo:: last_accepted_score,lowest_score: -142.893 -143.691
+protocol.loops.LoopMover: energy after repack: -142.893
+protocol.loops.LoopMover: refinement cycle (outer/inner): 1/3 61/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 26.6474
+protocol.loops.LoopMover: energy after accepted move: -142.866
+protocol.loops.LoopMover: refinement cycle (outer/inner): 1/3 62/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 26.6463
+protocol.loops.LoopMover: energy after accepted move: -142.993
+protocol.loops.LoopMover: refinement cycle (outer/inner): 1/3 63/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 26.6495
+protocol.loops.LoopMover: energy after accepted move: -143.291
+protocol.loops.LoopMover: refinement cycle (outer/inner): 1/3 64/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 26.6683
+protocol.loops.LoopMover: energy after accepted move: -142.558
+protocol.loops.LoopMover: refinement cycle (outer/inner): 1/3 65/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 26.4952
+protocol.loops.LoopMover: energy after accepted move: -142.976
+protocol.loops.LoopMover: refinement cycle (outer/inner): 1/3 66/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 24.9166
+protocol.loops.LoopMover: energy after accepted move: -136.98
+protocol.loops.LoopMover: refinement cycle (outer/inner): 1/3 67/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 24.9363
+protocol.loops.LoopMover: energy after accepted move: -136.716
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 24.9214
+protocol.loops.LoopMover: energy after accepted move: -136.518
+protocol.loops.LoopMover: refinement cycle (outer/inner): 1/3 68/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 24.9372
+protocol.loops.LoopMover: energy after accepted move: -137.109
+protocol.loops.LoopMover: refinement cycle (outer/inner): 1/3 69/110 
+protocol.loops.LoopMover: refinement cycle (outer/inner): 1/3 70/110 
+protocol.loops.LoopMover: refinement cycle (outer/inner): 1/3 71/110 
+protocol.loops.LoopMover: refinement cycle (outer/inner): 1/3 72/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 24.9718
+protocol.loops.LoopMover: energy after accepted move: -136.996
+protocol.loops.LoopMover: refinement cycle (outer/inner): 1/3 73/110 
+protocol.loops.LoopMover: refinement cycle (outer/inner): 1/3 74/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 24.9629
+protocol.loops.LoopMover: energy after accepted move: -137.004
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 24.9637
+protocol.loops.LoopMover: energy after accepted move: -137.456
+protocol.loops.LoopMover: refinement cycle (outer/inner): 1/3 75/110 
+protocol.loops.LoopMover: refinement cycle (outer/inner): 1/3 76/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 24.9568
+protocol.loops.LoopMover: energy after accepted move: -137.205
+protocol.loops.LoopMover: refinement cycle (outer/inner): 1/3 77/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 24.7229
+protocol.loops.LoopMover: energy after accepted move: -138.214
+protocol.loops.LoopMover: refinement cycle (outer/inner): 1/3 78/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 24.7317
+protocol.loops.LoopMover: energy after accepted move: -138.304
+protocol.loops.LoopMover: refinement cycle (outer/inner): 1/3 79/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 24.7526
+protocol.loops.LoopMover: energy after accepted move: -137.668
+protocol.loops.LoopMover: refinement cycle (outer/inner): 1/3 80/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 24.7546
+protocol.loops.LoopMover: energy after accepted move: -138.201
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.pack.pack_rotamers: built 569 rotamers at 37 positions.
+core.pack.pack_rotamers: IG: 329260 bytes
+protocol.loops.LoopMover: energy after design: -138.281
+protocols.moves.MonteCarlo: MonteCarlo:: last_accepted_score,lowest_score: -138.281 -143.691
+protocol.loops.LoopMover: energy after repack: -138.281
+protocol.loops.LoopMover: refinement cycle (outer/inner): 1/3 81/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 24.755
+protocol.loops.LoopMover: energy after accepted move: -138.225
+protocol.loops.LoopMover: refinement cycle (outer/inner): 1/3 82/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 24.75
+protocol.loops.LoopMover: energy after accepted move: -138.243
+protocol.loops.LoopMover: refinement cycle (outer/inner): 1/3 83/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 24.8711
+protocol.loops.LoopMover: energy after accepted move: -138.261
+protocol.loops.LoopMover: refinement cycle (outer/inner): 1/3 84/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 24.8412
+protocol.loops.LoopMover: energy after accepted move: -136.917
+protocol.loops.LoopMover: refinement cycle (outer/inner): 1/3 85/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 24.8244
+protocol.loops.LoopMover: energy after accepted move: -137.261
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 24.7084
+protocol.loops.LoopMover: energy after accepted move: -137.475
+protocol.loops.LoopMover: refinement cycle (outer/inner): 1/3 86/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 24.7109
+protocol.loops.LoopMover: energy after accepted move: -137.346
+protocol.loops.LoopMover: refinement cycle (outer/inner): 1/3 87/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 24.7599
+protocol.loops.LoopMover: energy after accepted move: -136.016
+protocol.loops.LoopMover: refinement cycle (outer/inner): 1/3 88/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 24.9189
+protocol.loops.LoopMover: energy after accepted move: -136.543
+protocol.loops.LoopMover: refinement cycle (outer/inner): 1/3 89/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 24.9226
+protocol.loops.LoopMover: energy after accepted move: -136.763
+protocol.loops.LoopMover: refinement cycle (outer/inner): 1/3 90/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 24.9159
+protocol.loops.LoopMover: energy after accepted move: -136.949
+protocol.loops.LoopMover: refinement cycle (outer/inner): 1/3 91/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 25.6797
+protocol.loops.LoopMover: energy after accepted move: -138.183
+protocol.loops.LoopMover: refinement cycle (outer/inner): 1/3 92/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 25.6852
+protocol.loops.LoopMover: energy after accepted move: -137.962
+protocol.loops.LoopMover: refinement cycle (outer/inner): 1/3 93/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 25.6806
+protocol.loops.LoopMover: energy after accepted move: -138.392
+protocol.loops.LoopMover: refinement cycle (outer/inner): 1/3 94/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 25.6722
+protocol.loops.LoopMover: energy after accepted move: -138.448
+protocol.loops.LoopMover: refinement cycle (outer/inner): 1/3 95/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 25.678
+protocol.loops.LoopMover: energy after accepted move: -137.684
+protocol.loops.LoopMover: refinement cycle (outer/inner): 1/3 96/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 25.6731
+protocol.loops.LoopMover: energy after accepted move: -137.766
+protocol.loops.LoopMover: refinement cycle (outer/inner): 1/3 97/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 25.693
+protocol.loops.LoopMover: energy after accepted move: -137.258
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 26.0432
+protocol.loops.LoopMover: energy after accepted move: -136.347
+protocol.loops.LoopMover: refinement cycle (outer/inner): 1/3 98/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 26.095
+protocol.loops.LoopMover: energy after accepted move: -136.479
+protocol.loops.LoopMover: refinement cycle (outer/inner): 1/3 99/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 26.0924
+protocol.loops.LoopMover: energy after accepted move: -136.576
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 26.036
+protocol.loops.LoopMover: energy after accepted move: -137.044
+protocol.loops.LoopMover: refinement cycle (outer/inner): 1/3 100/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 26.023
+protocol.loops.LoopMover: energy after accepted move: -137.434
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.pack.pack_rotamers: built 528 rotamers at 37 positions.
+core.pack.pack_rotamers: IG: 291844 bytes
+protocol.loops.LoopMover: energy after design: -137.479
+protocols.moves.MonteCarlo: MonteCarlo:: last_accepted_score,lowest_score: -137.479 -143.691
+protocol.loops.LoopMover: energy after repack: -137.479
+protocol.loops.LoopMover: refinement cycle (outer/inner): 1/3 101/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 26.0251
+protocol.loops.LoopMover: energy after accepted move: -137.526
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 26.186
+protocol.loops.LoopMover: energy after accepted move: -135.814
+protocol.loops.LoopMover: refinement cycle (outer/inner): 1/3 102/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 26.1984
+protocol.loops.LoopMover: energy after accepted move: -135.715
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 24.9224
+protocol.loops.LoopMover: energy after accepted move: -135.891
+protocol.loops.LoopMover: refinement cycle (outer/inner): 1/3 103/110 
+protocol.loops.LoopMover: refinement cycle (outer/inner): 1/3 104/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 24.9127
+protocol.loops.LoopMover: energy after accepted move: -135.952
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 24.8588
+protocol.loops.LoopMover: energy after accepted move: -136.152
+protocol.loops.LoopMover: refinement cycle (outer/inner): 1/3 105/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 24.795
+protocol.loops.LoopMover: energy after accepted move: -136.024
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 24.8138
+protocol.loops.LoopMover: energy after accepted move: -137.076
+protocol.loops.LoopMover: refinement cycle (outer/inner): 1/3 106/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 24.817
+protocol.loops.LoopMover: energy after accepted move: -136.91
+protocol.loops.LoopMover: refinement cycle (outer/inner): 1/3 107/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 24.874
+protocol.loops.LoopMover: energy after accepted move: -136.777
+protocol.loops.LoopMover: refinement cycle (outer/inner): 1/3 108/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 24.8951
+protocol.loops.LoopMover: energy after accepted move: -137.347
+protocol.loops.LoopMover: refinement cycle (outer/inner): 1/3 109/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 25.0358
+protocol.loops.LoopMover: energy after accepted move: -137.111
+protocol.loops.LoopMover: refinement cycle (outer/inner): 1/3 110/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 25.0363
+protocol.loops.LoopMover: energy after accepted move: -137.005
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.pack.pack_rotamers: built 575 rotamers at 37 positions.
+core.pack.pack_rotamers: IG: 338496 bytes
+protocol.loops.LoopMover: energy after design: -137.005
+protocols.moves.MonteCarlo: MonteCarlo:: last_accepted_score,lowest_score: -137.005 -143.691
+protocol.loops.LoopMover: energy after repack: -137.005
+protocol.loops.LoopMover: cycle: 2  -143.597
+protocol.loops.LoopMover: refinement cycle (outer/inner): 2/3 1/110 
+protocol.loops.LoopMover: refinement cycle (outer/inner): 2/3 2/110 
+protocol.loops.LoopMover: refinement cycle (outer/inner): 2/3 3/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 26.5968
+protocol.loops.LoopMover: energy after accepted move: -143.808
+protocol.loops.LoopMover: refinement cycle (outer/inner): 2/3 4/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 26.5927
+protocol.loops.LoopMover: energy after accepted move: -143.415
+protocol.loops.LoopMover: refinement cycle (outer/inner): 2/3 5/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 26.6244
+protocol.loops.LoopMover: energy after accepted move: -142.998
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 26.6731
+protocol.loops.LoopMover: energy after accepted move: -142.227
+protocol.loops.LoopMover: refinement cycle (outer/inner): 2/3 6/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 26.6546
+protocol.loops.LoopMover: energy after accepted move: -142.363
+protocol.loops.LoopMover: refinement cycle (outer/inner): 2/3 7/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 26.5814
+protocol.loops.LoopMover: energy after accepted move: -142.971
+protocol.loops.LoopMover: refinement cycle (outer/inner): 2/3 8/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 26.6009
+protocol.loops.LoopMover: energy after accepted move: -142.648
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 26.5991
+protocol.loops.LoopMover: energy after accepted move: -142.681
+protocol.loops.LoopMover: refinement cycle (outer/inner): 2/3 9/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 26.5944
+protocol.loops.LoopMover: energy after accepted move: -142.596
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 26.4817
+protocol.loops.LoopMover: energy after accepted move: -143.212
+protocol.loops.LoopMover: refinement cycle (outer/inner): 2/3 10/110 
+protocol.loops.LoopMover: refinement cycle (outer/inner): 2/3 11/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 26.5443
+protocol.loops.LoopMover: energy after accepted move: -142.91
+protocol.loops.LoopMover: refinement cycle (outer/inner): 2/3 12/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 26.5365
+protocol.loops.LoopMover: energy after accepted move: -142.786
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 26.5462
+protocol.loops.LoopMover: energy after accepted move: -142.764
+protocol.loops.LoopMover: refinement cycle (outer/inner): 2/3 13/110 
+protocol.loops.LoopMover: refinement cycle (outer/inner): 2/3 14/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 26.5374
+protocol.loops.LoopMover: energy after accepted move: -142.419
+protocol.loops.LoopMover: refinement cycle (outer/inner): 2/3 15/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 26.5468
+protocol.loops.LoopMover: energy after accepted move: -142.789
+protocol.loops.LoopMover: refinement cycle (outer/inner): 2/3 16/110 
+protocol.loops.LoopMover: refinement cycle (outer/inner): 2/3 17/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 26.5449
+protocol.loops.LoopMover: energy after accepted move: -142.839
+protocol.loops.LoopMover: refinement cycle (outer/inner): 2/3 18/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 26.5409
+protocol.loops.LoopMover: energy after accepted move: -142.48
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 26.5412
+protocol.loops.LoopMover: energy after accepted move: -142.737
+protocol.loops.LoopMover: refinement cycle (outer/inner): 2/3 19/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 26.5438
+protocol.loops.LoopMover: energy after accepted move: -142.693
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 26.5407
+protocol.loops.LoopMover: energy after accepted move: -142.58
+protocol.loops.LoopMover: refinement cycle (outer/inner): 2/3 20/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 26.5393
+protocol.loops.LoopMover: energy after accepted move: -142.616
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.pack.pack_rotamers: built 594 rotamers at 37 positions.
+core.pack.pack_rotamers: IG: 368104 bytes
+protocol.loops.LoopMover: energy after design: -142.616
+protocols.moves.MonteCarlo: MonteCarlo:: last_accepted_score,lowest_score: -142.616 -143.808
+protocol.loops.LoopMover: energy after repack: -142.616
+protocol.loops.LoopMover: refinement cycle (outer/inner): 2/3 21/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 26.5449
+protocol.loops.LoopMover: energy after accepted move: -142.561
+protocol.loops.LoopMover: refinement cycle (outer/inner): 2/3 22/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 26.5475
+protocol.loops.LoopMover: energy after accepted move: -142.782
+protocol.loops.LoopMover: refinement cycle (outer/inner): 2/3 23/110 
+protocol.loops.LoopMover: refinement cycle (outer/inner): 2/3 24/110 
+protocol.loops.LoopMover: refinement cycle (outer/inner): 2/3 25/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 26.553
+protocol.loops.LoopMover: energy after accepted move: -142.805
+protocol.loops.LoopMover: refinement cycle (outer/inner): 2/3 26/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 26.5642
+protocol.loops.LoopMover: energy after accepted move: -142.051
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 26.5695
+protocol.loops.LoopMover: energy after accepted move: -141.746
+protocol.loops.LoopMover: refinement cycle (outer/inner): 2/3 27/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 26.5693
+protocol.loops.LoopMover: energy after accepted move: -141.935
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 26.5727
+protocol.loops.LoopMover: energy after accepted move: -141.841
+protocol.loops.LoopMover: refinement cycle (outer/inner): 2/3 28/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 26.574
+protocol.loops.LoopMover: energy after accepted move: -141.631
+protocol.loops.LoopMover: refinement cycle (outer/inner): 2/3 29/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 26.6327
+protocol.loops.LoopMover: energy after accepted move: -143.36
+protocol.loops.LoopMover: refinement cycle (outer/inner): 2/3 30/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 26.5429
+protocol.loops.LoopMover: energy after accepted move: -143.703
+protocol.loops.LoopMover: refinement cycle (outer/inner): 2/3 31/110 
+protocol.loops.LoopMover: refinement cycle (outer/inner): 2/3 32/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 26.5671
+protocol.loops.LoopMover: energy after accepted move: -143.806
+protocol.loops.LoopMover: refinement cycle (outer/inner): 2/3 33/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 26.5337
+protocol.loops.LoopMover: energy after accepted move: -142.572
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 26.5312
+protocol.loops.LoopMover: energy after accepted move: -142.401
+protocol.loops.LoopMover: refinement cycle (outer/inner): 2/3 34/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 27.0084
+protocol.loops.LoopMover: energy after accepted move: -142.191
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 26.7452
+protocol.loops.LoopMover: energy after accepted move: -142.736
+protocol.loops.LoopMover: refinement cycle (outer/inner): 2/3 35/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 26.7269
+protocol.loops.LoopMover: energy after accepted move: -142.933
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 26.66
+protocol.loops.LoopMover: energy after accepted move: -143.321
+protocol.loops.LoopMover: refinement cycle (outer/inner): 2/3 36/110 
+protocol.loops.LoopMover: refinement cycle (outer/inner): 2/3 37/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 26.618
+protocol.loops.LoopMover: energy after accepted move: -142.87
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 26.6604
+protocol.loops.LoopMover: energy after accepted move: -142.241
+protocol.loops.LoopMover: refinement cycle (outer/inner): 2/3 38/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 26.6069
+protocol.loops.LoopMover: energy after accepted move: -142.222
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 26.6553
+protocol.loops.LoopMover: energy after accepted move: -141.844
+protocol.loops.LoopMover: refinement cycle (outer/inner): 2/3 39/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 26.6539
+protocol.loops.LoopMover: energy after accepted move: -141.786
+protocol.loops.LoopMover: refinement cycle (outer/inner): 2/3 40/110 
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.pack.pack_rotamers: built 759 rotamers at 37 positions.
+core.pack.pack_rotamers: IG: 539828 bytes
+protocol.loops.LoopMover: energy after design: -141.786
+protocols.moves.MonteCarlo: MonteCarlo:: last_accepted_score,lowest_score: -141.786 -143.808
+protocol.loops.LoopMover: energy after repack: -141.786
+protocol.loops.LoopMover: refinement cycle (outer/inner): 2/3 41/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 26.65
+protocol.loops.LoopMover: energy after accepted move: -141.974
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 26.6405
+protocol.loops.LoopMover: energy after accepted move: -142.652
+protocol.loops.LoopMover: refinement cycle (outer/inner): 2/3 42/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 26.6435
+protocol.loops.LoopMover: energy after accepted move: -142.834
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 26.764
+protocol.loops.LoopMover: energy after accepted move: -143.776
+protocol.loops.LoopMover: refinement cycle (outer/inner): 2/3 43/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 26.7718
+protocol.loops.LoopMover: energy after accepted move: -143.517
+protocol.loops.LoopMover: refinement cycle (outer/inner): 2/3 44/110 
+protocol.loops.LoopMover: refinement cycle (outer/inner): 2/3 45/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 26.8135
+protocol.loops.LoopMover: energy after accepted move: -143.647
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 26.8481
+protocol.loops.LoopMover: energy after accepted move: -143.226
+protocol.loops.LoopMover: refinement cycle (outer/inner): 2/3 46/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 26.8574
+protocol.loops.LoopMover: energy after accepted move: -143.284
+protocol.loops.LoopMover: refinement cycle (outer/inner): 2/3 47/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 26.8484
+protocol.loops.LoopMover: energy after accepted move: -142.341
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 26.8532
+protocol.loops.LoopMover: energy after accepted move: -142.436
+protocol.loops.LoopMover: refinement cycle (outer/inner): 2/3 48/110 
+protocol.loops.LoopMover: refinement cycle (outer/inner): 2/3 49/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 26.8441
+protocol.loops.LoopMover: energy after accepted move: -142.466
+protocol.loops.LoopMover: refinement cycle (outer/inner): 2/3 50/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 26.7595
+protocol.loops.LoopMover: energy after accepted move: -141.935
+protocol.loops.LoopMover: refinement cycle (outer/inner): 2/3 51/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 26.7054
+protocol.loops.LoopMover: energy after accepted move: -142.324
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 26.7062
+protocol.loops.LoopMover: energy after accepted move: -142.76
+protocol.loops.LoopMover: refinement cycle (outer/inner): 2/3 52/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 26.7033
+protocol.loops.LoopMover: energy after accepted move: -142.928
+protocol.loops.LoopMover: refinement cycle (outer/inner): 2/3 53/110 
+protocol.loops.LoopMover: refinement cycle (outer/inner): 2/3 54/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 26.7874
+protocol.loops.LoopMover: energy after accepted move: -141.673
+protocol.loops.LoopMover: refinement cycle (outer/inner): 2/3 55/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 26.791
+protocol.loops.LoopMover: energy after accepted move: -141.774
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 27.1115
+protocol.loops.LoopMover: energy after accepted move: -140.614
+protocol.loops.LoopMover: refinement cycle (outer/inner): 2/3 56/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 27.1126
+protocol.loops.LoopMover: energy after accepted move: -140.479
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 27.4656
+protocol.loops.LoopMover: energy after accepted move: -140.132
+protocol.loops.LoopMover: refinement cycle (outer/inner): 2/3 57/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 27.4627
+protocol.loops.LoopMover: energy after accepted move: -140.76
+protocol.loops.LoopMover: refinement cycle (outer/inner): 2/3 58/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 27.4711
+protocol.loops.LoopMover: energy after accepted move: -140.632
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 27.4592
+protocol.loops.LoopMover: energy after accepted move: -140.852
+protocol.loops.LoopMover: refinement cycle (outer/inner): 2/3 59/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 27.4657
+protocol.loops.LoopMover: energy after accepted move: -140.863
+protocol.loops.LoopMover: refinement cycle (outer/inner): 2/3 60/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 27.4681
+protocol.loops.LoopMover: energy after accepted move: -140.61
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 27.5476
+protocol.loops.LoopMover: energy after accepted move: -140.421
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.pack.pack_rotamers: built 603 rotamers at 37 positions.
+core.pack.pack_rotamers: IG: 370292 bytes
+protocol.loops.LoopMover: energy after design: -140.585
+protocols.moves.MonteCarlo: MonteCarlo:: last_accepted_score,lowest_score: -140.585 -143.808
+protocol.loops.LoopMover: energy after repack: -140.585
+protocol.loops.LoopMover: refinement cycle (outer/inner): 2/3 61/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 27.2198
+protocol.loops.LoopMover: energy after accepted move: -142.388
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 27.2237
+protocol.loops.LoopMover: energy after accepted move: -142.319
+protocol.loops.LoopMover: refinement cycle (outer/inner): 2/3 62/110 
+protocol.loops.LoopMover: refinement cycle (outer/inner): 2/3 63/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 27.4574
+protocol.loops.LoopMover: energy after accepted move: -142.588
+protocol.loops.LoopMover: refinement cycle (outer/inner): 2/3 64/110 
+protocol.loops.LoopMover: refinement cycle (outer/inner): 2/3 65/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 27.4565
+protocol.loops.LoopMover: energy after accepted move: -142.472
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 27.2893
+protocol.loops.LoopMover: energy after accepted move: -142.49
+protocol.loops.LoopMover: refinement cycle (outer/inner): 2/3 66/110 
+protocol.loops.LoopMover: refinement cycle (outer/inner): 2/3 67/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 27.3004
+protocol.loops.LoopMover: energy after accepted move: -142.376
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 27.2977
+protocol.loops.LoopMover: energy after accepted move: -142.374
+protocol.loops.LoopMover: refinement cycle (outer/inner): 2/3 68/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 27.2985
+protocol.loops.LoopMover: energy after accepted move: -142.339
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 27.3059
+protocol.loops.LoopMover: energy after accepted move: -142.299
+protocol.loops.LoopMover: refinement cycle (outer/inner): 2/3 69/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 27.2812
+protocol.loops.LoopMover: energy after accepted move: -142.327
+protocol.loops.LoopMover: refinement cycle (outer/inner): 2/3 70/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 27.2827
+protocol.loops.LoopMover: energy after accepted move: -142.396
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 27.4031
+protocol.loops.LoopMover: energy after accepted move: -142.453
+protocol.loops.LoopMover: refinement cycle (outer/inner): 2/3 71/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 27.2661
+protocol.loops.LoopMover: energy after accepted move: -141.86
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 27.2606
+protocol.loops.LoopMover: energy after accepted move: -141.961
+protocol.loops.LoopMover: refinement cycle (outer/inner): 2/3 72/110 
+protocol.loops.LoopMover: refinement cycle (outer/inner): 2/3 73/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 27.2601
+protocol.loops.LoopMover: energy after accepted move: -141.897
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 27.2586
+protocol.loops.LoopMover: energy after accepted move: -141.01
+protocol.loops.LoopMover: refinement cycle (outer/inner): 2/3 74/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 27.2596
+protocol.loops.LoopMover: energy after accepted move: -141.138
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 27.2599
+protocol.loops.LoopMover: energy after accepted move: -141.209
+protocol.loops.LoopMover: refinement cycle (outer/inner): 2/3 75/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 27.2622
+protocol.loops.LoopMover: energy after accepted move: -141.297
+protocol.loops.LoopMover: refinement cycle (outer/inner): 2/3 76/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 27.2735
+protocol.loops.LoopMover: energy after accepted move: -141.28
+protocol.loops.LoopMover: refinement cycle (outer/inner): 2/3 77/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 27.4109
+protocol.loops.LoopMover: energy after accepted move: -141.657
+protocol.loops.LoopMover: refinement cycle (outer/inner): 2/3 78/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 27.4125
+protocol.loops.LoopMover: energy after accepted move: -141.68
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 27.3798
+protocol.loops.LoopMover: energy after accepted move: -141.149
+protocol.loops.LoopMover: refinement cycle (outer/inner): 2/3 79/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 27.3917
+protocol.loops.LoopMover: energy after accepted move: -141.892
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 27.3912
+protocol.loops.LoopMover: energy after accepted move: -141.748
+protocol.loops.LoopMover: refinement cycle (outer/inner): 2/3 80/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 27.3959
+protocol.loops.LoopMover: energy after accepted move: -141.697
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.pack.pack_rotamers: built 611 rotamers at 37 positions.
+core.pack.pack_rotamers: IG: 379704 bytes
+protocol.loops.LoopMover: energy after design: -141.697
+protocols.moves.MonteCarlo: MonteCarlo:: last_accepted_score,lowest_score: -141.697 -143.808
+protocol.loops.LoopMover: energy after repack: -141.697
+protocol.loops.LoopMover: refinement cycle (outer/inner): 2/3 81/110 
+protocol.loops.LoopMover: refinement cycle (outer/inner): 2/3 82/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 27.4171
+protocol.loops.LoopMover: energy after accepted move: -141.511
+protocol.loops.LoopMover: refinement cycle (outer/inner): 2/3 83/110 
+protocol.loops.LoopMover: refinement cycle (outer/inner): 2/3 84/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 27.4387
+protocol.loops.LoopMover: energy after accepted move: -142.287
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 27.4544
+protocol.loops.LoopMover: energy after accepted move: -142.413
+protocol.loops.LoopMover: refinement cycle (outer/inner): 2/3 85/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 27.5124
+protocol.loops.LoopMover: energy after accepted move: -142.055
+protocol.loops.LoopMover: refinement cycle (outer/inner): 2/3 86/110 
+protocol.loops.LoopMover: refinement cycle (outer/inner): 2/3 87/110 
+protocol.loops.LoopMover: refinement cycle (outer/inner): 2/3 88/110 
+protocol.loops.LoopMover: refinement cycle (outer/inner): 2/3 89/110 
+protocol.loops.LoopMover: refinement cycle (outer/inner): 2/3 90/110 
+protocol.loops.LoopMover: refinement cycle (outer/inner): 2/3 91/110 
+protocol.loops.LoopMover: refinement cycle (outer/inner): 2/3 92/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 27.0825
+protocol.loops.LoopMover: energy after accepted move: -141.632
+protocol.loops.LoopMover: refinement cycle (outer/inner): 2/3 93/110 
+protocol.loops.LoopMover: refinement cycle (outer/inner): 2/3 94/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 27.1692
+protocol.loops.LoopMover: energy after accepted move: -142.27
+protocol.loops.LoopMover: refinement cycle (outer/inner): 2/3 95/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 27.1678
+protocol.loops.LoopMover: energy after accepted move: -142.191
+protocol.loops.LoopMover: refinement cycle (outer/inner): 2/3 96/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 27.0942
+protocol.loops.LoopMover: energy after accepted move: -142.029
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 26.9499
+protocol.loops.LoopMover: energy after accepted move: -141.243
+protocol.loops.LoopMover: refinement cycle (outer/inner): 2/3 97/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 26.974
+protocol.loops.LoopMover: energy after accepted move: -140.784
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 27.1585
+protocol.loops.LoopMover: energy after accepted move: -141.567
+protocol.loops.LoopMover: refinement cycle (outer/inner): 2/3 98/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 27.1335
+protocol.loops.LoopMover: energy after accepted move: -141.328
+protocol.loops.LoopMover: refinement cycle (outer/inner): 2/3 99/110 
+protocol.loops.LoopMover: refinement cycle (outer/inner): 2/3 100/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 26.9146
+protocol.loops.LoopMover: energy after accepted move: -142.169
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 26.9763
+protocol.loops.LoopMover: energy after accepted move: -141.126
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.pack.pack_rotamers: built 614 rotamers at 37 positions.
+core.pack.pack_rotamers: IG: 381632 bytes
+protocol.loops.LoopMover: energy after design: -141.126
+protocols.moves.MonteCarlo: MonteCarlo:: last_accepted_score,lowest_score: -141.126 -143.808
+protocol.loops.LoopMover: energy after repack: -141.126
+protocol.loops.LoopMover: refinement cycle (outer/inner): 2/3 101/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 26.9811
+protocol.loops.LoopMover: energy after accepted move: -141.248
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 26.9786
+protocol.loops.LoopMover: energy after accepted move: -141.278
+protocol.loops.LoopMover: refinement cycle (outer/inner): 2/3 102/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 27.035
+protocol.loops.LoopMover: energy after accepted move: -140.612
+protocol.loops.LoopMover: refinement cycle (outer/inner): 2/3 103/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 27.054
+protocol.loops.LoopMover: energy after accepted move: -142.097
+protocol.loops.LoopMover: refinement cycle (outer/inner): 2/3 104/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 27.1599
+protocol.loops.LoopMover: energy after accepted move: -142.236
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 27.1735
+protocol.loops.LoopMover: energy after accepted move: -142.266
+protocol.loops.LoopMover: refinement cycle (outer/inner): 2/3 105/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 27.1739
+protocol.loops.LoopMover: energy after accepted move: -142.215
+protocol.loops.LoopMover: refinement cycle (outer/inner): 2/3 106/110 
+protocol.loops.LoopMover: refinement cycle (outer/inner): 2/3 107/110 
+protocol.loops.LoopMover: refinement cycle (outer/inner): 2/3 108/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 27.4331
+protocol.loops.LoopMover: energy after accepted move: -142.084
+protocol.loops.LoopMover: refinement cycle (outer/inner): 2/3 109/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 27.4124
+protocol.loops.LoopMover: energy after accepted move: -141.225
+protocol.loops.LoopMover: refinement cycle (outer/inner): 2/3 110/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 27.3588
+protocol.loops.LoopMover: energy after accepted move: -141.631
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.pack.pack_rotamers: built 616 rotamers at 37 positions.
+core.pack.pack_rotamers: IG: 383212 bytes
+protocol.loops.LoopMover: energy after design: -141.473
+protocols.moves.MonteCarlo: MonteCarlo:: last_accepted_score,lowest_score: -141.473 -143.808
+protocol.loops.LoopMover: energy after repack: -141.473
+protocol.loops.LoopMover: cycle: 3  -143.63
+protocol.loops.LoopMover: refinement cycle (outer/inner): 3/3 1/110 
+protocol.loops.LoopMover: refinement cycle (outer/inner): 3/3 2/110 
+protocol.loops.LoopMover: refinement cycle (outer/inner): 3/3 3/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 26.5882
+protocol.loops.LoopMover: energy after accepted move: -143.605
+protocol.loops.LoopMover: refinement cycle (outer/inner): 3/3 4/110 
+protocol.loops.LoopMover: refinement cycle (outer/inner): 3/3 5/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 26.4576
+protocol.loops.LoopMover: energy after accepted move: -143.301
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 26.4781
+protocol.loops.LoopMover: energy after accepted move: -143.219
+protocol.loops.LoopMover: refinement cycle (outer/inner): 3/3 6/110 
+protocol.loops.LoopMover: refinement cycle (outer/inner): 3/3 7/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 26.4858
+protocol.loops.LoopMover: energy after accepted move: -143.303
+protocol.loops.LoopMover: refinement cycle (outer/inner): 3/3 8/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 26.4765
+protocol.loops.LoopMover: energy after accepted move: -143.088
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 26.424
+protocol.loops.LoopMover: energy after accepted move: -143.859
+protocol.loops.LoopMover: refinement cycle (outer/inner): 3/3 9/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 26.4211
+protocol.loops.LoopMover: energy after accepted move: -143.882
+protocol.loops.LoopMover: refinement cycle (outer/inner): 3/3 10/110 
+protocol.loops.LoopMover: refinement cycle (outer/inner): 3/3 11/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 26.4456
+protocol.loops.LoopMover: energy after accepted move: -143.651
+protocol.loops.LoopMover: refinement cycle (outer/inner): 3/3 12/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 26.45
+protocol.loops.LoopMover: energy after accepted move: -143.46
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 26.4888
+protocol.loops.LoopMover: energy after accepted move: -143.353
+protocol.loops.LoopMover: refinement cycle (outer/inner): 3/3 13/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 26.2053
+protocol.loops.LoopMover: energy after accepted move: -142.857
+protocol.loops.LoopMover: refinement cycle (outer/inner): 3/3 14/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 26.2204
+protocol.loops.LoopMover: energy after accepted move: -142.36
+protocol.loops.LoopMover: refinement cycle (outer/inner): 3/3 15/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 26.4492
+protocol.loops.LoopMover: energy after accepted move: -143.733
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 26.5628
+protocol.loops.LoopMover: energy after accepted move: -143.384
+protocol.loops.LoopMover: refinement cycle (outer/inner): 3/3 16/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 26.551
+protocol.loops.LoopMover: energy after accepted move: -143.173
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 26.4414
+protocol.loops.LoopMover: energy after accepted move: -143.87
+protocol.loops.LoopMover: refinement cycle (outer/inner): 3/3 17/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 26.4493
+protocol.loops.LoopMover: energy after accepted move: -143.613
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 26.4441
+protocol.loops.LoopMover: energy after accepted move: -143.781
+protocol.loops.LoopMover: refinement cycle (outer/inner): 3/3 18/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 26.4372
+protocol.loops.LoopMover: energy after accepted move: -143.858
+protocol.loops.LoopMover: refinement cycle (outer/inner): 3/3 19/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 26.1065
+protocol.loops.LoopMover: energy after accepted move: -142.18
+protocol.loops.LoopMover: refinement cycle (outer/inner): 3/3 20/110 
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.pack.pack_rotamers: built 740 rotamers at 37 positions.
+core.pack.pack_rotamers: IG: 510000 bytes
+protocol.loops.LoopMover: energy after design: -142.193
+protocols.moves.MonteCarlo: MonteCarlo:: last_accepted_score,lowest_score: -142.193 -143.882
+protocol.loops.LoopMover: energy after repack: -142.193
+protocol.loops.LoopMover: refinement cycle (outer/inner): 3/3 21/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 26.4998
+protocol.loops.LoopMover: energy after accepted move: -142.218
+protocol.loops.LoopMover: refinement cycle (outer/inner): 3/3 22/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 26.6021
+protocol.loops.LoopMover: energy after accepted move: -141.576
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 26.6139
+protocol.loops.LoopMover: energy after accepted move: -141.58
+protocol.loops.LoopMover: refinement cycle (outer/inner): 3/3 23/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 26.5598
+protocol.loops.LoopMover: energy after accepted move: -142.179
+protocol.loops.LoopMover: refinement cycle (outer/inner): 3/3 24/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 26.6436
+protocol.loops.LoopMover: energy after accepted move: -139.48
+protocol.loops.LoopMover: refinement cycle (outer/inner): 3/3 25/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 26.6664
+protocol.loops.LoopMover: energy after accepted move: -139.692
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 26.6417
+protocol.loops.LoopMover: energy after accepted move: -142.641
+protocol.loops.LoopMover: refinement cycle (outer/inner): 3/3 26/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 26.6487
+protocol.loops.LoopMover: energy after accepted move: -142.377
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 26.677
+protocol.loops.LoopMover: energy after accepted move: -141.938
+protocol.loops.LoopMover: refinement cycle (outer/inner): 3/3 27/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 26.6118
+protocol.loops.LoopMover: energy after accepted move: -142.282
+protocol.loops.LoopMover: refinement cycle (outer/inner): 3/3 28/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 26.6132
+protocol.loops.LoopMover: energy after accepted move: -142.069
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 26.5983
+protocol.loops.LoopMover: energy after accepted move: -142.365
+protocol.loops.LoopMover: refinement cycle (outer/inner): 3/3 29/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 26.6012
+protocol.loops.LoopMover: energy after accepted move: -142.155
+protocol.loops.LoopMover: refinement cycle (outer/inner): 3/3 30/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 26.5205
+protocol.loops.LoopMover: energy after accepted move: -142.036
+protocol.loops.LoopMover: refinement cycle (outer/inner): 3/3 31/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 26.5207
+protocol.loops.LoopMover: energy after accepted move: -142.337
+protocol.loops.LoopMover: refinement cycle (outer/inner): 3/3 32/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 26.4856
+protocol.loops.LoopMover: energy after accepted move: -142.418
+protocol.loops.LoopMover: refinement cycle (outer/inner): 3/3 33/110 
+protocol.loops.LoopMover: refinement cycle (outer/inner): 3/3 34/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 26.4852
+protocol.loops.LoopMover: energy after accepted move: -142.129
+protocol.loops.LoopMover: refinement cycle (outer/inner): 3/3 35/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 26.4256
+protocol.loops.LoopMover: energy after accepted move: -142.847
+protocol.loops.LoopMover: refinement cycle (outer/inner): 3/3 36/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 26.2157
+protocol.loops.LoopMover: energy after accepted move: -142.884
+protocol.loops.LoopMover: refinement cycle (outer/inner): 3/3 37/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 26.2151
+protocol.loops.LoopMover: energy after accepted move: -142.934
+protocol.loops.LoopMover: refinement cycle (outer/inner): 3/3 38/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 26.218
+protocol.loops.LoopMover: energy after accepted move: -142.987
+protocol.loops.LoopMover: refinement cycle (outer/inner): 3/3 39/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 26.2079
+protocol.loops.LoopMover: energy after accepted move: -142.943
+protocol.loops.LoopMover: refinement cycle (outer/inner): 3/3 40/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 26.2094
+protocol.loops.LoopMover: energy after accepted move: -142.97
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 26.208
+protocol.loops.LoopMover: energy after accepted move: -142.917
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.pack.pack_rotamers: built 725 rotamers at 37 positions.
+core.pack.pack_rotamers: IG: 489628 bytes
+protocol.loops.LoopMover: energy after design: -142.917
+protocols.moves.MonteCarlo: MonteCarlo:: last_accepted_score,lowest_score: -142.917 -143.882
+protocol.loops.LoopMover: energy after repack: -142.917
+protocol.loops.LoopMover: refinement cycle (outer/inner): 3/3 41/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 26.4581
+protocol.loops.LoopMover: energy after accepted move: -143.326
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 26.4722
+protocol.loops.LoopMover: energy after accepted move: -143.449
+protocol.loops.LoopMover: refinement cycle (outer/inner): 3/3 42/110 
+protocol.loops.LoopMover: refinement cycle (outer/inner): 3/3 43/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 26.4643
+protocol.loops.LoopMover: energy after accepted move: -143.473
+protocol.loops.LoopMover: refinement cycle (outer/inner): 3/3 44/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 26.5253
+protocol.loops.LoopMover: energy after accepted move: -143.364
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 26.5114
+protocol.loops.LoopMover: energy after accepted move: -142.796
+protocol.loops.LoopMover: refinement cycle (outer/inner): 3/3 45/110 
+protocol.loops.LoopMover: refinement cycle (outer/inner): 3/3 46/110 
+protocol.loops.LoopMover: refinement cycle (outer/inner): 3/3 47/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 26.5125
+protocol.loops.LoopMover: energy after accepted move: -143.232
+protocol.loops.LoopMover: refinement cycle (outer/inner): 3/3 48/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 26.5151
+protocol.loops.LoopMover: energy after accepted move: -143.263
+protocol.loops.LoopMover: refinement cycle (outer/inner): 3/3 49/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 26.5178
+protocol.loops.LoopMover: energy after accepted move: -143.008
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 26.4725
+protocol.loops.LoopMover: energy after accepted move: -142.192
+protocol.loops.LoopMover: refinement cycle (outer/inner): 3/3 50/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 26.0079
+protocol.loops.LoopMover: energy after accepted move: -142.049
+protocol.loops.LoopMover: refinement cycle (outer/inner): 3/3 51/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 26.3062
+protocol.loops.LoopMover: energy after accepted move: -143.137
+protocol.loops.LoopMover: refinement cycle (outer/inner): 3/3 52/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 26.2948
+protocol.loops.LoopMover: energy after accepted move: -143.094
+protocol.loops.LoopMover: refinement cycle (outer/inner): 3/3 53/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 26.3059
+protocol.loops.LoopMover: energy after accepted move: -142.509
+protocol.loops.LoopMover: refinement cycle (outer/inner): 3/3 54/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 26.3031
+protocol.loops.LoopMover: energy after accepted move: -142.306
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 26.3109
+protocol.loops.LoopMover: energy after accepted move: -142.339
+protocol.loops.LoopMover: refinement cycle (outer/inner): 3/3 55/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 26.3066
+protocol.loops.LoopMover: energy after accepted move: -142.384
+protocol.loops.LoopMover: refinement cycle (outer/inner): 3/3 56/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 26.2906
+protocol.loops.LoopMover: energy after accepted move: -142.629
+protocol.loops.LoopMover: refinement cycle (outer/inner): 3/3 57/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 26.2865
+protocol.loops.LoopMover: energy after accepted move: -142.782
+protocol.loops.LoopMover: refinement cycle (outer/inner): 3/3 58/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 26.2881
+protocol.loops.LoopMover: energy after accepted move: -142.954
+protocol.loops.LoopMover: refinement cycle (outer/inner): 3/3 59/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 26.2804
+protocol.loops.LoopMover: energy after accepted move: -142.949
+protocol.loops.LoopMover: refinement cycle (outer/inner): 3/3 60/110 
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.pack.pack_rotamers: built 740 rotamers at 37 positions.
+core.pack.pack_rotamers: IG: 510580 bytes
+protocol.loops.LoopMover: energy after design: -142.952
+protocols.moves.MonteCarlo: MonteCarlo:: last_accepted_score,lowest_score: -142.952 -143.882
+protocol.loops.LoopMover: energy after repack: -142.952
+protocol.loops.LoopMover: refinement cycle (outer/inner): 3/3 61/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 26.3889
+protocol.loops.LoopMover: energy after accepted move: -142.975
+protocol.loops.LoopMover: refinement cycle (outer/inner): 3/3 62/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 26.3644
+protocol.loops.LoopMover: energy after accepted move: -142.619
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 26.3448
+protocol.loops.LoopMover: energy after accepted move: -142.539
+protocol.loops.LoopMover: refinement cycle (outer/inner): 3/3 63/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 26.3612
+protocol.loops.LoopMover: energy after accepted move: -142.734
+protocol.loops.LoopMover: refinement cycle (outer/inner): 3/3 64/110 
+protocol.loops.LoopMover: refinement cycle (outer/inner): 3/3 65/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 26.524
+protocol.loops.LoopMover: energy after accepted move: -143.117
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 26.5016
+protocol.loops.LoopMover: energy after accepted move: -143.207
+protocol.loops.LoopMover: refinement cycle (outer/inner): 3/3 66/110 
+protocol.loops.LoopMover: refinement cycle (outer/inner): 3/3 67/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 26.4676
+protocol.loops.LoopMover: energy after accepted move: -142.624
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 26.494
+protocol.loops.LoopMover: energy after accepted move: -142.543
+protocol.loops.LoopMover: refinement cycle (outer/inner): 3/3 68/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 26.4342
+protocol.loops.LoopMover: energy after accepted move: -143.156
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 26.4299
+protocol.loops.LoopMover: energy after accepted move: -143.294
+protocol.loops.LoopMover: refinement cycle (outer/inner): 3/3 69/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 26.4323
+protocol.loops.LoopMover: energy after accepted move: -143.329
+protocol.loops.LoopMover: refinement cycle (outer/inner): 3/3 70/110 
+protocol.loops.LoopMover: refinement cycle (outer/inner): 3/3 71/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 26.4382
+protocol.loops.LoopMover: energy after accepted move: -143.344
+protocol.loops.LoopMover: refinement cycle (outer/inner): 3/3 72/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 26.4531
+protocol.loops.LoopMover: energy after accepted move: -143.343
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 26.3957
+protocol.loops.LoopMover: energy after accepted move: -143.284
+protocol.loops.LoopMover: refinement cycle (outer/inner): 3/3 73/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 26.3785
+protocol.loops.LoopMover: energy after accepted move: -143.465
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 26.3731
+protocol.loops.LoopMover: energy after accepted move: -142.864
+protocol.loops.LoopMover: refinement cycle (outer/inner): 3/3 74/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 26.3723
+protocol.loops.LoopMover: energy after accepted move: -142.608
+protocol.loops.LoopMover: refinement cycle (outer/inner): 3/3 75/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 26.4066
+protocol.loops.LoopMover: energy after accepted move: -143.148
+protocol.loops.LoopMover: refinement cycle (outer/inner): 3/3 76/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 26.4034
+protocol.loops.LoopMover: energy after accepted move: -143.414
+protocol.loops.LoopMover: refinement cycle (outer/inner): 3/3 77/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 26.3948
+protocol.loops.LoopMover: energy after accepted move: -143.58
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 26.3739
+protocol.loops.LoopMover: energy after accepted move: -143.753
+protocol.loops.LoopMover: refinement cycle (outer/inner): 3/3 78/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 26.4841
+protocol.loops.LoopMover: energy after accepted move: -143.136
+protocol.loops.LoopMover: refinement cycle (outer/inner): 3/3 79/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 26.4776
+protocol.loops.LoopMover: energy after accepted move: -144.092
+protocol.loops.LoopMover: refinement cycle (outer/inner): 3/3 80/110 
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.pack.pack_rotamers: built 740 rotamers at 37 positions.
+core.pack.pack_rotamers: IG: 509784 bytes
+protocol.loops.LoopMover: energy after design: -144.097
+protocols.moves.MonteCarlo: MonteCarlo:: last_accepted_score,lowest_score: -144.097 -144.097
+protocol.loops.LoopMover: energy after repack: -144.097
+protocol.loops.LoopMover: refinement cycle (outer/inner): 3/3 81/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 26.4835
+protocol.loops.LoopMover: energy after accepted move: -143.823
+protocol.loops.LoopMover: refinement cycle (outer/inner): 3/3 82/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 26.4793
+protocol.loops.LoopMover: energy after accepted move: -143.881
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 26.4694
+protocol.loops.LoopMover: energy after accepted move: -143.73
+protocol.loops.LoopMover: refinement cycle (outer/inner): 3/3 83/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 26.4725
+protocol.loops.LoopMover: energy after accepted move: -143.958
+protocol.loops.LoopMover: refinement cycle (outer/inner): 3/3 84/110 
+protocol.loops.LoopMover: refinement cycle (outer/inner): 3/3 85/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 26.4613
+protocol.loops.LoopMover: energy after accepted move: -143.83
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 26.4646
+protocol.loops.LoopMover: energy after accepted move: -143.783
+protocol.loops.LoopMover: refinement cycle (outer/inner): 3/3 86/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 26.4638
+protocol.loops.LoopMover: energy after accepted move: -143.801
+protocol.loops.LoopMover: refinement cycle (outer/inner): 3/3 87/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 26.4519
+protocol.loops.LoopMover: energy after accepted move: -143.709
+protocol.loops.LoopMover: refinement cycle (outer/inner): 3/3 88/110 
+protocol.loops.LoopMover: refinement cycle (outer/inner): 3/3 89/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 26.4539
+protocol.loops.LoopMover: energy after accepted move: -143.744
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 26.4486
+protocol.loops.LoopMover: energy after accepted move: -143.866
+protocol.loops.LoopMover: refinement cycle (outer/inner): 3/3 90/110 
+protocol.loops.LoopMover: refinement cycle (outer/inner): 3/3 91/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 26.4505
+protocol.loops.LoopMover: energy after accepted move: -143.885
+protocol.loops.LoopMover: refinement cycle (outer/inner): 3/3 92/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 26.4598
+protocol.loops.LoopMover: energy after accepted move: -144.109
+protocol.loops.LoopMover: refinement cycle (outer/inner): 3/3 93/110 
+protocol.loops.LoopMover: refinement cycle (outer/inner): 3/3 94/110 
+protocol.loops.LoopMover: refinement cycle (outer/inner): 3/3 95/110 
+protocol.loops.LoopMover: refinement cycle (outer/inner): 3/3 96/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 26.4884
+protocol.loops.LoopMover: energy after accepted move: -143.822
+protocol.loops.LoopMover: refinement cycle (outer/inner): 3/3 97/110 
+protocol.loops.LoopMover: refinement cycle (outer/inner): 3/3 98/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 26.4848
+protocol.loops.LoopMover: energy after accepted move: -143.7
+protocol.loops.LoopMover: refinement cycle (outer/inner): 3/3 99/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 26.4813
+protocol.loops.LoopMover: energy after accepted move: -143.302
+protocol.loops.LoopMover: refinement cycle (outer/inner): 3/3 100/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 26.4859
+protocol.loops.LoopMover: energy after accepted move: -143.184
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 26.4735
+protocol.loops.LoopMover: energy after accepted move: -143.048
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.pack.pack_rotamers: built 737 rotamers at 37 positions.
+core.pack.pack_rotamers: IG: 506968 bytes
+protocol.loops.LoopMover: energy after design: -143.048
+protocols.moves.MonteCarlo: MonteCarlo:: last_accepted_score,lowest_score: -143.048 -144.109
+protocol.loops.LoopMover: energy after repack: -143.048
+protocol.loops.LoopMover: refinement cycle (outer/inner): 3/3 101/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 26.4503
+protocol.loops.LoopMover: energy after accepted move: -143.33
+protocol.loops.LoopMover: refinement cycle (outer/inner): 3/3 102/110 
+protocol.loops.LoopMover: refinement cycle (outer/inner): 3/3 103/110 
+protocol.loops.LoopMover: refinement cycle (outer/inner): 3/3 104/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 26.4986
+protocol.loops.LoopMover: energy after accepted move: -143.729
+protocol.loops.LoopMover: refinement cycle (outer/inner): 3/3 105/110 
+protocol.loops.LoopMover: refinement cycle (outer/inner): 3/3 106/110 
+protocol.loops.LoopMover: refinement cycle (outer/inner): 3/3 107/110 
+protocol.loops.LoopMover: refinement cycle (outer/inner): 3/3 108/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 26.4982
+protocol.loops.LoopMover: energy after accepted move: -143.779
+protocol.loops.LoopMover: refinement cycle (outer/inner): 3/3 109/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 26.5091
+protocol.loops.LoopMover: energy after accepted move: -143.391
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 2 move on loop 1: 26.527
+protocol.loops.LoopMover: energy after accepted move: -143.01
+protocol.loops.LoopMover: refinement cycle (outer/inner): 3/3 110/110 
+protocol.loops.LoopMover: RMS to native after accepted kinematic round 1 move on loop 1: 26.5282
+protocol.loops.LoopMover: energy after accepted move: -143.003
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.pack.pack_rotamers: built 756 rotamers at 37 positions.
+core.pack.pack_rotamers: IG: 537440 bytes
+protocol.loops.LoopMover: energy after design: -142.999
+protocols.moves.MonteCarlo: MonteCarlo:: last_accepted_score,lowest_score: -142.999 -144.109
+protocol.loops.LoopMover: energy after repack: -142.999
+protocols.moves.MonteCarlo:    kic_refine_r1 trials=    295;  accepts= 0.6034;  energy_drop/trial=  -0.00162
+protocols.moves.MonteCarlo:    kic_refine_r2 trials=    305;  accepts= 0.5934;  energy_drop/trial=   0.01378
+protocols.moves.MonteCarlo:           repack trials=     19;  accepts= 1.0000;  energy_drop/trial=  -7.50308
+protocols::checkpoint: Deleting checkpoints of LoopMover
+protocols.looprelax: Refinetime: 97
+protocols.looprelax: ====================================================================================
+protocols.looprelax: ===
+protocols.looprelax: ===  Getting Statistics 
+protocols.looprelax: ===
+protocols.looprelax: ===
+protocols::checkpoint: Deleting checkpoints of Loopbuild
+protocols::loopbuild: loop_cenrms: 0
+protocols::loopbuild: loop_rms: 0
+protocols::loopbuild: total_energy: -144.085
+protocols::loopbuild: chainbreak: 0.00373256

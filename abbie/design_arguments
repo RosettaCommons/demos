@@ -1,0 +1,6 @@
+-database /home/arlamber/minirosetta_database
+-mode design
+-resfile resfiles/test2.resfile
+-s input/not1_reduced_old_pdb_rosetta.pdb
+-score_function my_soft_rep_dna.wts
+-o final_design2.pdb

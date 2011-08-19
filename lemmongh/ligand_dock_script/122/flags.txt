@@ -1,0 +1,14 @@
+-in
+	-path
+		-database /home/lemmongh/workspace/minirosetta_database
+	-file
+		-s proteinAndLigand.pdb.gz
+		-extra_res_fa AA1.params AA2.params
+-out 
+	-level 1000		
+	-nstruct 1
+	-file
+		-silent silent.out
+-docking		
+	-ligand
+		-option_file ligand_options.txt

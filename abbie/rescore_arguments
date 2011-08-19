@@ -1,0 +1,4 @@
+-database /home/arlamber/minirosetta_database
+-mode rescore
+-s input/form1_FINAL_methylatedDNA_try2_reduced.pdb
+-weights_tag my_soft_rep_dna.wts

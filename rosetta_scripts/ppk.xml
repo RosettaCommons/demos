@@ -1,0 +1,16 @@
+This script carries out a protocol for prepacking a protein complex. This process repacks and minimizes all of the sidechains of the complex by moving the proteins involved in the jump (see below) an infinite distance and then bringing them back together. Though clashes might appear in the interface after prepacking, these will go away after design or docking simulations.
+This is useful in producing reasonable reference energies away from the interface of the complex before running docking or design.
+<dock_design>
+        <SCOREFXNS>
+        </SCOREFXNS>
+        <FILTERS>
+        </FILTERS>
+        <MOVERS>
+                <Prepack name=ppk jump_number=1 scorefxn=score12/> change jump_number to another value in order to prepack relative to a different interface (e.g., in cases where there are more than 2 chains). Use jump_number=0 to prepack the entire structure without moving the partners apart.
+        </MOVERS>
+        <APPLY_TO_POSE>
+        </APPLY_TO_POSE>
+        <PROTOCOLS>
+                <Add mover_name=ppk/>
+        </PROTOCOLS>
+</dock_design>

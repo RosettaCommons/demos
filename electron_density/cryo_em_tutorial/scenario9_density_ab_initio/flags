@@ -1,0 +1,63 @@
+## Keywords that are replace are listed in help_keywords.txt
+-database /work/dimaio/minirosetta_database
+
+#-in:file:fasta em_nsf.fasta 
+#-abinitio:fastrelax
+#-abinitio:debug
+#-abinitio:debug_structures
+#-abinitio:close_loops
+#-abinitio:fastrelax
+#-in:file:native ../inputs/native.pdb 
+
+# we start with a relative good model... 
+-skip_stages 1 2 
+
+# otherwise the coord-cst are switched on according to their root atom :-(  
+-seq_sep_stages 1 1 1
+
+#-abinitio:close_loops
+-short_frag_cycles 1
+-scored_frag_cycles 1
+-non_ideal_loop_closing
+-alternative_closure_protocol
+-fast_loops:window_accept_ratio .01
+-fast_loops:nr_scored_sampling_passes 4
+-fast_loops:min_breakout_good_loops 5
+-fast_loops:min_breakout_fast_loops 80
+-fast_loops:min_fast_loops 3
+-fast_loops:min_good_loops 0
+-fast_loops:nr_scored_fragments 20
+-fast_loops:vdw_delta 0.5
+-fast_loops:give_up 1000 
+
+#-out::level 340
+#-mute core.io.pdb 
+
+#don't have prove that this actually helps.. maybe in the refinement stage..
+-increase_cycles 1
+#-cst_weight 0.01
+#-fold_cst:no_minimize
+
+
+#-sample_ss_jumps
+-ramp_chainbreaks
+#-ramp_coord_cst
+-sep_switch_accelerate 0.8
+#-jump_residues_move
+-skip_convergence_check
+-overlap_chainbreak
+
+#-mute core.chemical
+#-mute core.conformation
+
+-fail_on_bad_hbond false 
+-relax::fastrelax_repeats 8
+
+# density
+-edensity::mapfile 1nsf.5A.mrc
+-edensity::mapreso 5.0
+-edensity::grid_spacing 2.0
+-abinitio::stage3a_patch ./phase3.patch
+-abinitio::stage3b_patch ./phase3.patch
+-abinitio::stage4_patch  ./phase4.patch
+#-mute all

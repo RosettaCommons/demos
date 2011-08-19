@@ -1,0 +1,68 @@
+# Lines beginning with a sharp symbol (#) are treated as comments.  Blank lines
+# are ignored.  Symbols are white-space delimited; any amount of whitespace is just fine
+
+# This is an example fitness function file in a heterodimerization task: a homodimer is
+# redesigned to form a heterodimer, which requires destabilizing the interactions
+# between the new homodimeric pairs.  The fitness function file has two responsibilities:
+# declaring states, and describing how to combine into a single value the energies
+# for each of the states after they have all been assigned the same sequence
+# (the same outer-loop sequence) and the rotamers for this sequence have been
+# optimized on each of the states
+
+# The next five lines declare 5 sets of states and assign each set to a vector-variable.
+# The "vmin" function will have to be used to extract a scalar value from each of these
+# vector variables.  In this demo, each of these states files declare two states, so
+# there are 10 states that are optimized total.  The state files can of course declare any
+# number of states, but they must declare at least one state.
+
+STATE_VECTOR A    A.states
+STATE_VECTOR B    B.states
+STATE_VECTOR AA   AA.states
+STATE_VECTOR AB   AB.states
+STATE_VECTOR BB   BB.states
+
+# extract the lowest-energy from each vector of state energies
+SCALAR_EXPRESSION bestA  = vmin( A )
+SCALAR_EXPRESSION bestB  = vmin( B )
+SCALAR_EXPRESSION bestAA = vmin( AA )
+SCALAR_EXPRESSION bestAB = vmin( AB )
+SCALAR_EXPRESSION bestBB = vmin( BB )
+
+# now compute the binding energies
+SCALAR_EXPRESSION dGbind_AA = bestAA - 2 * bestA
+SCALAR_EXPRESSION dGbind_AB = bestAB - bestA - bestB
+SCALAR_EXPRESSION dGbind_BB = bestBB - 2 * bestB
+
+#Now clip the homodimer binding energies at 0:
+# These two exprsessions below use the "if-then-else" function (ite) to multiply the original
+# energies by either 1.0 or by 0.0.
+#
+# The if-then-else function works as follows: the first argument to the ite function is
+# evaluated: if the first argument evaluates to a non-zero value, then the ite function
+# returns the second argument, the "then" argument (in this case, 1.0); if the first
+# argument evaluates to a zero value, then the ite function returns the third argument,
+# the "else" argument, (in this case 0.0).
+#
+# The first argument here is a boolean function "less than" (lt) which takes two
+# parameters and returns 1.0 if the first argument is less than the second argument
+# and 0.0 otherwise.
+
+SCALAR_EXPRESSION clipped_dGbindAA = ite( lt( dGbind_AA, 0.0 ), 1.0, 0.0 ) * dGbind_AA
+SCALAR_EXPRESSION clipped_dGbindBB = ite( lt( dGbind_BB, 0.0 ), 1.0, 0.0 ) * dGbind_BB
+
+# The next line declares a sequence-level constraint file
+# that, in this case, penalizes the design of homodimers (it can happen)
+# and that tries to avoid introducing more than 5 mutations from the wild type
+# homodimer on either chain.  The next line says: evaluate the expressions
+# defined in the text file "1USM_3native.entfunc" and store it in the scalar variable
+# "cstE"
+ENTITY_FUNCTION cstE 1USM_3native.entfunc
+
+# here's one possible fitness function:
+# optimize the total energy of the AB complex, and try to destabilize
+# the off-target interactions between the AA and BB homodimrs
+# and also include the sequence-constraint score stored in the cstE variable
+
+# Note: this fitness function doesn't examine dGbindAB -- maybe it should?
+
+FITNESS bestAB - 0.5 * ( clipped_dGbindAA + clipped_dGbindBB ) + cstE

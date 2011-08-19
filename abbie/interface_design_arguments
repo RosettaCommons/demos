@@ -1,0 +1,26 @@
+##
+## 1. identifies positions where an arginine rotamer could possible contact one of the dna positions
+##    given with the -pdb_pos argument. These are redesigned. Then looks for positions within 10A (based
+##    on some single sidechain atom). These are repacked. Everything else is fixed.
+## 2.  Then it redesigns.
+##
+## 3. currently generates a debugging pdb with the bfactor column indicating whether a position was
+##    fixed/packed/or designed (25,50,75) -- called "pack_or_design.pdb"
+##
+
+
+
+-database /home/arlamber/minirosetta_database
+-mode interface_design
+-s input/not1_reduced_old_pdb_rosetta.pdb
+-o tmp.pdb
+-score_function my_soft_rep_dna.wts
+## the DNA position(s) around which to design. these are now (in principle) genuine PDB numbers
+## residue # 716 chain C, line[22:26] == ' 716' line[21] = 'C'
+##
+-pdb_pos 716:C
+
+
+#-s methyl_716C.pdb
+#-o methyl_716C_redesign.pdb
+#-database /home/pbradley/dat/blab_minirosetta_database

@@ -1,0 +1,5 @@
+#basic run
+./FlexPepDocking.linuxgccrelease @flags.basic -database <PATH TO ROSETTA 3 DATABASE>
+
+#run with res 166 as anchor and add a low resolution round of optimization 
+./FlexPepDocking.linuxgccrelease @flags.lowres -database <PATH TO ROSETTA 3 DATABASE>

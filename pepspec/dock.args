@@ -1,0 +1,17 @@
+-ignore_unrecognized_res
+
+-pepspec::no_prepack_prot
+-pepspec::anchor_type PRO
+-s 1CKA.align.nopep.pdb
+
+-pepspec::ref_pdb_list homol.pdblist
+
+-score::weights standard.wts
+-pepspec::soft_wts soft_rep.wts
+
+-pepspec::interface_cutoff 6
+
+-pepspec::n_dock_loop 10
+-pepspec::homol_csts
+-pepspec::n_peptides 10
+-o 1cka.docked

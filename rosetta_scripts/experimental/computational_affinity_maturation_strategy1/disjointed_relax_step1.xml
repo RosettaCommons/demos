@@ -1,0 +1,29 @@
+<dock_design>
+	<SCOREFXNS>
+	</SCOREFXNS>
+	<FILTERS>
+		<Sasa name=hydrophobic_sasa hydrophobic=1 confidence=0/>
+		<Sasa name=sasa confidence=0/>
+		<Ddg name=ddg confidence=0 repeats=3/>
+	</FILTERS>
+	<MOVERS>
+		<AtomTree name=docking_tree docking_ft=1/>
+		<FastRelax name=relax repeats=8>
+			<MoveMap>
+				<Chain number=1 bb=0 chi=0/>
+				<Chain number=2 bb=1 chi=1/>
+				<Jump number=1 setting=1/>
+			</MoveMap>
+		</FastRelax>
+	<HotspotDisjointedFoldTree name=dft ddG_threshold=1000 resnums=304B,289B,285B,281B,277B/> resnums=127B,128B,191B/>
+	<AddSidechainConstraintsToHotspots name=ascth resnums=304B,289B,285B,281B,277B/>
+	</MOVERS>
+	<APPLY_TO_POSE>
+	</APPLY_TO_POSE>
+	<PROTOCOLS>
+		<Add mover_name=dft/>
+		<Add mover=relax/>
+		<Add filter=ddg/>
+		<Add mover=ascth/>
+	</PROTOCOLS>
+</dock_design>

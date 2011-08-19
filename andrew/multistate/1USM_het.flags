@@ -1,0 +1,9 @@
+-entity_resfile entity.resfile 
+-fitness_file fitness.daf 
+-ms::pop_size 100 
+-ms::generations 240  
+-ms::numresults 10
+-use_input_sc
+-ms::fraction_by_recombination 0.02
+-no_his_his_pairE
+#-msd::double_lazy_ig_mem_limit 800

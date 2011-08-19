@@ -1,0 +1,24 @@
+-ignore_unrecognized_res
+
+-score::weights standard.wts
+-pepspec::soft_wts soft_rep.wts
+
+-pepspec::interface_cutoff 5
+-pepspec::clash_cutoff 5.0
+
+-pepspec::n_peptides 10
+-pepspec::n_build_loop 100
+-pepspec::diversify_pep_seqs 
+-pepspec::diversify_lvl 1
+
+-pepspec::save_low_pdbs
+
+-pepspec::pdb_list 1cka.docked.pdblist
+-pepspec::homol_csts 1cka.docked.cst
+
+-pepspec::pep_chain B
+-pepspec::pep_anchor 58
+-pepspec::n_prepend 3
+-pepspec::n_append 7
+
+-o 1cka_spec

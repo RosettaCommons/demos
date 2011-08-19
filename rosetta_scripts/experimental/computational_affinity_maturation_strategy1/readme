@@ -1,0 +1,1 @@
+the two scripts should be used in tandem. See RosettaScripts documentation for details on how to use this. The scripts are hard-coded for a particular example and should be changed to fit different examples.

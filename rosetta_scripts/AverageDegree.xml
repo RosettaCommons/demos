@@ -1,0 +1,19 @@
+Use to compute the average number of neighbours for a residue at the interface. Useful to decide on whether a surface is 'designable'. A cutoff of 8.5 residue neighbours makes sense.
+<dock_design>
+	<TASKOPERATIONS>
+		<ProteinInterfaceDesign name=pido repack_chain1=0/>
+	</TASKOPERATIONS>
+	<SCOREFXNS>
+	</SCOREFXNS>
+	<FILTERS>
+		<AverageDegree name=average_degree confidence=0 task_operations=pido/>
+	</FILTERS>
+	<MOVERS>
+		AtomTree name=docking_tree docking_ft=1/>
+	</MOVERS>
+	<APPLY_TO_POSE>
+	</APPLY_TO_POSE>
+	<PROTOCOLS>
+		<Add filter_name=average_degree/>
+	</PROTOCOLS>
+</dock_design>

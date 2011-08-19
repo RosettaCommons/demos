@@ -1,0 +1,10 @@
+DEFAULT # applies to all ligands listed after LIGAND keywords 
+soft_rep old # use soft_repulsive score during docking (but not final minimize) rather than hard.  Old uses Rosetta++ electrostatics, old is default
+protocol abbrev2 # 6 cycles with full-repack at 1 and 4
+
+LIGAND X # PDB ligand chain ID
+mutate_same_name3 # during packing sample ligand residue conformers with same 3 letter name # NOT YET IMPLEMENTED 
+slide_together # after initial placement (translate/rotate) slide ligand 1 angstrom at a time until it runs into protein, then back up 1 angstrom
+tether_ligand 0.1 # constrain ligand centroid during docking step so small repeated movements don't lead to ligand running away 
+minimize_ligand 10
+minimize_backbone 0.3

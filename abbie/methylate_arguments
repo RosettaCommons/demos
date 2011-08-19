@@ -1,0 +1,9 @@
+-database /home/arlamber/minirosetta_database
+-mode methylate
+-s input/not1_reduced_old_pdb_rosetta.pdb
+-o methyl_716C.pdb
+-pdb_pos 716:C
+
+
+#-weights_tag my_soft_rep_dna.wts
+#-database /home/pbradley/dat/blab_minirosetta_database
