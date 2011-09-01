@@ -1,0 +1,22 @@
+# Input databases
+-database                       ../../../rosetta_database
+-in::file::vall              	../../../rosetta_tools/fragment_tools/vall.apr24.2008.extended.gz
+
+# Query-related input files
+-in::file::fasta		input_files/2jsvX.fasta
+-in::file::s                    input_files/2jsvX.pdb
+
+# Weights file
+-frags::scoring::config		input_files/null.wghts
+
+# What should we do?
+-frags::bounded_protocol	
+
+# three-mers only, please
+-frags::frag_sizes 		3
+-frags::n_candidates		200
+-frags::n_frags			200
+
+# Output 
+-out::file::frag_prefix		output_files/frags
+-frags::describe_fragments 	output_files/frags.fsc
