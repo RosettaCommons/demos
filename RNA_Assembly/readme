@@ -1,0 +1,34 @@
+####################
+   RNA Assembly
+####################
+
+This README was written in Sep. 2011, by Rhiju Das (rhiju@stanford.edu).
+
+This demo illustrates a protocol to assemble models of large RNAs by first building their helical stems and inter-helical motifs, and then putting them together.
+
+It is being published in a (primarily experimental) paper "A two-dimensional mutate-and-map strategy for non-coding RNA structure" by W. Kladwang, C. VanLang, P. Cordero, and R. Das (2011), Nature Chemistry. 
+
+Everything needed to run the job is created by the command:
+
+  python scripts/setup_rna_assembly_jobs.py  add.fasta add_secstruct.txt 1y26_RNA.pdb  add_mutate_map_threetertiarycontacts.cst
+
+The first two arguments are required -- the sequence_file and the secondary structure file [either in dot/bracket notation, or specifying Watson/Crick base pairs as pairs of numbers].
+
+The last two arguments are optional; they supply the native pdb and any constraints, here derived from a high-throughput "mutate-and-map" strategy for RNA structure determination.
+
+You may need to change the path to your rosetta exectuable in setup_rna_assembly_jobs.py [in which case you should get a warning!]
+
+Then run the Rosetta commands in :
+ README_STEMS
+ README_MOTIFS
+ README_ASSEMBLE
+
+You can see examples of these files and their output in example_output/. Please note that for these files I changed the 'nstruct' commands to only create 2 models per motif. In reality you will want to make 2000-4000 MOTIF models, and then several thousand ASSEMBLE models. [You can just use one STEM model per helix, as that is supposed to be an ideal helix.]
+
+The final outfile/silentfile is  add_assemble.out. We can extract models from it using:
+
+ extract_pdbs<.exe> -in:file:silent add_assemble.out -tags S_000001 -database <path to your database> -out:file:residue_type_set rna
+
+or using scripts like my 'extract_lowscore_decoys.py'.
+
+Caveat: The above protocol is a bit inflexible in that the motifs are modeled separately from each other -- if a loop/loop interaction occurs in the final global model it will not really be modeled correctly by the isolated loops. We are working on iterative methods to tackled this global de novo assembly question. For now the protocol seems to work well if there are experimental constraints that e.g., connect the loops.
