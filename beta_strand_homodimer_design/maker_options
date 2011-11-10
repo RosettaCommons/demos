@@ -1,0 +1,6 @@
+-run::chain A
+-sheet_start 806
+-sheet_stop 812
+-window_size 5 
+-ignore_unrecognized_res true
+-mute core protocols.moves.RigidBodyMover basic.io.database
