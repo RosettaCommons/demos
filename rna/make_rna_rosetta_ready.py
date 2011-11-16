@@ -4,7 +4,6 @@ import string
 from sys import argv,stderr
 from os import popen,system
 from os.path import exists,dirname,basename,abspath
-from amino_acids import longer_names
 
 #assert( len(argv)>2)
 pdbname = argv[1]
@@ -37,8 +36,15 @@ else:
 fastaid = stderr
 num_model = 0
 
-#max_model = 60 # for virus
 max_model = 0 # for virus
+
+longer_names={'ALA': 'A', 'ARG': 'R', 'ASN': 'N', 'ASP': 'D',
+              'CYS': 'C', 'GLU': 'E', 'GLN': 'Q', 'GLY': 'G',
+              'HIS': 'H', 'ILE': 'I', 'LEU': 'L', 'LYS': 'K',
+              'MET': 'M', 'PHE': 'F', 'PRO': 'P', 'SER': 'S',
+              'THR': 'T', 'TRP': 'W', 'TYR': 'Y', 'VAL': 'V',
+              ' rA': 'a', ' rC': 'c', ' rG': 'g', ' rU': 'u'
+              }
 
 for pdbname in pdbnames:
     #netpdbname = '/net/pdb/' + pdbname[1:3] + '/' + pdbname
