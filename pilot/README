@@ -46,11 +46,12 @@ fragment_picker -- Prepare fragements for loop modeling or ab initio modeling. N
 python -- python implementation of relax protocol, to minimize the energy of a structure. Needs a README
 rna -- How to prepare an RNA for Rosetta. Needs a README
 RNA_Design -- Needs a README to describe scientific goals.
-rosetta -- Needs a README. Fragments, pdb, refold and score.
-serialization -- Needs a README. Delete or demote?
-utility -- Needs a README. Delete or demote?
 
-### pilot demos ###
+
+### pilot demos -- flagged for deletion ###
+rosetta -- Needs a README. Fragments, pdb, refold and score. May move to pilot or delete, very old revision numbers.
+serialization -- Needs a README. May move to pilot or delete.
+utility -- Needs a README. Delete or demote?
 abbie
 andrew
 chu
