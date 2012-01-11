@@ -1,1 +1,0 @@
-../../bin/jim_test -database ~/MiniRosetta/minirosetta_database/ -adducts dna_major 2 dna_minor protein_sidechain 2 -s input/test_in.pdb

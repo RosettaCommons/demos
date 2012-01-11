@@ -49,21 +49,21 @@ RNA_Design -- Needs a README to describe scientific goals.
 
 
 ### pilot demos -- flagged for deletion ###
-rosetta -- Needs a README. Fragments, pdb, refold and score. May move to pilot or delete, very old revision numbers.
-serialization -- Needs a README. May move to pilot or delete.
-utility -- Needs a README. Delete or demote?
-abbie
-andrew
-chu
-dan
-dekim
-gktaylor
-james
-jim
-lemmongh
-liz
-olli
-phil
-sraman
-vatsan
-will
+rosetta -- DEL
+serialization -- DEL
+utility -- DEL
+abbie -- (pbradley) DEL
+andrew -- emailed
+chu -- move to rosetta_source/src/apps/pilot/chu
+dan -- empty! DEL
+dekim -- DEL
+gktaylor -- emailed greg and david kim, dekim says DEL
+james -- (dekim, aleaverfay)
+jim -- DEL
+lemmongh -- no action, glemmon@gmail.com
+liz -- DEL
+olli -- emailed oliver
+phil -- DEL, same as abbie
+sraman -- emailed vatsan
+vatsan -- emailed vatsan
+will -- emailed will
