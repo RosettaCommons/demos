@@ -1,0 +1,3 @@
+#s minimized.pdb
+-match:scaffold_active_site_residues_for_geomcsts all.pos 
+#match:active_site_definition_by_gridlig  /work/khare/all_scaffolds/1a53_11.pdb_0.gridlig

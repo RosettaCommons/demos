@@ -1,0 +1,283 @@
+core.init: Mini-Rosetta version 47050M from https://svn.rosettacommons.org/source/trunk/rosetta/rosetta_source
+core.init: command: /work/khare/rosetta/rosetta_source/bin/enzyme_design.static.linuxiccrelease @enzdes.flags -correct -linmem_ig 10 -in:file::s UM_1_H15H17H214D295Q58_1A4L_clean_A_r_1A4L_clean_A_1.pdb
+core.init: 'RNG device' seed mode, using '/dev/urandom', seed=-1951403778 seed_offset=0 real_seed=-1951403778
+core.init.random: RandomGenerator:init: Normal mode, seed=-1951403778 RG_type=mt19937
+core.scoring.etable: Starting energy table calculation
+core.scoring.etable: smooth_etable: changing atr/rep split to bottom of energy well
+core.scoring.etable: smooth_etable: spline smoothing lj etables (maxdis = 6)
+core.scoring.etable: smooth_etable: spline smoothing solvation etables (max_dis = 6)
+core.scoring.etable: Finished calculating energy tables.
+basic.io.database: Database file opened: scoring/score_functions/PairEPotential/pdb_pair_stats_fine
+basic.io.database: Database file opened: scoring/score_functions/hbonds/correct_params/HBPoly1D.csv
+basic.io.database: Database file opened: scoring/score_functions/hbonds/correct_params/HBFadeIntervals.csv
+basic.io.database: Database file opened: scoring/score_functions/hbonds/correct_params/HBEval.csv
+basic.io.database: Database file opened: scoring/score_functions/EnvPairPotential/env_log.txt
+basic.io.database: Database file opened: scoring/score_functions/EnvPairPotential/cbeta_den.txt
+basic.io.database: Database file opened: scoring/score_functions/EnvPairPotential/pair_log.txt
+basic.io.database: Database file opened: scoring/score_functions/EnvPairPotential/cenpack_log.txt
+basic.io.database: Database file opened: scoring/score_functions/EnvPairPotential/env_log.txt
+basic.io.database: Database file opened: scoring/score_functions/EnvPairPotential/cbeta_den.txt
+basic.io.database: Database file opened: scoring/score_functions/EnvPairPotential/pair_log.txt
+basic.io.database: Database file opened: scoring/score_functions/EnvPairPotential/cenpack_log.txt
+basic.io.database: Database file opened: scoring/score_functions/MembranePotential/CEN6_mem_env_log.txt
+basic.io.database: Database file opened: scoring/score_functions/MembranePotential/CEN10_mem_env_log.txt
+basic.io.database: Database file opened: scoring/score_functions/MembranePotential/memcbeta_den.txt
+basic.io.database: Database file opened: scoring/score_functions/MembranePotential/mem_pair_log.txt
+basic.io.database: Database file opened: scoring/score_functions/P_AA_pp/P_AA
+basic.io.database: Database file opened: scoring/score_functions/P_AA_pp/P_AA_n
+basic.io.database: Database file opened: scoring/score_functions/P_AA_pp/P_AA_pp_08.2009
+basic.io.database: Database file opened: scoring/score_functions/rama/Rama09_noEH_kernel25_it08.dat
+core.scoring.etable: Using alternate parameters: LJ_RADIUS_SOFT in Etable construction.
+core.scoring.etable: Starting energy table calculation
+core.scoring.etable: smooth_etable: changing atr/rep split to bottom of energy well
+core.scoring.etable: smooth_etable: spline smoothing lj etables (maxdis = 6)
+core.scoring.etable: smooth_etable: spline smoothing solvation etables (max_dis = 6)
+core.scoring.etable: Finished calculating energy tables.
+core.chemical.ResidueTypeSet: Finished initializing fa_standard residue type set.  Created 1488 residue types
+core.scoring.ScoreFunctionFactory: SCOREFUNCTION: enzdes.wts
+protocols.jobdist.JobDistributors: Looking for an available job: 1 1 UM_1_H15H17H214D295Q58_1A4L_clean_A_r_1A4L_clean_A_1.pdb 1
+apps.public.enzdes.enzyme_design: Starting UM_1_H15H17H214D295Q58_1A4L_clean_A_r_1A4L_clean_A_1_0001 ...
+core.pack.task: Packer task: initialize from command line() 
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  OXT on residue GLN_p:CtermProteinFull 4
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  OXT on residue HIS_p:CtermProteinFull_p:NtermProteinFull 5
+core.pack.task: Packer task: initialize from command line() 
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  OXT on residue GLN_p:CtermProteinFull 3
+core.pack.task: Packer task: initialize from command line() 
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  OXT on residue HIS_p:CtermProteinFull_p:NtermProteinFull 1
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  OXT on residue GLN_p:CtermProteinFull_p:NtermProteinFull 2
+core.pack.task: Packer task: initialize from command line() 
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  OXT on residue GLN_p:CtermProteinFull 2
+core.pack.task: Packer task: initialize from command line() 
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  OXT on residue GLN_p:CtermProteinFull 2
+core.pack.task: Packer task: initialize from command line() 
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  OXT on residue GLN_p:CtermProteinFull_p:NtermProteinFull 1
+core.pack.task: Packer task: initialize from command line() 
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  OXT on residue GLN_p:CtermProteinFull_p:NtermProteinFull 1
+core.pack.task: Packer task: initialize from command line() 
+core.pack.task: Packer task: initialize from command line() 
+core.pack.task: Packer task: initialize from command line() 
+core.pack.task: Packer task: initialize from command line() 
+core.pack.task: Packer task: initialize from command line() 
+core.pack.task: Packer task: initialize from command line() 
+core.pack.task: Packer task: initialize from command line() 
+core.pack.task: Packer task: initialize from command line() 
+core.pack.task: Packer task: initialize from command line() 
+core.pack.task: Packer task: initialize from command line() 
+core.pack.task: Packer task: initialize from command line() 
+core.pack.task: Packer task: initialize from command line() 
+core.pack.task: Packer task: initialize from command line() 
+protocols.enzdes.enzdes_util: PDB UM_1_H15H17H214D295Q58_1A4L_clean_A_r_1A4L_clean_A_1.pdb is a multimodel pdb containing 20 models.
+protocols.enzdes.enzdes_util: For ligand at seqpos 350, 19 additional rigid body locations were read in.
+protocols.enzdes.EnzdesFixBBProtocol: starting apply function...
+core.pack.dunbrack: Dunbrack library took 0.03 seconds to load from binary
+core.pack.dunbrack.SingleLigandRotamerLibrary: Read in 2124 rotamers for LG1!
+protocols.toolbox.match_enzdes_util.EnzConstraintIO: read enzyme constraints from constraint.cst ... done, 5 cst blocks were read.
+protocols.toolbox.match_enzdes_util.EnzConstraintIO: Generating constraints for pose... 
+protocols.toolbox.match_enzdes_util.EnzConstraintParameters: for block 1, 5 newly generated constraints were added 
+protocols.toolbox.match_enzdes_util.EnzConstraintIO: checking cst data consistency for block 1...  done
+protocols.toolbox.match_enzdes_util.EnzConstraintIO: Cst Block 1done... 
+protocols.toolbox.match_enzdes_util.EnzConstraintParameters: for block 2, 5 newly generated constraints were added 
+protocols.toolbox.match_enzdes_util.EnzConstraintIO: checking cst data consistency for block 2...  done
+protocols.toolbox.match_enzdes_util.EnzConstraintIO: Cst Block 2done... 
+protocols.toolbox.match_enzdes_util.EnzConstraintParameters: for block 3, 5 newly generated constraints were added 
+protocols.toolbox.match_enzdes_util.EnzConstraintIO: checking cst data consistency for block 3...  done
+protocols.toolbox.match_enzdes_util.EnzConstraintIO: Cst Block 3done... 
+protocols.toolbox.match_enzdes_util.EnzConstraintParameters: for block 4, 5 newly generated constraints were added 
+protocols.toolbox.match_enzdes_util.EnzConstraintIO: checking cst data consistency for block 4...  done
+protocols.toolbox.match_enzdes_util.EnzConstraintIO: Cst Block 4done... 
+protocols.toolbox.match_enzdes_util.EnzConstraintParameters: for block 5, 3 newly generated constraints were added 
+protocols.toolbox.match_enzdes_util.EnzConstraintIO: checking cst data consistency for block 5...  done
+protocols.toolbox.match_enzdes_util.EnzConstraintIO: Cst Block 5done... 
+protocols.enzdes.EnzdesBaseProtocol: Catalytic residues (pose numbering) are: 12 14 55 211 292 350 
+protocols.enzdes.EnzdesFixBBProtocol: Done setting up the task and constraints... 
+core.pack.task: Packer task: initialize from command line() 
+protocols.enzdes.EnzdesTaskOperations: Design Interface: detected 24 design-shell residues and 49 repack-shell residues, shell sizes cut1-4 used were 6 8 10 12
+protocols.enzdes.EnzdesTaskOperations: Design-shell Residues(pose-numbering): 12+14+55+56+58+59+98+150+152+153+154+178+180+181+182+183+211+214+215+234+235+262+292+293+
+protocols.enzdes.EnzdesTaskOperations: Repack-shell Residues(pose-numbering): 10+11+13+16+17+18+57+60+61+62+63+96+97+99+100+102+103+113+148+151+155+179+184+185+188+189+209+210+212+213+220+224+232+233+236+237+257+258+259+263+265+266+268+290+291+295+296+297+350+
+protocols.enzdes.EnzdesTaskOperations: Final Design Shell Residues: 55, 56, 58, 59, 98, 150, 152, 153, 154, 178, 180, 181, 182, 183, 214, 215, 234, 235, 262, 293, 
+protocols.enzdes.EnzdesTaskOperations: Final Repack Shell Residues: 10, 11, 12, 13, 14, 16, 17, 18, 55, 56, 57, 58, 59, 60, 61, 62, 63, 96, 97, 98, 99, 100, 102, 103, 113, 148, 150, 151, 152, 153, 154, 155, 178, 179, 180, 181, 182, 183, 184, 185, 188, 189, 209, 210, 211, 212, 213, 214, 215, 220, 224, 232, 233, 234, 235, 236, 237, 257, 258, 259, 262, 263, 265, 266, 268, 290, 291, 292, 293, 295, 296, 297, 350, 
+protocols.enzdes.EnzdesTaskOperations: Packer Energies between ligand and design residues are upweighted by factor 1.8.
+protocols.enzdes.EnzdesTaskOperations: SetCatalyticResPackBehavior task operation touched the following catalytic residues: 12, 14, 55, 211, 292, 350, 
+protocols.enzdes.EnzdesFixBBProtocol: starting cst_opt minimization...
+protocols.enzdes.EnzdesBaseProtocol: Doing a pose minimization... the backbone is allowed to move at positions: 9, 10, 11, 12, 13, 15, 16, 17, 18, 19, 56, 57, 58, 59, 60, 61, 62, 63, 96, 97, 98, 99, 100, 101, 102, 103, 111, 112, 113, 114, 115, 147, 148, 149, 150, 151, 152, 153, 154, 155, 178, 179, 180, 181, 182, 183, 184, 185, 186, 187, 188, 189, 190, 208, 209, 210, 211, 212, 213, 214, 215, 218, 219, 220, 221, 222, 223, 224, 232, 233, 234, 235, 236, 237, 256, 257, 258, 259, 260, 261, 262, 263, 264, 265, 266, 267, 268, 289, 290, 291, 292, 293, 294, 295, 296, 297, 
+protocols.ligand_docking.LigandBaseProtocol: Moved ligand FOLD_TREE  EDGE 1 14 -1  EDGE 14 349 -1  EDGE 14 350 1 
+protocols.ligand_docking.LigandBaseProtocol: 
+protocols.ligand_docking.LigandBaseProtocol: Final loops foldtree FOLD_TREE  EDGE 1 8 -1  EDGE 8 10 -1  JEDGE 8 14 2 CA CA  END  EDGE 14 11 -1  EDGE 14 18 -1  JEDGE 14 20 3 CA CA  END  EDGE 20 19 -1  EDGE 20 55 -1  EDGE 55 57 -1  JEDGE 55 64 4 CA CA  END  EDGE 64 58 -1  EDGE 64 95 -1  EDGE 95 102 -1  JEDGE 95 104 5 CA CA  END  EDGE 104 103 -1  EDGE 104 110 -1  EDGE 110 111 -1  JEDGE 110 116 6 CA CA  END  EDGE 116 112 -1  EDGE 116 146 -1  EDGE 146 153 -1  JEDGE 146 156 7 CA CA  END  EDGE 156 154 -1  EDGE 156 177 -1  EDGE 177 189 -1  JEDGE 177 191 8 CA CA  END  EDGE 191 190 -1  EDGE 191 207 -1  EDGE 207 212 -1  JEDGE 207 216 9 CA CA  END  EDGE 216 213 -1  EDGE 216 217 -1  EDGE 217 219 -1  JEDGE 217 225 10 CA CA  END  EDGE 225 220 -1  EDGE 225 231 -1  EDGE 231 235 -1  JEDGE 231 238 11 CA CA  END  EDGE 238 236 -1  EDGE 238 255 -1  EDGE 255 267 -1  JEDGE 255 269 12 CA CA  END  EDGE 269 268 -1  EDGE 269 288 -1  EDGE 288 291 -1  JEDGE 288 298 13 CA CA  END  EDGE 298 292 -1  EDGE 298 349 -1  EDGE 14 350 1 
+protocols.ligand_docking.LigandBaseProtocol: 
+core.pack.dunbrack.SingleLigandRotamerLibrary: Added 2124 rotamers for LG1_connectZN1_connectZN1_connectZN1_connectZN1
+protocols.ligand_docking.ligand_functions: Torsion constraint for Rsd 350 chi 1 = -62.6338 std dev 8 99.5586 std dev 8 -99.0704 std dev 8 -82.6071 std dev 8 83.0023 std dev 8
+core.pack.dunbrack.SingleLigandRotamerLibrary: Added 2124 rotamers for LG1_connectZN1_connectZN1_connectZN1_connectZN1
+protocols.ligand_docking.ligand_functions: Torsion constraint for Rsd 350 chi 2 = -81.3428 std dev 8 -160.633 std dev 8 159.43 std dev 8 78.998 std dev 8
+core.pack.dunbrack.SingleLigandRotamerLibrary: Added 2124 rotamers for LG1_connectZN1_connectZN1_connectZN1_connectZN1
+protocols.ligand_docking.ligand_functions: Torsion constraint for Rsd 350 chi 3 = 89.2254 std dev 8 -60.7666 std dev 8 59.2037 std dev 8 28.9961 std dev 8 30.4335 std dev 8 -30.7556 std dev 8
+core.pack.dunbrack.SingleLigandRotamerLibrary: Added 2124 rotamers for LG1_connectZN1_connectZN1_connectZN1_connectZN1
+protocols.ligand_docking.ligand_functions: Torsion constraint for Rsd 350 chi 4 = -99.7236 std dev 8 81.6911 std dev 8 98.5203 std dev 8 -83.3244 std dev 8 61.0231 std dev 8
+core.pack.dunbrack.SingleLigandRotamerLibrary: Added 2124 rotamers for LG1_connectZN1_connectZN1_connectZN1_connectZN1
+protocols.ligand_docking.ligand_functions: Torsion constraint for Rsd 350 chi 5 = 178.356 std dev 0.1 178.461 std dev 0.1 178.428 std dev 0.1 178.494 std dev 0.1 178.41 std dev 0.1 178.547 std dev 0.1 178.482 std dev 0.1 178.504 std dev 0.1 178.446 std dev 0.1 178.373 std dev 0.1 178.394 std dev 0.1 178.344 std dev 0.1 178.525 std dev 0.1 178.601 std dev 0.1 178.471 std dev 0.1 178.581 std dev 0.1 178.559 std dev 0.1 178.633 std dev 0.1 178.535 std dev 0.1 178.514 std dev 0.1 178.325 std dev 0.1 178.306 std dev 0.1 178.273 std dev 0.1
+core.pack.dunbrack.SingleLigandRotamerLibrary: Added 2124 rotamers for LG1_connectZN1_connectZN1_connectZN1_connectZN1
+protocols.ligand_docking.ligand_functions: Torsion constraint for Rsd 350 chi 6 = 146.171 std dev 8 101.445 std dev 8 51.8559 std dev 8 -23.4995 std dev 8 112.429 std dev 8 131.604 std dev 8 124.626 std dev 8 142.308 std dev 8 71.797 std dev 8 127.145 std dev 8 -10.2946 std dev 8 -33.7229 std dev 8 -8.4272 std dev 8 139.733 std dev 8 -7.5439 std dev 8 -55.0852 std dev 8 56.8046 std dev 8 -18.866 std dev 8 96.9168 std dev 8 34.4928 std dev 8 19.9678 std dev 8 94.2515 std dev 8 -48.5833 std dev 8 172.256 std dev 8 161.172 std dev 8 -70.2061 std dev 8 86.4968 std dev 8 49.3764 std dev 8 -166.575 std dev 8 -38.1471 std dev 8 -63.8434 std dev 8 26.9815 std dev 8 154.699 std dev 8 6.8114 std dev 8 21.7076 std dev 8 11.3728 std dev 8 -53.3164 std dev 8 66.8911 std dev 8 116.414 std dev 8 79.1046 std dev 8 41.738 std dev 8 -178.228 std dev 8 64.2667 std dev 8 109.832 std dev 8 -3.45277 std dev 8 36.7705 std dev 8 4.35384 std dev 8 -40.0962 std dev 8 157.262 std dev 8 -25.4905 std dev 8 -22.6912 std dev 8 -52.4777 std dev 8 -172.511 std dev 8 81.9966 std dev 8 65.126 std dev 8 -18.0172 std dev 8
+core.pack.task: Packer task: initialize from command line() 
+core.pack.dunbrack.SingleLigandRotamerLibrary: Added 2124 rotamers for LG1_connectZN1_connectZN1_connectZN1_connectZN1
+core.pack.dunbrack.SingleLigandRotamerLibrary: Added 2124 rotamers for LG1_connectZN1_connectZN1_connectZN1_connectZN1
+core.pack.dunbrack.SingleLigandRotamerLibrary: Added 2124 rotamers for LG1_connectZN1_connectZN1_connectZN1_connectZN1
+core.pack.dunbrack.SingleLigandRotamerLibrary: Added 2124 rotamers for LG1_connectZN1_connectZN1_connectZN1_connectZN1
+core.pack.dunbrack.SingleLigandRotamerLibrary: Added 2124 rotamers for LG1_connectZN1_connectZN1_connectZN1_connectZN1
+core.pack.dunbrack.SingleLigandRotamerLibrary: Added 2124 rotamers for LG1_connectZN1_connectZN1_connectZN1_connectZN1
+core.pack.dunbrack.SingleLigandRotamerLibrary: Added 2124 rotamers for LG1_connectZN1_connectZN1_connectZN1_connectZN1
+core.pack.dunbrack.SingleLigandRotamerLibrary: Added 2124 rotamers for LG1_connectZN1_connectZN1_connectZN1_connectZN1
+core.pack.dunbrack.SingleLigandRotamerLibrary: Added 2124 rotamers for LG1_connectZN1_connectZN1_connectZN1_connectZN1
+core.pack.dunbrack.SingleLigandRotamerLibrary: Added 2124 rotamers for LG1_connectZN1_connectZN1_connectZN1_connectZN1
+core.pack.dunbrack.SingleLigandRotamerLibrary: Added 2124 rotamers for LG1_connectZN1_connectZN1_connectZN1_connectZN1
+core.pack.dunbrack.SingleLigandRotamerLibrary: Added 2124 rotamers for LG1_connectZN1_connectZN1_connectZN1_connectZN1
+core.pack.dunbrack.SingleLigandRotamerLibrary: Added 2124 rotamers for LG1_connectZN1_connectZN1_connectZN1_connectZN1
+core.pack.dunbrack.SingleLigandRotamerLibrary: Added 2124 rotamers for LG1_connectZN1_connectZN1_connectZN1_connectZN1
+core.pack.dunbrack.SingleLigandRotamerLibrary: Added 2124 rotamers for LG1_connectZN1_connectZN1_connectZN1_connectZN1
+core.pack.dunbrack.SingleLigandRotamerLibrary: Added 2124 rotamers for LG1_connectZN1_connectZN1_connectZN1_connectZN1
+core.pack.dunbrack.SingleLigandRotamerLibrary: Added 2124 rotamers for LG1_connectZN1_connectZN1_connectZN1_connectZN1
+core.pack.dunbrack.SingleLigandRotamerLibrary: Added 2124 rotamers for LG1_connectZN1_connectZN1_connectZN1_connectZN1
+core.pack.dunbrack.SingleLigandRotamerLibrary: Added 2124 rotamers for LG1_connectZN1_connectZN1_connectZN1_connectZN1
+protocols.enzdes.EnzdesFixBBProtocol: done cst_opt minimization.
+core.pack.task: Packer task: initialize from command line() 
+protocols.enzdes.EnzdesTaskOperations: Design Interface: detected 24 design-shell residues and 50 repack-shell residues, shell sizes cut1-4 used were 6 8 10 12
+protocols.enzdes.EnzdesTaskOperations: Design-shell Residues(pose-numbering): 12+14+16+17+55+58+59+60+61+62+66+98+180+181+183+211+214+234+262+265+266+292+293+296+
+protocols.enzdes.EnzdesTaskOperations: Repack-shell Residues(pose-numbering): 13+15+18+19+47+49+53+54+56+57+63+64+65+69+70+96+99+100+103+113+114+148+150+152+153+154+178+179+182+184+209+210+212+213+215+235+257+258+259+261+263+264+267+268+290+291+294+295+297+350+
+protocols.enzdes.EnzdesTaskOperations: Final Design Shell Residues: 16, 17, 55, 58, 59, 60, 61, 62, 66, 98, 180, 181, 183, 214, 234, 262, 265, 266, 293, 296, 
+protocols.enzdes.EnzdesTaskOperations: Final Repack Shell Residues: 12, 13, 14, 15, 16, 17, 18, 19, 47, 49, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 69, 70, 96, 98, 99, 100, 103, 113, 114, 148, 150, 152, 153, 154, 178, 179, 180, 181, 182, 183, 184, 209, 210, 211, 212, 213, 214, 215, 234, 235, 257, 258, 259, 261, 262, 263, 264, 265, 266, 267, 268, 290, 291, 292, 293, 294, 295, 296, 297, 350, 
+protocols.enzdes.EnzdesTaskOperations: Packer Energies between ligand and design residues are upweighted by factor 1.8.
+protocols.enzdes.EnzdesTaskOperations: SetCatalyticResPackBehavior task operation touched the following catalytic residues: 12, 14, 55, 211, 292, 350, 
+protocols.enzdes.EnzdesFixBBProtocol: starting cst_design, 2 cycles of design/minimization ... 
+protocols.enzdes.EnzdesCacheableObserver: favor_native_res: adding a bonus of 1.25 for native residues to pose.
+core.pack.interaction_graph.interaction_graph_factory: Instantiating LinearMemoryInteractionGraph
+core.pack.pack_rotamers: built 66891 rotamers at 68 positions.
+core.pack.pack_rotamers: IG: 18255312 bytes
+protocols.enzdes.EnzdesBaseProtocol: Doing a pose minimization... the backbone is allowed to move at positions: 12, 13, 14, 15, 16, 17, 18, 19, 46, 47, 48, 49, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 111, 112, 113, 114, 115, 116, 147, 148, 149, 150, 151, 152, 153, 154, 178, 179, 180, 181, 182, 183, 184, 208, 209, 210, 211, 212, 213, 214, 215, 232, 233, 234, 235, 236, 237, 256, 257, 258, 259, 260, 261, 262, 263, 264, 265, 266, 267, 268, 289, 290, 291, 292, 293, 294, 295, 296, 297, 
+protocols.ligand_docking.LigandBaseProtocol: Moved ligand FOLD_TREE  EDGE 1 298 -1  EDGE 298 349 -1  EDGE 298 350 1 
+protocols.ligand_docking.LigandBaseProtocol: 
+protocols.ligand_docking.LigandBaseProtocol: Final loops foldtree FOLD_TREE  EDGE 1 11 -1  EDGE 11 15 -1  JEDGE 11 20 2 CA CA  END  EDGE 20 16 -1  EDGE 20 45 -1  EDGE 45 48 -1  JEDGE 45 50 3 CA CA  END  EDGE 50 49 -1  EDGE 50 51 -1  EDGE 51 62 -1  JEDGE 51 72 4 CA CA  END  EDGE 72 63 -1  EDGE 72 94 -1  EDGE 94 101 -1  JEDGE 94 105 5 CA CA  END  EDGE 105 102 -1  EDGE 105 110 -1  EDGE 110 111 -1  JEDGE 110 117 6 CA CA  END  EDGE 117 112 -1  EDGE 117 146 -1  EDGE 146 148 -1  JEDGE 146 155 7 CA CA  END  EDGE 155 149 -1  EDGE 155 177 -1  EDGE 177 183 -1  JEDGE 177 185 8 CA CA  END  EDGE 185 184 -1  EDGE 185 207 -1  EDGE 207 213 -1  JEDGE 207 216 9 CA CA  END  EDGE 216 214 -1  EDGE 216 231 -1  EDGE 231 233 -1  JEDGE 231 238 10 CA CA  END  EDGE 238 234 -1  EDGE 238 255 -1  EDGE 255 258 -1  JEDGE 255 269 11 CA CA  END  EDGE 269 259 -1  EDGE 269 288 -1  EDGE 288 290 -1  JEDGE 288 298 12 CA CA  END  EDGE 298 291 -1  EDGE 298 349 -1  EDGE 298 350 1 
+protocols.ligand_docking.LigandBaseProtocol: 
+core.pack.dunbrack.SingleLigandRotamerLibrary: Added 2124 rotamers for LG1_connectZN1_connectZN1_connectZN1_connectZN1
+protocols.ligand_docking.ligand_functions: Torsion constraint for Rsd 350 chi 1 = 99.5251 std dev 8 -99.1121 std dev 8 -82.5661 std dev 8 -62.6948 std dev 8 82.9374 std dev 8
+core.pack.dunbrack.SingleLigandRotamerLibrary: Added 2124 rotamers for LG1_connectZN1_connectZN1_connectZN1_connectZN1
+protocols.ligand_docking.ligand_functions: Torsion constraint for Rsd 350 chi 2 = -160.636 std dev 8 159.446 std dev 8 -81.2662 std dev 8 79.0059 std dev 8 156.346 std dev 8
+core.pack.dunbrack.SingleLigandRotamerLibrary: Added 2124 rotamers for LG1_connectZN1_connectZN1_connectZN1_connectZN1
+protocols.ligand_docking.ligand_functions: Torsion constraint for Rsd 350 chi 3 = 89.2077 std dev 8 29.0709 std dev 8 -30.7421 std dev 8 -60.7666 std dev 8 59.0467 std dev 8 30.4589 std dev 8
+core.pack.dunbrack.SingleLigandRotamerLibrary: Added 2124 rotamers for LG1_connectZN1_connectZN1_connectZN1_connectZN1
+protocols.ligand_docking.ligand_functions: Torsion constraint for Rsd 350 chi 4 = 81.5952 std dev 8 -99.7216 std dev 8 -83.352 std dev 8 61.0343 std dev 8 98.5582 std dev 8
+core.pack.dunbrack.SingleLigandRotamerLibrary: Added 2124 rotamers for LG1_connectZN1_connectZN1_connectZN1_connectZN1
+protocols.ligand_docking.ligand_functions: Torsion constraint for Rsd 350 chi 5 = 178.482 std dev 0.1 178.399 std dev 0.1 178.448 std dev 0.1 178.579 std dev 0.1 178.525 std dev 0.1 178.363 std dev 0.1 178.51 std dev 0.1 178.496 std dev 0.1 178.471 std dev 0.1 178.273 std dev 0.1 178.412 std dev 0.1 178.596 std dev 0.1 178.458 std dev 0.1 178.386 std dev 0.1 178.423 std dev 0.1 178.435 std dev 0.1 178.556 std dev 0.1 178.538 std dev 0.1 178.338 std dev 0.1 178.353 std dev 0.1 178.376 std dev 0.1 178.325 std dev 0.1 178.567 std dev 0.1 178.633 std dev 0.1 178.306 std dev 0.1
+core.pack.dunbrack.SingleLigandRotamerLibrary: Added 2124 rotamers for LG1_connectZN1_connectZN1_connectZN1_connectZN1
+protocols.ligand_docking.ligand_functions: Torsion constraint for Rsd 350 chi 6 = -18.866 std dev 8 51.8559 std dev 8 142.308 std dev 8 157.474 std dev 8 131.407 std dev 8 -25.4905 std dev 8 66.8911 std dev 8 109.265 std dev 8 172.256 std dev 8 -40.0962 std dev 8 21.6592 std dev 8 -70.2061 std dev 8 116.414 std dev 8 11.3728 std dev 8 -3.45277 std dev 8 19.4832 std dev 8 56.8046 std dev 8 34.4928 std dev 8 79.7009 std dev 8 124.102 std dev 8 -33.7229 std dev 8 127.178 std dev 8 97.0028 std dev 8 26.858 std dev 8 146.171 std dev 8 94.2515 std dev 8 86.4968 std dev 8 81.9966 std dev 8 -55.0852 std dev 8 -48.5833 std dev 8 41.738 std dev 8 -8.4272 std dev 8 -38.1471 std dev 8 71.797 std dev 8 64.4781 std dev 8 112.429 std dev 8 -10.2946 std dev 8 36.7705 std dev 8 49.3764 std dev 8 101.445 std dev 8 161.172 std dev 8 4.35384 std dev 8 -23.4995 std dev 8 139.431 std dev 8 6.8114 std dev 8 -18.0172 std dev 8 -63.9549 std dev 8 -53.3164 std dev 8 154.699 std dev 8 -52.4777 std dev 8 -178.228 std dev 8 -22.6912 std dev 8 -172.511 std dev 8 -166.575 std dev 8 -7.5439 std dev 8 147.823 std dev 8
+core.pack.task: Packer task: initialize from command line() 
+core.pack.dunbrack.SingleLigandRotamerLibrary: Added 2124 rotamers for LG1_connectZN1_connectZN1_connectZN1_connectZN1
+core.pack.dunbrack.SingleLigandRotamerLibrary: Added 2124 rotamers for LG1_connectZN1_connectZN1_connectZN1_connectZN1
+core.pack.dunbrack.SingleLigandRotamerLibrary: Added 2124 rotamers for LG1_connectZN1_connectZN1_connectZN1_connectZN1
+core.pack.dunbrack.SingleLigandRotamerLibrary: Added 2124 rotamers for LG1_connectZN1_connectZN1_connectZN1_connectZN1
+core.pack.dunbrack.SingleLigandRotamerLibrary: Added 2124 rotamers for LG1_connectZN1_connectZN1_connectZN1_connectZN1
+core.pack.dunbrack.SingleLigandRotamerLibrary: Added 2124 rotamers for LG1_connectZN1_connectZN1_connectZN1_connectZN1
+core.pack.dunbrack.SingleLigandRotamerLibrary: Added 2124 rotamers for LG1_connectZN1_connectZN1_connectZN1_connectZN1
+core.pack.dunbrack.SingleLigandRotamerLibrary: Added 2124 rotamers for LG1_connectZN1_connectZN1_connectZN1_connectZN1
+core.pack.dunbrack.SingleLigandRotamerLibrary: Added 2124 rotamers for LG1_connectZN1_connectZN1_connectZN1_connectZN1
+core.pack.dunbrack.SingleLigandRotamerLibrary: Added 2124 rotamers for LG1_connectZN1_connectZN1_connectZN1_connectZN1
+core.pack.dunbrack.SingleLigandRotamerLibrary: Added 2124 rotamers for LG1_connectZN1_connectZN1_connectZN1_connectZN1
+core.pack.dunbrack.SingleLigandRotamerLibrary: Added 2124 rotamers for LG1_connectZN1_connectZN1_connectZN1_connectZN1
+core.pack.dunbrack.SingleLigandRotamerLibrary: Added 2124 rotamers for LG1_connectZN1_connectZN1_connectZN1_connectZN1
+core.pack.dunbrack.SingleLigandRotamerLibrary: Added 2124 rotamers for LG1_connectZN1_connectZN1_connectZN1_connectZN1
+core.pack.dunbrack.SingleLigandRotamerLibrary: Added 2124 rotamers for LG1_connectZN1_connectZN1_connectZN1_connectZN1
+core.pack.dunbrack.SingleLigandRotamerLibrary: Added 2124 rotamers for LG1_connectZN1_connectZN1_connectZN1_connectZN1
+core.pack.dunbrack.SingleLigandRotamerLibrary: Added 2124 rotamers for LG1_connectZN1_connectZN1_connectZN1_connectZN1
+core.pack.dunbrack.SingleLigandRotamerLibrary: Added 2124 rotamers for LG1_connectZN1_connectZN1_connectZN1_connectZN1
+core.pack.dunbrack.SingleLigandRotamerLibrary: Added 2124 rotamers for LG1_connectZN1_connectZN1_connectZN1_connectZN1
+core.pack.task: Packer task: initialize from command line() 
+core.pack.interaction_graph.interaction_graph_factory: Instantiating LinearMemoryInteractionGraph
+core.pack.pack_rotamers: built 27704 rotamers at 68 positions.
+core.pack.pack_rotamers: IG: 7278988 bytes
+protocols.enzdes.EnzdesBaseProtocol: Doing a pose minimization... the backbone is allowed to move at positions: 12, 13, 14, 15, 16, 17, 18, 19, 46, 47, 48, 49, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 111, 112, 113, 114, 115, 116, 147, 148, 149, 150, 151, 152, 153, 154, 178, 179, 180, 181, 182, 183, 184, 208, 209, 210, 211, 212, 213, 214, 215, 232, 233, 234, 235, 236, 237, 256, 257, 258, 259, 260, 261, 262, 263, 264, 265, 266, 267, 268, 289, 290, 291, 292, 293, 294, 295, 296, 297, 
+protocols.ligand_docking.LigandBaseProtocol: Moved ligand FOLD_TREE  EDGE 1 298 -1  EDGE 298 349 -1  EDGE 298 350 1 
+protocols.ligand_docking.LigandBaseProtocol: 
+protocols.ligand_docking.LigandBaseProtocol: Final loops foldtree FOLD_TREE  EDGE 1 11 -1  EDGE 11 12 -1  JEDGE 11 20 2 CA CA  END  EDGE 20 13 -1  EDGE 20 45 -1  EDGE 45 48 -1  JEDGE 45 50 3 CA CA  END  EDGE 50 49 -1  EDGE 50 51 -1  EDGE 51 63 -1  JEDGE 51 72 4 CA CA  END  EDGE 72 64 -1  EDGE 72 94 -1  EDGE 94 98 -1  JEDGE 94 105 5 CA CA  END  EDGE 105 99 -1  EDGE 105 110 -1  EDGE 110 112 -1  JEDGE 110 117 6 CA CA  END  EDGE 117 113 -1  EDGE 117 146 -1  EDGE 146 151 -1  JEDGE 146 155 7 CA CA  END  EDGE 155 152 -1  EDGE 155 177 -1  EDGE 177 181 -1  JEDGE 177 185 8 CA CA  END  EDGE 185 182 -1  EDGE 185 207 -1  EDGE 207 211 -1  JEDGE 207 216 9 CA CA  END  EDGE 216 212 -1  EDGE 216 231 -1  EDGE 231 234 -1  JEDGE 231 238 10 CA CA  END  EDGE 238 235 -1  EDGE 238 255 -1  EDGE 255 259 -1  JEDGE 255 269 11 CA CA  END  EDGE 269 260 -1  EDGE 269 288 -1  EDGE 288 296 -1  JEDGE 288 298 12 CA CA  END  EDGE 298 297 -1  EDGE 298 349 -1  EDGE 298 350 1 
+protocols.ligand_docking.LigandBaseProtocol: 
+core.pack.dunbrack.SingleLigandRotamerLibrary: Added 2124 rotamers for LG1_connectZN1_connectZN1_connectZN1_connectZN1
+protocols.ligand_docking.ligand_functions: Torsion constraint for Rsd 350 chi 1 = -82.6074 std dev 8 -99.0652 std dev 8 99.5485 std dev 8 -62.6925 std dev 8 83.0703 std dev 8
+core.pack.dunbrack.SingleLigandRotamerLibrary: Added 2124 rotamers for LG1_connectZN1_connectZN1_connectZN1_connectZN1
+protocols.ligand_docking.ligand_functions: Torsion constraint for Rsd 350 chi 2 = -160.651 std dev 8 79.0024 std dev 8 159.448 std dev 8 -81.2989 std dev 8 152.812 std dev 8
+core.pack.dunbrack.SingleLigandRotamerLibrary: Added 2124 rotamers for LG1_connectZN1_connectZN1_connectZN1_connectZN1
+protocols.ligand_docking.ligand_functions: Torsion constraint for Rsd 350 chi 3 = 89.026 std dev 8 59.0709 std dev 8 -60.7918 std dev 8 -30.6439 std dev 8 28.9595 std dev 8 30.3871 std dev 8
+core.pack.dunbrack.SingleLigandRotamerLibrary: Added 2124 rotamers for LG1_connectZN1_connectZN1_connectZN1_connectZN1
+protocols.ligand_docking.ligand_functions: Torsion constraint for Rsd 350 chi 4 = 81.6839 std dev 8 -99.6969 std dev 8 60.9691 std dev 8 98.5509 std dev 8 -83.3686 std dev 8
+core.pack.dunbrack.SingleLigandRotamerLibrary: Added 2124 rotamers for LG1_connectZN1_connectZN1_connectZN1_connectZN1
+protocols.ligand_docking.ligand_functions: Torsion constraint for Rsd 350 chi 5 = 178.357 std dev 0.1 178.376 std dev 0.1 178.415 std dev 0.1 178.489 std dev 0.1 178.577 std dev 0.1 178.397 std dev 0.1 178.476 std dev 0.1 178.514 std dev 0.1 178.432 std dev 0.1 178.594 std dev 0.1 178.5 std dev 0.1 178.53 std dev 0.1 178.559 std dev 0.1 178.541 std dev 0.1 178.455 std dev 0.1 178.465 std dev 0.1 178.443 std dev 0.1 178.325 std dev 0.1 178.338 std dev 0.1 178.633 std dev 0.1 178.273 std dev 0.1 178.386 std dev 0.1 178.306 std dev 0.1
+core.pack.dunbrack.SingleLigandRotamerLibrary: Added 2124 rotamers for LG1_connectZN1_connectZN1_connectZN1_connectZN1
+protocols.ligand_docking.ligand_functions: Torsion constraint for Rsd 350 chi 6 = 154.268 std dev 8 -49.0174 std dev 8 161.172 std dev 8 41.738 std dev 8 -38.1471 std dev 8 71.797 std dev 8 127.178 std dev 8 131.407 std dev 8 79.1046 std dev 8 -40.0962 std dev 8 -33.7229 std dev 8 109.265 std dev 8 112.425 std dev 8 139.431 std dev 8 6.8114 std dev 8 157.474 std dev 8 56.8046 std dev 8 87.1917 std dev 8 -70.2061 std dev 8 81.9966 std dev 8 142.308 std dev 8 49.3764 std dev 8 36.7705 std dev 8 26.858 std dev 8 64.2667 std dev 8 -8.09051 std dev 8 124.102 std dev 8 4.35384 std dev 8 -3.45277 std dev 8 -55.0852 std dev 8 -25.4905 std dev 8 19.6288 std dev 8 -52.4777 std dev 8 116.414 std dev 8 -22.6912 std dev 8 146.824 std dev 8 -23.4995 std dev 8 11.3728 std dev 8 97.0028 std dev 8 -18.866 std dev 8 51.8559 std dev 8 -63.8434 std dev 8 -10.2946 std dev 8 101.445 std dev 8 66.8911 std dev 8 34.4892 std dev 8 172.256 std dev 8 21.7076 std dev 8 -178.228 std dev 8 -53.3164 std dev 8 94.2515 std dev 8 -172.511 std dev 8 -18.0172 std dev 8 -166.575 std dev 8 65.126 std dev 8 150.163 std dev 8
+core.pack.task: Packer task: initialize from command line() 
+core.pack.dunbrack.SingleLigandRotamerLibrary: Added 2124 rotamers for LG1_connectZN1_connectZN1_connectZN1_connectZN1
+core.pack.dunbrack.SingleLigandRotamerLibrary: Added 2124 rotamers for LG1_connectZN1_connectZN1_connectZN1_connectZN1
+core.pack.dunbrack.SingleLigandRotamerLibrary: Added 2124 rotamers for LG1_connectZN1_connectZN1_connectZN1_connectZN1
+core.pack.dunbrack.SingleLigandRotamerLibrary: Added 2124 rotamers for LG1_connectZN1_connectZN1_connectZN1_connectZN1
+core.pack.dunbrack.SingleLigandRotamerLibrary: Added 2124 rotamers for LG1_connectZN1_connectZN1_connectZN1_connectZN1
+core.pack.dunbrack.SingleLigandRotamerLibrary: Added 2124 rotamers for LG1_connectZN1_connectZN1_connectZN1_connectZN1
+core.pack.dunbrack.SingleLigandRotamerLibrary: Added 2124 rotamers for LG1_connectZN1_connectZN1_connectZN1_connectZN1
+core.pack.dunbrack.SingleLigandRotamerLibrary: Added 2124 rotamers for LG1_connectZN1_connectZN1_connectZN1_connectZN1
+core.pack.dunbrack.SingleLigandRotamerLibrary: Added 2124 rotamers for LG1_connectZN1_connectZN1_connectZN1_connectZN1
+core.pack.dunbrack.SingleLigandRotamerLibrary: Added 2124 rotamers for LG1_connectZN1_connectZN1_connectZN1_connectZN1
+core.pack.dunbrack.SingleLigandRotamerLibrary: Added 2124 rotamers for LG1_connectZN1_connectZN1_connectZN1_connectZN1
+core.pack.dunbrack.SingleLigandRotamerLibrary: Added 2124 rotamers for LG1_connectZN1_connectZN1_connectZN1_connectZN1
+core.pack.dunbrack.SingleLigandRotamerLibrary: Added 2124 rotamers for LG1_connectZN1_connectZN1_connectZN1_connectZN1
+core.pack.dunbrack.SingleLigandRotamerLibrary: Added 2124 rotamers for LG1_connectZN1_connectZN1_connectZN1_connectZN1
+core.pack.dunbrack.SingleLigandRotamerLibrary: Added 2124 rotamers for LG1_connectZN1_connectZN1_connectZN1_connectZN1
+core.pack.dunbrack.SingleLigandRotamerLibrary: Added 2124 rotamers for LG1_connectZN1_connectZN1_connectZN1_connectZN1
+core.pack.dunbrack.SingleLigandRotamerLibrary: Added 2124 rotamers for LG1_connectZN1_connectZN1_connectZN1_connectZN1
+core.pack.dunbrack.SingleLigandRotamerLibrary: Added 2124 rotamers for LG1_connectZN1_connectZN1_connectZN1_connectZN1
+core.pack.dunbrack.SingleLigandRotamerLibrary: Added 2124 rotamers for LG1_connectZN1_connectZN1_connectZN1_connectZN1
+core.pack.task: Packer task: initialize from command line() 
+core.pack.task: Packer task: initialize from command line() 
+protocols.enzdes.EnzdesTaskOperations: Design Interface: detected 0 design-shell residues and 76 repack-shell residues, shell sizes cut1-4 used were 0 0 10 12
+protocols.enzdes.EnzdesTaskOperations: Design-shell Residues(pose-numbering): 
+protocols.enzdes.EnzdesTaskOperations: Repack-shell Residues(pose-numbering): 12+13+14+15+16+17+18+19+47+49+53+54+55+56+57+58+59+60+61+62+63+64+65+66+68+69+70+96+97+98+99+100+103+113+114+148+150+152+153+154+178+179+180+181+182+183+184+209+210+211+212+213+214+215+234+235+257+259+261+262+263+264+265+266+267+268+269+290+291+292+293+294+295+296+297+350+
+protocols.enzdes.EnzdesTaskOperations: Final Design Shell Residues: 
+protocols.enzdes.EnzdesTaskOperations: Final Repack Shell Residues: 12, 13, 14, 15, 16, 17, 18, 19, 47, 49, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 68, 69, 70, 96, 97, 98, 99, 100, 103, 113, 114, 148, 150, 152, 153, 154, 178, 179, 180, 181, 182, 183, 184, 209, 210, 211, 212, 213, 214, 215, 234, 235, 257, 259, 261, 262, 263, 264, 265, 266, 267, 268, 269, 290, 291, 292, 293, 294, 295, 296, 297, 350, 
+protocols.enzdes.EnzdesTaskOperations: SetCatalyticResPackBehavior task operation touched the following catalytic residues: 12, 14, 55, 211, 292, 350, 
+protocols.enzdes.EnzdesBaseProtocol: Doing a pose minimization... the backbone is allowed to move at positions: 12, 13, 14, 15, 16, 17, 18, 19, 46, 47, 48, 49, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 96, 97, 98, 99, 100, 101, 102, 103, 104, 111, 112, 113, 114, 115, 116, 147, 148, 149, 150, 151, 152, 153, 154, 178, 179, 180, 181, 182, 183, 184, 208, 209, 210, 211, 212, 213, 214, 215, 232, 233, 234, 235, 236, 237, 256, 257, 258, 259, 261, 262, 263, 264, 265, 266, 267, 268, 269, 289, 290, 291, 292, 293, 294, 295, 296, 297, 
+protocols.ligand_docking.LigandBaseProtocol: Moved ligand FOLD_TREE  EDGE 1 298 -1  EDGE 298 349 -1  EDGE 298 350 1 
+protocols.ligand_docking.LigandBaseProtocol: 
+protocols.ligand_docking.LigandBaseProtocol: Final loops foldtree FOLD_TREE  EDGE 1 11 -1  EDGE 11 15 -1  JEDGE 11 20 2 CA CA  END  EDGE 20 16 -1  EDGE 20 45 -1  EDGE 45 46 -1  JEDGE 45 50 3 CA CA  END  EDGE 50 47 -1  EDGE 50 51 -1  EDGE 51 60 -1  JEDGE 51 71 4 CA CA  END  EDGE 71 61 -1  EDGE 71 95 -1  EDGE 95 102 -1  JEDGE 95 105 5 CA CA  END  EDGE 105 103 -1  EDGE 105 110 -1  EDGE 110 115 -1  JEDGE 110 117 6 CA CA  END  EDGE 117 116 -1  EDGE 117 146 -1  EDGE 146 153 -1  JEDGE 146 155 7 CA CA  END  EDGE 155 154 -1  EDGE 155 177 -1  EDGE 177 182 -1  JEDGE 177 185 8 CA CA  END  EDGE 185 183 -1  EDGE 185 207 -1  EDGE 207 211 -1  JEDGE 207 216 9 CA CA  END  EDGE 216 212 -1  EDGE 216 231 -1  EDGE 231 234 -1  JEDGE 231 238 10 CA CA  END  EDGE 238 235 -1  EDGE 238 255 -1  EDGE 255 258 -1  JEDGE 255 260 11 CA CA  END  EDGE 260 259 -1  EDGE 260 263 -1  JEDGE 260 270 12 CA CA  END  EDGE 270 264 -1  EDGE 270 288 -1  EDGE 288 294 -1  JEDGE 288 298 13 CA CA  END  EDGE 298 295 -1  EDGE 298 349 -1  EDGE 298 350 1 
+protocols.ligand_docking.LigandBaseProtocol: 
+core.pack.dunbrack.SingleLigandRotamerLibrary: Added 2124 rotamers for LG1_connectZN1_connectZN1_connectZN1_connectZN1
+protocols.ligand_docking.ligand_functions: Torsion constraint for Rsd 350 chi 1 = 99.5586 std dev 8 -99.1459 std dev 8 -82.5661 std dev 8 83.03 std dev 8 -62.6724 std dev 8
+core.pack.dunbrack.SingleLigandRotamerLibrary: Added 2124 rotamers for LG1_connectZN1_connectZN1_connectZN1_connectZN1
+protocols.ligand_docking.ligand_functions: Torsion constraint for Rsd 350 chi 2 = -81.2988 std dev 8 78.9916 std dev 8 -160.667 std dev 8 159.472 std dev 8 149.163 std dev 8
+core.pack.dunbrack.SingleLigandRotamerLibrary: Added 2124 rotamers for LG1_connectZN1_connectZN1_connectZN1_connectZN1
+protocols.ligand_docking.ligand_functions: Torsion constraint for Rsd 350 chi 3 = 89.1458 std dev 8 59.0631 std dev 8 -30.8125 std dev 8 -60.7592 std dev 8 30.4048 std dev 8 29.047 std dev 8 -29.9786 std dev 8
+core.pack.dunbrack.SingleLigandRotamerLibrary: Added 2124 rotamers for LG1_connectZN1_connectZN1_connectZN1_connectZN1
+protocols.ligand_docking.ligand_functions: Torsion constraint for Rsd 350 chi 4 = -83.2938 std dev 8 -99.6253 std dev 8 98.5356 std dev 8 60.9961 std dev 8 81.6946 std dev 8
+core.pack.dunbrack.SingleLigandRotamerLibrary: Added 2124 rotamers for LG1_connectZN1_connectZN1_connectZN1_connectZN1
+protocols.ligand_docking.ligand_functions: Torsion constraint for Rsd 350 chi 5 = 178.474 std dev 0.1 178.452 std dev 0.1 178.4 std dev 0.1 178.539 std dev 0.1 178.462 std dev 0.1 178.601 std dev 0.1 178.416 std dev 0.1 178.518 std dev 0.1 178.345 std dev 0.1 178.359 std dev 0.1 178.5 std dev 0.1 178.581 std dev 0.1 178.489 std dev 0.1 178.551 std dev 0.1 178.436 std dev 0.1 178.387 std dev 0.1 178.372 std dev 0.1 178.567 std dev 0.1 178.33 std dev 0.1 178.528 std dev 0.1 178.633 std dev 0.1 178.273 std dev 0.1 178.306 std dev 0.1
+core.pack.dunbrack.SingleLigandRotamerLibrary: Added 2124 rotamers for LG1_connectZN1_connectZN1_connectZN1_connectZN1
+protocols.ligand_docking.ligand_functions: Torsion constraint for Rsd 350 chi 6 = -33.7229 std dev 8 -70.2061 std dev 8 -40.0962 std dev 8 81.9966 std dev 8 21.7076 std dev 8 146.171 std dev 8 116.702 std dev 8 -52.998 std dev 8 50.0788 std dev 8 94.2515 std dev 8 172.256 std dev 8 109.265 std dev 8 139.431 std dev 8 101.445 std dev 8 41.855 std dev 8 56.8046 std dev 8 142.203 std dev 8 26.858 std dev 8 154.268 std dev 8 96.9168 std dev 8 -63.9549 std dev 8 36.7705 std dev 8 34.4892 std dev 8 131.407 std dev 8 124.102 std dev 8 66.8911 std dev 8 -3.45277 std dev 8 6.8114 std dev 8 4.35384 std dev 8 79.1046 std dev 8 51.8559 std dev 8 -55.0852 std dev 8 -25.4905 std dev 8 19.4832 std dev 8 -23.4995 std dev 8 112.429 std dev 8 86.4968 std dev 8 -18.866 std dev 8 71.797 std dev 8 -10.2946 std dev 8 11.3728 std dev 8 -8.4272 std dev 8 -38.1471 std dev 8 157.474 std dev 8 127.145 std dev 8 161.557 std dev 8 -178.228 std dev 8 -18.0172 std dev 8 -172.511 std dev 8 -48.5833 std dev 8 -22.6912 std dev 8 64.2667 std dev 8 -166.575 std dev 8 -7.5439 std dev 8 65.126 std dev 8 149.604 std dev 8
+core.pack.task: Packer task: initialize from command line() 
+core.pack.dunbrack.SingleLigandRotamerLibrary: Added 2124 rotamers for LG1_connectZN1_connectZN1_connectZN1_connectZN1
+core.pack.dunbrack.SingleLigandRotamerLibrary: Added 2124 rotamers for LG1_connectZN1_connectZN1_connectZN1_connectZN1
+core.pack.dunbrack.SingleLigandRotamerLibrary: Added 2124 rotamers for LG1_connectZN1_connectZN1_connectZN1_connectZN1
+core.pack.dunbrack.SingleLigandRotamerLibrary: Added 2124 rotamers for LG1_connectZN1_connectZN1_connectZN1_connectZN1
+core.pack.dunbrack.SingleLigandRotamerLibrary: Added 2124 rotamers for LG1_connectZN1_connectZN1_connectZN1_connectZN1
+core.pack.dunbrack.SingleLigandRotamerLibrary: Added 2124 rotamers for LG1_connectZN1_connectZN1_connectZN1_connectZN1
+core.pack.dunbrack.SingleLigandRotamerLibrary: Added 2124 rotamers for LG1_connectZN1_connectZN1_connectZN1_connectZN1
+core.pack.dunbrack.SingleLigandRotamerLibrary: Added 2124 rotamers for LG1_connectZN1_connectZN1_connectZN1_connectZN1
+core.pack.dunbrack.SingleLigandRotamerLibrary: Added 2124 rotamers for LG1_connectZN1_connectZN1_connectZN1_connectZN1
+core.pack.dunbrack.SingleLigandRotamerLibrary: Added 2124 rotamers for LG1_connectZN1_connectZN1_connectZN1_connectZN1
+core.pack.dunbrack.SingleLigandRotamerLibrary: Added 2124 rotamers for LG1_connectZN1_connectZN1_connectZN1_connectZN1
+core.pack.dunbrack.SingleLigandRotamerLibrary: Added 2124 rotamers for LG1_connectZN1_connectZN1_connectZN1_connectZN1
+core.pack.dunbrack.SingleLigandRotamerLibrary: Added 2124 rotamers for LG1_connectZN1_connectZN1_connectZN1_connectZN1
+core.pack.dunbrack.SingleLigandRotamerLibrary: Added 2124 rotamers for LG1_connectZN1_connectZN1_connectZN1_connectZN1
+core.pack.dunbrack.SingleLigandRotamerLibrary: Added 2124 rotamers for LG1_connectZN1_connectZN1_connectZN1_connectZN1
+core.pack.dunbrack.SingleLigandRotamerLibrary: Added 2124 rotamers for LG1_connectZN1_connectZN1_connectZN1_connectZN1
+core.pack.dunbrack.SingleLigandRotamerLibrary: Added 2124 rotamers for LG1_connectZN1_connectZN1_connectZN1_connectZN1
+core.pack.dunbrack.SingleLigandRotamerLibrary: Added 2124 rotamers for LG1_connectZN1_connectZN1_connectZN1_connectZN1
+core.pack.dunbrack.SingleLigandRotamerLibrary: Added 2124 rotamers for LG1_connectZN1_connectZN1_connectZN1_connectZN1
+basic.io.database: Database file opened: scoring/score_functions/hbonds/standard_params/HBPoly1D.csv
+basic.io.database: Database file opened: scoring/score_functions/hbonds/standard_params/HBFadeIntervals.csv
+basic.io.database: Database file opened: scoring/score_functions/hbonds/standard_params/HBEval.csv
+basic.io.database: Database file opened: scoring/score_functions/SurfacePotential/average_hASA_by_res_and_neighbor.txt
+basic.io.database: Database file opened: scoring/score_functions/SurfacePotential/surface_score.txt
+basic.io.database: Database file opened: scoring/score_functions/SurfacePotential/hpatch_score.txt
+apps.public.enzdes.enzyme_design: Finished UM_1_H15H17H214D295Q58_1A4L_clean_A_r_1A4L_clean_A_1_0001 in 1140 seconds.
+apps.public.enzdes.enzyme_design: Finished all 1 structures in 1143 seconds.

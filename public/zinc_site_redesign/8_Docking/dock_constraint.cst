@@ -1,0 +1,53 @@
+
+
+    # ZN - HIS 15
+
+    CST::BEGIN
+    TEMPLATE::   ATOM_MAP: 1 atom_name:  ZN1
+    TEMPLATE::   ATOM_MAP: 1 residue3:  ZN1
+    
+    TEMPLATE::   ATOM_MAP: 2 atom_type: Ntrp ,
+    TEMPLATE::   ATOM_MAP: 2 residue1:  H
+    
+    CONSTRAINT:: distanceAB:  2.58  0.20  100.  0
+
+    CST::END
+
+    # ZN - HIS 17
+
+    CST::BEGIN
+    TEMPLATE::   ATOM_MAP: 1 atom_name:  ZN1
+    TEMPLATE::   ATOM_MAP: 1 residue3:  ZN1
+    
+    TEMPLATE::   ATOM_MAP: 2 atom_type: Ntrp ,
+    TEMPLATE::   ATOM_MAP: 2 residue1:  H
+    
+    CONSTRAINT:: distanceAB:  2.49  0.20  100.  0
+
+    CST::END
+
+    # ZN - HIS 214
+
+    CST::BEGIN
+    TEMPLATE::   ATOM_MAP: 1 atom_name:  ZN1
+    TEMPLATE::   ATOM_MAP: 1 residue3:  ZN1
+    
+    TEMPLATE::   ATOM_MAP: 2 atom_type: Ntrp ,
+    TEMPLATE::   ATOM_MAP: 2 residue1:  H
+    
+    CONSTRAINT:: distanceAB:  2.74  0.20  100.  0
+
+    CST::END
+
+    # ZN - ASP 295
+
+    CST::BEGIN
+    TEMPLATE::   ATOM_MAP: 1 atom_name:  ZN1
+    TEMPLATE::   ATOM_MAP: 1 residue3:  ZN1
+    
+    TEMPLATE::   ATOM_MAP: 2 atom_type: OOC ,
+    TEMPLATE::   ATOM_MAP: 2 residue1:  D
+    
+    CONSTRAINT:: distanceAB:  2.39  0.20  100.  0
+
+    CST::END

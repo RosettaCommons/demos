@@ -1,0 +1,29 @@
+-in
+  -file:extra_res_fa LG.params
+-out::overwrite
+-out::file::o enz_score.out
+-out::file::output_virtual
+-database /work/khare/rosetta/rosetta_database/
+-packing
+  -use_input_sc
+  -ex1:level 6
+  -ex2:level 6
+  -soft_rep_design
+  -no_optH false 
+-enzdes
+  -minimize_ligand_torsions 10.0
+  -cstfile constraint.cst
+  -cst_opt
+  -detect_design_interface
+  -cut1 6.0
+  -cut2 8.0
+  -cut3 10.0
+  -cut4 12.0
+  -lig_packer_weight 1.8
+  -no_unconstrained_repack
+  -chi_min
+  -loop_bb_min_allowed_dev 0.1
+  -fix_catalytic_aa
+-score
+   -weights enzdes.wts
+-nstruct 1

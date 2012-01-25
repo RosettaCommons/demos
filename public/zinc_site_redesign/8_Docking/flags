@@ -1,0 +1,30 @@
+-run
+ -constant_seed
+ -rng mt19937
+-in
+ -file
+  -s dock_design.pdb
+  -native dock_design.pdb
+  -extra_res_fa LG.params ZN1.params
+-out
+ -nstruct 80
+ -file
+#  -renumber_pdb
+ -pdb
+-packing
+ -no_optH
+ -ex1 
+ -ex2 
+ -ex1aro
+ -flip_HNQ
+-enzdes
+ -cstfile dock_constraint.cst
+ -fix_catalytic_aa
+# -enz_debug
+-docking
+ -randomize2
+-ligand
+ -improve_orientation 10
+# Evaluate coulomb between protein and ligand
+ -old_estat
+-score:weights enzdes.wts

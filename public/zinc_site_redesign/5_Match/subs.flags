@@ -1,0 +1,3 @@
+-extra_res_fa LG.params
+-match:lig_name LG1
+-match:geometric_constraint_file  1A4L_clean_A.cst
