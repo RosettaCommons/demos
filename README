@@ -24,7 +24,7 @@ fragment_picker -- Prepare fragements for loop modeling or ab initio modeling.
 
 ligand_dock -- Docking a ligand into a protein. Separate ligand_setup and ligand_dock demos.
 
-pepspec -- Peptide specificity / flexible backbone design. Designs a peptide to bind around an "anchor" residue on the target protein.
+peptide_specificity -- Peptide specificity / flexible backbone design. Designs a peptide to bind around an "anchor" residue on the target protein.
 
 python -- python implementation of relax protocol, to minimize the energy of a structure. 
 

@@ -43,10 +43,6 @@ SConscript.demo
 
 ### needs a README purgatory ####
 fragment_picker -- Prepare fragements for loop modeling or ab initio modeling. Needs a README
-python -- python implementation of relax protocol, to minimize the energy of a structure. Needs a README
-rna -- How to prepare an RNA for Rosetta. Needs a README
-RNA_Design -- Needs a README to describe scientific goals.
-
 
 ### pilot demos -- flagged for deletion ###
 rosetta -- DEL
@@ -54,16 +50,16 @@ serialization -- DEL
 utility -- DEL
 abbie -- (pbradley) DEL
 andrew -- emailed
-chu -- move to rosetta_source/src/apps/pilot/chu
-dan -- empty! DEL
+chu -- moved to rosetta_source/src/apps/pilot/chu
+dan -- DEL
 dekim -- DEL
-gktaylor -- emailed greg and david kim, dekim says DEL
-james -- (dekim, aleaverfay)
+gktaylor -- DEL dekim says DEL, gktaylor says DEL
+james -- DEL dekim says DEL (dekim, aleaverfay)
 jim -- DEL
 lemmongh -- no action, glemmon@gmail.com
 liz -- DEL
 olli -- emailed oliver
-phil -- DEL, same as abbie
-sraman -- emailed vatsan
-vatsan -- emailed vatsan
-will -- emailed will
+phil -- DEL
+sraman -- DEL
+vatsan -- DEL
+will -- DEL
