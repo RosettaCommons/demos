@@ -1,0 +1,53 @@
+####################
+   Rosetta VIP
+####################
+
+This README was written in Feb. 2012, by Jim Havranek (havranek@genetics.wustl.edu).
+
+This demo illustrates a protocol to identify candidate mutations for stabilizing proteins that have sub-optimally packed cores.
+
+It has been published in the paper "A two-dimensional mutate-and-map strategy for non-coding RNA structure" by B. Borgo J.J. Havranek (2012), Proc. Natl. Acad. Sci. USA 109(5) pp 1494-99.
+
+The app can be run as follows:
+
+./(executables_path)/vip.(arch)(mode) -database (database_path) -s input.pdb -cp:ncycles 3 -cp:cutoff 6.0 -sasa_calculator_probe_radius 1.0 -run:silent
+
+options are:
+
+-cp:ncycles (Size)
+	This will run the iterative protocol (find point mutations, relax, output best relaxed pose) a fixed number of times. If you don't use this option it will continue to run until it no longer finds favorable mutations. The latter option can take a while for large proteins.
+
+-cp:cutoff (real)
+	This is the cutoff for choosing mutatable residues (ie distance from cavity ball to a non-bb, non-surface atom on the residue). The smallest cutoff you can use is best since that will mutated the smallest # of residues that line the cavity.
+
+-sasa_calculator_probe_radius (real) Increasing this will likely give you surface clefts in addition to buried voids.
+
+
+further options for the fast relax mover, sasa metric options, etc.:
+
+-cp:pack_sfxn (score function) (e.g. -cp:pack_sfxn score12_full)
+	Allows you to use a different score for the point mutant trials
+
+-cp:relax_sfxn (score function) to use a different score for the relax stage
+
+-cp:skip_relax
+This causes the protocol to skip the relax step, which is a quick fix until I can exchange the relax mover for something more efficient. I'd only caution that scoring of the fixed bb point mutations isn't quantitative wrt to magnitude of the ddE. Rather, it seems to be very accurate in terms of favorable vs. unfavorable. I'll be working on a local relax and will update you when that's available.
+
+-cp:local_relax
+This restricts the scope of the relaxation protocol for possible mutations to 'neighbor' residues, which are defined as those residues within a X Ang. CB-CB distance.
+
+-cp:print_reports
+Theis generates a file (reports.txt ) that tells you which mutations were identified by the simple geometric screen, and which mutations still look good after relaxation.
+
+
+
+a couple of other notes:
+
+- Extra rotamers are automatically included in the point mutant trials, so if you use -ex1 -ex2 etc flags, these will be applied in the relax step which slows things down quite a bit.
+
+- Cavity finding is done via RosettaHoles1, which is stochastic, so:  1) if it finds no cavities, run it again and it probably will and 2) separate runs can result in a different sequence of mutations.
+
+- Run time expectation: The demo takes ~30 minutes on a MacBook Pro.
+
+
+
