@@ -37,8 +37,10 @@ This causes the protocol to skip the relax step, which is a quick fix until I ca
 This restricts the scope of the relaxation protocol for possible mutations to 'neighbor' residues, which are defined as those residues within a X Ang. CB-CB distance.
 
 -cp:print_reports
-Theis generates a file (reports.txt ) that tells you which mutations were identified by the simple geometric screen, and which mutations still look good after relaxation.
+This generates a file (reports.txt ) that tells you which mutations were identified by the simple geometric screen, and which mutations still look good after relaxation.
 
+-cp:print_intermediate_pdbs
+This option outputs a fullatom pdb for each accepted mutation, named "vip_iter_1.pdb", with the number incremented for each pass through.  The pdb for the final iteration will be the same as the final pdb.
 
 
 a couple of other notes:
