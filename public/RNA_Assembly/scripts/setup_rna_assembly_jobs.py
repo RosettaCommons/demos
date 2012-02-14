@@ -5,14 +5,20 @@
 
 import string
 from sys import argv,exit
-from os import system
-from os.path import exists, expanduser
+from os import system, getcwd
+from os.path import exists, expanduser, abspath, dirname
 
 if len( argv ) < 2:
     print argv[0], ' <sequence.fasta>  <secstruct file> [<native.pdb> <constraints.cst> <torsions.torsions>]'
     exit( 0 )
 
-EXE_DIR =  expanduser('~')+'/src/rosetta_TRUNK/rosetta_source/bin/'
+#EXE_DIR =  expanduser('~')+'/src/rosetta_TRUNK/rosetta_source/bin/'
+scripts_path = dirname( abspath( argv[0] ) ) + '/'
+EXE_DIR =  scripts_path +'/../../../../rosetta_source/bin/'
+EXE_DIR = abspath( EXE_DIR )
+
+# for pdbslice.py
+tools_scripts_path = abspath( dirname( abspath( argv[0] ) ) + '/../../../../rosetta_tools/rna/' )
 
 if not exists( EXE_DIR ):
     print 'Need to set EXE_DIR in '+argv[0]+' to match an existing directory'
@@ -324,7 +330,8 @@ for i in range( stem_count ):
 
     # pdb_file
     if native_exists:
-        command = 'pdbslice.py  %s -segments %d %d %d %d stem%d_' %(
+        command = 'python %s/pdbslice.py  %s -segments %d %d %d %d stem%d_' %( \
+            tools_scripts_path,
             native_pdb_file,
             stem_res[0][0]+1,
             stem_res[-1][0]+1,
@@ -440,7 +447,7 @@ for i in range( motif_count ):
     # pdb_file
     native_tag = ''
     if native_exists:
-        command = 'pdbslice.py  %s -subset ' %  native_pdb_file
+        command = 'python %s/pdbslice.py  %s -subset ' %  ( tools_scripts_path, native_pdb_file )
         for k in range( motif_length ): command += ' %d' % (motif_res[k]+1)
         command += ' motif%d_' % (i+1)
         print command
