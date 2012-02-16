@@ -1,2 +1,0 @@
-#!/bin/sh
-/Users/jim/Current_Projects/TRUNK/rosetta_source/bin/vip.macosgccrelease -database /Users/jim/Current_Projects/TRUNK/rosetta_database/ -s Start_Lambda_Model.pdb -cp:cutoff 6.0 -sasa_calculator_probe_radius 1.0 -run:silent -cp:print_intermediate_pdbs -cp:local_relax -cp:relax_mover "classic_relax" -cp:print_reports -mute protocols.simple_moves core.pack protocols.relax protocols::checkpoint core.scoring.etable basic.io.database core.io.pdb core.chemical protocols.packstat

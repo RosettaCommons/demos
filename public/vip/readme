@@ -49,7 +49,5 @@ a couple of other notes:
 
 - Cavity finding is done via RosettaHoles1, which is stochastic, so:  1) if it finds no cavities, run it again and it probably will and 2) separate runs can result in a different sequence of mutations.
 
-- Run time expectation: The demo takes ~30 minutes on a MacBook Pro.
-
 
 

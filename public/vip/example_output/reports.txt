@@ -1,0 +1,27 @@
+ GOE point mutant report: 
+Position: 60 Native AA: PHE  Mutant AA: TRP  ddEgoe: 0.212912
+Position: 64 Native AA: PHE  Mutant AA: TYR  ddEgoe: 0.920463
+Position: 76 Native AA: TYR  Mutant AA: TRP  ddEgoe: 1.10447
+Position: 79 Native AA: TYR  Mutant AA: TRP  ddEgoe: 0.634465
+ GOE after relax report: 
+Position: 64 Native AA: PHE  Mutant AA: TYR  ddE: 3.95788
+Position: 79 Native AA: TYR  Mutant AA: TRP  ddE: 0.525851
+ GOE point mutant report: 
+Position: 60 Native AA: PHE  Mutant AA: TRP  ddEgoe: 0.467874
+ GOE after relax report: 
+ GOE point mutant report: 
+Position: 60 Native AA: PHE  Mutant AA: TRP  ddEgoe: 0.212912
+Position: 64 Native AA: PHE  Mutant AA: TYR  ddEgoe: 0.920463
+Position: 76 Native AA: TYR  Mutant AA: TRP  ddEgoe: 1.10447
+Position: 79 Native AA: TYR  Mutant AA: TRP  ddEgoe: 0.634465
+ GOE after relax report: 
+Position: 64 Native AA: PHE  Mutant AA: TYR  ddE: 2.63563
+ GOE point mutant report: 
+Position: 60 Native AA: PHE  Mutant AA: TRP  ddEgoe: 0.0953075
+Position: 76 Native AA: TYR  Mutant AA: TRP  ddEgoe: 1.14258
+Position: 79 Native AA: TYR  Mutant AA: TRP  ddEgoe: 0.435067
+ GOE after relax report: 
+ GOE point mutant report: 
+Position: 60 Native AA: PHE  Mutant AA: TRP  ddEgoe: 0.141189
+Position: 76 Native AA: TYR  Mutant AA: TRP  ddEgoe: 1.01092
+ GOE after relax report: 
