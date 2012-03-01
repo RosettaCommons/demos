@@ -8,6 +8,8 @@ This demo illustrates a protocol to identify candidate mutations for stabilizing
 
 It has been published in the paper "Automated selection of stabilizing mutations in designed and natural proteins" by B. Borgo J.J. Havranek (2012), Proc. Natl. Acad. Sci. USA 109(5) pp 1494-99.
 
+The source code is found at:  (rosetta_source)/src/apps/public/vip.cc
+
 The app can be run as follows:
 
 ./(executables_path)/vip.(arch)(mode) -database (database_path) -s input.pdb -cp:ncycles 3 -cp:cutoff 6.0 -sasa_calculator_probe_radius 1.0 -run:silent
@@ -47,6 +49,8 @@ This option outputs a fullatom pdb for each accepted mutation, named "vip_iter_1
 
 
 a couple of other notes:
+
+- It is preferable to let the application find as many mutations as possible.  This is accomplished by _not_ using the -cp:ncycles option.  If the application takes too long to run, the -cp:ncycles option can be used to limit the run time to an acceptable amount.
 
 - Extra rotamers are automatically included in the point mutant trials, so if you use -ex1 -ex2 etc flags, these will be applied in the relax step which slows things down quite a bit.
 
