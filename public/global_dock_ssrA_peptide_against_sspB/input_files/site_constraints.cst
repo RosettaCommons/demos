@@ -1,0 +1,33 @@
+# Constraints file with centroid mode constraints, based on Pocket-Finder output
+#
+# Legend:
+# SiteConstraint [ATOM] [RESID][CHAIN1] [CHAIN2] [PENALTY_FUNC]- a compound constraint that computes the minimal [PENALTY_FUNCTION], which is computed for all interactions of the specified atom in chain #1 and any of the atoms in chain #2
+# FLAT_HARMONIC x_0 std-dev tol - zero penalty if |x - x_0| < tol, else penalty is [ ( |x - x_0| - tol ) / std-dev ] ^ 2
+# ============================================
+
+SiteConstraint CA 52A B FLAT_HARMONIC 0 3 5
+SiteConstraint C  52A B FLAT_HARMONIC 0 3 5 
+SiteConstraint CB 52A B FLAT_HARMONIC 0 3 5
+# SiteConstraint CD2 52A B FLAT_HARMONIC 0 3 5
+SiteConstraint N  53A B FLAT_HARMONIC 0 3 5 
+SiteConstraint CA 53A B FLAT_HARMONIC 0 3 5 
+SiteConstraint C  53A  B FLAT_HARMONIC 0 3 5
+SiteConstraint O   53A B FLAT_HARMONIC 0 3 5
+SiteConstraint CB  53A B FLAT_HARMONIC 0 3 5
+#SiteConstraint CE1 71A B FLAT_HARMONIC 0 3 5
+SiteConstraint CB 71A B FLAT_HARMONIC 0 5 7 # added instead of CB, CE1, CZ
+#SiteConstraint CZ  71A B FLAT_HARMONIC 0 3 5
+SiteConstraint CB  73A B FLAT_HARMONIC 0 3 5
+SiteConstraint N   74A B FLAT_HARMONIC 0 3 5
+SiteConstraint C   74A B FLAT_HARMONIC 0 3 5
+SiteConstraint O   74A B FLAT_HARMONIC 0 3 5
+SiteConstraint CB 75A B FLAT_HARMONIC 0 5 6 # added instead of CG, CD1, CD2, CE1, CE2, CZ
+#SiteConstraint CG  75A B FLAT_HARMONIC 0 3 5
+#SiteConstraint CD1 75A B FLAT_HARMONIC 0 3 5
+#SiteConstraint CD2 75A B FLAT_HARMONIC 0 3 5
+#SiteConstraint CE1 75A B FLAT_HARMONIC 0 3 5
+#SiteConstraint CE2 75A B FLAT_HARMONIC 0 3 5
+#SiteConstraint CZ  75A B FLAT_HARMONIC 0 3 5
+SiteConstraint CB 82A B FLAT_HARMONIC 0 5 7 # added instead of CD1
+#SiteConstraint CD1 82A B FLAT_HARMONIC 0 3 5
+

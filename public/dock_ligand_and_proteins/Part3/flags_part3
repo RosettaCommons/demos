@@ -1,0 +1,7 @@
+-in
+	-file
+		-s combined.pdb
+		-extra_res_cen RAP.cen.params
+		-extra_res_fa RAP.params
+	-path
+		-database /blue/meilerlab/apps/rosetta/rosetta-3.3/rosetta_database

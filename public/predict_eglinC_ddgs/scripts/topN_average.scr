@@ -1,0 +1,8 @@
+#!/bin/bash
+
+# Computes the average score of the top N scoring structures held in an out file
+# assuming that column 2 of the .out file is the total score
+# $1 == out file
+# $2 == N (the number of top-scoring structures to average)
+
+grep SCORE: $1 | grep -v "score" | awk '{print $2}' | sort -n | head -n $2 | awk '{sum += $1} END {print sum / NR}'

@@ -1,0 +1,7 @@
+1. Strip out waters, and keep chains B and D from the starting_files/ directory, and put this Rosetta-readable PDB into the rosetta_inputs directory.
+
+2. The executable is called FlexPepDock, and the code lives in src/protocols/flexpep_docking/
+
+3. This demo should perform local docking of the peptide ssrA (chain D) against the protein sspB (chain B).  It's up to you to decide how much freedom to give the peptide, but keep in mind that this is local docking.  
+
+4. It's also up to you to decide what commandline options to include in this demo.

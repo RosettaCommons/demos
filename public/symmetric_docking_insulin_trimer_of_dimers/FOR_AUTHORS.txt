@@ -1,0 +1,19 @@
+Insulin is a symmetric hexamer formed of three dimers.  Each dimer forms along the beta strand.
+
+The goal of this demo is to run symmetric docking to
+a) dock the dimers (held fixed) into a trimer (of dimers), and
+b) dock the monomers into a trimer of dimers.
+
+In the first case, you may start from the PDB structure, 1ZEH, which
+contains two monomers.
+
+In the second case, you should start from the chain A structure.
+
+Make sure your demo describes thoroughly the input file preparation,
+as this is one of the more difficult parts of symmetical modeling
+in Rosetta.
+
+NOTE: There are Zn atoms coordinated at the trimer interface in
+the crystal structure.  I do not believe Rosetta can handle 
+a single zinc being symmetrically coordinated, so, you will
+probably want to strip out this Zn.

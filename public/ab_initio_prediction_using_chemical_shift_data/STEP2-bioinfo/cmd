@@ -1,0 +1,2 @@
+./make_fragments.modified.pl -verbose -nosam -nojufo -nohoms 15112.fasta
+cat *homolog_* > 15112.homologs

@@ -1,0 +1,91 @@
+core.init: (0) Mini-Rosetta version 44773:44775M from https://svn.rosettacommons.org/source/trunk/rosetta/rosetta_source
+core.init: (0) command: /vol/ek/ravehb/rosetta/svn_mini/rosetta_source/bin//FlexPepDocking.linuxgccrelease -s start.pdb -native native.pdb -database /vol/ek/ravehb/rosetta/svn_mini/rosetta_database/ -scorefile score.ppk.sc @prepack_flags
+core.init: (0) 'RNG device' seed mode, using '/dev/urandom', seed=-55243953 seed_offset=0 real_seed=-55243953
+core.init.random: (0) RandomGenerator:init: Normal mode, seed=-55243953 RG_type=mt19937
+core.scoring.ScoreFunctionFactory: (0) SCOREFUNCTION: standard
+core.scoring.ScoreFunctionFactory: (0) SCOREFUNCTION PATCH: score12
+core.scoring.etable: (0) Starting energy table calculation
+core.scoring.etable: (0) smooth_etable: changing atr/rep split to bottom of energy well
+core.scoring.etable: (0) smooth_etable: spline smoothing lj etables (maxdis = 6)
+core.scoring.etable: (0) smooth_etable: spline smoothing solvation etables (max_dis = 6)
+core.scoring.etable: (0) Finished calculating energy tables.
+basic.io.database: (0) Database file opened: pdb_pair_stats_fine
+basic.io.database: (0) Database file opened: scoring/score_functions/hbonds/standard_params/HBPoly1D.csv
+basic.io.database: (0) Database file opened: scoring/score_functions/hbonds/standard_params/HBFadeIntervals.csv
+basic.io.database: (0) Database file opened: scoring/score_functions/hbonds/standard_params/HBEval.csv
+basic.io.database: (0) Database file opened: env_log.txt
+basic.io.database: (0) Database file opened: cbeta_den.txt
+basic.io.database: (0) Database file opened: pair_log.txt
+basic.io.database: (0) Database file opened: cenpack_log.txt
+basic.io.database: (0) Database file opened: env_log.txt
+basic.io.database: (0) Database file opened: cbeta_den.txt
+basic.io.database: (0) Database file opened: pair_log.txt
+basic.io.database: (0) Database file opened: cenpack_log.txt
+basic.io.database: (0) Database file opened: CEN6_mem_env_log.txt
+basic.io.database: (0) Database file opened: CEN10_mem_env_log.txt
+basic.io.database: (0) Database file opened: memcbeta_den.txt
+basic.io.database: (0) Database file opened: mem_pair_log.txt
+basic.io.database: (0) Database file opened: P_AA
+basic.io.database: (0) Database file opened: P_AA_n
+basic.io.database: (0) Database file opened: P_AA_pp
+basic.io.database: (0) Database file opened: Rama_smooth_dyn.dat_ss_6.4
+basic.io.database: (0) Database file opened: env_log.txt
+basic.io.database: (0) Database file opened: cbeta_den.txt
+basic.io.database: (0) Database file opened: pair_log.txt
+basic.io.database: (0) Database file opened: cenpack_log.txt
+core.pack.rotamer_set.UnboundRotamersOperation: (0) Adding 'unbound' rotamers from native.pdb
+core.chemical.ResidueTypeSet: (0) Finished initializing fa_standard residue type set.  Created 6350 residue types
+core.conformation.Conformation: (0) [ WARNING ] missing heavyatom:  OXT on residue ASP_p:CtermProteinFull 106
+core.scoring.ScoreFunctionFactory: (0) SCOREFUNCTION: standard
+core.scoring.ScoreFunctionFactory: (0) SCOREFUNCTION PATCH: score12
+core.conformation.Conformation: (0) [ WARNING ] missing heavyatom:  OXT on residue ASP_p:CtermProteinFull 106
+core.pack.task: (0) Packer task: initialize from command line() 
+protocols.jd2.PDBJobInputter: (0) Instantiate PDBJobInputter
+protocols.jd2.PDBJobInputter: (0) PDBJobInputter::fill_jobs
+protocols.jd2.PDBJobInputter: (0) pushing start.pdb nstruct index 1
+core.conformation.Conformation: (0) [ WARNING ] missing heavyatom:  OXT on residue ASP_p:CtermProteinFull 106
+core.pack.task: (0) Packer task: initialize from command line() 
+protocols.jd2.PDBJobInputter: (0) PDBJobInputter::pose_from_job
+core.conformation.Conformation: (0) [ WARNING ] missing heavyatom:  OXT on residue ASP_p:CtermProteinFull 106
+core.pack.task: (0) Packer task: initialize from command line() 
+protocols.jd2.PDBJobInputter: (0) filling pose from PDB start.pdb
+FlexPepDockingProtocol: (0) apply
+protocols.flexPepDocking.FlexPepDockingFlags: (0) Receptor chain: A
+protocols.flexPepDocking.FlexPepDockingFlags: (0) Receptor first res: 1
+protocols.flexPepDocking.FlexPepDockingFlags: (0) Receptor nres: 106
+protocols.flexPepDocking.FlexPepDockingFlags: (0) Peptide chain: B
+protocols.flexPepDocking.FlexPepDockingFlags: (0) Peptide first res: 107
+protocols.flexPepDocking.FlexPepDockingFlags: (0) Peptide nres: 8
+protocols.flexPepDocking.FlexPepDockingFlags: (0) Peptide anchor: 111
+protocols.flexPepDocking.FlexPepDockingFlags: (0) # peptide anchors: 1
+protocols.flexPepDocking.FlexPepDockingFlags: (0) # peptide cuts: 0
+protocols.flexPepDocking.FlexPepDockingFlags: (0) Receptor anchor: 72
+core.pack.task: (0) Packer task: initialize from command line() 
+core.pack.rotamer_set.UnboundRotamersOperation: (0) Adding 'unbound' rotamers from native.pdb
+core.conformation.Conformation: (0) [ WARNING ] missing heavyatom:  OXT on residue ASP_p:CtermProteinFull 106
+core.pack.dunbrack: (0) Dunbrack library took 0.05 seconds to load from binary
+protocols.moves.RigidBodyMover: (0) Translate: Jump (before): RT 0.257228 -0.768782 0.585498 -0.5781 -0.607931 -0.544261 0.77436 -0.198477 -0.60081 18.7872 -20.7047 -5.22187  
+protocols.moves.RigidBodyMover: (0) Translate: Jump (after):  RT 0.257228 -0.768782 0.585498 -0.5781 -0.607931 -0.544261 0.77436 -0.198477 -0.60081 912.845 -450.707 -130.758  
+core.pack.interaction_graph.interaction_graph_factory: (0) Instantiating DensePDInteractionGraph
+core.pack.pack_rotamers: (0) built 1227 rotamers at 114 positions.
+core.pack.pack_rotamers: (0) IG: 844784 bytes
+protocols.moves.RigidBodyMover: (0) Translate: Jump (before): RT 0.257228 -0.768782 0.585498 -0.5781 -0.607931 -0.544261 0.77436 -0.198477 -0.60081 912.845 -450.707 -130.758  
+protocols.moves.RigidBodyMover: (0) Translate: Jump (after):  RT 0.257228 -0.768782 0.585498 -0.5781 -0.607931 -0.544261 0.77436 -0.198477 -0.60081 18.7872 -20.7047 -5.22187  
+protocols.moves.RigidBodyMover: (0) Translate: Jump (before): RT 0.257228 -0.768782 0.585498 -0.5781 -0.607931 -0.544261 0.77436 -0.198477 -0.60081 18.7872 -20.7047 -5.22187  
+protocols.moves.RigidBodyMover: (0) Translate: Jump (after):  RT 0.257228 -0.768782 0.585498 -0.5781 -0.607931 -0.544261 0.77436 -0.198477 -0.60081 917.277 -441.475 -130.394  
+FlexPepDockingPoseMetrics: (0) Isc: 0
+FlexPepDockingPoseMetrics: (0) Total BSA  is: 0
+FlexPepDockingPoseMetrics: (0) Interface HB #: 0
+FlexPepDockingPoseMetrics: (0) Total packstats: -0.0164322
+FlexPepDockingPoseMetrics: (0) Interface Unsat polar groups: 0
+FlexPepDockingPoseMetrics: (0) 107 bsa: 0 HB: 0 pack: 0.0828656 unsat: 0
+FlexPepDockingPoseMetrics: (0) 108 bsa: 0 HB: 0 pack: 0.27376 unsat: 0
+FlexPepDockingPoseMetrics: (0) 109 bsa: 0 HB: 0 pack: 0.151472 unsat: 0
+FlexPepDockingPoseMetrics: (0) 110 bsa: 0 HB: 0 pack: 0.467628 unsat: 0
+FlexPepDockingPoseMetrics: (0) 111 bsa: 0 HB: 0 pack: 0.830073 unsat: 0
+FlexPepDockingPoseMetrics: (0) 112 bsa: 0 HB: 0 pack: 0.650434 unsat: 0
+FlexPepDockingPoseMetrics: (0) 113 bsa: 0 HB: 0 pack: 0.155851 unsat: 0
+FlexPepDockingPoseMetrics: (0) 114 bsa: 0 HB: 0 pack: 0.817574 unsat: 0
+protocols.jd2.JobDistributor: (0) start_0001 reported success in 9 seconds
+protocols.jd2.JobDistributor: (0) no more batches to process... 
+protocols.jd2.JobDistributor: (0) 1 jobs considered, 1 jobs attempted in 9 seconds

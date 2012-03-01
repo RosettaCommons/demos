@@ -1,0 +1,15 @@
+req NaCo_dTotE value < 0.00
+req NaCo_burunsat_pm value < 5.00
+req NaCo_NLconts_pm value > -2.00
+req NaCo_pstat_pm value > -0.05
+req nlr_totrms value < 0.5
+req nlr_SR1_rms value < 0.5
+req nlr_SR2_rms value < 0.5
+req nlr_SR3_rms value < 0.5
+req SR_1_all_cst value < 1.2
+req SR_2_all_cst value < 1.0
+req SR_3_all_cst value < 2.3
+#req SR_4_interf_E_1_2 value < -8.5
+req all_cst value < 6.5
+output sortmin SR_4_interf_E_1_2
+#output sortmin all_cst

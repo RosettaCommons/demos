@@ -1,0 +1,37 @@
+<dock_design>
+	<SCOREFXNS>
+	</SCOREFXNS>
+	<FILTERS> 
+    <Ddg name=ddg_binding threshold=0 scorefxn=score12 repeats=3 repack=1/>
+    DDG filter computes binding score for the complex
+    (threshold=0 only allows complexes with negative binding score)
+    (repeats=3 calculates binding score three times and returns average)
+    (repack=1 repack complex in both bound and unbound states to calculate binding score)
+    <Sasa name=sasa threshold=800/>
+    SASA filter computes interface solvent-accessible surface area
+    (threshold=800 only allows complexes with greater than 800 Å^2
+    as per Janin et al., Quarterly Reviews of Biophysics, 2008)
+  </FILTERS>
+	<TASKOPERATIONS>
+		<ProteinInterfaceDesign name=design repack_chain1=1 repack_chain2=1 design_chain1=1 design_chain2=0 interface_distance_cutoff=8/>
+		Designs and repacks interface residues of chain 1 and repacks interface residues of chain 2
+		<InitializeFromCommandline name=cmdline/>
+		Reads command line options
+	</TASKOPERATIONS>
+	<MOVERS>
+		<Docking name=dock1 fullatom=1 local_refine=1/>
+		Runs local refinement stage of full atom docking
+		<PackRotamersMover name=packrot scorefxn=score12 task_operations=design,cmdline/>
+		Runs protein interface design
+		<MinMover name=min scorefxn=score12 chi=1 bb=1 type=dfpmin_armijo_nonmonotone tolerance=0.01/>
+		Runs full atom side-chain and backbone minimization
+	</MOVERS>
+	<PROTOCOLS>
+		Runs movers and filters in this order
+		<Add mover_name=dock1/>
+		<Add mover_name=packrot/>
+		<Add mover_name=min/>
+		<Add filter_name=ddg_binding/>
+   		<Add filter_name=sasa/>
+	</PROTOCOLS>
+</dock_design>

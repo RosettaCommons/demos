@@ -1,0 +1,26 @@
+# In your run, you'll want to correct this path to point to your copy of minirosetta_database
+-database /Users/cmiles/minirosetta_database
+
+# Number of output structures. In realistic usage, you'll probably want to generate several hundred models.
+-nstruct 1
+#-nstruct 500
+
+# Domain we are inserting
+-anchor_pdb ../2lct_prepared.pdb
+
+# Target PDB is needed for Anchored Design, but not for this domain insertion task.
+# Create a PDB file with a single residue that is sufficiently far (~1,000 A) away from
+# the anchor.
+-target_pdb pseudotarget.pdb
+
+# Protein into which we are performing the insertion
+-scaffold_pdb ../../starting_files/1ema.pdb
+
+# Defines the insertion position in the scaffold. 
+-scaffold_loop scaffold_loop.txt
+
+# Number of cycles of loop closure. A more realistic value is 50,000.
+-APDBC_cycles 100
+
+# Ignore the irrelevant fluorophore residue in GFP
+-ignore_unrecognized_res 

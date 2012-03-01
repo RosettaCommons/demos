@@ -1,0 +1,7 @@
+-ex1 
+-ex2aro 
+-use_input_sc 
+-unboundrot native.pdb 
+-flexpep_prepack 
+-nstruct 1
+-scorefile score.ppk.sc

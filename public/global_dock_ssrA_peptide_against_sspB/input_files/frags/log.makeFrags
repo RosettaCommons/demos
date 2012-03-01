@@ -1,0 +1,63 @@
+Assuming /a/warhol-00/h/miro/ek/ravehb/rosetta/RosettaCon2011/demos/global_dock_ssrA_peptide_against_sspB/input_files/frags/1OU8B.psipred_ss2 is a psipred_ss2 file.
+Assuming /a/warhol-00/h/miro/ek/ravehb/rosetta/RosettaCon2011/demos/global_dock_ssrA_peptide_against_sspB/input_files/frags/1OU8B.jufo_ss is a jufo file.
+core.init: (0) Mini-Rosetta version 44773:44775M from https://svn.rosettacommons.org/source/trunk/rosetta/rosetta_source
+core.init: (0) command: /vol/ek/ravehb/rosetta/svn_mini/rosetta_source/bin//fragment_picker.linuxgccrelease -database /vol/ek/ravehb/rosetta/svn_mini/rosetta_database/ @flags
+core.init: (0) 'RNG device' seed mode, using '/dev/urandom', seed=-6433822 seed_offset=0 real_seed=-6433822
+core.init.random: (0) RandomGenerator:init: Normal mode, seed=-6433822 RG_type=mt19937
+protocols.frag_picker.FragmentPicker: (0) reading a query profile from: 1OU8B.checkpoint
+protocols.frag_picker.FragmentPicker: (0) picking fragments for query profile: GAANDENY
+protocols.frag_picker.VallProvider: (0) vallChunksFromLibrary
+protocols.frag_picker.VallProvider: (0) Reading Vall library from vall.dat.2006-05-05 ... startline: 1  endline: 0
+protocols.frag_picker.VallProvider: (0)    100000
+protocols.frag_picker.VallProvider: (0)    200000
+protocols.frag_picker.VallProvider: (0)    300000
+protocols.frag_picker.VallProvider: (0)    400000
+protocols.frag_picker.VallProvider: (0)    500000
+protocols.frag_picker.VallProvider: (0)    600000
+protocols.frag_picker.VallProvider: (0)    700000
+protocols.frag_picker.VallProvider: (0)    800000
+protocols.frag_picker.VallProvider: (0)    900000
+protocols.frag_picker.VallProvider: (0)    1000000
+protocols.frag_picker.VallProvider: (0)    1100000
+protocols.frag_picker.VallProvider: (0)    1200000
+protocols.frag_picker.VallProvider: (0)    1300000
+protocols.frag_picker.VallProvider: (0)    1400000
+protocols.frag_picker.VallProvider: (0) ... done.  Read 1484262 lines.  Time elapsed: 17 seconds.
+protocols.frag_picker.VallProvider: (0) Largest chunk: 1264 aa
+protocols.frag_picker.FragmentPicker: (0) Will pick fragments of size:5 3 
+protocols.frag_picker.FragmentPicker: (0) Creating fragment scoring scheme
+protocols.frag_picker.scores.ProfileScoreL1: (0) Profile scoring method is: L1
+protocols.frag_picker.scores.ProfileScoreL1: (0) Created cache for fraglen: 3 5
+core.pack.task: (0) Packer task: initialize from command line() 
+protocols.frag_picker.scores.PhiPsiSquareWell: (0) Reference file for Phi,Psi scoring loaded from ref.pdb
+protocols.frag_picker.scores.FragmentCrmsd: (0) Reference structure to score fragments by crmsd loaded from: ref.pdb
+core.pack.task: (0) Packer task: initialize from command line() 
+protocols.frag_picker.FragmentPicker: (0) Picking 500 fragments based on 2000 candidates
+protocols.frag_picker.FragmentPicker: (0) Creating fragment scoring scheme for the selection step
+protocols.frag_picker.FragmentPicker: (0) Collector for fragment size: 3 set to: BoundedCollector
+protocols.frag_picker.FragmentPicker: (0) Collector for fragment size: 5 set to: BoundedCollector
+protocols.frag_picker.FragmentPicker: (0) Fragment scoring scheme used:
+-----------------------------------------
+id    fragment score method name   weight
+  1            SecondarySimilarity    2
+  2                 ProfileScoreL1    1
+  3               PhiPsiSquareWell    0
+  4                  FragmentCrmsd    0
+-----------------------------------------
+
+protocols.frag_picker.FragmentPicker: (0) 
+fragment_picker: (0) After setup; size of a query is: 8
+fragment_picker: (0) Picking candidates
+fragment_picker: (0) Running bounded protocol
+protocols.frag_picker.FragmentPicker: (0) 100% done at 12as
+protocols.frag_picker.FragmentPicker: (0) 
+ pos  count   best     worst  | pos  count   best    worst   | pos  count    best    worst  |
+   1   2000     0.14     0.65 |   2   2000     0.31     0.75 |   3   2000     0.51     0.86 |
+   4   2000     0.41     0.88 |   5   2000     0.29     0.82 |   6   2000     0.37     0.75 |
+   7      0                   |   8      0                   |
+protocols.frag_picker.FragmentPicker: (0) 
+ pos  count   best     worst  | pos  count   best    worst   | pos  count    best    worst  |
+   1   2000     0.55     0.85 |   2   2000     0.65     0.88 |   3   2000     0.61     0.89 |
+   4   2000     0.53     0.89 |   5      0                   |   6      0                   |
+   7      0                   |   8      0                   |
+

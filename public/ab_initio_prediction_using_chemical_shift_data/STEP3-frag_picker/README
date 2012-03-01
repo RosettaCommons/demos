@@ -1,0 +1,21 @@
+run this:
+$ ./cmd
+
+inputs:
+	1. vall database 						// download from http://bioshell.chem.uw.edu.pl/rosetta-related/vall.apr24.2008.extended.gz
+	2. fasta
+	3. scores.cfg								// configuration file for picking fragments, don't modify if know what you're doing
+
+	from STEP1-run_talos:
+		1. 15112.talos
+		2. pred.ss.tab 
+		3. pred.tab
+
+	from STEP2-bioinfo:
+		1. 15112.checkpoint
+		2. 15112.homologs
+
+outputs that are going to be used for next step:
+	> fragments files:
+			15112.fasta.frags.3mers
+			15112.fasta.frags.9mers

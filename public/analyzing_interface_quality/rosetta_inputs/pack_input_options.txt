@@ -1,0 +1,21 @@
+#basic rosetta needs
+-database /path/to/minirosetta_database #CHANGE ME
+
+#specific options for InterfaceAnalyzer
+-compute_packstat true #this will actually run rosetta's packstat calculation (slow)
+-tracer_data_print false #make a score file with all the important info instead of just printing to the terminal
+-out:file:score_only pack_input_score.sc #This will cause output of all of the info to a file called "pack_input_score.sc"
+-pack_input true #will relax the input interface residues (good if you are starting from raw pdb files as in this case)
+-pack_separated true #will also pack the monomers to calculated dG bind.
+-add_regular_scores_to_scorefile true #will run the rest of rosetta's score function on your complex using score12
+
+#these are some tweeks that we have found helpful
+-atomic_burial_cutoff 0.01 #This is set to help rosetta identify buried polar atoms properly
+-sasa_calculator_probe_radius 1.4 #This is the default water probe radius for SASA calculations, sometimes lowering the radius helps rosetta more accurately find buried polar atoms 
+-pose_metrics::interface_cutoff 8.0 # this defines how far away a CBeta atom can be from the other chain to be considered an interface residue
+
+#options to help rosetta pack the input interfaces
+-use_input_sc # will include the input rotamer in packing
+-ex1 #expand rotamer library around chi1 rotamers
+-ex2 #expand rotamer library around chi2 rotamers
+-extrachi_cutoff 1 #this will build extra rotamers at all positions and not just core

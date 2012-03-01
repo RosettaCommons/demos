@@ -1,0 +1,14 @@
+#!/bin/bash
+
+for i in `cat eglin_c/input/1cse_init/dirs.txt`
+do
+   cd $i
+   echo $i
+   wtavg=`eglin_c/scripts/topN_average.scr wt_*.out 3`
+   mutavg=`eglin_c/scripts/topN_average.scr mut_*.out 3`
+   echo $i $wtavg $mutavg >> ../top3avg_energies.dat
+   cd ..
+done
+
+awk '{print $1, ($3-$2)}' top3avg_energies.dat > top3avg_ddG.dat
+

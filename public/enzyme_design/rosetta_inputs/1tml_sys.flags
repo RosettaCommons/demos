@@ -1,0 +1,3 @@
+-s rosetta_inputs/scaffolds/1tml_11.pdb
+-match:scaffold_active_site_residues rosetta_inputs/scaffolds/1tml_11.pos
+

@@ -1,0 +1,6 @@
+
+This tutorial should explain how to perform abinitio prediction for the proton
+pumping rhodopsin AR2.  The sequence of the protein is given in 
+the starting files directory - 3AM6.fasta.   The structure of this protein
+is known, 3AM6.pdb.  If this target is too challenging for pure abinitio, 
+then show how to include constraints that will aid the folding process.  

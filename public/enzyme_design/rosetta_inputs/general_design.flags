@@ -1,0 +1,23 @@
+-extra_res_fa rosetta_inputs/1n1.params 
+-ex1 
+-ex2 
+-use_input_sc
+-linmem_ig 10
+-enzdes
+ -cstfile rosetta_inputs/mocktim.cst
+ -detect_design_interface
+ -cut1 6.0
+ -cut2 8.0
+ -cut3 10.0
+ -cut4 12.0
+ -cst_min
+ -cst_opt
+ -chi_min
+ -cst_design
+ -bb_min
+ -design_min_cycles 3
+ -lig_packer_weight 1.6
+ -favor_native_res 0.8
+ -start_from_random_rb_conf
+ -compare_native rosetta_inputs/native_pdbs/
+ -final_repack_without_ligand

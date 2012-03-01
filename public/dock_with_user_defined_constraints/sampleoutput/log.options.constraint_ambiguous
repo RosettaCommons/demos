@@ -1,0 +1,420 @@
+core.init: Mini-Rosetta version 43066M from https://svn.rosettacommons.org/source/trunk/mini
+core.init: command: /Users/menis/workspace/mini/bin/docking_protocol.macosgccrelease @rosetta_inputs/options.constraint_ambiguous
+core.init: 'RNG device' seed mode, using '/dev/urandom', seed=-79983631 seed_offset=0 real_seed=-79983631
+core.init.random: RandomGenerator:init: Normal mode, seed=-79983631 RG_type=mt19937
+basic.io.database: Database file opened: env_log.txt
+basic.io.database: Database file opened: cbeta_den.txt
+basic.io.database: Database file opened: pair_log.txt
+basic.io.database: Database file opened: cenpack_log.txt
+basic.io.database: Database file opened: interchain_env_log.txt
+basic.io.database: Database file opened: interchain_pair_log.txt
+core.scoring.etable: Starting energy table calculation
+core.scoring.etable: smooth_etable: changing atr/rep split to bottom of energy well
+core.scoring.etable: smooth_etable: spline smoothing lj etables (maxdis = 6)
+core.scoring.etable: smooth_etable: spline smoothing solvation etables (max_dis = 6)
+core.scoring.etable: Finished calculating energy tables.
+basic.io.database: Database file opened: pdb_pair_stats_fine
+basic.io.database: Database file opened: scoring/score_functions/hbonds/standard_params/HBPoly1D.csv
+basic.io.database: Database file opened: scoring/score_functions/hbonds/standard_params/HBFadeIntervals.csv
+basic.io.database: Database file opened: scoring/score_functions/hbonds/standard_params/HBEval.csv
+basic.io.database: Database file opened: env_log.txt
+basic.io.database: Database file opened: cbeta_den.txt
+basic.io.database: Database file opened: pair_log.txt
+basic.io.database: Database file opened: cenpack_log.txt
+basic.io.database: Database file opened: env_log.txt
+basic.io.database: Database file opened: cbeta_den.txt
+basic.io.database: Database file opened: pair_log.txt
+basic.io.database: Database file opened: cenpack_log.txt
+basic.io.database: Database file opened: CEN6_mem_env_log.txt
+basic.io.database: Database file opened: CEN10_mem_env_log.txt
+basic.io.database: Database file opened: memcbeta_den.txt
+basic.io.database: Database file opened: mem_pair_log.txt
+basic.io.database: Database file opened: P_AA
+basic.io.database: Database file opened: P_AA_n
+basic.io.database: Database file opened: P_AA_pp
+protocols.docking.DockingInitialPerturbation: Reading options...
+protocols.jd2.PDBJobInputter: Instantiate PDBJobInputter
+protocols.jd2.PDBJobInputter: PDBJobInputter::fill_jobs
+protocols.jd2.PDBJobInputter: pushing rosetta_inputs/2OM2_AB.pdb nstruct index 1
+protocols.jd2.PDBJobInputter: PDBJobInputter::pose_from_job
+core.chemical.ResidueTypeSet: Finished initializing fa_standard residue type set.  Created 4218 residue types
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  OXT on residue LYS_p:CtermProteinFull 320
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  CG  on residue LYS_p:CtermProteinFull 320
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  CD  on residue LYS_p:CtermProteinFull 320
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  CE  on residue LYS_p:CtermProteinFull 320
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  NZ  on residue LYS_p:CtermProteinFull 320
+core.pack.task: Packer task: initialize from command line() 
+core.pack.pack_missing_sidechains: packing residue number 320 because of missing atom number 7 atom name  CG 
+basic.io.database: Database file opened: Rama_smooth_dyn.dat_ss_6.4
+core.pack.dunbrack: Dunbrack library took 0.060965 seconds to load from binary
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.pack.pack_rotamers: built 15 rotamers at 1 positions.
+core.pack.pack_rotamers: IG: 848 bytes
+protocols.jd2.PDBJobInputter: filling pose from PDB rosetta_inputs/2OM2_AB.pdb
+protocols.docking.DockingProtocol: setting up the constraint set mover
+core.io.constraints: read constraints from rosetta_inputs/constraint_ambiguous.cst
+protocols.docking.DockingProtocol: Setting docking foldtree
+protocols.docking.DockingProtocol: old fold tree: FOLD_TREE  EDGE 1 320 -1  EDGE 1 321 1  EDGE 321 356 -1 
+protocols.docking.DockingProtocol: 
+protocols.docking.DockingProtocol: new fold tree: FOLD_TREE  EDGE 1 16 -1  EDGE 16 320 -1  EDGE 16 338 1  EDGE 338 356 -1  EDGE 338 321 -1 
+protocols.docking.DockingProtocol: 
+protocols.docking.DockingProtocol: Danger Will Robinson! Native is an impostor!
+protocols.docking.DockingProtocol: ////////////////////////////////////////////////////////////////////////////////
+protocols.docking.DockingProtocol: ///                     Rosetta 3 Docking Protocol                           ///
+protocols.docking.DockingProtocol: ///                                                                          ///
+protocols.docking.DockingProtocol: /// Dockable Jumps: 1                                                        ///
+protocols.docking.DockingProtocol: /// Low Resolution Docking Protocol:   on                                    ///
+protocols.docking.DockingProtocol: /// High Resolution Docking Protocol:  on                                    ///
+protocols.docking.DockingProtocol: /// Low Resolution Filter:   on                                              ///
+protocols.docking.DockingProtocol: /// High Resolution Filter:  on                                              ///
+protocols.docking.DockingProtocol: ////////////////////////////////////////////////////////////////////////////////
+core.chemical.ResidueTypeSet: Finished initializing centroid residue type set.  Created 1202 residue types
+protocols.docking.DockingProtocol: FOLD_TREE  EDGE 1 16 -1  EDGE 16 320 -1  EDGE 16 338 1  EDGE 338 356 -1  EDGE 338 321 -1 
+protocols.docking.DockingProtocol: 
+protocols.docking.DockingInitialPerturbation: dock_pert: true
+protocols.docking.DockingInitialPerturbation: option[ docking::dock_pert ]()8 3
+basic.io.database: Database file opened: env_log.txt
+basic.io.database: Database file opened: cbeta_den.txt
+basic.io.database: Database file opened: pair_log.txt
+basic.io.database: Database file opened: cenpack_log.txt
+protocols.docking.DockingInitialPerturbation: sliding into contact
+protocols.docking.DockingInitialPerturbation: Moving away
+protocols.moves.RigidBodyMover: Translate: Jump (before): RT 0.0674446 0.671433 -0.73799 -0.977947 0.191027 0.0844249 0.197662 0.716021 0.66951 -8.91186 -8.67308 -4.57129  
+protocols.moves.RigidBodyMover: Translate: Jump (after):  RT 0.0674446 0.671433 -0.73799 -0.977947 0.191027 0.0844249 0.197662 0.716021 0.66951 -9.63019 -9.35887 -4.45424  
+protocols.moves.RigidBodyMover: Translate: Jump (before): RT 0.0674446 0.671433 -0.73799 -0.977947 0.191027 0.0844249 0.197662 0.716021 0.66951 -9.63019 -9.35887 -4.45424  
+protocols.moves.RigidBodyMover: Translate: Jump (after):  RT 0.0674446 0.671433 -0.73799 -0.977947 0.191027 0.0844249 0.197662 0.716021 0.66951 -10.3485 -10.0447 -4.3372  
+protocols.moves.RigidBodyMover: Translate: Jump (before): RT 0.0674446 0.671433 -0.73799 -0.977947 0.191027 0.0844249 0.197662 0.716021 0.66951 -10.3485 -10.0447 -4.3372  
+protocols.moves.RigidBodyMover: Translate: Jump (after):  RT 0.0674446 0.671433 -0.73799 -0.977947 0.191027 0.0844249 0.197662 0.716021 0.66951 -11.0669 -10.7304 -4.22016  
+protocols.moves.RigidBodyMover: Translate: Jump (before): RT 0.0674446 0.671433 -0.73799 -0.977947 0.191027 0.0844249 0.197662 0.716021 0.66951 -11.0669 -10.7304 -4.22016  
+protocols.moves.RigidBodyMover: Translate: Jump (after):  RT 0.0674446 0.671433 -0.73799 -0.977947 0.191027 0.0844249 0.197662 0.716021 0.66951 -11.7852 -11.4162 -4.10312  
+protocols.moves.RigidBodyMover: Translate: Jump (before): RT 0.0674446 0.671433 -0.73799 -0.977947 0.191027 0.0844249 0.197662 0.716021 0.66951 -11.7852 -11.4162 -4.10312  
+protocols.moves.RigidBodyMover: Translate: Jump (after):  RT 0.0674446 0.671433 -0.73799 -0.977947 0.191027 0.0844249 0.197662 0.716021 0.66951 -12.5035 -12.102 -3.98608  
+protocols.moves.RigidBodyMover: Translate: Jump (before): RT 0.0674446 0.671433 -0.73799 -0.977947 0.191027 0.0844249 0.197662 0.716021 0.66951 -12.5035 -12.102 -3.98608  
+protocols.moves.RigidBodyMover: Translate: Jump (after):  RT 0.0674446 0.671433 -0.73799 -0.977947 0.191027 0.0844249 0.197662 0.716021 0.66951 -13.2219 -12.7878 -3.86904  
+protocols.docking.DockingInitialPerturbation: Moving together
+protocols.moves.RigidBodyMover: Translate: Jump (before): RT 0.0674446 0.671433 -0.73799 -0.977947 0.191027 0.0844249 0.197662 0.716021 0.66951 -13.2219 -12.7878 -3.86904  
+protocols.moves.RigidBodyMover: Translate: Jump (after):  RT 0.0674446 0.671433 -0.73799 -0.977947 0.191027 0.0844249 0.197662 0.716021 0.66951 -12.5035 -12.102 -3.98608  
+protocols.moves.RigidBodyMover: Translate: Jump (before): RT 0.0674446 0.671433 -0.73799 -0.977947 0.191027 0.0844249 0.197662 0.716021 0.66951 -12.5035 -12.102 -3.98608  
+protocols.moves.RigidBodyMover: Translate: Jump (after):  RT 0.0674446 0.671433 -0.73799 -0.977947 0.191027 0.0844249 0.197662 0.716021 0.66951 -13.2219 -12.7878 -3.86904  
+protocols.docking.DockingProtocol: finished initial perturbation
+protocols.docking.DockingLowRes: in DockingLowRes.apply
+protocols.docking.DockingLowRes: ////////////////////////////////////////////////////////////////////////////////
+protocols.docking.DockingLowRes: ///                       Docking Low Res Protocol                           ///
+protocols.docking.DockingLowRes: ///                                                                          ///
+protocols.docking.DockingLowRes: /// Centroid Inner Cycles: 50                                                ///
+protocols.docking.DockingLowRes: /// Centroid Outer Cycles: 10                                                ///
+protocols.docking.DockingLowRes: /// Ensemble 1: off                                                            ///
+protocols.docking.DockingLowRes: /// Ensemble 2: off                                                            ///
+protocols.docking.DockingLowRes: /// Scorefunction:                                                           ///
+protocols.docking.DockingLowRes: ScoreFunction::show():
+weights: (interchain_pair 1) (interchain_vdw 1) (atom_pair_constraint 1) (interchain_env 1) (interchain_contact 2)
+energy_method_options: EnergyMethodOptions::show: etable_type: FA_STANDARD_DEFAULT
+EnergyMethodOptions::show: unfolded_energies_type: UNFOLDED_SCORE12
+protocols.docking.DockingLowRes: EnergyMethodOptions::show: atom_vdw_atom_type_set_name: centroid
+protocols.docking.DockingLowRes: EnergyMethodOptions::show: exclude_protein_protein_hack_elec: false
+protocols.docking.DockingLowRes: EnergyMethodOptions::show: exclude_DNA_DNA: true
+protocols.docking.DockingLowRes: EnergyMethodOptions::show: cst_max_seq_sep: 18446744073709551615
+protocols.docking.DockingLowRes: EnergyMethodOptions::show: bond_angle_central_atoms_to_score:
+protocols.docking.DockingLowRes: EnergyMethodOptions::show: bond_angle_residue_type_param_set: none
+protocols.docking.DockingLowRes: HBondOptions::show: exclude_DNA_DNA: true
+protocols.docking.DockingLowRes: HBondOptions::show: use_hb_env_dep: true
+protocols.docking.DockingLowRes: HBondOptions::show: use_hb_env_dep_DNA: true
+protocols.docking.DockingLowRes: HBondOptions::show: smooth_hb_env_dep: true
+protocols.docking.DockingLowRes: HBondOptions::show: decompose_bb_hb_into_pair_energies: false
+protocols.docking.DockingLowRes: HBondOptions::show: params_database_tag_: standard_params
+protocols.docking.DockingLowRes: HBondOptions::show: use_incorrect_deriv_: false
+protocols.docking.DockingLowRes: HBondOptions::show: Mbhbond: false 
+protocols.docking.DockingLowRes: 
+
+protocols.docking.DockingLowRes: ////////////////////////////////////////////////////////////////////////////////
+protocols.TrialMover: Acceptance rate: 0.06
+protocols.TrialMover: Acceptance rate: 0.1
+protocols.TrialMover: Acceptance rate: 0.02
+protocols.TrialMover: Acceptance rate: 0.08
+protocols.TrialMover: Acceptance rate: 0.04
+protocols.TrialMover: Acceptance rate: 0.02
+protocols.TrialMover: Acceptance rate: 0.04
+protocols.TrialMover: Acceptance rate: 0.06
+protocols.TrialMover: Acceptance rate: 0
+protocols.TrialMover: Acceptance rate: 0
+protocols.docking.DockingLowRes: ::::::::::::::::::Centroid Rigid Body Adaptive:::::::::::::::::::
+protocols.docking.DockingProtocol:  Scoretype: interchain_contact score: -27.5, cutoff: 9.99
+protocols.docking.DockingProtocol:  Scoretype: interchain_vdw score: 0.205362, cutoff: 1
+protocols.docking.DockingProtocol:  Scoretype: atom_pair_constraint score: 1.77071, cutoff: 1
+protocols.jd2.JobDistributor: 2OM2_AB_0001 reported failure and will retry
+protocols.jd2.PDBJobInputter: PDBJobInputter::pose_from_job
+protocols.jd2.PDBJobInputter: filling pose from saved copy rosetta_inputs/2OM2_AB.pdb
+protocols.docking.DockingProtocol: setting up the constraint set mover
+protocols.docking.DockingProtocol: ////////////////////////////////////////////////////////////////////////////////
+protocols.docking.DockingProtocol: ///                     Rosetta 3 Docking Protocol                           ///
+protocols.docking.DockingProtocol: ///                                                                          ///
+protocols.docking.DockingProtocol: /// Dockable Jumps: 1                                                        ///
+protocols.docking.DockingProtocol: /// Low Resolution Docking Protocol:   on                                    ///
+protocols.docking.DockingProtocol: /// High Resolution Docking Protocol:  on                                    ///
+protocols.docking.DockingProtocol: /// Low Resolution Filter:   on                                              ///
+protocols.docking.DockingProtocol: /// High Resolution Filter:  on                                              ///
+protocols.docking.DockingProtocol: ////////////////////////////////////////////////////////////////////////////////
+protocols.docking.DockingProtocol: FOLD_TREE  EDGE 1 16 -1  EDGE 16 320 -1  EDGE 16 338 1  EDGE 338 356 -1  EDGE 338 321 -1 
+protocols.docking.DockingProtocol: 
+protocols.docking.DockingInitialPerturbation: dock_pert: true
+protocols.docking.DockingInitialPerturbation: option[ docking::dock_pert ]()8 3
+protocols.docking.DockingInitialPerturbation: sliding into contact
+protocols.docking.DockingInitialPerturbation: Moving away
+protocols.moves.RigidBodyMover: Translate: Jump (before): RT 0.0971617 0.711895 -0.695532 -0.953981 0.265811 0.138799 0.28369 0.650038 0.704961 -8.88294 -8.49258 -9.11083  
+protocols.moves.RigidBodyMover: Translate: Jump (after):  RT 0.0971617 0.711895 -0.695532 -0.953981 0.265811 0.138799 0.28369 0.650038 0.704961 -9.59703 -9.15557 -9.33561  
+protocols.moves.RigidBodyMover: Translate: Jump (before): RT 0.0971617 0.711895 -0.695532 -0.953981 0.265811 0.138799 0.28369 0.650038 0.704961 -9.59703 -9.15557 -9.33561  
+protocols.moves.RigidBodyMover: Translate: Jump (after):  RT 0.0971617 0.711895 -0.695532 -0.953981 0.265811 0.138799 0.28369 0.650038 0.704961 -10.3111 -9.81855 -9.56039  
+protocols.moves.RigidBodyMover: Translate: Jump (before): RT 0.0971617 0.711895 -0.695532 -0.953981 0.265811 0.138799 0.28369 0.650038 0.704961 -10.3111 -9.81855 -9.56039  
+protocols.moves.RigidBodyMover: Translate: Jump (after):  RT 0.0971617 0.711895 -0.695532 -0.953981 0.265811 0.138799 0.28369 0.650038 0.704961 -11.0252 -10.4815 -9.78518  
+protocols.moves.RigidBodyMover: Translate: Jump (before): RT 0.0971617 0.711895 -0.695532 -0.953981 0.265811 0.138799 0.28369 0.650038 0.704961 -11.0252 -10.4815 -9.78518  
+protocols.moves.RigidBodyMover: Translate: Jump (after):  RT 0.0971617 0.711895 -0.695532 -0.953981 0.265811 0.138799 0.28369 0.650038 0.704961 -11.7393 -11.1445 -10.01  
+protocols.moves.RigidBodyMover: Translate: Jump (before): RT 0.0971617 0.711895 -0.695532 -0.953981 0.265811 0.138799 0.28369 0.650038 0.704961 -11.7393 -11.1445 -10.01  
+protocols.moves.RigidBodyMover: Translate: Jump (after):  RT 0.0971617 0.711895 -0.695532 -0.953981 0.265811 0.138799 0.28369 0.650038 0.704961 -12.4534 -11.8075 -10.2347  
+protocols.moves.RigidBodyMover: Translate: Jump (before): RT 0.0971617 0.711895 -0.695532 -0.953981 0.265811 0.138799 0.28369 0.650038 0.704961 -12.4534 -11.8075 -10.2347  
+protocols.moves.RigidBodyMover: Translate: Jump (after):  RT 0.0971617 0.711895 -0.695532 -0.953981 0.265811 0.138799 0.28369 0.650038 0.704961 -13.1675 -12.4705 -10.4595  
+protocols.moves.RigidBodyMover: Translate: Jump (before): RT 0.0971617 0.711895 -0.695532 -0.953981 0.265811 0.138799 0.28369 0.650038 0.704961 -13.1675 -12.4705 -10.4595  
+protocols.moves.RigidBodyMover: Translate: Jump (after):  RT 0.0971617 0.711895 -0.695532 -0.953981 0.265811 0.138799 0.28369 0.650038 0.704961 -13.8816 -13.1335 -10.6843  
+protocols.moves.RigidBodyMover: Translate: Jump (before): RT 0.0971617 0.711895 -0.695532 -0.953981 0.265811 0.138799 0.28369 0.650038 0.704961 -13.8816 -13.1335 -10.6843  
+protocols.moves.RigidBodyMover: Translate: Jump (after):  RT 0.0971617 0.711895 -0.695532 -0.953981 0.265811 0.138799 0.28369 0.650038 0.704961 -14.5957 -13.7964 -10.9091  
+protocols.moves.RigidBodyMover: Translate: Jump (before): RT 0.0971617 0.711895 -0.695532 -0.953981 0.265811 0.138799 0.28369 0.650038 0.704961 -14.5957 -13.7964 -10.9091  
+protocols.moves.RigidBodyMover: Translate: Jump (after):  RT 0.0971617 0.711895 -0.695532 -0.953981 0.265811 0.138799 0.28369 0.650038 0.704961 -15.3098 -14.4594 -11.1339  
+protocols.moves.RigidBodyMover: Translate: Jump (before): RT 0.0971617 0.711895 -0.695532 -0.953981 0.265811 0.138799 0.28369 0.650038 0.704961 -15.3098 -14.4594 -11.1339  
+protocols.moves.RigidBodyMover: Translate: Jump (after):  RT 0.0971617 0.711895 -0.695532 -0.953981 0.265811 0.138799 0.28369 0.650038 0.704961 -16.0239 -15.1224 -11.3587  
+protocols.moves.RigidBodyMover: Translate: Jump (before): RT 0.0971617 0.711895 -0.695532 -0.953981 0.265811 0.138799 0.28369 0.650038 0.704961 -16.0239 -15.1224 -11.3587  
+protocols.moves.RigidBodyMover: Translate: Jump (after):  RT 0.0971617 0.711895 -0.695532 -0.953981 0.265811 0.138799 0.28369 0.650038 0.704961 -16.738 -15.7854 -11.5834  
+protocols.moves.RigidBodyMover: Translate: Jump (before): RT 0.0971617 0.711895 -0.695532 -0.953981 0.265811 0.138799 0.28369 0.650038 0.704961 -16.738 -15.7854 -11.5834  
+protocols.moves.RigidBodyMover: Translate: Jump (after):  RT 0.0971617 0.711895 -0.695532 -0.953981 0.265811 0.138799 0.28369 0.650038 0.704961 -17.452 -16.4484 -11.8082  
+protocols.moves.RigidBodyMover: Translate: Jump (before): RT 0.0971617 0.711895 -0.695532 -0.953981 0.265811 0.138799 0.28369 0.650038 0.704961 -17.452 -16.4484 -11.8082  
+protocols.moves.RigidBodyMover: Translate: Jump (after):  RT 0.0971617 0.711895 -0.695532 -0.953981 0.265811 0.138799 0.28369 0.650038 0.704961 -18.1661 -17.1113 -12.033  
+protocols.moves.RigidBodyMover: Translate: Jump (before): RT 0.0971617 0.711895 -0.695532 -0.953981 0.265811 0.138799 0.28369 0.650038 0.704961 -18.1661 -17.1113 -12.033  
+protocols.moves.RigidBodyMover: Translate: Jump (after):  RT 0.0971617 0.711895 -0.695532 -0.953981 0.265811 0.138799 0.28369 0.650038 0.704961 -18.8802 -17.7743 -12.2578  
+protocols.moves.RigidBodyMover: Translate: Jump (before): RT 0.0971617 0.711895 -0.695532 -0.953981 0.265811 0.138799 0.28369 0.650038 0.704961 -18.8802 -17.7743 -12.2578  
+protocols.moves.RigidBodyMover: Translate: Jump (after):  RT 0.0971617 0.711895 -0.695532 -0.953981 0.265811 0.138799 0.28369 0.650038 0.704961 -19.5943 -18.4373 -12.4826  
+protocols.moves.RigidBodyMover: Translate: Jump (before): RT 0.0971617 0.711895 -0.695532 -0.953981 0.265811 0.138799 0.28369 0.650038 0.704961 -19.5943 -18.4373 -12.4826  
+protocols.moves.RigidBodyMover: Translate: Jump (after):  RT 0.0971617 0.711895 -0.695532 -0.953981 0.265811 0.138799 0.28369 0.650038 0.704961 -20.3084 -19.1003 -12.7073  
+protocols.docking.DockingInitialPerturbation: Moving together
+protocols.moves.RigidBodyMover: Translate: Jump (before): RT 0.0971617 0.711895 -0.695532 -0.953981 0.265811 0.138799 0.28369 0.650038 0.704961 -20.3084 -19.1003 -12.7073  
+protocols.moves.RigidBodyMover: Translate: Jump (after):  RT 0.0971617 0.711895 -0.695532 -0.953981 0.265811 0.138799 0.28369 0.650038 0.704961 -19.5943 -18.4373 -12.4826  
+protocols.moves.RigidBodyMover: Translate: Jump (before): RT 0.0971617 0.711895 -0.695532 -0.953981 0.265811 0.138799 0.28369 0.650038 0.704961 -19.5943 -18.4373 -12.4826  
+protocols.moves.RigidBodyMover: Translate: Jump (after):  RT 0.0971617 0.711895 -0.695532 -0.953981 0.265811 0.138799 0.28369 0.650038 0.704961 -20.3084 -19.1003 -12.7073  
+protocols.docking.DockingProtocol: finished initial perturbation
+protocols.docking.DockingLowRes: in DockingLowRes.apply
+protocols.docking.DockingLowRes: ////////////////////////////////////////////////////////////////////////////////
+protocols.docking.DockingLowRes: ///                       Docking Low Res Protocol                           ///
+protocols.docking.DockingLowRes: ///                                                                          ///
+protocols.docking.DockingLowRes: /// Centroid Inner Cycles: 50                                                ///
+protocols.docking.DockingLowRes: /// Centroid Outer Cycles: 10                                                ///
+protocols.docking.DockingLowRes: /// Ensemble 1: off                                                            ///
+protocols.docking.DockingLowRes: /// Ensemble 2: off                                                            ///
+protocols.docking.DockingLowRes: /// Scorefunction:                                                           ///
+protocols.docking.DockingLowRes: ScoreFunction::show():
+weights: (interchain_pair 1) (interchain_vdw 1) (atom_pair_constraint 1) (interchain_env 1) (interchain_contact 2)
+energy_method_options: EnergyMethodOptions::show: etable_type: FA_STANDARD_DEFAULT
+EnergyMethodOptions::show: unfolded_energies_type: UNFOLDED_SCORE12
+protocols.docking.DockingLowRes: EnergyMethodOptions::show: atom_vdw_atom_type_set_name: centroid
+protocols.docking.DockingLowRes: EnergyMethodOptions::show: exclude_protein_protein_hack_elec: false
+protocols.docking.DockingLowRes: EnergyMethodOptions::show: exclude_DNA_DNA: true
+protocols.docking.DockingLowRes: EnergyMethodOptions::show: cst_max_seq_sep: 18446744073709551615
+protocols.docking.DockingLowRes: EnergyMethodOptions::show: bond_angle_central_atoms_to_score:
+protocols.docking.DockingLowRes: EnergyMethodOptions::show: bond_angle_residue_type_param_set: none
+protocols.docking.DockingLowRes: HBondOptions::show: exclude_DNA_DNA: true
+protocols.docking.DockingLowRes: HBondOptions::show: use_hb_env_dep: true
+protocols.docking.DockingLowRes: HBondOptions::show: use_hb_env_dep_DNA: true
+protocols.docking.DockingLowRes: HBondOptions::show: smooth_hb_env_dep: true
+protocols.docking.DockingLowRes: HBondOptions::show: decompose_bb_hb_into_pair_energies: false
+protocols.docking.DockingLowRes: HBondOptions::show: params_database_tag_: standard_params
+protocols.docking.DockingLowRes: HBondOptions::show: use_incorrect_deriv_: false
+protocols.docking.DockingLowRes: HBondOptions::show: Mbhbond: false 
+protocols.docking.DockingLowRes: 
+
+protocols.docking.DockingLowRes: ////////////////////////////////////////////////////////////////////////////////
+protocols.TrialMover: Acceptance rate: 0.44
+protocols.TrialMover: Acceptance rate: 0.4
+protocols.TrialMover: Acceptance rate: 0.24
+protocols.TrialMover: Acceptance rate: 0.18
+protocols.TrialMover: Acceptance rate: 0.2
+protocols.TrialMover: Acceptance rate: 0.2
+protocols.TrialMover: Acceptance rate: 0.12
+protocols.TrialMover: Acceptance rate: 0.32
+protocols.TrialMover: Acceptance rate: 0.24
+protocols.TrialMover: Acceptance rate: 0.16
+protocols.docking.DockingLowRes: ::::::::::::::::::Centroid Rigid Body Adaptive:::::::::::::::::::
+protocols.docking.DockMCMProtocol: in DockMCMProtocol.apply
+protocols.docking.DockMCMCycle: Setting up defaults for DockMCMCycle: 
+protocols.docking.DockMCMCycle: ////////////////////////////////////////////////////////////////////////////////
+protocols.docking.DockMCMCycle: /// Dockable Jumps: 1                                                        ///
+protocols.docking.DockMCMCycle: /// Translation: 0.1                                                         ///
+protocols.docking.DockMCMCycle: /// Rotation: 5                                                              ///
+protocols.docking.DockMCMCycle: /// Scorefunction:                                                           ///
+protocols.docking.DockMCMCycle: ScoreFunction::show():
+weights: (fa_atr 0.338) (fa_rep 0.044) (fa_sol 0.242) (hack_elec 0.026) (fa_pair 0.164) (hbond_sr_bb 0.245) (hbond_lr_bb 0.245) (hbond_bb_sc 0.245) (hbond_sc 0.245) (dslf_ss_dst 0.5) (dslf_cs_ang 2) (dslf_ss_dih 5) (dslf_ca_dih 5) (atom_pair_constraint 1) (fa_dun 0.036)
+energy_method_options: EnergyMethodOptions::show: etable_type: FA_STANDARD_DEFAULT
+EnergyMethodOptions::show: unfolded_energies_type: UNFOLDED_SCORE12
+protocols.docking.DockMCMCycle: EnergyMethodOptions::show: atom_vdw_atom_type_set_name: centroid
+protocols.docking.DockMCMCycle: EnergyMethodOptions::show: exclude_protein_protein_hack_elec: false
+protocols.docking.DockMCMCycle: EnergyMethodOptions::show: exclude_DNA_DNA: true
+protocols.docking.DockMCMCycle: EnergyMethodOptions::show: cst_max_seq_sep: 18446744073709551615
+protocols.docking.DockMCMCycle: EnergyMethodOptions::show: bond_angle_central_atoms_to_score:
+protocols.docking.DockMCMCycle: EnergyMethodOptions::show: bond_angle_residue_type_param_set: none
+protocols.docking.DockMCMCycle: HBondOptions::show: exclude_DNA_DNA: true
+protocols.docking.DockMCMCycle: HBondOptions::show: use_hb_env_dep: true
+protocols.docking.DockMCMCycle: HBondOptions::show: use_hb_env_dep_DNA: true
+protocols.docking.DockMCMCycle: HBondOptions::show: smooth_hb_env_dep: true
+protocols.docking.DockMCMCycle: HBondOptions::show: decompose_bb_hb_into_pair_energies: false
+protocols.docking.DockMCMCycle: HBondOptions::show: params_database_tag_: standard_params
+protocols.docking.DockMCMCycle: HBondOptions::show: use_incorrect_deriv_: false
+protocols.docking.DockMCMCycle: HBondOptions::show: Mbhbond: false 
+protocols.docking.DockMCMCycle: 
+
+protocols.docking.DockMCMCycle: /// Packing scorefunction:                                                   ///
+protocols.docking.DockMCMCycle: ScoreFunction::show():
+weights: (fa_atr 0.8) (fa_rep 0.44) (fa_sol 0.65) (fa_intra_rep 0.004) (pro_close 1) (fa_pair 0.49) (hbond_sr_bb 1.17) (hbond_lr_bb 1.17) (hbond_bb_sc 1.17) (hbond_sc 1.1) (dslf_ss_dst 0.5) (dslf_cs_ang 2) (dslf_ss_dih 5) (dslf_ca_dih 5) (fa_dun 0.56) (p_aa_pp 0.64) (ref 1)
+energy_method_options: EnergyMethodOptions::show: etable_type: FA_STANDARD_DEFAULT
+EnergyMethodOptions::show: method_weights: ref 0.16 1.7 -0.67 -0.81 0.63 -0.17 0.56 0.24 -0.65 -0.1 -0.34 -0.89 0.02 -0.97 -0.98 -0.37 -0.27 0.29 0.91 0.51
+EnergyMethodOptions::show: unfolded_energies_type: UNFOLDED_SCORE12
+protocols.docking.DockMCMCycle: EnergyMethodOptions::show: atom_vdw_atom_type_set_name: centroid
+protocols.docking.DockMCMCycle: EnergyMethodOptions::show: exclude_protein_protein_hack_elec: false
+protocols.docking.DockMCMCycle: EnergyMethodOptions::show: exclude_DNA_DNA: true
+protocols.docking.DockMCMCycle: EnergyMethodOptions::show: cst_max_seq_sep: 18446744073709551615
+protocols.docking.DockMCMCycle: EnergyMethodOptions::show: bond_angle_central_atoms_to_score:
+protocols.docking.DockMCMCycle: EnergyMethodOptions::show: bond_angle_residue_type_param_set: none
+protocols.docking.DockMCMCycle: HBondOptions::show: exclude_DNA_DNA: true
+protocols.docking.DockMCMCycle: HBondOptions::show: use_hb_env_dep: true
+protocols.docking.DockMCMCycle: HBondOptions::show: use_hb_env_dep_DNA: true
+protocols.docking.DockMCMCycle: HBondOptions::show: smooth_hb_env_dep: true
+protocols.docking.DockMCMCycle: HBondOptions::show: decompose_bb_hb_into_pair_energies: false
+protocols.docking.DockMCMCycle: HBondOptions::show: params_database_tag_: standard_params
+protocols.docking.DockMCMCycle: HBondOptions::show: use_incorrect_deriv_: false
+protocols.docking.DockMCMCycle: HBondOptions::show: Mbhbond: false 
+protocols.docking.DockMCMCycle: 
+
+protocols.docking.DockMCMCycle: ////////////////////////////////////////////////////////////////////////////////
+core.pack.task: Packer task: initialize from command line() 
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.pack.pack_rotamers: built 296 rotamers at 48 positions.
+core.pack.pack_rotamers: IG: 150264 bytes
+protocols.docking.DockMCMCycle: in DockMCMCycle.apply
+core.pack.task: Packer task: initialize from command line() 
+protocols.docking.DockMCMCycle: in DockMCMCycle.apply
+core.pack.task: Packer task: initialize from command line() 
+protocols.docking.DockMCMCycle: in DockMCMCycle.apply
+core.pack.task: Packer task: initialize from command line() 
+protocols.docking.DockMCMCycle: in DockMCMCycle.apply
+core.pack.task: Packer task: initialize from command line() 
+protocols.docking.DockMCMCycle: in DockMCMCycle.apply
+core.pack.task: Packer task: initialize from command line() 
+protocols.docking.DockMCMCycle: in DockMCMCycle.apply
+core.pack.task: Packer task: initialize from command line() 
+protocols.docking.DockMCMCycle: in DockMCMCycle.apply
+core.pack.task: Packer task: initialize from command line() 
+protocols.docking.DockMCMCycle: in DockMCMCycle.apply
+core.pack.task: Packer task: initialize from command line() 
+protocols.docking.DockMCMCycle: in DockMCMCycle.apply
+core.pack.task: Packer task: initialize from command line() 
+protocols.docking.DockMCMCycle: in DockMCMCycle.apply
+core.pack.task: Packer task: initialize from command line() 
+protocols.docking.DockMCMCycle: in DockMCMCycle.apply
+core.pack.task: Packer task: initialize from command line() 
+protocols.docking.DockMCMCycle: in DockMCMCycle.apply
+core.pack.task: Packer task: initialize from command line() 
+core.pack.task: Packer task: initialize from command line() 
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.pack.pack_rotamers: built 243 rotamers at 31 positions.
+core.pack.pack_rotamers: IG: 90740 bytes
+protocols.docking.DockMCMCycle: in DockMCMCycle.apply
+core.pack.task: Packer task: initialize from command line() 
+protocols.docking.DockMCMCycle: in DockMCMCycle.apply
+core.pack.task: Packer task: initialize from command line() 
+protocols.docking.DockMCMCycle: in DockMCMCycle.apply
+core.pack.task: Packer task: initialize from command line() 
+protocols.docking.DockMCMCycle: in DockMCMCycle.apply
+core.pack.task: Packer task: initialize from command line() 
+protocols.docking.DockMCMCycle: in DockMCMCycle.apply
+core.pack.task: Packer task: initialize from command line() 
+protocols.docking.DockMCMCycle: in DockMCMCycle.apply
+core.pack.task: Packer task: initialize from command line() 
+protocols.docking.DockMCMCycle: in DockMCMCycle.apply
+core.pack.task: Packer task: initialize from command line() 
+protocols.docking.DockMCMCycle: in DockMCMCycle.apply
+core.pack.task: Packer task: initialize from command line() 
+core.pack.task: Packer task: initialize from command line() 
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.pack.pack_rotamers: built 194 rotamers at 28 positions.
+core.pack.pack_rotamers: IG: 70436 bytes
+protocols.docking.DockMCMCycle: in DockMCMCycle.apply
+core.pack.task: Packer task: initialize from command line() 
+protocols.docking.DockMCMCycle: in DockMCMCycle.apply
+core.pack.task: Packer task: initialize from command line() 
+protocols.docking.DockMCMCycle: in DockMCMCycle.apply
+core.pack.task: Packer task: initialize from command line() 
+protocols.docking.DockMCMCycle: in DockMCMCycle.apply
+core.pack.task: Packer task: initialize from command line() 
+protocols.docking.DockMCMCycle: in DockMCMCycle.apply
+core.pack.task: Packer task: initialize from command line() 
+protocols.docking.DockMCMCycle: in DockMCMCycle.apply
+core.pack.task: Packer task: initialize from command line() 
+protocols.docking.DockMCMCycle: in DockMCMCycle.apply
+core.pack.task: Packer task: initialize from command line() 
+protocols.docking.DockMCMCycle: in DockMCMCycle.apply
+core.pack.task: Packer task: initialize from command line() 
+core.pack.task: Packer task: initialize from command line() 
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.pack.pack_rotamers: built 194 rotamers at 28 positions.
+core.pack.pack_rotamers: IG: 70196 bytes
+protocols.docking.DockMCMCycle: in DockMCMCycle.apply
+core.pack.task: Packer task: initialize from command line() 
+protocols.docking.DockMCMCycle: in DockMCMCycle.apply
+core.pack.task: Packer task: initialize from command line() 
+protocols.docking.DockMCMCycle: in DockMCMCycle.apply
+core.pack.task: Packer task: initialize from command line() 
+protocols.docking.DockMCMCycle: in DockMCMCycle.apply
+core.pack.task: Packer task: initialize from command line() 
+protocols.docking.DockMCMCycle: in DockMCMCycle.apply
+core.pack.task: Packer task: initialize from command line() 
+protocols.docking.DockMCMCycle: in DockMCMCycle.apply
+core.pack.task: Packer task: initialize from command line() 
+protocols.docking.DockMCMCycle: in DockMCMCycle.apply
+core.pack.task: Packer task: initialize from command line() 
+protocols.docking.DockMCMCycle: in DockMCMCycle.apply
+core.pack.task: Packer task: initialize from command line() 
+core.pack.task: Packer task: initialize from command line() 
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.pack.pack_rotamers: built 189 rotamers at 28 positions.
+core.pack.pack_rotamers: IG: 66604 bytes
+protocols.docking.DockMCMCycle: in DockMCMCycle.apply
+core.pack.task: Packer task: initialize from command line() 
+protocols.docking.DockMCMCycle: in DockMCMCycle.apply
+core.pack.task: Packer task: initialize from command line() 
+protocols.docking.DockMCMCycle: in DockMCMCycle.apply
+core.pack.task: Packer task: initialize from command line() 
+protocols.docking.DockMCMCycle: in DockMCMCycle.apply
+core.pack.task: Packer task: initialize from command line() 
+protocols.docking.DockMCMCycle: in DockMCMCycle.apply
+core.pack.task: Packer task: initialize from command line() 
+protocols.docking.DockMCMCycle: in DockMCMCycle.apply
+core.pack.task: Packer task: initialize from command line() 
+protocols.docking.DockMCMCycle: in DockMCMCycle.apply
+core.pack.task: Packer task: initialize from command line() 
+protocols.docking.DockMCMCycle: in DockMCMCycle.apply
+core.pack.task: Packer task: initialize from command line() 
+core.pack.task: Packer task: initialize from command line() 
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.pack.pack_rotamers: built 195 rotamers at 30 positions.
+core.pack.pack_rotamers: IG: 73988 bytes
+protocols.docking.DockMCMCycle: in DockMCMCycle.apply
+core.pack.task: Packer task: initialize from command line() 
+protocols.docking.DockMCMCycle: in DockMCMCycle.apply
+core.pack.task: Packer task: initialize from command line() 
+protocols.docking.DockMCMCycle: in DockMCMCycle.apply
+core.pack.task: Packer task: initialize from command line() 
+protocols.docking.DockMCMCycle: in DockMCMCycle.apply
+core.pack.task: Packer task: initialize from command line() 
+protocols.docking.DockMCMCycle: in DockMCMCycle.apply
+core.pack.task: Packer task: initialize from command line() 
+protocols.moves.RigidBodyMover: Translate: Jump (before): RT 0.336623 0.214595 -0.916861 -0.921034 0.277617 -0.273177 0.195913 0.936417 0.291102 -20.2351 -11.3933 -6.38859  
+protocols.moves.RigidBodyMover: Translate: Jump (after):  RT 0.336623 0.214595 -0.916861 -0.921034 0.277617 -0.273177 0.195913 0.936417 0.291102 -872.678 -528.603 -82.7758  
+protocols.moves.RigidBodyMover: Translate: Jump (before): RT 0.336623 0.214595 -0.916861 -0.921034 0.277617 -0.273177 0.195913 0.936417 0.291102 -20.2351 -11.3933 -6.38859  
+protocols.moves.RigidBodyMover: Translate: Jump (after):  RT 0.336623 0.214595 -0.916861 -0.921034 0.277617 -0.273177 0.195913 0.936417 0.291102 -872.678 -528.603 -82.7758  
+protocols.jd2.JobDistributor: 2OM2_AB_0001 reported success in 38 seconds
+protocols.jd2.JobDistributor: no more batches to process... 
+protocols.jd2.JobDistributor: 1 jobs considered, 2 jobs attempted in 48 seconds

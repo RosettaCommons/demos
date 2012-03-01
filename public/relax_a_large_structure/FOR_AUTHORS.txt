@@ -1,0 +1,16 @@
+
+A common stumbling block for researchers who are considering using
+Rosetta is the structures they are interested in working with are
+quite large, bigger than 1000 residues. While many protocols will not
+be appropriate for structures this large, some are still things that
+can be done. This demo should demonstrate how to use minimization with
+large strctures:
+
+   * Minimize a specific set of residues while keeping the rest fixed
+     - Use the FastRelax mover in Rosetta scripts to minize a portion of 3E0C.pdb (in the starting_files directory). You can use the MoveMap xml subtag syntax.
+     - https://wiki.rosettacommons.org/index.php/Movers_%28RosettaScripts%29#FastRelax
+
+   * It will be important to identify flags etc. that are important for handling large structures.  For example, use of the linmem integration graph to keep memory usage down.
+
+   * Another goal of this tutorial will be the creation of output in silent file format and the extraction of those decoys into pdb file format
+

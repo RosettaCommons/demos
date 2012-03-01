@@ -1,0 +1,4 @@
+Create a demo/tutorial for designing an enzyme.  Perhaps the most straightforward way to do this is to base
+it on Florian's PlosONE article: Richter et. al., Plos One, 2011, 6, 19230.  
+
+The demo should include all the required scripts/input files and contain examples of the outputs for each step.

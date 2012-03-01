@@ -1,0 +1,4 @@
+#!/bin/tcsh
+source /work/moody/ab_initio_prediction_using_chemical_shift_data/STEP1-run_talos/nmrInit.linux9.com
+source /work/moody/ab_initio_prediction_using_chemical_shift_data/STEP1-run_talos/talos+Init.com
+talos+ -in bobuA.talos

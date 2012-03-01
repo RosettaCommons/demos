@@ -1,0 +1,24 @@
+make it work: (please refer to make_fragments tutorial first)
+make_fragments.pl 
+	ex. databases: vall, nr...
+	ex. programs: blast...
+
+	programs: 
+    PSI_BLAST - ftp://ftp.ncbi.nih.gov/blast/executables/release/
+    PSIPRED - http://bioinf.cs.ucl.ac.uk/psipred/
+    SAM - http://www.soe.ucsc.edu/research/compbio/sam.html
+    PORTER - http://distill.ucd.ie/porter/
+    rosetta fragment picker -- included in the release
+
+to get fasta from bmrb do:
+	$ ./bmrb2fasta.com 15112.bmrb
+
+source this command:
+	$ ./cmd 									// run cmd
+
+	-> input file:
+	1. fasta
+
+	-> outputs that are going to be used in next step:
+	1. 15112.checkpoint  			// sequence profile from psiblast
+	2. 15112.homologs					// homologs list from nr and vall

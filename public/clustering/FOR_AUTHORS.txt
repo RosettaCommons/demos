@@ -1,0 +1,10 @@
+1. There are no raw input_files for this demo, the PDBs are already clean and Rosetta-readable (in the rosetta_inputs directory).  The sequences are not identical, and neither are the docked orientations.  (Note: each complex has two chains, each chain has 46 amino acids.  Each complex also has two zinc atoms).
+
+2. The clustering protocol should be used to group the 166 starting structures according to their structural similiarity.
+
+3. Once you write the demo, we recommend that you view the PDBs in a few of the clusters to check the results by eye.
+
+4. A common question on the forums is how to cluster a very large number of structures, and what options should be used optimize clustering of 100 structures versus 1000 versus 10,000 etc. For example: memory problems arise when the number of clusters gets too high, therefore, a process where you increase the RMSD angstrom cutoff in order to cluster all structures, then re-cluster each resulting cluster with a smaller RMSD cutoff is one way to get around this. 
+
+5. Any insight you can give in the README.dox would be very helpful.  For this demo, though, we wanted to give you a manageable set of 166.
+

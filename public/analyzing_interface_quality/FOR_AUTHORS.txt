@@ -1,0 +1,18 @@
+In this tutorial, you will show users how to calculate various metrics of structure quality for protein-protein interfaces.  Show users how to:
+
+*Calculate Rosetta score and interpret the relevant terms
+**Are there clashes?
+*Calculate protein-protein interface related metrics
+**binding energy
+**number of unsatisfied hydrogen bonds
+**packing score (packstat)
+**Buried surface area
+**surface area normalized by interface binding energy
+
+As you write, you will surely think of other metrics relevant to this problem - please include them!  Also, for each metric, discuss how to interpret it and describe rules of thumb for determining if a structure scores well or poorly overall and with respect to one metric.
+
+The suggested application for this tutorial is InterfaceAnalyzer.  It is extensively documented already; feel free to steal!
+
+You have been provided with two PDBs to use for demonstration: 1U6E, a simple homodimer, and 3R2X, Sarel's hemaglutinin/designed protein structure.  In the latter case, be sure to calculate the interface between the designed protein and the HA - the interface between HA chains is unimportant.
+
+If there is a Rosetta publication discussing these terms, please cite it.

@@ -1,0 +1,7 @@
+# LOOP start end cutpoint skip-rate extend
+LOOP     1   38    0  0.0  X
+LOOP    93  102    0  0.0  X
+LOOP   143  149    0  0.0  X
+LOOP   174  180    0  0.0  X
+LOOP   220  336    0  0.0  X
+LOOP   369  375    0  0.0  X

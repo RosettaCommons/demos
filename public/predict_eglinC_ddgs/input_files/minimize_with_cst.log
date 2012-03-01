@@ -1,0 +1,80 @@
+core.init: Mini-Rosetta version Release 3.3, from SVN 42942 from https://svn.rosettacommons.org/source/branches/releases/rosetta-3.3/rosetta_source
+core.init: command: /Users/ekellogg/rosetta_release_3/rosetta-3.3/rosetta_source/bin/minimize_with_cst.default.macosgccrelease -in:file:l lst -database /Users/ekellogg/minirosetta_database/ -in:file:fullatom -ddg::out_pdb_prefix minimize_with_cst
+core.init: 'RNG device' seed mode, using '/dev/urandom', seed=1257789487 seed_offset=0 real_seed=1257789487
+core.init.random: RandomGenerator:init: Normal mode, seed=1257789487 RG_type=mt19937
+core.chemical.ResidueTypeSet: Finished initializing fa_standard residue type set.  Created 4218 residue types
+core.scoring.etable: Starting energy table calculation
+core.scoring.etable: smooth_etable: changing atr/rep split to bottom of energy well
+core.scoring.etable: smooth_etable: spline smoothing lj etables (maxdis = 6)
+core.scoring.etable: smooth_etable: spline smoothing solvation etables (max_dis = 6)
+core.scoring.etable: Finished calculating energy tables.
+basic.io.database: Database file opened: pdb_pair_stats_fine
+basic.io.database: Database file opened: scoring/score_functions/hbonds/standard_params/HBPoly1D.csv
+basic.io.database: Database file opened: scoring/score_functions/hbonds/standard_params/HBFadeIntervals.csv
+basic.io.database: Database file opened: scoring/score_functions/hbonds/standard_params/HBEval.csv
+basic.io.database: Database file opened: env_log.txt
+basic.io.database: Database file opened: cbeta_den.txt
+basic.io.database: Database file opened: pair_log.txt
+basic.io.database: Database file opened: cenpack_log.txt
+basic.io.database: Database file opened: env_log.txt
+basic.io.database: Database file opened: cbeta_den.txt
+basic.io.database: Database file opened: pair_log.txt
+basic.io.database: Database file opened: cenpack_log.txt
+basic.io.database: Database file opened: CEN6_mem_env_log.txt
+basic.io.database: Database file opened: CEN10_mem_env_log.txt
+basic.io.database: Database file opened: memcbeta_den.txt
+basic.io.database: Database file opened: mem_pair_log.txt
+basic.io.database: Database file opened: P_AA
+basic.io.database: Database file opened: P_AA_n
+basic.io.database: Database file opened: P_AA_pp
+using -l option 
+examining file: 1CSEi.ren.pdb
+core.pack.task: Packer task: initialize from command line() 
+core.pack.dunbrack: Dunbrack library took 0.053759 seconds to load from binary
+------------------------------------------------------------
+ Scores                       Weight   Raw Score Wghtd.Score
+------------------------------------------------------------
+ fa_atr                       0.800    -293.445    -234.756
+ fa_rep                       0.440     121.547      53.481
+ fa_sol                       0.650     181.786     118.161
+ fa_intra_rep                 0.004     195.881       0.784
+ pro_close                    1.000      12.857      12.857
+ fa_pair                      0.490      -5.986      -2.933
+ hbond_sr_bb                  1.170     -18.959     -22.182
+ hbond_lr_bb                  1.170     -17.827     -20.858
+ hbond_bb_sc                  1.170      -1.057      -1.237
+ hbond_sc                     1.100      -1.787      -1.965
+ dslf_ss_dst                  0.500       0.000       0.000
+ dslf_cs_ang                  2.000       0.000       0.000
+ dslf_ss_dih                  5.000       0.000       0.000
+ dslf_ca_dih                  5.000       0.000       0.000
+ fa_dun                       0.560     225.944     126.528
+ p_aa_pp                      0.640     -27.312     -17.479
+ ref                          1.000      -7.550      -7.550
+---------------------------------------------------
+ Total weighted score:                        2.850
+core.scoring.NeighborList: Minimization stats: 590 score/deriv cals, 42 narrow-from-wide updates, 4 full updates.
+------------------------------------------------------------
+ Scores                       Weight   Raw Score Wghtd.Score
+------------------------------------------------------------
+ fa_atr                       0.800    -289.180    -231.344
+ fa_rep                       0.440      64.952      28.579
+ fa_sol                       0.650     176.320     114.608
+ fa_intra_rep                 0.004     167.316       0.669
+ pro_close                    1.000       4.213       4.213
+ fa_pair                      0.490      -5.955      -2.918
+ hbond_sr_bb                  1.170     -18.959     -22.182
+ hbond_lr_bb                  1.170     -17.827     -20.858
+ hbond_bb_sc                  1.170      -1.279      -1.496
+ hbond_sc                     1.100      -2.540      -2.794
+ dslf_ss_dst                  0.500       0.000       0.000
+ dslf_cs_ang                  2.000       0.000       0.000
+ dslf_ss_dih                  5.000       0.000       0.000
+ dslf_ca_dih                  5.000       0.000       0.000
+ fa_dun                       0.560     108.192      60.587
+ p_aa_pp                      0.640     -27.312     -17.479
+ ref                          1.000      -7.550      -7.550
+---------------------------------------------------
+ Total weighted score:                      -97.964
+running another iteration of minimization. difference is: -100.814
+core.scoring.NeighborList: Minimization stats: 7 score/deriv cals, 0 narrow-from-wide updates, 0 full updates.

@@ -1,0 +1,30 @@
+# Full documentation for the options is available at:
+# http://www.rosettacommons.org/manuals/archive/rosetta3.1_user_guide/app_dock.html
+# However, a more complete and indepth write-up is available in the non-released
+# version: http://graylab.jhu.edu/Rosetta.Developer.Documentation/all_else/d0/de4/docking_protocol.html
+
+
+#### BEGIN OPTIONS
+
+# Input Options:
+
+-database /Users/menis/rosetta/minirosetta_database    # Location of the Mini Rosetta database 
+-in:file:s rosetta_inputs/2OM2_AB.pdb                  # Location of the starting structre, includes both partners (separated by TER)
+-nstruct 1                                             # Number of structures to produce. For demo purposes, producing 1 decoy. In reality,
+                                                       # one should produce 1,000 decoys for local refine, and at least 10,000-100,000 structures
+                                                       # for global dock or good quality production runs!
+
+# Docking Options:
+-dock_pert 3 8 					       # Randomly perturbs the input structure using a gaussian for translation and rotation with 
+						       # standard deviation [T] and [R].  Recommended "-dock_pert 3 8"
+
+
+# Constraint Options:
+-constraints:cst_file rosetta_inputs/constraint_ambiguous.cst    # File containing the constraints. Only AtomPair, Ambigious and SiteConstraint will be honored
+                                                       # A write up on constraint usage is available: 
+                                                       # http://www.rosettacommons.org/manuals/archive/rosetta3.1_user_guide/file_constraints.html
+
+# Output Options:
+-out:file:fullatom                                     # Boolean flag to indicate full atom 
+-out:file:o demo_output                                # Name of the resulting docked complex
+

@@ -1,0 +1,11 @@
+
+The demo/tutorial should show the user how to make models of the anti-MS2 
+antibody docked against the MS2 antigen.  Since documentation/tutorials 
+already exist for similar modeling problems, this tutorial should make
+extensive reference to existing documentation.  This might be a good time to
+make sure the existing documentation corresponds with current practices.
+
+Starting files include 1) sequence of the anti-MS2 antibody, (2) the
+structure of the MS2 antigen, (3) pdbs of homology models for anti-MS2, and
+(4) an example output structure.
+ 

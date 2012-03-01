@@ -1,0 +1,9 @@
+> take the fragment files generated from STEP3 to do abinitio folding 
+inputs: 
+	15112.fasta
+	15112.fasta.frags.3mers
+	15112.fasta.frags.9mers
+
+outputs:
+	tons of cs-rosetta models
+	

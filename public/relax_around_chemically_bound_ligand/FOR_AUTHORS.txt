@@ -1,0 +1,37 @@
+The purpose of this demo is to relax a protein
+with a chemically attached small molecule.
+
+The "LOV2" domain binds a flavin and, when exposed
+to blue light, forms a thiol bond at CYS 450 to
+this flavin.  One question that would be nice
+to answer is what effect this chemical bond
+has on the stability of the LOV2 domain, since
+it is known that after this bond forms, the
+C-terminal "J-alpha" helix unfolds.
+
+To address this with Rosetta, we would like to 
+run relax on the starting structure while
+preserving this chemical bond.  The crystal
+structure 2v0w was made by crystalizing the LOV2
+domain in the dark, and then exposing the crystals
+to light.  The thiol bond between CYS 450 and the
+flavin is visible in the structure.
+
+This requires:
+
+1) creating the appropriate residue parameter files
+for Rosetta for representing the flavin;
+
+2) appropriately labeling the starting PDB file
+so that rosetta will recognize and respect the chemical
+bond between CYS 450 and the flavin.
+
+3) providing command lines so that Rosetta will relax
+the rest of the protein around the flavin.  This may
+require using constraints between the flavin and CYS
+450 in order to ensure that the chemical bond is not
+distorted by the relaxation.
+
+NOTE: if you renumber the residues on the input PDB,
+make sure to provide all scripts necessary for this
+renumbering.

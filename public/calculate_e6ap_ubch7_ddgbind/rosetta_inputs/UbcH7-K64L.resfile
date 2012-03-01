@@ -1,0 +1,6 @@
+NATAA
+EX 1 EX 2
+USE_INPUT_SC
+start
+#Pick L mutation at residue 64
+64 D PIKAA L 

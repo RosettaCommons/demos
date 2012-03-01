@@ -1,0 +1,34 @@
+The task here is to redesign a protein at a protein/DNA interface. 
+
+The given structure is 2h7h.pdb the Crystal structure of the JUN BZIP homodimer complexed with AP-1 DNA.
+
+Your task is to use rosetta to redesign the protein in this crystal structure to stabilize its interaction with DNA.
+You should be able to use RosettaScripts for this but any method will do.
+
+
+If you can, include ways of analyzing your output to figure out which design is best.
+
+The contents of each demo directory should be:
+
+starting_files/
+  -- directory in which the raw input files are given - these
+     are provided for you and serve as the base for your
+     tutorial
+rosetta_inputs/
+  -- directory in which the modified starting files should
+     be placed which will be used as inputs to Rosetta.
+     You may need to make modifications like stripping
+     extra chains from the input PDB; store the modified
+     PDB here and leave the unaltered one in starting_files 
+scripts/
+  -- python scripts, shell scripts, used in the workflow
+  -- awk, grep, sed, etc. command lines
+
+README.dox
+  -- A prose or list description of how to perform the protocol
+
+FOR_AUTHORS.txt
+  -- A description for the demo creators of what their demo
+     should achieve.
+  -- Most of what starts in this file should end up in the
+     README file as well.

@@ -1,0 +1,10 @@
+total 6
+3
+V 6 A
+V 7 G
+V 11 G
+2
+A 14 F
+E 16 A
+1
+F 18 A

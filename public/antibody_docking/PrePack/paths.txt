@@ -1,0 +1,46 @@
+Rosetta Input/Output Paths (order essential)
+path is first '/', './',or  '../' to next whitespace, must end with '/'
+INPUT PATHS:
+Native structure                ../PrePack_input/
+Unbound structure               ../PrePack_input/
+alternate data files            /Users/jianqing/Work/Code_Development/rosetta-2.3.1/rosetta_database/
+fragments                       ../PrePack_input/
+structure dssp,ssa (dat,jones)  ../PrePack_input/
+sequence fasta,dat,jones        ../PrePack_input/
+constraints                     ../PrePack_input/
+starting structure              ../PrePack_input/
+data files                      /Users/jianqing/Work/Code_Development/rosetta-2.3.1/rosetta_database/
+OUTPUT PATHS:
+movie                           ./
+pdb path                        ./
+score                           ./
+status                          ./
+user                            ./
+FRAGMENTS: (use '*****' in place of pdb name and chain)
+2                                      number of valid fragment files
+3                                      frag file 1 size
+aa*****03_05.200_new_c                               name
+9                                      frag file 2 size
+aa*****09_05.200_new_c                               name
+------------------------------------------------------------------------
+Information for new users:
+
+Edit the lead part of the two database paths so that they are consistent
+with the structure of your filesystem and your user name.
+
+Note that all paths must end with '/'.  Otherwise paths.txt will not work.
+"alternate data files" and "data files" should point to the location of the
+ rosetta_database module.
+Pay careful attention to the difference between native structure, starting 
+structure, unbound structure, etc.  These terms are defined in the RosettaDock
+tutorial.
+
+The reference directory (./) refers to the directory in which Rosetta 
+outputs pdb files (rrun.sh should create this directory).  Thus, the 
+directory from which you launch rrun.sh is '../' and not './'
+-------------------------------------------------------------------------
+CVS information:
+$Revision: 5881 $
+$Date: 2005-03-02 17:28:00 -0500 (Wed, 02 Mar 2005) $
+$Author: mdaily $
+-------------------------------------------------------------------------

@@ -1,0 +1,130 @@
+core.init: Mini-Rosetta version Release 3.3, from SVN 42942 from https://svn.rosettacommons.org/source/branches/releases/rosetta-3.3/rosetta_source
+core.init: command: /Users/ekellogg/rosetta_release_3/rosetta-3.3/rosetta_source/bin/ddg_monomer.default.macosgccrelease -in:file:s minimize_with_cst.1CSEi.ren_0001.pdb -ddg::weight_file soft_rep -ddg::iterations 5 -ddg::dump_pdbs true -ddg::mut_file mutations.multiples.txt -database /Users/ekellogg/minirosetta_database/ -ddg::local_opt_only false -ddg::min_cst false -ddg::mean true -ddg::min false -ignore_unrecognized_res
+core.init: 'RNG device' seed mode, using '/dev/urandom', seed=-1272279634 seed_offset=0 real_seed=-1272279634
+core.init.random: RandomGenerator:init: Normal mode, seed=-1272279634 RG_type=mt19937
+core.chemical.ResidueTypeSet: Finished initializing fa_standard residue type set.  Created 4218 residue types
+core.pack.task: Packer task: initialize from command line() 
+apps.public.ddg.ddg_monomer: option score::fa_max_dis unspecified on the command ine.  Setting fa_max_dis to 9.0 A.
+core.scoring.etable: Using alternate parameters: LJ_RADIUS_SOFT in Etable construction.
+core.scoring.etable: Starting energy table calculation
+core.scoring.etable: smooth_etable: changing atr/rep split to bottom of energy well
+core.scoring.etable: smooth_etable: spline smoothing lj etables (maxdis = 9)
+core.scoring.etable: smooth_etable: spline smoothing solvation etables (max_dis = 9)
+core.scoring.etable: Finished calculating energy tables.
+basic.io.database: Database file opened: pdb_pair_stats_fine
+basic.io.database: Database file opened: scoring/score_functions/hbonds/standard_params/HBPoly1D.csv
+basic.io.database: Database file opened: scoring/score_functions/hbonds/standard_params/HBFadeIntervals.csv
+basic.io.database: Database file opened: scoring/score_functions/hbonds/standard_params/HBEval.csv
+basic.io.database: Database file opened: env_log.txt
+basic.io.database: Database file opened: cbeta_den.txt
+basic.io.database: Database file opened: pair_log.txt
+basic.io.database: Database file opened: cenpack_log.txt
+basic.io.database: Database file opened: env_log.txt
+basic.io.database: Database file opened: cbeta_den.txt
+basic.io.database: Database file opened: pair_log.txt
+basic.io.database: Database file opened: cenpack_log.txt
+basic.io.database: Database file opened: CEN6_mem_env_log.txt
+basic.io.database: Database file opened: CEN10_mem_env_log.txt
+basic.io.database: Database file opened: memcbeta_den.txt
+basic.io.database: Database file opened: mem_pair_log.txt
+basic.io.database: Database file opened: P_AA
+basic.io.database: Database file opened: P_AA_n
+basic.io.database: Database file opened: P_AA_pp
+core.scoring.etable: Starting energy table calculation
+core.scoring.etable: smooth_etable: changing atr/rep split to bottom of energy well
+core.scoring.etable: smooth_etable: spline smoothing lj etables (maxdis = 9)
+core.scoring.etable: smooth_etable: spline smoothing solvation etables (max_dis = 9)
+core.scoring.etable: Finished calculating energy tables.
+basic.io.database: Database file opened: Rama_smooth_dyn.dat_ss_6.4
+core.pack.dunbrack: Dunbrack library took 0.054267 seconds to load from binary
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.pack.pack_rotamers: built 1443 rotamers at 63 positions.
+core.pack.pack_rotamers: IG: 2972764 bytes
+core.pack.pack_rotamers: packloop:    1 rescore-deltaE:     0.499 seq: - simannealerE: -260.92 rescoreE: -260.422
+core.pack.pack_rotamers: packloop:    2 rescore-deltaE:     0.273 seq: - simannealerE: -261.046 rescoreE: -260.773
+core.pack.pack_rotamers: packloop:    3 rescore-deltaE:     0.274 seq: - simannealerE: -260.379 rescoreE: -260.105
+core.pack.pack_rotamers: packloop:    4 rescore-deltaE:     0.274 seq: - simannealerE: -261.046 rescoreE: -260.773
+core.pack.pack_rotamers: packloop:    5 rescore-deltaE:     0.499 seq: - simannealerE: -261.053 rescoreE: -260.555
+protocols.moves.ddGMover: 1 score before mutation: residue -260.422  fa_atr:     0.000 fa_rep:     0.000 fa_sol:     0.000 fa_intra_rep:     0.000 pro_close:     0.000 fa_pair:     0.000 hbond_sr_bb:     0.000 hbond_lr_bb:     0.000 hbond_bb_sc:     0.000 hbond_sc:     0.000 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 fa_dun:     0.000 p_aa_pp:     0.000 ref:     0.000
+protocols.moves.ddGMover: 2 score before mutation: residue -260.773  fa_atr:     0.000 fa_rep:     0.000 fa_sol:     0.000 fa_intra_rep:     0.000 pro_close:     0.000 fa_pair:     0.000 hbond_sr_bb:     0.000 hbond_lr_bb:     0.000 hbond_bb_sc:     0.000 hbond_sc:     0.000 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 fa_dun:     0.000 p_aa_pp:     0.000 ref:     0.000
+protocols.moves.ddGMover: 3 score before mutation: residue -260.105  fa_atr:     0.000 fa_rep:     0.000 fa_sol:     0.000 fa_intra_rep:     0.000 pro_close:     0.000 fa_pair:     0.000 hbond_sr_bb:     0.000 hbond_lr_bb:     0.000 hbond_bb_sc:     0.000 hbond_sc:     0.000 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 fa_dun:     0.000 p_aa_pp:     0.000 ref:     0.000
+protocols.moves.ddGMover: 4 score before mutation: residue -260.773  fa_atr:     0.000 fa_rep:     0.000 fa_sol:     0.000 fa_intra_rep:     0.000 pro_close:     0.000 fa_pair:     0.000 hbond_sr_bb:     0.000 hbond_lr_bb:     0.000 hbond_bb_sc:     0.000 hbond_sc:     0.000 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 fa_dun:     0.000 p_aa_pp:     0.000 ref:     0.000
+protocols.moves.ddGMover: 5 score before mutation: residue -260.555  fa_atr:     0.000 fa_rep:     0.000 fa_sol:     0.000 fa_intra_rep:     0.000 pro_close:     0.000 fa_pair:     0.000 hbond_sr_bb:     0.000 hbond_lr_bb:     0.000 hbond_bb_sc:     0.000 hbond_sc:     0.000 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 fa_dun:     0.000 p_aa_pp:     0.000 ref:     0.000
+apps.public.ddg.ddg_monomer: reading in mutfile
+apps.public.ddg.ddg_monomer: wt is V resnum is 6 and mut is A
+apps.public.ddg.ddg_monomer: wt is V resnum is 7 and mut is G
+apps.public.ddg.ddg_monomer: wt is V resnum is 11 and mut is G
+apps.public.ddg.ddg_monomer: end reading mutations for this
+apps.public.ddg.ddg_monomer: wt is A resnum is 14 and mut is F
+apps.public.ddg.ddg_monomer: wt is E resnum is 16 and mut is A
+apps.public.ddg.ddg_monomer: end reading mutations for this
+apps.public.ddg.ddg_monomer: wt is F resnum is 18 and mut is A
+apps.public.ddg.ddg_monomer: end reading mutations for this
+apps.public.ddg.ddg_monomer: end reading mutations for this
+apps.public.ddg.ddg_monomer: size of res_to_mut is: 4
+apps.public.ddg.ddg_monomer: testing if wt calc is complete. should be complete!
+core.pack.interaction_graph.interaction_graph_factory: Instantiating PDInteractionGraph
+core.pack.pack_rotamers: built 1423 rotamers at 63 positions.
+core.pack.pack_rotamers: IG: 3074264 bytes
+core.pack.pack_rotamers: packloop:    1 rescore-deltaE:     0.004 seq: AGG simannealerE: -251.507 rescoreE: -251.503
+core.pack.pack_rotamers: packloop:    2 rescore-deltaE:     0.004 seq: AGG simannealerE: -252.068 rescoreE: -252.064
+core.pack.pack_rotamers: packloop:    3 rescore-deltaE:     0.004 seq: AGG simannealerE: -251.51 rescoreE: -251.506
+core.pack.pack_rotamers: packloop:    4 rescore-deltaE:     0.063 seq: AGG simannealerE: -251.817 rescoreE: -251.753
+core.pack.pack_rotamers: packloop:    5 rescore-deltaE:     0.094 seq: AGG simannealerE: -251.373 rescoreE: -251.28
+protocols.moves.ddGMover: [DEBUG] file does not exist. mutant_trajV6AV7GV11G. Creating logfile now.
+1 score after mutation: residue V6AV7GV11G -251.503  fa_atr:  -404.856 fa_rep:    60.700 fa_sol:   125.596 fa_intra_rep:    17.987 pro_close:     2.520 fa_pair:    -1.547 hbond_sr_bb:   -26.352 hbond_lr_bb:   -24.777 hbond_bb_sc:    -1.574 hbond_sc:    -3.957 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 fa_dun:    22.691 p_aa_pp:   -10.634 ref:    -7.300
+protocols.moves.ddGMover: round 1 mutate V6AV7GV11G -251.503
+protocols.moves.ddGMover: 2 score after mutation: residue V6AV7GV11G -252.064  fa_atr:  -404.392 fa_rep:    60.292 fa_sol:   126.479 fa_intra_rep:    17.659 pro_close:     2.520 fa_pair:    -1.182 hbond_sr_bb:   -26.352 hbond_lr_bb:   -24.777 hbond_bb_sc:    -2.304 hbond_sc:    -4.220 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 fa_dun:    22.146 p_aa_pp:   -10.634 ref:    -7.300
+protocols.moves.ddGMover: round 2 mutate V6AV7GV11G -252.064
+protocols.moves.ddGMover: 3 score after mutation: residue V6AV7GV11G -251.506  fa_atr:  -403.095 fa_rep:    60.803 fa_sol:   124.856 fa_intra_rep:    17.996 pro_close:     2.520 fa_pair:    -1.578 hbond_sr_bb:   -26.352 hbond_lr_bb:   -24.777 hbond_bb_sc:    -1.574 hbond_sc:    -3.957 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 fa_dun:    21.585 p_aa_pp:   -10.634 ref:    -7.300
+protocols.moves.ddGMover: round 3 mutate V6AV7GV11G -251.506
+protocols.moves.ddGMover: 4 score after mutation: residue V6AV7GV11G -251.753  fa_atr:  -402.814 fa_rep:    59.302 fa_sol:   126.586 fa_intra_rep:    17.858 pro_close:     2.520 fa_pair:    -1.211 hbond_sr_bb:   -26.352 hbond_lr_bb:   -24.777 hbond_bb_sc:    -2.304 hbond_sc:    -4.756 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 fa_dun:    22.129 p_aa_pp:   -10.634 ref:    -7.300
+protocols.moves.ddGMover: round 4 mutate V6AV7GV11G -251.753
+protocols.moves.ddGMover: 5 score after mutation: residue V6AV7GV11G -251.28  fa_atr:  -401.630 fa_rep:    58.674 fa_sol:   124.804 fa_intra_rep:    18.062 pro_close:     2.520 fa_pair:    -1.603 hbond_sr_bb:   -26.352 hbond_lr_bb:   -24.777 hbond_bb_sc:    -1.574 hbond_sc:    -3.957 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 fa_dun:    22.487 p_aa_pp:   -10.634 ref:    -7.300
+protocols.moves.ddGMover: round 5 mutate V6AV7GV11G -251.28
+protocols.moves.ddGMover: mutate V6AV7GV11G   wildtype_dG is: -260.773 and mutant_dG is: -252.064 ddG is: 8.70878
+apps.public.ddg.ddg_monomer: mutation label for this round is V6AV7GV11G
+apps.public.ddg.ddg_monomer: testing if wt calc is complete. should be complete!
+core.pack.interaction_graph.interaction_graph_factory: Instantiating PDInteractionGraph
+core.pack.pack_rotamers: built 1462 rotamers at 63 positions.
+core.pack.pack_rotamers: IG: 3316484 bytes
+core.pack.pack_rotamers: packloop:    1 rescore-deltaE:     0.243 seq: FA simannealerE: -248.673 rescoreE: -248.43
+core.pack.pack_rotamers: packloop:    2 rescore-deltaE:     0.243 seq: FA simannealerE: -248.673 rescoreE: -248.43
+core.pack.pack_rotamers: packloop:    3 rescore-deltaE:     0.274 seq: FA simannealerE: -247.082 rescoreE: -246.808
+core.pack.pack_rotamers: packloop:    4 rescore-deltaE:     0.393 seq: FA simannealerE: -248.591 rescoreE: -248.198
+core.pack.pack_rotamers: packloop:    5 rescore-deltaE:     0.274 seq: FA simannealerE: -248.627 rescoreE: -248.353
+protocols.moves.ddGMover: [DEBUG] file does not exist. mutant_trajA14FE16A. Creating logfile now.
+1 score after mutation: residue A14FE16A -248.43  fa_atr:  -436.779 fa_rep:    88.879 fa_sol:   127.324 fa_intra_rep:    19.681 pro_close:     2.520 fa_pair:    -1.098 hbond_sr_bb:   -26.352 hbond_lr_bb:   -24.777 hbond_bb_sc:    -2.215 hbond_sc:    -4.671 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 fa_dun:    23.597 p_aa_pp:   -11.069 ref:    -3.470
+protocols.moves.ddGMover: round 1 mutate A14FE16A -248.43
+protocols.moves.ddGMover: 2 score after mutation: residue A14FE16A -248.43  fa_atr:  -436.779 fa_rep:    88.879 fa_sol:   127.324 fa_intra_rep:    19.681 pro_close:     2.520 fa_pair:    -1.098 hbond_sr_bb:   -26.352 hbond_lr_bb:   -24.777 hbond_bb_sc:    -2.215 hbond_sc:    -4.671 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 fa_dun:    23.597 p_aa_pp:   -11.069 ref:    -3.470
+protocols.moves.ddGMover: round 2 mutate A14FE16A -248.43
+protocols.moves.ddGMover: 3 score after mutation: residue A14FE16A -246.808  fa_atr:  -429.079 fa_rep:    87.135 fa_sol:   120.241 fa_intra_rep:    19.791 pro_close:     2.520 fa_pair:    -1.178 hbond_sr_bb:   -26.352 hbond_lr_bb:   -24.777 hbond_bb_sc:    -1.390 hbond_sc:    -3.101 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 fa_dun:    23.919 p_aa_pp:   -11.069 ref:    -3.470
+protocols.moves.ddGMover: round 3 mutate A14FE16A -246.808
+protocols.moves.ddGMover: 4 score after mutation: residue A14FE16A -248.198  fa_atr:  -435.147 fa_rep:    88.414 fa_sol:   126.127 fa_intra_rep:    19.678 pro_close:     2.520 fa_pair:    -1.049 hbond_sr_bb:   -26.352 hbond_lr_bb:   -24.777 hbond_bb_sc:    -2.215 hbond_sc:    -4.903 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 fa_dun:    24.046 p_aa_pp:   -11.069 ref:    -3.470
+protocols.moves.ddGMover: round 4 mutate A14FE16A -248.198
+protocols.moves.ddGMover: 5 score after mutation: residue A14FE16A -248.353  fa_atr:  -435.039 fa_rep:    88.389 fa_sol:   125.959 fa_intra_rep:    19.548 pro_close:     2.520 fa_pair:    -1.125 hbond_sr_bb:   -26.352 hbond_lr_bb:   -24.777 hbond_bb_sc:    -2.215 hbond_sc:    -4.134 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 fa_dun:    23.412 p_aa_pp:   -11.069 ref:    -3.470
+protocols.moves.ddGMover: round 5 mutate A14FE16A -248.353
+protocols.moves.ddGMover: mutate A14FE16A   wildtype_dG is: -260.773 and mutant_dG is: -248.43 ddG is: 12.3428
+apps.public.ddg.ddg_monomer: mutation label for this round is A14FE16A
+apps.public.ddg.ddg_monomer: testing if wt calc is complete. should be complete!
+core.pack.interaction_graph.interaction_graph_factory: Instantiating PDInteractionGraph
+core.pack.pack_rotamers: built 1407 rotamers at 63 positions.
+core.pack.pack_rotamers: IG: 2975876 bytes
+core.pack.pack_rotamers: packloop:    1 rescore-deltaE:     0.499 seq: A simannealerE: -251.451 rescoreE: -250.952
+core.pack.pack_rotamers: packloop:    2 rescore-deltaE:     0.274 seq: A simannealerE: -251.476 rescoreE: -251.202
+core.pack.pack_rotamers: packloop:    3 rescore-deltaE:     0.499 seq: A simannealerE: -251.294 rescoreE: -250.796
+core.pack.pack_rotamers: packloop:    4 rescore-deltaE:     0.544 seq: A simannealerE: -251.232 rescoreE: -250.688
+core.pack.pack_rotamers: packloop:    5 rescore-deltaE:     0.243 seq: A simannealerE: -250.442 rescoreE: -250.199
+protocols.moves.ddGMover: [DEBUG] file does not exist. mutant_trajF18A. Creating logfile now.
+1 score after mutation: residue F18A -250.952  fa_atr:  -405.832 fa_rep:    61.071 fa_sol:   127.926 fa_intra_rep:    18.851 pro_close:     2.520 fa_pair:    -1.119 hbond_sr_bb:   -26.352 hbond_lr_bb:   -24.777 hbond_bb_sc:    -2.215 hbond_sc:    -4.897 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 fa_dun:    22.602 p_aa_pp:   -11.491 ref:    -7.240
+protocols.moves.ddGMover: round 1 mutate F18A -250.952
+protocols.moves.ddGMover: 2 score after mutation: residue F18A -251.202  fa_atr:  -404.538 fa_rep:    60.802 fa_sol:   126.750 fa_intra_rep:    18.768 pro_close:     2.520 fa_pair:    -1.238 hbond_sr_bb:   -26.352 hbond_lr_bb:   -24.777 hbond_bb_sc:    -2.215 hbond_sc:    -4.128 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 fa_dun:    21.937 p_aa_pp:   -11.491 ref:    -7.240
+protocols.moves.ddGMover: round 2 mutate F18A -251.202
+protocols.moves.ddGMover: 3 score after mutation: residue F18A -250.796  fa_atr:  -411.073 fa_rep:    62.923 fa_sol:   130.384 fa_intra_rep:    19.020 pro_close:     2.520 fa_pair:    -1.182 hbond_sr_bb:   -26.352 hbond_lr_bb:   -24.777 hbond_bb_sc:    -2.215 hbond_sc:    -4.897 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 fa_dun:    23.585 p_aa_pp:   -11.491 ref:    -7.240
+protocols.moves.ddGMover: round 3 mutate F18A -250.796
+protocols.moves.ddGMover: 4 score after mutation: residue F18A -250.688  fa_atr:  -410.987 fa_rep:    62.745 fa_sol:   130.338 fa_intra_rep:    18.920 pro_close:     2.520 fa_pair:    -1.182 hbond_sr_bb:   -26.352 hbond_lr_bb:   -24.777 hbond_bb_sc:    -2.215 hbond_sc:    -4.852 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 fa_dun:    23.885 p_aa_pp:   -11.491 ref:    -7.240
+protocols.moves.ddGMover: round 4 mutate F18A -250.688
+protocols.moves.ddGMover: 5 score after mutation: residue F18A -250.199  fa_atr:  -408.369 fa_rep:    63.309 fa_sol:   129.023 fa_intra_rep:    19.369 pro_close:     2.520 fa_pair:    -1.536 hbond_sr_bb:   -26.352 hbond_lr_bb:   -24.777 hbond_bb_sc:    -1.485 hbond_sc:    -5.255 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 fa_dun:    22.085 p_aa_pp:   -11.491 ref:    -7.240
+protocols.moves.ddGMover: round 5 mutate F18A -250.199
+protocols.moves.ddGMover: mutate F18A   wildtype_dG is: -260.773 and mutant_dG is: -251.202 ddG is: 9.57067
+apps.public.ddg.ddg_monomer: mutation label for this round is F18A

@@ -1,0 +1,11 @@
+#!/bin/csh
+
+set PATH_TO_EXE=/vol/ek/ravehb/rosetta/svn_mini/rosetta_source/bin/
+set PATH_TO_DB=/vol/ek/ravehb/rosetta/svn_mini/rosetta_database/
+
+#rosetta command line
+$PATH_TO_EXE/FlexPepDocking.linuxgccrelease -database $PATH_TO_DB \
+    @run_flags
+
+echo "FlexPepDock Ab-initio done!"
+echo

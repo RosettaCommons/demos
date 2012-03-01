@@ -1,0 +1,41 @@
+## replace the above command with the path to your own rosetta database
+-database             /Users/patrickbarth/RosettaCon2011/tutorial/trunk_r43621/minirosetta_database 
+
+-run:protocol looprelax
+
+##information for fragments files
+-loops:frag_sizes 9              3             1
+-loops:frag_files /Users/patrickbarth/RosettaCon2011/tutorial/dopamine/input/frags/aaDXDR_09_05.200_v1_3 /Users/patrickbarth/RosettaCon2011/tutorial/dopamine/input/frags/aaDXDR_03_05.200_v1_3 none
+
+##some input information
+##for benchmark purposes, replace the following pdb by the experimentally-determined native structure
+-in:file:native /Users/patrickbarth/RosettaCon2011/tutorial/dopamine/input/DXDR_D3DR.pdb
+-in:file:fullatom
+-s DXDR.pdb
+## the following pdb corresponds to the starting template
+-loops:input_pdb /Users/patrickbarth/RosettaCon2011/tutorial/dopamine/input/DXDR_D3DR.pdb
+##loopfile generated from the zone file
+-loops:loop_file /Users/patrickbarth/RosettaCon2011/tutorial/dopamine/input/DXDR.loopfile
+
+##membrane specific input information
+-score:weights /Users/patrickbarth/RosettaCon2011/tutorial/dopamine/input/membrane_highres_t1.wts
+-in:file:spanfile /Users/patrickbarth/RosettaCon2011/tutorial/dopamine/input/DXDR.span
+
+##output format
+-out:file:fullatom
+-out:file:silent_struct_type binary
+-out:file:silent DXDR_lprlxmb.out
+##number of structures generated
+-nstruct 1
+
+## loop remodeling step: for additional details, see the regular looprelax protocol options 
+-loops:remodel  quick_ccd
+##-loops:refine  refine_ccd
+-loops:random_order
+-loops:idealize_before_loop_close
+
+## if you want FULL STRUCTRE relax then do this. otherwise dont.
+-loops::relax    fastrelax
+
+-fail_on_bad_hbond false
+

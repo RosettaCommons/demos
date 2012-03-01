@@ -1,0 +1,29 @@
+-run:protocol threading # run the rosetta threading, loopbuilding, and refinement protocol
+-in:file:alignment ./starting_files/template_target_short.aln # path to alignment file
+-cm:aln_format general # format of alignment file
+-frag3 ./starting_files/fragments/aat000_03_05.200_v1_3.gz # path in 9mer fragment file
+-frag9 ./starting_files/fragments/aat000_09_05.200_v1_3.gz # path to 3mer fragment file
+-in:file:fasta ./starting_files/fragments/t000_.fasta # path to target fasta file
+-in:file:fullatom # we have fullatom format for the input template
+-loops:frag_sizes 9 3 1 # which size fragments are you using?
+-loops:frag_files ./starting_files/fragments/aat000_09_05.200_v1_3.gz ./starting_files/fragments/aat000_03_05.200_v1_3.gz none	# paths to 9mer file, 3mer file, and say "none" for the 1mer file
+-in:file:psipred_ss2 ./starting_files/t000_.psipred_ss2 # path to psipred secondary structure prediction file
+-in:file:fullatom 
+-out:nstruct 1 # number of structures you want to build.  Should build at least 1000, but 10,000 would be better
+-in:file:template_pdb ./starting_files/2astB_66-105_renumbered.pdb # path to template pdb
+-database ./rosetta-3.3/rosetta_database/ # path to rosetta database
+-loops:extended # Force extended on loops, independent of loop input file
+-loops:build_initial # Precede loop-modeling with an initial round of just removing the missing densities and building simple loops
+-loops:remodel quick_ccd # closing loops by quick_ccd
+-loops:refine refine_ccd # small movements to remodel loop
+-silent_decoytime # Add time since the last structure was written to score line
+-random_grow_loops_by 4 # randomly grow loops by up to this number of residues on either side.
+-select_best_loop_from 1 # Keep building loops until N and choose best (by score)
+-out:file:fullatom # output in fullatom mode
+-out:output
+-out:file:silent threaded_model.out # silent file stores internal coordinates of the PDB
+-out:file:silent_struct_type binary # output the silent file in binary format
+-out:file:scorefile threaded_model.fasc # output a table of Rosetta scores
+-run:constant_seed # Use a constant seed (1111111 unless specified)
+-run:jran 1111111 # this is good for testing since you should always get the same result
+-overwrite # overwrite any already-existing results having the same name

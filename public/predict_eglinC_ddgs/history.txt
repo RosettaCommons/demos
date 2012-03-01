@@ -1,0 +1,150 @@
+  516  ls scripts/
+  517  ls starting_files/
+  518  open starting_files/EglinMutants.xls 
+  519  ls
+  520  ls input_files/
+  521  ls scripts/
+  522  pwd
+  523  ls
+  524  ls starting_files/
+  525  open starting_files/EglinMutants.xls 
+  526  less starting_files/1CSE.pdb.gz 
+  527  gunzip starting_files/1CSE.pdb.gz 
+  528  ls
+  529  less starting_files/1CSE.pdb 
+  530  ls
+  531  emacs FOR_AUTHORS.dox &
+  532  pwd
+  533  ls input_files/
+  534  ls starting_files/
+  535  less starting_files/1CSE.pdb 
+  536  ls
+  537  ls ~/src/pdbUtil/
+  538  ls ~/src/pdbUtil/sequentialPdbResSeq.pl 
+  539  ~/src/pdbUtil/sequentialPdbResSeq.pl 
+  540* ~/src/pdbUtil/
+  541  ~/src/pdbUtil/*chain*
+  542  ~/src/pdbUtil/*Chain*
+  543  ls ~/src/pdbUtil/*Chain*
+  544  ~/src/pdbUtil/removeChain.pl 
+  545  ls
+  546  ~/src/pdbUtil/removeExtendedChain.pl 
+  547  less ~/src/pdbUtil/removeExtendedChain.pl 
+  548  less ~/src/pdbUtil/removeChain.pl 
+  549  ls
+  550  ~/src/pdbUtil/removeChain.pl 
+  551  less ~/src/pdbUtil/removeChain.pl 
+  552  scp ls
+  553  ls
+  554  scp fw.bakerlab.org:~/extract_chains.pl .
+  555  ls
+  556  ./extract_chains.pl starting_files/1CSE.pdb I 
+  557  ./extract_chains.pl starting_files/1CSE.pdb I  > 1CSEi.pdb
+  558  ls
+  559  ls
+  560  ~/src/pdbUtil/sequentialPdbResSeq.pl 
+  561  ~/src/pdbUtil/sequentialPdbResSeq.pl  -pdbfile 1CSEi.pdb -res1 1 > 1CSEi.ren.pdb
+  562  ls
+  563  less 1CSEi.ren.pdb 
+  564  head 1CSEi.ren.pdb 
+  565  head 1CSEi.pdb 
+  566  ls
+  567  mv 1CSEi.ren.pdb input_files/
+  568  mv 1CSEi.pdb input_files/
+  569  ls
+  570  ls input_files/
+  571  ls
+  572  mv extract_chains.pl scripts/
+  573  cp ~/src/pdbUtil/sequentialPdbResSeq.pl  scripts/
+  574  ls
+  575  ls
+  576  emacs mutations.txt &
+  577  head mutations.txt 
+  578  emacs mutations.multiples.txt &
+  579  pwd
+  580  ls
+  581  ls input_files/
+  582  ls
+  583  ls scripts/
+  584  ls
+  585  ls input_files/
+  586  ls input_files/1CSEi.ren.pdb > lst
+  587  less lst
+  588  ~/rosetta_release_3/rosetta-3.3/rosetta_source/bin/minimize_with_cst.default.macosgccrelease -in:file:l lst -database ~/minirosetta_database/ -in:file:fullatom 
+  589  ls
+  590  ls input_files/
+  591  ls /
+  592  ls /Volumes/
+  593  ls /Volumes/NINFTW/
+  594  cp mutations.multiples.txt /Volumes/NINFTW/
+  595  ls
+  596  ls
+  597  ~/rosetta_release_3/rosetta-3.3/rosetta_source/bin/minimize_with_cst.default.macosgccrelease -in:file:l lst -database ~/minirosetta_database/ -in:file:fullatom -ddg::out_pdb_prefix minimize_with_cst 
+  598  ls
+  599  cd input_files/
+  600  ls
+  601  ls 1CSEi.ren.pdb > lst
+  602  ls
+  603  ~/rosetta_release_3/rosetta-3.3/rosetta_source/bin/minimize_with_cst.default.macosgccrelease -in:file:l lst -database ~/minirosetta_database/ -in:file:fullatom -ddg::out_pdb_prefix minimize_with_cst > minimize_with_cst.log &
+  604  tail -f minimize_with_cst.log 
+  605  ls
+  606  less minimize_with_cst.1CSEi.ren_0001.pdb 
+  607  ls
+  608  ls minimize_with_cst.1CSEi.ren_0001.pdb 1CSEi.ren.pdb > test.lst
+  609  ls
+  610  ~/rosetta_release_3/rosetta-3.3/rosetta_source/bin/score.default.macosgccrelease -in:file:l test.lst -database ~/minirosetta_database/ -in:file:fullatom -out:file:scorefile score.chk.fsc 
+  611  ls
+  612  less score.chk.fsc 
+  613  ls
+  614  cd ../
+  615  ls
+  616  cd input_files/
+  617  ls
+  618  history | less
+  619  history | tail
+  620  history | tail -n 100 | less
+  621  ls
+  622  pwd
+  623  ls
+  624  cd ../
+  625  ls
+  626  emacs -nw mutations.multiples.txt 
+  627  cp mutations.multiples.txt input_files/
+  628  cd input_files/
+  629  ls
+  630  emacs mutations.multiples.txt  &
+  631  ls
+  632  cat mutations.multiples.txt
+  633  ls
+  634  ./fix_bb_monomer_ddg.linuxgccrelease -in:file:s <PDB file> -ddg::weight_file ddg.wts -ddg::iterations 20
+  635  -ddg::dump_pdbs true -ddg::mut_file <mutation_file.mutfile> -database <PATH TO ROSETTA_DATABASE> -ignore_unrecognized_re
+  636  -ddg::local_opt_only false -ddg::min_cst false -ddg::mean true -ddg::min false -ddg::sc_min_only false  -in:file:fullatom
+  637  ~/rosetta_release_3/rosetta-3.3/rosetta_source/bin/ddg_monomer.default.macosgccrelease -in:file:s minimize_with_cst.1CSEi.ren_0001.pdb -ddg::weight_file soft_rep -ddg::iterations 5 -ddg::dump_pdbs true -ddg::mut_file mutations.multiples.txt -database ~/minirosetta_database/ -ddg::local_opt_only false -ddg::min_cst false -ddg::mean true -ddg::min -ignore_unrecognized_res 
+  638  ls
+  639  emacs -nw mutations.multiples.txt &
+  640  emacs mutations.multiples.txt &
+  641  ls
+  642  rm -rf repacked_wt_round_*
+  643  ls
+  644  emacs 1CSEi.pdb  &
+  645  bc
+  646  ls
+  647  ~/rosetta_release_3/rosetta-3.3/rosetta_source/bin/ddg_monomer.default.macosgccrelease -in:file:s minimize_with_cst.1CSEi.ren_0001.pdb -ddg::weight_file soft_rep -ddg::iterations 5 -ddg::dump_pdbs true -ddg::mut_file mutations.multiples.txt -database ~/minirosetta_database/ -ddg::local_opt_only false -ddg::min_cst false -ddg::mean true -ddg::min -ignore_unrecognized_res 
+  648  ls
+  649  less ddg_predictions.out 
+  650  ls
+  651  rm -rf mut*pdb mutant_traj* repacked_wt*pdb wt_traj
+  652  ls
+  653  ~/rosetta_release_3/rosetta-3.3/rosetta_source/bin/ddg_monomer.default.macosgccrelease -in:file:s minimize_with_cst.1CSEi.ren_0001.pdb -ddg::weight_file soft_rep -ddg::iterations 5 -ddg::dump_pdbs true -ddg::mut_file mutations.multiples.txt -database ~/minirosetta_database/ -ddg::local_opt_only false -ddg::min_cst false -ddg::mean true -ddg::min false -ignore_unrecognized_res  >& ddg.log &
+  654  tail -f ddg.log 
+  655  ls
+  656  cd ..
+  657  ls
+  658  cd ../
+  659  pwd
+  660  ls
+  661  cd predict_eglinC_ddgs/
+  662  ls
+  663  emacs README.dox &
+  664  history | tail -n 150 | less
+  665  history | tail -n 150 > history.txt

@@ -1,0 +1,4 @@
+SEQUENCE: 
+SCORE: total_score dslf_ca_dih dslf_cs_ang dslf_ss_dih dslf_ss_dst      fa_atr      fa_dun fa_intra_rep      fa_pair       fa_rep       fa_sol hbond_bb_sc hbond_lr_bb    hbond_sc hbond_sr_bb linear_chainbreak             omega overlap_chainbreak            p_aa_pp pro_close      rama       ref description 
+SCORE:    -904.958       0.000       0.000       0.000       0.000   -2604.237     769.208        4.353      -40.925      279.627     1295.271    -132.516    -216.755     -52.920    -156.519             0.000           104.389              0.000            -69.958    28.357    -9.315  -103.020 1u6e_0001
+SCORE:    -227.888       0.546      27.056      19.612      -8.152   -2205.342     750.019        6.740      -46.706      502.636     1134.504     -62.634    -151.470     -28.688    -116.535             0.000            81.012              0.000            -56.084    38.918   -13.523   -99.800 3r2x_0001

@@ -1,0 +1,18 @@
+In this tutorial, you will describe how to wrangle modified residue types through combined centroid/fullatom protocols in Rosetta.
+
+Background:
+Many Rosetta protocols use a centroid phase followed by a fullatom phase.  However, the centroid residue set is compatible with the canonical 20 amino acids, and very little else.  For example, ligands and post-translational modifications are incompatible with centroid mode; Rosetta generally crashes when trying to switch these residues to centroid (or silently drops the post-translational modification).
+
+Your job is to figure out how to perform a simple Rosetta protocol where the input structure has a nonstandard residue (in this case, a phosphoresidue) without crashing and without deleting the phosphate.
+
+You have been provided with two PDBs containing a two phosphoresidues each as input (one p-SER, one p-THR, and two p-TYRs).  Pick one or the other for this tutorial.  The inputs are shared with the design_with_phosphoresidue tutorial.  They are NMR models, so you should either include use of the -obey_ENDMDL flag or manually delete the extra models from the starting PDBs.
+
+A) You may need to modify these inputs before Rosetta can load them in successfully.  This task is shared with the design_with_phosphoresidue tutorial; document it independently anyway.
+**This should discuss the existence of the phosphate patches in the database and how to get atom names to match properly for the PDB reader
+
+B) Pick a Rosetta protocol that has a centroid and fullatom phase.  The PDBs are small domains binding phosphopeptides, so I suggest docking.  Flexpepdock or some other protocol might work as well.
+**You do not need to deal with every single step of the protocol, like relax-prepack-dock-cluster; just do the main step that has both centroid and fullatom phases.
+
+C) Document how to run the protocol such that the phosphoresidue is read in properly, maintained through the fullatom phase of modeling, and present in the output.
+**One way to do this would be to create a centroid residue type for the phosphoresidue.  If you take this route, describe how you created the new residue type, how you get Rosetta to read it in, and any choices you had to make in its creation.
+**The centroid scorefunction is not smart enough to handle a phosphoresidue.  That is outside the scope of this tutorial - it's ok if the centroid scorefunction treats P-SER as SER, just so long as the fullatom phase and final result has the P present and scored properly by fa_rep, etc.

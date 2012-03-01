@@ -1,0 +1,24 @@
+<dock_design>
+	<TASKOPERATIONS>
+		<InitializeFromCommandline name=IFC/>
+		<OperateOnCertainResidues name=ProtNoPack>
+			<PreventRepackingRLT/>
+			<ResidueHasProperty property=PROTEIN/>
+		</OperateOnCertainResidues>
+		<OperateOnCertainResidues name=DnaNoPack>
+			<PreventRepackingRLT/>
+			<ResidueHasProperty property=DNA/>
+		</OperateOnCertainResidues>
+	</TASKOPERATIONS>
+	<SCOREFXNS>
+		<DNA weights=dna/>
+	</SCOREFXNS>
+	<FILTERS>
+	</FILTERS>
+	<MOVERS>
+		<DnaInterfacePacker name=score scorefxn=DNA task_operations=IFC,ProtNoPack,DnaNoPack/>
+	</MOVERS>
+	<PROTOCOLS>
+		<Add mover_name=score/>
+	</PROTOCOLS>
+</dock_design>

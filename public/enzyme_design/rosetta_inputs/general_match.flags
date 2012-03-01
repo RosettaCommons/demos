@@ -1,0 +1,6 @@
+-extra_res_fa rosetta_inputs/1n1.params 
+-match::lig_name 1n1 
+-in:ignore_unrecognized_res 
+-ex1 
+-ex2 
+-match:geometric_constraint_file rosetta_inputs/mocktim.cst

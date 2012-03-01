@@ -1,0 +1,14 @@
+The purpose of this tutorial is to demonstrate how to do basic fixed backbone design with noncanonical residue types - amino acids not found in naturally occuring proteins.  You have been supplied with a small PDB (1l2y) to use as a canvas.
+
+A) Describe how to design on this protein using the "included" noncanonical residue types, NVL and HLU.  (These are "included" in that they are part of the unmodified fullatom residue type set, and their rotamer libraries are part of the unmodified minirosetta database).
+**Show how to write a resfile & command line to design one position to be NVL/HLU, but not a canonical residue
+**Show how to write a resfile that allows for the canonical 20, plus NVL and HLU
+
+B) Describe how to design on this protein with a third noncanonical thrown into the mix.
+**Show how to activate a noncanonical by adding it to residue_types.txt in the database, so that it becomes part of the fullatom residue type set
+**Show how to get its rotamer libraries - see the note in minirosetta_database/ncaa_rotlibs/Readme
+***Write the tutorial from the POV of developers: show how to svn co the appropriate files, and where to put them so that the rotamer library is read in and design proceeds appropriately
+***Write the tutorial from the POV of academic users; put the best instructions you can figure for actually getting the library ("ask on the message boards" or "ask Doug Renfrew" or both are acceptable; include the URL or email) and then show where to put the file to get it to work
+**Do the design steps from A) with your third residue type thrown into the mix.  You should make absolutely certain that the noncanonicals are repacking properly from the rotamer library, instead of just adding their params-file base rotamer.
+
+C) You do not have to describe HOW the noncanonical parameters file, or rotamer library, were created.  (Of course you should if you have the time and knowledge...)

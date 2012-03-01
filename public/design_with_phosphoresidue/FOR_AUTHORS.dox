@@ -1,0 +1,12 @@
+In this tutorial, you will describe how to repack in the vicinity of a phosphate-modified residue.  Make sure you hit the following points:
+
+A) how to make sure the phosphoresidue is read in properly, and how to debug common problems if Rosetta reads in only the standard residue but deletes the phosphate
+**This should discuss the existence of the phosphate patches in the database and how to get atom names to match properly for the PDB reader
+
+B) how to design around the phosphoresidue
+**Perhaps by automatic detection of its neighborhood (perhaps write a RosettaScript)
+**perhaps by a manually written resfile of its neighborhood
+
+For megabonus points, do this WITH ROTAMER FLEXIBLITY for the phosphoresidue - let it be packable if at all possible.  This author is not sure if it works or not - test it and if it does, document with the phosphoresidue moving.
+
+You have been provided with two PDBs containing a two phosphoresidues each as input (one p-SER, one p-THR, and two p-TYRs).  Complete this tutorial for all 4 of them, handled in pairs if you wish.  They are NMR models, so you should either include use of the -obey_ENDMDL flag or manually delete the extra models from the starting PDBs.  This tutorial shares inputs with the patched_residue_types_in_centroid-fullatom_protocols tutorial, but both are expected to document the "getting Rosetta to read it in" steps.

@@ -1,0 +1,34 @@
+Note: This demo requires dragging structures in pymol, which may
+require a two-button mouse 
+
+This workflow describes designing an interface between Rac and Raf
+using RosettaScripts. The protocol is going to redesign an interface
+with the goal of binding optimization. Your protocol should design
+only the Raf sequence, leaving the Rac sequence as wildtype. Both
+sides of the interface should be packed and minimized. Be sure to
+describe appropriate numbers of trajectories, rosetta script loop
+iterations, and filter thresholds.
+
+Proper post-processing/verification should be described, eg sequence
+diversity, energy convergence, RMSD vs. Score plot generation. Refer
+users to the InterfaceAnalyzer demo for more extensive decoy
+evaluation.
+
+The pre-docked structure should contain chain A of 2ov2.pdb (Rac) and
+chain B of 1c1y (Raf). All other chains, ligands, etc. should be
+removed.
+
+For this demo, create the pre-docked structure by hand, be sure to
+describe alternative methods for generation of pre-docked
+conformations (eg, constraints, alignment to native partners, etc).
+
+The protocol should take the 
+following form:
+	
+	LOOP [n-iterations]
+		Docking 
+		Packing/Sequence optimization
+		Minimization
+
+See design_script.xml in the rosetta_inputs folder for a starting template.
+

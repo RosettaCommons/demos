@@ -1,0 +1,44 @@
+#flexpepdock ab-initio basic flags:
+-flexPepDocking:lowres_abinitio
+-flexPepDocking:pep_refine
+-flexPepDocking:flexpep_score_only
+
+#lowres_abinitio site constraints:
+-constraints:cst_file input_files/site_constraints.cst 
+
+#packer flags:
+-ex1
+-ex2aro
+-use_input_sc
+-unboundrot input_files/start.ppk.pdb
+
+# I/O:
+-s input_files/start.ppk.pdb 
+-native input_files/native.pdb 
+-out:file:silent output_files/decoys.silent 	    
+-out:file:silent_struct_type binary 
+#-out:path:pdb output_files 
+-out:path:score output_files 
+
+#number of structures to produce
+#for demo:
+#-nstruct 5
+#for production run:
+-nstruct 500000
+
+#fragments:
+-frag3 input_files/frags/frags.3mers.offset
+#frag9 input_files/frags/frags.9mers.offset # not relevant for an 8-mer
+-frag5 input_files/frags/frags.5mers.offset
+-flexPepDocking:frag5_weight 0.25
+#-flexPepDocking:frag9_weight 0.1 # not relevant for an 8-mer
+
+#mute excessive logs:
+-mute protocols.moves.RigidBodyMover
+-mute core.chemical
+-mute core.scoring.etable
+-mute protocols.evalution
+-mute core.pack.rotamer_trials
+-mute protocols.abinitio.FragmentMover
+-mute core.fragment
+-mute protocols.jd2.PDBJobInputter

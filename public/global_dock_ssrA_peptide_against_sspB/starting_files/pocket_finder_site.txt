@@ -1,0 +1,27 @@
+# largest pocket detected using Ligsite via Pocket-Finder server
+# (http://www.modelling.leeds.ac.uk/pocketfinder/)
+# Input file used was the recepotor chain from 1OU8 (chain B)
+1233  CA  LEU A  52  
+ 1234  C   LEU A  52  
+ 1236  CB  LEU A  52  
+ 1239  CD2 LEU A  52  
+ 1240  N   ASN A  53  
+ 1241  CA  ASN A  53  
+ 1242  C   ASN A  53  
+ 1243  O   ASN A  53  
+ 1244  CB  ASN A  53  
+ 1381  CE1 PHE A  71  
+ 1383  CZ  PHE A  71  
+ 1396  CB  ALA A  73  
+ 1397  N   ARG A  74  
+ 1399  C   ARG A  74  
+ 1400  O   ARG A  74  
+ 1413  CG  PHE A  75  
+ 1414  CD1 PHE A  75  
+ 1415  CD2 PHE A  75  
+ 1416  CE1 PHE A  75  
+ 1417  CE2 PHE A  75  
+ 1418  CZ  PHE A  75  
+ 1471  CD1 LEU A  82  
+
+

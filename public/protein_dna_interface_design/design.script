@@ -1,0 +1,22 @@
+<dock_design>
+	<TASKOPERATIONS>
+		<InitializeFromCommandline name=IFC/>
+		<IncludeCurrent name=IC/>
+		<RestrictDesignToProteinDNAInterface name=DnaInt base_only=1 z_cutoff=3.0 dna_defs=X.208.CYT,X.209.ADE/>
+		<OperateOnCertainResidues name=AUTOprot>
+			<AddBehaviorRLT behavior=AUTO/>
+			<ResidueHasProperty property=PROTEIN/>
+		</OperateOnCertainResidues>
+	</TASKOPERATIONS>
+	<SCOREFXNS>
+		<DNA weights=dna/>
+	</SCOREFXNS>
+	<FILTERS>
+	</FILTERS>
+	<MOVERS>
+		<DnaInterfacePacker name=score scorefxn=DNA task_operations=IFC,IC,AUTOprot,DnaInt probe_specificity=1 binding=1/>
+	</MOVERS>
+	<PROTOCOLS>
+		<Add mover_name=score/>
+	</PROTOCOLS>
+</dock_design>

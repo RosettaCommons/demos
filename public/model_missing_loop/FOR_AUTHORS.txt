@@ -1,0 +1,17 @@
+The purpose of this demo is to show how Rosetta
+can be used to model portions of a crystal structure
+where the density of several consecutive residues
+is missing.
+
+In this demo, residues 32-36 of vinculin (1tr2) 
+have missing density.  Only the first 132 residues
+of the N-terminal portion of vinculin should be used.
+(This is a 1000 residue protein). These five residues
+also have coordinates reported, but, pretend that they
+do not.  That is, create a new PDB input file for
+Rosetta where residues 32-36 have been removed.
+
+The sequence for these five residues is VDGKA.
+
+Note that several MSE residues are present in this
+structure and should be treated as MET by Rosetta.

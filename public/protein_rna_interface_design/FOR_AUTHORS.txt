@@ -1,0 +1,33 @@
+The purpose of this demo is to show how rosetta could be used to design a protein at an RNA/protein interface. The task is to use rosetta to make predictions about residues that would stabilize the protein/RNA interaction
+
+To accomplish this you will need to do some modifications to rosetta, see the guidelines in:
+mini/doc/RNA_protein_compatability.dox  
+Make sure this file is complete with everything that needs to be done.
+
+The files provided are is the crystal structure of the spliceosomal U2B"-U2A' protein complex bound to a fragment of U2 small nuclear RNA (1a9n.pbd)  The chains for one biological unit have been selected and make into the file 1a9n_ABQ.pdb 
+
+You should use fixbb or some other protocol to redesign a few residues at the RNA/protein interface.  You can use a resfile or automatic detection if you are feeling plucky.  
+
+This info below is the basic outline of what goes where:
+starting_files/
+  -- directory in which the raw input files are given - these
+     are provided for you and serve as the base for your
+     tutorial
+rosetta_inputs/
+  -- directory in which the modified starting files should
+     be placed which will be used as inputs to Rosetta.
+     You may need to make modifications like stripping
+     extra chains from the input PDB; store the modified
+     PDB here and leave the unaltered one in starting_files 
+scripts/
+  -- python scripts, shell scripts, used in the workflow
+  -- awk, grep, sed, etc. command lines
+
+README.dox
+  -- A prose or list description of how to perform the protocol
+
+FOR_AUTHORS.txt
+  -- A description for the demo creators of what their demo
+     should achieve.
+  -- Most of what starts in this file should end up in the
+     README file as well.

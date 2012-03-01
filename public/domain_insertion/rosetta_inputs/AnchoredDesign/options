@@ -1,0 +1,38 @@
+# In your run, you'll want to correct this path to point to your copy of minirosetta_database
+-database /Users/cmiles/minirosetta_database
+
+# Input structure
+-s S_0001.pdb
+
+# Defines the regions to remodel
+-loops:loop_file loopsfile
+
+# Specifies the regions to design and how to repack them
+-resfile resfile
+
+# Bypasses fragment-based loop diversification. Recommend disabling this option in real-world use.
+# Enabled here to make the tutorial faster
+-no_frags
+
+# Packing options. Enable for real-world use.
+#-ex1
+#-ex2
+-use_input_sc
+#-extrachi_cutoff 8
+
+# Minimizer
+-run:min_type dfpmin_armijo
+
+# Defines the inserted domain
+-AnchoredDesign:anchor anchor
+
+# Controls the frequency of repacks inside refinement
+-AnchoredDesign:refine_repack_cycles 50
+
+# Controls the number of cycles of perturb and refine. Recommended values are 5000 and 10000, respectively.
+-AnchoredDesign:perturb_cycles 25
+-AnchoredDesign:refine_cycles 50
+
+# Number of output structures. In realistic usage, you'll probably want to generate several hundred models.
+-nstruct 1
+#-nstruct 500

@@ -1,0 +1,20 @@
+# Constraints across the interface, one distance, one angle and one dihedral
+
+# Distance between GLU43-CD Arg516-CZ (on peptide)  
+# Parameters (distance to center of spring,  1/sqrt(k) spring constant)
+# Functional form: ( (x - x0)  / constant)^2
+#  AtomPair  CD 43A CZ 516B  HARMONIC 4.7 0.2
+# AtomPair  CA 43A CA 516B  HARMONIC 12 0.2
+
+# SiteConstraint finds closest C-alpha on specified chain (here chain A) from the specified atom (here CZ 516B) 
+# Parameters (distance to center of sprint, 1/sqrt(k) sprint constant, tolerance)
+# Functional form: ( (x - x0 - tolerance) / constant)^2
+# --> If fabs(x-x0) <= tol, return 0.0
+# SiteConstraint CA 516B A FLAT_HARMONIC 0 0.2 5 
+
+# You can have more than one constraint on at a time.
+
+# Ambiguous consrtaint will pick the lowest of the specified constraints
+# FORMAT: Ambiguous: Constraint_Type1 Constraint_Def1 [Constraint_Type2 Constraint_Def2 [...]]
+AmbiguousConstraint AtomPair  CA 43A CA 516B  HARMONIC 12 0.2 SiteConstraint CZ 516B A FLAT_HARMONIC 0 0.2 5 
+

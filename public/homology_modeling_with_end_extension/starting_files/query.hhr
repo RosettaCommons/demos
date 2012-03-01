@@ -1,0 +1,1422 @@
+Query         Tue_Aug_02_20:26:10_+0200_2011
+Match_columns 236
+No_of_seqs    145 out of 387
+Neff          2.7 
+Searched_HMMs 25452
+Date          Tue Aug  2 21:28:51 2011
+Command       /cluster/toolkit/production/bioprogs/hhpred/hhsearch -cpu 4 -v 1 -i /cluster/toolkit/production/tmp/production/682687/5424213.hhm -d /cluster/toolkit/production/databases/hhpred/new_dbs/pdb70_30Jul11/db/pdb.hhm -o /cluster/toolkit/production/tmp/production/682687/5424213.hhr -p 20 -P 20 -Z 100 -B 100 -seq 1 -aliw 80 -local -ssm 2 -norealign -sc 1 -dbstrlen 10000 -cs /cluster/toolkit/production/bioprogs/hhblits/context_data.lib 
+
+ No Hit                             Prob E-value P-value  Score    SS Cols Query HMM  Template HMM
+  1 3p7n_A Sensor histidine kinase  99.6   4E-16 1.6E-20  130.6   8.1   85  140-224    66-185 (258)
+  2 1n9l_A PHOT-LOV1, putative blu  99.6 5.3E-16 2.1E-20  112.0   6.7   72  146-217     8-108 (109)
+  3 2v0u_A NPH1-1, LOV2; kinase, t  99.6 4.4E-16 1.7E-20  117.9   5.5   85  140-224     8-124 (146)
+  4 1byw_A Protein (human ERG pota  99.6 2.5E-15 9.9E-20  107.6   6.3   74  146-219     6-110 (110)
+  5 2wkq_A NPH1-1, RAS-related C3   99.6 1.6E-15 6.3E-20  129.8   5.4   85  140-224    17-133 (332)
+  6 3d72_A Vivid PAS protein VVD;   99.5 1.1E-14 4.5E-19  112.0   5.8   70  146-215    40-149 (149)
+  7 2z6d_A Phototropin-2; PAS-fold  99.5   1E-13 4.1E-18   97.7   6.7   87  140-226    12-130 (130)
+  8 2l0w_A Potassium voltage-gated  99.4 3.1E-13 1.2E-17  100.4   7.6   80  140-219    22-138 (138)
+  9 2pr5_A Blue-light photorecepto  99.4 4.3E-13 1.7E-17   98.9   6.6   78  146-224    14-119 (132)
+ 10 3lyx_A Sensory BOX/ggdef domai  99.2 3.6E-11 1.4E-15   86.9   6.2   76  146-221    22-123 (124)
+ 11 2gj3_A Nitrogen fixation regul  99.1 7.5E-11 2.9E-15   82.5   6.8   74  146-219    20-119 (120)
+ 12 3f1p_B ARYL hydrocarbon recept  98.8 7.5E-09 2.9E-13   74.4   7.7   75  148-222    19-121 (121)
+ 13 3f1p_A Endothelial PAS domain-  98.8 2.9E-09 1.2E-13   75.8   4.8   70  152-221    21-116 (117)
+ 14 3h9w_A Diguanylate cyclase wit  98.8   5E-09   2E-13   75.2   5.5   69  152-220    16-110 (115)
+ 15 2qkp_A Uncharacterized protein  98.7 5.8E-08 2.3E-12   70.4   9.7  101  124-224     2-138 (151)
+ 16 3mqq_A Transcriptional regulat  98.7 7.8E-09 3.1E-13   72.7   4.5   88  136-223     1-120 (120)
+ 17 1v9y_A Heme PAS sensor protein  98.7 7.9E-09 3.1E-13   79.7   3.9   79  146-224    55-161 (167)
+ 18 3luq_A Sensor protein; PAS, hi  98.6 5.9E-08 2.3E-12   64.8   6.6   78  140-217     5-114 (114)
+ 19 3mjq_A Uncharacterized protein  98.6 2.4E-08 9.4E-13   71.7   4.3   87  140-226     5-117 (126)
+ 20 3ewk_A Sensor protein; PAS dom  98.6 3.4E-08 1.3E-12   73.8   5.1   70  146-215   126-227 (227)
+ 21 3bwl_A Sensor protein; structu  98.6 5.7E-08 2.2E-12   69.2   5.7   78  140-217    19-126 (126)
+ 22 3ewk_A Sensor protein; PAS dom  98.5 1.8E-07 7.2E-12   69.8   6.9   79  146-224     4-108 (227)
+ 23 2kdk_A ARYL hydrocarbon recept  98.5 3.3E-07 1.3E-11   67.5   7.1   71  151-221    24-121 (121)
+ 24 3eeh_A Putative light and redo  98.5 2.6E-07   1E-11   67.2   6.4   66  152-217    34-125 (125)
+ 25 3mr0_A Sensory box histidine k  98.5 3.8E-07 1.5E-11   66.6   7.1   77  148-224    26-130 (142)
+ 26 3mxq_A Sensor protein; PSI2, M  98.4 1.5E-07 6.1E-12   68.2   4.7   85  140-224    24-152 (152)
+ 27 2vv6_A FIXL, sensor protein FI  98.4 3.1E-07 1.2E-11   62.9   4.9   79  146-224     8-114 (119)
+ 28 2vlg_A Sporulation kinase A; h  98.4 2.7E-07 1.1E-11   67.1   4.7   83  138-220     3-111 (111)
+ 29 3icy_A Sensor protein; sensory  98.3 6.4E-07 2.5E-11   61.2   5.7   78  140-217     6-118 (118)
+ 30 2r78_A Sensor protein; sensory  98.3 3.2E-07 1.3E-11   64.1   4.2   87  127-217     2-117 (117)
+ 31 3nja_A Probable ggdef family p  98.3 7.3E-07 2.9E-11   62.7   5.3   70  152-221    29-125 (125)
+ 32 3kx0_X Uncharacterized protein  98.2 8.4E-07 3.3E-11   68.7   4.9  108  117-224    16-160 (185)
+ 33 3cax_A Uncharacterized protein  98.2 5.2E-06   2E-10   71.3   9.3   91  140-230   241-358 (369)
+ 34 3k3c_A Protein RV1364C/MT1410;  98.1 1.5E-06 5.8E-11   63.6   4.3   73  152-224    40-140 (158)
+ 35 3mfx_A Sensory BOX/ggdef famil  98.1 1.8E-06 7.1E-11   63.8   4.7   76  139-216     5-122 (129)
+ 36 3gdi_A Period circadian protei  98.1 3.4E-06 1.3E-10   66.2   6.4   78  148-225   172-277 (309)
+ 37 3olo_A Two-component sensor hi  98.1   1E-06 4.1E-11   61.7   2.5   72  146-217    28-118 (118)
+ 38 1d06_A Nitrogen fixation regul  98.0 5.1E-06   2E-10   59.9   5.0   72  146-217    31-130 (130)
+ 39 3a0s_A Sensor protein; PAS-fol  97.8 2.8E-05 1.1E-09   53.6   5.8   70  146-215     7-96  (96)
+ 40 3b33_A Sensor protein; structu  97.8 7.6E-06   3E-10   58.8   2.7   86  131-216     1-114 (115)
+ 41 1ll8_A PAS kinase; PAS domain,  97.8 1.7E-05 6.5E-10   56.7   4.2   76  142-217     2-113 (114)
+ 42 1nwz_A PYP, photoactive yellow  97.4  0.0001   4E-09   54.2   4.3   77  140-216    23-125 (125)
+ 43 3a0r_A Sensor protein; four he  97.4 4.7E-05 1.8E-09   64.1   2.3   79  146-224    23-121 (349)
+ 44 3fg8_A Uncharacterized protein  97.3 0.00016 6.3E-09   52.8   4.3   69  146-219    27-118 (118)
+ 45 3fc7_A HTR-like protein, senso  97.3 0.00025   1E-08   49.5   5.0   72  146-217    34-125 (125)
+ 46 1wa9_A Period circadian protei  97.3 0.00037 1.5E-08   57.8   6.6   91  146-236   163-284 (368)
+ 47 1mzu_A PPR; photoactive yellow  97.0 0.00058 2.3E-08   50.5   4.1   75  140-214    28-129 (129)
+ 48 2w0n_A Sensor protein DCUS; si  97.0 3.4E-05 1.3E-09   54.1  -2.5   77  140-217    21-118 (118)
+ 49 3gdi_A Period circadian protei  96.5  0.0032 1.3E-07   49.2   5.5  104  117-224     2-140 (309)
+ 50 1wa9_A Period circadian protei  94.2  0.0072 2.8E-07   50.0  -0.0   79  146-224    13-141 (368)
+ 51 1oj5_A Steroid receptor coacti  93.3  0.0098 3.8E-07   44.9  -0.8   86  148-233    14-128 (132)
+ 52 2jhe_A Transcription regulator  91.0   0.074 2.9E-06   41.3   1.8   73  140-212    86-177 (190)
+ 53 3clo_A Transcriptional regulat  63.2     8.7 0.00034   31.9   5.1  103  124-226    19-174 (258)
+ 54 1p0z_A Sensor kinase CITA; tra  60.8      22 0.00085   26.2   6.4   75  140-218    41-127 (131)
+ 55 2ool_A Sensor protein; bacteri  45.2      19 0.00073   30.4   4.2   52  146-197    48-118 (337)
+ 56 3pvu_A Beta-adrenergic recepto  33.6     2.9 0.00011   40.6  -2.9   46  153-198     7-69  (695)
+ 57 8tfv_A Protein (thanatin); bac  26.2      17 0.00068   22.1   0.7    9  149-157     5-13  (26)
+ 58 3c1r_A Glutaredoxin-1; oxidize  23.3      29  0.0011   25.8   1.6   24  140-163    71-97  (118)
+
+No 1  
+>3p7n_A Sensor histidine kinase; LOV domain, light-activated transcription factor, DNA bindin; HET: FMN; 2.10A {Erythrobacter litoralis}
+Probab=99.63  E-value=4e-16  Score=130.63  Aligned_cols=85  Identities=31%  Similarity=0.453  Sum_probs=0.0
+
+Q ss_pred             HHHHHh------ccCCC----ceEEECCcc---cCcc----cCCCcCC------CHHHHHH-HHh-hcCCce--EEEecc
+Q Tue_Aug_02_20:  140 VKAMAN------VTDAS----DNVYASRGT---TGYS----DGRNCRG------TDRAVDK-RNA-TKGVDT--SVCNYR  192 (236)
+Q Consensus       140 leai~q------ITDpt----PIIYANdAF---TGYS----IGRNCRF------DpeaVar-ReA-~~G~e~--eVlNYR  192 (236)
+                      .++|++      ||||+    ||||||++|   |||+    ||++|+|      +++.+.+ +++ ..+..+  ++++||
+T Consensus        66 ~~a~e~sp~~ivitD~~~~d~~Ii~vN~af~~ltGy~~~EviGk~~~~L~~~~~~~~~~~~l~~~l~~g~~~~~E~~~~r  145 (258)
+T 3p7n_A           66 LDLIEASPIASVVSDPRLADNPLIAINQAFTDLTGYSEEECVGRNCRFLAGSGTEPWLTDKIRQGVREHKPVLVEILNYK  145 (258)
+T ss_dssp             HHHHHTCSSEEEEECTTSTTCCEEEECHHHHHHHCCCGGGTTTSCGGGGCCTTCCHHHHHHHHHHHHHTCCEEEEEEEEC
+T ss_pred             HHHHHhCCCCEEEEcCCCCCCeEEehhHHHHHHHCcCHHHHcCCChhhhCCccccHHHHHHHHHHHHcCCCcEEEEEEEe
+
+
+Q ss_pred             -CCCe-ee---ecc-cCCCCC-EEEEEE-EEChhhhhhcc
+Q Tue_Aug_02_20:  193 -DGTT-WN---VAG-RDSKGN-VNYVGV-SKVSDYAKVNN  224 (236)
+Q Consensus       193 -DGSp-WN---ISP-rDedG~-thFVGV-rDVTe~~e~~e  224 (236)
+                       ||++ |.   ++| +|++|+ ++|+++ .|||++.+..+
+T Consensus       146 kdG~~~~~~~~ispi~d~~G~v~~~~~~~~dit~~k~~e~  185 (258)
+T 3p7n_A          146 KDGTPFRNAVLVAPIYDDDDELLYFLGSQVEVDDDQPNMG  185 (258)
+T ss_dssp             TTSCEEEEEEEEEEEECTTSCSEEEEEEEEEC-------C
+T ss_pred             cCCCEEeccceEEEEECCCCCEEEEEEEEEECchHhhhHH
+
+
+No 2  
+>1n9l_A PHOT-LOV1, putative blue light receptor; phototropin, flavin, electron transport; HET: FMN; 1.90A {Chlamydomonas reinhardtii} SCOP: d.110.3.6 PDB: 1n9n_A* 1n9o_A*
+Probab=99.62  E-value=5.3e-16  Score=111.96  Aligned_cols=72  Identities=49%  Similarity=0.809  Sum_probs=0.0
+
+Q ss_pred             ccCCC----ceEEECCcc---cCcc----cCCCcCC------CHHHHHH-HHh-hcCCce--EEEecc-CCCe-ee---e
+Q Tue_Aug_02_20:  146 VTDAS----DNVYASRGT---TGYS----DGRNCRG------TDRAVDK-RNA-TKGVDT--SVCNYR-DGTT-WN---V  199 (236)
+Q Consensus       146 ITDpt----PIIYANdAF---TGYS----IGRNCRF------DpeaVar-ReA-~~G~e~--eVlNYR-DGSp-WN---I  199 (236)
+                      |+||+    +|||||++|   |||+    ||+++.+      +++.+++ +++ ..++.+  ++.++| ||+. |.   +
+T Consensus         8 i~da~~pd~~Ii~vN~a~~~~~G~~~~e~iG~~~~~l~~~~~~~~~~~~~~~~l~~g~~~~~e~~~~~kdG~~~~~~~~~   87 (109)
+T 1n9l_A            8 VADATLPDCPLVYASEGFYAMTGYGPDEVLGHNCRFLQGEGTDPKEVQKIRDAIKKGEACSVRLLNYRKDGTPFWNLLTV   87 (109)
+T ss_dssp             EEETTSTTCCEEEECHHHHHHHCCCHHHHTTSCGGGGCCTTCCHHHHHHHHHHHHHTCCEEEEEEEECTTSCEEEEEEEE
+T ss_pred             EEeCCCCCCeEEEECHHHHHHHCcCHHHhCCccceeecCccccHHHHHhhhhhhcccceEEEEEEEEecCCeEEEEEEEE
+
+
+Q ss_pred             cc-cCCCCC-EEEEEE-EECh
+Q Tue_Aug_02_20:  200 AG-RDSKGN-VNYVGV-SKVS  217 (236)
+Q Consensus       200 SP-rDedG~-thFVGV-rDVT  217 (236)
+                      +| +|++|+ ++||++ +|||
+T Consensus        88 ~pi~d~~G~i~~~v~~~~DIT  108 (109)
+T 1n9l_A           88 TPIKTPDGRVSKFVGVQVDVT  108 (109)
+T ss_dssp             EEEECTTSCEEEEEEEEEECC
+T ss_pred             eEEECCCCCEEEEEEEEEECC
+
+
+No 3  
+>2v0u_A NPH1-1, LOV2; kinase, transferase, ATP-binding, serine/threonine-protein kinase, light-induced signal transduction, phototropin1; HET: FMN; 1.40A {Avena sativa} PDB: 2v0w_A* 2v1b_A* 2v1a_A* 1jnu_A* 1g28_A*
+Probab=99.61  E-value=4.4e-16  Score=117.88  Aligned_cols=85  Identities=32%  Similarity=0.572  Sum_probs=0.0
+
+Q ss_pred             HHHHHh---ccCCC----ceEEECCcc---cCcc----cCCCcCC------CHHHHHH-HHh-hcCCce--EEEecc-CC
+Q Tue_Aug_02_20:  140 VKAMAN---VTDAS----DNVYASRGT---TGYS----DGRNCRG------TDRAVDK-RNA-TKGVDT--SVCNYR-DG  194 (236)
+Q Consensus       140 leai~q---ITDpt----PIIYANdAF---TGYS----IGRNCRF------DpeaVar-ReA-~~G~e~--eVlNYR-DG  194 (236)
+                      +++|.+   |+|++    +|||||++|   |||+    +|+++.|      ++..... +++ ..+..+  ++.++| ||
+T Consensus         8 ~~~~~~~~~i~d~~~~dg~I~~vN~a~~~~~Gys~~e~~G~~~~~l~~~~~~~~~~~~l~~~l~~~~~~~~e~~~~~kdG   87 (146)
+T 2v0u_A            8 LERIEKNFVITDPRLPDNPIIFASDSFLQLTEYSREEILGRNCRFLQGPETDRATVRKIRDAIDNQTEVTVQLINYTKSG   87 (146)
+T ss_dssp             GGGSSSCEEEECTTSTTCCEEEECHHHHHHHCCCHHHHTTSCGGGGCCTTSCHHHHHHHHHHHHTTCCEEEEEEEECTTC
+T ss_pred             HHhCCCcEEEEeCCCCCCEEEEEcHHHHHHHCcCHHHHcCCCHHHHcccCCCHHHHHHHHHHHHcCCceEEEEEEEecCC
+
+
+Q ss_pred             Ce-ee---ecc-cCCCCC-EEEEEE-EEChhhhhhcc
+Q Tue_Aug_02_20:  195 TT-WN---VAG-RDSKGN-VNYVGV-SKVSDYAKVNN  224 (236)
+Q Consensus       195 Sp-WN---ISP-rDedG~-thFVGV-rDVTe~~e~~e  224 (236)
+                      ++ |.   +.| +|++|+ ++||++ +|||++.+...
+T Consensus        88 ~~~~~~~~~~p~~d~~G~~~~~v~~~~DITe~k~~e~  124 (146)
+T 2v0u_A           88 KKFWNLFHLQPMRDQKGDVQYFIGVQLDGTEHVRDAA  124 (146)
+T ss_dssp             CEEEEEEEEEEEECTTSCEEEEEEEEEEESSCCCHHH
+T ss_pred             CEEEEEEEEEEEEcCCCCEEEEEEEEEECCHHHHHHH
+
+
+No 4  
+>1byw_A Protein (human ERG potassium channel); PAS domain, potassium channel domain, membrane protein; 2.60A {Homo sapiens} SCOP: d.110.3.6
+Probab=99.57  E-value=2.5e-15  Score=107.57  Aligned_cols=74  Identities=24%  Similarity=0.423  Sum_probs=0.0
+
+Q ss_pred             ccCCC----ceEEECCcc---cCcc----cCCCc--CC------CHHHHHH-HHh-hcCCce--EEEecc-CCCe-ee--
+Q Tue_Aug_02_20:  146 VTDAS----DNVYASRGT---TGYS----DGRNC--RG------TDRAVDK-RNA-TKGVDT--SVCNYR-DGTT-WN--  198 (236)
+Q Consensus       146 ITDpt----PIIYANdAF---TGYS----IGRNC--RF------DpeaVar-ReA-~~G~e~--eVlNYR-DGSp-WN--  198 (236)
+                      |+||.    +|||||++|   |||+    ||+++  +|      +++.++. .++ ..+..+  ++..+| ||+. |.  
+T Consensus         6 i~da~~~d~~IiyvN~a~~~l~G~~~~e~~g~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~e~~~~~~dG~~~w~~~   85 (110)
+T 1byw_A            6 IANARVENCAVIYCNDGFCELCGYSRAEVMQRPCTCDFLHGPCTQRRAAAQIAQALLGAEERKVEIAFYRKDGSCFLCLV   85 (110)
+T ss_dssp             EEETTSSSCBEEEECHHHHHHHTCCHHHHTTSBTTCGGGCCTTCCHHHHHHHHHHHHTTCCEEEEEEEECTTSCEEEEEE
+T ss_pred             EEeCCCCCCeEEEECHHHHHHHCCChhhccccccccccceeecccccccccccccccccccceeeEEEEeecccchheee
+
+
+Q ss_pred             -ecc-cCCCCC-EEEEEE-EEChhh
+Q Tue_Aug_02_20:  199 -VAG-RDSKGN-VNYVGV-SKVSDY  219 (236)
+Q Consensus       199 -ISP-rDedG~-thFVGV-rDVTe~  219 (236)
+                       +.| +|++|+ ++||++ +||||+
+T Consensus        86 ~~~pv~d~~G~v~~~v~~~~DITer  110 (110)
+T 1byw_A           86 DVVPVKNEDGAVIMFILNFEVVMEK  110 (110)
+T ss_dssp             EEEEEECTTCCEEEEEEEEEEEEEC
+T ss_pred             eeeEEECCCCCEEEEEEEEEECCCC
+
+
+No 5  
+>2wkq_A NPH1-1, RAS-related C3 botulinum toxin substrate 1; transferase, cell adhesion, nucleotide-binding, protein engineering, RAS superfamily LOV2; HET: GTP FMN; 1.60A {Avena sativa} PDB: 2wkr_A* 2wkp_A*
+Probab=99.56  E-value=1.6e-15  Score=129.83  Aligned_cols=85  Identities=31%  Similarity=0.529  Sum_probs=0.0
+
+Q ss_pred             HHHHHh---ccCCC----ceEEECCcc---cCcc----cCCCcCC------CHHHHHH-HHh-hcCCce--EEEecc-CC
+Q Tue_Aug_02_20:  140 VKAMAN---VTDAS----DNVYASRGT---TGYS----DGRNCRG------TDRAVDK-RNA-TKGVDT--SVCNYR-DG  194 (236)
+Q Consensus       140 leai~q---ITDpt----PIIYANdAF---TGYS----IGRNCRF------DpeaVar-ReA-~~G~e~--eVlNYR-DG  194 (236)
+                      ||++..   ||||+    +|+|||++|   |||+    ||++++|      ++..+++ +++ ..+..+  +++++| ||
+T Consensus        17 ~e~~~~~~~itD~~~pDg~I~~vN~a~~~i~Gy~~eE~iG~~~~~l~~~~~~~~~~~~i~~~l~~~~~~~~e~~~~~kdG   96 (332)
+T 2wkq_A           17 LERIEKNFVITDPRLPDNPIIFASDSFLQLTEYSREEILGRNARFLQGPETDRATVRKIRDAIDNQTEVTVQLINYTKSG   96 (332)
+T ss_dssp             GGGCCSEEEEECTTSTTCCEEEECHHHHHHHCCCHHHHTTSCGGGGCCTTCCHHHHHHHHHHHHTTCCEEEEEEEECTTC
+T ss_pred             HhcCCCeEEEEcCCCCCCeEEEEcHHHHHHHCcCHHHHcCCCHHHhCCCCCCHHHHHHHHHHHHcCCeEEEEEEEECCCC
+
+
+Q ss_pred             Ce-ee---ecc-cCCCCC-EEEEEE-EEChhhhhhcc
+Q Tue_Aug_02_20:  195 TT-WN---VAG-RDSKGN-VNYVGV-SKVSDYAKVNN  224 (236)
+Q Consensus       195 Sp-WN---ISP-rDedG~-thFVGV-rDVTe~~e~~e  224 (236)
+                      ++ |.   +.| +|++|+ ++|||+ +|||++.+..+
+T Consensus        97 ~~~~~~~~~~pi~d~~G~i~~~i~~~~DITe~k~~e~  133 (332)
+T 2wkq_A           97 KKFWNLFHLQPMRDQKGDVQYFIGVQLDGTEHVRDAA  133 (332)
+T ss_dssp             CEEEEEEEEEEEECTTSCEEEEEEEEEEESSCCCHHH
+T ss_pred             CEEEEEEEEeeeECCCCCEEEEEEEeccccchHHHHH
+
+
+No 6  
+>3d72_A Vivid PAS protein VVD; circadian, photoreceptor, blue-light, LOV, signaling protein; HET: FAD; 1.65A {Neurospora crassa} PDB: 3is2_A* 2pd8_A* 3hjk_A* 2pdr_A* 2pd7_A* 2pdt_A* 3hji_A*
+Probab=99.51  E-value=1.1e-14  Score=111.96  Aligned_cols=70  Identities=34%  Similarity=0.594  Sum_probs=0.0
+
+Q ss_pred             ccCCC-c---eEEECCcc---cCcc----cCCCcCC-----------------CHHHHHH-HHh-hcCCce--EEEecc-
+Q Tue_Aug_02_20:  146 VTDAS-D---NVYASRGT---TGYS----DGRNCRG-----------------TDRAVDK-RNA-TKGVDT--SVCNYR-  192 (236)
+Q Consensus       146 ITDpt-P---IIYANdAF---TGYS----IGRNCRF-----------------DpeaVar-ReA-~~G~e~--eVlNYR-  192 (236)
+                      |+|++ |   |||||++|   |||+    ||++|+|                 ++..+++ +++ .++..+  ++.+|| 
+T Consensus        40 i~D~~~~D~~Ii~vN~a~~~ltGy~~eEviGk~~~~~~~~~~~~~~~~~~~~~~~~~~~~i~~~l~~~~~~~~E~~~~~k  119 (149)
+T 3d72_A           40 LCDLKQKDTPIVYASEAFLYMTGYSNAEVLGRNCRFLQSPDGMVKPKSTRKYVDSNTINTMRKAIDRNAEVQVEVVNFKK  119 (149)
+T ss_dssp             EEETTSTTCCEEEECHHHHHHHCCCHHHHTTSCGGGGGSTTSCCCTTCCCSSSCHHHHHHHHHHHHHTCCEEEEEEEECT
+T ss_pred             EEeCCCCCCcEEEecHHHHHHHCcCHHHHcCCcceeecccccccccccccccCCHHHHHHHHHHHHcCCeEEEEEEEEcC
+
+
+Q ss_pred             CCCe-ee---ecc-cCCCCC-EEEEEE-EE
+Q Tue_Aug_02_20:  193 DGTT-WN---VAG-RDSKGN-VNYVGV-SK  215 (236)
+Q Consensus       193 DGSp-WN---ISP-rDedG~-thFVGV-rD  215 (236)
+                      ||+. |.   ++| +|++|+ ++|||| +|
+T Consensus       120 dG~~~wv~~~~~pi~D~~G~v~~~vGi~~~  149 (149)
+T 3d72_A          120 NGQRFVNFLTMIPVRDETGEYRYSMGFQCE  149 (149)
+T ss_dssp             TCCEEEEEEEEEEEECTTSSEEEEEEECCC
+T ss_pred             CCCEEEEEEEEEEEECCCCCEEEEEEEEeC
+
+
+No 7  
+>2z6d_A Phototropin-2; PAS-fold, LOV-fold, alternative splicing, ATP-binding, chromophore, flavoprotein, FMN, kinase, membrane, nucleotide-binding; HET: FMN; 2.00A {Arabidopsis thaliana} PDB: 2z6c_A*
+Probab=99.45  E-value=1e-13  Score=97.70  Aligned_cols=87  Identities=44%  Similarity=0.768  Sum_probs=0.0
+
+Q ss_pred             HHHHHh---ccCCC----ceEEECCcc---cCcc----cCCCcCC------CHHHHHH-HHh-hcCCce--EEEecc-CC
+Q Tue_Aug_02_20:  140 VKAMAN---VTDAS----DNVYASRGT---TGYS----DGRNCRG------TDRAVDK-RNA-TKGVDT--SVCNYR-DG  194 (236)
+Q Consensus       140 leai~q---ITDpt----PIIYANdAF---TGYS----IGRNCRF------DpeaVar-ReA-~~G~e~--eVlNYR-DG  194 (236)
+                      |++|.+   |+|++    +|||||++|   |||+    +|+++.+      .+..... +.. ..+...  ++..++ +|
+T Consensus        12 ~~~~~~~i~i~D~~~pd~~Iv~~N~a~~~~~Gy~~ee~~g~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~   91 (130)
+T 2z6d_A           12 LSTLQQTFVVSDATQPHCPIVYASSGFFTMTGYSSKEIVGRNCRFLQGPDTDKNEVAKIRDCVKNGKSYCGRLLNYKKDG   91 (130)
+T ss_dssp             HHHTTCEEEEEETTSTTCCEEEECHHHHHHHCCCHHHHTTSCGGGGCCTTSCHHHHHHHHHHHHTTCCEEEEEEEECTTS
+T ss_pred             HHhCCCcEEEEECCCCCccEEEEecceecceeechhhccCccceeeeeeccccccccccccccccccccceeeeeeeccc
+
+
+Q ss_pred             Ce-ee---ecc-cCCCCC-EEEEEE-EEChhhhhhcccc
+Q Tue_Aug_02_20:  195 TT-WN---VAG-RDSKGN-VNYVGV-SKVSDYAKVNNYK  226 (236)
+Q Consensus       195 Sp-WN---ISP-rDedG~-thFVGV-rDVTe~~e~~e~k  226 (236)
+                      .. |-   +.| +|++|+ ++|||+ +|||++.++.+-|
+T Consensus        92 ~~~~~~~~~~~i~d~~G~~~~~v~i~~DITerKea~~ek  130 (130)
+T 2z6d_A           92 TPFWNLLTVTPIKDDQGNTIKFIGMQVEVSKYTEGVNDK  130 (130)
+T ss_dssp             CEEEEEEEEEEEECTTSCEEEEEEEEEECCTTC------
+T ss_pred             ccccccccccceeCCCCCEEEEEEEEEEChHHHHHHhcC
+
+
+No 8  
+>2l0w_A Potassium voltage-gated channel, subfamily H (EAG member 2, isoform CRA_B; HERG, PAS domain, voltage-gated potassium channel, membrane; NMR {Homo sapiens} PDB: 2l1m_A 2l4r_A
+Probab=99.42  E-value=3.1e-13  Score=100.41  Aligned_cols=80  Identities=23%  Similarity=0.436  Sum_probs=0.0
+
+Q ss_pred             HHHHHh------ccCCC----ceEEECCcc---cCcc----cCCCcCC--------CHHHHHH-HHh-hcCCce--EEEe
+Q Tue_Aug_02_20:  140 VKAMAN------VTDAS----DNVYASRGT---TGYS----DGRNCRG--------TDRAVDK-RNA-TKGVDT--SVCN  190 (236)
+Q Consensus       140 leai~q------ITDpt----PIIYANdAF---TGYS----IGRNCRF--------DpeaVar-ReA-~~G~e~--eVlN  190 (236)
+                      +++++.      |+|+.    +|||||++|   |||+    +|+++..        ++..++. .++ ..+..+  ++.+
+T Consensus        22 ~~~~~~~~~~~~v~d~~~~d~~iv~~N~a~~~~~Gy~~eeiig~~~~~~~~~~~~~~~~~~~~~~~~l~~~~~~~~e~~~  101 (138)
+T 2l0w_A           22 IRKFEGQSRKFIIANARVENCAVIYCNDGFCELCGYSRAEVMQRPCTCDFLHGPRTQRRAAAQIAQALLGAEERKVEIAF  101 (138)
+T ss_dssp             HHHHTTTTSEEEEEESSSTTCBEEEECSHHHHHHSCCHHHHTTSBTTCGGGCCTTCCHHHHHHHHHHTTCSSCEEEEEEE
+T ss_pred             HHHHhcCCCcEEEEEccCCCCCEEEECHHHHhhhcCCHHHHcCCCccccccccccchhheeeeecccccccccccccccc
+
+
+Q ss_pred             cc-CCCe-ee---ecc-cCCCCC-EEEEEE-EEChhh
+Q Tue_Aug_02_20:  191 YR-DGTT-WN---VAG-RDSKGN-VNYVGV-SKVSDY  219 (236)
+Q Consensus       191 YR-DGSp-WN---ISP-rDedG~-thFVGV-rDVTe~  219 (236)
+                      ++ ||++ |.   +.| +|++|+ ++||++ .||||+
+T Consensus       102 ~~~dg~~~wv~~~~~pv~d~~G~i~~~i~~~~DiTer  138 (138)
+T 2l0w_A          102 YRKDGSCFLCLVDVVPVKNEDGAVIMFILNFEVVMEK  138 (138)
+T ss_dssp             ECTTSCEEEEEEEEEEEECTTSCEEEEEEEEEEEEEC
+T ss_pred             ccccccceeeEEEEEEEECCCCCEEEEEEEEEECCCC
+
+
+No 9  
+>2pr5_A Blue-light photoreceptor; light-oxygen-voltage, LOV, PER-ARNT-SIM, PAS, flavoprotein, protein; HET: FMN; 1.45A {Bacillus subtilis} PDB: 2pr6_A*
+Probab=99.39  E-value=4.3e-13  Score=98.93  Aligned_cols=78  Identities=32%  Similarity=0.610  Sum_probs=0.0
+
+Q ss_pred             ccCCC----ceEEECCcc---cCcc----cCCCcCC------CHHHHHH-HHh-hcCCce--EEEecc-CCCe-ee---e
+Q Tue_Aug_02_20:  146 VTDAS----DNVYASRGT---TGYS----DGRNCRG------TDRAVDK-RNA-TKGVDT--SVCNYR-DGTT-WN---V  199 (236)
+Q Consensus       146 ITDpt----PIIYANdAF---TGYS----IGRNCRF------DpeaVar-ReA-~~G~e~--eVlNYR-DGSp-WN---I  199 (236)
+                      |+|+.    +|||||++|   |||+    +|++++|      .+..... +++ ..+..+  ++.+++ ||+. |.   +
+T Consensus        14 i~D~~~~d~~I~~~N~a~~~l~G~~~~el~g~~~~~l~~~~~~~~~~~~~~~~~~~~~~~~~e~~~~~~~G~~~~v~~~~   93 (132)
+T 2pr5_A           14 ITDPALEDNPIVYVNQGFVQMTGYETEEILGKNCRFLQGKHTDPAEVDNIRTALQNKEPVTVQIQNYKKDGTMFWNELNI   93 (132)
+T ss_dssp             EECTTSTTCCEEEECHHHHHHHSCCHHHHTTSCGGGGCCTTCCHHHHHHHHHHHHHTCCEEEEEEEECTTSCEEEEEEEE
+T ss_pred             EEECCCCCCEEEEECHHHHHHHCcCHHHHhccchhhcccccccHHHHHHHHHHHhcCCceeeEEEEEecCCcEEEEEEEE
+
+
+Q ss_pred             cc-cCCCCCEEEEEE-EEChhhhhhcc
+Q Tue_Aug_02_20:  200 AG-RDSKGNVNYVGV-SKVSDYAKVNN  224 (236)
+Q Consensus       200 SP-rDedG~thFVGV-rDVTe~~e~~e  224 (236)
+                      .| ++.+| .+||++ .|||++.+..+
+T Consensus        94 ~p~~~~~~-~~~i~~~~DITerk~~e~  119 (132)
+T 2pr5_A           94 DPMEIEDK-TYFVGIQNDITKQKEYEK  119 (132)
+T ss_dssp             EEEEETTE-EEEEEEEEECHHHHHHHH
+T ss_pred             EEEEcCCc-CEEEEEEEeccHHHHHHH
+
+
+No 10 
+>3lyx_A Sensory BOX/ggdef domain protein; structural genomics, PSI- 2, protein structure initiative, northeast structural genomics consortium; 2.00A {Colwellia psychrerythraea}
+Probab=99.16  E-value=3.6e-11  Score=86.91  Aligned_cols=76  Identities=20%  Similarity=0.256  Sum_probs=0.0
+
+Q ss_pred             ccCCC-ceEEECCcc---cCcc----cCCCcCC-----CHHHHHH--HHh-hcCCce--EEEecc-CCCe-ee---ecc-
+Q Tue_Aug_02_20:  146 VTDAS-DNVYASRGT---TGYS----DGRNCRG-----TDRAVDK--RNA-TKGVDT--SVCNYR-DGTT-WN---VAG-  201 (236)
+Q Consensus       146 ITDpt-PIIYANdAF---TGYS----IGRNCRF-----DpeaVar--ReA-~~G~e~--eVlNYR-DGSp-WN---ISP-  201 (236)
+                      |+|+. -|+|||++|   +||+    +|+++..     ++..+..  .++ ..+...  ++...+ ||++ |.   ++| 
+T Consensus        22 v~d~~g~i~~~N~~~~~l~G~~~~e~~g~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~e~~~~~~~G~~~~~~~~~~pi  101 (124)
+T 3lyx_A           22 VTDLQGFIIDWNKGSETLYGYSKEQAIGQPVNMLHVPGDTEHITSEVISAVENQGKWTGEIRMLHKDGHIGWIESMCVPI  101 (124)
+T ss_dssp             EEETTCBEEEECHHHHHHHCCCHHHHTTSBGGGGSCTTTHHHHHHHHHHHHHHTSCEEEEEEEECTTSCEEEEEEEEEEE
+T ss_pred             EEcCCCCEEEEhHHHHHHhccchhhcccccccccccccccccccchhhhhhhhccccceEEeeecccCccceeeeeeeeE
+
+
+Q ss_pred             cCCCCC-EEEEEE-EEChhhhh
+Q Tue_Aug_02_20:  202 RDSKGN-VNYVGV-SKVSDYAK  221 (236)
+Q Consensus       202 rDedG~-thFVGV-rDVTe~~e  221 (236)
+                      +|++|+ ++||++ +|||++.+
+T Consensus       102 ~~~~g~~~~~i~v~~DITerK~  123 (124)
+T 3lyx_A          102 YGENYQMVGALGINRDITKRKK  123 (124)
+T ss_dssp             ECSTTCEEEEEEEEEECSCC--
+T ss_pred             ECCCCCEEEEEEEEEECCHHhc
+
+
+No 11 
+>2gj3_A Nitrogen fixation regulatory protein; PAS domain, FAD, redox sensor, atomic resolution, transferase; HET: FAD; 1.04A {Azotobacter vinelandii}
+Probab=99.14  E-value=7.5e-11  Score=82.51  Aligned_cols=74  Identities=27%  Similarity=0.367  Sum_probs=0.0
+
+Q ss_pred             ccCCC-ceEEECCcc---cCcc----cCCCcCC------CHHHHHH-HHh-hcCCce--EEEecc-CCCe-ee---ecc-
+Q Tue_Aug_02_20:  146 VTDAS-DNVYASRGT---TGYS----DGRNCRG------TDRAVDK-RNA-TKGVDT--SVCNYR-DGTT-WN---VAG-  201 (236)
+Q Consensus       146 ITDpt-PIIYANdAF---TGYS----IGRNCRF------DpeaVar-ReA-~~G~e~--eVlNYR-DGSp-WN---ISP-  201 (236)
+                      |+|+. -|+|||++|   +||+    +|+++.+      +...... +.+ ..+...  ++..++ +|+. |.   +.| 
+T Consensus        20 i~D~~g~i~~~N~~~~~~~g~~~~e~~g~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~e~~~~~~~g~~~~~~~~~~pi   99 (120)
+T 2gj3_A           20 ITDLKANILYANRAFRTITGYGSEEVLGKNESILSNGTTPRLVYQALWGRLAQKKPWSGVLVNRRKDKTLYLAELTVAPV   99 (120)
+T ss_dssp             EECTTCBEEEECHHHHHHHCCCTTGGGGCBGGGGCCTTSCHHHHHHHHHHHHTTCCEEEEEEEECTTSCEEEEEEEEEEE
+T ss_pred             EEcCCCCEEEEecceeeccccchhhhhhhccccccccccchhhhhhhhhhhcccccceEEEEEEeeeccccccccceeEE
+
+
+Q ss_pred             cCCCCC-EEEEEE-EEChhh
+Q Tue_Aug_02_20:  202 RDSKGN-VNYVGV-SKVSDY  219 (236)
+Q Consensus       202 rDedG~-thFVGV-rDVTe~  219 (236)
+                      +|++|+ ++||++ +||||.
+T Consensus       100 ~d~~g~i~~~v~~~~DITEl  119 (120)
+T 2gj3_A          100 LNEAGETIYYLGMHRDTSEL  119 (120)
+T ss_dssp             ECTTSCEEEEEEEEEECCSC
+T ss_pred             ECCCCCEEEEEEEEEeccCC
+
+
+No 12 
+>3f1p_B ARYL hydrocarbon receptor nuclear translocator; PAS domain, heterodimer, internal cavity, activator, angiogenesis, congenital erythrocytosis; 1.17A {Homo sapiens} PDB: 3f1o_B* 3f1n_B 3h7w_B* 3h82_B* 1x0o_A 2hv1_A 2b02_A* 2k7s_A 2a24_B
+Probab=98.85  E-value=7.5e-09  Score=74.36  Aligned_cols=75  Identities=8%  Similarity=0.113  Sum_probs=0.0
+
+Q ss_pred             CCC-ceEEECCcc---cCcc----cCCCcCC-----CHHHHHH--HHh-hcCCce---EEEecc-CCCe-ee---ecc-c
+Q Tue_Aug_02_20:  148 DAS-DNVYASRGT---TGYS----DGRNCRG-----TDRAVDK--RNA-TKGVDT---SVCNYR-DGTT-WN---VAG-R  202 (236)
+Q Consensus       148 Dpt-PIIYANdAF---TGYS----IGRNCRF-----DpeaVar--ReA-~~G~e~---eVlNYR-DGSp-WN---ISP-r  202 (236)
+                      ++. .|+|||++|   |||+    +|++...     +...+.+  ..+ ..+...   +...++ ||.. |.   ..| +
+T Consensus        19 ~~dG~i~~vN~~~~~~~G~~~~elig~~~~~~~~~ed~~~~~~~~~~~~~~~~~~~~~e~~~~~kdG~~~wi~~~~~~i~   98 (121)
+T 3f1p_B           19 NIEGIFTFVDHRCVATVGYQPQELLGKNIVEFCHPEDQQLLRDSFQQVVKLKGQVLSVMFRFRSKNQEWLWMRTSSFTFQ   98 (121)
+T ss_dssp             CTTSBEEEECTTHHHHHSCCGGGTTTSBGGGGBCTTTHHHHHHHHHHHTTSTTCCEEEEEEEECTTSCEEEEEEEEEEEC
+T ss_pred             CCCCCEEEECHHHHHHhCCCeecccccceeecccccceeeEeeeeeccccccceeecccceeccccceEEEEEEEEEEEE
+
+
+Q ss_pred             CC-CCC-EEEEEE-EEChhhhhh
+Q Tue_Aug_02_20:  203 DS-KGN-VNYVGV-SKVSDYAKV  222 (236)
+Q Consensus       203 De-dG~-thFVGV-rDVTe~~e~  222 (236)
+                      |+ +|+ .++|++ +|||++.+.
+T Consensus        99 d~~~~~~~~vi~~~~dIte~k~~  121 (121)
+T 3f1p_B           99 NPYSDEIEYIICTNTNVKNSSQE  121 (121)
+T ss_dssp             CTTCCCCCEEEEEEEECCCC---
+T ss_pred             cCCCCcEEEEEEEEEECcccccC
+
+
+No 13 
+>3f1p_A Endothelial PAS domain-containing protein 1; PAS domain, heterodimer, internal cavity, activator, angiogenesis, congenital erythrocytosis; 1.17A {Homo sapiens} PDB: 3f1o_A* 3f1n_A 3h7w_A* 3h82_A* 1p97_A 2a24_A
+Probab=98.82  E-value=2.9e-09  Score=75.84  Aligned_cols=70  Identities=21%  Similarity=0.224  Sum_probs=0.0
+
+Q ss_pred             eEEECCcc---cCcc----cCCCcCC-----CHHHHHH--HHh-hcCCce--EEEecc-CCCe-ee---ecc-cCC-CCC
+Q Tue_Aug_02_20:  152 NVYASRGT---TGYS----DGRNCRG-----TDRAVDK--RNA-TKGVDT--SVCNYR-DGTT-WN---VAG-RDS-KGN  207 (236)
+Q Consensus       152 IIYANdAF---TGYS----IGRNCRF-----DpeaVar--ReA-~~G~e~--eVlNYR-DGSp-WN---ISP-rDe-dG~  207 (236)
+                      |+|||++|   +||+    +|++..-     +...+.+  .++ ..+...  ++..++ ||+. |.   ..| +|+ +|+
+T Consensus        21 i~~vn~~~~~~~Gy~~~e~~g~~~~~~~~~~d~~~~~~~~~~~~~~~~~~~~e~~~~~~dG~~iwv~~~~~~i~~~~~g~  100 (117)
+T 3f1p_A           21 FTYCDDRITELIGYHPEELLGRSAYEFYHALDSENMTKSHQNLCTKGQVVSGQYRMLAKHGGYVWLETQGTVIYNPRNLQ  100 (117)
+T ss_dssp             EEEECTHHHHHHCCCHHHHTTSBGGGGBCGGGHHHHHHHHHHHHHHSEEECCCEEEECTTSSEEEEEEEEEEEEETTTTE
+T ss_pred             EEEECHHHHHHcCCCceecccccccccccccccccceeeeeecccccceecccceeeeccccceeEEEEEEEEEeCCCCc
+
+
+Q ss_pred             -EEEEEE-EEChhhhh
+Q Tue_Aug_02_20:  208 -VNYVGV-SKVSDYAK  221 (236)
+Q Consensus       208 -thFVGV-rDVTe~~e  221 (236)
+                       .+||++ +||||+.+
+T Consensus       101 ~~~iv~~~~dIte~k~  116 (117)
+T 3f1p_A          101 PQCIMCVNYVLSEIEK  116 (117)
+T ss_dssp             EEEEEEEEEECSCCBC
+T ss_pred             EEEEEEEEEECChhhc
+
+
+No 14 
+>3h9w_A Diguanylate cyclase with PAS/PAC sensor; alpha-beta protein., structural genomics, PSI-2, protein structure initiative; 1.90A {Marinobacter aquaeolei VT8}
+Probab=98.80  E-value=5e-09  Score=75.17  Aligned_cols=69  Identities=22%  Similarity=0.254  Sum_probs=0.0
+
+Q ss_pred             eEEECCcc---cCcc----cCCCcCC------CHHHHHH--HHh-hcCCce--EEEecc-CCCe-ee---ecc-cCCCCC
+Q Tue_Aug_02_20:  152 NVYASRGT---TGYS----DGRNCRG------TDRAVDK--RNA-TKGVDT--SVCNYR-DGTT-WN---VAG-RDSKGN  207 (236)
+Q Consensus       152 IIYANdAF---TGYS----IGRNCRF------DpeaVar--ReA-~~G~e~--eVlNYR-DGSp-WN---ISP-rDedG~  207 (236)
+                      |+|||++|   +||+    +|...-+      +.+.+..  ..+ ..+...  ++..++ ||+. |.   +.| +|++|+
+T Consensus        16 ~~yvn~~~~~l~Gy~~~e~~~~~~~~~~i~p~d~~~~~~~~~~~~~~~~~~~~e~~~~~~~G~~~wv~~~~~~i~d~~g~   95 (115)
+T 3h9w_A           16 FEYIGPQIEALLGWPQGSWKSVEDWATRMHPEDQEWVVNFCVKQSECGVDHEADYRALHRDGHYVWIRDVVHVVRDDSGE   95 (115)
+T ss_dssp             EEEECTHHHHHHCSCGGGCCBHHHHHHSBCHHHHHHHHHHHHHHHHTTCCEEEEEEEECTTSCEEEEEEEEEEEECTTSC
+T ss_pred             EEEECHHHHHHHCCChhhcccccceecccchhhhHHHHHHHHHHhhhccceeeEEEEEeeccccceecccceeEECCCCC
+
+
+Q ss_pred             -EEEEEE-EEChhhh
+Q Tue_Aug_02_20:  208 -VNYVGV-SKVSDYA  220 (236)
+Q Consensus       208 -thFVGV-rDVTe~~  220 (236)
+                       +.|+|+ .||||+.
+T Consensus        96 ~~~~~g~~~DITeq~  110 (115)
+T 3h9w_A           96 VEALIGFMFDISLEH  110 (115)
+T ss_dssp             EEEEEEEEEECGGGG
+T ss_pred             EEEEEEEEEEECCCC
+
+
+No 15 
+>2qkp_A Uncharacterized protein; structural genomics, unknown function, PSI-2, protein structure initiative; 1.75A {Streptococcus mutans UA159}
+Probab=98.75  E-value=5.8e-08  Score=70.43  Aligned_cols=101  Identities=17%  Similarity=0.158  Sum_probs=0.0
+
+Q ss_pred             CCCCCCcccccCcchhHHHHHh----------ccCCC-ceEEECCcc-----cCcc----cCCCcCC-----CHHHHHH-
+Q Tue_Aug_02_20:  124 SADTTDNSKANRDDYSVKAMAN----------VTDAS-DNVYASRGT-----TGYS----DGRNCRG-----TDRAVDK-  177 (236)
+Q Consensus       124 ~~~~~~~~~~~~~d~~leai~q----------ITDpt-PIIYANdAF-----TGYS----IGRNCRF-----DpeaVar-  177 (236)
+                      |-|.+-+-++..-.++++.|.+          +.|+. -|+|+|.+|     .|+.    +|+.+.+     ....+.. 
+T Consensus         2 ~~~~~~~~~~~~~~ls~eql~~il~~~p~~i~~~D~~g~i~~~N~~~~~~~~~~~~~~~~iG~~~~~~~p~~~~~~~~~~   81 (151)
+T 2qkp_A            2 SLDRTTQQPFGNGYLSVEQANLILNHLPLEITFVNKDDIFQYYNDSVPAAEMVFKRTPSQVGRNVELCHPPKVLDKVKKV   81 (151)
+T ss_dssp             CCCTTSCEEETTEEECHHHHHHHHHHSSSEEEEEETTSBEEEECCCSCGGGCSSCCCGGGTTSBGGGSSCHHHHHHHHHH
+T ss_pred             CccccchhhhhcccccHHHHHHHHHhCCccEEEEeCCCCEEEEeccccccccccCChHHHhCceeeEEcCHHHHHHHHHH
+
+
+Q ss_pred             HHh-hcCCceEEE-ecc-CCCe-ee---ecc-cCCCCC-EEEEEE-EEChhhhhhcc
+Q Tue_Aug_02_20:  178 RNA-TKGVDTSVC-NYR-DGTT-WN---VAG-RDSKGN-VNYVGV-SKVSDYAKVNN  224 (236)
+Q Consensus       178 ReA-~~G~e~eVl-NYR-DGSp-WN---ISP-rDedG~-thFVGV-rDVTe~~e~~e  224 (236)
+                      -++ ..+...... -++ +|.. |-   ..| +|.+|+ +.+|++ .|||++.+..+
+T Consensus        82 ~~~~~~~~~~~~e~~~~~~~~~r~i~~~~~Pi~d~~G~i~g~i~~~~DITe~k~~E~  138 (151)
+T 2qkp_A           82 FELLRNGQRDKVNMWFQSERLGKFVYVTYAAVRDQAGDFQGVLEYVQDIKPFFELDS  138 (151)
+T ss_dssp             HHHHHTTSBSEEEEEEEETTTTEEEEEEEEEEECTTCCEEEEEEEEEECGGGGGGGG
+T ss_pred             HhhhhhccccccceeeeccCCCcceeeeeeeEEcCCCcEEEEEEEEEEChHHHHHHH
+
+
+No 16 
+>3mqq_A Transcriptional regulator, LUXR family; PAS domain, PSI, MCSG, structural genomics, center for structural genomics; 1.65A {Burkholderia thailandensis} PDB: 3mqo_A
+Probab=98.73  E-value=7.8e-09  Score=72.67  Aligned_cols=88  Identities=13%  Similarity=0.034  Sum_probs=0.0
+
+Q ss_pred             cchhHHHHHh-------ccCCCceEEECCcc---cCcc----cCCCcCC-------CHHHHHH-HHh-hcCCce--EEEe
+Q Tue_Aug_02_20:  136 DDYSVKAMAN-------VTDASDNVYASRGT---TGYS----DGRNCRG-------TDRAVDK-RNA-TKGVDT--SVCN  190 (236)
+Q Consensus       136 ~d~~leai~q-------ITDptPIIYANdAF---TGYS----IGRNCRF-------DpeaVar-ReA-~~G~e~--eVlN  190 (236)
+                      |-+..+.|=+       |.+..-|+|||++|   +||+    +|++..+       .+..... +.+ ..+...  ++.-
+T Consensus         1 ~~~~y~~~~e~~p~gi~i~~~g~i~~vN~~~~~l~G~~~~e~ig~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~e~~~   80 (120)
+T 3mqq_A            1 PAIDYKTAFHLAPIGLVLSRDRVIEDCNDELAAIFRCARADLIGRSFEVLYPSSDEFERIGERISPVMIAHGSYADDRIM   80 (120)
+T ss_dssp             --CCHHHHHHHCSSEEEEEETTEEEEECHHHHHHTTSCHHHHTTCBGGGGSSSHHHHHHHHHHHHHHHHHHSCEEEEEEE
+T ss_pred             CHhHHHHHHHhCCceEEEECCCeEEeecHHHHHHHCcCHHHhcccccccccCchhhhHHHhhhhhhhcccccceeeeeee
+
+
+Q ss_pred             cc-CCCe-ee---ecccCCCCC-EEEEEE-EEChhhhhhc
+Q Tue_Aug_02_20:  191 YR-DGTT-WN---VAGRDSKGN-VNYVGV-SKVSDYAKVN  223 (236)
+Q Consensus       191 YR-DGSp-WN---ISPrDedG~-thFVGV-rDVTe~~e~~  223 (236)
+                      ++ ||+. |.   +.|.+.+|. ..+|++ .|||++.+..
+T Consensus        81 ~~~dG~~~~v~~~~~~i~~~~~~~~~i~~~~DITe~k~~~  120 (120)
+T 3mqq_A           81 KRAGGELFWCHVTGRALDRTAPLAAGVWTFEDLSATRRVA  120 (120)
+T ss_dssp             ECTTSCEEEEEEEEEESSTTSTTSSEEEEEEESCC-----
+T ss_pred             ecCCCeEEEEEEEEEEEccCCCEEEEEEEEEECcHHHhcC
+
+
+No 17 
+>1v9y_A Heme PAS sensor protein; signaling protein; HET: HEM; 1.32A {Escherichia coli K12} SCOP: d.110.3.2 PDB: 1v9z_A* 1vb6_A* 1s67_L* 1s66_L*
+Probab=98.69  E-value=7.9e-09  Score=79.67  Aligned_cols=79  Identities=16%  Similarity=0.355  Sum_probs=0.0
+
+Q ss_pred             ccCCC-ceEEECCcc---cCcc----cCCCcCC---------CHHHHHH-HHh----hcCCceEEEecc-CCCe-ee---
+Q Tue_Aug_02_20:  146 VTDAS-DNVYASRGT---TGYS----DGRNCRG---------TDRAVDK-RNA----TKGVDTSVCNYR-DGTT-WN---  198 (236)
+Q Consensus       146 ITDpt-PIIYANdAF---TGYS----IGRNCRF---------DpeaVar-ReA----~~G~e~eVlNYR-DGSp-WN---  198 (236)
+                      +.|+. .|+|||++|   +||+    +|+++..         ..+.+.. ...    ..+...++...| ||+. |.   
+T Consensus        55 ~~d~~g~I~~~N~a~~~l~Gy~~~el~G~~~~~l~~~~~~~~~~~~~~~~~~~~~~~~~~~~~e~~~~~kdG~~~~v~~~  134 (167)
+T 1v9y_A           55 LINENDEVMFFNPAAEKLWGYKREEVIGNNIDMLIPRDLRPAHPEYIRHNREGGKARVEGMSRELQLEKKDGSKIWTRFA  134 (167)
+T ss_dssp             EECTTSBEEEECHHHHHHHSCCGGGTTTSBGGGGSCGGGTTTHHHHHHHHHC----------CEEEEECTTSCEEEEEEE
+T ss_pred             EEcCCCCEEEECHHHHHHhhhhhhhhhcccccccccchhhhhhhHHHHHHHHhhhhcccccceeEEEEeeccccccceeE
+
+
+Q ss_pred             ecccCCCCCEEEEEE-EEChhhhhhcc
+Q Tue_Aug_02_20:  199 VAGRDSKGNVNYVGV-SKVSDYAKVNN  224 (236)
+Q Consensus       199 ISPrDedG~thFVGV-rDVTe~~e~~e  224 (236)
+                      ++|...+|..+|+++ +|||++.+..+
+T Consensus       135 i~~i~~~~~~~~~~~~~DITe~k~~ee  161 (167)
+T 1v9y_A          135 LSKVSAEGKVYYLALVRDASVEMAQKE  161 (167)
+T ss_dssp             EEEEEETTEEEEEEEEEC---------
+T ss_pred             EEEEEeCCEEEEEEEEEECHHHHHHHH
+
+
+No 18 
+>3luq_A Sensor protein; PAS, histidine, kinase, PSI, MCSG, structural genomics, midwest center for structural genomics; HET: PGE; 2.49A {Geobacter sulfurreducens}
+Probab=98.65  E-value=5.9e-08  Score=64.82  Aligned_cols=78  Identities=21%  Similarity=0.252  Sum_probs=0.0
+
+Q ss_pred             HHHHHh-------ccCCC-ceEEECCcc---cCcc----cCCCcCC-----CHHHHHH-HHh-hcCCce--EEEecc-CC
+Q Tue_Aug_02_20:  140 VKAMAN-------VTDAS-DNVYASRGT---TGYS----DGRNCRG-----TDRAVDK-RNA-TKGVDT--SVCNYR-DG  194 (236)
+Q Consensus       140 leai~q-------ITDpt-PIIYANdAF---TGYS----IGRNCRF-----DpeaVar-ReA-~~G~e~--eVlNYR-DG  194 (236)
+                      |++|-+       +.|+. .|+|+|++|   +||+    +|++..+     ....... ... ..+...  +..-++ ||
+T Consensus         5 lr~i~e~~p~~I~~~D~~g~i~~~N~~~~~~~g~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~g   84 (114)
+T 3luq_A            5 LRLFTEHAPAALAMFDREMRYLAVSRRWREDYGLGDGDILGMSHYDIFPEIGEEWKSVHRRGLAGEVIRVEEDCFVRADG   84 (114)
+T ss_dssp             HHHHHHTCSSEEEEEETTCBEEEECHHHHHHTTCCSSCCTTCBHHHHCTTCCHHHHHHHHHHHTTCCEEEEEEEEEC--C
+T ss_pred             HHHHHHcCchheEEEeCCCCEEEEEeeeeeeeccccccccccccccccccccccccccccccccccccccccceeeeecc
+
+
+Q ss_pred             Ce-ee---ecc-cCCCCC-EEEEEE-EECh
+Q Tue_Aug_02_20:  195 TT-WN---VAG-RDSKGN-VNYVGV-SKVS  217 (236)
+Q Consensus       195 Sp-WN---ISP-rDedG~-thFVGV-rDVT  217 (236)
+                      .. |-   +.| +|++|+ .+++++ +|||
+T Consensus        85 ~~~~~~~~~~pi~d~~g~~~g~~~~~~DIT  114 (114)
+T 3luq_A           85 RTQWLRWEVRPWYEGEGRVGGVVIFTEDIT  114 (114)
+T ss_dssp             CEEEEEEEEEEEECTTSCEEEEEEEEEECC
+T ss_pred             cccccccceeEEECCCCCEEEEEEEEEEcC
+
+
+No 19 
+>3mjq_A Uncharacterized protein; NESG, structural genomics, PSI-2, protein structure initiati northeast structural genomics consortium; 2.60A {Desulfitobacterium hafniense}
+Probab=98.61  E-value=2.4e-08  Score=71.67  Aligned_cols=87  Identities=10%  Similarity=0.124  Sum_probs=0.0
+
+Q ss_pred             HHHHHh---ccCCC-ceEEECCcc---cCcc----cCCCcCC-----CHHHHHH-HHh---hcCCceEEEecc-CCCe-e
+Q Tue_Aug_02_20:  140 VKAMAN---VTDAS-DNVYASRGT---TGYS----DGRNCRG-----TDRAVDK-RNA---TKGVDTSVCNYR-DGTT-W  197 (236)
+Q Consensus       140 leai~q---ITDpt-PIIYANdAF---TGYS----IGRNCRF-----DpeaVar-ReA---~~G~e~eVlNYR-DGSp-W  197 (236)
+                      ++.|.+   |+|+. -|+|+|++|   +||+    +|+++..     .+..... .++   .....+++...+ ||+. |
+T Consensus         5 ld~~~d~i~i~d~~g~i~~~N~~~~~~~G~~~~e~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~e~~~~~~dG~~~~   84 (126)
+T 3mjq_A            5 LETIEDMILIINREGRLLYANTAVPKKLGYTHEELMSMHILTITSAGKMAEGEKILAELFAGKKESLPLSLEKKEGTSIP   84 (126)
+T ss_dssp             GGGCSSEEEEEETTSBEEEECTHHHHHHSCCHHHHHHSBHHHHHCTTCHHHHHHHHHHHHHTCCSEEEEEEECTTSCEEE
+T ss_pred             HhcCcccEEEEcCCCcEEEEeccccccccccccccccccccccccccccccccccccccccccccccccccccccceEEe
+
+
+Q ss_pred             e---ecccCCCCCEEEEEE-EEChhhhhhcccc
+Q Tue_Aug_02_20:  198 N---VAGRDSKGNVNYVGV-SKVSDYAKVNNYK  226 (236)
+Q Consensus       198 N---ISPrDedG~thFVGV-rDVTe~~e~~e~k  226 (236)
+                      .   +.|.-.+|...+|++ +|||++.++...+
+T Consensus        85 ~~~~~~~~~~~~~~~i~~i~~DITerk~ae~~~  117 (126)
+T 3mjq_A           85 AKARIWQGKWHNEPCLFAIIKDLSKEERASSPP  117 (126)
+T ss_dssp             EEEEEEEEESSSSEEEEEEEEECC---------
+T ss_pred             eeeeeEEEEeCCceEEEEEEEECCHHHHHcChH
+
+
+No 20 
+>3ewk_A Sensor protein; PAS domain, alpha/beta fold, kinase, phosphoprotein, transferase, flavoprotein; HET: FAD; 2.34A {Methylococcus capsulatus}
+Probab=98.61  E-value=3.4e-08  Score=73.76  Aligned_cols=70  Identities=20%  Similarity=0.339  Sum_probs=0.0
+
+Q ss_pred             ccCCC-ceEEECCcc---cCcc----cCCCcCC------CHHHHHH-HHh-hcCCce--EEEec------c-CCCe-ee-
+Q Tue_Aug_02_20:  146 VTDAS-DNVYASRGT---TGYS----DGRNCRG------TDRAVDK-RNA-TKGVDT--SVCNY------R-DGTT-WN-  198 (236)
+Q Consensus       146 ITDpt-PIIYANdAF---TGYS----IGRNCRF------DpeaVar-ReA-~~G~e~--eVlNY------R-DGSp-WN-  198 (236)
+                      +.|+. -|+|+|++|   +||+    +|+++.+      .+...+. +++ ..++.+  ++.+|      + ||+. |. 
+T Consensus       126 ~~d~~g~i~~~N~~~~~~~G~~~~e~~g~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~e~~~~~~~~~~~~dg~~~wi~  205 (227)
+T 3ewk_A          126 LTDRAGRIIYANPALCRFSGMAEGELLGQSPSILDSPLADQETLAAMQEALQAGQPWSGRLLNRRRTGPAPHDAEDYWAE  205 (227)
+T ss_dssp             EECTTSCEEEECHHHHHHHTCCTHHHHSSCGGGGBCTTSCHHHHHHHHHHHHHTCCEECCEEEEEECCSSSSCEEEEEEE
+T ss_pred             eeCCCCeEEEECHHHHHHhCCCHHHhcCCchhhhcCchhhhhhhhHHHHHHhhcCceEEEEEEEEecCcccCCCeEEEEE
+
+
+Q ss_pred             --ecc-cCCCCC-EEEEEE-EE
+Q Tue_Aug_02_20:  199 --VAG-RDSKGN-VNYVGV-SK  215 (236)
+Q Consensus       199 --ISP-rDedG~-thFVGV-rD  215 (236)
+                        +.| +|++|+ ++|||| +|
+T Consensus       206 ~~~~pi~d~~G~v~~~v~i~~D  227 (227)
+T 3ewk_A          206 ISTTPIHTDGNGLVGYVQIQHD  227 (227)
+T ss_dssp             EEEEEEECSSSCEEEEEEEEEC
+T ss_pred             EEEEEEECCCCCEEEEEEEEEC
+
+
+No 21 
+>3bwl_A Sensor protein; structural genomics, APC87707.1, PAS domain, HTR-like protein, PSI-2, protein structure initiative; HET: MSE I3A; 1.73A {Haloarcula marismortui atcc 43049}
+Probab=98.59  E-value=5.7e-08  Score=69.23  Aligned_cols=78  Identities=18%  Similarity=0.220  Sum_probs=0.0
+
+Q ss_pred             HHHHHh-------ccCCC-ceEEECCcc---cCcc----cCCCcCC-----CHHHHHH--HHh--hcCCceEEEecc-CC
+Q Tue_Aug_02_20:  140 VKAMAN-------VTDAS-DNVYASRGT---TGYS----DGRNCRG-----TDRAVDK--RNA--TKGVDTSVCNYR-DG  194 (236)
+Q Consensus       140 leai~q-------ITDpt-PIIYANdAF---TGYS----IGRNCRF-----DpeaVar--ReA--~~G~e~eVlNYR-DG  194 (236)
+                      +++|-.       +.|+. -|+|+|++|   +||+    +|+++..     +++.+..  ..+  .....+++.-++ ||
+T Consensus        19 ~~~i~~~~~~~i~~~d~~g~i~~~N~~~~~~~g~~~~el~g~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~e~~~~~~~G   98 (126)
+T 3bwl_A           19 LEALFENSPDMIDVLDADGTICEVNQRFCAELGYDESEVLGRSIWEFDLMFDAEDVQTQLSGFSVDERRKFEGLYERRDG   98 (126)
+T ss_dssp             HHHHHHHCSSEEEEECTTCBEEEECHHHHHHHTCCGGGTTTSBGGGTBTTCCHHHHHHHHHTCCTTCEEEEEEEEECTTS
+T ss_pred             HHHHHHcCchhhhcccccccchhhhHHHHHhccCCHHHHcCCCHHHHhcccCHHHHHHHHHHHHhcCCcceeEEEECCCC
+
+
+Q ss_pred             Ce-ee---ecccCCCCCEEEEEE-EECh
+Q Tue_Aug_02_20:  195 TT-WN---VAGRDSKGNVNYVGV-SKVS  217 (236)
+Q Consensus       195 Sp-WN---ISPrDedG~thFVGV-rDVT  217 (236)
+                      +. |.   +.|.+.+|+.+|+++ +|||
+T Consensus        99 ~~~~v~~~~~~~~~~~~~~~~~v~~DIT  126 (126)
+T 3bwl_A           99 STMSVEVHLLRFNLEGEDRFLAISRDIT  126 (126)
+T ss_dssp             CEEEEEEEEEEEEETTEEEEEEEEEEC-
+T ss_pred             CEEEEEEEEEEEEeCCeEEEEEEEEECC
+
+
+No 22 
+>3ewk_A Sensor protein; PAS domain, alpha/beta fold, kinase, phosphoprotein, transferase, flavoprotein; HET: FAD; 2.34A {Methylococcus capsulatus}
+Probab=98.52  E-value=1.8e-07  Score=69.77  Aligned_cols=79  Identities=23%  Similarity=0.451  Sum_probs=0.0
+
+Q ss_pred             ccCCC-ceEEECCcc---cCcc----cCCCcCC------CHHHHHH-HHh-hcCCce--EEEecc-CCCe-ee---ecc-
+Q Tue_Aug_02_20:  146 VTDAS-DNVYASRGT---TGYS----DGRNCRG------TDRAVDK-RNA-TKGVDT--SVCNYR-DGTT-WN---VAG-  201 (236)
+Q Consensus       146 ITDpt-PIIYANdAF---TGYS----IGRNCRF------DpeaVar-ReA-~~G~e~--eVlNYR-DGSp-WN---ISP-  201 (236)
+                      |||+. -|+|||++|   +||+    ||+++++      .++.+.. .+. ..+...  +..-++ +|.. |-   ++| 
+T Consensus         4 i~D~~G~I~~vN~a~~~l~G~~~eeliG~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~e~~~~~~~g~~~~~~~~~~~i   83 (227)
+T 3ewk_A            4 ITDLQGRILYANDNFCAVSRYGREELVGQDHRIVNSGYHGKAYIRDMWRTISRGNIWQGEFCNRRKDGTRYWVDSTIVPL   83 (227)
+T ss_dssp             EEETTCBEEEECHHHHHHTTCCHHHHTTSBGGGGCCSCSCHHHHHHHHHHHTTTCCEEEEEEEECSSSCEEEEEEEEEEE
+T ss_pred             EEcCCCCEEEecHHHHHHHCcCHHHHcCCCHHHhCChhhhHHHhhhHHHhhhcCCceeEEEEEEecccceEEeeeeeeee
+
+
+Q ss_pred             cCCCCC-EEEEEE-EEChhhhhhcc
+Q Tue_Aug_02_20:  202 RDSKGN-VNYVGV-SKVSDYAKVNN  224 (236)
+Q Consensus       202 rDedG~-thFVGV-rDVTe~~e~~e  224 (236)
+                      .+..|. ..++.+ .|++++.+..+
+T Consensus        84 ~~~~g~~~~~~~~~~~~~~~~~~~~  108 (227)
+T 3ewk_A           84 MDNAGKPRQYISIRRDITAQKEAEA  108 (227)
+T ss_dssp             ECSSSCEEEEEEEEEECTTTTHHHH
+T ss_pred             eccCCceeEEEeeeccHHHHHHHHH
+
+
+No 23 
+>2kdk_A ARYL hydrocarbon receptor nuclear translocator-LI 2; circadian clock, PAS domain, transcription, activator, biolo rhythms, DNA-binding, nucleus; NMR {Homo sapiens}
+Probab=98.47  E-value=3.3e-07  Score=67.51  Aligned_cols=71  Identities=17%  Similarity=0.165  Sum_probs=0.0
+
+Q ss_pred             ceEEECCcc---cCcc----cCCCcCC-----CHHHHHH--HHh-hcCCce---EEEecc-CCCe-ee---ecc-cCCCC
+Q Tue_Aug_02_20:  151 DNVYASRGT---TGYS----DGRNCRG-----TDRAVDK--RNA-TKGVDT---SVCNYR-DGTT-WN---VAG-RDSKG  206 (236)
+Q Consensus       151 PIIYANdAF---TGYS----IGRNCRF-----DpeaVar--ReA-~~G~e~---eVlNYR-DGSp-WN---ISP-rDedG  206 (236)
+                      .|+|||++|   +||+    +|+.+.-     |.+.+.+  .++ ..+...   +....+ ||+. |.   ..| +|.+|
+T Consensus        24 ~i~yvN~~~~~~lGy~~~elig~~~~~l~~ped~~~~~~~~~~~~~~~~~~~~~e~r~~~kdG~~~w~~~~~~~v~~~~~  103 (121)
+T 2kdk_A           24 KFVYVDQRATAILGYLPQELLGTSCYEYFHQDDHNNLTDKHKAVLQSKEKILTDSYKFRAKDGSFVTLKSQWFSFTNPDT  103 (121)
+T ss_dssp             BEEEECTHHHHHTCCCTTTSBTSBTTTTBCSSSHHHHHHHHHHHHTSSSCEEEEEEEEECSSSCEEEEEEEEEEEECCSS
+T ss_pred             CEEEEehHHHHHhcCCHHHhhhcccccccccchhHHHHhhhhhcccccccccccceeEEccCCeEEEEEEEEEEEEcCCC
+
+
+Q ss_pred             C--EEEEEE-EEChhhhh
+Q Tue_Aug_02_20:  207 N--VNYVGV-SKVSDYAK  221 (236)
+Q Consensus       207 ~--thFVGV-rDVTe~~e  221 (236)
+                      .  .+|||+ .||+...|
+T Consensus       104 ~~~~~iv~~~~~i~~~~e  121 (121)
+T 2kdk_A          104 KELEYIVSVNTLVLGHSE  121 (121)
+T ss_dssp             SCEEEEEEEEECCSSCCC
+T ss_pred             CcEEEEEEEEEEccCCCC
+
+
+No 24 
+>3eeh_A Putative light and redox sensing histidine kinase; structural genomics, PSI, MCSG, protein structure initiative; HET: PG5; 1.95A {Haloarcula marismortui}
+Probab=98.46  E-value=2.6e-07  Score=67.20  Aligned_cols=66  Identities=12%  Similarity=0.165  Sum_probs=0.0
+
+Q ss_pred             eEEECCcc---cCcc----cCCCcCC----CHHHHHH-HHh----hcCCceEEE-ecc--CCCe-ee---ecc-cCCCCC
+Q Tue_Aug_02_20:  152 NVYASRGT---TGYS----DGRNCRG----TDRAVDK-RNA----TKGVDTSVC-NYR--DGTT-WN---VAG-RDSKGN  207 (236)
+Q Consensus       152 IIYANdAF---TGYS----IGRNCRF----DpeaVar-ReA----~~G~e~eVl-NYR--DGSp-WN---ISP-rDedG~  207 (236)
+                      |+|+|++|   |||+    +|.-..|    .|+...+ +.+    ..++.+++. -++  ||.. |.   ..| +|++|+
+T Consensus        34 ~~~~n~~~~~i~G~~~~e~~~~~~~~~~~v~ped~~~~~~~~~~~~~~~~~~~e~ri~~~dG~~~wv~~~~~~~~~~~g~  113 (125)
+T 3eeh_A           34 VLVINSAYEDIWGRSVAKLRENPHDFLNGIHPEDRELMKDTMQSLMDGESADVECRVNATEEYQRWVWIQGEPITNDAGE  113 (125)
+T ss_dssp             EEEECTHHHHHHSSCHHHHHHCGGGGGGGBCHHHHHHHHHHHHHHHTTCCEEEEEEECGGGTTCEEEEEEEEEEECTTSC
+T ss_pred             EEEECHHHHHHhCccccccccchHHHHHhcCHHHHHHHHHHHHHhhcCCCceEEEEEECCCCCEEEEEEEEEEEECCCCC
+
+
+Q ss_pred             -EEEEEE-EECh
+Q Tue_Aug_02_20:  208 -VNYVGV-SKVS  217 (236)
+Q Consensus       208 -thFVGV-rDVT  217 (236)
+                       ..++|+ .|||
+T Consensus       114 ~~~~~g~~~DIT  125 (125)
+T 3eeh_A          114 TVRVAGFARDIT  125 (125)
+T ss_dssp             EEEEEEEEEECC
+T ss_pred             EEEEEEEEEEeC
+
+
+No 25 
+>3mr0_A Sensory box histidine kinase/response regulator; PAS fold, structural genomics, PSI-2; HET: PG5; 1.49A {Burkholderia thailandensis}
+Probab=98.45  E-value=3.8e-07  Score=66.62  Aligned_cols=77  Identities=19%  Similarity=0.227  Sum_probs=0.0
+
+Q ss_pred             CCC-ceEEECCcc---cCcc---cCCCcCC--------CHHHHHH--HHh-hcCCceEEE--ecc-CCCe-ee---ecc-
+Q Tue_Aug_02_20:  148 DAS-DNVYASRGT---TGYS---DGRNCRG--------TDRAVDK--RNA-TKGVDTSVC--NYR-DGTT-WN---VAG-  201 (236)
+Q Consensus       148 Dpt-PIIYANdAF---TGYS---IGRNCRF--------DpeaVar--ReA-~~G~e~eVl--NYR-DGSp-WN---ISP-  201 (236)
+                      |+. -+||+|++|   +||+   +...+..        +...+..  ..+ ..+..+++.  -.+ ||+. |.   ..| 
+T Consensus        26 d~~~~~~~~n~~~~~~~g~~~~~~~~~~~~~~~~i~~~~~~~~~~~~~~~~~~~~~~~~e~ri~~~dG~~~w~~~~~~~~  105 (142)
+T 3mr0_A           26 NPKTGAMYLSPHFKKIMGYEDHELPDEITGHRESIHPDDRARVLAALKAHLEHRDTYDVEYRVRTRSGDFRWIQSRGQAL  105 (142)
+T ss_dssp             CTTTCCEEECHHHHHHTTCCGGGSCSEEC---CCBCTTTHHHHHHHHHHHHHHCCCEEEEEEEECTTSCEEEEEEEEEEE
+T ss_pred             ECCcCEEEECHHHHHHHCcCHHHHcCCchhHHhcCCHHHHHHHHHHHHHHhhccCCceeEEEEeecCCCceEEEEEEEEE
+
+
+Q ss_pred             cCCCCC-EEEEEE-EEChhhhhhcc
+Q Tue_Aug_02_20:  202 RDSKGN-VNYVGV-SKVSDYAKVNN  224 (236)
+Q Consensus       202 rDedG~-thFVGV-rDVTe~~e~~e  224 (236)
+                      +|++|+ +.++|+ .|||++.+..+
+T Consensus       106 ~d~~G~~~~i~g~~~DITe~k~~e~  130 (142)
+T 3mr0_A          106 WNSAGEPYRMVGWIMDVTDRKRDED  130 (142)
+T ss_dssp             ECTTSCEEEEEEEEEECHHHHHHHH
+T ss_pred             ECCCCCEEEEEEEEEECcHHHHHHH
+
+
+No 26 
+>3mxq_A Sensor protein; PSI2, MCSG, structural genomics, protein structure initiativ midwest center for structural genomics; 2.78A {Vibrio cholerae o1 biovar el tor}
+Probab=98.44  E-value=1.5e-07  Score=68.24  Aligned_cols=85  Identities=9%  Similarity=0.071  Sum_probs=0.0
+
+Q ss_pred             HHHHHh-------ccCCC-ceEEECCcc---cCcc----cCCCcCC----CHHHHHH--HHh-hcCCceEE---------
+Q Tue_Aug_02_20:  140 VKAMAN-------VTDAS-DNVYASRGT---TGYS----DGRNCRG----TDRAVDK--RNA-TKGVDTSV---------  188 (236)
+Q Consensus       140 leai~q-------ITDpt-PIIYANdAF---TGYS----IGRNCRF----DpeaVar--ReA-~~G~e~eV---------  188 (236)
+                      |++|-+       |.|+. -|+|+|++|   +||.    +|+++..    ....+..  +.+ ..+.....         
+T Consensus        24 l~~il~~~p~~i~i~D~d~~i~~~N~~~~~~~g~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  103 (152)
+T 3mxq_A           24 LSELLDQLSFALCIVRNDYVIVKVNEYFESRVIFDGETMQGKNILELFPESADYLKRKIDTALVIESSSFSSWEQKPHLL  103 (152)
+T ss_dssp             HHHHHHHHCCEEEEEETTSBEEEECHHHHHTSSSCHHHHTTSBHHHHSGGGHHHHHHHHHHHHHHTSCEEEECCSSSCSS
+T ss_pred             HHHHHhcCccceEEEecCCCeeccCCcccccccccccccccccccccccCcHHHHHHHHHHHHHhcccccceeeeeeecc
+
+
+Q ss_pred             -----Eecc-CCCe-ee---ecc-cCCCCC-EEEEEE-EEChhhhhhcc
+Q Tue_Aug_02_20:  189 -----CNYR-DGTT-WN---VAG-RDSKGN-VNYVGV-SKVSDYAKVNN  224 (236)
+Q Consensus       189 -----lNYR-DGSp-WN---ISP-rDedG~-thFVGV-rDVTe~~e~~e  224 (236)
+                           ..++ +|.. |-   +.| +|++|+ +++|++ .|||++.+..+
+T Consensus       104 ~~~~~~~~~~~~~~~~~~~~~~Pl~d~~G~v~~vv~~~~DITe~k~~eq  152 (152)
+T 3mxq_A          104 PFKSSRPVSGEEEQMYQNLEVIPIHSEDGTIEHVCLCVYDVTIQASQQQ  152 (152)
+T ss_dssp             CC----------CCEEEEEEEEEEECTTSCEEEEEEEEEEEECC-----
+T ss_pred             ccceeeccCCCcceeeeEEEEEEEECCCCCEEEEEEEEEEhhHHHHhcC
+
+
+No 27 
+>2vv6_A FIXL, sensor protein FIXL; signaling protein, transferase, phosphoprotein, nitrogen fixation, PER-ARNT-SIM, metal-binding, PAS, iron; HET: HEM; 1.5A {Bradyrhizobium japonicum} PDB: 1xj6_A* 1xj4_A* 2vv7_A* 2vv8_A* 1lsw_A* 1dp8_A* 1dp9_A* 1drm_A* 1lsv_A* 1dp6_A* 1lsx_A* 1lt0_A* 1y28_A* 2cmn_A* 1xj3_A* 1xj2_A* 2owh_A* 2owj_A*
+Probab=98.39  E-value=3.1e-07  Score=62.93  Aligned_cols=79  Identities=23%  Similarity=0.283  Sum_probs=0.0
+
+Q ss_pred             ccCCC-ceEEECCcc---cCcc----cCCCcCC---------CHHHHHH-HHh----hcCCceEEEecc-CCCe-ee-ec
+Q Tue_Aug_02_20:  146 VTDAS-DNVYASRGT---TGYS----DGRNCRG---------TDRAVDK-RNA----TKGVDTSVCNYR-DGTT-WN-VA  200 (236)
+Q Consensus       146 ITDpt-PIIYANdAF---TGYS----IGRNCRF---------DpeaVar-ReA----~~G~e~eVlNYR-DGSp-WN-IS  200 (236)
+                      |.|+. -|+|||++|   +||+    +|+.+..         ....+.. ...    ......++.... +|.. |. ++
+T Consensus         8 v~D~~g~I~~~N~a~~~l~g~~~~e~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~g~~~~~~~~   87 (119)
+T 2vv6_A            8 VIDGHGIIQLFSTAAERLFGWSELEAIGQNVNILMPEPDRSRHDSYISRYRTTSDPHIIGIGRIVTGKRRDGTTFPMHLS   87 (119)
+T ss_dssp             EEETTSBEEEECHHHHHHHCCCHHHHTTSBGGGGSCTTHHHHHHHHHHHHHHHCCCSSTTTCEEEEEECTTSCEEEEEEE
+T ss_pred             EECCCCcEEeehHHHHHHHCcCHHHHcCcccccccccccchhhHhhhhccccccccccccceeeeeeeeccCcccchhhh
+
+
+Q ss_pred             c-cCCCCC-EEEEEE-EEChhhhhhcc
+Q Tue_Aug_02_20:  201 G-RDSKGN-VNYVGV-SKVSDYAKVNN  224 (236)
+Q Consensus       201 P-rDedG~-thFVGV-rDVTe~~e~~e  224 (236)
+                      + ...++. ..|+++ +|||++.+..+
+T Consensus        88 ~~~~~~~~~~~~~~~~~DITerk~~e~  114 (119)
+T 2vv6_A           88 IGEMQSGGEPYFTGFVRDLTEHQQTQA  114 (119)
+T ss_dssp             EEEEEETTEEEEEEEEEECC-------
+T ss_pred             ccccccccccEEEEEEEEcHHHHHHHH
+
+
+No 28 
+>2vlg_A Sporulation kinase A; histidine kinase, two-component regulatory system, two-component signal transduction, transferase, phosphorylation, SCOD; 1.7A {Bacillus subtilis}
+Probab=98.38  E-value=2.7e-07  Score=67.10  Aligned_cols=83  Identities=16%  Similarity=0.138  Sum_probs=0.0
+
+Q ss_pred             hhHHHHHh---ccCCC-ceEEECCcc---cCcc----cCCC-cCC----CHHHHHH-HHh-hcCCceEEEecc-CCCe-e
+Q Tue_Aug_02_20:  138 YSVKAMAN---VTDAS-DNVYASRGT---TGYS----DGRN-CRG----TDRAVDK-RNA-TKGVDTSVCNYR-DGTT-W  197 (236)
+Q Consensus       138 ~~leai~q---ITDpt-PIIYANdAF---TGYS----IGRN-CRF----DpeaVar-ReA-~~G~e~eVlNYR-DGSp-W  197 (236)
+                      |-|+.+..   |.|+. -|+|||++|   +||+    +|++ ..|    |.+.+.+ -.. .....++..-.| ||+. |
+T Consensus         3 ~~le~~~D~~~v~d~~G~i~~vn~~~~~~lGy~~eel~g~~~~~~ihp~d~~~~~~~~~~~~~~~~~e~r~~~kdG~~iw   82 (111)
+T 2vlg_A            3 FPLQTKTDIHAVLASNGRIIYISANSKLHLGYLQGEMIGSFLKTFLHEEDQFLVESYFYNEHHLMPCTFRFIKKDHTIVW   82 (111)
+T ss_dssp             ------CCEEEEECTTSBEEEECTTHHHHHSCCHHHHTTSBGGGGBCGGGHHHHHHHHHCSCCSSCEEEEEECTTSCEEE
+T ss_pred             eeeecCcceEEEECCCCeEEEECHHHHHHHCCCHHHhhhhhhcccCCHHHHHHHHHHHhccCCCceeeeEEEcCCCeEEE
+
+
+Q ss_pred             e---ecc-cCCCCC-EEEEEE-EEChhhh
+Q Tue_Aug_02_20:  198 N---VAG-RDSKGN-VNYVGV-SKVSDYA  220 (236)
+Q Consensus       198 N---ISP-rDedG~-thFVGV-rDVTe~~  220 (236)
+                      .   +.| .+..|. .++|.+ .||+|+.
+T Consensus        83 ve~~~~~v~~~~~~~~~~ii~~~~i~eek  111 (111)
+T 2vlg_A           83 VEAAVEIVTTRAERTEREIILKMKVLEEE  111 (111)
+T ss_dssp             EEEEEEEC-------CCCEEEEEEEC---
+T ss_pred             EEEEEEEEEeCCCCcceEEEEEEEeecCC
+
+
+No 29 
+>3icy_A Sensor protein; sensory box histidine kinase/response regulator domain, kinase, chlorobium tepidum TLS, PSI-2; 2.68A {Chlorobaculum tepidum}
+Probab=98.35  E-value=6.4e-07  Score=61.22  Aligned_cols=78  Identities=12%  Similarity=0.153  Sum_probs=0.0
+
+Q ss_pred             HHHHHh-------ccCCC---ceEEECCcc---cCcc----cCCCcCC-----CHHHHHH--HHh-hcCCceEEE--ecc
+Q Tue_Aug_02_20:  140 VKAMAN-------VTDAS---DNVYASRGT---TGYS----DGRNCRG-----TDRAVDK--RNA-TKGVDTSVC--NYR  192 (236)
+Q Consensus       140 leai~q-------ITDpt---PIIYANdAF---TGYS----IGRNCRF-----DpeaVar--ReA-~~G~e~eVl--NYR  192 (236)
+                      +++|-+       +.|+.   .++|+|++|   +||+    +|+...-     +.+.+.+  .++ ..+..+++.  -.+
+T Consensus         6 ~~~l~~~~p~~i~~~d~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~i~p~~~~~~~~~~~~~~~~~~~~~~e~~~~~   85 (118)
+T 3icy_A            6 LQALVDNIPAAIYHLDVSGQATIRFRPPAFLKTLVSEHAGTTRLNTLSMIHHDDRHMLSNAYSKLREAKHSLTLVYRIVT   85 (118)
+T ss_dssp             HHHHHTTCCCCCEEECTTSCEEECCCCCGGGGGGEEEETTEEEEGGGGGBCGGGHHHHHHHHHHHHHSCCEEEEEEEEEC
+T ss_pred             HHHHHhcCceeEEEEECcccccccccccccccccccccccccchhHHHhhhhccccccccccccccccccccccceeeee
+
+
+Q ss_pred             -CCCe-ee---ecc-cCCCCC-EEEEEE-EECh
+Q Tue_Aug_02_20:  193 -DGTT-WN---VAG-RDSKGN-VNYVGV-SKVS  217 (236)
+Q Consensus       193 -DGSp-WN---ISP-rDedG~-thFVGV-rDVT  217 (236)
+                       ||+. |.   ..| +|++|+ ++++|+ .|||
+T Consensus        86 ~dG~~~wi~~~~~~i~d~~G~~~~~~g~~~DIT  118 (118)
+T 3icy_A           86 PEGKLHWIEDHMRSSFSDDGLFSGIDGILCEVT  118 (118)
+T ss_dssp             TTCCEEEEEEEEEEEECTTSCEEEEEEEEEECC
+T ss_pred             ecccceeeeeEEEEEECCCCCEEEEEEEEEEcC
+
+
+No 30 
+>2r78_A Sensor protein; sensory box sensor histidine kinase/response regulator, structural genomics, PSI, MCSG; 1.60A {Geobacter sulfurreducens pca}
+Probab=98.34  E-value=3.2e-07  Score=64.07  Aligned_cols=87  Identities=16%  Similarity=0.164  Sum_probs=0.0
+
+Q ss_pred             CCCcccccCcchh--HHHHHh---ccCCC-ceEEECCcc---cCcc----cCCCcCC-----CHHHHHH-HHh-hcCCce
+Q Tue_Aug_02_20:  127 TTDNSKANRDDYS--VKAMAN---VTDAS-DNVYASRGT---TGYS----DGRNCRG-----TDRAVDK-RNA-TKGVDT  186 (236)
+Q Consensus       127 ~~~~~~~~~~d~~--leai~q---ITDpt-PIIYANdAF---TGYS----IGRNCRF-----DpeaVar-ReA-~~G~e~  186 (236)
+                      +|..-+.+.-.|.  ++.+..   +.|+. .|+|+|++|   +||+    +|+++.-     +++.+.. -+. ..++.+
+T Consensus         2 ~~e~l~~~e~~yr~l~e~~~~~i~~~d~~g~i~~~N~~~~~~~g~~~~~l~g~~~~~~~~~~~~~~~~~~~~~~~~~~~~   81 (117)
+T 2r78_A            2 GTENLYFQSNAYRALFEHAIDGIFIMDAEGHYLDVNPAICSAIGYTRDEFLALDWGVLSRGVDSGWAAASLARIVGGEPL   81 (117)
+T ss_dssp             CCCSHHHHHHHHHHHHHHCSSEEEEECTTSBEEEECHHHHHHHCCCHHHHTTCBTTTTTTCSTTSHHHHHHHHHHTTCCE
+T ss_pred             hHHHHHHHHHHHHHHHHcCCcceEEEcCCCCEEEEchHHHHHhCCChHHhcCCccchhhccccHHHHHHHHHHHHcCCce
+
+
+Q ss_pred             --EEEecc-CCCe-ee---ecc-cCCCCCEEEEEE-EECh
+Q Tue_Aug_02_20:  187 --SVCNYR-DGTT-WN---VAG-RDSKGNVNYVGV-SKVS  217 (236)
+Q Consensus       187 --eVlNYR-DGSp-WN---ISP-rDedG~thFVGV-rDVT  217 (236)
+                        ++..++ ||+. |.   +.| .|..    +||+ +|||
+T Consensus        82 ~~e~~~~~~dG~~~~~~~~~~~i~d~~----~~~i~~DIT  117 (117)
+T 2r78_A           82 REERTVWTRNGDQLTVELSAHLLPDGK----ILGIARDVS  117 (117)
+T ss_dssp             EEEEEEECTTSCEEEEEEEEEECTTSC----EEEEEEC--
+T ss_pred             EEEEEEEcCCCCEEEEEEEEEEEECCE----EEEEEEECc
+
+
+No 31 
+>3nja_A Probable ggdef family protein; structural genomics, PSI-2, protein structure initiative, MI center for structural genomics, MCSG; 2.37A {Chromobacterium violaceum}
+Probab=98.30  E-value=7.3e-07  Score=62.66  Aligned_cols=70  Identities=14%  Similarity=0.057  Sum_probs=0.0
+
+Q ss_pred             eEEECCcc---cCcc----cCCCcCC-------CHHHHHH--HHh-hcCCce--EEEecc-CCCe-ee---ecc-cCCCC
+Q Tue_Aug_02_20:  152 NVYASRGT---TGYS----DGRNCRG-------TDRAVDK--RNA-TKGVDT--SVCNYR-DGTT-WN---VAG-RDSKG  206 (236)
+Q Consensus       152 IIYANdAF---TGYS----IGRNCRF-------DpeaVar--ReA-~~G~e~--eVlNYR-DGSp-WN---ISP-rDedG  206 (236)
+                      ++|+|+.|   +||+    ++.-..|       +.+.+..  +.+ ..+..+  ++.-.+ ||.. |.   ..| +|++|
+T Consensus        29 ~~~~s~~~~~l~G~~~~~~~~~~~~~~~~~~~d~~~~~~~~~~~~~~~~~~~~~e~r~~~~~g~~~w~~~~~~~~~d~~g  108 (125)
+T 3nja_A           29 RLEWSQAVHDIFGTDSATFDATEDAYFQRVHPDDRARVRRELDRHVLGDRPFDVEYRIVRPDGQVRELLERNHIQRQASG  108 (125)
+T ss_dssp             EEEECHHHHHHHTCCTTTCCCBHHHHHHHBCTTTHHHHHHHHHHHHHSCCCEEEEEEEECTTSCEEEEEEEEEEEECTTS
+T ss_pred             EEEECHHHHHHhCCCcccccCCHHHHHhhhhHHHHHHHHHHHHHHhccCcceeEEEEEeecccccccccccceeEECCCC
+
+
+Q ss_pred             C-EEEEEE-EEChhhhh
+Q Tue_Aug_02_20:  207 N-VNYVGV-SKVSDYAK  221 (236)
+Q Consensus       207 ~-thFVGV-rDVTe~~e  221 (236)
+                      + +.++|+ .|||++.+
+T Consensus       109 ~~~~~~G~~~DITerKq  125 (125)
+T 3nja_A          109 QVDHLWGTVIDMTEHKQ  125 (125)
+T ss_dssp             CEEEEEEEEEECCC---
+T ss_pred             CEEEEEEEEEECchhcC
+
+
+No 32 
+>3kx0_X Uncharacterized protein RV1364C/MT1410; PAS domain, sensory domain, mycobacteium tuberculos molecule binding domain; 2.30A {Mycobacterium tuberculosis}
+Probab=98.24  E-value=8.4e-07  Score=68.69  Aligned_cols=108  Identities=16%  Similarity=0.159  Sum_probs=0.0
+
+Q ss_pred             CCCccccCCCCCCcccccCcchhHHHHHh-------ccC-CC-ceEEECCcc---cCcc--cCCCcCC------CHHHHH
+Q Tue_Aug_02_20:  117 GRGDSACSADTTDNSKANRDDYSVKAMAN-------VTD-AS-DNVYASRGT---TGYS--DGRNCRG------TDRAVD  176 (236)
+Q Consensus       117 ~~~~~~~~~~~~~~~~~~~~d~~leai~q-------ITD-pt-PIIYANdAF---TGYS--IGRNCRF------DpeaVa  176 (236)
+                      +||-.+=.+-..+-.++..+.=.+++|-+       +.| +. .|+|||++|   +||.  ||++++-      .+....
+T Consensus        16 ~~G~~~~~~~~~~~~~~~~s~e~~r~l~e~~P~~i~~~d~~dg~i~~~N~a~~~l~G~~e~iG~~~~~~~~~~~~~~~~~   95 (185)
+T 3kx0_X           16 PRGSHASMAAEMDWDKTVGAAEDVRRIFEHIPAILVGLEGPDHRFVAVNAAYRGFSPLLDTVGQPAREVYPELEGQQIYE   95 (185)
+T ss_dssp             ----------CCCHHHHTCCHHHHHHHHHHCSSEEEEEETTTTEEEEECHHHHHHCCCCSCTTSBHHHHCTTSCSSSSHH
+T ss_pred             CCchHHHHHHHHHHHHHhhhHHHHHHHHHhhhhhEEEEECCCCEEEEEcHHHHHHcCcHHHhCccccccCchhhhhhHHH
+
+
+Q ss_pred             H-HHh-hcCCceEEE------ecc--CCCe-ee---ecc-cCCCCC-EEEEEE-EEChhhhhhcc
+Q Tue_Aug_02_20:  177 K-RNA-TKGVDTSVC------NYR--DGTT-WN---VAG-RDSKGN-VNYVGV-SKVSDYAKVNN  224 (236)
+Q Consensus       177 r-ReA-~~G~e~eVl------NYR--DGSp-WN---ISP-rDedG~-thFVGV-rDVTe~~e~~e  224 (236)
+                      . +++ ..+......      .+.  .|.. |.   +.| ++.+|. .+++++ .|||++.+...
+T Consensus        96 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~p~~~~~G~~~~~~~~~~DITe~k~ae~  160 (185)
+T 3kx0_X           96 MLDRVYQTGEPQSGSEWRLQTDYDGSGVEERYFDFVVTPRRRADGSIEGVQLIVDDVTSRVRARQ  160 (185)
+T ss_dssp             HHHHHHHHCCCEEEEEEEEC--------CCEEEEEEEEEEECTTSCEEEEEEEEEECHHHHTTCC
+T ss_pred             HHHHHHHhCCCccceeEEEEEeeccCCCceEEEEEEEEEEEcCCCCEEeeEecccccCHHHHHHH
+
+
+No 33 
+>3cax_A Uncharacterized protein PF0695; structural genomics, unknown function, PSI-2, protein structure initiative; 2.43A {Pyrococcus furiosus dsm 3638}
+Probab=98.20  E-value=5.2e-06  Score=71.29  Aligned_cols=91  Identities=19%  Similarity=0.204  Sum_probs=0.0
+
+Q ss_pred             HHHHHh-------ccCCC-ceEEECCcc-cCcc----cCCCcCC-----CHHHHHH-HHh-hcCCceEEE-ecc-CCCe-
+Q Tue_Aug_02_20:  140 VKAMAN-------VTDAS-DNVYASRGT-TGYS----DGRNCRG-----TDRAVDK-RNA-TKGVDTSVC-NYR-DGTT-  196 (236)
+Q Consensus       140 leai~q-------ITDpt-PIIYANdAF-TGYS----IGRNCRF-----DpeaVar-ReA-~~G~e~eVl-NYR-DGSp-  196 (236)
+                      |++|-+       +.|+. .|+|+|+++ .||.    ||+++..     ..+.+.. -++ ..|+..... -.+ +|.. 
+T Consensus       241 l~~il~~~p~~i~~vD~~~~i~~~N~~~~~~~~~~~~iG~~~~~~~p~~~~~~~~~~~~~~~~g~~~~~e~~~~~~g~~~  320 (369)
+T 3cax_A          241 LKAIFEALPVDVTFIDKDDRVRFFSPGERIFTRTPSVLGRPVQLCHPPKSVYVVNKILKAFKEGRKKEATFWLRLREKYV  320 (369)
+T ss_dssp             HHHHHHHSSSEEEEECTTSBEEEECCSSCSSCCCGGGTTCBTTTSSCGGGHHHHHHHHHHHHHTSCSCEEEEEEETTEEE
+T ss_pred             HHHHHhcCCCcEEEEeCCCcEEEECchhcccCCCHHHcCCchhhcCCHHHHHHHHHHHHHHHcCCceEEEEEEeeCCEEE
+
+
+Q ss_pred             ee-ecc-cCCCCC-EEEEEE-EEChhhhhhccccccCc
+Q Tue_Aug_02_20:  197 WN-VAG-RDSKGN-VNYVGV-SKVSDYAKVNNYKGVRT  230 (236)
+Q Consensus       197 WN-ISP-rDedG~-thFVGV-rDVTe~~e~~e~k~~r~  230 (236)
+                      |. ..| +|.+|+ +.+|++ +|||++.+...-+-+-+
+T Consensus       321 ~v~~~pv~d~~G~~~G~v~~~~DIT~~k~~e~e~rl~~  358 (369)
+T 3cax_A          321 YIKYVPLFNEKGEYIGTLEMTMDIAPYKKIEGEKRLLD  358 (369)
+T ss_dssp             EEEEEEEECTTSCEEEEEEEEEECHHHHTCCSCCCSCC
+T ss_pred             EEEEEEEECCCCCEEEEEEEEEEChHHHHHHHHHHHHH
+
+
+No 34 
+>3k3c_A Protein RV1364C/MT1410; sensor, PAS, signal transduction, fatty-acid binding, sigma regulator, signaling protein; HET: PLM; 1.62A {Mycobacterium tuberculosis} PDB: 3k3d_A
+Probab=98.15  E-value=1.5e-06  Score=63.62  Aligned_cols=73  Identities=14%  Similarity=0.156  Sum_probs=0.0
+
+Q ss_pred             eEEECCcc---cCcc--cCCCcCC------CHHHHHH-HHh-hcCCceEEE------ecc--CCCe-ee---ecc-cCCC
+Q Tue_Aug_02_20:  152 NVYASRGT---TGYS--DGRNCRG------TDRAVDK-RNA-TKGVDTSVC------NYR--DGTT-WN---VAG-RDSK  205 (236)
+Q Consensus       152 IIYANdAF---TGYS--IGRNCRF------DpeaVar-ReA-~~G~e~eVl------NYR--DGSp-WN---ISP-rDed  205 (236)
+                      |+|+|++|   +||.  ||+++.-      .+..... .++ .........      .+.  +|.+ |.   +.| ++.+
+T Consensus        40 i~~~N~a~~~~~g~~e~~G~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  119 (158)
+T 3k3c_A           40 FVAVNAAYRGFSPLLDTVGQPAREVYPELEGQQIYEMLDRVYQTGEPQSGSEWRLQTDYDGSGVEERYFDFVVTPRRRAD  119 (158)
+T ss_dssp             EEEECHHHHHHCTTCCSTTSBHHHHSGGGGGTTHHHHHHHHHHHCCCEEEEEEEEEEESSSSCEEEEEEEEEEEEEECTT
+T ss_pred             EEEEechhhhhhccccccccccccccccccccccchhhhhccccccccccccceeeeeccCccceeEEEEEEeeeeecCC
+
+
+Q ss_pred             CC-EEEEEE-EEChhhhhhcc
+Q Tue_Aug_02_20:  206 GN-VNYVGV-SKVSDYAKVNN  224 (236)
+Q Consensus       206 G~-thFVGV-rDVTe~~e~~e  224 (236)
+                      |. .+||++ +|||++.+..+
+T Consensus       120 g~~~~i~~~~~DITe~~~~e~  140 (158)
+T 3k3c_A          120 GSIEGVQLIVDDVTSRVRARQ  140 (158)
+T ss_dssp             SCEEEEEEEEEECHHHHHHHH
+T ss_pred             CceecccceeEECCHHHHHHH
+
+
+No 35 
+>3mfx_A Sensory BOX/ggdef family protein; alpha-beta protein, structural genomics, PSI-2, protein structure initiative; 2.40A {Shewanella oneidensis}
+Probab=98.14  E-value=1.8e-06  Score=63.82  Aligned_cols=76  Identities=11%  Similarity=0.090  Sum_probs=0.0
+
+Q ss_pred             hHHHHHh----------ccCCC-ceEEECCcc---cCcc----cCCCcCC---------------CHHHHHH-HHh-hcC
+Q Tue_Aug_02_20:  139 SVKAMAN----------VTDAS-DNVYASRGT---TGYS----DGRNCRG---------------TDRAVDK-RNA-TKG  183 (236)
+Q Consensus       139 ~leai~q----------ITDpt-PIIYANdAF---TGYS----IGRNCRF---------------DpeaVar-ReA-~~G  183 (236)
+                      +++++..          ++|+. -|+|||++|   +||+    ||++..-               ....... ... ...
+T Consensus         5 s~e~l~~i~~~~~d~ii~~D~~G~I~~~N~aa~~l~G~~~~eliG~~~~~l~~~~~~~~~~~~~~~~~~~~~~~~~~~~~   84 (129)
+T 3mfx_A            5 SLETIELFIQHLTEAMILVNANGFIRSCNQRSAELLDCPQVSLKGQDWRNFLTEHHQARYDNLLSHDVQLGTNCGQPVQH   84 (129)
+T ss_dssp             HHHHHHHHHTTCSSEEEEEETTSBEEEECHHHHHHTTSCHHHHTTSBGGGGBCTTCCGGGGCTTC----------CCSCE
+T ss_pred             HHHHHHHHHHhCcCeEEEEcCCCCEEEECHHHHhhhcCCHHHHcCCcHHHhcCchhHHHHHhhhhhhccccccccccccc
+
+
+Q ss_pred             CceEEEecc-CCCe-ee---ecc-cCCCCCEEEEEE-EEC
+Q Tue_Aug_02_20:  184 VDTSVCNYR-DGTT-WN---VAG-RDSKGNVNYVGV-SKV  216 (236)
+Q Consensus       184 ~e~eVlNYR-DGSp-WN---ISP-rDedG~thFVGV-rDV  216 (236)
+                      ...++..+| ||++ |.   ++| .+.++.  |||| +||
+T Consensus        85 ~~~E~~~~~~dG~~~~vels~s~~~~~~~~--~v~i~rDI  122 (129)
+T 3mfx_A           85 PAQETTLICASGKAKDVELSISYIPGHEPM--FVMVMHDL  122 (129)
+T ss_dssp             EEEEEEEECTTSCEEEEEEEEEEECSSSCE--EEEEEEEC
+T ss_pred             eeeeEEEEecCCcEEEEEEEEEEEECCCcE--EEEEEEEC
+
+
+No 36 
+>3gdi_A Period circadian protein homolog 2; tandem PAS domains, biological rhythms, cytoplasm, nucleus, phosphoprotein, transcription; 2.40A {Mus musculus}
+Probab=98.14  E-value=3.4e-06  Score=66.20  Aligned_cols=78  Identities=9%  Similarity=-0.036  Sum_probs=0.0
+
+Q ss_pred             CCC-ceEEECCcc---cCcc----cCCCcCC-----CHHHHHH--HHh--hcCCceEEEecc----CCCe-ee---ecc-
+Q Tue_Aug_02_20:  148 DAS-DNVYASRGT---TGYS----DGRNCRG-----TDRAVDK--RNA--TKGVDTSVCNYR----DGTT-WN---VAG-  201 (236)
+Q Consensus       148 Dpt-PIIYANdAF---TGYS----IGRNCRF-----DpeaVar--ReA--~~G~e~eVlNYR----DGSp-WN---ISP-  201 (236)
+                      |+. .++|||++|   +||+    +|+.+.-     |.+.+..  +.+  ..+..+....||    ||+. |-   +.| 
+T Consensus       172 d~~g~~~~~n~~~~~~~Gy~~~e~~~~~~~~~ihpeD~~~~~~~~~~~~~~~~~~~~~~e~r~~~kdG~~~wv~~~~~~i  251 (309)
+T 3gdi_A          172 TPNCLFQAVDERAVPLLGYLPQDLIETPVLVQLHPSDRPLMLAIHKKILQAGGQPFDYSPIRFRTRNGEYITLDTSWSSF  251 (309)
+T ss_dssp             CTTCBEEEECTTHHHHHSCCHHHHTTSBHHHHBCTTSHHHHHHHHHHHHHTTTCCEEEEEEEEECTTSCEEEEEEEEEEE
+T ss_pred             cCCCcEEEecchhhhhcccCccccccccccccCCcccHHHHHHHHHHHHhcCCccceeeeeeeEcCCCcEEEEEEEEEEE
+
+
+Q ss_pred             cCCCCC-EEEEEE-EEChhhhhhccc
+Q Tue_Aug_02_20:  202 RDSKGN-VNYVGV-SKVSDYAKVNNY  225 (236)
+Q Consensus       202 rDedG~-thFVGV-rDVTe~~e~~e~  225 (236)
+                      +|+.|. +.||.+ .|||++.+..+.
+T Consensus       252 ~~~~~~~~~~i~~~~di~~~~~~e~~  277 (309)
+T 3gdi_A          252 INPWSRKISFIIGRHKVRVGPLNEDV  277 (309)
+T ss_dssp             ECTTTCCEEEEEEEEEEEECCSSSCT
+T ss_pred             EeCCCCceEEEEEEEEECcchhhHHH
+
+
+No 37 
+>3olo_A Two-component sensor histidine kinase; structural genomics, PSI-2, protein structure initiative, MI center for structural genomics, MCSG, TRA; 2.09A {Nostoc SP}
+Probab=98.10  E-value=1e-06  Score=61.74  Aligned_cols=72  Identities=11%  Similarity=-0.008  Sum_probs=0.0
+
+Q ss_pred             ccCCC-ceEEECCcc---cCcc----cCCCcCC-CHHHHHH-HHh---hcCCceEEEecc-CCCe-ee---ecccCCCCC
+Q Tue_Aug_02_20:  146 VTDAS-DNVYASRGT---TGYS----DGRNCRG-TDRAVDK-RNA---TKGVDTSVCNYR-DGTT-WN---VAGRDSKGN  207 (236)
+Q Consensus       146 ITDpt-PIIYANdAF---TGYS----IGRNCRF-DpeaVar-ReA---~~G~e~eVlNYR-DGSp-WN---ISPrDedG~  207 (236)
+                      |.|.. -|+|||++|   +||+    +|++..- .+..... .+.   .....+++..++ ||+. |.   ++|...+|.
+T Consensus        28 ~~d~~g~i~~vN~a~~~~~g~~~~el~g~~~~~l~~~~~~~~~~~~~~~~~~~~~~~~~~~~g~~~~vei~~~~v~~~~~  107 (118)
+T 3olo_A           28 CLGDNWQFLYVNDATCRMTEYSREQLLSMNLQDIDVDFALHDWEEIRQKNNYTFKTRYRSQSGRIFLVEMSLTFLEDQER  107 (118)
+T ss_dssp             EECTTSBEEEECHHHHHHHCCCHHHHTTCBGGGTBTTGGGSCHHHHHHHSEEEEEEEEECTTCCEEEEEEEEEEEEETTE
+T ss_pred             EEEccceEEEeccccccccccceeecccccccccccccccccccccccccccccccccccccccceeEEEEEEEEEECCE
+
+
+Q ss_pred             EEEEEE-EECh
+Q Tue_Aug_02_20:  208 VNYVGV-SKVS  217 (236)
+Q Consensus       208 thFVGV-rDVT  217 (236)
+                      .+++++ +|||
+T Consensus       108 ~~~~~~~rDIT  118 (118)
+T 3olo_A          108 RFSCVFVREKS  118 (118)
+T ss_dssp             EEEEEEEEEC-
+T ss_pred             EEEEEEEEECc
+
+
+No 38 
+>1d06_A Nitrogen fixation regulatory protein FIXL; oxygen sensor, histidine kinase, PAS, high-resolution, two- component system; HET: HEM; 1.40A {Sinorhizobium meliloti} SCOP: d.110.3.2 PDB: 1ew0_A*
+Probab=98.02  E-value=5.1e-06  Score=59.90  Aligned_cols=72  Identities=26%  Similarity=0.345  Sum_probs=0.0
+
+Q ss_pred             ccCCC-ceEEECCcc---cCcc----cCCCcCC---------CHHHHHH-HHh----hcCCceEEEecc-CCCe-ee---
+Q Tue_Aug_02_20:  146 VTDAS-DNVYASRGT---TGYS----DGRNCRG---------TDRAVDK-RNA----TKGVDTSVCNYR-DGTT-WN---  198 (236)
+Q Consensus       146 ITDpt-PIIYANdAF---TGYS----IGRNCRF---------DpeaVar-ReA----~~G~e~eVlNYR-DGSp-WN---  198 (236)
+                      +.|+. -|+|||++|   +||+    ||++...         ....++. ...    ..+...++...+ ||+. |.   
+T Consensus        31 ~~d~~g~i~~~N~~~~~l~g~~~~e~lg~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~e~~~~~~dg~~~~v~~~  110 (130)
+T 1d06_A           31 VSATDGTIVSFNAAAVRQFGYAEEEVIGQNLRILMPEPYRHEHDGYLQRYMATGEKRIIGIDRVVSGQRKDGSTFPMKLA  110 (130)
+T ss_dssp             EEETTSBEEEECHHHHHHHCCCHHHHTTSBGGGGSCTTHHHHHHHHHHHHHHHCCCSSTTSCEEEEEECTTSCEEEEEEE
+T ss_pred             EEcCCCCEEEeehhhhhccCCCHHHhcCccccccCChhhHHHHHHHHHHHHHhccccccceeEEEEEEcCCCcEEEEEEE
+
+
+Q ss_pred             ecccCCCCCEEEEEE-EECh
+Q Tue_Aug_02_20:  199 VAGRDSKGNVNYVGV-SKVS  217 (236)
+Q Consensus       199 ISPrDedG~thFVGV-rDVT  217 (236)
+                      ++|...+|...|+++ +|||
+T Consensus       111 ~~~i~~~~~~~~~~~~rDIT  130 (130)
+T 1d06_A          111 VGEMRSGGERFFTGFIRDLT  130 (130)
+T ss_dssp             EEEEEETTEEEEEEEEEECC
+T ss_pred             EEEEEECCeEEEEEEEEECc
+
+
+No 39 
+>3a0s_A Sensor protein; PAS-fold, kinase, phosphoprotein, transferase, two-component regulatory system; HET: PG4 PGE; 1.47A {Thermotoga maritima} PDB: 3a0v_A*
+Probab=97.84  E-value=2.8e-05  Score=53.62  Aligned_cols=70  Identities=10%  Similarity=0.083  Sum_probs=0.0
+
+Q ss_pred             ccCCC-ceEEECCcc---cCcc----cCCCcCC---CHHHHHH-HHh-hcCCceEEEecc-CCCeee--ecc-cCCCCC-
+Q Tue_Aug_02_20:  146 VTDAS-DNVYASRGT---TGYS----DGRNCRG---TDRAVDK-RNA-TKGVDTSVCNYR-DGTTWN--VAG-RDSKGN-  207 (236)
+Q Consensus       146 ITDpt-PIIYANdAF---TGYS----IGRNCRF---DpeaVar-ReA-~~G~e~eVlNYR-DGSpWN--ISP-rDedG~-  207 (236)
+                      +.|+. -|+|||++|   +||+    +|+.+.-   .+..... +++ ..++.+++.... ++..|.  ++| +|++|+ 
+T Consensus         7 ~~D~~g~I~~~N~~a~~l~g~~~~~~iG~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Pi~~~~g~~   86 (96)
+T 3a0s_A            7 TLSKDGRITEWNKKAEQLFGLKKENVLGRRLKDLPDFEEIGSVAESVFENKEPVFLNFYKFGERYFNIRFSPFRNAKTQL   86 (96)
+T ss_dssp             EEETTSBEEEECHHHHHHHCCCHHHHTTSBGGGSTTCHHHHHHHHHHHHHTCCEEEEEEEETTEEEEEEEEEEECTTTCC
+T ss_pred             EECCCCCEEEECHHHHHhhhhhhhhhccccHHHheehhhhcchhhhhhhhhhcccccccccceeEEEeeeeEeEcCCCCE
+
+
+Q ss_pred             -EEEEEE-EE
+Q Tue_Aug_02_20:  208 -VNYVGV-SK  215 (236)
+Q Consensus       208 -thFVGV-rD  215 (236)
+                       ..+|-+ .|
+T Consensus        87 i~G~v~~~~D   96 (96)
+T 3a0s_A           87 LEGVIITIDD   96 (96)
+T ss_dssp             EEEEEEEEEC
+T ss_pred             EEEEEEEEEC
+
+
+No 40 
+>3b33_A Sensor protein; structural genomics, PAS domain, nitrogen regulation protein, APC91440.4, PSI-2; HET: MSE; 1.83A {Vibrio parahaemolyticus rimd 2210633}
+Probab=97.81  E-value=7.6e-06  Score=58.78  Aligned_cols=86  Identities=15%  Similarity=0.134  Sum_probs=0.0
+
+Q ss_pred             ccccCcchhHHHHHh------ccCCC-ceEEECCcc---cCcc----cCCCcCC----CHHHHHH-HHh-hcCCceEEE-
+Q Tue_Aug_02_20:  131 SKANRDDYSVKAMAN------VTDAS-DNVYASRGT---TGYS----DGRNCRG----TDRAVDK-RNA-TKGVDTSVC-  189 (236)
+Q Consensus       131 ~~~~~~d~~leai~q------ITDpt-PIIYANdAF---TGYS----IGRNCRF----DpeaVar-ReA-~~G~e~eVl-  189 (236)
+                      |-++--.|.-.-|+.      |.|+. -|+|+|++|   +||+    +|++...    .+..... +++ .++..+... 
+T Consensus         1 s~~~~~~l~~~il~~~~~~iivvD~~g~I~~~N~aa~~l~G~s~~el~G~~~~~l~~~~~~~~~~~~~~~~~~~~~~~~~   80 (115)
+T 3b33_A            1 SNAMDTSLPSAILNNMVTATLILDDGLAIRYANPAAELLFSQSAKRIVEQSLSQLIQHASLDLALLTQPLQSGQSITDSD   80 (115)
+T ss_dssp             -----CCHHHHHHHHCSSEEEEECTTCBEEEECHHHHHHTTSCHHHHTTCBHHHHCSEEECCTHHHHHHHHHCCCEEEEE
+T ss_pred             CchhhHHHHHHHHhcccceEEEECCCCCEEEEChHHhhhChhhhhhhcCccHHHhcCCchhhHHHHHHHHHhCCCeEEEE
+
+
+Q ss_pred             -ecc-CCCe-ee---ecc-cCCCCCEEEEEEEEC
+Q Tue_Aug_02_20:  190 -NYR-DGTT-WN---VAG-RDSKGNVNYVGVSKV  216 (236)
+Q Consensus       190 -NYR-DGSp-WN---ISP-rDedG~thFVGVrDV  216 (236)
+                       .++ ||.+ |.   ++| .++.|..-.|-++||
+T Consensus        81 ~~~~~~G~~~~v~~s~~pi~~~~~~~ili~~r~i  114 (115)
+T 3b33_A           81 VTFVVDGRPLMLEVTVSPITWQRQLMLLVEMRKI  114 (115)
+T ss_dssp             EEEEETTEEEEEEEEEEEEEETTEEEEEEEEEEC
+T ss_pred             EEEEeCCEEEEEEEEEEEEEeCCCeEEEEEEEeC
+
+
+No 41 
+>1ll8_A PAS kinase; PAS domain, ligand binding, ligand screening, kinase regulation, transferase; NMR {Homo sapiens} SCOP: d.110.3.5
+Probab=97.79  E-value=1.7e-05  Score=56.71  Aligned_cols=76  Identities=21%  Similarity=0.207  Sum_probs=0.0
+
+Q ss_pred             HHHh-------ccCCC--ceEEECCcc---cCcc----cCCCcCC-----CHHHHHH-HHh---hcCCce-----EEEec
+Q Tue_Aug_02_20:  142 AMAN-------VTDAS--DNVYASRGT---TGYS----DGRNCRG-----TDRAVDK-RNA---TKGVDT-----SVCNY  191 (236)
+Q Consensus       142 ai~q-------ITDpt--PIIYANdAF---TGYS----IGRNCRF-----DpeaVar-ReA---~~G~e~-----eVlNY  191 (236)
+                      ||++       +.|+.  -|+|||++|   +||+    +|++..-     ++..+.. .+.   ..+...     ++.-.
+T Consensus         2 ~~~~~~n~AI~~id~~~G~I~~~N~~a~~l~Gys~~el~g~~~~~l~~~~~~~~~~~~~~~~~~~~~~~~~~~~~e~~~~   81 (114)
+T 1ll8_A            2 AMDPEFNKAIFTVDAKTTEILVANDKACGLLGYSSQDLIGQKLTQFFLRSDSDVVEALSEEHMEADGHAAVVFGTVVDII   81 (114)
+T ss_dssp             CSSTTTTCEEEEEETTTCBEEEECTTHHHHHTCCTTTTTTSBGGGGSSCTTTHHHHHTTSSTTSSSSCSSCCCSSSEEEC
+T ss_pred             cchhhcCeEEEEEECCCCEEEEecHHHHhhhccccHhHcCCchhHhcChhhHHHHHHHHHHHhhcCCceeeeeeeeeEEE
+
+
+Q ss_pred             c-CCCe-ee---ecccCCCCCEEEEEE-EECh
+Q Tue_Aug_02_20:  192 R-DGTT-WN---VAGRDSKGNVNYVGV-SKVS  217 (236)
+Q Consensus       192 R-DGSp-WN---ISPrDedG~thFVGV-rDVT  217 (236)
+                      | ||++ |.   +.+...+|...|+.| .||+
+T Consensus        82 ~~dG~~~pv~i~~~~i~~~~~~~~~~il~dv~  113 (114)
+T 1ll8_A           82 SRSGEKIPVSVWMKRMRQERRLCCVVVLEPVE  113 (114)
+T ss_dssp             CTTCCCEEEECCEECCBSSSSBEEEEEEEECC
+T ss_pred             ccCCcEEEEEEEEEEEEECCeEEEEEEEEecc
+
+
+No 42 
+>1nwz_A PYP, photoactive yellow protein; PAS, LOV, GAF, domains fold, signaling protein; HET: HC4; 0.82A {Halorhodospira halophila} SCOP: d.110.3.1 PDB: 1kou_A* 1ot9_A* 1otb_A* 1s4r_A* 1s4s_A* 1ts0_A* 1ts6_A* 1ts7_A* 1ts8_A* 1uwn_X* 1uwp_X* 2d01_A* 2phy_A* 2pyp_A* 2pyr_A* 2qj5_A* 2qj7_A* 2qws_A* 2zoh_A* 2zoi_A* ...
+Probab=97.44  E-value=0.0001  Score=54.22  Aligned_cols=77  Identities=19%  Similarity=0.238  Sum_probs=0.0
+
+Q ss_pred             HHHHHh---ccCCC-ceEEECCcc---cCcc----cCCCc-CC------CHHHHHH-HHh-hcCCceEEEecc---CCCe
+Q Tue_Aug_02_20:  140 VKAMAN---VTDAS-DNVYASRGT---TGYS----DGRNC-RG------TDRAVDK-RNA-TKGVDTSVCNYR---DGTT  196 (236)
+Q Consensus       140 leai~q---ITDpt-PIIYANdAF---TGYS----IGRNC-RF------DpeaVar-ReA-~~G~e~eVlNYR---DGSp  196 (236)
+                      |+++..   +.|+. -|+|+|++|   +||+    ||+++ .+      .+....+ +++ ..+...+...|.   +|.+
+T Consensus        23 ld~~p~Gii~~D~dG~I~~~N~a~~~l~G~~~~e~iG~~~~~~~~p~~~~~~~~~~~~~~~~~g~~~~~~~~~~~~~g~~  102 (125)
+T 1nwz_A           23 LDGLAFGAIQLDGDGNILQYNAAEGDITGRDPKQVIGKNFFKDVAPCTDSPEFYGKFKEGVASGNLNTMFEYTFDYQMTP  102 (125)
+T ss_dssp             HTTCSSEEEEEETTCBEEEECHHHHHHHCCCHHHHTTSBCCCCCCGGGCSTTTHHHHHHHHHHTCCEEEEEEEECTTSCC
+T ss_pred             HhcCCceEEEEeCCCChhhhhHHHHHHhhhcHHHhcCCchhhhcCchhhchhhhhhhhHHHhcCCcceEEEEEEeccCCc
+
+
+Q ss_pred             -ee-ecc-cCCCCCEEEEEEEEC
+Q Tue_Aug_02_20:  197 -WN-VAG-RDSKGNVNYVGVSKV  216 (236)
+Q Consensus       197 -WN-ISP-rDedG~thFVGVrDV  216 (236)
+                       |. |.. ...+|...||=|++|
+T Consensus       103 ~~v~v~~~~~~dg~~~~v~V~~i  125 (125)
+T 1nwz_A          103 TKVKVHMKKALSGDSYWVFVKRV  125 (125)
+T ss_dssp             EEEEEEEEECSSSSEEEEEEEEC
+T ss_pred             EEEEEEEEEeeCCCeEEEEEEEC
+
+
+No 43 
+>3a0r_A Sensor protein; four helix bundle, PAS fold, kinase, phosphoprotein, transferase, two-component regulatory system; 3.80A {Thermotoga maritima}
+Probab=97.40  E-value=4.7e-05  Score=64.15  Aligned_cols=79  Identities=13%  Similarity=0.163  Sum_probs=0.0
+
+Q ss_pred             ccCCC-ceEEECCcc---cCcc----cCCCcCC--CHHHHHH-HHh-hcCCceEEEecc-CCCe-ee--ecc-cCCCCC-
+Q Tue_Aug_02_20:  146 VTDAS-DNVYASRGT---TGYS----DGRNCRG--TDRAVDK-RNA-TKGVDTSVCNYR-DGTT-WN--VAG-RDSKGN-  207 (236)
+Q Consensus       146 ITDpt-PIIYANdAF---TGYS----IGRNCRF--DpeaVar-ReA-~~G~e~eVlNYR-DGSp-WN--ISP-rDedG~-  207 (236)
+                      |.|+. -|+|+|++|   +||+    +|+++.-  +++.... .+. ..+.......+. +|.. |.  +.| ++..+. 
+T Consensus        23 v~D~dg~I~~~N~a~~~llG~~~~el~G~~~~~l~~~~~~~~~~~~~~~~~~~~~~~~~~~~~r~~~~~~~p~~~~~~~~  102 (349)
+T 3a0r_A           23 TLSKDGRITEWNKKAEQLFGLKKENVLGRRLKDLPDFEEIGSVAESVFENKEPVFLNFYKFGERYFNIRFSPFRNAKTQL  102 (349)
+T ss_dssp             EEESSSBCSCBCHHHHHHHSCCSTTTTTCBSTTSTTTTHHHHHHHHHHHHCCCCEEECCCBTTBCCEEEEEEECCTTTTS
+T ss_pred             EECCCCceehhhHHHHHHHCcCHHHHcCCCHHHcCCHHHHHHHHHHHHhcCCeEEEEEeeCCceEEEEEEEeeccccccc
+
+
+Q ss_pred             -EEEEEE-EEChhhhhhcc
+Q Tue_Aug_02_20:  208 -VNYVGV-SKVSDYAKVNN  224 (236)
+Q Consensus       208 -thFVGV-rDVTe~~e~~e  224 (236)
+                       ..+|++ +|||++.+..+
+T Consensus       103 ~~g~v~~~~DITe~k~~e~  121 (349)
+T 3a0r_A          103 LEGVIITIDDVTELYKYEE  121 (349)
+T ss_dssp             SCEEEEEEECCSTTTTTTT
+T ss_pred             ccceEEEEeeccccccccc
+
+
+No 44 
+>3fg8_A Uncharacterized protein RHA05790; PAS domain, structural genomics, PSI-2, protein structure initiative, midwest center for structural genomics; HET: 3PB; 1.80A {Rhodococcus SP}
+Probab=97.34  E-value=0.00016  Score=52.78  Aligned_cols=69  Identities=16%  Similarity=0.059  Sum_probs=0.0
+
+Q ss_pred             ccCCC-ceEEECCcc---cCcc----cCCCcCC------CHHHHHH-HHh-hcCCceEEEecc-CCCe-ee---ecc-cC
+Q Tue_Aug_02_20:  146 VTDAS-DNVYASRGT---TGYS----DGRNCRG------TDRAVDK-RNA-TKGVDTSVCNYR-DGTT-WN---VAG-RD  203 (236)
+Q Consensus       146 ITDpt-PIIYANdAF---TGYS----IGRNCRF------DpeaVar-ReA-~~G~e~eVlNYR-DGSp-WN---ISP-rD  203 (236)
+                      +.|+. -|+|||++|   +||+    +|+++.=      .....+. +++ ..++..++.-.. ++.. |-   +.| .|
+T Consensus        27 ~lD~dgri~~vN~a~~~l~G~~~eeliG~~~~e~~p~~~~~~~~~~~~~~~~tg~~~~~e~~~~~~~~~w~~v~~~p~~d  106 (118)
+T 3fg8_A           27 ALDEDLRIIYVNSGCLRHVRRSRDELLGRVVTEVLPETQGSYFDALCRKVLATGREQQTRVDSLYSPGMTIEVTAAADSG  106 (118)
+T ss_dssp             EECTTCBEEEECHHHHHHHTCCHHHHTTSBHHHHCGGGTTSHHHHHHHHHHHHCCCEEEEEECSSSTTCEEEEEEEEETT
+T ss_pred             EECCCCeEEEEHHHHHHHhhhhhcccccCcHHHhhhhhhcccccccceeecccCceEEEEEEEeccCcEEEEEEEEEcCC
+
+
+Q ss_pred             CCCCEEEEEE-EEChhh
+Q Tue_Aug_02_20:  204 SKGNVNYVGV-SKVSDY  219 (236)
+Q Consensus       204 edG~thFVGV-rDVTe~  219 (236)
+                           .++.+ +|||++
+T Consensus       107 -----Gi~v~~rDIT~e  118 (118)
+T 3fg8_A          107 -----ALVVHFRDVTAE  118 (118)
+T ss_dssp             -----EEEEEEEECSCC
+T ss_pred             -----EEEEEEEEcCCC
+
+
+No 45 
+>3fc7_A HTR-like protein, sensor protein; APC87712.1, HTR-like protein,haloarcula marismortui ATCC 430 structural genomics, PSI-2; 2.65A {Haloarcula marismortui}
+Probab=97.32  E-value=0.00025  Score=49.49  Aligned_cols=72  Identities=13%  Similarity=0.088  Sum_probs=0.0
+
+Q ss_pred             ccCCC-ceEEECCcc---cCcc----cCCCcCC-----CHHHHHH--HHh-hcCCceEEEeccCCCe--eeecccCCCCC
+Q Tue_Aug_02_20:  146 VTDAS-DNVYASRGT---TGYS----DGRNCRG-----TDRAVDK--RNA-TKGVDTSVCNYRDGTT--WNVAGRDSKGN  207 (236)
+Q Consensus       146 ITDpt-PIIYANdAF---TGYS----IGRNCRF-----DpeaVar--ReA-~~G~e~eVlNYRDGSp--WNISPrDedG~  207 (236)
+                      +.|+. -|+|+|++|   +||+    +|+.+.-     +...+..  +++ ..++......-.+|..  |.+.|.+.+|.
+T Consensus        34 ~~d~~g~i~~~N~~~~~~~g~~~~~~~g~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~e~~~~~r~~~~~~~Pv~~~~~  113 (125)
+T 3fc7_A           34 HLTTNGTILSVNPSMAGRLGADPDTLVGQQLSAVMDSEAANQRLEAGKSAVENGTATRSEDAVGGRHYHNQYIPVDSHRK  113 (125)
+T ss_dssp             EEETTSBEEEECHHHHHHHTSCHHHHTTSBGGGSSCHHHHHHHHHHHHHHHHHTSCEEEEEEETTEEEEEEEEESSTTTT
+T ss_pred             EECCCCcEEEEcHHHHHhcCCccccccCCcHHHcCCHhHHHHHHHHHHHHHHcCCeEEEEEEEeeEEEEEEEEEEEcCCC
+
+
+Q ss_pred             -EEEEEE-EECh
+Q Tue_Aug_02_20:  208 -VNYVGV-SKVS  217 (236)
+Q Consensus       208 -thFVGV-rDVT  217 (236)
+                       ..|+++ +|||
+T Consensus       114 ~~~~~~i~~DIT  125 (125)
+T 3fc7_A          114 SDTFQLVSRDIT  125 (125)
+T ss_dssp             TTEEEEEEEECC
+T ss_pred             EEEEEEEEEECc
+
+
+No 46 
+>1wa9_A Period circadian protein; PAS domain, circadian rhythm, clock protein, phosphorylation, polymorphism; 3.15A {Drosophila melanogaster} PDB: 3gec_A
+Probab=97.30  E-value=0.00037  Score=57.80  Aligned_cols=91  Identities=18%  Similarity=0.160  Sum_probs=0.0
+
+Q ss_pred             ccCCC-ceEEECCcc---cCcc----cCCCcCC-----CHHHHHH--HHh-hcCCce--EEE--ecc----CCCe-ee--
+Q Tue_Aug_02_20:  146 VTDAS-DNVYASRGT---TGYS----DGRNCRG-----TDRAVDK--RNA-TKGVDT--SVC--NYR----DGTT-WN--  198 (236)
+Q Consensus       146 ITDpt-PIIYANdAF---TGYS----IGRNCRF-----DpeaVar--ReA-~~G~e~--eVl--NYR----DGSp-WN--  198 (236)
+                      +.|+. .|+|||++|   +||+    +|+.+..     |.+.+..  +++ ..+...  .+.  -||    ||+. |.  
+T Consensus       163 ~~d~~g~~~~vn~~~~~i~Gy~~~el~g~~~~~~iHpdD~~~~~~~~~~~~~~g~~~~~~~~~~eyR~~~kdG~~~wv~~  242 (368)
+T 1wa9_A          163 RHTATGIISHVDSAAVSALGYLPQDLIGRSIMDFYHHEDLSVMKETYETVMKKGQTAGASFCSKPYRFLIQNGCYVLLET  242 (368)
+T ss_dssp             EEETTCBEEEECGGGHHHHCCCHHHHTTSBGGGGBCTTTHHHHHHHHHHHHHHTTSTTCCEECCCEEEECTTSCEEEEEE
+T ss_pred             EEcCCCcEEEEChhhhhhccccchhccCccccccCCHHHHHHHHHHHHHHHHhCCCCCCcccceEEEEEecCCCEEEEEE
+
+
+Q ss_pred             -ecc-cCCCCC-EEEEEE-EEChhhhhhccccccCccccccC
+Q Tue_Aug_02_20:  199 -VAG-RDSKGN-VNYVGV-SKVSDYAKVNNYKGVRTSNMRRK  236 (236)
+Q Consensus       199 -ISP-rDedG~-thFVGV-rDVTe~~e~~e~k~~r~~~~~~~  236 (236)
+                       ..| +|..|. .+||+. .||+++.+..+.--.+..-.++.
+T Consensus       243 ~~~~~~d~~~~~~~~i~~~~~i~~~~~~~~~~~~~~~~~~~~  284 (368)
+T 1wa9_A          243 EWTSFVNPWSRKLEFVVGHHRVFQGPKQCNVFEAAPTCKLKI  284 (368)
+T ss_dssp             EEEEEECTTTCCEEEEEEEEEEEECCSSSCTTSCCCCCCCCC
+T ss_pred             EEEEEECCCCCceeEEEEEEEeccCccchhhhhhccchhhhc
+
+
+No 47 
+>1mzu_A PPR; photoactive yellow protein, PAS, PYP, signaling protein; HET: HC4; 2.00A {Rhodospirillum centenum} SCOP: d.110.3.1
+Probab=96.97  E-value=0.00058  Score=50.50  Aligned_cols=75  Identities=15%  Similarity=0.058  Sum_probs=0.0
+
+Q ss_pred             HHHHHh---ccCCC-ceEEECCcc---cCcc----cCCCcCC-------CHHHHHH-HHh-hcCCceEEE--ecc-CCCe
+Q Tue_Aug_02_20:  140 VKAMAN---VTDAS-DNVYASRGT---TGYS----DGRNCRG-------TDRAVDK-RNA-TKGVDTSVC--NYR-DGTT  196 (236)
+Q Consensus       140 leai~q---ITDpt-PIIYANdAF---TGYS----IGRNCRF-------DpeaVar-ReA-~~G~e~eVl--NYR-DGSp  196 (236)
+                      |+++-.   +.|+. -|+|||++|   +||+    ||++..-       .+..... +++ ..|...+..  -++ +|.+
+T Consensus        28 lda~p~GIv~~D~dGrI~~~N~a~~~l~G~~~eeliG~~~~~~~~~~~~~~~~~~~~~~~~~~g~~~~~~~~~~~~~g~~  107 (129)
+T 1mzu_A           28 FDALPVGAIQVDGSGVIHRYNRTESRLSGRIPERVIGRNFFTEVAPCTNIPAFSGRFMDGVTSGTLDARFDFVFDFQMAP  107 (129)
+T ss_dssp             GGGCSSEEEEEETTCBEEEECHHHHHHHCCCHHHHTTSBCCCCCCGGGCSTTTHHHHHHHHHTSCCEEEEEEEEECSSCE
+T ss_pred             hccCCeEEEEEeCCCeEEEehHHHHHHHcCCHHHHcCCcHHHhhhhhhhhhhhhhccchhhhcccccceeeEEeccCCcE
+
+
+Q ss_pred             -ee-ecc-cCCCCCEEEEEE-E
+Q Tue_Aug_02_20:  197 -WN-VAG-RDSKGNVNYVGV-S  214 (236)
+Q Consensus       197 -WN-ISP-rDedG~thFVGV-r  214 (236)
+                       |. |.+ ...+|...||=| +
+T Consensus       108 ~~v~v~~~~~~~~~~~~v~vrr  129 (129)
+T 1mzu_A          108 VRVQIRMQNAGVPDRYWIFVRK  129 (129)
+T ss_dssp             EEEEEEEEECSSTTEEEEEEEC
+T ss_pred             EEEEEEEEEecCCCEEEEEEEC
+
+
+No 48 
+>2w0n_A Sensor protein DCUS; signal transduction, two-component regulatory system, PAS, kinase, membrane, transferase, solid state cell inner membrane; NMR {Escherichia coli}
+Probab=96.96  E-value=3.4e-05  Score=54.07  Aligned_cols=77  Identities=9%  Similarity=0.132  Sum_probs=0.0
+
+Q ss_pred             HHHHHh---ccCCC-ceEEECCcc---cCcc---cCCCcCC---CHHHHHH-HHh-hcCCceEEEecc-CCCe-ee-ecc
+Q Tue_Aug_02_20:  140 VKAMAN---VTDAS-DNVYASRGT---TGYS---DGRNCRG---TDRAVDK-RNA-TKGVDTSVCNYR-DGTT-WN-VAG  201 (236)
+Q Consensus       140 leai~q---ITDpt-PIIYANdAF---TGYS---IGRNCRF---DpeaVar-ReA-~~G~e~eVlNYR-DGSp-WN-ISP  201 (236)
+                      |+.|.+   +.|+. -|+|+|++|   +||+   +|..+.-   ++..... ..+ ..+......-+. ++.. +. +.|
+T Consensus        21 l~~~~~gii~~D~~g~I~~~N~~~~~i~g~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~p  100 (118)
+T 2w0n_A           21 LQSIKEGVVAVDDRGEVTLINDAAQELLNYRKSQDDEKLSTLSHSWSQVVDVSEVLRDGTPRRDEEITIKDRLLLINTVP  100 (118)
+T ss_dssp             HHCCCCCCEEEBTTTBCCCBCHHHHHHHCSCTTTTTSSCCCTTCCCSCTHHHHHHHHTTCCCCCCCEESSSCEECCCEEC
+T ss_pred             HHhccchheEECCCCCEEEEcHHHHHHHCcCHHHhCCchhhhcCChHHhhhhhhhhccCceeEEEEEEeeeccceeEEEE
+
+
+Q ss_pred             -cCCCCC-EEEEEE-EECh
+Q Tue_Aug_02_20:  202 -RDSKGN-VNYVGV-SKVS  217 (236)
+Q Consensus       202 -rDedG~-thFVGV-rDVT  217 (236)
+                       ++ +|+ +.+|.+ +|||
+T Consensus       101 i~~-~g~~~G~V~~~rDIT  118 (118)
+T 2w0n_A          101 VRS-NGVIIGAISTFRDKT  118 (118)
+T ss_dssp             CCC-SSCCCCEEECCCCCC
+T ss_pred             EEE-CCEEEEEEEEEEeCC
+
+
+No 49 
+>3gdi_A Period circadian protein homolog 2; tandem PAS domains, biological rhythms, cytoplasm, nucleus, phosphoprotein, transcription; 2.40A {Mus musculus}
+Probab=96.51  E-value=0.0032  Score=49.16  Aligned_cols=104  Identities=11%  Similarity=-0.029  Sum_probs=0.0
+
+Q ss_pred             CCCccccCCCCCCcccccCcchhHHHHHh----ccCCC-ceEEECCcc---cCcc----cCCCcCC-----CHHHHHH--
+Q Tue_Aug_02_20:  117 GRGDSACSADTTDNSKANRDDYSVKAMAN----VTDAS-DNVYASRGT---TGYS----DGRNCRG-----TDRAVDK--  177 (236)
+Q Consensus       117 ~~~~~~~~~~~~~~~~~~~~d~~leai~q----ITDpt-PIIYANdAF---TGYS----IGRNCRF-----DpeaVar--  177 (236)
+                      |-|++    -+..-.+.-...|-|++++.    +++.+ .|+|||++|   +||+    +|+++.=     |...+..  
+T Consensus         2 ~~~~~----~~~~e~~~~~~~~~l~~~d~~~iv~~~~~G~i~~vN~~~~~llGy~~eel~G~~~~d~ihp~D~~~~~~~l   77 (309)
+T 3gdi_A            2 PLGSS----YSMEQVEGITSEYIVKNADMFAVAVSLVSGKILYISNQVASIFHCKKDAFSDAKFVEFLAPHDVSVFHSYT   77 (309)
+T ss_dssp             --CCB----CCTTTTCCCSCC----CTTEEEEEECTTTCBEEEECTTTTTTC-------CCSBGGGGBCTTTHHHHHHHT
+T ss_pred             CCCcc----hhHHHHHHHHHHHHHHhcCCEEEEEECCCCEEEEEcHHHHHHhCcCHHHHcCCCHHHhCChhhHHHHHHHH
+
+
+Q ss_pred             HHh-hcCCce---EEEecc-CCCe-ee-------ecc-cCCCCC-EEEEEE-EEChhhhhhcc
+Q Tue_Aug_02_20:  178 RNA-TKGVDT---SVCNYR-DGTT-WN-------VAG-RDSKGN-VNYVGV-SKVSDYAKVNN  224 (236)
+Q Consensus       178 ReA-~~G~e~---eVlNYR-DGSp-WN-------ISP-rDedG~-thFVGV-rDVTe~~e~~e  224 (236)
+                      ... ..+...   ...-++ .+.. |.       ..+ .+..+. +.++|. .||+++....+
+T Consensus        78 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~di~~~~~~e~  140 (309)
+T 3gdi_A           78 TPYKLPPWSVCSGLDSFTQECMEEKSFFCRVSVGKHHENEIRYQPFRMTPYLVKVQEQQGAES  140 (309)
+T ss_dssp             CTTSSCBCC--------------CCCEEEEECCCC----CCCCEEEEEEEEEEECC-------
+T ss_pred             hhhhcCCcccccceeeeeeecccceEEEEEeeeccccccccceEEEEEEEEEEEchhhhhhhH
+
+
+No 50 
+>1wa9_A Period circadian protein; PAS domain, circadian rhythm, clock protein, phosphorylation, polymorphism; 3.15A {Drosophila melanogaster} PDB: 3gec_A
+Probab=94.21  E-value=0.0072  Score=50.05  Aligned_cols=79  Identities=11%  Similarity=0.026  Sum_probs=0.0
+
+Q ss_pred             ccCCC-ceEEECCcc---cCcc----cCCCcCC--CHHHHHH-HHh-hcC------------------------------
+Q Tue_Aug_02_20:  146 VTDAS-DNVYASRGT---TGYS----DGRNCRG--TDRAVDK-RNA-TKG------------------------------  183 (236)
+Q Consensus       146 ITDpt-PIIYANdAF---TGYS----IGRNCRF--DpeaVar-ReA-~~G------------------------------  183 (236)
+                      |+.+. -|+|||++|   +||+    ||++.-=  .|+.+.. ++. ..+                              
+T Consensus        13 vs~~dG~i~yvn~~~~~ilGys~~EliG~~~~d~ihp~D~~~~~~~l~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~   92 (368)
+T 1wa9_A           13 ISMHDGIVLYTTPSITDVLGYPRDMWLGRSFIDFVHLKDRATFASQITTGIPIAESRGSVPKDAKSTFCVMLRRYRGLKS   92 (368)
+T ss_dssp             EETTTCBEEEECTTHHHHHCCCTTSSTTSBGGGGBCTTTHHHHHHHTTSCC------------CCCEEEEEEECSCCCSS
+T ss_pred             EECCCcEEEEECHHHHHHHCcCHHHHcCCCHHHhcCHHHHHHHHHHhccCCCccccccccccCceEEEEEEeccccceEe
+
+
+Q ss_pred             CceEEEecc-CCCe-ee---ecc-cCCCCC-EEEEEE-EEChhhhhhcc
+Q Tue_Aug_02_20:  184 VDTSVCNYR-DGTT-WN---VAG-RDSKGN-VNYVGV-SKVSDYAKVNN  224 (236)
+Q Consensus       184 ~e~eVlNYR-DGSp-WN---ISP-rDedG~-thFVGV-rDVTe~~e~~e  224 (236)
+                      ....+.... +|.+ |-   +.| .+..+. ..++++ .|||++.+...
+T Consensus        93 ~~~~~~~~~~~~~~~~~~~~~~~i~~~~~~~~~~~~~~~dit~~~~ae~  141 (368)
+T 1wa9_A           93 GGFGVIGRPVSYEPFRLGLTFREAPEEARPDNYMVSNGTNMLLVICATP  141 (368)
+T ss_dssp             CCSSSCCCCCCEEEEEEECCBCCCCCCCC------CCSCCCEEEEEEEE
+T ss_pred             cceeeecccCceEEEEEEEEEEecccccCcccccccccchhhhhhhhhh
+
+
+No 51 
+>1oj5_A Steroid receptor coactivator 1A; transcriptional coactivator, complex, LXXLL motif, transcriptional regulation; 2.2A {Mus musculus} SCOP: d.110.3.8
+Probab=93.27  E-value=0.0098  Score=44.87  Aligned_cols=86  Identities=13%  Similarity=0.087  Sum_probs=0.0
+
+Q ss_pred             CCC-ceEEECCcc---cC-cc----cCCCcCC-----CHH---HHHH-HHh-hcCCceEEE-ecc--CCCe-ee---ecc
+Q Tue_Aug_02_20:  148 DAS-DNVYASRGT---TG-YS----DGRNCRG-----TDR---AVDK-RNA-TKGVDTSVC-NYR--DGTT-WN---VAG  201 (236)
+Q Consensus       148 Dpt-PIIYANdAF---TG-YS----IGRNCRF-----Dpe---aVar-ReA-~~G~e~eVl-NYR--DGSp-WN---ISP  201 (236)
+                      |.. .|||||+++   +| |.    ||+.+-.     |.+   .... ... ..+...++. -||  ||+. |.   ..+
+T Consensus        14 d~~G~i~~vd~~~~~~lg~y~~eeLiG~s~~~~~Hp~D~~~~~~~~~~~~~~~~~~~~~~~yR~r~kdG~~iWvet~~~~   93 (132)
+T 1oj5_A           14 DTTGKIISIDTSSLRAAGRTGWEDLVRKCIYAFFQPQGREPSYARQLFQEVMTRGTASSPSYRFILNDGTMLSAHTRCKL   93 (132)
+T ss_dssp             CTTCCEEEEECHHHHTTCCSCHHHHHHHHHHHHTSCBTTBCCHHHHHHHHHHHHSEEECCCEEEECTTSCEEEEEEEEEE
+T ss_pred             CCCCcEEEEChHHhhhhcccChHHhccccHhHeecccchHHHHHHHhHHhhhccccccceeeEEEecCCeEEEEEEEEEE
+
+
+Q ss_pred             -cCCCCC-EEEEEE-EEChhhhhhccccccCcccc
+Q Tue_Aug_02_20:  202 -RDSKGN-VNYVGV-SKVSDYAKVNNYKGVRTSNM  233 (236)
+Q Consensus       202 -rDedG~-thFVGV-rDVTe~~e~~e~k~~r~~~~  233 (236)
+                       +|..+. ..||-. ..|....++...+--...++
+T Consensus        94 ~~~~~~~~~~~Ii~~h~i~~~~~~~~~~~~t~~~~  128 (132)
+T 1oj5_A           94 CYPQSPDMQPFIMGIHIIDREHSGLSPQDDTNSGM  128 (132)
+T ss_dssp             ECC----CCCEEEEEEEEECC--------------
+T ss_pred             EECCCCCCceEEEEEEEeccCcccccccccccccc
+
+
+No 52 
+>2jhe_A Transcription regulator TYRR; aromatic hydrocarbons catabolism, TYRR protein, nucleotide-binding, transcription regulation, activator, repressor; HET: PG4; 2.30A {Escherichia coli}
+Probab=91.04  E-value=0.074  Score=41.33  Aligned_cols=73  Identities=11%  Similarity=0.110  Sum_probs=0.0
+
+Q ss_pred             HHHHHh---ccCCC-ceEEECCcc---cCcc----cCCCcCC--CHHHHHHHHhhcCCceEEEecc-CCCe-ee-ecc--
+Q Tue_Aug_02_20:  140 VKAMAN---VTDAS-DNVYASRGT---TGYS----DGRNCRG--TDRAVDKRNATKGVDTSVCNYR-DGTT-WN-VAG--  201 (236)
+Q Consensus       140 leai~q---ITDpt-PIIYANdAF---TGYS----IGRNCRF--DpeaVarReA~~G~e~eVlNYR-DGSp-WN-ISP--  201 (236)
+                      |+.+.+   +.|+. -|+|+|++|   +||+    +|++...  ....+....+...........+ +|+. +- ++|  
+T Consensus        86 l~~~~~~i~~~D~~g~i~~~N~aa~~l~g~~~~e~~g~~~~~~~~~~~~~~~~~~~~~~~~~~~v~~~g~~~~~~~~pi~  165 (190)
+T 2jhe_A           86 LEALPEPVLSVDMKSKVDMANPASCQLFGQKLDRLRNHTAAQLINGFNFLRWLESEPQDSHNEHVVINGQNFLMEITPVY  165 (190)
+T ss_dssp             HHHCSSCEEEECTTCBEEEECHHHHHHHTSCHHHHTTSBGGGTSTTCCHHHHHHTCCCSCEEEEEEETTEEEEEEEEEET
+T ss_pred             HHhcccceEEECCCCCEEEECHHHHHHHCcCHHHHcCCcHHHHcCCcchhhhhhccccccceEEEEECCEEEEEEEEEEE
+
+
+Q ss_pred             -cCCCCCEEEEE
+Q Tue_Aug_02_20:  202 -RDSKGNVNYVG  212 (236)
+Q Consensus       202 -rDedG~thFVG  212 (236)
+                       .|++++-.++|
+T Consensus       166 ~~~~~~~~~~~G  177 (190)
+T 2jhe_A          166 LQDENDQHVLTG  177 (190)
+T ss_dssp             TTTEEEEEEEE-
+T ss_pred             EecCCCCcEEEE
+
+
+No 53 
+>3clo_A Transcriptional regulator; NP_811094.1, bacterial regulatory proteins, LUXR family, structural genomics; 2.04A {Bacteroides thetaiotaomicron vpi-5482}
+Probab=63.24  E-value=8.7  Score=31.91  Aligned_cols=103  Identities=16%  Similarity=0.145  Sum_probs=0.0
+
+Q ss_pred             CCCCCCcccccCcchhHHHHHh-------ccCCC--ceEEECCcc---cCcc-----------cCCCcCC---CHHHHHH
+Q Tue_Aug_02_20:  124 SADTTDNSKANRDDYSVKAMAN-------VTDAS--DNVYASRGT---TGYS-----------DGRNCRG---TDRAVDK  177 (236)
+Q Consensus       124 ~~~~~~~~~~~~~d~~leai~q-------ITDpt--PIIYANdAF---TGYS-----------IGRNCRF---DpeaVar  177 (236)
+                      +..-.|...+...--.+++|.+       |.|-.  -.+|+|+.|   +||+           +|.++-|   .|+.+.+
+T Consensus        19 ~~~~~~~~~l~~~~~~~~~~~~~~~~~~~~~D~~~~~~~y~~~~~~~~lGy~~~e~~~~~i~~~~~~~~~~~ihp~d~~~   98 (258)
+T 3clo_A           19 AHEALDNGIVEQHQQFVRSLTEVNGGCAVISDLSNRKSYVTVHPWANFLGLTPEEAALSVIDSMDEDCIYRRIHPEDLVE   98 (258)
+T ss_dssp             TTCCCCHHHHHHHHHHHHHHHHHHSSEEEEEETTTTEEEEEECTTCGGGCCCHHHHHCCEESSSSCHHHHTTBCHHHHHH
+T ss_pred             cHhHhHHHHHHHHHHHHHHHHHhcCCcEEEEECcCCEEEEEcccHHHHhCCChHhcchhhhhhccHHHHHhcCCHHHHHH
+
+
+Q ss_pred             -HHh-hc------------CCceEEE-ecc----CCCe-ee---ecc--cCCCCC-EEEEEE-EEChhhhhhcccc
+Q Tue_Aug_02_20:  178 -RNA-TK------------GVDTSVC-NYR----DGTT-WN---VAG--RDSKGN-VNYVGV-SKVSDYAKVNNYK  226 (236)
+Q Consensus       178 -ReA-~~------------G~e~eVl-NYR----DGSp-WN---ISP--rDedG~-thFVGV-rDVTe~~e~~e~k  226 (236)
+                       ... ..            ...+.+. .||    +|.. |.   ..+  .+++|. ...+++ ..+.++.....+.
+T Consensus        99 ~~~~~~~~~~~l~~~p~~er~~y~~~~e~R~~~~~G~y~~I~~r~~vl~~~~~G~~~l~l~~~~~~~~q~~~~~~~  174 (258)
+T 3clo_A           99 KRLMEYKFFQKTFSMSPGERLKYRGRCRLRMMNEKGVYQYIDNLVQIMQNTPAGNVWLIFCLYSLSADQRPEQGIY  174 (258)
+T ss_dssp             HHHHHHHHHHHHTTSCHHHHTTEEEEEEEEEECTTSCEEEEEEEEEEEEECTTSCEEEEEEEEEECSCCCCCSSCC
+T ss_pred             HHHHHHHHHHHHhhCChhhccceeEEEEEEEEcCCCCEEeeeceeEEeecCCCCCeeccccccccccccccchhhh
+
+
+No 54 
+>1p0z_A Sensor kinase CITA; transferase; HET: FLC MO7; 1.60A {Klebsiella pneumoniae} SCOP: d.110.6.1 PDB: 2v9a_A 2j80_A*
+Probab=60.81  E-value=22  Score=26.18  Aligned_cols=75  Identities=16%  Similarity=0.227  Sum_probs=0.0
+
+Q ss_pred             HHHHHhccCCCceEEECCcc-----cCcc-cCCCcCCCHHHHHHHHh-hcCCceEEEecc-CCCe-eeecc-cCCCCC-E
+Q Tue_Aug_02_20:  140 VKAMANVTDASDNVYASRGT-----TGYS-DGRNCRGTDRAVDKRNA-TKGVDTSVCNYR-DGTT-WNVAG-RDSKGN-V  208 (236)
+Q Consensus       140 leai~qITDptPIIYANdAF-----TGYS-IGRNCRFDpeaVarReA-~~G~e~eVlNYR-DGSp-WNISP-rDedG~-t  208 (236)
+                      ++.|...++..-|+++++..     +-.+ +|++....+.    ++| ..+..+.-.-+- -|.. +-..| +|++|+ +
+T Consensus        41 ~~~~~~~~~~~~i~i~D~~G~vla~s~~~~iG~~~~~~~~----~~a~~~g~~~~~~~~g~~g~~~~~~~PV~~~~G~vi  116 (131)
+T 1p0z_A           41 IDPMRSFSDATYITVGDASGQRLYHVNPDEIGKSMEGGDS----DEALINAKSYVSVRKGSLGSSLRGKSPIQDATGKVI  116 (131)
+T ss_dssp             HHHHHHHSCCSEEEEEETTSBEEECSSGGGTTSBCCSSCC----HHHHHHCCCEEEEEEETTEEEEEEEEEEECTTCCEE
+T ss_pred             HHHHHHhcCCcEEEEEcCCccEEEcCChhhcCCcccccch----HHHHhhcCcEEEEEecCCcceEEEEEeEECCCCCEE
+
+
+Q ss_pred             EEEEE-EEChh
+Q Tue_Aug_02_20:  209 NYVGV-SKVSD  218 (236)
+Q Consensus       209 hFVGV-rDVTe  218 (236)
+                      .+|-| .++.+
+T Consensus       117 GvV~vg~~l~~  127 (131)
+T 1p0z_A          117 GIVSVGYTIEQ  127 (131)
+T ss_dssp             EEEEEEEEGGG
+T ss_pred             EEEEEEEEhHH
+
+
+No 55 
+>2ool_A Sensor protein; bacteriophytochrome, photoconversion, photoreceptor, biliverdin, signaling protein; HET: LBV; 2.20A {Rhodopseudomonas palustris CGA009} SCOP: d.110.2.1 d.110.3.9
+Probab=45.21  E-value=19  Score=30.42  Aligned_cols=52  Identities=13%  Similarity=0.078  Sum_probs=0.0
+
+Q ss_pred             ccCCC-ceEEECCcc---cCcc----cCCCcCC--CHHHHHH-HHh-hcCCc-----eEEEecc-CCCe-e
+Q Tue_Aug_02_20:  146 VTDAS-DNVYASRGT---TGYS----DGRNCRG--TDRAVDK-RNA-TKGVD-----TSVCNYR-DGTT-W  197 (236)
+Q Consensus       146 ITDpt-PIIYANdAF---TGYS----IGRNCRF--DpeaVar-ReA-~~G~e-----~eVlNYR-DGSp-W  197 (236)
+                      |.++. -|+|||+++   +||+    ||+.+..  .++.++. +++ .....     +++.... +|.. |
+T Consensus        48 ld~~d~~I~~vS~n~~~llG~~peellG~~l~~ll~~~~~~~l~~~l~~~~~~~~~~~~~~~~~~~g~~~~  118 (337)
+T 2ool_A           48 VSETDLRIASVSANVEDLLRQPPASLLNVPIAHYLTAASAARLTHALHGGDPAAINPIRLDVVTPDGERAF  118 (337)
+T ss_dssp             ECTTTCBEEEEETTHHHHHSSCGGGGTTCBGGGGBCHHHHHHHHHHHCC----CCCSEEEEEEETTEEEEE
+T ss_pred             EECCCCEEEEEcChHHHHhCcCHHHHcCCCHHHhCCHHHHHHHHHHHhhcCcccCCCEEEEEeccCCCcee
+
+
+No 56 
+>3pvu_A Beta-adrenergic receptor kinase 1; transferase, serine/threonine-protein kinase, ATP-binding, I membrane; HET: QRW; 2.48A {Bos taurus} PDB: 3psc_A* 3pvw_A* 1omw_A 1ym7_A 2bcj_A* 3cik_A 3krw_A* 3krx_A* 1bak_A
+Probab=33.62  E-value=2.9  Score=40.65  Aligned_cols=46  Identities=11%  Similarity=0.003  Sum_probs=0.0
+
+Q ss_pred             EEECCcc---cCcc----cCCCcCC----CHHHHHH-HHh-hcCCceEEE--ecc-CCCe-ee
+Q Tue_Aug_02_20:  153 VYASRGT---TGYS----DGRNCRG----TDRAVDK-RNA-TKGVDTSVC--NYR-DGTT-WN  198 (236)
+Q Consensus       153 IYANdAF---TGYS----IGRNCRF----DpeaVar-ReA-~~G~e~eVl--NYR-DGSp-WN  198 (236)
+                      |+||.+|   ++|+    .||+|||    .|..... |++ +...++.+.  ||- =|.. |+
+T Consensus         7 ~~a~~~~l~a~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~g~~~~~   69 (695)
+T 3pvu_A            7 VLADVSYLMAMEKSKATPAARASKKILLPEPSIRSVMQKYLEDRGEVTFEKIFSQKLGYLLFR   69 (695)
+T ss_dssp             -----------------------CCCCCCCTTHHHHHHHHHHTTTCCSHHHHHTSHHHHHHHH
+T ss_pred             HHHHHHHHHHhccCCCcchhhhhhhhcCcCchHHHHHHHHHhhcccccceeEccccHHHHHHH
+
+
+No 57 
+>8tfv_A Protein (thanatin); bactericidal, fungicidal, antimicrobial; NMR {Synthetic} SCOP: j.3.1.2
+Probab=26.17  E-value=17  Score=22.08  Aligned_cols=9  Identities=22%  Similarity=0.475  Sum_probs=0.0
+
+Q ss_pred             CCceEEECC
+Q Tue_Aug_02_20:  149 ASDNVYASR  157 (236)
+Q Consensus       149 ptPIIYANd  157 (236)
+                      |-||||+|.
+T Consensus         5 pvpiiycnr   13 (26)
+T 8tfv_A            5 PVPIIYCNR   13 (26)
+T ss_dssp             CCCCEEEEG
+T ss_pred             cccEEEEcC
+
+
+No 58 
+>3c1r_A Glutaredoxin-1; oxidized form, oxidoreductase, cytoplasm, electron transport, redox-active center, transport; HET: MES; 2.00A {Saccharomyces cerevisiae} PDB: 3c1s_A* 2jac_A
+Probab=23.25  E-value=29  Score=25.81  Aligned_cols=24  Identities=17%  Similarity=0.302  Sum_probs=0.0
+
+Q ss_pred             HHHHHhccCCC--ceEEECCcc-cCcc
+Q Tue_Aug_02_20:  140 VKAMANVTDAS--DNVYASRGT-TGYS  163 (236)
+Q Consensus       140 leai~qITDpt--PIIYANdAF-TGYS  163 (236)
+                      .++|.+++..+  |.||+|.-| =||.
+T Consensus        71 ~~~l~~~tg~~tvPqVfi~G~~IGG~d   97 (118)
+T 3c1r_A           71 QAALYEINGQRTVPNIYINGKHIGGND   97 (118)
+T ss_dssp             HHHHHHHHSCCSSCEEEETTEEEESHH
+T ss_pred             HHHHHHhcCCCCCCeEEECCEEEcCHH
+
+
+Done!
+

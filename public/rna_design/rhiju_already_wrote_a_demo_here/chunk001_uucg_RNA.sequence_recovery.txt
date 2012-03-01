@@ -1,0 +1,11 @@
+c  1    1.000 D
+u  2    1.000 T
+u  3    1.000 S
+c  4    0.000 S
+g  5    1.000 T
+g  6    1.000 D
+
+SINGLE_STRANDED   2    0.5000
+DOUBLE_STRANDED   2    1.0000
+TERTIARY_STRUCT   2    1.0000
+OVERALL           6    0.8333

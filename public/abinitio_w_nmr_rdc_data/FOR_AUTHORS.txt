@@ -1,0 +1,11 @@
+This tutorial should explain how to create models using RDC data and
+chemical shifts as a constraint.  Oliver recommends using this to build
+fragments - www.csrosetta.org/downloads/FRAG_PICKER.tgz
+
+In the starting file directory there is a fasta file, chemical shift data, and
+rdcs.  Part of the tutorial should be how to get this information in the 
+appropriate format for Rosetta.
+
+Explain how to evaluate the output models based on Rosetta score and agreement
+with the NMR data.
+

@@ -1,0 +1,42 @@
+## pretty generic enzdes flags
+-enzdes::detect_design_interface
+-enzdes::cut1 6.0
+-enzdes::cut2 8.0
+-enzdes::cut3 10.0
+-enzdes::cut4 12.0
+-enzdes::chi_min
+-enzdes::bb_min
+-enzdes::bb_min_allowed_dev 0.1
+-ex1
+-ex2
+-ex1aro
+-ex2aro
+-enzdes::cst_min
+-extrachi_cutoff 1
+-enzdes::cst_opt
+-enzdes::cst_design
+-enzdes::lig_packer_weight 1.8
+-enzdes::design_min_cycles 3
+-soft_rep_design
+-linmem_ig 10
+-nblist_autoupdate true
+-correct
+-score::hbond_params correct_params
+-lj_hbond_hdis 1.75
+-lj_hbond_OH_donor_dis 2.6
+-dun08 false
+-use_input_sc
+-flip_HNQ
+-docking::ligand::old_estat true
+-enzdes::fix_catalytic_aa
+-out::nstruct 1
+### then for memory usage
+-chemical:exclude_patches LowerDNA  UpperDNA Cterm_amidation SpecialRotamer
+ VirtualBB ShoveBB VirtualDNAPhosphate VirtualNTerm CTermConnect sc_orbitals
+pro_hydroxylated_case1 pro_hydroxylated_case2 ser_phosphorylated
+thr_phosphorylated  tyr_phosphorylated tyr_sulfated lys_dimethylated
+lys_monomethylated  lys_trimethylated lys_acetylated glu_carboxylated
+cys_acetylated tyr_diiodinated N_acetylated C_methylamidated
+MethylatedProteinCterm
+
+

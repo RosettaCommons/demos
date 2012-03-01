@@ -1,0 +1,17 @@
+This tutorial should explain how to calculate delta-delta-g of binding
+for a variety of points mutations made at the interface of e6ap and ubch7. The
+point mutants to evaluate can be found in starting_files/mutations_to_evaluate.txt 
+
+There are several ways to accomplish this task, some options are below:
+
+option 1:
+-run interface analyzer on the native interface, note the delta-G of binding
+-run fixBB using a resfile to specify the desired point mutant
+-rerun interface analyzer on the mutated interface, note the delta-G of binding
+-use the two delta-Gs to calculate delta-delta-G of the mutation
+
+option 2:
+-run interface analyzer on the native interface, note the delta-G of binding
+-create a rosettaScript to runs the PackRotamersMover with a resfile, followed
+by running the interfaceAnalyzer.
+-use the two delta-Gs to calculate the delta-delta-G of the mutation

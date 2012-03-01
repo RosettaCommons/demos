@@ -1,0 +1,47 @@
+The goal of this demo is to redesign an RNA sequence using the
+structure of the Internal Loop of SRP (PDB 1lnt) as a backbone
+template. The raw pdb file is included in the starting_files/
+directory. You should feel free to reduce the size of the structure if
+you want, but make sure to mention how/why you did this. This demo
+should outline how to setup your initial structures and how
+to run design. Give any scripts and command lines used for this
+procedure and some analysis of your results. If you use silent
+files make sure you mention how to extract them.
+
+A good starting point for this would be the manual:
+http://www.rosettacommons.org/manuals/archive/rosetta3.1_user_guide/app_RNA_design.html 
+There is also a scientific test which could prove useful:
+mini/test/scientific/tests/rna_design/
+There are also a few prep scripts in demo which could help make everything rosetta friendly.
+mini/demo/rna/
+
+
+GENERAL STUFF:
+The entire workflow for this demo should be described in a file
+named README.dox.  It should describe an entire work flow, with
+command lines, tested if possible.
+
+The contents of each demo directory should be:
+
+starting_files/
+  -- directory in which the raw input files are given - these
+     are provided for you and serve as the base for your
+     tutorial
+rosetta_inputs/
+  -- directory in which the modified starting files should
+     be placed which will be used as inputs to Rosetta.
+     You may need to make modifications like stripping
+     extra chains from the input PDB; store the modified
+     PDB here and leave the unaltered one in starting_files 
+scripts/
+  -- python scripts, shell scripts, used in the workflow
+  -- awk, grep, sed, etc. command lines
+
+README.dox
+  -- A prose or list description of how to perform the protocol
+
+FOR_AUTHORS.txt
+  -- A description for the demo creators of what their demo
+     should achieve.
+  -- Most of what starts in this file should end up in the
+     README file as well.

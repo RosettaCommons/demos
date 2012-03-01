@@ -1,0 +1,35 @@
+For this demo, we want a few individuals to provide instructions for how to use Rosetta to calculate ddG's for a set
+of mutants to eglinC.  There is already documentation for how to run the 'minimize_with_cst' and 'ddg_monomer' applications
+located at http://www.rosettacommons.org/manuals/archive/rosetta3.3_user_guide/app_ddg_monomer.html.  That documentation
+explains well how to calculate the ddG for one mutant. For this tutorial, extra instructions for how to perform this task
+for a large set of mutants should be given. On the Rosetta forums, whenever the calculation of ddG is desired, it is never
+for one single mutant.
+
+The set of mutants for which ddGs should be calculated can be found in the Excel file 'EglinMutants.xls', located in the
+starting_files subdirectory. The structure of eglinC that should be used for the calculations, 1CSE, is also located in this
+directory. 
+
+Note that 1) the 1CSE structure is actually a complex (only eglinC needs to be included for the calculations) and 2) that
+the numbering starts with 8, not 1. The mutants in the Excel file use the PDB numbering.
+
+The instructions will have to explain the following:
+
+1) What all needs to be done with the 1CSE starting structure to get it ready for ddG calculations (including definition
+   of the constraints).
+
+2) How to convert the mutants (e.g. 49YW) in the Excel file into the right format for use with the ddg_monomer app. This 
+   will presumably need to include renumbering of the PDB and of the mutations. 
+
+   Ideally, scripts that are commonly used to create the appropriate input and run directories will be provided and/or documented.
+   It's not practical to ask users to setup directories for each of a 100 mutants manually.
+
+3) Restate what the command lines are for the ddg_monomer run. Describe what output files will be produced.
+
+4) Finally, explain how one would go about obtaining the actual ddG for a mutant from the output files in each run
+   directory.  The shell scripts, 'compute_top3avg_energies.scr' and 'topN_average.scr'  in the 'scripts' directory may 
+   be helpful here.
+
+
+Remember that everything that needs to be done to get this demo working should be explained in the README.dox file.
+
+

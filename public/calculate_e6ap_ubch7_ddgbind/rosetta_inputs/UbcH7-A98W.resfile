@@ -1,0 +1,6 @@
+NATAA
+EX 1 EX 2
+USE_INPUT_SC
+start
+#Pick W mutation at residue 98
+98 D PIKAA W 

@@ -1,0 +1,80 @@
+These instructions will get you from a .bmrb file containing chemical shift data to the set of fragment files needed to run the Rosetta ab_initio application.
+
+The raw NMR data must have it's peaks assigned using NMRPipe, CCPNMR or compararable software. NMRPIPE can be downloaded from <http://spin.niddk.nih.gov/NMRPipe/>. CCPNMR can be downloaded from <http://www.ccpn.ac.uk/ccpn/software/>. The data must be in he format of a .bmrb or a .talos file. 
+
+A secondary structure prediction must be made from the .talos file using TALOS. TALOS can be downloaded from <http://spin.niddk.nih.gov/NMRPipe/talos/>
+
+You can get more information about CS-Rosetta from http://spin.niddk.nih.gov/bax/software/CSROSETTA/
+
+Using chemical shift data to guide the Rosetta ab_initio protocol occurs in four steps:
+
+1. Prepare necessary input files.
+2. Make fragments.
+3. Run the fragment picker.
+4. Run ab_initio.
+
+1. Prepare necessary input files.
+
+You will need the following input files to make fragments from chemical shift data:
+
+1. a ".talos file" (the provided sample is 15112.talos)(this file contains the chemical shift data assigned to each residue in the TALOS format).
+2. a "pred.ss.tab" and a "pred.tab" file. (the provided samples are "pred.ss.tab" and "pred.tab")(these files contain a secondary structure prediction made from your sequence and the chemical shift data in the ".talos" file).
+3. a ".fasta" file (the provided example is 15112.fasta)(this file contains the amino acid sequence of your protein in the fasta format).
+
+Sample chemical shift data an be downloaded from the "bmrb" website. It is best to have at lease 3 data types (1H, 13C, 15N).
+
+If you have just a .bmrb file, you can use the following provided script to produce a .talos file from it: "bmrb2talos.com"
+
+Assuming your .bmrb file is called "15112.bmrb" the script is run as follows: bmrb2talos.com 15112.bmrb > 15112.talos
+
+2. Make fragments from your ".fasta" file.
+
+Please refer the the "make_fragments" tutorial for details on setting up the
+environment and executables required to make the provided "make_fragments.modified.pl" script
+work properly.
+
+The script is run as follows:
+
+./make_fragments.modified.pl -verbose -nosam -nojufo -nohoms <filename.fasta>
+
+Please note that this script requires your input basenames to be exactly 5 characters long.
+
+The "make_fragments.modified.pl" script will generate the following outputs:
+
+1. a ".check" file
+2. a ".checkpoint" file
+3. a ".align" file
+4. a ".psipred_ss2" file
+5. a ".psipred" file
+6. an ".outn" file
+7. a ".homolog_vall" file
+8. a ".homolog_nr" file
+
+Once the script has finished, do the following to concatenate the appropriate "make_fragments.modified.pl" output files into a new file for input into the next step:
+
+cat *homolog_* > filename.homologs
+
+3. Run the fragment picker
+
+The fragment picker uses the ".fasta", ".talos", "pred.ss.tab", "pred.tab", ".fasta.checkpoint", ".fasta.homologs" and the ".homolog_vall" files as well as the provided "scores.cfg" file.
+
+Please refer to the "fragment_picker" tutorial for instructions on setting up and using the fragment picker. 
+
+The fragemnt_picker is run as follows:
+
+~/mini/bin/fragment_picker.linuxgccrelease -database ~/minirosetta_database -in:file:vall ~/vall.dat.2008.apr24.vCS -frags:n_frags 200 -frags:frag_sizes 3 9 -frags:scoring:config filename.checkpoint -frags:denied_pdb filename.homologs -in:file:talos_cs filename.talos -in:file:fasta filename.fasta -in:file:sspred pred.ss.tab talos -in:file:talos_phi_psi pred.tab -frags:sigmoid_cs_A 2 -frags:sigmoid_cs_B 4 -frags:describe_fragments frags.fsc.score -out:file:frag_prefix filename.fasta.frag
+
+For simplicity's sake all of the reqiured options have been included in the provided "flags" file. The "flags: file has been configured the use the provided input files beginning with "15112". The use your own input data, simply modify the "flags" file with your own filenames. Using the "flags" file, the fragment picker is run as follows:  
+
+~/mini/bin/fragment_picker.linuxgccrelease @flags
+
+The fragemnt picker will generate the following four outputs:
+
+1. a "frags.fsc.score.3mers" file
+2. a ".fasta.frags.3mers" file
+3. a "fsc.score.9mers" file
+4. a "fasta.frags.9mers" file
+
+4. Run ab_initio:
+
+Please fefer to the ab_initio tutorial for instuctions on setting up and using the Rosetta ab_initio protocol.

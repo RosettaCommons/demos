@@ -1,0 +1,9 @@
+In this tutorial, you will demonstrate to users how to perform domain insertion with Rosetta.  Domain insertion is when you have two well-folded domains, and you insert one (B) into a flexible loop of the other (A), such that domain A is split into halves in primary sequence, but the whole protein still folds into A and B.
+
+You have been provided with two PDBs: 1ema (a GFP structure) and 2lct (an SH2 domain).  Your job is to insert the SH2 domain into the GFP; this sort of experiment is common for researchers wishing to generate biosensors.
+
+2lct is an NMR structure, remember to clean out the extra models or use the obey_ENDMDL flag.  You can drop the peptide ligand in that PDB, it is irrelevant to this experiment.  Rosetta may have issues with the GFP fluorophore; you may delete it or use -ignore_unrecognized_res, but make sure you note for the audience what you did and why.
+
+You should perform the insertion on the GFP loop of your choice; I suggest 171-176 but if there's a good reason to pick a different one, do it.  You may want to trim the SH2 domain, or add residues to the loop, etc., to get the N and C of the insertion to be closer to the cutpoints.
+
+It is up to you how to do the domain insertion.  Rosetta does not have a good domain insertion executeable of which the organizers are aware.  It is possible to hijack the AnchoredDesign executeable to do it: use a "target" structure that is distant in space (100 angstroms is good) and use the entire insertion as an "anchor" with the GFP as the "scaffold".  You can then use AnchoredPDBCreator and AnchoredDesign to perform the insertion and remodel/design the insertion loop, respectively.  The code will want to improve the non-existent anchor/scaffold interface (which can be ignored), but the scorefunction will also optimize the anchor (insert)/scaffold interface and loop, which is relevant to this problem.

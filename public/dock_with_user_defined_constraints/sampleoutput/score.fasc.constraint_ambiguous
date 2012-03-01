@@ -1,0 +1,3 @@
+SEQUENCE: 
+SCORE: total_score         rms        Fnat        I_sc        Irms atom_pair_constraint              cen_rms dslf_ca_dih dslf_cs_ang dslf_ss_dih dslf_ss_dst      fa_atr      fa_dun     fa_pair      fa_rep      fa_sol hack_elec hbond_bb_sc hbond_lr_bb    hbond_sc hbond_sr_bb interchain_contact interchain_env interchain_pair interchain_vdw        st_rmsd description 
+SCORE:    -330.221      14.812       0.125      -4.663       6.975                0.003               13.698       0.000       0.000       0.000       0.000    -570.420      27.679      -9.489      27.249     260.694    -3.087      -5.163      -9.457      -3.312     -44.918            -19.000        -35.845          -1.314          0.636         15.247 2OM2_AB_0001

@@ -1,0 +1,4 @@
+SEQUENCE: 
+SCORE: total_score        I_sc dslf_ca_dih dslf_cs_ang dslf_ss_dih dslf_ss_dst      fa_atr      fa_dun     fa_pair      fa_rep      fa_sol hack_elec hbond_bb_sc hbond_lr_bb    hbond_sc hbond_sr_bb description 
+SCORE:    -301.326      -4.084       6.003       6.308       4.159     -63.680    -440.088      17.905      -4.964      34.438     194.305    -1.967      -3.133      -6.022      -3.527     -41.063 1ZEH_monomer_0001
+SCORE:    -310.927      -4.639      10.657      15.840       5.973    -108.245    -367.932      12.504      -2.741      15.539     156.926    -1.618      -2.352      -1.642      -1.620     -42.216 1ZEH_haptomer_0001

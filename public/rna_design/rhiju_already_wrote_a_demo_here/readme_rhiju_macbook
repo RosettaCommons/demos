@@ -1,0 +1,2 @@
+#~/src/mini/bin/rna_design.macosgccrelease @flags -database ~/minirosetta_database
+~/src/rosetta-3.3/rosetta_source/bin/rna_design.macosgccrelease @flags -database ~/src/rosetta-3.3/rosetta_database

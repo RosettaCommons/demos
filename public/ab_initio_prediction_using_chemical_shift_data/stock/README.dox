@@ -1,0 +1,14 @@
+This document was created on August 5, 2011 by: 
+Ray Wang <wangyr@u.washington.edu>
+David Johnson <habib@ku.edu>
+James Moody <jdmoodymx@gmail.com>
+Ken Jung <kenjung@uw.edu>
+
+For Rosetta users:
+	please read the "README" file in each step, and run the "cmd" in each folder. 
+
+STEP1-run_talos
+STEP2-bioinfo
+STEP3-frag_picker
+STEP4-abinitio_using_CS_frags
+
