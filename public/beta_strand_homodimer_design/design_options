@@ -1,14 +1,14 @@
 #general options
 -nstruct 5000 #try 5000 or so for production runs
 -out::pdb_gz true #do this for production runs
--pack_min_runs 5
--make_ala_interface true 
--find_bb_hbond_E true 
+-pack_min_runs 5 # number of times to do design/packing.
+-make_ala_interface true # makes the interface alanine during docking
+-find_bb_hbond_E true # report the backbone, backbone hbond Energy
 -no_his_his_pairE true 
--favor_native_res 0.5
--disallow_res CGP  # prevents design up Gly, Cys, Pro
+-favor_native_res 0.5 #favor native residue to prevent unneeded mutations
+-disallow_res CGP  # prevents design up Gly, Cys, Pro unless it is native
 -run:min_type dfpmin
--pose_metrics:interface_cutoff 8.0 
+-pose_metrics:interface_cutoff 8.0 # interface definition
 -use_input_sc
 -ex1
 -ex2 

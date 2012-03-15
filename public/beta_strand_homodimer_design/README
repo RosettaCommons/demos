@@ -84,5 +84,10 @@ However, the only one you really need is 2a7b_mpm_A806_anti_wind_1_step_1_INPUT.
 Run this command
 rosetta/rosetta_source/bin/homodimer_design.linuxgccrelease -s 2a7b_mpm_A806_anti_wind_1_step_1_INPUT.pdb.gz -database rosetta/rosetta_database -symmetry:symmetry_definition symmdef @design_options
 
+See the comments in the design_options file for descriptions of what does what.
+
+This will output designed structures with the name: 2a7b_mpm_A806_anti_wind_1_step_1_INPUT_000x.pdb.gz and a score file: score.fasc.
+From there it is up to you to to chose how you will determine which designs meet your needs.
+
 Then you should probably run the output through the InterfaceAnalyzer. See documentation for it here:
 rosetta_source/doc/apps/public/analysis/interface_analyzer.dox
