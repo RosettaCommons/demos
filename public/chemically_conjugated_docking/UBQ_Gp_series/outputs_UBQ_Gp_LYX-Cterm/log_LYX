@@ -1,0 +1,256 @@
+core.init: Constant seed mode, seed=1111111 seed_offset=0 real_seed=1111111
+protocols.evaluation.ChiWellRmsdEvaluatorCreator: Evaluation Creator active ... 
+core.scoring.ScoreFunctionFactory: SCOREFUNCTION: standard
+core.scoring.ScoreFunctionFactory: SCOREFUNCTION PATCH: score12
+core.scoring.etable: Starting energy table calculation
+core.scoring.etable: smooth_etable: changing atr/rep split to bottom of energy well
+core.scoring.etable: smooth_etable: spline smoothing lj etables (maxdis = 6)
+core.scoring.etable: smooth_etable: spline smoothing solvation etables (max_dis = 6)
+core.scoring.etable: Finished calculating energy tables.
+basic.io.database: Database file opened: scoring/score_functions/PairEPotential/pdb_pair_stats_fine
+basic.io.database: Database file opened: scoring/score_functions/hbonds/standard_params/HBPoly1D.csv
+basic.io.database: Database file opened: scoring/score_functions/hbonds/standard_params/HBFadeIntervals.csv
+basic.io.database: Database file opened: scoring/score_functions/hbonds/standard_params/HBEval.csv
+basic.io.database: Database file opened: scoring/score_functions/EnvPairPotential/env_log.txt
+basic.io.database: Database file opened: scoring/score_functions/EnvPairPotential/cbeta_den.txt
+basic.io.database: Database file opened: scoring/score_functions/EnvPairPotential/pair_log.txt
+basic.io.database: Database file opened: scoring/score_functions/EnvPairPotential/cenpack_log.txt
+basic.io.database: Database file opened: scoring/score_functions/EnvPairPotential/env_log.txt
+basic.io.database: Database file opened: scoring/score_functions/EnvPairPotential/cbeta_den.txt
+basic.io.database: Database file opened: scoring/score_functions/EnvPairPotential/pair_log.txt
+basic.io.database: Database file opened: scoring/score_functions/EnvPairPotential/cenpack_log.txt
+basic.io.database: Database file opened: scoring/score_functions/MembranePotential/CEN6_mem_env_log.txt
+basic.io.database: Database file opened: scoring/score_functions/MembranePotential/CEN10_mem_env_log.txt
+basic.io.database: Database file opened: scoring/score_functions/MembranePotential/memcbeta_den.txt
+basic.io.database: Database file opened: scoring/score_functions/MembranePotential/mem_pair_log.txt
+basic.io.database: Database file opened: scoring/score_functions/P_AA_pp/P_AA
+basic.io.database: Database file opened: scoring/score_functions/P_AA_pp/P_AA_n
+basic.io.database: Database file opened: scoring/score_functions/P_AA_pp/P_AA_pp
+basic.io.database: Database file opened: scoring/score_functions/rama/Rama_smooth_dyn.dat_ss_6.4
+apps.public.scenarios.chemically_conjugated_docking.UBQ_Gp_LYX-Cterm: Using fullatom scorefunction from commandline:
+ScoreFunction::show():
+weights: (fa_atr 0.8) (fa_rep 0.44) (fa_sol 0.65) (fa_intra_rep 0.004) (pro_close 1) (fa_pair 0.49) (hbond_sr_bb 0.585) (hbond_lr_bb 1.17) (hbond_bb_sc 1.17) (hbond_sc 1.1) (dslf_ss_dst 0.5) (dslf_cs_ang 2) (dslf_ss_dih 5) (dslf_ca_dih 5) (rama 0.2) (omega 0.5) (fa_dun 0.56) (p_aa_pp 0.32) (ref 1)
+energy_method_options: EnergyMethodOptions::show: etable_type: FA_STANDARD_DEFAULT
+EnergyMethodOptions::show: method_weights: ref 0.16 1.7 -0.67 -0.81 0.63 -0.17 0.56 0.24 -0.65 -0.1 -0.34 -0.89 0.02 -0.97 -0.98 -0.37 -0.27 0.29 0.91 0.51
+EnergyMethodOptions::show: unfolded_energies_type: UNFOLDED_SCORE12
+apps.public.scenarios.chemically_conjugated_docking.UBQ_Gp_LYX-Cterm: EnergyMethodOptions::show: atom_vdw_atom_type_set_name: centroid
+apps.public.scenarios.chemically_conjugated_docking.UBQ_Gp_LYX-Cterm: EnergyMethodOptions::show: exclude_protein_protein_hack_elec: false
+apps.public.scenarios.chemically_conjugated_docking.UBQ_Gp_LYX-Cterm: EnergyMethodOptions::show: exclude_monomer_hack_elec: false
+apps.public.scenarios.chemically_conjugated_docking.UBQ_Gp_LYX-Cterm: EnergyMethodOptions::show: hackelec_max_dis: 5.5
+apps.public.scenarios.chemically_conjugated_docking.UBQ_Gp_LYX-Cterm: EnergyMethodOptions::show: hackelec_min_dis: 1.5
+apps.public.scenarios.chemically_conjugated_docking.UBQ_Gp_LYX-Cterm: EnergyMethodOptions::show: hackelec_die: 10
+apps.public.scenarios.chemically_conjugated_docking.UBQ_Gp_LYX-Cterm: EnergyMethodOptions::show: hackelec_no_dis_dep_die: false
+apps.public.scenarios.chemically_conjugated_docking.UBQ_Gp_LYX-Cterm: EnergyMethodOptions::show: exclude_DNA_DNA: true
+apps.public.scenarios.chemically_conjugated_docking.UBQ_Gp_LYX-Cterm: EnergyMethodOptions::show: cst_max_seq_sep: 18446744073709551615
+apps.public.scenarios.chemically_conjugated_docking.UBQ_Gp_LYX-Cterm: EnergyMethodOptions::show: bond_angle_central_atoms_to_score:
+apps.public.scenarios.chemically_conjugated_docking.UBQ_Gp_LYX-Cterm: EnergyMethodOptions::show: bond_angle_residue_type_param_set: none
+apps.public.scenarios.chemically_conjugated_docking.UBQ_Gp_LYX-Cterm: HBondOptions::show: exclude_DNA_DNA: true
+apps.public.scenarios.chemically_conjugated_docking.UBQ_Gp_LYX-Cterm: HBondOptions::show: include_intra_res_RNA_: false
+apps.public.scenarios.chemically_conjugated_docking.UBQ_Gp_LYX-Cterm: HBondOptions::show: exclude_self_hbonds: true
+apps.public.scenarios.chemically_conjugated_docking.UBQ_Gp_LYX-Cterm: HBondOptions::show: use_hb_env_dep: true
+apps.public.scenarios.chemically_conjugated_docking.UBQ_Gp_LYX-Cterm: HBondOptions::show: use_hb_env_dep_DNA: true
+apps.public.scenarios.chemically_conjugated_docking.UBQ_Gp_LYX-Cterm: HBondOptions::show: smooth_hb_env_dep: true
+apps.public.scenarios.chemically_conjugated_docking.UBQ_Gp_LYX-Cterm: HBondOptions::show: bb_donor_acceptor_check: true
+apps.public.scenarios.chemically_conjugated_docking.UBQ_Gp_LYX-Cterm: HBondOptions::show: decompose_bb_hb_into_pair_energies: false
+apps.public.scenarios.chemically_conjugated_docking.UBQ_Gp_LYX-Cterm: HBondOptions::show: params_database_tag_: standard_params
+apps.public.scenarios.chemically_conjugated_docking.UBQ_Gp_LYX-Cterm: HBondOptions::show: use_incorrect_deriv_: false
+apps.public.scenarios.chemically_conjugated_docking.UBQ_Gp_LYX-Cterm: HBondOptions::show: use_sp2_chi_penalty_: false
+apps.public.scenarios.chemically_conjugated_docking.UBQ_Gp_LYX-Cterm: HBondOptions::show: Mbhbond: false 
+apps.public.scenarios.chemically_conjugated_docking.UBQ_Gp_LYX-Cterm: 
+Creating starting pose...
+core.chemical.ResidueTypeSet: Finished initializing fa_standard residue type set.  Created 6352 residue types
+core.conformation.Conformation: appending residue by a chemical bond in the foldtree: 167 GLY anchor:  NZ   147 root:  C  
+apps.public.scenarios.chemically_conjugated_docking.UBQ_Gp_LYX-Cterm: starting pose finished.
+apps.public.scenarios.chemically_conjugated_docking.UBQ_Gp_LYX-Cterm:    Current     Low    total cycles =100
+apps.public.scenarios.chemically_conjugated_docking.UBQ_Gp_LYX-Cterm: 1  109221  109221
+core.mm.MMTorsionLibrary: MM torsion sets added fully assigned: 664; wildcard: 35 and 1 virtual parameter.
+core.scoring.NeighborList: Minimization stats: 7 score/deriv cals, 1 narrow-from-wide updates, 0 full updates.
+apps.public.scenarios.chemically_conjugated_docking.UBQ_Gp_LYX-Cterm: 2  -271.757  -271.757
+core.scoring.NeighborList: Minimization stats: 7 score/deriv cals, 1 narrow-from-wide updates, 0 full updates.
+apps.public.scenarios.chemically_conjugated_docking.UBQ_Gp_LYX-Cterm: 3  -272.765  -272.765
+core.scoring.NeighborList: Minimization stats: 7 score/deriv cals, 1 narrow-from-wide updates, 0 full updates.
+apps.public.scenarios.chemically_conjugated_docking.UBQ_Gp_LYX-Cterm: 4  -272.9  -272.9
+apps.public.scenarios.chemically_conjugated_docking.UBQ_Gp_LYX-Cterm: 5  -272.9  -272.9
+core.scoring.NeighborList: Minimization stats: 7 score/deriv cals, 1 narrow-from-wide updates, 0 full updates.
+apps.public.scenarios.chemically_conjugated_docking.UBQ_Gp_LYX-Cterm: 6  -272.9  -272.9
+apps.public.scenarios.chemically_conjugated_docking.UBQ_Gp_LYX-Cterm: 7  -272.9  -272.9
+core.scoring.NeighborList: Minimization stats: 26 score/deriv cals, 3 narrow-from-wide updates, 7 full updates.
+apps.public.scenarios.chemically_conjugated_docking.UBQ_Gp_LYX-Cterm: 8  -292.648  -292.648
+core.scoring.NeighborList: Minimization stats: 7 score/deriv cals, 0 narrow-from-wide updates, 0 full updates.
+apps.public.scenarios.chemically_conjugated_docking.UBQ_Gp_LYX-Cterm: 9  -292.751  -292.751
+core.scoring.NeighborList: Minimization stats: 7 score/deriv cals, 0 narrow-from-wide updates, 0 full updates.
+apps.public.scenarios.chemically_conjugated_docking.UBQ_Gp_LYX-Cterm: 10  -292.945  -292.945
+core.scoring.NeighborList: Minimization stats: 7 score/deriv cals, 0 narrow-from-wide updates, 0 full updates.
+apps.public.scenarios.chemically_conjugated_docking.UBQ_Gp_LYX-Cterm: 11  -292.962  -292.962
+core.scoring.NeighborList: Minimization stats: 7 score/deriv cals, 0 narrow-from-wide updates, 0 full updates.
+apps.public.scenarios.chemically_conjugated_docking.UBQ_Gp_LYX-Cterm: 12  -292.987  -292.987
+apps.public.scenarios.chemically_conjugated_docking.UBQ_Gp_LYX-Cterm: 13  -292.987  -292.987
+apps.public.scenarios.chemically_conjugated_docking.UBQ_Gp_LYX-Cterm: 14  -292.987  -292.987
+core.scoring.NeighborList: Minimization stats: 7 score/deriv cals, 0 narrow-from-wide updates, 0 full updates.
+apps.public.scenarios.chemically_conjugated_docking.UBQ_Gp_LYX-Cterm: 15  -292.994  -292.994
+core.scoring.NeighborList: Minimization stats: 7 score/deriv cals, 0 narrow-from-wide updates, 0 full updates.
+apps.public.scenarios.chemically_conjugated_docking.UBQ_Gp_LYX-Cterm: 16  -293.146  -293.146
+core.scoring.NeighborList: Minimization stats: 7 score/deriv cals, 0 narrow-from-wide updates, 0 full updates.
+apps.public.scenarios.chemically_conjugated_docking.UBQ_Gp_LYX-Cterm: 17  -292.959  -293.146
+core.scoring.NeighborList: Minimization stats: 7 score/deriv cals, 0 narrow-from-wide updates, 0 full updates.
+apps.public.scenarios.chemically_conjugated_docking.UBQ_Gp_LYX-Cterm: 18  -293.117  -293.146
+apps.public.scenarios.chemically_conjugated_docking.UBQ_Gp_LYX-Cterm: 19  -293.117  -293.146
+apps.public.scenarios.chemically_conjugated_docking.UBQ_Gp_LYX-Cterm: 20  -293.117  -293.146
+apps.public.scenarios.chemically_conjugated_docking.UBQ_Gp_LYX-Cterm: 21  -293.117  -293.146
+apps.public.scenarios.chemically_conjugated_docking.UBQ_Gp_LYX-Cterm: 22  -293.117  -293.146
+core.scoring.NeighborList: Minimization stats: 7 score/deriv cals, 0 narrow-from-wide updates, 0 full updates.
+apps.public.scenarios.chemically_conjugated_docking.UBQ_Gp_LYX-Cterm: 23  -293.25  -293.25
+core.scoring.NeighborList: Minimization stats: 7 score/deriv cals, 0 narrow-from-wide updates, 0 full updates.
+apps.public.scenarios.chemically_conjugated_docking.UBQ_Gp_LYX-Cterm: 24  -293.612  -293.612
+core.scoring.NeighborList: Minimization stats: 7 score/deriv cals, 0 narrow-from-wide updates, 0 full updates.
+apps.public.scenarios.chemically_conjugated_docking.UBQ_Gp_LYX-Cterm: 25  -294.062  -294.062
+core.scoring.NeighborList: Minimization stats: 7 score/deriv cals, 0 narrow-from-wide updates, 0 full updates.
+apps.public.scenarios.chemically_conjugated_docking.UBQ_Gp_LYX-Cterm: 26  -294.16  -294.16
+core.scoring.NeighborList: Minimization stats: 7 score/deriv cals, 0 narrow-from-wide updates, 0 full updates.
+apps.public.scenarios.chemically_conjugated_docking.UBQ_Gp_LYX-Cterm: 27  -294.43  -294.43
+core.scoring.NeighborList: Minimization stats: 7 score/deriv cals, 0 narrow-from-wide updates, 0 full updates.
+apps.public.scenarios.chemically_conjugated_docking.UBQ_Gp_LYX-Cterm: 28  -294.639  -294.639
+core.scoring.NeighborList: Minimization stats: 7 score/deriv cals, 0 narrow-from-wide updates, 0 full updates.
+apps.public.scenarios.chemically_conjugated_docking.UBQ_Gp_LYX-Cterm: 29  -294.942  -294.942
+apps.public.scenarios.chemically_conjugated_docking.UBQ_Gp_LYX-Cterm: 30  -294.942  -294.942
+apps.public.scenarios.chemically_conjugated_docking.UBQ_Gp_LYX-Cterm: 31  -294.942  -294.942
+core.scoring.NeighborList: Minimization stats: 7 score/deriv cals, 0 narrow-from-wide updates, 0 full updates.
+apps.public.scenarios.chemically_conjugated_docking.UBQ_Gp_LYX-Cterm: 32  -295.064  -295.064
+apps.public.scenarios.chemically_conjugated_docking.UBQ_Gp_LYX-Cterm: 33  -295.064  -295.064
+apps.public.scenarios.chemically_conjugated_docking.UBQ_Gp_LYX-Cterm: 34  -295.064  -295.064
+core.scoring.NeighborList: Minimization stats: 7 score/deriv cals, 0 narrow-from-wide updates, 0 full updates.
+apps.public.scenarios.chemically_conjugated_docking.UBQ_Gp_LYX-Cterm: 35  -295.258  -295.258
+core.scoring.NeighborList: Minimization stats: 7 score/deriv cals, 0 narrow-from-wide updates, 0 full updates.
+apps.public.scenarios.chemically_conjugated_docking.UBQ_Gp_LYX-Cterm: 36  -295.393  -295.393
+core.scoring.NeighborList: Minimization stats: 7 score/deriv cals, 0 narrow-from-wide updates, 0 full updates.
+apps.public.scenarios.chemically_conjugated_docking.UBQ_Gp_LYX-Cterm: 37  -296.363  -296.363
+apps.public.scenarios.chemically_conjugated_docking.UBQ_Gp_LYX-Cterm: 38  -296.363  -296.363
+core.scoring.NeighborList: Minimization stats: 7 score/deriv cals, 0 narrow-from-wide updates, 0 full updates.
+apps.public.scenarios.chemically_conjugated_docking.UBQ_Gp_LYX-Cterm: 39  -296.487  -296.487
+core.scoring.NeighborList: Minimization stats: 7 score/deriv cals, 0 narrow-from-wide updates, 0 full updates.
+apps.public.scenarios.chemically_conjugated_docking.UBQ_Gp_LYX-Cterm: 40  -296.499  -296.499
+core.scoring.NeighborList: Minimization stats: 7 score/deriv cals, 0 narrow-from-wide updates, 0 full updates.
+apps.public.scenarios.chemically_conjugated_docking.UBQ_Gp_LYX-Cterm: 41  -296.594  -296.594
+core.scoring.NeighborList: Minimization stats: 7 score/deriv cals, 0 narrow-from-wide updates, 0 full updates.
+apps.public.scenarios.chemically_conjugated_docking.UBQ_Gp_LYX-Cterm: 42  -296.651  -296.651
+apps.public.scenarios.chemically_conjugated_docking.UBQ_Gp_LYX-Cterm: 43  -296.651  -296.651
+apps.public.scenarios.chemically_conjugated_docking.UBQ_Gp_LYX-Cterm: 44  -296.651  -296.651
+core.scoring.NeighborList: Minimization stats: 7 score/deriv cals, 0 narrow-from-wide updates, 0 full updates.
+apps.public.scenarios.chemically_conjugated_docking.UBQ_Gp_LYX-Cterm: 45  -296.688  -296.688
+core.scoring.NeighborList: Minimization stats: 7 score/deriv cals, 0 narrow-from-wide updates, 0 full updates.
+apps.public.scenarios.chemically_conjugated_docking.UBQ_Gp_LYX-Cterm: 46  -296.688  -296.688
+core.scoring.NeighborList: Minimization stats: 7 score/deriv cals, 0 narrow-from-wide updates, 0 full updates.
+apps.public.scenarios.chemically_conjugated_docking.UBQ_Gp_LYX-Cterm: 47  -296.764  -296.764
+core.scoring.NeighborList: Minimization stats: 7 score/deriv cals, 0 narrow-from-wide updates, 0 full updates.
+apps.public.scenarios.chemically_conjugated_docking.UBQ_Gp_LYX-Cterm: 48  -296.9  -296.9
+core.scoring.NeighborList: Minimization stats: 7 score/deriv cals, 0 narrow-from-wide updates, 0 full updates.
+apps.public.scenarios.chemically_conjugated_docking.UBQ_Gp_LYX-Cterm: 49  -297.095  -297.095
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.pack.pack_rotamers: built 21 rotamers at 7 positions.
+core.pack.pack_rotamers: IG: 7284 bytes
+core.scoring.NeighborList: Minimization stats: 7 score/deriv cals, 0 narrow-from-wide updates, 0 full updates.
+apps.public.scenarios.chemically_conjugated_docking.UBQ_Gp_LYX-Cterm: 50  -297.216  -297.216
+core.scoring.NeighborList: Minimization stats: 7 score/deriv cals, 0 narrow-from-wide updates, 0 full updates.
+apps.public.scenarios.chemically_conjugated_docking.UBQ_Gp_LYX-Cterm: 51  -297.271  -297.271
+apps.public.scenarios.chemically_conjugated_docking.UBQ_Gp_LYX-Cterm: 52  -297.271  -297.271
+apps.public.scenarios.chemically_conjugated_docking.UBQ_Gp_LYX-Cterm: 53  -297.271  -297.271
+core.scoring.NeighborList: Minimization stats: 7 score/deriv cals, 0 narrow-from-wide updates, 0 full updates.
+apps.public.scenarios.chemically_conjugated_docking.UBQ_Gp_LYX-Cterm: 54  -298.248  -298.248
+core.scoring.NeighborList: Minimization stats: 7 score/deriv cals, 0 narrow-from-wide updates, 0 full updates.
+apps.public.scenarios.chemically_conjugated_docking.UBQ_Gp_LYX-Cterm: 55  -302.235  -302.235
+apps.public.scenarios.chemically_conjugated_docking.UBQ_Gp_LYX-Cterm: 56  -302.235  -302.235
+core.scoring.NeighborList: Minimization stats: 7 score/deriv cals, 0 narrow-from-wide updates, 0 full updates.
+apps.public.scenarios.chemically_conjugated_docking.UBQ_Gp_LYX-Cterm: 57  -302.284  -302.284
+core.scoring.NeighborList: Minimization stats: 7 score/deriv cals, 0 narrow-from-wide updates, 0 full updates.
+apps.public.scenarios.chemically_conjugated_docking.UBQ_Gp_LYX-Cterm: 58  -302.336  -302.336
+core.scoring.NeighborList: Minimization stats: 7 score/deriv cals, 0 narrow-from-wide updates, 0 full updates.
+apps.public.scenarios.chemically_conjugated_docking.UBQ_Gp_LYX-Cterm: 59  -302.384  -302.384
+core.scoring.NeighborList: Minimization stats: 7 score/deriv cals, 0 narrow-from-wide updates, 0 full updates.
+apps.public.scenarios.chemically_conjugated_docking.UBQ_Gp_LYX-Cterm: 60  -302.475  -302.475
+core.scoring.NeighborList: Minimization stats: 7 score/deriv cals, 0 narrow-from-wide updates, 0 full updates.
+apps.public.scenarios.chemically_conjugated_docking.UBQ_Gp_LYX-Cterm: 61  -302.543  -302.543
+core.scoring.NeighborList: Minimization stats: 7 score/deriv cals, 0 narrow-from-wide updates, 0 full updates.
+apps.public.scenarios.chemically_conjugated_docking.UBQ_Gp_LYX-Cterm: 62  -302.598  -302.598
+apps.public.scenarios.chemically_conjugated_docking.UBQ_Gp_LYX-Cterm: 63  -302.598  -302.598
+apps.public.scenarios.chemically_conjugated_docking.UBQ_Gp_LYX-Cterm: 64  -302.598  -302.598
+apps.public.scenarios.chemically_conjugated_docking.UBQ_Gp_LYX-Cterm: 65  -302.598  -302.598
+core.scoring.NeighborList: Minimization stats: 7 score/deriv cals, 0 narrow-from-wide updates, 0 full updates.
+apps.public.scenarios.chemically_conjugated_docking.UBQ_Gp_LYX-Cterm: 66  -302.539  -302.598
+core.scoring.NeighborList: Minimization stats: 7 score/deriv cals, 0 narrow-from-wide updates, 0 full updates.
+apps.public.scenarios.chemically_conjugated_docking.UBQ_Gp_LYX-Cterm: 67  -302.674  -302.674
+apps.public.scenarios.chemically_conjugated_docking.UBQ_Gp_LYX-Cterm: 68  -302.674  -302.674
+core.scoring.NeighborList: Minimization stats: 7 score/deriv cals, 0 narrow-from-wide updates, 0 full updates.
+apps.public.scenarios.chemically_conjugated_docking.UBQ_Gp_LYX-Cterm: 69  -302.643  -302.674
+core.scoring.NeighborList: Minimization stats: 7 score/deriv cals, 0 narrow-from-wide updates, 0 full updates.
+apps.public.scenarios.chemically_conjugated_docking.UBQ_Gp_LYX-Cterm: 70  -302.731  -302.731
+core.scoring.NeighborList: Minimization stats: 7 score/deriv cals, 0 narrow-from-wide updates, 0 full updates.
+apps.public.scenarios.chemically_conjugated_docking.UBQ_Gp_LYX-Cterm: 71  -302.853  -302.853
+core.scoring.NeighborList: Minimization stats: 7 score/deriv cals, 0 narrow-from-wide updates, 0 full updates.
+apps.public.scenarios.chemically_conjugated_docking.UBQ_Gp_LYX-Cterm: 72  -302.853  -302.853
+core.scoring.NeighborList: Minimization stats: 7 score/deriv cals, 0 narrow-from-wide updates, 0 full updates.
+apps.public.scenarios.chemically_conjugated_docking.UBQ_Gp_LYX-Cterm: 73  -302.917  -302.917
+core.scoring.NeighborList: Minimization stats: 7 score/deriv cals, 0 narrow-from-wide updates, 0 full updates.
+apps.public.scenarios.chemically_conjugated_docking.UBQ_Gp_LYX-Cterm: 74  -302.923  -302.923
+apps.public.scenarios.chemically_conjugated_docking.UBQ_Gp_LYX-Cterm: 75  -302.923  -302.923
+apps.public.scenarios.chemically_conjugated_docking.UBQ_Gp_LYX-Cterm: 76  -302.923  -302.923
+core.scoring.NeighborList: Minimization stats: 7 score/deriv cals, 0 narrow-from-wide updates, 0 full updates.
+apps.public.scenarios.chemically_conjugated_docking.UBQ_Gp_LYX-Cterm: 77  -302.986  -302.986
+core.scoring.NeighborList: Minimization stats: 7 score/deriv cals, 0 narrow-from-wide updates, 0 full updates.
+apps.public.scenarios.chemically_conjugated_docking.UBQ_Gp_LYX-Cterm: 78  -303.074  -303.074
+core.scoring.NeighborList: Minimization stats: 7 score/deriv cals, 0 narrow-from-wide updates, 0 full updates.
+apps.public.scenarios.chemically_conjugated_docking.UBQ_Gp_LYX-Cterm: 79  -303.004  -303.074
+apps.public.scenarios.chemically_conjugated_docking.UBQ_Gp_LYX-Cterm: 80  -303.004  -303.074
+apps.public.scenarios.chemically_conjugated_docking.UBQ_Gp_LYX-Cterm: 81  -303.004  -303.074
+core.scoring.NeighborList: Minimization stats: 7 score/deriv cals, 0 narrow-from-wide updates, 0 full updates.
+apps.public.scenarios.chemically_conjugated_docking.UBQ_Gp_LYX-Cterm: 82  -303.046  -303.074
+apps.public.scenarios.chemically_conjugated_docking.UBQ_Gp_LYX-Cterm: 83  -303.046  -303.074
+apps.public.scenarios.chemically_conjugated_docking.UBQ_Gp_LYX-Cterm: 84  -303.046  -303.074
+core.scoring.NeighborList: Minimization stats: 7 score/deriv cals, 0 narrow-from-wide updates, 0 full updates.
+apps.public.scenarios.chemically_conjugated_docking.UBQ_Gp_LYX-Cterm: 85  -303.118  -303.118
+core.scoring.NeighborList: Minimization stats: 7 score/deriv cals, 0 narrow-from-wide updates, 0 full updates.
+apps.public.scenarios.chemically_conjugated_docking.UBQ_Gp_LYX-Cterm: 86  -303.222  -303.222
+core.scoring.NeighborList: Minimization stats: 7 score/deriv cals, 1 narrow-from-wide updates, 0 full updates.
+apps.public.scenarios.chemically_conjugated_docking.UBQ_Gp_LYX-Cterm: 87  -303.222  -303.222
+core.scoring.NeighborList: Minimization stats: 7 score/deriv cals, 0 narrow-from-wide updates, 0 full updates.
+apps.public.scenarios.chemically_conjugated_docking.UBQ_Gp_LYX-Cterm: 88  -303.265  -303.265
+apps.public.scenarios.chemically_conjugated_docking.UBQ_Gp_LYX-Cterm: 89  -303.265  -303.265
+core.scoring.NeighborList: Minimization stats: 7 score/deriv cals, 0 narrow-from-wide updates, 0 full updates.
+apps.public.scenarios.chemically_conjugated_docking.UBQ_Gp_LYX-Cterm: 90  -303.316  -303.316
+apps.public.scenarios.chemically_conjugated_docking.UBQ_Gp_LYX-Cterm: 91  -303.316  -303.316
+core.scoring.NeighborList: Minimization stats: 7 score/deriv cals, 0 narrow-from-wide updates, 0 full updates.
+apps.public.scenarios.chemically_conjugated_docking.UBQ_Gp_LYX-Cterm: 92  -303.314  -303.316
+core.scoring.NeighborList: Minimization stats: 7 score/deriv cals, 0 narrow-from-wide updates, 0 full updates.
+apps.public.scenarios.chemically_conjugated_docking.UBQ_Gp_LYX-Cterm: 93  -303.349  -303.349
+core.scoring.NeighborList: Minimization stats: 7 score/deriv cals, 0 narrow-from-wide updates, 0 full updates.
+apps.public.scenarios.chemically_conjugated_docking.UBQ_Gp_LYX-Cterm: 94  -303.369  -303.369
+apps.public.scenarios.chemically_conjugated_docking.UBQ_Gp_LYX-Cterm: 95  -303.369  -303.369
+core.scoring.NeighborList: Minimization stats: 7 score/deriv cals, 0 narrow-from-wide updates, 0 full updates.
+apps.public.scenarios.chemically_conjugated_docking.UBQ_Gp_LYX-Cterm: 96  -303.391  -303.391
+apps.public.scenarios.chemically_conjugated_docking.UBQ_Gp_LYX-Cterm: 97  -303.391  -303.391
+apps.public.scenarios.chemically_conjugated_docking.UBQ_Gp_LYX-Cterm: 98  -303.391  -303.391
+core.scoring.NeighborList: Minimization stats: 7 score/deriv cals, 0 narrow-from-wide updates, 0 full updates.
+apps.public.scenarios.chemically_conjugated_docking.UBQ_Gp_LYX-Cterm: 99  -303.391  -303.391
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.pack.pack_rotamers: built 16 rotamers at 6 positions.
+core.pack.pack_rotamers: IG: 5376 bytes
+core.scoring.NeighborList: Minimization stats: 7 score/deriv cals, 0 narrow-from-wide updates, 0 full updates.
+apps.public.scenarios.chemically_conjugated_docking.UBQ_Gp_LYX-Cterm: 100  -303.429  -303.429
+protocols.analysis.InterfaceAnalyzerMover: Making an interface set with default calculator.
+protocols.analysis.InterfaceAnalyzerMover: NULL scorefunction.  Initialize from cmd line.
+core.scoring.ScoreFunctionFactory: SCOREFUNCTION: standard
+core.scoring.ScoreFunctionFactory: SCOREFUNCTION PATCH: score12
+protocols.moves.RigidBodyMover: Translate: Jump (before): RT 0.304014 -0.712522 0.632367 -0.507169 0.440854 0.740559 -0.806446 -0.545857 -0.227343 -37.8317 -41.9341 43.3955  
+protocols.moves.RigidBodyMover: Translate: Jump (after):  RT 0.304014 -0.712522 0.632367 -0.507169 0.440854 0.740559 -0.806446 -0.545857 -0.227343 -703.573 -519.755 616.524  
+core.scoring.ScoreFunctionFactory: SCOREFUNCTION: standard
+core.scoring.ScoreFunctionFactory: SCOREFUNCTION PATCH: score12
+protocols.analysis.InterfaceAnalyzerMover: Computing delta unsat polar residues...
+basic.io.database: Database file opened: scoring/score_functions/sc/sc_radii.lib
+core.scoring.sc.ShapeComplementarityCalculator: Failed to assign atom radius for residue LYX:CG . Skipping atom!
+core.scoring.sc.ShapeComplementarityCalculator: Failed to assign atom radius for residue LYX:CD . Skipping atom!
+core.scoring.sc.ShapeComplementarityCalculator: Failed to assign atom radius for residue LYX:CE . Skipping atom!
+core.scoring.sc.ShapeComplementarityCalculator: Failed to assign atom radius for residue LYX:NZ . Skipping atom!
+protocols.analysis.InterfaceAnalyzerMover: Computing Shape Complementarity Score...
+protocols.analysis.InterfaceAnalyzerMover: Upstream chain(s) numbers: 1, 
+protocols.analysis.InterfaceAnalyzerMover: Downstream chain(s) numbers: 2, 
+protocols.jd2.JobDistributor: no more batches to process... 
+apps.public.scenarios.chemically_conjugated_docking.UBQ_Gp_LYX-Cterm: ************************d**o**n**e**************************************

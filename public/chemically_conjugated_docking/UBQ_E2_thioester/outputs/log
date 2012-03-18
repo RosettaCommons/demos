@@ -1,0 +1,232 @@
+core.init: Constant seed mode, seed=1111111 seed_offset=0 real_seed=1111111
+protocols.evaluation.ChiWellRmsdEvaluatorCreator: Evaluation Creator active ... 
+core.scoring.ScoreFunctionFactory: SCOREFUNCTION: standard
+core.scoring.ScoreFunctionFactory: SCOREFUNCTION PATCH: score12
+core.scoring.etable: Starting energy table calculation
+core.scoring.etable: smooth_etable: changing atr/rep split to bottom of energy well
+core.scoring.etable: smooth_etable: spline smoothing lj etables (maxdis = 6)
+core.scoring.etable: smooth_etable: spline smoothing solvation etables (max_dis = 6)
+core.scoring.etable: Finished calculating energy tables.
+basic.io.database: Database file opened: scoring/score_functions/PairEPotential/pdb_pair_stats_fine
+basic.io.database: Database file opened: scoring/score_functions/hbonds/standard_params/HBPoly1D.csv
+basic.io.database: Database file opened: scoring/score_functions/hbonds/standard_params/HBFadeIntervals.csv
+basic.io.database: Database file opened: scoring/score_functions/hbonds/standard_params/HBEval.csv
+basic.io.database: Database file opened: scoring/score_functions/EnvPairPotential/env_log.txt
+basic.io.database: Database file opened: scoring/score_functions/EnvPairPotential/cbeta_den.txt
+basic.io.database: Database file opened: scoring/score_functions/EnvPairPotential/pair_log.txt
+basic.io.database: Database file opened: scoring/score_functions/EnvPairPotential/cenpack_log.txt
+basic.io.database: Database file opened: scoring/score_functions/EnvPairPotential/env_log.txt
+basic.io.database: Database file opened: scoring/score_functions/EnvPairPotential/cbeta_den.txt
+basic.io.database: Database file opened: scoring/score_functions/EnvPairPotential/pair_log.txt
+basic.io.database: Database file opened: scoring/score_functions/EnvPairPotential/cenpack_log.txt
+basic.io.database: Database file opened: scoring/score_functions/MembranePotential/CEN6_mem_env_log.txt
+basic.io.database: Database file opened: scoring/score_functions/MembranePotential/CEN10_mem_env_log.txt
+basic.io.database: Database file opened: scoring/score_functions/MembranePotential/memcbeta_den.txt
+basic.io.database: Database file opened: scoring/score_functions/MembranePotential/mem_pair_log.txt
+basic.io.database: Database file opened: scoring/score_functions/P_AA_pp/P_AA
+basic.io.database: Database file opened: scoring/score_functions/P_AA_pp/P_AA_n
+basic.io.database: Database file opened: scoring/score_functions/P_AA_pp/P_AA_pp
+basic.io.database: Database file opened: scoring/score_functions/rama/Rama_smooth_dyn.dat_ss_6.4
+apps.public.scenarios.chemically_conjugated_docking.UBQ_E2_thioester: Using fullatom scorefunction from commandline:
+ScoreFunction::show():
+weights: (fa_atr 0.8) (fa_rep 0.44) (fa_sol 0.65) (fa_intra_rep 0.004) (pro_close 1) (fa_pair 0.49) (hbond_sr_bb 0.585) (hbond_lr_bb 1.17) (hbond_bb_sc 1.17) (hbond_sc 1.1) (dslf_ss_dst 0.5) (dslf_cs_ang 2) (dslf_ss_dih 5) (dslf_ca_dih 5) (atom_pair_constraint 50) (rama 0.2) (omega 0.5) (fa_dun 0.56) (p_aa_pp 0.32) (ref 1)
+energy_method_options: EnergyMethodOptions::show: etable_type: FA_STANDARD_DEFAULT
+EnergyMethodOptions::show: method_weights: ref 0.16 1.7 -0.67 -0.81 0.63 -0.17 0.56 0.24 -0.65 -0.1 -0.34 -0.89 0.02 -0.97 -0.98 -0.37 -0.27 0.29 0.91 0.51
+EnergyMethodOptions::show: unfolded_energies_type: UNFOLDED_SCORE12
+apps.public.scenarios.chemically_conjugated_docking.UBQ_E2_thioester: EnergyMethodOptions::show: atom_vdw_atom_type_set_name: centroid
+apps.public.scenarios.chemically_conjugated_docking.UBQ_E2_thioester: EnergyMethodOptions::show: exclude_protein_protein_hack_elec: false
+apps.public.scenarios.chemically_conjugated_docking.UBQ_E2_thioester: EnergyMethodOptions::show: exclude_monomer_hack_elec: false
+apps.public.scenarios.chemically_conjugated_docking.UBQ_E2_thioester: EnergyMethodOptions::show: hackelec_max_dis: 5.5
+apps.public.scenarios.chemically_conjugated_docking.UBQ_E2_thioester: EnergyMethodOptions::show: hackelec_min_dis: 1.5
+apps.public.scenarios.chemically_conjugated_docking.UBQ_E2_thioester: EnergyMethodOptions::show: hackelec_die: 10
+apps.public.scenarios.chemically_conjugated_docking.UBQ_E2_thioester: EnergyMethodOptions::show: hackelec_no_dis_dep_die: false
+apps.public.scenarios.chemically_conjugated_docking.UBQ_E2_thioester: EnergyMethodOptions::show: exclude_DNA_DNA: true
+apps.public.scenarios.chemically_conjugated_docking.UBQ_E2_thioester: EnergyMethodOptions::show: cst_max_seq_sep: 18446744073709551615
+apps.public.scenarios.chemically_conjugated_docking.UBQ_E2_thioester: EnergyMethodOptions::show: bond_angle_central_atoms_to_score:
+apps.public.scenarios.chemically_conjugated_docking.UBQ_E2_thioester: EnergyMethodOptions::show: bond_angle_residue_type_param_set: none
+apps.public.scenarios.chemically_conjugated_docking.UBQ_E2_thioester: HBondOptions::show: exclude_DNA_DNA: true
+apps.public.scenarios.chemically_conjugated_docking.UBQ_E2_thioester: HBondOptions::show: include_intra_res_RNA_: false
+apps.public.scenarios.chemically_conjugated_docking.UBQ_E2_thioester: HBondOptions::show: exclude_self_hbonds: true
+apps.public.scenarios.chemically_conjugated_docking.UBQ_E2_thioester: HBondOptions::show: use_hb_env_dep: true
+apps.public.scenarios.chemically_conjugated_docking.UBQ_E2_thioester: HBondOptions::show: use_hb_env_dep_DNA: true
+apps.public.scenarios.chemically_conjugated_docking.UBQ_E2_thioester: HBondOptions::show: smooth_hb_env_dep: true
+apps.public.scenarios.chemically_conjugated_docking.UBQ_E2_thioester: HBondOptions::show: bb_donor_acceptor_check: true
+apps.public.scenarios.chemically_conjugated_docking.UBQ_E2_thioester: HBondOptions::show: decompose_bb_hb_into_pair_energies: false
+apps.public.scenarios.chemically_conjugated_docking.UBQ_E2_thioester: HBondOptions::show: params_database_tag_: standard_params
+apps.public.scenarios.chemically_conjugated_docking.UBQ_E2_thioester: HBondOptions::show: use_incorrect_deriv_: false
+apps.public.scenarios.chemically_conjugated_docking.UBQ_E2_thioester: HBondOptions::show: use_sp2_chi_penalty_: false
+apps.public.scenarios.chemically_conjugated_docking.UBQ_E2_thioester: HBondOptions::show: Mbhbond: false 
+apps.public.scenarios.chemically_conjugated_docking.UBQ_E2_thioester: 
+Creating starting pose...
+core.chemical.ResidueTypeSet: Finished initializing fa_standard residue type set.  Created 6352 residue types
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  OXT on residue VAL_p:CtermProteinFull 154
+core.conformation.Conformation: appending residue by a chemical bond in the foldtree: 155 GLY anchor:  SG    85 root:  C  
+apps.public.scenarios.chemically_conjugated_docking.UBQ_E2_thioester: starting pose finished.
+apps.public.scenarios.chemically_conjugated_docking.UBQ_E2_thioester: 4 8 11 15 16 17 18 19 21 38 39 40 41 42 43 44 46 47 60 61 62 63 64 66 77 79 82 83 85 87 88 89 90 91 92 94 95 96 98 99 101 102 103 105 108 109 110 111 113 115 117 121 122 124 125 128 134 135 size 58
+apps.public.scenarios.chemically_conjugated_docking.UBQ_E2_thioester:    Current     Low    total cycles =100
+apps.public.scenarios.chemically_conjugated_docking.UBQ_E2_thioester: 1  1401.59  1401.59
+core.mm.MMTorsionLibrary: MM torsion sets added fully assigned: 664; wildcard: 35 and 1 virtual parameter.
+apps.public.scenarios.chemically_conjugated_docking.UBQ_E2_thioester: 2  1401.59  1401.59
+core.scoring.NeighborList: Minimization stats: 115 score/deriv cals, 10 narrow-from-wide updates, 33 full updates.
+apps.public.scenarios.chemically_conjugated_docking.UBQ_E2_thioester: 3  955.906  955.906
+core.scoring.NeighborList: Minimization stats: 27 score/deriv cals, 5 narrow-from-wide updates, 5 full updates.
+apps.public.scenarios.chemically_conjugated_docking.UBQ_E2_thioester: 4  921.04  921.04
+core.scoring.NeighborList: Minimization stats: 32 score/deriv cals, 5 narrow-from-wide updates, 6 full updates.
+apps.public.scenarios.chemically_conjugated_docking.UBQ_E2_thioester: 5  909.923  909.923
+apps.public.scenarios.chemically_conjugated_docking.UBQ_E2_thioester: 6  909.923  909.923
+core.scoring.NeighborList: Minimization stats: 13 score/deriv cals, 3 narrow-from-wide updates, 3 full updates.
+apps.public.scenarios.chemically_conjugated_docking.UBQ_E2_thioester: 7  903.885  903.885
+apps.public.scenarios.chemically_conjugated_docking.UBQ_E2_thioester: 8  903.885  903.885
+apps.public.scenarios.chemically_conjugated_docking.UBQ_E2_thioester: 9  903.885  903.885
+apps.public.scenarios.chemically_conjugated_docking.UBQ_E2_thioester: 10  903.885  903.885
+apps.public.scenarios.chemically_conjugated_docking.UBQ_E2_thioester: 11  903.885  903.885
+core.scoring.NeighborList: Minimization stats: 25 score/deriv cals, 5 narrow-from-wide updates, 4 full updates.
+apps.public.scenarios.chemically_conjugated_docking.UBQ_E2_thioester: 12  897.771  897.771
+apps.public.scenarios.chemically_conjugated_docking.UBQ_E2_thioester: 13  897.771  897.771
+apps.public.scenarios.chemically_conjugated_docking.UBQ_E2_thioester: 14  897.771  897.771
+core.scoring.NeighborList: Minimization stats: 21 score/deriv cals, 6 narrow-from-wide updates, 2 full updates.
+apps.public.scenarios.chemically_conjugated_docking.UBQ_E2_thioester: 15  894.731  894.731
+apps.public.scenarios.chemically_conjugated_docking.UBQ_E2_thioester: 16  894.731  894.731
+apps.public.scenarios.chemically_conjugated_docking.UBQ_E2_thioester: 17  894.731  894.731
+core.scoring.NeighborList: Minimization stats: 21 score/deriv cals, 2 narrow-from-wide updates, 3 full updates.
+apps.public.scenarios.chemically_conjugated_docking.UBQ_E2_thioester: 18  893.324  893.324
+core.scoring.NeighborList: Minimization stats: 44 score/deriv cals, 3 narrow-from-wide updates, 9 full updates.
+apps.public.scenarios.chemically_conjugated_docking.UBQ_E2_thioester: 19  702.928  702.928
+apps.public.scenarios.chemically_conjugated_docking.UBQ_E2_thioester: 20  702.928  702.928
+core.scoring.NeighborList: Minimization stats: 25 score/deriv cals, 1 narrow-from-wide updates, 3 full updates.
+apps.public.scenarios.chemically_conjugated_docking.UBQ_E2_thioester: 21  698.539  698.539
+core.scoring.NeighborList: Minimization stats: 33 score/deriv cals, 4 narrow-from-wide updates, 6 full updates.
+apps.public.scenarios.chemically_conjugated_docking.UBQ_E2_thioester: 22  681.125  681.125
+core.scoring.NeighborList: Minimization stats: 45 score/deriv cals, 9 narrow-from-wide updates, 7 full updates.
+apps.public.scenarios.chemically_conjugated_docking.UBQ_E2_thioester: 23  649.333  649.333
+apps.public.scenarios.chemically_conjugated_docking.UBQ_E2_thioester: 24  649.333  649.333
+core.scoring.NeighborList: Minimization stats: 11 score/deriv cals, 2 narrow-from-wide updates, 2 full updates.
+apps.public.scenarios.chemically_conjugated_docking.UBQ_E2_thioester: 25  646.431  646.431
+core.scoring.NeighborList: Minimization stats: 38 score/deriv cals, 5 narrow-from-wide updates, 8 full updates.
+apps.public.scenarios.chemically_conjugated_docking.UBQ_E2_thioester: 26  611.704  611.704
+apps.public.scenarios.chemically_conjugated_docking.UBQ_E2_thioester: 27  611.704  611.704
+apps.public.scenarios.chemically_conjugated_docking.UBQ_E2_thioester: 28  611.704  611.704
+apps.public.scenarios.chemically_conjugated_docking.UBQ_E2_thioester: 29  611.704  611.704
+core.scoring.NeighborList: Minimization stats: 59 score/deriv cals, 14 narrow-from-wide updates, 8 full updates.
+apps.public.scenarios.chemically_conjugated_docking.UBQ_E2_thioester: 30  591.815  591.815
+apps.public.scenarios.chemically_conjugated_docking.UBQ_E2_thioester: 31  591.815  591.815
+apps.public.scenarios.chemically_conjugated_docking.UBQ_E2_thioester: 32  591.815  591.815
+core.scoring.NeighborList: Minimization stats: 7 score/deriv cals, 2 narrow-from-wide updates, 0 full updates.
+apps.public.scenarios.chemically_conjugated_docking.UBQ_E2_thioester: 33  590.815  590.815
+apps.public.scenarios.chemically_conjugated_docking.UBQ_E2_thioester: 34  590.815  590.815
+apps.public.scenarios.chemically_conjugated_docking.UBQ_E2_thioester: 35  590.815  590.815
+core.scoring.NeighborList: Minimization stats: 8 score/deriv cals, 3 narrow-from-wide updates, 0 full updates.
+apps.public.scenarios.chemically_conjugated_docking.UBQ_E2_thioester: 36  591.03  590.815
+apps.public.scenarios.chemically_conjugated_docking.UBQ_E2_thioester: 37  591.03  590.815
+apps.public.scenarios.chemically_conjugated_docking.UBQ_E2_thioester: 38  591.03  590.815
+core.scoring.NeighborList: Minimization stats: 20 score/deriv cals, 2 narrow-from-wide updates, 2 full updates.
+apps.public.scenarios.chemically_conjugated_docking.UBQ_E2_thioester: 39  586.282  586.282
+apps.public.scenarios.chemically_conjugated_docking.UBQ_E2_thioester: 40  586.282  586.282
+apps.public.scenarios.chemically_conjugated_docking.UBQ_E2_thioester: 41  586.282  586.282
+core.scoring.NeighborList: Minimization stats: 12 score/deriv cals, 0 narrow-from-wide updates, 2 full updates.
+apps.public.scenarios.chemically_conjugated_docking.UBQ_E2_thioester: 42  586.509  586.282
+apps.public.scenarios.chemically_conjugated_docking.UBQ_E2_thioester: 43  586.509  586.282
+core.scoring.NeighborList: Minimization stats: 18 score/deriv cals, 3 narrow-from-wide updates, 3 full updates.
+apps.public.scenarios.chemically_conjugated_docking.UBQ_E2_thioester: 44  585.965  585.965
+core.scoring.NeighborList: Minimization stats: 15 score/deriv cals, 2 narrow-from-wide updates, 2 full updates.
+apps.public.scenarios.chemically_conjugated_docking.UBQ_E2_thioester: 45  586.347  585.965
+apps.public.scenarios.chemically_conjugated_docking.UBQ_E2_thioester: 46  586.347  585.965
+apps.public.scenarios.chemically_conjugated_docking.UBQ_E2_thioester: 47  586.347  585.965
+apps.public.scenarios.chemically_conjugated_docking.UBQ_E2_thioester: 48  586.347  585.965
+core.scoring.NeighborList: Minimization stats: 12 score/deriv cals, 0 narrow-from-wide updates, 2 full updates.
+apps.public.scenarios.chemically_conjugated_docking.UBQ_E2_thioester: 49  586.565  585.965
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.pack.pack_rotamers: built 254 rotamers at 37 positions.
+core.pack.pack_rotamers: IG: 116112 bytes
+core.scoring.NeighborList: Minimization stats: 24 score/deriv cals, 7 narrow-from-wide updates, 2 full updates.
+apps.public.scenarios.chemically_conjugated_docking.UBQ_E2_thioester: 50  568.985  568.985
+apps.public.scenarios.chemically_conjugated_docking.UBQ_E2_thioester: 51  568.985  568.985
+apps.public.scenarios.chemically_conjugated_docking.UBQ_E2_thioester: 52  568.985  568.985
+apps.public.scenarios.chemically_conjugated_docking.UBQ_E2_thioester: 53  568.985  568.985
+core.scoring.NeighborList: Minimization stats: 21 score/deriv cals, 3 narrow-from-wide updates, 3 full updates.
+apps.public.scenarios.chemically_conjugated_docking.UBQ_E2_thioester: 54  569.207  568.985
+core.scoring.NeighborList: Minimization stats: 11 score/deriv cals, 2 narrow-from-wide updates, 2 full updates.
+apps.public.scenarios.chemically_conjugated_docking.UBQ_E2_thioester: 55  569.376  568.985
+apps.public.scenarios.chemically_conjugated_docking.UBQ_E2_thioester: 56  569.376  568.985
+apps.public.scenarios.chemically_conjugated_docking.UBQ_E2_thioester: 57  569.376  568.985
+apps.public.scenarios.chemically_conjugated_docking.UBQ_E2_thioester: 58  569.376  568.985
+apps.public.scenarios.chemically_conjugated_docking.UBQ_E2_thioester: 59  569.376  568.985
+apps.public.scenarios.chemically_conjugated_docking.UBQ_E2_thioester: 60  569.376  568.985
+core.scoring.NeighborList: Minimization stats: 18 score/deriv cals, 2 narrow-from-wide updates, 3 full updates.
+apps.public.scenarios.chemically_conjugated_docking.UBQ_E2_thioester: 61  568.732  568.732
+core.scoring.NeighborList: Minimization stats: 15 score/deriv cals, 2 narrow-from-wide updates, 2 full updates.
+apps.public.scenarios.chemically_conjugated_docking.UBQ_E2_thioester: 62  569.441  568.732
+core.scoring.NeighborList: Minimization stats: 8 score/deriv cals, 2 narrow-from-wide updates, 0 full updates.
+apps.public.scenarios.chemically_conjugated_docking.UBQ_E2_thioester: 63  569.336  568.732
+apps.public.scenarios.chemically_conjugated_docking.UBQ_E2_thioester: 64  569.336  568.732
+apps.public.scenarios.chemically_conjugated_docking.UBQ_E2_thioester: 65  569.336  568.732
+core.scoring.NeighborList: Minimization stats: 8 score/deriv cals, 0 narrow-from-wide updates, 0 full updates.
+apps.public.scenarios.chemically_conjugated_docking.UBQ_E2_thioester: 66  569.294  568.732
+apps.public.scenarios.chemically_conjugated_docking.UBQ_E2_thioester: 67  569.294  568.732
+apps.public.scenarios.chemically_conjugated_docking.UBQ_E2_thioester: 68  569.294  568.732
+apps.public.scenarios.chemically_conjugated_docking.UBQ_E2_thioester: 69  569.294  568.732
+core.scoring.NeighborList: Minimization stats: 11 score/deriv cals, 2 narrow-from-wide updates, 2 full updates.
+apps.public.scenarios.chemically_conjugated_docking.UBQ_E2_thioester: 70  569.266  568.732
+core.scoring.NeighborList: Minimization stats: 23 score/deriv cals, 2 narrow-from-wide updates, 2 full updates.
+apps.public.scenarios.chemically_conjugated_docking.UBQ_E2_thioester: 71  568.825  568.732
+apps.public.scenarios.chemically_conjugated_docking.UBQ_E2_thioester: 72  568.825  568.732
+apps.public.scenarios.chemically_conjugated_docking.UBQ_E2_thioester: 73  568.825  568.732
+apps.public.scenarios.chemically_conjugated_docking.UBQ_E2_thioester: 74  568.825  568.732
+core.scoring.NeighborList: Minimization stats: 12 score/deriv cals, 2 narrow-from-wide updates, 2 full updates.
+apps.public.scenarios.chemically_conjugated_docking.UBQ_E2_thioester: 75  568.837  568.732
+core.scoring.NeighborList: Minimization stats: 20 score/deriv cals, 4 narrow-from-wide updates, 2 full updates.
+apps.public.scenarios.chemically_conjugated_docking.UBQ_E2_thioester: 76  568.667  568.667
+apps.public.scenarios.chemically_conjugated_docking.UBQ_E2_thioester: 77  568.667  568.667
+core.scoring.NeighborList: Minimization stats: 21 score/deriv cals, 6 narrow-from-wide updates, 2 full updates.
+apps.public.scenarios.chemically_conjugated_docking.UBQ_E2_thioester: 78  568.419  568.419
+core.scoring.NeighborList: Minimization stats: 8 score/deriv cals, 3 narrow-from-wide updates, 0 full updates.
+apps.public.scenarios.chemically_conjugated_docking.UBQ_E2_thioester: 79  568.322  568.322
+apps.public.scenarios.chemically_conjugated_docking.UBQ_E2_thioester: 80  568.322  568.322
+apps.public.scenarios.chemically_conjugated_docking.UBQ_E2_thioester: 81  568.322  568.322
+core.scoring.NeighborList: Minimization stats: 11 score/deriv cals, 0 narrow-from-wide updates, 2 full updates.
+apps.public.scenarios.chemically_conjugated_docking.UBQ_E2_thioester: 82  568.322  568.322
+core.scoring.NeighborList: Minimization stats: 17 score/deriv cals, 4 narrow-from-wide updates, 2 full updates.
+apps.public.scenarios.chemically_conjugated_docking.UBQ_E2_thioester: 83  568.197  568.197
+core.scoring.NeighborList: Minimization stats: 21 score/deriv cals, 0 narrow-from-wide updates, 3 full updates.
+apps.public.scenarios.chemically_conjugated_docking.UBQ_E2_thioester: 84  568.197  568.197
+apps.public.scenarios.chemically_conjugated_docking.UBQ_E2_thioester: 85  568.197  568.197
+core.scoring.NeighborList: Minimization stats: 23 score/deriv cals, 5 narrow-from-wide updates, 2 full updates.
+apps.public.scenarios.chemically_conjugated_docking.UBQ_E2_thioester: 86  568.876  568.197
+core.scoring.NeighborList: Minimization stats: 11 score/deriv cals, 0 narrow-from-wide updates, 3 full updates.
+apps.public.scenarios.chemically_conjugated_docking.UBQ_E2_thioester: 87  568.876  568.197
+apps.public.scenarios.chemically_conjugated_docking.UBQ_E2_thioester: 88  568.876  568.197
+apps.public.scenarios.chemically_conjugated_docking.UBQ_E2_thioester: 89  568.876  568.197
+apps.public.scenarios.chemically_conjugated_docking.UBQ_E2_thioester: 90  568.876  568.197
+apps.public.scenarios.chemically_conjugated_docking.UBQ_E2_thioester: 91  568.876  568.197
+core.scoring.NeighborList: Minimization stats: 20 score/deriv cals, 4 narrow-from-wide updates, 3 full updates.
+apps.public.scenarios.chemically_conjugated_docking.UBQ_E2_thioester: 92  568.481  568.197
+apps.public.scenarios.chemically_conjugated_docking.UBQ_E2_thioester: 93  568.481  568.197
+apps.public.scenarios.chemically_conjugated_docking.UBQ_E2_thioester: 94  568.481  568.197
+apps.public.scenarios.chemically_conjugated_docking.UBQ_E2_thioester: 95  568.481  568.197
+apps.public.scenarios.chemically_conjugated_docking.UBQ_E2_thioester: 96  568.481  568.197
+core.scoring.NeighborList: Minimization stats: 11 score/deriv cals, 2 narrow-from-wide updates, 2 full updates.
+apps.public.scenarios.chemically_conjugated_docking.UBQ_E2_thioester: 97  567.141  567.141
+core.scoring.NeighborList: Minimization stats: 7 score/deriv cals, 2 narrow-from-wide updates, 0 full updates.
+apps.public.scenarios.chemically_conjugated_docking.UBQ_E2_thioester: 98  567.139  567.139
+core.scoring.NeighborList: Minimization stats: 24 score/deriv cals, 2 narrow-from-wide updates, 3 full updates.
+apps.public.scenarios.chemically_conjugated_docking.UBQ_E2_thioester: 99  565.391  565.391
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.pack.pack_rotamers: built 251 rotamers at 37 positions.
+core.pack.pack_rotamers: IG: 118228 bytes
+core.scoring.NeighborList: Minimization stats: 11 score/deriv cals, 2 narrow-from-wide updates, 2 full updates.
+apps.public.scenarios.chemically_conjugated_docking.UBQ_E2_thioester: 100  564.388  564.388
+protocols.analysis.InterfaceAnalyzerMover: Making an interface set with default calculator.
+protocols.analysis.InterfaceAnalyzerMover: NULL scorefunction.  Initialize from cmd line.
+core.scoring.ScoreFunctionFactory: SCOREFUNCTION: standard
+core.scoring.ScoreFunctionFactory: SCOREFUNCTION PATCH: score12
+protocols.moves.RigidBodyMover: Translate: Jump (before): RT 0.477467 0.115579 -0.871015 -0.592507 -0.689653 -0.41631 -0.648815 0.714857 -0.260805 19.8962 49.6256 17.2627  
+protocols.moves.RigidBodyMover: Translate: Jump (after):  RT 0.477467 0.115579 -0.871015 -0.592507 -0.689653 -0.41631 -0.648815 0.714857 -0.260805 351.056 956.445 278.055  
+core.scoring.ScoreFunctionFactory: SCOREFUNCTION: standard
+core.scoring.ScoreFunctionFactory: SCOREFUNCTION PATCH: score12
+protocols.analysis.InterfaceAnalyzerMover: Computing delta unsat polar residues...
+basic.io.database: Database file opened: scoring/score_functions/sc/sc_radii.lib
+protocols.analysis.InterfaceAnalyzerMover: Computing Shape Complementarity Score...
+protocols.analysis.InterfaceAnalyzerMover: Upstream chain(s) numbers: 1, 
+protocols.analysis.InterfaceAnalyzerMover: Downstream chain(s) numbers: 2, 
+protocols.jd2.JobDistributor: no more batches to process... 
+apps.public.scenarios.chemically_conjugated_docking.UBQ_E2_thioester: ************************d**o**n**e**************************************
