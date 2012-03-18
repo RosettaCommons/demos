@@ -40,18 +40,18 @@ The SWA_RNA_python package located at rosetta_tools/SWA_RNA_python/ contains the
 
 For example, if the main rosetta folder is located at ~/rosetta/, then the file should look as follow:
 
-#!/usr/bin/python
+	#!/usr/bin/python
 
-USER_ROSETTA_BIN_FOLDER="~/rosetta/rosetta_source/bin/"
-USER_ROSETTA_DATABASE_FOLDER="~/rosetta/rosetta_database/"
+	USER_ROSETTA_BIN_FOLDER="~/rosetta/rosetta_source/bin/"
+	USER_ROSETTA_DATABASE_FOLDER="~/rosetta/rosetta_database/"
 
-2) Add the python package scripts/SWA_RNA_python/ to the PYTHON path. For bash shell users, the path can be directly added to the ~/.bashrc file:
+2) Add the SWA_RNA_python package location to the PYTHON path. For bash shell users, the location can be directly added to the ~/.bashrc file:
 
-export PYTHONPATH=$PYTHONPATH:~/rosetta/rosetta_tools/SWA_RNA_python/
+	export PYTHONPATH=$PYTHONPATH:~/rosetta/rosetta_tools/SWA_RNA_python/
 
 3) After the paths are correctly specified, the following command is used to setup everything needed run the Stepwise Assembly job:
 
-rosetta_tools/SWA_RNA_python/SWA_dagman_python/SWA_DAG/setup_SWA_RNA_dag_job_files.py -s template.pdb -fasta fasta -sample_res 3-8 -single_stranded_loop_mode True -local_demo True -native_pdb native.pdb
+	rosetta_tools/SWA_RNA_python/SWA_dagman_python/SWA_DAG/setup_SWA_RNA_dag_job_files.py -s template.pdb -fasta fasta -sample_res 3-8 -single_stranded_loop_mode True -local_demo True -native_pdb native.pdb
 
 The "-s" flag specifies the template_PDB file
 The "-fasta" flag specifies the fasta file
@@ -72,11 +72,11 @@ The expected outputs are two silent_files:
 A) region_0_1_sample.out: This silent_file contain 108 structures, corresponding to the 108 lowest energy conformations.
 B) region_0_1_sample.cluster.out: Same as A) but after clustering of the models to remove redundant conformations.
 
-In both silent_files, the total energy score is found under the 'score' column. If the "native_pdb" flag was included, then the RMSD between the native_pdb and each Rosetta model is found under the 'NAT_rmsd' column.
+In both silent_files, the total energy score is found under the 'score' column. If the "native_pdb" flag was included, then the RMSD (in angstrom units) between the native_pdb and each Rosetta model is found under the 'NAT_rmsd' column.
 
 Finally, use the following command to extract the top 5 energy cluster centers:
 
-rosetta_tools/SWA_RNA_python/SWA_dagman_python/misc/SWA_extract_pdb.py -tag S_0 S_1 S_2 S_3 S_4  -silent_file region_0_1_sample.cluster.out
+	rosetta_tools/SWA_RNA_python/SWA_dagman_python/misc/SWA_extract_pdb.py -tag S_0 S_1 S_2 S_3 S_4  -silent_file region_0_1_sample.cluster.out
 
 After running the command, the extracted PDB files should appear in the pose_region_0_1_sample.cluster.out/ subfolder.
 
