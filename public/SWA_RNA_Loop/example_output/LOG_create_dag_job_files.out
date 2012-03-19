@@ -1,0 +1,26 @@
+single_stranded_loop_mode=True
+fasta=fasta
+sample_virt_ribose_in_sep_DAG=True
+apply_VDW_rep_delete_matching_res=True
+native_pdb=native.pdb
+native_rmsd_screen=False
+native_virtual_res is list, default=  []
+force_bulge_res is list, default=  []
+old_SWA_idealize_helix=False
+allow_combine_DS_regions=False
+start_elements=  ['template.pdb']
+force_syn_chi_res_list is list, default=  []
+force_north_ribose_list is list, default=  []
+force_south_ribose_list is list, default=  []
+protonated_H1_adenosine_list is list, default=  []
+invert_lower_element=False
+invert_upper_element=False
+dinucleotide_at_single_element_cc= pure_append_prepend 
+sequence= cugaugaaggacggauuuccgaaugauacaauccaaugaggagagga 
+     sample_res_list=  [3, 4, 5, 6, 7, 8]
+ sample_segment_list=  ['3-8']
+            rmsd_res=  [3, 4, 5, 6, 7, 8]
+native_alignment_res=  []
+----------------------------------------------------------------------------------------------------------------------------
+Successfully RAN  /Users/sripakpa/SWA_RNA_python/SWA_dagman_python/SWA_DAG/create_dag_job_files.py -s template.pdb -fasta fasta -sample_res 3-8 -single_stranded_loop_mode True -native_pdb native.pdb
+----------------------------------------------------------------------------------------------------------------------------
