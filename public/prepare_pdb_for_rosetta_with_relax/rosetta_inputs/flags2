@@ -1,0 +1,11 @@
+-ignore_unrecognized_res
+-relax:constrain_relax_to_start_coords
+-relax:coord_constrain_sidechains
+-relax:ramp_constraints false
+-ex1
+-ex2
+-use_input_sc
+-correct
+-no_his_his_pairE
+-no_optH false
+-flip_HNQ
