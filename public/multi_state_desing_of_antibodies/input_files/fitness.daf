@@ -1,0 +1,9 @@
+STATE_VECTOR A ab1.states
+STATE_VECTOR B ab2.states
+STATE_VECTOR C ab3.states
+
+SCALAR_EXPRESSION best_A = vmin( A )
+SCALAR_EXPRESSION best_B = vmin( B )
+SCALAR_EXPRESSION best_C = vmin( C )
+
+FITNESS best_A + best_B + best_C
