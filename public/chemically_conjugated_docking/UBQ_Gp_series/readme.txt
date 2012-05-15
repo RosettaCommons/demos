@@ -1,7 +1,6 @@
 This demo contains the starting structures for the original use of the UBQ_Gp series of executables, and is a copy of their integration tests.  To run the demos (in the inputs subfolder):
 
 UBQ_Gp_CYD-CYD.linuxgccrelease @options
-UBQ_Gp_CYX-Cterm.linuxgccrelease @options
 UBQ_Gp_LYX-Cterm.linuxgccrelease @options
 
 Each uses the same input files.  Read the options file first to set local paths as needed.
