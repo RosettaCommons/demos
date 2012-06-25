@@ -2,7 +2,7 @@
 
 $ROSETTA3_SRC/bin/loopmodel.default.linuxgccrelease \
 	-database $ROSETTA3_DB \
-	-loops::input_pdb 1cid_threaded.pdb \
+	-in::file::s 1cid_threaded.pdb \
 	-loops::loop_file 1cid_threaded.loopfile \
 	-nstruct 1 \
 	-in::file::fullatom \

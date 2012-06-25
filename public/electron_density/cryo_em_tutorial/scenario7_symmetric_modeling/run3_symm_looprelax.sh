@@ -5,7 +5,7 @@ $ROSETTA3_SRC/bin/loopmodel.default.linuxgccrelease \
 	-in::file::centroid_input \
 	-symmetry:symmetry_definition 1K4C_edited.symm \
 	-symmetry::initialize_rigid_body_dofs \
-	-loops::input_pdb 1K4C_mem_abrelax_INPUT.pdb \
+	-in::file::s 1K4C_mem_abrelax_INPUT.pdb \
 	-loops:loop_file 1K4C.loopfile \
 	-loops::frag_sizes 9 3 1 \
 	-loops::frag_files aa1kcs_09_05.200_v1_3  aa1kcs_03_05.200_v1_3 none \

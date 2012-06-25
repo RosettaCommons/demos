@@ -9,7 +9,7 @@ stem=`echo $file | sed 's/\.pdb//'`
 
 $ROSETTA3_SRC/bin/loopmodel.default.linuxgccrelease \
 	-database $ROSETTA3_DB \
-	-loops::input_pdb $stem.pdb \
+	-in::file::s $stem.pdb \
 	-loops::loop_file $stem.loopfile \
 	-nstruct 1 \
 	-in::file::fullatom \

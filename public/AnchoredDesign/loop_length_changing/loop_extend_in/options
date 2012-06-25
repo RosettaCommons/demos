@@ -1,7 +1,7 @@
 -database /path/to/database
 
 #IO
--loops::input_pdb 1FNA_preextend.pdb
+-in::file::s 1FNA_preextend.pdb
 -out::prefix 1FNA_extended
 
 #packing to taste
