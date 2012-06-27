@@ -1,0 +1,302 @@
+core.init: command: AbinitioRelax.macosgccrelease -database /Users/rhiju/minirosetta_database -fasta 1not_.fasta -frag3 aa1not_03_05.200_v1_3 -frag9 aa1not_09_05.200_v1_3 -out:file:silent 1not_abrelax_CST_increase_cycles.out -out:file:silent_struct_type binary -nstruct 1 -cst_file 1not_native_disulf_CEN.cst -abinitio:relax -cst_fa_file 1not_native_disulf.cst -native 1not.pdb -increase_cycles 10 -score:weights score12.wts -ex1 -ex2 -extrachi_cutoff 0
+core.init: 'RNG device' seed mode, using '/dev/urandom', seed=655329619 seed_offset=0 real_seed=655329619
+core.init.random: RandomGenerator:init: Normal mode, seed=655329619 RG_type=mt19937
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  OXT on residue CYS_p:CtermProteinFull 13
+--------------------------------------------
+------- not checking for disulfides --------
+--------------------------------------------
+--------------------------------------------
+------- not checking for pseudobonds -------
+--------------------------------------------
+core.pack.task: Packer task: initialize from command line() 
+protocols.abinitio.AbrelaxApplication: read fasta sequence: 13 residues
+ECCNPACGRHYSC
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  OXT on residue CYS_p:CtermProteinFull 13
+core.pack.task: Packer task: initialize from command line() 
+core.io.fragments: reading fragments from file: aa1not_09_05.200_v1_3 ... 
+core.io.fragments: rosetta++ fileformat detected! Calling legacy reader... 
+core.fragments.ConstantLengthFragSet: finished reading top 25 9mer fragments from file aa1not_09_05.200_v1_3
+core.io.fragments: reading fragments from file: aa1not_03_05.200_v1_3 ... 
+core.io.fragments: rosetta++ fileformat detected! Calling legacy reader... 
+core.fragments.ConstantLengthFragSet: finished reading top 200 3mer fragments from file aa1not_03_05.200_v1_3
+core.scoring.constraints: Constraint choice: 1not_native_disulf_CEN.cst
+core.io.constraints: read constraints from 1not_native_disulf_CEN.cst
+core.io.constraints: read constraints section --atompairs---
+core.conformation: compute strand/loop fractions for 13 residues... 
+protocols.abinitio.AbrelaxApplication: run FoldConstraints.....
+core.io.database: Database file opened: /Users/rhiju/minirosetta_database/env_log.txt
+core.io.database: Database file opened: /Users/rhiju/minirosetta_database/cbeta_den.txt
+core.io.database: Database file opened: /Users/rhiju/minirosetta_database/pair_log.txt
+core.io.database: Database file opened: /Users/rhiju/minirosetta_database/cenpack_log.txt
+core.io.database: Database file opened: /Users/rhiju/minirosetta_database/phi.theta.36.HS.resmooth
+core.io.database: Database file opened: /Users/rhiju/minirosetta_database/phi.theta.36.SS.resmooth
+core.scoring.ScoreFunctionFactory: SCOREFUNCTION: score12.wts
+core.scoring.etable: Starting energy table calculation
+core.scoring.etable: smooth_etable: changing atr/rep split to bottom of energy well
+core.scoring.etable: smooth_etable: spline smoothing lj etables (maxdis = 6)
+core.scoring.etable: smooth_etable: spline smoothing solvation etables (max_dis = 6)
+core.scoring.etable: Finished calculating energy tables.
+core.io.database: Database file opened: /Users/rhiju/minirosetta_database/pdb_pair_stats_fine
+core.io.database: Database file opened: /Users/rhiju/minirosetta_database/P_AA
+core.io.database: Database file opened: /Users/rhiju/minirosetta_database/P_AA_n
+core.io.database: Database file opened: /Users/rhiju/minirosetta_database/P_AA_pp
+core.io.database: Database file opened: /Users/rhiju/minirosetta_database/Rama_smooth_dyn.dat_ss_6.4
+protocols.jobdist.JobDistributors: Looking for an available job: 1 1  1
+protocols.relax.ClassicRelax: Setting up default relax setting
+protocols::checkpoint: Deleting checkpoints of ClassicRelax
+protocols.abinitio: 
+===================================================================
+   Stage 1                                                         
+   Folding with score0 for max of 20000
+protocols.abinitio.foldconstraints: max_seq_sep: 1
+protocols.abinitio.foldconstraints: setup basic minmove
+protocols.abinitio.foldconstraints: minimized: ResiduePairConstraints: ... total violations: 0
+protocols.abinitio.foldconstraints: 
+protocols.abinitio.foldconstraints: ResiduePairConstraints: ... total violations: 0
+protocols.abinitio: Replaced extended chain after 2 cycles.
+protocols.abinitio.foldconstraints: ResiduePairConstraints: ... total violations: 0
+protocols.moves.MonteCarlo: ClassicFragmentM trials=      2;  accepts= 1.0000;  energy_drop/trial=   0.00000
+protocols.abinitio: ------------------------------------------------------------
+ Scores                       Weight   Raw Score Wghtd.Score
+------------------------------------------------------------
+ vdw                          0.100       0.000       0.000
+ atom_pair_constraint         1.000       0.000       0.000
+---------------------------------------------------
+ Total weighted score:                        0.000
+
+===================================================================
+   Stage 2                                                         
+   Folding with score1 for 20000
+protocols.abinitio.foldconstraints: max_seq_sep: 1
+protocols.abinitio.foldconstraints: minimized: ResiduePairConstraints: ... total violations: 0
+protocols.abinitio.foldconstraints: 
+protocols.abinitio.foldconstraints: ResiduePairConstraints: ... total violations: 0
+protocols.abinitio.foldconstraints: max_seq_sep: 1
+protocols.abinitio.foldconstraints: minimized: ResiduePairConstraints: ... total violations: 0
+protocols.abinitio.foldconstraints: 
+protocols.moves.MonteCarlo: ClassicFragmentM trials=  20000;  accepts= 0.5092;  energy_drop/trial=  -0.00014
+protocols.abinitio: ------------------------------------------------------------
+ Scores                       Weight   Raw Score Wghtd.Score
+------------------------------------------------------------
+ vdw                          1.000       0.000       0.000
+ pair                         1.000      -7.267      -7.267
+ atom_pair_constraint         1.000       0.000       0.000
+ env                          1.000      12.560      12.560
+ hs_pair                      1.000       0.000       0.000
+ ss_pair                      0.300       0.000       0.000
+ sheet                        1.000       0.000       0.000
+---------------------------------------------------
+ Total weighted score:                        5.294
+
+===================================================================
+   Stage 3                                                         
+   Folding with score2 and score5 for 20000
+protocols.abinitio.foldconstraints: max_seq_sep: 2
+protocols.abinitio.foldconstraints: minimized: ResiduePairConstraints: ... total violations: 0
+protocols.abinitio.foldconstraints: 
+protocols.abinitio.foldconstraints: ResiduePairConstraints: ... total violations: 0
+protocols.abinitio:  stop cycles in stage3 due to convergence 
+protocols.abinitio.foldconstraints: max_seq_sep: 2
+protocols.abinitio.foldconstraints: minimized: ResiduePairConstraints: ... total violations: 0
+protocols.abinitio.foldconstraints: 
+protocols.abinitio.foldconstraints: ResiduePairConstraints: ... total violations: 0
+protocols.abinitio:  stop cycles in stage3 due to convergence 
+protocols.abinitio.foldconstraints: max_seq_sep: 3
+protocols.abinitio.foldconstraints: minimized: ResiduePairConstraints: ... total violations: 0
+protocols.abinitio.foldconstraints: 
+protocols.abinitio.foldconstraints: ResiduePairConstraints: ... total violations: 0
+protocols.abinitio:  stop cycles in stage3 due to convergence 
+protocols.abinitio.foldconstraints: max_seq_sep: 3
+protocols.abinitio.foldconstraints: minimized: ResiduePairConstraints: ... total violations: 0
+protocols.abinitio.foldconstraints: 
+protocols.abinitio.foldconstraints: ResiduePairConstraints: ... total violations: 0
+protocols.abinitio:  stop cycles in stage3 due to convergence 
+protocols.abinitio.foldconstraints: max_seq_sep: 4
+protocols.abinitio.foldconstraints: minimized: ResiduePairConstraints: ... total violations: 0
+protocols.abinitio.foldconstraints: 
+protocols.abinitio.foldconstraints: ResiduePairConstraints: ... total violations: 0
+protocols.abinitio:  stop cycles in stage3 due to convergence 
+protocols.abinitio.foldconstraints: max_seq_sep: 4
+protocols.abinitio.foldconstraints: minimized: ResiduePairConstraints: ... total violations: 0
+protocols.abinitio.foldconstraints: 
+protocols.abinitio.foldconstraints: ResiduePairConstraints: ... total violations: 0
+protocols.abinitio:  stop cycles in stage3 due to convergence 
+protocols.abinitio.foldconstraints: max_seq_sep: 5
+protocols.abinitio.foldconstraints: minimized: ResiduePairConstraints: ... total violations: 1
+protocols.abinitio.foldconstraints: 
+protocols.abinitio.foldconstraints: ResiduePairConstraints: ... total violations: 1
+protocols.abinitio:  stop cycles in stage3 due to convergence 
+protocols.abinitio.foldconstraints: max_seq_sep: 5
+protocols.abinitio.foldconstraints: minimized: ResiduePairConstraints: ... total violations: 1
+protocols.abinitio.foldconstraints: 
+protocols.abinitio.foldconstraints: ResiduePairConstraints: ... total violations: 1
+protocols.abinitio:  stop cycles in stage3 due to convergence 
+protocols.abinitio.foldconstraints: max_seq_sep: 6
+protocols.abinitio.foldconstraints: minimized: ResiduePairConstraints: ... total violations: 1
+protocols.abinitio.foldconstraints: 
+protocols.abinitio.foldconstraints: ResiduePairConstraints: ... total violations: 1
+protocols.abinitio:  stop cycles in stage3 due to convergence 
+protocols.abinitio.foldconstraints: max_seq_sep: 6
+protocols.abinitio.foldconstraints: minimized: ResiduePairConstraints: ... total violations: 1
+protocols.abinitio.foldconstraints: 
+protocols.abinitio.foldconstraints: ResiduePairConstraints: ... total violations: 1
+protocols.abinitio:  stop cycles in stage3 due to convergence 
+protocols.moves.MonteCarlo: ClassicFragmentM trials=   1583;  accepts= 0.4409;  energy_drop/trial=   0.00518
+protocols.abinitio: ------------------------------------------------------------
+ Scores                       Weight   Raw Score Wghtd.Score
+------------------------------------------------------------
+ vdw                          1.000       0.000       0.000
+ cenpack                      0.500      -1.153      -0.577
+ pair                         1.000      -7.267      -7.267
+ atom_pair_constraint         1.000      10.000      10.000
+ env                          1.000      12.560      12.560
+ cbeta                        0.250       5.887       1.472
+ hs_pair                      1.000       0.000       0.000
+ ss_pair                      1.000       0.000       0.000
+ sheet                        1.000       0.000       0.000
+---------------------------------------------------
+ Total weighted score:                       16.189
+
+===================================================================
+   Stage 4                                                         
+   Folding with score3 for 40000
+protocols.abinitio.foldconstraints: ResiduePairConstraints: ... total violations: 1
+protocols.abinitio.foldconstraints: max_seq_sep: 8
+protocols.abinitio.foldconstraints: minimized: ResiduePairConstraints: ... total violations: 1
+protocols.abinitio.foldconstraints: 
+protocols.abinitio.foldconstraints: ResiduePairConstraints: ... total violations: 1
+protocols.moves.MonteCarlo: autotemp_reject -- heat: 150 2
+protocols.moves.MonteCarlo: autotemp_accept: reset temperature_ = 2
+protocols.moves.MonteCarlo: autotemp_reject -- heat: 150 2
+protocols.moves.MonteCarlo: autotemp_accept: reset temperature_ = 2
+protocols.moves.MonteCarlo: autotemp_reject -- heat: 150 2
+protocols.moves.MonteCarlo: autotemp_accept: reset temperature_ = 2
+protocols.moves.MonteCarlo: autotemp_reject -- heat: 150 2
+protocols.moves.MonteCarlo: autotemp_accept: reset temperature_ = 2
+protocols.moves.MonteCarlo: autotemp_reject -- heat: 150 2
+protocols.moves.MonteCarlo: autotemp_accept: reset temperature_ = 2
+protocols.moves.MonteCarlo: autotemp_reject -- heat: 150 2
+protocols.moves.MonteCarlo: autotemp_accept: reset temperature_ = 2
+protocols.moves.MonteCarlo: autotemp_reject -- heat: 150 2
+protocols.moves.MonteCarlo: autotemp_accept: reset temperature_ = 2
+protocols.moves.MonteCarlo: autotemp_reject -- heat: 150 2
+protocols.moves.MonteCarlo: autotemp_accept: reset temperature_ = 2
+protocols.abinitio.foldconstraints: max_seq_sep: 10
+protocols.abinitio.foldconstraints: minimized: ResiduePairConstraints: ... total violations: 0
+protocols.abinitio.foldconstraints: 
+protocols.abinitio.foldconstraints: ResiduePairConstraints: ... total violations: 0
+protocols.moves.MonteCarlo: autotemp_reject -- heat: 150 2
+protocols.moves.MonteCarlo: autotemp_accept: reset temperature_ = 2
+protocols.moves.MonteCarlo: autotemp_reject -- heat: 150 2
+protocols.moves.MonteCarlo: autotemp_accept: reset temperature_ = 2
+protocols.moves.MonteCarlo: autotemp_reject -- heat: 150 2
+protocols.moves.MonteCarlo: autotemp_accept: reset temperature_ = 2
+protocols.moves.MonteCarlo: autotemp_reject -- heat: 150 2
+protocols.moves.MonteCarlo: autotemp_accept: reset temperature_ = 2
+protocols.moves.MonteCarlo: autotemp_reject -- heat: 150 2
+protocols.moves.MonteCarlo: autotemp_accept: reset temperature_ = 2
+protocols.moves.MonteCarlo: autotemp_reject -- heat: 150 2
+protocols.moves.MonteCarlo: autotemp_accept: reset temperature_ = 2
+protocols.moves.MonteCarlo: autotemp_reject -- heat: 150 2
+protocols.moves.MonteCarlo: autotemp_accept: reset temperature_ = 2
+protocols.moves.MonteCarlo: autotemp_reject -- heat: 150 2
+protocols.moves.MonteCarlo: autotemp_accept: reset temperature_ = 2
+protocols.abinitio.foldconstraints: max_seq_sep: 13
+protocols.abinitio.foldconstraints: minimized: ResiduePairConstraints: ... total violations: 0
+protocols.abinitio.foldconstraints: 
+protocols.abinitio.foldconstraints: ResiduePairConstraints: ... total violations: 0
+protocols.moves.MonteCarlo: autotemp_reject -- heat: 150 2
+protocols.moves.MonteCarlo: autotemp_accept: reset temperature_ = 2
+protocols.moves.MonteCarlo: autotemp_reject -- heat: 150 2
+protocols.moves.MonteCarlo: autotemp_accept: reset temperature_ = 2
+protocols.moves.MonteCarlo: autotemp_reject -- heat: 150 2
+protocols.moves.MonteCarlo: autotemp_reject -- heat: 150 3
+protocols.moves.MonteCarlo: autotemp_accept: reset temperature_ = 2
+protocols.moves.MonteCarlo: ClassicFragmentM trials=  40000;  accepts= 0.1820;  energy_drop/trial=  -0.00006
+protocols.moves.MonteCarlo: SmoothFragmentMo trials=  80000;  accepts= 0.1112;  energy_drop/trial=   0.00051
+protocols.abinitio: ------------------------------------------------------------
+ Scores                       Weight   Raw Score Wghtd.Score
+------------------------------------------------------------
+ vdw                          1.000       0.204       0.204
+ cenpack                      1.000      -1.499      -1.499
+ pair                         1.000      -7.206      -7.206
+ atom_pair_constraint         1.000       0.160       0.160
+ env                          1.000       8.598       8.598
+ cbeta                        1.000       4.999       4.999
+ rg                           3.000       6.301      18.903
+ hs_pair                      1.000       0.000       0.000
+ ss_pair                      1.000       0.000       0.000
+ rsigma                       1.000       0.000       0.000
+ sheet                        1.000       0.000       0.000
+---------------------------------------------------
+ Total weighted score:                       24.161
+
+===================================================================
+   Finished Abinitio                                                 
+
+ABOUT TO SWITCH RESOLUTIONS
+core.scoring.ScoreFunctionFactory: SCOREFUNCTION: score12.wts
+core.scoring.constraints: Constraint choice: 1not_native_disulf.cst
+core.io.constraints: read constraints from 1not_native_disulf.cst
+core.io.constraints: read constraints section --atompairs---
+core.scoring.dunbrack: Dunbrack library took 0.04125 seconds to load from binary
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.pack.pack_rotamers: built 103 rotamers at 13 positions.
+core.pack.pack_rotamers: IG: 40760 bytes
+DONE SWITCHING RESOLUTIONS
+core.scoring.constraints: Constraint choice: 1not_native_disulf.cst
+core.io.constraints: read constraints from 1not_native_disulf.cst
+core.io.constraints: read constraints section --atompairs---
+core.scoring.ScoreFunctionFactory: SCOREFUNCTION: score12.wts
+protocols.relax.ClassicRelax: Setting up default relax setting
+core.pack.task: Packer task: initialize from command line() 
+core.pack.task: Packer task: initialize from command line() 
+protocols.relax.ClassicRelax: 
+protocols.relax.ClassicRelax: 
+protocols.relax.ClassicRelax: ===================================================================
+protocols.relax.ClassicRelax:    Stage 1                                                         
+protocols.relax.ClassicRelax:    Ramping repulsives with 8 outer cycles and 1 inner cycles
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.pack.pack_rotamers: built 1077 rotamers at 13 positions.
+core.pack.pack_rotamers: IG: 1712944 bytes
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.pack.pack_rotamers: built 1002 rotamers at 13 positions.
+core.pack.pack_rotamers: IG: 1449356 bytes
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.pack.pack_rotamers: built 973 rotamers at 13 positions.
+core.pack.pack_rotamers: IG: 1349812 bytes
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.pack.pack_rotamers: built 961 rotamers at 13 positions.
+core.pack.pack_rotamers: IG: 1309852 bytes
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.pack.pack_rotamers: built 978 rotamers at 13 positions.
+core.pack.pack_rotamers: IG: 1263496 bytes
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.pack.pack_rotamers: built 988 rotamers at 13 positions.
+core.pack.pack_rotamers: IG: 1130420 bytes
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.pack.pack_rotamers: built 1004 rotamers at 13 positions.
+core.pack.pack_rotamers: IG: 1342172 bytes
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.pack.pack_rotamers: built 999 rotamers at 13 positions.
+core.pack.pack_rotamers: IG: 1329120 bytes
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.pack.pack_rotamers: built 995 rotamers at 13 positions.
+core.pack.pack_rotamers: IG: 1321032 bytes
+core.pack.task: Packer task: initialize from command line() 
+core.pack.task: Packer task: initialize from command line() 
+protocols.relax.ClassicRelax: 
+protocols.relax.ClassicRelax: ===================================================================
+protocols.relax.ClassicRelax:    Stage 2                                                         
+protocols.relax.ClassicRelax:    Mainmintrial for 52 with a full repack every 100 cycles
+protocols.relax.ClassicRelax: 
+protocols.relax.ClassicRelax: ===================================================================
+protocols.relax.ClassicRelax:    Stage 3                                                         
+protocols.relax.ClassicRelax:    Mainmintrial for 13
+protocols.relax.ClassicRelax: 
+protocols::checkpoint: Deleting checkpoints of ClassicRelax
+protocols.abinitio.AbrelaxApplication: Finished _0001 in 43 seconds.
+protocols::checkpoint: Deleting checkpoints of ClassicAbinitio
+protocols::checkpoint: Deleting checkpoints of Abrelax
+protocols::checkpoint: Deleting checkpoints of ClassicAbinitio
+protocols::checkpoint: Deleting checkpoints of Abrelax

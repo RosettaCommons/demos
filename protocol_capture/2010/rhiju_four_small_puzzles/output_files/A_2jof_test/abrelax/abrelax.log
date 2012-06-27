@@ -1,0 +1,232 @@
+core.init: command: AbinitioRelax.macosgccrelease -database /Users/rhiju/minirosetta_database -fasta 2jof.fasta -native 2jof.pdb -frag3 aat000_03_05.200_v1_3.txt -frag9 aat000_09_05.200_v1_3.txt -out:file:silent 2jof_abrelax.out -out:file:silent_struct_type binary -abinitio:relax -nstruct 1 -ex1 -ex2 -extrachi_cutoff 0
+core.init: 'RNG device' seed mode, using '/dev/urandom', seed=885742831 seed_offset=0 real_seed=885742831
+core.init.random: RandomGenerator:init: Normal mode, seed=885742831 RG_type=mt19937
+core.io.pdb.file_data: [ WARNING ] discarding 5 atoms at position 1 in file 2jof.pdb. Best match rsd_type:  ASP_p:NtermProteinFull
+core.io.pdb.file_data: [ WARNING ] discarding 3 atoms at position 2 in file 2jof.pdb. Best match rsd_type:  ALA
+core.io.pdb.file_data: [ WARNING ] discarding 2 atoms at position 3 in file 2jof.pdb. Best match rsd_type:  TYR
+core.io.pdb.file_data: [ WARNING ] discarding 3 atoms at position 4 in file 2jof.pdb. Best match rsd_type:  ALA
+core.io.pdb.file_data: [ WARNING ] discarding 6 atoms at position 5 in file 2jof.pdb. Best match rsd_type:  GLN
+core.io.pdb.file_data: [ WARNING ] discarding 2 atoms at position 6 in file 2jof.pdb. Best match rsd_type:  TRP
+core.io.pdb.file_data: [ WARNING ] discarding 8 atoms at position 7 in file 2jof.pdb. Best match rsd_type:  LEU
+core.io.pdb.file_data: [ WARNING ] discarding 11 atoms at position 8 in file 2jof.pdb. Best match rsd_type:  LYS
+core.io.pdb.file_data: [ WARNING ] discarding 2 atoms at position 9 in file 2jof.pdb. Best match rsd_type:  ASP
+core.io.pdb.file_data: [ WARNING ] discarding 2 atoms at position 10 in file 2jof.pdb. Best match rsd_type:  GLY
+core.io.pdb.file_data: [ WARNING ] discarding 2 atoms at position 11 in file 2jof.pdb. Best match rsd_type:  GLY
+core.io.pdb.file_data: [ WARNING ] discarding 6 atoms at position 12 in file 2jof.pdb. Best match rsd_type:  PRO
+core.io.pdb.file_data: [ WARNING ] discarding 2 atoms at position 13 in file 2jof.pdb. Best match rsd_type:  SER
+core.io.pdb.file_data: [ WARNING ] discarding 2 atoms at position 14 in file 2jof.pdb. Best match rsd_type:  SER
+core.io.pdb.file_data: [ WARNING ] discarding 2 atoms at position 15 in file 2jof.pdb. Best match rsd_type:  GLY
+core.io.pdb.file_data: [ WARNING ] discarding 10 atoms at position 16 in file 2jof.pdb. Best match rsd_type:  ARG
+core.io.pdb.file_data: [ WARNING ] discarding 6 atoms at position 17 in file 2jof.pdb. Best match rsd_type:  PRO
+core.io.pdb.file_data: [ WARNING ] discarding 6 atoms at position 18 in file 2jof.pdb. Best match rsd_type:  PRO
+core.io.pdb.file_data: [ WARNING ] discarding 6 atoms at position 19 in file 2jof.pdb. Best match rsd_type:  PRO
+core.io.pdb.file_data: [ WARNING ] discarding 2 atoms at position 20 in file 2jof.pdb. Best match rsd_type:  SER_p:CtermProteinFull
+--------------------------------------------
+------- not checking for disulfides --------
+--------------------------------------------
+--------------------------------------------
+------- not checking for pseudobonds -------
+--------------------------------------------
+core.pack.task: Packer task: initialize from command line() 
+protocols.abinitio.AbrelaxApplication: read fasta sequence: 20 residues
+DAYAQWLKDGGPSSGRPPPS
+core.io.pdb.file_data: [ WARNING ] discarding 5 atoms at position 1 in file 2jof.pdb. Best match rsd_type:  ASP_p:NtermProteinFull
+core.io.pdb.file_data: [ WARNING ] discarding 3 atoms at position 2 in file 2jof.pdb. Best match rsd_type:  ALA
+core.io.pdb.file_data: [ WARNING ] discarding 2 atoms at position 3 in file 2jof.pdb. Best match rsd_type:  TYR
+core.io.pdb.file_data: [ WARNING ] discarding 3 atoms at position 4 in file 2jof.pdb. Best match rsd_type:  ALA
+core.io.pdb.file_data: [ WARNING ] discarding 6 atoms at position 5 in file 2jof.pdb. Best match rsd_type:  GLN
+core.io.pdb.file_data: [ WARNING ] discarding 2 atoms at position 6 in file 2jof.pdb. Best match rsd_type:  TRP
+core.io.pdb.file_data: [ WARNING ] discarding 8 atoms at position 7 in file 2jof.pdb. Best match rsd_type:  LEU
+core.io.pdb.file_data: [ WARNING ] discarding 11 atoms at position 8 in file 2jof.pdb. Best match rsd_type:  LYS
+core.io.pdb.file_data: [ WARNING ] discarding 2 atoms at position 9 in file 2jof.pdb. Best match rsd_type:  ASP
+core.io.pdb.file_data: [ WARNING ] discarding 2 atoms at position 10 in file 2jof.pdb. Best match rsd_type:  GLY
+core.io.pdb.file_data: [ WARNING ] discarding 2 atoms at position 11 in file 2jof.pdb. Best match rsd_type:  GLY
+core.io.pdb.file_data: [ WARNING ] discarding 6 atoms at position 12 in file 2jof.pdb. Best match rsd_type:  PRO
+core.io.pdb.file_data: [ WARNING ] discarding 2 atoms at position 13 in file 2jof.pdb. Best match rsd_type:  SER
+core.io.pdb.file_data: [ WARNING ] discarding 2 atoms at position 14 in file 2jof.pdb. Best match rsd_type:  SER
+core.io.pdb.file_data: [ WARNING ] discarding 2 atoms at position 15 in file 2jof.pdb. Best match rsd_type:  GLY
+core.io.pdb.file_data: [ WARNING ] discarding 10 atoms at position 16 in file 2jof.pdb. Best match rsd_type:  ARG
+core.io.pdb.file_data: [ WARNING ] discarding 6 atoms at position 17 in file 2jof.pdb. Best match rsd_type:  PRO
+core.io.pdb.file_data: [ WARNING ] discarding 6 atoms at position 18 in file 2jof.pdb. Best match rsd_type:  PRO
+core.io.pdb.file_data: [ WARNING ] discarding 6 atoms at position 19 in file 2jof.pdb. Best match rsd_type:  PRO
+core.io.pdb.file_data: [ WARNING ] discarding 2 atoms at position 20 in file 2jof.pdb. Best match rsd_type:  SER_p:CtermProteinFull
+core.pack.task: Packer task: initialize from command line() 
+core.io.fragments: reading fragments from file: aat000_09_05.200_v1_3.txt ... 
+core.io.fragments: rosetta++ fileformat detected! Calling legacy reader... 
+core.fragments.ConstantLengthFragSet: finished reading top 25 9mer fragments from file aat000_09_05.200_v1_3.txt
+core.io.fragments: reading fragments from file: aat000_03_05.200_v1_3.txt ... 
+core.io.fragments: rosetta++ fileformat detected! Calling legacy reader... 
+core.fragments.ConstantLengthFragSet: finished reading top 200 3mer fragments from file aat000_03_05.200_v1_3.txt
+core.conformation: compute strand/loop fractions for 20 residues... 
+protocols.abinitio.AbrelaxApplication: run ClassicAbinitio.....
+core.io.database: Database file opened: /Users/rhiju/minirosetta_database/env_log.txt
+core.io.database: Database file opened: /Users/rhiju/minirosetta_database/cbeta_den.txt
+core.io.database: Database file opened: /Users/rhiju/minirosetta_database/pair_log.txt
+core.io.database: Database file opened: /Users/rhiju/minirosetta_database/cenpack_log.txt
+core.io.database: Database file opened: /Users/rhiju/minirosetta_database/phi.theta.36.HS.resmooth
+core.io.database: Database file opened: /Users/rhiju/minirosetta_database/phi.theta.36.SS.resmooth
+core.scoring.ScoreFunctionFactory: SCOREFUNCTION: standard
+core.scoring.ScoreFunctionFactory: SCOREFUNCTION PATCH: score12
+core.scoring.etable: Starting energy table calculation
+core.scoring.etable: smooth_etable: changing atr/rep split to bottom of energy well
+core.scoring.etable: smooth_etable: spline smoothing lj etables (maxdis = 6)
+core.scoring.etable: smooth_etable: spline smoothing solvation etables (max_dis = 6)
+core.scoring.etable: Finished calculating energy tables.
+core.io.database: Database file opened: /Users/rhiju/minirosetta_database/pdb_pair_stats_fine
+core.io.database: Database file opened: /Users/rhiju/minirosetta_database/P_AA
+core.io.database: Database file opened: /Users/rhiju/minirosetta_database/P_AA_n
+core.io.database: Database file opened: /Users/rhiju/minirosetta_database/P_AA_pp
+core.io.database: Database file opened: /Users/rhiju/minirosetta_database/Rama_smooth_dyn.dat_ss_6.4
+protocols.jobdist.JobDistributors: Looking for an available job: 1 1  1
+protocols.relax.ClassicRelax: Setting up default relax setting
+protocols::checkpoint: Deleting checkpoints of ClassicRelax
+protocols.abinitio: 
+===================================================================
+   Stage 1                                                         
+   Folding with score0 for max of 2000
+protocols.abinitio: Replaced extended chain after 2 cycles.
+protocols.moves.MonteCarlo: ClassicFragmentM trials=      2;  accepts= 1.0000;  energy_drop/trial=   0.02343
+protocols.abinitio: ------------------------------------------------------------
+ Scores                       Weight   Raw Score Wghtd.Score
+------------------------------------------------------------
+ vdw                          0.100       0.701       0.070
+---------------------------------------------------
+ Total weighted score:                        0.070
+
+===================================================================
+   Stage 2                                                         
+   Folding with score1 for 2000
+protocols.moves.MonteCarlo: autotemp_reject -- heat: 150 2
+protocols.moves.MonteCarlo: autotemp_accept: reset temperature_ = 2
+protocols.moves.MonteCarlo: ClassicFragmentM trials=   2000;  accepts= 0.2285;  energy_drop/trial=  -0.00578
+protocols.abinitio: ------------------------------------------------------------
+ Scores                       Weight   Raw Score Wghtd.Score
+------------------------------------------------------------
+ vdw                          1.000       0.998       0.998
+ pair                         1.000      -4.746      -4.746
+ env                          1.000      -4.282      -4.282
+ hs_pair                      1.000       0.000       0.000
+ ss_pair                      0.300       0.000       0.000
+ sheet                        1.000       0.000       0.000
+---------------------------------------------------
+ Total weighted score:                       -8.030
+
+===================================================================
+   Stage 3                                                         
+   Folding with score2 and score5 for 2000
+protocols.moves.MonteCarlo: autotemp_reject -- heat: 150 2
+protocols.moves.MonteCarlo: autotemp_accept: reset temperature_ = 2
+protocols.moves.MonteCarlo: autotemp_reject -- heat: 150 2
+protocols.moves.MonteCarlo: autotemp_accept: reset temperature_ = 2
+protocols.moves.MonteCarlo: autotemp_reject -- heat: 150 2
+protocols.moves.MonteCarlo: autotemp_accept: reset temperature_ = 2
+protocols.moves.MonteCarlo: autotemp_reject -- heat: 150 2
+protocols.moves.MonteCarlo: autotemp_accept: reset temperature_ = 2
+protocols.moves.MonteCarlo: autotemp_reject -- heat: 150 2
+protocols.moves.MonteCarlo: autotemp_accept: reset temperature_ = 2
+protocols.abinitio:  stop cycles in stage3 due to convergence 
+protocols.moves.MonteCarlo: autotemp_reject -- heat: 150 2
+protocols.moves.MonteCarlo: autotemp_accept: reset temperature_ = 2
+protocols.abinitio:  stop cycles in stage3 due to convergence 
+protocols.abinitio:  stop cycles in stage3 due to convergence 
+protocols.moves.MonteCarlo: ClassicFragmentM trials=  16398;  accepts= 0.2133;  energy_drop/trial=   0.00336
+protocols.abinitio: ------------------------------------------------------------
+ Scores                       Weight   Raw Score Wghtd.Score
+------------------------------------------------------------
+ vdw                          1.000       0.000       0.000
+ cenpack                      0.500      -1.759      -0.879
+ pair                         1.000      -3.072      -3.072
+ env                          1.000      -4.343      -4.343
+ cbeta                        0.250       8.029       2.007
+ hs_pair                      1.000       0.000       0.000
+ ss_pair                      1.000       0.000       0.000
+ sheet                        1.000       0.000       0.000
+---------------------------------------------------
+ Total weighted score:                       -6.287
+
+===================================================================
+   Stage 4                                                         
+   Folding with score3 for 4000
+protocols.moves.MonteCarlo: ClassicFragmentM trials=   4000;  accepts= 0.2205;  energy_drop/trial=  -0.00117
+protocols.moves.MonteCarlo: SmoothFragmentMo trials=   8000;  accepts= 0.2742;  energy_drop/trial=   0.00271
+protocols.abinitio: ------------------------------------------------------------
+ Scores                       Weight   Raw Score Wghtd.Score
+------------------------------------------------------------
+ vdw                          1.000       3.049       3.049
+ cenpack                      1.000      -3.332      -3.332
+ pair                         1.000     -10.044     -10.044
+ env                          1.000      -4.598      -4.598
+ cbeta                        1.000       6.879       6.879
+ rg                           3.000       7.042      21.125
+ hs_pair                      1.000       0.000       0.000
+ ss_pair                      1.000       0.000       0.000
+ rsigma                       1.000       0.000       0.000
+ sheet                        1.000       0.000       0.000
+---------------------------------------------------
+ Total weighted score:                       13.079
+
+===================================================================
+   Finished Abinitio                                                 
+
+ABOUT TO SWITCH RESOLUTIONS
+core.scoring.ScoreFunctionFactory: SCOREFUNCTION: standard
+core.scoring.ScoreFunctionFactory: SCOREFUNCTION PATCH: score12
+core.scoring.dunbrack: Dunbrack library took 0.032517 seconds to load from binary
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.pack.pack_rotamers: built 132 rotamers at 20 positions.
+core.pack.pack_rotamers: IG: 63956 bytes
+DONE SWITCHING RESOLUTIONS
+core.scoring.ScoreFunctionFactory: SCOREFUNCTION: standard
+core.scoring.ScoreFunctionFactory: SCOREFUNCTION PATCH: score12
+protocols.relax.ClassicRelax: Setting up default relax setting
+core.pack.task: Packer task: initialize from command line() 
+core.pack.task: Packer task: initialize from command line() 
+protocols.relax.ClassicRelax: 
+protocols.relax.ClassicRelax: 
+protocols.relax.ClassicRelax: ===================================================================
+protocols.relax.ClassicRelax:    Stage 1                                                         
+protocols.relax.ClassicRelax:    Ramping repulsives with 8 outer cycles and 1 inner cycles
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.pack.pack_rotamers: built 1297 rotamers at 20 positions.
+core.pack.pack_rotamers: IG: 2394656 bytes
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.pack.pack_rotamers: built 1307 rotamers at 20 positions.
+core.pack.pack_rotamers: IG: 1823932 bytes
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.pack.pack_rotamers: built 1286 rotamers at 20 positions.
+core.pack.pack_rotamers: IG: 1762344 bytes
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.pack.pack_rotamers: built 1273 rotamers at 20 positions.
+core.pack.pack_rotamers: IG: 1720588 bytes
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.pack.pack_rotamers: built 1259 rotamers at 20 positions.
+core.pack.pack_rotamers: IG: 1676764 bytes
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.pack.pack_rotamers: built 1248 rotamers at 20 positions.
+core.pack.pack_rotamers: IG: 1641196 bytes
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.pack.pack_rotamers: built 1241 rotamers at 20 positions.
+core.pack.pack_rotamers: IG: 1617956 bytes
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.pack.pack_rotamers: built 1231 rotamers at 20 positions.
+core.pack.pack_rotamers: IG: 1586676 bytes
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.pack.pack_rotamers: built 1227 rotamers at 20 positions.
+core.pack.pack_rotamers: IG: 1574848 bytes
+core.pack.task: Packer task: initialize from command line() 
+core.pack.task: Packer task: initialize from command line() 
+protocols.relax.ClassicRelax: 
+protocols.relax.ClassicRelax: ===================================================================
+protocols.relax.ClassicRelax:    Stage 2                                                         
+protocols.relax.ClassicRelax:    Mainmintrial for 80 with a full repack every 100 cycles
+protocols.relax.ClassicRelax: 
+protocols.relax.ClassicRelax: ===================================================================
+protocols.relax.ClassicRelax:    Stage 3                                                         
+protocols.relax.ClassicRelax:    Mainmintrial for 20
+protocols.relax.ClassicRelax: 
+protocols::checkpoint: Deleting checkpoints of ClassicRelax
+protocols.abinitio.AbrelaxApplication: Finished _0001 in 18 seconds.
+protocols::checkpoint: Deleting checkpoints of ClassicAbinitio
+protocols::checkpoint: Deleting checkpoints of Abrelax
+protocols::checkpoint: Deleting checkpoints of ClassicAbinitio
+protocols::checkpoint: Deleting checkpoints of Abrelax

@@ -1,0 +1,33 @@
+--------------------------------------------
+------- not checking for pseudobonds -------
+--------------------------------------------
+Check it! NATIVE gcuucggc
+Check it! EXTEND gcuucggc
+Reading basepair x-y potential file: rna_base_pair_xy.dat
+Finished reading basepair x-y potential file: rna_base_pair_xy.dat
+Reading non-base-base x-y potential file: rna_base_backbone_xy.dat
+Reading RNA backbone backbone potential file: rna_backbone_backbone.dat
+Reading basepair x-y potential file: rna_base_pair_xy.dat
+Finished reading basepair x-y potential file: rna_base_pair_xy.dat
+Reading non-base-base x-y potential file: rna_base_backbone_xy.dat
+Reading RNA backbone backbone potential file: rna_backbone_backbone.dat
+Setting desired secondary structure to: XXXXXXXX
+Reading in vall_torsions file: ./1f7y.torsions
+Lines read from vall_torsions file: 57
+INPUT_RES: 
+ABOUT TO APPEND VIRTUAL ANCHOR 
+ABOUT TO SET UP JUMPS 
+
+ABOUT TO SET UP CHAINBREAKS 
+ABOUT TO SET UP PHOSPHATES 
+Picked Fragment Library for sequence y  and sec. struct X ... found 27 potential fragments
+Picked Fragment Library for sequence r  and sec. struct X ... found 30 potential fragments
+Picked Fragment Library for sequence yyr  and sec. struct XXX ... found 6 potential fragments
+Picked Fragment Library for sequence yyy  and sec. struct XXX ... found 8 potential fragments
+Picked Fragment Library for sequence yrr  and sec. struct XXX ... found 8 potential fragments
+Picked Fragment Library for sequence rry  and sec. struct XXX ... found 9 potential fragments
+Picked Fragment Library for sequence ryy  and sec. struct XXX ... found 7 potential fragments
+Picked Fragment Library for sequence ry  and sec. struct XX ... found 12 potential fragments
+Picked Fragment Library for sequence yy  and sec. struct XX ... found 15 potential fragments
+Picked Fragment Library for sequence yr  and sec. struct XX ... found 11 potential fragments
+Picked Fragment Library for sequence rr  and sec. struct XX ... found 18 potential fragments

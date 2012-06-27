@@ -1,0 +1,133 @@
+core.init: Mini-Rosetta version 40103 from https://svn.rosettacommons.org/source/trunk/mini
+core.init: command: ./relax.linuxgccrelease @Menv_smooth.flags
+core.init: Constant seed mode, seed=1111111 seed_offset=0 real_seed=1111111
+core.init.random: RandomGenerator:init: Normal mode, seed=1111111 RG_type=mt19937
+core.init: found database environment variable ROSETTA3_DB: /data/vladimir/minirosetta_database
+core.scoring.ScoreFunctionFactory: SCOREFUNCTION: membrane_highres_Menv_smooth.wts
+core.scoring.etable: Starting energy table calculation
+core.scoring.etable: smooth_etable: changing atr/rep split to bottom of energy well
+core.scoring.etable: smooth_etable: spline smoothing lj etables (maxdis = 6)
+core.scoring.etable: smooth_etable: spline smoothing solvation etables (max_dis = 6)
+core.scoring.etable: Finished calculating energy tables.
+basic.io.database: Database file opened: /data/vladimir/minirosetta_database/pdb_pair_stats_fine
+core.scoring.etable: Starting energy table calculation
+core.scoring.etable: smooth_etable: changing atr/rep split to bottom of energy well
+core.scoring.etable: smooth_etable: spline smoothing lj etables (maxdis = 6)
+core.scoring.etable: smooth_etable: spline smoothing solvation etables (max_dis = 6)
+core.scoring.etable: Finished calculating energy tables.
+core.scoring.etable: Using alternate parameters: LK_DGFREE in MembEtable construction.
+core.scoring.etable: Using alternate parameters: MEMB_LK_DGFREE in MembEtable construction.
+core.scoring.etable: Using alternate parameters: LK_DGREFCE in MembEtable construction.
+core.scoring.etable: Using alternate parameters: MEMB_LK_DGREFCE in MembEtable construction.
+core.scoring.etable: Starting membrane specific energy table calculation
+core.scoring.etable: smooth_etable: spline smoothing solvation etables (max_dis = 6)
+core.scoring.etable: Finished calculating membrane specific energy tables.
+basic.io.database: Database file opened: /data/vladimir/minirosetta_database/env_log.txt
+basic.io.database: Database file opened: /data/vladimir/minirosetta_database/cbeta_den.txt
+basic.io.database: Database file opened: /data/vladimir/minirosetta_database/pair_log.txt
+basic.io.database: Database file opened: /data/vladimir/minirosetta_database/cenpack_log.txt
+basic.io.database: Database file opened: /data/vladimir/minirosetta_database/env_log.txt
+basic.io.database: Database file opened: /data/vladimir/minirosetta_database/cbeta_den.txt
+basic.io.database: Database file opened: /data/vladimir/minirosetta_database/pair_log.txt
+basic.io.database: Database file opened: /data/vladimir/minirosetta_database/cenpack_log.txt
+basic.io.database: Database file opened: /data/vladimir/minirosetta_database/CEN6_mem_env_log.txt
+basic.io.database: Database file opened: /data/vladimir/minirosetta_database/CEN10_mem_env_log.txt
+basic.io.database: Database file opened: /data/vladimir/minirosetta_database/memcbeta_den.txt
+basic.io.database: Database file opened: /data/vladimir/minirosetta_database/mem_pair_log.txt
+basic.io.database: Database file opened: /data/vladimir/minirosetta_database/CEN10_Menv_smooth_log.txt
+basic.io.database: Database file opened: /data/vladimir/minirosetta_database/scoring/score_functions/hbonds/standard_params/HBPoly1D.csv
+basic.io.database: Database file opened: /data/vladimir/minirosetta_database/scoring/score_functions/hbonds/standard_params/HBFadeIntervals.csv
+basic.io.database: Database file opened: /data/vladimir/minirosetta_database/scoring/score_functions/hbonds/standard_params/HBEval.csv
+basic.io.database: Database file opened: /data/vladimir/minirosetta_database/P_AA
+basic.io.database: Database file opened: /data/vladimir/minirosetta_database/P_AA_n
+basic.io.database: Database file opened: /data/vladimir/minirosetta_database/P_AA_pp
+basic.io.database: Database file opened: /data/vladimir/minirosetta_database/Rama_smooth_dyn.dat_ss_6.4
+protocols.relax.FastRelax: ================== Using default script ==================
+core.chemical.ResidueTypeSet: Finished initializing fa_standard residue type set.  Created 7533 residue types
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  OXT on residue VAL_p:CtermProteinFull 123
+core.pack.task: Packer task: initialize from command line() 
+protocols.jd2.PDBJobInputter: Instantiate PDBJobInputter
+protocols.jd2.PDBJobInputter: PDBJobInputter::fill_jobs
+protocols.jd2.PDBJobInputter: pushing input_files/BRD4.pdb nstruct index 1
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  OXT on residue VAL_p:CtermProteinFull 123
+core.pack.task: Packer task: initialize from command line() 
+protocols.jd2.PDBJobInputter: PDBJobInputter::pose_from_job
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  OXT on residue VAL_p:CtermProteinFull 123
+core.pack.task: Packer task: initialize from command line() 
+protocols.jd2.PDBJobInputter: filling pose from PDB input_files/BRD4.pdb
+core.pack.task: Packer task: initialize from command line() 
+core.scoring.MembranePotential: Reading spanfile input_files/BRD4.span
+core.scoring.MembraneTopology: Initialize Membrane spanning regions with input_files/BRD4.span
+core.scoring.MembraneTopology: TM region prediction for BRD4 predicted using OCTOPUS
+core.scoring.MembraneTopology: 4 123
+core.scoring.MembraneTopology: antiparallel
+core.scoring.MembraneTopology: n2c
+core.scoring.MembraneTopology:    6    26     6    26
+core.scoring.MembraneTopology:   31    51    31    51
+core.scoring.MembraneTopology:   58    78    58    78
+core.scoring.MembraneTopology:   97   117    97   117
+core.scoring.MembranePotential: MembraneCenter   39.856  50.063   2.623
+core.scoring.MembranePotential: MembraneNormal    0.055   0.982   0.179
+core.scoring.MembranePotential: ATOM   9999  X   MEM A 999      39.856  50.063   2.623
+core.scoring.MembranePotential: ATOM   9999  Y   MEM A 999      40.680  64.799   5.303
+core.scoring.MembranePotential: ATOM   9999  Z   MEM A 999      39.032  35.328  -0.058
+core.pack.dunbrack: Dunbrack library took 0.09 seconds to load from binary
+core.scoring.rms_util: WARNING: CA_rmsd out of range... range1 124 requested but only 123 CA atoms found in fill_rmsd_coordinates 
+protocols.relax.FastRelax: CMD: repeat  -220.25  0  0  0.44
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.pack.pack_rotamers: built 799 rotamers at 124 positions.
+core.pack.pack_rotamers: IG: 502716 bytes
+core.scoring.rms_util: WARNING: CA_rmsd out of range... range1 124 requested but only 123 CA atoms found in fill_rmsd_coordinates 
+protocols.relax.FastRelax: CMD: ramp_repack_min  -514.597  0.114463  0.114463  0.0088
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.pack.pack_rotamers: built 712 rotamers at 124 positions.
+core.pack.pack_rotamers: IG: 436464 bytes
+core.scoring.rms_util: WARNING: CA_rmsd out of range... range1 124 requested but only 123 CA atoms found in fill_rmsd_coordinates 
+protocols.relax.FastRelax: CMD: ramp_repack_min  -486.161  0.143062  0.143062  0.11
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.pack.pack_rotamers: built 705 rotamers at 124 positions.
+core.pack.pack_rotamers: IG: 390584 bytes
+core.scoring.rms_util: WARNING: CA_rmsd out of range... range1 124 requested but only 123 CA atoms found in fill_rmsd_coordinates 
+protocols.relax.FastRelax: CMD: ramp_repack_min  -480.044  0.32919  0.32919  0.242
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.pack.pack_rotamers: built 671 rotamers at 124 positions.
+core.pack.pack_rotamers: IG: 366876 bytes
+core.scoring.rms_util: WARNING: CA_rmsd out of range... range1 124 requested but only 123 CA atoms found in fill_rmsd_coordinates 
+protocols.relax.FastRelax: CMD: ramp_repack_min  -461.484  0.410586  0.410586  0.44
+core.scoring.rms_util: WARNING: CA_rmsd out of range... range1 124 requested but only 123 CA atoms found in fill_rmsd_coordinates 
+protocols.relax.FastRelax: MRP: 0  -461.484  -461.484  0.410586  0.410586  
+core.scoring.rms_util: WARNING: CA_rmsd out of range... range1 124 requested but only 123 CA atoms found in fill_rmsd_coordinates 
+protocols.relax.FastRelax: CMD: accept_to_best  -461.484  0.410586  0.410586  0.44
+core.scoring.rms_util: WARNING: CA_rmsd out of range... range1 124 requested but only 123 CA atoms found in fill_rmsd_coordinates 
+protocols.relax.FastRelax: CMD: endrepeat  -461.484  0.410586  0.410586  0.44
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.pack.pack_rotamers: built 818 rotamers at 124 positions.
+core.pack.pack_rotamers: IG: 545804 bytes
+core.scoring.rms_util: WARNING: CA_rmsd out of range... range1 124 requested but only 123 CA atoms found in fill_rmsd_coordinates 
+protocols.relax.FastRelax: CMD: ramp_repack_min  -512.359  0.128325  0.128325  0.0088
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.pack.pack_rotamers: built 718 rotamers at 124 positions.
+core.pack.pack_rotamers: IG: 428832 bytes
+core.scoring.rms_util: WARNING: CA_rmsd out of range... range1 124 requested but only 123 CA atoms found in fill_rmsd_coordinates 
+protocols.relax.FastRelax: CMD: ramp_repack_min  -488.541  0.149494  0.149494  0.11
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.pack.pack_rotamers: built 709 rotamers at 124 positions.
+core.pack.pack_rotamers: IG: 391632 bytes
+core.scoring.rms_util: WARNING: CA_rmsd out of range... range1 124 requested but only 123 CA atoms found in fill_rmsd_coordinates 
+protocols.relax.FastRelax: CMD: ramp_repack_min  -482.521  0.351142  0.351142  0.242
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.pack.pack_rotamers: built 678 rotamers at 124 positions.
+core.pack.pack_rotamers: IG: 374436 bytes
+core.scoring.rms_util: WARNING: CA_rmsd out of range... range1 124 requested but only 123 CA atoms found in fill_rmsd_coordinates 
+protocols.relax.FastRelax: CMD: ramp_repack_min  -467.8  0.565623  0.565623  0.44
+core.scoring.rms_util: WARNING: CA_rmsd out of range... range1 124 requested but only 123 CA atoms found in fill_rmsd_coordinates 
+protocols.relax.FastRelax: MRP: 1  -467.8  -467.8  0.565623  0.565623  
+core.scoring.rms_util: WARNING: CA_rmsd out of range... range1 124 requested but only 123 CA atoms found in fill_rmsd_coordinates 
+protocols.relax.FastRelax: CMD: accept_to_best  -467.8  0.565623  0.565623  0.44
+core.scoring.rms_util: WARNING: CA_rmsd out of range... range1 124 requested but only 123 CA atoms found in fill_rmsd_coordinates 
+protocols.relax.FastRelax: CMD: endrepeat  -467.8  0.565623  0.565623  0.44
+protocols::checkpoint: Deleting checkpoints of FastRelax
+protocols.jd2.JobDistributor: BRD4_0001 reported success in 116 seconds
+protocols.jd2.JobDistributor: no more batches to process... 
+protocols.jd2.JobDistributor: 1 jobs considered, 1 jobs attempted in 116 seconds
+protocols::checkpoint: Deleting checkpoints of FastRelax

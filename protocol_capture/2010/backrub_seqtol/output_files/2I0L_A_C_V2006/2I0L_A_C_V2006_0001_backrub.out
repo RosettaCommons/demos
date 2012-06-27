@@ -1,0 +1,169 @@
+core.init: Mini-Rosetta version 40577 from https://svn.rosettacommons.org/source/branches/releases/rosetta-3.2/rosetta_source
+core.init: command: /netapp/home/colin/rosetta/rosetta-3.2/rosetta_source/bin/backrub.linuxgccrelease -database /netapp/home/colin/rosetta/rosetta-3.2/rosetta_database -s /netapp/home/colin/backrub_seqtol/input_files/2I0L_A_C_V2006/2I0L_A_C_V2006.pdb -ignore_unrecognized_res -ex1 -ex2 -extrachi_cutoff 0 -out:prefix 2I0L_A_C_V2006_0001 -mute core.io.pdb.file_data -backrub:ntrials 10000 -score:weights standard -score:patch score12
+core.init: 'RNG device' seed mode, using '/dev/urandom', seed=215441429 seed_offset=0 real_seed=215441429
+core.init.random: RandomGenerator:init: Normal mode, seed=215441429 RG_type=mt19937
+core.scoring.ScoreFunctionFactory: SCOREFUNCTION: standard
+core.scoring.ScoreFunctionFactory: SCOREFUNCTION PATCH: score12
+core.scoring.etable: Starting energy table calculation
+core.scoring.etable: smooth_etable: changing atr/rep split to bottom of energy well
+core.scoring.etable: smooth_etable: spline smoothing lj etables (maxdis = 6)
+core.scoring.etable: smooth_etable: spline smoothing solvation etables (max_dis = 6)
+core.scoring.etable: Finished calculating energy tables.
+core.io.database: Database file opened: /netapp/home/colin/rosetta/rosetta-3.2/rosetta_database/pdb_pair_stats_fine
+core.io.database: Database file opened: /netapp/home/colin/rosetta/rosetta-3.2/rosetta_database/scoring/score_functions/hbonds/standard_params/HBPoly1D.csv
+core.io.database: Database file opened: /netapp/home/colin/rosetta/rosetta-3.2/rosetta_database/scoring/score_functions/hbonds/standard_params/HBFadeIntervals.csv
+core.io.database: Database file opened: /netapp/home/colin/rosetta/rosetta-3.2/rosetta_database/scoring/score_functions/hbonds/standard_params/HBEval.csv
+core.io.database: Database file opened: /netapp/home/colin/rosetta/rosetta-3.2/rosetta_database/P_AA
+core.io.database: Database file opened: /netapp/home/colin/rosetta/rosetta-3.2/rosetta_database/P_AA_n
+core.io.database: Database file opened: /netapp/home/colin/rosetta/rosetta-3.2/rosetta_database/P_AA_pp
+core.io.database: Database file opened: /netapp/home/colin/rosetta/rosetta-3.2/rosetta_database/Rama_smooth_dyn.dat_ss_6.4
+core.mm.MMBondAngleLibrary: MM bond angle sets added fully assigned: 474; wildcard: 0 and 1 virtual parameter.
+core.io.database: Database file opened: /netapp/home/colin/rosetta/rosetta-3.2/rosetta_database/branch_angle/branch_angle_1.txt
+core.io.database: Database file opened: /netapp/home/colin/rosetta/rosetta-3.2/rosetta_database/branch_angle/branch_angle_2.txt
+core.scoring.dunbrack: Dunbrack library took 0.03 seconds to load from binary
+apps.backrub: Processing /netapp/home/colin/backrub_seqtol/input_files/2I0L_A_C_V2006/2I0L_A_C_V2006.pdb...
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  CG1 on residue ILE 36
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  CG2 on residue ILE 36
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  CD1 on residue ILE 36
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  CG  on residue GLU 63
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  CD  on residue GLU 63
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  OE1 on residue GLU 63
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  OE2 on residue GLU 63
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  OXT on residue LYS_p:CtermProteinFull 83
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  CG  on residue ARG_p:NtermProteinFull 84
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  CD  on residue ARG_p:NtermProteinFull 84
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  NE  on residue ARG_p:NtermProteinFull 84
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  CZ  on residue ARG_p:NtermProteinFull 84
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  NH1 on residue ARG_p:NtermProteinFull 84
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  NH2 on residue ARG_p:NtermProteinFull 84
+core.pack.task: Packer task: initialize from command line() 
+core.pack.pack_missing_sidechains: packing residue number 36 because of missing atom number 6 atom name  CG1
+core.pack.pack_missing_sidechains: packing residue number 63 because of missing atom number 6 atom name  CG 
+core.pack.pack_missing_sidechains: packing residue number 84 because of missing atom number 6 atom name  CG 
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.pack.pack_rotamers: built 354 rotamers at 3 positions.
+core.pack.pack_rotamers: IG: 2820 bytes
+protocols.moves.BackrubMover: Segment lengths: 3-34 atoms
+protocols.moves.BackrubMover: Main chain pivot atoms: CA
+protocols.moves.BackrubMover: Adding backrub segments for residues 1-89
+protocols.moves.BackrubMover: Total Segments Added: 822
+apps.backrub: Score After PDB Load:
+apps.backrub: ------------------------------------------------------------
+ Scores                       Weight   Raw Score Wghtd.Score
+------------------------------------------------------------
+ fa_atr                       0.800    -339.413    -271.531
+ fa_rep                       0.440     294.375     129.525
+ fa_sol                       0.650     220.671     143.436
+ fa_intra_rep                 0.004     303.895       1.216
+ mm_bend                      1.000     131.291     131.291
+ pro_close                    1.000       1.737       1.737
+ fa_pair                      0.490      -7.773      -3.809
+ hbond_sr_bb                  0.585     -19.138     -11.196
+ hbond_lr_bb                  1.170     -22.575     -26.412
+ hbond_bb_sc                  1.170      -2.406      -2.815
+ hbond_sc                     1.100      -1.027      -1.130
+ dslf_ss_dst                  0.500       0.000       0.000
+ dslf_cs_ang                  2.000       0.000       0.000
+ dslf_ss_dih                  5.000       0.000       0.000
+ dslf_ca_dih                  5.000       0.000       0.000
+ rama                         0.200      76.122      15.224
+ omega                        0.500       3.591       1.796
+ fa_dun                       0.560     320.523     179.493
+ p_aa_pp                      0.320     -38.277     -12.249
+ ref                          1.000     -17.230     -17.230
+---------------------------------------------------
+ Total weighted score:                      257.347
+core.pack.task: Packer task: initialize from command line() 
+apps.backrub: Score After Branch Angle Optimization/Side Chain Idealization:
+apps.backrub: ------------------------------------------------------------
+ Scores                       Weight   Raw Score Wghtd.Score
+------------------------------------------------------------
+ fa_atr                       0.800    -337.281    -269.825
+ fa_rep                       0.440     423.931     186.530
+ fa_sol                       0.650     220.535     143.348
+ fa_intra_rep                 0.004     354.860       1.419
+ mm_bend                      1.000      70.135      70.135
+ pro_close                    1.000       1.737       1.737
+ fa_pair                      0.490      -7.856      -3.849
+ hbond_sr_bb                  0.585     -19.138     -11.196
+ hbond_lr_bb                  1.170     -22.575     -26.412
+ hbond_bb_sc                  1.170      -2.242      -2.623
+ hbond_sc                     1.100      -1.507      -1.658
+ dslf_ss_dst                  0.500       0.000       0.000
+ dslf_cs_ang                  2.000       0.000       0.000
+ dslf_ss_dih                  5.000       0.000       0.000
+ dslf_ca_dih                  5.000       0.000       0.000
+ rama                         0.200      76.122      15.224
+ omega                        0.500       3.591       1.796
+ fa_dun                       0.560     320.188     179.305
+ p_aa_pp                      0.320     -38.277     -12.249
+ ref                          1.000     -17.230     -17.230
+---------------------------------------------------
+ Total weighted score:                      254.453
+core.pack.task: Packer task: initialize from command line() 
+apps.backrub: Running 10000 trials...
+protocols.moves.MonteCarlo:      br_CA_CA_04 trials=    730;  accepts= 0.4644;  energy_drop/trial=  -0.06844
+protocols.moves.MonteCarlo:      br_CA_CA_07 trials=    719;  accepts= 0.3324;  energy_drop/trial=  -0.00433
+protocols.moves.MonteCarlo:      br_CA_CA_10 trials=    773;  accepts= 0.3131;  energy_drop/trial=  -0.01797
+protocols.moves.MonteCarlo:      br_CA_CA_13 trials=    707;  accepts= 0.2801;  energy_drop/trial=  -0.01429
+protocols.moves.MonteCarlo:      br_CA_CA_16 trials=    688;  accepts= 0.3023;  energy_drop/trial=  -0.00285
+protocols.moves.MonteCarlo:      br_CA_CA_19 trials=    664;  accepts= 0.2696;  energy_drop/trial=  -0.01219
+protocols.moves.MonteCarlo:      br_CA_CA_22 trials=    637;  accepts= 0.2261;  energy_drop/trial=  -0.01513
+protocols.moves.MonteCarlo:      br_CA_CA_25 trials=    660;  accepts= 0.2273;  energy_drop/trial=  -0.00033
+protocols.moves.MonteCarlo:      br_CA_CA_28 trials=    624;  accepts= 0.2212;  energy_drop/trial=  -0.00233
+protocols.moves.MonteCarlo:      br_CA_CA_31 trials=    683;  accepts= 0.2050;  energy_drop/trial=   0.00540
+protocols.moves.MonteCarlo:      br_CA_CA_34 trials=    626;  accepts= 0.1981;  energy_drop/trial=  -0.00807
+protocols.moves.MonteCarlo:       sc_chi_rot trials=   2220;  accepts= 0.3896;  energy_drop/trial=  -0.06494
+protocols.moves.MonteCarlo:      sc_chi_unif trials=    269;  accepts= 0.0186;  energy_drop/trial=  -0.09053
+apps.backrub: Last Score:
+apps.backrub: ------------------------------------------------------------
+ Scores                       Weight   Raw Score Wghtd.Score
+------------------------------------------------------------
+ fa_atr                       0.800    -295.888    -236.710
+ fa_rep                       0.440      92.567      40.729
+ fa_sol                       0.650     179.865     116.912
+ fa_intra_rep                 0.004     203.482       0.814
+ mm_bend                      1.000      48.255      48.255
+ pro_close                    1.000       1.737       1.737
+ fa_pair                      0.490      -5.819      -2.851
+ hbond_sr_bb                  0.585     -16.029      -9.377
+ hbond_lr_bb                  1.170     -18.405     -21.534
+ hbond_bb_sc                  1.170      -2.227      -2.606
+ hbond_sc                     1.100      -0.828      -0.911
+ dslf_ss_dst                  0.500       0.000       0.000
+ dslf_cs_ang                  2.000       0.000       0.000
+ dslf_ss_dih                  5.000       0.000       0.000
+ dslf_ca_dih                  5.000       0.000       0.000
+ rama                         0.200      56.109      11.222
+ omega                        0.500       3.591       1.796
+ fa_dun                       0.560     124.721      69.843
+ p_aa_pp                      0.320     -43.640     -13.965
+ ref                          1.000     -17.230     -17.230
+---------------------------------------------------
+ Total weighted score:                      -13.875
+apps.backrub: Low Score:
+apps.backrub: ------------------------------------------------------------
+ Scores                       Weight   Raw Score Wghtd.Score
+------------------------------------------------------------
+ fa_atr                       0.800    -298.784    -239.027
+ fa_rep                       0.440      82.917      36.484
+ fa_sol                       0.650     181.242     117.807
+ fa_intra_rep                 0.004     208.176       0.833
+ mm_bend                      1.000      49.604      49.604
+ pro_close                    1.000       1.737       1.737
+ fa_pair                      0.490      -5.212      -2.554
+ hbond_sr_bb                  0.585     -18.082     -10.578
+ hbond_lr_bb                  1.170     -18.454     -21.592
+ hbond_bb_sc                  1.170      -1.097      -1.283
+ hbond_sc                     1.100      -0.513      -0.565
+ dslf_ss_dst                  0.500       0.000       0.000
+ dslf_cs_ang                  2.000       0.000       0.000
+ dslf_ss_dih                  5.000       0.000       0.000
+ dslf_ca_dih                  5.000       0.000       0.000
+ rama                         0.200      34.026       6.805
+ omega                        0.500       3.591       1.796
+ fa_dun                       0.560     128.865      72.164
+ p_aa_pp                      0.320     -46.287     -14.812
+ ref                          1.000     -17.230     -17.230
+---------------------------------------------------
+ Total weighted score:                      -20.411

@@ -1,0 +1,8 @@
+#!/bin/bash
+
+#rosetta command lineS
+
+rosetta.mactel aa input_pdb _ -s g000.pdb -loops
+
+rosetta.mactel -design -l list_of_pdbs -tail -begin 342 -end 351 -chain_ -series bb -protein g000 -resfile g000_resfile -ex1 -ex2 -extrachi_cutoff 1 -exOH -no_his_his_pairE -tight_hb -try_both_his_tautomers
+
