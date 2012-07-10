@@ -12,8 +12,8 @@ This script relies on a fragment library of params files to be provided.
 		<HeavyAtom name=heavy chain=X heavy_atom_limit=50/>
 		<CompleteConnections name=complete chain=X/>
 		<CompoundStatement name=both>
-			<NAND filter_name=heavy/>
-			<NAND filter_name=complete/>
+			<NOT filter_name=heavy/>
+			<ANDNOT filter_name=complete/>
 		</CompoundStatement>
 	</FILTERS>
 	<INTERFACE_BUILDERS>
