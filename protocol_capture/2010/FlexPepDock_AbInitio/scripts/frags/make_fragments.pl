@@ -41,7 +41,7 @@ my $TAIL = "_v1_3";
 $scratch = "/vol/ek/share";
 $fragsDir = "rosetta/rosetta_fragments_latest";
 
-my $pathToDemo="/vol/ek/londonir/protocol_capture2/FlexPepDockAbInitio/";
+my $pathToDemo="/vol/ek/liorz06/ProtocolCapture/FlexPepDock_AbInitio/";
 
 # psi-blast
 #my $BLAST_BIN_DIR = "$shareware_dir/new_blast/blast-2.2.12/bin";

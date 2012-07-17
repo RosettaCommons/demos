@@ -5,8 +5,8 @@
 # usage: cluster.sh <top x structures> <radius> <score.sc> <native.pdb> <decoys.silent> <stype=column number of score according to which to select the top x structures>
 # e.g. cluster.sh 500 2 ../score.sc ../native.pdb ../decoys.silent reweighted_sc ---> clusters top 500 by reweighted score with 2A peptide bb rms radius.
 
-set PATH_TO_EXE=/vol/ek/ravehb/rosetta/svn_mini/rosetta_source/bin
-set PATH_TO_DB=/vol/ek/ravehb/rosetta/svn_mini/rosetta_database/
+set PATH_TO_EXE=/vol/ek/liorz06/miniRosettaWorkspace/mini/bin/
+set PATH_TO_DB=/vol/ek/liorz06/miniRosettaWorkspace/rosetta_database
 
 set top=$1
 set radius=$2

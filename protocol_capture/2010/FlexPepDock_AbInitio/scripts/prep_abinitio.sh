@@ -4,7 +4,7 @@ if( $#argv < 1 ) then
 endif
 
 #be sure to set these paths for the demo to work
-set pathToDemo=/vol/ek/londonir/protocol_capture2/FlexPepDockAbInitio
+set pathToDemo=/vol/ek/liorz06/ProtocolCapture/FlexPepDock_AbInitio/
 set pathToVall=/vol/ek/share/rosetta/rosetta_fragments_latest/nnmake_database
 
 set id=$1

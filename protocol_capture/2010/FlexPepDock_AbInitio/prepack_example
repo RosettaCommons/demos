@@ -1,7 +1,7 @@
 #!/bin/csh
 
-set PATH_TO_EXE=/vol/ek/ravehb/rosetta/svn_mini/mini/bin
-set PATH_TO_DB=/vol/ek/ravehb/rosetta/svn_mini/minirosetta_database/
+set PATH_TO_EXE=/vol/ek/liorz06/miniRosettaWorkspace/mini/bin/
+set PATH_TO_DB=/vol/ek/liorz06/miniRosettaWorkspace/rosetta_database
 
 #rosetta command line
 $PATH_TO_EXE/FlexPepDocking.linuxgccrelease -database $PATH_TO_DB @prepack_flags > prepack.log
