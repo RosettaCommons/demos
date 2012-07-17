@@ -263,16 +263,13 @@ M  END
 ---------------------------------
 STEP 05 RUNNING MOLFILE2PARAMS.PY
 ---------------------------------
-Finally, the molfile2params_polymer.py script will convert the modified molfile to a params file. The commands bellow work for the eaxmple files...
+Finally, the molfile2params_polymer.py script will convert the modified molfile to a params file. The commands bellow work for the example files...
 
 $python molfile_to_params_polymer.py --clobber --polymer --no-pdb --name C40 -k ornithine.kin stage_05_modified_molfile/ornithine.mol
 $python molfile_to_params_polymer.py --clobber --polymer --peptoid --no-pdb --name P01 -k amino2.kin stage_05_modified_molfile/amino2.mol
 
-There is additional tweeking that needs to happen to the params files to make them work. Compare these to the ones in the database for reference. 
+There is additional tweaking that needs to happen to the params files to make them work. Compare these to the ones in the database for reference. 
 
-Pro Tip: The molfile2params.py script can produce a kinemage file. This is super handy as it lets you check how rosetta will build the atom tree, and the arom type assignments, and other stuff. You can open kinemage files using the KiNG program from the Richardson lab at Duke (http://kinemage.biochem.duke.edu/software/king.php).
-Note: Jane and Dave Richardson are pretty cool people and you should try to meet them at some point while you are in North Carolinam (she are on Ben's thesis committee). Ian Davis, the original author of this script, was a grad student in thier lab at Duke before he did a postdoc in the Baker lab and added some basic kinemage output to rosetta and this script.
+Pro Tip: The molfile2params.py script can produce a kinemage file. This is super handy as it lets you check how rosetta will build the atom tree, and the atom type assignments, and other stuff. You can open kinemage files using the KiNG program from the Richardson lab at Duke (http://kinemage.biochem.duke.edu/software/king.php).
 
 For questions on backbone-dependent rotamer library design please contact either Doug Renfrew (dougrenfrew@gmail.com) or Tim Craven (twc254@nyu.edu).
-
-
