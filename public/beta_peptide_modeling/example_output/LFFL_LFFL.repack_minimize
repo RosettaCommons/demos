@@ -1,0 +1,73 @@
+core.init: Mini-Rosetta version 49954:49967M from https://svn.rosettacommons.org/source/trunk/rosetta/rosetta_source
+core.init: command: beta_peptide_modeling.linuxgccrelease -database /home/fcchou/src/rosetta/rosetta_database -force_field beta_peptide -native repack_and_minimize/acdy_LFFL_LFFL_repack.pdb -algorithm minimize -ex1 -ex2 -packing::pack_missing_sidechains false -packing::extrachi_cutoff 0
+core.init: 'RNG device' seed mode, using '/dev/urandom', seed=344688972 seed_offset=0 real_seed=344688972
+core.init.random: RandomGenerator:init: Normal mode, seed=344688972 RG_type=mt19937
+core.scoring.etable: Starting energy table calculation
+core.scoring.etable: smooth_etable: changing atr/rep split to bottom of energy well
+core.scoring.etable: smooth_etable: spline smoothing lj etables (maxdis = 6)
+core.scoring.etable: smooth_etable: spline smoothing solvation etables (max_dis = 6)
+core.scoring.etable: Finished calculating energy tables.
+basic.io.database: Database file opened: scoring/score_functions/PairEPotential/pdb_pair_stats_fine
+basic.io.database: Database file opened: scoring/score_functions/hbonds/standard_params/HBPoly1D.csv
+basic.io.database: Database file opened: scoring/score_functions/hbonds/standard_params/HBFadeIntervals.csv
+basic.io.database: Database file opened: scoring/score_functions/hbonds/standard_params/HBEval.csv
+basic.io.database: Database file opened: scoring/score_functions/EnvPairPotential/env_log.txt
+basic.io.database: Database file opened: scoring/score_functions/EnvPairPotential/cbeta_den.txt
+basic.io.database: Database file opened: scoring/score_functions/EnvPairPotential/pair_log.txt
+basic.io.database: Database file opened: scoring/score_functions/EnvPairPotential/cenpack_log.txt
+basic.io.database: Database file opened: scoring/score_functions/EnvPairPotential/env_log.txt
+basic.io.database: Database file opened: scoring/score_functions/EnvPairPotential/cbeta_den.txt
+basic.io.database: Database file opened: scoring/score_functions/EnvPairPotential/pair_log.txt
+basic.io.database: Database file opened: scoring/score_functions/EnvPairPotential/cenpack_log.txt
+basic.io.database: Database file opened: scoring/score_functions/MembranePotential/CEN6_mem_env_log.txt
+basic.io.database: Database file opened: scoring/score_functions/MembranePotential/CEN10_mem_env_log.txt
+basic.io.database: Database file opened: scoring/score_functions/MembranePotential/memcbeta_den.txt
+basic.io.database: Database file opened: scoring/score_functions/MembranePotential/mem_pair_log.txt
+core.chemical.ResidueTypeSet: Finished initializing fa_standard residue type set.  Created 8955 residue types
+Loaded in PDB file...
+Jump from 12 to 13
+Jump from 24 to 25
+Jump from 36 to 37
+Jump from 48 to 49
+Jump from 60 to 61
+Jump from 72 to 73
+Jump from 84 to 85
+Minimizing... jumps
+Minimizing... backbone+chi
+Minimizing... jumps+backbone+chi
+core.optimization.LineMinimizer: Inaccurate G! step= 3.8147e-08 Deriv= -3953.09 Finite Diff= 8.48304e+07
+Completed minimize_test() with new score: -177.945 vs orig: 2262.47
+------------------------------------------------------------
+ Scores                       Weight   Raw Score Wghtd.Score
+------------------------------------------------------------
+ fa_atr                       0.800    -639.641    -511.713
+ fa_rep                       0.440    6064.111    2668.209
+ fa_sol                       0.650     298.003     193.702
+ fa_intra_rep                 0.004     383.290       1.533
+ fa_pair                      0.490       0.000       0.000
+ hbond_sr_bb                  1.170     -72.735     -85.100
+ hbond_lr_bb                  1.170       0.000       0.000
+ hbond_bb_sc                  1.170      -0.056      -0.065
+ hbond_sc                     1.100      -3.720      -4.091
+ atom_pair_constraint         1.000       0.000       0.000
+ angle_constraint             1.000       0.000       0.000
+ dihedral_constraint          1.000       0.000       0.000
+---------------------------------------------------
+ Total weighted score:                     2262.474
+------------------------------------------------------------
+ Scores                       Weight   Raw Score Wghtd.Score
+------------------------------------------------------------
+ fa_atr                       0.800    -552.234    -441.787
+ fa_rep                       0.440     129.194      56.846
+ fa_sol                       0.650     286.022     185.914
+ fa_intra_rep                 0.004     384.505       1.538
+ fa_pair                      0.490       0.000       0.000
+ hbond_sr_bb                  1.170     -73.528     -86.027
+ hbond_lr_bb                  1.170       0.000       0.000
+ hbond_bb_sc                  1.170      -0.020      -0.024
+ hbond_sc                     1.100      -3.024      -3.327
+ atom_pair_constraint         1.000       0.000       0.000
+ angle_constraint             1.000       0.000       0.000
+ dihedral_constraint          1.000     108.922     108.922
+---------------------------------------------------
+ Total weighted score:                     -177.945

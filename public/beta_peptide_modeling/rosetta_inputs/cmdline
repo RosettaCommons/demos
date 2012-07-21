@@ -1,0 +1,7 @@
+beta_peptide_modeling.linuxgccrelease -database  ../../../../rosetta_database -force_field beta_peptide -native redesign/acdy_LLLL_LLLL.pdb -algorithm redesign -ex1 -ex2 -packing::pack_missing_sidechains false -packing::extrachi_cutoff 0 -repack_res 2 5 8 11 14 17 20 23 -n_repeat 4 -repeat_size 24 > LLLL_LLLL.redesign 
+
+beta_peptide_modeling.linuxgccrelease -database ../../../../rosetta_database -force_field beta_peptide_soft_rep_design -native repack_and_minimize/acdy_LFFL_LFFL.pdb -algorithm repack -ex1 -ex2 -packing::pack_missing_sidechains false -packing::extrachi_cutoff 0 -repack_res 2 5 8 11 14 17 20 23 -n_repeat 4 -repeat_size 24 > LFFL_LFFL.repack
+beta_peptide_modeling.linuxgccrelease -database  ../../../../rosetta_database -force_field beta_peptide -native repack_and_minimize/acdy_LFFL_LFFL_repack.pdb -algorithm minimize -ex1 -ex2 -packing::pack_missing_sidechains false -packing::extrachi_cutoff 0 > LFFL_LFFL.repack_minimize
+
+beta_peptide_modeling.linuxgccrelease -database  ../../../../rosetta_database -force_field beta_peptide_soft_rep_design -native repack_and_minimize/acdy_LLLL_LLLL.pdb -algorithm repack -ex1 -ex2 -packing::pack_missing_sidechains false -packing::extrachi_cutoff 0 -repack_res 2 5 8 11 14 17 20 23 -n_repeat 4 -repeat_size 24 > LLLL_LLLL.repack
+beta_peptide_modeling.linuxgccrelease -database  ../../../../rosetta_database -force_field beta_peptide -native repack_and_minimize/acdy_LLLL_LLLL_repack.pdb -algorithm minimize -ex1 -ex2 -packing::pack_missing_sidechains false -packing::extrachi_cutoff 0 > LLLL_LLLL.repack_minimize

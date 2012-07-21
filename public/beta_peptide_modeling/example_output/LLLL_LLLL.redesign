@@ -1,0 +1,226 @@
+core.init: Mini-Rosetta version 49954:49967M from https://svn.rosettacommons.org/source/trunk/rosetta/rosetta_source
+core.init: command: beta_peptide_modeling.linuxgccrelease -database /home/fcchou/src/rosetta/rosetta_database -force_field beta_peptide -native redesign_hard/acdy_LLLL_LLLL.pdb -algorithm redesign -ex1 -ex2 -packing::pack_missing_sidechains false -packing::extrachi_cutoff 0 -repack_res 2 5 8 11 14 17 20 23 -n_repeat 4 -repeat_size 24
+core.init: 'RNG device' seed mode, using '/dev/urandom', seed=1677491898 seed_offset=0 real_seed=1677491898
+core.init.random: RandomGenerator:init: Normal mode, seed=1677491898 RG_type=mt19937
+core.scoring.etable: Starting energy table calculation
+core.scoring.etable: smooth_etable: changing atr/rep split to bottom of energy well
+core.scoring.etable: smooth_etable: spline smoothing lj etables (maxdis = 6)
+core.scoring.etable: smooth_etable: spline smoothing solvation etables (max_dis = 6)
+core.scoring.etable: Finished calculating energy tables.
+basic.io.database: Database file opened: scoring/score_functions/PairEPotential/pdb_pair_stats_fine
+basic.io.database: Database file opened: scoring/score_functions/hbonds/standard_params/HBPoly1D.csv
+basic.io.database: Database file opened: scoring/score_functions/hbonds/standard_params/HBFadeIntervals.csv
+basic.io.database: Database file opened: scoring/score_functions/hbonds/standard_params/HBEval.csv
+basic.io.database: Database file opened: scoring/score_functions/EnvPairPotential/env_log.txt
+basic.io.database: Database file opened: scoring/score_functions/EnvPairPotential/cbeta_den.txt
+basic.io.database: Database file opened: scoring/score_functions/EnvPairPotential/pair_log.txt
+basic.io.database: Database file opened: scoring/score_functions/EnvPairPotential/cenpack_log.txt
+basic.io.database: Database file opened: scoring/score_functions/EnvPairPotential/env_log.txt
+basic.io.database: Database file opened: scoring/score_functions/EnvPairPotential/cbeta_den.txt
+basic.io.database: Database file opened: scoring/score_functions/EnvPairPotential/pair_log.txt
+basic.io.database: Database file opened: scoring/score_functions/EnvPairPotential/cenpack_log.txt
+basic.io.database: Database file opened: scoring/score_functions/MembranePotential/CEN6_mem_env_log.txt
+basic.io.database: Database file opened: scoring/score_functions/MembranePotential/CEN10_mem_env_log.txt
+basic.io.database: Database file opened: scoring/score_functions/MembranePotential/memcbeta_den.txt
+basic.io.database: Database file opened: scoring/score_functions/MembranePotential/mem_pair_log.txt
+core.chemical.ResidueTypeSet: Finished initializing fa_standard residue type set.  Created 8955 residue types
+core.io.pdb.file_data: [ WARNING ] discarding 2 atoms at position 4 in file redesign_hard/acdy_LLLL_LLLL.pdb. Best match rsd_type:  B3Y
+core.io.pdb.file_data: [ WARNING ] discarding 1 atoms at position 7 in file redesign_hard/acdy_LLLL_LLLL.pdb. Best match rsd_type:  B3Y
+core.io.pdb.file_data: [ WARNING ] discarding 2 atoms at position 16 in file redesign_hard/acdy_LLLL_LLLL.pdb. Best match rsd_type:  B3Y
+core.io.pdb.file_data: [ WARNING ] discarding 1 atoms at position 19 in file redesign_hard/acdy_LLLL_LLLL.pdb. Best match rsd_type:  B3Y
+core.io.pdb.file_data: [ WARNING ] discarding 2 atoms at position 28 in file redesign_hard/acdy_LLLL_LLLL.pdb. Best match rsd_type:  B3Y
+core.io.pdb.file_data: [ WARNING ] discarding 1 atoms at position 31 in file redesign_hard/acdy_LLLL_LLLL.pdb. Best match rsd_type:  B3Y
+core.io.pdb.file_data: [ WARNING ] discarding 2 atoms at position 40 in file redesign_hard/acdy_LLLL_LLLL.pdb. Best match rsd_type:  B3Y
+core.io.pdb.file_data: [ WARNING ] discarding 1 atoms at position 43 in file redesign_hard/acdy_LLLL_LLLL.pdb. Best match rsd_type:  B3Y
+core.io.pdb.file_data: [ WARNING ] discarding 2 atoms at position 52 in file redesign_hard/acdy_LLLL_LLLL.pdb. Best match rsd_type:  B3Y
+core.io.pdb.file_data: [ WARNING ] discarding 1 atoms at position 55 in file redesign_hard/acdy_LLLL_LLLL.pdb. Best match rsd_type:  B3Y
+core.io.pdb.file_data: [ WARNING ] discarding 2 atoms at position 64 in file redesign_hard/acdy_LLLL_LLLL.pdb. Best match rsd_type:  B3Y
+core.io.pdb.file_data: [ WARNING ] discarding 1 atoms at position 67 in file redesign_hard/acdy_LLLL_LLLL.pdb. Best match rsd_type:  B3Y
+core.io.pdb.file_data: [ WARNING ] discarding 2 atoms at position 76 in file redesign_hard/acdy_LLLL_LLLL.pdb. Best match rsd_type:  B3Y
+core.io.pdb.file_data: [ WARNING ] discarding 1 atoms at position 79 in file redesign_hard/acdy_LLLL_LLLL.pdb. Best match rsd_type:  B3Y
+core.io.pdb.file_data: [ WARNING ] skipping pdb residue b/c its missing too many mainchain atoms:    1 H B3D B3D_p:CtermProteinFull
+core.io.pdb.file_data: missing:  N  
+core.io.pdb.file_data: missing:  CA 
+core.io.pdb.file_data: missing:  CM 
+core.io.pdb.file_data: missing:  C  
+core.io.pdb.file_data: [ WARNING ] discarding 2 atoms at position 89 in file redesign_hard/acdy_LLLL_LLLL.pdb. Best match rsd_type:  B3Y
+core.io.pdb.file_data: [ WARNING ] discarding 1 atoms at position 92 in file redesign_hard/acdy_LLLL_LLLL.pdb. Best match rsd_type:  B3Y
+core.io.pdb.file_data: Adding undetected upper terminus type! 84
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  CD1 on residue B3L 2
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  CD2 on residue B3L 2
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  CZ  on residue B3Y 4
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  OH  on residue B3Y 4
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  CD1 on residue B3L 5
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  CD2 on residue B3L 5
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  CZ  on residue B3Y 7
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  CD1 on residue B3L 8
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  CD2 on residue B3L 8
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  CD1 on residue B3L 11
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  CD2 on residue B3L 11
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  CD1 on residue B3L 14
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  CD2 on residue B3L 14
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  CZ  on residue B3Y 16
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  OH  on residue B3Y 16
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  CD1 on residue B3L 17
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  CD2 on residue B3L 17
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  CZ  on residue B3Y 19
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  CD1 on residue B3L 20
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  CD2 on residue B3L 20
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  CD1 on residue B3L 23
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  CD2 on residue B3L 23
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  CD1 on residue B3L 26
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  CD2 on residue B3L 26
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  CZ  on residue B3Y 28
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  OH  on residue B3Y 28
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  CD1 on residue B3L 29
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  CD2 on residue B3L 29
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  CZ  on residue B3Y 31
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  CD1 on residue B3L 32
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  CD2 on residue B3L 32
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  CD1 on residue B3L 35
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  CD2 on residue B3L 35
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  CD1 on residue B3L 38
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  CD2 on residue B3L 38
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  CZ  on residue B3Y 40
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  OH  on residue B3Y 40
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  CD1 on residue B3L 41
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  CD2 on residue B3L 41
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  CZ  on residue B3Y 43
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  CD1 on residue B3L 44
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  CD2 on residue B3L 44
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  CD1 on residue B3L 47
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  CD2 on residue B3L 47
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  CD1 on residue B3L 50
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  CD2 on residue B3L 50
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  CZ  on residue B3Y 52
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  OH  on residue B3Y 52
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  CD1 on residue B3L 53
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  CD2 on residue B3L 53
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  CZ  on residue B3Y 55
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  CD1 on residue B3L 56
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  CD2 on residue B3L 56
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  CD1 on residue B3L 59
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  CD2 on residue B3L 59
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  CD1 on residue B3L 62
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  CD2 on residue B3L 62
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  CZ  on residue B3Y 64
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  OH  on residue B3Y 64
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  CD1 on residue B3L 65
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  CD2 on residue B3L 65
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  CZ  on residue B3Y 67
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  CD1 on residue B3L 68
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  CD2 on residue B3L 68
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  CD1 on residue B3L 71
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  CD2 on residue B3L 71
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  CD1 on residue B3L 74
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  CD2 on residue B3L 74
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  CZ  on residue B3Y 76
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  OH  on residue B3Y 76
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  CD1 on residue B3L 77
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  CD2 on residue B3L 77
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  CZ  on residue B3Y 79
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  CD1 on residue B3L 80
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  CD2 on residue B3L 80
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  CD1 on residue B3L 83
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  CD2 on residue B3L 83
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  OXT on residue B3D_p:CtermProteinFull 84
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  CD1 on residue B3L 86
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  CD2 on residue B3L 86
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  CZ  on residue B3Y 88
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  OH  on residue B3Y 88
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  CD1 on residue B3L 89
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  CD2 on residue B3L 89
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  CZ  on residue B3Y 91
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  CD1 on residue B3L 92
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  CD2 on residue B3L 92
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  CD1 on residue B3L 95
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  CD2 on residue B3L 95
+core.io.pdb.file_data: [ WARNING ] can't find atom for res 4 atom  CY  (trying to set temp)
+core.io.pdb.file_data: [ WARNING ] can't find atom for res 4 atom  I   (trying to set temp)
+core.io.pdb.file_data: [ WARNING ] can't find atom for res 7 atom  CY  (trying to set temp)
+core.io.pdb.file_data: [ WARNING ] can't find atom for res 16 atom  CY  (trying to set temp)
+core.io.pdb.file_data: [ WARNING ] can't find atom for res 16 atom  I   (trying to set temp)
+core.io.pdb.file_data: [ WARNING ] can't find atom for res 19 atom  CY  (trying to set temp)
+core.io.pdb.file_data: [ WARNING ] can't find atom for res 28 atom  CY  (trying to set temp)
+core.io.pdb.file_data: [ WARNING ] can't find atom for res 28 atom  I   (trying to set temp)
+core.io.pdb.file_data: [ WARNING ] can't find atom for res 31 atom  CY  (trying to set temp)
+core.io.pdb.file_data: [ WARNING ] can't find atom for res 40 atom  CY  (trying to set temp)
+core.io.pdb.file_data: [ WARNING ] can't find atom for res 40 atom  I   (trying to set temp)
+core.io.pdb.file_data: [ WARNING ] can't find atom for res 43 atom  CY  (trying to set temp)
+core.io.pdb.file_data: [ WARNING ] can't find atom for res 52 atom  CY  (trying to set temp)
+core.io.pdb.file_data: [ WARNING ] can't find atom for res 52 atom  I   (trying to set temp)
+core.io.pdb.file_data: [ WARNING ] can't find atom for res 55 atom  CY  (trying to set temp)
+core.io.pdb.file_data: [ WARNING ] can't find atom for res 64 atom  CY  (trying to set temp)
+core.io.pdb.file_data: [ WARNING ] can't find atom for res 64 atom  I   (trying to set temp)
+core.io.pdb.file_data: [ WARNING ] can't find atom for res 67 atom  CY  (trying to set temp)
+core.io.pdb.file_data: [ WARNING ] can't find atom for res 76 atom  CY  (trying to set temp)
+core.io.pdb.file_data: [ WARNING ] can't find atom for res 76 atom  I   (trying to set temp)
+core.io.pdb.file_data: [ WARNING ] can't find atom for res 79 atom  CY  (trying to set temp)
+core.io.pdb.file_data: [ WARNING ] can't find atom for res 88 atom  CY  (trying to set temp)
+core.io.pdb.file_data: [ WARNING ] can't find atom for res 88 atom  I   (trying to set temp)
+core.io.pdb.file_data: [ WARNING ] can't find atom for res 91 atom  CY  (trying to set temp)
+Loaded in PDB file...
+core.pack.task: Packer task: initialize from command line() 
+NRES  = 96
+residue rebuilding:
+2 26 50 74 
+5 29 53 77 
+8 32 56 80 
+11 35 59 83 
+14 38 62 86 
+17 41 65 89 
+20 44 68 92 
+23 47 71 95 
+core.pack.dunbrack: Dunbrack library took 0.02 seconds to load from binary
+Reading in rot lib /home/fcchou/src/rosetta/rosetta_database//rotamer/ncaa_rotlibs/B3L.rotlib...done!
+Reading in rot lib /home/fcchou/src/rosetta/rosetta_database//rotamer/ncaa_rotlibs/B3C.rotlib...done!
+Reading in rot lib /home/fcchou/src/rosetta/rosetta_database//rotamer/ncaa_rotlibs/B3D.rotlib...done!
+Reading in rot lib /home/fcchou/src/rosetta/rosetta_database//rotamer/ncaa_rotlibs/B3E.rotlib...done!
+Reading in rot lib /home/fcchou/src/rosetta/rosetta_database//rotamer/ncaa_rotlibs/B3F.rotlib...done!
+Reading in rot lib /home/fcchou/src/rosetta/rosetta_database//rotamer/ncaa_rotlibs/B3H.rotlib...done!
+Reading in rot lib /home/fcchou/src/rosetta/rosetta_database//rotamer/ncaa_rotlibs/B3I.rotlib...done!
+Reading in rot lib /home/fcchou/src/rosetta/rosetta_database//rotamer/ncaa_rotlibs/B3K.rotlib...done!
+Reading in rot lib /home/fcchou/src/rosetta/rosetta_database//rotamer/ncaa_rotlibs/B3M.rotlib...done!
+Reading in rot lib /home/fcchou/src/rosetta/rosetta_database//rotamer/ncaa_rotlibs/B3N.rotlib...done!
+Reading in rot lib /home/fcchou/src/rosetta/rosetta_database//rotamer/ncaa_rotlibs/B3O.rotlib...done!
+Reading in rot lib /home/fcchou/src/rosetta/rosetta_database//rotamer/ncaa_rotlibs/B3P.rotlib...done!
+Reading in rot lib /home/fcchou/src/rosetta/rosetta_database//rotamer/ncaa_rotlibs/B3Q.rotlib...done!
+Reading in rot lib /home/fcchou/src/rosetta/rosetta_database//rotamer/ncaa_rotlibs/B3R.rotlib...done!
+Reading in rot lib /home/fcchou/src/rosetta/rosetta_database//rotamer/ncaa_rotlibs/B3S.rotlib...done!
+Reading in rot lib /home/fcchou/src/rosetta/rosetta_database//rotamer/ncaa_rotlibs/B3T.rotlib...done!
+Reading in rot lib /home/fcchou/src/rosetta/rosetta_database//rotamer/ncaa_rotlibs/B3V.rotlib...done!
+Reading in rot lib /home/fcchou/src/rosetta/rosetta_database//rotamer/ncaa_rotlibs/B3W.rotlib...done!
+Reading in rot lib /home/fcchou/src/rosetta/rosetta_database//rotamer/ncaa_rotlibs/B3Y.rotlib...done!
+expected rotamer count is 7198
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.pack.pack_rotamers: built 29451 rotamers at 32 positions.
+core.pack.pack_rotamers: IG: 1080939372 bytes
+Completed pack_rotamers_test() with new score: -279.77 vs orig: 2386.48
+------------------------------------------------------------
+ Scores                       Weight   Raw Score Wghtd.Score
+------------------------------------------------------------
+ fa_atr                       0.800    -540.580    -432.464
+ fa_rep                       0.440    6175.205    2717.090
+ fa_sol                       0.650     289.164     187.957
+ fa_intra_rep                 0.004     786.441       3.146
+ fa_pair                      0.490       0.000       0.000
+ hbond_sr_bb                  1.170     -72.732     -85.096
+ hbond_lr_bb                  1.170       0.000       0.000
+ hbond_bb_sc                  1.170      -0.056      -0.066
+ hbond_sc                     1.100      -3.716      -4.088
+---------------------------------------------------
+ Total weighted score:                     2386.478
+------------------------------------------------------------
+ Scores                       Weight   Raw Score Wghtd.Score
+------------------------------------------------------------
+ fa_atr                       0.800    -545.503    -436.402
+ fa_rep                       0.440     133.314      58.658
+ fa_sol                       0.650     286.289     186.088
+ fa_intra_rep                 0.004     284.709       1.139
+ fa_pair                      0.490       0.000       0.000
+ hbond_sr_bb                  1.170     -72.732     -85.096
+ hbond_lr_bb                  1.170       0.000       0.000
+ hbond_bb_sc                  1.170      -0.056      -0.066
+ hbond_sc                     1.100      -3.719      -4.091
+---------------------------------------------------
+ Total weighted score:                     -279.770
