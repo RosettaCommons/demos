@@ -16,7 +16,7 @@
 
  <MOVERS>
     <Docking name=docking score_high=soft_rep fullatom=1 local_refine=1/> Invokes RosettaDock local-refinement (in full-atom) with a soft potential
-    <Backrub name=backrub partner1=0 partner2=1 interface_distance_cutoff=8.0 moves=1000 sc_move_probability=0.25 scorefxn=score12 small_move_probability=0.15 bbg_move_probability=0.25/> perturb the backbone of chain2
+    <BackrubDD name=backrub partner1=0 partner2=1 interface_distance_cutoff=8.0 moves=1000 sc_move_probability=0.25 scorefxn=score12 small_move_probability=0.15 bbg_move_probability=0.25/> perturb the backbone of chain2
     <RepackMinimize name=des1 scorefxn_repack=soft_rep scorefxn_minimize=soft_rep minimize_bb=0 minimize_rb=1/>
     <RepackMinimize name=des2 scorefxn_repack=score12 scorefxn_minimize=score12 minimize_bb=0 minimize_rb=1/> Design & minimizatio
 n at the interface
