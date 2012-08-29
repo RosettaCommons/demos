@@ -1,0 +1,11 @@
+Benchmark file
+at Wed Aug 22 16:08:11 EDT 2012
+in /nas02/home/k/h/khouli/interface_design_demo/scripts/design/pacrot_s12p_nomin
+
+Weights used: score12prime
+Number of input structures: 28
+Number of design trajectories: 100
+CPU hours: 366.526
+Overall interface sequence recovery: 0.395
+Core interface sequence recovery: 0.460
+Surface interface sequence recovery: 0.283

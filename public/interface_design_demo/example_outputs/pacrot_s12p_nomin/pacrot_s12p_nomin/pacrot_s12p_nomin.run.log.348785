@@ -1,0 +1,1227 @@
+Sender: LSF System <lsfadmin@c-191-56>
+Subject: Job 348785: <pacrot_s12p_nomin> Done
+
+Job <pacrot_s12p_nomin> was submitted from host <killdevil-login1> by user <khouli> in cluster <killdevil>.
+Job was executed on host(s) <12*c-191-56>, in queue <day>, as user <khouli> in cluster <killdevil>.
+                            <12*c-191-35>
+                            <1*c-195-37>
+                            <1*c-194-08>
+                            <1*c-194-19>
+                            <1*c-194-23>
+                            <1*c-194-36>
+                            <1*c-194-56>
+                            <1*c-195-06>
+                            <1*c-195-09>
+</nas02/home/k/h/khouli> was used as the home directory.
+</nas02/home/k/h/khouli/interface_design_demo/scripts/design/pacrot_s12p_nomin/pacrot_s12p_nomin> was used as the working directory.
+Started at Wed Aug 22 04:16:22 2012
+Results reported at Wed Aug 22 15:44:06 2012
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+mpirun /nas02/home/k/h/khouli/rosetta/rosetta_source/bin/rosetta_scripts.mpi.linuxgccrelease -database /nas02/home/k/h/khouli/rosetta/rosetta_database/ -l /nas02/home/k/h/khouli/interface_design_demo/scripts/design/pacrot_s12p_nomin/selected_chains.list -nstruct 100 -jd2:ntrials 20 -out:pdb_gz true -parser:protocol pacrot_s12p_nomin.script.xml -mpi_tracer_to_file pacrot_s12p_nomin.tracers -overwrite -chemical:exclude_patches LowerDNA UpperDNA Cterm_amidation SpecialRotamer protein_cutpoint_upper protein_cutpoint_lower VirtualBB ShoveBB VirtualDNAPhosphate VirtualNTerm CTermConnect sc_orbitals pro_hydroxylated_case1 pro_hydroxylated_case2 ser_phosphorylated thr_phosphorylated tyr_phosphorylated tyr_sulfated lys_dimethylated lys_monomethylated lys_trimethylated lys_acetylated glu_carboxylated cys_acetylated tyr_diiodinated N_acetylated C_methylamidated MethylatedProteinCterm -score:weights score12prime -atomic_burial_cutoff 0.01 -sasa_calculator_probe_radius 1.2 -ignore_unrecognized_res -no_optH false -skip_set_reasonable_fold_tree -no_his_his_pairE -fa_max_dis 6.0 -options:user -ex1 -ex2
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time   :1319494.12 sec.
+    Max Memory :        93 GB
+    Max Swap   :       105 GB
+
+    Max Processes  :        47
+    Max Threads    :        81
+
+The output (if any) follows:
+
+
+# User Specified Options:
+
+-options:user 
+
+-parser:protocol pacrot_s12p_nomin.script.xml
+
+-pose_metrics:atomic_burial_cutoff 0.01
+-pose_metrics:sasa_calculator_probe_radius 1.2
+
+-chemical:exclude_patches  LowerDNA UpperDNA Cterm_amidation SpecialRotamer protein_cutpoint_upper protein_cutpoint_lower VirtualBB ShoveBB VirtualDNAPhosphate VirtualNTerm CTermConnect sc_orbitals pro_hydroxylated_case1 pro_hydroxylated_case2 ser_phosphorylated thr_phosphorylated tyr_phosphorylated tyr_sulfated lys_dimethylated lys_monomethylated lys_trimethylated lys_acetylated glu_carboxylated cys_acetylated tyr_diiodinated N_acetylated C_methylamidated MethylatedProteinCterm
+
+-score:weights score12prime
+-score:fa_max_dis 6
+
+-corrections:score:no_his_his_pairE 
+
+-packing:no_optH false
+-packing:ex1 
+-packing:ex2 
+
+-in:ignore_unrecognized_res 
+-in:path:database  /nas02/home/k/h/khouli/rosetta/rosetta_database/
+-in:file:l  /nas02/home/k/h/khouli/interface_design_demo/scripts/design/pacrot_s12p_nomin/selected_chains.list
+
+-out:overwrite 
+-out:nstruct 100
+-out:pdb_gz 
+-out:mpi_tracer_to_file pacrot_s12p_nomin.tracers
+
+-run:skip_set_reasonable_fold_tree 
+
+-jd2:ntrials 20
+
+
+# User Specified Options:
+
+# User Specified Options:
+
+# User Specified Options:
+core.init: (24) Mini-Rosetta version 49772M from https://svn.rosettacommons.org/source/trunk/rosetta/rosetta_source
+core.init: (24) command: /nas02/home/k/h/khouli/rosetta/rosetta_source/bin/rosetta_scripts.mpi.linuxgccrelease -database /nas02/home/k/h/khouli/rosetta/rosetta_database/ -l /nas02/home/k/h/khouli/interface_design_demo/scripts/design/pacrot_s12p_nomin/selected_chains.list -nstruct 100 -jd2:ntrials 20 -out:pdb_gz true -parser:protocol pacrot_s12p_nomin.script.xml -mpi_tracer_to_file pacrot_s12p_nomin.tracers -overwrite -chemical:exclude_patches LowerDNA UpperDNA Cterm_amidation SpecialRotamer protein_cutpoint_upper protein_cutpoint_lower VirtualBB ShoveBB VirtualDNAPhosphate VirtualNTerm CTermConnect sc_orbitals pro_hydroxylated_case1 pro_hydroxylated_case2 ser_phosphorylated thr_phosphorylated tyr_phosphorylated tyr_sulfated lys_dimethylated lys_monomethylated lys_trimethylated lys_acetylated glu_carboxylated cys_acetylated tyr_diiodinated N_acetylated C_methylamidated MethylatedProteinCterm -score:weights score12prime -atomic_burial_cutoff 0.01 -sasa_calculator_probe_radius 1.2 -ignore_unrecognized_res -no_optH false -skip_set_reasonable_fold_tree -no_his_his_pairE -fa_max_dis 6.0 -options:user -ex1 -ex2
+
+# User Specified Options:
+
+-options:user 
+
+-parser:protocol pacrot_s12p_nomin.script.xml
+
+-pose_metrics:atomic_burial_cutoff 0.01
+-pose_metrics:sasa_calculator_probe_radius 1.2
+
+-chemical:exclude_patches  LowerDNA UpperDNA Cterm_amidation SpecialRotamer protein_cutpoint_upper protein_cutpoint_lower VirtualBB ShoveBB VirtualDNAPhosphate VirtualNTerm CTermConnect sc_orbitals pro_hydroxylated_case1 pro_hydroxylated_case2 ser_phosphorylated thr_phosphorylated tyr_phosphorylated tyr_sulfated lys_dimethylated lys_monomethylated lys_trimethylated lys_acetylated glu_carboxylated cys_acetylated tyr_diiodinated N_acetylated C_methylamidated MethylatedProteinCterm
+
+-score:weights score12prime
+-score:fa_max_dis 6
+
+-corrections:score:no_his_his_pairE 
+
+-packing:no_optH false
+-packing:ex1 
+-packing:ex2 
+
+-in:ignore_unrecognized_res 
+-in:path:database  /nas02/home/k/h/khouli/rosetta/rosetta_database/
+-in:file:l  /nas02/home/k/h/khouli/interface_design_demo/scripts/design/pacrot_s12p_nomin/selected_chains.list
+
+-out:overwrite 
+-out:nstruct 100
+-out:pdb_gz 
+-out:mpi_tracer_to_file pacrot_s12p_nomin.tracers
+
+-run:skip_set_reasonable_fold_tree 
+
+-jd2:ntrials 20
+
+core.init: (25) Mini-Rosetta version 49772M from https://svn.rosettacommons.org/source/trunk/rosetta/rosetta_source
+core.init: (25) command: /nas02/home/k/h/khouli/rosetta/rosetta_source/bin/rosetta_scripts.mpi.linuxgccrelease -database /nas02/home/k/h/khouli/rosetta/rosetta_database/ -l /nas02/home/k/h/khouli/interface_design_demo/scripts/design/pacrot_s12p_nomin/selected_chains.list -nstruct 100 -jd2:ntrials 20 -out:pdb_gz true -parser:protocol pacrot_s12p_nomin.script.xml -mpi_tracer_to_file pacrot_s12p_nomin.tracers -overwrite -chemical:exclude_patches LowerDNA UpperDNA Cterm_amidation SpecialRotamer protein_cutpoint_upper protein_cutpoint_lower VirtualBB ShoveBB VirtualDNAPhosphate VirtualNTerm CTermConnect sc_orbitals pro_hydroxylated_case1 pro_hydroxylated_case2 ser_phosphorylated thr_phosphorylated tyr_phosphorylated tyr_sulfated lys_dimethylated lys_monomethylated lys_trimethylated lys_acetylated glu_carboxylated cys_acetylated tyr_diiodinated N_acetylated C_methylamidated MethylatedProteinCterm -score:weights score12prime -atomic_burial_cutoff 0.01 -sasa_calculator_probe_radius 1.2 -ignore_unrecognized_res -no_optH false -skip_set_reasonable_fold_tree -no_his_his_pairE -fa_max_dis 6.0 -options:user -ex1 -ex2
+
+# User Specified Options:
+
+# User Specified Options:
+
+# User Specified Options:
+
+# User Specified Options:
+
+# User Specified Options:
+
+-
+-options:user 
+
+-parser:protocol pacrot_s12p_nomin.script.xml
+
+-pose_metrics:atomic_burial_cutoff 0.01
+-pose_metrics:sasa_calculator_probe_radius 1.2
+
+-chemical:exclude_patches  LowerDNA UpperDNA Cterm_amidation SpecialRotamer protein_cutpoint_upper protein_cutpoint_lower VirtualBB ShoveBB VirtualDNAPhosphate VirtualNTerm CTermConnect sc_orbitals pro_hydroxylated_case1 pro_hydroxylated_case2 ser_phosphorylated thr_phosphorylated tyr_phosphorylated tyr_sulfated lys_dimethylated lys_monomethylated lys_trimethylated lys_acetylated glu_carboxylated cys_acetylated tyr_diiodinated N_acetylated C_methylamidated MethylatedProteinCterm
+
+-score:weights score12prime
+-score:fa_max_dis 6
+
+-corrections:score:no_his_his_pairE 
+
+-packing:no_optH false
+-packing:ex1 
+-packing:ex2 
+
+-in:ignore_unrecognized_res 
+-in:path:database  /nas02/home/k/h/khouli/rosetta/rosetta_database/
+-in:file:l  /nas02/home/k/h/khouli/interface_design_demo/scripts/design/pacrot_s12p_nomin/selected_chains.list
+
+-out:overwrite 
+-out:nstruct 100
+-out:pdb_gz 
+-out:mpi_tracer_to_file pacrot_s12p_nomin.tracers
+
+-run:skip_set_reasonable_fold_tree 
+
+-jd2:ntrials 20
+
+core.init: (28) Mini-Rosetta version 49772M from https://svn.rosettacommons.org/source/trunk/rosetta/rosetta_source
+core.init: (28) command: /nas02/home/k/h/khouli/rosetta/rosetta_source/bin/rosetta_scripts.mpi.linuxgccrelease -database /nas02/home/k/h/khouli/rosetta/rosetta_database/ -l /nas02/home/k/h/khouli/interface_design_demo/scripts/design/pacrot_s12p_nomin/selected_chains.list -nstruct 100 -jd2:ntrials 20 -out:pdb_gz true -parser:protocol pacrot_s12p_nomin.script.xml -mpi_tracer_to_file pacrot_s12p_nomin.tracers -overwrite -chemical:exclude_patches LowerDNA UpperDNA Cterm_amidation SpecialRotamer protein_cutpoint_upper protein_cutpoint_lower VirtualBB ShoveBB VirtualDNAPhosphate VirtualNTerm CTermConnect sc_orbitals pro_hydroxylated_case1 pro_hydroxylated_case2 ser_phosphorylated thr_phosphorylated tyr_phosphorylated tyr_sulfated lys_dimethylated lys_monomethylated lys_trimethylated lys_acetylated glu_carboxylated cys_acetylated tyr_diiodinated N_acetylated C_methylamidated MethylatedProteinCterm -score:weights score12prime -atomic_burial_cutoff 0.01 -sasa_calculator_probe_radius 1.2 -ignore_unrecognized_res -no_optH false -skip_set_reasonable_fold_tree -no_his_his_pairE -fa_max_dis 6.0 -options:user -ex1 -ex2
+
+-options:user 
+
+-parser:protocol pacrot_s12p_nomin.script.xml
+
+-pose_metrics:atomic_burial_cutoff 0.01
+-pose_metrics:sasa_calculator_probe_radius 1.2
+
+-chemical:exclude_patches  LowerDNA UpperDNA Cterm_amidation SpecialRotamer protein_cutpoint_upper protein_cutpoint_lower VirtualBB ShoveBB VirtualDNAPhosphate VirtualNTerm CTermConnect sc_orbitals pro_hydroxylated_case1 pro_hydroxylated_case2 ser_phosphorylated thr_phosphorylated tyr_phosphorylated tyr_sulfated lys_dimethylated lys_monomethylated lys_trimethylated lys_acetylated glu_carboxylated cys_acetylated tyr_diiodinated N_acetylated C_methylamidated MethylatedProteinCterm
+
+-score:weights score12prime
+-score:fa_max_dis 6
+
+-corrections:score:no_his_his_pairE 
+
+-packing:no_optH false
+-packing:ex1 
+-packing:ex2 
+
+-in:ignore_unrecognized_res 
+-in:path:database  /nas02/home/k/h/khouli/rosetta/rosetta_database/
+-in:file:l  /nas02/home/k/h/khouli/interface_design_demo/scripts/design/pacrot_s12p_nomin/selected_chains.list
+
+-out:overwrite 
+-out:nstruct 100
+-out:pdb_gz 
+-out:mpi_tracer_to_file pacrot_s12p_nomin.tracers
+
+-run:skip_set_reasonable_fold_tree 
+
+-jd2:ntrials 20
+
+core.init: (31) Mini-Rosetta version 49772M from https://svn.rosettacommons.org/source/trunk/rosetta/rosetta_source
+core.init: (31) command: /nas02/home/k/h/khouli/rosetta/rosetta_source/bin/rosetta_scripts.mpi.linuxgccrelease -database /nas02/home/k/h/khouli/rosetta/rosetta_database/ -l /nas02/home/k/h/khouli/interface_design_demo/scripts/design/pacrot_s12p_nomin/selected_chains.list -nstruct 100 -jd2:ntrials 20 -out:pdb_gz true -parser:protocol pacrot_s12p_nomin.script.xml -mpi_tracer_to_file pacrot_s12p_nomin.tracers -overwrite -chemical:exclude_patches LowerDNA UpperDNA Cterm_amidation SpecialRotamer protein_cutpoint_upper protein_cutpoint_lower VirtualBB ShoveBB VirtualDNAPhosphate VirtualNTerm CTermConnect sc_orbitals pro_hydroxylated_case1 pro_hydroxylated_case2 ser_phosphorylated thr_phosphorylated tyr_phosphorylated tyr_sulfated lys_dimethylated lys_monomethylated lys_trimethylated lys_acetylated glu_carboxylated cys_acetylated tyr_diiodinated N_acetylated C_methylamidated MethylatedProteinCterm -score:weights score12prime -atomic_burial_cutoff 0.01 -sasa_calculator_probe_radius 1.2 -ignore_unrecognized_res -no_optH false -skip_set_reasonable_fold_tree -no_his_his_pairE -fa_max_dis 6.0 -options:user -ex1 -ex2
+
+-options:user 
+
+-parser:protocol pacrot_s12p_nomin.script.xml
+
+-pose_metrics:atomic_burial_cutoff 0.01
+-pose_metrics:sasa_calculator_probe_radius 1.2
+
+-chemical:exclude_patches  LowerDNA UpperDNA Cterm_amidation SpecialRotamer protein_cutpoint_upper protein_cutpoint_lower VirtualBB ShoveBB VirtualDNAPhosphate VirtualNTerm CTermConnect sc_orbitals pro_hydroxylated_case1 pro_hydroxylated_case2 ser_phosphorylated thr_phosphorylated tyr_phosphorylated tyr_sulfated lys_dimethylated lys_monomethylated lys_trimethylated lys_acetylated glu_carboxylated cys_acetylated tyr_diiodinated N_acetylated C_methylamidated MethylatedProteinCterm
+
+-score:weights score12prime
+-score:fa_max_dis 6
+
+-corrections:score:no_his_his_pairE 
+
+-packing:no_optH false
+-packing:ex1 
+-packing:ex2 
+
+-in:ignore_unrecognized_res 
+-in:path:database  /nas02/home/k/h/khouli/rosetta/rosetta_database/
+-in:file:l  /nas02/home/k/h/khouli/interface_design_demo/scripts/design/pacrot_s12p_nomin/selected_chains.list
+
+-out:overwrite 
+-out:nstruct 100
+-out:pdb_gz 
+-out:mpi_tracer_to_file pacrot_s12p_nomin.tracers
+
+-run:skip_set_reasonable_fold_tree 
+
+-jd2:ntrials 20
+
+core.init: (26) Mini-Rosetta version 49772M from https://svn.rosettacommons.org/source/trunk/rosetta/rosetta_source
+core.init: (26) command: /nas02/home/k/h/khouli/rosetta/rosetta_source/bin/rosetta_scripts.mpi.linuxgccrelease -database /nas02/home/k/h/khouli/rosetta/rosetta_database/ -l /nas02/home/k/h/khouli/interface_design_demo/scripts/design/pacrot_s12p_nomin/selected_chains.list -nstruct 100 -jd2:ntrials 20 -out:pdb_gz true -parser:protocol pacrot_s12p_nomin.script.xml -mpi_tracer_to_file pacrot_s12p_nomin.tracers -overwrite -chemical:exclude_patches LowerDNA UpperDNA Cterm_amidation SpecialRotamer protein_cutpoint_upper protein_cutpoint_lower VirtualBB ShoveBB VirtualDNAPhosphate VirtualNTerm CTermConnect sc_orbitals pro_hydroxylated_case1 pro_hydroxylated_case2 ser_phosphorylated thr_phosphorylated tyr_phosphorylated tyr_sulfated lys_dimethylated lys_monomethylated lys_trimethylated lys_acetylated glu_carboxylated cys_acetylated tyr_diiodinated N_acetylated C_methylamidated MethylatedProteinCterm -score:weights score12prime -atomic_burial_cutoff 0.01 -sasa_calculator_probe_radius 1.2 -ignore_unrecognized_res -no_optH false -skip_set_reasonable_fold_tree -no_his_his_pairE -fa_max_dis 6.0 -options:user -ex1 -ex2
+
+# User Specified Options:
+
+# User Specified Options:
+
+
+--
+-options:useroptions:user  
+
+options:user 
+
+# User Specified Options:
+
+# User Specified Options:
+
+
+
+
+
+# User Specified Options:
+-
+options:user- 
+options:user 
+-
+options:user
+ 
+
+--parser:protocolparser:protocol  pacrot_s12p_nomin.script.xmlpacrot_s12p_nomin.script.xml
+-
+
+parser:protocol pacrot_s12p_nomin.script.xml
+-parser:protocol pacrot_s12p_nomin.script.xml
+-parser:protocol 
+# User Specified Options:
+pacrot_s12p_nomin.script.xml
+
+# User Specified Options:
+-parser:protocol pacrot_s12p_nomin.script.xml
+
+
+# User Specified Options:
+-
+-options:user 
+
+
+options:user 
+
+
+-
+
+# User Specified Options:
+options:user 
+
+
+
+
+-
+
+options:user 
+-parser:protocol pacrot_s12p_nomin.script.xml-
+
+parser:protocol pacrot_s12p_nomin.script.xml
+-parser:protocol pacrot_s12p_nomin.script.xml
+----pose_metrics:atomic_burial_cutoffpose_metrics:atomic_burial_cutoff-pose_metrics:atomic_burial_cutoff-pose_metrics:atomic_burial_cutoffpose_metrics:atomic_burial_cutoff   pose_metrics:atomic_burial_cutoff  0.01-0.010.01
+parser:protocol
+
+0.010.01  
+
+0.01-pacrot_s12p_nomin.script.xml
+--
+pose_metrics:sasa_calculator_probe_radius
+pose_metrics:sasa_calculator_probe_radiuspose_metrics:sasa_calculator_probe_radius ---
+ 1.2 pose_metrics:sasa_calculator_probe_radius1.2
+
+1.2 pose_metrics:sasa_calculator_probe_radiuspose_metrics:sasa_calculator_probe_radius
+ 1.2
+ 1.2
+1.2
+
+-pose_metrics:atomic_burial_cutoff -0.01pose_metrics:atomic_burial_cutoff
+ 0.01
+
+# User Specified Options:
+
+# User Specified Options:
+
+# User Specified Options:
+
+# User Specified Options:
+
+
+
+
+----options:useroptions:useroptions:user options:user 
+  
+
+
+
+
+# User Specified Options:
+
+
+
+
+# User Specified Options:
+
+# User Specified Options:
+
+-
+-options:user 
+
+options:user- 
+options:user 
+# User Specified Options:
+
+
+
+--parser:protocol-parser:protocol parser:protocol-pacrot_s12p_nomin.script.xml  
+parser:protocol
+pacrot_s12p_nomin.script.xml
+pacrot_s12p_nomin.script.xml- 
+
+pacrot_s12p_nomin.script.xml
+options:user 
+-parser:protocol pacrot_s12p_nomin.script.xml
+-parser:protocol pacrot_s12p_nomin.script.xml
+
+-parser:protocol pacrot_s12p_nomin.script.xml
+
+
+-
+
+parser:protocol pacrot_s12p_nomin.script.xml
+
+
+
+
+-----pose_metrics:atomic_burial_cutoffpose_metrics:atomic_burial_cutoffpose_metrics:atomic_burial_cutoff  -pose_metrics:atomic_burial_cutoff pose_metrics:atomic_burial_cutoff- 0.01pose_metrics:atomic_burial_cutoffpose_metrics:atomic_burial_cutoff
+  0.010.010.01
+0.01 0.01
+
+-
+
+0.01pose_metrics:sasa_calculator_probe_radius
+ -1.2-pose_metrics:sasa_calculator_probe_radius-
+--pose_metrics:sasa_calculator_probe_radius pose_metrics:sasa_calculator_probe_radiuspose_metrics:sasa_calculator_probe_radius pose_metrics:sasa_calculator_probe_radius-  1.2-1.21.2pose_metrics:sasa_calculator_probe_radius1.2 
+
+
+1.2pose_metrics:atomic_burial_cutoff
+ 
+ 1.2
+-options:user 
+
+-parser:protocol pacrot_s12p_nomin.script.xml
+
+-pose_metrics:atomic_burial_cutoff 0.01
+-pose_metrics:sasa_calculator_probe_radius 1.2
+
+-chemical:exclude_patches  LowerDNA UpperDNA Cterm_amidation SpecialRotamer protein_cutpoint_upper protein_cutpoint_lower VirtualBB ShoveBB VirtualDNAPhosphate VirtualNTerm CTermConnect sc_orbitals pro_hydroxylated_case1 pro_hydroxylated_case2 ser_phosphorylated thr_phosphorylated tyr_phosphorylated tyr_sulfated lys_dimethylated lys_monomethylated lys_trimethylated lys_acetylated glu_carboxylated cys_acetylated tyr_diiodinated N_acetylated C_methylamidated MethylatedProteinCterm
+
+-score:weights score12prime
+-score:fa_max_dis 6
+
+-corrections:score:no_his_his_pairE 
+
+-packing:no_optH false
+-packing:ex1 
+-packing:ex2 
+
+-in:ignore_unrecognized_res 
+-in:path:database  /nas02/home/k/h/khouli/rosetta/rosetta_database/
+-in:file:l  /nas02/home/k/h/khouli/interface_design_demo/scripts/design/pacrot_s12p_nomin/selected_chains.list
+
+-out:overwrite 
+-out:nstruct 100
+-out:pdb_gz 
+-out:mpi_tracer_to_file pacrot_s12p_nomin.tracers
+
+-run:skip_set_reasonable_fold_tree 
+
+-jd2:ntrials 20
+
+core.init: (30) Mini-Rosetta version 49772M from https://svn.rosettacommons.org/source/trunk/rosetta/rosetta_source
+core.init: (30) command: /nas02/home/k/h/khouli/rosetta/rosetta_source/bin/rosetta_scripts.mpi.linuxgccrelease -database /nas02/home/k/h/khouli/rosetta/rosetta_database/ -l /nas02/home/k/h/khouli/interface_design_demo/scripts/design/pacrot_s12p_nomin/selected_chains.list -nstruct 100 -jd2:ntrials 20 -out:pdb_gz true -parser:protocol pacrot_s12p_nomin.script.xml -mpi_tracer_to_file pacrot_s12p_nomin.tracers -overwrite -chemical:exclude_patches LowerDNA UpperDNA Cterm_amidation SpecialRotamer protein_cutpoint_upper protein_cutpoint_lower VirtualBB ShoveBB VirtualDNAPhosphate VirtualNTerm CTermConnect sc_orbitals pro_hydroxylated_case1 pro_hydroxylated_case2 ser_phosphorylated thr_phosphorylated tyr_phosphorylated tyr_sulfated lys_dimethylated lys_monomethylated lys_trimethylated lys_acetylated glu_carboxylated cys_acetylated tyr_diiodinated N_acetylated C_methylamidated MethylatedProteinCterm -score:weights score12prime -atomic_burial_cutoff 0.01 -sasa_calculator_probe_radius 1.2 -ignore_unrecognized_res -no_optH false -skip_set_reasonable_fold_tree -no_his_his_pairE -fa_max_dis 6.0 -options:user -ex1 -ex2
+
+-options:user 
+
+-parser:protocol pacrot_s12p_nomin.script.xml
+
+-pose_metrics:atomic_burial_cutoff 0.01
+-pose_metrics:sasa_calculator_probe_radius 1.2
+
+-chemical:exclude_patches  LowerDNA UpperDNA Cterm_amidation SpecialRotamer protein_cutpoint_upper protein_cutpoint_lower VirtualBB ShoveBB VirtualDNAPhosphate VirtualNTerm CTermConnect sc_orbitals pro_hydroxylated_case1 pro_hydroxylated_case2 ser_phosphorylated thr_phosphorylated tyr_phosphorylated tyr_sulfated lys_dimethylated lys_monomethylated lys_trimethylated lys_acetylated glu_carboxylated cys_acetylated tyr_diiodinated N_acetylated C_methylamidated MethylatedProteinCterm
+
+-score:weights score12prime
+-score:fa_max_dis 6
+
+-corrections:score:no_his_his_pairE 
+
+-packing:no_optH false
+-packing:ex1 
+-packing:ex2 
+
+-in:ignore_unrecognized_res 
+-in:path:database  /nas02/home/k/h/khouli/rosetta/rosetta_database/
+-in:file:l  /nas02/home/k/h/khouli/interface_design_demo/scripts/design/pacrot_s12p_nomin/selected_chains.list
+
+-out:overwrite 
+-out:nstruct 100
+-out:pdb_gz 
+-out:mpi_tracer_to_file pacrot_s12p_nomin.tracers
+
+-run:skip_set_reasonable_fold_tree 
+
+-jd2:ntrials 20
+
+core.init: (27) Mini-Rosetta version 49772M from https://svn.rosettacommons.org/source/trunk/rosetta/rosetta_source
+core.init: (27) command: /nas02/home/k/h/khouli/rosetta/rosetta_source/bin/rosetta_scripts.mpi.linuxgccrelease -database /nas02/home/k/h/khouli/rosetta/rosetta_database/ -l /nas02/home/k/h/khouli/interface_design_demo/scripts/design/pacrot_s12p_nomin/selected_chains.list -nstruct 100 -jd2:ntrials 20 -out:pdb_gz true -parser:protocol pacrot_s12p_nomin.script.xml -mpi_tracer_to_file pacrot_s12p_nomin.tracers -overwrite -chemical:exclude_patches LowerDNA UpperDNA Cterm_amidation SpecialRotamer protein_cutpoint_upper protein_cutpoint_lower VirtualBB ShoveBB VirtualDNAPhosphate VirtualNTerm CTermConnect sc_orbitals pro_hydroxylated_case1 pro_hydroxylated_case2 ser_phosphorylated thr_phosphorylated tyr_phosphorylated tyr_sulfated lys_dimethylated lys_monomethylated lys_trimethylated lys_acetylated glu_carboxylated cys_acetylated tyr_diiodinated N_acetylated C_methylamidated MethylatedProteinCterm -score:weights score12prime -atomic_burial_cutoff 0.01 -sasa_calculator_probe_radius 1.2 -ignore_unrecognized_res -no_optH false -skip_set_reasonable_fold_tree -no_his_his_pairE -fa_max_dis 6.0 -options:user -ex1 -ex2
+options:user 
+
+-parser:protocol pacrot_s12p_nomin.script.xml
+
+-pose_metrics:atomic_burial_cutoff 0.01
+-pose_metrics:sasa_calculator_probe_radius 1.2
+
+-chemical:exclude_patches  LowerDNA UpperDNA Cterm_amidation SpecialRotamer protein_cutpoint_upper protein_cutpoint_lower VirtualBB ShoveBB VirtualDNAPhosphate VirtualNTerm CTermConnect sc_orbitals pro_hydroxylated_case1 pro_hydroxylated_case2 ser_phosphorylated thr_phosphorylated tyr_phosphorylated tyr_sulfated lys_dimethylated lys_monomethylated lys_trimethylated lys_acetylated glu_carboxylated cys_acetylated tyr_diiodinated N_acetylated C_methylamidated MethylatedProteinCterm
+
+-score:weights score12prime
+-score:fa_max_dis 6
+
+-corrections:score:no_his_his_pairE 
+
+-packing:no_optH false
+-packing:ex1 
+-packing:ex2 
+
+-in:ignore_unrecognized_res 
+-in:path:database  /nas02/home/k/h/khouli/rosetta/rosetta_database/
+-in:file:l  /nas02/home/k/h/khouli/interface_design_demo/scripts/design/pacrot_s12p_nomin/selected_chains.list
+
+-out:overwrite 
+-out:nstruct 100
+-out:pdb_gz 
+-out:mpi_tracer_to_file pacrot_s12p_nomin.tracers
+
+-run:skip_set_reasonable_fold_tree 
+
+-jd2:ntrials 20
+
+core.init: (29) Mini-Rosetta version 49772M from https://svn.rosettacommons.org/source/trunk/rosetta/rosetta_source
+core.init: (29) command: /nas02/home/k/h/khouli/rosetta/rosetta_source/bin/rosetta_scripts.mpi.linuxgccrelease -database /nas02/home/k/h/khouli/rosetta/rosetta_database/ -l /nas02/home/k/h/khouli/interface_design_demo/scripts/design/pacrot_s12p_nomin/selected_chains.list -nstruct 100 -jd2:ntrials 20 -out:pdb_gz true -parser:protocol pacrot_s12p_nomin.script.xml -mpi_tracer_to_file pacrot_s12p_nomin.tracers -overwrite -chemical:exclude_patches LowerDNA UpperDNA Cterm_amidation SpecialRotamer protein_cutpoint_upper protein_cutpoint_lower VirtualBB ShoveBB VirtualDNAPhosphate VirtualNTerm CTermConnect sc_orbitals pro_hydroxylated_case1 pro_hydroxylated_case2 ser_phosphorylated thr_phosphorylated tyr_phosphorylated tyr_sulfated lys_dimethylated lys_monomethylated lys_trimethylated lys_acetylated glu_carboxylated cys_acetylated tyr_diiodinated N_acetylated C_methylamidated MethylatedProteinCterm -score:weights score12prime -atomic_burial_cutoff 0.01 -sasa_calculator_probe_radius 1.2 -ignore_unrecognized_res -no_optH false -skip_set_reasonable_fold_tree -no_his_his_pairE -fa_max_dis 6.0 -options:user -ex1 -ex2
+
+---pose_metrics:sasa_calculator_probe_radiuspose_metrics:atomic_burial_cutoffpose_metrics:sasa_calculator_probe_radius   
+1.20.01
+
+1.2
+
+
+-
+pose_metrics:sasa_calculator_probe_radius
+ 
+1.2
+
+# User Specified Options:
+-pose_metrics:atomic_burial_cutoff 0.01
+
+--options:userpose_metrics:sasa_calculator_probe_radius--  1.2chemical:exclude_patcheschemical:exclude_patches -  LowerDNA UpperDNA Cterm_amidation SpecialRotamer protein_cutpoint_upper protein_cutpoint_lower VirtualBB ShoveBB VirtualDNAPhosphate VirtualNTerm CTermConnect sc_orbitals pro_hydroxylated_case1 pro_hydroxylated_case2 ser_phosphorylated thr_phosphorylated tyr_phosphorylated tyr_sulfated lys_dimethylated lys_monomethylated lys_trimethylated lys_acetylated glu_carboxylated cys_acetylated tyr_diiodinated N_acetylated C_methylamidated MethylatedProteinCterm
+ LowerDNA UpperDNA Cterm_amidation SpecialRotamer protein_cutpoint_upper protein_cutpoint_lower VirtualBB ShoveBB VirtualDNAPhosphate VirtualNTerm CTermConnect sc_orbitals pro_hydroxylated_case1 pro_hydroxylated_case2 ser_phosphorylated thr_phosphorylated tyr_phosphorylated tyr_sulfated lys_dimethylated lys_monomethylated lys_trimethylated lys_acetylated glu_carboxylated cys_acetylated tyr_diiodinated N_acetylated C_methylamidated MethylatedProteinCterm
+chemical:exclude_patches
+--
+ chemical:exclude_patches
+
+ 
+- LowerDNA UpperDNA Cterm_amidation SpecialRotamer protein_cutpoint_upper protein_cutpoint_lower VirtualBB ShoveBB VirtualDNAPhosphate VirtualNTerm CTermConnect sc_orbitals pro_hydroxylated_case1 pro_hydroxylated_case2 ser_phosphorylated thr_phosphorylated tyr_phosphorylated tyr_sulfated lys_dimethylated lys_monomethylated lys_trimethylated lys_acetylated glu_carboxylated cys_acetylated tyr_diiodinated N_acetylated C_methylamidated MethylatedProteinCterm-
+ LowerDNA UpperDNA Cterm_amidation SpecialRotamer protein_cutpoint_upper protein_cutpoint_lower VirtualBB ShoveBB VirtualDNAPhosphate VirtualNTerm CTermConnect sc_orbitals pro_hydroxylated_case1 pro_hydroxylated_case2 ser_phosphorylated thr_phosphorylated tyr_phosphorylated tyr_sulfated lys_dimethylated lys_monomethylated lys_trimethylated lys_acetylated glu_carboxylated cys_acetylated tyr_diiodinated N_acetylated C_methylamidated MethylatedProteinCterm
+
+-score:weights
+chemical:exclude_patchesscore:weightschemical:exclude_patches
+
+    
+ LowerDNA UpperDNA Cterm_amidation SpecialRotamer protein_cutpoint_upper protein_cutpoint_lower VirtualBB ShoveBB VirtualDNAPhosphate VirtualNTerm CTermConnect sc_orbitals pro_hydroxylated_case1 pro_hydroxylated_case2 ser_phosphorylated thr_phosphorylated tyr_phosphorylated tyr_sulfated lys_dimethylated lys_monomethylated lys_trimethylated lys_acetylated glu_carboxylated cys_acetylated tyr_diiodinated N_acetylated C_methylamidated MethylatedProteinCtermscore12primescore12prime-
+- LowerDNA UpperDNA Cterm_amidation SpecialRotamer protein_cutpoint_upper protein_cutpoint_lower VirtualBB ShoveBB VirtualDNAPhosphate VirtualNTerm CTermConnect sc_orbitals pro_hydroxylated_case1 pro_hydroxylated_case2 ser_phosphorylated thr_phosphorylated tyr_phosphorylated tyr_sulfated lys_dimethylated lys_monomethylated lys_trimethylated lys_acetylated glu_carboxylated cys_acetylated tyr_diiodinated N_acetylated C_methylamidated MethylatedProteinCtermscore:weights
+
+ 
+score:weights
+score12prime
+ -
+score12prime--score:weightsscore:fa_max_dis
+score:weights  - score12prime0.01
+
+-pose_metrics:sasa_calculator_probe_radius 1.2
+
+# User Specified Options:
+
+
+
+
+
+-
+
+
+options:user
+ 
+
+# User Specified Options:
+
+-chemical:exclude_patches  LowerDNA UpperDNA Cterm_amidation SpecialRotamer protein_cutpoint_upper protein_cutpoint_lower VirtualBB ShoveBB VirtualDNAPhosphate VirtualNTerm CTermConnect sc_orbitals pro_hydroxylated_case1 pro_hydroxylated_case2 ser_phosphorylated thr_phosphorylated tyr_phosphorylated tyr_sulfated lys_dimethylated lys_monomethylated lys_trimethylated lys_acetylated glu_carboxylated cys_acetylated tyr_diiodinated N_acetylated C_methylamidated MethylatedProteinCterm
+
+
+---score:weightschemical:exclude_patches -score12prime ---chemical:exclude_patchesoptions:user
+- LowerDNA UpperDNA Cterm_amidation SpecialRotamer protein_cutpoint_upper protein_cutpoint_lower VirtualBB ShoveBB VirtualDNAPhosphate VirtualNTerm CTermConnect sc_orbitals pro_hydroxylated_case1 pro_hydroxylated_case2 ser_phosphorylated thr_phosphorylated tyr_phosphorylated tyr_sulfated lys_dimethylated lys_monomethylated lys_trimethylated lys_acetylated glu_carboxylated cys_acetylated tyr_diiodinated N_acetylated C_methylamidated MethylatedProteinCtermchemical:exclude_patcheschemical:exclude_patches
+  
+chemical:exclude_patches---parser:protocolchemical:exclude_patches  score:fa_max_dis chemical:exclude_patchespacrot_s12p_nomin.script.xml LowerDNA UpperDNA Cterm_amidation SpecialRotamer protein_cutpoint_upper protein_cutpoint_lower VirtualBB ShoveBB VirtualDNAPhosphate VirtualNTerm CTermConnect sc_orbitals pro_hydroxylated_case1 pro_hydroxylated_case2 ser_phosphorylated thr_phosphorylated tyr_phosphorylated tyr_sulfated lys_dimethylated lys_monomethylated lys_trimethylated lys_acetylated glu_carboxylated cys_acetylated tyr_diiodinated N_acetylated C_methylamidated MethylatedProteinCterm  LowerDNA UpperDNA Cterm_amidation SpecialRotamer protein_cutpoint_upper protein_cutpoint_lower VirtualBB ShoveBB VirtualDNAPhosphate VirtualNTerm CTermConnect sc_orbitals pro_hydroxylated_case1 pro_hydroxylated_case2 ser_phosphorylated thr_phosphorylated tyr_phosphorylated tyr_sulfated lys_dimethylated lys_monomethylated lys_trimethylated lys_acetylated glu_carboxylated cys_acetylated tyr_diiodinated N_acetylated C_methylamidated MethylatedProteinCterm
+
+ 
+ LowerDNA UpperDNA Cterm_amidation SpecialRotamer protein_cutpoint_upper protein_cutpoint_lower VirtualBB ShoveBB VirtualDNAPhosphate VirtualNTerm CTermConnect sc_orbitals pro_hydroxylated_case1 pro_hydroxylated_case2 ser_phosphorylated thr_phosphorylated tyr_phosphorylated tyr_sulfated lys_dimethylated lys_monomethylated lys_trimethylated lys_acetylated glu_carboxylated cys_acetylated tyr_diiodinated N_acetylated C_methylamidated MethylatedProteinCterm LowerDNA UpperDNA Cterm_amidation SpecialRotamer protein_cutpoint_upper protein_cutpoint_lower VirtualBB ShoveBB VirtualDNAPhosphate VirtualNTerm CTermConnect sc_orbitals pro_hydroxylated_case1 pro_hydroxylated_case2 ser_phosphorylated thr_phosphorylated tyr_phosphorylated tyr_sulfated lys_dimethylated lys_monomethylated lys_trimethylated lys_acetylated glu_carboxylated cys_acetylated tyr_diiodinated N_acetylated C_methylamidated MethylatedProteinCterm
+ -
+ LowerDNA UpperDNA Cterm_amidation SpecialRotamer protein_cutpoint_upper protein_cutpoint_lower VirtualBB ShoveBB VirtualDNAPhosphate VirtualNTerm CTermConnect sc_orbitals pro_hydroxylated_case1 pro_hydroxylated_case2 ser_phosphorylated thr_phosphorylated tyr_phosphorylated tyr_sulfated lys_dimethylated lys_monomethylated lys_trimethylated lys_acetylated glu_carboxylated cys_acetylated tyr_diiodinated N_acetylated C_methylamidated MethylatedProteinCterm6score:weights
+
+
+  
+
+-
+score12primescore:weights-
+
+ LowerDNA UpperDNA Cterm_amidation SpecialRotamer protein_cutpoint_upper protein_cutpoint_lower VirtualBB ShoveBB VirtualDNAPhosphate VirtualNTerm CTermConnect sc_orbitals pro_hydroxylated_case1 pro_hydroxylated_case2 ser_phosphorylated thr_phosphorylated tyr_phosphorylated tyr_sulfated lys_dimethylated lys_monomethylated lys_trimethylated lys_acetylated glu_carboxylated cys_acetylated tyr_diiodinated N_acetylated C_methylamidated MethylatedProteinCterm 
+score:weights
+-6
+score12prime-
+
+score:fa_max_disscore:fa_max_dis- - score:fa_max_dis6-parser:protocol 
+6score:fa_max_dis6-  
+chemical:exclude_patches-pacrot_s12p_nomin.script.xml
+ 
+-
+
+
+corrections:score:no_his_his_pairEscore:fa_max_dis- -  LowerDNA UpperDNA Cterm_amidation SpecialRotamer protein_cutpoint_upper protein_cutpoint_lower VirtualBB ShoveBB VirtualDNAPhosphate VirtualNTerm CTermConnect sc_orbitals pro_hydroxylated_case1 pro_hydroxylated_case2 ser_phosphorylated thr_phosphorylated tyr_phosphorylated tyr_sulfated lys_dimethylated lys_monomethylated lys_trimethylated lys_acetylated glu_carboxylated cys_acetylated tyr_diiodinated N_acetylated C_methylamidated MethylatedProteinCterm
+6chemical:exclude_patches-6chemical:exclude_patches
+
+
+-
+corrections:score:no_his_his_pairE
+   
+-corrections:score:no_his_his_pairE LowerDNA UpperDNA Cterm_amidation SpecialRotamer protein_cutpoint_upper protein_cutpoint_lower VirtualBB ShoveBB VirtualDNAPhosphate VirtualNTerm CTermConnect sc_orbitals pro_hydroxylated_case1 pro_hydroxylated_case2 ser_phosphorylated thr_phosphorylated tyr_phosphorylated tyr_sulfated lys_dimethylated lys_monomethylated lys_trimethylated lys_acetylated glu_carboxylated cys_acetylated tyr_diiodinated N_acetylated C_methylamidated MethylatedProteinCterm
+ LowerDNA UpperDNA Cterm_amidation SpecialRotamer protein_cutpoint_upper protein_cutpoint_lower VirtualBB ShoveBB VirtualDNAPhosphate VirtualNTerm CTermConnect sc_orbitals pro_hydroxylated_case1 pro_hydroxylated_case2 ser_phosphorylated thr_phosphorylated tyr_phosphorylated tyr_sulfated lys_dimethylated lys_monomethylated lys_trimethylated lys_acetylated glu_carboxylated cys_acetylated tyr_diiodinated N_acetylated C_methylamidated MethylatedProteinCtermcorrections:score:no_his_his_pairE 
+
+
+ 
+
+-
+--
+score:weights-
+-
+corrections:score:no_his_his_pairEscore:weights corrections:score:no_his_his_pairE-score:weights-  score12prime  packing:no_optH
+
+score12primechemical:exclude_patches
+
+score12prime
+
+   LowerDNA UpperDNA Cterm_amidation SpecialRotamer protein_cutpoint_upper protein_cutpoint_lower VirtualBB ShoveBB VirtualDNAPhosphate VirtualNTerm CTermConnect sc_orbitals pro_hydroxylated_case1 pro_hydroxylated_case2 ser_phosphorylated thr_phosphorylated tyr_phosphorylated tyr_sulfated lys_dimethylated lys_monomethylated lys_trimethylated lys_acetylated glu_carboxylated cys_acetylated tyr_diiodinated N_acetylated C_methylamidated MethylatedProteinCtermfalse
+-
+
+score:fa_max_dis---
+-packing:no_optHscore:fa_max_dis
+ score:fa_max_dispacking:ex1
+
+score12primescore:weights- 
+
+corrections:score:no_his_his_pairE--- score:weights--
+score:weightsscore:weightsparser:protocol-score:fa_max_dis    score12primescore:fa_max_dis score12primescore12prime
+score12primescore12prime6
+ 
+6
+ -
+
+
+
+pacrot_s12p_nomin.script.xmlscore:fa_max_dis
+-- score:fa_max_dis-6
+ score:fa_max_dis
+
+
+score:fa_max_dis 6----6 
+corrections:score:no_his_his_pairE
+score:fa_max_dispacking:no_optH
+ corrections:score:no_his_his_pairE -6 
+ 6
+# User Specified Options:
+
+
+false
+
+
+corrections:score:no_his_his_pairE
+ --
+corrections:score:no_his_his_pairEcorrections:score:no_his_his_pairE-  packing:ex1
+
+
+ -
+
+corrections:score:no_his_his_pairE--
+- pose_metrics:atomic_burial_cutoffpacking:ex2corrections:score:no_his_his_pairE
+-   
+0.01
+
+options:user
+ 
+-
+-
+pose_metrics:sasa_calculator_probe_radius
+packing:no_optH- 
+-1.2in:ignore_unrecognized_res -
+false
+ packing:no_optH
+
+-
+packing:no_optH- packing:no_optH
+  -6- 6 
+
+
+packing:no_optH6false
+score:weights-  
+
+score12primepacking:no_optH-false -
+
+falsepacking:ex2
+-
+
+ 
+--
+---packing:ex1packing:ex1-packing:ex1  corrections:score:no_his_his_pairE
+
+
+pose_metrics:atomic_burial_cutoffpacking:no_optH corrections:score:no_his_his_pairE  packing:no_optH
+ -- -packing:ex2false  
+-0.01
+packing:ex2
+-
+
+
+false-
+-packing:ex2score:fa_max_dis pose_metrics:sasa_calculator_probe_radius-corrections:score:no_his_his_pairE
+in:ignore_unrecognized_res  
+
+ - 6-in:ignore_unrecognized_res
+
+
+  packing:ex1
+packing:ex1
+1.2 - 
+
+
+
+
+in:ignore_unrecognized_res
+-- -
+packing:ex2-
+packing:no_optH-packing:ex2 corrections:score:no_his_his_pairEin:ignore_unrecognized_res  --false in:path:database 
+ 
+in:path:database
+-
+ 
+
+- /nas02/home/k/h/khouli/rosetta/rosetta_database/ /nas02/home/k/h/khouli/rosetta/rosetta_database/packing:no_optH-
+packing:no_optH-   falsefalsepacking:ex1false
+false
+
+ -
+
+
+
+--packing:ex1---packing:no_optHpacking:ex1packing:ex1 -- packing:no_optHpacking:ex2 packing:ex1-   pose_metrics:atomic_burial_cutoff false
+-
+in:path:database
+- - 
+packing:ex2
+
+falsepacking:ex2  /nas02/home/k/h/khouli/rosetta/rosetta_database/-
+-packing:ex10.01
+parser:protocol
+
+
+ packing:ex2 -
+- -
+
+ -packing:ex1
+pose_metrics:sasa_calculator_probe_radiuspacking:ex2  - in:ignore_unrecognized_resin:ignore_unrecognized_res
+ 
+
+ 
+pacrot_s12p_nomin.script.xml
+-
+packing:ex2--1.2
+-
+
+
+ packing:ex2-in:file:l in:ignore_unrecognized_resin:ignore_unrecognized_res
+
+ -  /nas02/home/k/h/khouli/interface_design_demo/scripts/design/pacrot_s12p_nomin/selected_chains.list-
+ 
+in:path:database
+chemical:exclude_patches--  
+
+in:path:database /nas02/home/k/h/khouli/rosetta/rosetta_database/ LowerDNA UpperDNA Cterm_amidation SpecialRotamer protein_cutpoint_upper protein_cutpoint_lower VirtualBB ShoveBB VirtualDNAPhosphate VirtualNTerm CTermConnect sc_orbitals pro_hydroxylated_case1 pro_hydroxylated_case2 ser_phosphorylated thr_phosphorylated tyr_phosphorylated tyr_sulfated lys_dimethylated lys_monomethylated lys_trimethylated lys_acetylated glu_carboxylated cys_acetylated tyr_diiodinated N_acetylated C_methylamidated MethylatedProteinCterm- 
+in:ignore_unrecognized_resin:ignore_unrecognized_res-
+ /nas02/home/k/h/khouli/rosetta/rosetta_database/- packing:no_optH-in:path:database
+
+  --packing:ex1 /nas02/home/k/h/khouli/rosetta/rosetta_database/in:path:database
+ 
+  falsefalsein:ignore_unrecognized_res /nas02/home/k/h/khouli/rosetta/rosetta_database/
+
+-
+
+
+ -in:ignore_unrecognized_res
+--
+-
+in:file:l packing:ex1- -in:file:l /nas02/home/k/h/khouli/interface_design_demo/scripts/design/pacrot_s12p_nomin/selected_chains.listpacking:ex1packing:no_optHpacking:ex2  
+-
+ in:file:l--
+
+- 
+ - /nas02/home/k/h/khouli/interface_design_demo/scripts/design/pacrot_s12p_nomin/selected_chains.listpacking:ex2in:file:l
+in:path:database /nas02/home/k/h/khouli/interface_design_demo/scripts/design/pacrot_s12p_nomin/selected_chains.list  -packing:ex2 
+ /nas02/home/k/h/khouli/interface_design_demo/scripts/design/pacrot_s12p_nomin/selected_chains.list 
+
+ 
+- /nas02/home/k/h/khouli/rosetta/rosetta_database/
+in:path:database
+
+
+false -
+
+-out:overwrite- /nas02/home/k/h/khouli/rosetta/rosetta_database/-
+-chemical:exclude_patchesout:overwrite out:overwrite in:ignore_unrecognized_res
+
+  in:ignore_unrecognized_res-
+
+
+ LowerDNA UpperDNA Cterm_amidation SpecialRotamer protein_cutpoint_upper protein_cutpoint_lower VirtualBB ShoveBB VirtualDNAPhosphate VirtualNTerm CTermConnect sc_orbitals pro_hydroxylated_case1 pro_hydroxylated_case2 ser_phosphorylated thr_phosphorylated tyr_phosphorylated tyr_sulfated lys_dimethylated lys_monomethylated lys_trimethylated lys_acetylated glu_carboxylated cys_acetylated tyr_diiodinated N_acetylated C_methylamidated MethylatedProteinCterm--
+-in:ignore_unrecognized_res 
+in:file:lout:overwrite 
+
+  packing:ex1-
+ 
+- 
+ /nas02/home/k/h/khouli/interface_design_demo/scripts/design/pacrot_s12p_nomin/selected_chains.listscore:weights
+in:file:l--  in:ignore_unrecognized_res
+
+
+-
+
+in:path:database -in:path:database
+-  out:overwrite /nas02/home/k/h/khouli/rosetta/rosetta_database/ /nas02/home/k/h/khouli/rosetta/rosetta_database/ score:weights
+
+ 
+
+-score12prime-
+in:file:l--in:file:l in:path:databasein:path:database   /nas02/home/k/h/khouli/interface_design_demo/scripts/design/pacrot_s12p_nomin/selected_chains.list /nas02/home/k/h/khouli/rosetta/rosetta_database/- 
+
+
+ /nas02/home/k/h/khouli/interface_design_demo/scripts/design/pacrot_s12p_nomin/selected_chains.list /nas02/home/k/h/khouli/rosetta/rosetta_database/---
+in:file:lin:path:database
+in:file:lscore:fa_max_dis  -   /nas02/home/k/h/khouli/rosetta/rosetta_database/ /nas02/home/k/h/khouli/interface_design_demo/scripts/design/pacrot_s12p_nomin/selected_chains.list /nas02/home/k/h/khouli/interface_design_demo/scripts/design/pacrot_s12p_nomin/selected_chains.listout:nstruct6
+
+
+
+- -
+in:file:l
+out:overwrite100 -- 
+in:file:l
+
+out:overwrite /nas02/home/k/h/khouli/interface_design_demo/scripts/design/pacrot_s12p_nomin/selected_chains.list
+- 
+-  /nas02/home/k/h/khouli/interface_design_demo/scripts/design/pacrot_s12p_nomin/selected_chains.listcorrections:score:no_his_his_pairE-
+- pose_metrics:atomic_burial_cutoff
+-out:pdb_gz
+ out:overwrite  in:file:l
+--0.01
+
+ -
+out:overwrite-
+
+out:nstructout:overwrite - /nas02/home/k/h/khouli/interface_design_demo/scripts/design/pacrot_s12p_nomin/selected_chains.listchemical:exclude_patches-out:overwrite
+ out:mpi_tracer_to_file
+  -out:nstruct
+- /nas02/home/k/h/khouli/interface_design_demo/scripts/design/pacrot_s12p_nomin/selected_chains.listin:path:database-
+- packing:ex2in:path:database-in:path:database-  /nas02/home/k/h/khouli/rosetta/rosetta_database/ 
+out:nstruct /nas02/home/k/h/khouli/rosetta/rosetta_database/    
+
+score12prime-100
+100 /nas02/home/k/h/khouli/rosetta/rosetta_database/-
+-out:nstructout:overwrite
+
+ -
+ out:nstructout:pdb_gz
+ --out:overwritescore:fa_max_dis100in:file:l 
+
+
+ --in:file:l out:pdb_gz  
+--100 /nas02/home/k/h/khouli/interface_design_demo/scripts/design/pacrot_s12p_nomin/selected_chains.listout:pdb_gz6in:file:l /nas02/home/k/h/khouli/interface_design_demo/scripts/design/pacrot_s12p_nomin/selected_chains.list-  
+
+out:mpi_tracer_to_file
+-
+ /nas02/home/k/h/khouli/interface_design_demo/scripts/design/pacrot_s12p_nomin/selected_chains.list- -out:nstructout:pdb_gzpacrot_s12p_nomin.tracers
+
+ out:nstruct
+
+ 
+ -100
+100- -
+-out:mpi_tracer_to_file
+out:overwrite
+corrections:score:no_his_his_pairE
+   out:mpi_tracer_to_file
+pacrot_s12p_nomin.tracers-
+
+ 
+--
+out:overwritepacrot_s12p_nomin.tracers--
+run:skip_set_reasonable_fold_tree
+ - out:mpi_tracer_to_fileout:pdb_gzin:ignore_unrecognized_res-
+out:overwrite 
+  out:pdb_gz
+  -
+ LowerDNA UpperDNA Cterm_amidation SpecialRotamer protein_cutpoint_upper protein_cutpoint_lower VirtualBB ShoveBB VirtualDNAPhosphate VirtualNTerm CTermConnect sc_orbitals pro_hydroxylated_case1 pro_hydroxylated_case2 ser_phosphorylated thr_phosphorylated tyr_phosphorylated tyr_sulfated lys_dimethylated lys_monomethylated lys_trimethylated lys_acetylated glu_carboxylated cys_acetylated tyr_diiodinated N_acetylated C_methylamidated MethylatedProteinCterm100pacrot_s12p_nomin.tracers 
+-
+ pose_metrics:sasa_calculator_probe_radius-
+
+
+ 
+
+
+1.2--out:nstruct--
+out:nstructout:nstruct  out:pdb_gzpacking:no_optH100- out:overwrite100 
+score:weights --
+
+
+
+ out:nstructout:nstruct100-  -out:pdb_gzout:pdb_gz- 100100
+
+
+
+- -- --out:nstructout:mpi_tracer_to_fileout:pdb_gz 
+out:pdb_gzout:mpi_tracer_to_filepacrot_s12p_nomin.tracers-  out:pdb_gz-
+ 
+out:mpi_tracer_to_file
+
+ score12primepacrot_s12p_nomin.tracers
+-false
+run:skip_set_reasonable_fold_tree
+- 
+out:mpi_tracer_to_file - out:mpi_tracer_to_file
+ pacrot_s12p_nomin.tracerspacrot_s12p_nomin.tracerspacking:ex1
+
+-
+ 100
+-
+out:mpi_tracer_to_file- --
+pacrot_s12p_nomin.tracers
+-packing:ex2 jd2:ntrialsscore:fa_max_dis run:skip_set_reasonable_fold_treepacrot_s12p_nomin.tracers-run:skip_set_reasonable_fold_tree
+
+   
+
+
+- -
+run:skip_set_reasonable_fold_tree
+206 out:pdb_gz
+
+
+-- 
+
+pacrot_s12p_nomin.tracersout:nstruct
+-
+ 100
+-jd2:ntrials- out:mpi_tracer_to_file
+-out:mpi_tracer_to_file20  --pacrot_s12p_nomin.tracersout:pdb_gzpacrot_s12p_nomin.tracers
+
+run:skip_set_reasonable_fold_tree --
+
+
+
+out:nstruct--
+out:nstructrun:skip_set_reasonable_fold_treein:path:database --100packing:no_optH   run:skip_set_reasonable_fold_tree
+
+out:mpi_tracer_to_file   -false
+
+
+100
+ /nas02/home/k/h/khouli/rosetta/rosetta_database/ 
+
+
+out:pdb_gz
+-pacrot_s12p_nomin.tracers
+-- jd2:ntrialsjd2:ntrials
+--
+  20packing:ex120
+- 
+-
+jd2:ntrials
+run:skip_set_reasonable_fold_tree-
+- in:file:lout:pdb_gzpacking:ex2run:skip_set_reasonable_fold_tree - 
+ 20 
+out:mpi_tracer_to_file 
+
+
+  /nas02/home/k/h/khouli/interface_design_demo/scripts/design/pacrot_s12p_nomin/selected_chains.listpacrot_s12p_nomin.tracers
+
+
+
+
+--
+
+run:skip_set_reasonable_fold_treeout:mpi_tracer_to_file-- - jd2:ntrialsjd2:ntrialspacrot_s12p_nomin.tracers 
+ in:ignore_unrecognized_res
+
+2020
+ 
+
+-
+
+out:overwrite- 
+jd2:ntrials
+ 
+
+
+run:skip_set_reasonable_fold_treechemical:exclude_patchesjd2:ntrials
+- - jd2:ntrials LowerDNA UpperDNA Cterm_amidation SpecialRotamer protein_cutpoint_upper protein_cutpoint_lower VirtualBB ShoveBB VirtualDNAPhosphate VirtualNTerm CTermConnect sc_orbitals pro_hydroxylated_case1 pro_hydroxylated_case2 ser_phosphorylated thr_phosphorylated tyr_phosphorylated tyr_sulfated lys_dimethylated lys_monomethylated lys_trimethylated lys_acetylated glu_carboxylated cys_acetylated tyr_diiodinated N_acetylated C_methylamidated MethylatedProteinCterm -jd2:ntrials
+
+ -
+20 20
+
+
+out:mpi_tracer_to_file
+in:ignore_unrecognized_res -20pacrot_s12p_nomin.tracers 
+
+
+run:skip_set_reasonable_fold_tree-
+
+- run:skip_set_reasonable_fold_treescore:weights-
+  -corrections:score:no_his_his_pairEscore12prime
+jd2:ntrials 
+ 
+
+20
+
+
+-jd2:ntrials-
+
+ -
+20jd2:ntrials
+
+score:fa_max_dis 
+ 20-6
+run:skip_set_reasonable_fold_tree
+ 
+
+
+--
+jd2:ntrials
+corrections:score:no_his_his_pairE - packing:no_optH20
+ 
+false
+
+-packing:ex1
+ 
+-packing:ex2 
+
+-in:ignore_unrecognized_res
+ 
+
+-packing:no_optH false
+-in:path:database- packing:ex1 /nas02/home/k/h/khouli/rosetta/rosetta_database/
+ 
+-packing:ex2 -
+in:path:database  /nas02/home/k/h/khouli/rosetta/rosetta_database/
+-in:file:l  /nas02/home/k/h/khouli/interface_design_demo/scripts/design/pacrot_s12p_nomin/selected_chains.list
+-in:file:l  /nas02/home/k/h/khouli/interface_design_demo/scripts/design/pacrot_s12p_nomin/selected_chains.list
+
+-
+-in:ignore_unrecognized_resout:overwrite  
+
+
+-out:overwrite 
+-in:path:database  /nas02/home/k/h/khouli/rosetta/rosetta_database/
+-out:nstruct 100
+-out:nstruct- out:pdb_gz 100
+
+-out:pdb_gz- -in:file:l
+
+-20run:skip_set_reasonable_fold_tree
+ 
+-in:path:database 
+ /nas02/home/k/h/khouli/rosetta/rosetta_database/
+
+---jd2:ntrialsout:nstructrun:skip_set_reasonable_fold_tree   
+20
+100
+
+
+--
+out:pdb_gzin:file:l
+  - /nas02/home/k/h/khouli/interface_design_demo/scripts/design/pacrot_s12p_nomin/selected_chains.listjd2:ntrials
+ 
+20
+-out:mpi_tracer_to_file pacrot_s12p_nomin.tracers
+
+-
+out:overwrite 
+
+
+-run:skip_set_reasonable_fold_tree- out:nstruct
+ 100
+-
+out:pdb_gz 
+-jd2:ntrials 20
+-out:mpi_tracer_to_file pacrot_s12p_nomin.tracers
+
+-
+run:skip_set_reasonable_fold_tree 
+
+-jd2:ntrials 20
+
+
+# User Specified Options:
+
+-options:user 
+
+-parser:protocol pacrot_s12p_nomin.script.xml
+
+-pose_metrics:atomic_burial_cutoff 0.01
+-pose_metrics:sasa_calculator_probe_radius 1.2
+
+-chemical:exclude_patches  LowerDNA UpperDNA Cterm_amidation SpecialRotamer protein_cutpoint_upper protein_cutpoint_lower VirtualBB ShoveBB VirtualDNAPhosphate VirtualNTerm CTermConnect sc_orbitals pro_hydroxylated_case1 pro_hydroxylated_case2 ser_phosphorylated thr_phosphorylated tyr_phosphorylated tyr_sulfated lys_dimethylated lys_monomethylated lys_trimethylated lys_acetylated glu_carboxylated cys_acetylated tyr_diiodinated N_acetylated C_methylamidated MethylatedProteinCterm
+
+-score:weights score12prime
+-score:fa_max_dis 6
+
+-corrections:score:no_his_his_pairE 
+
+-packing:no_optH false
+-packing:ex1 
+-packing:ex2 
+
+-in:ignore_unrecognized_res 
+-in:path:database  /nas02/home/k/h/khouli/rosetta/rosetta_database/
+-in:file:l  /nas02/home/k/h/khouli/interface_design_demo/scripts/design/pacrot_s12p_nomin/selected_chains.list
+
+-out:overwrite 
+-out:nstruct 100
+-out:pdb_gz 
+-out:mpi_tracer_to_file pacrot_s12p_nomin.tracers
+
+-run:skip_set_reasonable_fold_tree 
+
+-jd2:ntrials 20
+
+core.initcore.initcore.initcore.init: core.init: : (((: (: (191620) ) ) 18core.init) core.initcore.init13core.init: ) MMMcore.init(: core.init: M: iii((niM(: n: i17n15in) 12i(-) 14R-n) o() 23MiRs) MMeout:mpi_tracer_to_file   /nas02/home/k/h/khouli/interface_design_demo/scripts/design/pacrot_s12p_nomin/selected_chains.listpacrot_s12p_nomin.tracers
+
+-out:mpi_tracer_to_file pacrot_s12p_nomin.tracers
+
+-
+-run:skip_set_reasonable_fold_tree 
+
+-run:skip_set_reasonable_fold_tree 
+
+-
+jd2:ntrials 20-jd2:ntrials
+ 20
+out:overwrite
+ 
+
+-out:nstruct 100
+-out:pdb_gz 
+-out:mpi_tracer_to_file pacrot_s12p_nomin.tracers
+
+-run:skip_set_reasonable_fold_tree 
+
+-jd2:ntrials 20
+
+
+-options:user 
+
+-parser:protocol pacrot_s12p_nomin.script.xml
+
+-pose_metrics:atomic_burial_cutoff 0.01
+-pose_metrics:sasa_calculator_probe_radius 1.2
+
+-chemical:exclude_patches  LowerDNA UpperDNA Cterm_amidation SpecialRotamer protein_cutpoint_upper protein_cutpoint_lower VirtualBB ShoveBB VirtualDNAPhosphate VirtualNTerm CTermConnect sc_orbitals pro_hydroxylated_case1 pro_hydroxylated_case2 ser_phosphorylated thr_phosphorylated tyr_phosphorylated tyr_sulfated lys_dimethylated lys_monomethylated lys_trimethylated lys_acetylated glu_carboxylated cys_acetylated tyr_diiodinated N_acetylated C_methylamidated MethylatedProteinCterm
+
+-score:weights score12prime
+-score:fa_max_dis 6
+
+-corrections:score:no_his_his_pairE 
+
+-packing:no_optH false
+-packing:ex1 
+-packing:ex2 
+
+-in:ignore_unrecognized_res 
+-in:path:database  /nas02/home/k/h/khouli/rosetta/rosetta_database/
+-in:file:l  /nas02/home/k/h/khouli/interface_design_demo/scripts/design/pacrot_s12p_nomin/selected_chains.list
+
+-out:overwrite 
+-out:nstruct 100
+-out:pdb_gz 
+-out:mpi_tracer_to_file pacrot_s12p_nomin.tracers
+
+-run:skip_set_reasonable_fold_tree 
+
+-jd2:ntrials 20
+
+core.initcore.initcore.initcore.initcore.initcore.init: : : : : : ((((((111470) ) 10) ) ) ) core.init: MMMcore.init(MMMiiicore.init: 8core.initcore.init: (in(i: n) 5-ni(: niR9i2-n) (on) ) R6iisiMoeiM--ti-MRMitonRiaioninsn is-Roit-siMitn-niRii22Raoo- ) ei-tRMv-enssRtiiaeo Mtoeisi-rtsRnetotaRstoatveaneietr-si sRnt ioovaitvissn-- R eveoertrs t4Roei9nvr se4orses97ne st4itotnt 7a7ai 72o9ova7Ms7 nif4r v) oie-eRstRsr-ooe-sesttsRaMeiiite-ttoo nnveResaR rott vsteoeat4aa9  ivte 7svr-trivsseoirs7ei2RooMsne  nit4fo orn94 o79r7mn7a  e24hMt9stttt4a 79is777 7pfetr s22vtv2teMtroM 2o 9M  7e7v2t4oemfnMaerror2mt  9 sviMhot7htnv7a  2t te4 f9s4Mpet sr7orff: m7vreo/9mr/7ssiirr7 ohovpm2  2snMtnoh. hrs: foi/ts/srtMo4t9tons t4ipppnssse9: : 74t7t:/7m//v9s/2M :e/aff/osamsr ov v rrme nh rtnh.otfrspaotmsstr i:pheisvtoo/e/stmrn sivti:p o/t one4/ sns  va449:sco4o7vn7mhnrt.m2r.99M/oto9n/sne s s7fi.p4orsortsot:rv9a/gocmsnn .7 ore7o/vna no.hrtM/ tf7scosfsov2emrpmtnM.s.vtr7aooonnsme:c.t/rro /o7sosssfme et2vtrtnttana. cc4Mmorhmo o.ma crmontoosmt.opfmmmooo9rsngossrhg/nes7smo :o.tno/r/7souo/rumsrtcv .2oe/hsmts42ttm7oto/nu9Ms7aes7.vrconc2p orMsm.7:r2emoftM o/gs/r/7os2ftt/msro rnaeovuschn.otno.ku r/ttrrafrtcoprsgoos/cmseemst omto/htu:mrroacMmn/ sueo/f.rtmo/nntoesrsr/vk.ptgprcsgn/t/hrsMtg.r/rssootes/ht.:ou o/eruttungrar/tkct/c/testpsfprrroocoaumeu/m/rotsntcsrv:ocreenuktot//u/nan/rtknrm/smkr/osmu:sseotn/ k.tora/ov/s.hreronornt/s/segr.s/tsrptssrn/soste/:o7o/t.mrtr urutogn shr/koacsteh/e/saor/eouttr7ttcsurst_cnoekta2v/tspMrs/mot/m:pot srueaotrsnceftruortnsoakce/moe//:msr ott/
+./rtssoma/oevnaosnhsscore.init_e: .tntrs(t/roeorosvu:osttet.oato/s/rtrgttan_aa/o/es/sr/.scorroeusoeess/oettotrstrercoetttatstteaetttutau_/c_asstvnaakcons_/camo_ootouus.ormucsrerro
+mrmomrcrcsueocm
+sreoueoce
+enncore.inito
+e
+nr1autg) .t.rcr_oopvcstooom/mrnousgraesans/de
+/::ss.etr ttco//su/etnatcore.init_et
+soaass: re(cc9st) r0oateooau_2core.init/m: vcn/sohooum.mmero/omkcrncu/o(erhmsrt4cmoe) o
+n
+s/skrcacheu.oeonmno/ktsnts/.: core.inittrtso.(: oao.(13roa18/ccore.init) rscocore.inito: ) : so(greercmtgt/gm20ost) o(/mam19core.initu: cmt(/_osm16r) csamc/soaeaoo) mmnanordmc:onudamonn/dm:sad sn:de:u/. :no  to/t/ unn/rnartraa/aasc0c2_ss/core.initsud: .core.initmka(: l8t:) ni( 11cd//rn:) eo o/acgmrttomsr/aormt0n/u2sntrag/ckoaosh/soasem/onsodteem0/ttctkmuua/arhmar/rooc/e/rknrmoc:/estedo r:m/ osnth/2s/ountnahuna/ls_si.oa/stsoorsmuorr0seeeotnre./0ctut22at//ng/hhkoaork/m/o_hos/esrkeoso/s/kmtueter/oetba/_//oshit/okknrh/kcs/thueerotucoraurelli/ot
+gtabuh///rkrichs/e/oserorocore.initiout/sn: r/etlstoreo/at/toasstueettiatsr_/ta_e/satrcrts(raoui/rtp_octossrusrosoesnsk7tee.) tmapctticter/_ioramatt.r/sl_ocmsitaneas_n
+oupdexsr:gtoaoescou.ur_trm sut//rccnetrcore.initc/ecapeb: /ii(esl.ae0a/lssnee00hsun2n
+/sohrokgo0umrer2/acm/sr2heo0osm/e/ecore.init/2k/he/c/ttkho: /e/omm(ehehe///14/k) k
+k//h/ktkhrrot/huuhc/lnscore.inito/oiu/k/ukhoakmrho: uu(holmni/12/ur) laoli/oisk//scrrer/nrocmoedm/tribo nu/irurrroxcug-e
+e2sn2) etd/tkhcnoc/ttsrraeaocore.initcoseae/_ttl
+t: tem_(essroaocbar/aaois_pksteestu  sr.cmrc0mcore.initamis) /: ha(//_neae6p-nspkthid/.baotdttuasla) bca/or0so2mslmee :tirttotsoesaks//eahr:o_estotsoou seolttiere/tttuan/a/n/urkttroaaassnerso/ae/tdrrto/s:are0 _2tssto/rehcteotot/ouotssnea
+taa/t_sestasm_rtsot0a2uoo/eaure///rcttrkrcore.initse: cch//rohi./s/tmhioc anu/no/rmnpmdio:uoaa.mxresgn caen/eslcki
+n0nc//d/hun/2r:aaes _k/thr/xhoscore.initlsogteouet: ltcmiea(/saoac0rs_/ne/e rralusk0o/eshc-2e/srad10stkieto a) -h/p0r2tdo/srhseo2beea//is(neobtb/i/tkn_ih/aonr17/emost_sstrae_ooseoseueottrutoaltua_rstc) s_iceestac/r_ois/ocsrrb/pimtitopuasucrrn.cm_er
+mt/toerascspt.o/seinm.edalsteib
+ptticore.initnt:nikc_ u/a/xsgacm/teho/eatesuat._lmkdctiptaao//bamo
+a/hstih.mlroio/eabs tembtan/atmnecore.initasa_neses aao/u/e//sxr/0gnd2oks:eac/s t: c-tu/a0lh2_ rd/c/kk (rk/eealnthea//hahoabs5osbo) nu0/e2ihm//a/rc.: l/_ccore.init(soncr23ir) opraiuohet/rlnrsusceseetxeatgkth.c
+sseiatpmct_os.ac _psrscore.initeiom-cud0.l: erluar: cspeio.2a((//ilnetmliubi i15-xhd22a) tcpogni) mm/anacbrcua/rotescbexreoasltemthme a/neka//lrksh/siocoho0-sueoe2m/l//mtd/tka r-eimt/h/ahlako b/hu//alahnr_//sdkn:kakehhh so/ 0iooon2ou/o/l/urslaihois/o0s/ei2mrn/eemteues/rosktchtfot/srklnaei//itrampo/es/eomsaa am/a.s/ngoednkcm:c nesraasd/0 ee n2:/dlt-htm/e/hnnpoaiads.m/:ea 0r2klt/hao//_binsakacna/rsuhsxse e o-0 hdoi//usnpmaaeg/ecnacs/0ttka/lhss2/t0022k/2sk/hhota/uai/rhtrsehas/taao/t/hscs/eere/0ottktths2_aae//kd_otru.edlroiso///shiitnhstatemtetaeagr/otftapctaibea.k/__mdkhdaenra__ohsotoseudstloaieeumago//n/i sb_-aus/lr_erclrodl s/iee /sns/blehoohioh.mro/oom_smlmmeee/spek//rhookaissu/eeaeue/r/t/kkthlah//.cshr k/lto//eo uitnek/uhin-/ad/hakr/obthasalosbx0rai2os/ie/rgokc oucehrltsi///seetsttothanuorlomateei//asenrtoas//l0/r2u_seeratolsrkdeei/as/hthoo/a ks-tot/ttmhae_/oaakeusblrdieoa//th/_edastretsrotsasea//e/ottttottbkaaaa_ s_std-cahlaetsarbetaru ata_soitobsapu ea/et//nl/airs/tieitmktpo-/acoh/n/trus/acrtlxoe ssrt/0/ai2nds//eapusbstihi/eootrmskceggens/0e/_2h//pd/kea/shsohcuncb/o/otckrutlaiehmtrgier/ronot_n/doi_/aups/c1aa2l/ptsrreeakctlrrbteoaa_soests aro/.-or/ls  c/-snl0sn ro/e2eu_transsta/otoamhsuoprcicet0m2.esl/_a0d/hioraenoeu/sx0//2/sabbkmee//2tet//ihhkaoomm_/eeh/nt/ib/gkn/tdckiatha/_hatr/b/ako/ahc/hbrok/narsokekushslhehi//ooeue// s -oisll-rnoilt telue/luitna eoltti//snrieinea/s/r0rfsf2etaunteotr taafcaaecc-sra__dssed0eea2st/ie__acasrbcgh/ah_docmenss_tiodtmeeer/e sia/i/dki/gprgkn/n_td_needmseoa/emomh/sopsoth.s0//_/ssme/stcpksc/chkthbr2aicioo_ur/riirduah.inl/lprt.aiotibs/apm.psstpmeliite/spsot///mdidieenieutssnn/tpsi/kdtgeetrin.iea g/lx.nflihas-ii/r/cg_nngkpefn_a/ulud/pcc xsechsaocicur/irnrgraonostxgp0tl_gase1c_tec_ic22dpcae/sc_r/cphsdrro1.rt_2elsne_eolilgsoeemmnmtipn_oits//1aep.osae/edse_rmosal2eesetpl_ccnmrottnmiieeosnae/dkia_ /-s/pcosem i/hn_/ntuadh csianse/-eslkrxdeig-past.lsdlt/etciaasattec dtcd/-etnhdbdsatd_bcrbeueachaott _sauic1aag0cn0i/shiba slpgir-ne/aapjacessrnsesi./llee o di 2 s///atnnns/_.tlsc-iranos1:s2 anl-ttpnratiis0_ ss 2-n/e/t0rtu2anh/co_tsnslhosnmao a2ts0s0m ee m2-/eo0r/e12ui/0/10kk 2n-phjurtd :_/2hp-c:/fdob/nndt_orgta oihmhtszmea/li /akkltnbrsemc au/eest/a1eesle 0h-ekcd/pcoa2hr_0e /s/0 e-choh kteehru/-aon_oitjdkunu:_updcahdl2lerl:aiposiidsn0/b2r.s/ltis/:niish_tign.tz/l/eiogrhnt orc-fo_oad/selrs oc epmani_sdcomeee/ktartsottsriurlttss_u echc saer 1/i22t-gon0 -pspp tta-tr/_nntrrua1osoe_u0d/s0keslrou/mct/t: : eiidt1mnpp-.ots//drao0rbs0hecsr_o_dctgo z/-rcijoad rlit2pipots:sj epn.grattctdarnx2e:btnmostutlatrtrie_ks/ha tli d-as-mopp sau1e_aid_sr2ltspr_ea/aali2ni pc2otae0ag/n/rbm0_  c-s-iooruue/ttrt:/p or-:rana_opfctpd_bdlo_ri:gbspz.o t 1_t/_g2ss1oprczlsr2rneu/opsaesse0_iep t_otn c.npt xemoatlc2lto- ro/lpormtmita tu _ae-ac  _-hdm/psioir-mnppo1aanreass_/er2/r/p:tntr_sr_n0ak/cospseme1rreootasril2:_ppte2r_a//ossbsinohieteso/_e/ktt eseni/stn1-ta2ehm dt-ta/pirl_rtan_ft/caa_nocroa soiemspubsoleilta/scnu//_rsesicdne/etaseioisrns0rcs.i2egeelt/t nhdt_m_ttdaoeceme/mchpapteia/nbiset./__nrkoe.l/ssdlsiaosfsh_//tsukc cacrh-irin0.imsrt2hnpi//partnsrcouu/cohetcotid p_eussixsenl1dis.m0eet.e/.sili0/tings tntiekl///-iprjhgg/nnda2fkbu c-_hndaaoiscuetrrmcolxtum_:c_gocct/esss rcc_1n1p2dicprret0/r_iirasni0lieprogsotil e s-2jep0dt 2mtt:ni-.n_nslso/tirsuin/tell:ae/dcpddreene.aultabsemss/eme xrigpacoos-si_ecd ogr/eest2tl_decsg0zc na- /htap ao-ecrdaturiutten:si.ap ps-rtaapds_b./a_oedblltiarstsaaes_drgttea:et_ asszsp c-irbo1r agnbsns ae2t/ti-iponp/nsc dor/tarp_luenuat-c l uapeorc tam-sopaiat cr./stmrnsbe/r_nx:os0p tp2_as1/g1css01ia0n/02r2eohsat/os_hon/.thtocm/ettnooteo_loefmrki/aak_lcbdcloaealte   iaepcppc/hsanecaadotehr/oc u/trrtsoe _l-c.a_r-dstlco_osi1crhtk2v/h_bacs_hsa1i1ea2p2p_o_rsipnputiiow_n.lxemnmii n//nr2l oc-pr_eoncc/jooptlm .mepsae d_ce0/l2ik2:/dr/_enncoltho/anihmoh.hensaoic_inrnnmitpsrss/miuteexk./ea/sal1./slx2hmskl p0ie kslo/g-t_eu2cc/ tl ehhni--d/nmh_/cprh2oa/iim0snosi.ml/i.nn  ltn-tni-rtomascmplesea.iriis_ertsr s tcancf nr .-e.l-os/vai0crpn_tcr.eia_2sxpcthi/mts-etnlstohd0te . oe2-mrrimcw-_amxrmeull/ n:-f/cpmeiteipkxf_/cahll s/ciu1htcds_k.toitha/olrnku .scrhsotce-irstrootaecu tult1ima te:parb-0lte.e0px_ /d-tibn/umsjlod/kr_ao2ss/:ehianlnttgtttr/seeez _ u-ic rfti t/ra lin1a/muslseearp 0fipk_r0ao2c_0/t  rr -o-j2adah2toc_p0:s-ahdrnsoste1 ca-rreemere2dutl:pi_oiptttaou__l//aaaf_nirtsl/db:rpeoo td opbt_ra2agcars0boom zae-itcn_oksus1.ett eo//tt:t olrs2spa-ir cdueegprsl_eba esp_  hta-gt //kpc_hanzn aar-rt/soodsnvoerme/raintr0wr_nr2siua_s1.tett eo-r: dpa/-eshm0or2cpamaeopchr2_eb//ntaeohmttriossaecseo_/rsadmemocekor/c: /uo/l ilalpnt-h.iokaspbc v:rtieepsr/prawx/acthi/d/-lorut.koxdlecimetk/hreh lcorto_sso_o1 /l2p- sm us-apoientpciulp_alch_cniterottma/i/herneoma.it/ns_  rtsiscc-acialgeler: 1er/xn2iL_oon/astp/ocpsr__ls0nu0owt2mfei2dfr/ai./erenlpche.x_Dh paoamNosltAecotshcmtrptee/o_ta_t mac/eeak Usp-rcip_e rdrp/DLorstNedma1_ooswA1ets22ps/k_ht pir/paD/_egnCtoht.txNeinm_rm/_mti_nAa lkU_ape_d0sreit _k0tepuprrarctagcaiahhc_ce dote-ern rso_oj_ed -cuLtl_mctdetsoirie e_/_1gtshoom_w2fef:rnekmiiDnllt_/eNriodi 1ac02eAlhe / U0p/iappp/_a pscnmk o2onmse/tarhrs0occu-nmh/ipdsekord oar-mtaiDmncNi.ehtuepoerblnmalsieA oSared_i c_C//tartpceeo/reicsimtura tesla _oc-_tdfliaRaillcn-_tmb eieoro d_tatpverearitwaprimoi/otn_nte/ecr sh-faiisrne//oilleDn: .crrerjN-rtiof/tdo_Ai uratCs21p2tietan_p:srpci_1dme:_rtbsas t/netp2xdntpersmcrl/s_uo-_moifidvdeaniciedgaslgier_ozst wgnidoreie.ttmrn_e a np st2i0n/-iucS.cprhenet  ra-c-ieoampugp/ncaaaaptielrrRato_:ccedep_etsdasme rdrcsmr oeecoabtcrr-st:op -_vopshvireer_o_ortg1geo/2lssp t:ewzr_o cneiLcixtocrotwrwlrnuinee rl_pDcto rumue-dei c N-hs-etn__cei/ampcAhisaretem cpdolapcehapretilssU:o/teed1mpi2_nescxtsterc_1 poc:aplLel_supd/usoeirdwn:2ogecrem_pDpppaeir__tnn/cnrphD o/NNcAeer sCphraaoeAtx oUcstcoeiipprpmnml _uitdnleteeeiLrr_ac.pDomlso tnsasNocA_ct ./crhctdpeeliewasi dsLeuaCtsiitt_pcooreiDigNnrrAownntdo  tpS Utm__.sc1tep_p2l_-prpa_mhoaiDwencNsAdeisxarlen Rt1iV 2ro/ntriUpppaaDmaNmpAl e srutteicuCr_ troeDaoNrp-mlrcontABr_.aon B_Co tmSsmhmmiil1ott2d epeinvaip.iSnprne_m_ es_cBcta1inmBiiou0 s0Vnd ttip a-oom-/csr i_retjiaititSlnrunstppae_RtcuiiltadoplorDnpctnee2aa.u:clNnAtrP_meeh/rr R xcSo  ot1mtsolappmh pae_c-p0isetrae0rrfl e opmtorieRli-pjto ltnVeietrde_teicutcdaeo_rult_N tip2cipihtonaaiiT:mnaerleraars_cc en_ccrnmrot n_uuCt _tlsotpwtopre_r2potoi Tis_rtnf0oitVii_.urentplutaaeplerl1e mB2-Cdp o_niBs treoliusStcth_: npeh_una no_ppvpocaeieBcctmr2urpr o todsp ttBn c_eosViisi-r_nontir.tp.1unrblonti_tet2irpaasll_n_sia tsc0uDrnp_tNcpocbrp_oueAmcgrPe iutnthu  op_z1th-y0.dtrrps p0tohpo rsax  oy-ror-ojottau-ilvecaueieir nVneistnwtrr_rnstit teut-er_ltde_cdoacovw ueae r2_sl::retN-wTupl n1-t ocproVrwoip_rertdumehaclerprhb By tiC iVdTriBiemoaxir1_mayn cSttrhl_Csoegnlos0 e-aclnaoerlzttcr ev:twupd:aheel B0  rsBe e_BVcx 2Vacsmriloit0-rcutr_itu aoeocdrr2bBctuoe -i_ lejSusBe dtaaahlBl pDo2vSlh:-olNrs eAv x_PeappthpecBBholsBcB:p aunpdthorhVosepehs_a rrVoiti ie_ahrlrot ytlcuauVaLtyluardDtrNarAioerxdloyD lNoAttPsua:thsrtph_aewppPloesdr bh:haprooetdr_sos_pcph_hNotgrD2capyahlsNshA0ta eTUa et1eet1d o cz-e pVtsy   ipo2rorrLVu_tplhoooips_rptu_htnohruretewy:ydo pr lp-eadpumbeoixratymrlr_ng.laaDcap NCzAtr TsDaeNere csdrtdN_ oclriANT aCUesttet_yerTurm2prr psCep_msoseeet rnrC.mnTu eDelm crfrx1eNC_-ta2_pm TptseChamoeomcrs_iorplahdro:rdy lprmapCstn ao_bn-timetecnirdon ta leestycchtsr __Aospoclis_n rd_ in: CSrpmpept_tooprhhrbeetiobrttoaoilrssy_c coimotplrphaa_aolathleyRmosrditod_dar  alpoyrhlsa_moxt iocm_rmytyonhe.crplneyyrdior ada_osccorrormoltxotxloe aenidtty_p_lt craohatespSeedypf _t1tpyileyiadrlca attnpstlr_e_oe__dphrey ccdliayoesrdha.o__sxtt1cycau2lloex_1rsRtsepo tppaahaosommcl1rtiy  iepnmrtre_r l d-_oucompep_patath1pt2pepsyhee_rylnip__2dr r soaosptettror_e_enrioh tne1dtd2 y_ro_mpycrpuihotmpoxd_lrsnopn_ycxiyn_so_yilaholcien.taontr.sayaumuttt_yleulldi_esasdfpt_ccacaapteecetscdenae2dsd.r r  elteiyrg2r pl ttapshor_.__sie cppurnhr__iptthxsoc_eopsmdeplarhoolositmr r_e_bprwpo-hetxrfyhohmyrps iliaV syl-loaetol _ittproeteh.rodau exratylcmdBvyitsBlnea_ reacd_ct lealrc dutySyl etyh rtops-twayohm_pvliia_rtpenhtpet_Brpth_Borsde  pihtmVeyoindo_rarolca_ m_rtotyoerldtaw_iheteterhiuryrot ecodarV s_otit-o p_lhfd_olfpriititunrylyharalaelt_l_ecatp tDhhNo seBeppeeaodddsA  pshpPm1 iNchholBt_ yooSyarrsahc2psc_rahtyalco_revoprt_ylrsteiytmlul_aaaotetntt:ehedeexel dot ysyCmlt1a_ rftmBieBa_tdn .t h_s2tVVtpyp_rl1aiecy2rea_iscmhluueddi  nldfdraleorttltyoaytumu_ressesadsd__apal alidcn ip -mlhMoeoyeNstt_ptce_tvTDenr.dwhNyhelyrrlamayAtohPiryh eeoCmlTtsseldeptamiPttiehr earaondrh. t tatttecimengeyeC etlredu-_ actrlyCraL_Vmc sroud-c ealntneofrlbseodsxr cyaliohlcyrytses_ra_e mmeottdotmn  euwolieacsanmsd-llc:o:y mwoNse__vtreeerT-hxoyc eldiDwocrrgvNhtybsteshi_Aiya tte craelslUtlcwyusroplmi aamrtetdeeed_ etre d1halpytrpys _eoda_lC  ttlt2yirTratt-_pcdiphiyrehydimse mdlc eei-orre_DdotyxmsecN_yihlceaahrlti mhrn-a:imemateeeytAtldxaohomn mCoNyt_ oteCnetliscedimaract_caeb_ecetd ytnLl eaelolcyhudastc_ey wlsetdrlil e:amaCu_lc_y rsaed_xcesct_m1e_aceo lptrhyrtuluayetldco bmDeaf_fopttieyNlida_atadattl mdhe iygedcl0ysdAaldthru._o0  xaUe_ epyc1sp gdlat-rplartibs  _pauo_otsMLaco_chashaxtyer_dorybtlroaxeyohxtyelcdarwylle_cneaies turlc madlLaSat esdteotpohPreraDcoy_etytlweasptee_Ddcridaeo_d iNbae2c eAs e_yc lenyCsrCrtst_eclaDyr_taarcaledcNriestumNme_eA_ ysaRtt- As1aco ye1Uto pr.p2ell aa-:pamd mwreirtig tUeetepyedrpaod_tidie_grh nrhyo dpdiDirtpotshey _rogrl duDNu_ooinnsrnscp_NdcriaAaxotAeydirobed lcoNi xnCohagr_net aoitrz1yc2eCpyte laoSteeaptrterieletedmyd ea_lNte_amertdceiersd_dcm  ad-_nia  Coa___sl-eamoctayeco2Rpenttmt asHm  _yitlhihoymlsc_aefir_cabaadcdmletretauta_ystplduiet_itpahir  od-tCaesokp_idtaniohpaeo_n soesm dpS lMttihpeotne_t esctirhh_pcmhyuyatrylyoe_rlSdrolrla_efapRafyeoscltt oenidaa0ua.t 0iptmihtobr1d_ipealpaleemndi d_eP fd haoeptrlart-Rtodsoea_ersryo stre_ttaop_drppiec herda oe rhonNt-Mi etoet_inyhp_ynlarCos_cacpcuhltleiosem_teluaremtth aht-nyplit_sos_acpaoeriacdtoPro_n irturpyroetrndoeipr lCEab:rt_e_ott_mw_eepuetcd d -eefiriptnahC_tmgphotaisudtyieyuartrepl a omsti_mn  x1dye-israrp_.h_ti n_2otts_dc p-lesohsrcndp _ioierMgone:cwooourestrlieufr1weu yge_tpuppnlrtaeet2h6ar.to eie0enp d-tcViodpyhorrtg  n_tiislmy et iarsoulnptysceinod sr:P_rz_uessdeo_pe_rucre1 pruts-r leofei-ant-2eppntdeirtoitxr_meioantooeC1d_ ptt tmuhHa i-ic lnlyfBaetxylB2slc_msae
+__tbp eeSd e-rsrhkumii  omu-tapteept-_oiovstrlcmsihioecotoyiwee_db_arurlreenilatar:_Bws  oceluntaoBl_na_f cytbeludetfsiolfV__mV  _gchf0of.i0llotoiyw1 der0sur_n_ts.t o-rm 0s 1taerpsotan_socc mVoimaeleir no--ctnsruouate_uslueaaht_thils1ao2__aDlctNryoaaplh_lrihapitwelymcderus l-lBaoea_Ara PbttBte hdllVBepooBaiy r sot _irurSs_aSpr_mrEphoito lrvhea-chfaBitbdme_iaeBu_eoysv etsbml _uVar iB1B_VtirriBxBa.ird_rd a2ti luSVums_ic h-ateiiuyusl lDtahNgr nly1tlattao6efA.Nhu.2P oatr0o dleT--divf  oeelg lp0yeh.n_sotDri_u0Br1oan m-reyesoacsBsacsn __ puVnoirgsen:ctiraNCyluz_eehAtldaPccsauc_aetetrurTlte ea-oelaeshxyt1l o a-g-otdD eerensiVzdx_ p irge2roNbg
+derl_tp_uArnrlmeoh_sPu ah-uatd_io_uCcpeonaoao ssctp_laohpHVnriarNt nr b1ttoTeexfH.ayl ls2e re-cf bi-uasgat kntioaVrm eisplrs_ etcos _ClueNntTrxe_-rseeycr_Tuedkales oacoirapgny_msaCnsbel_taoim_zceoenrd_rbtef_loaelrNeddiseot_ nstaa clrnCbeT ey- tns-olTe_eyneoo_sp fe_rhtolHimlcads_t__ r afta pethlmdi scsrcesteee  C__Cop-tyTrser-koa_iyinrornpoEl_d_rhis eitnio__ds-rm_heiCaobefhnianysacdsoten_tpiantaeatbierclE_dd tem - f aNa_ars _cxs_ocf_om_oxdail_rcaexsybttos lyd6y.lrli___aatr d0trtiee sd e-6bicore.initidei: d(p_. ot021 o dat-procintC-la) _iopnaostMaisolme _eothpnt_ssinhshr: u:yessupyedils_1n ehNrdiris__op ara _r-hRao-yio-smeeceodxrxioxy 1tr1p Et_ e-al- hfetraxvtd o-2eexyadleras__ix
+aoty2ytm_laecxder_na ddas e
+oid41sx9  7ty 6h.M0C p7l-_eyoa2deMrdprt mtoioe_et_oxhfcrynatyssoe:mdh luyh1lash ydet_tarltcmpopaxra rs-os:_/yehx/leiy1tsavdtne .de-eddarrtdo_Psce1ee odxtatr2p _as
+oecxrcMt2ooa mes_emiehsnotCyey2nh dlrtsysr._aotrpoeleeghaxt/orydsls_r_oeamppudc Pahth-rrseooosctcderse_e/2copty iharnrCsousenlerrtekaey/2:r_tlrpma owehtssdeeo e etdrittgsh -_ahrppts/_htrchopoohosshsrr _eeprp:sotwhyschtpoelooarh_siaropgytsrheothedusol1y r tr2lacphaystertercli
+eda m_tteodpeh r reht-d1_oa 2ypsttrpphorh_ymooprisri_hpmcypcore.inithe: _l(hoo ba21u-rs) raypotilhetsaaodoptl hrc_myeodmiccmlot_ura ybtatyrotunle_rdyia:fdapt f/h nl aoes0r_d0.ct s_2ut0pp/yhthhyor1oo mofr-fses/ a0k_s.pr_/s0yhahuslo/_uklrclahaf1lfyotla aceuulaitlt-t/aseedrtedado o d sts lyretayrlt___ysytspscr_ar_u/o_ddalriisblfommsaueeteecltttut_aefrh_ladhayastdt yloeioularrutacltde_seeypd  / rs1blol_.idnydb/2seriy_o_r sm sa_ldmed-iotinmiteuaget_toyssnhhsco my_yrrmli1eolpaetnaott.mshet2_.yeu edm-ndlt r plailehiytgyyc.nsloaseg_otldr ie_nemlnidumoy_xzu songe_olnnctmdcyo_rmrersreeetilthm_ceeyoatleghtssan ehity zl-eye-raddldant_t rieaaobtmla_edes yedote sp h_tl/yytlHnryls aisf_ ssa0_a-tma2tlecen/edohsto_ eth r-yomilpyseymklt/elkstaH/i ph_hf_t/aayskalcethadelestoeye tdutgl le i-a/d_tsrlrk eyoeldliss yapu_gelssu_at___ocstcnaecaaea/atrtcrrbyeb_obtlysroolleaeaetxat_ystetxealdfody_ alo ngladlagtadtt_leueatdbd_ubr la ce_ecsae_yr/sf ccebo_-oya alxl-srcyd bn_e_/lootn_tahrsxayeai0ycl2tesela/t h_toeeayhmdeli/a d-kt cnst/eyto_syhpdre__/_ah kadccidheyisi st_io_royhuEtldla iyciia-esrnftt__ayad/pt_ieliaedmnadtiaite  rxoertddfiN y_a_nrtdcEaiya_e trds_e-ci_ dfided6eoat. i0sy iN-i_gdolom_ndaia_paitnxdctena_eeaddtimet itosy/deo slCnd6 caN_ s.tNr:_e_0idpu a tasmCs-cc/ee_eodtpmtreeyht etstily-ioalhgenaytnytexsl/le:1dap ma daum iC-sCeedc_i_xrarmdmtoe e2eta
+-d_ettt seh1hd2xM yy1llpe aaM_tm-enmihoteyidhmalxdyt2iaendatl
+/te aedsMtdPee elteMhdrcyPotelrteatoehdiyttn_lCeecatihdtnaeePCirtdrnmoePstr re.-omils tniecs-Ciotstnr ceCe-ort:nmesrw rtmee-ri :sug-cwchesotirtc geso1h: r0tesw0c:es woi s-ergcjioedhrg21het:t12ssn 2pt srprsrcciioomirerma eeel11 -22-apst roap2mtirio0immc mie_- bco-e_uuatt b:ru-priadotaibloa_mlm_g_iiczcccu __uttbbtoroufuufrfrfiiea a  l0-l_.p_a0r.c0sc0u1eut 1rt-o o:-fsfpfsafa rs 0saoa0.t_.0_o10ccca 1ola -l-lcssc uuaaplsslaaactaa_r_occtaatllo_orccsru_u1_lp2rappot_borlnoreaob_t_meorpra_r_dpirrionbauos.bed s_ei1cur._ar2s  da-dir1uiiigsputns. x m1o.1l.r.2 22 e-  _-mu-ip-gniiin_ggtrnonoorerrraceeeco___eugurun_nnrtienrozrec_eoecfcgodign_loinregzeien spidza _zec-rdern_deoo_strr_ _eoe-spsn1st o2 H-p_n -_onfnoo_ao_lmooipsppetttnH HH.   -tfffsraakalilalsspes_cee se e r---stsss kkk_-iiiroppepv_a_e_ssssroeeenwttatr_b__ilrrtreeeee_aaa fsss-oooolncnnahaabelbmdleie_b_c_tflafrelooe_:lefeld oxdl_-cdt_nlr_tourtd_reeeee_he  pi-enao -ts-n_c_nohh_ohie_shis_ihs his_i_sspL_hao_piiwrhaseEi_ir rspDE-N_Ap af ia-Uarifp_rpaEEme_  arm-xD-_NfdAaiaf _xsaC _m_tam6de.aixr0xm _s_d_ -aidmo6si.i dp0s6a .t t06-ii .ooop-nnot psiS:o0tpu enis-csoi:enorsup :tsaui-leesRoreoxntr as1 -m:-ee eruxx-s1e e rx1p - 2r
+oe--txeee2xix
+12n 
+_-ceuxt2p
+oint_upper protein_cutpoint_lower VirtualBB ShoveBB VirtualDNAPhosphate VirtualNTerm CTermConnect sc_orbitals pro_hydroxylated_case1 pro_hydroxylated_case2 ser_phosphorylated thr_phosphorylated tyr_phosphorylated tyr_sulfated lys_dimethylated lys_monomethylated lys_trimethylated lys_acetylated glu_carboxylated cys_acetylated tyr_diiodinated N_acetylated C_methylamidated MethylatedProteinCterm -score:weights score12prime -atomic_burial_cutoff 0.01 -sasa_calculator_probe_radius 1.2 -ignore_unrecognized_res -no_optH false -skip_set_reasonable_fold_tree -no_his_his_pairE -fa_max_dis 6.0 -options:user -ex1 -ex2
+c df Slpeht eieapcmia inpccarr-ooaartcctsae_lilses1Rlor oft0a/emn.et2la:ec/_ihes2r_1_2pe d_connumtp_eprsdpate_oo/mnesxiics loisoks-tmnegii.nnni_u.tnnt0ri/gdc2htnrua_tes_g_/cdae/tpupaheporiokpthenrcurc/ehtm_nroomssu/uec  _etsp -p prlpd1oeavers0 eo /k-tcec/iprrhirrmionp_Lo/tow0sr/tiv/ckeunetiwhno e_ttr-p_odciDuettjerorpsfed 2a1oNicnie-uo_wAnt/: rls_nd2eisclicothtUwerte/p e_mpilrc_ap -ieVliir:rriDnNcegnxtntuhoecoAmla/lu mCdaeli_itsBw Bce2pseaperari nrS fhmtacV_/alic0mor:srvhe iie-BldooegBacae ttetVupautltiix:rnet_dBtpucasd_ebsBd__/o csce_l lSunLDogdN dhzShw oeptvea1d_eArprDmBeaeiPehtcBNouAses   nVUscipsi-appliep2ohpi._RarrhagDtnlregeNoAt os V utiismnesr/C:iaarsnL/omcltewrtpD_ueeptradNarcmrrl nNio T_raDpeprNAtPrmAom htU i-C_n/tooTssps/cdpde1raotoeeemsCrtlitsispoDgn2rnie nNon_le/euAppcec _panmCnoch tatSeu trtmso_eaat ccpmV_eco/tispmirccoridrcaaolriRttiiboornnit o_iattp ens11tt/2adt_S_mueulpsrse01ac  p0r2op_p _pilpps-ehaNsrcyrjl_e_dnd2rR/noolx:doeoettyocTte emmesinrnpadthimmlreignoa_/ rari tCiTact_luseetcpnipreosmidnC_nrn/.coioseatn ne.ns_septlca1h_cauuir2eincptipelpe _npccprru0ttt.   ppsoocrit_-niiootoxntomucesdse.rtt_it_rhll__ bo- :lionyui_wttdscramuptopxpepyco_ehsltsirl r ip apV_pir1or-rdtoaut_nthanb ylse_edtittBgrdz_2Brui_p-na_nssnl oo nwcrt_c.ctSuarsceotmrur xlhpVyoioeie2nuiir/rlva et_st entesBr-su atet__ldpBe Bct-tlp_l on _1sf0ieaoBthrSoc wclrheeaVorvi ssueprsp ta0herd tVco-:eriepyr1BjcBut lrVa1u_ aiatplrerrlDootNB0Acu_daBh0 Pyothl  otd Ddt1h_NoctArSsPoohhphls0x1 ayho2vo2erpap0-a_ltcna jtsoeBerd:p_-_Bhoji  acnmtdeaVi iVtVistrep_h2iidr rntnoutr2.tus:asstaeapulllrsNasl1_nNDp.Thherro TNs2Apeom2rlrh ioCy2raTp0yemlsr at cmPt-CelotaChdt  Tero-un:tntionneayr_derecl trsn:mt_rCpsoisphmosospntphhnhtaro  asicer_t py-l_cdontro hblrovb_2seaispsuh0 o trgatcyV.i _lercazet2torled-ds t r pubota wl0yN Ti1etrrsoytrra 0l-sm_c_ rurt_ipph rChouosTyutietpseedrtmr0r:Copou h topxnlo:d .-_rfbyayhlnpxpea-t_-lytcctejegmddh aeld rld byzas -t_medtd iri2mydestrcmo__xtcrag_hssyyuol:l_zfclaraputileee:_ra : dta-tsbt_neicettrtddp e alraloy1rrtyssolse_asd_e c popxm1ilpcmcerlioeurt oo _hpeuyrdlnhapyt_oreea ahrydodmr_so-acep_rpeo ltt_dltyrxh_syh_soyym1rls2lapdt_:oreood_nax aoyx tmylnaeftaepdtlcel_2odychms_a0tacs_eatrsrhtesi2   ey-sioreLeil1rlamos twp_eeretodp_deohhto hyo _yrleplucna.ycsDtrte_ddt rs:Nappclrohyaixo:rsAss r_rpyoaUcomolte_eae2yt etlscetahrdtys_e1p rd2ipplb_htnoplhy_rlapto_tgodtzpea.t_dsh m peehcti rcungaoesx ldsu._eppom2r-rhto  DlyNolpAa cCcarsreyalraarytsrelcbol_at p_orapexde t hrterssmeda_t- ohc_resrcpt ys-hm1o_prtryalplyoora2hya_to:lvpteepptsrephamdhdtooii _gdole unc__yortsyd_al_sarpt wttrmthiarechcsaa_eirtnicdorepy or.bls1toahtyxeyo nrty- rlo_Scpcsaeltpae2dhpe_otdt e tocpdysycrch psretih_m_yaoirhdc_aeilipoiRoct_tolyta. lyplaloxdtrranem_if:syeulaillfnaaaaodtt xlctmmle ededt cdeNr e_tiuaed cd l -typnsyepay_t rr.yolrtsyatcmoe_td__rtirdec_i_drpis oeroauilCdtmtefipiatt_nhah_cmotepsyehdseptlts1pihh eanystdo_r2lcy e._ulNydt _tsalp_atodlyi1acsmmp_iemidenoxdrna aet_cte2ryo__ml ttuatmpLyehptrttlho_ y_e-sdyu wnleMmlpoefdtmaa hlCiytenpat_te.edmoed_ irlr_ ntytoDrlsmapNrar e_tfealecyddieoicl idtrlnAesmese_ttr _P. rhhyUopttsptoaylyeaicmrcreiiimsnliCpna_dt_eemarottneed r of_-ttmcloeiud oy-v mrshMsteDp_yltpheNceeol ostAp. ra_1yaiCrltema:ohtnynwwetto2rimtpicelerxe_om_gaddl ehtPltyntlrthom_yotsrssl1eo 2ws_tcad_pa oelmer_i riyecnntC1st2ae n._t-pomrrermtimtmyalere a id-m c-tsaelmVtpicdieoerdm og_tsirltyih ycaelte-ri:auoirnv sta-wcete_h.b_eci_tgrrtcuerrhdaioeimrta unlwamcarelrt_i e_strSephc esilcyso ylcsbct_aora-xueyto a1i2vlBp-aroliBecfmrlRe f tc ae:h-0tooeet_wexSd.adfa rmct0eo1 celm tyhyimcoily_is-blrscisaulrvt_taeeeud_ia a  la :ppaaeesglc_ad-_cecxBlcual_ecBucr _lteVcporaiottyaccrtubyltrlltahautao_extoodyfe lifres g_mltcn0t.ue_hd1ep2_saruo0iac1lub D- tecp_dNsatrAeoe PcdatrpaLhi_soanad_ibsu co_apnoolpsm cyxwu1eh.lcraytisa2rt_ t_a-nicyoDge_anNuolerrAt ca._ tVtdetry_hUuplineirarapreclt:eeetpddps cop boLegeut rcx_eynyriraicd_slr_aooiddazcu iuesileeN nit1s.dpw_T reey2so l aa-dt-teieineddrond_eo -raN mttgoeyod__ptrnropt_avrdHeeieD _rCatcicrew utiNnn NoyDdTfeArlriNanaha_r_emicttaelCd A c teCoCcee_dtotum nNtUnses_ egyapeeeoL  or-mtlicwphsnckapti-pey_er iDtsl_nNectsarmDaezitAy edUahdlc__etra_ermemdiN e_tsleACdi_aodcmoa twCs r altpe-_noemdnie:tboahenCebor_yltlohitpxepett  aHeVra_ mfifSaicldr saleMroDtltseeuyu aNldlt mlp_eaad-hmBsi_kmyAiiBplt d  cprMaCri_dteSeashaeeoeattv dttlthoiPyel-ed__dornroetaaeohsito_ nhnrRinamCsb_t_o elhdMePaeerer_SompemieBtitpsBetcy _da_fitnpdiaoCaVtaeialldrR_ tmrohoy-riEosl catnm-cre  fitx-treraeh_oetamem uaSs d-psnecxpcaoi_roryee a:dLw:Pi_reshwleiloDso_ Nie6AwrgPaihlhit.etrs0ge_hhtDpoi a-neCsNtirot tRsropseEAhpoedr as_p tcm t- if t-orcraseaiec o1s2o_poUnrVnt_smresii:remaeeuptsciom 11ap x2er-_cerenurdu pD-treeiaa:r_tpx ro1cslw oeim_-Nue hNtAppTi6ogpim.eec0yio r-n imdxor2h 
+t_-rsant p_sCtbtctooo moexircumC_y_tlaTbaeurpupermtiri1tora2mneipslea:erl_i_cCdou_udsiirn_ tcpcmauoetrnoeefnoftafsr u tf --i 0acepe0te.xp.t0o 0_es2c1n1o1c    Sip-rn-mseeex_ r2sic
+c_pucau _isra_op_b-hctuasoltcataursprpeloliaooi_iacnRalba_olnticiscntoucore.initrttpouattlfs: afl_m_ ac(t__he poo3rpuru r0) .t0opp_bo1perrr_Myro ilpiarb-oenst_antlrtoeoiaw-da__ipeehreRuosysdddelr s oi airouxnst_1yc. Vltiwa 2t_ae1pt.la2hr rrvcoeue  c urdVs--lt_ieoir_agiinntito pgororrpe_ctnpao4_h9ruoresno7_et_nurc7iubau2snM1r aef celo_ugBrrnnoiappedmhczil ouoeBsgB rht1trt pot_ySnpdh_sB_i.roelizoa:snth/u  -2tS v_-pi/pgshnneeooB_erdeodvo_neu.l _rtopryvseneedtsrrBoo BxwHBe ry-tetnla ocVoy m_camoVptirfotr oagHnen s l_di.rzo_ptfparrhulgc/sseoes asoasoeVliudirre-_pD rc2eNehA/tsettkr Poissirtu nh--pnns_rko_/sokuuepyir_rpohso_a_seatplltBsaBtelaHta/e pt_ro trsfteaee_taDstrNSe AoaVn_elhacsPoeuhis shoaopbthuloos-rssdyrovepplorknaa_etbBtfuilineacpte_dsoB_e_e
+ tf lh_ollVdtd lriary_tcore.initu: or(ta3te_r) NweleeDcer_ o -matn sosh_tNrhoViVesnT_maAehbrlaiePenii_sdr _ufhr_o:-p t/lnohfopnuoms_aplaslh0haidsira_2Ntpsho e/at_hrhroidEtmrT seC-ef ale_ry e_e/pm-lTakea/imhr /atkxnrCho_tmyosdCEi_ s_ -ouf6huTilaiasl/ enrn__odeBedVc.smh0aeixr iB-ts __oi ptdSptatmrtam ii/esrytotrisCeEtuosh o-tn nfaa6s_nyael:_csr.luoN_utarh c0mte ae/poxs-d_seohbciodprsti _svoT penr-B beBe 6/.r0xrco hs-1lie_mVoi pott-tn sai:ireooorxnryCyTb2setilraastte_uu
+ta_:suasmlmelsd reCpsol snrDt oyc-nrreirop n tmpe-eeNrt_xxshs1o o1u c-_A.-yhe_txml2ph
+i Pyey.xa2ldsi
+rdlhntcroofue_oxasxdtoygpeldc cahr lrtxaebyeylildletay_tasastces__ee  da-lV_dtsisa cdrrept1iirata ubsapommal_rseNhe1eoyTe  e_t/thpdhrnrhmyrya dooslyr0x_2oh/xCylhyayoalTtldmtaeraeeeotrtd/dexk m d/llhye/Cyk_lsdoyhc_naonsa_tuas_eleccmeiac/1sotnrde e o_tpssoy2cercl matoes_sat_toteahheer2/y brylsrdioda_ septrtgehotrelaxtoduya_l s_lcsp_aahlpdt hayrtsaoop_bebrsoatpdysrxhrey_oilo/l_r amc-alehtayt tseeyl/hedanydt2ra delo s c0atdyxsth2yeer/ lsrd_h pa__tlpyatshocehmdo_ehre__a/ostkccpps/aehyhos/thlprekaohyy1htslool epupahadlr toeirdt/tyiy erorlnda__td yetithlhregirlfuayad_t_docpdecedar_ihr odoes spbnitoathxgxotyyynyrlrre_y_a_lddpepthmohoelsa dN_/paoc_ttsaheaseposdccd ererytthi2l op cyarsyttyyselse_/aadreldcr_tsa_pe eittpdgtyhhn y/Cepooascsrp_pldorhhma to_oett_rretsysydy1 lrlh_t2sayuyaptlut_allrnemfeo_aidmdft ddi eattnihdtae/r ydtsri_lep oey_lMdhediecso tntss_eauphdldhytl_eysfc_oaildhd tmaraiNete_dimtyaenl thesladhycy.ylePstlare_tlidodytaseilmttdt ea  ttee-tlyhinderynys dCst rlut__lypmcseaht_rot Cmms1eo_0pm nd0-oohe sl tmnocy-hooserjrm_ydyeltm2t:lenahaot:mnyrtihwiyoleamaeldiladsg at eht2eettt0dedtsy  h d-rs l yocMylseaulot__ttetr:yersdh1pyis u2dmpll_bat_lrrgteyfzisi eamm_ttterteuetddeh Pr hy li-rlm-ypayaoseatltr_ttshadoeeetyiidmre:lmid npaecCrtto tt_lhoebeylycrldsyuoams r_lt _ia lea-acydpssa _lceclceta_ryytcocosru_teelmyt_to:nswlaoo1tayf2mtpelef_ ieetnagd0dho t my.hgigltle0nluad1. _usc s_gtac-ecrlrsd iaabspuosrc t_xbolc.yyaxaoxsrylr_mea_bltlcto earx-tmidpymai lele1_cactt2duythrpely sardca_il ctymeceaoasry _r_c-tsa_t_ceeoaptead_rctyt foleyolimatylblyisteeale_c _aa_tdprabacc dutertediroe tiyutdasyt_ llystr_ y_11rrc2au_.d_tpidd2et_id oin- fiioofidiomgo igdil0ndniuinn.n_.otaaacr0ttte1aee_erd ur nbdd-ascNa or eeNNcxr___syosaglaaa anc_c-itezoetevycedcteld re_wcarrytyatielelsyctdle_ u aasal-c tCac_ette-mhodeerem_itd  ncpCCtyoar__hlm_l:omeoeabxpettcethythleylH_yl ludadmeafra_aiapmlmdaa idsittdcedihateyeut rdass  _-te d1dLM.es ioe2kMid w e-oiMrdeiteDgihttpNnnyh_hlAyy saloUaparetltpteaettdreeee_PDd_NrdAde aPursorCPno ttNren_reooraicmaenett_tbcCeeaylitomielinadnerCgaCttmntte_iifoeonder z -r emSldpC se__md-cc_smr itece-oarltreReehsyos lta o:-camn-wmeorioneirdgr_ epor_eooa:h:htpwtetweteiHisnie gd _shc ui_tsMhpctigeofthossiat hrnsytl__lesucap1post2 apeer dee-isP1prsrc koi2rpimrrpreeoporEtt _ee1i-mifis2e nn ea-p_C-t__carrtamutaitxmetoep_reoodai mmsmiins oic-t-n a_sa6t_clbco.b_oowb0meuuil rrrr-e iicaVe_loip:__barctlwi_oftnueucuirsoaut:loguitBfahlosBl fe_dSr_f ct ht-ou0vs.eftre 0oB xefs1B0cf1e   o  V--.ri00en.-10r 1es1tx-au2s2so a
+aa-_plssDrhiNi_maAcasPe_s_ah hoc-alsaipa_clshtuca_atpllcoeama iuicVrutciEl_lor bara-tut_utaploorNrrforTia__ebpap_erlrrm_oo_ rbCaTdcbemei_uarteruxmo_sa_Cfddr oifi1nu asn0d. se.2i6c0 . t11-0u i -s.-gs 2o1 pn.- 2osit arcg-s_eiinooa_ro_ugnbirscnnet:_aroauuerllsceosncg_e rpuurrn loenra-_ceeihocyzxtodgoge1rndn ro_i-zix_reezyedpxel2adr_
+st_o rereb-eneodss___  rocp--aandsionet_uo1H_s o p p1orftop.aH_t2 lhH sf -ayeifldgsraeol n xo-s-yssrelkke aii_-tppu_enss_dkres_ieetpct_c_a_rossgeerenaet2ias_ osrseonezanreab_adslpb_hrlooeenes_as_p fbfh-olooern_yollldfd_a__ootttlperrtddeeH_ eett  rh- ferna_-oelp_s nheho-i o_-nsshos_pihkhs_oh_iiripshys__il_pssahae_tiptiea_sd_ iprrtaerEy iEar-rs _f-Eopfh n-oaafasa_p_mb_halmmoeaxar__xyxfd_l_iadosdtili es6dsd.  _ 6t06.t .ry0-re 0o_ p-st-ouioplotpfitainoteeosdnn : ss-ul:n:syueoussr_s_ ehedi-rre si -x_m-h1eexei tx1-she1_ xpy 2la-a-e
+itrxeeE2xd
+ 2 
+-lfay_sm_amxo_nodmiest 6h.y0l a-toepdt iloynss_:tursiemr e-tehxyl1a -ext2e
+d lys_acetylated glu_carboxylated cys_acetylated tyr_diiodinated N_acetylated C_methylamidated MethylatedProteinCterm -score:weights score12prime -atomic_burial_cutoff 0.01 -sasa_calculator_probe_radius 1.2 -ignore_unrecognized_res -no_optH false -skip_set_reasonable_fold_tree -no_his_his_pairE -fa_max_dis 6.0 -options:user -ex1 -ex2
+Job  /opt/lsf/8.0/linux2.6-glibc2.3-x86_64/bin/mvapich_wrapper /nas02/home/k/h/khouli/rosetta/rosetta_source/bin/rosetta_scripts.mpi.linuxgccrelease -database /nas02/home/k/h/khouli/rosetta/rosetta_database/ -l /nas02/home/k/h/khouli/interface_design_demo/scripts/design/pacrot_s12p_nomin/selected_chains.list -nstruct 100 -jd2:ntrials 20 -out:pdb_gz true -parser:protocol pacrot_s12p_nomin.script.xml -mpi_tracer_to_file pacrot_s12p_nomin.tracers -overwrite -chemical:exclude_patches LowerDNA UpperDNA Cterm_amidation SpecialRotamer protein_cutpoint_upper protein_cutpoint_lower VirtualBB ShoveBB VirtualDNAPhosphate VirtualNTerm CTermConnect sc_orbitals pro_hydroxylated_case1 pro_hydroxylated_case2 ser_phosphorylated thr_phosphorylated tyr_phosphorylated tyr_sulfated lys_dimethylated lys_monomethylated lys_trimethylated lys_acetylated glu_carboxylated cys_acetylated tyr_diiodinated N_acetylated C_methylamidated MethylatedProteinCterm -score:weights score12prime -atomic_burial_cutoff 0.01 -sasa_calculator_probe_radius 1.2 -ignore_unrecognized_res -no_optH false -skip_set_reasonable_fold_tree -no_his_his_pairE -fa_max_dis 6.0 -options:user -ex1 -ex2
+
+TID   HOST_NAME   COMMAND_LINE            STATUS            TERMINATION_TIME
+===== ========== ================  =======================  ===================
+00000 c-195-09   /nas02/home/k/h/  Done                     08/22/2012 15:44:01
+00001 c-195-06   /nas02/home/k/h/  Done                     08/22/2012 15:44:01
+00002 c-194-56   /nas02/home/k/h/  Done                     08/22/2012 15:44:01
+00003 c-194-36   /nas02/home/k/h/  Done                     08/22/2012 15:44:01
+00004 c-194-23   /nas02/home/k/h/  Done                     08/22/2012 15:44:01
+00005 c-194-19   /nas02/home/k/h/  Done                     08/22/2012 15:44:01
+00006 c-194-08   /nas02/home/k/h/  Done                     08/22/2012 15:44:01
+00007 c-195-37   /nas02/home/k/h/  Done                     08/22/2012 15:44:01
+00008 c-191-35   /nas02/home/k/h/  Done                     08/22/2012 15:44:03
+00009 c-191-35   /nas02/home/k/h/  Done                     08/22/2012 15:44:03
+00010 c-191-35   /nas02/home/k/h/  Done                     08/22/2012 15:44:03
+00011 c-191-35   /nas02/home/k/h/  Done                     08/22/2012 15:44:03
+00012 c-191-35   /nas02/home/k/h/  Done                     08/22/2012 15:44:03
+00013 c-191-35   /nas02/home/k/h/  Done                     08/22/2012 15:44:03
+00014 c-191-35   /nas02/home/k/h/  Done                     08/22/2012 15:44:03
+00015 c-191-35   /nas02/home/k/h/  Done                     08/22/2012 15:44:03
+00016 c-191-35   /nas02/home/k/h/  Done                     08/22/2012 15:44:03
+00017 c-191-35   /nas02/home/k/h/  Done                     08/22/2012 15:44:03
+00018 c-191-35   /nas02/home/k/h/  Done                     08/22/2012 15:44:03
+00019 c-191-35   /nas02/home/k/h/  Done                     08/22/2012 15:44:03
+00020 c-191-56   /nas02/home/k/h/  Done                     08/22/2012 15:44:03
+00021 c-191-56   /nas02/home/k/h/  Done                     08/22/2012 15:44:03
+00022 c-191-56   /nas02/home/k/h/  Done                     08/22/2012 15:44:03
+00023 c-191-56   /nas02/home/k/h/  Done                     08/22/2012 15:44:03
+00024 c-191-56   /nas02/home/k/h/  Done                     08/22/2012 15:44:03
+00025 c-191-56   /nas02/home/k/h/  Done                     08/22/2012 15:44:03
+00026 c-191-56   /nas02/home/k/h/  Done                     08/22/2012 15:44:03
+00027 c-191-56   /nas02/home/k/h/  Done                     08/22/2012 15:44:03
+00028 c-191-56   /nas02/home/k/h/  Done                     08/22/2012 15:44:03
+00029 c-191-56   /nas02/home/k/h/  Done                     08/22/2012 15:44:03
+00030 c-191-56   /nas02/home/k/h/  Done                     08/22/2012 15:44:03
+00031 c-191-56   /nas02/home/k/h/  Done                     08/22/2012 15:44:03

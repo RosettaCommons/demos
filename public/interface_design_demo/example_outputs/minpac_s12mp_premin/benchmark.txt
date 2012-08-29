@@ -1,0 +1,11 @@
+Benchmark file
+at Thu Aug 23 09:33:48 EDT 2012
+in /nas02/home/k/h/khouli/interface_design_demo/scripts/design/minpac_s12mp_premin
+
+Weights used: score12minpack
+Number of input structures: 28
+Number of design trajectories: 100
+CPU hours: 846.026
+Overall interface sequence recovery: 0.579
+Core interface sequence recovery: 0.681
+Surface interface sequence recovery: 0.440

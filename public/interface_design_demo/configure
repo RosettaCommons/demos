@@ -1,0 +1,44 @@
+#!/usr/bin/env bash
+set -e
+
+rosetta_dir=${HOME}/rosetta # default
+
+if [ "$#" -lt "1" ]
+then
+    read -p "Use ${rosetta_dir} as Rosetta directory for scripts? [Y/n]" yn
+    case $yn in
+        [Yy] ) ;;
+        .* ) exit;;
+	* ) ;;
+    esac
+else
+    rosetta_dir=$1
+    [[ $rosetta_dir == */ ]] && rosetta_dir=${rosetta_dir%/}
+fi
+
+echo $rosetta_dir
+
+my_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
+sed -i "s|^.*rosetta_path=.*$|rosetta_path=${rosetta_dir}|" ${my_dir}/scripts/design/*/*pac*_*_*min\.sh
+sed -i "s|^.*rosetta_path=.*$|rosetta_path=${rosetta_dir}|" ${my_dir}/scripts/analyze/seqRec.sh
+
+read -p "Add optE_inf_premin.wts to ${rosetta_dir}/rosetta_database/scoring/weights/? [Y/n]" yn
+case $yn in
+    [^Yy]* ) ;;
+    * ) cp ${my_dir}/scripts/design/minpac_optE_premin/optE_inf_premin.wts ${rosetta_dir}/rosetta_database/scoring/weights/.;;
+esac
+
+# Check for sequence_recovery.liuxgccrelease
+seq_rec_path="${rosetta_dir}/rosetta_source/bin/sequence_recovery.linuxgccrelease"
+[ ! -e "$seq_rec_path" ] && echo "I looked for $seq_rec_path but couldn't" \
+    "find it. Go fix \$seq_bin in scripts/analyze/seqRec.sh."
+
+# Check for rosetta_scripts binary
+which bsub &>/dev/null || echo "No bsub in path. You're not using the LSF system I use." \
+    "I have no idea how to automate this. You'll have to change how the" \
+    "rosetta_scripts bin is executed in" \
+    "/scripts/design/some-protocol/some-protocol.sh before you run a protool."
+
+ls -d $(pwd)/inputs/selected_chains/*pdb* > ./inputs/selected_chains/selected_chains.list
+ls -d $(pwd)/inputs/min_nats/*pdb* > ./inputs/min_nats/nats.list

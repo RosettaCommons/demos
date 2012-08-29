@@ -1,0 +1,11 @@
+Benchmark file
+at Thu Aug 23 06:40:50 EDT 2012
+in /nas02/home/k/h/khouli/interface_design_demo/scripts/design/minpac_optE_premin
+
+Weights used: optE_inf_premin
+Number of input structures: 28
+Number of design trajectories: 100
+CPU hours: 1313.385
+Overall interface sequence recovery: 0.496
+Core interface sequence recovery: 0.592
+Surface interface sequence recovery: 0.362
