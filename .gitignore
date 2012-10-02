@@ -1,0 +1,10 @@
+.svn
+*.pyc
+*.o
+*.so
+!/external/lib/*/*/*.so
+*.dylib
+*.os
+._*
+*~
+\#*\#
