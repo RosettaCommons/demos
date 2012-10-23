@@ -1,0 +1,102 @@
+######################################################################################################
+###                                                                                                ###
+###  Blueprint file for building backbone of the former half of a ferredoxin-like fold structure.  ###
+###  This file is used for specifying secondary structure strings.                                 ###
+###                                                                                                ###
+###  Principles for designing ideal protein structures                                             ###
+###  Nobuyasu Koga, Rie Tatsumi-Koga, Gaohua Liu, Rong Xiao, Thomas B. Acton,                      ###
+###  Gaetano T. Montelione, and David Baker                                                        ###
+###  Nature 2012, Supplementary Data                                                               ###
+###                                                                                                ###
+######################################################################################################
+#
+# (The lines started with '#' are comments.)
+#
+## SSPAIR is strand-pairs information for the constraints between strands.
+SSPAIR 1-3.A.0;2-3.A.0
+#
+# SSPAIR is expressed in the following style,
+#
+# (strand-id)-(strand-id).(P/A).(register_shift);(strand-id)-(strand-id).(P/A).(register_shift);...
+#
+# Examples:
+# 1-2.A.0;1-3.P.-1 means 1st and 2nd strands make anti parallel strand-pair with register shift  0, and 
+#                        1st and 3rd strands make      parallel strand-pair with register shift -1.
+# 
+# Examples of a strand pair:
+# 1-2.P.0  (1st and 2nd strands make parallel strand pair with register shift 0)
+#  1 ====>   1 ====>    1 =======>
+#  2 ====>   2 ======>  2 ===>
+#
+# 1-2.P.2  (1st and 2nd strands make parallel strand pair with register shift 2)
+#  1 =====>     1 ====>        1  ========>
+#  2   ====>    2   ======>    2    ====>
+#
+# 1-2.P.-1 (1st and 2nd strands make parallel strand pair with register shift -1)
+#  1  ====>     1   =====>       1  ========>
+#  2 ====>      2  ==========>   2 ====> 
+#
+# 1-2.A.2  (1st and 2nd strands make anti parallel strand pair with register shift 2)
+#  1 ====>        1 ======>          1 ===========>
+#  2   <====      2   <==========    2   <====
+#
+# 1-2.A.-2 (1st and 2nd strands make anti parallel strand pair with register shift -2)
+#  1   ====>      1   ==========>    1    =====>
+#  2 <====        2 <=====           2  <===========
+#
+####################################################################################################
+# Secondary structure strings for building backbone:
+# 1st column: Residue number. The residue positions marked with 0 are newly generated based on a input pdb.
+# 2nd column: Amino acid type. This is used for the vdw radius of the pseudo side-chain, since there are no amino-acid-dependent score terms.
+# 3rd column: Secondary structure type, L:loop, E:strand, and H:helix.
+# 4th column: Build instruction, R:build the assigned positions, and '.':leave the assigned positions as intact.
+#
+#
+1 V L R
+2 V E R
+0 V E R
+0 V E R
+0 V E R
+0 V E R
+0 V E R
+0 V E R
+0 V L R
+0 V L R
+0 V L R
+0 V H R
+0 V H R
+0 V H R
+0 V H R
+0 V H R
+0 V H R
+0 V H R
+0 V H R
+0 V H R
+0 V H R
+0 V H R
+0 V H R
+0 V H R
+0 V H R
+0 V H R
+0 V H R
+0 V H R
+0 V H R
+0 V L R
+0 V L R
+0 V E R
+0 V E R
+0 V E R
+0 V E R
+0 V E R
+0 V E R
+0 V E R
+0 V L R
+0 V L R
+0 V E R
+0 V E R
+0 V E R
+0 V E R
+0 V E R
+0 V E R
+0 V E R
+0 V L R

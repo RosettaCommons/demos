@@ -1,0 +1,112 @@
+######################################################################################################
+###                                                                                                ###
+###  Blueprint file for building backbone of the latter half of a ferredoxin-like fold structure.  ###
+###  This file is used for specifying secondary structure strings.                                 ###
+###                                                                                                ###
+###  Principles for designing ideal protein structures                                             ###
+###  Nobuyasu Koga, Rie Tatsumi-Koga, Gaohua Liu, Rong Xiao, Thomas B. Acton,                      ###
+###  Gaetano T. Montelione, and David Baker                                                        ###
+###  Nature 2012, Supplementary Data                                                               ###
+###                                                                                                ###
+######################################################################################################
+#
+# SSPair is strand-pairs information for the constraints between strands.
+SSPAIR 1-3.A.0;1-4.A.0;2-3.A.0
+#
+# Helix-pairs information for the constraints between helices
+HHPAIR 1-2.A
+#
+# HHPAIR is expressed in the following style,
+#
+# (helix-id)-(helix-id).(P/A);(helix-id)-(helix-id).(P/A)...
+#
+# # Examples:
+# 1-2.A;2-3.P mean 1st and 2nd helices make anti-parallel helix pair, and
+#                  2nd and 3rd helices make      parallel helix pair.
+#
+####################################################################################################
+# Secondary structure strings for building backbone:
+# 1st column: Residue number. 0 stands for the residues that are extended.
+# 2nd column: Amino acid type. This is used for the vdw radius of the single sphere 'side-chain', since no amino-acid-dependent score terms are used.
+# 3rd column: Secondary structure type, L:loop, E:strand, and H:helix.
+# 4th column: Build instruction, R:build the assigned positions, and '.':leave the assigned positions as intact.
+#
+#
+1  V L .
+2  V E .
+3  V E .
+4  V E .
+5  V E .
+6  V E .
+7  V E .
+8  V E .
+9  V L .
+10 V L .
+11 V L .
+12 V H .
+13 V H .
+14 V H .
+15 V H .
+16 V H .
+17 V H .
+18 V H .
+19 V H .
+20 V H .
+21 V H .
+22 V H .
+23 V H .
+24 V H .
+25 V H .
+26 V H .
+27 V H .
+28 V H .
+29 V H .
+30 V L .
+31 V L .
+32 V E .
+33 V E .
+34 V E .
+35 V E .
+36 V E .
+37 V E .
+38 V E .
+39 V L .
+40 V L .
+41 V E .
+42 V E .
+43 V E .
+44 V E .
+45 V E .
+46 V E R
+47 V E R
+48 V L R
+0 V L R
+0 V L R
+0 V H R
+0 V H R
+0 V H R
+0 V H R
+0 V H R
+0 V H R
+0 V H R
+0 V H R
+0 V H R
+0 V H R
+0 V H R
+0 V H R
+0 V H R
+0 V H R
+0 V H R
+0 V H R
+0 V H R
+0 V H R
+0 V L R
+0 V L R
+0 V E R
+0 V E R
+0 V E R
+0 V E R
+0 V E R
+0 V E R
+0 V E R
+0 V L R

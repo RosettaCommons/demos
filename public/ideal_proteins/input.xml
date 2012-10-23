@@ -1,0 +1,171 @@
+###############################################################################################
+###                                                                                         ###
+###        RosettaScript XML file for designing ferredoxin-like fold structures.            ###
+###                                                                                         ###
+###       Principles for designing ideal protein structures                                 ###
+###       Nobuyasu Koga, Rie Tatsumi-Koga, Gaohua Liu, Rong Xiao, Thomas B. Acton,          ###
+###       Gaetano T. Montelione, and David Baker                                            ###
+###       Nature 2012, Supplementary Data                                                   ###
+###                                                                                         ###
+###############################################################################################
+##
+##   (The lines started with '#' are comments.)
+## 
+##   This protocol consists of 4 steps:                                                    
+##
+##   1) Build backbone structures for the former half of ferredoxin-like fold.
+##   2) Build backbone structures for the latter half, extending from the former half.
+##   3) Design sidechains followed by the relaxation of the structure of the backbone and the side chains.
+##      (Select structures based on the DSSP secondary structure, the helix-pairing, and the energy filters after this step.)
+##   4) Perform futher repeats of the sidechain design and relaxation calculation, followed by the energy and the packing filters.
+##      ( The step 4 is performed for the selected structures from those produced after the step 3. )
+##
+ <dock_design>
+	<SCOREFXNS>
+           <SFXN1 weights=fldsgn_cen >
+                < Reweight scoretype=hbond_sr_bb weight=1.0 />
+                < Reweight scoretype=hbond_lr_bb weight=1.0 />
+           </SFXN1>
+           <SFXN2 weights=fldsgn_cen >
+                < Reweight scoretype=hbond_sr_bb weight=1.0 />
+                < Reweight scoretype=hbond_lr_bb weight=1.0 />
+           </SFXN2>
+           <SFXN3 weights=myweight >
+                < Reweight scoretype=atom_pair_constraint weight=1.0 />
+           </SFXN3>
+	</SCOREFXNS>
+        <FILTERS>
+
+           ## ===== For step 1 ======= ##
+
+           ## Select structures that have the stand pairs, 1-3.A.0;2-3.A.0, which indicates
+           ## that 1st and 3rd strands make antiparallel beta-strand pair with register shift 0, and
+           ##      2nd and 3rd strands make antiparallel beta-strand pair with register shift 0.
+           < SheetTopology      name=st1 topology="1-3.A.0;2-3.A.0" blueprint="./input1.bbskel" /> 
+
+           ## Eliminate structures that have a kinked helix.
+           < HelixKink          name=hk1 blueprint="./input1.bbskel" />
+
+           ## Define the compound filter of st1 and hk1.
+           < CompoundStatement name=cm1 >
+                < AND filter_name=st1/>
+                < AND filter_name=hk1/>
+           </CompoundStatement>
+           
+           ## ====== For step 2 ======= ##
+
+           ## Select structures that have the stand pairs, 1-3.A.0;1-4.A.0;2-3.A.0
+           < SheetTopology name=st2 topology="1-3.A.0;1-4.A.0;2-3.A.0" blueprint="./input2.bbskel" />
+
+           ## Eliminate structures that have kinked helices.
+           < HelixKink     name=hk2 blueprint="./input2.bbskel" />
+
+           ## Eliminate structures of which helix pairs are far away with each other.
+           < HelixPairing  name=hp helix_pairings="1-2.A" dist=13.0 cross=30.0 align=5.0 blueprint="./input2.bbskel" />
+
+           ## Define the compound filter of st2 and hk2
+           < CompoundStatement name=cm2 >
+                < AND filter_name=st2/>
+                < AND filter_name=hk2/>
+                < AND filter_name=hp/>
+           </CompoundStatement>
+
+           ## ====== For step 4 ======= ##
+
+           ## Select structures that have the correct secondary structure strings
+           < SecondaryStructure name=ss blueprint="./input2.bbskel" />
+
+           ## Select structures according to energy
+           < ScoreType name=sc scorefxn=score12 score_type=total_score threshold=-170/>
+
+           ## Select structures according to Packing; threshold should be more than 0.6 and less than 0.7.
+           < PackStat name=pstat threshold=0.6 />
+
+           ## The filter for packing using RosettaHoles was done without using RosettaScripts.
+           ## The filter for local sequence structure compatibility was done without using RosettaScripts
+
+        </FILTERS>
+        <TASKOPERATIONS>
+
+           ## ====== For step 3 and 4 ====== ##
+
+           ## Limit the range of the chi2 angles for PHE, TYR, and HIS.
+           < LimitAromaChi2 name=limitchi2 />
+
+           ## Select amino acid types for each residue position based on solvent-accessible surface area and the secondary structure type.
+           < LayerDesign name=layer_all           layer=core_boundary_surface  core_H=15 core_E=15 core_L=25 surface_H=60 surface_E=60 surface_L=40 pore_radius=2.0 verbose=true />
+
+        </TASKOPERATIONS>
+	<MOVERS>
+
+           ## ====== For step 1 ======= ##
+
+           ## Apply constraints between strands. See SSPAIR line in input1.bbskel.
+           < SetSecStructEnergies name=sse1 scorefxn=SFXN1 blueprint="./input1.bbskel" />
+
+           ## Build backbone for the former half.
+  	   < BluePrintBDR name=bdr1 scorefxn=SFXN1 use_abego_bias=1 blueprint="./input1.bbskel" />
+
+           ## Repeat the backbone building util satisfying the compound filter.
+           < LoopOver     name=lover1 mover_name=bdr1 filter_name=cm1 iterations=1000 drift=0 ms_whenfail=FAIL_DO_NOT_RETRY/>
+
+           ## ====== For step 2 ======= ##
+
+           ## Apply constraints between strands and between helices. See SSPAIR and HHPAIR lines in input2.bbskel.
+           < SetSecStructEnergies name=sse2 scorefxn=SFXN2 blueprint="./input2.bbskel" />
+
+           ## Build backbone for the latter half.
+  	   < BluePrintBDR name=bdr2 scorefxn=SFXN2 use_abego_bias=1 blueprint="./input2.bbskel" />
+
+           ## Repeat the backbone building utill satisfying the filter
+           < LoopOver     name=lover2 mover_name=bdr2 filter_name=cm2 iterations=1000 drift=0 ms_whenfail=FAIL_DO_NOT_RETRY/>
+
+           ## ====== For step 3 ======= ##
+             
+           ## Iterate the sidechain design and the relaxation of entire structure
+           < FlxbbDesign name=flxbb1 ncycles=3 constraints_sheet=10.0 sfxn_design=SFXN3 sfxn_relax=SFXN3 clear_all_residues=1 task_operations=limitchi2,layer_all blueprint="./input2.bbskel" resfile="./input.resfile" />
+
+           ## ====== For step 4 ======= ##
+
+           ## Calculate secondary structure based on hydrogen-bond patterns.
+           < Dssp name=dssp />
+
+           ## Iterate the sidechain design and the relaxation of entire structure.
+           < FlxbbDesign name=flxbb2 ncycles=5 constraints_sheet=10.0 sfxn_design=SFXN3 sfxn_relax=SFXN3 clear_all_residues=1 task_operations=limitchi2,layer_all blueprint="./input2.bbskel" resfile="./input.resfile" />
+
+	</MOVERS>
+	<APPLY_TO_POSE>
+	</APPLY_TO_POSE>
+	<PROTOCOLS>
+
+           ## ====== Step 1 ======= ##
+
+            < Add mover_name=sse1   />
+            < Add mover_name=lover1 />
+
+           ## ====== Step 2 ======= ##
+
+            < Add mover_name=sse2   />
+            < Add mover_name=lover2 />
+
+           ## ====== Step 3 ======= ##
+
+            < Add mover_name=flxbb1 />
+
+           # After the step 3, select structures by the following filters.
+            Add mover_name=dssp />
+            Add filter_name=ss />
+            Add filter_name=hp />
+            Add filter_name=sc />
+
+           ## ====== Step 4 ======= ##
+           ## The step 4 is performed for the selected structures from those produced after the step 3.
+
+            Add mover_name=flxbb2 />
+            Add mover_name=dssp />
+            Add filter_name=ss />
+            Add filter_name=pstat />
+            Add filter_name=sc />
+
+	</PROTOCOLS>
+</dock_design>
