@@ -6,7 +6,9 @@ This README was written in Jul. 2012, by Fang-Chieh Chou (fcchou@stanford.edu).
 
 This demo illustrates a protocol to redesign and model beta-3-peptides in Rosetta.
 
-A paper is to be published: 
+Detailed application of the method is described in the following paper:
+
+Molski, M.A., Goodman, J.L., Chou, F.C., Baker, D., Das, R., and Schepartz, A. (2012). Remodeling a beta-peptide bundle. Chemical Science.
 
 The example input files are in rosetta_input.
 
