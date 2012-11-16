@@ -1,4 +1,4 @@
--database <path to database>
+#-database <path to database>
 
 -l pdblist
 
@@ -6,19 +6,20 @@
 -ignore_unrecognized_res
 
 #Speeds up read-in
--packing::pack_missing_sidechains false
--packing::prevent_repacking
+-packing:pack_missing_sidechains false
+-packing:prevent_repacking
 
 #necessary to read PDB-sourced multimodel NMR files
--obey_ENDMDL
+-in:file:obey_ENDMDL
 
 #Disastrous if you forget this - do not want tons of repeated structures out!
--jd2::no_output
+-jd2:no_output
+
+#Prevents wasted memory from already-processed structures
+-jd2:delete_old_poses
 
 #settings for AnchorFinder
 -window_size 5
 -loopness 1
 -nbrs_per_residue 4.0
 -bestoutfile goodfile.out
-
-
