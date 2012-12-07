@@ -1,0 +1,4702 @@
+core.init: Mini-Rosetta version 52429:52430M from https://svn.rosettacommons.org/source/trunk/rosetta/rosetta_source
+core.init: command: ../../../../rosetta_source/bin/hbs_design.linuxgccrelease -database /home/kdrew/programs/rosetta/rosetta_svn/rosetta/rosetta_database/ @../inputs/flags
+core.init: 'RNG device' seed mode, using '/dev/urandom', seed=1810825781 seed_offset=0 real_seed=1810825781
+core.init.random: RandomGenerator:init: Normal mode, seed=1810825781 RG_type=mt19937
+basic.io.database: Database file opened: scoring/score_functions/hbonds/standard_params/HBPoly1D.csv
+basic.io.database: Database file opened: scoring/score_functions/hbonds/standard_params/HBFadeIntervals.csv
+basic.io.database: Database file opened: scoring/score_functions/hbonds/standard_params/HBEval.csv
+protocols.jd2.PDBJobInputter: Instantiate PDBJobInputter
+protocols.jd2.PDBJobInputter: PDBJobInputter::fill_jobs
+protocols.jd2.PDBJobInputter: pushing ../inputs/mdm2_hbs.pdb nstruct index 1
+protocols.jd2.PDBJobInputter: pushing ../inputs/mdm2_hbs.pdb nstruct index 2
+protocols.jd2.PDBJobInputter: pushing ../inputs/mdm2_hbs.pdb nstruct index 3
+protocols.jd2.PDBJobInputter: pushing ../inputs/mdm2_hbs.pdb nstruct index 4
+protocols.jd2.PDBJobInputter: pushing ../inputs/mdm2_hbs.pdb nstruct index 5
+protocols.jd2.PDBJobInputter: pushing ../inputs/mdm2_hbs.pdb nstruct index 6
+protocols.jd2.PDBJobInputter: pushing ../inputs/mdm2_hbs.pdb nstruct index 7
+protocols.jd2.PDBJobInputter: pushing ../inputs/mdm2_hbs.pdb nstruct index 8
+protocols.jd2.PDBJobInputter: pushing ../inputs/mdm2_hbs.pdb nstruct index 9
+protocols.jd2.PDBJobInputter: pushing ../inputs/mdm2_hbs.pdb nstruct index 10
+protocols.evaluation.ChiWellRmsdEvaluatorCreator: Evaluation Creator active ... 
+protocols.jd2.PDBJobInputter: PDBJobInputter::pose_from_job
+protocols.jd2.PDBJobInputter: filling pose from PDB ../inputs/mdm2_hbs.pdb
+core.chemical.ResidueTypeSet: While generating ResidueTypeSet fa_standard: Including patch patches/hbs_pre.txt as requested
+core.chemical.ResidueTypeSet: While generating ResidueTypeSet fa_standard: Including patch patches/hbs_post.txt as requested
+core.chemical.ResidueTypeSet: Finished initializing fa_standard residue type set.  Created 9597 residue types
+core.conformation.Conformation: Connecting residues: 86 ( ALA_p:NtermProteinFull_p:hbs_pre ) and 88 ( ALA_p:hbs_post ) at atoms  CYH and  CZH
+core.conformation.Conformation:  with mututal distances: 1.70959 and 1.51663
+core.conformation.Conformation: Adding PseudoBond between residues 86 87, connecting atoms  CYH and  C   through residue 88 at atoms  N   &  CZH which are separated by 1 bond
+core.pack.task: Packer task: initialize from command line() 
+core.scoring.etable: Starting energy table calculation
+core.scoring.etable: smooth_etable: changing atr/rep split to bottom of energy well
+core.scoring.etable: smooth_etable: spline smoothing lj etables (maxdis = 6)
+core.scoring.etable: smooth_etable: spline smoothing solvation etables (max_dis = 6)
+core.scoring.etable: Finished calculating energy tables.
+basic.io.database: Database file opened: scoring/score_functions/PairEPotential/pdb_pair_stats_fine
+basic.io.database: Database file opened: scoring/score_functions/EnvPairPotential/env_log.txt
+basic.io.database: Database file opened: scoring/score_functions/EnvPairPotential/cbeta_den.txt
+basic.io.database: Database file opened: scoring/score_functions/EnvPairPotential/pair_log.txt
+basic.io.database: Database file opened: scoring/score_functions/EnvPairPotential/cenpack_log.txt
+basic.io.database: Database file opened: scoring/score_functions/EnvPairPotential/env_log.txt
+basic.io.database: Database file opened: scoring/score_functions/EnvPairPotential/cbeta_den.txt
+basic.io.database: Database file opened: scoring/score_functions/EnvPairPotential/pair_log.txt
+basic.io.database: Database file opened: scoring/score_functions/EnvPairPotential/cenpack_log.txt
+basic.io.database: Database file opened: scoring/score_functions/MembranePotential/CEN6_mem_env_log.txt
+basic.io.database: Database file opened: scoring/score_functions/MembranePotential/CEN10_mem_env_log.txt
+basic.io.database: Database file opened: scoring/score_functions/MembranePotential/memcbeta_den.txt
+basic.io.database: Database file opened: scoring/score_functions/MembranePotential/mem_pair_log.txt
+basic.io.database: Database file opened: scoring/score_functions/P_AA_pp/P_AA
+basic.io.database: Database file opened: scoring/score_functions/P_AA_pp/P_AA_n
+basic.io.database: Database file opened: scoring/score_functions/P_AA_pp/P_AA_pp
+basic.io.database: Database file opened: scoring/score_functions/rama/Rama_smooth_dyn.dat_ss_6.4
+AFTER: FOLD_TREE  EDGE 1 33 -1  EDGE 33 85 -1  EDGE 33 91 1  EDGE 91 86 -1  EDGE 91 96 -1 
+
+core.pack.dunbrack: Dunbrack library took 0.03 seconds to load from binary
+HbsDesign: hbs_start: 86 hbs_end: 96
+protocols.simple_moves.hbs.HbsPatcher: added atom pair constraint to hbs with distance: 1.52 and std: 0.05
+HbsDesign: Main loop...
+HbsDesign: PERTURB: 1 / 1
+HbsDesign: PERTURB: 1 / 2
+HbsDesign: PERTURB: 1 / 3
+HbsDesign: PERTURB: 1 / 4
+HbsDesign: PERTURB: 1 / 5
+HbsDesign: PERTURB: 1 / 6
+HbsDesign: PERTURB: 1 / 7
+HbsDesign: PERTURB: 1 / 8
+HbsDesign: PERTURB: 1 / 9
+HbsDesign: PERTURB: 1 / 10
+HbsDesign: DESIGN: 1
+HbsDesign: hbs postion 1
+HbsDesign:   not designed
+HbsDesign: hbs postion 2
+HbsDesign:   not designed
+HbsDesign: hbs postion 3
+HbsDesign:   not designed
+HbsDesign: hbs postion 4
+HbsDesign:   designed
+HbsDesign: hbs postion 5
+HbsDesign:   designed
+HbsDesign: hbs postion 6
+HbsDesign:   designed
+HbsDesign: hbs postion 7
+HbsDesign:   designed
+HbsDesign: hbs postion 8
+HbsDesign:   not designed
+HbsDesign: hbs postion 9
+HbsDesign:   not designed
+HbsDesign: hbs postion 10
+HbsDesign:   not designed
+HbsDesign: hbs postion 11
+HbsDesign:   not designed
+core.pack.interaction_graph.interaction_graph_factory: Instantiating PDInteractionGraph
+core.pack.pack_rotamers: built 4754 rotamers at 96 positions.
+core.pack.pack_rotamers: IG: 18393788 bytes
+core.pack.task: Packer task: initialize from command line() 
+HbsDesign: pre mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -205.264  -205.264  -205.264  -205.264  0  0  0  0
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     10;  accepts= 0.3000;  energy_drop/trial=   0.31563
+HbsDesign: post mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -205.869  -205.869  -205.869  -205.869  0  0  0  3
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     10;  accepts= 0.3000;  energy_drop/trial=   0.31563
+protocols.moves.TrialCounter:              unk trials=      1;  accepts= 1.0000;  energy_drop/trial=  -0.60489
+HbsDesign: PERTURB: 2 / 1
+HbsDesign: PERTURB: 2 / 2
+HbsDesign: PERTURB: 2 / 3
+HbsDesign: PERTURB: 2 / 4
+HbsDesign: PERTURB: 2 / 5
+HbsDesign: PERTURB: 2 / 6
+HbsDesign: PERTURB: 2 / 7
+HbsDesign: PERTURB: 2 / 8
+HbsDesign: PERTURB: 2 / 9
+HbsDesign: PERTURB: 2 / 10
+HbsDesign: DESIGN: 2
+HbsDesign: hbs postion 1
+HbsDesign:   not designed
+HbsDesign: hbs postion 2
+HbsDesign:   not designed
+HbsDesign: hbs postion 3
+HbsDesign:   not designed
+HbsDesign: hbs postion 4
+HbsDesign:   designed
+HbsDesign: hbs postion 5
+HbsDesign:   designed
+HbsDesign: hbs postion 6
+HbsDesign:   designed
+HbsDesign: hbs postion 7
+HbsDesign:   designed
+HbsDesign: hbs postion 8
+HbsDesign:   not designed
+HbsDesign: hbs postion 9
+HbsDesign:   not designed
+HbsDesign: hbs postion 10
+HbsDesign:   not designed
+HbsDesign: hbs postion 11
+HbsDesign:   not designed
+core.pack.interaction_graph.interaction_graph_factory: Instantiating PDInteractionGraph
+core.pack.pack_rotamers: built 4754 rotamers at 96 positions.
+core.pack.pack_rotamers: IG: 18407164 bytes
+core.pack.task: Packer task: initialize from command line() 
+HbsDesign: pre mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -205.869  -205.869  -205.869  -205.869  0  0  0  0
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     20;  accepts= 0.1500;  energy_drop/trial=   0.15782
+protocols.moves.TrialCounter:              unk trials=      1;  accepts= 1.0000;  energy_drop/trial=  -0.60489
+HbsDesign: post mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -205.983  -205.983  -205.983  -205.983  0  0  0  3
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     20;  accepts= 0.1500;  energy_drop/trial=   0.15782
+protocols.moves.TrialCounter:              unk trials=      2;  accepts= 1.0000;  energy_drop/trial=  -0.35968
+HbsDesign: PERTURB: 3 / 1
+HbsDesign: PERTURB: 3 / 2
+HbsDesign: PERTURB: 3 / 3
+HbsDesign: PERTURB: 3 / 4
+HbsDesign: PERTURB: 3 / 5
+HbsDesign: PERTURB: 3 / 6
+HbsDesign: PERTURB: 3 / 7
+HbsDesign: PERTURB: 3 / 8
+HbsDesign: PERTURB: 3 / 9
+HbsDesign: PERTURB: 3 / 10
+HbsDesign: DESIGN: 3
+HbsDesign: hbs postion 1
+HbsDesign:   not designed
+HbsDesign: hbs postion 2
+HbsDesign:   not designed
+HbsDesign: hbs postion 3
+HbsDesign:   not designed
+HbsDesign: hbs postion 4
+HbsDesign:   designed
+HbsDesign: hbs postion 5
+HbsDesign:   designed
+HbsDesign: hbs postion 6
+HbsDesign:   designed
+HbsDesign: hbs postion 7
+HbsDesign:   designed
+HbsDesign: hbs postion 8
+HbsDesign:   not designed
+HbsDesign: hbs postion 9
+HbsDesign:   not designed
+HbsDesign: hbs postion 10
+HbsDesign:   not designed
+HbsDesign: hbs postion 11
+HbsDesign:   not designed
+core.pack.interaction_graph.interaction_graph_factory: Instantiating PDInteractionGraph
+core.pack.pack_rotamers: built 4755 rotamers at 96 positions.
+core.pack.pack_rotamers: IG: 18413000 bytes
+core.pack.task: Packer task: initialize from command line() 
+HbsDesign: pre mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -205.983  -205.983  -205.983  -205.983  0  0  0  0
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     30;  accepts= 0.1333;  energy_drop/trial=   0.15038
+protocols.moves.TrialCounter:              unk trials=      2;  accepts= 1.0000;  energy_drop/trial=  -0.35968
+HbsDesign: post mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -206.037  -206.037  -206.037  -206.037  0  0  0  3
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     30;  accepts= 0.1333;  energy_drop/trial=   0.15038
+protocols.moves.TrialCounter:              unk trials=      3;  accepts= 1.0000;  energy_drop/trial=  -0.25753
+HbsDesign: PERTURB: 4 / 1
+HbsDesign: PERTURB: 4 / 2
+HbsDesign: PERTURB: 4 / 3
+HbsDesign: PERTURB: 4 / 4
+HbsDesign: PERTURB: 4 / 5
+HbsDesign: PERTURB: 4 / 6
+HbsDesign: PERTURB: 4 / 7
+HbsDesign: PERTURB: 4 / 8
+HbsDesign: PERTURB: 4 / 9
+HbsDesign: PERTURB: 4 / 10
+HbsDesign: DESIGN: 4
+HbsDesign: hbs postion 1
+HbsDesign:   not designed
+HbsDesign: hbs postion 2
+HbsDesign:   not designed
+HbsDesign: hbs postion 3
+HbsDesign:   not designed
+HbsDesign: hbs postion 4
+HbsDesign:   designed
+HbsDesign: hbs postion 5
+HbsDesign:   designed
+HbsDesign: hbs postion 6
+HbsDesign:   designed
+HbsDesign: hbs postion 7
+HbsDesign:   designed
+HbsDesign: hbs postion 8
+HbsDesign:   not designed
+HbsDesign: hbs postion 9
+HbsDesign:   not designed
+HbsDesign: hbs postion 10
+HbsDesign:   not designed
+HbsDesign: hbs postion 11
+HbsDesign:   not designed
+core.pack.interaction_graph.interaction_graph_factory: Instantiating PDInteractionGraph
+core.pack.pack_rotamers: built 4754 rotamers at 96 positions.
+core.pack.pack_rotamers: IG: 18402872 bytes
+core.pack.task: Packer task: initialize from command line() 
+HbsDesign: pre mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -206.037  -206.037  -206.037  -206.037  0  0  0  0
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     40;  accepts= 0.1500;  energy_drop/trial=   0.14901
+protocols.moves.TrialCounter:              unk trials=      3;  accepts= 1.0000;  energy_drop/trial=  -0.25753
+HbsDesign: post mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -206.079  -206.079  -206.079  -206.079  0  0  0  3
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     40;  accepts= 0.1500;  energy_drop/trial=   0.14901
+protocols.moves.TrialCounter:              unk trials=      4;  accepts= 1.0000;  energy_drop/trial=  -0.20360
+HbsDesign: PERTURB: 5 / 1
+HbsDesign: PERTURB: 5 / 2
+HbsDesign: PERTURB: 5 / 3
+HbsDesign: PERTURB: 5 / 4
+HbsDesign: PERTURB: 5 / 5
+HbsDesign: PERTURB: 5 / 6
+HbsDesign: PERTURB: 5 / 7
+HbsDesign: PERTURB: 5 / 8
+HbsDesign: PERTURB: 5 / 9
+HbsDesign: PERTURB: 5 / 10
+HbsDesign: DESIGN: 5
+HbsDesign: hbs postion 1
+HbsDesign:   not designed
+HbsDesign: hbs postion 2
+HbsDesign:   not designed
+HbsDesign: hbs postion 3
+HbsDesign:   not designed
+HbsDesign: hbs postion 4
+HbsDesign:   designed
+HbsDesign: hbs postion 5
+HbsDesign:   designed
+HbsDesign: hbs postion 6
+HbsDesign:   designed
+HbsDesign: hbs postion 7
+HbsDesign:   designed
+HbsDesign: hbs postion 8
+HbsDesign:   not designed
+HbsDesign: hbs postion 9
+HbsDesign:   not designed
+HbsDesign: hbs postion 10
+HbsDesign:   not designed
+HbsDesign: hbs postion 11
+HbsDesign:   not designed
+core.pack.interaction_graph.interaction_graph_factory: Instantiating PDInteractionGraph
+core.pack.pack_rotamers: built 4755 rotamers at 96 positions.
+core.pack.pack_rotamers: IG: 18411452 bytes
+core.pack.task: Packer task: initialize from command line() 
+HbsDesign: pre mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -206.079  -206.079  -206.079  -206.079  0  0  0  0
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     50;  accepts= 0.1200;  energy_drop/trial=   0.11921
+protocols.moves.TrialCounter:              unk trials=      4;  accepts= 1.0000;  energy_drop/trial=  -0.20360
+HbsDesign: post mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -206.026  -206.079  -206.026  -206.079  0  0  0  1
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     50;  accepts= 0.1200;  energy_drop/trial=   0.11921
+protocols.moves.TrialCounter:              unk trials=      5;  accepts= 1.0000;  energy_drop/trial=  -0.15247
+HbsDesign: PERTURB: 6 / 1
+HbsDesign: PERTURB: 6 / 2
+HbsDesign: PERTURB: 6 / 3
+HbsDesign: PERTURB: 6 / 4
+HbsDesign: PERTURB: 6 / 5
+HbsDesign: PERTURB: 6 / 6
+HbsDesign: PERTURB: 6 / 7
+HbsDesign: PERTURB: 6 / 8
+HbsDesign: PERTURB: 6 / 9
+HbsDesign: PERTURB: 6 / 10
+HbsDesign: DESIGN: 6
+HbsDesign: hbs postion 1
+HbsDesign:   not designed
+HbsDesign: hbs postion 2
+HbsDesign:   not designed
+HbsDesign: hbs postion 3
+HbsDesign:   not designed
+HbsDesign: hbs postion 4
+HbsDesign:   designed
+HbsDesign: hbs postion 5
+HbsDesign:   designed
+HbsDesign: hbs postion 6
+HbsDesign:   designed
+HbsDesign: hbs postion 7
+HbsDesign:   designed
+HbsDesign: hbs postion 8
+HbsDesign:   not designed
+HbsDesign: hbs postion 9
+HbsDesign:   not designed
+HbsDesign: hbs postion 10
+HbsDesign:   not designed
+HbsDesign: hbs postion 11
+HbsDesign:   not designed
+core.pack.interaction_graph.interaction_graph_factory: Instantiating PDInteractionGraph
+core.pack.pack_rotamers: built 4754 rotamers at 96 positions.
+core.pack.pack_rotamers: IG: 18407188 bytes
+core.pack.task: Packer task: initialize from command line() 
+HbsDesign: pre mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -206.026  -206.026  -206.026  -206.026  0  0  0  0
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     60;  accepts= 0.1000;  energy_drop/trial=   0.09934
+protocols.moves.TrialCounter:              unk trials=      5;  accepts= 1.0000;  energy_drop/trial=  -0.15247
+HbsDesign: post mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -206.136  -206.136  -206.136  -206.136  0  0  0  3
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     60;  accepts= 0.1000;  energy_drop/trial=   0.09934
+protocols.moves.TrialCounter:              unk trials=      6;  accepts= 1.0000;  energy_drop/trial=  -0.14540
+HbsDesign: PERTURB: 7 / 1
+HbsDesign: PERTURB: 7 / 2
+HbsDesign: PERTURB: 7 / 3
+HbsDesign: PERTURB: 7 / 4
+HbsDesign: PERTURB: 7 / 5
+HbsDesign: PERTURB: 7 / 6
+HbsDesign: PERTURB: 7 / 7
+HbsDesign: PERTURB: 7 / 8
+HbsDesign: PERTURB: 7 / 9
+HbsDesign: PERTURB: 7 / 10
+HbsDesign: DESIGN: 7
+HbsDesign: hbs postion 1
+HbsDesign:   not designed
+HbsDesign: hbs postion 2
+HbsDesign:   not designed
+HbsDesign: hbs postion 3
+HbsDesign:   not designed
+HbsDesign: hbs postion 4
+HbsDesign:   designed
+HbsDesign: hbs postion 5
+HbsDesign:   designed
+HbsDesign: hbs postion 6
+HbsDesign:   designed
+HbsDesign: hbs postion 7
+HbsDesign:   designed
+HbsDesign: hbs postion 8
+HbsDesign:   not designed
+HbsDesign: hbs postion 9
+HbsDesign:   not designed
+HbsDesign: hbs postion 10
+HbsDesign:   not designed
+HbsDesign: hbs postion 11
+HbsDesign:   not designed
+core.pack.interaction_graph.interaction_graph_factory: Instantiating PDInteractionGraph
+core.pack.pack_rotamers: built 4750 rotamers at 96 positions.
+core.pack.pack_rotamers: IG: 18370876 bytes
+core.pack.task: Packer task: initialize from command line() 
+HbsDesign: pre mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -206.136  -206.136  -206.136  -206.136  0  0  0  0
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     70;  accepts= 0.0857;  energy_drop/trial=   0.08515
+protocols.moves.TrialCounter:              unk trials=      6;  accepts= 1.0000;  energy_drop/trial=  -0.14540
+HbsDesign: post mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -206.091  -206.136  -206.091  -206.136  0  0  0  1
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     70;  accepts= 0.0857;  energy_drop/trial=   0.08515
+protocols.moves.TrialCounter:              unk trials=      7;  accepts= 1.0000;  energy_drop/trial=  -0.11820
+HbsDesign: PERTURB: 8 / 1
+HbsDesign: PERTURB: 8 / 2
+HbsDesign: PERTURB: 8 / 3
+HbsDesign: PERTURB: 8 / 4
+HbsDesign: PERTURB: 8 / 5
+HbsDesign: PERTURB: 8 / 6
+HbsDesign: PERTURB: 8 / 7
+HbsDesign: PERTURB: 8 / 8
+HbsDesign: PERTURB: 8 / 9
+HbsDesign: PERTURB: 8 / 10
+HbsDesign: DESIGN: 8
+HbsDesign: hbs postion 1
+HbsDesign:   not designed
+HbsDesign: hbs postion 2
+HbsDesign:   not designed
+HbsDesign: hbs postion 3
+HbsDesign:   not designed
+HbsDesign: hbs postion 4
+HbsDesign:   designed
+HbsDesign: hbs postion 5
+HbsDesign:   designed
+HbsDesign: hbs postion 6
+HbsDesign:   designed
+HbsDesign: hbs postion 7
+HbsDesign:   designed
+HbsDesign: hbs postion 8
+HbsDesign:   not designed
+HbsDesign: hbs postion 9
+HbsDesign:   not designed
+HbsDesign: hbs postion 10
+HbsDesign:   not designed
+HbsDesign: hbs postion 11
+HbsDesign:   not designed
+core.pack.interaction_graph.interaction_graph_factory: Instantiating PDInteractionGraph
+core.pack.pack_rotamers: built 4748 rotamers at 96 positions.
+core.pack.pack_rotamers: IG: 18355476 bytes
+core.pack.task: Packer task: initialize from command line() 
+HbsDesign: pre mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -206.091  -206.091  -206.091  -206.091  0  0  0  0
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     80;  accepts= 0.0750;  energy_drop/trial=   0.07451
+protocols.moves.TrialCounter:              unk trials=      7;  accepts= 1.0000;  energy_drop/trial=  -0.11820
+HbsDesign: post mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -206.113  -206.113  -206.113  -206.113  0  0  0  3
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     80;  accepts= 0.0750;  energy_drop/trial=   0.07451
+protocols.moves.TrialCounter:              unk trials=      8;  accepts= 1.0000;  energy_drop/trial=  -0.10609
+HbsDesign: PERTURB: 9 / 1
+HbsDesign: PERTURB: 9 / 2
+HbsDesign: PERTURB: 9 / 3
+HbsDesign: PERTURB: 9 / 4
+HbsDesign: PERTURB: 9 / 5
+HbsDesign: PERTURB: 9 / 6
+HbsDesign: PERTURB: 9 / 7
+HbsDesign: PERTURB: 9 / 8
+HbsDesign: PERTURB: 9 / 9
+HbsDesign: PERTURB: 9 / 10
+HbsDesign: DESIGN: 9
+HbsDesign: hbs postion 1
+HbsDesign:   not designed
+HbsDesign: hbs postion 2
+HbsDesign:   not designed
+HbsDesign: hbs postion 3
+HbsDesign:   not designed
+HbsDesign: hbs postion 4
+HbsDesign:   designed
+HbsDesign: hbs postion 5
+HbsDesign:   designed
+HbsDesign: hbs postion 6
+HbsDesign:   designed
+HbsDesign: hbs postion 7
+HbsDesign:   designed
+HbsDesign: hbs postion 8
+HbsDesign:   not designed
+HbsDesign: hbs postion 9
+HbsDesign:   not designed
+HbsDesign: hbs postion 10
+HbsDesign:   not designed
+HbsDesign: hbs postion 11
+HbsDesign:   not designed
+core.pack.interaction_graph.interaction_graph_factory: Instantiating PDInteractionGraph
+core.pack.pack_rotamers: built 4750 rotamers at 96 positions.
+core.pack.pack_rotamers: IG: 18377424 bytes
+core.pack.task: Packer task: initialize from command line() 
+HbsDesign: pre mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -206.113  -206.113  -206.113  -206.113  0  0  0  1
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     90;  accepts= 0.1000;  energy_drop/trial=   0.12608
+protocols.moves.TrialCounter:              unk trials=      8;  accepts= 1.0000;  energy_drop/trial=  -0.10609
+HbsDesign: post mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -206.143  -206.143  -206.143  -206.143  0  0  0  3
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     90;  accepts= 0.1000;  energy_drop/trial=   0.12608
+protocols.moves.TrialCounter:              unk trials=      9;  accepts= 1.0000;  energy_drop/trial=  -0.09767
+HbsDesign: PERTURB: 10 / 1
+HbsDesign: PERTURB: 10 / 2
+HbsDesign: PERTURB: 10 / 3
+HbsDesign: PERTURB: 10 / 4
+HbsDesign: PERTURB: 10 / 5
+HbsDesign: PERTURB: 10 / 6
+HbsDesign: PERTURB: 10 / 7
+HbsDesign: PERTURB: 10 / 8
+HbsDesign: PERTURB: 10 / 9
+HbsDesign: PERTURB: 10 / 10
+HbsDesign: DESIGN: 10
+HbsDesign: hbs postion 1
+HbsDesign:   not designed
+HbsDesign: hbs postion 2
+HbsDesign:   not designed
+HbsDesign: hbs postion 3
+HbsDesign:   not designed
+HbsDesign: hbs postion 4
+HbsDesign:   designed
+HbsDesign: hbs postion 5
+HbsDesign:   designed
+HbsDesign: hbs postion 6
+HbsDesign:   designed
+HbsDesign: hbs postion 7
+HbsDesign:   designed
+HbsDesign: hbs postion 8
+HbsDesign:   not designed
+HbsDesign: hbs postion 9
+HbsDesign:   not designed
+HbsDesign: hbs postion 10
+HbsDesign:   not designed
+HbsDesign: hbs postion 11
+HbsDesign:   not designed
+core.pack.interaction_graph.interaction_graph_factory: Instantiating PDInteractionGraph
+core.pack.pack_rotamers: built 4748 rotamers at 96 positions.
+core.pack.pack_rotamers: IG: 18354520 bytes
+core.pack.task: Packer task: initialize from command line() 
+HbsDesign: pre mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -206.143  -206.143  -206.143  -206.143  0  0  0  0
+protocols.moves.TrialCounter: RigidBodyPerturb trials=    100;  accepts= 0.0900;  energy_drop/trial=   0.11347
+protocols.moves.TrialCounter:              unk trials=      9;  accepts= 1.0000;  energy_drop/trial=  -0.09767
+HbsDesign: post mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -206.17  -206.17  -206.17  -206.17  0  0  0  3
+protocols.moves.TrialCounter: RigidBodyPerturb trials=    100;  accepts= 0.0900;  energy_drop/trial=   0.11347
+protocols.moves.TrialCounter:              unk trials=     10;  accepts= 1.0000;  energy_drop/trial=  -0.09061
+HbsDesign: Ending main loop...
+HbsDesign: Checking pose energy...
+protocols.moves.RigidBodyMover: Translate: Jump (before): RT -0.237086 0.259645 0.936149 -0.38296 -0.910572 0.155564 0.892823 -0.321625 0.315317 2.60328 -2.36081 -8.85393  
+protocols.moves.RigidBodyMover: Translate: Jump (after):  RT -0.237086 0.259645 0.936149 -0.38296 -0.910572 0.155564 0.892823 -0.321625 0.315317 -152.636 -8.59934 -996.711  
+core.pack.task: Packer task: initialize from command line() 
+core.pack.interaction_graph.interaction_graph_factory: Instantiating LinearMemoryInteractionGraph
+core.pack.pack_rotamers: built 1643 rotamers at 96 positions.
+core.pack.pack_rotamers: IG: 1670272 bytes
+protocols.jd2.JobDistributor: mdm2_hbs_0001 reported success in 69 seconds
+protocols.jd2.PDBJobInputter: PDBJobInputter::pose_from_job
+protocols.jd2.PDBJobInputter: filling pose from saved copy ../inputs/mdm2_hbs.pdb
+AFTER: FOLD_TREE  EDGE 1 33 -1  EDGE 33 85 -1  EDGE 33 91 1  EDGE 91 86 -1  EDGE 91 96 -1 
+
+HbsDesign: hbs_start: 86 hbs_end: 96
+protocols.simple_moves.hbs.HbsPatcher: added atom pair constraint to hbs with distance: 1.52 and std: 0.05
+HbsDesign: Main loop...
+HbsDesign: PERTURB: 1 / 1
+HbsDesign: PERTURB: 1 / 2
+HbsDesign: PERTURB: 1 / 3
+HbsDesign: PERTURB: 1 / 4
+HbsDesign: PERTURB: 1 / 5
+HbsDesign: PERTURB: 1 / 6
+HbsDesign: PERTURB: 1 / 7
+HbsDesign: PERTURB: 1 / 8
+HbsDesign: PERTURB: 1 / 9
+HbsDesign: PERTURB: 1 / 10
+HbsDesign: DESIGN: 1
+HbsDesign: hbs postion 1
+HbsDesign:   not designed
+HbsDesign: hbs postion 2
+HbsDesign:   not designed
+HbsDesign: hbs postion 3
+HbsDesign:   not designed
+HbsDesign: hbs postion 4
+HbsDesign:   designed
+HbsDesign: hbs postion 5
+HbsDesign:   designed
+HbsDesign: hbs postion 6
+HbsDesign:   designed
+HbsDesign: hbs postion 7
+HbsDesign:   designed
+HbsDesign: hbs postion 8
+HbsDesign:   not designed
+HbsDesign: hbs postion 9
+HbsDesign:   not designed
+HbsDesign: hbs postion 10
+HbsDesign:   not designed
+HbsDesign: hbs postion 11
+HbsDesign:   not designed
+core.pack.interaction_graph.interaction_graph_factory: Instantiating PDInteractionGraph
+core.pack.pack_rotamers: built 4754 rotamers at 96 positions.
+core.pack.pack_rotamers: IG: 18393788 bytes
+core.pack.task: Packer task: initialize from command line() 
+HbsDesign: pre mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -205.264  -205.264  -205.264  -205.264  0  0  0  0
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     10 NO ACCEPTS.
+HbsDesign: post mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -205.935  -205.935  -205.935  -205.935  0  0  0  3
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     10 NO ACCEPTS.
+protocols.moves.TrialCounter:              unk trials=      1;  accepts= 1.0000;  energy_drop/trial=  -0.67096
+HbsDesign: PERTURB: 2 / 1
+HbsDesign: PERTURB: 2 / 2
+HbsDesign: PERTURB: 2 / 3
+HbsDesign: PERTURB: 2 / 4
+HbsDesign: PERTURB: 2 / 5
+HbsDesign: PERTURB: 2 / 6
+HbsDesign: PERTURB: 2 / 7
+HbsDesign: PERTURB: 2 / 8
+HbsDesign: PERTURB: 2 / 9
+HbsDesign: PERTURB: 2 / 10
+HbsDesign: DESIGN: 2
+HbsDesign: hbs postion 1
+HbsDesign:   not designed
+HbsDesign: hbs postion 2
+HbsDesign:   not designed
+HbsDesign: hbs postion 3
+HbsDesign:   not designed
+HbsDesign: hbs postion 4
+HbsDesign:   designed
+HbsDesign: hbs postion 5
+HbsDesign:   designed
+HbsDesign: hbs postion 6
+HbsDesign:   designed
+HbsDesign: hbs postion 7
+HbsDesign:   designed
+HbsDesign: hbs postion 8
+HbsDesign:   not designed
+HbsDesign: hbs postion 9
+HbsDesign:   not designed
+HbsDesign: hbs postion 10
+HbsDesign:   not designed
+HbsDesign: hbs postion 11
+HbsDesign:   not designed
+core.pack.interaction_graph.interaction_graph_factory: Instantiating PDInteractionGraph
+core.pack.pack_rotamers: built 4753 rotamers at 96 positions.
+core.pack.pack_rotamers: IG: 18392896 bytes
+core.pack.task: Packer task: initialize from command line() 
+HbsDesign: pre mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -205.935  -205.935  -205.935  -205.935  0  0  0  0
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     20 NO ACCEPTS.
+protocols.moves.TrialCounter:              unk trials=      1;  accepts= 1.0000;  energy_drop/trial=  -0.67096
+HbsDesign: post mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -206.022  -206.022  -206.022  -206.022  0  0  0  3
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     20 NO ACCEPTS.
+protocols.moves.TrialCounter:              unk trials=      2;  accepts= 1.0000;  energy_drop/trial=  -0.37903
+HbsDesign: PERTURB: 3 / 1
+HbsDesign: PERTURB: 3 / 2
+HbsDesign: PERTURB: 3 / 3
+HbsDesign: PERTURB: 3 / 4
+HbsDesign: PERTURB: 3 / 5
+HbsDesign: PERTURB: 3 / 6
+HbsDesign: PERTURB: 3 / 7
+HbsDesign: PERTURB: 3 / 8
+HbsDesign: PERTURB: 3 / 9
+HbsDesign: PERTURB: 3 / 10
+HbsDesign: DESIGN: 3
+HbsDesign: hbs postion 1
+HbsDesign:   not designed
+HbsDesign: hbs postion 2
+HbsDesign:   not designed
+HbsDesign: hbs postion 3
+HbsDesign:   not designed
+HbsDesign: hbs postion 4
+HbsDesign:   designed
+HbsDesign: hbs postion 5
+HbsDesign:   designed
+HbsDesign: hbs postion 6
+HbsDesign:   designed
+HbsDesign: hbs postion 7
+HbsDesign:   designed
+HbsDesign: hbs postion 8
+HbsDesign:   not designed
+HbsDesign: hbs postion 9
+HbsDesign:   not designed
+HbsDesign: hbs postion 10
+HbsDesign:   not designed
+HbsDesign: hbs postion 11
+HbsDesign:   not designed
+core.pack.interaction_graph.interaction_graph_factory: Instantiating PDInteractionGraph
+core.pack.pack_rotamers: built 4757 rotamers at 96 positions.
+core.pack.pack_rotamers: IG: 18430516 bytes
+core.pack.task: Packer task: initialize from command line() 
+HbsDesign: pre mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -206.022  -206.022  -206.022  -206.022  0  0  0  0
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     30;  accepts= 0.0667;  energy_drop/trial=   0.03559
+protocols.moves.TrialCounter:              unk trials=      2;  accepts= 1.0000;  energy_drop/trial=  -0.37903
+HbsDesign: post mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -206.073  -206.073  -206.073  -206.073  0  0  0  3
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     30;  accepts= 0.0667;  energy_drop/trial=   0.03559
+protocols.moves.TrialCounter:              unk trials=      3;  accepts= 1.0000;  energy_drop/trial=  -0.26960
+HbsDesign: PERTURB: 4 / 1
+HbsDesign: PERTURB: 4 / 2
+HbsDesign: PERTURB: 4 / 3
+HbsDesign: PERTURB: 4 / 4
+HbsDesign: PERTURB: 4 / 5
+HbsDesign: PERTURB: 4 / 6
+HbsDesign: PERTURB: 4 / 7
+HbsDesign: PERTURB: 4 / 8
+HbsDesign: PERTURB: 4 / 9
+HbsDesign: PERTURB: 4 / 10
+HbsDesign: DESIGN: 4
+HbsDesign: hbs postion 1
+HbsDesign:   not designed
+HbsDesign: hbs postion 2
+HbsDesign:   not designed
+HbsDesign: hbs postion 3
+HbsDesign:   not designed
+HbsDesign: hbs postion 4
+HbsDesign:   designed
+HbsDesign: hbs postion 5
+HbsDesign:   designed
+HbsDesign: hbs postion 6
+HbsDesign:   designed
+HbsDesign: hbs postion 7
+HbsDesign:   designed
+HbsDesign: hbs postion 8
+HbsDesign:   not designed
+HbsDesign: hbs postion 9
+HbsDesign:   not designed
+HbsDesign: hbs postion 10
+HbsDesign:   not designed
+HbsDesign: hbs postion 11
+HbsDesign:   not designed
+core.pack.interaction_graph.interaction_graph_factory: Instantiating PDInteractionGraph
+core.pack.pack_rotamers: built 4755 rotamers at 96 positions.
+core.pack.pack_rotamers: IG: 18412892 bytes
+core.pack.task: Packer task: initialize from command line() 
+HbsDesign: pre mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -206.073  -206.073  -206.073  -206.073  0  0  0  0
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     40;  accepts= 0.0500;  energy_drop/trial=   0.02669
+protocols.moves.TrialCounter:              unk trials=      3;  accepts= 1.0000;  energy_drop/trial=  -0.26960
+HbsDesign: post mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -206.032  -206.073  -206.032  -206.073  0  0  0  1
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     40;  accepts= 0.0500;  energy_drop/trial=   0.02669
+protocols.moves.TrialCounter:              unk trials=      4;  accepts= 1.0000;  energy_drop/trial=  -0.19188
+HbsDesign: PERTURB: 5 / 1
+HbsDesign: PERTURB: 5 / 2
+HbsDesign: PERTURB: 5 / 3
+HbsDesign: PERTURB: 5 / 4
+HbsDesign: PERTURB: 5 / 5
+HbsDesign: PERTURB: 5 / 6
+HbsDesign: PERTURB: 5 / 7
+HbsDesign: PERTURB: 5 / 8
+HbsDesign: PERTURB: 5 / 9
+HbsDesign: PERTURB: 5 / 10
+HbsDesign: DESIGN: 5
+HbsDesign: hbs postion 1
+HbsDesign:   not designed
+HbsDesign: hbs postion 2
+HbsDesign:   not designed
+HbsDesign: hbs postion 3
+HbsDesign:   not designed
+HbsDesign: hbs postion 4
+HbsDesign:   designed
+HbsDesign: hbs postion 5
+HbsDesign:   designed
+HbsDesign: hbs postion 6
+HbsDesign:   designed
+HbsDesign: hbs postion 7
+HbsDesign:   designed
+HbsDesign: hbs postion 8
+HbsDesign:   not designed
+HbsDesign: hbs postion 9
+HbsDesign:   not designed
+HbsDesign: hbs postion 10
+HbsDesign:   not designed
+HbsDesign: hbs postion 11
+HbsDesign:   not designed
+core.pack.interaction_graph.interaction_graph_factory: Instantiating PDInteractionGraph
+core.pack.pack_rotamers: built 4754 rotamers at 96 positions.
+core.pack.pack_rotamers: IG: 18402480 bytes
+core.pack.task: Packer task: initialize from command line() 
+HbsDesign: pre mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -206.032  -206.032  -206.032  -206.032  0  0  0  0
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     50;  accepts= 0.0400;  energy_drop/trial=   0.02135
+protocols.moves.TrialCounter:              unk trials=      4;  accepts= 1.0000;  energy_drop/trial=  -0.19188
+HbsDesign: post mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -206.053  -206.053  -206.053  -206.053  0  0  0  3
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     50;  accepts= 0.0400;  energy_drop/trial=   0.02135
+protocols.moves.TrialCounter:              unk trials=      5;  accepts= 1.0000;  energy_drop/trial=  -0.15777
+HbsDesign: PERTURB: 6 / 1
+HbsDesign: PERTURB: 6 / 2
+HbsDesign: PERTURB: 6 / 3
+HbsDesign: PERTURB: 6 / 4
+HbsDesign: PERTURB: 6 / 5
+HbsDesign: PERTURB: 6 / 6
+HbsDesign: PERTURB: 6 / 7
+HbsDesign: PERTURB: 6 / 8
+HbsDesign: PERTURB: 6 / 9
+HbsDesign: PERTURB: 6 / 10
+HbsDesign: DESIGN: 6
+HbsDesign: hbs postion 1
+HbsDesign:   not designed
+HbsDesign: hbs postion 2
+HbsDesign:   not designed
+HbsDesign: hbs postion 3
+HbsDesign:   not designed
+HbsDesign: hbs postion 4
+HbsDesign:   designed
+HbsDesign: hbs postion 5
+HbsDesign:   designed
+HbsDesign: hbs postion 6
+HbsDesign:   designed
+HbsDesign: hbs postion 7
+HbsDesign:   designed
+HbsDesign: hbs postion 8
+HbsDesign:   not designed
+HbsDesign: hbs postion 9
+HbsDesign:   not designed
+HbsDesign: hbs postion 10
+HbsDesign:   not designed
+HbsDesign: hbs postion 11
+HbsDesign:   not designed
+core.pack.interaction_graph.interaction_graph_factory: Instantiating PDInteractionGraph
+core.pack.pack_rotamers: built 4753 rotamers at 96 positions.
+core.pack.pack_rotamers: IG: 18394608 bytes
+core.pack.task: Packer task: initialize from command line() 
+HbsDesign: pre mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -206.053  -206.053  -206.053  -206.053  0  0  0  0
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     60;  accepts= 0.0333;  energy_drop/trial=   0.01780
+protocols.moves.TrialCounter:              unk trials=      5;  accepts= 1.0000;  energy_drop/trial=  -0.15777
+HbsDesign: post mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -206.096  -206.096  -206.096  -206.096  0  0  0  3
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     60;  accepts= 0.0333;  energy_drop/trial=   0.01780
+protocols.moves.TrialCounter:              unk trials=      6;  accepts= 1.0000;  energy_drop/trial=  -0.13857
+HbsDesign: PERTURB: 7 / 1
+HbsDesign: PERTURB: 7 / 2
+HbsDesign: PERTURB: 7 / 3
+HbsDesign: PERTURB: 7 / 4
+HbsDesign: PERTURB: 7 / 5
+HbsDesign: PERTURB: 7 / 6
+HbsDesign: PERTURB: 7 / 7
+HbsDesign: PERTURB: 7 / 8
+HbsDesign: PERTURB: 7 / 9
+HbsDesign: PERTURB: 7 / 10
+HbsDesign: DESIGN: 7
+HbsDesign: hbs postion 1
+HbsDesign:   not designed
+HbsDesign: hbs postion 2
+HbsDesign:   not designed
+HbsDesign: hbs postion 3
+HbsDesign:   not designed
+HbsDesign: hbs postion 4
+HbsDesign:   designed
+HbsDesign: hbs postion 5
+HbsDesign:   designed
+HbsDesign: hbs postion 6
+HbsDesign:   designed
+HbsDesign: hbs postion 7
+HbsDesign:   designed
+HbsDesign: hbs postion 8
+HbsDesign:   not designed
+HbsDesign: hbs postion 9
+HbsDesign:   not designed
+HbsDesign: hbs postion 10
+HbsDesign:   not designed
+HbsDesign: hbs postion 11
+HbsDesign:   not designed
+core.pack.interaction_graph.interaction_graph_factory: Instantiating PDInteractionGraph
+core.pack.pack_rotamers: built 4749 rotamers at 96 positions.
+core.pack.pack_rotamers: IG: 18361620 bytes
+core.pack.task: Packer task: initialize from command line() 
+HbsDesign: pre mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -206.096  -206.096  -206.096  -206.096  0  0  0  0
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     70;  accepts= 0.0286;  energy_drop/trial=   0.01525
+protocols.moves.TrialCounter:              unk trials=      6;  accepts= 1.0000;  energy_drop/trial=  -0.13857
+HbsDesign: post mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -206.125  -206.125  -206.125  -206.125  0  0  0  3
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     70;  accepts= 0.0286;  energy_drop/trial=   0.01525
+protocols.moves.TrialCounter:              unk trials=      7;  accepts= 1.0000;  energy_drop/trial=  -0.12295
+HbsDesign: PERTURB: 8 / 1
+HbsDesign: PERTURB: 8 / 2
+HbsDesign: PERTURB: 8 / 3
+HbsDesign: PERTURB: 8 / 4
+HbsDesign: PERTURB: 8 / 5
+HbsDesign: PERTURB: 8 / 6
+HbsDesign: PERTURB: 8 / 7
+HbsDesign: PERTURB: 8 / 8
+HbsDesign: PERTURB: 8 / 9
+HbsDesign: PERTURB: 8 / 10
+HbsDesign: DESIGN: 8
+HbsDesign: hbs postion 1
+HbsDesign:   not designed
+HbsDesign: hbs postion 2
+HbsDesign:   not designed
+HbsDesign: hbs postion 3
+HbsDesign:   not designed
+HbsDesign: hbs postion 4
+HbsDesign:   designed
+HbsDesign: hbs postion 5
+HbsDesign:   designed
+HbsDesign: hbs postion 6
+HbsDesign:   designed
+HbsDesign: hbs postion 7
+HbsDesign:   designed
+HbsDesign: hbs postion 8
+HbsDesign:   not designed
+HbsDesign: hbs postion 9
+HbsDesign:   not designed
+HbsDesign: hbs postion 10
+HbsDesign:   not designed
+HbsDesign: hbs postion 11
+HbsDesign:   not designed
+core.pack.interaction_graph.interaction_graph_factory: Instantiating PDInteractionGraph
+core.pack.pack_rotamers: built 4750 rotamers at 96 positions.
+core.pack.pack_rotamers: IG: 18374256 bytes
+core.pack.task: Packer task: initialize from command line() 
+HbsDesign: pre mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -206.125  -206.125  -206.125  -206.125  0  0  0  0
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     80;  accepts= 0.0375;  energy_drop/trial=   0.02218
+protocols.moves.TrialCounter:              unk trials=      7;  accepts= 1.0000;  energy_drop/trial=  -0.12295
+HbsDesign: post mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -206.151  -206.151  -206.151  -206.151  0  0  0  3
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     80;  accepts= 0.0375;  energy_drop/trial=   0.02218
+protocols.moves.TrialCounter:              unk trials=      8;  accepts= 1.0000;  energy_drop/trial=  -0.11089
+HbsDesign: PERTURB: 9 / 1
+HbsDesign: PERTURB: 9 / 2
+HbsDesign: PERTURB: 9 / 3
+HbsDesign: PERTURB: 9 / 4
+HbsDesign: PERTURB: 9 / 5
+HbsDesign: PERTURB: 9 / 6
+HbsDesign: PERTURB: 9 / 7
+HbsDesign: PERTURB: 9 / 8
+HbsDesign: PERTURB: 9 / 9
+HbsDesign: PERTURB: 9 / 10
+HbsDesign: DESIGN: 9
+HbsDesign: hbs postion 1
+HbsDesign:   not designed
+HbsDesign: hbs postion 2
+HbsDesign:   not designed
+HbsDesign: hbs postion 3
+HbsDesign:   not designed
+HbsDesign: hbs postion 4
+HbsDesign:   designed
+HbsDesign: hbs postion 5
+HbsDesign:   designed
+HbsDesign: hbs postion 6
+HbsDesign:   designed
+HbsDesign: hbs postion 7
+HbsDesign:   designed
+HbsDesign: hbs postion 8
+HbsDesign:   not designed
+HbsDesign: hbs postion 9
+HbsDesign:   not designed
+HbsDesign: hbs postion 10
+HbsDesign:   not designed
+HbsDesign: hbs postion 11
+HbsDesign:   not designed
+core.pack.interaction_graph.interaction_graph_factory: Instantiating PDInteractionGraph
+core.pack.pack_rotamers: built 4746 rotamers at 96 positions.
+core.pack.pack_rotamers: IG: 18334288 bytes
+core.pack.task: Packer task: initialize from command line() 
+HbsDesign: pre mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -206.151  -206.151  -206.151  -206.151  0  0  0  0
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     90;  accepts= 0.0333;  energy_drop/trial=   0.01972
+protocols.moves.TrialCounter:              unk trials=      8;  accepts= 1.0000;  energy_drop/trial=  -0.11089
+HbsDesign: post mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -206.239  -206.239  -206.239  -206.239  0  0  0  3
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     90;  accepts= 0.0333;  energy_drop/trial=   0.01972
+protocols.moves.TrialCounter:              unk trials=      9;  accepts= 1.0000;  energy_drop/trial=  -0.10829
+HbsDesign: PERTURB: 10 / 1
+HbsDesign: PERTURB: 10 / 2
+HbsDesign: PERTURB: 10 / 3
+HbsDesign: PERTURB: 10 / 4
+HbsDesign: PERTURB: 10 / 5
+HbsDesign: PERTURB: 10 / 6
+HbsDesign: PERTURB: 10 / 7
+HbsDesign: PERTURB: 10 / 8
+HbsDesign: PERTURB: 10 / 9
+HbsDesign: PERTURB: 10 / 10
+HbsDesign: DESIGN: 10
+HbsDesign: hbs postion 1
+HbsDesign:   not designed
+HbsDesign: hbs postion 2
+HbsDesign:   not designed
+HbsDesign: hbs postion 3
+HbsDesign:   not designed
+HbsDesign: hbs postion 4
+HbsDesign:   designed
+HbsDesign: hbs postion 5
+HbsDesign:   designed
+HbsDesign: hbs postion 6
+HbsDesign:   designed
+HbsDesign: hbs postion 7
+HbsDesign:   designed
+HbsDesign: hbs postion 8
+HbsDesign:   not designed
+HbsDesign: hbs postion 9
+HbsDesign:   not designed
+HbsDesign: hbs postion 10
+HbsDesign:   not designed
+HbsDesign: hbs postion 11
+HbsDesign:   not designed
+core.pack.interaction_graph.interaction_graph_factory: Instantiating PDInteractionGraph
+core.pack.pack_rotamers: built 4750 rotamers at 96 positions.
+core.pack.pack_rotamers: IG: 18374368 bytes
+core.pack.task: Packer task: initialize from command line() 
+HbsDesign: pre mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -206.239  -206.239  -206.239  -206.239  0  0  0  0
+protocols.moves.TrialCounter: RigidBodyPerturb trials=    100;  accepts= 0.0300;  energy_drop/trial=   0.01775
+protocols.moves.TrialCounter:              unk trials=      9;  accepts= 1.0000;  energy_drop/trial=  -0.10829
+HbsDesign: post mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -206.293  -206.293  -206.293  -206.293  0  0  0  3
+protocols.moves.TrialCounter: RigidBodyPerturb trials=    100;  accepts= 0.0300;  energy_drop/trial=   0.01775
+protocols.moves.TrialCounter:              unk trials=     10;  accepts= 1.0000;  energy_drop/trial=  -0.10290
+HbsDesign: Ending main loop...
+HbsDesign: Checking pose energy...
+protocols.moves.RigidBodyMover: Translate: Jump (before): RT -0.237086 0.259645 0.936149 -0.38296 -0.910572 0.155564 0.892823 -0.321625 0.315317 2.60328 -2.36081 -8.85393  
+protocols.moves.RigidBodyMover: Translate: Jump (after):  RT -0.237086 0.259645 0.936149 -0.38296 -0.910572 0.155564 0.892823 -0.321625 0.315317 -142.47 -25.1414 -998.013  
+core.pack.task: Packer task: initialize from command line() 
+core.pack.interaction_graph.interaction_graph_factory: Instantiating LinearMemoryInteractionGraph
+core.pack.pack_rotamers: built 1632 rotamers at 96 positions.
+core.pack.pack_rotamers: IG: 1669568 bytes
+protocols.jd2.JobDistributor: mdm2_hbs_0002 reported success in 64 seconds
+protocols.jd2.PDBJobInputter: PDBJobInputter::pose_from_job
+protocols.jd2.PDBJobInputter: filling pose from saved copy ../inputs/mdm2_hbs.pdb
+AFTER: FOLD_TREE  EDGE 1 33 -1  EDGE 33 85 -1  EDGE 33 91 1  EDGE 91 86 -1  EDGE 91 96 -1 
+
+HbsDesign: hbs_start: 86 hbs_end: 96
+protocols.simple_moves.hbs.HbsPatcher: added atom pair constraint to hbs with distance: 1.52 and std: 0.05
+HbsDesign: Main loop...
+HbsDesign: PERTURB: 1 / 1
+HbsDesign: PERTURB: 1 / 2
+HbsDesign: PERTURB: 1 / 3
+HbsDesign: PERTURB: 1 / 4
+HbsDesign: PERTURB: 1 / 5
+HbsDesign: PERTURB: 1 / 6
+HbsDesign: PERTURB: 1 / 7
+HbsDesign: PERTURB: 1 / 8
+HbsDesign: PERTURB: 1 / 9
+HbsDesign: PERTURB: 1 / 10
+HbsDesign: DESIGN: 1
+HbsDesign: hbs postion 1
+HbsDesign:   not designed
+HbsDesign: hbs postion 2
+HbsDesign:   not designed
+HbsDesign: hbs postion 3
+HbsDesign:   not designed
+HbsDesign: hbs postion 4
+HbsDesign:   designed
+HbsDesign: hbs postion 5
+HbsDesign:   designed
+HbsDesign: hbs postion 6
+HbsDesign:   designed
+HbsDesign: hbs postion 7
+HbsDesign:   designed
+HbsDesign: hbs postion 8
+HbsDesign:   not designed
+HbsDesign: hbs postion 9
+HbsDesign:   not designed
+HbsDesign: hbs postion 10
+HbsDesign:   not designed
+HbsDesign: hbs postion 11
+HbsDesign:   not designed
+core.pack.interaction_graph.interaction_graph_factory: Instantiating PDInteractionGraph
+core.pack.pack_rotamers: built 4754 rotamers at 96 positions.
+core.pack.pack_rotamers: IG: 18393788 bytes
+core.pack.task: Packer task: initialize from command line() 
+HbsDesign: pre mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -205.264  -205.264  -205.264  -205.264  0  0  0  0
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     10;  accepts= 0.1000;  energy_drop/trial=   0.28557
+HbsDesign: post mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -205.869  -205.869  -205.869  -205.869  0  0  0  3
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     10;  accepts= 0.1000;  energy_drop/trial=   0.28557
+protocols.moves.TrialCounter:              unk trials=      1;  accepts= 1.0000;  energy_drop/trial=  -0.60489
+HbsDesign: PERTURB: 2 / 1
+HbsDesign: PERTURB: 2 / 2
+HbsDesign: PERTURB: 2 / 3
+HbsDesign: PERTURB: 2 / 4
+HbsDesign: PERTURB: 2 / 5
+HbsDesign: PERTURB: 2 / 6
+HbsDesign: PERTURB: 2 / 7
+HbsDesign: PERTURB: 2 / 8
+HbsDesign: PERTURB: 2 / 9
+HbsDesign: PERTURB: 2 / 10
+HbsDesign: DESIGN: 2
+HbsDesign: hbs postion 1
+HbsDesign:   not designed
+HbsDesign: hbs postion 2
+HbsDesign:   not designed
+HbsDesign: hbs postion 3
+HbsDesign:   not designed
+HbsDesign: hbs postion 4
+HbsDesign:   designed
+HbsDesign: hbs postion 5
+HbsDesign:   designed
+HbsDesign: hbs postion 6
+HbsDesign:   designed
+HbsDesign: hbs postion 7
+HbsDesign:   designed
+HbsDesign: hbs postion 8
+HbsDesign:   not designed
+HbsDesign: hbs postion 9
+HbsDesign:   not designed
+HbsDesign: hbs postion 10
+HbsDesign:   not designed
+HbsDesign: hbs postion 11
+HbsDesign:   not designed
+core.pack.interaction_graph.interaction_graph_factory: Instantiating PDInteractionGraph
+core.pack.pack_rotamers: built 4754 rotamers at 96 positions.
+core.pack.pack_rotamers: IG: 18407164 bytes
+core.pack.task: Packer task: initialize from command line() 
+HbsDesign: pre mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -205.869  -205.869  -205.869  -205.869  0  0  0  0
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     20;  accepts= 0.0500;  energy_drop/trial=   0.14279
+protocols.moves.TrialCounter:              unk trials=      1;  accepts= 1.0000;  energy_drop/trial=  -0.60489
+HbsDesign: post mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -205.936  -205.936  -205.936  -205.936  0  0  0  3
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     20;  accepts= 0.0500;  energy_drop/trial=   0.14279
+protocols.moves.TrialCounter:              unk trials=      2;  accepts= 1.0000;  energy_drop/trial=  -0.33614
+HbsDesign: PERTURB: 3 / 1
+HbsDesign: PERTURB: 3 / 2
+HbsDesign: PERTURB: 3 / 3
+HbsDesign: PERTURB: 3 / 4
+HbsDesign: PERTURB: 3 / 5
+HbsDesign: PERTURB: 3 / 6
+HbsDesign: PERTURB: 3 / 7
+HbsDesign: PERTURB: 3 / 8
+HbsDesign: PERTURB: 3 / 9
+HbsDesign: PERTURB: 3 / 10
+HbsDesign: DESIGN: 3
+HbsDesign: hbs postion 1
+HbsDesign:   not designed
+HbsDesign: hbs postion 2
+HbsDesign:   not designed
+HbsDesign: hbs postion 3
+HbsDesign:   not designed
+HbsDesign: hbs postion 4
+HbsDesign:   designed
+HbsDesign: hbs postion 5
+HbsDesign:   designed
+HbsDesign: hbs postion 6
+HbsDesign:   designed
+HbsDesign: hbs postion 7
+HbsDesign:   designed
+HbsDesign: hbs postion 8
+HbsDesign:   not designed
+HbsDesign: hbs postion 9
+HbsDesign:   not designed
+HbsDesign: hbs postion 10
+HbsDesign:   not designed
+HbsDesign: hbs postion 11
+HbsDesign:   not designed
+core.pack.interaction_graph.interaction_graph_factory: Instantiating PDInteractionGraph
+core.pack.pack_rotamers: built 4754 rotamers at 96 positions.
+core.pack.pack_rotamers: IG: 18405200 bytes
+core.pack.task: Packer task: initialize from command line() 
+HbsDesign: pre mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -205.936  -205.936  -205.936  -205.936  0  0  0  0
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     30;  accepts= 0.0333;  energy_drop/trial=   0.09519
+protocols.moves.TrialCounter:              unk trials=      2;  accepts= 1.0000;  energy_drop/trial=  -0.33614
+HbsDesign: post mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -205.987  -205.987  -205.987  -205.987  0  0  0  3
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     30;  accepts= 0.0333;  energy_drop/trial=   0.09519
+protocols.moves.TrialCounter:              unk trials=      3;  accepts= 1.0000;  energy_drop/trial=  -0.24080
+HbsDesign: PERTURB: 4 / 1
+HbsDesign: PERTURB: 4 / 2
+HbsDesign: PERTURB: 4 / 3
+HbsDesign: PERTURB: 4 / 4
+HbsDesign: PERTURB: 4 / 5
+HbsDesign: PERTURB: 4 / 6
+HbsDesign: PERTURB: 4 / 7
+HbsDesign: PERTURB: 4 / 8
+HbsDesign: PERTURB: 4 / 9
+HbsDesign: PERTURB: 4 / 10
+HbsDesign: DESIGN: 4
+HbsDesign: hbs postion 1
+HbsDesign:   not designed
+HbsDesign: hbs postion 2
+HbsDesign:   not designed
+HbsDesign: hbs postion 3
+HbsDesign:   not designed
+HbsDesign: hbs postion 4
+HbsDesign:   designed
+HbsDesign: hbs postion 5
+HbsDesign:   designed
+HbsDesign: hbs postion 6
+HbsDesign:   designed
+HbsDesign: hbs postion 7
+HbsDesign:   designed
+HbsDesign: hbs postion 8
+HbsDesign:   not designed
+HbsDesign: hbs postion 9
+HbsDesign:   not designed
+HbsDesign: hbs postion 10
+HbsDesign:   not designed
+HbsDesign: hbs postion 11
+HbsDesign:   not designed
+core.pack.interaction_graph.interaction_graph_factory: Instantiating PDInteractionGraph
+core.pack.pack_rotamers: built 4752 rotamers at 96 positions.
+core.pack.pack_rotamers: IG: 18386388 bytes
+core.pack.task: Packer task: initialize from command line() 
+HbsDesign: pre mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -205.987  -205.987  -205.987  -205.987  0  0  0  0
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     40;  accepts= 0.0500;  energy_drop/trial=   0.09258
+protocols.moves.TrialCounter:              unk trials=      3;  accepts= 1.0000;  energy_drop/trial=  -0.24080
+HbsDesign: post mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -205.871  -205.987  -205.871  -205.987  0  0  0  1
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     40;  accepts= 0.0500;  energy_drop/trial=   0.09258
+protocols.moves.TrialCounter:              unk trials=      4;  accepts= 1.0000;  energy_drop/trial=  -0.15165
+HbsDesign: PERTURB: 5 / 1
+HbsDesign: PERTURB: 5 / 2
+HbsDesign: PERTURB: 5 / 3
+HbsDesign: PERTURB: 5 / 4
+HbsDesign: PERTURB: 5 / 5
+HbsDesign: PERTURB: 5 / 6
+HbsDesign: PERTURB: 5 / 7
+HbsDesign: PERTURB: 5 / 8
+HbsDesign: PERTURB: 5 / 9
+HbsDesign: PERTURB: 5 / 10
+HbsDesign: DESIGN: 5
+HbsDesign: hbs postion 1
+HbsDesign:   not designed
+HbsDesign: hbs postion 2
+HbsDesign:   not designed
+HbsDesign: hbs postion 3
+HbsDesign:   not designed
+HbsDesign: hbs postion 4
+HbsDesign:   designed
+HbsDesign: hbs postion 5
+HbsDesign:   designed
+HbsDesign: hbs postion 6
+HbsDesign:   designed
+HbsDesign: hbs postion 7
+HbsDesign:   designed
+HbsDesign: hbs postion 8
+HbsDesign:   not designed
+HbsDesign: hbs postion 9
+HbsDesign:   not designed
+HbsDesign: hbs postion 10
+HbsDesign:   not designed
+HbsDesign: hbs postion 11
+HbsDesign:   not designed
+core.pack.interaction_graph.interaction_graph_factory: Instantiating PDInteractionGraph
+core.pack.pack_rotamers: built 4752 rotamers at 96 positions.
+core.pack.pack_rotamers: IG: 18385152 bytes
+core.pack.task: Packer task: initialize from command line() 
+HbsDesign: pre mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -205.871  -205.871  -205.871  -205.871  0  0  0  0
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     50;  accepts= 0.0600;  energy_drop/trial=   0.10080
+protocols.moves.TrialCounter:              unk trials=      4;  accepts= 1.0000;  energy_drop/trial=  -0.15165
+HbsDesign: post mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -206.038  -206.038  -206.038  -206.038  0  0  0  3
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     50;  accepts= 0.0600;  energy_drop/trial=   0.10080
+protocols.moves.TrialCounter:              unk trials=      5;  accepts= 1.0000;  energy_drop/trial=  -0.15468
+HbsDesign: PERTURB: 6 / 1
+HbsDesign: PERTURB: 6 / 2
+HbsDesign: PERTURB: 6 / 3
+HbsDesign: PERTURB: 6 / 4
+HbsDesign: PERTURB: 6 / 5
+HbsDesign: PERTURB: 6 / 6
+HbsDesign: PERTURB: 6 / 7
+HbsDesign: PERTURB: 6 / 8
+HbsDesign: PERTURB: 6 / 9
+HbsDesign: PERTURB: 6 / 10
+HbsDesign: DESIGN: 6
+HbsDesign: hbs postion 1
+HbsDesign:   not designed
+HbsDesign: hbs postion 2
+HbsDesign:   not designed
+HbsDesign: hbs postion 3
+HbsDesign:   not designed
+HbsDesign: hbs postion 4
+HbsDesign:   designed
+HbsDesign: hbs postion 5
+HbsDesign:   designed
+HbsDesign: hbs postion 6
+HbsDesign:   designed
+HbsDesign: hbs postion 7
+HbsDesign:   designed
+HbsDesign: hbs postion 8
+HbsDesign:   not designed
+HbsDesign: hbs postion 9
+HbsDesign:   not designed
+HbsDesign: hbs postion 10
+HbsDesign:   not designed
+HbsDesign: hbs postion 11
+HbsDesign:   not designed
+core.pack.interaction_graph.interaction_graph_factory: Instantiating PDInteractionGraph
+core.pack.pack_rotamers: built 4753 rotamers at 96 positions.
+core.pack.pack_rotamers: IG: 18395068 bytes
+core.pack.task: Packer task: initialize from command line() 
+HbsDesign: pre mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -206.038  -206.038  -206.038  -206.038  0  0  0  0
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     60;  accepts= 0.0500;  energy_drop/trial=   0.08400
+protocols.moves.TrialCounter:              unk trials=      5;  accepts= 1.0000;  energy_drop/trial=  -0.15468
+HbsDesign: post mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -206.088  -206.088  -206.088  -206.088  0  0  0  3
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     60;  accepts= 0.0500;  energy_drop/trial=   0.08400
+protocols.moves.TrialCounter:              unk trials=      6;  accepts= 1.0000;  energy_drop/trial=  -0.13739
+HbsDesign: PERTURB: 7 / 1
+HbsDesign: PERTURB: 7 / 2
+HbsDesign: PERTURB: 7 / 3
+HbsDesign: PERTURB: 7 / 4
+HbsDesign: PERTURB: 7 / 5
+HbsDesign: PERTURB: 7 / 6
+HbsDesign: PERTURB: 7 / 7
+HbsDesign: PERTURB: 7 / 8
+HbsDesign: PERTURB: 7 / 9
+HbsDesign: PERTURB: 7 / 10
+HbsDesign: DESIGN: 7
+HbsDesign: hbs postion 1
+HbsDesign:   not designed
+HbsDesign: hbs postion 2
+HbsDesign:   not designed
+HbsDesign: hbs postion 3
+HbsDesign:   not designed
+HbsDesign: hbs postion 4
+HbsDesign:   designed
+HbsDesign: hbs postion 5
+HbsDesign:   designed
+HbsDesign: hbs postion 6
+HbsDesign:   designed
+HbsDesign: hbs postion 7
+HbsDesign:   designed
+HbsDesign: hbs postion 8
+HbsDesign:   not designed
+HbsDesign: hbs postion 9
+HbsDesign:   not designed
+HbsDesign: hbs postion 10
+HbsDesign:   not designed
+HbsDesign: hbs postion 11
+HbsDesign:   not designed
+core.pack.interaction_graph.interaction_graph_factory: Instantiating PDInteractionGraph
+core.pack.pack_rotamers: built 4751 rotamers at 96 positions.
+core.pack.pack_rotamers: IG: 18378572 bytes
+core.pack.task: Packer task: initialize from command line() 
+HbsDesign: pre mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -206.088  -206.088  -206.088  -206.088  0  0  0  1
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     70;  accepts= 0.0571;  energy_drop/trial=   0.07451
+protocols.moves.TrialCounter:              unk trials=      6;  accepts= 1.0000;  energy_drop/trial=  -0.13739
+HbsDesign: post mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -206.1  -206.1  -206.1  -206.1  0  0  0  3
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     70;  accepts= 0.0571;  energy_drop/trial=   0.07451
+protocols.moves.TrialCounter:              unk trials=      7;  accepts= 1.0000;  energy_drop/trial=  -0.11943
+HbsDesign: PERTURB: 8 / 1
+HbsDesign: PERTURB: 8 / 2
+HbsDesign: PERTURB: 8 / 3
+HbsDesign: PERTURB: 8 / 4
+HbsDesign: PERTURB: 8 / 5
+HbsDesign: PERTURB: 8 / 6
+HbsDesign: PERTURB: 8 / 7
+HbsDesign: PERTURB: 8 / 8
+HbsDesign: PERTURB: 8 / 9
+HbsDesign: PERTURB: 8 / 10
+HbsDesign: DESIGN: 8
+HbsDesign: hbs postion 1
+HbsDesign:   not designed
+HbsDesign: hbs postion 2
+HbsDesign:   not designed
+HbsDesign: hbs postion 3
+HbsDesign:   not designed
+HbsDesign: hbs postion 4
+HbsDesign:   designed
+HbsDesign: hbs postion 5
+HbsDesign:   designed
+HbsDesign: hbs postion 6
+HbsDesign:   designed
+HbsDesign: hbs postion 7
+HbsDesign:   designed
+HbsDesign: hbs postion 8
+HbsDesign:   not designed
+HbsDesign: hbs postion 9
+HbsDesign:   not designed
+HbsDesign: hbs postion 10
+HbsDesign:   not designed
+HbsDesign: hbs postion 11
+HbsDesign:   not designed
+core.pack.interaction_graph.interaction_graph_factory: Instantiating PDInteractionGraph
+core.pack.pack_rotamers: built 4749 rotamers at 96 positions.
+core.pack.pack_rotamers: IG: 18363016 bytes
+core.pack.task: Packer task: initialize from command line() 
+HbsDesign: pre mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -206.1  -206.1  -206.1  -206.1  0  0  0  0
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     80;  accepts= 0.0500;  energy_drop/trial=   0.06520
+protocols.moves.TrialCounter:              unk trials=      7;  accepts= 1.0000;  energy_drop/trial=  -0.11943
+HbsDesign: post mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -206.156  -206.156  -206.156  -206.156  0  0  0  3
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     80;  accepts= 0.0500;  energy_drop/trial=   0.06520
+protocols.moves.TrialCounter:              unk trials=      8;  accepts= 1.0000;  energy_drop/trial=  -0.11153
+HbsDesign: PERTURB: 9 / 1
+HbsDesign: PERTURB: 9 / 2
+HbsDesign: PERTURB: 9 / 3
+HbsDesign: PERTURB: 9 / 4
+HbsDesign: PERTURB: 9 / 5
+HbsDesign: PERTURB: 9 / 6
+HbsDesign: PERTURB: 9 / 7
+HbsDesign: PERTURB: 9 / 8
+HbsDesign: PERTURB: 9 / 9
+HbsDesign: PERTURB: 9 / 10
+HbsDesign: DESIGN: 9
+HbsDesign: hbs postion 1
+HbsDesign:   not designed
+HbsDesign: hbs postion 2
+HbsDesign:   not designed
+HbsDesign: hbs postion 3
+HbsDesign:   not designed
+HbsDesign: hbs postion 4
+HbsDesign:   designed
+HbsDesign: hbs postion 5
+HbsDesign:   designed
+HbsDesign: hbs postion 6
+HbsDesign:   designed
+HbsDesign: hbs postion 7
+HbsDesign:   designed
+HbsDesign: hbs postion 8
+HbsDesign:   not designed
+HbsDesign: hbs postion 9
+HbsDesign:   not designed
+HbsDesign: hbs postion 10
+HbsDesign:   not designed
+HbsDesign: hbs postion 11
+HbsDesign:   not designed
+core.pack.interaction_graph.interaction_graph_factory: Instantiating PDInteractionGraph
+core.pack.pack_rotamers: built 4746 rotamers at 96 positions.
+core.pack.pack_rotamers: IG: 18332572 bytes
+core.pack.task: Packer task: initialize from command line() 
+HbsDesign: pre mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -206.156  -206.156  -206.156  -206.156  0  0  0  0
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     90;  accepts= 0.0444;  energy_drop/trial=   0.05795
+protocols.moves.TrialCounter:              unk trials=      8;  accepts= 1.0000;  energy_drop/trial=  -0.11153
+HbsDesign: post mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -206.227  -206.227  -206.227  -206.227  0  0  0  3
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     90;  accepts= 0.0444;  energy_drop/trial=   0.05795
+protocols.moves.TrialCounter:              unk trials=      9;  accepts= 1.0000;  energy_drop/trial=  -0.10696
+HbsDesign: PERTURB: 10 / 1
+HbsDesign: PERTURB: 10 / 2
+HbsDesign: PERTURB: 10 / 3
+HbsDesign: PERTURB: 10 / 4
+HbsDesign: PERTURB: 10 / 5
+HbsDesign: PERTURB: 10 / 6
+HbsDesign: PERTURB: 10 / 7
+HbsDesign: PERTURB: 10 / 8
+HbsDesign: PERTURB: 10 / 9
+HbsDesign: PERTURB: 10 / 10
+HbsDesign: DESIGN: 10
+HbsDesign: hbs postion 1
+HbsDesign:   not designed
+HbsDesign: hbs postion 2
+HbsDesign:   not designed
+HbsDesign: hbs postion 3
+HbsDesign:   not designed
+HbsDesign: hbs postion 4
+HbsDesign:   designed
+HbsDesign: hbs postion 5
+HbsDesign:   designed
+HbsDesign: hbs postion 6
+HbsDesign:   designed
+HbsDesign: hbs postion 7
+HbsDesign:   designed
+HbsDesign: hbs postion 8
+HbsDesign:   not designed
+HbsDesign: hbs postion 9
+HbsDesign:   not designed
+HbsDesign: hbs postion 10
+HbsDesign:   not designed
+HbsDesign: hbs postion 11
+HbsDesign:   not designed
+core.pack.interaction_graph.interaction_graph_factory: Instantiating PDInteractionGraph
+core.pack.pack_rotamers: built 4747 rotamers at 96 positions.
+core.pack.pack_rotamers: IG: 18346180 bytes
+core.pack.task: Packer task: initialize from command line() 
+HbsDesign: pre mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -206.227  -206.227  -206.227  -206.227  0  0  0  0
+protocols.moves.TrialCounter: RigidBodyPerturb trials=    100;  accepts= 0.0400;  energy_drop/trial=   0.05216
+protocols.moves.TrialCounter:              unk trials=      9;  accepts= 1.0000;  energy_drop/trial=  -0.10696
+HbsDesign: post mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -206.217  -206.227  -206.217  -206.227  0  0  0  1
+protocols.moves.TrialCounter: RigidBodyPerturb trials=    100;  accepts= 0.0400;  energy_drop/trial=   0.05216
+protocols.moves.TrialCounter:              unk trials=     10;  accepts= 1.0000;  energy_drop/trial=  -0.09528
+HbsDesign: Ending main loop...
+HbsDesign: Checking pose energy...
+protocols.moves.RigidBodyMover: Translate: Jump (before): RT -0.237086 0.259645 0.936149 -0.38296 -0.910572 0.155564 0.892823 -0.321625 0.315317 2.60328 -2.36081 -8.85393  
+protocols.moves.RigidBodyMover: Translate: Jump (after):  RT -0.237086 0.259645 0.936149 -0.38296 -0.910572 0.155564 0.892823 -0.321625 0.315317 -142.422 -25.1194 -998.02  
+core.pack.task: Packer task: initialize from command line() 
+core.pack.interaction_graph.interaction_graph_factory: Instantiating LinearMemoryInteractionGraph
+core.pack.pack_rotamers: built 1632 rotamers at 96 positions.
+core.pack.pack_rotamers: IG: 1669568 bytes
+protocols.jd2.JobDistributor: mdm2_hbs_0003 reported success in 65 seconds
+protocols.jd2.PDBJobInputter: PDBJobInputter::pose_from_job
+protocols.jd2.PDBJobInputter: filling pose from saved copy ../inputs/mdm2_hbs.pdb
+AFTER: FOLD_TREE  EDGE 1 33 -1  EDGE 33 85 -1  EDGE 33 91 1  EDGE 91 86 -1  EDGE 91 96 -1 
+
+HbsDesign: hbs_start: 86 hbs_end: 96
+protocols.simple_moves.hbs.HbsPatcher: added atom pair constraint to hbs with distance: 1.52 and std: 0.05
+HbsDesign: Main loop...
+HbsDesign: PERTURB: 1 / 1
+HbsDesign: PERTURB: 1 / 2
+HbsDesign: PERTURB: 1 / 3
+HbsDesign: PERTURB: 1 / 4
+HbsDesign: PERTURB: 1 / 5
+HbsDesign: PERTURB: 1 / 6
+HbsDesign: PERTURB: 1 / 7
+HbsDesign: PERTURB: 1 / 8
+HbsDesign: PERTURB: 1 / 9
+HbsDesign: PERTURB: 1 / 10
+HbsDesign: DESIGN: 1
+HbsDesign: hbs postion 1
+HbsDesign:   not designed
+HbsDesign: hbs postion 2
+HbsDesign:   not designed
+HbsDesign: hbs postion 3
+HbsDesign:   not designed
+HbsDesign: hbs postion 4
+HbsDesign:   designed
+HbsDesign: hbs postion 5
+HbsDesign:   designed
+HbsDesign: hbs postion 6
+HbsDesign:   designed
+HbsDesign: hbs postion 7
+HbsDesign:   designed
+HbsDesign: hbs postion 8
+HbsDesign:   not designed
+HbsDesign: hbs postion 9
+HbsDesign:   not designed
+HbsDesign: hbs postion 10
+HbsDesign:   not designed
+HbsDesign: hbs postion 11
+HbsDesign:   not designed
+core.pack.interaction_graph.interaction_graph_factory: Instantiating PDInteractionGraph
+core.pack.pack_rotamers: built 4754 rotamers at 96 positions.
+core.pack.pack_rotamers: IG: 18393788 bytes
+core.pack.task: Packer task: initialize from command line() 
+HbsDesign: pre mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -205.264  -205.264  -205.264  -205.264  0  0  0  0
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     10;  accepts= 0.4000;  energy_drop/trial=   0.60877
+HbsDesign: post mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -205.869  -205.869  -205.869  -205.869  0  0  0  3
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     10;  accepts= 0.4000;  energy_drop/trial=   0.60877
+protocols.moves.TrialCounter:              unk trials=      1;  accepts= 1.0000;  energy_drop/trial=  -0.60489
+HbsDesign: PERTURB: 2 / 1
+HbsDesign: PERTURB: 2 / 2
+HbsDesign: PERTURB: 2 / 3
+HbsDesign: PERTURB: 2 / 4
+HbsDesign: PERTURB: 2 / 5
+HbsDesign: PERTURB: 2 / 6
+HbsDesign: PERTURB: 2 / 7
+HbsDesign: PERTURB: 2 / 8
+HbsDesign: PERTURB: 2 / 9
+HbsDesign: PERTURB: 2 / 10
+HbsDesign: DESIGN: 2
+HbsDesign: hbs postion 1
+HbsDesign:   not designed
+HbsDesign: hbs postion 2
+HbsDesign:   not designed
+HbsDesign: hbs postion 3
+HbsDesign:   not designed
+HbsDesign: hbs postion 4
+HbsDesign:   designed
+HbsDesign: hbs postion 5
+HbsDesign:   designed
+HbsDesign: hbs postion 6
+HbsDesign:   designed
+HbsDesign: hbs postion 7
+HbsDesign:   designed
+HbsDesign: hbs postion 8
+HbsDesign:   not designed
+HbsDesign: hbs postion 9
+HbsDesign:   not designed
+HbsDesign: hbs postion 10
+HbsDesign:   not designed
+HbsDesign: hbs postion 11
+HbsDesign:   not designed
+core.pack.interaction_graph.interaction_graph_factory: Instantiating PDInteractionGraph
+core.pack.pack_rotamers: built 4754 rotamers at 96 positions.
+core.pack.pack_rotamers: IG: 18407164 bytes
+core.pack.task: Packer task: initialize from command line() 
+HbsDesign: pre mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -205.869  -205.869  -205.869  -205.869  0  0  0  0
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     20;  accepts= 0.2000;  energy_drop/trial=   0.30438
+protocols.moves.TrialCounter:              unk trials=      1;  accepts= 1.0000;  energy_drop/trial=  -0.60489
+HbsDesign: post mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -205.983  -205.983  -205.983  -205.983  0  0  0  3
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     20;  accepts= 0.2000;  energy_drop/trial=   0.30438
+protocols.moves.TrialCounter:              unk trials=      2;  accepts= 1.0000;  energy_drop/trial=  -0.35968
+HbsDesign: PERTURB: 3 / 1
+HbsDesign: PERTURB: 3 / 2
+HbsDesign: PERTURB: 3 / 3
+HbsDesign: PERTURB: 3 / 4
+HbsDesign: PERTURB: 3 / 5
+HbsDesign: PERTURB: 3 / 6
+HbsDesign: PERTURB: 3 / 7
+HbsDesign: PERTURB: 3 / 8
+HbsDesign: PERTURB: 3 / 9
+HbsDesign: PERTURB: 3 / 10
+HbsDesign: DESIGN: 3
+HbsDesign: hbs postion 1
+HbsDesign:   not designed
+HbsDesign: hbs postion 2
+HbsDesign:   not designed
+HbsDesign: hbs postion 3
+HbsDesign:   not designed
+HbsDesign: hbs postion 4
+HbsDesign:   designed
+HbsDesign: hbs postion 5
+HbsDesign:   designed
+HbsDesign: hbs postion 6
+HbsDesign:   designed
+HbsDesign: hbs postion 7
+HbsDesign:   designed
+HbsDesign: hbs postion 8
+HbsDesign:   not designed
+HbsDesign: hbs postion 9
+HbsDesign:   not designed
+HbsDesign: hbs postion 10
+HbsDesign:   not designed
+HbsDesign: hbs postion 11
+HbsDesign:   not designed
+core.pack.interaction_graph.interaction_graph_factory: Instantiating PDInteractionGraph
+core.pack.pack_rotamers: built 4755 rotamers at 96 positions.
+core.pack.pack_rotamers: IG: 18413000 bytes
+core.pack.task: Packer task: initialize from command line() 
+HbsDesign: pre mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -205.983  -205.983  -205.983  -205.983  0  0  0  0
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     30;  accepts= 0.1333;  energy_drop/trial=   0.20292
+protocols.moves.TrialCounter:              unk trials=      2;  accepts= 1.0000;  energy_drop/trial=  -0.35968
+HbsDesign: post mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -206.037  -206.037  -206.037  -206.037  0  0  0  3
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     30;  accepts= 0.1333;  energy_drop/trial=   0.20292
+protocols.moves.TrialCounter:              unk trials=      3;  accepts= 1.0000;  energy_drop/trial=  -0.25753
+HbsDesign: PERTURB: 4 / 1
+HbsDesign: PERTURB: 4 / 2
+HbsDesign: PERTURB: 4 / 3
+HbsDesign: PERTURB: 4 / 4
+HbsDesign: PERTURB: 4 / 5
+HbsDesign: PERTURB: 4 / 6
+HbsDesign: PERTURB: 4 / 7
+HbsDesign: PERTURB: 4 / 8
+HbsDesign: PERTURB: 4 / 9
+HbsDesign: PERTURB: 4 / 10
+HbsDesign: DESIGN: 4
+HbsDesign: hbs postion 1
+HbsDesign:   not designed
+HbsDesign: hbs postion 2
+HbsDesign:   not designed
+HbsDesign: hbs postion 3
+HbsDesign:   not designed
+HbsDesign: hbs postion 4
+HbsDesign:   designed
+HbsDesign: hbs postion 5
+HbsDesign:   designed
+HbsDesign: hbs postion 6
+HbsDesign:   designed
+HbsDesign: hbs postion 7
+HbsDesign:   designed
+HbsDesign: hbs postion 8
+HbsDesign:   not designed
+HbsDesign: hbs postion 9
+HbsDesign:   not designed
+HbsDesign: hbs postion 10
+HbsDesign:   not designed
+HbsDesign: hbs postion 11
+HbsDesign:   not designed
+core.pack.interaction_graph.interaction_graph_factory: Instantiating PDInteractionGraph
+core.pack.pack_rotamers: built 4754 rotamers at 96 positions.
+core.pack.pack_rotamers: IG: 18402872 bytes
+core.pack.task: Packer task: initialize from command line() 
+HbsDesign: pre mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -206.037  -206.037  -206.037  -206.037  0  0  0  0
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     40;  accepts= 0.1250;  energy_drop/trial=   0.21933
+protocols.moves.TrialCounter:              unk trials=      3;  accepts= 1.0000;  energy_drop/trial=  -0.25753
+HbsDesign: post mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -205.871  -206.037  -205.871  -206.037  0  0  0  1
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     40;  accepts= 0.1250;  energy_drop/trial=   0.21933
+protocols.moves.TrialCounter:              unk trials=      4;  accepts= 1.0000;  energy_drop/trial=  -0.15162
+HbsDesign: PERTURB: 5 / 1
+HbsDesign: PERTURB: 5 / 2
+HbsDesign: PERTURB: 5 / 3
+HbsDesign: PERTURB: 5 / 4
+HbsDesign: PERTURB: 5 / 5
+HbsDesign: PERTURB: 5 / 6
+HbsDesign: PERTURB: 5 / 7
+HbsDesign: PERTURB: 5 / 8
+HbsDesign: PERTURB: 5 / 9
+HbsDesign: PERTURB: 5 / 10
+HbsDesign: DESIGN: 5
+HbsDesign: hbs postion 1
+HbsDesign:   not designed
+HbsDesign: hbs postion 2
+HbsDesign:   not designed
+HbsDesign: hbs postion 3
+HbsDesign:   not designed
+HbsDesign: hbs postion 4
+HbsDesign:   designed
+HbsDesign: hbs postion 5
+HbsDesign:   designed
+HbsDesign: hbs postion 6
+HbsDesign:   designed
+HbsDesign: hbs postion 7
+HbsDesign:   designed
+HbsDesign: hbs postion 8
+HbsDesign:   not designed
+HbsDesign: hbs postion 9
+HbsDesign:   not designed
+HbsDesign: hbs postion 10
+HbsDesign:   not designed
+HbsDesign: hbs postion 11
+HbsDesign:   not designed
+core.pack.interaction_graph.interaction_graph_factory: Instantiating PDInteractionGraph
+core.pack.pack_rotamers: built 4752 rotamers at 96 positions.
+core.pack.pack_rotamers: IG: 18385152 bytes
+core.pack.task: Packer task: initialize from command line() 
+HbsDesign: pre mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -205.871  -205.871  -205.871  -205.871  0  0  0  0
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     50;  accepts= 0.1000;  energy_drop/trial=   0.17546
+protocols.moves.TrialCounter:              unk trials=      4;  accepts= 1.0000;  energy_drop/trial=  -0.15162
+HbsDesign: post mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -206.038  -206.038  -206.038  -206.038  0  0  0  3
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     50;  accepts= 0.1000;  energy_drop/trial=   0.17546
+protocols.moves.TrialCounter:              unk trials=      5;  accepts= 1.0000;  energy_drop/trial=  -0.15468
+HbsDesign: PERTURB: 6 / 1
+HbsDesign: PERTURB: 6 / 2
+HbsDesign: PERTURB: 6 / 3
+HbsDesign: PERTURB: 6 / 4
+HbsDesign: PERTURB: 6 / 5
+HbsDesign: PERTURB: 6 / 6
+HbsDesign: PERTURB: 6 / 7
+HbsDesign: PERTURB: 6 / 8
+HbsDesign: PERTURB: 6 / 9
+HbsDesign: PERTURB: 6 / 10
+HbsDesign: DESIGN: 6
+HbsDesign: hbs postion 1
+HbsDesign:   not designed
+HbsDesign: hbs postion 2
+HbsDesign:   not designed
+HbsDesign: hbs postion 3
+HbsDesign:   not designed
+HbsDesign: hbs postion 4
+HbsDesign:   designed
+HbsDesign: hbs postion 5
+HbsDesign:   designed
+HbsDesign: hbs postion 6
+HbsDesign:   designed
+HbsDesign: hbs postion 7
+HbsDesign:   designed
+HbsDesign: hbs postion 8
+HbsDesign:   not designed
+HbsDesign: hbs postion 9
+HbsDesign:   not designed
+HbsDesign: hbs postion 10
+HbsDesign:   not designed
+HbsDesign: hbs postion 11
+HbsDesign:   not designed
+core.pack.interaction_graph.interaction_graph_factory: Instantiating PDInteractionGraph
+core.pack.pack_rotamers: built 4754 rotamers at 96 positions.
+core.pack.pack_rotamers: IG: 18402240 bytes
+core.pack.task: Packer task: initialize from command line() 
+HbsDesign: pre mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -206.038  -206.038  -206.038  -206.038  0  0  0  0
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     60;  accepts= 0.0833;  energy_drop/trial=   0.14622
+protocols.moves.TrialCounter:              unk trials=      5;  accepts= 1.0000;  energy_drop/trial=  -0.15468
+HbsDesign: post mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -206.136  -206.136  -206.136  -206.136  0  0  0  3
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     60;  accepts= 0.0833;  energy_drop/trial=   0.14622
+protocols.moves.TrialCounter:              unk trials=      6;  accepts= 1.0000;  energy_drop/trial=  -0.14529
+HbsDesign: PERTURB: 7 / 1
+HbsDesign: PERTURB: 7 / 2
+HbsDesign: PERTURB: 7 / 3
+HbsDesign: PERTURB: 7 / 4
+HbsDesign: PERTURB: 7 / 5
+HbsDesign: PERTURB: 7 / 6
+HbsDesign: PERTURB: 7 / 7
+HbsDesign: PERTURB: 7 / 8
+HbsDesign: PERTURB: 7 / 9
+HbsDesign: PERTURB: 7 / 10
+HbsDesign: DESIGN: 7
+HbsDesign: hbs postion 1
+HbsDesign:   not designed
+HbsDesign: hbs postion 2
+HbsDesign:   not designed
+HbsDesign: hbs postion 3
+HbsDesign:   not designed
+HbsDesign: hbs postion 4
+HbsDesign:   designed
+HbsDesign: hbs postion 5
+HbsDesign:   designed
+HbsDesign: hbs postion 6
+HbsDesign:   designed
+HbsDesign: hbs postion 7
+HbsDesign:   designed
+HbsDesign: hbs postion 8
+HbsDesign:   not designed
+HbsDesign: hbs postion 9
+HbsDesign:   not designed
+HbsDesign: hbs postion 10
+HbsDesign:   not designed
+HbsDesign: hbs postion 11
+HbsDesign:   not designed
+core.pack.interaction_graph.interaction_graph_factory: Instantiating PDInteractionGraph
+core.pack.pack_rotamers: built 4754 rotamers at 96 positions.
+core.pack.pack_rotamers: IG: 18402176 bytes
+core.pack.task: Packer task: initialize from command line() 
+HbsDesign: pre mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -206.136  -206.136  -206.136  -206.136  0  0  0  0
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     70;  accepts= 0.0714;  energy_drop/trial=   0.12533
+protocols.moves.TrialCounter:              unk trials=      6;  accepts= 1.0000;  energy_drop/trial=  -0.14529
+HbsDesign: post mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -206.168  -206.168  -206.168  -206.168  0  0  0  3
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     70;  accepts= 0.0714;  energy_drop/trial=   0.12533
+protocols.moves.TrialCounter:              unk trials=      7;  accepts= 1.0000;  energy_drop/trial=  -0.12906
+HbsDesign: PERTURB: 8 / 1
+HbsDesign: PERTURB: 8 / 2
+HbsDesign: PERTURB: 8 / 3
+HbsDesign: PERTURB: 8 / 4
+HbsDesign: PERTURB: 8 / 5
+HbsDesign: PERTURB: 8 / 6
+HbsDesign: PERTURB: 8 / 7
+HbsDesign: PERTURB: 8 / 8
+HbsDesign: PERTURB: 8 / 9
+HbsDesign: PERTURB: 8 / 10
+HbsDesign: DESIGN: 8
+HbsDesign: hbs postion 1
+HbsDesign:   not designed
+HbsDesign: hbs postion 2
+HbsDesign:   not designed
+HbsDesign: hbs postion 3
+HbsDesign:   not designed
+HbsDesign: hbs postion 4
+HbsDesign:   designed
+HbsDesign: hbs postion 5
+HbsDesign:   designed
+HbsDesign: hbs postion 6
+HbsDesign:   designed
+HbsDesign: hbs postion 7
+HbsDesign:   designed
+HbsDesign: hbs postion 8
+HbsDesign:   not designed
+HbsDesign: hbs postion 9
+HbsDesign:   not designed
+HbsDesign: hbs postion 10
+HbsDesign:   not designed
+HbsDesign: hbs postion 11
+HbsDesign:   not designed
+core.pack.interaction_graph.interaction_graph_factory: Instantiating PDInteractionGraph
+core.pack.pack_rotamers: built 4750 rotamers at 96 positions.
+core.pack.pack_rotamers: IG: 18371508 bytes
+core.pack.task: Packer task: initialize from command line() 
+HbsDesign: pre mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -206.168  -206.168  -206.168  -206.168  0  0  0  0
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     80;  accepts= 0.0625;  energy_drop/trial=   0.10967
+protocols.moves.TrialCounter:              unk trials=      7;  accepts= 1.0000;  energy_drop/trial=  -0.12906
+HbsDesign: post mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -206.102  -206.168  -206.102  -206.168  0  0  0  1
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     80;  accepts= 0.0625;  energy_drop/trial=   0.10967
+protocols.moves.TrialCounter:              unk trials=      8;  accepts= 1.0000;  energy_drop/trial=  -0.10470
+HbsDesign: PERTURB: 9 / 1
+HbsDesign: PERTURB: 9 / 2
+HbsDesign: PERTURB: 9 / 3
+HbsDesign: PERTURB: 9 / 4
+HbsDesign: PERTURB: 9 / 5
+HbsDesign: PERTURB: 9 / 6
+HbsDesign: PERTURB: 9 / 7
+HbsDesign: PERTURB: 9 / 8
+HbsDesign: PERTURB: 9 / 9
+HbsDesign: PERTURB: 9 / 10
+HbsDesign: DESIGN: 9
+HbsDesign: hbs postion 1
+HbsDesign:   not designed
+HbsDesign: hbs postion 2
+HbsDesign:   not designed
+HbsDesign: hbs postion 3
+HbsDesign:   not designed
+HbsDesign: hbs postion 4
+HbsDesign:   designed
+HbsDesign: hbs postion 5
+HbsDesign:   designed
+HbsDesign: hbs postion 6
+HbsDesign:   designed
+HbsDesign: hbs postion 7
+HbsDesign:   designed
+HbsDesign: hbs postion 8
+HbsDesign:   not designed
+HbsDesign: hbs postion 9
+HbsDesign:   not designed
+HbsDesign: hbs postion 10
+HbsDesign:   not designed
+HbsDesign: hbs postion 11
+HbsDesign:   not designed
+core.pack.interaction_graph.interaction_graph_factory: Instantiating PDInteractionGraph
+core.pack.pack_rotamers: built 4749 rotamers at 96 positions.
+core.pack.pack_rotamers: IG: 18368636 bytes
+core.pack.task: Packer task: initialize from command line() 
+HbsDesign: pre mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -206.102  -206.102  -206.102  -206.102  0  0  0  0
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     90;  accepts= 0.0556;  energy_drop/trial=   0.09748
+protocols.moves.TrialCounter:              unk trials=      8;  accepts= 1.0000;  energy_drop/trial=  -0.10470
+HbsDesign: post mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -206.203  -206.203  -206.203  -206.203  0  0  0  3
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     90;  accepts= 0.0556;  energy_drop/trial=   0.09748
+protocols.moves.TrialCounter:              unk trials=      9;  accepts= 1.0000;  energy_drop/trial=  -0.10434
+HbsDesign: PERTURB: 10 / 1
+HbsDesign: PERTURB: 10 / 2
+HbsDesign: PERTURB: 10 / 3
+HbsDesign: PERTURB: 10 / 4
+HbsDesign: PERTURB: 10 / 5
+HbsDesign: PERTURB: 10 / 6
+HbsDesign: PERTURB: 10 / 7
+HbsDesign: PERTURB: 10 / 8
+HbsDesign: PERTURB: 10 / 9
+HbsDesign: PERTURB: 10 / 10
+HbsDesign: DESIGN: 10
+HbsDesign: hbs postion 1
+HbsDesign:   not designed
+HbsDesign: hbs postion 2
+HbsDesign:   not designed
+HbsDesign: hbs postion 3
+HbsDesign:   not designed
+HbsDesign: hbs postion 4
+HbsDesign:   designed
+HbsDesign: hbs postion 5
+HbsDesign:   designed
+HbsDesign: hbs postion 6
+HbsDesign:   designed
+HbsDesign: hbs postion 7
+HbsDesign:   designed
+HbsDesign: hbs postion 8
+HbsDesign:   not designed
+HbsDesign: hbs postion 9
+HbsDesign:   not designed
+HbsDesign: hbs postion 10
+HbsDesign:   not designed
+HbsDesign: hbs postion 11
+HbsDesign:   not designed
+core.pack.interaction_graph.interaction_graph_factory: Instantiating PDInteractionGraph
+core.pack.pack_rotamers: built 4746 rotamers at 96 positions.
+core.pack.pack_rotamers: IG: 18337392 bytes
+core.pack.task: Packer task: initialize from command line() 
+HbsDesign: pre mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -206.203  -206.203  -206.203  -206.203  0  0  0  0
+protocols.moves.TrialCounter: RigidBodyPerturb trials=    100;  accepts= 0.0600;  energy_drop/trial=   0.11703
+protocols.moves.TrialCounter:              unk trials=      9;  accepts= 1.0000;  energy_drop/trial=  -0.10434
+HbsDesign: post mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -206.239  -206.239  -206.239  -206.239  0  0  0  3
+protocols.moves.TrialCounter: RigidBodyPerturb trials=    100;  accepts= 0.0600;  energy_drop/trial=   0.11703
+protocols.moves.TrialCounter:              unk trials=     10;  accepts= 1.0000;  energy_drop/trial=  -0.09748
+HbsDesign: Ending main loop...
+HbsDesign: Checking pose energy...
+protocols.moves.RigidBodyMover: Translate: Jump (before): RT -0.237086 0.259645 0.936149 -0.38296 -0.910572 0.155564 0.892823 -0.321625 0.315317 2.60328 -2.36081 -8.85393  
+protocols.moves.RigidBodyMover: Translate: Jump (after):  RT -0.237086 0.259645 0.936149 -0.38296 -0.910572 0.155564 0.892823 -0.321625 0.315317 -142.667 -25.3068 -997.98  
+core.pack.task: Packer task: initialize from command line() 
+core.pack.interaction_graph.interaction_graph_factory: Instantiating LinearMemoryInteractionGraph
+core.pack.pack_rotamers: built 1632 rotamers at 96 positions.
+core.pack.pack_rotamers: IG: 1669568 bytes
+protocols.jd2.JobDistributor: mdm2_hbs_0004 reported success in 65 seconds
+protocols.jd2.PDBJobInputter: PDBJobInputter::pose_from_job
+protocols.jd2.PDBJobInputter: filling pose from saved copy ../inputs/mdm2_hbs.pdb
+AFTER: FOLD_TREE  EDGE 1 33 -1  EDGE 33 85 -1  EDGE 33 91 1  EDGE 91 86 -1  EDGE 91 96 -1 
+
+HbsDesign: hbs_start: 86 hbs_end: 96
+protocols.simple_moves.hbs.HbsPatcher: added atom pair constraint to hbs with distance: 1.52 and std: 0.05
+HbsDesign: Main loop...
+HbsDesign: PERTURB: 1 / 1
+HbsDesign: PERTURB: 1 / 2
+HbsDesign: PERTURB: 1 / 3
+HbsDesign: PERTURB: 1 / 4
+HbsDesign: PERTURB: 1 / 5
+HbsDesign: PERTURB: 1 / 6
+HbsDesign: PERTURB: 1 / 7
+HbsDesign: PERTURB: 1 / 8
+HbsDesign: PERTURB: 1 / 9
+HbsDesign: PERTURB: 1 / 10
+HbsDesign: DESIGN: 1
+HbsDesign: hbs postion 1
+HbsDesign:   not designed
+HbsDesign: hbs postion 2
+HbsDesign:   not designed
+HbsDesign: hbs postion 3
+HbsDesign:   not designed
+HbsDesign: hbs postion 4
+HbsDesign:   designed
+HbsDesign: hbs postion 5
+HbsDesign:   designed
+HbsDesign: hbs postion 6
+HbsDesign:   designed
+HbsDesign: hbs postion 7
+HbsDesign:   designed
+HbsDesign: hbs postion 8
+HbsDesign:   not designed
+HbsDesign: hbs postion 9
+HbsDesign:   not designed
+HbsDesign: hbs postion 10
+HbsDesign:   not designed
+HbsDesign: hbs postion 11
+HbsDesign:   not designed
+core.pack.interaction_graph.interaction_graph_factory: Instantiating PDInteractionGraph
+core.pack.pack_rotamers: built 4754 rotamers at 96 positions.
+core.pack.pack_rotamers: IG: 18393788 bytes
+core.pack.task: Packer task: initialize from command line() 
+HbsDesign: pre mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -205.264  -205.264  -205.264  -205.264  0  0  0  0
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     10 NO ACCEPTS.
+HbsDesign: post mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -205.935  -205.935  -205.935  -205.935  0  0  0  3
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     10 NO ACCEPTS.
+protocols.moves.TrialCounter:              unk trials=      1;  accepts= 1.0000;  energy_drop/trial=  -0.67096
+HbsDesign: PERTURB: 2 / 1
+HbsDesign: PERTURB: 2 / 2
+HbsDesign: PERTURB: 2 / 3
+HbsDesign: PERTURB: 2 / 4
+HbsDesign: PERTURB: 2 / 5
+HbsDesign: PERTURB: 2 / 6
+HbsDesign: PERTURB: 2 / 7
+HbsDesign: PERTURB: 2 / 8
+HbsDesign: PERTURB: 2 / 9
+HbsDesign: PERTURB: 2 / 10
+HbsDesign: DESIGN: 2
+HbsDesign: hbs postion 1
+HbsDesign:   not designed
+HbsDesign: hbs postion 2
+HbsDesign:   not designed
+HbsDesign: hbs postion 3
+HbsDesign:   not designed
+HbsDesign: hbs postion 4
+HbsDesign:   designed
+HbsDesign: hbs postion 5
+HbsDesign:   designed
+HbsDesign: hbs postion 6
+HbsDesign:   designed
+HbsDesign: hbs postion 7
+HbsDesign:   designed
+HbsDesign: hbs postion 8
+HbsDesign:   not designed
+HbsDesign: hbs postion 9
+HbsDesign:   not designed
+HbsDesign: hbs postion 10
+HbsDesign:   not designed
+HbsDesign: hbs postion 11
+HbsDesign:   not designed
+core.pack.interaction_graph.interaction_graph_factory: Instantiating PDInteractionGraph
+core.pack.pack_rotamers: built 4753 rotamers at 96 positions.
+core.pack.pack_rotamers: IG: 18392896 bytes
+core.pack.task: Packer task: initialize from command line() 
+HbsDesign: pre mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -205.935  -205.935  -205.935  -205.935  0  0  0  0
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     20 NO ACCEPTS.
+protocols.moves.TrialCounter:              unk trials=      1;  accepts= 1.0000;  energy_drop/trial=  -0.67096
+HbsDesign: post mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -205.943  -205.943  -205.943  -205.943  0  0  0  3
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     20 NO ACCEPTS.
+protocols.moves.TrialCounter:              unk trials=      2;  accepts= 1.0000;  energy_drop/trial=  -0.33947
+HbsDesign: PERTURB: 3 / 1
+HbsDesign: PERTURB: 3 / 2
+HbsDesign: PERTURB: 3 / 3
+HbsDesign: PERTURB: 3 / 4
+HbsDesign: PERTURB: 3 / 5
+HbsDesign: PERTURB: 3 / 6
+HbsDesign: PERTURB: 3 / 7
+HbsDesign: PERTURB: 3 / 8
+HbsDesign: PERTURB: 3 / 9
+HbsDesign: PERTURB: 3 / 10
+HbsDesign: DESIGN: 3
+HbsDesign: hbs postion 1
+HbsDesign:   not designed
+HbsDesign: hbs postion 2
+HbsDesign:   not designed
+HbsDesign: hbs postion 3
+HbsDesign:   not designed
+HbsDesign: hbs postion 4
+HbsDesign:   designed
+HbsDesign: hbs postion 5
+HbsDesign:   designed
+HbsDesign: hbs postion 6
+HbsDesign:   designed
+HbsDesign: hbs postion 7
+HbsDesign:   designed
+HbsDesign: hbs postion 8
+HbsDesign:   not designed
+HbsDesign: hbs postion 9
+HbsDesign:   not designed
+HbsDesign: hbs postion 10
+HbsDesign:   not designed
+HbsDesign: hbs postion 11
+HbsDesign:   not designed
+core.pack.interaction_graph.interaction_graph_factory: Instantiating PDInteractionGraph
+core.pack.pack_rotamers: built 4757 rotamers at 96 positions.
+core.pack.pack_rotamers: IG: 18430580 bytes
+core.pack.task: Packer task: initialize from command line() 
+HbsDesign: pre mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -205.943  -205.943  -205.943  -205.943  0  0  0  0
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     30 NO ACCEPTS.
+protocols.moves.TrialCounter:              unk trials=      2;  accepts= 1.0000;  energy_drop/trial=  -0.33947
+HbsDesign: post mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -206.059  -206.059  -206.059  -206.059  0  0  0  3
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     30 NO ACCEPTS.
+protocols.moves.TrialCounter:              unk trials=      3;  accepts= 1.0000;  energy_drop/trial=  -0.26494
+HbsDesign: PERTURB: 4 / 1
+HbsDesign: PERTURB: 4 / 2
+HbsDesign: PERTURB: 4 / 3
+HbsDesign: PERTURB: 4 / 4
+HbsDesign: PERTURB: 4 / 5
+HbsDesign: PERTURB: 4 / 6
+HbsDesign: PERTURB: 4 / 7
+HbsDesign: PERTURB: 4 / 8
+HbsDesign: PERTURB: 4 / 9
+HbsDesign: PERTURB: 4 / 10
+HbsDesign: DESIGN: 4
+HbsDesign: hbs postion 1
+HbsDesign:   not designed
+HbsDesign: hbs postion 2
+HbsDesign:   not designed
+HbsDesign: hbs postion 3
+HbsDesign:   not designed
+HbsDesign: hbs postion 4
+HbsDesign:   designed
+HbsDesign: hbs postion 5
+HbsDesign:   designed
+HbsDesign: hbs postion 6
+HbsDesign:   designed
+HbsDesign: hbs postion 7
+HbsDesign:   designed
+HbsDesign: hbs postion 8
+HbsDesign:   not designed
+HbsDesign: hbs postion 9
+HbsDesign:   not designed
+HbsDesign: hbs postion 10
+HbsDesign:   not designed
+HbsDesign: hbs postion 11
+HbsDesign:   not designed
+core.pack.interaction_graph.interaction_graph_factory: Instantiating PDInteractionGraph
+core.pack.pack_rotamers: built 4755 rotamers at 96 positions.
+core.pack.pack_rotamers: IG: 18413596 bytes
+core.pack.task: Packer task: initialize from command line() 
+HbsDesign: pre mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -206.059  -206.059  -206.059  -206.059  0  0  0  0
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     40 NO ACCEPTS.
+protocols.moves.TrialCounter:              unk trials=      3;  accepts= 1.0000;  energy_drop/trial=  -0.26494
+HbsDesign: post mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -206.002  -206.059  -206.002  -206.059  0  0  0  1
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     40 NO ACCEPTS.
+protocols.moves.TrialCounter:              unk trials=      4;  accepts= 1.0000;  energy_drop/trial=  -0.18438
+HbsDesign: PERTURB: 5 / 1
+HbsDesign: PERTURB: 5 / 2
+HbsDesign: PERTURB: 5 / 3
+HbsDesign: PERTURB: 5 / 4
+HbsDesign: PERTURB: 5 / 5
+HbsDesign: PERTURB: 5 / 6
+HbsDesign: PERTURB: 5 / 7
+HbsDesign: PERTURB: 5 / 8
+HbsDesign: PERTURB: 5 / 9
+HbsDesign: PERTURB: 5 / 10
+HbsDesign: DESIGN: 5
+HbsDesign: hbs postion 1
+HbsDesign:   not designed
+HbsDesign: hbs postion 2
+HbsDesign:   not designed
+HbsDesign: hbs postion 3
+HbsDesign:   not designed
+HbsDesign: hbs postion 4
+HbsDesign:   designed
+HbsDesign: hbs postion 5
+HbsDesign:   designed
+HbsDesign: hbs postion 6
+HbsDesign:   designed
+HbsDesign: hbs postion 7
+HbsDesign:   designed
+HbsDesign: hbs postion 8
+HbsDesign:   not designed
+HbsDesign: hbs postion 9
+HbsDesign:   not designed
+HbsDesign: hbs postion 10
+HbsDesign:   not designed
+HbsDesign: hbs postion 11
+HbsDesign:   not designed
+core.pack.interaction_graph.interaction_graph_factory: Instantiating PDInteractionGraph
+core.pack.pack_rotamers: built 4754 rotamers at 96 positions.
+core.pack.pack_rotamers: IG: 18402240 bytes
+core.pack.task: Packer task: initialize from command line() 
+HbsDesign: pre mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -206.002  -206.002  -206.002  -206.002  0  0  0  0
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     50 NO ACCEPTS.
+protocols.moves.TrialCounter:              unk trials=      4;  accepts= 1.0000;  energy_drop/trial=  -0.18438
+HbsDesign: post mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -206.048  -206.048  -206.048  -206.048  0  0  0  3
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     50 NO ACCEPTS.
+protocols.moves.TrialCounter:              unk trials=      5;  accepts= 1.0000;  energy_drop/trial=  -0.15675
+HbsDesign: PERTURB: 6 / 1
+HbsDesign: PERTURB: 6 / 2
+HbsDesign: PERTURB: 6 / 3
+HbsDesign: PERTURB: 6 / 4
+HbsDesign: PERTURB: 6 / 5
+HbsDesign: PERTURB: 6 / 6
+HbsDesign: PERTURB: 6 / 7
+HbsDesign: PERTURB: 6 / 8
+HbsDesign: PERTURB: 6 / 9
+HbsDesign: PERTURB: 6 / 10
+HbsDesign: DESIGN: 6
+HbsDesign: hbs postion 1
+HbsDesign:   not designed
+HbsDesign: hbs postion 2
+HbsDesign:   not designed
+HbsDesign: hbs postion 3
+HbsDesign:   not designed
+HbsDesign: hbs postion 4
+HbsDesign:   designed
+HbsDesign: hbs postion 5
+HbsDesign:   designed
+HbsDesign: hbs postion 6
+HbsDesign:   designed
+HbsDesign: hbs postion 7
+HbsDesign:   designed
+HbsDesign: hbs postion 8
+HbsDesign:   not designed
+HbsDesign: hbs postion 9
+HbsDesign:   not designed
+HbsDesign: hbs postion 10
+HbsDesign:   not designed
+HbsDesign: hbs postion 11
+HbsDesign:   not designed
+core.pack.interaction_graph.interaction_graph_factory: Instantiating PDInteractionGraph
+core.pack.pack_rotamers: built 4751 rotamers at 96 positions.
+core.pack.pack_rotamers: IG: 18384824 bytes
+core.pack.task: Packer task: initialize from command line() 
+HbsDesign: pre mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -206.048  -206.048  -206.048  -206.048  0  0  0  0
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     60;  accepts= 0.0333;  energy_drop/trial=   0.04875
+protocols.moves.TrialCounter:              unk trials=      5;  accepts= 1.0000;  energy_drop/trial=  -0.15675
+HbsDesign: post mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -206.099  -206.099  -206.099  -206.099  0  0  0  3
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     60;  accepts= 0.0333;  energy_drop/trial=   0.04875
+protocols.moves.TrialCounter:              unk trials=      6;  accepts= 1.0000;  energy_drop/trial=  -0.13912
+HbsDesign: PERTURB: 7 / 1
+HbsDesign: PERTURB: 7 / 2
+HbsDesign: PERTURB: 7 / 3
+HbsDesign: PERTURB: 7 / 4
+HbsDesign: PERTURB: 7 / 5
+HbsDesign: PERTURB: 7 / 6
+HbsDesign: PERTURB: 7 / 7
+HbsDesign: PERTURB: 7 / 8
+HbsDesign: PERTURB: 7 / 9
+HbsDesign: PERTURB: 7 / 10
+HbsDesign: DESIGN: 7
+HbsDesign: hbs postion 1
+HbsDesign:   not designed
+HbsDesign: hbs postion 2
+HbsDesign:   not designed
+HbsDesign: hbs postion 3
+HbsDesign:   not designed
+HbsDesign: hbs postion 4
+HbsDesign:   designed
+HbsDesign: hbs postion 5
+HbsDesign:   designed
+HbsDesign: hbs postion 6
+HbsDesign:   designed
+HbsDesign: hbs postion 7
+HbsDesign:   designed
+HbsDesign: hbs postion 8
+HbsDesign:   not designed
+HbsDesign: hbs postion 9
+HbsDesign:   not designed
+HbsDesign: hbs postion 10
+HbsDesign:   not designed
+HbsDesign: hbs postion 11
+HbsDesign:   not designed
+core.pack.interaction_graph.interaction_graph_factory: Instantiating PDInteractionGraph
+core.pack.pack_rotamers: built 4749 rotamers at 96 positions.
+core.pack.pack_rotamers: IG: 18368636 bytes
+core.pack.task: Packer task: initialize from command line() 
+HbsDesign: pre mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -206.099  -206.099  -206.099  -206.099  0  0  0  0
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     70;  accepts= 0.0571;  energy_drop/trial=   0.07673
+protocols.moves.TrialCounter:              unk trials=      6;  accepts= 1.0000;  energy_drop/trial=  -0.13912
+HbsDesign: post mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -206.183  -206.183  -206.183  -206.183  0  0  0  3
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     70;  accepts= 0.0571;  energy_drop/trial=   0.07673
+protocols.moves.TrialCounter:              unk trials=      7;  accepts= 1.0000;  energy_drop/trial=  -0.13124
+HbsDesign: PERTURB: 8 / 1
+HbsDesign: PERTURB: 8 / 2
+HbsDesign: PERTURB: 8 / 3
+HbsDesign: PERTURB: 8 / 4
+HbsDesign: PERTURB: 8 / 5
+HbsDesign: PERTURB: 8 / 6
+HbsDesign: PERTURB: 8 / 7
+HbsDesign: PERTURB: 8 / 8
+HbsDesign: PERTURB: 8 / 9
+HbsDesign: PERTURB: 8 / 10
+HbsDesign: DESIGN: 8
+HbsDesign: hbs postion 1
+HbsDesign:   not designed
+HbsDesign: hbs postion 2
+HbsDesign:   not designed
+HbsDesign: hbs postion 3
+HbsDesign:   not designed
+HbsDesign: hbs postion 4
+HbsDesign:   designed
+HbsDesign: hbs postion 5
+HbsDesign:   designed
+HbsDesign: hbs postion 6
+HbsDesign:   designed
+HbsDesign: hbs postion 7
+HbsDesign:   designed
+HbsDesign: hbs postion 8
+HbsDesign:   not designed
+HbsDesign: hbs postion 9
+HbsDesign:   not designed
+HbsDesign: hbs postion 10
+HbsDesign:   not designed
+HbsDesign: hbs postion 11
+HbsDesign:   not designed
+core.pack.interaction_graph.interaction_graph_factory: Instantiating PDInteractionGraph
+core.pack.pack_rotamers: built 4750 rotamers at 96 positions.
+core.pack.pack_rotamers: IG: 18377360 bytes
+core.pack.task: Packer task: initialize from command line() 
+HbsDesign: pre mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -206.183  -206.183  -206.183  -206.183  0  0  0  0
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     80;  accepts= 0.0500;  energy_drop/trial=   0.06714
+protocols.moves.TrialCounter:              unk trials=      7;  accepts= 1.0000;  energy_drop/trial=  -0.13124
+HbsDesign: post mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -206.244  -206.244  -206.244  -206.244  0  0  0  3
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     80;  accepts= 0.0500;  energy_drop/trial=   0.06714
+protocols.moves.TrialCounter:              unk trials=      8;  accepts= 1.0000;  energy_drop/trial=  -0.12246
+HbsDesign: PERTURB: 9 / 1
+HbsDesign: PERTURB: 9 / 2
+HbsDesign: PERTURB: 9 / 3
+HbsDesign: PERTURB: 9 / 4
+HbsDesign: PERTURB: 9 / 5
+HbsDesign: PERTURB: 9 / 6
+HbsDesign: PERTURB: 9 / 7
+HbsDesign: PERTURB: 9 / 8
+HbsDesign: PERTURB: 9 / 9
+HbsDesign: PERTURB: 9 / 10
+HbsDesign: DESIGN: 9
+HbsDesign: hbs postion 1
+HbsDesign:   not designed
+HbsDesign: hbs postion 2
+HbsDesign:   not designed
+HbsDesign: hbs postion 3
+HbsDesign:   not designed
+HbsDesign: hbs postion 4
+HbsDesign:   designed
+HbsDesign: hbs postion 5
+HbsDesign:   designed
+HbsDesign: hbs postion 6
+HbsDesign:   designed
+HbsDesign: hbs postion 7
+HbsDesign:   designed
+HbsDesign: hbs postion 8
+HbsDesign:   not designed
+HbsDesign: hbs postion 9
+HbsDesign:   not designed
+HbsDesign: hbs postion 10
+HbsDesign:   not designed
+HbsDesign: hbs postion 11
+HbsDesign:   not designed
+core.pack.interaction_graph.interaction_graph_factory: Instantiating PDInteractionGraph
+core.pack.pack_rotamers: built 4751 rotamers at 96 positions.
+core.pack.pack_rotamers: IG: 18382852 bytes
+core.pack.task: Packer task: initialize from command line() 
+HbsDesign: pre mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -206.244  -206.244  -206.244  -206.244  0  0  0  0
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     90;  accepts= 0.0444;  energy_drop/trial=   0.05968
+protocols.moves.TrialCounter:              unk trials=      8;  accepts= 1.0000;  energy_drop/trial=  -0.12246
+HbsDesign: post mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -206.246  -206.246  -206.246  -206.246  0  0  0  3
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     90;  accepts= 0.0444;  energy_drop/trial=   0.05968
+protocols.moves.TrialCounter:              unk trials=      9;  accepts= 1.0000;  energy_drop/trial=  -0.10908
+HbsDesign: PERTURB: 10 / 1
+HbsDesign: PERTURB: 10 / 2
+HbsDesign: PERTURB: 10 / 3
+HbsDesign: PERTURB: 10 / 4
+HbsDesign: PERTURB: 10 / 5
+HbsDesign: PERTURB: 10 / 6
+HbsDesign: PERTURB: 10 / 7
+HbsDesign: PERTURB: 10 / 8
+HbsDesign: PERTURB: 10 / 9
+HbsDesign: PERTURB: 10 / 10
+HbsDesign: DESIGN: 10
+HbsDesign: hbs postion 1
+HbsDesign:   not designed
+HbsDesign: hbs postion 2
+HbsDesign:   not designed
+HbsDesign: hbs postion 3
+HbsDesign:   not designed
+HbsDesign: hbs postion 4
+HbsDesign:   designed
+HbsDesign: hbs postion 5
+HbsDesign:   designed
+HbsDesign: hbs postion 6
+HbsDesign:   designed
+HbsDesign: hbs postion 7
+HbsDesign:   designed
+HbsDesign: hbs postion 8
+HbsDesign:   not designed
+HbsDesign: hbs postion 9
+HbsDesign:   not designed
+HbsDesign: hbs postion 10
+HbsDesign:   not designed
+HbsDesign: hbs postion 11
+HbsDesign:   not designed
+core.pack.interaction_graph.interaction_graph_factory: Instantiating PDInteractionGraph
+core.pack.pack_rotamers: built 4755 rotamers at 96 positions.
+core.pack.pack_rotamers: IG: 18424444 bytes
+core.pack.task: Packer task: initialize from command line() 
+HbsDesign: pre mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -206.246  -206.246  -206.246  -206.246  0  0  0  0
+protocols.moves.TrialCounter: RigidBodyPerturb trials=    100;  accepts= 0.0400;  energy_drop/trial=   0.05371
+protocols.moves.TrialCounter:              unk trials=      9;  accepts= 1.0000;  energy_drop/trial=  -0.10908
+HbsDesign: post mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -206.303  -206.303  -206.303  -206.303  0  0  0  3
+protocols.moves.TrialCounter: RigidBodyPerturb trials=    100;  accepts= 0.0400;  energy_drop/trial=   0.05371
+protocols.moves.TrialCounter:              unk trials=     10;  accepts= 1.0000;  energy_drop/trial=  -0.10394
+HbsDesign: Ending main loop...
+HbsDesign: Checking pose energy...
+protocols.moves.RigidBodyMover: Translate: Jump (before): RT -0.237086 0.259645 0.936149 -0.38296 -0.910572 0.155564 0.892823 -0.321625 0.315317 2.60328 -2.36081 -8.85393  
+protocols.moves.RigidBodyMover: Translate: Jump (after):  RT -0.237086 0.259645 0.936149 -0.38296 -0.910572 0.155564 0.892823 -0.321625 0.315317 -130.406 -32.0334 -999.524  
+core.pack.task: Packer task: initialize from command line() 
+core.pack.interaction_graph.interaction_graph_factory: Instantiating LinearMemoryInteractionGraph
+core.pack.pack_rotamers: built 1612 rotamers at 96 positions.
+core.pack.pack_rotamers: IG: 1668288 bytes
+protocols.jd2.JobDistributor: mdm2_hbs_0005 reported success in 64 seconds
+protocols.jd2.PDBJobInputter: PDBJobInputter::pose_from_job
+protocols.jd2.PDBJobInputter: filling pose from saved copy ../inputs/mdm2_hbs.pdb
+AFTER: FOLD_TREE  EDGE 1 33 -1  EDGE 33 85 -1  EDGE 33 91 1  EDGE 91 86 -1  EDGE 91 96 -1 
+
+HbsDesign: hbs_start: 86 hbs_end: 96
+protocols.simple_moves.hbs.HbsPatcher: added atom pair constraint to hbs with distance: 1.52 and std: 0.05
+HbsDesign: Main loop...
+HbsDesign: PERTURB: 1 / 1
+HbsDesign: PERTURB: 1 / 2
+HbsDesign: PERTURB: 1 / 3
+HbsDesign: PERTURB: 1 / 4
+HbsDesign: PERTURB: 1 / 5
+HbsDesign: PERTURB: 1 / 6
+HbsDesign: PERTURB: 1 / 7
+HbsDesign: PERTURB: 1 / 8
+HbsDesign: PERTURB: 1 / 9
+HbsDesign: PERTURB: 1 / 10
+HbsDesign: DESIGN: 1
+HbsDesign: hbs postion 1
+HbsDesign:   not designed
+HbsDesign: hbs postion 2
+HbsDesign:   not designed
+HbsDesign: hbs postion 3
+HbsDesign:   not designed
+HbsDesign: hbs postion 4
+HbsDesign:   designed
+HbsDesign: hbs postion 5
+HbsDesign:   designed
+HbsDesign: hbs postion 6
+HbsDesign:   designed
+HbsDesign: hbs postion 7
+HbsDesign:   designed
+HbsDesign: hbs postion 8
+HbsDesign:   not designed
+HbsDesign: hbs postion 9
+HbsDesign:   not designed
+HbsDesign: hbs postion 10
+HbsDesign:   not designed
+HbsDesign: hbs postion 11
+HbsDesign:   not designed
+core.pack.interaction_graph.interaction_graph_factory: Instantiating PDInteractionGraph
+core.pack.pack_rotamers: built 4754 rotamers at 96 positions.
+core.pack.pack_rotamers: IG: 18393788 bytes
+core.pack.task: Packer task: initialize from command line() 
+HbsDesign: pre mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -205.264  -205.264  -205.264  -205.264  0  0  0  0
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     10 NO ACCEPTS.
+HbsDesign: post mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -205.869  -205.869  -205.869  -205.869  0  0  0  3
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     10 NO ACCEPTS.
+protocols.moves.TrialCounter:              unk trials=      1;  accepts= 1.0000;  energy_drop/trial=  -0.60489
+HbsDesign: PERTURB: 2 / 1
+HbsDesign: PERTURB: 2 / 2
+HbsDesign: PERTURB: 2 / 3
+HbsDesign: PERTURB: 2 / 4
+HbsDesign: PERTURB: 2 / 5
+HbsDesign: PERTURB: 2 / 6
+HbsDesign: PERTURB: 2 / 7
+HbsDesign: PERTURB: 2 / 8
+HbsDesign: PERTURB: 2 / 9
+HbsDesign: PERTURB: 2 / 10
+HbsDesign: DESIGN: 2
+HbsDesign: hbs postion 1
+HbsDesign:   not designed
+HbsDesign: hbs postion 2
+HbsDesign:   not designed
+HbsDesign: hbs postion 3
+HbsDesign:   not designed
+HbsDesign: hbs postion 4
+HbsDesign:   designed
+HbsDesign: hbs postion 5
+HbsDesign:   designed
+HbsDesign: hbs postion 6
+HbsDesign:   designed
+HbsDesign: hbs postion 7
+HbsDesign:   designed
+HbsDesign: hbs postion 8
+HbsDesign:   not designed
+HbsDesign: hbs postion 9
+HbsDesign:   not designed
+HbsDesign: hbs postion 10
+HbsDesign:   not designed
+HbsDesign: hbs postion 11
+HbsDesign:   not designed
+core.pack.interaction_graph.interaction_graph_factory: Instantiating PDInteractionGraph
+core.pack.pack_rotamers: built 4754 rotamers at 96 positions.
+core.pack.pack_rotamers: IG: 18407164 bytes
+core.pack.task: Packer task: initialize from command line() 
+HbsDesign: pre mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -205.869  -205.869  -205.869  -205.869  0  0  0  0
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     20 NO ACCEPTS.
+protocols.moves.TrialCounter:              unk trials=      1;  accepts= 1.0000;  energy_drop/trial=  -0.60489
+HbsDesign: post mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -205.983  -205.983  -205.983  -205.983  0  0  0  3
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     20 NO ACCEPTS.
+protocols.moves.TrialCounter:              unk trials=      2;  accepts= 1.0000;  energy_drop/trial=  -0.35968
+HbsDesign: PERTURB: 3 / 1
+HbsDesign: PERTURB: 3 / 2
+HbsDesign: PERTURB: 3 / 3
+HbsDesign: PERTURB: 3 / 4
+HbsDesign: PERTURB: 3 / 5
+HbsDesign: PERTURB: 3 / 6
+HbsDesign: PERTURB: 3 / 7
+HbsDesign: PERTURB: 3 / 8
+HbsDesign: PERTURB: 3 / 9
+HbsDesign: PERTURB: 3 / 10
+HbsDesign: DESIGN: 3
+HbsDesign: hbs postion 1
+HbsDesign:   not designed
+HbsDesign: hbs postion 2
+HbsDesign:   not designed
+HbsDesign: hbs postion 3
+HbsDesign:   not designed
+HbsDesign: hbs postion 4
+HbsDesign:   designed
+HbsDesign: hbs postion 5
+HbsDesign:   designed
+HbsDesign: hbs postion 6
+HbsDesign:   designed
+HbsDesign: hbs postion 7
+HbsDesign:   designed
+HbsDesign: hbs postion 8
+HbsDesign:   not designed
+HbsDesign: hbs postion 9
+HbsDesign:   not designed
+HbsDesign: hbs postion 10
+HbsDesign:   not designed
+HbsDesign: hbs postion 11
+HbsDesign:   not designed
+core.pack.interaction_graph.interaction_graph_factory: Instantiating PDInteractionGraph
+core.pack.pack_rotamers: built 4755 rotamers at 96 positions.
+core.pack.pack_rotamers: IG: 18413000 bytes
+core.pack.task: Packer task: initialize from command line() 
+HbsDesign: pre mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -205.983  -205.983  -205.983  -205.983  0  0  0  0
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     30 NO ACCEPTS.
+protocols.moves.TrialCounter:              unk trials=      2;  accepts= 1.0000;  energy_drop/trial=  -0.35968
+HbsDesign: post mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -206.037  -206.037  -206.037  -206.037  0  0  0  3
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     30 NO ACCEPTS.
+protocols.moves.TrialCounter:              unk trials=      3;  accepts= 1.0000;  energy_drop/trial=  -0.25753
+HbsDesign: PERTURB: 4 / 1
+HbsDesign: PERTURB: 4 / 2
+HbsDesign: PERTURB: 4 / 3
+HbsDesign: PERTURB: 4 / 4
+HbsDesign: PERTURB: 4 / 5
+HbsDesign: PERTURB: 4 / 6
+HbsDesign: PERTURB: 4 / 7
+HbsDesign: PERTURB: 4 / 8
+HbsDesign: PERTURB: 4 / 9
+HbsDesign: PERTURB: 4 / 10
+HbsDesign: DESIGN: 4
+HbsDesign: hbs postion 1
+HbsDesign:   not designed
+HbsDesign: hbs postion 2
+HbsDesign:   not designed
+HbsDesign: hbs postion 3
+HbsDesign:   not designed
+HbsDesign: hbs postion 4
+HbsDesign:   designed
+HbsDesign: hbs postion 5
+HbsDesign:   designed
+HbsDesign: hbs postion 6
+HbsDesign:   designed
+HbsDesign: hbs postion 7
+HbsDesign:   designed
+HbsDesign: hbs postion 8
+HbsDesign:   not designed
+HbsDesign: hbs postion 9
+HbsDesign:   not designed
+HbsDesign: hbs postion 10
+HbsDesign:   not designed
+HbsDesign: hbs postion 11
+HbsDesign:   not designed
+core.pack.interaction_graph.interaction_graph_factory: Instantiating PDInteractionGraph
+core.pack.pack_rotamers: built 4754 rotamers at 96 positions.
+core.pack.pack_rotamers: IG: 18402872 bytes
+core.pack.task: Packer task: initialize from command line() 
+HbsDesign: pre mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -206.037  -206.037  -206.037  -206.037  0  0  0  0
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     40 NO ACCEPTS.
+protocols.moves.TrialCounter:              unk trials=      3;  accepts= 1.0000;  energy_drop/trial=  -0.25753
+HbsDesign: post mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -206.026  -206.037  -206.026  -206.037  0  0  0  1
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     40 NO ACCEPTS.
+protocols.moves.TrialCounter:              unk trials=      4;  accepts= 1.0000;  energy_drop/trial=  -0.19045
+HbsDesign: PERTURB: 5 / 1
+HbsDesign: PERTURB: 5 / 2
+HbsDesign: PERTURB: 5 / 3
+HbsDesign: PERTURB: 5 / 4
+HbsDesign: PERTURB: 5 / 5
+HbsDesign: PERTURB: 5 / 6
+HbsDesign: PERTURB: 5 / 7
+HbsDesign: PERTURB: 5 / 8
+HbsDesign: PERTURB: 5 / 9
+HbsDesign: PERTURB: 5 / 10
+HbsDesign: DESIGN: 5
+HbsDesign: hbs postion 1
+HbsDesign:   not designed
+HbsDesign: hbs postion 2
+HbsDesign:   not designed
+HbsDesign: hbs postion 3
+HbsDesign:   not designed
+HbsDesign: hbs postion 4
+HbsDesign:   designed
+HbsDesign: hbs postion 5
+HbsDesign:   designed
+HbsDesign: hbs postion 6
+HbsDesign:   designed
+HbsDesign: hbs postion 7
+HbsDesign:   designed
+HbsDesign: hbs postion 8
+HbsDesign:   not designed
+HbsDesign: hbs postion 9
+HbsDesign:   not designed
+HbsDesign: hbs postion 10
+HbsDesign:   not designed
+HbsDesign: hbs postion 11
+HbsDesign:   not designed
+core.pack.interaction_graph.interaction_graph_factory: Instantiating PDInteractionGraph
+core.pack.pack_rotamers: built 4753 rotamers at 96 positions.
+core.pack.pack_rotamers: IG: 18392480 bytes
+core.pack.task: Packer task: initialize from command line() 
+HbsDesign: pre mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -206.026  -206.026  -206.026  -206.026  0  0  0  0
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     50 NO ACCEPTS.
+protocols.moves.TrialCounter:              unk trials=      4;  accepts= 1.0000;  energy_drop/trial=  -0.19045
+HbsDesign: post mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -206.026  -206.026  -206.026  -206.026  0  0  0  0
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     50 NO ACCEPTS.
+protocols.moves.TrialCounter:              unk trials=      5;  accepts= 0.8000;  energy_drop/trial=  -0.15236
+HbsDesign: PERTURB: 6 / 1
+HbsDesign: PERTURB: 6 / 2
+HbsDesign: PERTURB: 6 / 3
+HbsDesign: PERTURB: 6 / 4
+HbsDesign: PERTURB: 6 / 5
+HbsDesign: PERTURB: 6 / 6
+HbsDesign: PERTURB: 6 / 7
+HbsDesign: PERTURB: 6 / 8
+HbsDesign: PERTURB: 6 / 9
+HbsDesign: PERTURB: 6 / 10
+HbsDesign: DESIGN: 6
+HbsDesign: hbs postion 1
+HbsDesign:   not designed
+HbsDesign: hbs postion 2
+HbsDesign:   not designed
+HbsDesign: hbs postion 3
+HbsDesign:   not designed
+HbsDesign: hbs postion 4
+HbsDesign:   designed
+HbsDesign: hbs postion 5
+HbsDesign:   designed
+HbsDesign: hbs postion 6
+HbsDesign:   designed
+HbsDesign: hbs postion 7
+HbsDesign:   designed
+HbsDesign: hbs postion 8
+HbsDesign:   not designed
+HbsDesign: hbs postion 9
+HbsDesign:   not designed
+HbsDesign: hbs postion 10
+HbsDesign:   not designed
+HbsDesign: hbs postion 11
+HbsDesign:   not designed
+core.pack.interaction_graph.interaction_graph_factory: Instantiating PDInteractionGraph
+core.pack.pack_rotamers: built 4753 rotamers at 96 positions.
+core.pack.pack_rotamers: IG: 18392480 bytes
+core.pack.task: Packer task: initialize from command line() 
+HbsDesign: pre mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -206.026  -206.026  -206.026  -206.026  0  0  0  0
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     60;  accepts= 0.0167;  energy_drop/trial=   0.01107
+protocols.moves.TrialCounter:              unk trials=      5;  accepts= 0.8000;  energy_drop/trial=  -0.15236
+HbsDesign: post mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -206.042  -206.042  -206.042  -206.042  0  0  0  3
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     60;  accepts= 0.0167;  energy_drop/trial=   0.01107
+protocols.moves.TrialCounter:              unk trials=      6;  accepts= 0.8333;  energy_drop/trial=  -0.12963
+HbsDesign: PERTURB: 7 / 1
+HbsDesign: PERTURB: 7 / 2
+HbsDesign: PERTURB: 7 / 3
+HbsDesign: PERTURB: 7 / 4
+HbsDesign: PERTURB: 7 / 5
+HbsDesign: PERTURB: 7 / 6
+HbsDesign: PERTURB: 7 / 7
+HbsDesign: PERTURB: 7 / 8
+HbsDesign: PERTURB: 7 / 9
+HbsDesign: PERTURB: 7 / 10
+HbsDesign: DESIGN: 7
+HbsDesign: hbs postion 1
+HbsDesign:   not designed
+HbsDesign: hbs postion 2
+HbsDesign:   not designed
+HbsDesign: hbs postion 3
+HbsDesign:   not designed
+HbsDesign: hbs postion 4
+HbsDesign:   designed
+HbsDesign: hbs postion 5
+HbsDesign:   designed
+HbsDesign: hbs postion 6
+HbsDesign:   designed
+HbsDesign: hbs postion 7
+HbsDesign:   designed
+HbsDesign: hbs postion 8
+HbsDesign:   not designed
+HbsDesign: hbs postion 9
+HbsDesign:   not designed
+HbsDesign: hbs postion 10
+HbsDesign:   not designed
+HbsDesign: hbs postion 11
+HbsDesign:   not designed
+core.pack.interaction_graph.interaction_graph_factory: Instantiating PDInteractionGraph
+core.pack.pack_rotamers: built 4753 rotamers at 96 positions.
+core.pack.pack_rotamers: IG: 18394608 bytes
+core.pack.task: Packer task: initialize from command line() 
+HbsDesign: pre mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -206.042  -206.042  -206.042  -206.042  0  0  0  0
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     70;  accepts= 0.0286;  energy_drop/trial=   0.02231
+protocols.moves.TrialCounter:              unk trials=      6;  accepts= 0.8333;  energy_drop/trial=  -0.12963
+HbsDesign: post mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -206.212  -206.212  -206.212  -206.212  0  0  0  3
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     70;  accepts= 0.0286;  energy_drop/trial=   0.02231
+protocols.moves.TrialCounter:              unk trials=      7;  accepts= 0.8571;  energy_drop/trial=  -0.13537
+HbsDesign: PERTURB: 8 / 1
+HbsDesign: PERTURB: 8 / 2
+HbsDesign: PERTURB: 8 / 3
+HbsDesign: PERTURB: 8 / 4
+HbsDesign: PERTURB: 8 / 5
+HbsDesign: PERTURB: 8 / 6
+HbsDesign: PERTURB: 8 / 7
+HbsDesign: PERTURB: 8 / 8
+HbsDesign: PERTURB: 8 / 9
+HbsDesign: PERTURB: 8 / 10
+HbsDesign: DESIGN: 8
+HbsDesign: hbs postion 1
+HbsDesign:   not designed
+HbsDesign: hbs postion 2
+HbsDesign:   not designed
+HbsDesign: hbs postion 3
+HbsDesign:   not designed
+HbsDesign: hbs postion 4
+HbsDesign:   designed
+HbsDesign: hbs postion 5
+HbsDesign:   designed
+HbsDesign: hbs postion 6
+HbsDesign:   designed
+HbsDesign: hbs postion 7
+HbsDesign:   designed
+HbsDesign: hbs postion 8
+HbsDesign:   not designed
+HbsDesign: hbs postion 9
+HbsDesign:   not designed
+HbsDesign: hbs postion 10
+HbsDesign:   not designed
+HbsDesign: hbs postion 11
+HbsDesign:   not designed
+core.pack.interaction_graph.interaction_graph_factory: Instantiating PDInteractionGraph
+core.pack.pack_rotamers: built 4745 rotamers at 96 positions.
+core.pack.pack_rotamers: IG: 18323352 bytes
+core.pack.task: Packer task: initialize from command line() 
+HbsDesign: pre mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -206.212  -206.212  -206.212  -206.212  0  0  0  0
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     80;  accepts= 0.0250;  energy_drop/trial=   0.01953
+protocols.moves.TrialCounter:              unk trials=      7;  accepts= 0.8571;  energy_drop/trial=  -0.13537
+HbsDesign: post mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -206.237  -206.237  -206.237  -206.237  0  0  0  3
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     80;  accepts= 0.0250;  energy_drop/trial=   0.01953
+protocols.moves.TrialCounter:              unk trials=      8;  accepts= 0.8750;  energy_drop/trial=  -0.12166
+HbsDesign: PERTURB: 9 / 1
+HbsDesign: PERTURB: 9 / 2
+HbsDesign: PERTURB: 9 / 3
+HbsDesign: PERTURB: 9 / 4
+HbsDesign: PERTURB: 9 / 5
+HbsDesign: PERTURB: 9 / 6
+HbsDesign: PERTURB: 9 / 7
+HbsDesign: PERTURB: 9 / 8
+HbsDesign: PERTURB: 9 / 9
+HbsDesign: PERTURB: 9 / 10
+HbsDesign: DESIGN: 9
+HbsDesign: hbs postion 1
+HbsDesign:   not designed
+HbsDesign: hbs postion 2
+HbsDesign:   not designed
+HbsDesign: hbs postion 3
+HbsDesign:   not designed
+HbsDesign: hbs postion 4
+HbsDesign:   designed
+HbsDesign: hbs postion 5
+HbsDesign:   designed
+HbsDesign: hbs postion 6
+HbsDesign:   designed
+HbsDesign: hbs postion 7
+HbsDesign:   designed
+HbsDesign: hbs postion 8
+HbsDesign:   not designed
+HbsDesign: hbs postion 9
+HbsDesign:   not designed
+HbsDesign: hbs postion 10
+HbsDesign:   not designed
+HbsDesign: hbs postion 11
+HbsDesign:   not designed
+core.pack.interaction_graph.interaction_graph_factory: Instantiating PDInteractionGraph
+core.pack.pack_rotamers: built 4745 rotamers at 96 positions.
+core.pack.pack_rotamers: IG: 18327400 bytes
+core.pack.task: Packer task: initialize from command line() 
+HbsDesign: pre mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -206.237  -206.237  -206.237  -206.237  0  0  0  0
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     90;  accepts= 0.0222;  energy_drop/trial=   0.01736
+protocols.moves.TrialCounter:              unk trials=      8;  accepts= 0.8750;  energy_drop/trial=  -0.12166
+HbsDesign: post mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -206.177  -206.237  -206.177  -206.237  0  0  0  1
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     90;  accepts= 0.0222;  energy_drop/trial=   0.01736
+protocols.moves.TrialCounter:              unk trials=      9;  accepts= 0.8889;  energy_drop/trial=  -0.10143
+HbsDesign: PERTURB: 10 / 1
+HbsDesign: PERTURB: 10 / 2
+HbsDesign: PERTURB: 10 / 3
+HbsDesign: PERTURB: 10 / 4
+HbsDesign: PERTURB: 10 / 5
+HbsDesign: PERTURB: 10 / 6
+HbsDesign: PERTURB: 10 / 7
+HbsDesign: PERTURB: 10 / 8
+HbsDesign: PERTURB: 10 / 9
+HbsDesign: PERTURB: 10 / 10
+HbsDesign: DESIGN: 10
+HbsDesign: hbs postion 1
+HbsDesign:   not designed
+HbsDesign: hbs postion 2
+HbsDesign:   not designed
+HbsDesign: hbs postion 3
+HbsDesign:   not designed
+HbsDesign: hbs postion 4
+HbsDesign:   designed
+HbsDesign: hbs postion 5
+HbsDesign:   designed
+HbsDesign: hbs postion 6
+HbsDesign:   designed
+HbsDesign: hbs postion 7
+HbsDesign:   designed
+HbsDesign: hbs postion 8
+HbsDesign:   not designed
+HbsDesign: hbs postion 9
+HbsDesign:   not designed
+HbsDesign: hbs postion 10
+HbsDesign:   not designed
+HbsDesign: hbs postion 11
+HbsDesign:   not designed
+core.pack.interaction_graph.interaction_graph_factory: Instantiating PDInteractionGraph
+core.pack.pack_rotamers: built 4752 rotamers at 96 positions.
+core.pack.pack_rotamers: IG: 18395540 bytes
+core.pack.task: Packer task: initialize from command line() 
+HbsDesign: pre mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -206.177  -206.177  -206.177  -206.177  0  0  0  0
+protocols.moves.TrialCounter: RigidBodyPerturb trials=    100;  accepts= 0.0200;  energy_drop/trial=   0.01562
+protocols.moves.TrialCounter:              unk trials=      9;  accepts= 0.8889;  energy_drop/trial=  -0.10143
+HbsDesign: post mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -206.309  -206.309  -206.309  -206.309  0  0  0  3
+protocols.moves.TrialCounter: RigidBodyPerturb trials=    100;  accepts= 0.0200;  energy_drop/trial=   0.01562
+protocols.moves.TrialCounter:              unk trials=     10;  accepts= 0.9000;  energy_drop/trial=  -0.10449
+HbsDesign: Ending main loop...
+HbsDesign: Checking pose energy...
+protocols.moves.RigidBodyMover: Translate: Jump (before): RT -0.237086 0.259645 0.936149 -0.38296 -0.910572 0.155564 0.892823 -0.321625 0.315317 2.60328 -2.36081 -8.85393  
+protocols.moves.RigidBodyMover: Translate: Jump (after):  RT -0.237086 0.259645 0.936149 -0.38296 -0.910572 0.155564 0.892823 -0.321625 0.315317 -142.371 -25.2127 -998.025  
+core.pack.task: Packer task: initialize from command line() 
+core.pack.interaction_graph.interaction_graph_factory: Instantiating LinearMemoryInteractionGraph
+core.pack.pack_rotamers: built 1632 rotamers at 96 positions.
+core.pack.pack_rotamers: IG: 1669568 bytes
+protocols.jd2.JobDistributor: mdm2_hbs_0006 reported success in 65 seconds
+protocols.jd2.PDBJobInputter: PDBJobInputter::pose_from_job
+protocols.jd2.PDBJobInputter: filling pose from saved copy ../inputs/mdm2_hbs.pdb
+AFTER: FOLD_TREE  EDGE 1 33 -1  EDGE 33 85 -1  EDGE 33 91 1  EDGE 91 86 -1  EDGE 91 96 -1 
+
+HbsDesign: hbs_start: 86 hbs_end: 96
+protocols.simple_moves.hbs.HbsPatcher: added atom pair constraint to hbs with distance: 1.52 and std: 0.05
+HbsDesign: Main loop...
+HbsDesign: PERTURB: 1 / 1
+HbsDesign: PERTURB: 1 / 2
+HbsDesign: PERTURB: 1 / 3
+HbsDesign: PERTURB: 1 / 4
+HbsDesign: PERTURB: 1 / 5
+HbsDesign: PERTURB: 1 / 6
+HbsDesign: PERTURB: 1 / 7
+HbsDesign: PERTURB: 1 / 8
+HbsDesign: PERTURB: 1 / 9
+HbsDesign: PERTURB: 1 / 10
+HbsDesign: DESIGN: 1
+HbsDesign: hbs postion 1
+HbsDesign:   not designed
+HbsDesign: hbs postion 2
+HbsDesign:   not designed
+HbsDesign: hbs postion 3
+HbsDesign:   not designed
+HbsDesign: hbs postion 4
+HbsDesign:   designed
+HbsDesign: hbs postion 5
+HbsDesign:   designed
+HbsDesign: hbs postion 6
+HbsDesign:   designed
+HbsDesign: hbs postion 7
+HbsDesign:   designed
+HbsDesign: hbs postion 8
+HbsDesign:   not designed
+HbsDesign: hbs postion 9
+HbsDesign:   not designed
+HbsDesign: hbs postion 10
+HbsDesign:   not designed
+HbsDesign: hbs postion 11
+HbsDesign:   not designed
+core.pack.interaction_graph.interaction_graph_factory: Instantiating PDInteractionGraph
+core.pack.pack_rotamers: built 4754 rotamers at 96 positions.
+core.pack.pack_rotamers: IG: 18393788 bytes
+core.pack.task: Packer task: initialize from command line() 
+HbsDesign: pre mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -205.264  -205.264  -205.264  -205.264  0  0  0  0
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     10;  accepts= 0.1000;  energy_drop/trial=   0.06698
+HbsDesign: post mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -205.869  -205.869  -205.869  -205.869  0  0  0  3
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     10;  accepts= 0.1000;  energy_drop/trial=   0.06698
+protocols.moves.TrialCounter:              unk trials=      1;  accepts= 1.0000;  energy_drop/trial=  -0.60489
+HbsDesign: PERTURB: 2 / 1
+HbsDesign: PERTURB: 2 / 2
+HbsDesign: PERTURB: 2 / 3
+HbsDesign: PERTURB: 2 / 4
+HbsDesign: PERTURB: 2 / 5
+HbsDesign: PERTURB: 2 / 6
+HbsDesign: PERTURB: 2 / 7
+HbsDesign: PERTURB: 2 / 8
+HbsDesign: PERTURB: 2 / 9
+HbsDesign: PERTURB: 2 / 10
+HbsDesign: DESIGN: 2
+HbsDesign: hbs postion 1
+HbsDesign:   not designed
+HbsDesign: hbs postion 2
+HbsDesign:   not designed
+HbsDesign: hbs postion 3
+HbsDesign:   not designed
+HbsDesign: hbs postion 4
+HbsDesign:   designed
+HbsDesign: hbs postion 5
+HbsDesign:   designed
+HbsDesign: hbs postion 6
+HbsDesign:   designed
+HbsDesign: hbs postion 7
+HbsDesign:   designed
+HbsDesign: hbs postion 8
+HbsDesign:   not designed
+HbsDesign: hbs postion 9
+HbsDesign:   not designed
+HbsDesign: hbs postion 10
+HbsDesign:   not designed
+HbsDesign: hbs postion 11
+HbsDesign:   not designed
+core.pack.interaction_graph.interaction_graph_factory: Instantiating PDInteractionGraph
+core.pack.pack_rotamers: built 4754 rotamers at 96 positions.
+core.pack.pack_rotamers: IG: 18407164 bytes
+core.pack.task: Packer task: initialize from command line() 
+HbsDesign: pre mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -205.869  -205.869  -205.869  -205.869  0  0  0  0
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     20;  accepts= 0.1000;  energy_drop/trial=   0.20325
+protocols.moves.TrialCounter:              unk trials=      1;  accepts= 1.0000;  energy_drop/trial=  -0.60489
+HbsDesign: post mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -205.936  -205.936  -205.936  -205.936  0  0  0  3
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     20;  accepts= 0.1000;  energy_drop/trial=   0.20325
+protocols.moves.TrialCounter:              unk trials=      2;  accepts= 1.0000;  energy_drop/trial=  -0.33614
+HbsDesign: PERTURB: 3 / 1
+HbsDesign: PERTURB: 3 / 2
+HbsDesign: PERTURB: 3 / 3
+HbsDesign: PERTURB: 3 / 4
+HbsDesign: PERTURB: 3 / 5
+HbsDesign: PERTURB: 3 / 6
+HbsDesign: PERTURB: 3 / 7
+HbsDesign: PERTURB: 3 / 8
+HbsDesign: PERTURB: 3 / 9
+HbsDesign: PERTURB: 3 / 10
+HbsDesign: DESIGN: 3
+HbsDesign: hbs postion 1
+HbsDesign:   not designed
+HbsDesign: hbs postion 2
+HbsDesign:   not designed
+HbsDesign: hbs postion 3
+HbsDesign:   not designed
+HbsDesign: hbs postion 4
+HbsDesign:   designed
+HbsDesign: hbs postion 5
+HbsDesign:   designed
+HbsDesign: hbs postion 6
+HbsDesign:   designed
+HbsDesign: hbs postion 7
+HbsDesign:   designed
+HbsDesign: hbs postion 8
+HbsDesign:   not designed
+HbsDesign: hbs postion 9
+HbsDesign:   not designed
+HbsDesign: hbs postion 10
+HbsDesign:   not designed
+HbsDesign: hbs postion 11
+HbsDesign:   not designed
+core.pack.interaction_graph.interaction_graph_factory: Instantiating PDInteractionGraph
+core.pack.pack_rotamers: built 4754 rotamers at 96 positions.
+core.pack.pack_rotamers: IG: 18405200 bytes
+core.pack.task: Packer task: initialize from command line() 
+HbsDesign: pre mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -205.936  -205.936  -205.936  -205.936  0  0  0  0
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     30;  accepts= 0.0667;  energy_drop/trial=   0.13550
+protocols.moves.TrialCounter:              unk trials=      2;  accepts= 1.0000;  energy_drop/trial=  -0.33614
+HbsDesign: post mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -205.987  -205.987  -205.987  -205.987  0  0  0  3
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     30;  accepts= 0.0667;  energy_drop/trial=   0.13550
+protocols.moves.TrialCounter:              unk trials=      3;  accepts= 1.0000;  energy_drop/trial=  -0.24080
+HbsDesign: PERTURB: 4 / 1
+HbsDesign: PERTURB: 4 / 2
+HbsDesign: PERTURB: 4 / 3
+HbsDesign: PERTURB: 4 / 4
+HbsDesign: PERTURB: 4 / 5
+HbsDesign: PERTURB: 4 / 6
+HbsDesign: PERTURB: 4 / 7
+HbsDesign: PERTURB: 4 / 8
+HbsDesign: PERTURB: 4 / 9
+HbsDesign: PERTURB: 4 / 10
+HbsDesign: DESIGN: 4
+HbsDesign: hbs postion 1
+HbsDesign:   not designed
+HbsDesign: hbs postion 2
+HbsDesign:   not designed
+HbsDesign: hbs postion 3
+HbsDesign:   not designed
+HbsDesign: hbs postion 4
+HbsDesign:   designed
+HbsDesign: hbs postion 5
+HbsDesign:   designed
+HbsDesign: hbs postion 6
+HbsDesign:   designed
+HbsDesign: hbs postion 7
+HbsDesign:   designed
+HbsDesign: hbs postion 8
+HbsDesign:   not designed
+HbsDesign: hbs postion 9
+HbsDesign:   not designed
+HbsDesign: hbs postion 10
+HbsDesign:   not designed
+HbsDesign: hbs postion 11
+HbsDesign:   not designed
+core.pack.interaction_graph.interaction_graph_factory: Instantiating PDInteractionGraph
+core.pack.pack_rotamers: built 4752 rotamers at 96 positions.
+core.pack.pack_rotamers: IG: 18386388 bytes
+core.pack.task: Packer task: initialize from command line() 
+HbsDesign: pre mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -205.987  -205.987  -205.987  -205.987  0  0  0  0
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     40;  accepts= 0.0500;  energy_drop/trial=   0.10162
+protocols.moves.TrialCounter:              unk trials=      3;  accepts= 1.0000;  energy_drop/trial=  -0.24080
+HbsDesign: post mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -206.026  -206.026  -206.026  -206.026  0  0  0  3
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     40;  accepts= 0.0500;  energy_drop/trial=   0.10162
+protocols.moves.TrialCounter:              unk trials=      4;  accepts= 1.0000;  energy_drop/trial=  -0.19054
+HbsDesign: PERTURB: 5 / 1
+HbsDesign: PERTURB: 5 / 2
+HbsDesign: PERTURB: 5 / 3
+HbsDesign: PERTURB: 5 / 4
+HbsDesign: PERTURB: 5 / 5
+HbsDesign: PERTURB: 5 / 6
+HbsDesign: PERTURB: 5 / 7
+HbsDesign: PERTURB: 5 / 8
+HbsDesign: PERTURB: 5 / 9
+HbsDesign: PERTURB: 5 / 10
+HbsDesign: DESIGN: 5
+HbsDesign: hbs postion 1
+HbsDesign:   not designed
+HbsDesign: hbs postion 2
+HbsDesign:   not designed
+HbsDesign: hbs postion 3
+HbsDesign:   not designed
+HbsDesign: hbs postion 4
+HbsDesign:   designed
+HbsDesign: hbs postion 5
+HbsDesign:   designed
+HbsDesign: hbs postion 6
+HbsDesign:   designed
+HbsDesign: hbs postion 7
+HbsDesign:   designed
+HbsDesign: hbs postion 8
+HbsDesign:   not designed
+HbsDesign: hbs postion 9
+HbsDesign:   not designed
+HbsDesign: hbs postion 10
+HbsDesign:   not designed
+HbsDesign: hbs postion 11
+HbsDesign:   not designed
+core.pack.interaction_graph.interaction_graph_factory: Instantiating PDInteractionGraph
+core.pack.pack_rotamers: built 4751 rotamers at 96 positions.
+core.pack.pack_rotamers: IG: 18375936 bytes
+core.pack.task: Packer task: initialize from command line() 
+HbsDesign: pre mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -206.026  -206.026  -206.026  -206.026  0  0  0  2
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     50;  accepts= 0.1200;  energy_drop/trial=   0.10882
+protocols.moves.TrialCounter:              unk trials=      4;  accepts= 1.0000;  energy_drop/trial=  -0.19054
+HbsDesign: post mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -206.051  -206.051  -206.051  -206.051  0  0  0  3
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     50;  accepts= 0.1200;  energy_drop/trial=   0.10882
+protocols.moves.TrialCounter:              unk trials=      5;  accepts= 1.0000;  energy_drop/trial=  -0.15731
+HbsDesign: PERTURB: 6 / 1
+HbsDesign: PERTURB: 6 / 2
+HbsDesign: PERTURB: 6 / 3
+HbsDesign: PERTURB: 6 / 4
+HbsDesign: PERTURB: 6 / 5
+HbsDesign: PERTURB: 6 / 6
+HbsDesign: PERTURB: 6 / 7
+HbsDesign: PERTURB: 6 / 8
+HbsDesign: PERTURB: 6 / 9
+HbsDesign: PERTURB: 6 / 10
+HbsDesign: DESIGN: 6
+HbsDesign: hbs postion 1
+HbsDesign:   not designed
+HbsDesign: hbs postion 2
+HbsDesign:   not designed
+HbsDesign: hbs postion 3
+HbsDesign:   not designed
+HbsDesign: hbs postion 4
+HbsDesign:   designed
+HbsDesign: hbs postion 5
+HbsDesign:   designed
+HbsDesign: hbs postion 6
+HbsDesign:   designed
+HbsDesign: hbs postion 7
+HbsDesign:   designed
+HbsDesign: hbs postion 8
+HbsDesign:   not designed
+HbsDesign: hbs postion 9
+HbsDesign:   not designed
+HbsDesign: hbs postion 10
+HbsDesign:   not designed
+HbsDesign: hbs postion 11
+HbsDesign:   not designed
+core.pack.interaction_graph.interaction_graph_factory: Instantiating PDInteractionGraph
+core.pack.pack_rotamers: built 4749 rotamers at 96 positions.
+core.pack.pack_rotamers: IG: 18362276 bytes
+core.pack.task: Packer task: initialize from command line() 
+HbsDesign: pre mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -206.051  -206.051  -206.051  -206.051  0  0  0  1
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     60;  accepts= 0.1333;  energy_drop/trial=   0.13593
+protocols.moves.TrialCounter:              unk trials=      5;  accepts= 1.0000;  energy_drop/trial=  -0.15731
+HbsDesign: post mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -206.098  -206.098  -206.098  -206.098  0  0  0  3
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     60;  accepts= 0.1333;  energy_drop/trial=   0.13593
+protocols.moves.TrialCounter:              unk trials=      6;  accepts= 1.0000;  energy_drop/trial=  -0.13906
+HbsDesign: PERTURB: 7 / 1
+HbsDesign: PERTURB: 7 / 2
+HbsDesign: PERTURB: 7 / 3
+HbsDesign: PERTURB: 7 / 4
+HbsDesign: PERTURB: 7 / 5
+HbsDesign: PERTURB: 7 / 6
+HbsDesign: PERTURB: 7 / 7
+HbsDesign: PERTURB: 7 / 8
+HbsDesign: PERTURB: 7 / 9
+HbsDesign: PERTURB: 7 / 10
+HbsDesign: DESIGN: 7
+HbsDesign: hbs postion 1
+HbsDesign:   not designed
+HbsDesign: hbs postion 2
+HbsDesign:   not designed
+HbsDesign: hbs postion 3
+HbsDesign:   not designed
+HbsDesign: hbs postion 4
+HbsDesign:   designed
+HbsDesign: hbs postion 5
+HbsDesign:   designed
+HbsDesign: hbs postion 6
+HbsDesign:   designed
+HbsDesign: hbs postion 7
+HbsDesign:   designed
+HbsDesign: hbs postion 8
+HbsDesign:   not designed
+HbsDesign: hbs postion 9
+HbsDesign:   not designed
+HbsDesign: hbs postion 10
+HbsDesign:   not designed
+HbsDesign: hbs postion 11
+HbsDesign:   not designed
+core.pack.interaction_graph.interaction_graph_factory: Instantiating PDInteractionGraph
+core.pack.pack_rotamers: built 4750 rotamers at 96 positions.
+core.pack.pack_rotamers: IG: 18370940 bytes
+core.pack.task: Packer task: initialize from command line() 
+HbsDesign: pre mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -206.098  -206.098  -206.098  -206.098  0  0  0  0
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     70;  accepts= 0.1143;  energy_drop/trial=   0.11651
+protocols.moves.TrialCounter:              unk trials=      6;  accepts= 1.0000;  energy_drop/trial=  -0.13906
+HbsDesign: post mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -206.113  -206.113  -206.113  -206.113  0  0  0  3
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     70;  accepts= 0.1143;  energy_drop/trial=   0.11651
+protocols.moves.TrialCounter:              unk trials=      7;  accepts= 1.0000;  energy_drop/trial=  -0.12131
+HbsDesign: PERTURB: 8 / 1
+HbsDesign: PERTURB: 8 / 2
+HbsDesign: PERTURB: 8 / 3
+HbsDesign: PERTURB: 8 / 4
+HbsDesign: PERTURB: 8 / 5
+HbsDesign: PERTURB: 8 / 6
+HbsDesign: PERTURB: 8 / 7
+HbsDesign: PERTURB: 8 / 8
+HbsDesign: PERTURB: 8 / 9
+HbsDesign: PERTURB: 8 / 10
+HbsDesign: DESIGN: 8
+HbsDesign: hbs postion 1
+HbsDesign:   not designed
+HbsDesign: hbs postion 2
+HbsDesign:   not designed
+HbsDesign: hbs postion 3
+HbsDesign:   not designed
+HbsDesign: hbs postion 4
+HbsDesign:   designed
+HbsDesign: hbs postion 5
+HbsDesign:   designed
+HbsDesign: hbs postion 6
+HbsDesign:   designed
+HbsDesign: hbs postion 7
+HbsDesign:   designed
+HbsDesign: hbs postion 8
+HbsDesign:   not designed
+HbsDesign: hbs postion 9
+HbsDesign:   not designed
+HbsDesign: hbs postion 10
+HbsDesign:   not designed
+HbsDesign: hbs postion 11
+HbsDesign:   not designed
+core.pack.interaction_graph.interaction_graph_factory: Instantiating PDInteractionGraph
+core.pack.pack_rotamers: built 4747 rotamers at 96 positions.
+core.pack.pack_rotamers: IG: 18346820 bytes
+core.pack.task: Packer task: initialize from command line() 
+HbsDesign: pre mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -206.113  -206.113  -206.113  -206.113  0  0  0  0
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     80;  accepts= 0.1125;  energy_drop/trial=   0.11682
+protocols.moves.TrialCounter:              unk trials=      7;  accepts= 1.0000;  energy_drop/trial=  -0.12131
+HbsDesign: post mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -206.153  -206.153  -206.153  -206.153  0  0  0  3
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     80;  accepts= 0.1125;  energy_drop/trial=   0.11682
+protocols.moves.TrialCounter:              unk trials=      8;  accepts= 1.0000;  energy_drop/trial=  -0.11113
+HbsDesign: PERTURB: 9 / 1
+HbsDesign: PERTURB: 9 / 2
+HbsDesign: PERTURB: 9 / 3
+HbsDesign: PERTURB: 9 / 4
+HbsDesign: PERTURB: 9 / 5
+HbsDesign: PERTURB: 9 / 6
+HbsDesign: PERTURB: 9 / 7
+HbsDesign: PERTURB: 9 / 8
+HbsDesign: PERTURB: 9 / 9
+HbsDesign: PERTURB: 9 / 10
+HbsDesign: DESIGN: 9
+HbsDesign: hbs postion 1
+HbsDesign:   not designed
+HbsDesign: hbs postion 2
+HbsDesign:   not designed
+HbsDesign: hbs postion 3
+HbsDesign:   not designed
+HbsDesign: hbs postion 4
+HbsDesign:   designed
+HbsDesign: hbs postion 5
+HbsDesign:   designed
+HbsDesign: hbs postion 6
+HbsDesign:   designed
+HbsDesign: hbs postion 7
+HbsDesign:   designed
+HbsDesign: hbs postion 8
+HbsDesign:   not designed
+HbsDesign: hbs postion 9
+HbsDesign:   not designed
+HbsDesign: hbs postion 10
+HbsDesign:   not designed
+HbsDesign: hbs postion 11
+HbsDesign:   not designed
+core.pack.interaction_graph.interaction_graph_factory: Instantiating PDInteractionGraph
+core.pack.pack_rotamers: built 4745 rotamers at 96 positions.
+core.pack.pack_rotamers: IG: 18324296 bytes
+core.pack.task: Packer task: initialize from command line() 
+HbsDesign: pre mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -206.153  -206.153  -206.153  -206.153  0  0  0  0
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     90;  accepts= 0.1000;  energy_drop/trial=   0.10384
+protocols.moves.TrialCounter:              unk trials=      8;  accepts= 1.0000;  energy_drop/trial=  -0.11113
+HbsDesign: post mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -206.166  -206.166  -206.166  -206.166  0  0  0  3
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     90;  accepts= 0.1000;  energy_drop/trial=   0.10384
+protocols.moves.TrialCounter:              unk trials=      9;  accepts= 1.0000;  energy_drop/trial=  -0.10024
+HbsDesign: PERTURB: 10 / 1
+HbsDesign: PERTURB: 10 / 2
+HbsDesign: PERTURB: 10 / 3
+HbsDesign: PERTURB: 10 / 4
+HbsDesign: PERTURB: 10 / 5
+HbsDesign: PERTURB: 10 / 6
+HbsDesign: PERTURB: 10 / 7
+HbsDesign: PERTURB: 10 / 8
+HbsDesign: PERTURB: 10 / 9
+HbsDesign: PERTURB: 10 / 10
+HbsDesign: DESIGN: 10
+HbsDesign: hbs postion 1
+HbsDesign:   not designed
+HbsDesign: hbs postion 2
+HbsDesign:   not designed
+HbsDesign: hbs postion 3
+HbsDesign:   not designed
+HbsDesign: hbs postion 4
+HbsDesign:   designed
+HbsDesign: hbs postion 5
+HbsDesign:   designed
+HbsDesign: hbs postion 6
+HbsDesign:   designed
+HbsDesign: hbs postion 7
+HbsDesign:   designed
+HbsDesign: hbs postion 8
+HbsDesign:   not designed
+HbsDesign: hbs postion 9
+HbsDesign:   not designed
+HbsDesign: hbs postion 10
+HbsDesign:   not designed
+HbsDesign: hbs postion 11
+HbsDesign:   not designed
+core.pack.interaction_graph.interaction_graph_factory: Instantiating PDInteractionGraph
+core.pack.pack_rotamers: built 4746 rotamers at 96 positions.
+core.pack.pack_rotamers: IG: 18334288 bytes
+core.pack.task: Packer task: initialize from command line() 
+HbsDesign: pre mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -206.166  -206.166  -206.166  -206.166  0  0  0  0
+protocols.moves.TrialCounter: RigidBodyPerturb trials=    100;  accepts= 0.0900;  energy_drop/trial=   0.09346
+protocols.moves.TrialCounter:              unk trials=      9;  accepts= 1.0000;  energy_drop/trial=  -0.10024
+HbsDesign: post mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -206.352  -206.352  -206.352  -206.352  0  0  0  3
+protocols.moves.TrialCounter: RigidBodyPerturb trials=    100;  accepts= 0.0900;  energy_drop/trial=   0.09346
+protocols.moves.TrialCounter:              unk trials=     10;  accepts= 1.0000;  energy_drop/trial=  -0.10875
+HbsDesign: Ending main loop...
+HbsDesign: Checking pose energy...
+protocols.moves.RigidBodyMover: Translate: Jump (before): RT -0.237086 0.259645 0.936149 -0.38296 -0.910572 0.155564 0.892823 -0.321625 0.315317 2.60328 -2.36081 -8.85393  
+protocols.moves.RigidBodyMover: Translate: Jump (after):  RT -0.237086 0.259645 0.936149 -0.38296 -0.910572 0.155564 0.892823 -0.321625 0.315317 -137.453 -13.9802 -998.929  
+core.pack.task: Packer task: initialize from command line() 
+core.pack.interaction_graph.interaction_graph_factory: Instantiating LinearMemoryInteractionGraph
+core.pack.pack_rotamers: built 1613 rotamers at 96 positions.
+core.pack.pack_rotamers: IG: 1668352 bytes
+protocols.jd2.JobDistributor: mdm2_hbs_0007 reported success in 65 seconds
+protocols.jd2.PDBJobInputter: PDBJobInputter::pose_from_job
+protocols.jd2.PDBJobInputter: filling pose from saved copy ../inputs/mdm2_hbs.pdb
+AFTER: FOLD_TREE  EDGE 1 33 -1  EDGE 33 85 -1  EDGE 33 91 1  EDGE 91 86 -1  EDGE 91 96 -1 
+
+HbsDesign: hbs_start: 86 hbs_end: 96
+protocols.simple_moves.hbs.HbsPatcher: added atom pair constraint to hbs with distance: 1.52 and std: 0.05
+HbsDesign: Main loop...
+HbsDesign: PERTURB: 1 / 1
+HbsDesign: PERTURB: 1 / 2
+HbsDesign: PERTURB: 1 / 3
+HbsDesign: PERTURB: 1 / 4
+HbsDesign: PERTURB: 1 / 5
+HbsDesign: PERTURB: 1 / 6
+HbsDesign: PERTURB: 1 / 7
+HbsDesign: PERTURB: 1 / 8
+HbsDesign: PERTURB: 1 / 9
+HbsDesign: PERTURB: 1 / 10
+HbsDesign: DESIGN: 1
+HbsDesign: hbs postion 1
+HbsDesign:   not designed
+HbsDesign: hbs postion 2
+HbsDesign:   not designed
+HbsDesign: hbs postion 3
+HbsDesign:   not designed
+HbsDesign: hbs postion 4
+HbsDesign:   designed
+HbsDesign: hbs postion 5
+HbsDesign:   designed
+HbsDesign: hbs postion 6
+HbsDesign:   designed
+HbsDesign: hbs postion 7
+HbsDesign:   designed
+HbsDesign: hbs postion 8
+HbsDesign:   not designed
+HbsDesign: hbs postion 9
+HbsDesign:   not designed
+HbsDesign: hbs postion 10
+HbsDesign:   not designed
+HbsDesign: hbs postion 11
+HbsDesign:   not designed
+core.pack.interaction_graph.interaction_graph_factory: Instantiating PDInteractionGraph
+core.pack.pack_rotamers: built 4754 rotamers at 96 positions.
+core.pack.pack_rotamers: IG: 18393788 bytes
+core.pack.task: Packer task: initialize from command line() 
+HbsDesign: pre mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -205.264  -205.264  -205.264  -205.264  0  0  0  0
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     10 NO ACCEPTS.
+HbsDesign: post mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -205.264  -205.264  -205.264  -205.264  0  0  0  0
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     10 NO ACCEPTS.
+protocols.moves.TrialCounter:              unk trials=      1 NO ACCEPTS.
+HbsDesign: PERTURB: 2 / 1
+HbsDesign: PERTURB: 2 / 2
+HbsDesign: PERTURB: 2 / 3
+HbsDesign: PERTURB: 2 / 4
+HbsDesign: PERTURB: 2 / 5
+HbsDesign: PERTURB: 2 / 6
+HbsDesign: PERTURB: 2 / 7
+HbsDesign: PERTURB: 2 / 8
+HbsDesign: PERTURB: 2 / 9
+HbsDesign: PERTURB: 2 / 10
+HbsDesign: DESIGN: 2
+HbsDesign: hbs postion 1
+HbsDesign:   not designed
+HbsDesign: hbs postion 2
+HbsDesign:   not designed
+HbsDesign: hbs postion 3
+HbsDesign:   not designed
+HbsDesign: hbs postion 4
+HbsDesign:   designed
+HbsDesign: hbs postion 5
+HbsDesign:   designed
+HbsDesign: hbs postion 6
+HbsDesign:   designed
+HbsDesign: hbs postion 7
+HbsDesign:   designed
+HbsDesign: hbs postion 8
+HbsDesign:   not designed
+HbsDesign: hbs postion 9
+HbsDesign:   not designed
+HbsDesign: hbs postion 10
+HbsDesign:   not designed
+HbsDesign: hbs postion 11
+HbsDesign:   not designed
+core.pack.interaction_graph.interaction_graph_factory: Instantiating PDInteractionGraph
+core.pack.pack_rotamers: built 4754 rotamers at 96 positions.
+core.pack.pack_rotamers: IG: 18393788 bytes
+core.pack.task: Packer task: initialize from command line() 
+HbsDesign: pre mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -205.264  -205.264  -205.264  -205.264  0  0  0  0
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     20 NO ACCEPTS.
+protocols.moves.TrialCounter:              unk trials=      1 NO ACCEPTS.
+HbsDesign: post mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -205.869  -205.869  -205.869  -205.869  0  0  0  3
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     20 NO ACCEPTS.
+protocols.moves.TrialCounter:              unk trials=      2;  accepts= 0.5000;  energy_drop/trial=  -0.30244
+HbsDesign: PERTURB: 3 / 1
+HbsDesign: PERTURB: 3 / 2
+HbsDesign: PERTURB: 3 / 3
+HbsDesign: PERTURB: 3 / 4
+HbsDesign: PERTURB: 3 / 5
+HbsDesign: PERTURB: 3 / 6
+HbsDesign: PERTURB: 3 / 7
+HbsDesign: PERTURB: 3 / 8
+HbsDesign: PERTURB: 3 / 9
+HbsDesign: PERTURB: 3 / 10
+HbsDesign: DESIGN: 3
+HbsDesign: hbs postion 1
+HbsDesign:   not designed
+HbsDesign: hbs postion 2
+HbsDesign:   not designed
+HbsDesign: hbs postion 3
+HbsDesign:   not designed
+HbsDesign: hbs postion 4
+HbsDesign:   designed
+HbsDesign: hbs postion 5
+HbsDesign:   designed
+HbsDesign: hbs postion 6
+HbsDesign:   designed
+HbsDesign: hbs postion 7
+HbsDesign:   designed
+HbsDesign: hbs postion 8
+HbsDesign:   not designed
+HbsDesign: hbs postion 9
+HbsDesign:   not designed
+HbsDesign: hbs postion 10
+HbsDesign:   not designed
+HbsDesign: hbs postion 11
+HbsDesign:   not designed
+core.pack.interaction_graph.interaction_graph_factory: Instantiating PDInteractionGraph
+core.pack.pack_rotamers: built 4754 rotamers at 96 positions.
+core.pack.pack_rotamers: IG: 18407164 bytes
+core.pack.task: Packer task: initialize from command line() 
+HbsDesign: pre mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -205.869  -205.869  -205.869  -205.869  0  0  0  2
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     30;  accepts= 0.0667;  energy_drop/trial=   0.04335
+protocols.moves.TrialCounter:              unk trials=      2;  accepts= 0.5000;  energy_drop/trial=  -0.30244
+HbsDesign: post mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -205.983  -205.983  -205.983  -205.983  0  0  0  3
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     30;  accepts= 0.0667;  energy_drop/trial=   0.04335
+protocols.moves.TrialCounter:              unk trials=      3;  accepts= 0.6667;  energy_drop/trial=  -0.23978
+HbsDesign: PERTURB: 4 / 1
+HbsDesign: PERTURB: 4 / 2
+HbsDesign: PERTURB: 4 / 3
+HbsDesign: PERTURB: 4 / 4
+HbsDesign: PERTURB: 4 / 5
+HbsDesign: PERTURB: 4 / 6
+HbsDesign: PERTURB: 4 / 7
+HbsDesign: PERTURB: 4 / 8
+HbsDesign: PERTURB: 4 / 9
+HbsDesign: PERTURB: 4 / 10
+HbsDesign: DESIGN: 4
+HbsDesign: hbs postion 1
+HbsDesign:   not designed
+HbsDesign: hbs postion 2
+HbsDesign:   not designed
+HbsDesign: hbs postion 3
+HbsDesign:   not designed
+HbsDesign: hbs postion 4
+HbsDesign:   designed
+HbsDesign: hbs postion 5
+HbsDesign:   designed
+HbsDesign: hbs postion 6
+HbsDesign:   designed
+HbsDesign: hbs postion 7
+HbsDesign:   designed
+HbsDesign: hbs postion 8
+HbsDesign:   not designed
+HbsDesign: hbs postion 9
+HbsDesign:   not designed
+HbsDesign: hbs postion 10
+HbsDesign:   not designed
+HbsDesign: hbs postion 11
+HbsDesign:   not designed
+core.pack.interaction_graph.interaction_graph_factory: Instantiating PDInteractionGraph
+core.pack.pack_rotamers: built 4755 rotamers at 96 positions.
+core.pack.pack_rotamers: IG: 18413000 bytes
+core.pack.task: Packer task: initialize from command line() 
+HbsDesign: pre mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -205.983  -205.983  -205.983  -205.983  0  0  0  0
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     40;  accepts= 0.0500;  energy_drop/trial=   0.03251
+protocols.moves.TrialCounter:              unk trials=      3;  accepts= 0.6667;  energy_drop/trial=  -0.23978
+HbsDesign: post mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -205.983  -205.983  -205.983  -205.983  0  0  0  0
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     40;  accepts= 0.0500;  energy_drop/trial=   0.03251
+protocols.moves.TrialCounter:              unk trials=      4;  accepts= 0.5000;  energy_drop/trial=  -0.17984
+HbsDesign: PERTURB: 5 / 1
+HbsDesign: PERTURB: 5 / 2
+HbsDesign: PERTURB: 5 / 3
+HbsDesign: PERTURB: 5 / 4
+HbsDesign: PERTURB: 5 / 5
+HbsDesign: PERTURB: 5 / 6
+HbsDesign: PERTURB: 5 / 7
+HbsDesign: PERTURB: 5 / 8
+HbsDesign: PERTURB: 5 / 9
+HbsDesign: PERTURB: 5 / 10
+HbsDesign: DESIGN: 5
+HbsDesign: hbs postion 1
+HbsDesign:   not designed
+HbsDesign: hbs postion 2
+HbsDesign:   not designed
+HbsDesign: hbs postion 3
+HbsDesign:   not designed
+HbsDesign: hbs postion 4
+HbsDesign:   designed
+HbsDesign: hbs postion 5
+HbsDesign:   designed
+HbsDesign: hbs postion 6
+HbsDesign:   designed
+HbsDesign: hbs postion 7
+HbsDesign:   designed
+HbsDesign: hbs postion 8
+HbsDesign:   not designed
+HbsDesign: hbs postion 9
+HbsDesign:   not designed
+HbsDesign: hbs postion 10
+HbsDesign:   not designed
+HbsDesign: hbs postion 11
+HbsDesign:   not designed
+core.pack.interaction_graph.interaction_graph_factory: Instantiating PDInteractionGraph
+core.pack.pack_rotamers: built 4755 rotamers at 96 positions.
+core.pack.pack_rotamers: IG: 18413000 bytes
+core.pack.task: Packer task: initialize from command line() 
+HbsDesign: pre mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -205.983  -205.983  -205.983  -205.983  0  0  0  0
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     50;  accepts= 0.0400;  energy_drop/trial=   0.02601
+protocols.moves.TrialCounter:              unk trials=      4;  accepts= 0.5000;  energy_drop/trial=  -0.17984
+HbsDesign: post mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -205.837  -205.983  -205.837  -205.983  0  0  0  1
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     50;  accepts= 0.0400;  energy_drop/trial=   0.02601
+protocols.moves.TrialCounter:              unk trials=      5;  accepts= 0.6000;  energy_drop/trial=  -0.11460
+HbsDesign: PERTURB: 6 / 1
+HbsDesign: PERTURB: 6 / 2
+HbsDesign: PERTURB: 6 / 3
+HbsDesign: PERTURB: 6 / 4
+HbsDesign: PERTURB: 6 / 5
+HbsDesign: PERTURB: 6 / 6
+HbsDesign: PERTURB: 6 / 7
+HbsDesign: PERTURB: 6 / 8
+HbsDesign: PERTURB: 6 / 9
+HbsDesign: PERTURB: 6 / 10
+HbsDesign: DESIGN: 6
+HbsDesign: hbs postion 1
+HbsDesign:   not designed
+HbsDesign: hbs postion 2
+HbsDesign:   not designed
+HbsDesign: hbs postion 3
+HbsDesign:   not designed
+HbsDesign: hbs postion 4
+HbsDesign:   designed
+HbsDesign: hbs postion 5
+HbsDesign:   designed
+HbsDesign: hbs postion 6
+HbsDesign:   designed
+HbsDesign: hbs postion 7
+HbsDesign:   designed
+HbsDesign: hbs postion 8
+HbsDesign:   not designed
+HbsDesign: hbs postion 9
+HbsDesign:   not designed
+HbsDesign: hbs postion 10
+HbsDesign:   not designed
+HbsDesign: hbs postion 11
+HbsDesign:   not designed
+core.pack.interaction_graph.interaction_graph_factory: Instantiating PDInteractionGraph
+core.pack.pack_rotamers: built 4753 rotamers at 96 positions.
+core.pack.pack_rotamers: IG: 18395604 bytes
+core.pack.task: Packer task: initialize from command line() 
+HbsDesign: pre mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -205.837  -205.837  -205.837  -205.837  0  0  0  0
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     60;  accepts= 0.0500;  energy_drop/trial=   0.04568
+protocols.moves.TrialCounter:              unk trials=      5;  accepts= 0.6000;  energy_drop/trial=  -0.11460
+HbsDesign: post mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -206.019  -206.019  -206.019  -206.019  0  0  0  3
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     60;  accepts= 0.0500;  energy_drop/trial=   0.04568
+protocols.moves.TrialCounter:              unk trials=      6;  accepts= 0.6667;  energy_drop/trial=  -0.12583
+HbsDesign: PERTURB: 7 / 1
+HbsDesign: PERTURB: 7 / 2
+HbsDesign: PERTURB: 7 / 3
+HbsDesign: PERTURB: 7 / 4
+HbsDesign: PERTURB: 7 / 5
+HbsDesign: PERTURB: 7 / 6
+HbsDesign: PERTURB: 7 / 7
+HbsDesign: PERTURB: 7 / 8
+HbsDesign: PERTURB: 7 / 9
+HbsDesign: PERTURB: 7 / 10
+HbsDesign: DESIGN: 7
+HbsDesign: hbs postion 1
+HbsDesign:   not designed
+HbsDesign: hbs postion 2
+HbsDesign:   not designed
+HbsDesign: hbs postion 3
+HbsDesign:   not designed
+HbsDesign: hbs postion 4
+HbsDesign:   designed
+HbsDesign: hbs postion 5
+HbsDesign:   designed
+HbsDesign: hbs postion 6
+HbsDesign:   designed
+HbsDesign: hbs postion 7
+HbsDesign:   designed
+HbsDesign: hbs postion 8
+HbsDesign:   not designed
+HbsDesign: hbs postion 9
+HbsDesign:   not designed
+HbsDesign: hbs postion 10
+HbsDesign:   not designed
+HbsDesign: hbs postion 11
+HbsDesign:   not designed
+core.pack.interaction_graph.interaction_graph_factory: Instantiating PDInteractionGraph
+core.pack.pack_rotamers: built 4753 rotamers at 96 positions.
+core.pack.pack_rotamers: IG: 18392480 bytes
+core.pack.task: Packer task: initialize from command line() 
+HbsDesign: pre mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -206.019  -206.019  -206.019  -206.019  0  0  0  0
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     70;  accepts= 0.0429;  energy_drop/trial=   0.03915
+protocols.moves.TrialCounter:              unk trials=      6;  accepts= 0.6667;  energy_drop/trial=  -0.12583
+HbsDesign: post mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -206.038  -206.038  -206.038  -206.038  0  0  0  3
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     70;  accepts= 0.0429;  energy_drop/trial=   0.03915
+protocols.moves.TrialCounter:              unk trials=      7;  accepts= 0.7143;  energy_drop/trial=  -0.11061
+HbsDesign: PERTURB: 8 / 1
+HbsDesign: PERTURB: 8 / 2
+HbsDesign: PERTURB: 8 / 3
+HbsDesign: PERTURB: 8 / 4
+HbsDesign: PERTURB: 8 / 5
+HbsDesign: PERTURB: 8 / 6
+HbsDesign: PERTURB: 8 / 7
+HbsDesign: PERTURB: 8 / 8
+HbsDesign: PERTURB: 8 / 9
+HbsDesign: PERTURB: 8 / 10
+HbsDesign: DESIGN: 8
+HbsDesign: hbs postion 1
+HbsDesign:   not designed
+HbsDesign: hbs postion 2
+HbsDesign:   not designed
+HbsDesign: hbs postion 3
+HbsDesign:   not designed
+HbsDesign: hbs postion 4
+HbsDesign:   designed
+HbsDesign: hbs postion 5
+HbsDesign:   designed
+HbsDesign: hbs postion 6
+HbsDesign:   designed
+HbsDesign: hbs postion 7
+HbsDesign:   designed
+HbsDesign: hbs postion 8
+HbsDesign:   not designed
+HbsDesign: hbs postion 9
+HbsDesign:   not designed
+HbsDesign: hbs postion 10
+HbsDesign:   not designed
+HbsDesign: hbs postion 11
+HbsDesign:   not designed
+core.pack.interaction_graph.interaction_graph_factory: Instantiating PDInteractionGraph
+core.pack.pack_rotamers: built 4753 rotamers at 96 positions.
+core.pack.pack_rotamers: IG: 18393428 bytes
+core.pack.task: Packer task: initialize from command line() 
+HbsDesign: pre mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -206.038  -206.038  -206.038  -206.038  0  0  0  0
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     80;  accepts= 0.0375;  energy_drop/trial=   0.03426
+protocols.moves.TrialCounter:              unk trials=      7;  accepts= 0.7143;  energy_drop/trial=  -0.11061
+HbsDesign: post mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -206.121  -206.121  -206.121  -206.121  0  0  0  3
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     80;  accepts= 0.0375;  energy_drop/trial=   0.03426
+protocols.moves.TrialCounter:              unk trials=      8;  accepts= 0.7500;  energy_drop/trial=  -0.10705
+HbsDesign: PERTURB: 9 / 1
+HbsDesign: PERTURB: 9 / 2
+HbsDesign: PERTURB: 9 / 3
+HbsDesign: PERTURB: 9 / 4
+HbsDesign: PERTURB: 9 / 5
+HbsDesign: PERTURB: 9 / 6
+HbsDesign: PERTURB: 9 / 7
+HbsDesign: PERTURB: 9 / 8
+HbsDesign: PERTURB: 9 / 9
+HbsDesign: PERTURB: 9 / 10
+HbsDesign: DESIGN: 9
+HbsDesign: hbs postion 1
+HbsDesign:   not designed
+HbsDesign: hbs postion 2
+HbsDesign:   not designed
+HbsDesign: hbs postion 3
+HbsDesign:   not designed
+HbsDesign: hbs postion 4
+HbsDesign:   designed
+HbsDesign: hbs postion 5
+HbsDesign:   designed
+HbsDesign: hbs postion 6
+HbsDesign:   designed
+HbsDesign: hbs postion 7
+HbsDesign:   designed
+HbsDesign: hbs postion 8
+HbsDesign:   not designed
+HbsDesign: hbs postion 9
+HbsDesign:   not designed
+HbsDesign: hbs postion 10
+HbsDesign:   not designed
+HbsDesign: hbs postion 11
+HbsDesign:   not designed
+core.pack.interaction_graph.interaction_graph_factory: Instantiating PDInteractionGraph
+core.pack.pack_rotamers: built 4745 rotamers at 96 positions.
+core.pack.pack_rotamers: IG: 18324296 bytes
+core.pack.task: Packer task: initialize from command line() 
+HbsDesign: pre mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -206.121  -206.121  -206.121  -206.121  0  0  0  0
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     90;  accepts= 0.0333;  energy_drop/trial=   0.03045
+protocols.moves.TrialCounter:              unk trials=      8;  accepts= 0.7500;  energy_drop/trial=  -0.10705
+HbsDesign: post mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -206.2  -206.2  -206.2  -206.2  0  0  0  3
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     90;  accepts= 0.0333;  energy_drop/trial=   0.03045
+protocols.moves.TrialCounter:              unk trials=      9;  accepts= 0.7778;  energy_drop/trial=  -0.10402
+HbsDesign: PERTURB: 10 / 1
+HbsDesign: PERTURB: 10 / 2
+HbsDesign: PERTURB: 10 / 3
+HbsDesign: PERTURB: 10 / 4
+HbsDesign: PERTURB: 10 / 5
+HbsDesign: PERTURB: 10 / 6
+HbsDesign: PERTURB: 10 / 7
+HbsDesign: PERTURB: 10 / 8
+HbsDesign: PERTURB: 10 / 9
+HbsDesign: PERTURB: 10 / 10
+HbsDesign: DESIGN: 10
+HbsDesign: hbs postion 1
+HbsDesign:   not designed
+HbsDesign: hbs postion 2
+HbsDesign:   not designed
+HbsDesign: hbs postion 3
+HbsDesign:   not designed
+HbsDesign: hbs postion 4
+HbsDesign:   designed
+HbsDesign: hbs postion 5
+HbsDesign:   designed
+HbsDesign: hbs postion 6
+HbsDesign:   designed
+HbsDesign: hbs postion 7
+HbsDesign:   designed
+HbsDesign: hbs postion 8
+HbsDesign:   not designed
+HbsDesign: hbs postion 9
+HbsDesign:   not designed
+HbsDesign: hbs postion 10
+HbsDesign:   not designed
+HbsDesign: hbs postion 11
+HbsDesign:   not designed
+core.pack.interaction_graph.interaction_graph_factory: Instantiating PDInteractionGraph
+core.pack.pack_rotamers: built 4746 rotamers at 96 positions.
+core.pack.pack_rotamers: IG: 18337392 bytes
+core.pack.task: Packer task: initialize from command line() 
+HbsDesign: pre mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -206.2  -206.2  -206.2  -206.2  0  0  0  0
+protocols.moves.TrialCounter: RigidBodyPerturb trials=    100;  accepts= 0.0300;  energy_drop/trial=   0.02741
+protocols.moves.TrialCounter:              unk trials=      9;  accepts= 0.7778;  energy_drop/trial=  -0.10402
+HbsDesign: post mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -206.183  -206.2  -206.183  -206.2  0  0  0  1
+protocols.moves.TrialCounter: RigidBodyPerturb trials=    100;  accepts= 0.0300;  energy_drop/trial=   0.02741
+protocols.moves.TrialCounter:              unk trials=     10;  accepts= 0.8000;  energy_drop/trial=  -0.09189
+HbsDesign: Ending main loop...
+HbsDesign: Checking pose energy...
+protocols.moves.RigidBodyMover: Translate: Jump (before): RT -0.237086 0.259645 0.936149 -0.38296 -0.910572 0.155564 0.892823 -0.321625 0.315317 2.60328 -2.36081 -8.85393  
+protocols.moves.RigidBodyMover: Translate: Jump (after):  RT -0.237086 0.259645 0.936149 -0.38296 -0.910572 0.155564 0.892823 -0.321625 0.315317 -142.432 -25.0086 -998.021  
+core.pack.task: Packer task: initialize from command line() 
+core.pack.interaction_graph.interaction_graph_factory: Instantiating LinearMemoryInteractionGraph
+core.pack.pack_rotamers: built 1632 rotamers at 96 positions.
+core.pack.pack_rotamers: IG: 1669568 bytes
+protocols.jd2.JobDistributor: mdm2_hbs_0008 reported success in 64 seconds
+protocols.jd2.PDBJobInputter: PDBJobInputter::pose_from_job
+protocols.jd2.PDBJobInputter: filling pose from saved copy ../inputs/mdm2_hbs.pdb
+AFTER: FOLD_TREE  EDGE 1 33 -1  EDGE 33 85 -1  EDGE 33 91 1  EDGE 91 86 -1  EDGE 91 96 -1 
+
+HbsDesign: hbs_start: 86 hbs_end: 96
+protocols.simple_moves.hbs.HbsPatcher: added atom pair constraint to hbs with distance: 1.52 and std: 0.05
+HbsDesign: Main loop...
+HbsDesign: PERTURB: 1 / 1
+HbsDesign: PERTURB: 1 / 2
+HbsDesign: PERTURB: 1 / 3
+HbsDesign: PERTURB: 1 / 4
+HbsDesign: PERTURB: 1 / 5
+HbsDesign: PERTURB: 1 / 6
+HbsDesign: PERTURB: 1 / 7
+HbsDesign: PERTURB: 1 / 8
+HbsDesign: PERTURB: 1 / 9
+HbsDesign: PERTURB: 1 / 10
+HbsDesign: DESIGN: 1
+HbsDesign: hbs postion 1
+HbsDesign:   not designed
+HbsDesign: hbs postion 2
+HbsDesign:   not designed
+HbsDesign: hbs postion 3
+HbsDesign:   not designed
+HbsDesign: hbs postion 4
+HbsDesign:   designed
+HbsDesign: hbs postion 5
+HbsDesign:   designed
+HbsDesign: hbs postion 6
+HbsDesign:   designed
+HbsDesign: hbs postion 7
+HbsDesign:   designed
+HbsDesign: hbs postion 8
+HbsDesign:   not designed
+HbsDesign: hbs postion 9
+HbsDesign:   not designed
+HbsDesign: hbs postion 10
+HbsDesign:   not designed
+HbsDesign: hbs postion 11
+HbsDesign:   not designed
+core.pack.interaction_graph.interaction_graph_factory: Instantiating PDInteractionGraph
+core.pack.pack_rotamers: built 4754 rotamers at 96 positions.
+core.pack.pack_rotamers: IG: 18393788 bytes
+core.pack.task: Packer task: initialize from command line() 
+HbsDesign: pre mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -205.264  -205.264  -205.264  -205.264  0  0  0  0
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     10 NO ACCEPTS.
+HbsDesign: post mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -205.869  -205.869  -205.869  -205.869  0  0  0  3
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     10 NO ACCEPTS.
+protocols.moves.TrialCounter:              unk trials=      1;  accepts= 1.0000;  energy_drop/trial=  -0.60489
+HbsDesign: PERTURB: 2 / 1
+HbsDesign: PERTURB: 2 / 2
+HbsDesign: PERTURB: 2 / 3
+HbsDesign: PERTURB: 2 / 4
+HbsDesign: PERTURB: 2 / 5
+HbsDesign: PERTURB: 2 / 6
+HbsDesign: PERTURB: 2 / 7
+HbsDesign: PERTURB: 2 / 8
+HbsDesign: PERTURB: 2 / 9
+HbsDesign: PERTURB: 2 / 10
+HbsDesign: DESIGN: 2
+HbsDesign: hbs postion 1
+HbsDesign:   not designed
+HbsDesign: hbs postion 2
+HbsDesign:   not designed
+HbsDesign: hbs postion 3
+HbsDesign:   not designed
+HbsDesign: hbs postion 4
+HbsDesign:   designed
+HbsDesign: hbs postion 5
+HbsDesign:   designed
+HbsDesign: hbs postion 6
+HbsDesign:   designed
+HbsDesign: hbs postion 7
+HbsDesign:   designed
+HbsDesign: hbs postion 8
+HbsDesign:   not designed
+HbsDesign: hbs postion 9
+HbsDesign:   not designed
+HbsDesign: hbs postion 10
+HbsDesign:   not designed
+HbsDesign: hbs postion 11
+HbsDesign:   not designed
+core.pack.interaction_graph.interaction_graph_factory: Instantiating PDInteractionGraph
+core.pack.pack_rotamers: built 4754 rotamers at 96 positions.
+core.pack.pack_rotamers: IG: 18407164 bytes
+core.pack.task: Packer task: initialize from command line() 
+HbsDesign: pre mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -205.869  -205.869  -205.869  -205.869  0  0  0  0
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     20 NO ACCEPTS.
+protocols.moves.TrialCounter:              unk trials=      1;  accepts= 1.0000;  energy_drop/trial=  -0.60489
+HbsDesign: post mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -205.936  -205.936  -205.936  -205.936  0  0  0  3
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     20 NO ACCEPTS.
+protocols.moves.TrialCounter:              unk trials=      2;  accepts= 1.0000;  energy_drop/trial=  -0.33614
+HbsDesign: PERTURB: 3 / 1
+HbsDesign: PERTURB: 3 / 2
+HbsDesign: PERTURB: 3 / 3
+HbsDesign: PERTURB: 3 / 4
+HbsDesign: PERTURB: 3 / 5
+HbsDesign: PERTURB: 3 / 6
+HbsDesign: PERTURB: 3 / 7
+HbsDesign: PERTURB: 3 / 8
+HbsDesign: PERTURB: 3 / 9
+HbsDesign: PERTURB: 3 / 10
+HbsDesign: DESIGN: 3
+HbsDesign: hbs postion 1
+HbsDesign:   not designed
+HbsDesign: hbs postion 2
+HbsDesign:   not designed
+HbsDesign: hbs postion 3
+HbsDesign:   not designed
+HbsDesign: hbs postion 4
+HbsDesign:   designed
+HbsDesign: hbs postion 5
+HbsDesign:   designed
+HbsDesign: hbs postion 6
+HbsDesign:   designed
+HbsDesign: hbs postion 7
+HbsDesign:   designed
+HbsDesign: hbs postion 8
+HbsDesign:   not designed
+HbsDesign: hbs postion 9
+HbsDesign:   not designed
+HbsDesign: hbs postion 10
+HbsDesign:   not designed
+HbsDesign: hbs postion 11
+HbsDesign:   not designed
+core.pack.interaction_graph.interaction_graph_factory: Instantiating PDInteractionGraph
+core.pack.pack_rotamers: built 4754 rotamers at 96 positions.
+core.pack.pack_rotamers: IG: 18405200 bytes
+core.pack.task: Packer task: initialize from command line() 
+HbsDesign: pre mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -205.936  -205.936  -205.936  -205.936  0  0  0  0
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     30 NO ACCEPTS.
+protocols.moves.TrialCounter:              unk trials=      2;  accepts= 1.0000;  energy_drop/trial=  -0.33614
+HbsDesign: post mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -205.987  -205.987  -205.987  -205.987  0  0  0  3
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     30 NO ACCEPTS.
+protocols.moves.TrialCounter:              unk trials=      3;  accepts= 1.0000;  energy_drop/trial=  -0.24080
+HbsDesign: PERTURB: 4 / 1
+HbsDesign: PERTURB: 4 / 2
+HbsDesign: PERTURB: 4 / 3
+HbsDesign: PERTURB: 4 / 4
+HbsDesign: PERTURB: 4 / 5
+HbsDesign: PERTURB: 4 / 6
+HbsDesign: PERTURB: 4 / 7
+HbsDesign: PERTURB: 4 / 8
+HbsDesign: PERTURB: 4 / 9
+HbsDesign: PERTURB: 4 / 10
+HbsDesign: DESIGN: 4
+HbsDesign: hbs postion 1
+HbsDesign:   not designed
+HbsDesign: hbs postion 2
+HbsDesign:   not designed
+HbsDesign: hbs postion 3
+HbsDesign:   not designed
+HbsDesign: hbs postion 4
+HbsDesign:   designed
+HbsDesign: hbs postion 5
+HbsDesign:   designed
+HbsDesign: hbs postion 6
+HbsDesign:   designed
+HbsDesign: hbs postion 7
+HbsDesign:   designed
+HbsDesign: hbs postion 8
+HbsDesign:   not designed
+HbsDesign: hbs postion 9
+HbsDesign:   not designed
+HbsDesign: hbs postion 10
+HbsDesign:   not designed
+HbsDesign: hbs postion 11
+HbsDesign:   not designed
+core.pack.interaction_graph.interaction_graph_factory: Instantiating PDInteractionGraph
+core.pack.pack_rotamers: built 4752 rotamers at 96 positions.
+core.pack.pack_rotamers: IG: 18386388 bytes
+core.pack.task: Packer task: initialize from command line() 
+HbsDesign: pre mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -205.987  -205.987  -205.987  -205.987  0  0  0  0
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     40 NO ACCEPTS.
+protocols.moves.TrialCounter:              unk trials=      3;  accepts= 1.0000;  energy_drop/trial=  -0.24080
+HbsDesign: post mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -206.073  -206.073  -206.073  -206.073  0  0  0  3
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     40 NO ACCEPTS.
+protocols.moves.TrialCounter:              unk trials=      4;  accepts= 1.0000;  energy_drop/trial=  -0.20233
+HbsDesign: PERTURB: 5 / 1
+HbsDesign: PERTURB: 5 / 2
+HbsDesign: PERTURB: 5 / 3
+HbsDesign: PERTURB: 5 / 4
+HbsDesign: PERTURB: 5 / 5
+HbsDesign: PERTURB: 5 / 6
+HbsDesign: PERTURB: 5 / 7
+HbsDesign: PERTURB: 5 / 8
+HbsDesign: PERTURB: 5 / 9
+HbsDesign: PERTURB: 5 / 10
+HbsDesign: DESIGN: 5
+HbsDesign: hbs postion 1
+HbsDesign:   not designed
+HbsDesign: hbs postion 2
+HbsDesign:   not designed
+HbsDesign: hbs postion 3
+HbsDesign:   not designed
+HbsDesign: hbs postion 4
+HbsDesign:   designed
+HbsDesign: hbs postion 5
+HbsDesign:   designed
+HbsDesign: hbs postion 6
+HbsDesign:   designed
+HbsDesign: hbs postion 7
+HbsDesign:   designed
+HbsDesign: hbs postion 8
+HbsDesign:   not designed
+HbsDesign: hbs postion 9
+HbsDesign:   not designed
+HbsDesign: hbs postion 10
+HbsDesign:   not designed
+HbsDesign: hbs postion 11
+HbsDesign:   not designed
+core.pack.interaction_graph.interaction_graph_factory: Instantiating PDInteractionGraph
+core.pack.pack_rotamers: built 4753 rotamers at 96 positions.
+core.pack.pack_rotamers: IG: 18392416 bytes
+core.pack.task: Packer task: initialize from command line() 
+HbsDesign: pre mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -206.073  -206.073  -206.073  -206.073  0  0  0  1
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     50;  accepts= 0.0200;  energy_drop/trial=   0.02764
+protocols.moves.TrialCounter:              unk trials=      4;  accepts= 1.0000;  energy_drop/trial=  -0.20233
+HbsDesign: post mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -205.883  -206.073  -205.883  -206.073  0  0  0  1
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     50;  accepts= 0.0200;  energy_drop/trial=   0.02764
+protocols.moves.TrialCounter:              unk trials=      5;  accepts= 1.0000;  energy_drop/trial=  -0.12375
+HbsDesign: PERTURB: 6 / 1
+HbsDesign: PERTURB: 6 / 2
+HbsDesign: PERTURB: 6 / 3
+HbsDesign: PERTURB: 6 / 4
+HbsDesign: PERTURB: 6 / 5
+HbsDesign: PERTURB: 6 / 6
+HbsDesign: PERTURB: 6 / 7
+HbsDesign: PERTURB: 6 / 8
+HbsDesign: PERTURB: 6 / 9
+HbsDesign: PERTURB: 6 / 10
+HbsDesign: DESIGN: 6
+HbsDesign: hbs postion 1
+HbsDesign:   not designed
+HbsDesign: hbs postion 2
+HbsDesign:   not designed
+HbsDesign: hbs postion 3
+HbsDesign:   not designed
+HbsDesign: hbs postion 4
+HbsDesign:   designed
+HbsDesign: hbs postion 5
+HbsDesign:   designed
+HbsDesign: hbs postion 6
+HbsDesign:   designed
+HbsDesign: hbs postion 7
+HbsDesign:   designed
+HbsDesign: hbs postion 8
+HbsDesign:   not designed
+HbsDesign: hbs postion 9
+HbsDesign:   not designed
+HbsDesign: hbs postion 10
+HbsDesign:   not designed
+HbsDesign: hbs postion 11
+HbsDesign:   not designed
+core.pack.interaction_graph.interaction_graph_factory: Instantiating PDInteractionGraph
+core.pack.pack_rotamers: built 4752 rotamers at 96 positions.
+core.pack.pack_rotamers: IG: 18386096 bytes
+core.pack.task: Packer task: initialize from command line() 
+HbsDesign: pre mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -205.883  -205.883  -205.883  -205.883  0  0  0  0
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     60;  accepts= 0.0333;  energy_drop/trial=   0.04824
+protocols.moves.TrialCounter:              unk trials=      5;  accepts= 1.0000;  energy_drop/trial=  -0.12375
+HbsDesign: post mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -206.103  -206.103  -206.103  -206.103  0  0  0  3
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     60;  accepts= 0.0333;  energy_drop/trial=   0.04824
+protocols.moves.TrialCounter:              unk trials=      6;  accepts= 1.0000;  energy_drop/trial=  -0.13984
+HbsDesign: PERTURB: 7 / 1
+HbsDesign: PERTURB: 7 / 2
+HbsDesign: PERTURB: 7 / 3
+HbsDesign: PERTURB: 7 / 4
+HbsDesign: PERTURB: 7 / 5
+HbsDesign: PERTURB: 7 / 6
+HbsDesign: PERTURB: 7 / 7
+HbsDesign: PERTURB: 7 / 8
+HbsDesign: PERTURB: 7 / 9
+HbsDesign: PERTURB: 7 / 10
+HbsDesign: DESIGN: 7
+HbsDesign: hbs postion 1
+HbsDesign:   not designed
+HbsDesign: hbs postion 2
+HbsDesign:   not designed
+HbsDesign: hbs postion 3
+HbsDesign:   not designed
+HbsDesign: hbs postion 4
+HbsDesign:   designed
+HbsDesign: hbs postion 5
+HbsDesign:   designed
+HbsDesign: hbs postion 6
+HbsDesign:   designed
+HbsDesign: hbs postion 7
+HbsDesign:   designed
+HbsDesign: hbs postion 8
+HbsDesign:   not designed
+HbsDesign: hbs postion 9
+HbsDesign:   not designed
+HbsDesign: hbs postion 10
+HbsDesign:   not designed
+HbsDesign: hbs postion 11
+HbsDesign:   not designed
+core.pack.interaction_graph.interaction_graph_factory: Instantiating PDInteractionGraph
+core.pack.pack_rotamers: built 4745 rotamers at 96 positions.
+core.pack.pack_rotamers: IG: 18323032 bytes
+core.pack.task: Packer task: initialize from command line() 
+HbsDesign: pre mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -206.103  -206.103  -206.103  -206.103  0  0  0  0
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     70;  accepts= 0.0286;  energy_drop/trial=   0.04135
+protocols.moves.TrialCounter:              unk trials=      6;  accepts= 1.0000;  energy_drop/trial=  -0.13984
+HbsDesign: post mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -206.124  -206.124  -206.124  -206.124  0  0  0  3
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     70;  accepts= 0.0286;  energy_drop/trial=   0.04135
+protocols.moves.TrialCounter:              unk trials=      7;  accepts= 1.0000;  energy_drop/trial=  -0.12279
+HbsDesign: PERTURB: 8 / 1
+HbsDesign: PERTURB: 8 / 2
+HbsDesign: PERTURB: 8 / 3
+HbsDesign: PERTURB: 8 / 4
+HbsDesign: PERTURB: 8 / 5
+HbsDesign: PERTURB: 8 / 6
+HbsDesign: PERTURB: 8 / 7
+HbsDesign: PERTURB: 8 / 8
+HbsDesign: PERTURB: 8 / 9
+HbsDesign: PERTURB: 8 / 10
+HbsDesign: DESIGN: 8
+HbsDesign: hbs postion 1
+HbsDesign:   not designed
+HbsDesign: hbs postion 2
+HbsDesign:   not designed
+HbsDesign: hbs postion 3
+HbsDesign:   not designed
+HbsDesign: hbs postion 4
+HbsDesign:   designed
+HbsDesign: hbs postion 5
+HbsDesign:   designed
+HbsDesign: hbs postion 6
+HbsDesign:   designed
+HbsDesign: hbs postion 7
+HbsDesign:   designed
+HbsDesign: hbs postion 8
+HbsDesign:   not designed
+HbsDesign: hbs postion 9
+HbsDesign:   not designed
+HbsDesign: hbs postion 10
+HbsDesign:   not designed
+HbsDesign: hbs postion 11
+HbsDesign:   not designed
+core.pack.interaction_graph.interaction_graph_factory: Instantiating PDInteractionGraph
+core.pack.pack_rotamers: built 4748 rotamers at 96 positions.
+core.pack.pack_rotamers: IG: 18355476 bytes
+core.pack.task: Packer task: initialize from command line() 
+HbsDesign: pre mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -206.124  -206.124  -206.124  -206.124  0  0  0  0
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     80;  accepts= 0.0250;  energy_drop/trial=   0.03618
+protocols.moves.TrialCounter:              unk trials=      7;  accepts= 1.0000;  energy_drop/trial=  -0.12279
+HbsDesign: post mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -206.148  -206.148  -206.148  -206.148  0  0  0  3
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     80;  accepts= 0.0250;  energy_drop/trial=   0.03618
+protocols.moves.TrialCounter:              unk trials=      8;  accepts= 1.0000;  energy_drop/trial=  -0.11053
+HbsDesign: PERTURB: 9 / 1
+HbsDesign: PERTURB: 9 / 2
+HbsDesign: PERTURB: 9 / 3
+HbsDesign: PERTURB: 9 / 4
+HbsDesign: PERTURB: 9 / 5
+HbsDesign: PERTURB: 9 / 6
+HbsDesign: PERTURB: 9 / 7
+HbsDesign: PERTURB: 9 / 8
+HbsDesign: PERTURB: 9 / 9
+HbsDesign: PERTURB: 9 / 10
+HbsDesign: DESIGN: 9
+HbsDesign: hbs postion 1
+HbsDesign:   not designed
+HbsDesign: hbs postion 2
+HbsDesign:   not designed
+HbsDesign: hbs postion 3
+HbsDesign:   not designed
+HbsDesign: hbs postion 4
+HbsDesign:   designed
+HbsDesign: hbs postion 5
+HbsDesign:   designed
+HbsDesign: hbs postion 6
+HbsDesign:   designed
+HbsDesign: hbs postion 7
+HbsDesign:   designed
+HbsDesign: hbs postion 8
+HbsDesign:   not designed
+HbsDesign: hbs postion 9
+HbsDesign:   not designed
+HbsDesign: hbs postion 10
+HbsDesign:   not designed
+HbsDesign: hbs postion 11
+HbsDesign:   not designed
+core.pack.interaction_graph.interaction_graph_factory: Instantiating PDInteractionGraph
+core.pack.pack_rotamers: built 4745 rotamers at 96 positions.
+core.pack.pack_rotamers: IG: 18324296 bytes
+core.pack.task: Packer task: initialize from command line() 
+HbsDesign: pre mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -206.148  -206.148  -206.148  -206.148  0  0  0  0
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     90;  accepts= 0.0222;  energy_drop/trial=   0.03216
+protocols.moves.TrialCounter:              unk trials=      8;  accepts= 1.0000;  energy_drop/trial=  -0.11053
+HbsDesign: post mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -206.167  -206.167  -206.167  -206.167  0  0  0  3
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     90;  accepts= 0.0222;  energy_drop/trial=   0.03216
+protocols.moves.TrialCounter:              unk trials=      9;  accepts= 1.0000;  energy_drop/trial=  -0.10037
+HbsDesign: PERTURB: 10 / 1
+HbsDesign: PERTURB: 10 / 2
+HbsDesign: PERTURB: 10 / 3
+HbsDesign: PERTURB: 10 / 4
+HbsDesign: PERTURB: 10 / 5
+HbsDesign: PERTURB: 10 / 6
+HbsDesign: PERTURB: 10 / 7
+HbsDesign: PERTURB: 10 / 8
+HbsDesign: PERTURB: 10 / 9
+HbsDesign: PERTURB: 10 / 10
+HbsDesign: DESIGN: 10
+HbsDesign: hbs postion 1
+HbsDesign:   not designed
+HbsDesign: hbs postion 2
+HbsDesign:   not designed
+HbsDesign: hbs postion 3
+HbsDesign:   not designed
+HbsDesign: hbs postion 4
+HbsDesign:   designed
+HbsDesign: hbs postion 5
+HbsDesign:   designed
+HbsDesign: hbs postion 6
+HbsDesign:   designed
+HbsDesign: hbs postion 7
+HbsDesign:   designed
+HbsDesign: hbs postion 8
+HbsDesign:   not designed
+HbsDesign: hbs postion 9
+HbsDesign:   not designed
+HbsDesign: hbs postion 10
+HbsDesign:   not designed
+HbsDesign: hbs postion 11
+HbsDesign:   not designed
+core.pack.interaction_graph.interaction_graph_factory: Instantiating PDInteractionGraph
+core.pack.pack_rotamers: built 4751 rotamers at 96 positions.
+core.pack.pack_rotamers: IG: 18382704 bytes
+core.pack.task: Packer task: initialize from command line() 
+HbsDesign: pre mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -206.167  -206.167  -206.167  -206.167  0  0  0  0
+protocols.moves.TrialCounter: RigidBodyPerturb trials=    100;  accepts= 0.0200;  energy_drop/trial=   0.02894
+protocols.moves.TrialCounter:              unk trials=      9;  accepts= 1.0000;  energy_drop/trial=  -0.10037
+HbsDesign: post mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -206.221  -206.221  -206.221  -206.221  0  0  0  3
+protocols.moves.TrialCounter: RigidBodyPerturb trials=    100;  accepts= 0.0200;  energy_drop/trial=   0.02894
+protocols.moves.TrialCounter:              unk trials=     10;  accepts= 1.0000;  energy_drop/trial=  -0.09565
+HbsDesign: Ending main loop...
+HbsDesign: Checking pose energy...
+protocols.moves.RigidBodyMover: Translate: Jump (before): RT -0.237086 0.259645 0.936149 -0.38296 -0.910572 0.155564 0.892823 -0.321625 0.315317 2.60328 -2.36081 -8.85393  
+protocols.moves.RigidBodyMover: Translate: Jump (after):  RT -0.237086 0.259645 0.936149 -0.38296 -0.910572 0.155564 0.892823 -0.321625 0.315317 -152.542 -8.41343 -996.727  
+core.pack.task: Packer task: initialize from command line() 
+core.pack.interaction_graph.interaction_graph_factory: Instantiating LinearMemoryInteractionGraph
+core.pack.pack_rotamers: built 1643 rotamers at 96 positions.
+core.pack.pack_rotamers: IG: 1670272 bytes
+protocols.jd2.JobDistributor: mdm2_hbs_0009 reported success in 65 seconds
+protocols.jd2.PDBJobInputter: PDBJobInputter::pose_from_job
+protocols.jd2.PDBJobInputter: filling pose from saved copy ../inputs/mdm2_hbs.pdb
+AFTER: FOLD_TREE  EDGE 1 33 -1  EDGE 33 85 -1  EDGE 33 91 1  EDGE 91 86 -1  EDGE 91 96 -1 
+
+HbsDesign: hbs_start: 86 hbs_end: 96
+protocols.simple_moves.hbs.HbsPatcher: added atom pair constraint to hbs with distance: 1.52 and std: 0.05
+HbsDesign: Main loop...
+HbsDesign: PERTURB: 1 / 1
+HbsDesign: PERTURB: 1 / 2
+HbsDesign: PERTURB: 1 / 3
+HbsDesign: PERTURB: 1 / 4
+HbsDesign: PERTURB: 1 / 5
+HbsDesign: PERTURB: 1 / 6
+HbsDesign: PERTURB: 1 / 7
+HbsDesign: PERTURB: 1 / 8
+HbsDesign: PERTURB: 1 / 9
+HbsDesign: PERTURB: 1 / 10
+HbsDesign: DESIGN: 1
+HbsDesign: hbs postion 1
+HbsDesign:   not designed
+HbsDesign: hbs postion 2
+HbsDesign:   not designed
+HbsDesign: hbs postion 3
+HbsDesign:   not designed
+HbsDesign: hbs postion 4
+HbsDesign:   designed
+HbsDesign: hbs postion 5
+HbsDesign:   designed
+HbsDesign: hbs postion 6
+HbsDesign:   designed
+HbsDesign: hbs postion 7
+HbsDesign:   designed
+HbsDesign: hbs postion 8
+HbsDesign:   not designed
+HbsDesign: hbs postion 9
+HbsDesign:   not designed
+HbsDesign: hbs postion 10
+HbsDesign:   not designed
+HbsDesign: hbs postion 11
+HbsDesign:   not designed
+core.pack.interaction_graph.interaction_graph_factory: Instantiating PDInteractionGraph
+core.pack.pack_rotamers: built 4754 rotamers at 96 positions.
+core.pack.pack_rotamers: IG: 18393788 bytes
+core.pack.task: Packer task: initialize from command line() 
+HbsDesign: pre mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -205.264  -205.264  -205.264  -205.264  0  0  0  0
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     10 NO ACCEPTS.
+HbsDesign: post mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -205.869  -205.869  -205.869  -205.869  0  0  0  3
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     10 NO ACCEPTS.
+protocols.moves.TrialCounter:              unk trials=      1;  accepts= 1.0000;  energy_drop/trial=  -0.60489
+HbsDesign: PERTURB: 2 / 1
+HbsDesign: PERTURB: 2 / 2
+HbsDesign: PERTURB: 2 / 3
+HbsDesign: PERTURB: 2 / 4
+HbsDesign: PERTURB: 2 / 5
+HbsDesign: PERTURB: 2 / 6
+HbsDesign: PERTURB: 2 / 7
+HbsDesign: PERTURB: 2 / 8
+HbsDesign: PERTURB: 2 / 9
+HbsDesign: PERTURB: 2 / 10
+HbsDesign: DESIGN: 2
+HbsDesign: hbs postion 1
+HbsDesign:   not designed
+HbsDesign: hbs postion 2
+HbsDesign:   not designed
+HbsDesign: hbs postion 3
+HbsDesign:   not designed
+HbsDesign: hbs postion 4
+HbsDesign:   designed
+HbsDesign: hbs postion 5
+HbsDesign:   designed
+HbsDesign: hbs postion 6
+HbsDesign:   designed
+HbsDesign: hbs postion 7
+HbsDesign:   designed
+HbsDesign: hbs postion 8
+HbsDesign:   not designed
+HbsDesign: hbs postion 9
+HbsDesign:   not designed
+HbsDesign: hbs postion 10
+HbsDesign:   not designed
+HbsDesign: hbs postion 11
+HbsDesign:   not designed
+core.pack.interaction_graph.interaction_graph_factory: Instantiating PDInteractionGraph
+core.pack.pack_rotamers: built 4754 rotamers at 96 positions.
+core.pack.pack_rotamers: IG: 18407164 bytes
+core.pack.task: Packer task: initialize from command line() 
+HbsDesign: pre mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -205.869  -205.869  -205.869  -205.869  0  0  0  0
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     20 NO ACCEPTS.
+protocols.moves.TrialCounter:              unk trials=      1;  accepts= 1.0000;  energy_drop/trial=  -0.60489
+HbsDesign: post mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -205.936  -205.936  -205.936  -205.936  0  0  0  3
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     20 NO ACCEPTS.
+protocols.moves.TrialCounter:              unk trials=      2;  accepts= 1.0000;  energy_drop/trial=  -0.33614
+HbsDesign: PERTURB: 3 / 1
+HbsDesign: PERTURB: 3 / 2
+HbsDesign: PERTURB: 3 / 3
+HbsDesign: PERTURB: 3 / 4
+HbsDesign: PERTURB: 3 / 5
+HbsDesign: PERTURB: 3 / 6
+HbsDesign: PERTURB: 3 / 7
+HbsDesign: PERTURB: 3 / 8
+HbsDesign: PERTURB: 3 / 9
+HbsDesign: PERTURB: 3 / 10
+HbsDesign: DESIGN: 3
+HbsDesign: hbs postion 1
+HbsDesign:   not designed
+HbsDesign: hbs postion 2
+HbsDesign:   not designed
+HbsDesign: hbs postion 3
+HbsDesign:   not designed
+HbsDesign: hbs postion 4
+HbsDesign:   designed
+HbsDesign: hbs postion 5
+HbsDesign:   designed
+HbsDesign: hbs postion 6
+HbsDesign:   designed
+HbsDesign: hbs postion 7
+HbsDesign:   designed
+HbsDesign: hbs postion 8
+HbsDesign:   not designed
+HbsDesign: hbs postion 9
+HbsDesign:   not designed
+HbsDesign: hbs postion 10
+HbsDesign:   not designed
+HbsDesign: hbs postion 11
+HbsDesign:   not designed
+core.pack.interaction_graph.interaction_graph_factory: Instantiating PDInteractionGraph
+core.pack.pack_rotamers: built 4754 rotamers at 96 positions.
+core.pack.pack_rotamers: IG: 18405200 bytes
+core.pack.task: Packer task: initialize from command line() 
+HbsDesign: pre mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -205.936  -205.936  -205.936  -205.936  0  0  0  0
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     30 NO ACCEPTS.
+protocols.moves.TrialCounter:              unk trials=      2;  accepts= 1.0000;  energy_drop/trial=  -0.33614
+HbsDesign: post mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -205.846  -205.936  -205.846  -205.936  0  0  0  1
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     30 NO ACCEPTS.
+protocols.moves.TrialCounter:              unk trials=      3;  accepts= 1.0000;  energy_drop/trial=  -0.19380
+HbsDesign: PERTURB: 4 / 1
+HbsDesign: PERTURB: 4 / 2
+HbsDesign: PERTURB: 4 / 3
+HbsDesign: PERTURB: 4 / 4
+HbsDesign: PERTURB: 4 / 5
+HbsDesign: PERTURB: 4 / 6
+HbsDesign: PERTURB: 4 / 7
+HbsDesign: PERTURB: 4 / 8
+HbsDesign: PERTURB: 4 / 9
+HbsDesign: PERTURB: 4 / 10
+HbsDesign: DESIGN: 4
+HbsDesign: hbs postion 1
+HbsDesign:   not designed
+HbsDesign: hbs postion 2
+HbsDesign:   not designed
+HbsDesign: hbs postion 3
+HbsDesign:   not designed
+HbsDesign: hbs postion 4
+HbsDesign:   designed
+HbsDesign: hbs postion 5
+HbsDesign:   designed
+HbsDesign: hbs postion 6
+HbsDesign:   designed
+HbsDesign: hbs postion 7
+HbsDesign:   designed
+HbsDesign: hbs postion 8
+HbsDesign:   not designed
+HbsDesign: hbs postion 9
+HbsDesign:   not designed
+HbsDesign: hbs postion 10
+HbsDesign:   not designed
+HbsDesign: hbs postion 11
+HbsDesign:   not designed
+core.pack.interaction_graph.interaction_graph_factory: Instantiating PDInteractionGraph
+core.pack.pack_rotamers: built 4753 rotamers at 96 positions.
+core.pack.pack_rotamers: IG: 18395604 bytes
+core.pack.task: Packer task: initialize from command line() 
+HbsDesign: pre mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -205.846  -205.846  -205.846  -205.846  0  0  0  0
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     40;  accepts= 0.0750;  energy_drop/trial=   0.03751
+protocols.moves.TrialCounter:              unk trials=      3;  accepts= 1.0000;  energy_drop/trial=  -0.19380
+HbsDesign: post mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -206.009  -206.009  -206.009  -206.009  0  0  0  3
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     40;  accepts= 0.0750;  energy_drop/trial=   0.03751
+protocols.moves.TrialCounter:              unk trials=      4;  accepts= 1.0000;  energy_drop/trial=  -0.18615
+HbsDesign: PERTURB: 5 / 1
+HbsDesign: PERTURB: 5 / 2
+HbsDesign: PERTURB: 5 / 3
+HbsDesign: PERTURB: 5 / 4
+HbsDesign: PERTURB: 5 / 5
+HbsDesign: PERTURB: 5 / 6
+HbsDesign: PERTURB: 5 / 7
+HbsDesign: PERTURB: 5 / 8
+HbsDesign: PERTURB: 5 / 9
+HbsDesign: PERTURB: 5 / 10
+HbsDesign: DESIGN: 5
+HbsDesign: hbs postion 1
+HbsDesign:   not designed
+HbsDesign: hbs postion 2
+HbsDesign:   not designed
+HbsDesign: hbs postion 3
+HbsDesign:   not designed
+HbsDesign: hbs postion 4
+HbsDesign:   designed
+HbsDesign: hbs postion 5
+HbsDesign:   designed
+HbsDesign: hbs postion 6
+HbsDesign:   designed
+HbsDesign: hbs postion 7
+HbsDesign:   designed
+HbsDesign: hbs postion 8
+HbsDesign:   not designed
+HbsDesign: hbs postion 9
+HbsDesign:   not designed
+HbsDesign: hbs postion 10
+HbsDesign:   not designed
+HbsDesign: hbs postion 11
+HbsDesign:   not designed
+core.pack.interaction_graph.interaction_graph_factory: Instantiating PDInteractionGraph
+core.pack.pack_rotamers: built 4753 rotamers at 96 positions.
+core.pack.pack_rotamers: IG: 18392480 bytes
+core.pack.task: Packer task: initialize from command line() 
+HbsDesign: pre mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -206.009  -206.009  -206.009  -206.009  0  0  0  0
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     50;  accepts= 0.0600;  energy_drop/trial=   0.03001
+protocols.moves.TrialCounter:              unk trials=      4;  accepts= 1.0000;  energy_drop/trial=  -0.18615
+HbsDesign: post mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -206.049  -206.049  -206.049  -206.049  0  0  0  3
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     50;  accepts= 0.0600;  energy_drop/trial=   0.03001
+protocols.moves.TrialCounter:              unk trials=      5;  accepts= 1.0000;  energy_drop/trial=  -0.15690
+HbsDesign: PERTURB: 6 / 1
+HbsDesign: PERTURB: 6 / 2
+HbsDesign: PERTURB: 6 / 3
+HbsDesign: PERTURB: 6 / 4
+HbsDesign: PERTURB: 6 / 5
+HbsDesign: PERTURB: 6 / 6
+HbsDesign: PERTURB: 6 / 7
+HbsDesign: PERTURB: 6 / 8
+HbsDesign: PERTURB: 6 / 9
+HbsDesign: PERTURB: 6 / 10
+HbsDesign: DESIGN: 6
+HbsDesign: hbs postion 1
+HbsDesign:   not designed
+HbsDesign: hbs postion 2
+HbsDesign:   not designed
+HbsDesign: hbs postion 3
+HbsDesign:   not designed
+HbsDesign: hbs postion 4
+HbsDesign:   designed
+HbsDesign: hbs postion 5
+HbsDesign:   designed
+HbsDesign: hbs postion 6
+HbsDesign:   designed
+HbsDesign: hbs postion 7
+HbsDesign:   designed
+HbsDesign: hbs postion 8
+HbsDesign:   not designed
+HbsDesign: hbs postion 9
+HbsDesign:   not designed
+HbsDesign: hbs postion 10
+HbsDesign:   not designed
+HbsDesign: hbs postion 11
+HbsDesign:   not designed
+core.pack.interaction_graph.interaction_graph_factory: Instantiating PDInteractionGraph
+core.pack.pack_rotamers: built 4751 rotamers at 96 positions.
+core.pack.pack_rotamers: IG: 18380344 bytes
+core.pack.task: Packer task: initialize from command line() 
+HbsDesign: pre mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -206.049  -206.049  -206.049  -206.049  0  0  0  0
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     60;  accepts= 0.0500;  energy_drop/trial=   0.02501
+protocols.moves.TrialCounter:              unk trials=      5;  accepts= 1.0000;  energy_drop/trial=  -0.15690
+HbsDesign: post mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -206.142  -206.142  -206.142  -206.142  0  0  0  3
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     60;  accepts= 0.0500;  energy_drop/trial=   0.02501
+protocols.moves.TrialCounter:              unk trials=      6;  accepts= 1.0000;  energy_drop/trial=  -0.14625
+HbsDesign: PERTURB: 7 / 1
+HbsDesign: PERTURB: 7 / 2
+HbsDesign: PERTURB: 7 / 3
+HbsDesign: PERTURB: 7 / 4
+HbsDesign: PERTURB: 7 / 5
+HbsDesign: PERTURB: 7 / 6
+HbsDesign: PERTURB: 7 / 7
+HbsDesign: PERTURB: 7 / 8
+HbsDesign: PERTURB: 7 / 9
+HbsDesign: PERTURB: 7 / 10
+HbsDesign: DESIGN: 7
+HbsDesign: hbs postion 1
+HbsDesign:   not designed
+HbsDesign: hbs postion 2
+HbsDesign:   not designed
+HbsDesign: hbs postion 3
+HbsDesign:   not designed
+HbsDesign: hbs postion 4
+HbsDesign:   designed
+HbsDesign: hbs postion 5
+HbsDesign:   designed
+HbsDesign: hbs postion 6
+HbsDesign:   designed
+HbsDesign: hbs postion 7
+HbsDesign:   designed
+HbsDesign: hbs postion 8
+HbsDesign:   not designed
+HbsDesign: hbs postion 9
+HbsDesign:   not designed
+HbsDesign: hbs postion 10
+HbsDesign:   not designed
+HbsDesign: hbs postion 11
+HbsDesign:   not designed
+core.pack.interaction_graph.interaction_graph_factory: Instantiating PDInteractionGraph
+core.pack.pack_rotamers: built 4751 rotamers at 96 positions.
+core.pack.pack_rotamers: IG: 18378508 bytes
+core.pack.task: Packer task: initialize from command line() 
+HbsDesign: pre mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -206.142  -206.142  -206.142  -206.142  0  0  0  0
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     70;  accepts= 0.0571;  energy_drop/trial=   0.06288
+protocols.moves.TrialCounter:              unk trials=      6;  accepts= 1.0000;  energy_drop/trial=  -0.14625
+HbsDesign: post mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -206.114  -206.142  -206.114  -206.142  0  0  0  1
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     70;  accepts= 0.0571;  energy_drop/trial=   0.06288
+protocols.moves.TrialCounter:              unk trials=      7;  accepts= 1.0000;  energy_drop/trial=  -0.12148
+HbsDesign: PERTURB: 8 / 1
+HbsDesign: PERTURB: 8 / 2
+HbsDesign: PERTURB: 8 / 3
+HbsDesign: PERTURB: 8 / 4
+HbsDesign: PERTURB: 8 / 5
+HbsDesign: PERTURB: 8 / 6
+HbsDesign: PERTURB: 8 / 7
+HbsDesign: PERTURB: 8 / 8
+HbsDesign: PERTURB: 8 / 9
+HbsDesign: PERTURB: 8 / 10
+HbsDesign: DESIGN: 8
+HbsDesign: hbs postion 1
+HbsDesign:   not designed
+HbsDesign: hbs postion 2
+HbsDesign:   not designed
+HbsDesign: hbs postion 3
+HbsDesign:   not designed
+HbsDesign: hbs postion 4
+HbsDesign:   designed
+HbsDesign: hbs postion 5
+HbsDesign:   designed
+HbsDesign: hbs postion 6
+HbsDesign:   designed
+HbsDesign: hbs postion 7
+HbsDesign:   designed
+HbsDesign: hbs postion 8
+HbsDesign:   not designed
+HbsDesign: hbs postion 9
+HbsDesign:   not designed
+HbsDesign: hbs postion 10
+HbsDesign:   not designed
+HbsDesign: hbs postion 11
+HbsDesign:   not designed
+core.pack.interaction_graph.interaction_graph_factory: Instantiating PDInteractionGraph
+core.pack.pack_rotamers: built 4749 rotamers at 96 positions.
+core.pack.pack_rotamers: IG: 18363016 bytes
+core.pack.task: Packer task: initialize from command line() 
+HbsDesign: pre mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -206.114  -206.114  -206.114  -206.114  0  0  0  0
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     80;  accepts= 0.0625;  energy_drop/trial=   0.07043
+protocols.moves.TrialCounter:              unk trials=      7;  accepts= 1.0000;  energy_drop/trial=  -0.12148
+HbsDesign: post mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -206.141  -206.141  -206.141  -206.141  0  0  0  3
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     80;  accepts= 0.0625;  energy_drop/trial=   0.07043
+protocols.moves.TrialCounter:              unk trials=      8;  accepts= 1.0000;  energy_drop/trial=  -0.10964
+HbsDesign: PERTURB: 9 / 1
+HbsDesign: PERTURB: 9 / 2
+HbsDesign: PERTURB: 9 / 3
+HbsDesign: PERTURB: 9 / 4
+HbsDesign: PERTURB: 9 / 5
+HbsDesign: PERTURB: 9 / 6
+HbsDesign: PERTURB: 9 / 7
+HbsDesign: PERTURB: 9 / 8
+HbsDesign: PERTURB: 9 / 9
+HbsDesign: PERTURB: 9 / 10
+HbsDesign: DESIGN: 9
+HbsDesign: hbs postion 1
+HbsDesign:   not designed
+HbsDesign: hbs postion 2
+HbsDesign:   not designed
+HbsDesign: hbs postion 3
+HbsDesign:   not designed
+HbsDesign: hbs postion 4
+HbsDesign:   designed
+HbsDesign: hbs postion 5
+HbsDesign:   designed
+HbsDesign: hbs postion 6
+HbsDesign:   designed
+HbsDesign: hbs postion 7
+HbsDesign:   designed
+HbsDesign: hbs postion 8
+HbsDesign:   not designed
+HbsDesign: hbs postion 9
+HbsDesign:   not designed
+HbsDesign: hbs postion 10
+HbsDesign:   not designed
+HbsDesign: hbs postion 11
+HbsDesign:   not designed
+core.pack.interaction_graph.interaction_graph_factory: Instantiating PDInteractionGraph
+core.pack.pack_rotamers: built 4744 rotamers at 96 positions.
+core.pack.pack_rotamers: IG: 18315508 bytes
+core.pack.task: Packer task: initialize from command line() 
+HbsDesign: pre mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -206.141  -206.141  -206.141  -206.141  0  0  0  0
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     90;  accepts= 0.0667;  energy_drop/trial=   0.09192
+protocols.moves.TrialCounter:              unk trials=      8;  accepts= 1.0000;  energy_drop/trial=  -0.10964
+HbsDesign: post mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -206.163  -206.163  -206.163  -206.163  0  0  0  3
+protocols.moves.TrialCounter: RigidBodyPerturb trials=     90;  accepts= 0.0667;  energy_drop/trial=   0.09192
+protocols.moves.TrialCounter:              unk trials=      9;  accepts= 1.0000;  energy_drop/trial=  -0.09985
+HbsDesign: PERTURB: 10 / 1
+HbsDesign: PERTURB: 10 / 2
+HbsDesign: PERTURB: 10 / 3
+HbsDesign: PERTURB: 10 / 4
+HbsDesign: PERTURB: 10 / 5
+HbsDesign: PERTURB: 10 / 6
+HbsDesign: PERTURB: 10 / 7
+HbsDesign: PERTURB: 10 / 8
+HbsDesign: PERTURB: 10 / 9
+HbsDesign: PERTURB: 10 / 10
+HbsDesign: DESIGN: 10
+HbsDesign: hbs postion 1
+HbsDesign:   not designed
+HbsDesign: hbs postion 2
+HbsDesign:   not designed
+HbsDesign: hbs postion 3
+HbsDesign:   not designed
+HbsDesign: hbs postion 4
+HbsDesign:   designed
+HbsDesign: hbs postion 5
+HbsDesign:   designed
+HbsDesign: hbs postion 6
+HbsDesign:   designed
+HbsDesign: hbs postion 7
+HbsDesign:   designed
+HbsDesign: hbs postion 8
+HbsDesign:   not designed
+HbsDesign: hbs postion 9
+HbsDesign:   not designed
+HbsDesign: hbs postion 10
+HbsDesign:   not designed
+HbsDesign: hbs postion 11
+HbsDesign:   not designed
+core.pack.interaction_graph.interaction_graph_factory: Instantiating PDInteractionGraph
+core.pack.pack_rotamers: built 4749 rotamers at 96 positions.
+core.pack.pack_rotamers: IG: 18365648 bytes
+core.pack.task: Packer task: initialize from command line() 
+HbsDesign: pre mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -206.163  -206.163  -206.163  -206.163  0  0  0  0
+protocols.moves.TrialCounter: RigidBodyPerturb trials=    100;  accepts= 0.0600;  energy_drop/trial=   0.08273
+protocols.moves.TrialCounter:              unk trials=      9;  accepts= 1.0000;  energy_drop/trial=  -0.09985
+HbsDesign: post mc->boltzmann
+protocols.moves.MonteCarlo: MC: 1  -206.198  -206.198  -206.198  -206.198  0  0  0  3
+protocols.moves.TrialCounter: RigidBodyPerturb trials=    100;  accepts= 0.0600;  energy_drop/trial=   0.08273
+protocols.moves.TrialCounter:              unk trials=     10;  accepts= 1.0000;  energy_drop/trial=  -0.09336
+HbsDesign: Ending main loop...
+HbsDesign: Checking pose energy...
+protocols.moves.RigidBodyMover: Translate: Jump (before): RT -0.237086 0.259645 0.936149 -0.38296 -0.910572 0.155564 0.892823 -0.321625 0.315317 2.60328 -2.36081 -8.85393  
+protocols.moves.RigidBodyMover: Translate: Jump (after):  RT -0.237086 0.259645 0.936149 -0.38296 -0.910572 0.155564 0.892823 -0.321625 0.315317 -152.647 -8.29836 -996.711  
+core.pack.task: Packer task: initialize from command line() 
+core.pack.interaction_graph.interaction_graph_factory: Instantiating LinearMemoryInteractionGraph
+core.pack.pack_rotamers: built 1643 rotamers at 96 positions.
+core.pack.pack_rotamers: IG: 1670272 bytes
+protocols.jd2.JobDistributor: mdm2_hbs_0010 reported success in 65 seconds
+protocols.jd2.JobDistributor: no more batches to process... 
+protocols.jd2.JobDistributor: 10 jobs considered, 10 jobs attempted in 651 seconds
