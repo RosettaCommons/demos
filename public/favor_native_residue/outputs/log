@@ -1,0 +1,153 @@
+core.init: Mini-Rosetta version 1f5967b64e7ddaa602384c033beb95b149549522 from unknown
+core.init: command: /home/smlewis/rosetta/bin/rosetta_scripts.linuxclangrelease @options -database /home/smlewis/rosetta/../rosetta_database/
+core.init: 'RNG device' seed mode, using '/dev/urandom', seed=944228352 seed_offset=0 real_seed=944228352
+core.init.random: RandomGenerator:init: Normal mode, seed=944228352 RG_type=mt19937
+protocols.jd2.PDBJobInputter: Instantiate PDBJobInputter
+protocols.jd2.PDBJobInputter: PDBJobInputter::fill_jobs
+protocols.jd2.PDBJobInputter: pushing 1l2y.pdb nstruct index 1
+protocols.evaluation.ChiWellRmsdEvaluatorCreator: Evaluation Creator active ... 
+protocols.jd2.JobDistributor: Parser is present.  Input mover will be overwritten with whatever the parser creates.
+protocols.jd2.PDBJobInputter: PDBJobInputter::pose_from_job
+protocols.jd2.PDBJobInputter: filling pose from PDB 1l2y.pdb
+core.chemical.ResidueTypeSet: While generating ResidueTypeSet fa_standard: Skipping patch Cterm_amidation as requested
+core.chemical.ResidueTypeSet: While generating ResidueTypeSet fa_standard: Skipping patch LowerDNA as requested
+core.chemical.ResidueTypeSet: While generating ResidueTypeSet fa_standard: Skipping patch UpperDNA as requested
+core.chemical.ResidueTypeSet: While generating ResidueTypeSet fa_standard: Skipping patch SpecialRotamer as requested
+core.chemical.ResidueTypeSet: While generating ResidueTypeSet fa_standard: Skipping patch protein_cutpoint_upper as requested
+core.chemical.ResidueTypeSet: While generating ResidueTypeSet fa_standard: Skipping patch protein_cutpoint_lower as requested
+core.chemical.ResidueTypeSet: While generating ResidueTypeSet fa_standard: Skipping patch VirtualBB as requested
+core.chemical.ResidueTypeSet: While generating ResidueTypeSet fa_standard: Skipping patch ShoveBB as requested
+core.chemical.ResidueTypeSet: While generating ResidueTypeSet fa_standard: Skipping patch VirtualDNAPhosphate as requested
+core.chemical.ResidueTypeSet: While generating ResidueTypeSet fa_standard: Skipping patch pro_hydroxylated_case1 as requested
+core.chemical.ResidueTypeSet: While generating ResidueTypeSet fa_standard: Skipping patch pro_hydroxylated_case2 as requested
+core.chemical.ResidueTypeSet: While generating ResidueTypeSet fa_standard: Skipping patch ser_phosphorylated as requested
+core.chemical.ResidueTypeSet: While generating ResidueTypeSet fa_standard: Skipping patch thr_phosphorylated as requested
+core.chemical.ResidueTypeSet: While generating ResidueTypeSet fa_standard: Skipping patch tyr_phosphorylated as requested
+core.chemical.ResidueTypeSet: While generating ResidueTypeSet fa_standard: Skipping patch tyr_sulfated as requested
+core.chemical.ResidueTypeSet: While generating ResidueTypeSet fa_standard: Skipping patch lys_monomethylated as requested
+core.chemical.ResidueTypeSet: While generating ResidueTypeSet fa_standard: Skipping patch lys_dimethylated as requested
+core.chemical.ResidueTypeSet: While generating ResidueTypeSet fa_standard: Skipping patch lys_trimethylated as requested
+core.chemical.ResidueTypeSet: While generating ResidueTypeSet fa_standard: Skipping patch lys_acetylated as requested
+core.chemical.ResidueTypeSet: While generating ResidueTypeSet fa_standard: Skipping patch glu_carboxylated as requested
+core.chemical.ResidueTypeSet: While generating ResidueTypeSet fa_standard: Skipping patch cys_acetylated as requested
+core.chemical.ResidueTypeSet: While generating ResidueTypeSet fa_standard: Skipping patch tyr_diiodinated as requested
+core.chemical.ResidueTypeSet: While generating ResidueTypeSet fa_standard: Skipping patch N_acetylated as requested
+core.chemical.ResidueTypeSet: While generating ResidueTypeSet fa_standard: Skipping patch C_methylamidated as requested
+core.chemical.ResidueTypeSet: While generating ResidueTypeSet fa_standard: Skipping patch MethylatedProteinCterm as requested
+core.chemical.ResidueTypeSet: Finished initializing fa_standard residue type set.  Created 355 residue types
+core.pack.task: Packer task: initialize from command line() 
+protocols.jd2.DockDesignParser: dock_design_filename=favor_native_residue.xml
+protocols.jd2.DockDesignParser: Parsed script:
+<ROSETTASCRIPTS>
+	<SCOREFXNS>
+		<s12_prime weights=score12prime/>
+	</SCOREFXNS>
+	<TASKOPERATIONS>
+		<InitializeFromCommandline name=cmdTask/>
+	</TASKOPERATIONS>
+	<FILTERS/>
+	<MOVERS>
+		<FavorNativeResidue bonus=0.5 name=favor/>
+		<PackRotamersMover name=pack scorefxn=s12_prime task_operations=cmdTask/>
+	</MOVERS>
+	<APPLY_TO_POSE/>
+	<PROTOCOLS>
+		<Add mover_name=favor/>
+		<Add mover_name=pack/>
+	</PROTOCOLS>
+</ROSETTASCRIPTS>
+core.scoring.ScoreFunctionFactory: SCOREFUNCTION: score12prime
+core.scoring.etable: Starting energy table calculation
+core.scoring.etable: smooth_etable: changing atr/rep split to bottom of energy well
+core.scoring.etable: smooth_etable: spline smoothing lj etables (maxdis = 6)
+core.scoring.etable: smooth_etable: spline smoothing solvation etables (max_dis = 6)
+core.scoring.etable: Finished calculating energy tables.
+basic.io.database: Database file opened: scoring/score_functions/PairEPotential/pdb_pair_stats_fine
+basic.io.database: Database file opened: scoring/score_functions/hbonds/standard_params/HBPoly1D.csv
+basic.io.database: Database file opened: scoring/score_functions/hbonds/standard_params/HBFadeIntervals.csv
+basic.io.database: Database file opened: scoring/score_functions/hbonds/standard_params/HBEval.csv
+basic.io.database: Database file opened: scoring/score_functions/EnvPairPotential/env_log.txt
+basic.io.database: Database file opened: scoring/score_functions/EnvPairPotential/cbeta_den.txt
+basic.io.database: Database file opened: scoring/score_functions/EnvPairPotential/pair_log.txt
+basic.io.database: Database file opened: scoring/score_functions/EnvPairPotential/cenpack_log.txt
+basic.io.database: Database file opened: scoring/score_functions/EnvPairPotential/env_log.txt
+basic.io.database: Database file opened: scoring/score_functions/EnvPairPotential/cbeta_den.txt
+basic.io.database: Database file opened: scoring/score_functions/EnvPairPotential/pair_log.txt
+basic.io.database: Database file opened: scoring/score_functions/EnvPairPotential/cenpack_log.txt
+basic.io.database: Database file opened: scoring/score_functions/MembranePotential/CEN6_mem_env_log.txt
+basic.io.database: Database file opened: scoring/score_functions/MembranePotential/CEN10_mem_env_log.txt
+basic.io.database: Database file opened: scoring/score_functions/MembranePotential/memcbeta_den.txt
+basic.io.database: Database file opened: scoring/score_functions/MembranePotential/mem_pair_log.txt
+basic.io.database: Database file opened: scoring/score_functions/rama/Rama_smooth_dyn.dat_ss_6.4
+basic.io.database: Database file opened: scoring/score_functions/P_AA_pp/P_AA
+basic.io.database: Database file opened: scoring/score_functions/P_AA_pp/P_AA_n
+basic.io.database: Database file opened: scoring/score_functions/P_AA_pp/P_AA_pp
+core.scoring.etable: Using alternate parameters: LJ_RADIUS_SOFT in Etable construction.
+core.scoring.etable: Starting energy table calculation
+core.scoring.etable: smooth_etable: changing atr/rep split to bottom of energy well
+core.scoring.etable: smooth_etable: spline smoothing lj etables (maxdis = 6)
+core.scoring.etable: smooth_etable: spline smoothing solvation etables (max_dis = 6)
+core.scoring.etable: Finished calculating energy tables.
+basic.io.database: Database file opened: scoring/score_functions/EnvPairPotential/env_log.txt
+basic.io.database: Database file opened: scoring/score_functions/EnvPairPotential/cbeta_den.txt
+basic.io.database: Database file opened: scoring/score_functions/EnvPairPotential/pair_log.txt
+basic.io.database: Database file opened: scoring/score_functions/EnvPairPotential/cenpack_log.txt
+basic.io.database: Database file opened: scoring/score_functions/InterchainPotential/interchain_env_log.txt
+basic.io.database: Database file opened: scoring/score_functions/InterchainPotential/interchain_pair_log.txt
+basic.io.database: Database file opened: scoring/score_functions/EnvPairPotential/env_log.txt
+basic.io.database: Database file opened: scoring/score_functions/EnvPairPotential/cbeta_den.txt
+basic.io.database: Database file opened: scoring/score_functions/EnvPairPotential/pair_log.txt
+basic.io.database: Database file opened: scoring/score_functions/EnvPairPotential/cenpack_log.txt
+protocols.jd2.parser.ScoreFunctionLoader: defined score function "s12_prime" with weights "score12prime"
+protocols.jd2.parser.TaskOperationLoader: Defined TaskOperation named "cmdTask" of type InitializeFromCommandline
+protocols.protein_interface_design.movers.FavorNativeResiduePreCycle: Setting res_type_constraint weight in scorefxn commandline to 0.5
+Setting res_type_constraint weight in scorefxn s12_prime to 0.5
+Setting res_type_constraint weight in scorefxn score12 to 0.5
+Setting res_type_constraint weight in scorefxn score4L to 0.5
+Setting res_type_constraint weight in scorefxn score_docking to 0.5
+Setting res_type_constraint weight in scorefxn score_docking_low to 0.5
+Setting res_type_constraint weight in scorefxn soft_rep to 0.5
+applying favor native residue to pose with weight: 0.5
+protocols.jd2.DockDesignParser: Defined mover named "favor" of type FavorNativeResidue
+protocols.rosetta_scripts.util.hh: Object pack reading the following task_operations: Adding the following task operations
+cmdTask 
+protocols.jd2.DockDesignParser: Defined mover named "pack" of type PackRotamersMover
+protocols.rosetta_scripts.ParsedProtocol: ParsedProtocol mover with the following movers and filters
+added mover "favor" with filter "true_filter"
+added mover "pack" with filter "true_filter"
+protocols.jd2.PDBJobInputter: PDBJobInputter::pose_from_job
+protocols.jd2.PDBJobInputter: filling pose from saved copy 1l2y.pdb
+protocols.rosetta_scripts.ParsedProtocol: =======================BEGIN MOVER FavorNativeResidue=======================
+{
+protocols.rosetta_scripts.ParsedProtocol: 
+}
+=======================END MOVER FavorNativeResidue=======================
+protocols.rosetta_scripts.ParsedProtocol: =======================BEGIN FILTER =======================
+{
+protocols.rosetta_scripts.ParsedProtocol: 
+}
+=======================END FILTER =======================
+protocols.rosetta_scripts.ParsedProtocol: =======================BEGIN MOVER PackRotamersMover=======================
+{
+core.pack.task: Packer task: initialize from command line() 
+core.pack.dunbrack: Dunbrack library took 0.03 seconds to load from binary
+core.pack.interaction_graph.interaction_graph_factory: Instantiating PDInteractionGraph
+core.pack.pack_rotamers: built 2825 rotamers at 20 positions.
+core.pack.pack_rotamers: IG: 8636164 bytes
+protocols.rosetta_scripts.ParsedProtocol: 
+}
+=======================END MOVER PackRotamersMover=======================
+protocols.rosetta_scripts.ParsedProtocol: =======================BEGIN FILTER =======================
+{
+protocols.rosetta_scripts.ParsedProtocol: 
+}
+=======================END FILTER =======================
+protocols.rosetta_scripts.ParsedProtocol: setting status to success
+protocols.rosetta_scripts.ParsedProtocol.REPORT: =============Starting final report================
+protocols.rosetta_scripts.ParsedProtocol.REPORT: ============Begin report for ==================
+protocols.rosetta_scripts.ParsedProtocol.REPORT: ============End report for ==================
+protocols.rosetta_scripts.ParsedProtocol.REPORT: ============Begin report for ==================
+protocols.rosetta_scripts.ParsedProtocol.REPORT: ============End report for ==================
+protocols.jd2.JobDistributor: 1l2y_0001 reported success in 4 seconds
+protocols.jd2.JobDistributor: no more batches to process... 
+protocols.jd2.JobDistributor: 1 jobs considered, 1 jobs attempted in 4 seconds
