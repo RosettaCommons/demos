@@ -5,7 +5,11 @@ Usage: rosetta_scripts -s -database -parser:protocol ppk_minbb.xml -ex1 -ex2 -us
 <dock_design>
         <SCOREFXNS>
 		<sc12_w_correction weights=score12_w_corrections/>
-		<score_w_PB weights=score12_w_corrections patch=add_PB_elec.wts_patch/>
+		<score_w_PB weights=score12_w_corrections patch=add_PB_elec.wts_patch>
+			<Set charged_chains=1/>
+			<Set pb_bound_tag=PB_BOUND/>
+			<Set pb_unbound_tag=PB_UNBOUND/>
+		</score_w_PB>
         </SCOREFXNS>
 	<TASKOPERATIONS>
 		<RestrictToRepacking name=no_design />

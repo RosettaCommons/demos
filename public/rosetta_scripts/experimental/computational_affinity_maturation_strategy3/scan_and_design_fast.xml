@@ -25,7 +25,7 @@ The two resfiles below will be written out as intermediate files by the ScanFilt
         </TASKOPERATIONS>
 				<MOVERS>
                 <AtomTree name=docking_tree docking_ft=1/> connect chains by their geometric centres. Good for minimization
-                <MinMover name=min_all chi=1 jump=1> minimize sc, rb, and bb (of chain 2 only)
+                <MinMover name=min_all bb=0 chi=1 jump=1> minimize sc, rb, and bb (of chain 2 only)
 									<MoveMap>
 									  <Chain number=1 bb=0 chi=1/> disallow bb minimization on target chain
 									</MoveMap>
