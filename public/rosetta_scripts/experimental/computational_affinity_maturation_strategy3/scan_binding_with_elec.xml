@@ -13,7 +13,7 @@ Run each input file in a separate directory to ensure that the resfiles that are
 <dock_design>
 	<SCOREFXNS>
 		<sc12_w_PB weights=score12_full patch=pb_elec/>
-		<soft_rep_w_PB weights=soft_rep patch=pb_elec/>
+		<soft_rep weights=soft_rep />
 	</SCOREFXNS>
 	<TASKOPERATIONS>
 		<InitializeFromCommandline name=init/>
@@ -24,7 +24,7 @@ Run each input file in a separate directory to ensure that the resfiles that are
 		<RestrictAbsentCanonicalAAS name=nohis keep_aas="ACDEFGIKLMNPQRSTVWY"/> Histidines are a source of trouble for Rosetta energetics at the interface. Better to avoid them completely
 	</TASKOPERATIONS>
 	<MOVERS>
-		<SetupPoissonBoltzmannPotential name=setup_pb scorefxn=sc12_w_PB charged_chains=1 apbs_path="/home/honda/apbs-1.4/bin/apbs"/>
+		<SetupPoissonBoltzmannPotential name=setup_pb scorefxn=sc12_w_PB charged_chains=1 epsilon=2.0 apbs_path="/home/honda/apbs-1.4/bin/apbs"/>
 		<AtomTree name=docking_tree docking_ft=1/> connect chains by their geometric centres. Good for minimization
                 <MinMover name=min_all jump=1 bb=0 chi=1> minimize sc, rb, and bb (of chain 2 only)
                         <MoveMap>
@@ -32,8 +32,8 @@ Run each input file in a separate directory to ensure that the resfiles that are
                                 <Chain number=2 bb=1 chi=1/>
                         </MoveMap>
                 </MinMover>
-		<PackRotamersMover name=pack_interface_soft scorefxn=soft_rep_w_PB task_operations=init,repack_interface/>
-		<PackRotamersMover name=pack_interface scorefxn=sc12_w_PB   task_operations=init,repack_interface/>
+		<PackRotamersMover name=pack_interface_soft scorefxn=soft_rep task_operations=init,repack_interface/>
+		<PackRotamersMover name=pack_interface scorefxn=sc12_w_PB  task_operations=init,repack_interface/>
 		<ParsedProtocol name=relax_before_baseline> before running the baseline calculation in filter scan, you need to relax the ppk'ed structure
 			<Add mover=docking_tree/>
                         <Add mover=pack_interface_soft/>
@@ -57,8 +57,8 @@ Run each input file in a separate directory to ensure that the resfiles that are
 		<Add mover=save_pose_after_pb_setup/>
 		<Add mover=docking_tree/>
 		<Add filter=scan_binding_timer/>
-		<Add filter=ddg/>
-		Add filter=scan_binding/> slowest (two repacks x repeats)
+		Add filter=ddg/>
+		<Add filter=scan_binding/> slowest (two repacks x repeats)
 		<Add filter=scan_binding_timer/>
 	</PROTOCOLS>
 </dock_design>
