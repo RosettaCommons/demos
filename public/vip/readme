@@ -19,6 +19,9 @@ options are:
 -cp:ncycles (Size)
 	This will run the iterative protocol (find point mutations, relax, output best relaxed pose) a fixed number of times. If you don't use this option it will continue to run until it no longer finds favorable mutations. The latter option can take a while for large proteins.
 
+-cp:max_failures (Size)
+	This allows you to try each iteration multiple times before deciding it is pointless.  The reason for this option is that, due to RosettaHoles, the process is stochastic.  Whether a good mutation can be found can depend on the pseudorandom numbers pulled during the void identification steps.  The highest this should be set is around five.  The default is 1.
+
 -cp:cutoff (real)
 	This is the cutoff for choosing mutatable residues (ie distance from cavity ball to a non-bb, non-surface atom on the residue). The smallest cutoff you can use is best since that will mutated the smallest # of residues that line the cavity.
 
