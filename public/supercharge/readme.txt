@@ -94,14 +94,13 @@ This is the workflow of each mode:
 
 AvNAPSA_positive  BOOL def(false);				//run positive-charge AvNAPSA
 AvNAPSA_negative  BOOL def(false); 				//run negative-charge AvNAPSA
-AvNAPSA_target_net_charge  SIGNED_INT def(0);  			//residue positions will be mutated one at a time from most exposed to least exposed until target net charge is achieved
-surface_definition_atom_neighbor_cutoff  UNSIGNED_INT def(100); // if you have no target net charge in mind, AvNAPSA will mutate all surface DE-RK-NQ residues on the surface, with this surface cutoff
+target_net_charge  SIGNED_INT def(0);  				//residue positions will be mutated one at a time from most exposed to least exposed until target net charge is achieved
+surface_atom_cutoff  UNSIGNED_INT def(100); 			// if you have no target net charge in mind, AvNAPSA will mutate all surface DE-RK-NQ residues on the surface, with this surface cutoff
 
 
 --------------Options, Rosetta mode:---------------------
 
-surface_definition_by_atom  BOOL def(false);		           //Rosetta can also use residue AvNAPSA values to define the surface.  The default, however, is to use number of residue neighbors
-surface_definition_residue_neighbor_cutoff  UNSIGNED_INT def(16);  //residues with <16 neighboring residues within 10 Å are considered part of the surface
+surface_residue_cutoff  UNSIGNED_INT def(16);  //residues with <16 neighboring residues within 10 Å are considered part of the surface
 
 include_arg  BOOL def(false);  //use arginine in Rosetta supercharge
 include_lys  BOOL def(false);  //use lysine in Rosetta supercharge
@@ -120,12 +119,12 @@ dont_mutate_hbonded_sidechains  BOOL def(true);  //don’t mutate residues with 
 pre_packminpack  BOOL def(false);                //Packrotamers is always done as the first step.  This option will go one step further and run packrotamers, sidechain+backbone minimization, packrotamers on the input structure before performing the supercharge design step.
 
 nstruct  UNSIGNED_INT def(1);  			 //Monte Carlo sequence design of a protein surface is often convergent but it is still stochastic, multiple design runs can be performed if desired.
-Rosetta_target_net_charge  UNSIGNED_INT def(0);  //a target net charge can be achieved if desired, this is done in an automated way by incrementing/decrementing charged residue reference energies until the desired net charge results from the Monte Carlo design step.
+target_net_charge  UNSIGNED_INT def(0);  	 //a target net charge can be achieved if desired, this is done in an automated way by incrementing/decrementing charged residue reference energies until the desired net charge results from the Monte Carlo design step.
 
 
 --------------Options, AvNAPSA and Rosetta modes:--------------
 
-surface_definition_atom_neighbor_cutoff  UNSIGNED_INT def(100); // this is how AvNAPSA defines surface, can be used in either approach
+surface_atom_cutoff  UNSIGNED_INT def(100); // this is how AvNAPSA defines surface, can be used in either approach
 compare_energies  BOOL def(false);  	 	      		//prints a full residue-by-residue energy analysis in the log file
 only_compare_mutated_residues  BOOL def(false);  		//only includes mutated residues in the energy analysis
 resfile  FILE;  	       	    				//this is how you can specify which residues to not mutate.  Default setting must be ALLAA, and residue-by-residue settings should be NATAA, as shown below:
