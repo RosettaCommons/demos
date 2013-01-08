@@ -7,6 +7,8 @@
 #AvNAPSA negative supercharging
 
 -AvNAPSA_negative
+
+-target_net_charge_active
 -target_net_charge -25
 
 -out:path example_outputs
