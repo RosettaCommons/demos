@@ -14,6 +14,8 @@ AnchoredDesign -- Design of a protein-protein interface around a known interacti
 
 beta_strand_homodimer_design -- Identify exposed (unpaired) beta-strands and design a homodimer using the unpaired strand.
 
+darc -- DARC is designed to dock small molecules in protein pockets.
+
 electron_density
 1) cryoEM tutorial -- use Rosetta to model structures into cryoEM data.
 2) molecular replacement -- use Rosetta to solve difficult molecular replacement problems. 
