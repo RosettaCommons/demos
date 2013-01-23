@@ -18,7 +18,7 @@ Rosetta-mode and AvNAPSA-mode are explained below...
 
 Why supercharge protein surfaces?
 
-Reengineering protein surfaces to have high net charge, called supercharging, can improve reversibility of unfolding by preventing aggregation of partially unfolded states. Aggregation is a common obstacle for use of proteins in biotechnology and medicine Additionally, highly cationic proteins and peptides are capable of nonviral cell entry, and highly anionic proteins are filtered by kidneys more slowly than neutral or cationic proteins.  
+Reengineering protein surfaces to have high net charge, called supercharging, can improve reversibility of unfolding by preventing aggregation of partially unfolded states. Aggregation is a common obstacle for use of proteins in biotechnology and medicine.  Additionally, highly cationic proteins and peptides are capable of nonviral cell entry, and highly anionic proteins are filtered by kidneys more slowly than neutral or cationic proteins.  
 
 Optimal positions for incorporation of charged side chains should be determined, as numerous mutations and accumulation of like-charges can also destabilize the native state.  A previously demonstrated approach deterministically mutates flexible polar residues (amino acids DERKNQ) with the fewest average neighboring atoms per side chain atom (AvNAPSA: Lawrence MS, Phillips KJ, Liu DR, 2007, Supercharging proteins can impart unusual resilience, JACS).  Our approach uses Rosetta-based energy calculations to choose the surface mutations.  Both automated approaches for supercharging are implemented in this online server.
 
@@ -48,6 +48,8 @@ The supercharge server can run in four different modes:
 --Rosetta with a surface cutoff and target net charge
 --Rosetta with a surface cutoff and input reference energies for charged residue types
 
+
+What does AvNAPSA stand for: average number of neighboring atoms per sidechain atom.  This is a value that measures the extent of burial/accessibility.  It's similar to the residue neighbors by distance that Rosetta typically uses to define the surface, but it's on the atom-level rather than residue-level.  AvNAPSA-mode calculates an AvNAPSA value for every residue.  'surface_atom_cutoff' indicates the cutoff AvNAPSA value that defines surface residues.  AvNAPSA values of 50-150 are typical for surface residues.  AvNAPSA values >150 are typical for core residues.  A surface_atom_cutoff of 100 will lead to moderate supercharging.  A surface_atom_cutoff of 150 will lead to heavier supercharging.
 
 
 This is the workflow of each mode:
@@ -135,7 +137,9 @@ start
   24  A  NATAA
   26  A  NATAA
 
-if the default were NATRO, for example, no design would occur!
+
+Note: an input resfile is optional.  However, every supercharge run generates an output resfile that governs the design run.  The default of this output resfile is NATAA, which prevents core residues from mutating (see below).  The input resfile is read first, the output resfile (see below) is read second, and this is why ALLAA must be the default for the input resfile.  If the default were NATRO, for example, no design would occur!
+
 
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -143,7 +147,43 @@ if the default were NATRO, for example, no design would occur!
 
 Output:
 
+
 As output, a log file, the residue file that governed the design run, and the output PDB are provided.  First, the log file contains the exact Rosetta command line, the residue positions identified as located on the surface, a list of charged residues in the final sequence, the net charge, a list of mutations, text for a PyMOL selection to easily view the mutations in PyMOL, and optionally, a full energetic comparison of repacked native versus supercharged structures.  Secondly, the Rosetta residue file indicates which residue positions could possibly mutate, and to what residue types.  The third output file is the atomic coordinate file of the supercharged protein, in PDB format, and the naming of the output PDB is intended to facilitate self-documentation of the inputs for a given design run.  For Rosetta designs, the name includes the final reference energies that were used and the final net charge, and for AvNAPSA designs, the name includes the net charge and the largest AvNAPSA value of the mutated residues. 
+
+
+This is what an output resfile looks like for AvNAPSA-positive supercharging, which always chooses lysine:
+
+NATAA
+start
+   6 A  PIKAA  K
+   19 A  PIKAA  K
+   21 A  PIKAA  K
+   32 A  PIKAA  K
+   34 A  PIKAA  K
+   39 A  PIKAA  K
+
+
+
+This is what an output resfile looks like for Rosetta positive supercharging, which allows choice between native and RK, and preserves h-bonds:
+
+NATAA
+start
+   6 A  PIKAA ERK
+   9 A  PIKAA TRK
+   11 A  PIKAA VRK
+   21 A  PIKAA DRK
+   25 A  PIKAA HRK
+   26 A  NATAA  #same charge
+   30 A  NATAA  #same charge
+   32 A  NATRO  #has sc hbond energy=-1.15844
+   38 A  PIKAA TRK
+   39 A  NATRO  #has sc hbond energy=-1.33149
+   43 A  PIKAA TRK
+   50 A  NATRO  #has sc hbond energy=-0.536622
+   52 A  NATAA  #same charge
+   76 A  PIKAA DRK
+   77 A  PIKAA HRK
+
 
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////

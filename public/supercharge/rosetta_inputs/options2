@@ -21,4 +21,4 @@
 -dont_mutate_correct_charge true
 -dont_mutate_hbonded_sidechains true
 
--out:path example_outputs
+-out:path example_outputs/outpath2

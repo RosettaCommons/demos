@@ -1,0 +1,503 @@
+core.init: Mini-Rosetta version 53295M from https://svn.rosettacommons.org/source/trunk/rosetta/rosetta_source
+core.init: command: /home/bder/scr/rosetta_clean/rosetta_source/bin/supercharge.default.linuxgccrelease -database /home/bder/scr/rosetta_clean/rosetta_database/ @rosetta_inputs/options2
+core.init: 'RNG device' seed mode, using '/dev/urandom', seed=-1934890374 seed_offset=0 real_seed=-1934890374
+core.init.random: RandomGenerator:init: Normal mode, seed=-1934890374 RG_type=mt19937
+protocols.jd2.PDBJobInputter: Instantiate PDBJobInputter
+protocols.jd2.PDBJobInputter: PDBJobInputter::fill_jobs
+protocols.jd2.PDBJobInputter: pushing rosetta_inputs/2B3P_A_min.pdb nstruct index 1
+protocols.evaluation.ChiWellRmsdEvaluatorCreator: Evaluation Creator active ... 
+protocols.jd2.PDBJobInputter: PDBJobInputter::pose_from_job
+protocols.jd2.PDBJobInputter: filling pose from PDB rosetta_inputs/2B3P_A_min.pdb
+core.chemical.ResidueTypeSet: Finished initializing fa_standard residue type set.  Created 6242 residue types
+core.io.pdb.file_data: [ WARNING ] discarding 1 atoms at position 63 in file rosetta_inputs/2B3P_A_min.pdb. Best match rsd_type:  LEU
+core.io.pdb.file_data: [ WARNING ] discarding 3 atoms at position 64 in file rosetta_inputs/2B3P_A_min.pdb. Best match rsd_type:  VAL
+core.io.pdb.file_data: [ WARNING ] can't find atom for res 63 atom  OXT (trying to set temp)
+core.io.pdb.file_data: [ WARNING ] can't find atom for res 64 atom 1H   (trying to set temp)
+core.io.pdb.file_data: [ WARNING ] can't find atom for res 64 atom 2H   (trying to set temp)
+core.io.pdb.file_data: [ WARNING ] can't find atom for res 64 atom 3H   (trying to set temp)
+core.pack.task: Packer task: initialize from command line() 
+core.scoring.etable: Starting energy table calculation
+core.scoring.etable: smooth_etable: changing atr/rep split to bottom of energy well
+core.scoring.etable: smooth_etable: spline smoothing lj etables (maxdis = 6)
+core.scoring.etable: smooth_etable: spline smoothing solvation etables (max_dis = 6)
+core.scoring.etable: Finished calculating energy tables.
+basic.io.database: Database file opened: scoring/score_functions/PairEPotential/pdb_pair_stats_fine
+basic.io.database: Database file opened: scoring/score_functions/hbonds/standard_params/HBPoly1D.csv
+basic.io.database: Database file opened: scoring/score_functions/hbonds/standard_params/HBFadeIntervals.csv
+basic.io.database: Database file opened: scoring/score_functions/hbonds/standard_params/HBEval.csv
+basic.io.database: Database file opened: scoring/score_functions/EnvPairPotential/env_log.txt
+basic.io.database: Database file opened: scoring/score_functions/EnvPairPotential/cbeta_den.txt
+basic.io.database: Database file opened: scoring/score_functions/EnvPairPotential/pair_log.txt
+basic.io.database: Database file opened: scoring/score_functions/EnvPairPotential/cenpack_log.txt
+basic.io.database: Database file opened: scoring/score_functions/EnvPairPotential/env_log.txt
+basic.io.database: Database file opened: scoring/score_functions/EnvPairPotential/cbeta_den.txt
+basic.io.database: Database file opened: scoring/score_functions/EnvPairPotential/pair_log.txt
+basic.io.database: Database file opened: scoring/score_functions/EnvPairPotential/cenpack_log.txt
+basic.io.database: Database file opened: scoring/score_functions/MembranePotential/CEN6_mem_env_log.txt
+basic.io.database: Database file opened: scoring/score_functions/MembranePotential/CEN10_mem_env_log.txt
+basic.io.database: Database file opened: scoring/score_functions/MembranePotential/memcbeta_den.txt
+basic.io.database: Database file opened: scoring/score_functions/MembranePotential/mem_pair_log.txt
+basic.io.database: Database file opened: scoring/score_functions/P_AA_pp/P_AA
+basic.io.database: Database file opened: scoring/score_functions/P_AA_pp/P_AA_n
+basic.io.database: Database file opened: scoring/score_functions/P_AA_pp/P_AA_pp
+basic.io.database: Database file opened: scoring/score_functions/rama/Rama_smooth_dyn.dat_ss_6.4
+apps.public.design.supercharge: Packrotamers
+core.pack.task: Packer task: initialize from command line() 
+core.pack.dunbrack: Dunbrack library took 0.03 seconds to load from binary
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.pack.pack_rotamers: built 1928 rotamers at 228 positions.
+core.pack.pack_rotamers: IG: 1542132 bytes
+core.pack.task: Packer task: initialize from command line() 
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.pack.pack_rotamers: built 1919 rotamers at 228 positions.
+core.pack.pack_rotamers: IG: 1526052 bytes
+core.pack.task: Packer task: initialize from command line() 
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.pack.pack_rotamers: built 1919 rotamers at 228 positions.
+core.pack.pack_rotamers: IG: 1526052 bytes
+apps.public.design.supercharge: Minimizing sidechains...
+apps.public.design.supercharge: Packrotamers
+core.pack.task: Packer task: initialize from command line() 
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.pack.pack_rotamers: built 1919 rotamers at 228 positions.
+core.pack.pack_rotamers: IG: 1526052 bytes
+core.pack.task: Packer task: initialize from command line() 
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.pack.pack_rotamers: built 1919 rotamers at 228 positions.
+core.pack.pack_rotamers: IG: 1526052 bytes
+apps.public.design.supercharge: Minimizing sidechains and backbone...
+apps.public.design.supercharge: Packrotamers
+core.pack.task: Packer task: initialize from command line() 
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.pack.pack_rotamers: built 1894 rotamers at 228 positions.
+core.pack.pack_rotamers: IG: 1527136 bytes
+core.pack.task: Packer task: initialize from command line() 
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.pack.pack_rotamers: built 1894 rotamers at 228 positions.
+core.pack.pack_rotamers: IG: 1527136 bytes
+apps.public.design.supercharge: Minimizing sidechains and backbone...
+apps.public.design.supercharge: Packrotamers
+core.pack.task: Packer task: initialize from command line() 
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.pack.pack_rotamers: built 1896 rotamers at 228 positions.
+core.pack.pack_rotamers: IG: 1520184 bytes
+core.pack.task: Packer task: initialize from command line() 
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.pack.pack_rotamers: built 1896 rotamers at 228 positions.
+core.pack.pack_rotamers: IG: 1520184 bytes
+apps.public.design.supercharge: AvNAPSA score for residue 1  146
+apps.public.design.supercharge: AvNAPSA score for residue 2  115
+apps.public.design.supercharge: AvNAPSA score for residue 4  147
+apps.public.design.supercharge: AvNAPSA score for residue 5  60
+apps.public.design.supercharge: AvNAPSA score for residue 6  140
+apps.public.design.supercharge: AvNAPSA score for residue 7  207
+apps.public.design.supercharge: AvNAPSA score for residue 8  88
+apps.public.design.supercharge: AvNAPSA score for residue 10  101
+apps.public.design.supercharge: AvNAPSA score for residue 11  169
+apps.public.design.supercharge: AvNAPSA score for residue 12  125
+apps.public.design.supercharge: AvNAPSA score for residue 13  190
+apps.public.design.supercharge: AvNAPSA score for residue 14  135
+apps.public.design.supercharge: AvNAPSA score for residue 15  193
+apps.public.design.supercharge: AvNAPSA score for residue 16  121
+apps.public.design.supercharge: AvNAPSA score for residue 17  196
+apps.public.design.supercharge: AvNAPSA score for residue 18  114
+apps.public.design.supercharge: AvNAPSA score for residue 20  102
+apps.public.design.supercharge: AvNAPSA score for residue 21  198
+apps.public.design.supercharge: AvNAPSA score for residue 22  135
+apps.public.design.supercharge: AvNAPSA score for residue 24  107
+apps.public.design.supercharge: AvNAPSA score for residue 25  70
+apps.public.design.supercharge: AvNAPSA score for residue 26  193
+apps.public.design.supercharge: AvNAPSA score for residue 27  117
+apps.public.design.supercharge: AvNAPSA score for residue 28  214
+apps.public.design.supercharge: AvNAPSA score for residue 29  102
+apps.public.design.supercharge: AvNAPSA score for residue 31  103
+apps.public.design.supercharge: AvNAPSA score for residue 33  98
+apps.public.design.supercharge: AvNAPSA score for residue 35  126
+apps.public.design.supercharge: AvNAPSA score for residue 36  194
+apps.public.design.supercharge: AvNAPSA score for residue 37  107
+apps.public.design.supercharge: AvNAPSA score for residue 38  80
+apps.public.design.supercharge: AvNAPSA score for residue 40  108
+apps.public.design.supercharge: AvNAPSA score for residue 41  194
+apps.public.design.supercharge: AvNAPSA score for residue 42  118
+apps.public.design.supercharge: AvNAPSA score for residue 43  185
+apps.public.design.supercharge: AvNAPSA score for residue 44  141
+apps.public.design.supercharge: AvNAPSA score for residue 45  206
+apps.public.design.supercharge: AvNAPSA score for residue 46  150
+apps.public.design.supercharge: AvNAPSA score for residue 47  169
+apps.public.design.supercharge: AvNAPSA score for residue 48  122
+apps.public.design.supercharge: AvNAPSA score for residue 49  108
+apps.public.design.supercharge: AvNAPSA score for residue 51  75
+apps.public.design.supercharge: AvNAPSA score for residue 52  195
+apps.public.design.supercharge: AvNAPSA score for residue 53  165
+apps.public.design.supercharge: AvNAPSA score for residue 54  208
+apps.public.design.supercharge: AvNAPSA score for residue 55  192
+apps.public.design.supercharge: AvNAPSA score for residue 56  206
+apps.public.design.supercharge: AvNAPSA score for residue 57  199
+apps.public.design.supercharge: AvNAPSA score for residue 58  217
+apps.public.design.supercharge: AvNAPSA score for residue 59  211
+apps.public.design.supercharge: AvNAPSA score for residue 60  198
+apps.public.design.supercharge: AvNAPSA score for residue 61  197
+apps.public.design.supercharge: AvNAPSA score for residue 62  202
+apps.public.design.supercharge: AvNAPSA score for residue 63  203
+apps.public.design.supercharge: AvNAPSA score for residue 64  211
+apps.public.design.supercharge: AvNAPSA score for residue 65  193
+apps.public.design.supercharge: AvNAPSA score for residue 66  218
+apps.public.design.supercharge: AvNAPSA score for residue 67  209
+apps.public.design.supercharge: AvNAPSA score for residue 68  210
+apps.public.design.supercharge: AvNAPSA score for residue 69  107
+apps.public.design.supercharge: AvNAPSA score for residue 70  214
+apps.public.design.supercharge: AvNAPSA score for residue 71  148
+apps.public.design.supercharge: AvNAPSA score for residue 72  73
+apps.public.design.supercharge: AvNAPSA score for residue 73  106
+apps.public.design.supercharge: AvNAPSA score for residue 74  173
+apps.public.design.supercharge: AvNAPSA score for residue 75  133
+apps.public.design.supercharge: AvNAPSA score for residue 76  105
+apps.public.design.supercharge: AvNAPSA score for residue 77  154
+apps.public.design.supercharge: AvNAPSA score for residue 78  209
+apps.public.design.supercharge: AvNAPSA score for residue 79  223
+apps.public.design.supercharge: AvNAPSA score for residue 80  214
+apps.public.design.supercharge: AvNAPSA score for residue 81  211
+apps.public.design.supercharge: AvNAPSA score for residue 82  176
+apps.public.design.supercharge: AvNAPSA score for residue 83  211
+apps.public.design.supercharge: AvNAPSA score for residue 84  209
+apps.public.design.supercharge: AvNAPSA score for residue 85  130
+apps.public.design.supercharge: AvNAPSA score for residue 86  89
+apps.public.design.supercharge: AvNAPSA score for residue 88  214
+apps.public.design.supercharge: AvNAPSA score for residue 89  136
+apps.public.design.supercharge: AvNAPSA score for residue 90  202
+apps.public.design.supercharge: AvNAPSA score for residue 91  117
+apps.public.design.supercharge: AvNAPSA score for residue 92  195
+apps.public.design.supercharge: AvNAPSA score for residue 93  124
+apps.public.design.supercharge: AvNAPSA score for residue 94  212
+apps.public.design.supercharge: AvNAPSA score for residue 95  139
+apps.public.design.supercharge: AvNAPSA score for residue 96  211
+apps.public.design.supercharge: AvNAPSA score for residue 97  81
+apps.public.design.supercharge: AvNAPSA score for residue 98  63
+apps.public.design.supercharge: AvNAPSA score for residue 99  162
+apps.public.design.supercharge: AvNAPSA score for residue 101  148
+apps.public.design.supercharge: AvNAPSA score for residue 102  221
+apps.public.design.supercharge: AvNAPSA score for residue 103  100
+apps.public.design.supercharge: AvNAPSA score for residue 104  194
+apps.public.design.supercharge: AvNAPSA score for residue 105  97
+apps.public.design.supercharge: AvNAPSA score for residue 106  191
+apps.public.design.supercharge: AvNAPSA score for residue 107  123
+apps.public.design.supercharge: AvNAPSA score for residue 108  218
+apps.public.design.supercharge: AvNAPSA score for residue 109  132
+apps.public.design.supercharge: AvNAPSA score for residue 110  173
+apps.public.design.supercharge: AvNAPSA score for residue 111  109
+apps.public.design.supercharge: AvNAPSA score for residue 113  69
+apps.public.design.supercharge: AvNAPSA score for residue 114  125
+apps.public.design.supercharge: AvNAPSA score for residue 115  215
+apps.public.design.supercharge: AvNAPSA score for residue 116  150
+apps.public.design.supercharge: AvNAPSA score for residue 117  198
+apps.public.design.supercharge: AvNAPSA score for residue 118  116
+apps.public.design.supercharge: AvNAPSA score for residue 119  188
+apps.public.design.supercharge: AvNAPSA score for residue 120  98
+apps.public.design.supercharge: AvNAPSA score for residue 121  203
+apps.public.design.supercharge: AvNAPSA score for residue 122  98
+apps.public.design.supercharge: AvNAPSA score for residue 124  105
+apps.public.design.supercharge: AvNAPSA score for residue 125  81
+apps.public.design.supercharge: AvNAPSA score for residue 126  193
+apps.public.design.supercharge: AvNAPSA score for residue 127  95
+apps.public.design.supercharge: AvNAPSA score for residue 128  44
+apps.public.design.supercharge: AvNAPSA score for residue 129  68
+apps.public.design.supercharge: AvNAPSA score for residue 131  174
+apps.public.design.supercharge: AvNAPSA score for residue 132  223
+apps.public.design.supercharge: AvNAPSA score for residue 133  166
+apps.public.design.supercharge: AvNAPSA score for residue 135  133
+apps.public.design.supercharge: AvNAPSA score for residue 136  110
+apps.public.design.supercharge: AvNAPSA score for residue 137  208
+apps.public.design.supercharge: AvNAPSA score for residue 138  108
+apps.public.design.supercharge: AvNAPSA score for residue 139  143
+apps.public.design.supercharge: AvNAPSA score for residue 140  121
+apps.public.design.supercharge: AvNAPSA score for residue 141  192
+apps.public.design.supercharge: AvNAPSA score for residue 142  117
+apps.public.design.supercharge: AvNAPSA score for residue 143  102
+apps.public.design.supercharge: AvNAPSA score for residue 144  155
+apps.public.design.supercharge: AvNAPSA score for residue 145  117
+apps.public.design.supercharge: AvNAPSA score for residue 146  200
+apps.public.design.supercharge: AvNAPSA score for residue 147  117
+apps.public.design.supercharge: AvNAPSA score for residue 148  216
+apps.public.design.supercharge: AvNAPSA score for residue 149  120
+apps.public.design.supercharge: AvNAPSA score for residue 150  143
+apps.public.design.supercharge: AvNAPSA score for residue 151  119
+apps.public.design.supercharge: AvNAPSA score for residue 152  51
+apps.public.design.supercharge: AvNAPSA score for residue 153  54
+apps.public.design.supercharge: AvNAPSA score for residue 154  103
+apps.public.design.supercharge: AvNAPSA score for residue 155  104
+apps.public.design.supercharge: AvNAPSA score for residue 157  217
+apps.public.design.supercharge: AvNAPSA score for residue 158  121
+apps.public.design.supercharge: AvNAPSA score for residue 159  188
+apps.public.design.supercharge: AvNAPSA score for residue 160  128
+apps.public.design.supercharge: AvNAPSA score for residue 161  192
+apps.public.design.supercharge: AvNAPSA score for residue 162  110
+apps.public.design.supercharge: AvNAPSA score for residue 163  198
+apps.public.design.supercharge: AvNAPSA score for residue 164  90
+apps.public.design.supercharge: AvNAPSA score for residue 165  218
+apps.public.design.supercharge: AvNAPSA score for residue 166  128
+apps.public.design.supercharge: AvNAPSA score for residue 167  132
+apps.public.design.supercharge: AvNAPSA score for residue 168  93
+apps.public.design.supercharge: AvNAPSA score for residue 169  78
+apps.public.design.supercharge: AvNAPSA score for residue 171  96
+apps.public.design.supercharge: AvNAPSA score for residue 172  115
+apps.public.design.supercharge: AvNAPSA score for residue 173  176
+apps.public.design.supercharge: AvNAPSA score for residue 174  128
+apps.public.design.supercharge: AvNAPSA score for residue 175  208
+apps.public.design.supercharge: AvNAPSA score for residue 176  122
+apps.public.design.supercharge: AvNAPSA score for residue 177  207
+apps.public.design.supercharge: AvNAPSA score for residue 178  111
+apps.public.design.supercharge: AvNAPSA score for residue 179  196
+apps.public.design.supercharge: AvNAPSA score for residue 180  130
+apps.public.design.supercharge: AvNAPSA score for residue 181  203
+apps.public.design.supercharge: AvNAPSA score for residue 182  150
+apps.public.design.supercharge: AvNAPSA score for residue 183  172
+apps.public.design.supercharge: AvNAPSA score for residue 184  131
+apps.public.design.supercharge: AvNAPSA score for residue 186  78
+apps.public.design.supercharge: AvNAPSA score for residue 188  175
+apps.public.design.supercharge: AvNAPSA score for residue 189  63
+apps.public.design.supercharge: AvNAPSA score for residue 190  65
+apps.public.design.supercharge: AvNAPSA score for residue 191  149
+apps.public.design.supercharge: AvNAPSA score for residue 192  183
+apps.public.design.supercharge: AvNAPSA score for residue 193  89
+apps.public.design.supercharge: AvNAPSA score for residue 194  106
+apps.public.design.supercharge: AvNAPSA score for residue 195  201
+apps.public.design.supercharge: AvNAPSA score for residue 196  119
+apps.public.design.supercharge: AvNAPSA score for residue 197  206
+apps.public.design.supercharge: AvNAPSA score for residue 198  120
+apps.public.design.supercharge: AvNAPSA score for residue 199  181
+apps.public.design.supercharge: AvNAPSA score for residue 200  97
+apps.public.design.supercharge: AvNAPSA score for residue 201  169
+apps.public.design.supercharge: AvNAPSA score for residue 202  108
+apps.public.design.supercharge: AvNAPSA score for residue 203  171
+apps.public.design.supercharge: AvNAPSA score for residue 204  112
+apps.public.design.supercharge: AvNAPSA score for residue 205  110
+apps.public.design.supercharge: AvNAPSA score for residue 206  95
+apps.public.design.supercharge: AvNAPSA score for residue 207  63
+apps.public.design.supercharge: AvNAPSA score for residue 208  48
+apps.public.design.supercharge: AvNAPSA score for residue 209  113
+apps.public.design.supercharge: AvNAPSA score for residue 210  47
+apps.public.design.supercharge: AvNAPSA score for residue 211  96
+apps.public.design.supercharge: AvNAPSA score for residue 212  149
+apps.public.design.supercharge: AvNAPSA score for residue 213  150
+apps.public.design.supercharge: AvNAPSA score for residue 214  209
+apps.public.design.supercharge: AvNAPSA score for residue 215  149
+apps.public.design.supercharge: AvNAPSA score for residue 216  195
+apps.public.design.supercharge: AvNAPSA score for residue 217  114
+apps.public.design.supercharge: AvNAPSA score for residue 218  191
+apps.public.design.supercharge: AvNAPSA score for residue 219  116
+apps.public.design.supercharge: AvNAPSA score for residue 220  189
+apps.public.design.supercharge: AvNAPSA score for residue 221  139
+apps.public.design.supercharge: AvNAPSA score for residue 222  199
+apps.public.design.supercharge: AvNAPSA score for residue 223  134
+apps.public.design.supercharge: AvNAPSA score for residue 225  147
+apps.public.design.supercharge: AvNAPSA score for residue 226  60
+apps.public.design.supercharge: AvNAPSA score for residue 227  57
+apps.public.design.supercharge: Creating a resfile, it will be saved as example_outputs/outpath2/resfile_output_Rsc
+apps.public.design.supercharge: Using SCORE12 with custom reference weights
+ScoreFunction::show():
+weights: (fa_atr 0.8) (fa_rep 0.44) (fa_sol 0.65) (fa_intra_rep 0.004) (pro_close 1) (fa_pair 0.49) (hbond_sr_bb 0.585) (hbond_lr_bb 1.17) (hbond_bb_sc 1.17) (hbond_sc 1.1) (dslf_ss_dst 0.5) (dslf_cs_ang 2) (dslf_ss_dih 5) (dslf_ca_dih 5) (rama 0.2) (omega 0.5) (fa_dun 0.56) (p_aa_pp 0.32) (ref 1)
+energy_method_options: EnergyMethodOptions::show: etable_type: FA_STANDARD_DEFAULT
+analytic_etable_evaluation: 0
+EnergyMethodOptions::show: method_weights: ref 0.16 1.7 -0.6 -0.8 0.63 -0.17 0.56 0.24 -0.65 -0.1 -0.34 -0.89 0.02 -0.97 -0.98 -0.37 -0.27 0.29 0.91 0.51
+EnergyMethodOptions::show: unfolded_energies_type: UNFOLDED_SCORE12
+apps.public.design.supercharge: EnergyMethodOptions::show: atom_vdw_atom_type_set_name: centroid
+apps.public.design.supercharge: EnergyMethodOptions::show: exclude_protein_protein_hack_elec: false
+apps.public.design.supercharge: EnergyMethodOptions::show: exclude_monomer_hack_elec: false
+apps.public.design.supercharge: EnergyMethodOptions::show: hackelec_max_dis: 5.5
+apps.public.design.supercharge: EnergyMethodOptions::show: hackelec_min_dis: 1.5
+apps.public.design.supercharge: EnergyMethodOptions::show: hackelec_die: 10
+apps.public.design.supercharge: EnergyMethodOptions::show: hackelec_no_dis_dep_die: false
+apps.public.design.supercharge: EnergyMethodOptions::show: exclude_DNA_DNA: true
+apps.public.design.supercharge: EnergyMethodOptions::show: cst_max_seq_sep: 18446744073709551615
+apps.public.design.supercharge: EnergyMethodOptions::show: pb_bound_tag: bound
+apps.public.design.supercharge: EnergyMethodOptions::show: pb_unbound_tag: unbound
+apps.public.design.supercharge: EnergyMethodOptions::show: bond_angle_central_atoms_to_score:
+apps.public.design.supercharge: EnergyMethodOptions::show: bond_angle_residue_type_param_set: none
+apps.public.design.supercharge: HBondOptions::show: exclude_DNA_DNA: true
+apps.public.design.supercharge: HBondOptions::show: include_intra_res_RNA_: false
+apps.public.design.supercharge: HBondOptions::show: exclude_self_hbonds: true
+apps.public.design.supercharge: HBondOptions::show: use_hb_env_dep: true
+apps.public.design.supercharge: HBondOptions::show: use_hb_env_dep_DNA: true
+apps.public.design.supercharge: HBondOptions::show: smooth_hb_env_dep: true
+apps.public.design.supercharge: HBondOptions::show: bb_donor_acceptor_check: true
+apps.public.design.supercharge: HBondOptions::show: decompose_bb_hb_into_pair_energies: true
+apps.public.design.supercharge: HBondOptions::show: params_database_tag_: standard_params
+apps.public.design.supercharge: HBondOptions::show: use_incorrect_deriv_: false
+apps.public.design.supercharge: HBondOptions::show: use_sp2_chi_penalty_: false
+apps.public.design.supercharge: HBondOptions::show: sp2_BAH180_rise_: 0.75
+apps.public.design.supercharge: HBondOptions::show: measure_sp3acc_BAH_from_hvy_: false
+apps.public.design.supercharge: HBondOptions::show: Mbhbond: false 
+apps.public.design.supercharge: 
+apps.public.design.supercharge: Supercharging the protein surface... current charge: -5  target charge: -20
+apps.public.design.supercharge: Refweights D E K R -1.1 -1.3 -0.65 -0.98
+core.pack.task: Packer task: initialize from command line() 
+core.pack.interaction_graph.interaction_graph_factory: Instantiating PDInteractionGraph
+core.pack.pack_rotamers: built 2150 rotamers at 223 positions.
+core.pack.pack_rotamers: IG: 2229152 bytes
+apps.public.design.supercharge: Supercharging the protein surface... current charge: -12  target charge: -20
+apps.public.design.supercharge: Refweights D E K R -1.2 -1.4 -0.65 -0.98
+core.pack.task: Packer task: initialize from command line() 
+core.pack.interaction_graph.interaction_graph_factory: Instantiating PDInteractionGraph
+core.pack.pack_rotamers: built 2150 rotamers at 223 positions.
+core.pack.pack_rotamers: IG: 2229044 bytes
+apps.public.design.supercharge: Supercharging the protein surface... current charge: -12  target charge: -20
+apps.public.design.supercharge: Refweights D E K R -1.3 -1.5 -0.65 -0.98
+core.pack.task: Packer task: initialize from command line() 
+core.pack.interaction_graph.interaction_graph_factory: Instantiating PDInteractionGraph
+core.pack.pack_rotamers: built 2150 rotamers at 223 positions.
+core.pack.pack_rotamers: IG: 2229044 bytes
+apps.public.design.supercharge: Supercharging the protein surface... current charge: -13  target charge: -20
+apps.public.design.supercharge: Refweights D E K R -1.4 -1.6 -0.65 -0.98
+core.pack.task: Packer task: initialize from command line() 
+core.pack.interaction_graph.interaction_graph_factory: Instantiating PDInteractionGraph
+core.pack.pack_rotamers: built 2150 rotamers at 223 positions.
+core.pack.pack_rotamers: IG: 2229200 bytes
+apps.public.design.supercharge: Supercharging the protein surface... current charge: -14  target charge: -20
+apps.public.design.supercharge: Refweights D E K R -1.5 -1.7 -0.65 -0.98
+core.pack.task: Packer task: initialize from command line() 
+core.pack.interaction_graph.interaction_graph_factory: Instantiating PDInteractionGraph
+core.pack.pack_rotamers: built 2150 rotamers at 223 positions.
+core.pack.pack_rotamers: IG: 2229228 bytes
+apps.public.design.supercharge: Supercharging the protein surface... current charge: -14  target charge: -20
+apps.public.design.supercharge: Refweights D E K R -1.6 -1.8 -0.65 -0.98
+core.pack.task: Packer task: initialize from command line() 
+core.pack.interaction_graph.interaction_graph_factory: Instantiating PDInteractionGraph
+core.pack.pack_rotamers: built 2150 rotamers at 223 positions.
+core.pack.pack_rotamers: IG: 2229228 bytes
+apps.public.design.supercharge: Supercharging the protein surface... current charge: -14  target charge: -20
+apps.public.design.supercharge: Refweights D E K R -1.7 -1.9 -0.65 -0.98
+core.pack.task: Packer task: initialize from command line() 
+core.pack.interaction_graph.interaction_graph_factory: Instantiating PDInteractionGraph
+core.pack.pack_rotamers: built 2150 rotamers at 223 positions.
+core.pack.pack_rotamers: IG: 2229228 bytes
+apps.public.design.supercharge: Supercharging the protein surface... current charge: -14  target charge: -20
+apps.public.design.supercharge: Refweights D E K R -1.8 -2 -0.65 -0.98
+core.pack.task: Packer task: initialize from command line() 
+core.pack.interaction_graph.interaction_graph_factory: Instantiating PDInteractionGraph
+core.pack.pack_rotamers: built 2150 rotamers at 223 positions.
+core.pack.pack_rotamers: IG: 2229228 bytes
+apps.public.design.supercharge: Supercharging the protein surface... current charge: -14  target charge: -20
+apps.public.design.supercharge: Refweights D E K R -1.9 -2.1 -0.65 -0.98
+core.pack.task: Packer task: initialize from command line() 
+core.pack.interaction_graph.interaction_graph_factory: Instantiating PDInteractionGraph
+core.pack.pack_rotamers: built 2150 rotamers at 223 positions.
+core.pack.pack_rotamers: IG: 2229228 bytes
+apps.public.design.supercharge: Supercharging the protein surface... current charge: -14  target charge: -20
+apps.public.design.supercharge: Refweights D E K R -2 -2.2 -0.65 -0.98
+core.pack.task: Packer task: initialize from command line() 
+core.pack.interaction_graph.interaction_graph_factory: Instantiating PDInteractionGraph
+core.pack.pack_rotamers: built 2150 rotamers at 223 positions.
+core.pack.pack_rotamers: IG: 2229228 bytes
+apps.public.design.supercharge: Supercharging the protein surface... current charge: -16  target charge: -20
+apps.public.design.supercharge: Refweights D E K R -2.1 -2.3 -0.65 -0.98
+core.pack.task: Packer task: initialize from command line() 
+core.pack.interaction_graph.interaction_graph_factory: Instantiating PDInteractionGraph
+core.pack.pack_rotamers: built 2150 rotamers at 223 positions.
+core.pack.pack_rotamers: IG: 2229448 bytes
+apps.public.design.supercharge: Supercharging the protein surface... current charge: -16  target charge: -20
+apps.public.design.supercharge: Refweights D E K R -2.2 -2.4 -0.65 -0.98
+core.pack.task: Packer task: initialize from command line() 
+core.pack.interaction_graph.interaction_graph_factory: Instantiating PDInteractionGraph
+core.pack.pack_rotamers: built 2150 rotamers at 223 positions.
+core.pack.pack_rotamers: IG: 2229448 bytes
+apps.public.design.supercharge: Supercharging the protein surface... current charge: -16  target charge: -20
+apps.public.design.supercharge: Refweights D E K R -2.3 -2.5 -0.65 -0.98
+core.pack.task: Packer task: initialize from command line() 
+core.pack.interaction_graph.interaction_graph_factory: Instantiating PDInteractionGraph
+core.pack.pack_rotamers: built 2150 rotamers at 223 positions.
+core.pack.pack_rotamers: IG: 2229448 bytes
+apps.public.design.supercharge: Supercharging the protein surface... current charge: -16  target charge: -20
+apps.public.design.supercharge: Refweights D E K R -2.4 -2.6 -0.65 -0.98
+core.pack.task: Packer task: initialize from command line() 
+core.pack.interaction_graph.interaction_graph_factory: Instantiating PDInteractionGraph
+core.pack.pack_rotamers: built 2150 rotamers at 223 positions.
+core.pack.pack_rotamers: IG: 2228692 bytes
+apps.public.design.supercharge: Supercharging the protein surface... current charge: -17  target charge: -20
+apps.public.design.supercharge: Refweights D E K R -2.5 -2.7 -0.65 -0.98
+core.pack.task: Packer task: initialize from command line() 
+core.pack.interaction_graph.interaction_graph_factory: Instantiating PDInteractionGraph
+core.pack.pack_rotamers: built 2150 rotamers at 223 positions.
+core.pack.pack_rotamers: IG: 2228888 bytes
+apps.public.design.supercharge: Supercharging the protein surface... current charge: -17  target charge: -20
+apps.public.design.supercharge: Refweights D E K R -2.6 -2.8 -0.65 -0.98
+core.pack.task: Packer task: initialize from command line() 
+core.pack.interaction_graph.interaction_graph_factory: Instantiating PDInteractionGraph
+core.pack.pack_rotamers: built 2150 rotamers at 223 positions.
+core.pack.pack_rotamers: IG: 2228888 bytes
+apps.public.design.supercharge: Supercharging the protein surface... current charge: -17  target charge: -20
+apps.public.design.supercharge: Refweights D E K R -2.7 -2.9 -0.65 -0.98
+core.pack.task: Packer task: initialize from command line() 
+core.pack.interaction_graph.interaction_graph_factory: Instantiating PDInteractionGraph
+core.pack.pack_rotamers: built 2150 rotamers at 223 positions.
+core.pack.pack_rotamers: IG: 2228888 bytes
+apps.public.design.supercharge: Supercharging the protein surface... current charge: -17  target charge: -20
+apps.public.design.supercharge: Refweights D E K R -2.8 -3 -0.65 -0.98
+core.pack.task: Packer task: initialize from command line() 
+core.pack.interaction_graph.interaction_graph_factory: Instantiating PDInteractionGraph
+core.pack.pack_rotamers: built 2150 rotamers at 223 positions.
+core.pack.pack_rotamers: IG: 2228888 bytes
+apps.public.design.supercharge: Supercharging the protein surface... current charge: -17  target charge: -20
+apps.public.design.supercharge: Refweights D E K R -2.9 -3.1 -0.65 -0.98
+core.pack.task: Packer task: initialize from command line() 
+core.pack.interaction_graph.interaction_graph_factory: Instantiating PDInteractionGraph
+core.pack.pack_rotamers: built 2150 rotamers at 223 positions.
+core.pack.pack_rotamers: IG: 2228888 bytes
+apps.public.design.supercharge: Supercharging the protein surface... current charge: -17  target charge: -20
+apps.public.design.supercharge: Refweights D E K R -3 -3.2 -0.65 -0.98
+core.pack.task: Packer task: initialize from command line() 
+core.pack.interaction_graph.interaction_graph_factory: Instantiating PDInteractionGraph
+core.pack.pack_rotamers: built 2150 rotamers at 223 positions.
+core.pack.pack_rotamers: IG: 2228888 bytes
+apps.public.design.supercharge: NEW NAME FOR SUPERCHARGED OUTPUT: 2B3P_A_min_DE_-3.00_-3.20_-18.pdb
+apps.public.design.supercharge: 2B3P_A_min_DE_-3.00_-3.20_-18.pdb  R=8, K=17, D=24, E=19
+apps.public.design.supercharge: 2B3P_A_min_DE_-3.00_-3.20_-18.pdb  Net Charge = -18
+apps.public.design.supercharge: 2B3P_A_min_DE_-3.00_-3.20_-18.pdb  Mutations: T43D, I98D, T105E, V112D, T118E, L119D, K156E, Q157D, K158D, L178E, V193D, 
+apps.public.design.supercharge: 2B3P_A_min_DE_-3.00_-3.20_-18.pdb  # of mutations: 11
+apps.public.design.supercharge: 2B3P_A_min_DE_-3.00_-3.20_-18.pdb  select 43+98+105+112+118+119+156+157+158+178+193+
+apps.public.design.supercharge: Assert native and design have same number of residues
+core.pack.task: Packer task: initialize from command line() 
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.pack.pack_rotamers: built 1886 rotamers at 228 positions.
+core.pack.pack_rotamers: IG: 1527160 bytes
+core.pack.task: Packer task: initialize from command line() 
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.pack.pack_rotamers: built 1886 rotamers at 228 positions.
+core.pack.pack_rotamers: IG: 1527160 bytes
+core.pack.task: Packer task: initialize from command line() 
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.pack.pack_rotamers: built 1886 rotamers at 228 positions.
+core.pack.pack_rotamers: IG: 1527160 bytes
+core.pack.task: Packer task: initialize from command line() 
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.pack.pack_rotamers: built 1896 rotamers at 228 positions.
+core.pack.pack_rotamers: IG: 1520184 bytes
+core.pack.task: Packer task: initialize from command line() 
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.pack.pack_rotamers: built 1896 rotamers at 228 positions.
+core.pack.pack_rotamers: IG: 1520184 bytes
+core.pack.task: Packer task: initialize from command line() 
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.pack.pack_rotamers: built 1896 rotamers at 228 positions.
+core.pack.pack_rotamers: IG: 1520184 bytes
+apps.public.design.supercharge: Scoring native and design
+apps.public.design.supercharge: Initialized vectors
+apps.public.design.supercharge: Adding native energies
+apps.public.design.supercharge: Adding designed energies
+apps.public.design.supercharge: Subtracting design from native energies
+apps.public.design.supercharge: rosetta_inputs/2B3P_A_min.pdb 42 -0.6440 -0.0717 -0.0002 -0.0167 0.6682 0.0000 -0.0004 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 -0.9710 0.0000 0.2669 -0.4172 -0.4000 
+apps.public.design.supercharge: rosetta_inputs/2B3P_A_min.pdb 94 0.8630 -0.0853 0.0030 2.6176 -1.5183 0.0000 -0.5199 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.4117 0.0000 0.0894 0.8340 -0.9100 
+apps.public.design.supercharge: rosetta_inputs/2B3P_A_min.pdb 101 0.6027 0.1661 0.1580 0.3147 -1.2554 0.0000 -0.6403 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0796 0.0000 1.3757 0.8382 -0.5400 
+apps.public.design.supercharge: rosetta_inputs/2B3P_A_min.pdb 108 1.0587 -0.6820 -0.5302 2.7915 -0.5609 0.0000 -0.1161 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 1.0423 0.0000 0.5342 1.6709 -0.9600 
+apps.public.design.supercharge: rosetta_inputs/2B3P_A_min.pdb 114 1.3118 -1.1170 1.3625 1.3366 -1.3583 0.0000 -0.2405 0.0000 0.0000 0.0000 0.0323 0.0000 0.0000 0.0000 0.0000 -0.0637 0.0000 2.2284 0.4051 -0.5400 
+apps.public.design.supercharge: rosetta_inputs/2B3P_A_min.pdb 115 -0.1788 0.3531 -0.0714 3.0000 -2.8942 0.0000 0.0369 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 -0.6828 0.0000 -2.6805 -0.5588 -0.5700 
+apps.public.design.supercharge: rosetta_inputs/2B3P_A_min.pdb 152 -0.0405 -0.1832 -0.0004 0.1727 -0.3034 0.0000 -0.0025 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 -0.0703 0.0000 0.3841 -0.1396 -0.1600 
+apps.public.design.supercharge: rosetta_inputs/2B3P_A_min.pdb 153 -0.1503 -0.1634 -0.0011 0.4834 -0.7065 0.0000 -0.0462 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0140 0.0000 -1.2357 0.2544 0.3000 
+apps.public.design.supercharge: rosetta_inputs/2B3P_A_min.pdb 154 -0.2237 0.2577 -0.0401 0.0111 -0.3695 0.0000 0.5246 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 -0.3115 0.0000 -0.7957 -0.4597 -0.0200 
+apps.public.design.supercharge: rosetta_inputs/2B3P_A_min.pdb 174 0.3328 0.7161 -0.1362 0.5515 -0.7257 0.0000 -1.1396 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.1458 0.0000 0.9978 0.4522 -0.7100 
+apps.public.design.supercharge: rosetta_inputs/2B3P_A_min.pdb 189 -0.5393 0.0620 -0.0084 0.4316 -2.3107 0.0000 -0.6044 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 -0.2747 0.0000 0.5673 0.4277 -0.9600 
+apps.public.design.supercharge: rosetta_inputs/2B3P_A_min.pdb SUM-DIFFS 2.3922 -0.7477 0.7355 11.6942 -11.3348 0.0000 -2.7484 0.0000 0.0000 0.0000 0.0323 0.0000 0.0000 0.0000 0.0000 -0.6805 0.0000 1.7320 3.3072 -5.4700 
+apps.public.design.supercharge: rosetta_inputs/2B3P_A_min.pdb score_terms: total fa_atr fa_rep fa_sol fa_intra_rep pro_close fa_pair hbond_sr_bb hbond_lr_bb hbond_bb_sc hbond_sc dslf_ss_dst dslf_cs_ang dslf_ss_dih dslf_ca_dih rama omega fa_dun p_aa_pp ref
+protocols.jd2.JobDistributor: 2B3P_A_min_0001 reported success in 31 seconds
+protocols.jd2.JobDistributor: no more batches to process... 
+protocols.jd2.JobDistributor: 1 jobs considered, 1 jobs attempted in 31 seconds
+apps.public.design.supercharge: ************************d**o**n**e**************************************

@@ -1,0 +1,292 @@
+core.init: Mini-Rosetta version 53295M from https://svn.rosettacommons.org/source/trunk/rosetta/rosetta_source
+core.init: command: /home/bder/scr/rosetta_clean/rosetta_source/bin/supercharge.default.linuxgccrelease -database /home/bder/scr/rosetta_clean/rosetta_database/ @rosetta_inputs/options1
+core.init: 'RNG device' seed mode, using '/dev/urandom', seed=-1478488596 seed_offset=0 real_seed=-1478488596
+core.init.random: RandomGenerator:init: Normal mode, seed=-1478488596 RG_type=mt19937
+protocols.jd2.PDBJobInputter: Instantiate PDBJobInputter
+protocols.jd2.PDBJobInputter: PDBJobInputter::fill_jobs
+protocols.jd2.PDBJobInputter: pushing rosetta_inputs/2B3P_A_min.pdb nstruct index 1
+protocols.evaluation.ChiWellRmsdEvaluatorCreator: Evaluation Creator active ... 
+protocols.jd2.PDBJobInputter: PDBJobInputter::pose_from_job
+protocols.jd2.PDBJobInputter: filling pose from PDB rosetta_inputs/2B3P_A_min.pdb
+core.chemical.ResidueTypeSet: Finished initializing fa_standard residue type set.  Created 6242 residue types
+core.io.pdb.file_data: [ WARNING ] discarding 1 atoms at position 63 in file rosetta_inputs/2B3P_A_min.pdb. Best match rsd_type:  LEU
+core.io.pdb.file_data: [ WARNING ] discarding 3 atoms at position 64 in file rosetta_inputs/2B3P_A_min.pdb. Best match rsd_type:  VAL
+core.io.pdb.file_data: [ WARNING ] can't find atom for res 63 atom  OXT (trying to set temp)
+core.io.pdb.file_data: [ WARNING ] can't find atom for res 64 atom 1H   (trying to set temp)
+core.io.pdb.file_data: [ WARNING ] can't find atom for res 64 atom 2H   (trying to set temp)
+core.io.pdb.file_data: [ WARNING ] can't find atom for res 64 atom 3H   (trying to set temp)
+core.pack.task: Packer task: initialize from command line() 
+core.scoring.etable: Starting energy table calculation
+core.scoring.etable: smooth_etable: changing atr/rep split to bottom of energy well
+core.scoring.etable: smooth_etable: spline smoothing lj etables (maxdis = 6)
+core.scoring.etable: smooth_etable: spline smoothing solvation etables (max_dis = 6)
+core.scoring.etable: Finished calculating energy tables.
+basic.io.database: Database file opened: scoring/score_functions/PairEPotential/pdb_pair_stats_fine
+basic.io.database: Database file opened: scoring/score_functions/hbonds/standard_params/HBPoly1D.csv
+basic.io.database: Database file opened: scoring/score_functions/hbonds/standard_params/HBFadeIntervals.csv
+basic.io.database: Database file opened: scoring/score_functions/hbonds/standard_params/HBEval.csv
+basic.io.database: Database file opened: scoring/score_functions/EnvPairPotential/env_log.txt
+basic.io.database: Database file opened: scoring/score_functions/EnvPairPotential/cbeta_den.txt
+basic.io.database: Database file opened: scoring/score_functions/EnvPairPotential/pair_log.txt
+basic.io.database: Database file opened: scoring/score_functions/EnvPairPotential/cenpack_log.txt
+basic.io.database: Database file opened: scoring/score_functions/EnvPairPotential/env_log.txt
+basic.io.database: Database file opened: scoring/score_functions/EnvPairPotential/cbeta_den.txt
+basic.io.database: Database file opened: scoring/score_functions/EnvPairPotential/pair_log.txt
+basic.io.database: Database file opened: scoring/score_functions/EnvPairPotential/cenpack_log.txt
+basic.io.database: Database file opened: scoring/score_functions/MembranePotential/CEN6_mem_env_log.txt
+basic.io.database: Database file opened: scoring/score_functions/MembranePotential/CEN10_mem_env_log.txt
+basic.io.database: Database file opened: scoring/score_functions/MembranePotential/memcbeta_den.txt
+basic.io.database: Database file opened: scoring/score_functions/MembranePotential/mem_pair_log.txt
+basic.io.database: Database file opened: scoring/score_functions/P_AA_pp/P_AA
+basic.io.database: Database file opened: scoring/score_functions/P_AA_pp/P_AA_n
+basic.io.database: Database file opened: scoring/score_functions/P_AA_pp/P_AA_pp
+basic.io.database: Database file opened: scoring/score_functions/rama/Rama_smooth_dyn.dat_ss_6.4
+apps.public.design.supercharge: Packrotamers
+core.pack.task: Packer task: initialize from command line() 
+core.pack.dunbrack: Dunbrack library took 0.02 seconds to load from binary
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.pack.pack_rotamers: built 1928 rotamers at 228 positions.
+core.pack.pack_rotamers: IG: 1542132 bytes
+core.pack.task: Packer task: initialize from command line() 
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.pack.pack_rotamers: built 1919 rotamers at 228 positions.
+core.pack.pack_rotamers: IG: 1526052 bytes
+core.pack.task: Packer task: initialize from command line() 
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.pack.pack_rotamers: built 1919 rotamers at 228 positions.
+core.pack.pack_rotamers: IG: 1526052 bytes
+apps.public.design.supercharge: rosetta_inputs/2B3P_A_min.pdb
+apps.public.design.supercharge: adding 5 to surface set
+apps.public.design.supercharge: adding 8 to surface set
+apps.public.design.supercharge: adding 9 to surface set
+apps.public.design.supercharge: adding 10 to surface set
+apps.public.design.supercharge: adding 12 to surface set
+apps.public.design.supercharge: adding 20 to surface set
+apps.public.design.supercharge: adding 23 to surface set
+apps.public.design.supercharge: adding 24 to surface set
+apps.public.design.supercharge: adding 25 to surface set
+apps.public.design.supercharge: adding 29 to surface set
+apps.public.design.supercharge: adding 31 to surface set
+apps.public.design.supercharge: adding 37 to surface set
+apps.public.design.supercharge: adding 38 to surface set
+apps.public.design.supercharge: adding 42 to surface set
+apps.public.design.supercharge: adding 49 to surface set
+apps.public.design.supercharge: adding 50 to surface set
+apps.public.design.supercharge: adding 51 to surface set
+apps.public.design.supercharge: adding 71 to surface set
+apps.public.design.supercharge: adding 72 to surface set
+apps.public.design.supercharge: adding 73 to surface set
+apps.public.design.supercharge: adding 75 to surface set
+apps.public.design.supercharge: adding 76 to surface set
+apps.public.design.supercharge: adding 86 to surface set
+apps.public.design.supercharge: adding 91 to surface set
+apps.public.design.supercharge: adding 93 to surface set
+apps.public.design.supercharge: adding 97 to surface set
+apps.public.design.supercharge: adding 98 to surface set
+apps.public.design.supercharge: adding 101 to surface set
+apps.public.design.supercharge: adding 103 to surface set
+apps.public.design.supercharge: adding 105 to surface set
+apps.public.design.supercharge: adding 107 to surface set
+apps.public.design.supercharge: adding 111 to surface set
+apps.public.design.supercharge: adding 112 to surface set
+apps.public.design.supercharge: adding 113 to surface set
+apps.public.design.supercharge: adding 114 to surface set
+apps.public.design.supercharge: adding 118 to surface set
+apps.public.design.supercharge: adding 120 to surface set
+apps.public.design.supercharge: adding 122 to surface set
+apps.public.design.supercharge: adding 124 to surface set
+apps.public.design.supercharge: adding 125 to surface set
+apps.public.design.supercharge: adding 127 to surface set
+apps.public.design.supercharge: adding 128 to surface set
+apps.public.design.supercharge: adding 129 to surface set
+apps.public.design.supercharge: adding 134 to surface set
+apps.public.design.supercharge: adding 138 to surface set
+apps.public.design.supercharge: adding 139 to surface set
+apps.public.design.supercharge: adding 140 to surface set
+apps.public.design.supercharge: adding 142 to surface set
+apps.public.design.supercharge: adding 143 to surface set
+apps.public.design.supercharge: adding 145 to surface set
+apps.public.design.supercharge: adding 149 to surface set
+apps.public.design.supercharge: adding 152 to surface set
+apps.public.design.supercharge: adding 153 to surface set
+apps.public.design.supercharge: adding 154 to surface set
+apps.public.design.supercharge: adding 155 to surface set
+apps.public.design.supercharge: adding 160 to surface set
+apps.public.design.supercharge: adding 162 to surface set
+apps.public.design.supercharge: adding 164 to surface set
+apps.public.design.supercharge: adding 167 to surface set
+apps.public.design.supercharge: adding 168 to surface set
+apps.public.design.supercharge: adding 169 to surface set
+apps.public.design.supercharge: adding 170 to surface set
+apps.public.design.supercharge: adding 171 to surface set
+apps.public.design.supercharge: adding 172 to surface set
+apps.public.design.supercharge: adding 174 to surface set
+apps.public.design.supercharge: adding 176 to surface set
+apps.public.design.supercharge: adding 178 to surface set
+apps.public.design.supercharge: adding 184 to surface set
+apps.public.design.supercharge: adding 185 to surface set
+apps.public.design.supercharge: adding 186 to surface set
+apps.public.design.supercharge: adding 189 to surface set
+apps.public.design.supercharge: adding 190 to surface set
+apps.public.design.supercharge: adding 193 to surface set
+apps.public.design.supercharge: adding 194 to surface set
+apps.public.design.supercharge: adding 200 to surface set
+apps.public.design.supercharge: adding 202 to surface set
+apps.public.design.supercharge: adding 204 to surface set
+apps.public.design.supercharge: adding 205 to surface set
+apps.public.design.supercharge: adding 206 to surface set
+apps.public.design.supercharge: adding 207 to surface set
+apps.public.design.supercharge: adding 208 to surface set
+apps.public.design.supercharge: adding 209 to surface set
+apps.public.design.supercharge: adding 210 to surface set
+apps.public.design.supercharge: adding 211 to surface set
+apps.public.design.supercharge: adding 217 to surface set
+apps.public.design.supercharge: adding 223 to surface set
+apps.public.design.supercharge: adding 226 to surface set
+apps.public.design.supercharge: adding 227 to surface set
+apps.public.design.supercharge: adding 228 to surface set
+apps.public.design.supercharge: Creating a resfile, it will be saved as example_outputs/outpath1/resfile_output_Rsc
+apps.public.design.supercharge: Reading resfile from user input... make sure ALLAA is set as the default in your resfile!!
+apps.public.design.supercharge: Using SCORE12 with custom reference weights
+ScoreFunction::show():
+weights: (fa_atr 0.8) (fa_rep 0.44) (fa_sol 0.65) (fa_intra_rep 0.004) (pro_close 1) (fa_pair 0.49) (hbond_sr_bb 0.585) (hbond_lr_bb 1.17) (hbond_bb_sc 1.17) (hbond_sc 1.1) (dslf_ss_dst 0.5) (dslf_cs_ang 2) (dslf_ss_dih 5) (dslf_ca_dih 5) (rama 0.2) (omega 0.5) (fa_dun 0.56) (p_aa_pp 0.32) (ref 1)
+energy_method_options: EnergyMethodOptions::show: etable_type: FA_STANDARD_DEFAULT
+analytic_etable_evaluation: 0
+EnergyMethodOptions::show: method_weights: ref 0.16 1.7 -0.67 -0.81 0.63 -0.17 0.56 0.24 -1.65 -0.1 -0.34 -0.89 0.02 -0.97 -1.98 -0.37 -0.27 0.29 0.91 0.51
+EnergyMethodOptions::show: unfolded_energies_type: UNFOLDED_SCORE12
+apps.public.design.supercharge: EnergyMethodOptions::show: atom_vdw_atom_type_set_name: centroid
+apps.public.design.supercharge: EnergyMethodOptions::show: exclude_protein_protein_hack_elec: false
+apps.public.design.supercharge: EnergyMethodOptions::show: exclude_monomer_hack_elec: false
+apps.public.design.supercharge: EnergyMethodOptions::show: hackelec_max_dis: 5.5
+apps.public.design.supercharge: EnergyMethodOptions::show: hackelec_min_dis: 1.5
+apps.public.design.supercharge: EnergyMethodOptions::show: hackelec_die: 10
+apps.public.design.supercharge: EnergyMethodOptions::show: hackelec_no_dis_dep_die: false
+apps.public.design.supercharge: EnergyMethodOptions::show: exclude_DNA_DNA: true
+apps.public.design.supercharge: EnergyMethodOptions::show: cst_max_seq_sep: 18446744073709551615
+apps.public.design.supercharge: EnergyMethodOptions::show: pb_bound_tag: bound
+apps.public.design.supercharge: EnergyMethodOptions::show: pb_unbound_tag: unbound
+apps.public.design.supercharge: EnergyMethodOptions::show: bond_angle_central_atoms_to_score:
+apps.public.design.supercharge: EnergyMethodOptions::show: bond_angle_residue_type_param_set: none
+apps.public.design.supercharge: HBondOptions::show: exclude_DNA_DNA: true
+apps.public.design.supercharge: HBondOptions::show: include_intra_res_RNA_: false
+apps.public.design.supercharge: HBondOptions::show: exclude_self_hbonds: true
+apps.public.design.supercharge: HBondOptions::show: use_hb_env_dep: true
+apps.public.design.supercharge: HBondOptions::show: use_hb_env_dep_DNA: true
+apps.public.design.supercharge: HBondOptions::show: smooth_hb_env_dep: true
+apps.public.design.supercharge: HBondOptions::show: bb_donor_acceptor_check: true
+apps.public.design.supercharge: HBondOptions::show: decompose_bb_hb_into_pair_energies: true
+apps.public.design.supercharge: HBondOptions::show: params_database_tag_: standard_params
+apps.public.design.supercharge: HBondOptions::show: use_incorrect_deriv_: false
+apps.public.design.supercharge: HBondOptions::show: use_sp2_chi_penalty_: false
+apps.public.design.supercharge: HBondOptions::show: sp2_BAH180_rise_: 0.75
+apps.public.design.supercharge: HBondOptions::show: measure_sp3acc_BAH_from_hvy_: false
+apps.public.design.supercharge: HBondOptions::show: Mbhbond: false 
+apps.public.design.supercharge: 
+apps.public.design.supercharge: Supercharging the protein surface... nstruct = 1
+core.pack.task: Packer task: initialize from command line() 
+core.pack.interaction_graph.interaction_graph_factory: Instantiating PDInteractionGraph
+core.pack.pack_rotamers: built 3695 rotamers at 213 positions.
+core.pack.pack_rotamers: IG: 4078324 bytes
+core.pack.task: Packer task: initialize from command line() 
+core.pack.interaction_graph.interaction_graph_factory: Instantiating PDInteractionGraph
+core.pack.pack_rotamers: built 3695 rotamers at 213 positions.
+core.pack.pack_rotamers: IG: 4088312 bytes
+core.pack.task: Packer task: initialize from command line() 
+core.pack.interaction_graph.interaction_graph_factory: Instantiating PDInteractionGraph
+core.pack.pack_rotamers: built 3695 rotamers at 213 positions.
+core.pack.pack_rotamers: IG: 4089180 bytes
+apps.public.design.supercharge: NEW NAME FOR SUPERCHARGED OUTPUT: 2B3P_A_min_RK_-1.98_-1.65_0001.pdb
+apps.public.design.supercharge: 2B3P_A_min_RK_-1.98_-1.65_0001.pdb  R=16, K=45, D=10, E=10
+apps.public.design.supercharge: 2B3P_A_min_RK_-1.98_-1.65_0001.pdb  Net Charge = 41
+apps.public.design.supercharge: 2B3P_A_min_RK_-1.98_-1.65_0001.pdb  Mutations: V11R, D21R, H25R, T38K, T43R, D76K, E95K, T97K, D102K, T105R, D117K, E124K, I128K, D129K, E132K, E142R, N149K, T153K, Q157K, N159K, N164K, E172K, D180K, Y182K, D190K, V193K, L194K, N198K, Q204K, V206K, S208R, N212K, T230R, H231K, 
+apps.public.design.supercharge: 2B3P_A_min_RK_-1.98_-1.65_0001.pdb  # of mutations: 34
+apps.public.design.supercharge: 2B3P_A_min_RK_-1.98_-1.65_0001.pdb  select 11+21+25+38+43+76+95+97+102+105+117+124+128+129+132+142+149+153+157+159+164+172+180+182+190+193+194+198+204+206+208+212+230+231+
+apps.public.design.supercharge: Supercharging the protein surface... nstruct = 2
+core.pack.task: Packer task: initialize from command line() 
+core.pack.interaction_graph.interaction_graph_factory: Instantiating PDInteractionGraph
+core.pack.pack_rotamers: built 3695 rotamers at 213 positions.
+core.pack.pack_rotamers: IG: 4089104 bytes
+core.pack.task: Packer task: initialize from command line() 
+core.pack.interaction_graph.interaction_graph_factory: Instantiating PDInteractionGraph
+core.pack.pack_rotamers: built 3695 rotamers at 213 positions.
+core.pack.pack_rotamers: IG: 4089204 bytes
+core.pack.task: Packer task: initialize from command line() 
+core.pack.interaction_graph.interaction_graph_factory: Instantiating PDInteractionGraph
+core.pack.pack_rotamers: built 3695 rotamers at 213 positions.
+core.pack.pack_rotamers: IG: 4089128 bytes
+apps.public.design.supercharge: NEW NAME FOR SUPERCHARGED OUTPUT: 2B3P_A_min_RK_-1.98_-1.65_0002.pdb
+apps.public.design.supercharge: 2B3P_A_min_RK_-1.98_-1.65_0002.pdb  R=16, K=45, D=10, E=10
+apps.public.design.supercharge: 2B3P_A_min_RK_-1.98_-1.65_0002.pdb  Net Charge = 41
+apps.public.design.supercharge: 2B3P_A_min_RK_-1.98_-1.65_0002.pdb  Mutations: V11R, D21R, H25R, T38K, T43R, D76K, E95K, T97K, D102K, T105K, D117K, E124K, I128K, D129K, E132K, E142R, N149K, T153K, Q157K, N159K, N164R, E172K, D180K, Y182K, D190K, V193K, L194K, N198K, Q204K, V206K, S208R, N212K, T230R, H231K, 
+apps.public.design.supercharge: 2B3P_A_min_RK_-1.98_-1.65_0002.pdb  # of mutations: 34
+apps.public.design.supercharge: 2B3P_A_min_RK_-1.98_-1.65_0002.pdb  select 11+21+25+38+43+76+95+97+102+105+117+124+128+129+132+142+149+153+157+159+164+172+180+182+190+193+194+198+204+206+208+212+230+231+
+apps.public.design.supercharge: Assert native and design have same number of residues
+core.pack.task: Packer task: initialize from command line() 
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.pack.pack_rotamers: built 2456 rotamers at 228 positions.
+core.pack.pack_rotamers: IG: 2048280 bytes
+core.pack.task: Packer task: initialize from command line() 
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.pack.pack_rotamers: built 2456 rotamers at 228 positions.
+core.pack.pack_rotamers: IG: 2048280 bytes
+core.pack.task: Packer task: initialize from command line() 
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.pack.pack_rotamers: built 2456 rotamers at 228 positions.
+core.pack.pack_rotamers: IG: 2048280 bytes
+core.pack.task: Packer task: initialize from command line() 
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.pack.pack_rotamers: built 1919 rotamers at 228 positions.
+core.pack.pack_rotamers: IG: 1526052 bytes
+core.pack.task: Packer task: initialize from command line() 
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.pack.pack_rotamers: built 1919 rotamers at 228 positions.
+core.pack.pack_rotamers: IG: 1526052 bytes
+core.pack.task: Packer task: initialize from command line() 
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.pack.pack_rotamers: built 1919 rotamers at 228 positions.
+core.pack.pack_rotamers: IG: 1526052 bytes
+apps.public.design.supercharge: Scoring native and design
+apps.public.design.supercharge: Initialized vectors
+apps.public.design.supercharge: Adding native energies
+apps.public.design.supercharge: Adding designed energies
+apps.public.design.supercharge: Subtracting design from native energies
+apps.public.design.supercharge: rosetta_inputs/2B3P_A_min.pdb 10 0.3644 0.2911 -0.3058 0.3239 -1.4283 0.0000 -1.0593 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.7930 0.0000 2.3999 1.0869 -1.2700 
+apps.public.design.supercharge: rosetta_inputs/2B3P_A_min.pdb 20 0.8852 0.6912 0.0107 -1.7965 0.7626 0.0000 0.4028 0.0000 0.0000 0.0300 0.0000 0.0000 0.0000 0.0000 0.0000 0.6864 0.0000 2.5038 0.0948 -0.3100 
+apps.public.design.supercharge: rosetta_inputs/2B3P_A_min.pdb 24 -0.1093 0.0870 0.0103 0.5427 1.0906 0.0000 -0.0248 0.0000 0.0000 -0.0654 0.0000 0.0000 0.0000 0.0000 0.0000 0.4718 0.0000 1.3747 0.6997 -1.5400 
+apps.public.design.supercharge: rosetta_inputs/2B3P_A_min.pdb 37 -0.0362 0.0129 0.0006 -0.2910 -1.0171 0.0000 0.2086 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 -0.8536 0.0000 1.3987 -0.5885 -0.3800 
+apps.public.design.supercharge: rosetta_inputs/2B3P_A_min.pdb 42 0.2458 -0.2602 0.0025 0.0456 1.0044 0.0000 -0.4944 0.0000 0.0000 0.0000 -0.1038 0.0000 0.0000 0.0000 0.0000 -0.6141 0.0000 2.9814 -0.1912 -0.7100 
+apps.public.design.supercharge: rosetta_inputs/2B3P_A_min.pdb 72 0.3975 0.2649 -0.0007 -0.5445 0.0098 0.0000 0.3601 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 -0.4753 0.0000 0.9331 -0.2628 0.0200 
+apps.public.design.supercharge: rosetta_inputs/2B3P_A_min.pdb 91 0.1133 -0.2226 0.1196 -0.0862 -0.5008 0.0000 0.5076 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 -0.2621 0.0000 -0.1621 0.0978 0.1600 
+apps.public.design.supercharge: rosetta_inputs/2B3P_A_min.pdb 93 0.5428 0.1935 -0.0031 -0.1983 -0.4706 0.0000 -0.2987 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.1144 0.0000 1.4960 0.5811 -0.3800 
+apps.public.design.supercharge: rosetta_inputs/2B3P_A_min.pdb 98 0.0845 0.1706 0.1538 -0.7029 0.2191 0.0000 0.4510 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.1411 0.0000 -0.0224 0.2489 0.0200 
+apps.public.design.supercharge: rosetta_inputs/2B3P_A_min.pdb 101 1.1583 0.0220 -0.0924 -0.2604 -0.4003 0.0000 -0.2696 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0369 0.0000 3.0516 0.4629 -0.3800 
+apps.public.design.supercharge: rosetta_inputs/2B3P_A_min.pdb 113 0.1539 0.5641 -0.0004 -0.9042 -1.4567 0.0000 0.1523 0.0000 0.0000 0.0000 0.0339 0.0000 0.0000 0.0000 0.0000 0.2621 0.0000 -0.0121 0.3713 0.0200 
+apps.public.design.supercharge: rosetta_inputs/2B3P_A_min.pdb 120 0.0583 -0.0026 0.0007 -0.0908 -0.4659 0.0000 0.1072 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 -0.0543 0.0000 -0.1800 0.0626 0.1600 
+apps.public.design.supercharge: rosetta_inputs/2B3P_A_min.pdb 124 -0.0191 1.1905 0.0144 -1.0201 -3.5904 0.0000 -0.1819 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0013 0.0000 1.0539 0.2759 -0.8900 
+apps.public.design.supercharge: rosetta_inputs/2B3P_A_min.pdb 125 0.0721 0.5035 0.0444 -0.7311 0.0725 0.0000 0.0183 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.1499 0.0000 -0.0306 0.2590 0.0200 
+apps.public.design.supercharge: rosetta_inputs/2B3P_A_min.pdb 128 0.0433 -0.0009 0.0004 0.0062 -0.3876 0.0000 0.0020 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 -0.0305 0.0000 -0.0963 -0.1860 0.1600 
+apps.public.design.supercharge: rosetta_inputs/2B3P_A_min.pdb 138 0.1440 0.4522 -0.0416 -0.9915 0.6102 0.0000 0.1466 0.0000 0.0000 0.0000 0.0668 0.0000 0.0000 0.0000 0.0000 -0.0257 0.0000 0.8851 -0.0726 -0.1700 
+apps.public.design.supercharge: rosetta_inputs/2B3P_A_min.pdb 145 -0.3478 0.0592 -0.0288 -0.9271 0.0888 0.0000 0.1110 0.0000 0.0000 0.0000 0.0067 0.0000 0.0000 0.0000 0.0000 -0.6491 0.0000 0.4166 -0.5798 0.2400 
+apps.public.design.supercharge: rosetta_inputs/2B3P_A_min.pdb 149 -0.0214 0.0353 -0.0052 -0.5482 -1.1845 0.0000 -0.3048 0.0000 0.0000 0.0633 0.0000 0.0000 0.0000 0.0000 0.0000 0.5776 0.0000 0.7759 0.6844 -0.3800 
+apps.public.design.supercharge: rosetta_inputs/2B3P_A_min.pdb 153 -0.2278 -0.2601 0.0002 -0.1440 0.0400 0.0000 0.1631 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 -0.4850 0.0000 -0.3687 -0.0711 0.3200 
+apps.public.design.supercharge: rosetta_inputs/2B3P_A_min.pdb 155 0.5407 0.3020 0.1436 -0.6233 0.0553 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 1.0035 0.0000 -0.4034 1.3313 0.2400 
+apps.public.design.supercharge: rosetta_inputs/2B3P_A_min.pdb 160 -0.3831 -2.6151 0.4779 2.2510 1.9209 0.0000 -0.1375 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 -1.0668 0.0000 1.2033 -0.8600 -0.0900 
+apps.public.design.supercharge: rosetta_inputs/2B3P_A_min.pdb 168 -0.3021 0.0274 0.0131 -0.6476 -0.5254 0.0000 0.1083 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.2500 0.0000 -0.4034 0.1755 0.1600 
+apps.public.design.supercharge: rosetta_inputs/2B3P_A_min.pdb 176 0.8454 1.4514 -0.3239 -1.8558 -1.4861 0.0000 0.3276 0.0000 0.0000 0.0000 0.0336 0.0000 0.0000 0.0000 0.0000 0.7663 0.0000 0.6481 0.9543 0.0200 
+apps.public.design.supercharge: rosetta_inputs/2B3P_A_min.pdb 178 -0.3641 0.5259 -0.0505 -0.6212 -4.9848 0.0000 -0.1226 0.0000 0.0000 0.0000 0.0336 0.0000 0.0000 0.0000 0.0000 0.4646 0.0000 1.0455 0.5180 -1.1600 
+apps.public.design.supercharge: rosetta_inputs/2B3P_A_min.pdb 186 0.5944 0.0793 0.0447 -0.1092 -0.1395 0.0000 0.1015 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 -0.1487 0.0000 0.9292 0.0703 0.0200 
+apps.public.design.supercharge: rosetta_inputs/2B3P_A_min.pdb 189 -0.1863 0.3694 -0.0074 -0.0359 -2.3352 0.0000 -0.2577 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 -0.7215 0.0000 1.3672 -0.0030 -0.9400 
+apps.public.design.supercharge: rosetta_inputs/2B3P_A_min.pdb 190 0.3781 0.3658 -0.0074 -0.0401 -1.1546 0.0000 -0.0018 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 -0.0511 0.0000 0.9868 0.3996 -0.5500 
+apps.public.design.supercharge: rosetta_inputs/2B3P_A_min.pdb 194 -0.5029 0.6575 -0.0044 -1.3504 -0.5447 0.0000 0.0584 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 -0.5862 0.0000 -0.3094 -0.3911 0.2400 
+apps.public.design.supercharge: rosetta_inputs/2B3P_A_min.pdb 200 0.2763 0.1326 -0.0011 -0.1518 -0.1089 0.0000 0.0154 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 -0.1132 0.0000 -0.1193 0.0992 0.3200 
+apps.public.design.supercharge: rosetta_inputs/2B3P_A_min.pdb 202 0.6845 0.2154 -0.0597 -0.0909 -1.7388 0.0000 0.0148 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 1.0054 0.0000 1.5020 1.5470 -0.9400 
+apps.public.design.supercharge: rosetta_inputs/2B3P_A_min.pdb 204 0.7408 -0.5101 0.1792 -0.2004 2.0877 0.0000 0.0232 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.7133 0.0000 2.1510 1.3854 -0.6100 
+apps.public.design.supercharge: rosetta_inputs/2B3P_A_min.pdb 208 0.5157 0.3552 0.0041 -0.6123 -0.0296 0.0000 0.1402 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.6437 0.0000 -0.1138 0.7940 0.2400 
+apps.public.design.supercharge: rosetta_inputs/2B3P_A_min.pdb 226 0.7089 0.1036 0.0097 -0.2365 0.6538 0.0000 0.0037 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.9292 0.0000 1.5962 1.2544 -0.7100 
+apps.public.design.supercharge: rosetta_inputs/2B3P_A_min.pdb 227 -0.7347 0.9993 -0.0509 -0.7053 -0.0501 0.0000 0.0871 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 -0.0760 0.0000 0.2680 -0.0646 -1.2100 
+apps.public.design.supercharge: rosetta_inputs/2B3P_A_min.pdb SUM-DIFFS 6.3137 6.2513 0.2467 -13.3482 -15.3845 0.0000 0.3576 0.0000 0.0000 0.0279 0.0709 0.0000 0.0000 0.0000 0.0000 2.7977 0.0000 28.7464 10.1834 -10.2600 
+apps.public.design.supercharge: rosetta_inputs/2B3P_A_min.pdb score_terms: total fa_atr fa_rep fa_sol fa_intra_rep pro_close fa_pair hbond_sr_bb hbond_lr_bb hbond_bb_sc hbond_sc dslf_ss_dst dslf_cs_ang dslf_ss_dih dslf_ca_dih rama omega fa_dun p_aa_pp ref
+protocols.jd2.JobDistributor: 2B3P_A_min_0001 reported success in 17 seconds
+protocols.jd2.JobDistributor: no more batches to process... 
+protocols.jd2.JobDistributor: 1 jobs considered, 1 jobs attempted in 17 seconds
+apps.public.design.supercharge: ************************d**o**n**e**************************************

@@ -1,0 +1,218 @@
+core.init: Mini-Rosetta version 53295M from https://svn.rosettacommons.org/source/trunk/rosetta/rosetta_source
+core.init: command: /home/bder/scr/rosetta_clean/rosetta_source/bin/supercharge.default.linuxgccrelease -database /home/bder/scr/rosetta_clean/rosetta_database/ @rosetta_inputs/options3
+core.init: 'RNG device' seed mode, using '/dev/urandom', seed=1771888014 seed_offset=0 real_seed=1771888014
+core.init.random: RandomGenerator:init: Normal mode, seed=1771888014 RG_type=mt19937
+protocols.jd2.PDBJobInputter: Instantiate PDBJobInputter
+protocols.jd2.PDBJobInputter: PDBJobInputter::fill_jobs
+protocols.jd2.PDBJobInputter: pushing rosetta_inputs/2B3P_A_min.pdb nstruct index 1
+protocols.evaluation.ChiWellRmsdEvaluatorCreator: Evaluation Creator active ... 
+protocols.jd2.PDBJobInputter: PDBJobInputter::pose_from_job
+protocols.jd2.PDBJobInputter: filling pose from PDB rosetta_inputs/2B3P_A_min.pdb
+core.chemical.ResidueTypeSet: Finished initializing fa_standard residue type set.  Created 6242 residue types
+core.io.pdb.file_data: [ WARNING ] discarding 1 atoms at position 63 in file rosetta_inputs/2B3P_A_min.pdb. Best match rsd_type:  LEU
+core.io.pdb.file_data: [ WARNING ] discarding 3 atoms at position 64 in file rosetta_inputs/2B3P_A_min.pdb. Best match rsd_type:  VAL
+core.io.pdb.file_data: [ WARNING ] can't find atom for res 63 atom  OXT (trying to set temp)
+core.io.pdb.file_data: [ WARNING ] can't find atom for res 64 atom 1H   (trying to set temp)
+core.io.pdb.file_data: [ WARNING ] can't find atom for res 64 atom 2H   (trying to set temp)
+core.io.pdb.file_data: [ WARNING ] can't find atom for res 64 atom 3H   (trying to set temp)
+core.pack.task: Packer task: initialize from command line() 
+core.scoring.etable: Starting energy table calculation
+core.scoring.etable: smooth_etable: changing atr/rep split to bottom of energy well
+core.scoring.etable: smooth_etable: spline smoothing lj etables (maxdis = 6)
+core.scoring.etable: smooth_etable: spline smoothing solvation etables (max_dis = 6)
+core.scoring.etable: Finished calculating energy tables.
+basic.io.database: Database file opened: scoring/score_functions/PairEPotential/pdb_pair_stats_fine
+basic.io.database: Database file opened: scoring/score_functions/hbonds/standard_params/HBPoly1D.csv
+basic.io.database: Database file opened: scoring/score_functions/hbonds/standard_params/HBFadeIntervals.csv
+basic.io.database: Database file opened: scoring/score_functions/hbonds/standard_params/HBEval.csv
+basic.io.database: Database file opened: scoring/score_functions/EnvPairPotential/env_log.txt
+basic.io.database: Database file opened: scoring/score_functions/EnvPairPotential/cbeta_den.txt
+basic.io.database: Database file opened: scoring/score_functions/EnvPairPotential/pair_log.txt
+basic.io.database: Database file opened: scoring/score_functions/EnvPairPotential/cenpack_log.txt
+basic.io.database: Database file opened: scoring/score_functions/EnvPairPotential/env_log.txt
+basic.io.database: Database file opened: scoring/score_functions/EnvPairPotential/cbeta_den.txt
+basic.io.database: Database file opened: scoring/score_functions/EnvPairPotential/pair_log.txt
+basic.io.database: Database file opened: scoring/score_functions/EnvPairPotential/cenpack_log.txt
+basic.io.database: Database file opened: scoring/score_functions/MembranePotential/CEN6_mem_env_log.txt
+basic.io.database: Database file opened: scoring/score_functions/MembranePotential/CEN10_mem_env_log.txt
+basic.io.database: Database file opened: scoring/score_functions/MembranePotential/memcbeta_den.txt
+basic.io.database: Database file opened: scoring/score_functions/MembranePotential/mem_pair_log.txt
+basic.io.database: Database file opened: scoring/score_functions/P_AA_pp/P_AA
+basic.io.database: Database file opened: scoring/score_functions/P_AA_pp/P_AA_n
+basic.io.database: Database file opened: scoring/score_functions/P_AA_pp/P_AA_pp
+basic.io.database: Database file opened: scoring/score_functions/rama/Rama_smooth_dyn.dat_ss_6.4
+apps.public.design.supercharge: Packrotamers
+core.pack.task: Packer task: initialize from command line() 
+core.pack.dunbrack: Dunbrack library took 0.03 seconds to load from binary
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.pack.pack_rotamers: built 1928 rotamers at 228 positions.
+core.pack.pack_rotamers: IG: 1542132 bytes
+core.pack.task: Packer task: initialize from command line() 
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.pack.pack_rotamers: built 1919 rotamers at 228 positions.
+core.pack.pack_rotamers: IG: 1527380 bytes
+core.pack.task: Packer task: initialize from command line() 
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.pack.pack_rotamers: built 1919 rotamers at 228 positions.
+core.pack.pack_rotamers: IG: 1526052 bytes
+apps.public.design.supercharge: residue: 2  heavy: 9  sidechain: 5  AvNAPSA_value: 112
+apps.public.design.supercharge: residue 4 is already negative
+apps.public.design.supercharge: residue 5 is already negative
+apps.public.design.supercharge: residue 16 is already negative
+apps.public.design.supercharge: residue 18 is already negative
+apps.public.design.supercharge: residue 20 is already negative
+apps.public.design.supercharge: residue: 22  heavy: 8  sidechain: 5  AvNAPSA_value: 135
+apps.public.design.supercharge: residue: 25  heavy: 9  sidechain: 5  AvNAPSA_value: 69
+apps.public.design.supercharge: residue: 29  heavy: 11  sidechain: 5  AvNAPSA_value: 99
+apps.public.design.supercharge: residue 31 is already negative
+apps.public.design.supercharge: residue 33 is already negative
+apps.public.design.supercharge: residue 35 is already negative
+apps.public.design.supercharge: residue: 38  heavy: 8  sidechain: 5  AvNAPSA_value: 81
+apps.public.design.supercharge: residue: 40  heavy: 9  sidechain: 5  AvNAPSA_value: 108
+apps.public.design.supercharge: residue: 44  heavy: 9  sidechain: 5  AvNAPSA_value: 142
+apps.public.design.supercharge: residue: 51  heavy: 9  sidechain: 5  AvNAPSA_value: 76
+apps.public.design.supercharge: residue: 65  heavy: 9  sidechain: 5  AvNAPSA_value: 197
+apps.public.design.supercharge: residue: 69  heavy: 11  sidechain: 5  AvNAPSA_value: 109
+apps.public.design.supercharge: residue 72 is already negative
+apps.public.design.supercharge: residue: 75  heavy: 9  sidechain: 5  AvNAPSA_value: 133
+apps.public.design.supercharge: residue: 76  heavy: 11  sidechain: 5  AvNAPSA_value: 101
+apps.public.design.supercharge: residue 78 is already negative
+apps.public.design.supercharge: residue: 81  heavy: 9  sidechain: 5  AvNAPSA_value: 211
+apps.public.design.supercharge: residue 86 is already negative
+apps.public.design.supercharge: residue: 90  heavy: 9  sidechain: 5  AvNAPSA_value: 203
+apps.public.design.supercharge: residue 91 is already negative
+apps.public.design.supercharge: residue: 92  heavy: 11  sidechain: 5  AvNAPSA_value: 194
+apps.public.design.supercharge: residue: 97  heavy: 9  sidechain: 5  AvNAPSA_value: 84
+apps.public.design.supercharge: residue 98 is already negative
+apps.public.design.supercharge: residue 99 is already negative
+apps.public.design.supercharge: residue: 103  heavy: 9  sidechain: 5  AvNAPSA_value: 96
+apps.public.design.supercharge: residue: 105  heavy: 11  sidechain: 5  AvNAPSA_value: 98
+apps.public.design.supercharge: residue 107 is already negative
+apps.public.design.supercharge: residue: 109  heavy: 9  sidechain: 5  AvNAPSA_value: 132
+apps.public.design.supercharge: residue 111 is already negative
+apps.public.design.supercharge: residue 113 is already negative
+apps.public.design.supercharge: residue: 117  heavy: 8  sidechain: 5  AvNAPSA_value: 197
+apps.public.design.supercharge: residue: 118  heavy: 11  sidechain: 5  AvNAPSA_value: 117
+apps.public.design.supercharge: residue 120 is already negative
+apps.public.design.supercharge: residue: 122  heavy: 9  sidechain: 5  AvNAPSA_value: 98
+apps.public.design.supercharge: residue 125 is already negative
+apps.public.design.supercharge: residue: 127  heavy: 9  sidechain: 5  AvNAPSA_value: 89
+apps.public.design.supercharge: residue 128 is already negative
+apps.public.design.supercharge: residue 129 is already negative
+apps.public.design.supercharge: residue: 131  heavy: 8  sidechain: 5  AvNAPSA_value: 177
+apps.public.design.supercharge: residue: 136  heavy: 9  sidechain: 5  AvNAPSA_value: 108
+apps.public.design.supercharge: residue 138 is already negative
+apps.public.design.supercharge: residue: 140  heavy: 8  sidechain: 5  AvNAPSA_value: 122
+apps.public.design.supercharge: residue: 142  heavy: 8  sidechain: 5  AvNAPSA_value: 116
+apps.public.design.supercharge: residue: 145  heavy: 8  sidechain: 5  AvNAPSA_value: 114
+apps.public.design.supercharge: residue 151 is already negative
+apps.public.design.supercharge: residue: 152  heavy: 9  sidechain: 5  AvNAPSA_value: 51
+apps.public.design.supercharge: residue: 153  heavy: 9  sidechain: 5  AvNAPSA_value: 54
+apps.public.design.supercharge: residue: 154  heavy: 9  sidechain: 5  AvNAPSA_value: 101
+apps.public.design.supercharge: residue: 155  heavy: 8  sidechain: 5  AvNAPSA_value: 102
+apps.public.design.supercharge: residue: 158  heavy: 9  sidechain: 5  AvNAPSA_value: 122
+apps.public.design.supercharge: residue: 160  heavy: 8  sidechain: 5  AvNAPSA_value: 128
+apps.public.design.supercharge: residue: 162  heavy: 9  sidechain: 5  AvNAPSA_value: 106
+apps.public.design.supercharge: residue: 164  heavy: 11  sidechain: 5  AvNAPSA_value: 94
+apps.public.design.supercharge: residue: 166  heavy: 8  sidechain: 5  AvNAPSA_value: 130
+apps.public.design.supercharge: residue 168 is already negative
+apps.public.design.supercharge: residue 169 is already negative
+apps.public.design.supercharge: residue: 173  heavy: 9  sidechain: 5  AvNAPSA_value: 174
+apps.public.design.supercharge: residue 176 is already negative
+apps.public.design.supercharge: residue: 179  heavy: 9  sidechain: 5  AvNAPSA_value: 195
+apps.public.design.supercharge: residue: 180  heavy: 9  sidechain: 5  AvNAPSA_value: 130
+apps.public.design.supercharge: residue: 181  heavy: 8  sidechain: 5  AvNAPSA_value: 203
+apps.public.design.supercharge: residue 186 is already negative
+apps.public.design.supercharge: residue 193 is already negative
+apps.public.design.supercharge: residue: 194  heavy: 8  sidechain: 5  AvNAPSA_value: 109
+apps.public.design.supercharge: residue: 200  heavy: 9  sidechain: 5  AvNAPSA_value: 96
+apps.public.design.supercharge: residue: 205  heavy: 9  sidechain: 5  AvNAPSA_value: 101
+apps.public.design.supercharge: residue 206 is already negative
+apps.public.design.supercharge: residue: 208  heavy: 8  sidechain: 5  AvNAPSA_value: 50
+apps.public.design.supercharge: residue 209 is already negative
+apps.public.design.supercharge: residue: 210  heavy: 9  sidechain: 5  AvNAPSA_value: 46
+apps.public.design.supercharge: residue: 211  heavy: 11  sidechain: 5  AvNAPSA_value: 97
+apps.public.design.supercharge: residue 212 is already negative
+apps.public.design.supercharge: residue 218 is already negative
+apps.public.design.supercharge: there are 228 residues and 228 AvNAPSA values
+apps.public.design.supercharge: Creating a resfile, it will be saved as example_outputs/outpath3/resfile_output_Asc
+apps.public.design.supercharge: Starting net charge is -5 and target_net_charge is -25
+apps.public.design.supercharge: Mutate 210
+apps.public.design.supercharge: Mutate 208
+apps.public.design.supercharge: Mutate 152
+apps.public.design.supercharge: Mutate 153
+apps.public.design.supercharge: Mutate 25
+apps.public.design.supercharge: Mutate 51
+apps.public.design.supercharge: Mutate 38
+apps.public.design.supercharge: Mutate 97
+apps.public.design.supercharge: Mutate 127
+apps.public.design.supercharge: Mutate 164
+apps.public.design.supercharge: Mutate 200
+apps.public.design.supercharge: Mutate 103
+apps.public.design.supercharge: PYMOL_SELECT AVNAPSA residues: 210+208+152+153+25+51+38+97+127+164+200+103+
+core.pack.task: Packer task: initialize from command line() 
+core.pack.interaction_graph.interaction_graph_factory: Instantiating PDInteractionGraph
+core.pack.pack_rotamers: built 1798 rotamers at 228 positions.
+core.pack.pack_rotamers: IG: 1945728 bytes
+core.pack.task: Packer task: initialize from command line() 
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.pack.pack_rotamers: built 1810 rotamers at 228 positions.
+core.pack.pack_rotamers: IG: 1447956 bytes
+core.pack.task: Packer task: initialize from command line() 
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.pack.pack_rotamers: built 1810 rotamers at 228 positions.
+core.pack.pack_rotamers: IG: 1447956 bytes
+apps.public.design.supercharge: NEW NAME FOR SUPERCHARGED OUTPUT: 2B3P_A_min_AvNAPSA_neg_96_-25.pdb
+apps.public.design.supercharge: 2B3P_A_min_AvNAPSA_neg_96_-25.pdb  R=7, K=12, D=19, E=25
+apps.public.design.supercharge: 2B3P_A_min_AvNAPSA_neg_96_-25.pdb  Net Charge = -25
+apps.public.design.supercharge: 2B3P_A_min_AvNAPSA_neg_96_-25.pdb  Mutations: K26E, N39D, K52E, K101E, K107E, K131E, K156E, Q157E, R168E, Q204E, N212D, K214E, 
+apps.public.design.supercharge: 2B3P_A_min_AvNAPSA_neg_96_-25.pdb  # of mutations: 12
+apps.public.design.supercharge: 2B3P_A_min_AvNAPSA_neg_96_-25.pdb  select 26+39+52+101+107+131+156+157+168+204+212+214+
+apps.public.design.supercharge: Assert native and design have same number of residues
+core.pack.task: Packer task: initialize from command line() 
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.pack.pack_rotamers: built 1810 rotamers at 228 positions.
+core.pack.pack_rotamers: IG: 1447956 bytes
+core.pack.task: Packer task: initialize from command line() 
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.pack.pack_rotamers: built 1810 rotamers at 228 positions.
+core.pack.pack_rotamers: IG: 1447956 bytes
+core.pack.task: Packer task: initialize from command line() 
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.pack.pack_rotamers: built 1810 rotamers at 228 positions.
+core.pack.pack_rotamers: IG: 1447956 bytes
+core.pack.task: Packer task: initialize from command line() 
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.pack.pack_rotamers: built 1919 rotamers at 228 positions.
+core.pack.pack_rotamers: IG: 1526052 bytes
+core.pack.task: Packer task: initialize from command line() 
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.pack.pack_rotamers: built 1919 rotamers at 228 positions.
+core.pack.pack_rotamers: IG: 1526052 bytes
+core.pack.task: Packer task: initialize from command line() 
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.pack.pack_rotamers: built 1919 rotamers at 228 positions.
+core.pack.pack_rotamers: IG: 1526052 bytes
+apps.public.design.supercharge: Scoring native and design
+apps.public.design.supercharge: Initialized vectors
+apps.public.design.supercharge: Adding native energies
+apps.public.design.supercharge: Adding designed energies
+apps.public.design.supercharge: Subtracting design from native energies
+apps.public.design.supercharge: rosetta_inputs/2B3P_A_min.pdb 25 0.1970 0.0489 0.0140 -0.0509 0.5259 0.0000 0.3913 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 -0.1090 0.0000 0.3261 -0.0308 -0.1600 
+apps.public.design.supercharge: rosetta_inputs/2B3P_A_min.pdb 38 0.6614 0.0191 -0.0433 -0.1168 -0.3345 0.0000 0.1815 0.0000 0.0000 0.0000 0.3838 0.0000 0.0000 0.0000 0.0000 0.1730 0.0000 -0.1046 0.1105 0.2200 
+apps.public.design.supercharge: rosetta_inputs/2B3P_A_min.pdb 51 -0.0133 0.1212 -0.0006 -0.0460 0.3622 0.0000 -0.0340 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0137 0.0000 0.0682 0.1693 -0.1600 
+apps.public.design.supercharge: rosetta_inputs/2B3P_A_min.pdb 97 0.2800 -0.2580 0.0685 0.5491 0.3343 0.0000 0.2245 0.0000 0.0000 0.0127 0.0000 0.0000 0.0000 0.0000 0.0000 0.0369 0.0000 0.1423 0.1441 -0.1600 
+apps.public.design.supercharge: rosetta_inputs/2B3P_A_min.pdb 103 -0.0235 0.1288 -0.0008 0.0440 0.4618 0.0000 -0.2025 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0299 0.0000 0.2440 -0.1251 -0.1600 
+apps.public.design.supercharge: rosetta_inputs/2B3P_A_min.pdb 127 0.2383 0.1513 -0.0016 -0.2093 0.5276 0.0000 0.2904 0.0000 0.0000 0.0105 0.0000 0.0000 0.0000 0.0000 0.0000 -0.0539 0.0000 0.3819 0.1697 -0.1600 
+apps.public.design.supercharge: rosetta_inputs/2B3P_A_min.pdb 152 -0.0934 -0.0364 -0.0003 -0.0233 -0.2883 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 -0.0829 0.0000 0.3165 -0.1517 -0.1600 
+apps.public.design.supercharge: rosetta_inputs/2B3P_A_min.pdb 153 -0.2431 0.0593 -0.0005 -0.0036 0.3855 0.0000 -0.3343 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 -0.5768 0.0000 -0.1900 -0.1999 0.1600 
+apps.public.design.supercharge: rosetta_inputs/2B3P_A_min.pdb 164 0.0332 0.1761 -0.0562 -0.0813 -0.8544 0.0000 -0.0063 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0813 0.0000 -0.4123 0.0655 0.1700 
+apps.public.design.supercharge: rosetta_inputs/2B3P_A_min.pdb 200 0.1675 -0.0188 0.0004 0.0453 0.3721 0.0000 0.0364 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.1561 0.0000 -0.1412 0.0671 0.1600 
+apps.public.design.supercharge: rosetta_inputs/2B3P_A_min.pdb 208 0.4757 0.0306 -0.0006 -0.0113 -0.2387 0.0000 0.0832 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.2295 0.0000 0.1703 0.1801 0.2200 
+apps.public.design.supercharge: rosetta_inputs/2B3P_A_min.pdb 210 -0.1158 -0.0050 0.0000 0.0067 0.5383 0.0000 -0.0519 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.0000 0.1411 0.0000 0.1387 -0.1210 -0.1600 
+apps.public.design.supercharge: rosetta_inputs/2B3P_A_min.pdb SUM-DIFFS 1.5641 0.4171 -0.0211 0.1027 1.7919 0.0000 0.5784 0.0000 0.0000 0.0231 0.3838 0.0000 0.0000 0.0000 0.0000 0.0388 0.0000 0.9400 0.2779 -0.1900 
+apps.public.design.supercharge: rosetta_inputs/2B3P_A_min.pdb score_terms: total fa_atr fa_rep fa_sol fa_intra_rep pro_close fa_pair hbond_sr_bb hbond_lr_bb hbond_bb_sc hbond_sc dslf_ss_dst dslf_cs_ang dslf_ss_dih dslf_ca_dih rama omega fa_dun p_aa_pp ref
+protocols.jd2.JobDistributor: 2B3P_A_min_0001 reported success in 8 seconds
+protocols.jd2.JobDistributor: no more batches to process... 
+protocols.jd2.JobDistributor: 1 jobs considered, 1 jobs attempted in 8 seconds
+apps.public.design.supercharge: ************************d**o**n**e**************************************

@@ -1,0 +1,32 @@
+NATAA
+start
+   5 A  NATAA  #same charge
+   8 A  PIKAA FDE
+   22 A  PIKAA VDE
+   28 A  NATRO  #has sc hbond energy=-1.13688
+   32 A  NATAA  #same charge
+   43 A  PIKAA TDE
+   64 A  PIKAA LDE
+   81 A  NATRO  #has sc hbond energy=-1.25252
+   92 A  PIKAA YDE
+   96 A  NATRO  #has sc hbond energy=-1.27075
+   98 A  PIKAA IDE
+   105 A  PIKAA TDE
+   112 A  PIKAA VDE
+   114 A  PIKAA FDE
+   118 A  PIKAA TDE
+   119 A  PIKAA LDE
+   120 A  PIKAA VDE
+   141 A  PIKAA LDE
+   142 A  NATAA  #same charge
+   152 A  PIKAA IDE
+   156 A  PIKAA KDE
+   157 A  PIKAA QDE
+   158 A  PIKAA KDE
+   172 A  NATAA  #same charge
+   175 A  NATRO  #has sc hbond energy=-1.41916
+   178 A  PIKAA LDE
+   185 A  NATRO  #has sc hbond energy=-1.39245
+   193 A  PIKAA VDE
+   195 A  PIKAA LDE
+   210 A  NATAA  #same charge

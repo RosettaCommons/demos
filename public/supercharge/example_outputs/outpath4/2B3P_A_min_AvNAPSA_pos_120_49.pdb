@@ -242,16 +242,16 @@ ATOM    241  CA  GLU A  17      50.411   1.501  63.640  1.00  0.00
 ATOM    242  C   GLU A  17      50.928   1.575  65.060  1.00  0.00              
 ATOM    243  O   GLU A  17      51.191   2.658  65.581  1.00  0.00              
 ATOM    244  CB  GLU A  17      51.522   1.835  62.642  1.00  0.00              
-ATOM    245  CG  GLU A  17      51.141   1.626  61.183  1.00  0.00              
-ATOM    246  CD  GLU A  17      52.295   1.929  60.268  1.00  0.00              
-ATOM    247  OE1 GLU A  17      53.347   2.260  60.760  1.00  0.00              
-ATOM    248  OE2 GLU A  17      52.159   1.722  59.086  1.00  0.00              
+ATOM    245  CG  GLU A  17      52.724   0.903  62.703  1.00  0.00              
+ATOM    246  CD  GLU A  17      53.732   1.241  61.642  1.00  0.00              
+ATOM    247  OE1 GLU A  17      53.524   2.197  60.933  1.00  0.00              
+ATOM    248  OE2 GLU A  17      54.765   0.614  61.610  1.00  0.00              
 ATOM    249  H   GLU A  17      49.401   3.376  63.798  1.00  0.00              
 ATOM    250  HA  GLU A  17      50.082   0.481  63.441  1.00  0.00              
-ATOM    251 1HB  GLU A  17      51.789   2.880  62.801  1.00  0.00              
-ATOM    252 2HB  GLU A  17      52.374   1.201  62.889  1.00  0.00              
-ATOM    253 1HG  GLU A  17      50.765   0.625  60.973  1.00  0.00              
-ATOM    254 2HG  GLU A  17      50.347   2.353  61.019  1.00  0.00              
+ATOM    251 1HB  GLU A  17      51.080   1.791  61.647  1.00  0.00              
+ATOM    252 2HB  GLU A  17      51.844   2.855  62.852  1.00  0.00              
+ATOM    253 1HG  GLU A  17      53.213   0.889  63.677  1.00  0.00              
+ATOM    254 2HG  GLU A  17      52.297  -0.078  62.499  1.00  0.00              
 ATOM    255  N   LEU A  18      51.056   0.412  65.685  1.00  0.00              
 ATOM    256  CA  LEU A  18      51.497   0.331  67.067  1.00  0.00              
 ATOM    257  C   LEU A  18      52.607  -0.691  67.240  1.00  0.00              
@@ -276,23 +276,23 @@ ATOM    275  CA  LYS A  19      54.833  -1.113  68.126  1.00  0.00
 ATOM    276  C   LYS A  19      54.811  -1.100  69.644  1.00  0.00              
 ATOM    277  O   LYS A  19      54.748  -0.034  70.256  1.00  0.00              
 ATOM    278  CB  LYS A  19      56.166  -0.623  67.558  1.00  0.00              
-ATOM    279  CG  LYS A  19      57.346  -1.544  67.839  1.00  0.00              
-ATOM    280  CD  LYS A  19      58.642  -0.965  67.293  1.00  0.00              
-ATOM    281  CE  LYS A  19      59.827  -1.868  67.603  1.00  0.00              
-ATOM    282  NZ  LYS A  19      61.094  -1.341  67.028  1.00  0.00              
+ATOM    279  CG  LYS A  19      56.245  -0.636  66.037  1.00  0.00              
+ATOM    280  CD  LYS A  19      57.605  -0.160  65.549  1.00  0.00              
+ATOM    281  CE  LYS A  19      57.669  -0.130  64.029  1.00  0.00              
+ATOM    282  NZ  LYS A  19      58.990   0.346  63.537  1.00  0.00              
 ATOM    283  H   LYS A  19      53.790   0.749  68.011  1.00  0.00              
 ATOM    284  HA  LYS A  19      54.683  -2.089  67.663  1.00  0.00              
-ATOM    285 1HB  LYS A  19      56.035  -0.520  66.481  1.00  0.00              
-ATOM    286 2HB  LYS A  19      56.360   0.357  67.995  1.00  0.00              
-ATOM    287 1HG  LYS A  19      57.432  -1.677  68.918  1.00  0.00              
-ATOM    288 2HG  LYS A  19      57.152  -2.508  67.369  1.00  0.00              
-ATOM    289 1HD  LYS A  19      58.544  -0.851  66.213  1.00  0.00              
-ATOM    290 2HD  LYS A  19      58.804   0.013  67.747  1.00  0.00              
-ATOM    291 1HE  LYS A  19      59.924  -1.945  68.685  1.00  0.00              
-ATOM    292 2HE  LYS A  19      59.622  -2.854  67.186  1.00  0.00              
-ATOM    293 1HZ  LYS A  19      61.853  -1.968  67.255  1.00  0.00              
-ATOM    294 2HZ  LYS A  19      61.005  -1.270  66.024  1.00  0.00              
-ATOM    295 3HZ  LYS A  19      61.285  -0.428  67.414  1.00  0.00              
+ATOM    285 1HB  LYS A  19      56.313   0.395  67.920  1.00  0.00              
+ATOM    286 2HB  LYS A  19      56.944  -1.268  67.966  1.00  0.00              
+ATOM    287 1HG  LYS A  19      56.070  -1.655  65.690  1.00  0.00              
+ATOM    288 2HG  LYS A  19      55.467   0.019  65.645  1.00  0.00              
+ATOM    289 1HD  LYS A  19      57.783   0.843  65.941  1.00  0.00              
+ATOM    290 2HD  LYS A  19      58.368  -0.838  65.931  1.00  0.00              
+ATOM    291 1HE  LYS A  19      57.486  -1.138  63.660  1.00  0.00              
+ATOM    292 2HE  LYS A  19      56.886   0.536  63.667  1.00  0.00              
+ATOM    293 1HZ  LYS A  19      58.991   0.351  62.527  1.00  0.00              
+ATOM    294 2HZ  LYS A  19      59.160   1.282  63.879  1.00  0.00              
+ATOM    295 3HZ  LYS A  19      59.716  -0.272  63.872  1.00  0.00              
 ATOM    296  N   GLY A  20      54.838  -2.278  70.252  1.00  0.00              
 ATOM    297  CA  GLY A  20      54.803  -2.338  71.696  1.00  0.00              
 ATOM    298  C   GLY A  20      55.624  -3.456  72.291  1.00  0.00              
@@ -423,12 +423,12 @@ ATOM    422  CA  SER A  28      53.146  -5.065  66.463  1.00  0.00
 ATOM    423  C   SER A  28      51.703  -5.237  66.022  1.00  0.00              
 ATOM    424  O   SER A  28      51.275  -6.338  65.670  1.00  0.00              
 ATOM    425  CB  SER A  28      54.070  -4.995  65.263  1.00  0.00              
-ATOM    426  OG  SER A  28      53.719  -3.958  64.388  1.00  0.00              
+ATOM    426  OG  SER A  28      55.395  -4.730  65.633  1.00  0.00              
 ATOM    427  H   SER A  28      53.269  -7.106  67.082  1.00  0.00              
 ATOM    428  HA  SER A  28      53.323  -4.082  66.901  1.00  0.00              
-ATOM    429 1HB  SER A  28      55.088  -4.832  65.616  1.00  0.00              
-ATOM    430 2HB  SER A  28      54.020  -5.943  64.728  1.00  0.00              
-ATOM    431  HG  SER A  28      52.824  -4.098  64.069  1.00  0.00              
+ATOM    429 1HB  SER A  28      54.032  -5.950  64.739  1.00  0.00              
+ATOM    430 2HB  SER A  28      53.722  -4.204  64.600  1.00  0.00              
+ATOM    431  HG  SER A  28      55.945  -4.694  64.847  1.00  0.00              
 ATOM    432  N   VAL A  29      50.961  -4.136  66.048  1.00  0.00              
 ATOM    433  CA  VAL A  29      49.571  -4.124  65.627  1.00  0.00              
 ATOM    434  C   VAL A  29      49.392  -3.113  64.503  1.00  0.00              
@@ -450,25 +450,25 @@ ATOM    449  CA  ARG A  30      48.435  -2.635  62.321  1.00  0.00
 ATOM    450  C   ARG A  30      46.933  -2.616  62.107  1.00  0.00              
 ATOM    451  O   ARG A  30      46.297  -3.666  61.997  1.00  0.00              
 ATOM    452  CB  ARG A  30      49.194  -3.002  61.055  1.00  0.00              
-ATOM    453  CG  ARG A  30      48.929  -2.094  59.864  1.00  0.00              
-ATOM    454  CD  ARG A  30      49.718  -2.428  58.651  1.00  0.00              
-ATOM    455  NE  ARG A  30      51.147  -2.194  58.779  1.00  0.00              
-ATOM    456  CZ  ARG A  30      52.079  -2.666  57.928  1.00  0.00              
-ATOM    457  NH1 ARG A  30      51.743  -3.427  56.910  1.00  0.00              
-ATOM    458  NH2 ARG A  30      53.345  -2.363  58.157  1.00  0.00              
+ATOM    453  CG  ARG A  30      50.699  -2.796  61.129  1.00  0.00              
+ATOM    454  CD  ARG A  30      51.438  -3.234  59.917  1.00  0.00              
+ATOM    455  NE  ARG A  30      52.885  -3.139  60.026  1.00  0.00              
+ATOM    456  CZ  ARG A  30      53.602  -2.033  59.745  1.00  0.00              
+ATOM    457  NH1 ARG A  30      53.018  -0.941  59.303  1.00  0.00              
+ATOM    458  NH2 ARG A  30      54.913  -2.083  59.902  1.00  0.00              
 ATOM    459  H   ARG A  30      48.390  -4.481  63.399  1.00  0.00              
 ATOM    460  HA  ARG A  30      48.843  -1.645  62.528  1.00  0.00              
-ATOM    461 1HB  ARG A  30      50.255  -2.972  61.300  1.00  0.00              
-ATOM    462 2HB  ARG A  30      48.910  -4.022  60.798  1.00  0.00              
-ATOM    463 1HG  ARG A  30      47.872  -2.161  59.606  1.00  0.00              
-ATOM    464 2HG  ARG A  30      49.168  -1.069  60.150  1.00  0.00              
-ATOM    465 1HD  ARG A  30      49.580  -3.484  58.418  1.00  0.00              
-ATOM    466 2HD  ARG A  30      49.361  -1.823  57.818  1.00  0.00              
-ATOM    467  HE  ARG A  30      51.655  -1.672  59.481  1.00  0.00              
-ATOM    468 1HH1 ARG A  30      50.773  -3.665  56.759  1.00  0.00              
-ATOM    469 2HH1 ARG A  30      52.456  -3.771  56.284  1.00  0.00              
-ATOM    470 1HH2 ARG A  30      53.588  -1.791  58.954  1.00  0.00              
-ATOM    471 2HH2 ARG A  30      54.063  -2.704  57.535  1.00  0.00              
+ATOM    461 1HB  ARG A  30      48.985  -4.051  60.850  1.00  0.00              
+ATOM    462 2HB  ARG A  30      48.788  -2.387  60.251  1.00  0.00              
+ATOM    463 1HG  ARG A  30      50.897  -1.734  61.277  1.00  0.00              
+ATOM    464 2HG  ARG A  30      51.084  -3.359  61.980  1.00  0.00              
+ATOM    465 1HD  ARG A  30      51.194  -4.276  59.712  1.00  0.00              
+ATOM    466 2HD  ARG A  30      51.132  -2.617  59.073  1.00  0.00              
+ATOM    467  HE  ARG A  30      53.557  -3.838  60.312  1.00  0.00              
+ATOM    468 1HH1 ARG A  30      52.016  -0.925  59.172  1.00  0.00              
+ATOM    469 2HH1 ARG A  30      53.573  -0.123  59.098  1.00  0.00              
+ATOM    470 1HH2 ARG A  30      55.348  -2.936  60.225  1.00  0.00              
+ATOM    471 2HH2 ARG A  30      55.474  -1.269  59.698  1.00  0.00              
 ATOM    472  N   GLY A  31      46.362  -1.420  62.056  1.00  0.00              
 ATOM    473  CA  GLY A  31      44.946  -1.297  61.787  1.00  0.00              
 ATOM    474  C   GLY A  31      44.661  -0.321  60.667  1.00  0.00              
@@ -755,7 +755,7 @@ ATOM    754  CG2 THR A  49      50.623  -6.701  61.312  1.00  0.00
 ATOM    755  H   THR A  49      50.543  -7.443  64.294  1.00  0.00              
 ATOM    756  HA  THR A  49      50.674  -9.366  62.016  1.00  0.00              
 ATOM    757  HB  THR A  49      52.428  -7.849  61.149  1.00  0.00              
-ATOM    758  HG1 THR A  49      53.226  -7.149  63.208  1.00  0.00              
+ATOM    758  HG1 THR A  49      52.838  -5.897  62.346  1.00  0.00              
 ATOM    759 1HG2 THR A  49      51.031  -5.848  60.772  1.00  0.00              
 ATOM    760 2HG2 THR A  49      50.069  -7.337  60.622  1.00  0.00              
 ATOM    761 3HG2 THR A  49      49.955  -6.348  62.097  1.00  0.00              
@@ -2295,23 +2295,23 @@ ATOM   2294  CA  LYS A 142      36.640 -10.480  78.238  1.00  0.00
 ATOM   2295  C   LYS A 142      36.691  -9.586  77.012  1.00  0.00              
 ATOM   2296  O   LYS A 142      36.883  -8.372  77.119  1.00  0.00              
 ATOM   2297  CB  LYS A 142      35.235 -10.470  78.843  1.00  0.00              
-ATOM   2298  CG  LYS A 142      34.139 -10.941  77.897  1.00  0.00              
-ATOM   2299  CD  LYS A 142      32.789 -10.991  78.596  1.00  0.00              
-ATOM   2300  CE  LYS A 142      31.690 -11.448  77.647  1.00  0.00              
-ATOM   2301  NZ  LYS A 142      30.366 -11.517  78.322  1.00  0.00              
+ATOM   2298  CG  LYS A 142      35.006 -11.522  79.920  1.00  0.00              
+ATOM   2299  CD  LYS A 142      33.613 -11.407  80.519  1.00  0.00              
+ATOM   2300  CE  LYS A 142      32.540 -11.760  79.498  1.00  0.00              
+ATOM   2301  NZ  LYS A 142      31.182 -11.790  80.106  1.00  0.00              
 ATOM   2302  H   LYS A 142      37.329  -9.495  80.004  1.00  0.00              
 ATOM   2303  HA  LYS A 142      36.851 -11.501  77.920  1.00  0.00              
-ATOM   2304 1HB  LYS A 142      35.261 -11.117  79.720  1.00  0.00              
-ATOM   2305 2HB  LYS A 142      35.029  -9.445  79.155  1.00  0.00              
-ATOM   2306 1HG  LYS A 142      34.088 -10.250  77.055  1.00  0.00              
-ATOM   2307 2HG  LYS A 142      34.398 -11.935  77.535  1.00  0.00              
-ATOM   2308 1HD  LYS A 142      32.857 -11.685  79.435  1.00  0.00              
-ATOM   2309 2HD  LYS A 142      32.554  -9.994  78.969  1.00  0.00              
-ATOM   2310 1HE  LYS A 142      31.639 -10.743  76.819  1.00  0.00              
-ATOM   2311 2HE  LYS A 142      31.956 -12.434  77.268  1.00  0.00              
-ATOM   2312 1HZ  LYS A 142      29.667 -11.824  77.660  1.00  0.00              
-ATOM   2313 2HZ  LYS A 142      30.412 -12.172  79.090  1.00  0.00              
-ATOM   2314 3HZ  LYS A 142      30.119 -10.603  78.674  1.00  0.00              
+ATOM   2304 1HB  LYS A 142      35.078  -9.477  79.267  1.00  0.00              
+ATOM   2305 2HB  LYS A 142      34.533 -10.630  78.025  1.00  0.00              
+ATOM   2306 1HG  LYS A 142      35.130 -12.509  79.471  1.00  0.00              
+ATOM   2307 2HG  LYS A 142      35.751 -11.384  80.703  1.00  0.00              
+ATOM   2308 1HD  LYS A 142      33.543 -12.087  81.369  1.00  0.00              
+ATOM   2309 2HD  LYS A 142      33.465 -10.383  80.861  1.00  0.00              
+ATOM   2310 1HE  LYS A 142      32.566 -11.014  78.705  1.00  0.00              
+ATOM   2311 2HE  LYS A 142      32.773 -12.740  79.082  1.00  0.00              
+ATOM   2312 1HZ  LYS A 142      30.502 -12.027  79.398  1.00  0.00              
+ATOM   2313 2HZ  LYS A 142      31.158 -12.482  80.842  1.00  0.00              
+ATOM   2314 3HZ  LYS A 142      30.965 -10.882  80.491  1.00  0.00              
 ATOM   2315  N   TYR A 143      36.520 -10.197  75.847  1.00  0.00              
 ATOM   2316  CA  TYR A 143      36.579  -9.459  74.597  1.00  0.00              
 ATOM   2317  C   TYR A 143      35.340  -8.582  74.432  1.00  0.00              
@@ -2338,15 +2338,15 @@ ATOM   2337  CA  ASN A 144      34.250  -6.496  75.083  1.00  0.00
 ATOM   2338  C   ASN A 144      34.778  -5.171  75.608  1.00  0.00              
 ATOM   2339  O   ASN A 144      35.938  -5.076  76.016  1.00  0.00              
 ATOM   2340  CB  ASN A 144      33.006  -6.924  75.841  1.00  0.00              
-ATOM   2341  CG  ASN A 144      33.212  -7.041  77.325  1.00  0.00              
-ATOM   2342  OD1 ASN A 144      34.242  -6.621  77.865  1.00  0.00              
-ATOM   2343  ND2 ASN A 144      32.276  -7.683  77.976  1.00  0.00              
+ATOM   2341  CG  ASN A 144      33.244  -7.169  77.305  1.00  0.00              
+ATOM   2342  OD1 ASN A 144      33.755  -6.304  78.025  1.00  0.00              
+ATOM   2343  ND2 ASN A 144      32.951  -8.371  77.731  1.00  0.00              
 ATOM   2344  H   ASN A 144      36.075  -7.327  75.823  1.00  0.00              
 ATOM   2345  HA  ASN A 144      33.948  -6.371  74.042  1.00  0.00              
-ATOM   2346 1HB  ASN A 144      32.044  -6.446  75.650  1.00  0.00              
-ATOM   2347 2HB  ASN A 144      33.008  -7.923  75.406  1.00  0.00              
-ATOM   2348 1HD2 ASN A 144      32.347  -7.799  78.967  1.00  0.00              
-ATOM   2349 2HD2 ASN A 144      31.491  -8.056  77.483  1.00  0.00              
+ATOM   2346 1HB  ASN A 144      32.065  -6.387  75.716  1.00  0.00              
+ATOM   2347 2HB  ASN A 144      32.948  -7.884  75.329  1.00  0.00              
+ATOM   2348 1HD2 ASN A 144      33.083  -8.606  78.694  1.00  0.00              
+ATOM   2349 2HD2 ASN A 144      32.595  -9.054  77.094  1.00  0.00              
 ATOM   2350  N   PHE A 145      33.938  -4.144  75.597  1.00  0.00              
 ATOM   2351  CA  PHE A 145      34.370  -2.842  76.081  1.00  0.00              
 ATOM   2352  C   PHE A 145      33.185  -1.975  76.470  1.00  0.00              
@@ -2372,23 +2372,23 @@ ATOM   2371  CA  LYS A 146      32.103  -0.690  78.221  1.00  0.00
 ATOM   2372  C   LYS A 146      32.147   0.735  77.687  1.00  0.00              
 ATOM   2373  O   LYS A 146      33.154   1.174  77.123  1.00  0.00              
 ATOM   2374  CB  LYS A 146      32.124  -0.684  79.750  1.00  0.00              
-ATOM   2375  CG  LYS A 146      31.846  -2.039  80.388  1.00  0.00              
-ATOM   2376  CD  LYS A 146      31.871  -1.951  81.907  1.00  0.00              
-ATOM   2377  CE  LYS A 146      31.620  -3.309  82.545  1.00  0.00              
-ATOM   2378  NZ  LYS A 146      31.648  -3.240  84.031  1.00  0.00              
+ATOM   2375  CG  LYS A 146      31.898  -2.049  80.388  1.00  0.00              
+ATOM   2376  CD  LYS A 146      31.978  -1.971  81.905  1.00  0.00              
+ATOM   2377  CE  LYS A 146      30.849  -1.126  82.477  1.00  0.00              
+ATOM   2378  NZ  LYS A 146      30.941  -1.003  83.957  1.00  0.00              
 ATOM   2379  H   LYS A 146      34.025  -1.623  78.278  1.00  0.00              
 ATOM   2380  HA  LYS A 146      31.158  -1.146  77.921  1.00  0.00              
-ATOM   2381 1HB  LYS A 146      33.111  -0.335  80.055  1.00  0.00              
-ATOM   2382 2HB  LYS A 146      31.369   0.032  80.078  1.00  0.00              
-ATOM   2383 1HG  LYS A 146      30.864  -2.381  80.060  1.00  0.00              
-ATOM   2384 2HG  LYS A 146      32.606  -2.743  80.052  1.00  0.00              
-ATOM   2385 1HD  LYS A 146      32.848  -1.578  82.217  1.00  0.00              
-ATOM   2386 2HD  LYS A 146      31.098  -1.252  82.227  1.00  0.00              
-ATOM   2387 1HE  LYS A 146      30.645  -3.666  82.217  1.00  0.00              
-ATOM   2388 2HE  LYS A 146      32.393  -3.996  82.200  1.00  0.00              
-ATOM   2389 1HZ  LYS A 146      31.478  -4.159  84.415  1.00  0.00              
-ATOM   2390 2HZ  LYS A 146      32.553  -2.909  84.337  1.00  0.00              
-ATOM   2391 3HZ  LYS A 146      30.932  -2.604  84.352  1.00  0.00              
+ATOM   2381 1HB  LYS A 146      33.096  -0.298  80.055  1.00  0.00              
+ATOM   2382 2HB  LYS A 146      31.342   0.002  80.078  1.00  0.00              
+ATOM   2383 1HG  LYS A 146      30.912  -2.410  80.093  1.00  0.00              
+ATOM   2384 2HG  LYS A 146      32.660  -2.734  80.018  1.00  0.00              
+ATOM   2385 1HD  LYS A 146      31.916  -2.983  82.308  1.00  0.00              
+ATOM   2386 2HD  LYS A 146      32.936  -1.530  82.180  1.00  0.00              
+ATOM   2387 1HE  LYS A 146      30.901  -0.136  82.027  1.00  0.00              
+ATOM   2388 2HE  LYS A 146      29.902  -1.596  82.210  1.00  0.00              
+ATOM   2389 1HZ  LYS A 146      30.176  -0.437  84.296  1.00  0.00              
+ATOM   2390 2HZ  LYS A 146      30.891  -1.921  84.376  1.00  0.00              
+ATOM   2391 3HZ  LYS A 146      31.817  -0.567  84.205  1.00  0.00              
 ATOM   2392  N   SER A 147      31.039   1.447  77.857  1.00  0.00              
 ATOM   2393  CA  SER A 147      30.937   2.821  77.393  1.00  0.00              
 ATOM   2394  C   SER A 147      31.510   3.709  78.491  1.00  0.00              
@@ -2590,23 +2590,23 @@ ATOM   2589  CA  LYS A 158      52.022  23.138  77.074  1.00  0.00
 ATOM   2590  C   LYS A 158      51.242  23.594  75.845  1.00  0.00              
 ATOM   2591  O   LYS A 158      51.424  23.055  74.750  1.00  0.00              
 ATOM   2592  CB  LYS A 158      51.862  21.628  77.257  1.00  0.00              
-ATOM   2593  CG  LYS A 158      52.789  21.019  78.301  1.00  0.00              
-ATOM   2594  CD  LYS A 158      52.563  19.521  78.435  1.00  0.00              
-ATOM   2595  CE  LYS A 158      53.473  18.915  79.493  1.00  0.00              
-ATOM   2596  NZ  LYS A 158      54.912  19.082  79.152  1.00  0.00              
+ATOM   2593  CG  LYS A 158      52.752  21.027  78.337  1.00  0.00              
+ATOM   2594  CD  LYS A 158      52.566  19.520  78.433  1.00  0.00              
+ATOM   2595  CE  LYS A 158      53.421  18.926  79.542  1.00  0.00              
+ATOM   2596  NZ  LYS A 158      53.268  17.448  79.631  1.00  0.00              
 ATOM   2597  H   LYS A 158      50.796  23.516  78.790  1.00  0.00              
 ATOM   2598  HA  LYS A 158      53.068  23.358  76.857  1.00  0.00              
-ATOM   2599 1HB  LYS A 158      50.826  21.449  77.543  1.00  0.00              
-ATOM   2600 2HB  LYS A 158      52.056  21.166  76.288  1.00  0.00              
-ATOM   2601 1HG  LYS A 158      53.820  21.206  78.000  1.00  0.00              
-ATOM   2602 2HG  LYS A 158      52.597  21.503  79.258  1.00  0.00              
-ATOM   2603 1HD  LYS A 158      51.521  19.350  78.710  1.00  0.00              
-ATOM   2604 2HD  LYS A 158      52.764  19.051  77.472  1.00  0.00              
-ATOM   2605 1HE  LYS A 158      53.267  19.406  80.443  1.00  0.00              
-ATOM   2606 2HE  LYS A 158      53.241  17.854  79.576  1.00  0.00              
-ATOM   2607 1HZ  LYS A 158      55.480  18.668  79.877  1.00  0.00              
-ATOM   2608 2HZ  LYS A 158      55.104  18.626  78.271  1.00  0.00              
-ATOM   2609 3HZ  LYS A 158      55.127  20.066  79.075  1.00  0.00              
+ATOM   2599 1HB  LYS A 158      50.817  21.445  77.505  1.00  0.00              
+ATOM   2600 2HB  LYS A 158      52.093  21.163  76.298  1.00  0.00              
+ATOM   2601 1HG  LYS A 158      53.792  21.251  78.093  1.00  0.00              
+ATOM   2602 2HG  LYS A 158      52.497  21.487  79.291  1.00  0.00              
+ATOM   2603 1HD  LYS A 158      51.514  19.313  78.633  1.00  0.00              
+ATOM   2604 2HD  LYS A 158      52.848  19.074  77.479  1.00  0.00              
+ATOM   2605 1HE  LYS A 158      54.463  19.171  79.340  1.00  0.00              
+ATOM   2606 2HE  LYS A 158      53.119  19.379  80.486  1.00  0.00              
+ATOM   2607 1HZ  LYS A 158      53.850  17.094  80.378  1.00  0.00              
+ATOM   2608 2HZ  LYS A 158      52.302  17.220  79.820  1.00  0.00              
+ATOM   2609 3HZ  LYS A 158      53.548  17.028  78.757  1.00  0.00              
 ATOM   2610  N   LYS A 159      50.383  24.593  76.025  1.00  0.00              
 ATOM   2611  CA  LYS A 159      49.541  25.083  74.940  1.00  0.00              
 ATOM   2612  C   LYS A 159      48.725  23.925  74.370  1.00  0.00              
@@ -2808,15 +2808,15 @@ ATOM   2807  CA  ASN A 170      35.419  -6.912  82.496  1.00  0.00
 ATOM   2808  C   ASN A 170      36.356  -8.114  82.517  1.00  0.00              
 ATOM   2809  O   ASN A 170      36.974  -8.440  81.506  1.00  0.00              
 ATOM   2810  CB  ASN A 170      34.143  -7.241  81.743  1.00  0.00              
-ATOM   2811  CG  ASN A 170      33.333  -8.338  82.375  1.00  0.00              
-ATOM   2812  OD1 ASN A 170      33.730  -9.509  82.376  1.00  0.00              
-ATOM   2813  ND2 ASN A 170      32.163  -7.980  82.840  1.00  0.00              
+ATOM   2811  CG  ASN A 170      33.090  -6.173  81.840  1.00  0.00              
+ATOM   2812  OD1 ASN A 170      32.649  -5.805  82.935  1.00  0.00              
+ATOM   2813  ND2 ASN A 170      32.626  -5.731  80.699  1.00  0.00              
 ATOM   2814  H   ASN A 170      35.841  -5.435  81.004  1.00  0.00              
 ATOM   2815  HA  ASN A 170      35.097  -6.679  83.512  1.00  0.00              
-ATOM   2816 1HB  ASN A 170      33.473  -6.449  81.407  1.00  0.00              
-ATOM   2817 2HB  ASN A 170      34.679  -7.650  80.886  1.00  0.00              
-ATOM   2818 1HD2 ASN A 170      31.570  -8.658  83.275  1.00  0.00              
-ATOM   2819 2HD2 ASN A 170      31.863  -7.030  82.761  1.00  0.00              
+ATOM   2816 1HB  ASN A 170      34.180  -7.614  80.718  1.00  0.00              
+ATOM   2817 2HB  ASN A 170      33.880  -8.056  82.417  1.00  0.00              
+ATOM   2818 1HD2 ASN A 170      31.923  -5.019  80.687  1.00  0.00              
+ATOM   2819 2HD2 ASN A 170      32.974  -6.105  79.840  1.00  0.00              
 ATOM   2820  N   VAL A 171      36.453  -8.766  83.672  1.00  0.00              
 ATOM   2821  CA  VAL A 171      37.311  -9.936  83.828  1.00  0.00              
 ATOM   2822  C   VAL A 171      36.430 -11.186  83.787  1.00  0.00              
@@ -3029,18 +3029,18 @@ ATOM   3028  CA  GLN A 184      48.330  14.634  77.857  1.00  0.00
 ATOM   3029  C   GLN A 184      48.356  14.747  76.337  1.00  0.00              
 ATOM   3030  O   GLN A 184      48.726  13.795  75.648  1.00  0.00              
 ATOM   3031  CB  GLN A 184      49.720  14.910  78.436  1.00  0.00              
-ATOM   3032  CG  GLN A 184      49.769  14.932  79.954  1.00  0.00              
-ATOM   3033  CD  GLN A 184      51.160  15.227  80.484  1.00  0.00              
-ATOM   3034  OE1 GLN A 184      52.104  15.424  79.714  1.00  0.00              
-ATOM   3035  NE2 GLN A 184      51.295  15.256  81.805  1.00  0.00              
+ATOM   3032  CG  GLN A 184      49.746  15.062  79.947  1.00  0.00              
+ATOM   3033  CD  GLN A 184      49.639  13.731  80.665  1.00  0.00              
+ATOM   3034  OE1 GLN A 184      50.224  12.731  80.240  1.00  0.00              
+ATOM   3035  NE2 GLN A 184      48.884  13.708  81.758  1.00  0.00              
 ATOM   3036  H   GLN A 184      48.316  12.492  77.808  1.00  0.00              
 ATOM   3037  HA  GLN A 184      47.655  15.380  78.275  1.00  0.00              
-ATOM   3038 1HB  GLN A 184      50.380  14.129  78.057  1.00  0.00              
-ATOM   3039 2HB  GLN A 184      50.039  15.875  78.043  1.00  0.00              
-ATOM   3040 1HG  GLN A 184      49.055  15.491  80.559  1.00  0.00              
-ATOM   3041 2HG  GLN A 184      49.578  13.864  80.063  1.00  0.00              
-ATOM   3042 1HE2 GLN A 184      52.189  15.445  82.213  1.00  0.00              
-ATOM   3043 2HE2 GLN A 184      50.503  15.089  82.393  1.00  0.00              
+ATOM   3038 1HB  GLN A 184      50.356  14.076  78.138  1.00  0.00              
+ATOM   3039 2HB  GLN A 184      50.080  15.825  77.967  1.00  0.00              
+ATOM   3040 1HG  GLN A 184      50.492  15.663  80.466  1.00  0.00              
+ATOM   3041 2HG  GLN A 184      48.778  15.562  80.000  1.00  0.00              
+ATOM   3042 1HE2 GLN A 184      48.775  12.857  82.274  1.00  0.00              
+ATOM   3043 2HE2 GLN A 184      48.425  14.541  82.067  1.00  0.00              
 ATOM   3044  N   ASN A 185      47.951  15.898  75.814  1.00  0.00              
 ATOM   3045  CA  ASN A 185      47.993  16.138  74.373  1.00  0.00              
 ATOM   3046  C   ASN A 185      48.638  17.489  74.115  1.00  0.00              
@@ -3827,9 +3827,9 @@ TER
 END
 SS: LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL
 SCORE_INFO:
-TOTAL_SCORE: -482.878
+TOTAL_SCORE: -482.165
 WTS:  fa_atr: 0.8 fa_rep: 0.44 fa_sol: 0.65 fa_intra_rep: 0.004 pro_close: 1 fa_pair: 0.49 hbond_sr_bb: 0.585 hbond_lr_bb: 1.17 hbond_bb_sc: 1.17 hbond_sc: 1.1 dslf_ss_dst: 0.5 dslf_cs_ang: 2 dslf_ss_dih: 5 dslf_ca_dih: 5 rama: 0.2 omega: 0.5 fa_dun: 0.56 p_aa_pp: 0.32 ref: 1
-TOTAL_WTD:  fa_atr:  -820.806 fa_rep:    81.084 fa_sol:   375.017 fa_intra_rep:     1.822 pro_close:     2.200 fa_pair:   -14.598 hbond_sr_bb:   -18.252 hbond_lr_bb:  -164.038 hbond_bb_sc:   -20.120 hbond_sc:   -13.608 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:    -4.743 omega:    41.167 fa_dun:   138.883 p_aa_pp:   -24.477 ref:   -42.410
+TOTAL_WTD:  fa_atr:  -824.050 fa_rep:    81.848 fa_sol:   378.290 fa_intra_rep:     1.819 pro_close:     2.200 fa_pair:   -15.698 hbond_sr_bb:   -18.252 hbond_lr_bb:  -164.038 hbond_bb_sc:   -20.120 hbond_sc:   -14.502 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:    -4.743 omega:    41.167 fa_dun:   140.801 p_aa_pp:   -24.477 ref:   -42.410
 RSD_WTD: 1  fa_atr:    -1.786 fa_rep:     0.056 fa_sol:     1.658 fa_intra_rep:     0.001 pro_close:     0.000 fa_pair:    -0.151 hbond_sr_bb:    -0.214 hbond_lr_bb:     0.000 hbond_bb_sc:     0.000 hbond_sc:     0.000 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:     0.000 omega:     0.000 fa_dun:     0.162 p_aa_pp:     0.000 ref:    -0.370
 RSD_WTD: 2  fa_atr:    -2.920 fa_rep:     0.335 fa_sol:     2.349 fa_intra_rep:     0.005 pro_close:     0.000 fa_pair:    -0.145 hbond_sr_bb:     0.000 hbond_lr_bb:     0.000 hbond_bb_sc:    -1.176 hbond_sc:     0.000 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:    -0.228 omega:     0.096 fa_dun:     0.714 p_aa_pp:    -0.025 ref:    -0.650
 RSD_WTD: 3  fa_atr:    -2.323 fa_rep:     0.260 fa_sol:     1.140 fa_intra_rep:     0.000 pro_close:     0.000 fa_pair:     0.000 hbond_sr_bb:    -0.245 hbond_lr_bb:     0.000 hbond_bb_sc:     0.000 hbond_sc:     0.000 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:    -0.241 omega:     0.028 fa_dun:     0.000 p_aa_pp:    -0.797 ref:    -0.170
@@ -3843,24 +3843,24 @@ RSD_WTD: 10  fa_atr:    -1.688 fa_rep:     0.434 fa_sol:     0.623 fa_intra_rep:
 RSD_WTD: 11  fa_atr:    -3.980 fa_rep:     0.553 fa_sol:     1.387 fa_intra_rep:     0.013 pro_close:     0.004 fa_pair:     0.000 hbond_sr_bb:     0.000 hbond_lr_bb:    -1.668 hbond_bb_sc:     0.000 hbond_sc:     0.000 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:    -0.219 omega:     0.041 fa_dun:     0.023 p_aa_pp:    -0.375 ref:     0.290
 RSD_WTD: 12  fa_atr:    -3.057 fa_rep:     0.431 fa_sol:     1.133 fa_intra_rep:     0.001 pro_close:     0.043 fa_pair:     0.000 hbond_sr_bb:     0.000 hbond_lr_bb:    -0.849 hbond_bb_sc:     0.000 hbond_sc:     0.000 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:    -0.272 omega:     0.060 fa_dun:     0.371 p_aa_pp:    -0.623 ref:     0.020
 RSD_WTD: 13  fa_atr:    -5.177 fa_rep:     0.486 fa_sol:     1.205 fa_intra_rep:     0.020 pro_close:     0.000 fa_pair:     0.000 hbond_sr_bb:     0.000 hbond_lr_bb:    -1.400 hbond_bb_sc:     0.000 hbond_sc:     0.000 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:    -0.132 omega:     0.013 fa_dun:     0.194 p_aa_pp:    -0.332 ref:     0.240
-RSD_WTD: 14  fa_atr:    -3.894 fa_rep:     0.329 fa_sol:     1.441 fa_intra_rep:     0.011 pro_close:     0.000 fa_pair:     0.000 hbond_sr_bb:     0.000 hbond_lr_bb:    -1.730 hbond_bb_sc:     0.000 hbond_sc:     0.000 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:     0.012 omega:     0.017 fa_dun:     0.515 p_aa_pp:    -0.040 ref:    -0.100
-RSD_WTD: 15  fa_atr:    -4.326 fa_rep:     0.196 fa_sol:     1.505 fa_intra_rep:     0.012 pro_close:     0.000 fa_pair:     0.000 hbond_sr_bb:     0.000 hbond_lr_bb:    -1.644 hbond_bb_sc:     0.000 hbond_sc:     0.000 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:    -0.196 omega:     0.012 fa_dun:     0.053 p_aa_pp:    -0.395 ref:     0.290
-RSD_WTD: 16  fa_atr:    -3.013 fa_rep:     0.113 fa_sol:     1.826 fa_intra_rep:     0.005 pro_close:     0.000 fa_pair:    -0.519 hbond_sr_bb:     0.000 hbond_lr_bb:    -1.546 hbond_bb_sc:     0.000 hbond_sc:     0.000 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:     0.045 omega:     0.023 fa_dun:     1.005 p_aa_pp:     0.118 ref:    -0.810
-RSD_WTD: 17  fa_atr:    -4.798 fa_rep:     0.431 fa_sol:     1.013 fa_intra_rep:     0.024 pro_close:     0.000 fa_pair:     0.000 hbond_sr_bb:     0.000 hbond_lr_bb:    -1.658 hbond_bb_sc:     0.000 hbond_sc:     0.000 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:     0.070 omega:     0.108 fa_dun:     1.537 p_aa_pp:    -0.036 ref:    -0.100
-RSD_WTD: 18  fa_atr:    -2.087 fa_rep:     0.108 fa_sol:     1.163 fa_intra_rep:     0.004 pro_close:     0.000 fa_pair:    -0.141 hbond_sr_bb:     0.000 hbond_lr_bb:    -1.582 hbond_bb_sc:     0.000 hbond_sc:     0.000 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:    -0.027 omega:     0.003 fa_dun:     0.971 p_aa_pp:     0.082 ref:    -0.650
-RSD_WTD: 19  fa_atr:    -2.779 fa_rep:     0.295 fa_sol:     1.231 fa_intra_rep:     0.000 pro_close:     0.000 fa_pair:     0.000 hbond_sr_bb:     0.000 hbond_lr_bb:    -1.689 hbond_bb_sc:     0.000 hbond_sc:     0.000 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:     0.411 omega:     0.005 fa_dun:     0.000 p_aa_pp:     0.214 ref:    -0.170
+RSD_WTD: 14  fa_atr:    -3.456 fa_rep:     0.329 fa_sol:     1.251 fa_intra_rep:     0.011 pro_close:     0.000 fa_pair:     0.000 hbond_sr_bb:     0.000 hbond_lr_bb:    -1.730 hbond_bb_sc:     0.000 hbond_sc:     0.000 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:     0.012 omega:     0.017 fa_dun:     0.515 p_aa_pp:    -0.040 ref:    -0.100
+RSD_WTD: 15  fa_atr:    -4.175 fa_rep:     0.185 fa_sol:     1.433 fa_intra_rep:     0.012 pro_close:     0.000 fa_pair:     0.000 hbond_sr_bb:     0.000 hbond_lr_bb:    -1.644 hbond_bb_sc:     0.000 hbond_sc:     0.000 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:    -0.196 omega:     0.012 fa_dun:     0.053 p_aa_pp:    -0.395 ref:     0.290
+RSD_WTD: 16  fa_atr:    -3.371 fa_rep:     0.170 fa_sol:     2.296 fa_intra_rep:     0.007 pro_close:     0.000 fa_pair:    -0.814 hbond_sr_bb:     0.000 hbond_lr_bb:    -1.546 hbond_bb_sc:     0.000 hbond_sc:    -0.020 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:     0.045 omega:     0.023 fa_dun:     0.951 p_aa_pp:     0.118 ref:    -0.810
+RSD_WTD: 17  fa_atr:    -4.908 fa_rep:     0.434 fa_sol:     1.000 fa_intra_rep:     0.024 pro_close:     0.000 fa_pair:     0.000 hbond_sr_bb:     0.000 hbond_lr_bb:    -1.658 hbond_bb_sc:     0.000 hbond_sc:     0.000 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:     0.070 omega:     0.108 fa_dun:     1.537 p_aa_pp:    -0.036 ref:    -0.100
+RSD_WTD: 18  fa_atr:    -2.402 fa_rep:     0.108 fa_sol:     1.572 fa_intra_rep:     0.003 pro_close:     0.000 fa_pair:    -0.292 hbond_sr_bb:     0.000 hbond_lr_bb:    -1.582 hbond_bb_sc:     0.000 hbond_sc:     0.000 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:    -0.027 omega:     0.003 fa_dun:     0.906 p_aa_pp:     0.082 ref:    -0.650
+RSD_WTD: 19  fa_atr:    -2.707 fa_rep:     0.294 fa_sol:     1.212 fa_intra_rep:     0.000 pro_close:     0.000 fa_pair:     0.000 hbond_sr_bb:     0.000 hbond_lr_bb:    -1.689 hbond_bb_sc:     0.000 hbond_sc:     0.000 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:     0.411 omega:     0.005 fa_dun:     0.000 p_aa_pp:     0.214 ref:    -0.170
 RSD_WTD: 20  fa_atr:    -3.824 fa_rep:     0.283 fa_sol:     1.648 fa_intra_rep:     0.007 pro_close:     0.000 fa_pair:    -0.055 hbond_sr_bb:     0.000 hbond_lr_bb:    -1.417 hbond_bb_sc:     0.000 hbond_sc:     0.000 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:     0.285 omega:     0.006 fa_dun:     1.459 p_aa_pp:    -0.097 ref:    -0.650
 RSD_WTD: 21  fa_atr:    -4.778 fa_rep:     0.694 fa_sol:     1.403 fa_intra_rep:     0.011 pro_close:     0.000 fa_pair:     0.000 hbond_sr_bb:    -0.713 hbond_lr_bb:     0.000 hbond_bb_sc:     0.000 hbond_sc:     0.000 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:    -0.152 omega:     0.026 fa_dun:     0.037 p_aa_pp:    -0.342 ref:     0.290
 RSD_WTD: 22  fa_atr:    -3.831 fa_rep:     0.284 fa_sol:     2.922 fa_intra_rep:     0.020 pro_close:     0.000 fa_pair:    -0.031 hbond_sr_bb:     0.000 hbond_lr_bb:    -0.816 hbond_bb_sc:    -1.171 hbond_sc:     0.000 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:    -0.299 omega:     0.023 fa_dun:     2.233 p_aa_pp:    -0.508 ref:    -0.890
 RSD_WTD: 23  fa_atr:    -1.479 fa_rep:     0.201 fa_sol:     0.662 fa_intra_rep:     0.000 pro_close:     0.000 fa_pair:     0.000 hbond_sr_bb:     0.000 hbond_lr_bb:     0.000 hbond_bb_sc:     0.000 hbond_sc:     0.000 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:    -0.405 omega:     0.001 fa_dun:     0.000 p_aa_pp:    -0.793 ref:    -0.170
 RSD_WTD: 24  fa_atr:    -4.046 fa_rep:     0.305 fa_sol:     1.802 fa_intra_rep:     0.003 pro_close:     0.000 fa_pair:    -0.012 hbond_sr_bb:    -0.713 hbond_lr_bb:     0.000 hbond_bb_sc:     0.000 hbond_sc:     0.000 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:     0.052 omega:     0.018 fa_dun:     0.626 p_aa_pp:    -0.092 ref:     0.560
-RSD_WTD: 25  fa_atr:    -2.049 fa_rep:     0.217 fa_sol:     0.854 fa_intra_rep:     0.003 pro_close:     0.000 fa_pair:    -0.163 hbond_sr_bb:     0.000 hbond_lr_bb:     0.000 hbond_bb_sc:     0.000 hbond_sc:     0.000 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:    -0.193 omega:     0.047 fa_dun:     0.788 p_aa_pp:    -0.010 ref:    -0.650
-RSD_WTD: 26  fa_atr:    -5.891 fa_rep:     0.543 fa_sol:     1.381 fa_intra_rep:     0.027 pro_close:     0.000 fa_pair:     0.000 hbond_sr_bb:     0.000 hbond_lr_bb:    -1.689 hbond_bb_sc:     0.000 hbond_sc:     0.000 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:    -0.080 omega:     0.042 fa_dun:     0.036 p_aa_pp:    -0.279 ref:     0.630
-RSD_WTD: 27  fa_atr:    -2.966 fa_rep:     0.146 fa_sol:     1.980 fa_intra_rep:     0.002 pro_close:     0.000 fa_pair:    -0.063 hbond_sr_bb:     0.000 hbond_lr_bb:    -0.800 hbond_bb_sc:    -0.203 hbond_sc:    -0.028 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:     0.024 omega:     0.011 fa_dun:     0.365 p_aa_pp:     0.077 ref:    -0.370
-RSD_WTD: 28  fa_atr:    -4.212 fa_rep:     0.166 fa_sol:     1.166 fa_intra_rep:     0.013 pro_close:     0.000 fa_pair:     0.000 hbond_sr_bb:     0.000 hbond_lr_bb:    -1.658 hbond_bb_sc:     0.000 hbond_sc:     0.000 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:    -0.198 omega:     0.029 fa_dun:     0.095 p_aa_pp:    -0.373 ref:     0.290
-RSD_WTD: 29  fa_atr:    -3.164 fa_rep:     0.154 fa_sol:     1.672 fa_intra_rep:     0.010 pro_close:     0.000 fa_pair:    -0.228 hbond_sr_bb:     0.000 hbond_lr_bb:    -1.614 hbond_bb_sc:     0.000 hbond_sc:     0.000 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:    -0.013 omega:     0.051 fa_dun:     1.632 p_aa_pp:     0.044 ref:    -0.980
-RSD_WTD: 30  fa_atr:    -2.549 fa_rep:     0.422 fa_sol:     1.275 fa_intra_rep:     0.000 pro_close:     0.000 fa_pair:     0.000 hbond_sr_bb:     0.000 hbond_lr_bb:    -1.644 hbond_bb_sc:     0.000 hbond_sc:     0.000 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:     0.941 omega:     0.009 fa_dun:     0.000 p_aa_pp:     0.463 ref:    -0.170
-RSD_WTD: 31  fa_atr:    -2.283 fa_rep:     0.129 fa_sol:     1.143 fa_intra_rep:     0.003 pro_close:     0.000 fa_pair:     0.016 hbond_sr_bb:     0.000 hbond_lr_bb:    -1.569 hbond_bb_sc:     0.000 hbond_sc:     0.000 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:    -0.036 omega:     0.156 fa_dun:     0.799 p_aa_pp:     0.017 ref:    -0.650
+RSD_WTD: 25  fa_atr:    -2.049 fa_rep:     0.217 fa_sol:     0.854 fa_intra_rep:     0.003 pro_close:     0.000 fa_pair:    -0.021 hbond_sr_bb:     0.000 hbond_lr_bb:     0.000 hbond_bb_sc:     0.000 hbond_sc:     0.000 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:    -0.193 omega:     0.047 fa_dun:     0.788 p_aa_pp:    -0.010 ref:    -0.650
+RSD_WTD: 26  fa_atr:    -5.934 fa_rep:     0.545 fa_sol:     1.464 fa_intra_rep:     0.027 pro_close:     0.000 fa_pair:     0.000 hbond_sr_bb:     0.000 hbond_lr_bb:    -1.689 hbond_bb_sc:     0.000 hbond_sc:     0.000 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:    -0.080 omega:     0.042 fa_dun:     0.036 p_aa_pp:    -0.279 ref:     0.630
+RSD_WTD: 27  fa_atr:    -2.988 fa_rep:     0.149 fa_sol:     1.973 fa_intra_rep:     0.001 pro_close:     0.000 fa_pair:    -0.121 hbond_sr_bb:     0.000 hbond_lr_bb:    -0.800 hbond_bb_sc:    -0.203 hbond_sc:     0.000 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:     0.024 omega:     0.011 fa_dun:     0.635 p_aa_pp:     0.077 ref:    -0.370
+RSD_WTD: 28  fa_atr:    -4.267 fa_rep:     0.172 fa_sol:     1.131 fa_intra_rep:     0.013 pro_close:     0.000 fa_pair:     0.000 hbond_sr_bb:     0.000 hbond_lr_bb:    -1.658 hbond_bb_sc:     0.000 hbond_sc:     0.000 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:    -0.198 omega:     0.029 fa_dun:     0.095 p_aa_pp:    -0.373 ref:     0.290
+RSD_WTD: 29  fa_atr:    -3.585 fa_rep:     0.360 fa_sol:     2.182 fa_intra_rep:     0.009 pro_close:     0.000 fa_pair:    -0.447 hbond_sr_bb:     0.000 hbond_lr_bb:    -1.614 hbond_bb_sc:     0.000 hbond_sc:    -0.020 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:    -0.013 omega:     0.051 fa_dun:     1.472 p_aa_pp:     0.044 ref:    -0.980
+RSD_WTD: 30  fa_atr:    -2.440 fa_rep:     0.419 fa_sol:     1.242 fa_intra_rep:     0.000 pro_close:     0.000 fa_pair:     0.000 hbond_sr_bb:     0.000 hbond_lr_bb:    -1.644 hbond_bb_sc:     0.000 hbond_sc:     0.000 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:     0.941 omega:     0.009 fa_dun:     0.000 p_aa_pp:     0.463 ref:    -0.170
+RSD_WTD: 31  fa_atr:    -2.077 fa_rep:     0.126 fa_sol:     1.019 fa_intra_rep:     0.003 pro_close:     0.000 fa_pair:     0.000 hbond_sr_bb:     0.000 hbond_lr_bb:    -1.569 hbond_bb_sc:     0.000 hbond_sc:     0.000 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:    -0.036 omega:     0.156 fa_dun:     0.799 p_aa_pp:     0.017 ref:    -0.650
 RSD_WTD: 32  fa_atr:    -2.018 fa_rep:     0.370 fa_sol:     1.026 fa_intra_rep:     0.000 pro_close:     0.000 fa_pair:     0.000 hbond_sr_bb:     0.000 hbond_lr_bb:    -1.400 hbond_bb_sc:     0.000 hbond_sc:     0.000 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:     0.611 omega:     0.109 fa_dun:     0.000 p_aa_pp:    -0.785 ref:    -0.170
 RSD_WTD: 33  fa_atr:    -3.033 fa_rep:     0.712 fa_sol:     1.221 fa_intra_rep:     0.003 pro_close:     0.000 fa_pair:     0.000 hbond_sr_bb:     0.000 hbond_lr_bb:    -1.579 hbond_bb_sc:     0.000 hbond_sc:     0.000 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:    -0.010 omega:     0.007 fa_dun:     0.977 p_aa_pp:     0.063 ref:    -0.650
 RSD_WTD: 34  fa_atr:    -2.541 fa_rep:     0.092 fa_sol:     1.197 fa_intra_rep:     0.000 pro_close:     0.000 fa_pair:     0.000 hbond_sr_bb:     0.000 hbond_lr_bb:    -1.668 hbond_bb_sc:     0.000 hbond_sc:     0.000 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:     0.614 omega:     0.007 fa_dun:     0.000 p_aa_pp:     0.378 ref:    -0.170
@@ -3875,10 +3875,10 @@ RSD_WTD: 42  fa_atr:    -2.117 fa_rep:     0.067 fa_sol:     1.402 fa_intra_rep:
 RSD_WTD: 43  fa_atr:    -4.396 fa_rep:     0.403 fa_sol:     1.179 fa_intra_rep:     0.005 pro_close:     0.000 fa_pair:     0.000 hbond_sr_bb:     0.000 hbond_lr_bb:    -1.674 hbond_bb_sc:     0.000 hbond_sc:     0.000 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:    -0.047 omega:     0.000 fa_dun:     0.263 p_aa_pp:     0.002 ref:    -0.100
 RSD_WTD: 44  fa_atr:    -3.058 fa_rep:     0.143 fa_sol:     1.755 fa_intra_rep:     0.003 pro_close:     0.000 fa_pair:    -0.123 hbond_sr_bb:     0.000 hbond_lr_bb:    -1.569 hbond_bb_sc:     0.000 hbond_sc:     0.000 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:     0.004 omega:     0.009 fa_dun:     0.895 p_aa_pp:     0.110 ref:    -0.650
 RSD_WTD: 45  fa_atr:    -6.634 fa_rep:     0.887 fa_sol:     1.274 fa_intra_rep:     0.022 pro_close:     0.000 fa_pair:     0.000 hbond_sr_bb:     0.000 hbond_lr_bb:    -1.559 hbond_bb_sc:     0.000 hbond_sc:     0.000 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:    -0.171 omega:     0.168 fa_dun:     0.186 p_aa_pp:    -0.162 ref:     0.630
-RSD_WTD: 46  fa_atr:    -3.670 fa_rep:     0.158 fa_sol:     1.712 fa_intra_rep:     0.020 pro_close:     0.000 fa_pair:     0.000 hbond_sr_bb:     0.000 hbond_lr_bb:    -1.614 hbond_bb_sc:     0.000 hbond_sc:     0.000 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:    -0.057 omega:     0.174 fa_dun:     0.326 p_aa_pp:    -0.067 ref:     0.240
+RSD_WTD: 46  fa_atr:    -3.658 fa_rep:     0.158 fa_sol:     1.720 fa_intra_rep:     0.020 pro_close:     0.000 fa_pair:     0.000 hbond_sr_bb:     0.000 hbond_lr_bb:    -1.614 hbond_bb_sc:     0.000 hbond_sc:     0.000 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:    -0.057 omega:     0.174 fa_dun:     0.326 p_aa_pp:    -0.067 ref:     0.240
 RSD_WTD: 47  fa_atr:    -3.804 fa_rep:     0.152 fa_sol:     1.970 fa_intra_rep:     0.001 pro_close:     0.000 fa_pair:     0.000 hbond_sr_bb:     0.000 hbond_lr_bb:    -0.866 hbond_bb_sc:     0.000 hbond_sc:     0.000 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:    -0.152 omega:     0.081 fa_dun:     0.313 p_aa_pp:    -0.026 ref:     1.700
-RSD_WTD: 48  fa_atr:    -2.399 fa_rep:     0.072 fa_sol:     1.502 fa_intra_rep:     0.005 pro_close:     0.000 fa_pair:    -0.065 hbond_sr_bb:     0.000 hbond_lr_bb:    -0.800 hbond_bb_sc:     0.000 hbond_sc:    -0.028 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:    -0.178 omega:     0.002 fa_dun:     0.006 p_aa_pp:    -0.081 ref:    -0.270
-RSD_WTD: 49  fa_atr:    -2.104 fa_rep:     0.185 fa_sol:     1.467 fa_intra_rep:     0.005 pro_close:     0.000 fa_pair:    -0.104 hbond_sr_bb:     0.000 hbond_lr_bb:     0.000 hbond_bb_sc:    -0.203 hbond_sc:     0.000 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:    -0.069 omega:     0.002 fa_dun:     0.006 p_aa_pp:    -0.193 ref:    -0.270
+RSD_WTD: 48  fa_atr:    -2.541 fa_rep:     0.212 fa_sol:     1.540 fa_intra_rep:     0.005 pro_close:     0.000 fa_pair:    -0.090 hbond_sr_bb:     0.000 hbond_lr_bb:    -0.800 hbond_bb_sc:     0.000 hbond_sc:     0.000 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:    -0.178 omega:     0.002 fa_dun:     0.006 p_aa_pp:    -0.081 ref:    -0.270
+RSD_WTD: 49  fa_atr:    -2.150 fa_rep:     0.188 fa_sol:     1.528 fa_intra_rep:     0.005 pro_close:     0.000 fa_pair:    -0.141 hbond_sr_bb:     0.000 hbond_lr_bb:     0.000 hbond_bb_sc:    -0.203 hbond_sc:     0.000 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:    -0.069 omega:     0.002 fa_dun:     0.006 p_aa_pp:    -0.193 ref:    -0.270
 RSD_WTD: 50  fa_atr:    -1.328 fa_rep:     0.109 fa_sol:     0.943 fa_intra_rep:     0.000 pro_close:     0.000 fa_pair:     0.000 hbond_sr_bb:     0.000 hbond_lr_bb:     0.000 hbond_bb_sc:     0.000 hbond_sc:     0.000 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:     0.392 omega:     0.040 fa_dun:     0.000 p_aa_pp:    -0.811 ref:    -0.170
 RSD_WTD: 51  fa_atr:    -1.585 fa_rep:     0.052 fa_sol:     0.929 fa_intra_rep:     0.005 pro_close:     0.000 fa_pair:    -0.042 hbond_sr_bb:     0.000 hbond_lr_bb:     0.000 hbond_bb_sc:     0.000 hbond_sc:     0.000 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:    -0.239 omega:     0.000 fa_dun:     0.764 p_aa_pp:    -0.034 ref:    -0.650
 RSD_WTD: 52  fa_atr:    -5.243 fa_rep:     0.808 fa_sol:     1.574 fa_intra_rep:     0.007 pro_close:     0.003 fa_pair:     0.000 hbond_sr_bb:     0.000 hbond_lr_bb:     0.000 hbond_bb_sc:    -1.358 hbond_sc:     0.000 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:    -0.186 omega:     0.000 fa_dun:     0.392 p_aa_pp:    -0.051 ref:    -0.100
@@ -3886,7 +3886,7 @@ RSD_WTD: 53  fa_atr:    -3.264 fa_rep:     0.493 fa_sol:     0.929 fa_intra_rep:
 RSD_WTD: 54  fa_atr:    -4.341 fa_rep:     0.566 fa_sol:     1.336 fa_intra_rep:     0.014 pro_close:     0.002 fa_pair:     0.000 hbond_sr_bb:     0.000 hbond_lr_bb:     0.000 hbond_bb_sc:     0.000 hbond_sc:     0.000 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:    -0.136 omega:     0.037 fa_dun:     0.077 p_aa_pp:    -0.197 ref:     0.290
 RSD_WTD: 55  fa_atr:    -4.388 fa_rep:     0.837 fa_sol:     1.234 fa_intra_rep:     0.001 pro_close:     0.226 fa_pair:     0.000 hbond_sr_bb:    -0.061 hbond_lr_bb:     0.000 hbond_bb_sc:     0.000 hbond_sc:     0.000 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:    -0.300 omega:     0.174 fa_dun:     0.675 p_aa_pp:    -0.575 ref:     0.020
 RSD_WTD: 56  fa_atr:    -8.672 fa_rep:     1.006 fa_sol:     2.607 fa_intra_rep:     0.020 pro_close:     0.001 fa_pair:     0.000 hbond_sr_bb:    -0.366 hbond_lr_bb:     0.000 hbond_bb_sc:     0.000 hbond_sc:    -0.683 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:    -0.110 omega:     0.084 fa_dun:     1.033 p_aa_pp:    -0.026 ref:     0.910
-RSD_WTD: 57  fa_atr:    -4.113 fa_rep:     0.767 fa_sol:     1.269 fa_intra_rep:     0.001 pro_close:     0.298 fa_pair:     0.000 hbond_sr_bb:    -0.213 hbond_lr_bb:     0.000 hbond_bb_sc:     0.000 hbond_sc:     0.000 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:     0.059 omega:     0.016 fa_dun:     0.133 p_aa_pp:    -0.383 ref:     0.020
+RSD_WTD: 57  fa_atr:    -4.110 fa_rep:     0.767 fa_sol:     1.261 fa_intra_rep:     0.001 pro_close:     0.298 fa_pair:     0.000 hbond_sr_bb:    -0.213 hbond_lr_bb:     0.000 hbond_bb_sc:     0.000 hbond_sc:     0.000 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:     0.059 omega:     0.016 fa_dun:     0.133 p_aa_pp:    -0.383 ref:     0.020
 RSD_WTD: 58  fa_atr:    -3.996 fa_rep:     0.509 fa_sol:     2.095 fa_intra_rep:     0.004 pro_close:     0.000 fa_pair:    -0.001 hbond_sr_bb:    -0.061 hbond_lr_bb:     0.000 hbond_bb_sc:     0.000 hbond_sc:    -0.116 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:    -0.162 omega:     0.067 fa_dun:     0.062 p_aa_pp:     0.060 ref:    -0.270
 RSD_WTD: 59  fa_atr:    -4.824 fa_rep:     0.485 fa_sol:     1.371 fa_intra_rep:     0.007 pro_close:     0.000 fa_pair:     0.000 hbond_sr_bb:    -0.758 hbond_lr_bb:     0.000 hbond_bb_sc:     0.000 hbond_sc:     0.000 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:    -0.127 omega:     0.004 fa_dun:     0.075 p_aa_pp:    -0.021 ref:    -0.100
 RSD_WTD: 60  fa_atr:    -3.933 fa_rep:     0.243 fa_sol:     0.950 fa_intra_rep:     0.018 pro_close:     0.000 fa_pair:     0.000 hbond_sr_bb:    -0.232 hbond_lr_bb:     0.000 hbond_bb_sc:     0.000 hbond_sc:     0.000 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:    -0.053 omega:     0.039 fa_dun:     0.058 p_aa_pp:     0.031 ref:     0.290
@@ -3920,9 +3920,9 @@ RSD_WTD: 87  fa_atr:    -3.222 fa_rep:     0.385 fa_sol:     1.449 fa_intra_rep:
 RSD_WTD: 88  fa_atr:    -7.284 fa_rep:     0.399 fa_sol:     2.702 fa_intra_rep:     0.025 pro_close:     0.000 fa_pair:     0.000 hbond_sr_bb:     0.000 hbond_lr_bb:    -1.625 hbond_bb_sc:     0.000 hbond_sc:     0.000 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:    -0.135 omega:     0.007 fa_dun:     0.400 p_aa_pp:    -0.243 ref:     0.510
 RSD_WTD: 89  fa_atr:    -3.967 fa_rep:     0.191 fa_sol:     1.890 fa_intra_rep:     0.009 pro_close:     0.000 fa_pair:     0.000 hbond_sr_bb:     0.000 hbond_lr_bb:    -1.639 hbond_bb_sc:     0.000 hbond_sc:     0.000 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:    -0.205 omega:     0.002 fa_dun:     0.022 p_aa_pp:    -0.277 ref:     0.290
 RSD_WTD: 90  fa_atr:    -5.048 fa_rep:     0.253 fa_sol:     4.090 fa_intra_rep:     0.005 pro_close:     0.000 fa_pair:    -0.264 hbond_sr_bb:     0.000 hbond_lr_bb:    -1.570 hbond_bb_sc:     0.000 hbond_sc:    -0.749 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:     0.032 omega:     0.001 fa_dun:     1.475 p_aa_pp:     0.099 ref:    -0.970
-RSD_WTD: 91  fa_atr:    -3.250 fa_rep:     0.192 fa_sol:     1.674 fa_intra_rep:     0.003 pro_close:     0.000 fa_pair:    -0.009 hbond_sr_bb:     0.000 hbond_lr_bb:    -1.669 hbond_bb_sc:     0.000 hbond_sc:     0.000 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:    -0.049 omega:     0.003 fa_dun:     0.831 p_aa_pp:     0.126 ref:    -0.650
-RSD_WTD: 92  fa_atr:    -6.627 fa_rep:     0.360 fa_sol:     5.109 fa_intra_rep:     0.014 pro_close:     0.000 fa_pair:    -0.152 hbond_sr_bb:     0.000 hbond_lr_bb:    -1.516 hbond_bb_sc:    -0.656 hbond_sc:    -1.003 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:    -0.137 omega:     0.258 fa_dun:     2.783 p_aa_pp:    -0.077 ref:    -0.980
-RSD_WTD: 93  fa_atr:    -2.556 fa_rep:     0.060 fa_sol:     1.286 fa_intra_rep:     0.005 pro_close:     0.000 fa_pair:    -0.033 hbond_sr_bb:     0.000 hbond_lr_bb:    -1.623 hbond_bb_sc:     0.000 hbond_sc:     0.000 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:     0.042 omega:     0.010 fa_dun:     0.032 p_aa_pp:    -0.038 ref:    -0.270
+RSD_WTD: 91  fa_atr:    -3.428 fa_rep:     0.192 fa_sol:     1.901 fa_intra_rep:     0.003 pro_close:     0.000 fa_pair:     0.008 hbond_sr_bb:     0.000 hbond_lr_bb:    -1.669 hbond_bb_sc:     0.000 hbond_sc:     0.000 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:    -0.049 omega:     0.003 fa_dun:     0.831 p_aa_pp:     0.126 ref:    -0.650
+RSD_WTD: 92  fa_atr:    -6.658 fa_rep:     0.360 fa_sol:     5.173 fa_intra_rep:     0.014 pro_close:     0.000 fa_pair:    -0.152 hbond_sr_bb:     0.000 hbond_lr_bb:    -1.516 hbond_bb_sc:    -0.656 hbond_sc:    -1.003 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:    -0.137 omega:     0.258 fa_dun:     2.783 p_aa_pp:    -0.077 ref:    -0.980
+RSD_WTD: 93  fa_atr:    -2.562 fa_rep:     0.060 fa_sol:     1.305 fa_intra_rep:     0.005 pro_close:     0.000 fa_pair:    -0.059 hbond_sr_bb:     0.000 hbond_lr_bb:    -1.623 hbond_bb_sc:     0.000 hbond_sc:     0.000 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:     0.042 omega:     0.010 fa_dun:     0.032 p_aa_pp:    -0.038 ref:    -0.270
 RSD_WTD: 94  fa_atr:    -5.401 fa_rep:     0.434 fa_sol:     1.956 fa_intra_rep:     0.015 pro_close:     0.000 fa_pair:     0.000 hbond_sr_bb:     0.000 hbond_lr_bb:    -1.681 hbond_bb_sc:     0.000 hbond_sc:     0.000 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:    -0.101 omega:     0.047 fa_dun:     0.182 p_aa_pp:    -0.338 ref:     0.240
 RSD_WTD: 95  fa_atr:    -2.635 fa_rep:     0.030 fa_sol:     1.451 fa_intra_rep:     0.002 pro_close:     0.000 fa_pair:    -0.008 hbond_sr_bb:     0.000 hbond_lr_bb:    -1.552 hbond_bb_sc:     0.000 hbond_sc:     0.000 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:     0.048 omega:     0.043 fa_dun:     0.360 p_aa_pp:     0.216 ref:    -0.370
 RSD_WTD: 96  fa_atr:    -6.730 fa_rep:     0.404 fa_sol:     1.897 fa_intra_rep:     0.022 pro_close:     0.000 fa_pair:     0.000 hbond_sr_bb:    -0.531 hbond_lr_bb:     0.000 hbond_bb_sc:     0.000 hbond_sc:     0.000 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:    -0.155 omega:     0.001 fa_dun:     0.315 p_aa_pp:    -0.075 ref:     0.630
@@ -3940,15 +3940,15 @@ RSD_WTD: 107  fa_atr:    -3.464 fa_rep:     0.139 fa_sol:     2.215 fa_intra_rep
 RSD_WTD: 108  fa_atr:    -4.428 fa_rep:     0.336 fa_sol:     1.691 fa_intra_rep:     0.011 pro_close:     0.000 fa_pair:     0.000 hbond_sr_bb:     0.000 hbond_lr_bb:    -1.625 hbond_bb_sc:     0.000 hbond_sc:     0.000 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:    -0.180 omega:     0.180 fa_dun:     0.081 p_aa_pp:    -0.327 ref:     0.290
 RSD_WTD: 109  fa_atr:    -4.038 fa_rep:     0.171 fa_sol:     2.029 fa_intra_rep:     0.009 pro_close:     0.000 fa_pair:    -0.444 hbond_sr_bb:     0.000 hbond_lr_bb:    -1.672 hbond_bb_sc:     0.000 hbond_sc:     0.000 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:     0.085 omega:     0.089 fa_dun:     1.365 p_aa_pp:     0.129 ref:    -0.650
 RSD_WTD: 110  fa_atr:    -6.214 fa_rep:     0.381 fa_sol:     1.251 fa_intra_rep:     0.021 pro_close:     0.000 fa_pair:     0.000 hbond_sr_bb:     0.000 hbond_lr_bb:    -0.713 hbond_bb_sc:     0.000 hbond_sc:     0.000 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:    -0.203 omega:     0.080 fa_dun:     0.943 p_aa_pp:    -0.071 ref:     0.630
-RSD_WTD: 111  fa_atr:    -2.333 fa_rep:     0.026 fa_sol:     1.213 fa_intra_rep:     0.004 pro_close:     0.000 fa_pair:    -0.283 hbond_sr_bb:    -0.454 hbond_lr_bb:     0.000 hbond_bb_sc:     0.000 hbond_sc:     0.000 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:     0.192 omega:     0.060 fa_dun:     0.692 p_aa_pp:     0.106 ref:    -0.650
+RSD_WTD: 111  fa_atr:    -2.333 fa_rep:     0.026 fa_sol:     1.213 fa_intra_rep:     0.004 pro_close:     0.000 fa_pair:    -0.237 hbond_sr_bb:    -0.454 hbond_lr_bb:     0.000 hbond_bb_sc:     0.000 hbond_sc:     0.000 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:     0.192 omega:     0.060 fa_dun:     0.692 p_aa_pp:     0.106 ref:    -0.650
 RSD_WTD: 112  fa_atr:    -1.064 fa_rep:     0.077 fa_sol:     0.603 fa_intra_rep:     0.000 pro_close:     0.000 fa_pair:     0.000 hbond_sr_bb:     0.000 hbond_lr_bb:     0.000 hbond_bb_sc:     0.000 hbond_sc:     0.000 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:     0.126 omega:     0.000 fa_dun:     0.000 p_aa_pp:    -0.792 ref:    -0.170
 RSD_WTD: 113  fa_atr:    -1.347 fa_rep:     0.063 fa_sol:     0.708 fa_intra_rep:     0.004 pro_close:     0.000 fa_pair:     0.000 hbond_sr_bb:     0.000 hbond_lr_bb:     0.000 hbond_bb_sc:     0.000 hbond_sc:     0.000 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:    -0.189 omega:     0.000 fa_dun:     0.615 p_aa_pp:    -0.070 ref:    -0.650
 RSD_WTD: 114  fa_atr:    -3.872 fa_rep:     0.188 fa_sol:     1.669 fa_intra_rep:     0.011 pro_close:     0.000 fa_pair:     0.000 hbond_sr_bb:    -0.454 hbond_lr_bb:     0.000 hbond_bb_sc:     0.000 hbond_sc:     0.000 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:    -0.049 omega:     0.000 fa_dun:     0.091 p_aa_pp:    -0.039 ref:    -0.270
 RSD_WTD: 115  fa_atr:    -5.448 fa_rep:     0.231 fa_sol:     1.345 fa_intra_rep:     0.015 pro_close:     0.000 fa_pair:     0.000 hbond_sr_bb:     0.000 hbond_lr_bb:    -1.710 hbond_bb_sc:     0.000 hbond_sc:     0.000 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:    -0.094 omega:     0.092 fa_dun:     2.663 p_aa_pp:    -0.096 ref:    -0.100
-RSD_WTD: 116  fa_atr:    -4.376 fa_rep:     0.435 fa_sol:     1.715 fa_intra_rep:     0.010 pro_close:     0.000 fa_pair:     0.000 hbond_sr_bb:     0.000 hbond_lr_bb:    -1.672 hbond_bb_sc:     0.000 hbond_sc:     0.000 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:    -0.195 omega:     0.000 fa_dun:     0.209 p_aa_pp:    -0.359 ref:     0.290
-RSD_WTD: 117  fa_atr:    -4.724 fa_rep:     0.238 fa_sol:     3.341 fa_intra_rep:     0.008 pro_close:     0.000 fa_pair:    -0.026 hbond_sr_bb:     0.000 hbond_lr_bb:    -1.734 hbond_bb_sc:    -0.341 hbond_sc:     0.000 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:    -0.006 omega:     0.004 fa_dun:     0.928 p_aa_pp:    -0.091 ref:    -0.890
-RSD_WTD: 118  fa_atr:    -2.589 fa_rep:     0.173 fa_sol:     1.658 fa_intra_rep:     0.008 pro_close:     0.000 fa_pair:    -0.170 hbond_sr_bb:     0.000 hbond_lr_bb:    -1.663 hbond_bb_sc:     0.000 hbond_sc:     0.000 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:    -0.018 omega:     0.337 fa_dun:     1.274 p_aa_pp:     0.051 ref:    -0.980
-RSD_WTD: 119  fa_atr:    -5.408 fa_rep:     0.556 fa_sol:     1.761 fa_intra_rep:     0.023 pro_close:     0.000 fa_pair:     0.000 hbond_sr_bb:     0.000 hbond_lr_bb:    -1.549 hbond_bb_sc:     0.000 hbond_sc:     0.000 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:    -0.115 omega:     0.110 fa_dun:     0.441 p_aa_pp:    -0.247 ref:     0.240
+RSD_WTD: 116  fa_atr:    -4.367 fa_rep:     0.435 fa_sol:     1.714 fa_intra_rep:     0.010 pro_close:     0.000 fa_pair:     0.000 hbond_sr_bb:     0.000 hbond_lr_bb:    -1.672 hbond_bb_sc:     0.000 hbond_sc:     0.000 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:    -0.195 omega:     0.000 fa_dun:     0.209 p_aa_pp:    -0.359 ref:     0.290
+RSD_WTD: 117  fa_atr:    -4.718 fa_rep:     0.238 fa_sol:     3.334 fa_intra_rep:     0.008 pro_close:     0.000 fa_pair:    -0.026 hbond_sr_bb:     0.000 hbond_lr_bb:    -1.734 hbond_bb_sc:    -0.341 hbond_sc:     0.000 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:    -0.006 omega:     0.004 fa_dun:     0.928 p_aa_pp:    -0.091 ref:    -0.890
+RSD_WTD: 118  fa_atr:    -2.694 fa_rep:     0.173 fa_sol:     1.814 fa_intra_rep:     0.008 pro_close:     0.000 fa_pair:    -0.327 hbond_sr_bb:     0.000 hbond_lr_bb:    -1.663 hbond_bb_sc:     0.000 hbond_sc:     0.000 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:    -0.018 omega:     0.337 fa_dun:     1.274 p_aa_pp:     0.051 ref:    -0.980
+RSD_WTD: 119  fa_atr:    -5.425 fa_rep:     0.556 fa_sol:     1.777 fa_intra_rep:     0.023 pro_close:     0.000 fa_pair:     0.000 hbond_sr_bb:     0.000 hbond_lr_bb:    -1.549 hbond_bb_sc:     0.000 hbond_sc:     0.000 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:    -0.115 omega:     0.110 fa_dun:     0.441 p_aa_pp:    -0.247 ref:     0.240
 RSD_WTD: 120  fa_atr:    -2.326 fa_rep:     0.232 fa_sol:     1.360 fa_intra_rep:     0.003 pro_close:     0.000 fa_pair:    -0.085 hbond_sr_bb:     0.000 hbond_lr_bb:    -1.658 hbond_bb_sc:     0.000 hbond_sc:     0.000 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:     0.058 omega:     0.002 fa_dun:     0.898 p_aa_pp:     0.154 ref:    -0.650
 RSD_WTD: 121  fa_atr:    -4.262 fa_rep:     0.481 fa_sol:     0.857 fa_intra_rep:     0.023 pro_close:     0.000 fa_pair:     0.000 hbond_sr_bb:     0.000 hbond_lr_bb:    -1.393 hbond_bb_sc:     0.000 hbond_sc:     0.000 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:     0.046 omega:     0.054 fa_dun:     1.750 p_aa_pp:    -0.048 ref:    -0.100
 RSD_WTD: 122  fa_atr:    -2.652 fa_rep:     0.130 fa_sol:     1.315 fa_intra_rep:     0.005 pro_close:     0.000 fa_pair:    -0.044 hbond_sr_bb:     0.000 hbond_lr_bb:    -1.671 hbond_bb_sc:     0.000 hbond_sc:     0.000 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:     0.056 omega:     0.002 fa_dun:     0.855 p_aa_pp:     0.106 ref:    -0.650
@@ -3965,53 +3965,53 @@ RSD_WTD: 132  fa_atr:    -5.117 fa_rep:     0.724 fa_sol:     1.318 fa_intra_rep
 RSD_WTD: 133  fa_atr:    -3.376 fa_rep:     0.248 fa_sol:     1.146 fa_intra_rep:     0.008 pro_close:     0.000 fa_pair:     0.000 hbond_sr_bb:     0.000 hbond_lr_bb:     0.000 hbond_bb_sc:     0.000 hbond_sc:     0.000 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:    -0.157 omega:     0.005 fa_dun:     0.099 p_aa_pp:    -0.027 ref:    -0.100
 RSD_WTD: 134  fa_atr:    -2.256 fa_rep:     0.440 fa_sol:     1.099 fa_intra_rep:     0.000 pro_close:     0.000 fa_pair:     0.000 hbond_sr_bb:    -0.287 hbond_lr_bb:     0.000 hbond_bb_sc:     0.000 hbond_sc:     0.000 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:    -0.008 omega:     0.003 fa_dun:     0.000 p_aa_pp:     0.202 ref:    -0.170
 RSD_WTD: 135  fa_atr:    -4.641 fa_rep:     0.465 fa_sol:     2.461 fa_intra_rep:     0.004 pro_close:     0.000 fa_pair:    -0.035 hbond_sr_bb:    -0.278 hbond_lr_bb:     0.000 hbond_bb_sc:    -0.673 hbond_sc:     0.000 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:    -0.111 omega:     0.077 fa_dun:     0.883 p_aa_pp:    -0.316 ref:     0.560
-RSD_WTD: 136  fa_atr:    -4.774 fa_rep:     0.299 fa_sol:     3.000 fa_intra_rep:     0.005 pro_close:     0.000 fa_pair:    -0.301 hbond_sr_bb:     0.000 hbond_lr_bb:    -1.431 hbond_bb_sc:    -0.119 hbond_sc:     0.000 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:    -0.158 omega:     0.014 fa_dun:     0.674 p_aa_pp:    -0.052 ref:    -0.650
-RSD_WTD: 137  fa_atr:    -3.917 fa_rep:     0.422 fa_sol:     0.969 fa_intra_rep:     0.008 pro_close:     0.000 fa_pair:     0.000 hbond_sr_bb:     0.000 hbond_lr_bb:     0.000 hbond_bb_sc:     0.000 hbond_sc:     0.000 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:    -0.211 omega:     0.021 fa_dun:     0.176 p_aa_pp:    -0.141 ref:    -0.100
-RSD_WTD: 138  fa_atr:    -3.071 fa_rep:     0.391 fa_sol:     2.137 fa_intra_rep:     0.005 pro_close:     0.000 fa_pair:    -0.103 hbond_sr_bb:    -0.273 hbond_lr_bb:    -0.858 hbond_bb_sc:     0.000 hbond_sc:     0.000 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:    -0.199 omega:     0.011 fa_dun:     1.125 p_aa_pp:    -0.005 ref:    -0.650
-RSD_WTD: 139  fa_atr:    -4.627 fa_rep:     0.399 fa_sol:     1.775 fa_intra_rep:     0.027 pro_close:     0.000 fa_pair:     0.000 hbond_sr_bb:     0.000 hbond_lr_bb:     0.000 hbond_bb_sc:     0.000 hbond_sc:     0.000 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:     0.255 omega:     0.065 fa_dun:     0.507 p_aa_pp:    -0.008 ref:     0.510
-RSD_WTD: 140  fa_atr:    -3.271 fa_rep:     0.441 fa_sol:     2.462 fa_intra_rep:     0.014 pro_close:     0.000 fa_pair:    -0.188 hbond_sr_bb:    -0.273 hbond_lr_bb:     0.000 hbond_bb_sc:     0.000 hbond_sc:     0.000 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:     0.059 omega:     0.000 fa_dun:     0.747 p_aa_pp:    -0.263 ref:    -0.890
-RSD_WTD: 141  fa_atr:    -4.624 fa_rep:     0.604 fa_sol:     1.135 fa_intra_rep:     0.022 pro_close:     0.000 fa_pair:     0.000 hbond_sr_bb:     0.000 hbond_lr_bb:     0.000 hbond_bb_sc:     0.000 hbond_sc:     0.000 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:     0.211 omega:     0.075 fa_dun:     0.841 p_aa_pp:    -0.126 ref:     0.630
-RSD_WTD: 142  fa_atr:    -2.673 fa_rep:     0.371 fa_sol:     1.728 fa_intra_rep:     0.003 pro_close:     0.000 fa_pair:    -0.068 hbond_sr_bb:     0.000 hbond_lr_bb:     0.000 hbond_bb_sc:     0.000 hbond_sc:     0.000 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:    -0.075 omega:     0.000 fa_dun:     0.649 p_aa_pp:     0.144 ref:    -0.650
-RSD_WTD: 143  fa_atr:    -1.857 fa_rep:     0.093 fa_sol:     1.193 fa_intra_rep:     0.001 pro_close:     0.000 fa_pair:    -0.131 hbond_sr_bb:     0.000 hbond_lr_bb:     0.000 hbond_bb_sc:     0.000 hbond_sc:     0.000 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:    -0.119 omega:     0.103 fa_dun:     0.442 p_aa_pp:     0.039 ref:    -0.370
-RSD_WTD: 144  fa_atr:    -5.776 fa_rep:     0.763 fa_sol:     2.795 fa_intra_rep:     0.003 pro_close:     0.000 fa_pair:    -0.030 hbond_sr_bb:     0.000 hbond_lr_bb:    -1.617 hbond_bb_sc:    -0.029 hbond_sc:     0.000 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:     0.056 omega:     0.002 fa_dun:     0.858 p_aa_pp:    -0.123 ref:     0.560
+RSD_WTD: 136  fa_atr:    -4.785 fa_rep:     0.299 fa_sol:     3.010 fa_intra_rep:     0.005 pro_close:     0.000 fa_pair:    -0.301 hbond_sr_bb:     0.000 hbond_lr_bb:    -1.431 hbond_bb_sc:    -0.119 hbond_sc:     0.000 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:    -0.158 omega:     0.014 fa_dun:     0.674 p_aa_pp:    -0.052 ref:    -0.650
+RSD_WTD: 137  fa_atr:    -3.948 fa_rep:     0.422 fa_sol:     0.972 fa_intra_rep:     0.008 pro_close:     0.000 fa_pair:     0.000 hbond_sr_bb:     0.000 hbond_lr_bb:     0.000 hbond_bb_sc:     0.000 hbond_sc:     0.000 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:    -0.211 omega:     0.021 fa_dun:     0.176 p_aa_pp:    -0.141 ref:    -0.100
+RSD_WTD: 138  fa_atr:    -3.199 fa_rep:     0.354 fa_sol:     1.854 fa_intra_rep:     0.006 pro_close:     0.000 fa_pair:    -0.096 hbond_sr_bb:    -0.273 hbond_lr_bb:    -0.858 hbond_bb_sc:     0.000 hbond_sc:     0.000 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:    -0.199 omega:     0.011 fa_dun:     2.093 p_aa_pp:    -0.005 ref:    -0.650
+RSD_WTD: 139  fa_atr:    -4.538 fa_rep:     0.370 fa_sol:     1.782 fa_intra_rep:     0.027 pro_close:     0.000 fa_pair:     0.000 hbond_sr_bb:     0.000 hbond_lr_bb:     0.000 hbond_bb_sc:     0.000 hbond_sc:     0.000 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:     0.255 omega:     0.065 fa_dun:     0.507 p_aa_pp:    -0.008 ref:     0.510
+RSD_WTD: 140  fa_atr:    -3.326 fa_rep:     0.425 fa_sol:     2.696 fa_intra_rep:     0.009 pro_close:     0.000 fa_pair:    -0.173 hbond_sr_bb:    -0.273 hbond_lr_bb:     0.000 hbond_bb_sc:     0.000 hbond_sc:    -0.455 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:     0.059 omega:     0.000 fa_dun:     0.354 p_aa_pp:    -0.263 ref:    -0.890
+RSD_WTD: 141  fa_atr:    -4.637 fa_rep:     0.602 fa_sol:     1.164 fa_intra_rep:     0.022 pro_close:     0.000 fa_pair:     0.000 hbond_sr_bb:     0.000 hbond_lr_bb:     0.000 hbond_bb_sc:     0.000 hbond_sc:     0.000 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:     0.211 omega:     0.075 fa_dun:     0.841 p_aa_pp:    -0.126 ref:     0.630
+RSD_WTD: 142  fa_atr:    -2.859 fa_rep:     0.378 fa_sol:     1.835 fa_intra_rep:     0.008 pro_close:     0.000 fa_pair:    -0.027 hbond_sr_bb:     0.000 hbond_lr_bb:     0.000 hbond_bb_sc:     0.000 hbond_sc:     0.000 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:    -0.075 omega:     0.000 fa_dun:     1.630 p_aa_pp:     0.144 ref:    -0.650
+RSD_WTD: 143  fa_atr:    -1.870 fa_rep:     0.093 fa_sol:     1.204 fa_intra_rep:     0.001 pro_close:     0.000 fa_pair:    -0.131 hbond_sr_bb:     0.000 hbond_lr_bb:     0.000 hbond_bb_sc:     0.000 hbond_sc:     0.000 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:    -0.119 omega:     0.103 fa_dun:     0.442 p_aa_pp:     0.039 ref:    -0.370
+RSD_WTD: 144  fa_atr:    -5.811 fa_rep:     0.770 fa_sol:     2.814 fa_intra_rep:     0.003 pro_close:     0.000 fa_pair:    -0.014 hbond_sr_bb:     0.000 hbond_lr_bb:    -1.617 hbond_bb_sc:    -0.029 hbond_sc:     0.000 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:     0.056 omega:     0.002 fa_dun:     0.858 p_aa_pp:    -0.123 ref:     0.560
 RSD_WTD: 145  fa_atr:    -2.850 fa_rep:     0.117 fa_sol:     1.276 fa_intra_rep:     0.003 pro_close:     0.000 fa_pair:     0.033 hbond_sr_bb:     0.000 hbond_lr_bb:     0.000 hbond_bb_sc:     0.000 hbond_sc:     0.000 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:    -0.010 omega:     0.005 fa_dun:     0.909 p_aa_pp:     0.058 ref:    -0.650
 RSD_WTD: 146  fa_atr:    -4.443 fa_rep:     0.496 fa_sol:     1.449 fa_intra_rep:     0.011 pro_close:     0.000 fa_pair:     0.000 hbond_sr_bb:     0.000 hbond_lr_bb:    -1.553 hbond_bb_sc:     0.000 hbond_sc:     0.000 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:    -0.180 omega:     0.038 fa_dun:     0.069 p_aa_pp:    -0.312 ref:     0.290
 RSD_WTD: 147  fa_atr:    -4.480 fa_rep:     0.285 fa_sol:     1.730 fa_intra_rep:     0.023 pro_close:     0.000 fa_pair:     0.000 hbond_sr_bb:     0.000 hbond_lr_bb:    -1.432 hbond_bb_sc:     0.000 hbond_sc:     0.000 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:    -0.093 omega:     0.332 fa_dun:     0.401 p_aa_pp:    -0.059 ref:     0.510
 RSD_WTD: 148  fa_atr:    -4.817 fa_rep:     0.339 fa_sol:     1.598 fa_intra_rep:     0.019 pro_close:     0.000 fa_pair:     0.000 hbond_sr_bb:     0.000 hbond_lr_bb:    -1.569 hbond_bb_sc:     0.000 hbond_sc:     0.000 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:    -0.148 omega:     0.001 fa_dun:     0.244 p_aa_pp:    -0.276 ref:     0.240
 RSD_WTD: 149  fa_atr:    -2.585 fa_rep:     0.193 fa_sol:     1.461 fa_intra_rep:     0.011 pro_close:     0.000 fa_pair:     0.010 hbond_sr_bb:     0.000 hbond_lr_bb:    -1.704 hbond_bb_sc:    -0.074 hbond_sc:     0.000 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:    -0.182 omega:     0.000 fa_dun:     0.903 p_aa_pp:    -0.208 ref:    -0.270
 RSD_WTD: 150  fa_atr:    -2.009 fa_rep:     0.112 fa_sol:     0.652 fa_intra_rep:     0.001 pro_close:     0.000 fa_pair:     0.000 hbond_sr_bb:     0.000 hbond_lr_bb:     0.000 hbond_bb_sc:    -0.074 hbond_sc:     0.000 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:    -0.281 omega:     0.008 fa_dun:     0.000 p_aa_pp:    -0.086 ref:     0.160
-RSD_WTD: 151  fa_atr:    -4.731 fa_rep:     1.064 fa_sol:     2.129 fa_intra_rep:     0.008 pro_close:     0.000 fa_pair:    -0.242 hbond_sr_bb:    -0.063 hbond_lr_bb:    -1.470 hbond_bb_sc:     0.000 hbond_sc:     0.000 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:     0.245 omega:     0.007 fa_dun:     1.593 p_aa_pp:     0.067 ref:    -0.650
+RSD_WTD: 151  fa_atr:    -4.746 fa_rep:     1.064 fa_sol:     2.144 fa_intra_rep:     0.008 pro_close:     0.000 fa_pair:    -0.273 hbond_sr_bb:    -0.063 hbond_lr_bb:    -1.470 hbond_bb_sc:     0.000 hbond_sc:     0.000 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:     0.245 omega:     0.007 fa_dun:     1.593 p_aa_pp:     0.067 ref:    -0.650
 RSD_WTD: 152  fa_atr:    -1.680 fa_rep:     0.232 fa_sol:     0.799 fa_intra_rep:     0.007 pro_close:     0.000 fa_pair:     0.000 hbond_sr_bb:    -0.249 hbond_lr_bb:     0.000 hbond_bb_sc:     0.000 hbond_sc:     0.000 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:    -0.126 omega:     0.011 fa_dun:     0.810 p_aa_pp:    -0.042 ref:    -0.650
-RSD_WTD: 153  fa_atr:    -1.657 fa_rep:     0.718 fa_sol:     0.822 fa_intra_rep:     0.006 pro_close:     0.000 fa_pair:    -0.196 hbond_sr_bb:     0.000 hbond_lr_bb:     0.000 hbond_bb_sc:     0.000 hbond_sc:     0.000 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:    -0.085 omega:     0.011 fa_dun:     0.770 p_aa_pp:    -0.052 ref:    -0.650
-RSD_WTD: 154  fa_atr:    -2.855 fa_rep:     0.447 fa_sol:     1.381 fa_intra_rep:     0.006 pro_close:     0.000 fa_pair:    -0.340 hbond_sr_bb:    -0.017 hbond_lr_bb:     0.000 hbond_bb_sc:     0.000 hbond_sc:     0.000 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:    -0.175 omega:     0.030 fa_dun:     1.329 p_aa_pp:    -0.070 ref:    -0.650
+RSD_WTD: 153  fa_atr:    -1.656 fa_rep:     0.718 fa_sol:     0.805 fa_intra_rep:     0.006 pro_close:     0.000 fa_pair:    -0.192 hbond_sr_bb:     0.000 hbond_lr_bb:     0.000 hbond_bb_sc:     0.000 hbond_sc:     0.000 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:    -0.085 omega:     0.011 fa_dun:     0.770 p_aa_pp:    -0.052 ref:    -0.650
+RSD_WTD: 154  fa_atr:    -2.791 fa_rep:     0.446 fa_sol:     1.358 fa_intra_rep:     0.004 pro_close:     0.000 fa_pair:    -0.466 hbond_sr_bb:    -0.017 hbond_lr_bb:     0.000 hbond_bb_sc:     0.000 hbond_sc:     0.000 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:    -0.175 omega:     0.030 fa_dun:     0.623 p_aa_pp:    -0.070 ref:    -0.650
 RSD_WTD: 155  fa_atr:    -2.222 fa_rep:     0.344 fa_sol:     1.008 fa_intra_rep:     0.005 pro_close:     0.000 fa_pair:     0.000 hbond_sr_bb:    -0.294 hbond_lr_bb:     0.000 hbond_bb_sc:     0.000 hbond_sc:     0.000 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:    -0.099 omega:     0.055 fa_dun:     0.595 p_aa_pp:    -0.121 ref:    -0.650
 RSD_WTD: 156  fa_atr:    -3.027 fa_rep:     0.374 fa_sol:     1.423 fa_intra_rep:     0.000 pro_close:     0.000 fa_pair:     0.000 hbond_sr_bb:     0.000 hbond_lr_bb:    -1.470 hbond_bb_sc:     0.000 hbond_sc:     0.000 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:     0.783 omega:     0.024 fa_dun:     0.000 p_aa_pp:    -0.575 ref:    -0.170
-RSD_WTD: 157  fa_atr:    -5.363 fa_rep:     0.492 fa_sol:     1.484 fa_intra_rep:     0.018 pro_close:     0.000 fa_pair:     0.000 hbond_sr_bb:     0.000 hbond_lr_bb:    -1.646 hbond_bb_sc:     0.000 hbond_sc:     0.000 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:     0.000 omega:     0.146 fa_dun:     0.081 p_aa_pp:    -0.058 ref:     0.240
-RSD_WTD: 158  fa_atr:    -3.798 fa_rep:     0.536 fa_sol:     1.949 fa_intra_rep:     0.005 pro_close:     0.000 fa_pair:    -0.159 hbond_sr_bb:     0.000 hbond_lr_bb:    -1.704 hbond_bb_sc:     0.000 hbond_sc:     0.000 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:    -0.032 omega:     0.014 fa_dun:     1.756 p_aa_pp:    -0.012 ref:    -0.650
-RSD_WTD: 159  fa_atr:    -3.258 fa_rep:     0.306 fa_sol:     1.606 fa_intra_rep:     0.001 pro_close:     0.000 fa_pair:     0.000 hbond_sr_bb:     0.000 hbond_lr_bb:    -1.467 hbond_bb_sc:     0.000 hbond_sc:     0.000 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:     0.012 omega:     0.001 fa_dun:     0.000 p_aa_pp:    -0.174 ref:     0.160
-RSD_WTD: 160  fa_atr:    -2.679 fa_rep:     0.179 fa_sol:     1.926 fa_intra_rep:     0.003 pro_close:     0.000 fa_pair:    -0.177 hbond_sr_bb:     0.000 hbond_lr_bb:    -1.432 hbond_bb_sc:     0.000 hbond_sc:     0.000 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:     0.133 omega:     0.113 fa_dun:     0.649 p_aa_pp:     0.213 ref:    -0.890
+RSD_WTD: 157  fa_atr:    -5.364 fa_rep:     0.492 fa_sol:     1.486 fa_intra_rep:     0.018 pro_close:     0.000 fa_pair:     0.000 hbond_sr_bb:     0.000 hbond_lr_bb:    -1.646 hbond_bb_sc:     0.000 hbond_sc:     0.000 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:     0.000 omega:     0.146 fa_dun:     0.081 p_aa_pp:    -0.058 ref:     0.240
+RSD_WTD: 158  fa_atr:    -3.845 fa_rep:     0.581 fa_sol:     2.010 fa_intra_rep:     0.005 pro_close:     0.000 fa_pair:    -0.296 hbond_sr_bb:     0.000 hbond_lr_bb:    -1.704 hbond_bb_sc:     0.000 hbond_sc:     0.000 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:    -0.032 omega:     0.014 fa_dun:     1.756 p_aa_pp:    -0.012 ref:    -0.650
+RSD_WTD: 159  fa_atr:    -3.263 fa_rep:     0.306 fa_sol:     1.618 fa_intra_rep:     0.001 pro_close:     0.000 fa_pair:     0.000 hbond_sr_bb:     0.000 hbond_lr_bb:    -1.467 hbond_bb_sc:     0.000 hbond_sc:     0.000 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:     0.012 omega:     0.001 fa_dun:     0.000 p_aa_pp:    -0.174 ref:     0.160
+RSD_WTD: 160  fa_atr:    -2.680 fa_rep:     0.179 fa_sol:     1.926 fa_intra_rep:     0.003 pro_close:     0.000 fa_pair:    -0.235 hbond_sr_bb:     0.000 hbond_lr_bb:    -1.432 hbond_bb_sc:     0.000 hbond_sc:     0.000 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:     0.133 omega:     0.113 fa_dun:     0.649 p_aa_pp:     0.213 ref:    -0.890
 RSD_WTD: 161  fa_atr:    -6.251 fa_rep:     1.078 fa_sol:     1.940 fa_intra_rep:     0.025 pro_close:     0.000 fa_pair:     0.000 hbond_sr_bb:     0.000 hbond_lr_bb:    -1.231 hbond_bb_sc:     0.000 hbond_sc:     0.000 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:    -0.005 omega:     0.000 fa_dun:     0.398 p_aa_pp:    -0.219 ref:     0.630
 RSD_WTD: 162  fa_atr:    -2.608 fa_rep:     0.175 fa_sol:     1.159 fa_intra_rep:     0.003 pro_close:     0.000 fa_pair:    -0.139 hbond_sr_bb:     0.000 hbond_lr_bb:     0.000 hbond_bb_sc:     0.000 hbond_sc:     0.000 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:     0.015 omega:     0.000 fa_dun:     0.938 p_aa_pp:     0.061 ref:    -0.650
 RSD_WTD: 163  fa_atr:    -5.832 fa_rep:     0.733 fa_sol:     1.880 fa_intra_rep:     0.019 pro_close:     0.000 fa_pair:     0.000 hbond_sr_bb:     0.000 hbond_lr_bb:    -1.693 hbond_bb_sc:     0.000 hbond_sc:     0.000 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:    -0.171 omega:     0.014 fa_dun:     0.831 p_aa_pp:    -0.195 ref:     0.240
-RSD_WTD: 164  fa_atr:    -2.818 fa_rep:     0.441 fa_sol:     1.284 fa_intra_rep:     0.009 pro_close:     0.000 fa_pair:    -0.005 hbond_sr_bb:     0.000 hbond_lr_bb:     0.000 hbond_bb_sc:    -0.029 hbond_sc:     0.000 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:     0.139 omega:     0.040 fa_dun:     1.252 p_aa_pp:     0.092 ref:    -0.980
-RSD_WTD: 165  fa_atr:    -5.554 fa_rep:     0.458 fa_sol:     2.351 fa_intra_rep:     0.003 pro_close:     0.000 fa_pair:    -0.067 hbond_sr_bb:     0.000 hbond_lr_bb:    -1.575 hbond_bb_sc:     0.000 hbond_sc:     0.000 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:    -0.078 omega:     0.001 fa_dun:     0.638 p_aa_pp:     0.003 ref:     0.560
-RSD_WTD: 166  fa_atr:    -2.847 fa_rep:     0.032 fa_sol:     2.262 fa_intra_rep:     0.007 pro_close:     0.000 fa_pair:    -0.230 hbond_sr_bb:     0.000 hbond_lr_bb:    -0.858 hbond_bb_sc:     0.000 hbond_sc:     0.000 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:    -0.148 omega:     0.000 fa_dun:     1.023 p_aa_pp:     0.050 ref:    -0.890
-RSD_WTD: 167  fa_atr:    -5.234 fa_rep:     0.891 fa_sol:     2.878 fa_intra_rep:     0.010 pro_close:     0.000 fa_pair:     0.000 hbond_sr_bb:    -0.769 hbond_lr_bb:     0.000 hbond_bb_sc:     0.000 hbond_sc:     0.000 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:    -0.125 omega:     0.018 fa_dun:     0.312 p_aa_pp:    -0.146 ref:     0.290
-RSD_WTD: 168  fa_atr:    -2.440 fa_rep:     0.240 fa_sol:     1.183 fa_intra_rep:     0.007 pro_close:     0.000 fa_pair:    -0.198 hbond_sr_bb:     0.000 hbond_lr_bb:    -0.842 hbond_bb_sc:     0.000 hbond_sc:     0.000 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:    -0.039 omega:     0.000 fa_dun:     1.140 p_aa_pp:    -0.052 ref:    -0.650
+RSD_WTD: 164  fa_atr:    -2.891 fa_rep:     0.441 fa_sol:     1.402 fa_intra_rep:     0.009 pro_close:     0.000 fa_pair:     0.000 hbond_sr_bb:     0.000 hbond_lr_bb:     0.000 hbond_bb_sc:    -0.029 hbond_sc:     0.000 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:     0.139 omega:     0.040 fa_dun:     1.252 p_aa_pp:     0.092 ref:    -0.980
+RSD_WTD: 165  fa_atr:    -5.634 fa_rep:     0.458 fa_sol:     2.429 fa_intra_rep:     0.003 pro_close:     0.000 fa_pair:    -0.067 hbond_sr_bb:     0.000 hbond_lr_bb:    -1.575 hbond_bb_sc:     0.000 hbond_sc:     0.000 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:    -0.078 omega:     0.001 fa_dun:     0.638 p_aa_pp:     0.003 ref:     0.560
+RSD_WTD: 166  fa_atr:    -2.964 fa_rep:     0.034 fa_sol:     2.244 fa_intra_rep:     0.003 pro_close:     0.000 fa_pair:    -0.223 hbond_sr_bb:     0.000 hbond_lr_bb:    -0.858 hbond_bb_sc:     0.000 hbond_sc:    -0.455 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:    -0.148 omega:     0.000 fa_dun:     1.082 p_aa_pp:     0.050 ref:    -0.890
+RSD_WTD: 167  fa_atr:    -5.058 fa_rep:     0.885 fa_sol:     2.503 fa_intra_rep:     0.010 pro_close:     0.000 fa_pair:     0.000 hbond_sr_bb:    -0.769 hbond_lr_bb:     0.000 hbond_bb_sc:     0.000 hbond_sc:     0.000 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:    -0.125 omega:     0.018 fa_dun:     0.312 p_aa_pp:    -0.146 ref:     0.290
+RSD_WTD: 168  fa_atr:    -2.683 fa_rep:     0.246 fa_sol:     1.146 fa_intra_rep:     0.007 pro_close:     0.000 fa_pair:    -0.198 hbond_sr_bb:     0.000 hbond_lr_bb:    -0.842 hbond_bb_sc:     0.000 hbond_sc:     0.000 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:    -0.039 omega:     0.000 fa_dun:     1.140 p_aa_pp:    -0.052 ref:    -0.650
 RSD_WTD: 169  fa_atr:    -1.554 fa_rep:     0.422 fa_sol:     0.791 fa_intra_rep:     0.004 pro_close:     0.000 fa_pair:    -0.127 hbond_sr_bb:     0.000 hbond_lr_bb:     0.000 hbond_bb_sc:     0.000 hbond_sc:     0.000 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:    -0.178 omega:     0.077 fa_dun:     0.620 p_aa_pp:    -0.046 ref:    -0.650
-RSD_WTD: 170  fa_atr:    -1.024 fa_rep:     0.166 fa_sol:     0.686 fa_intra_rep:     0.000 pro_close:     0.000 fa_pair:     0.000 hbond_sr_bb:    -0.411 hbond_lr_bb:     0.000 hbond_bb_sc:     0.000 hbond_sc:     0.000 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:    -0.262 omega:     0.000 fa_dun:     0.000 p_aa_pp:    -0.805 ref:    -0.170
-RSD_WTD: 171  fa_atr:    -2.102 fa_rep:     0.180 fa_sol:     1.478 fa_intra_rep:     0.001 pro_close:     0.000 fa_pair:    -0.124 hbond_sr_bb:    -0.357 hbond_lr_bb:     0.000 hbond_bb_sc:     0.000 hbond_sc:     0.000 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:    -0.078 omega:     0.001 fa_dun:     0.096 p_aa_pp:    -0.242 ref:    -0.370
-RSD_WTD: 172  fa_atr:    -2.343 fa_rep:     0.209 fa_sol:     1.083 fa_intra_rep:     0.013 pro_close:     0.000 fa_pair:     0.000 hbond_sr_bb:     0.000 hbond_lr_bb:     0.000 hbond_bb_sc:     0.000 hbond_sc:     0.000 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:    -0.177 omega:     0.037 fa_dun:     0.033 p_aa_pp:    -0.387 ref:     0.290
+RSD_WTD: 170  fa_atr:    -1.012 fa_rep:     0.166 fa_sol:     0.659 fa_intra_rep:     0.000 pro_close:     0.000 fa_pair:     0.000 hbond_sr_bb:    -0.411 hbond_lr_bb:     0.000 hbond_bb_sc:     0.000 hbond_sc:     0.000 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:    -0.262 omega:     0.000 fa_dun:     0.000 p_aa_pp:    -0.805 ref:    -0.170
+RSD_WTD: 171  fa_atr:    -2.076 fa_rep:     0.180 fa_sol:     1.437 fa_intra_rep:     0.001 pro_close:     0.000 fa_pair:    -0.114 hbond_sr_bb:    -0.357 hbond_lr_bb:     0.000 hbond_bb_sc:     0.000 hbond_sc:     0.000 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:    -0.078 omega:     0.001 fa_dun:     0.096 p_aa_pp:    -0.242 ref:    -0.370
+RSD_WTD: 172  fa_atr:    -2.289 fa_rep:     0.209 fa_sol:     0.932 fa_intra_rep:     0.013 pro_close:     0.000 fa_pair:     0.000 hbond_sr_bb:     0.000 hbond_lr_bb:     0.000 hbond_bb_sc:     0.000 hbond_sc:     0.000 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:    -0.177 omega:     0.037 fa_dun:     0.033 p_aa_pp:    -0.387 ref:     0.290
 RSD_WTD: 173  fa_atr:    -5.097 fa_rep:     0.294 fa_sol:     3.463 fa_intra_rep:     0.017 pro_close:     0.000 fa_pair:    -0.168 hbond_sr_bb:     0.000 hbond_lr_bb:    -1.575 hbond_bb_sc:    -0.497 hbond_sc:    -0.532 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:    -0.066 omega:     0.005 fa_dun:     1.142 p_aa_pp:     0.036 ref:    -0.970
 RSD_WTD: 174  fa_atr:    -3.596 fa_rep:     0.220 fa_sol:     1.584 fa_intra_rep:     0.009 pro_close:     0.000 fa_pair:     0.000 hbond_sr_bb:     0.000 hbond_lr_bb:    -0.858 hbond_bb_sc:     0.000 hbond_sc:     0.000 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:    -0.157 omega:     0.001 fa_dun:     0.551 p_aa_pp:    -0.121 ref:    -0.100
 RSD_WTD: 175  fa_atr:    -3.855 fa_rep:     0.155 fa_sol:     1.500 fa_intra_rep:     0.001 pro_close:     0.000 fa_pair:     0.000 hbond_sr_bb:     0.000 hbond_lr_bb:    -1.693 hbond_bb_sc:     0.000 hbond_sc:     0.000 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:     0.724 omega:     0.012 fa_dun:     0.000 p_aa_pp:     0.286 ref:     0.160
 RSD_WTD: 176  fa_atr:    -4.430 fa_rep:     0.228 fa_sol:     2.913 fa_intra_rep:     0.011 pro_close:     0.000 fa_pair:    -0.160 hbond_sr_bb:     0.000 hbond_lr_bb:    -1.552 hbond_bb_sc:     0.000 hbond_sc:    -0.037 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:    -0.194 omega:     0.031 fa_dun:     0.343 p_aa_pp:    -0.215 ref:    -0.670
 RSD_WTD: 177  fa_atr:    -7.476 fa_rep:     0.693 fa_sol:     3.438 fa_intra_rep:     0.002 pro_close:     0.000 fa_pair:    -0.163 hbond_sr_bb:     0.000 hbond_lr_bb:    -1.231 hbond_bb_sc:     0.000 hbond_sc:    -0.499 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:    -0.064 omega:     0.185 fa_dun:     1.594 p_aa_pp:     0.021 ref:     0.560
-RSD_WTD: 178  fa_atr:    -3.957 fa_rep:     0.322 fa_sol:     2.558 fa_intra_rep:     0.023 pro_close:     0.000 fa_pair:     0.000 hbond_sr_bb:     0.000 hbond_lr_bb:    -1.623 hbond_bb_sc:     0.000 hbond_sc:    -0.037 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:    -0.039 omega:     0.017 fa_dun:     0.336 p_aa_pp:    -0.019 ref:     0.510
-RSD_WTD: 179  fa_atr:    -6.046 fa_rep:     0.350 fa_sol:     4.922 fa_intra_rep:     0.006 pro_close:     0.000 fa_pair:    -0.246 hbond_sr_bb:     0.000 hbond_lr_bb:    -1.467 hbond_bb_sc:     0.000 hbond_sc:    -2.380 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:    -0.080 omega:     0.113 fa_dun:     1.875 p_aa_pp:     0.033 ref:    -0.970
-RSD_WTD: 180  fa_atr:    -3.243 fa_rep:     0.116 fa_sol:     2.085 fa_intra_rep:     0.005 pro_close:     0.000 fa_pair:    -0.215 hbond_sr_bb:     0.000 hbond_lr_bb:    -1.669 hbond_bb_sc:     0.000 hbond_sc:     0.000 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:    -0.078 omega:     0.041 fa_dun:     1.013 p_aa_pp:     0.028 ref:    -0.970
-RSD_WTD: 181  fa_atr:    -5.286 fa_rep:     0.524 fa_sol:     4.248 fa_intra_rep:     0.003 pro_close:     0.000 fa_pair:    -0.214 hbond_sr_bb:     0.000 hbond_lr_bb:    -1.646 hbond_bb_sc:     0.000 hbond_sc:    -1.476 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:     0.103 omega:     0.004 fa_dun:     1.618 p_aa_pp:     0.094 ref:    -0.890
-RSD_WTD: 182  fa_atr:    -2.740 fa_rep:     0.159 fa_sol:     1.587 fa_intra_rep:     0.008 pro_close:     0.091 fa_pair:     0.038 hbond_sr_bb:     0.000 hbond_lr_bb:    -1.639 hbond_bb_sc:     0.000 hbond_sc:     0.000 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:    -0.007 omega:     0.056 fa_dun:     0.083 p_aa_pp:    -0.112 ref:    -0.270
+RSD_WTD: 178  fa_atr:    -4.230 fa_rep:     0.322 fa_sol:     2.853 fa_intra_rep:     0.023 pro_close:     0.000 fa_pair:     0.000 hbond_sr_bb:     0.000 hbond_lr_bb:    -1.623 hbond_bb_sc:     0.000 hbond_sc:    -0.037 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:    -0.039 omega:     0.017 fa_dun:     0.336 p_aa_pp:    -0.019 ref:     0.510
+RSD_WTD: 179  fa_atr:    -6.563 fa_rep:     0.520 fa_sol:     5.442 fa_intra_rep:     0.006 pro_close:     0.000 fa_pair:    -0.256 hbond_sr_bb:     0.000 hbond_lr_bb:    -1.467 hbond_bb_sc:     0.000 hbond_sc:    -2.380 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:    -0.080 omega:     0.113 fa_dun:     1.875 p_aa_pp:     0.033 ref:    -0.970
+RSD_WTD: 180  fa_atr:    -4.225 fa_rep:     0.331 fa_sol:     3.248 fa_intra_rep:     0.009 pro_close:     0.000 fa_pair:    -0.289 hbond_sr_bb:     0.000 hbond_lr_bb:    -1.669 hbond_bb_sc:     0.000 hbond_sc:     0.000 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:    -0.078 omega:     0.041 fa_dun:     2.031 p_aa_pp:     0.028 ref:    -0.970
+RSD_WTD: 181  fa_atr:    -5.288 fa_rep:     0.524 fa_sol:     4.248 fa_intra_rep:     0.003 pro_close:     0.000 fa_pair:    -0.217 hbond_sr_bb:     0.000 hbond_lr_bb:    -1.646 hbond_bb_sc:     0.000 hbond_sc:    -1.476 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:     0.103 omega:     0.004 fa_dun:     1.618 p_aa_pp:     0.094 ref:    -0.890
+RSD_WTD: 182  fa_atr:    -2.739 fa_rep:     0.158 fa_sol:     1.595 fa_intra_rep:     0.008 pro_close:     0.091 fa_pair:     0.050 hbond_sr_bb:     0.000 hbond_lr_bb:    -1.639 hbond_bb_sc:     0.000 hbond_sc:     0.000 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:    -0.007 omega:     0.056 fa_dun:     0.083 p_aa_pp:    -0.112 ref:    -0.270
 RSD_WTD: 183  fa_atr:    -3.085 fa_rep:     0.202 fa_sol:     0.833 fa_intra_rep:     0.002 pro_close:     0.236 fa_pair:     0.000 hbond_sr_bb:     0.000 hbond_lr_bb:     0.000 hbond_bb_sc:     0.000 hbond_sc:     0.000 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:    -0.219 omega:     0.000 fa_dun:     0.258 p_aa_pp:    -0.471 ref:     0.020
 RSD_WTD: 184  fa_atr:    -3.155 fa_rep:     0.151 fa_sol:     1.224 fa_intra_rep:     0.016 pro_close:     0.000 fa_pair:     0.000 hbond_sr_bb:     0.000 hbond_lr_bb:    -0.702 hbond_bb_sc:     0.000 hbond_sc:     0.000 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:     0.029 omega:     0.020 fa_dun:     0.153 p_aa_pp:    -0.158 ref:     0.240
 RSD_WTD: 185  fa_atr:    -1.498 fa_rep:     0.300 fa_sol:     0.827 fa_intra_rep:     0.000 pro_close:     0.000 fa_pair:     0.000 hbond_sr_bb:     0.000 hbond_lr_bb:     0.000 hbond_bb_sc:     0.000 hbond_sc:     0.000 dslf_ss_dst:     0.000 dslf_cs_ang:     0.000 dslf_ss_dih:     0.000 dslf_ca_dih:     0.000 rama:     0.619 omega:     0.000 fa_dun:     0.000 p_aa_pp:    -0.659 ref:    -0.170
@@ -4073,6 +4073,8 @@ EnergyMethodOptions::show: hackelec_die: 10
 EnergyMethodOptions::show: hackelec_no_dis_dep_die: false
 EnergyMethodOptions::show: exclude_DNA_DNA: true
 EnergyMethodOptions::show: cst_max_seq_sep: 18446744073709551615
+EnergyMethodOptions::show: pb_bound_tag: bound
+EnergyMethodOptions::show: pb_unbound_tag: unbound
 EnergyMethodOptions::show: bond_angle_central_atoms_to_score:
 EnergyMethodOptions::show: bond_angle_residue_type_param_set: none
 HBondOptions::show: exclude_DNA_DNA: true

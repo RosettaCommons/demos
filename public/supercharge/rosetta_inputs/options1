@@ -21,4 +21,4 @@
 
 -resfile rosetta_inputs/resfile
 
--out:path example_outputs
+-out:path example_outputs/outpath1
