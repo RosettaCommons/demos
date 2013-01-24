@@ -34,7 +34,7 @@ do not override one another.
 		<RestrictAbsentCanonicalAAS name=nohis keep_aas="ACDEFGIKLMNPQRSTVWY"/> 
 	</TASKOPERATIONS>
 	<MOVERS>
-		<SetupPoissonBoltzmannPotential name=setup_pb scorefxn=sc12_w_PB charged_chains=1 epsilon=2.0 apbs_path="/home/honda/dvlp/rosetta-trunk/rosetta_source/external/apbs/apbs-1.4-rosetta/bin/apbs" apbs_debug=0 calcenergy="false"/>
+		<SetupPoissonBoltzmannPotential name=setup_pb scorefxn=sc12_w_PB charged_chains=1 epsilon=2.0 apbs_path="/home/honda/dvlp/rosetta-trunk/rosetta_source/external/apbs/apbs-1.4-rosetta/bin/apbs" apbs_debug=3 calcenergy=0/>
 		connect chains by their geometric centres. Good for minimization
 		<AtomTree name=docking_tree docking_ft=1/> 
 		minimize sc, rb, and bb (of chain 2 only)
@@ -61,7 +61,7 @@ do not override one another.
 
 	<FILTERS>
 		I think that 1 repeat should suffice as the calculations on minimized designs are actually rather stable.
-		<Ddg name=ddg scorefxn=sc12_w_PB confidence=0.0 repeats=2/> 
+		<Ddg name=ddg scorefxn=sc12_w_PB confidence=0.0 repeats=2 translate_by=100/> 
 		Here, measuring the binding energy gain
 		<Delta name=delta_ddg filter=ddg upper=1 lower=0 range=-0.5 relax_mover=relax_before_baseline reference_name=pose_after_pb_setup/> 
 		produces a resfile showing shiwch subset of the non-destabilizing mutations (from the above step) do not harm binding affinity
