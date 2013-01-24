@@ -5,11 +5,6 @@ Usage: rosetta_scripts -s -database -parser:protocol ppk_minbb.xml -ex1 -ex2 -us
 <dock_design>
         <SCOREFXNS>
 		<sc12_w_correction weights=score12_w_corrections/>
-		<score_w_PB weights=score12_w_corrections patch=pb_elec>
-			<Set charged_chains=1/>
-			<Set pb_bound_tag=PB_BOUND/>
-			<Set pb_unbound_tag=PB_UNBOUND/>
-		</score_w_PB>
         </SCOREFXNS>
 	<TASKOPERATIONS>
 		<RestrictToRepacking name=no_design />
@@ -19,13 +14,13 @@ Usage: rosetta_scripts -s -database -parser:protocol ppk_minbb.xml -ex1 -ex2 -us
         <MOVERS>
 		<AtomTree name=docking_tree docking_ft=1/> good for bb minimization
                 <Prepack name=ppk jump_number=1 scorefxn=sc12_w_correction min_bb=0/>
-		<PackRotamersMover name=repack_with_PB task_operations=no_design scorefxn=score_w_PB/>
+		<PackRotamersMover name=repack task_operations=no_design scorefxn=sc12_w_correction>
         </MOVERS>
         <APPLY_TO_POSE>
         </APPLY_TO_POSE>
         <PROTOCOLS>
 		<Add mover=docking_tree/>
                 <Add mover_name=ppk/>
-		<Add mover_name=repack_with_PB/>
+		<Add mover_name=repack/>
         </PROTOCOLS>
 </dock_design>

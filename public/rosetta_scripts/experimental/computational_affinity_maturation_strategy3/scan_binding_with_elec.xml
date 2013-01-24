@@ -20,6 +20,7 @@ do not override one another.
 
 <dock_design>
 	<SCOREFXNS>
+		<sc12 weights=score12_full />
 		<sc12_w_PB weights=score12_full patch=pb_elec/>
 		<soft_rep weights=soft_rep />
 	</SCOREFXNS>
@@ -33,7 +34,7 @@ do not override one another.
 		<RestrictAbsentCanonicalAAS name=nohis keep_aas="ACDEFGIKLMNPQRSTVWY"/> 
 	</TASKOPERATIONS>
 	<MOVERS>
-		<SetupPoissonBoltzmannPotential name=setup_pb scorefxn=sc12_w_PB charged_chains=1 epsilon=2.0 apbs_path="/home/honda/apbs-1.4/bin/apbs"/>
+		<SetupPoissonBoltzmannPotential name=setup_pb scorefxn=sc12_w_PB charged_chains=1 epsilon=2.0 apbs_path="/home/honda/dvlp/rosetta-trunk/rosetta_source/external/apbs/apbs-1.4-rosetta/bin/apbs" apbs_debug=0 calcenergy="false"/>
 		connect chains by their geometric centres. Good for minimization
 		<AtomTree name=docking_tree docking_ft=1/> 
 		minimize sc, rb, and bb (of chain 2 only)
@@ -44,7 +45,7 @@ do not override one another.
                         </MoveMap>
                 </MinMover>
 		<PackRotamersMover name=pack_interface_soft scorefxn=soft_rep task_operations=init,repack_interface/>
-		<PackRotamersMover name=pack_interface scorefxn=sc12_w_PB  task_operations=init,repack_interface/>
+		<PackRotamersMover name=pack_interface scorefxn=sc12  task_operations=init,repack_interface/>
 		before running the baseline calculation in filter scan, you need to relax the ppk'ed structure
 		<ParsedProtocol name=relax_before_baseline> 
 			<Add mover=docking_tree/>
