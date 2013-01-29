@@ -1,0 +1,2081 @@
+ PyMOL(TM) Incentive Product - PyMOL Executable Build
+ Copyright (C) Schrodinger, LLC
+ 
+ This PyMOL Executable Build is available only to PyMOL Power, Casual, and 
+ Developer Users who have a valid license to use this software product. Any
+ other usage is specifically prohibited and may constitute a violation of 
+ United States and international copyright laws.
+ 
+ This Executable Build integrates and extends Open-Source PyMOL 1.5.0.
+ Detected 24 CPU cores.  Enabled multithreaded rendering.
+PyMOL>set seq_view
+ Setting: seq_view set to on.
+PyMOL>set cartoon_fancy_helices,1
+ Setting: cartoon_fancy_helices set to on.
+PyMOL>set cartoon_dumbbell_length, 0.8
+ Setting: cartoon_dumbbell_length set to 0.80000.
+PyMOL>set surface_color, grey80
+ Setting: surface_color set to grey80.
+PyMOL>set surface_cavity_cutoff,-7
+ Setting: surface_cavity_cutoff set to -7.00000.
+PyMOL>set surface_cavity_radius,-3
+ Setting: surface_cavity_radius set to -3.00000.
+PyMOL>set transparency, 0.2
+ Setting: transparency set to 0.20000.
+PyMOL>select ligands, organic
+ Selector: selection "ligands" defined with 0 atoms.
+PyMOL>show sticks, ligands
+PyMOL>cd /Users/christoffernorn/software/PyRosetta.MacOSX.Lion-r47465452.64Bit
+Traceback (most recent call last):
+  File "/Applications/PyMOLX11Hybrid.app/pymol/modules/pymol/externing.py", line 46, in cd
+    os.chdir(dir)  # raises on error
+OSError: [Errno 2] No such file or directory: '/Users/christoffernorn/software/PyRosetta.MacOSX.Lion-r47465452.64Bit'
+PyMOL>run /Users/christoffernorn/software/PyRosetta.MacOSX.Lion-r47452.64Bit/PyMOLPyRosettaServer.py
+PyMOL <---> PyRosetta link started!
+at 127.0.0.1 port 65000
+PyMOL>run /Users/christoffernorn/dropbox/software/pymol_scripts/scripts.py
+PyMOL>rei
+PyMOL>cd /Users/christoffernorn/dropbox/projects/gpcr_loop_benchmark_liz_chris/demo/cn_demos/7B/01_evaluate_score_vs_pocket_rmsd/
+ cd: now in /Users/christoffernorn/dropbox/projects/gpcr_loop_benchmark_liz_chris/demo/cn_demos/7B/01_evaluate_score_vs_pocket_rmsd
+['1u19_rhodopsin_pocket', '2rh1_b2ar_pocket', '2vt4_b1ar_pocket', '3odu_cxcr4_pocket', '3pbl_dopamine_pocket', '3rze_H1_pocket', '3uon_M2_pocket', '3v2w_sphingosine_pocket', '4daj_m3_pocket', '4djh_ka_opioid_pocket', '4dkl_mu_opioid_pocket', '4ea3_nociceptin_pocket', '4ej4_de_opioid_pocket']
+here1 /Users/christoffernorn/dropbox/projects/gpcr_loop_benchmark_liz_chris/demo/cn_demos/7B/01_evaluate_score_vs_pocket_rmsd/crystal_pockets/
+here2 3eml
+1u19_rhodopsin_pocket
+PyMOL>load /Users/christoffernorn/dropbox/projects/gpcr_loop_benchmark_liz_chris/demo/cn_demos/7B/01_evaluate_score_vs_pocket_rmsd/crystal_pockets/1u19_rhodopsin_pocket.pdb
+ CmdLoad: "/Users/christoffernorn/dropbox/projects/gpcr_loop_benchmark_liz_chris/demo/cn_demos/7B/01_evaluate_score_vs_pocket_rmsd/crystal_pockets/1u19_rhodopsin_pocket.pdb" loaded as "1u19_rhodopsin_pocket".
+2rh1_b2ar_pocket
+PyMOL>load /Users/christoffernorn/dropbox/projects/gpcr_loop_benchmark_liz_chris/demo/cn_demos/7B/01_evaluate_score_vs_pocket_rmsd/crystal_pockets/2rh1_b2ar_pocket.pdb
+ CmdLoad: "/Users/christoffernorn/dropbox/projects/gpcr_loop_benchmark_liz_chris/demo/cn_demos/7B/01_evaluate_score_vs_pocket_rmsd/crystal_pockets/2rh1_b2ar_pocket.pdb" loaded as "2rh1_b2ar_pocket".
+2vt4_b1ar_pocket
+PyMOL>load /Users/christoffernorn/dropbox/projects/gpcr_loop_benchmark_liz_chris/demo/cn_demos/7B/01_evaluate_score_vs_pocket_rmsd/crystal_pockets/2vt4_b1ar_pocket.pdb
+ CmdLoad: "/Users/christoffernorn/dropbox/projects/gpcr_loop_benchmark_liz_chris/demo/cn_demos/7B/01_evaluate_score_vs_pocket_rmsd/crystal_pockets/2vt4_b1ar_pocket.pdb" loaded as "2vt4_b1ar_pocket".
+3odu_cxcr4_pocket
+PyMOL>load /Users/christoffernorn/dropbox/projects/gpcr_loop_benchmark_liz_chris/demo/cn_demos/7B/01_evaluate_score_vs_pocket_rmsd/crystal_pockets/3odu_cxcr4_pocket.pdb
+ CmdLoad: "/Users/christoffernorn/dropbox/projects/gpcr_loop_benchmark_liz_chris/demo/cn_demos/7B/01_evaluate_score_vs_pocket_rmsd/crystal_pockets/3odu_cxcr4_pocket.pdb" loaded as "3odu_cxcr4_pocket".
+3pbl_dopamine_pocket
+PyMOL>load /Users/christoffernorn/dropbox/projects/gpcr_loop_benchmark_liz_chris/demo/cn_demos/7B/01_evaluate_score_vs_pocket_rmsd/crystal_pockets/3pbl_dopamine_pocket.pdb
+ CmdLoad: "/Users/christoffernorn/dropbox/projects/gpcr_loop_benchmark_liz_chris/demo/cn_demos/7B/01_evaluate_score_vs_pocket_rmsd/crystal_pockets/3pbl_dopamine_pocket.pdb" loaded as "3pbl_dopamine_pocket".
+3rze_H1_pocket
+PyMOL>load /Users/christoffernorn/dropbox/projects/gpcr_loop_benchmark_liz_chris/demo/cn_demos/7B/01_evaluate_score_vs_pocket_rmsd/crystal_pockets/3rze_H1_pocket.pdb
+ CmdLoad: "/Users/christoffernorn/dropbox/projects/gpcr_loop_benchmark_liz_chris/demo/cn_demos/7B/01_evaluate_score_vs_pocket_rmsd/crystal_pockets/3rze_H1_pocket.pdb" loaded as "3rze_H1_pocket".
+3uon_M2_pocket
+PyMOL>load /Users/christoffernorn/dropbox/projects/gpcr_loop_benchmark_liz_chris/demo/cn_demos/7B/01_evaluate_score_vs_pocket_rmsd/crystal_pockets/3uon_M2_pocket.pdb
+ CmdLoad: "/Users/christoffernorn/dropbox/projects/gpcr_loop_benchmark_liz_chris/demo/cn_demos/7B/01_evaluate_score_vs_pocket_rmsd/crystal_pockets/3uon_M2_pocket.pdb" loaded as "3uon_M2_pocket".
+3v2w_sphingosine_pocket
+PyMOL>load /Users/christoffernorn/dropbox/projects/gpcr_loop_benchmark_liz_chris/demo/cn_demos/7B/01_evaluate_score_vs_pocket_rmsd/crystal_pockets/3v2w_sphingosine_pocket.pdb
+ CmdLoad: "/Users/christoffernorn/dropbox/projects/gpcr_loop_benchmark_liz_chris/demo/cn_demos/7B/01_evaluate_score_vs_pocket_rmsd/crystal_pockets/3v2w_sphingosine_pocket.pdb" loaded as "3v2w_sphingosine_pocket".
+4daj_m3_pocket
+PyMOL>load /Users/christoffernorn/dropbox/projects/gpcr_loop_benchmark_liz_chris/demo/cn_demos/7B/01_evaluate_score_vs_pocket_rmsd/crystal_pockets/4daj_m3_pocket.pdb
+ CmdLoad: "/Users/christoffernorn/dropbox/projects/gpcr_loop_benchmark_liz_chris/demo/cn_demos/7B/01_evaluate_score_vs_pocket_rmsd/crystal_pockets/4daj_m3_pocket.pdb" loaded as "4daj_m3_pocket".
+4djh_ka_opioid_pocket
+PyMOL>load /Users/christoffernorn/dropbox/projects/gpcr_loop_benchmark_liz_chris/demo/cn_demos/7B/01_evaluate_score_vs_pocket_rmsd/crystal_pockets/4djh_ka_opioid_pocket.pdb
+ CmdLoad: "/Users/christoffernorn/dropbox/projects/gpcr_loop_benchmark_liz_chris/demo/cn_demos/7B/01_evaluate_score_vs_pocket_rmsd/crystal_pockets/4djh_ka_opioid_pocket.pdb" loaded as "4djh_ka_opioid_pocket".
+4dkl_mu_opioid_pocket
+PyMOL>load /Users/christoffernorn/dropbox/projects/gpcr_loop_benchmark_liz_chris/demo/cn_demos/7B/01_evaluate_score_vs_pocket_rmsd/crystal_pockets/4dkl_mu_opioid_pocket.pdb
+ CmdLoad: "/Users/christoffernorn/dropbox/projects/gpcr_loop_benchmark_liz_chris/demo/cn_demos/7B/01_evaluate_score_vs_pocket_rmsd/crystal_pockets/4dkl_mu_opioid_pocket.pdb" loaded as "4dkl_mu_opioid_pocket".
+4ea3_nociceptin_pocket
+PyMOL>load /Users/christoffernorn/dropbox/projects/gpcr_loop_benchmark_liz_chris/demo/cn_demos/7B/01_evaluate_score_vs_pocket_rmsd/crystal_pockets/4ea3_nociceptin_pocket.pdb
+ CmdLoad: "/Users/christoffernorn/dropbox/projects/gpcr_loop_benchmark_liz_chris/demo/cn_demos/7B/01_evaluate_score_vs_pocket_rmsd/crystal_pockets/4ea3_nociceptin_pocket.pdb" loaded as "4ea3_nociceptin_pocket".
+4ej4_de_opioid_pocket
+PyMOL>load /Users/christoffernorn/dropbox/projects/gpcr_loop_benchmark_liz_chris/demo/cn_demos/7B/01_evaluate_score_vs_pocket_rmsd/crystal_pockets/4ej4_de_opioid_pocket.pdb
+ CmdLoad: "/Users/christoffernorn/dropbox/projects/gpcr_loop_benchmark_liz_chris/demo/cn_demos/7B/01_evaluate_score_vs_pocket_rmsd/crystal_pockets/4ej4_de_opioid_pocket.pdb" loaded as "4ej4_de_opioid_pocket".
+PyMOL>load /Users/christoffernorn/dropbox/projects/gpcr_loop_benchmark_liz_chris/demo/cn_demos/7B/01_evaluate_score_vs_pocket_rmsd/crystal_pockets/template_2rh1.pdb
+HEADER    MEMBRANE PROTEIN / HYDROLASE            05-OCT-07   2RH1
+TITLE     HIGH RESOLUTION CRYSTAL STRUCTURE OF HUMAN B2-ADRENERGIC G PROTEIN-
+TITLE    2 COUPLED RECEPTOR.
+COMPND    MOL_ID: 1;
+COMPND   2 MOLECULE: BETA-2-ADRENERGIC RECEPTOR/T4-LYSOZYME CHIMERA;
+COMPND   3 CHAIN: A;
+COMPND   4 SYNONYM: BETA-2 ADRENERGIC RECEPTOR,  BETA-2 ADRENOCEPTOR,  BETA-2
+COMPND   5 ADRENORECEPTOR / LYSIS PROTEIN,  MURAMIDASE, ENDOLYSIN;
+COMPND   6 ENGINEERED: YES;
+COMPND   7 MUTATION: YES
+ ObjectMolecule: Read secondary structure assignments.
+ ObjectMolecule: Read crystal symmetry information.
+ Symmetry: Found 4 symmetry operators.
+ CmdLoad: "/Users/christoffernorn/dropbox/projects/gpcr_loop_benchmark_liz_chris/demo/cn_demos/7B/01_evaluate_score_vs_pocket_rmsd/crystal_pockets/template_2rh1.pdb" loaded as "template_2rh1".
+PyMOL>cealign template_2rh1 and i. 82+86+90+93+106+109+110+113+114+117+118+121+199+200+203+204+208+282+286+289+290+292+293+296+309+311+312+315+316, 1u19_rhodopsin_pocket
+RMSD 1.609301 over 24 residues
+PyMOL>cealign template_2rh1 and i. 82+86+90+93+106+109+110+113+114+117+118+121+199+200+203+204+208+282+286+289+290+292+293+296+309+311+312+315+316, 2rh1_b2ar_pocket
+RMSD 0.000481 over 24 residues
+PyMOL>cealign template_2rh1 and i. 82+86+90+93+106+109+110+113+114+117+118+121+199+200+203+204+208+282+286+289+290+292+293+296+309+311+312+315+316, 2vt4_b1ar_pocket
+RMSD 0.430332 over 24 residues
+PyMOL>cealign template_2rh1 and i. 82+86+90+93+106+109+110+113+114+117+118+121+199+200+203+204+208+282+286+289+290+292+293+296+309+311+312+315+316, 3odu_cxcr4_pocket
+RMSD 1.403355 over 24 residues
+PyMOL>cealign template_2rh1 and i. 82+86+90+93+106+109+110+113+114+117+118+121+199+200+203+204+208+282+286+289+290+292+293+296+309+311+312+315+316, 3pbl_dopamine_pocket
+RMSD 1.089136 over 24 residues
+PyMOL>cealign template_2rh1 and i. 82+86+90+93+106+109+110+113+114+117+118+121+199+200+203+204+208+282+286+289+290+292+293+296+309+311+312+315+316, 3rze_H1_pocket
+RMSD 0.878524 over 24 residues
+PyMOL>cealign template_2rh1 and i. 82+86+90+93+106+109+110+113+114+117+118+121+199+200+203+204+208+282+286+289+290+292+293+296+309+311+312+315+316, 3uon_M2_pocket
+RMSD 0.921453 over 24 residues
+PyMOL>cealign template_2rh1 and i. 82+86+90+93+106+109+110+113+114+117+118+121+199+200+203+204+208+282+286+289+290+292+293+296+309+311+312+315+316, 3v2w_sphingosine_pocket
+RMSD 1.147669 over 24 residues
+PyMOL>cealign template_2rh1 and i. 82+86+90+93+106+109+110+113+114+117+118+121+199+200+203+204+208+282+286+289+290+292+293+296+309+311+312+315+316, 4daj_m3_pocket
+RMSD 1.090918 over 24 residues
+PyMOL>cealign template_2rh1 and i. 82+86+90+93+106+109+110+113+114+117+118+121+199+200+203+204+208+282+286+289+290+292+293+296+309+311+312+315+316, 4djh_ka_opioid_pocket
+RMSD 1.220278 over 24 residues
+PyMOL>cealign template_2rh1 and i. 82+86+90+93+106+109+110+113+114+117+118+121+199+200+203+204+208+282+286+289+290+292+293+296+309+311+312+315+316, 4dkl_mu_opioid_pocket
+RMSD 1.148982 over 24 residues
+PyMOL>cealign template_2rh1 and i. 82+86+90+93+106+109+110+113+114+117+118+121+199+200+203+204+208+282+286+289+290+292+293+296+309+311+312+315+316, 4ea3_nociceptin_pocket
+RMSD 1.249240 over 24 residues
+PyMOL>cealign template_2rh1 and i. 82+86+90+93+106+109+110+113+114+117+118+121+199+200+203+204+208+282+286+289+290+292+293+296+309+311+312+315+316, 4ej4_de_opioid_pocket
+RMSD 1.162680 over 24 residues
+PyMOL>select name ca
+ Selector: selection "sele" defined with 820 atoms.
+PyMOL>iterate 1u19_rhodopsin_pocket,residue_list.append(resi)
+ Iterate: iterated over 29 atoms.
+PyMOL>alter 1u19_rhodopsin_pocket and resi 53,resi=1
+ Alter: modified 1 atoms.
+PyMOL>alter 1u19_rhodopsin_pocket and resi 57,resi=2
+ Alter: modified 1 atoms.
+PyMOL>alter 1u19_rhodopsin_pocket and resi 61,resi=3
+ Alter: modified 1 atoms.
+PyMOL>alter 1u19_rhodopsin_pocket and resi 64,resi=4
+ Alter: modified 1 atoms.
+PyMOL>alter 1u19_rhodopsin_pocket and resi 77,resi=5
+ Alter: modified 1 atoms.
+PyMOL>alter 1u19_rhodopsin_pocket and resi 80,resi=6
+ Alter: modified 1 atoms.
+PyMOL>alter 1u19_rhodopsin_pocket and resi 81,resi=7
+ Alter: modified 1 atoms.
+PyMOL>alter 1u19_rhodopsin_pocket and resi 84,resi=8
+ Alter: modified 1 atoms.
+PyMOL>alter 1u19_rhodopsin_pocket and resi 85,resi=9
+ Alter: modified 1 atoms.
+PyMOL>alter 1u19_rhodopsin_pocket and resi 88,resi=10
+ Alter: modified 1 atoms.
+PyMOL>alter 1u19_rhodopsin_pocket and resi 89,resi=11
+ Alter: modified 1 atoms.
+PyMOL>alter 1u19_rhodopsin_pocket and resi 92,resi=12
+ Alter: modified 1 atoms.
+PyMOL>alter 1u19_rhodopsin_pocket and resi 170,resi=13
+ Alter: modified 1 atoms.
+PyMOL>alter 1u19_rhodopsin_pocket and resi 171,resi=14
+ Alter: modified 1 atoms.
+PyMOL>alter 1u19_rhodopsin_pocket and resi 174,resi=15
+ Alter: modified 1 atoms.
+PyMOL>alter 1u19_rhodopsin_pocket and resi 175,resi=16
+ Alter: modified 1 atoms.
+PyMOL>alter 1u19_rhodopsin_pocket and resi 179,resi=17
+ Alter: modified 1 atoms.
+PyMOL>alter 1u19_rhodopsin_pocket and resi 228,resi=18
+ Alter: modified 1 atoms.
+PyMOL>alter 1u19_rhodopsin_pocket and resi 232,resi=19
+ Alter: modified 1 atoms.
+PyMOL>alter 1u19_rhodopsin_pocket and resi 235,resi=20
+ Alter: modified 1 atoms.
+PyMOL>alter 1u19_rhodopsin_pocket and resi 236,resi=21
+ Alter: modified 1 atoms.
+PyMOL>alter 1u19_rhodopsin_pocket and resi 238,resi=22
+ Alter: modified 1 atoms.
+PyMOL>alter 1u19_rhodopsin_pocket and resi 239,resi=23
+ Alter: modified 1 atoms.
+PyMOL>alter 1u19_rhodopsin_pocket and resi 242,resi=24
+ Alter: modified 1 atoms.
+PyMOL>alter 1u19_rhodopsin_pocket and resi 256,resi=25
+ Alter: modified 1 atoms.
+PyMOL>alter 1u19_rhodopsin_pocket and resi 258,resi=26
+ Alter: modified 1 atoms.
+PyMOL>alter 1u19_rhodopsin_pocket and resi 259,resi=27
+ Alter: modified 1 atoms.
+PyMOL>alter 1u19_rhodopsin_pocket and resi 262,resi=28
+ Alter: modified 1 atoms.
+PyMOL>alter 1u19_rhodopsin_pocket and resi 263,resi=29
+ Alter: modified 1 atoms.
+PyMOL>iterate 2rh1_b2ar_pocket,residue_list.append(resi)
+ Iterate: iterated over 29 atoms.
+PyMOL>alter 2rh1_b2ar_pocket and resi 54,resi=1
+ Alter: modified 1 atoms.
+PyMOL>alter 2rh1_b2ar_pocket and resi 58,resi=2
+ Alter: modified 1 atoms.
+PyMOL>alter 2rh1_b2ar_pocket and resi 62,resi=3
+ Alter: modified 1 atoms.
+PyMOL>alter 2rh1_b2ar_pocket and resi 65,resi=4
+ Alter: modified 1 atoms.
+PyMOL>alter 2rh1_b2ar_pocket and resi 78,resi=5
+ Alter: modified 1 atoms.
+PyMOL>alter 2rh1_b2ar_pocket and resi 81,resi=6
+ Alter: modified 1 atoms.
+PyMOL>alter 2rh1_b2ar_pocket and resi 82,resi=7
+ Alter: modified 1 atoms.
+PyMOL>alter 2rh1_b2ar_pocket and resi 85,resi=8
+ Alter: modified 1 atoms.
+PyMOL>alter 2rh1_b2ar_pocket and resi 86,resi=9
+ Alter: modified 1 atoms.
+PyMOL>alter 2rh1_b2ar_pocket and resi 89,resi=10
+ Alter: modified 1 atoms.
+PyMOL>alter 2rh1_b2ar_pocket and resi 90,resi=11
+ Alter: modified 1 atoms.
+PyMOL>alter 2rh1_b2ar_pocket and resi 93,resi=12
+ Alter: modified 1 atoms.
+PyMOL>alter 2rh1_b2ar_pocket and resi 171,resi=13
+ Alter: modified 1 atoms.
+PyMOL>alter 2rh1_b2ar_pocket and resi 172,resi=14
+ Alter: modified 1 atoms.
+PyMOL>alter 2rh1_b2ar_pocket and resi 175,resi=15
+ Alter: modified 1 atoms.
+PyMOL>alter 2rh1_b2ar_pocket and resi 176,resi=16
+ Alter: modified 1 atoms.
+PyMOL>alter 2rh1_b2ar_pocket and resi 180,resi=17
+ Alter: modified 1 atoms.
+PyMOL>alter 2rh1_b2ar_pocket and resi 222,resi=18
+ Alter: modified 1 atoms.
+PyMOL>alter 2rh1_b2ar_pocket and resi 226,resi=19
+ Alter: modified 1 atoms.
+PyMOL>alter 2rh1_b2ar_pocket and resi 229,resi=20
+ Alter: modified 1 atoms.
+PyMOL>alter 2rh1_b2ar_pocket and resi 230,resi=21
+ Alter: modified 1 atoms.
+PyMOL>alter 2rh1_b2ar_pocket and resi 232,resi=22
+ Alter: modified 1 atoms.
+PyMOL>alter 2rh1_b2ar_pocket and resi 233,resi=23
+ Alter: modified 1 atoms.
+PyMOL>alter 2rh1_b2ar_pocket and resi 236,resi=24
+ Alter: modified 1 atoms.
+PyMOL>alter 2rh1_b2ar_pocket and resi 249,resi=25
+ Alter: modified 1 atoms.
+PyMOL>alter 2rh1_b2ar_pocket and resi 251,resi=26
+ Alter: modified 1 atoms.
+PyMOL>alter 2rh1_b2ar_pocket and resi 252,resi=27
+ Alter: modified 1 atoms.
+PyMOL>alter 2rh1_b2ar_pocket and resi 255,resi=28
+ Alter: modified 1 atoms.
+PyMOL>alter 2rh1_b2ar_pocket and resi 256,resi=29
+ Alter: modified 1 atoms.
+PyMOL>iterate 2vt4_b1ar_pocket,residue_list.append(resi)
+ Iterate: iterated over 29 atoms.
+PyMOL>alter 2vt4_b1ar_pocket and resi 51,resi=1
+ Alter: modified 1 atoms.
+PyMOL>alter 2vt4_b1ar_pocket and resi 55,resi=2
+ Alter: modified 1 atoms.
+PyMOL>alter 2vt4_b1ar_pocket and resi 59,resi=3
+ Alter: modified 1 atoms.
+PyMOL>alter 2vt4_b1ar_pocket and resi 62,resi=4
+ Alter: modified 1 atoms.
+PyMOL>alter 2vt4_b1ar_pocket and resi 75,resi=5
+ Alter: modified 1 atoms.
+PyMOL>alter 2vt4_b1ar_pocket and resi 78,resi=6
+ Alter: modified 1 atoms.
+PyMOL>alter 2vt4_b1ar_pocket and resi 79,resi=7
+ Alter: modified 1 atoms.
+PyMOL>alter 2vt4_b1ar_pocket and resi 82,resi=8
+ Alter: modified 1 atoms.
+PyMOL>alter 2vt4_b1ar_pocket and resi 83,resi=9
+ Alter: modified 1 atoms.
+PyMOL>alter 2vt4_b1ar_pocket and resi 86,resi=10
+ Alter: modified 1 atoms.
+PyMOL>alter 2vt4_b1ar_pocket and resi 87,resi=11
+ Alter: modified 1 atoms.
+PyMOL>alter 2vt4_b1ar_pocket and resi 90,resi=12
+ Alter: modified 1 atoms.
+PyMOL>alter 2vt4_b1ar_pocket and resi 168,resi=13
+ Alter: modified 1 atoms.
+PyMOL>alter 2vt4_b1ar_pocket and resi 169,resi=14
+ Alter: modified 1 atoms.
+PyMOL>alter 2vt4_b1ar_pocket and resi 172,resi=15
+ Alter: modified 1 atoms.
+PyMOL>alter 2vt4_b1ar_pocket and resi 173,resi=16
+ Alter: modified 1 atoms.
+PyMOL>alter 2vt4_b1ar_pocket and resi 177,resi=17
+ Alter: modified 1 atoms.
+PyMOL>alter 2vt4_b1ar_pocket and resi 230,resi=18
+ Alter: modified 1 atoms.
+PyMOL>alter 2vt4_b1ar_pocket and resi 234,resi=19
+ Alter: modified 1 atoms.
+PyMOL>alter 2vt4_b1ar_pocket and resi 237,resi=20
+ Alter: modified 1 atoms.
+PyMOL>alter 2vt4_b1ar_pocket and resi 238,resi=21
+ Alter: modified 1 atoms.
+PyMOL>alter 2vt4_b1ar_pocket and resi 240,resi=22
+ Alter: modified 1 atoms.
+PyMOL>alter 2vt4_b1ar_pocket and resi 241,resi=23
+ Alter: modified 1 atoms.
+PyMOL>alter 2vt4_b1ar_pocket and resi 244,resi=24
+ Alter: modified 1 atoms.
+PyMOL>alter 2vt4_b1ar_pocket and resi 257,resi=25
+ Alter: modified 1 atoms.
+PyMOL>alter 2vt4_b1ar_pocket and resi 259,resi=26
+ Alter: modified 1 atoms.
+PyMOL>alter 2vt4_b1ar_pocket and resi 260,resi=27
+ Alter: modified 1 atoms.
+PyMOL>alter 2vt4_b1ar_pocket and resi 263,resi=28
+ Alter: modified 1 atoms.
+PyMOL>alter 2vt4_b1ar_pocket and resi 264,resi=29
+ Alter: modified 1 atoms.
+PyMOL>iterate 3odu_cxcr4_pocket,residue_list.append(resi)
+ Iterate: iterated over 29 atoms.
+PyMOL>alter 3odu_cxcr4_pocket and resi 54,resi=1
+ Alter: modified 1 atoms.
+PyMOL>alter 3odu_cxcr4_pocket and resi 57,resi=2
+ Alter: modified 1 atoms.
+PyMOL>alter 3odu_cxcr4_pocket and resi 61,resi=3
+ Alter: modified 1 atoms.
+PyMOL>alter 3odu_cxcr4_pocket and resi 64,resi=4
+ Alter: modified 1 atoms.
+PyMOL>alter 3odu_cxcr4_pocket and resi 76,resi=5
+ Alter: modified 1 atoms.
+PyMOL>alter 3odu_cxcr4_pocket and resi 79,resi=6
+ Alter: modified 1 atoms.
+PyMOL>alter 3odu_cxcr4_pocket and resi 80,resi=7
+ Alter: modified 1 atoms.
+PyMOL>alter 3odu_cxcr4_pocket and resi 83,resi=8
+ Alter: modified 1 atoms.
+PyMOL>alter 3odu_cxcr4_pocket and resi 84,resi=9
+ Alter: modified 1 atoms.
+PyMOL>alter 3odu_cxcr4_pocket and resi 87,resi=10
+ Alter: modified 1 atoms.
+PyMOL>alter 3odu_cxcr4_pocket and resi 88,resi=11
+ Alter: modified 1 atoms.
+PyMOL>alter 3odu_cxcr4_pocket and resi 91,resi=12
+ Alter: modified 1 atoms.
+PyMOL>alter 3odu_cxcr4_pocket and resi 166,resi=13
+ Alter: modified 1 atoms.
+PyMOL>alter 3odu_cxcr4_pocket and resi 167,resi=14
+ Alter: modified 1 atoms.
+PyMOL>alter 3odu_cxcr4_pocket and resi 170,resi=15
+ Alter: modified 1 atoms.
+PyMOL>alter 3odu_cxcr4_pocket and resi 171,resi=16
+ Alter: modified 1 atoms.
+PyMOL>alter 3odu_cxcr4_pocket and resi 175,resi=17
+ Alter: modified 1 atoms.
+PyMOL>alter 3odu_cxcr4_pocket and resi 215,resi=18
+ Alter: modified 1 atoms.
+PyMOL>alter 3odu_cxcr4_pocket and resi 219,resi=19
+ Alter: modified 1 atoms.
+PyMOL>alter 3odu_cxcr4_pocket and resi 222,resi=20
+ Alter: modified 1 atoms.
+PyMOL>alter 3odu_cxcr4_pocket and resi 223,resi=21
+ Alter: modified 1 atoms.
+PyMOL>alter 3odu_cxcr4_pocket and resi 225,resi=22
+ Alter: modified 1 atoms.
+PyMOL>alter 3odu_cxcr4_pocket and resi 226,resi=23
+ Alter: modified 1 atoms.
+PyMOL>alter 3odu_cxcr4_pocket and resi 229,resi=24
+ Alter: modified 1 atoms.
+PyMOL>alter 3odu_cxcr4_pocket and resi 252,resi=25
+ Alter: modified 1 atoms.
+PyMOL>alter 3odu_cxcr4_pocket and resi 254,resi=26
+ Alter: modified 1 atoms.
+PyMOL>alter 3odu_cxcr4_pocket and resi 255,resi=27
+ Alter: modified 1 atoms.
+PyMOL>alter 3odu_cxcr4_pocket and resi 258,resi=28
+ Alter: modified 1 atoms.
+PyMOL>alter 3odu_cxcr4_pocket and resi 259,resi=29
+ Alter: modified 1 atoms.
+PyMOL>iterate 3pbl_dopamine_pocket,residue_list.append(resi)
+ Iterate: iterated over 29 atoms.
+PyMOL>alter 3pbl_dopamine_pocket and resi 47,resi=1
+ Alter: modified 1 atoms.
+PyMOL>alter 3pbl_dopamine_pocket and resi 51,resi=2
+ Alter: modified 1 atoms.
+PyMOL>alter 3pbl_dopamine_pocket and resi 55,resi=3
+ Alter: modified 1 atoms.
+PyMOL>alter 3pbl_dopamine_pocket and resi 58,resi=4
+ Alter: modified 1 atoms.
+PyMOL>alter 3pbl_dopamine_pocket and resi 72,resi=5
+ Alter: modified 1 atoms.
+PyMOL>alter 3pbl_dopamine_pocket and resi 75,resi=6
+ Alter: modified 1 atoms.
+PyMOL>alter 3pbl_dopamine_pocket and resi 76,resi=7
+ Alter: modified 1 atoms.
+PyMOL>alter 3pbl_dopamine_pocket and resi 79,resi=8
+ Alter: modified 1 atoms.
+PyMOL>alter 3pbl_dopamine_pocket and resi 80,resi=9
+ Alter: modified 1 atoms.
+PyMOL>alter 3pbl_dopamine_pocket and resi 83,resi=10
+ Alter: modified 1 atoms.
+PyMOL>alter 3pbl_dopamine_pocket and resi 84,resi=11
+ Alter: modified 1 atoms.
+PyMOL>alter 3pbl_dopamine_pocket and resi 87,resi=12
+ Alter: modified 1 atoms.
+PyMOL>alter 3pbl_dopamine_pocket and resi 157,resi=13
+ Alter: modified 1 atoms.
+PyMOL>alter 3pbl_dopamine_pocket and resi 158,resi=14
+ Alter: modified 1 atoms.
+PyMOL>alter 3pbl_dopamine_pocket and resi 161,resi=15
+ Alter: modified 1 atoms.
+PyMOL>alter 3pbl_dopamine_pocket and resi 162,resi=16
+ Alter: modified 1 atoms.
+PyMOL>alter 3pbl_dopamine_pocket and resi 166,resi=17
+ Alter: modified 1 atoms.
+PyMOL>alter 3pbl_dopamine_pocket and resi 210,resi=18
+ Alter: modified 1 atoms.
+PyMOL>alter 3pbl_dopamine_pocket and resi 214,resi=19
+ Alter: modified 1 atoms.
+PyMOL>alter 3pbl_dopamine_pocket and resi 217,resi=20
+ Alter: modified 1 atoms.
+PyMOL>alter 3pbl_dopamine_pocket and resi 218,resi=21
+ Alter: modified 1 atoms.
+PyMOL>alter 3pbl_dopamine_pocket and resi 220,resi=22
+ Alter: modified 1 atoms.
+PyMOL>alter 3pbl_dopamine_pocket and resi 221,resi=23
+ Alter: modified 1 atoms.
+PyMOL>alter 3pbl_dopamine_pocket and resi 224,resi=24
+ Alter: modified 1 atoms.
+PyMOL>alter 3pbl_dopamine_pocket and resi 238,resi=25
+ Alter: modified 1 atoms.
+PyMOL>alter 3pbl_dopamine_pocket and resi 240,resi=26
+ Alter: modified 1 atoms.
+PyMOL>alter 3pbl_dopamine_pocket and resi 241,resi=27
+ Alter: modified 1 atoms.
+PyMOL>alter 3pbl_dopamine_pocket and resi 244,resi=28
+ Alter: modified 1 atoms.
+PyMOL>alter 3pbl_dopamine_pocket and resi 245,resi=29
+ Alter: modified 1 atoms.
+PyMOL>iterate 3rze_H1_pocket,residue_list.append(resi)
+ Iterate: iterated over 29 atoms.
+PyMOL>alter 3rze_H1_pocket and resi 49,resi=1
+ Alter: modified 1 atoms.
+PyMOL>alter 3rze_H1_pocket and resi 53,resi=2
+ Alter: modified 1 atoms.
+PyMOL>alter 3rze_H1_pocket and resi 57,resi=3
+ Alter: modified 1 atoms.
+PyMOL>alter 3rze_H1_pocket and resi 60,resi=4
+ Alter: modified 1 atoms.
+PyMOL>alter 3rze_H1_pocket and resi 73,resi=5
+ Alter: modified 1 atoms.
+PyMOL>alter 3rze_H1_pocket and resi 76,resi=6
+ Alter: modified 1 atoms.
+PyMOL>alter 3rze_H1_pocket and resi 77,resi=7
+ Alter: modified 1 atoms.
+PyMOL>alter 3rze_H1_pocket and resi 80,resi=8
+ Alter: modified 1 atoms.
+PyMOL>alter 3rze_H1_pocket and resi 81,resi=9
+ Alter: modified 1 atoms.
+PyMOL>alter 3rze_H1_pocket and resi 84,resi=10
+ Alter: modified 1 atoms.
+PyMOL>alter 3rze_H1_pocket and resi 85,resi=11
+ Alter: modified 1 atoms.
+PyMOL>alter 3rze_H1_pocket and resi 88,resi=12
+ Alter: modified 1 atoms.
+PyMOL>alter 3rze_H1_pocket and resi 156,resi=13
+ Alter: modified 1 atoms.
+PyMOL>alter 3rze_H1_pocket and resi 157,resi=14
+ Alter: modified 1 atoms.
+PyMOL>alter 3rze_H1_pocket and resi 160,resi=15
+ Alter: modified 1 atoms.
+PyMOL>alter 3rze_H1_pocket and resi 161,resi=16
+ Alter: modified 1 atoms.
+PyMOL>alter 3rze_H1_pocket and resi 165,resi=17
+ Alter: modified 1 atoms.
+PyMOL>alter 3rze_H1_pocket and resi 207,resi=18
+ Alter: modified 1 atoms.
+PyMOL>alter 3rze_H1_pocket and resi 211,resi=19
+ Alter: modified 1 atoms.
+PyMOL>alter 3rze_H1_pocket and resi 214,resi=20
+ Alter: modified 1 atoms.
+PyMOL>alter 3rze_H1_pocket and resi 215,resi=21
+ Alter: modified 1 atoms.
+PyMOL>alter 3rze_H1_pocket and resi 217,resi=22
+ Alter: modified 1 atoms.
+PyMOL>alter 3rze_H1_pocket and resi 218,resi=23
+ Alter: modified 1 atoms.
+PyMOL>alter 3rze_H1_pocket and resi 221,resi=24
+ Alter: modified 1 atoms.
+PyMOL>alter 3rze_H1_pocket and resi 234,resi=25
+ Alter: modified 1 atoms.
+PyMOL>alter 3rze_H1_pocket and resi 236,resi=26
+ Alter: modified 1 atoms.
+PyMOL>alter 3rze_H1_pocket and resi 237,resi=27
+ Alter: modified 1 atoms.
+PyMOL>alter 3rze_H1_pocket and resi 240,resi=28
+ Alter: modified 1 atoms.
+PyMOL>alter 3rze_H1_pocket and resi 241,resi=29
+ Alter: modified 1 atoms.
+PyMOL>iterate 3uon_M2_pocket,residue_list.append(resi)
+ Iterate: iterated over 29 atoms.
+PyMOL>alter 3uon_M2_pocket and resi 53,resi=1
+ Alter: modified 1 atoms.
+PyMOL>alter 3uon_M2_pocket and resi 57,resi=2
+ Alter: modified 1 atoms.
+PyMOL>alter 3uon_M2_pocket and resi 61,resi=3
+ Alter: modified 1 atoms.
+PyMOL>alter 3uon_M2_pocket and resi 64,resi=4
+ Alter: modified 1 atoms.
+PyMOL>alter 3uon_M2_pocket and resi 77,resi=5
+ Alter: modified 1 atoms.
+PyMOL>alter 3uon_M2_pocket and resi 80,resi=6
+ Alter: modified 1 atoms.
+PyMOL>alter 3uon_M2_pocket and resi 81,resi=7
+ Alter: modified 1 atoms.
+PyMOL>alter 3uon_M2_pocket and resi 84,resi=8
+ Alter: modified 1 atoms.
+PyMOL>alter 3uon_M2_pocket and resi 85,resi=9
+ Alter: modified 1 atoms.
+PyMOL>alter 3uon_M2_pocket and resi 88,resi=10
+ Alter: modified 1 atoms.
+PyMOL>alter 3uon_M2_pocket and resi 89,resi=11
+ Alter: modified 1 atoms.
+PyMOL>alter 3uon_M2_pocket and resi 92,resi=12
+ Alter: modified 1 atoms.
+PyMOL>alter 3uon_M2_pocket and resi 167,resi=13
+ Alter: modified 1 atoms.
+PyMOL>alter 3uon_M2_pocket and resi 168,resi=14
+ Alter: modified 1 atoms.
+PyMOL>alter 3uon_M2_pocket and resi 171,resi=15
+ Alter: modified 1 atoms.
+PyMOL>alter 3uon_M2_pocket and resi 172,resi=16
+ Alter: modified 1 atoms.
+PyMOL>alter 3uon_M2_pocket and resi 176,resi=17
+ Alter: modified 1 atoms.
+PyMOL>alter 3uon_M2_pocket and resi 218,resi=18
+ Alter: modified 1 atoms.
+PyMOL>alter 3uon_M2_pocket and resi 222,resi=19
+ Alter: modified 1 atoms.
+PyMOL>alter 3uon_M2_pocket and resi 225,resi=20
+ Alter: modified 1 atoms.
+PyMOL>alter 3uon_M2_pocket and resi 226,resi=21
+ Alter: modified 1 atoms.
+PyMOL>alter 3uon_M2_pocket and resi 228,resi=22
+ Alter: modified 1 atoms.
+PyMOL>alter 3uon_M2_pocket and resi 229,resi=23
+ Alter: modified 1 atoms.
+PyMOL>alter 3uon_M2_pocket and resi 232,resi=24
+ Alter: modified 1 atoms.
+PyMOL>alter 3uon_M2_pocket and resi 245,resi=25
+ Alter: modified 1 atoms.
+PyMOL>alter 3uon_M2_pocket and resi 247,resi=26
+ Alter: modified 1 atoms.
+PyMOL>alter 3uon_M2_pocket and resi 248,resi=27
+ Alter: modified 1 atoms.
+PyMOL>alter 3uon_M2_pocket and resi 251,resi=28
+ Alter: modified 1 atoms.
+PyMOL>alter 3uon_M2_pocket and resi 252,resi=29
+ Alter: modified 1 atoms.
+PyMOL>iterate 3v2w_sphingosine_pocket,residue_list.append(resi)
+ Iterate: iterated over 29 atoms.
+PyMOL>alter 3v2w_sphingosine_pocket and resi 48,resi=1
+ Alter: modified 1 atoms.
+PyMOL>alter 3v2w_sphingosine_pocket and resi 52,resi=2
+ Alter: modified 1 atoms.
+PyMOL>alter 3v2w_sphingosine_pocket and resi 56,resi=3
+ Alter: modified 1 atoms.
+PyMOL>alter 3v2w_sphingosine_pocket and resi 59,resi=4
+ Alter: modified 1 atoms.
+PyMOL>alter 3v2w_sphingosine_pocket and resi 71,resi=5
+ Alter: modified 1 atoms.
+PyMOL>alter 3v2w_sphingosine_pocket and resi 74,resi=6
+ Alter: modified 1 atoms.
+PyMOL>alter 3v2w_sphingosine_pocket and resi 75,resi=7
+ Alter: modified 1 atoms.
+PyMOL>alter 3v2w_sphingosine_pocket and resi 78,resi=8
+ Alter: modified 1 atoms.
+PyMOL>alter 3v2w_sphingosine_pocket and resi 79,resi=9
+ Alter: modified 1 atoms.
+PyMOL>alter 3v2w_sphingosine_pocket and resi 82,resi=10
+ Alter: modified 1 atoms.
+PyMOL>alter 3v2w_sphingosine_pocket and resi 83,resi=11
+ Alter: modified 1 atoms.
+PyMOL>alter 3v2w_sphingosine_pocket and resi 86,resi=12
+ Alter: modified 1 atoms.
+PyMOL>alter 3v2w_sphingosine_pocket and resi 149,resi=13
+ Alter: modified 1 atoms.
+PyMOL>alter 3v2w_sphingosine_pocket and resi 150,resi=14
+ Alter: modified 1 atoms.
+PyMOL>alter 3v2w_sphingosine_pocket and resi 153,resi=15
+ Alter: modified 1 atoms.
+PyMOL>alter 3v2w_sphingosine_pocket and resi 154,resi=16
+ Alter: modified 1 atoms.
+PyMOL>alter 3v2w_sphingosine_pocket and resi 157,resi=17
+ Alter: modified 1 atoms.
+PyMOL>alter 3v2w_sphingosine_pocket and resi 199,resi=18
+ Alter: modified 1 atoms.
+PyMOL>alter 3v2w_sphingosine_pocket and resi 203,resi=19
+ Alter: modified 1 atoms.
+PyMOL>alter 3v2w_sphingosine_pocket and resi 206,resi=20
+ Alter: modified 1 atoms.
+PyMOL>alter 3v2w_sphingosine_pocket and resi 207,resi=21
+ Alter: modified 1 atoms.
+PyMOL>alter 3v2w_sphingosine_pocket and resi 209,resi=22
+ Alter: modified 1 atoms.
+PyMOL>alter 3v2w_sphingosine_pocket and resi 210,resi=23
+ Alter: modified 1 atoms.
+PyMOL>alter 3v2w_sphingosine_pocket and resi 213,resi=24
+ Alter: modified 1 atoms.
+PyMOL>alter 3v2w_sphingosine_pocket and resi 228,resi=25
+ Alter: modified 1 atoms.
+PyMOL>alter 3v2w_sphingosine_pocket and resi 230,resi=26
+ Alter: modified 1 atoms.
+PyMOL>alter 3v2w_sphingosine_pocket and resi 231,resi=27
+ Alter: modified 1 atoms.
+PyMOL>alter 3v2w_sphingosine_pocket and resi 234,resi=28
+ Alter: modified 1 atoms.
+PyMOL>alter 3v2w_sphingosine_pocket and resi 235,resi=29
+ Alter: modified 1 atoms.
+PyMOL>iterate 4daj_m3_pocket,residue_list.append(resi)
+ Iterate: iterated over 29 atoms.
+PyMOL>alter 4daj_m3_pocket and resi 53,resi=1
+ Alter: modified 1 atoms.
+PyMOL>alter 4daj_m3_pocket and resi 57,resi=2
+ Alter: modified 1 atoms.
+PyMOL>alter 4daj_m3_pocket and resi 61,resi=3
+ Alter: modified 1 atoms.
+PyMOL>alter 4daj_m3_pocket and resi 64,resi=4
+ Alter: modified 1 atoms.
+PyMOL>alter 4daj_m3_pocket and resi 77,resi=5
+ Alter: modified 1 atoms.
+PyMOL>alter 4daj_m3_pocket and resi 80,resi=6
+ Alter: modified 1 atoms.
+PyMOL>alter 4daj_m3_pocket and resi 81,resi=7
+ Alter: modified 1 atoms.
+PyMOL>alter 4daj_m3_pocket and resi 84,resi=8
+ Alter: modified 1 atoms.
+PyMOL>alter 4daj_m3_pocket and resi 85,resi=9
+ Alter: modified 1 atoms.
+PyMOL>alter 4daj_m3_pocket and resi 88,resi=10
+ Alter: modified 1 atoms.
+PyMOL>alter 4daj_m3_pocket and resi 89,resi=11
+ Alter: modified 1 atoms.
+PyMOL>alter 4daj_m3_pocket and resi 92,resi=12
+ Alter: modified 1 atoms.
+PyMOL>alter 4daj_m3_pocket and resi 167,resi=13
+ Alter: modified 1 atoms.
+PyMOL>alter 4daj_m3_pocket and resi 168,resi=14
+ Alter: modified 1 atoms.
+PyMOL>alter 4daj_m3_pocket and resi 171,resi=15
+ Alter: modified 1 atoms.
+PyMOL>alter 4daj_m3_pocket and resi 172,resi=16
+ Alter: modified 1 atoms.
+PyMOL>alter 4daj_m3_pocket and resi 176,resi=17
+ Alter: modified 1 atoms.
+PyMOL>alter 4daj_m3_pocket and resi 211,resi=18
+ Alter: modified 1 atoms.
+PyMOL>alter 4daj_m3_pocket and resi 215,resi=19
+ Alter: modified 1 atoms.
+PyMOL>alter 4daj_m3_pocket and resi 218,resi=20
+ Alter: modified 1 atoms.
+PyMOL>alter 4daj_m3_pocket and resi 219,resi=21
+ Alter: modified 1 atoms.
+PyMOL>alter 4daj_m3_pocket and resi 221,resi=22
+ Alter: modified 1 atoms.
+PyMOL>alter 4daj_m3_pocket and resi 222,resi=23
+ Alter: modified 1 atoms.
+PyMOL>alter 4daj_m3_pocket and resi 225,resi=24
+ Alter: modified 1 atoms.
+PyMOL>alter 4daj_m3_pocket and resi 238,resi=25
+ Alter: modified 1 atoms.
+PyMOL>alter 4daj_m3_pocket and resi 240,resi=26
+ Alter: modified 1 atoms.
+PyMOL>alter 4daj_m3_pocket and resi 241,resi=27
+ Alter: modified 1 atoms.
+PyMOL>alter 4daj_m3_pocket and resi 244,resi=28
+ Alter: modified 1 atoms.
+PyMOL>alter 4daj_m3_pocket and resi 245,resi=29
+ Alter: modified 1 atoms.
+PyMOL>iterate 4djh_ka_opioid_pocket,residue_list.append(resi)
+ Iterate: iterated over 29 atoms.
+PyMOL>alter 4djh_ka_opioid_pocket and resi 54,resi=1
+ Alter: modified 1 atoms.
+PyMOL>alter 4djh_ka_opioid_pocket and resi 57,resi=2
+ Alter: modified 1 atoms.
+PyMOL>alter 4djh_ka_opioid_pocket and resi 61,resi=3
+ Alter: modified 1 atoms.
+PyMOL>alter 4djh_ka_opioid_pocket and resi 64,resi=4
+ Alter: modified 1 atoms.
+PyMOL>alter 4djh_ka_opioid_pocket and resi 77,resi=5
+ Alter: modified 1 atoms.
+PyMOL>alter 4djh_ka_opioid_pocket and resi 80,resi=6
+ Alter: modified 1 atoms.
+PyMOL>alter 4djh_ka_opioid_pocket and resi 81,resi=7
+ Alter: modified 1 atoms.
+PyMOL>alter 4djh_ka_opioid_pocket and resi 84,resi=8
+ Alter: modified 1 atoms.
+PyMOL>alter 4djh_ka_opioid_pocket and resi 85,resi=9
+ Alter: modified 1 atoms.
+PyMOL>alter 4djh_ka_opioid_pocket and resi 88,resi=10
+ Alter: modified 1 atoms.
+PyMOL>alter 4djh_ka_opioid_pocket and resi 89,resi=11
+ Alter: modified 1 atoms.
+PyMOL>alter 4djh_ka_opioid_pocket and resi 92,resi=12
+ Alter: modified 1 atoms.
+PyMOL>alter 4djh_ka_opioid_pocket and resi 172,resi=13
+ Alter: modified 1 atoms.
+PyMOL>alter 4djh_ka_opioid_pocket and resi 173,resi=14
+ Alter: modified 1 atoms.
+PyMOL>alter 4djh_ka_opioid_pocket and resi 176,resi=15
+ Alter: modified 1 atoms.
+PyMOL>alter 4djh_ka_opioid_pocket and resi 177,resi=16
+ Alter: modified 1 atoms.
+PyMOL>alter 4djh_ka_opioid_pocket and resi 181,resi=17
+ Alter: modified 1 atoms.
+PyMOL>alter 4djh_ka_opioid_pocket and resi 228,resi=18
+ Alter: modified 1 atoms.
+PyMOL>alter 4djh_ka_opioid_pocket and resi 232,resi=19
+ Alter: modified 1 atoms.
+PyMOL>alter 4djh_ka_opioid_pocket and resi 235,resi=20
+ Alter: modified 1 atoms.
+PyMOL>alter 4djh_ka_opioid_pocket and resi 236,resi=21
+ Alter: modified 1 atoms.
+PyMOL>alter 4djh_ka_opioid_pocket and resi 238,resi=22
+ Alter: modified 1 atoms.
+PyMOL>alter 4djh_ka_opioid_pocket and resi 239,resi=23
+ Alter: modified 1 atoms.
+PyMOL>alter 4djh_ka_opioid_pocket and resi 242,resi=24
+ Alter: modified 1 atoms.
+PyMOL>alter 4djh_ka_opioid_pocket and resi 253,resi=25
+ Alter: modified 1 atoms.
+PyMOL>alter 4djh_ka_opioid_pocket and resi 255,resi=26
+ Alter: modified 1 atoms.
+PyMOL>alter 4djh_ka_opioid_pocket and resi 256,resi=27
+ Alter: modified 1 atoms.
+PyMOL>alter 4djh_ka_opioid_pocket and resi 259,resi=28
+ Alter: modified 1 atoms.
+PyMOL>alter 4djh_ka_opioid_pocket and resi 260,resi=29
+ Alter: modified 1 atoms.
+PyMOL>iterate 4dkl_mu_opioid_pocket,residue_list.append(resi)
+ Iterate: iterated over 29 atoms.
+PyMOL>alter 4dkl_mu_opioid_pocket and resi 53,resi=1
+ Alter: modified 1 atoms.
+PyMOL>alter 4dkl_mu_opioid_pocket and resi 56,resi=2
+ Alter: modified 1 atoms.
+PyMOL>alter 4dkl_mu_opioid_pocket and resi 60,resi=3
+ Alter: modified 1 atoms.
+PyMOL>alter 4dkl_mu_opioid_pocket and resi 63,resi=4
+ Alter: modified 1 atoms.
+PyMOL>alter 4dkl_mu_opioid_pocket and resi 76,resi=5
+ Alter: modified 1 atoms.
+PyMOL>alter 4dkl_mu_opioid_pocket and resi 79,resi=6
+ Alter: modified 1 atoms.
+PyMOL>alter 4dkl_mu_opioid_pocket and resi 80,resi=7
+ Alter: modified 1 atoms.
+PyMOL>alter 4dkl_mu_opioid_pocket and resi 83,resi=8
+ Alter: modified 1 atoms.
+PyMOL>alter 4dkl_mu_opioid_pocket and resi 84,resi=9
+ Alter: modified 1 atoms.
+PyMOL>alter 4dkl_mu_opioid_pocket and resi 87,resi=10
+ Alter: modified 1 atoms.
+PyMOL>alter 4dkl_mu_opioid_pocket and resi 88,resi=11
+ Alter: modified 1 atoms.
+PyMOL>alter 4dkl_mu_opioid_pocket and resi 91,resi=12
+ Alter: modified 1 atoms.
+PyMOL>alter 4dkl_mu_opioid_pocket and resi 168,resi=13
+ Alter: modified 1 atoms.
+PyMOL>alter 4dkl_mu_opioid_pocket and resi 169,resi=14
+ Alter: modified 1 atoms.
+PyMOL>alter 4dkl_mu_opioid_pocket and resi 172,resi=15
+ Alter: modified 1 atoms.
+PyMOL>alter 4dkl_mu_opioid_pocket and resi 173,resi=16
+ Alter: modified 1 atoms.
+PyMOL>alter 4dkl_mu_opioid_pocket and resi 177,resi=17
+ Alter: modified 1 atoms.
+PyMOL>alter 4dkl_mu_opioid_pocket and resi 219,resi=18
+ Alter: modified 1 atoms.
+PyMOL>alter 4dkl_mu_opioid_pocket and resi 223,resi=19
+ Alter: modified 1 atoms.
+PyMOL>alter 4dkl_mu_opioid_pocket and resi 226,resi=20
+ Alter: modified 1 atoms.
+PyMOL>alter 4dkl_mu_opioid_pocket and resi 227,resi=21
+ Alter: modified 1 atoms.
+PyMOL>alter 4dkl_mu_opioid_pocket and resi 229,resi=22
+ Alter: modified 1 atoms.
+PyMOL>alter 4dkl_mu_opioid_pocket and resi 230,resi=23
+ Alter: modified 1 atoms.
+PyMOL>alter 4dkl_mu_opioid_pocket and resi 233,resi=24
+ Alter: modified 1 atoms.
+PyMOL>alter 4dkl_mu_opioid_pocket and resi 249,resi=25
+ Alter: modified 1 atoms.
+PyMOL>alter 4dkl_mu_opioid_pocket and resi 251,resi=26
+ Alter: modified 1 atoms.
+PyMOL>alter 4dkl_mu_opioid_pocket and resi 252,resi=27
+ Alter: modified 1 atoms.
+PyMOL>alter 4dkl_mu_opioid_pocket and resi 255,resi=28
+ Alter: modified 1 atoms.
+PyMOL>alter 4dkl_mu_opioid_pocket and resi 256,resi=29
+ Alter: modified 1 atoms.
+PyMOL>iterate 4ea3_nociceptin_pocket,residue_list.append(resi)
+ Iterate: iterated over 29 atoms.
+PyMOL>alter 4ea3_nociceptin_pocket and resi 54,resi=1
+ Alter: modified 1 atoms.
+PyMOL>alter 4ea3_nociceptin_pocket and resi 57,resi=2
+ Alter: modified 1 atoms.
+PyMOL>alter 4ea3_nociceptin_pocket and resi 61,resi=3
+ Alter: modified 1 atoms.
+PyMOL>alter 4ea3_nociceptin_pocket and resi 64,resi=4
+ Alter: modified 1 atoms.
+PyMOL>alter 4ea3_nociceptin_pocket and resi 77,resi=5
+ Alter: modified 1 atoms.
+PyMOL>alter 4ea3_nociceptin_pocket and resi 80,resi=6
+ Alter: modified 1 atoms.
+PyMOL>alter 4ea3_nociceptin_pocket and resi 81,resi=7
+ Alter: modified 1 atoms.
+PyMOL>alter 4ea3_nociceptin_pocket and resi 84,resi=8
+ Alter: modified 1 atoms.
+PyMOL>alter 4ea3_nociceptin_pocket and resi 85,resi=9
+ Alter: modified 1 atoms.
+PyMOL>alter 4ea3_nociceptin_pocket and resi 88,resi=10
+ Alter: modified 1 atoms.
+PyMOL>alter 4ea3_nociceptin_pocket and resi 89,resi=11
+ Alter: modified 1 atoms.
+PyMOL>alter 4ea3_nociceptin_pocket and resi 92,resi=12
+ Alter: modified 1 atoms.
+PyMOL>alter 4ea3_nociceptin_pocket and resi 162,resi=13
+ Alter: modified 1 atoms.
+PyMOL>alter 4ea3_nociceptin_pocket and resi 163,resi=14
+ Alter: modified 1 atoms.
+PyMOL>alter 4ea3_nociceptin_pocket and resi 166,resi=15
+ Alter: modified 1 atoms.
+PyMOL>alter 4ea3_nociceptin_pocket and resi 167,resi=16
+ Alter: modified 1 atoms.
+PyMOL>alter 4ea3_nociceptin_pocket and resi 171,resi=17
+ Alter: modified 1 atoms.
+PyMOL>alter 4ea3_nociceptin_pocket and resi 219,resi=18
+ Alter: modified 1 atoms.
+PyMOL>alter 4ea3_nociceptin_pocket and resi 223,resi=19
+ Alter: modified 1 atoms.
+PyMOL>alter 4ea3_nociceptin_pocket and resi 226,resi=20
+ Alter: modified 1 atoms.
+PyMOL>alter 4ea3_nociceptin_pocket and resi 227,resi=21
+ Alter: modified 1 atoms.
+PyMOL>alter 4ea3_nociceptin_pocket and resi 229,resi=22
+ Alter: modified 1 atoms.
+PyMOL>alter 4ea3_nociceptin_pocket and resi 230,resi=23
+ Alter: modified 1 atoms.
+PyMOL>alter 4ea3_nociceptin_pocket and resi 233,resi=24
+ Alter: modified 1 atoms.
+PyMOL>alter 4ea3_nociceptin_pocket and resi 249,resi=25
+ Alter: modified 1 atoms.
+PyMOL>alter 4ea3_nociceptin_pocket and resi 251,resi=26
+ Alter: modified 1 atoms.
+PyMOL>alter 4ea3_nociceptin_pocket and resi 252,resi=27
+ Alter: modified 1 atoms.
+PyMOL>alter 4ea3_nociceptin_pocket and resi 255,resi=28
+ Alter: modified 1 atoms.
+PyMOL>alter 4ea3_nociceptin_pocket and resi 256,resi=29
+ Alter: modified 1 atoms.
+PyMOL>iterate 4ej4_de_opioid_pocket,residue_list.append(resi)
+ Iterate: iterated over 29 atoms.
+PyMOL>alter 4ej4_de_opioid_pocket and resi 58,resi=1
+ Alter: modified 1 atoms.
+PyMOL>alter 4ej4_de_opioid_pocket and resi 61,resi=2
+ Alter: modified 1 atoms.
+PyMOL>alter 4ej4_de_opioid_pocket and resi 65,resi=3
+ Alter: modified 1 atoms.
+PyMOL>alter 4ej4_de_opioid_pocket and resi 68,resi=4
+ Alter: modified 1 atoms.
+PyMOL>alter 4ej4_de_opioid_pocket and resi 81,resi=5
+ Alter: modified 1 atoms.
+PyMOL>alter 4ej4_de_opioid_pocket and resi 84,resi=6
+ Alter: modified 1 atoms.
+PyMOL>alter 4ej4_de_opioid_pocket and resi 85,resi=7
+ Alter: modified 1 atoms.
+PyMOL>alter 4ej4_de_opioid_pocket and resi 88,resi=8
+ Alter: modified 1 atoms.
+PyMOL>alter 4ej4_de_opioid_pocket and resi 89,resi=9
+ Alter: modified 1 atoms.
+PyMOL>alter 4ej4_de_opioid_pocket and resi 92,resi=10
+ Alter: modified 1 atoms.
+PyMOL>alter 4ej4_de_opioid_pocket and resi 93,resi=11
+ Alter: modified 1 atoms.
+PyMOL>alter 4ej4_de_opioid_pocket and resi 96,resi=12
+ Alter: modified 1 atoms.
+PyMOL>alter 4ej4_de_opioid_pocket and resi 173,resi=13
+ Alter: modified 1 atoms.
+PyMOL>alter 4ej4_de_opioid_pocket and resi 174,resi=14
+ Alter: modified 1 atoms.
+PyMOL>alter 4ej4_de_opioid_pocket and resi 177,resi=15
+ Alter: modified 1 atoms.
+PyMOL>alter 4ej4_de_opioid_pocket and resi 178,resi=16
+ Alter: modified 1 atoms.
+PyMOL>alter 4ej4_de_opioid_pocket and resi 182,resi=17
+ Alter: modified 1 atoms.
+PyMOL>alter 4ej4_de_opioid_pocket and resi 224,resi=18
+ Alter: modified 1 atoms.
+PyMOL>alter 4ej4_de_opioid_pocket and resi 228,resi=19
+ Alter: modified 1 atoms.
+PyMOL>alter 4ej4_de_opioid_pocket and resi 231,resi=20
+ Alter: modified 1 atoms.
+PyMOL>alter 4ej4_de_opioid_pocket and resi 232,resi=21
+ Alter: modified 1 atoms.
+PyMOL>alter 4ej4_de_opioid_pocket and resi 234,resi=22
+ Alter: modified 1 atoms.
+PyMOL>alter 4ej4_de_opioid_pocket and resi 235,resi=23
+ Alter: modified 1 atoms.
+PyMOL>alter 4ej4_de_opioid_pocket and resi 238,resi=24
+ Alter: modified 1 atoms.
+PyMOL>alter 4ej4_de_opioid_pocket and resi 255,resi=25
+ Alter: modified 1 atoms.
+PyMOL>alter 4ej4_de_opioid_pocket and resi 257,resi=26
+ Alter: modified 1 atoms.
+PyMOL>alter 4ej4_de_opioid_pocket and resi 258,resi=27
+ Alter: modified 1 atoms.
+PyMOL>alter 4ej4_de_opioid_pocket and resi 261,resi=28
+ Alter: modified 1 atoms.
+PyMOL>alter 4ej4_de_opioid_pocket and resi 262,resi=29
+ Alter: modified 1 atoms.
+PyMOL>load /Users/christoffernorn/dropbox/projects/gpcr_loop_benchmark_liz_chris/demo/cn_demos/7B/01_evaluate_score_vs_pocket_rmsd/structures/3emlA/3emlA_1.pdb
+ CmdLoad: "/Users/christoffernorn/dropbox/projects/gpcr_loop_benchmark_liz_chris/demo/cn_demos/7B/01_evaluate_score_vs_pocket_rmsd/structures/3emlA/3emlA_1.pdb" loaded as "3emlA_1".
+PyMOL>remove 3emlA_1 and not resi 53+57+61+64+75+78+79+82+83+86+87+90+167+168+171+172+177+220+224+227+228+230+231+234+249+251+252+255+256
+ Remove: eliminated 4100 atoms in model "3emlA_1".
+PyMOL>remove 3emlA_1 and not name ca
+ Remove: eliminated 443 atoms in model "3emlA_1".
+PyMOL>cealign template_2rh1 and i. 82+86+90+93+106+109+110+113+114+117+118+121+199+200+203+204+208+282+286+289+290+292+293+296+309+311+312+315+316, 3emlA_1
+RMSD 1.437997 over 24 residues
+PyMOL>iterate 3emlA_1,residue_list.append(resi)
+ Iterate: iterated over 29 atoms.
+PyMOL>alter 3emlA_1 and resi 53,resi=1
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_1 and resi 57,resi=2
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_1 and resi 61,resi=3
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_1 and resi 64,resi=4
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_1 and resi 75,resi=5
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_1 and resi 78,resi=6
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_1 and resi 79,resi=7
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_1 and resi 82,resi=8
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_1 and resi 83,resi=9
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_1 and resi 86,resi=10
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_1 and resi 87,resi=11
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_1 and resi 90,resi=12
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_1 and resi 167,resi=13
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_1 and resi 168,resi=14
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_1 and resi 171,resi=15
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_1 and resi 172,resi=16
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_1 and resi 177,resi=17
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_1 and resi 220,resi=18
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_1 and resi 224,resi=19
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_1 and resi 227,resi=20
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_1 and resi 228,resi=21
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_1 and resi 230,resi=22
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_1 and resi 231,resi=23
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_1 and resi 234,resi=24
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_1 and resi 249,resi=25
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_1 and resi 251,resi=26
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_1 and resi 252,resi=27
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_1 and resi 255,resi=28
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_1 and resi 256,resi=29
+ Alter: modified 1 atoms.
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete 3emlA_1
+PyMOL>load /Users/christoffernorn/dropbox/projects/gpcr_loop_benchmark_liz_chris/demo/cn_demos/7B/01_evaluate_score_vs_pocket_rmsd/structures/3emlA/3emlA_10.pdb
+ CmdLoad: "/Users/christoffernorn/dropbox/projects/gpcr_loop_benchmark_liz_chris/demo/cn_demos/7B/01_evaluate_score_vs_pocket_rmsd/structures/3emlA/3emlA_10.pdb" loaded as "3emlA_10".
+PyMOL>remove 3emlA_10 and not resi 53+57+61+64+75+78+79+82+83+86+87+90+167+168+171+172+177+220+224+227+228+230+231+234+249+251+252+255+256
+ Remove: eliminated 4100 atoms in model "3emlA_10".
+PyMOL>remove 3emlA_10 and not name ca
+ Remove: eliminated 443 atoms in model "3emlA_10".
+PyMOL>cealign template_2rh1 and i. 82+86+90+93+106+109+110+113+114+117+118+121+199+200+203+204+208+282+286+289+290+292+293+296+309+311+312+315+316, 3emlA_10
+RMSD 2.932690 over 24 residues
+PyMOL>iterate 3emlA_10,residue_list.append(resi)
+ Iterate: iterated over 29 atoms.
+PyMOL>alter 3emlA_10 and resi 53,resi=1
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_10 and resi 57,resi=2
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_10 and resi 61,resi=3
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_10 and resi 64,resi=4
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_10 and resi 75,resi=5
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_10 and resi 78,resi=6
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_10 and resi 79,resi=7
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_10 and resi 82,resi=8
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_10 and resi 83,resi=9
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_10 and resi 86,resi=10
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_10 and resi 87,resi=11
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_10 and resi 90,resi=12
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_10 and resi 167,resi=13
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_10 and resi 168,resi=14
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_10 and resi 171,resi=15
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_10 and resi 172,resi=16
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_10 and resi 177,resi=17
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_10 and resi 220,resi=18
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_10 and resi 224,resi=19
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_10 and resi 227,resi=20
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_10 and resi 228,resi=21
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_10 and resi 230,resi=22
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_10 and resi 231,resi=23
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_10 and resi 234,resi=24
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_10 and resi 249,resi=25
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_10 and resi 251,resi=26
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_10 and resi 252,resi=27
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_10 and resi 255,resi=28
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_10 and resi 256,resi=29
+ Alter: modified 1 atoms.
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete 3emlA_10
+PyMOL>load /Users/christoffernorn/dropbox/projects/gpcr_loop_benchmark_liz_chris/demo/cn_demos/7B/01_evaluate_score_vs_pocket_rmsd/structures/3emlA/3emlA_11.pdb
+ CmdLoad: "/Users/christoffernorn/dropbox/projects/gpcr_loop_benchmark_liz_chris/demo/cn_demos/7B/01_evaluate_score_vs_pocket_rmsd/structures/3emlA/3emlA_11.pdb" loaded as "3emlA_11".
+PyMOL>remove 3emlA_11 and not resi 53+57+61+64+75+78+79+82+83+86+87+90+167+168+171+172+177+220+224+227+228+230+231+234+249+251+252+255+256
+ Remove: eliminated 4100 atoms in model "3emlA_11".
+PyMOL>remove 3emlA_11 and not name ca
+ Remove: eliminated 443 atoms in model "3emlA_11".
+PyMOL>cealign template_2rh1 and i. 82+86+90+93+106+109+110+113+114+117+118+121+199+200+203+204+208+282+286+289+290+292+293+296+309+311+312+315+316, 3emlA_11
+RMSD 2.275466 over 24 residues
+PyMOL>iterate 3emlA_11,residue_list.append(resi)
+ Iterate: iterated over 29 atoms.
+PyMOL>alter 3emlA_11 and resi 53,resi=1
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_11 and resi 57,resi=2
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_11 and resi 61,resi=3
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_11 and resi 64,resi=4
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_11 and resi 75,resi=5
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_11 and resi 78,resi=6
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_11 and resi 79,resi=7
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_11 and resi 82,resi=8
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_11 and resi 83,resi=9
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_11 and resi 86,resi=10
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_11 and resi 87,resi=11
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_11 and resi 90,resi=12
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_11 and resi 167,resi=13
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_11 and resi 168,resi=14
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_11 and resi 171,resi=15
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_11 and resi 172,resi=16
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_11 and resi 177,resi=17
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_11 and resi 220,resi=18
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_11 and resi 224,resi=19
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_11 and resi 227,resi=20
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_11 and resi 228,resi=21
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_11 and resi 230,resi=22
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_11 and resi 231,resi=23
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_11 and resi 234,resi=24
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_11 and resi 249,resi=25
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_11 and resi 251,resi=26
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_11 and resi 252,resi=27
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_11 and resi 255,resi=28
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_11 and resi 256,resi=29
+ Alter: modified 1 atoms.
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete 3emlA_11
+PyMOL>load /Users/christoffernorn/dropbox/projects/gpcr_loop_benchmark_liz_chris/demo/cn_demos/7B/01_evaluate_score_vs_pocket_rmsd/structures/3emlA/3emlA_12.pdb
+ CmdLoad: "/Users/christoffernorn/dropbox/projects/gpcr_loop_benchmark_liz_chris/demo/cn_demos/7B/01_evaluate_score_vs_pocket_rmsd/structures/3emlA/3emlA_12.pdb" loaded as "3emlA_12".
+PyMOL>remove 3emlA_12 and not resi 53+57+61+64+75+78+79+82+83+86+87+90+167+168+171+172+177+220+224+227+228+230+231+234+249+251+252+255+256
+ Remove: eliminated 4100 atoms in model "3emlA_12".
+PyMOL>remove 3emlA_12 and not name ca
+ Remove: eliminated 443 atoms in model "3emlA_12".
+PyMOL>cealign template_2rh1 and i. 82+86+90+93+106+109+110+113+114+117+118+121+199+200+203+204+208+282+286+289+290+292+293+296+309+311+312+315+316, 3emlA_12
+RMSD 2.565582 over 24 residues
+PyMOL>iterate 3emlA_12,residue_list.append(resi)
+ Iterate: iterated over 29 atoms.
+PyMOL>alter 3emlA_12 and resi 53,resi=1
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_12 and resi 57,resi=2
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_12 and resi 61,resi=3
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_12 and resi 64,resi=4
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_12 and resi 75,resi=5
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_12 and resi 78,resi=6
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_12 and resi 79,resi=7
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_12 and resi 82,resi=8
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_12 and resi 83,resi=9
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_12 and resi 86,resi=10
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_12 and resi 87,resi=11
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_12 and resi 90,resi=12
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_12 and resi 167,resi=13
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_12 and resi 168,resi=14
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_12 and resi 171,resi=15
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_12 and resi 172,resi=16
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_12 and resi 177,resi=17
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_12 and resi 220,resi=18
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_12 and resi 224,resi=19
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_12 and resi 227,resi=20
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_12 and resi 228,resi=21
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_12 and resi 230,resi=22
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_12 and resi 231,resi=23
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_12 and resi 234,resi=24
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_12 and resi 249,resi=25
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_12 and resi 251,resi=26
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_12 and resi 252,resi=27
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_12 and resi 255,resi=28
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_12 and resi 256,resi=29
+ Alter: modified 1 atoms.
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete 3emlA_12
+PyMOL>load /Users/christoffernorn/dropbox/projects/gpcr_loop_benchmark_liz_chris/demo/cn_demos/7B/01_evaluate_score_vs_pocket_rmsd/structures/3emlA/3emlA_2.pdb
+ CmdLoad: "/Users/christoffernorn/dropbox/projects/gpcr_loop_benchmark_liz_chris/demo/cn_demos/7B/01_evaluate_score_vs_pocket_rmsd/structures/3emlA/3emlA_2.pdb" loaded as "3emlA_2".
+PyMOL>remove 3emlA_2 and not resi 53+57+61+64+75+78+79+82+83+86+87+90+167+168+171+172+177+220+224+227+228+230+231+234+249+251+252+255+256
+ Remove: eliminated 4100 atoms in model "3emlA_2".
+PyMOL>remove 3emlA_2 and not name ca
+ Remove: eliminated 443 atoms in model "3emlA_2".
+PyMOL>cealign template_2rh1 and i. 82+86+90+93+106+109+110+113+114+117+118+121+199+200+203+204+208+282+286+289+290+292+293+296+309+311+312+315+316, 3emlA_2
+RMSD 1.700130 over 24 residues
+PyMOL>iterate 3emlA_2,residue_list.append(resi)
+ Iterate: iterated over 29 atoms.
+PyMOL>alter 3emlA_2 and resi 53,resi=1
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_2 and resi 57,resi=2
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_2 and resi 61,resi=3
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_2 and resi 64,resi=4
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_2 and resi 75,resi=5
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_2 and resi 78,resi=6
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_2 and resi 79,resi=7
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_2 and resi 82,resi=8
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_2 and resi 83,resi=9
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_2 and resi 86,resi=10
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_2 and resi 87,resi=11
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_2 and resi 90,resi=12
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_2 and resi 167,resi=13
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_2 and resi 168,resi=14
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_2 and resi 171,resi=15
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_2 and resi 172,resi=16
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_2 and resi 177,resi=17
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_2 and resi 220,resi=18
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_2 and resi 224,resi=19
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_2 and resi 227,resi=20
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_2 and resi 228,resi=21
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_2 and resi 230,resi=22
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_2 and resi 231,resi=23
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_2 and resi 234,resi=24
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_2 and resi 249,resi=25
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_2 and resi 251,resi=26
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_2 and resi 252,resi=27
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_2 and resi 255,resi=28
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_2 and resi 256,resi=29
+ Alter: modified 1 atoms.
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete 3emlA_2
+PyMOL>load /Users/christoffernorn/dropbox/projects/gpcr_loop_benchmark_liz_chris/demo/cn_demos/7B/01_evaluate_score_vs_pocket_rmsd/structures/3emlA/3emlA_3.pdb
+ CmdLoad: "/Users/christoffernorn/dropbox/projects/gpcr_loop_benchmark_liz_chris/demo/cn_demos/7B/01_evaluate_score_vs_pocket_rmsd/structures/3emlA/3emlA_3.pdb" loaded as "3emlA_3".
+PyMOL>remove 3emlA_3 and not resi 53+57+61+64+75+78+79+82+83+86+87+90+167+168+171+172+177+220+224+227+228+230+231+234+249+251+252+255+256
+ Remove: eliminated 4100 atoms in model "3emlA_3".
+PyMOL>remove 3emlA_3 and not name ca
+ Remove: eliminated 443 atoms in model "3emlA_3".
+PyMOL>cealign template_2rh1 and i. 82+86+90+93+106+109+110+113+114+117+118+121+199+200+203+204+208+282+286+289+290+292+293+296+309+311+312+315+316, 3emlA_3
+RMSD 2.600353 over 24 residues
+PyMOL>iterate 3emlA_3,residue_list.append(resi)
+ Iterate: iterated over 29 atoms.
+PyMOL>alter 3emlA_3 and resi 53,resi=1
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_3 and resi 57,resi=2
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_3 and resi 61,resi=3
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_3 and resi 64,resi=4
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_3 and resi 75,resi=5
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_3 and resi 78,resi=6
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_3 and resi 79,resi=7
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_3 and resi 82,resi=8
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_3 and resi 83,resi=9
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_3 and resi 86,resi=10
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_3 and resi 87,resi=11
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_3 and resi 90,resi=12
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_3 and resi 167,resi=13
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_3 and resi 168,resi=14
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_3 and resi 171,resi=15
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_3 and resi 172,resi=16
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_3 and resi 177,resi=17
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_3 and resi 220,resi=18
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_3 and resi 224,resi=19
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_3 and resi 227,resi=20
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_3 and resi 228,resi=21
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_3 and resi 230,resi=22
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_3 and resi 231,resi=23
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_3 and resi 234,resi=24
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_3 and resi 249,resi=25
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_3 and resi 251,resi=26
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_3 and resi 252,resi=27
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_3 and resi 255,resi=28
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_3 and resi 256,resi=29
+ Alter: modified 1 atoms.
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete 3emlA_3
+PyMOL>load /Users/christoffernorn/dropbox/projects/gpcr_loop_benchmark_liz_chris/demo/cn_demos/7B/01_evaluate_score_vs_pocket_rmsd/structures/3emlA/3emlA_4.pdb
+ CmdLoad: "/Users/christoffernorn/dropbox/projects/gpcr_loop_benchmark_liz_chris/demo/cn_demos/7B/01_evaluate_score_vs_pocket_rmsd/structures/3emlA/3emlA_4.pdb" loaded as "3emlA_4".
+PyMOL>remove 3emlA_4 and not resi 53+57+61+64+75+78+79+82+83+86+87+90+167+168+171+172+177+220+224+227+228+230+231+234+249+251+252+255+256
+ Remove: eliminated 4100 atoms in model "3emlA_4".
+PyMOL>remove 3emlA_4 and not name ca
+ Remove: eliminated 443 atoms in model "3emlA_4".
+PyMOL>cealign template_2rh1 and i. 82+86+90+93+106+109+110+113+114+117+118+121+199+200+203+204+208+282+286+289+290+292+293+296+309+311+312+315+316, 3emlA_4
+RMSD 2.309043 over 24 residues
+PyMOL>iterate 3emlA_4,residue_list.append(resi)
+ Iterate: iterated over 29 atoms.
+PyMOL>alter 3emlA_4 and resi 53,resi=1
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_4 and resi 57,resi=2
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_4 and resi 61,resi=3
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_4 and resi 64,resi=4
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_4 and resi 75,resi=5
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_4 and resi 78,resi=6
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_4 and resi 79,resi=7
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_4 and resi 82,resi=8
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_4 and resi 83,resi=9
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_4 and resi 86,resi=10
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_4 and resi 87,resi=11
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_4 and resi 90,resi=12
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_4 and resi 167,resi=13
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_4 and resi 168,resi=14
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_4 and resi 171,resi=15
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_4 and resi 172,resi=16
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_4 and resi 177,resi=17
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_4 and resi 220,resi=18
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_4 and resi 224,resi=19
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_4 and resi 227,resi=20
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_4 and resi 228,resi=21
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_4 and resi 230,resi=22
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_4 and resi 231,resi=23
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_4 and resi 234,resi=24
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_4 and resi 249,resi=25
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_4 and resi 251,resi=26
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_4 and resi 252,resi=27
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_4 and resi 255,resi=28
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_4 and resi 256,resi=29
+ Alter: modified 1 atoms.
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete 3emlA_4
+PyMOL>load /Users/christoffernorn/dropbox/projects/gpcr_loop_benchmark_liz_chris/demo/cn_demos/7B/01_evaluate_score_vs_pocket_rmsd/structures/3emlA/3emlA_5.pdb
+ CmdLoad: "/Users/christoffernorn/dropbox/projects/gpcr_loop_benchmark_liz_chris/demo/cn_demos/7B/01_evaluate_score_vs_pocket_rmsd/structures/3emlA/3emlA_5.pdb" loaded as "3emlA_5".
+PyMOL>remove 3emlA_5 and not resi 53+57+61+64+75+78+79+82+83+86+87+90+167+168+171+172+177+220+224+227+228+230+231+234+249+251+252+255+256
+ Remove: eliminated 4101 atoms in model "3emlA_5".
+PyMOL>remove 3emlA_5 and not name ca
+ Remove: eliminated 444 atoms in model "3emlA_5".
+PyMOL>cealign template_2rh1 and i. 82+86+90+93+106+109+110+113+114+117+118+121+199+200+203+204+208+282+286+289+290+292+293+296+309+311+312+315+316, 3emlA_5
+RMSD 2.503938 over 24 residues
+PyMOL>iterate 3emlA_5,residue_list.append(resi)
+ Iterate: iterated over 29 atoms.
+PyMOL>alter 3emlA_5 and resi 53,resi=1
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_5 and resi 57,resi=2
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_5 and resi 61,resi=3
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_5 and resi 64,resi=4
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_5 and resi 75,resi=5
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_5 and resi 78,resi=6
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_5 and resi 79,resi=7
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_5 and resi 82,resi=8
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_5 and resi 83,resi=9
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_5 and resi 86,resi=10
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_5 and resi 87,resi=11
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_5 and resi 90,resi=12
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_5 and resi 167,resi=13
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_5 and resi 168,resi=14
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_5 and resi 171,resi=15
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_5 and resi 172,resi=16
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_5 and resi 177,resi=17
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_5 and resi 220,resi=18
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_5 and resi 224,resi=19
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_5 and resi 227,resi=20
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_5 and resi 228,resi=21
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_5 and resi 230,resi=22
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_5 and resi 231,resi=23
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_5 and resi 234,resi=24
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_5 and resi 249,resi=25
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_5 and resi 251,resi=26
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_5 and resi 252,resi=27
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_5 and resi 255,resi=28
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_5 and resi 256,resi=29
+ Alter: modified 1 atoms.
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete 3emlA_5
+PyMOL>load /Users/christoffernorn/dropbox/projects/gpcr_loop_benchmark_liz_chris/demo/cn_demos/7B/01_evaluate_score_vs_pocket_rmsd/structures/3emlA/3emlA_6.pdb
+ CmdLoad: "/Users/christoffernorn/dropbox/projects/gpcr_loop_benchmark_liz_chris/demo/cn_demos/7B/01_evaluate_score_vs_pocket_rmsd/structures/3emlA/3emlA_6.pdb" loaded as "3emlA_6".
+PyMOL>remove 3emlA_6 and not resi 53+57+61+64+75+78+79+82+83+86+87+90+167+168+171+172+177+220+224+227+228+230+231+234+249+251+252+255+256
+ Remove: eliminated 4100 atoms in model "3emlA_6".
+PyMOL>remove 3emlA_6 and not name ca
+ Remove: eliminated 443 atoms in model "3emlA_6".
+PyMOL>cealign template_2rh1 and i. 82+86+90+93+106+109+110+113+114+117+118+121+199+200+203+204+208+282+286+289+290+292+293+296+309+311+312+315+316, 3emlA_6
+RMSD 2.143540 over 24 residues
+PyMOL>iterate 3emlA_6,residue_list.append(resi)
+ Iterate: iterated over 29 atoms.
+PyMOL>alter 3emlA_6 and resi 53,resi=1
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_6 and resi 57,resi=2
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_6 and resi 61,resi=3
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_6 and resi 64,resi=4
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_6 and resi 75,resi=5
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_6 and resi 78,resi=6
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_6 and resi 79,resi=7
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_6 and resi 82,resi=8
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_6 and resi 83,resi=9
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_6 and resi 86,resi=10
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_6 and resi 87,resi=11
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_6 and resi 90,resi=12
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_6 and resi 167,resi=13
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_6 and resi 168,resi=14
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_6 and resi 171,resi=15
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_6 and resi 172,resi=16
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_6 and resi 177,resi=17
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_6 and resi 220,resi=18
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_6 and resi 224,resi=19
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_6 and resi 227,resi=20
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_6 and resi 228,resi=21
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_6 and resi 230,resi=22
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_6 and resi 231,resi=23
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_6 and resi 234,resi=24
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_6 and resi 249,resi=25
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_6 and resi 251,resi=26
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_6 and resi 252,resi=27
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_6 and resi 255,resi=28
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_6 and resi 256,resi=29
+ Alter: modified 1 atoms.
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete 3emlA_6
+PyMOL>load /Users/christoffernorn/dropbox/projects/gpcr_loop_benchmark_liz_chris/demo/cn_demos/7B/01_evaluate_score_vs_pocket_rmsd/structures/3emlA/3emlA_7.pdb
+ CmdLoad: "/Users/christoffernorn/dropbox/projects/gpcr_loop_benchmark_liz_chris/demo/cn_demos/7B/01_evaluate_score_vs_pocket_rmsd/structures/3emlA/3emlA_7.pdb" loaded as "3emlA_7".
+PyMOL>remove 3emlA_7 and not resi 53+57+61+64+75+78+79+82+83+86+87+90+167+168+171+172+177+220+224+227+228+230+231+234+249+251+252+255+256
+ Remove: eliminated 4100 atoms in model "3emlA_7".
+PyMOL>remove 3emlA_7 and not name ca
+ Remove: eliminated 443 atoms in model "3emlA_7".
+PyMOL>cealign template_2rh1 and i. 82+86+90+93+106+109+110+113+114+117+118+121+199+200+203+204+208+282+286+289+290+292+293+296+309+311+312+315+316, 3emlA_7
+RMSD 2.374894 over 24 residues
+PyMOL>iterate 3emlA_7,residue_list.append(resi)
+ Iterate: iterated over 29 atoms.
+PyMOL>alter 3emlA_7 and resi 53,resi=1
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_7 and resi 57,resi=2
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_7 and resi 61,resi=3
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_7 and resi 64,resi=4
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_7 and resi 75,resi=5
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_7 and resi 78,resi=6
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_7 and resi 79,resi=7
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_7 and resi 82,resi=8
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_7 and resi 83,resi=9
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_7 and resi 86,resi=10
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_7 and resi 87,resi=11
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_7 and resi 90,resi=12
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_7 and resi 167,resi=13
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_7 and resi 168,resi=14
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_7 and resi 171,resi=15
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_7 and resi 172,resi=16
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_7 and resi 177,resi=17
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_7 and resi 220,resi=18
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_7 and resi 224,resi=19
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_7 and resi 227,resi=20
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_7 and resi 228,resi=21
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_7 and resi 230,resi=22
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_7 and resi 231,resi=23
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_7 and resi 234,resi=24
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_7 and resi 249,resi=25
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_7 and resi 251,resi=26
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_7 and resi 252,resi=27
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_7 and resi 255,resi=28
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_7 and resi 256,resi=29
+ Alter: modified 1 atoms.
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete 3emlA_7
+PyMOL>load /Users/christoffernorn/dropbox/projects/gpcr_loop_benchmark_liz_chris/demo/cn_demos/7B/01_evaluate_score_vs_pocket_rmsd/structures/3emlA/3emlA_8.pdb
+ CmdLoad: "/Users/christoffernorn/dropbox/projects/gpcr_loop_benchmark_liz_chris/demo/cn_demos/7B/01_evaluate_score_vs_pocket_rmsd/structures/3emlA/3emlA_8.pdb" loaded as "3emlA_8".
+PyMOL>remove 3emlA_8 and not resi 53+57+61+64+75+78+79+82+83+86+87+90+167+168+171+172+177+220+224+227+228+230+231+234+249+251+252+255+256
+ Remove: eliminated 4100 atoms in model "3emlA_8".
+PyMOL>remove 3emlA_8 and not name ca
+ Remove: eliminated 443 atoms in model "3emlA_8".
+PyMOL>cealign template_2rh1 and i. 82+86+90+93+106+109+110+113+114+117+118+121+199+200+203+204+208+282+286+289+290+292+293+296+309+311+312+315+316, 3emlA_8
+RMSD 2.275638 over 24 residues
+PyMOL>iterate 3emlA_8,residue_list.append(resi)
+ Iterate: iterated over 29 atoms.
+PyMOL>alter 3emlA_8 and resi 53,resi=1
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_8 and resi 57,resi=2
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_8 and resi 61,resi=3
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_8 and resi 64,resi=4
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_8 and resi 75,resi=5
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_8 and resi 78,resi=6
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_8 and resi 79,resi=7
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_8 and resi 82,resi=8
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_8 and resi 83,resi=9
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_8 and resi 86,resi=10
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_8 and resi 87,resi=11
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_8 and resi 90,resi=12
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_8 and resi 167,resi=13
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_8 and resi 168,resi=14
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_8 and resi 171,resi=15
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_8 and resi 172,resi=16
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_8 and resi 177,resi=17
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_8 and resi 220,resi=18
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_8 and resi 224,resi=19
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_8 and resi 227,resi=20
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_8 and resi 228,resi=21
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_8 and resi 230,resi=22
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_8 and resi 231,resi=23
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_8 and resi 234,resi=24
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_8 and resi 249,resi=25
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_8 and resi 251,resi=26
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_8 and resi 252,resi=27
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_8 and resi 255,resi=28
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_8 and resi 256,resi=29
+ Alter: modified 1 atoms.
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete 3emlA_8
+PyMOL>load /Users/christoffernorn/dropbox/projects/gpcr_loop_benchmark_liz_chris/demo/cn_demos/7B/01_evaluate_score_vs_pocket_rmsd/structures/3emlA/3emlA_9.pdb
+ CmdLoad: "/Users/christoffernorn/dropbox/projects/gpcr_loop_benchmark_liz_chris/demo/cn_demos/7B/01_evaluate_score_vs_pocket_rmsd/structures/3emlA/3emlA_9.pdb" loaded as "3emlA_9".
+PyMOL>remove 3emlA_9 and not resi 53+57+61+64+75+78+79+82+83+86+87+90+167+168+171+172+177+220+224+227+228+230+231+234+249+251+252+255+256
+ Remove: eliminated 4100 atoms in model "3emlA_9".
+PyMOL>remove 3emlA_9 and not name ca
+ Remove: eliminated 443 atoms in model "3emlA_9".
+PyMOL>cealign template_2rh1 and i. 82+86+90+93+106+109+110+113+114+117+118+121+199+200+203+204+208+282+286+289+290+292+293+296+309+311+312+315+316, 3emlA_9
+RMSD 2.246018 over 24 residues
+PyMOL>iterate 3emlA_9,residue_list.append(resi)
+ Iterate: iterated over 29 atoms.
+PyMOL>alter 3emlA_9 and resi 53,resi=1
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_9 and resi 57,resi=2
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_9 and resi 61,resi=3
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_9 and resi 64,resi=4
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_9 and resi 75,resi=5
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_9 and resi 78,resi=6
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_9 and resi 79,resi=7
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_9 and resi 82,resi=8
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_9 and resi 83,resi=9
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_9 and resi 86,resi=10
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_9 and resi 87,resi=11
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_9 and resi 90,resi=12
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_9 and resi 167,resi=13
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_9 and resi 168,resi=14
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_9 and resi 171,resi=15
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_9 and resi 172,resi=16
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_9 and resi 177,resi=17
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_9 and resi 220,resi=18
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_9 and resi 224,resi=19
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_9 and resi 227,resi=20
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_9 and resi 228,resi=21
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_9 and resi 230,resi=22
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_9 and resi 231,resi=23
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_9 and resi 234,resi=24
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_9 and resi 249,resi=25
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_9 and resi 251,resi=26
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_9 and resi 252,resi=27
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_9 and resi 255,resi=28
+ Alter: modified 1 atoms.
+PyMOL>alter 3emlA_9 and resi 256,resi=29
+ Alter: modified 1 atoms.
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete dist
+PyMOL>delete 3emlA_9
+{'3emlA_10': [0.846, 0.853, 1.411, 1.907, 1.319, 0.926, 1.424, 0.668, 1.192, 0.5, 1.016, 0.995, 9.433, 4.815, 1.048, 3.912, 0.842, 2.185, 0.825, 1.213, 1.017, 0.79, 1.421, 0.939, 0.712, 1.027, 0.621, 1.142, 1.764], '3emlA_11': [0.671, 1.125, 1.26, 1.719, 1.147, 0.76, 0.356, 0.494, 0.713, 0.61, 1.001, 0.997, 6.37, 2.531, 3.478, 4.165, 0.368, 1.488, 0.597, 0.358, 0.491, 0.664, 1.088, 1.779, 1.101, 0.483, 0.589, 0.909, 0.778], '3emlA_12': [0.661, 1.133, 1.364, 1.601, 1.214, 1.16, 1.326, 0.459, 0.681, 1.047, 1.429, 1.862, 7.087, 4.796, 0.843, 3.852, 2.425, 2.184, 0.904, 0.893, 0.792, 0.182, 0.915, 0.972, 1.443, 0.887, 1.035, 0.751, 0.951], '3emlA_8': [0.826, 0.865, 0.601, 0.77, 1.113, 1.141, 0.835, 0.764, 0.814, 0.369, 1.146, 0.945, 6.101, 3.707, 1.784, 3.666, 0.423, 2.28, 1.721, 1.052, 0.449, 0.427, 1.009, 1.072, 1.016, 0.611, 1.248, 1.581, 1.479], '3emlA_9': [0.781, 1.587, 1.926, 2.811, 0.915, 0.839, 1.38, 0.425, 0.532, 0.724, 1.232, 1.648, 6.984, 2.804, 2.842, 3.812, 1.464, 1.507, 0.277, 0.615, 0.839, 0.451, 0.768, 0.955, 0.821, 0.355, 0.483, 0.282, 0.294], '3emlA_6': [0.694, 1.358, 1.45, 1.936, 1.129, 0.67, 0.716, 0.205, 0.751, 0.509, 1.097, 1.219, 5.952, 3.278, 2.277, 3.066, 1.692, 1.164, 0.154, 0.763, 0.948, 0.349, 0.864, 1.327, 1.806, 0.591, 0.759, 0.824, 0.732], '3emlA_7': [0.559, 1.464, 2.695, 3.988, 1.544, 1.35, 1.612, 0.256, 0.804, 0.485, 1.391, 1.896, 7.576, 2.927, 2.031, 3.758, 1.912, 1.358, 0.313, 0.426, 0.723, 0.312, 0.682, 0.714, 1.844, 0.211, 0.91, 0.297, 0.074], '3emlA_4': [0.681, 0.623, 1.228, 2.023, 0.908, 0.777, 1.058, 0.358, 0.709, 1.083, 1.388, 1.495, 7.109, 3.451, 2.429, 2.61, 1.476, 1.152, 0.484, 1.028, 1.193, 0.673, 0.754, 1.253, 2.01, 0.963, 1.087, 0.657, 0.605], '3emlA_5': [0.469, 2.113, 3.561, 3.526, 4.797, 3.014, 1.211, 0.973, 0.658, 1.1, 1.944, 2.35, 6.659, 3.635, 1.841, 2.992, 1.908, 1.663, 0.588, 1.054, 1.021, 0.592, 0.648, 0.716, 1.054, 0.868, 0.264, 0.638, 0.699], '3emlA_2': [0.771, 2.07, 3.631, 3.823, 1.517, 0.665, 0.736, 0.669, 0.112, 0.366, 0.22, 0.422, 3.46, 1.177, 2.266, 2.166, 1.102, 0.202, 0.654, 0.519, 0.347, 0.449, 0.551, 0.742, 0.605, 0.437, 0.114, 0.215, 1.036], '3emlA_3': [0.812, 0.625, 0.992, 1.665, 2.012, 2.104, 1.736, 1.95, 1.141, 0.561, 1.132, 1.022, 7.831, 3.345, 2.144, 3.814, 0.865, 1.266, 0.638, 0.981, 0.863, 0.952, 1.644, 1.779, 1.564, 0.716, 0.615, 0.926, 0.951], '3emlA_1': [0.576, 0.823, 1.961, 3.169, 0.99, 0.671, 0.788, 0.251, 0.452, 0.265, 0.573, 1.003, 3.316, 1.368, 0.839, 1.995, 1.353, 0.514, 0.804, 0.913, 0.591, 0.422, 0.39, 0.506, 0.378, 0.21, 0.231, 0.395, 0.609]}
