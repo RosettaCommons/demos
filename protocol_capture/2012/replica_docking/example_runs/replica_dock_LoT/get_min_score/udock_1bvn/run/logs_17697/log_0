@@ -1,0 +1,13 @@
+core.init: (0) 'RNG device' seed mode, using '/dev/urandom', seed=369886433 seed_offset=0 real_seed=369886433
+core.init.random: (0) RandomGenerator:init: Normal mode, seed=369886433 RG_type=mt19937
+protocols.jd2.PDBJobInputter: (0) Instantiate PDBJobInputter
+protocols.jd2.PDBJobInputter: (0) PDBJobInputter::fill_jobs
+protocols.jd2.PDBJobInputter: (0) pushing /home/zhezhang/rosetta_vanilla/rosetta_demos/protocol_capture/replica_docking/dock_targetlib/udock_1bvn/start/P.pdb nstruct index 1
+protocols.jd2.PDBJobInputter: (0) pushing /home/zhezhang/rosetta_vanilla/rosetta_demos/protocol_capture/replica_docking/dock_targetlib/udock_1bvn/start/P.pdb nstruct index 2
+protocols.jd2.PDBJobInputter: (0) pushing /home/zhezhang/rosetta_vanilla/rosetta_demos/protocol_capture/replica_docking/dock_targetlib/udock_1bvn/start/P.pdb nstruct index 3
+protocols.jd2.PDBJobInputter: (0) pushing /home/zhezhang/rosetta_vanilla/rosetta_demos/protocol_capture/replica_docking/dock_targetlib/udock_1bvn/start/P.pdb nstruct index 4
+protocols.jd2.PDBJobInputter: (0) pushing /home/zhezhang/rosetta_vanilla/rosetta_demos/protocol_capture/replica_docking/dock_targetlib/udock_1bvn/start/P.pdb nstruct index 5
+core.chemical.ResidueTypeSet: (0) Finished initializing fa_standard residue type set.  Created 6225 residue types
+core.pack.task: (0) Packer task: initialize from command line() 
+protocols.evaluation.ChiWellRmsdEvaluatorCreator: (0) Evaluation Creator active ... 
+

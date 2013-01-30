@@ -1,0 +1,413 @@
+core.init: (1) 'RNG device' seed mode, using '/dev/urandom', seed=-626620897 seed_offset=0 real_seed=1413539398
+core.init.random: (1) RandomGenerator:init: Normal mode, seed=1413539398 RG_type=mt19937
+core.chemical.ResidueTypeSet: (1) Finished initializing fa_standard residue type set.  Created 6225 residue types
+core.io.pdb.file_data: (1) [ WARNING ] discarding 1 atoms at position 1 in file ../../../../dock_targetlib/udock_1bvn/native/protAB.pdb. Best match rsd_type:  PRO_p:NtermProteinFull
+core.conformation.Conformation: (1) Found disulfide between residues 28 86
+core.conformation.Conformation: (1) current variant for 28 CYS
+core.conformation.Conformation: (1) current variant for 86 CYS
+core.conformation.Conformation: (1) current variant for 28 CYD
+core.conformation.Conformation: (1) current variant for 86 CYD
+core.conformation.Conformation: (1) Found disulfide between residues 70 115
+core.conformation.Conformation: (1) current variant for 70 CYS
+core.conformation.Conformation: (1) current variant for 115 CYS
+core.conformation.Conformation: (1) current variant for 70 CYD
+core.conformation.Conformation: (1) current variant for 115 CYD
+core.conformation.Conformation: (1) Found disulfide between residues 141 160
+core.conformation.Conformation: (1) current variant for 141 CYS
+core.conformation.Conformation: (1) current variant for 160 CYS
+core.conformation.Conformation: (1) current variant for 141 CYD
+core.conformation.Conformation: (1) current variant for 160 CYD
+core.conformation.Conformation: (1) Found disulfide between residues 378 384
+core.conformation.Conformation: (1) current variant for 378 CYS
+core.conformation.Conformation: (1) current variant for 384 CYS
+core.conformation.Conformation: (1) current variant for 378 CYD
+core.conformation.Conformation: (1) current variant for 384 CYD
+core.conformation.Conformation: (1) Found disulfide between residues 450 462
+core.conformation.Conformation: (1) current variant for 450 CYS
+core.conformation.Conformation: (1) current variant for 462 CYS
+core.conformation.Conformation: (1) current variant for 450 CYD
+core.conformation.Conformation: (1) current variant for 462 CYD
+core.conformation.Conformation: (1) Found disulfide between residues 507 523
+core.conformation.Conformation: (1) current variant for 507 CYS
+core.conformation.Conformation: (1) current variant for 523 CYS
+core.conformation.Conformation: (1) current variant for 507 CYD
+core.conformation.Conformation: (1) current variant for 523 CYD
+core.conformation.Conformation: (1) Found disulfide between residues 541 569
+core.conformation.Conformation: (1) current variant for 541 CYS
+core.conformation.Conformation: (1) current variant for 569 CYS
+core.conformation.Conformation: (1) current variant for 541 CYD
+core.conformation.Conformation: (1) current variant for 569 CYD
+core.io.pdb.file_data: (1) [ WARNING ] can't find atom for res 1 atom  OE  (trying to set temp)
+core.pack.task: (1) Packer task: initialize from command line() 
+core.scoring.ScoreFunctionFactory: (1) SCOREFUNCTION: interchain_cen
+basic.io.database: (1) Database file opened: scoring/score_functions/EnvPairPotential/env_log.txt
+basic.io.database: (1) Database file opened: scoring/score_functions/EnvPairPotential/cbeta_den.txt
+basic.io.database: (1) Database file opened: scoring/score_functions/EnvPairPotential/pair_log.txt
+basic.io.database: (1) Database file opened: scoring/score_functions/EnvPairPotential/cenpack_log.txt
+basic.io.database: (1) Database file opened: scoring/score_functions/InterchainPotential/interchain_env_log.txt
+basic.io.database: (1) Database file opened: scoring/score_functions/InterchainPotential/interchain_pair_log.txt
+core.scoring.etable: (1) Starting energy table calculation
+core.scoring.etable: (1) smooth_etable: changing atr/rep split to bottom of energy well
+core.scoring.etable: (1) smooth_etable: spline smoothing lj etables (maxdis = 6)
+core.scoring.etable: (1) smooth_etable: spline smoothing solvation etables (max_dis = 6)
+core.scoring.etable: (1) Finished calculating energy tables.
+basic.io.database: (1) Database file opened: scoring/score_functions/PairEPotential/pdb_pair_stats_fine
+basic.io.database: (1) Database file opened: scoring/score_functions/hbonds/standard_params/HBPoly1D.csv
+basic.io.database: (1) Database file opened: scoring/score_functions/hbonds/standard_params/HBFadeIntervals.csv
+basic.io.database: (1) Database file opened: scoring/score_functions/hbonds/standard_params/HBEval.csv
+basic.io.database: (1) Database file opened: scoring/score_functions/EnvPairPotential/env_log.txt
+basic.io.database: (1) Database file opened: scoring/score_functions/EnvPairPotential/cbeta_den.txt
+basic.io.database: (1) Database file opened: scoring/score_functions/EnvPairPotential/pair_log.txt
+basic.io.database: (1) Database file opened: scoring/score_functions/EnvPairPotential/cenpack_log.txt
+basic.io.database: (1) Database file opened: scoring/score_functions/EnvPairPotential/env_log.txt
+basic.io.database: (1) Database file opened: scoring/score_functions/EnvPairPotential/cbeta_den.txt
+basic.io.database: (1) Database file opened: scoring/score_functions/EnvPairPotential/pair_log.txt
+basic.io.database: (1) Database file opened: scoring/score_functions/EnvPairPotential/cenpack_log.txt
+basic.io.database: (1) Database file opened: scoring/score_functions/MembranePotential/CEN6_mem_env_log.txt
+basic.io.database: (1) Database file opened: scoring/score_functions/MembranePotential/CEN10_mem_env_log.txt
+basic.io.database: (1) Database file opened: scoring/score_functions/MembranePotential/memcbeta_den.txt
+basic.io.database: (1) Database file opened: scoring/score_functions/MembranePotential/mem_pair_log.txt
+basic.io.database: (1) Database file opened: scoring/score_functions/P_AA_pp/P_AA
+basic.io.database: (1) Database file opened: scoring/score_functions/P_AA_pp/P_AA_n
+basic.io.database: (1) Database file opened: scoring/score_functions/P_AA_pp/P_AA_pp
+protocols.docking.DockingInitialPerturbation: (1) Reading options...
+protocols.docking.DockingLowRes: (1) DOCL_LOW_RES: INIT 
+protocols.docking.DockingLowRes: (1) ScoreFunction::show():
+weights: (interchain_pair 1) (interchain_vdw 1) (interchain_env 1) (interchain_contact 2)
+energy_method_options: EnergyMethodOptions::show: etable_type: FA_STANDARD_DEFAULT
+analytic_etable_evaluation: 0
+EnergyMethodOptions::show: unfolded_energies_type: UNFOLDED_SCORE12
+protocols.docking.DockingLowRes: (1) EnergyMethodOptions::show: atom_vdw_atom_type_set_name: centroid
+protocols.docking.DockingLowRes: (1) EnergyMethodOptions::show: exclude_protein_protein_hack_elec: false
+protocols.docking.DockingLowRes: (1) EnergyMethodOptions::show: exclude_monomer_hack_elec: false
+protocols.docking.DockingLowRes: (1) EnergyMethodOptions::show: hackelec_max_dis: 5.5
+protocols.docking.DockingLowRes: (1) EnergyMethodOptions::show: hackelec_min_dis: 1.5
+protocols.docking.DockingLowRes: (1) EnergyMethodOptions::show: hackelec_die: 10
+protocols.docking.DockingLowRes: (1) EnergyMethodOptions::show: hackelec_no_dis_dep_die: false
+protocols.docking.DockingLowRes: (1) EnergyMethodOptions::show: exclude_DNA_DNA: true
+protocols.docking.DockingLowRes: (1) EnergyMethodOptions::show: cst_max_seq_sep: 18446744073709551615
+protocols.docking.DockingLowRes: (1) EnergyMethodOptions::show: bond_angle_central_atoms_to_score:
+protocols.docking.DockingLowRes: (1) EnergyMethodOptions::show: bond_angle_residue_type_param_set: none
+protocols.docking.DockingLowRes: (1) HBondOptions::show: exclude_DNA_DNA: true
+protocols.docking.DockingLowRes: (1) HBondOptions::show: include_intra_res_RNA_: false
+protocols.docking.DockingLowRes: (1) HBondOptions::show: exclude_self_hbonds: true
+protocols.docking.DockingLowRes: (1) HBondOptions::show: use_hb_env_dep: true
+protocols.docking.DockingLowRes: (1) HBondOptions::show: use_hb_env_dep_DNA: true
+protocols.docking.DockingLowRes: (1) HBondOptions::show: smooth_hb_env_dep: true
+protocols.docking.DockingLowRes: (1) HBondOptions::show: bb_donor_acceptor_check: true
+protocols.docking.DockingLowRes: (1) HBondOptions::show: decompose_bb_hb_into_pair_energies: false
+protocols.docking.DockingLowRes: (1) HBondOptions::show: params_database_tag_: standard_params
+protocols.docking.DockingLowRes: (1) HBondOptions::show: use_incorrect_deriv_: false
+protocols.docking.DockingLowRes: (1) HBondOptions::show: use_sp2_chi_penalty_: false
+protocols.docking.DockingLowRes: (1) HBondOptions::show: sp2_BAH180_rise_: 0.75
+protocols.docking.DockingLowRes: (1) HBondOptions::show: measure_sp3acc_BAH_from_hvy_: false
+protocols.docking.DockingLowRes: (1) HBondOptions::show: Mbhbond: false 
+protocols.docking.DockingProtocol: (1)  FILTERS ARE ON... 
+protocols.jd2.PDBJobInputter: (1) Instantiate PDBJobInputter
+protocols.jd2.PDBJobInputter: (1) PDBJobInputter::fill_jobs
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 1
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 2
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 3
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 4
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 5
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 6
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 7
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 8
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 9
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 10
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 11
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 12
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 13
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 14
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 15
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 16
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 17
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 18
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 19
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 20
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 21
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 22
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 23
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 24
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 25
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 26
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 27
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 28
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 29
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 30
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 31
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 32
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 33
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 34
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 35
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 36
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 37
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 38
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 39
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 40
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 41
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 42
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 43
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 44
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 45
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 46
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 47
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 48
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 49
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 50
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 51
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 52
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 53
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 54
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 55
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 56
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 57
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 58
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 59
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 60
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 61
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 62
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 63
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 64
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 65
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 66
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 67
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 68
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 69
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 70
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 71
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 72
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 73
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 74
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 75
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 76
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 77
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 78
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 79
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 80
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 81
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 82
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 83
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 84
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 85
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 86
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 87
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 88
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 89
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 90
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 91
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 92
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 93
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 94
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 95
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 96
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 97
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 98
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 99
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 100
+core.io.pdb.file_data: (1) [ WARNING ] discarding 1 atoms at position 1 in file ../../../../dock_targetlib/udock_1bvn/native/protAB.pdb. Best match rsd_type:  PRO_p:NtermProteinFull
+core.conformation.Conformation: (1) Found disulfide between residues 28 86
+core.conformation.Conformation: (1) current variant for 28 CYS
+core.conformation.Conformation: (1) current variant for 86 CYS
+core.conformation.Conformation: (1) current variant for 28 CYD
+core.conformation.Conformation: (1) current variant for 86 CYD
+core.conformation.Conformation: (1) Found disulfide between residues 70 115
+core.conformation.Conformation: (1) current variant for 70 CYS
+core.conformation.Conformation: (1) current variant for 115 CYS
+core.conformation.Conformation: (1) current variant for 70 CYD
+core.conformation.Conformation: (1) current variant for 115 CYD
+core.conformation.Conformation: (1) Found disulfide between residues 141 160
+core.conformation.Conformation: (1) current variant for 141 CYS
+core.conformation.Conformation: (1) current variant for 160 CYS
+core.conformation.Conformation: (1) current variant for 141 CYD
+core.conformation.Conformation: (1) current variant for 160 CYD
+core.conformation.Conformation: (1) Found disulfide between residues 378 384
+core.conformation.Conformation: (1) current variant for 378 CYS
+core.conformation.Conformation: (1) current variant for 384 CYS
+core.conformation.Conformation: (1) current variant for 378 CYD
+core.conformation.Conformation: (1) current variant for 384 CYD
+core.conformation.Conformation: (1) Found disulfide between residues 450 462
+core.conformation.Conformation: (1) current variant for 450 CYS
+core.conformation.Conformation: (1) current variant for 462 CYS
+core.conformation.Conformation: (1) current variant for 450 CYD
+core.conformation.Conformation: (1) current variant for 462 CYD
+core.conformation.Conformation: (1) Found disulfide between residues 507 523
+core.conformation.Conformation: (1) current variant for 507 CYS
+core.conformation.Conformation: (1) current variant for 523 CYS
+core.conformation.Conformation: (1) current variant for 507 CYD
+core.conformation.Conformation: (1) current variant for 523 CYD
+core.conformation.Conformation: (1) Found disulfide between residues 541 569
+core.conformation.Conformation: (1) current variant for 541 CYS
+core.conformation.Conformation: (1) current variant for 569 CYS
+core.conformation.Conformation: (1) current variant for 541 CYD
+core.conformation.Conformation: (1) current variant for 569 CYD
+core.io.pdb.file_data: (1) [ WARNING ] can't find atom for res 1 atom  OE  (trying to set temp)
+core.pack.task: (1) Packer task: initialize from command line() 
+protocols.evaluation.ChiWellRmsdEvaluatorCreator: (1) Evaluation Creator active ... 
+protocols.jd2.MPIFileBufJobDistributor: (1) Starting JobDistribution with 94 worker processes 
+protocols.jd2.JobDistributor: (1) P_0001_0010 reported success in 18 seconds
+protocols.jd2.JobDistributor: (1) P_0001_0042 reported success in 19 seconds
+protocols.jd2.JobDistributor: (1) P_0001_0069 reported success in 20 seconds
+protocols.jd2.JobDistributor: (1) P_0001_0002 reported success in 20 seconds
+protocols.jd2.JobDistributor: (1) P_0001_0076 reported success in 20 seconds
+protocols.jd2.JobDistributor: (1) P_0001_0004 reported success in 20 seconds
+protocols.jd2.JobDistributor: (1) start batch ../inputs/flags_batch0002
+protocols.jd2.PDBJobInputter: (1) Instantiate PDBJobInputter
+protocols.jd2.PDBJobInputter: (1) PDBJobInputter::fill_jobs
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 1
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 2
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 3
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 4
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 5
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 6
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 7
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 8
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 9
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 10
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 11
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 12
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 13
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 14
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 15
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 16
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 17
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 18
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 19
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 20
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 21
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 22
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 23
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 24
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 25
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 26
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 27
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 28
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 29
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 30
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 31
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 32
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 33
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 34
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 35
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 36
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 37
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 38
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 39
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 40
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 41
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 42
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 43
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 44
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 45
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 46
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 47
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 48
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 49
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 50
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 51
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 52
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 53
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 54
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 55
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 56
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 57
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 58
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 59
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 60
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 61
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 62
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 63
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 64
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 65
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 66
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 67
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 68
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 69
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 70
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 71
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 72
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 73
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 74
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 75
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 76
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 77
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 78
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 79
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 80
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 81
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 82
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 83
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 84
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 85
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 86
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 87
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 88
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 89
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 90
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 91
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 92
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 93
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 94
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 95
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 96
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 97
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 98
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 99
+protocols.jd2.PDBJobInputter: (1) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 100
+core.io.pdb.file_data: (1) [ WARNING ] discarding 1 atoms at position 1 in file ../../../../dock_targetlib/udock_1bvn/native/protAB.pdb. Best match rsd_type:  PRO_p:NtermProteinFull
+core.conformation.Conformation: (1) Found disulfide between residues 28 86
+core.conformation.Conformation: (1) current variant for 28 CYS
+core.conformation.Conformation: (1) current variant for 86 CYS
+core.conformation.Conformation: (1) current variant for 28 CYD
+core.conformation.Conformation: (1) current variant for 86 CYD
+core.conformation.Conformation: (1) Found disulfide between residues 70 115
+core.conformation.Conformation: (1) current variant for 70 CYS
+core.conformation.Conformation: (1) current variant for 115 CYS
+core.conformation.Conformation: (1) current variant for 70 CYD
+core.conformation.Conformation: (1) current variant for 115 CYD
+core.conformation.Conformation: (1) Found disulfide between residues 141 160
+core.conformation.Conformation: (1) current variant for 141 CYS
+core.conformation.Conformation: (1) current variant for 160 CYS
+core.conformation.Conformation: (1) current variant for 141 CYD
+core.conformation.Conformation: (1) current variant for 160 CYD
+core.conformation.Conformation: (1) Found disulfide between residues 378 384
+core.conformation.Conformation: (1) current variant for 378 CYS
+core.conformation.Conformation: (1) current variant for 384 CYS
+core.conformation.Conformation: (1) current variant for 378 CYD
+core.conformation.Conformation: (1) current variant for 384 CYD
+core.conformation.Conformation: (1) Found disulfide between residues 450 462
+core.conformation.Conformation: (1) current variant for 450 CYS
+core.conformation.Conformation: (1) current variant for 462 CYS
+core.conformation.Conformation: (1) current variant for 450 CYD
+core.conformation.Conformation: (1) current variant for 462 CYD
+core.conformation.Conformation: (1) Found disulfide between residues 507 523
+core.conformation.Conformation: (1) current variant for 507 CYS
+core.conformation.Conformation: (1) current variant for 523 CYS
+core.conformation.Conformation: (1) current variant for 507 CYD
+core.conformation.Conformation: (1) current variant for 523 CYD
+core.conformation.Conformation: (1) Found disulfide between residues 541 569
+core.conformation.Conformation: (1) current variant for 541 CYS
+core.conformation.Conformation: (1) current variant for 569 CYS
+core.conformation.Conformation: (1) current variant for 541 CYD
+core.conformation.Conformation: (1) current variant for 569 CYD
+core.io.pdb.file_data: (1) [ WARNING ] can't find atom for res 1 atom  OE  (trying to set temp)
+core.pack.task: (1) Packer task: initialize from command line() 
+protocols.evaluation.ChiWellRmsdEvaluatorCreator: (1) Evaluation Creator active ... 
+protocols.jd2.JobDistributor: (1) P_0002_0012 reported success in 19 seconds
+protocols.jd2.JobDistributor: (1) P_0002_0021 reported success in 20 seconds
+protocols.jd2.JobDistributor: (1) P_0002_0003 reported success in 20 seconds
+protocols.jd2.JobDistributor: (1) P_0002_0020 reported success in 20 seconds
+protocols.jd2.JobDistributor: (1) P_0002_0001 reported success in 20 seconds
+protocols.jd2.JobDistributor: (1) P_0002_0037 reported success in 20 seconds
+protocols.jd2.JobDistributor: (1) P_0002_0016 reported success in 20 seconds
+protocols.jd2.JobDistributor: (1) P_0002_0043 reported success in 20 seconds
+protocols.jd2.JobDistributor: (1) P_0002_0002 reported success in 20 seconds
+protocols.jd2.JobDistributor: (1) P_0002_0007 reported success in 21 seconds
+protocols.jd2.JobDistributor: (1) no more batches to process... 
+protocols.jd2.MPIFileBufJobDistributor: (1) Master Node: Finished sending spin down signals to slaves
+protocols.jd2.MPIFileBufJobDistributor: (1) Master Node stats: jobs-send out: 200  returned: 200  bad jobs: 0
+protocols.docking.DockingLowRes: (1) 
+
+protocols.docking.DockingLowRes: (1) WARNING: Message(s) above was printed in the end instead of proper place because this Tracer object has some contents left in inner buffer when destructor was called. Explicit call Tracer::flush() or end your IO with std::endl to disable this warning.
+
+

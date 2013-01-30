@@ -1,0 +1,3 @@
+partners/partners                                            shark:/home/zhezhang/dock_bench/unbound/1tx4/partners
+start/P.pdb                                                  shark:/home/zhezhang/dock_bench/unbound/1tx4/P.pdb
+native/protAB.pdb                                            shark:/home/zhezhang/dock_bench/unbound/1tx4/protAB.pdb

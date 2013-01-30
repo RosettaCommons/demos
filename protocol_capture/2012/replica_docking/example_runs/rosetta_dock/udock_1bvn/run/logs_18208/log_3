@@ -1,0 +1,1381 @@
+core.init: (3) 'RNG device' seed mode, using '/dev/urandom', seed=421580671 seed_offset=0 real_seed=1413539400
+core.init.random: (3) RandomGenerator:init: Normal mode, seed=1413539400 RG_type=mt19937
+core.chemical.ResidueTypeSet: (3) Finished initializing fa_standard residue type set.  Created 6225 residue types
+core.io.pdb.file_data: (3) [ WARNING ] discarding 1 atoms at position 1 in file ../../../../dock_targetlib/udock_1bvn/native/protAB.pdb. Best match rsd_type:  PRO_p:NtermProteinFull
+core.conformation.Conformation: (3) Found disulfide between residues 28 86
+core.conformation.Conformation: (3) current variant for 28 CYS
+core.conformation.Conformation: (3) current variant for 86 CYS
+core.conformation.Conformation: (3) current variant for 28 CYD
+core.conformation.Conformation: (3) current variant for 86 CYD
+core.conformation.Conformation: (3) Found disulfide between residues 70 115
+core.conformation.Conformation: (3) current variant for 70 CYS
+core.conformation.Conformation: (3) current variant for 115 CYS
+core.conformation.Conformation: (3) current variant for 70 CYD
+core.conformation.Conformation: (3) current variant for 115 CYD
+core.conformation.Conformation: (3) Found disulfide between residues 141 160
+core.conformation.Conformation: (3) current variant for 141 CYS
+core.conformation.Conformation: (3) current variant for 160 CYS
+core.conformation.Conformation: (3) current variant for 141 CYD
+core.conformation.Conformation: (3) current variant for 160 CYD
+core.conformation.Conformation: (3) Found disulfide between residues 378 384
+core.conformation.Conformation: (3) current variant for 378 CYS
+core.conformation.Conformation: (3) current variant for 384 CYS
+core.conformation.Conformation: (3) current variant for 378 CYD
+core.conformation.Conformation: (3) current variant for 384 CYD
+core.conformation.Conformation: (3) Found disulfide between residues 450 462
+core.conformation.Conformation: (3) current variant for 450 CYS
+core.conformation.Conformation: (3) current variant for 462 CYS
+core.conformation.Conformation: (3) current variant for 450 CYD
+core.conformation.Conformation: (3) current variant for 462 CYD
+core.conformation.Conformation: (3) Found disulfide between residues 507 523
+core.conformation.Conformation: (3) current variant for 507 CYS
+core.conformation.Conformation: (3) current variant for 523 CYS
+core.conformation.Conformation: (3) current variant for 507 CYD
+core.conformation.Conformation: (3) current variant for 523 CYD
+core.conformation.Conformation: (3) Found disulfide between residues 541 569
+core.conformation.Conformation: (3) current variant for 541 CYS
+core.conformation.Conformation: (3) current variant for 569 CYS
+core.conformation.Conformation: (3) current variant for 541 CYD
+core.conformation.Conformation: (3) current variant for 569 CYD
+core.io.pdb.file_data: (3) [ WARNING ] can't find atom for res 1 atom  OE  (trying to set temp)
+core.pack.task: (3) Packer task: initialize from command line() 
+core.scoring.ScoreFunctionFactory: (3) SCOREFUNCTION: interchain_cen
+basic.io.database: (3) Database file opened: scoring/score_functions/EnvPairPotential/env_log.txt
+basic.io.database: (3) Database file opened: scoring/score_functions/EnvPairPotential/cbeta_den.txt
+basic.io.database: (3) Database file opened: scoring/score_functions/EnvPairPotential/pair_log.txt
+basic.io.database: (3) Database file opened: scoring/score_functions/EnvPairPotential/cenpack_log.txt
+basic.io.database: (3) Database file opened: scoring/score_functions/InterchainPotential/interchain_env_log.txt
+basic.io.database: (3) Database file opened: scoring/score_functions/InterchainPotential/interchain_pair_log.txt
+core.scoring.etable: (3) Starting energy table calculation
+core.scoring.etable: (3) smooth_etable: changing atr/rep split to bottom of energy well
+core.scoring.etable: (3) smooth_etable: spline smoothing lj etables (maxdis = 6)
+core.scoring.etable: (3) smooth_etable: spline smoothing solvation etables (max_dis = 6)
+core.scoring.etable: (3) Finished calculating energy tables.
+basic.io.database: (3) Database file opened: scoring/score_functions/PairEPotential/pdb_pair_stats_fine
+basic.io.database: (3) Database file opened: scoring/score_functions/hbonds/standard_params/HBPoly1D.csv
+basic.io.database: (3) Database file opened: scoring/score_functions/hbonds/standard_params/HBFadeIntervals.csv
+basic.io.database: (3) Database file opened: scoring/score_functions/hbonds/standard_params/HBEval.csv
+basic.io.database: (3) Database file opened: scoring/score_functions/EnvPairPotential/env_log.txt
+basic.io.database: (3) Database file opened: scoring/score_functions/EnvPairPotential/cbeta_den.txt
+basic.io.database: (3) Database file opened: scoring/score_functions/EnvPairPotential/pair_log.txt
+basic.io.database: (3) Database file opened: scoring/score_functions/EnvPairPotential/cenpack_log.txt
+basic.io.database: (3) Database file opened: scoring/score_functions/EnvPairPotential/env_log.txt
+basic.io.database: (3) Database file opened: scoring/score_functions/EnvPairPotential/cbeta_den.txt
+basic.io.database: (3) Database file opened: scoring/score_functions/EnvPairPotential/pair_log.txt
+basic.io.database: (3) Database file opened: scoring/score_functions/EnvPairPotential/cenpack_log.txt
+basic.io.database: (3) Database file opened: scoring/score_functions/MembranePotential/CEN6_mem_env_log.txt
+basic.io.database: (3) Database file opened: scoring/score_functions/MembranePotential/CEN10_mem_env_log.txt
+basic.io.database: (3) Database file opened: scoring/score_functions/MembranePotential/memcbeta_den.txt
+basic.io.database: (3) Database file opened: scoring/score_functions/MembranePotential/mem_pair_log.txt
+basic.io.database: (3) Database file opened: scoring/score_functions/P_AA_pp/P_AA
+basic.io.database: (3) Database file opened: scoring/score_functions/P_AA_pp/P_AA_n
+basic.io.database: (3) Database file opened: scoring/score_functions/P_AA_pp/P_AA_pp
+protocols.docking.DockingInitialPerturbation: (3) Reading options...
+protocols.docking.DockingLowRes: (3) DOCL_LOW_RES: INIT 
+protocols.docking.DockingLowRes: (3) ScoreFunction::show():
+weights: (interchain_pair 1) (interchain_vdw 1) (interchain_env 1) (interchain_contact 2)
+energy_method_options: EnergyMethodOptions::show: etable_type: FA_STANDARD_DEFAULT
+analytic_etable_evaluation: 0
+EnergyMethodOptions::show: unfolded_energies_type: UNFOLDED_SCORE12
+protocols.docking.DockingLowRes: (3) EnergyMethodOptions::show: atom_vdw_atom_type_set_name: centroid
+protocols.docking.DockingLowRes: (3) EnergyMethodOptions::show: exclude_protein_protein_hack_elec: false
+protocols.docking.DockingLowRes: (3) EnergyMethodOptions::show: exclude_monomer_hack_elec: false
+protocols.docking.DockingLowRes: (3) EnergyMethodOptions::show: hackelec_max_dis: 5.5
+protocols.docking.DockingLowRes: (3) EnergyMethodOptions::show: hackelec_min_dis: 1.5
+protocols.docking.DockingLowRes: (3) EnergyMethodOptions::show: hackelec_die: 10
+protocols.docking.DockingLowRes: (3) EnergyMethodOptions::show: hackelec_no_dis_dep_die: false
+protocols.docking.DockingLowRes: (3) EnergyMethodOptions::show: exclude_DNA_DNA: true
+protocols.docking.DockingLowRes: (3) EnergyMethodOptions::show: cst_max_seq_sep: 18446744073709551615
+protocols.docking.DockingLowRes: (3) EnergyMethodOptions::show: bond_angle_central_atoms_to_score:
+protocols.docking.DockingLowRes: (3) EnergyMethodOptions::show: bond_angle_residue_type_param_set: none
+protocols.docking.DockingLowRes: (3) HBondOptions::show: exclude_DNA_DNA: true
+protocols.docking.DockingLowRes: (3) HBondOptions::show: include_intra_res_RNA_: false
+protocols.docking.DockingLowRes: (3) HBondOptions::show: exclude_self_hbonds: true
+protocols.docking.DockingLowRes: (3) HBondOptions::show: use_hb_env_dep: true
+protocols.docking.DockingLowRes: (3) HBondOptions::show: use_hb_env_dep_DNA: true
+protocols.docking.DockingLowRes: (3) HBondOptions::show: smooth_hb_env_dep: true
+protocols.docking.DockingLowRes: (3) HBondOptions::show: bb_donor_acceptor_check: true
+protocols.docking.DockingLowRes: (3) HBondOptions::show: decompose_bb_hb_into_pair_energies: false
+protocols.docking.DockingLowRes: (3) HBondOptions::show: params_database_tag_: standard_params
+protocols.docking.DockingLowRes: (3) HBondOptions::show: use_incorrect_deriv_: false
+protocols.docking.DockingLowRes: (3) HBondOptions::show: use_sp2_chi_penalty_: false
+protocols.docking.DockingLowRes: (3) HBondOptions::show: sp2_BAH180_rise_: 0.75
+protocols.docking.DockingLowRes: (3) HBondOptions::show: measure_sp3acc_BAH_from_hvy_: false
+protocols.docking.DockingLowRes: (3) HBondOptions::show: Mbhbond: false 
+protocols.docking.DockingProtocol: (3)  FILTERS ARE ON... 
+protocols.jd2.PDBJobInputter: (3) Instantiate PDBJobInputter
+protocols.jd2.PDBJobInputter: (3) PDBJobInputter::fill_jobs
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 1
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 2
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 3
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 4
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 5
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 6
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 7
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 8
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 9
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 10
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 11
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 12
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 13
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 14
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 15
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 16
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 17
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 18
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 19
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 20
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 21
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 22
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 23
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 24
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 25
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 26
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 27
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 28
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 29
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 30
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 31
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 32
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 33
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 34
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 35
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 36
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 37
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 38
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 39
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 40
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 41
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 42
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 43
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 44
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 45
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 46
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 47
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 48
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 49
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 50
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 51
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 52
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 53
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 54
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 55
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 56
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 57
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 58
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 59
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 60
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 61
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 62
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 63
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 64
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 65
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 66
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 67
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 68
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 69
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 70
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 71
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 72
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 73
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 74
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 75
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 76
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 77
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 78
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 79
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 80
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 81
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 82
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 83
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 84
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 85
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 86
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 87
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 88
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 89
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 90
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 91
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 92
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 93
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 94
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 95
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 96
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 97
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 98
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 99
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 100
+core.io.pdb.file_data: (3) [ WARNING ] discarding 1 atoms at position 1 in file ../../../../dock_targetlib/udock_1bvn/native/protAB.pdb. Best match rsd_type:  PRO_p:NtermProteinFull
+core.conformation.Conformation: (3) Found disulfide between residues 28 86
+core.conformation.Conformation: (3) current variant for 28 CYS
+core.conformation.Conformation: (3) current variant for 86 CYS
+core.conformation.Conformation: (3) current variant for 28 CYD
+core.conformation.Conformation: (3) current variant for 86 CYD
+core.conformation.Conformation: (3) Found disulfide between residues 70 115
+core.conformation.Conformation: (3) current variant for 70 CYS
+core.conformation.Conformation: (3) current variant for 115 CYS
+core.conformation.Conformation: (3) current variant for 70 CYD
+core.conformation.Conformation: (3) current variant for 115 CYD
+core.conformation.Conformation: (3) Found disulfide between residues 141 160
+core.conformation.Conformation: (3) current variant for 141 CYS
+core.conformation.Conformation: (3) current variant for 160 CYS
+core.conformation.Conformation: (3) current variant for 141 CYD
+core.conformation.Conformation: (3) current variant for 160 CYD
+core.conformation.Conformation: (3) Found disulfide between residues 378 384
+core.conformation.Conformation: (3) current variant for 378 CYS
+core.conformation.Conformation: (3) current variant for 384 CYS
+core.conformation.Conformation: (3) current variant for 378 CYD
+core.conformation.Conformation: (3) current variant for 384 CYD
+core.conformation.Conformation: (3) Found disulfide between residues 450 462
+core.conformation.Conformation: (3) current variant for 450 CYS
+core.conformation.Conformation: (3) current variant for 462 CYS
+core.conformation.Conformation: (3) current variant for 450 CYD
+core.conformation.Conformation: (3) current variant for 462 CYD
+core.conformation.Conformation: (3) Found disulfide between residues 507 523
+core.conformation.Conformation: (3) current variant for 507 CYS
+core.conformation.Conformation: (3) current variant for 523 CYS
+core.conformation.Conformation: (3) current variant for 507 CYD
+core.conformation.Conformation: (3) current variant for 523 CYD
+core.conformation.Conformation: (3) Found disulfide between residues 541 569
+core.conformation.Conformation: (3) current variant for 541 CYS
+core.conformation.Conformation: (3) current variant for 569 CYS
+core.conformation.Conformation: (3) current variant for 541 CYD
+core.conformation.Conformation: (3) current variant for 569 CYD
+core.io.pdb.file_data: (3) [ WARNING ] can't find atom for res 1 atom  OE  (trying to set temp)
+core.pack.task: (3) Packer task: initialize from command line() 
+protocols.evaluation.ChiWellRmsdEvaluatorCreator: (3) Evaluation Creator active ... 
+protocols.jd2.PDBJobInputter: (3) PDBJobInputter::pose_from_job
+core.conformation.Conformation: (3) Found disulfide between residues 28 86
+core.conformation.Conformation: (3) current variant for 28 CYS
+core.conformation.Conformation: (3) current variant for 86 CYS
+core.conformation.Conformation: (3) current variant for 28 CYD
+core.conformation.Conformation: (3) current variant for 86 CYD
+core.conformation.Conformation: (3) Found disulfide between residues 70 115
+core.conformation.Conformation: (3) current variant for 70 CYS
+core.conformation.Conformation: (3) current variant for 115 CYS
+core.conformation.Conformation: (3) current variant for 70 CYD
+core.conformation.Conformation: (3) current variant for 115 CYD
+core.conformation.Conformation: (3) Found disulfide between residues 141 160
+core.conformation.Conformation: (3) current variant for 141 CYS
+core.conformation.Conformation: (3) current variant for 160 CYS
+core.conformation.Conformation: (3) current variant for 141 CYD
+core.conformation.Conformation: (3) current variant for 160 CYD
+core.conformation.Conformation: (3) Found disulfide between residues 378 384
+core.conformation.Conformation: (3) current variant for 378 CYS
+core.conformation.Conformation: (3) current variant for 384 CYS
+core.conformation.Conformation: (3) current variant for 378 CYD
+core.conformation.Conformation: (3) current variant for 384 CYD
+core.conformation.Conformation: (3) Found disulfide between residues 450 462
+core.conformation.Conformation: (3) current variant for 450 CYS
+core.conformation.Conformation: (3) current variant for 462 CYS
+core.conformation.Conformation: (3) current variant for 450 CYD
+core.conformation.Conformation: (3) current variant for 462 CYD
+core.conformation.Conformation: (3) Found disulfide between residues 507 523
+core.conformation.Conformation: (3) current variant for 507 CYS
+core.conformation.Conformation: (3) current variant for 523 CYS
+core.conformation.Conformation: (3) current variant for 507 CYD
+core.conformation.Conformation: (3) current variant for 523 CYD
+core.conformation.Conformation: (3) Found disulfide between residues 541 569
+core.conformation.Conformation: (3) current variant for 541 CYS
+core.conformation.Conformation: (3) current variant for 569 CYS
+core.conformation.Conformation: (3) current variant for 541 CYD
+core.conformation.Conformation: (3) current variant for 569 CYD
+core.pack.task: (3) Packer task: initialize from command line() 
+protocols.jd2.PDBJobInputter: (3) filling pose from PDB ../../../../dock_targetlib/udock_1bvn/start/P.pdb
+core.io.pdb.file_data: (3) [ WARNING ] discarding 1 atoms at position 1 in file ../../../../dock_targetlib/udock_1bvn/native/protAB.pdb. Best match rsd_type:  PRO_p:NtermProteinFull
+core.conformation.Conformation: (3) Found disulfide between residues 28 86
+core.conformation.Conformation: (3) current variant for 28 CYS
+core.conformation.Conformation: (3) current variant for 86 CYS
+core.conformation.Conformation: (3) current variant for 28 CYD
+core.conformation.Conformation: (3) current variant for 86 CYD
+core.conformation.Conformation: (3) Found disulfide between residues 70 115
+core.conformation.Conformation: (3) current variant for 70 CYS
+core.conformation.Conformation: (3) current variant for 115 CYS
+core.conformation.Conformation: (3) current variant for 70 CYD
+core.conformation.Conformation: (3) current variant for 115 CYD
+core.conformation.Conformation: (3) Found disulfide between residues 141 160
+core.conformation.Conformation: (3) current variant for 141 CYS
+core.conformation.Conformation: (3) current variant for 160 CYS
+core.conformation.Conformation: (3) current variant for 141 CYD
+core.conformation.Conformation: (3) current variant for 160 CYD
+core.conformation.Conformation: (3) Found disulfide between residues 378 384
+core.conformation.Conformation: (3) current variant for 378 CYS
+core.conformation.Conformation: (3) current variant for 384 CYS
+core.conformation.Conformation: (3) current variant for 378 CYD
+core.conformation.Conformation: (3) current variant for 384 CYD
+core.conformation.Conformation: (3) Found disulfide between residues 450 462
+core.conformation.Conformation: (3) current variant for 450 CYS
+core.conformation.Conformation: (3) current variant for 462 CYS
+core.conformation.Conformation: (3) current variant for 450 CYD
+core.conformation.Conformation: (3) current variant for 462 CYD
+core.conformation.Conformation: (3) Found disulfide between residues 507 523
+core.conformation.Conformation: (3) current variant for 507 CYS
+core.conformation.Conformation: (3) current variant for 523 CYS
+core.conformation.Conformation: (3) current variant for 507 CYD
+core.conformation.Conformation: (3) current variant for 523 CYD
+core.conformation.Conformation: (3) Found disulfide between residues 541 569
+core.conformation.Conformation: (3) current variant for 541 CYS
+core.conformation.Conformation: (3) current variant for 569 CYS
+core.conformation.Conformation: (3) current variant for 541 CYD
+core.conformation.Conformation: (3) current variant for 569 CYD
+core.io.pdb.file_data: (3) [ WARNING ] can't find atom for res 1 atom  OE  (trying to set temp)
+core.pack.task: (3) Packer task: initialize from command line() 
+core.scoring.ScoreFunctionFactory: (3) SCOREFUNCTION: interchain_cen
+protocols.docking.DockingInitialPerturbation: (3) Reading options...
+protocols.docking.DockingLowRes: (3) 
+DOCL_LOW_RES: INIT 
+protocols.docking.DockingLowRes: (3) ScoreFunction::show():
+weights: (interchain_pair 1) (interchain_vdw 1) (interchain_env 1) (interchain_contact 2)
+energy_method_options: EnergyMethodOptions::show: etable_type: FA_STANDARD_DEFAULT
+analytic_etable_evaluation: 0
+EnergyMethodOptions::show: unfolded_energies_type: UNFOLDED_SCORE12
+protocols.docking.DockingLowRes: (3) EnergyMethodOptions::show: atom_vdw_atom_type_set_name: centroid
+protocols.docking.DockingLowRes: (3) EnergyMethodOptions::show: exclude_protein_protein_hack_elec: false
+protocols.docking.DockingLowRes: (3) EnergyMethodOptions::show: exclude_monomer_hack_elec: false
+protocols.docking.DockingLowRes: (3) EnergyMethodOptions::show: hackelec_max_dis: 5.5
+protocols.docking.DockingLowRes: (3) EnergyMethodOptions::show: hackelec_min_dis: 1.5
+protocols.docking.DockingLowRes: (3) EnergyMethodOptions::show: hackelec_die: 10
+protocols.docking.DockingLowRes: (3) EnergyMethodOptions::show: hackelec_no_dis_dep_die: false
+protocols.docking.DockingLowRes: (3) EnergyMethodOptions::show: exclude_DNA_DNA: true
+protocols.docking.DockingLowRes: (3) EnergyMethodOptions::show: cst_max_seq_sep: 18446744073709551615
+protocols.docking.DockingLowRes: (3) EnergyMethodOptions::show: bond_angle_central_atoms_to_score:
+protocols.docking.DockingLowRes: (3) EnergyMethodOptions::show: bond_angle_residue_type_param_set: none
+protocols.docking.DockingLowRes: (3) HBondOptions::show: exclude_DNA_DNA: true
+protocols.docking.DockingLowRes: (3) HBondOptions::show: include_intra_res_RNA_: false
+protocols.docking.DockingLowRes: (3) HBondOptions::show: exclude_self_hbonds: true
+protocols.docking.DockingLowRes: (3) HBondOptions::show: use_hb_env_dep: true
+protocols.docking.DockingLowRes: (3) HBondOptions::show: use_hb_env_dep_DNA: true
+protocols.docking.DockingLowRes: (3) HBondOptions::show: smooth_hb_env_dep: true
+protocols.docking.DockingLowRes: (3) HBondOptions::show: bb_donor_acceptor_check: true
+protocols.docking.DockingLowRes: (3) HBondOptions::show: decompose_bb_hb_into_pair_energies: false
+protocols.docking.DockingLowRes: (3) HBondOptions::show: params_database_tag_: standard_params
+protocols.docking.DockingLowRes: (3) HBondOptions::show: use_incorrect_deriv_: false
+protocols.docking.DockingLowRes: (3) HBondOptions::show: use_sp2_chi_penalty_: false
+protocols.docking.DockingLowRes: (3) HBondOptions::show: sp2_BAH180_rise_: 0.75
+protocols.docking.DockingLowRes: (3) HBondOptions::show: measure_sp3acc_BAH_from_hvy_: false
+protocols.docking.DockingLowRes: (3) HBondOptions::show: Mbhbond: false 
+protocols.docking.DockingProtocol: (3)  FILTERS ARE ON... 
+protocols.docking.DockingProtocol: (3) Setting docking foldtree
+protocols.docking.DockingProtocol: (3) old fold tree: FOLD_TREE  EDGE 1 496 -1  EDGE 1 497 1  EDGE 497 570 -1 
+protocols.docking.DockingProtocol: (3) 
+protocols.docking.DockingProtocol: (3) new fold tree: FOLD_TREE  EDGE 1 337 -1  EDGE 337 496 -1  EDGE 337 531 1  EDGE 531 570 -1  EDGE 531 497 -1 
+protocols.docking.DockingProtocol: (3) 
+protocols.docking.DockingProtocol: (3) ////////////////////////////////////////////////////////////////////////////////
+protocols.docking.DockingProtocol: (3) ///                     Rosetta 3 Docking Protocol                           ///
+protocols.docking.DockingProtocol: (3) ///                                                                          ///
+protocols.docking.DockingProtocol: (3) /// Dockable Jumps: 1                                                        ///
+protocols.docking.DockingProtocol: (3) /// Low Resolution Docking Protocol:   on                                    ///
+protocols.docking.DockingProtocol: (3) /// High Resolution Docking Protocol: off                                    ///
+protocols.docking.DockingProtocol: (3) /// Low Resolution Filter:   on                                              ///
+protocols.docking.DockingProtocol: (3) /// High Resolution Filter: off                                              ///
+protocols.docking.DockingProtocol: (3) ////////////////////////////////////////////////////////////////////////////////
+core.chemical.ResidueTypeSet: (3) Finished initializing centroid residue type set.  Created 1980 residue types
+protocols.docking.DockingProtocol: (3) FOLD_TREE  EDGE 1 337 -1  EDGE 337 496 -1  EDGE 337 531 1  EDGE 531 570 -1  EDGE 531 497 -1 
+protocols.docking.DockingProtocol: (3) 
+protocols.docking.DockingInitialPerturbation: (3) randomize1: true
+protocols.moves.RigidBodyMover: (3) Randomize: Jump (before): RT -0.407229 0.906965 0.107609 0.878494 0.421198 -0.225477 -0.249825 0.00271303 -0.968287 -2.49045 -11.9196 30.2988  
+protocols.moves.RigidBodyMover: (3) Randomize: Rot (before): 14.1684 11.754 40.1581
+protocols.geometry.RB_geometry: (3) random_reorientation_matrix phi: 218.454 psi: 183.973 theta: 106.565
+protocols.moves.RigidBodyMover: (3) Randomize: Jump (after):  RT -0.73432 -0.678599 0.0166484 -0.536478 0.565153 -0.626732 0.415891 -0.469153 -0.779057 18.1206 15.7421 20.8337  
+protocols.moves.RigidBodyMover: (3) Randomize: Rot  (after): 14.1684 11.754 40.1581
+protocols.moves.RigidBodyMover: (3) Randomize: ---
+protocols.docking.DockingInitialPerturbation: (3) randomize2: true
+protocols.moves.RigidBodyMover: (3) Randomize: Jump (before): RT -0.73432 -0.678599 0.0166484 -0.536478 0.565153 -0.626732 0.415891 -0.469153 -0.779057 18.1206 15.7421 20.8337  
+protocols.moves.RigidBodyMover: (3) Randomize: Rot (before): 6.62141 1.39538 64.4203
+protocols.geometry.RB_geometry: (3) random_reorientation_matrix phi: 188.593 psi: 286.807 theta: 46.1494
+protocols.moves.RigidBodyMover: (3) Randomize: Jump (after):  RT 0.311636 -0.9027 -0.296674 -0.420922 -0.411064 0.80861 -0.851885 -0.127115 -0.508069 19.8326 12.0993 19.0421  
+protocols.moves.RigidBodyMover: (3) Randomize: Rot  (after): 6.62141 1.39538 64.4203
+protocols.moves.RigidBodyMover: (3) Randomize: ---
+basic.io.database: (3) Database file opened: scoring/score_functions/EnvPairPotential/env_log.txt
+basic.io.database: (3) Database file opened: scoring/score_functions/EnvPairPotential/cbeta_den.txt
+basic.io.database: (3) Database file opened: scoring/score_functions/EnvPairPotential/pair_log.txt
+basic.io.database: (3) Database file opened: scoring/score_functions/EnvPairPotential/cenpack_log.txt
+protocols.docking.DockingInitialPerturbation: (3) sliding into contact
+protocols.docking.DockingInitialPerturbation: (3) Moving away
+protocols.moves.RigidBodyMover: (3) Translate: Jump (before): RT 0.311636 -0.9027 -0.296674 -0.420922 -0.411064 0.80861 -0.851885 -0.127115 -0.508069 19.8326 12.0993 19.0421  
+protocols.moves.RigidBodyMover: (3) Translate: Jump (after):  RT 0.311636 -0.9027 -0.296674 -0.420922 -0.411064 0.80861 -0.851885 -0.127115 -0.508069 20.373 12.7198 19.6104  
+protocols.moves.RigidBodyMover: (3) Translate: Jump (before): RT 0.311636 -0.9027 -0.296674 -0.420922 -0.411064 0.80861 -0.851885 -0.127115 -0.508069 20.373 12.7198 19.6104  
+protocols.moves.RigidBodyMover: (3) Translate: Jump (after):  RT 0.311636 -0.9027 -0.296674 -0.420922 -0.411064 0.80861 -0.851885 -0.127115 -0.508069 20.9134 13.3403 20.1787  
+protocols.moves.RigidBodyMover: (3) Translate: Jump (before): RT 0.311636 -0.9027 -0.296674 -0.420922 -0.411064 0.80861 -0.851885 -0.127115 -0.508069 20.9134 13.3403 20.1787  
+protocols.moves.RigidBodyMover: (3) Translate: Jump (after):  RT 0.311636 -0.9027 -0.296674 -0.420922 -0.411064 0.80861 -0.851885 -0.127115 -0.508069 21.4538 13.9608 20.747  
+protocols.moves.RigidBodyMover: (3) Translate: Jump (before): RT 0.311636 -0.9027 -0.296674 -0.420922 -0.411064 0.80861 -0.851885 -0.127115 -0.508069 21.4538 13.9608 20.747  
+protocols.moves.RigidBodyMover: (3) Translate: Jump (after):  RT 0.311636 -0.9027 -0.296674 -0.420922 -0.411064 0.80861 -0.851885 -0.127115 -0.508069 21.9942 14.5813 21.3153  
+protocols.moves.RigidBodyMover: (3) Translate: Jump (before): RT 0.311636 -0.9027 -0.296674 -0.420922 -0.411064 0.80861 -0.851885 -0.127115 -0.508069 21.9942 14.5813 21.3153  
+protocols.moves.RigidBodyMover: (3) Translate: Jump (after):  RT 0.311636 -0.9027 -0.296674 -0.420922 -0.411064 0.80861 -0.851885 -0.127115 -0.508069 22.5346 15.2018 21.8836  
+protocols.moves.RigidBodyMover: (3) Translate: Jump (before): RT 0.311636 -0.9027 -0.296674 -0.420922 -0.411064 0.80861 -0.851885 -0.127115 -0.508069 22.5346 15.2018 21.8836  
+protocols.moves.RigidBodyMover: (3) Translate: Jump (after):  RT 0.311636 -0.9027 -0.296674 -0.420922 -0.411064 0.80861 -0.851885 -0.127115 -0.508069 23.075 15.8223 22.4519  
+protocols.moves.RigidBodyMover: (3) Translate: Jump (before): RT 0.311636 -0.9027 -0.296674 -0.420922 -0.411064 0.80861 -0.851885 -0.127115 -0.508069 23.075 15.8223 22.4519  
+protocols.moves.RigidBodyMover: (3) Translate: Jump (after):  RT 0.311636 -0.9027 -0.296674 -0.420922 -0.411064 0.80861 -0.851885 -0.127115 -0.508069 23.6154 16.4428 23.0202  
+protocols.moves.RigidBodyMover: (3) Translate: Jump (before): RT 0.311636 -0.9027 -0.296674 -0.420922 -0.411064 0.80861 -0.851885 -0.127115 -0.508069 23.6154 16.4428 23.0202  
+protocols.moves.RigidBodyMover: (3) Translate: Jump (after):  RT 0.311636 -0.9027 -0.296674 -0.420922 -0.411064 0.80861 -0.851885 -0.127115 -0.508069 24.1558 17.0633 23.5885  
+protocols.moves.RigidBodyMover: (3) Translate: Jump (before): RT 0.311636 -0.9027 -0.296674 -0.420922 -0.411064 0.80861 -0.851885 -0.127115 -0.508069 24.1558 17.0633 23.5885  
+protocols.moves.RigidBodyMover: (3) Translate: Jump (after):  RT 0.311636 -0.9027 -0.296674 -0.420922 -0.411064 0.80861 -0.851885 -0.127115 -0.508069 24.6962 17.6838 24.1568  
+protocols.docking.DockingInitialPerturbation: (3) Moving together
+protocols.moves.RigidBodyMover: (3) Translate: Jump (before): RT 0.311636 -0.9027 -0.296674 -0.420922 -0.411064 0.80861 -0.851885 -0.127115 -0.508069 24.6962 17.6838 24.1568  
+protocols.moves.RigidBodyMover: (3) Translate: Jump (after):  RT 0.311636 -0.9027 -0.296674 -0.420922 -0.411064 0.80861 -0.851885 -0.127115 -0.508069 24.1558 17.0633 23.5885  
+protocols.moves.RigidBodyMover: (3) Translate: Jump (before): RT 0.311636 -0.9027 -0.296674 -0.420922 -0.411064 0.80861 -0.851885 -0.127115 -0.508069 24.1558 17.0633 23.5885  
+protocols.moves.RigidBodyMover: (3) Translate: Jump (after):  RT 0.311636 -0.9027 -0.296674 -0.420922 -0.411064 0.80861 -0.851885 -0.127115 -0.508069 24.6962 17.6838 24.1568  
+protocols.docking.DockingProtocol: (3) finished initial perturbation
+protocols.docking.DockingLowRes: (3) in DockingLowRes.apply
+protocols.docking.DockingLowRes: (3) 
+EARLY DOCK_LOW_RES_SCORE: 
+protocols.docking.DockingLowRes: (3) ScoreFunction::show():
+weights: (interchain_pair 1) (interchain_vdw 1) (interchain_env 1) (interchain_contact 2)
+energy_method_options: EnergyMethodOptions::show: etable_type: FA_STANDARD_DEFAULT
+analytic_etable_evaluation: 0
+EnergyMethodOptions::show: unfolded_energies_type: UNFOLDED_SCORE12
+protocols.docking.DockingLowRes: (3) EnergyMethodOptions::show: atom_vdw_atom_type_set_name: centroid
+protocols.docking.DockingLowRes: (3) EnergyMethodOptions::show: exclude_protein_protein_hack_elec: false
+protocols.docking.DockingLowRes: (3) EnergyMethodOptions::show: exclude_monomer_hack_elec: false
+protocols.docking.DockingLowRes: (3) EnergyMethodOptions::show: hackelec_max_dis: 5.5
+protocols.docking.DockingLowRes: (3) EnergyMethodOptions::show: hackelec_min_dis: 1.5
+protocols.docking.DockingLowRes: (3) EnergyMethodOptions::show: hackelec_die: 10
+protocols.docking.DockingLowRes: (3) EnergyMethodOptions::show: hackelec_no_dis_dep_die: false
+protocols.docking.DockingLowRes: (3) EnergyMethodOptions::show: exclude_DNA_DNA: true
+protocols.docking.DockingLowRes: (3) EnergyMethodOptions::show: cst_max_seq_sep: 18446744073709551615
+protocols.docking.DockingLowRes: (3) EnergyMethodOptions::show: bond_angle_central_atoms_to_score:
+protocols.docking.DockingLowRes: (3) EnergyMethodOptions::show: bond_angle_residue_type_param_set: none
+protocols.docking.DockingLowRes: (3) HBondOptions::show: exclude_DNA_DNA: true
+protocols.docking.DockingLowRes: (3) HBondOptions::show: include_intra_res_RNA_: false
+protocols.docking.DockingLowRes: (3) HBondOptions::show: exclude_self_hbonds: true
+protocols.docking.DockingLowRes: (3) HBondOptions::show: use_hb_env_dep: true
+protocols.docking.DockingLowRes: (3) HBondOptions::show: use_hb_env_dep_DNA: true
+protocols.docking.DockingLowRes: (3) HBondOptions::show: smooth_hb_env_dep: true
+protocols.docking.DockingLowRes: (3) HBondOptions::show: bb_donor_acceptor_check: true
+protocols.docking.DockingLowRes: (3) HBondOptions::show: decompose_bb_hb_into_pair_energies: false
+protocols.docking.DockingLowRes: (3) HBondOptions::show: params_database_tag_: standard_params
+protocols.docking.DockingLowRes: (3) HBondOptions::show: use_incorrect_deriv_: false
+protocols.docking.DockingLowRes: (3) HBondOptions::show: use_sp2_chi_penalty_: false
+protocols.docking.DockingLowRes: (3) HBondOptions::show: sp2_BAH180_rise_: 0.75
+protocols.docking.DockingLowRes: (3) HBondOptions::show: measure_sp3acc_BAH_from_hvy_: false
+protocols.docking.DockingLowRes: (3) HBondOptions::show: Mbhbond: false 
+protocols.docking.DockingLowRes: (3) 
+DOCK_LOW_RES_SCORE: 
+protocols.docking.DockingLowRes: (3) ScoreFunction::show():
+weights: (interchain_pair 1) (interchain_vdw 1) (interchain_env 1) (interchain_contact 2)
+energy_method_options: EnergyMethodOptions::show: etable_type: FA_STANDARD_DEFAULT
+analytic_etable_evaluation: 0
+EnergyMethodOptions::show: unfolded_energies_type: UNFOLDED_SCORE12
+protocols.docking.DockingLowRes: (3) EnergyMethodOptions::show: atom_vdw_atom_type_set_name: centroid
+protocols.docking.DockingLowRes: (3) EnergyMethodOptions::show: exclude_protein_protein_hack_elec: false
+protocols.docking.DockingLowRes: (3) EnergyMethodOptions::show: exclude_monomer_hack_elec: false
+protocols.docking.DockingLowRes: (3) EnergyMethodOptions::show: hackelec_max_dis: 5.5
+protocols.docking.DockingLowRes: (3) EnergyMethodOptions::show: hackelec_min_dis: 1.5
+protocols.docking.DockingLowRes: (3) EnergyMethodOptions::show: hackelec_die: 10
+protocols.docking.DockingLowRes: (3) EnergyMethodOptions::show: hackelec_no_dis_dep_die: false
+protocols.docking.DockingLowRes: (3) EnergyMethodOptions::show: exclude_DNA_DNA: true
+protocols.docking.DockingLowRes: (3) EnergyMethodOptions::show: cst_max_seq_sep: 18446744073709551615
+protocols.docking.DockingLowRes: (3) EnergyMethodOptions::show: bond_angle_central_atoms_to_score:
+protocols.docking.DockingLowRes: (3) EnergyMethodOptions::show: bond_angle_residue_type_param_set: none
+protocols.docking.DockingLowRes: (3) HBondOptions::show: exclude_DNA_DNA: true
+protocols.docking.DockingLowRes: (3) HBondOptions::show: include_intra_res_RNA_: false
+protocols.docking.DockingLowRes: (3) HBondOptions::show: exclude_self_hbonds: true
+protocols.docking.DockingLowRes: (3) HBondOptions::show: use_hb_env_dep: true
+protocols.docking.DockingLowRes: (3) HBondOptions::show: use_hb_env_dep_DNA: true
+protocols.docking.DockingLowRes: (3) HBondOptions::show: smooth_hb_env_dep: true
+protocols.docking.DockingLowRes: (3) HBondOptions::show: bb_donor_acceptor_check: true
+protocols.docking.DockingLowRes: (3) HBondOptions::show: decompose_bb_hb_into_pair_energies: false
+protocols.docking.DockingLowRes: (3) HBondOptions::show: params_database_tag_: standard_params
+protocols.docking.DockingLowRes: (3) HBondOptions::show: use_incorrect_deriv_: false
+protocols.docking.DockingLowRes: (3) HBondOptions::show: use_sp2_chi_penalty_: false
+protocols.docking.DockingLowRes: (3) HBondOptions::show: sp2_BAH180_rise_: 0.75
+protocols.docking.DockingLowRes: (3) HBondOptions::show: measure_sp3acc_BAH_from_hvy_: false
+protocols.docking.DockingLowRes: (3) HBondOptions::show: Mbhbond: false 
+protocols.docking.DockingLowRes: (3) ////////////////////////////////////////////////////////////////////////////////
+protocols.docking.DockingLowRes: (3) ///                       Docking Low Res Protocol                           ///
+protocols.docking.DockingLowRes: (3) ///                                                                          ///
+protocols.docking.DockingLowRes: (3) /// Centroid Inner Cycles: 50                                                ///
+protocols.docking.DockingLowRes: (3) /// Centroid Outer Cycles: 10                                                ///
+protocols.docking.DockingLowRes: (3) /// Ensemble 1: off                                                            ///
+protocols.docking.DockingLowRes: (3) /// Ensemble 2: off                                                            ///
+protocols.docking.DockingLowRes: (3) /// Scorefunction:                                                           ///
+protocols.docking.DockingLowRes: (3) ScoreFunction::show():
+weights: (interchain_pair 1) (interchain_vdw 1) (interchain_env 1) (interchain_contact 2)
+energy_method_options: EnergyMethodOptions::show: etable_type: FA_STANDARD_DEFAULT
+analytic_etable_evaluation: 0
+EnergyMethodOptions::show: unfolded_energies_type: UNFOLDED_SCORE12
+protocols.docking.DockingLowRes: (3) EnergyMethodOptions::show: atom_vdw_atom_type_set_name: centroid
+protocols.docking.DockingLowRes: (3) EnergyMethodOptions::show: exclude_protein_protein_hack_elec: false
+protocols.docking.DockingLowRes: (3) EnergyMethodOptions::show: exclude_monomer_hack_elec: false
+protocols.docking.DockingLowRes: (3) EnergyMethodOptions::show: hackelec_max_dis: 5.5
+protocols.docking.DockingLowRes: (3) EnergyMethodOptions::show: hackelec_min_dis: 1.5
+protocols.docking.DockingLowRes: (3) EnergyMethodOptions::show: hackelec_die: 10
+protocols.docking.DockingLowRes: (3) EnergyMethodOptions::show: hackelec_no_dis_dep_die: false
+protocols.docking.DockingLowRes: (3) EnergyMethodOptions::show: exclude_DNA_DNA: true
+protocols.docking.DockingLowRes: (3) EnergyMethodOptions::show: cst_max_seq_sep: 18446744073709551615
+protocols.docking.DockingLowRes: (3) EnergyMethodOptions::show: bond_angle_central_atoms_to_score:
+protocols.docking.DockingLowRes: (3) EnergyMethodOptions::show: bond_angle_residue_type_param_set: none
+protocols.docking.DockingLowRes: (3) HBondOptions::show: exclude_DNA_DNA: true
+protocols.docking.DockingLowRes: (3) HBondOptions::show: include_intra_res_RNA_: false
+protocols.docking.DockingLowRes: (3) HBondOptions::show: exclude_self_hbonds: true
+protocols.docking.DockingLowRes: (3) HBondOptions::show: use_hb_env_dep: true
+protocols.docking.DockingLowRes: (3) HBondOptions::show: use_hb_env_dep_DNA: true
+protocols.docking.DockingLowRes: (3) HBondOptions::show: smooth_hb_env_dep: true
+protocols.docking.DockingLowRes: (3) HBondOptions::show: bb_donor_acceptor_check: true
+protocols.docking.DockingLowRes: (3) HBondOptions::show: decompose_bb_hb_into_pair_energies: false
+protocols.docking.DockingLowRes: (3) HBondOptions::show: params_database_tag_: standard_params
+protocols.docking.DockingLowRes: (3) HBondOptions::show: use_incorrect_deriv_: false
+protocols.docking.DockingLowRes: (3) HBondOptions::show: use_sp2_chi_penalty_: false
+protocols.docking.DockingLowRes: (3) HBondOptions::show: sp2_BAH180_rise_: 0.75
+protocols.docking.DockingLowRes: (3) HBondOptions::show: measure_sp3acc_BAH_from_hvy_: false
+protocols.docking.DockingLowRes: (3) HBondOptions::show: Mbhbond: false 
+protocols.docking.DockingLowRes: (3) 
+
+protocols.docking.DockingLowRes: (3) ////////////////////////////////////////////////////////////////////////////////
+protocols.docking.DockingLowRes: (3) ::::::::::::::::::Centroid Rigid Body Adaptive:::::::::::::::::::
+protocols.TrialMover: (3) Acceptance rate: 0.1
+protocols.TrialMover: (3) Acceptance rate: 0.16
+protocols.TrialMover: (3) Acceptance rate: 0.06
+protocols.TrialMover: (3) Acceptance rate: 0.12
+protocols.TrialMover: (3) Acceptance rate: 0.16
+protocols.TrialMover: (3) Acceptance rate: 0.04
+protocols.TrialMover: (3) Acceptance rate: 0.16
+protocols.TrialMover: (3) Acceptance rate: 0.14
+protocols.TrialMover: (3) Acceptance rate: 0.1
+protocols.TrialMover: (3) Acceptance rate: 0.2
+protocols.docking.DockingLowRes: (3) DockingLowRes.apply end
+protocols.moves.MonteCarlo: (3) MC: 0.8  -34.203  -34.203  -34.203  -34.203  0  0  0  0
+protocols.moves.TrialCounter: (3) RigidBodyPerturb trials=    500;  accepts= 0.1240;  energy_drop/trial=  -0.02335
+protocols.docking.DockingProtocol: (3)  Scoretype: interchain_contact score: -12, cutoff: 9.99
+protocols.docking.DockingProtocol: (3)  Scoretype: interchain_vdw score: 2.95083, cutoff: 1
+protocols.jd2.JobDistributor: (3) P_0001_0041 reported failure and will retry
+protocols.jd2.PDBJobInputter: (3) PDBJobInputter::pose_from_job
+protocols.jd2.PDBJobInputter: (3) filling pose from saved copy ../../../../dock_targetlib/udock_1bvn/start/P.pdb
+protocols.docking.DockingProtocol: (3) ////////////////////////////////////////////////////////////////////////////////
+protocols.docking.DockingProtocol: (3) ///                     Rosetta 3 Docking Protocol                           ///
+protocols.docking.DockingProtocol: (3) ///                                                                          ///
+protocols.docking.DockingProtocol: (3) /// Dockable Jumps: 1                                                        ///
+protocols.docking.DockingProtocol: (3) /// Low Resolution Docking Protocol:   on                                    ///
+protocols.docking.DockingProtocol: (3) /// High Resolution Docking Protocol: off                                    ///
+protocols.docking.DockingProtocol: (3) /// Low Resolution Filter:   on                                              ///
+protocols.docking.DockingProtocol: (3) /// High Resolution Filter: off                                              ///
+protocols.docking.DockingProtocol: (3) ////////////////////////////////////////////////////////////////////////////////
+protocols.docking.DockingProtocol: (3) FOLD_TREE  EDGE 1 337 -1  EDGE 337 496 -1  EDGE 337 531 1  EDGE 531 570 -1  EDGE 531 497 -1 
+protocols.docking.DockingProtocol: (3) 
+protocols.docking.DockingInitialPerturbation: (3) randomize1: true
+protocols.moves.RigidBodyMover: (3) Randomize: Jump (before): RT -0.407229 0.906965 0.107609 0.878494 0.421198 -0.225477 -0.249825 0.00271303 -0.968287 -2.49045 -11.9196 30.2988  
+protocols.moves.RigidBodyMover: (3) Randomize: Rot (before): 14.1684 11.754 40.1581
+protocols.geometry.RB_geometry: (3) random_reorientation_matrix phi: 349.173 psi: 229.43 theta: 97.2354
+protocols.moves.RigidBodyMover: (3) Randomize: Jump (after):  RT 0.848182 -0.529636 0.00858724 0.267952 0.415013 -0.869463 0.456935 0.739763 0.493924 -3.73301 12.7947 -23.2772  
+protocols.moves.RigidBodyMover: (3) Randomize: Rot  (after): 14.1684 11.754 40.1581
+protocols.moves.RigidBodyMover: (3) Randomize: ---
+protocols.docking.DockingInitialPerturbation: (3) randomize2: true
+protocols.moves.RigidBodyMover: (3) Randomize: Jump (before): RT 0.848182 -0.529636 0.00858724 0.267952 0.415013 -0.869463 0.456935 0.739763 0.493924 -3.73301 12.7947 -23.2772  
+protocols.moves.RigidBodyMover: (3) Randomize: Rot (before): -5.31311 28.6816 30.8392
+protocols.geometry.RB_geometry: (3) random_reorientation_matrix phi: 70.977 psi: 198.619 theta: 48.1811
+protocols.moves.RigidBodyMover: (3) Randomize: Jump (after):  RT 0.108235 -0.540038 -0.834652 0.94612 0.313707 -0.080285 0.305193 -0.780991 0.544895 -1.26302 10.5941 -21.9054  
+protocols.moves.RigidBodyMover: (3) Randomize: Rot  (after): -5.31311 28.6816 30.8392
+protocols.moves.RigidBodyMover: (3) Randomize: ---
+protocols.docking.DockingInitialPerturbation: (3) sliding into contact
+protocols.docking.DockingInitialPerturbation: (3) Moving away
+protocols.moves.RigidBodyMover: (3) Translate: Jump (before): RT 0.108235 -0.540038 -0.834652 0.94612 0.313707 -0.080285 0.305193 -0.780991 0.544895 -1.26302 10.5941 -21.9054  
+protocols.moves.RigidBodyMover: (3) Translate: Jump (after):  RT 0.108235 -0.540038 -0.834652 0.94612 0.313707 -0.080285 0.305193 -0.780991 0.544895 -1.53883 11.0598 -22.7462  
+protocols.moves.RigidBodyMover: (3) Translate: Jump (before): RT 0.108235 -0.540038 -0.834652 0.94612 0.313707 -0.080285 0.305193 -0.780991 0.544895 -1.53883 11.0598 -22.7462  
+protocols.moves.RigidBodyMover: (3) Translate: Jump (after):  RT 0.108235 -0.540038 -0.834652 0.94612 0.313707 -0.080285 0.305193 -0.780991 0.544895 -1.81465 11.5256 -23.5871  
+protocols.moves.RigidBodyMover: (3) Translate: Jump (before): RT 0.108235 -0.540038 -0.834652 0.94612 0.313707 -0.080285 0.305193 -0.780991 0.544895 -1.81465 11.5256 -23.5871  
+protocols.moves.RigidBodyMover: (3) Translate: Jump (after):  RT 0.108235 -0.540038 -0.834652 0.94612 0.313707 -0.080285 0.305193 -0.780991 0.544895 -2.09046 11.9913 -24.4279  
+protocols.moves.RigidBodyMover: (3) Translate: Jump (before): RT 0.108235 -0.540038 -0.834652 0.94612 0.313707 -0.080285 0.305193 -0.780991 0.544895 -2.09046 11.9913 -24.4279  
+protocols.moves.RigidBodyMover: (3) Translate: Jump (after):  RT 0.108235 -0.540038 -0.834652 0.94612 0.313707 -0.080285 0.305193 -0.780991 0.544895 -2.36627 12.457 -25.2688  
+protocols.moves.RigidBodyMover: (3) Translate: Jump (before): RT 0.108235 -0.540038 -0.834652 0.94612 0.313707 -0.080285 0.305193 -0.780991 0.544895 -2.36627 12.457 -25.2688  
+protocols.moves.RigidBodyMover: (3) Translate: Jump (after):  RT 0.108235 -0.540038 -0.834652 0.94612 0.313707 -0.080285 0.305193 -0.780991 0.544895 -2.64209 12.9228 -26.1096  
+protocols.moves.RigidBodyMover: (3) Translate: Jump (before): RT 0.108235 -0.540038 -0.834652 0.94612 0.313707 -0.080285 0.305193 -0.780991 0.544895 -2.64209 12.9228 -26.1096  
+protocols.moves.RigidBodyMover: (3) Translate: Jump (after):  RT 0.108235 -0.540038 -0.834652 0.94612 0.313707 -0.080285 0.305193 -0.780991 0.544895 -2.9179 13.3885 -26.9505  
+protocols.moves.RigidBodyMover: (3) Translate: Jump (before): RT 0.108235 -0.540038 -0.834652 0.94612 0.313707 -0.080285 0.305193 -0.780991 0.544895 -2.9179 13.3885 -26.9505  
+protocols.moves.RigidBodyMover: (3) Translate: Jump (after):  RT 0.108235 -0.540038 -0.834652 0.94612 0.313707 -0.080285 0.305193 -0.780991 0.544895 -3.19372 13.8542 -27.7913  
+protocols.moves.RigidBodyMover: (3) Translate: Jump (before): RT 0.108235 -0.540038 -0.834652 0.94612 0.313707 -0.080285 0.305193 -0.780991 0.544895 -3.19372 13.8542 -27.7913  
+protocols.moves.RigidBodyMover: (3) Translate: Jump (after):  RT 0.108235 -0.540038 -0.834652 0.94612 0.313707 -0.080285 0.305193 -0.780991 0.544895 -3.46953 14.32 -28.6321  
+protocols.moves.RigidBodyMover: (3) Translate: Jump (before): RT 0.108235 -0.540038 -0.834652 0.94612 0.313707 -0.080285 0.305193 -0.780991 0.544895 -3.46953 14.32 -28.6321  
+protocols.moves.RigidBodyMover: (3) Translate: Jump (after):  RT 0.108235 -0.540038 -0.834652 0.94612 0.313707 -0.080285 0.305193 -0.780991 0.544895 -3.74534 14.7857 -29.473  
+protocols.moves.RigidBodyMover: (3) Translate: Jump (before): RT 0.108235 -0.540038 -0.834652 0.94612 0.313707 -0.080285 0.305193 -0.780991 0.544895 -3.74534 14.7857 -29.473  
+protocols.moves.RigidBodyMover: (3) Translate: Jump (after):  RT 0.108235 -0.540038 -0.834652 0.94612 0.313707 -0.080285 0.305193 -0.780991 0.544895 -4.02116 15.2515 -30.3138  
+protocols.moves.RigidBodyMover: (3) Translate: Jump (before): RT 0.108235 -0.540038 -0.834652 0.94612 0.313707 -0.080285 0.305193 -0.780991 0.544895 -4.02116 15.2515 -30.3138  
+protocols.moves.RigidBodyMover: (3) Translate: Jump (after):  RT 0.108235 -0.540038 -0.834652 0.94612 0.313707 -0.080285 0.305193 -0.780991 0.544895 -4.29697 15.7172 -31.1547  
+protocols.moves.RigidBodyMover: (3) Translate: Jump (before): RT 0.108235 -0.540038 -0.834652 0.94612 0.313707 -0.080285 0.305193 -0.780991 0.544895 -4.29697 15.7172 -31.1547  
+protocols.moves.RigidBodyMover: (3) Translate: Jump (after):  RT 0.108235 -0.540038 -0.834652 0.94612 0.313707 -0.080285 0.305193 -0.780991 0.544895 -4.57279 16.1829 -31.9955  
+protocols.moves.RigidBodyMover: (3) Translate: Jump (before): RT 0.108235 -0.540038 -0.834652 0.94612 0.313707 -0.080285 0.305193 -0.780991 0.544895 -4.57279 16.1829 -31.9955  
+protocols.moves.RigidBodyMover: (3) Translate: Jump (after):  RT 0.108235 -0.540038 -0.834652 0.94612 0.313707 -0.080285 0.305193 -0.780991 0.544895 -4.8486 16.6487 -32.8364  
+protocols.moves.RigidBodyMover: (3) Translate: Jump (before): RT 0.108235 -0.540038 -0.834652 0.94612 0.313707 -0.080285 0.305193 -0.780991 0.544895 -4.8486 16.6487 -32.8364  
+protocols.moves.RigidBodyMover: (3) Translate: Jump (after):  RT 0.108235 -0.540038 -0.834652 0.94612 0.313707 -0.080285 0.305193 -0.780991 0.544895 -5.12441 17.1144 -33.6772  
+protocols.moves.RigidBodyMover: (3) Translate: Jump (before): RT 0.108235 -0.540038 -0.834652 0.94612 0.313707 -0.080285 0.305193 -0.780991 0.544895 -5.12441 17.1144 -33.6772  
+protocols.moves.RigidBodyMover: (3) Translate: Jump (after):  RT 0.108235 -0.540038 -0.834652 0.94612 0.313707 -0.080285 0.305193 -0.780991 0.544895 -5.40023 17.5801 -34.518  
+protocols.moves.RigidBodyMover: (3) Translate: Jump (before): RT 0.108235 -0.540038 -0.834652 0.94612 0.313707 -0.080285 0.305193 -0.780991 0.544895 -5.40023 17.5801 -34.518  
+protocols.moves.RigidBodyMover: (3) Translate: Jump (after):  RT 0.108235 -0.540038 -0.834652 0.94612 0.313707 -0.080285 0.305193 -0.780991 0.544895 -5.67604 18.0459 -35.3589  
+protocols.moves.RigidBodyMover: (3) Translate: Jump (before): RT 0.108235 -0.540038 -0.834652 0.94612 0.313707 -0.080285 0.305193 -0.780991 0.544895 -5.67604 18.0459 -35.3589  
+protocols.moves.RigidBodyMover: (3) Translate: Jump (after):  RT 0.108235 -0.540038 -0.834652 0.94612 0.313707 -0.080285 0.305193 -0.780991 0.544895 -5.95186 18.5116 -36.1997  
+protocols.moves.RigidBodyMover: (3) Translate: Jump (before): RT 0.108235 -0.540038 -0.834652 0.94612 0.313707 -0.080285 0.305193 -0.780991 0.544895 -5.95186 18.5116 -36.1997  
+protocols.moves.RigidBodyMover: (3) Translate: Jump (after):  RT 0.108235 -0.540038 -0.834652 0.94612 0.313707 -0.080285 0.305193 -0.780991 0.544895 -6.22767 18.9773 -37.0406  
+protocols.moves.RigidBodyMover: (3) Translate: Jump (before): RT 0.108235 -0.540038 -0.834652 0.94612 0.313707 -0.080285 0.305193 -0.780991 0.544895 -6.22767 18.9773 -37.0406  
+protocols.moves.RigidBodyMover: (3) Translate: Jump (after):  RT 0.108235 -0.540038 -0.834652 0.94612 0.313707 -0.080285 0.305193 -0.780991 0.544895 -6.50348 19.4431 -37.8814  
+protocols.moves.RigidBodyMover: (3) Translate: Jump (before): RT 0.108235 -0.540038 -0.834652 0.94612 0.313707 -0.080285 0.305193 -0.780991 0.544895 -6.50348 19.4431 -37.8814  
+protocols.moves.RigidBodyMover: (3) Translate: Jump (after):  RT 0.108235 -0.540038 -0.834652 0.94612 0.313707 -0.080285 0.305193 -0.780991 0.544895 -6.7793 19.9088 -38.7223  
+protocols.moves.RigidBodyMover: (3) Translate: Jump (before): RT 0.108235 -0.540038 -0.834652 0.94612 0.313707 -0.080285 0.305193 -0.780991 0.544895 -6.7793 19.9088 -38.7223  
+protocols.moves.RigidBodyMover: (3) Translate: Jump (after):  RT 0.108235 -0.540038 -0.834652 0.94612 0.313707 -0.080285 0.305193 -0.780991 0.544895 -7.05511 20.3745 -39.5631  
+protocols.moves.RigidBodyMover: (3) Translate: Jump (before): RT 0.108235 -0.540038 -0.834652 0.94612 0.313707 -0.080285 0.305193 -0.780991 0.544895 -7.05511 20.3745 -39.5631  
+protocols.moves.RigidBodyMover: (3) Translate: Jump (after):  RT 0.108235 -0.540038 -0.834652 0.94612 0.313707 -0.080285 0.305193 -0.780991 0.544895 -7.33093 20.8403 -40.4039  
+protocols.docking.DockingInitialPerturbation: (3) Moving together
+protocols.moves.RigidBodyMover: (3) Translate: Jump (before): RT 0.108235 -0.540038 -0.834652 0.94612 0.313707 -0.080285 0.305193 -0.780991 0.544895 -7.33093 20.8403 -40.4039  
+protocols.moves.RigidBodyMover: (3) Translate: Jump (after):  RT 0.108235 -0.540038 -0.834652 0.94612 0.313707 -0.080285 0.305193 -0.780991 0.544895 -7.05511 20.3745 -39.5631  
+protocols.moves.RigidBodyMover: (3) Translate: Jump (before): RT 0.108235 -0.540038 -0.834652 0.94612 0.313707 -0.080285 0.305193 -0.780991 0.544895 -7.05511 20.3745 -39.5631  
+protocols.moves.RigidBodyMover: (3) Translate: Jump (after):  RT 0.108235 -0.540038 -0.834652 0.94612 0.313707 -0.080285 0.305193 -0.780991 0.544895 -7.33093 20.8403 -40.4039  
+protocols.docking.DockingProtocol: (3) finished initial perturbation
+protocols.docking.DockingLowRes: (3) in DockingLowRes.apply
+protocols.docking.DockingLowRes: (3) 
+EARLY DOCK_LOW_RES_SCORE: 
+protocols.docking.DockingLowRes: (3) ScoreFunction::show():
+weights: (interchain_pair 1) (interchain_vdw 1) (interchain_env 1) (interchain_contact 2)
+energy_method_options: EnergyMethodOptions::show: etable_type: FA_STANDARD_DEFAULT
+analytic_etable_evaluation: 0
+EnergyMethodOptions::show: unfolded_energies_type: UNFOLDED_SCORE12
+protocols.docking.DockingLowRes: (3) EnergyMethodOptions::show: atom_vdw_atom_type_set_name: centroid
+protocols.docking.DockingLowRes: (3) EnergyMethodOptions::show: exclude_protein_protein_hack_elec: false
+protocols.docking.DockingLowRes: (3) EnergyMethodOptions::show: exclude_monomer_hack_elec: false
+protocols.docking.DockingLowRes: (3) EnergyMethodOptions::show: hackelec_max_dis: 5.5
+protocols.docking.DockingLowRes: (3) EnergyMethodOptions::show: hackelec_min_dis: 1.5
+protocols.docking.DockingLowRes: (3) EnergyMethodOptions::show: hackelec_die: 10
+protocols.docking.DockingLowRes: (3) EnergyMethodOptions::show: hackelec_no_dis_dep_die: false
+protocols.docking.DockingLowRes: (3) EnergyMethodOptions::show: exclude_DNA_DNA: true
+protocols.docking.DockingLowRes: (3) EnergyMethodOptions::show: cst_max_seq_sep: 18446744073709551615
+protocols.docking.DockingLowRes: (3) EnergyMethodOptions::show: bond_angle_central_atoms_to_score:
+protocols.docking.DockingLowRes: (3) EnergyMethodOptions::show: bond_angle_residue_type_param_set: none
+protocols.docking.DockingLowRes: (3) HBondOptions::show: exclude_DNA_DNA: true
+protocols.docking.DockingLowRes: (3) HBondOptions::show: include_intra_res_RNA_: false
+protocols.docking.DockingLowRes: (3) HBondOptions::show: exclude_self_hbonds: true
+protocols.docking.DockingLowRes: (3) HBondOptions::show: use_hb_env_dep: true
+protocols.docking.DockingLowRes: (3) HBondOptions::show: use_hb_env_dep_DNA: true
+protocols.docking.DockingLowRes: (3) HBondOptions::show: smooth_hb_env_dep: true
+protocols.docking.DockingLowRes: (3) HBondOptions::show: bb_donor_acceptor_check: true
+protocols.docking.DockingLowRes: (3) HBondOptions::show: decompose_bb_hb_into_pair_energies: false
+protocols.docking.DockingLowRes: (3) HBondOptions::show: params_database_tag_: standard_params
+protocols.docking.DockingLowRes: (3) HBondOptions::show: use_incorrect_deriv_: false
+protocols.docking.DockingLowRes: (3) HBondOptions::show: use_sp2_chi_penalty_: false
+protocols.docking.DockingLowRes: (3) HBondOptions::show: sp2_BAH180_rise_: 0.75
+protocols.docking.DockingLowRes: (3) HBondOptions::show: measure_sp3acc_BAH_from_hvy_: false
+protocols.docking.DockingLowRes: (3) HBondOptions::show: Mbhbond: false 
+protocols.docking.DockingLowRes: (3) 
+DOCK_LOW_RES_SCORE: 
+protocols.docking.DockingLowRes: (3) ScoreFunction::show():
+weights: (interchain_pair 1) (interchain_vdw 1) (interchain_env 1) (interchain_contact 2)
+energy_method_options: EnergyMethodOptions::show: etable_type: FA_STANDARD_DEFAULT
+analytic_etable_evaluation: 0
+EnergyMethodOptions::show: unfolded_energies_type: UNFOLDED_SCORE12
+protocols.docking.DockingLowRes: (3) EnergyMethodOptions::show: atom_vdw_atom_type_set_name: centroid
+protocols.docking.DockingLowRes: (3) EnergyMethodOptions::show: exclude_protein_protein_hack_elec: false
+protocols.docking.DockingLowRes: (3) EnergyMethodOptions::show: exclude_monomer_hack_elec: false
+protocols.docking.DockingLowRes: (3) EnergyMethodOptions::show: hackelec_max_dis: 5.5
+protocols.docking.DockingLowRes: (3) EnergyMethodOptions::show: hackelec_min_dis: 1.5
+protocols.docking.DockingLowRes: (3) EnergyMethodOptions::show: hackelec_die: 10
+protocols.docking.DockingLowRes: (3) EnergyMethodOptions::show: hackelec_no_dis_dep_die: false
+protocols.docking.DockingLowRes: (3) EnergyMethodOptions::show: exclude_DNA_DNA: true
+protocols.docking.DockingLowRes: (3) EnergyMethodOptions::show: cst_max_seq_sep: 18446744073709551615
+protocols.docking.DockingLowRes: (3) EnergyMethodOptions::show: bond_angle_central_atoms_to_score:
+protocols.docking.DockingLowRes: (3) EnergyMethodOptions::show: bond_angle_residue_type_param_set: none
+protocols.docking.DockingLowRes: (3) HBondOptions::show: exclude_DNA_DNA: true
+protocols.docking.DockingLowRes: (3) HBondOptions::show: include_intra_res_RNA_: false
+protocols.docking.DockingLowRes: (3) HBondOptions::show: exclude_self_hbonds: true
+protocols.docking.DockingLowRes: (3) HBondOptions::show: use_hb_env_dep: true
+protocols.docking.DockingLowRes: (3) HBondOptions::show: use_hb_env_dep_DNA: true
+protocols.docking.DockingLowRes: (3) HBondOptions::show: smooth_hb_env_dep: true
+protocols.docking.DockingLowRes: (3) HBondOptions::show: bb_donor_acceptor_check: true
+protocols.docking.DockingLowRes: (3) HBondOptions::show: decompose_bb_hb_into_pair_energies: false
+protocols.docking.DockingLowRes: (3) HBondOptions::show: params_database_tag_: standard_params
+protocols.docking.DockingLowRes: (3) HBondOptions::show: use_incorrect_deriv_: false
+protocols.docking.DockingLowRes: (3) HBondOptions::show: use_sp2_chi_penalty_: false
+protocols.docking.DockingLowRes: (3) HBondOptions::show: sp2_BAH180_rise_: 0.75
+protocols.docking.DockingLowRes: (3) HBondOptions::show: measure_sp3acc_BAH_from_hvy_: false
+protocols.docking.DockingLowRes: (3) HBondOptions::show: Mbhbond: false 
+protocols.docking.DockingLowRes: (3) ////////////////////////////////////////////////////////////////////////////////
+protocols.docking.DockingLowRes: (3) ///                       Docking Low Res Protocol                           ///
+protocols.docking.DockingLowRes: (3) ///                                                                          ///
+protocols.docking.DockingLowRes: (3) /// Centroid Inner Cycles: 50                                                ///
+protocols.docking.DockingLowRes: (3) /// Centroid Outer Cycles: 10                                                ///
+protocols.docking.DockingLowRes: (3) /// Ensemble 1: off                                                            ///
+protocols.docking.DockingLowRes: (3) /// Ensemble 2: off                                                            ///
+protocols.docking.DockingLowRes: (3) /// Scorefunction:                                                           ///
+protocols.docking.DockingLowRes: (3) ScoreFunction::show():
+weights: (interchain_pair 1) (interchain_vdw 1) (interchain_env 1) (interchain_contact 2)
+energy_method_options: EnergyMethodOptions::show: etable_type: FA_STANDARD_DEFAULT
+analytic_etable_evaluation: 0
+EnergyMethodOptions::show: unfolded_energies_type: UNFOLDED_SCORE12
+protocols.docking.DockingLowRes: (3) EnergyMethodOptions::show: atom_vdw_atom_type_set_name: centroid
+protocols.docking.DockingLowRes: (3) EnergyMethodOptions::show: exclude_protein_protein_hack_elec: false
+protocols.docking.DockingLowRes: (3) EnergyMethodOptions::show: exclude_monomer_hack_elec: false
+protocols.docking.DockingLowRes: (3) EnergyMethodOptions::show: hackelec_max_dis: 5.5
+protocols.docking.DockingLowRes: (3) EnergyMethodOptions::show: hackelec_min_dis: 1.5
+protocols.docking.DockingLowRes: (3) EnergyMethodOptions::show: hackelec_die: 10
+protocols.docking.DockingLowRes: (3) EnergyMethodOptions::show: hackelec_no_dis_dep_die: false
+protocols.docking.DockingLowRes: (3) EnergyMethodOptions::show: exclude_DNA_DNA: true
+protocols.docking.DockingLowRes: (3) EnergyMethodOptions::show: cst_max_seq_sep: 18446744073709551615
+protocols.docking.DockingLowRes: (3) EnergyMethodOptions::show: bond_angle_central_atoms_to_score:
+protocols.docking.DockingLowRes: (3) EnergyMethodOptions::show: bond_angle_residue_type_param_set: none
+protocols.docking.DockingLowRes: (3) HBondOptions::show: exclude_DNA_DNA: true
+protocols.docking.DockingLowRes: (3) HBondOptions::show: include_intra_res_RNA_: false
+protocols.docking.DockingLowRes: (3) HBondOptions::show: exclude_self_hbonds: true
+protocols.docking.DockingLowRes: (3) HBondOptions::show: use_hb_env_dep: true
+protocols.docking.DockingLowRes: (3) HBondOptions::show: use_hb_env_dep_DNA: true
+protocols.docking.DockingLowRes: (3) HBondOptions::show: smooth_hb_env_dep: true
+protocols.docking.DockingLowRes: (3) HBondOptions::show: bb_donor_acceptor_check: true
+protocols.docking.DockingLowRes: (3) HBondOptions::show: decompose_bb_hb_into_pair_energies: false
+protocols.docking.DockingLowRes: (3) HBondOptions::show: params_database_tag_: standard_params
+protocols.docking.DockingLowRes: (3) HBondOptions::show: use_incorrect_deriv_: false
+protocols.docking.DockingLowRes: (3) HBondOptions::show: use_sp2_chi_penalty_: false
+protocols.docking.DockingLowRes: (3) HBondOptions::show: sp2_BAH180_rise_: 0.75
+protocols.docking.DockingLowRes: (3) HBondOptions::show: measure_sp3acc_BAH_from_hvy_: false
+protocols.docking.DockingLowRes: (3) HBondOptions::show: Mbhbond: false 
+protocols.docking.DockingLowRes: (3) 
+
+protocols.docking.DockingLowRes: (3) ////////////////////////////////////////////////////////////////////////////////
+protocols.docking.DockingLowRes: (3) ::::::::::::::::::Centroid Rigid Body Adaptive:::::::::::::::::::
+protocols.TrialMover: (3) Acceptance rate: 0.22
+protocols.TrialMover: (3) Acceptance rate: 0.18
+protocols.TrialMover: (3) Acceptance rate: 0.46
+protocols.TrialMover: (3) Acceptance rate: 0.56
+protocols.TrialMover: (3) Acceptance rate: 0.5
+protocols.TrialMover: (3) Acceptance rate: 0.24
+protocols.TrialMover: (3) Acceptance rate: 0.46
+protocols.TrialMover: (3) Acceptance rate: 0.1
+protocols.TrialMover: (3) Acceptance rate: 0.48
+protocols.TrialMover: (3) Acceptance rate: 0.62
+protocols.docking.DockingLowRes: (3) DockingLowRes.apply end
+protocols.moves.MonteCarlo: (3) MC: 0.8  -22.9625  -22.9625  -22.9625  -22.9625  0  0  0  2
+protocols.moves.TrialCounter: (3) RigidBodyPerturb trials=   1000;  accepts= 0.2530;  energy_drop/trial=  -0.00682
+core.conformation.util: (3) Non-ideal residue detected:  Residue #1 atom #3(  C   ) :  Ideal theta=1.20079, Inspected theta=1.17281 (in Radians)
+core.io.silent: (3) detected attempt to write non-ideal pose to silent-file...Automatically switching to binary silent-struct type
+protocols.jd2.JobDistributor: (3) start batch ../inputs/flags_batch0002
+protocols.jd2.PDBJobInputter: (3) Instantiate PDBJobInputter
+protocols.jd2.PDBJobInputter: (3) PDBJobInputter::fill_jobs
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 1
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 2
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 3
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 4
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 5
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 6
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 7
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 8
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 9
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 10
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 11
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 12
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 13
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 14
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 15
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 16
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 17
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 18
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 19
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 20
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 21
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 22
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 23
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 24
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 25
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 26
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 27
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 28
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 29
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 30
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 31
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 32
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 33
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 34
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 35
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 36
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 37
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 38
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 39
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 40
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 41
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 42
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 43
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 44
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 45
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 46
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 47
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 48
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 49
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 50
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 51
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 52
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 53
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 54
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 55
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 56
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 57
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 58
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 59
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 60
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 61
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 62
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 63
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 64
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 65
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 66
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 67
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 68
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 69
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 70
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 71
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 72
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 73
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 74
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 75
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 76
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 77
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 78
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 79
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 80
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 81
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 82
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 83
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 84
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 85
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 86
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 87
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 88
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 89
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 90
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 91
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 92
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 93
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 94
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 95
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 96
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 97
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 98
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 99
+protocols.jd2.PDBJobInputter: (3) pushing ../../../../dock_targetlib/udock_1bvn/start/P.pdb nstruct index 100
+core.io.pdb.file_data: (3) [ WARNING ] discarding 1 atoms at position 1 in file ../../../../dock_targetlib/udock_1bvn/native/protAB.pdb. Best match rsd_type:  PRO_p:NtermProteinFull
+core.conformation.Conformation: (3) Found disulfide between residues 28 86
+core.conformation.Conformation: (3) current variant for 28 CYS
+core.conformation.Conformation: (3) current variant for 86 CYS
+core.conformation.Conformation: (3) current variant for 28 CYD
+core.conformation.Conformation: (3) current variant for 86 CYD
+core.conformation.Conformation: (3) Found disulfide between residues 70 115
+core.conformation.Conformation: (3) current variant for 70 CYS
+core.conformation.Conformation: (3) current variant for 115 CYS
+core.conformation.Conformation: (3) current variant for 70 CYD
+core.conformation.Conformation: (3) current variant for 115 CYD
+core.conformation.Conformation: (3) Found disulfide between residues 141 160
+core.conformation.Conformation: (3) current variant for 141 CYS
+core.conformation.Conformation: (3) current variant for 160 CYS
+core.conformation.Conformation: (3) current variant for 141 CYD
+core.conformation.Conformation: (3) current variant for 160 CYD
+core.conformation.Conformation: (3) Found disulfide between residues 378 384
+core.conformation.Conformation: (3) current variant for 378 CYS
+core.conformation.Conformation: (3) current variant for 384 CYS
+core.conformation.Conformation: (3) current variant for 378 CYD
+core.conformation.Conformation: (3) current variant for 384 CYD
+core.conformation.Conformation: (3) Found disulfide between residues 450 462
+core.conformation.Conformation: (3) current variant for 450 CYS
+core.conformation.Conformation: (3) current variant for 462 CYS
+core.conformation.Conformation: (3) current variant for 450 CYD
+core.conformation.Conformation: (3) current variant for 462 CYD
+core.conformation.Conformation: (3) Found disulfide between residues 507 523
+core.conformation.Conformation: (3) current variant for 507 CYS
+core.conformation.Conformation: (3) current variant for 523 CYS
+core.conformation.Conformation: (3) current variant for 507 CYD
+core.conformation.Conformation: (3) current variant for 523 CYD
+core.conformation.Conformation: (3) Found disulfide between residues 541 569
+core.conformation.Conformation: (3) current variant for 541 CYS
+core.conformation.Conformation: (3) current variant for 569 CYS
+core.conformation.Conformation: (3) current variant for 541 CYD
+core.conformation.Conformation: (3) current variant for 569 CYD
+core.io.pdb.file_data: (3) [ WARNING ] can't find atom for res 1 atom  OE  (trying to set temp)
+core.pack.task: (3) Packer task: initialize from command line() 
+protocols.evaluation.ChiWellRmsdEvaluatorCreator: (3) Evaluation Creator active ... 
+protocols.jd2.PDBJobInputter: (3) PDBJobInputter::pose_from_job
+core.conformation.Conformation: (3) Found disulfide between residues 28 86
+core.conformation.Conformation: (3) current variant for 28 CYS
+core.conformation.Conformation: (3) current variant for 86 CYS
+core.conformation.Conformation: (3) current variant for 28 CYD
+core.conformation.Conformation: (3) current variant for 86 CYD
+core.conformation.Conformation: (3) Found disulfide between residues 70 115
+core.conformation.Conformation: (3) current variant for 70 CYS
+core.conformation.Conformation: (3) current variant for 115 CYS
+core.conformation.Conformation: (3) current variant for 70 CYD
+core.conformation.Conformation: (3) current variant for 115 CYD
+core.conformation.Conformation: (3) Found disulfide between residues 141 160
+core.conformation.Conformation: (3) current variant for 141 CYS
+core.conformation.Conformation: (3) current variant for 160 CYS
+core.conformation.Conformation: (3) current variant for 141 CYD
+core.conformation.Conformation: (3) current variant for 160 CYD
+core.conformation.Conformation: (3) Found disulfide between residues 378 384
+core.conformation.Conformation: (3) current variant for 378 CYS
+core.conformation.Conformation: (3) current variant for 384 CYS
+core.conformation.Conformation: (3) current variant for 378 CYD
+core.conformation.Conformation: (3) current variant for 384 CYD
+core.conformation.Conformation: (3) Found disulfide between residues 450 462
+core.conformation.Conformation: (3) current variant for 450 CYS
+core.conformation.Conformation: (3) current variant for 462 CYS
+core.conformation.Conformation: (3) current variant for 450 CYD
+core.conformation.Conformation: (3) current variant for 462 CYD
+core.conformation.Conformation: (3) Found disulfide between residues 507 523
+core.conformation.Conformation: (3) current variant for 507 CYS
+core.conformation.Conformation: (3) current variant for 523 CYS
+core.conformation.Conformation: (3) current variant for 507 CYD
+core.conformation.Conformation: (3) current variant for 523 CYD
+core.conformation.Conformation: (3) Found disulfide between residues 541 569
+core.conformation.Conformation: (3) current variant for 541 CYS
+core.conformation.Conformation: (3) current variant for 569 CYS
+core.conformation.Conformation: (3) current variant for 541 CYD
+core.conformation.Conformation: (3) current variant for 569 CYD
+core.pack.task: (3) Packer task: initialize from command line() 
+protocols.jd2.PDBJobInputter: (3) filling pose from PDB ../../../../dock_targetlib/udock_1bvn/start/P.pdb
+core.io.pdb.file_data: (3) [ WARNING ] discarding 1 atoms at position 1 in file ../../../../dock_targetlib/udock_1bvn/native/protAB.pdb. Best match rsd_type:  PRO_p:NtermProteinFull
+core.conformation.Conformation: (3) Found disulfide between residues 28 86
+core.conformation.Conformation: (3) current variant for 28 CYS
+core.conformation.Conformation: (3) current variant for 86 CYS
+core.conformation.Conformation: (3) current variant for 28 CYD
+core.conformation.Conformation: (3) current variant for 86 CYD
+core.conformation.Conformation: (3) Found disulfide between residues 70 115
+core.conformation.Conformation: (3) current variant for 70 CYS
+core.conformation.Conformation: (3) current variant for 115 CYS
+core.conformation.Conformation: (3) current variant for 70 CYD
+core.conformation.Conformation: (3) current variant for 115 CYD
+core.conformation.Conformation: (3) Found disulfide between residues 141 160
+core.conformation.Conformation: (3) current variant for 141 CYS
+core.conformation.Conformation: (3) current variant for 160 CYS
+core.conformation.Conformation: (3) current variant for 141 CYD
+core.conformation.Conformation: (3) current variant for 160 CYD
+core.conformation.Conformation: (3) Found disulfide between residues 378 384
+core.conformation.Conformation: (3) current variant for 378 CYS
+core.conformation.Conformation: (3) current variant for 384 CYS
+core.conformation.Conformation: (3) current variant for 378 CYD
+core.conformation.Conformation: (3) current variant for 384 CYD
+core.conformation.Conformation: (3) Found disulfide between residues 450 462
+core.conformation.Conformation: (3) current variant for 450 CYS
+core.conformation.Conformation: (3) current variant for 462 CYS
+core.conformation.Conformation: (3) current variant for 450 CYD
+core.conformation.Conformation: (3) current variant for 462 CYD
+core.conformation.Conformation: (3) Found disulfide between residues 507 523
+core.conformation.Conformation: (3) current variant for 507 CYS
+core.conformation.Conformation: (3) current variant for 523 CYS
+core.conformation.Conformation: (3) current variant for 507 CYD
+core.conformation.Conformation: (3) current variant for 523 CYD
+core.conformation.Conformation: (3) Found disulfide between residues 541 569
+core.conformation.Conformation: (3) current variant for 541 CYS
+core.conformation.Conformation: (3) current variant for 569 CYS
+core.conformation.Conformation: (3) current variant for 541 CYD
+core.conformation.Conformation: (3) current variant for 569 CYD
+core.io.pdb.file_data: (3) [ WARNING ] can't find atom for res 1 atom  OE  (trying to set temp)
+core.pack.task: (3) Packer task: initialize from command line() 
+core.scoring.ScoreFunctionFactory: (3) SCOREFUNCTION: interchain_cen
+protocols.docking.DockingInitialPerturbation: (3) Reading options...
+protocols.docking.DockingLowRes: (3) 
+DOCL_LOW_RES: INIT 
+protocols.docking.DockingLowRes: (3) ScoreFunction::show():
+weights: (interchain_pair 1) (interchain_vdw 1) (interchain_env 1) (interchain_contact 2)
+energy_method_options: EnergyMethodOptions::show: etable_type: FA_STANDARD_DEFAULT
+analytic_etable_evaluation: 0
+EnergyMethodOptions::show: unfolded_energies_type: UNFOLDED_SCORE12
+protocols.docking.DockingLowRes: (3) EnergyMethodOptions::show: atom_vdw_atom_type_set_name: centroid
+protocols.docking.DockingLowRes: (3) EnergyMethodOptions::show: exclude_protein_protein_hack_elec: false
+protocols.docking.DockingLowRes: (3) EnergyMethodOptions::show: exclude_monomer_hack_elec: false
+protocols.docking.DockingLowRes: (3) EnergyMethodOptions::show: hackelec_max_dis: 5.5
+protocols.docking.DockingLowRes: (3) EnergyMethodOptions::show: hackelec_min_dis: 1.5
+protocols.docking.DockingLowRes: (3) EnergyMethodOptions::show: hackelec_die: 10
+protocols.docking.DockingLowRes: (3) EnergyMethodOptions::show: hackelec_no_dis_dep_die: false
+protocols.docking.DockingLowRes: (3) EnergyMethodOptions::show: exclude_DNA_DNA: true
+protocols.docking.DockingLowRes: (3) EnergyMethodOptions::show: cst_max_seq_sep: 18446744073709551615
+protocols.docking.DockingLowRes: (3) EnergyMethodOptions::show: bond_angle_central_atoms_to_score:
+protocols.docking.DockingLowRes: (3) EnergyMethodOptions::show: bond_angle_residue_type_param_set: none
+protocols.docking.DockingLowRes: (3) HBondOptions::show: exclude_DNA_DNA: true
+protocols.docking.DockingLowRes: (3) HBondOptions::show: include_intra_res_RNA_: false
+protocols.docking.DockingLowRes: (3) HBondOptions::show: exclude_self_hbonds: true
+protocols.docking.DockingLowRes: (3) HBondOptions::show: use_hb_env_dep: true
+protocols.docking.DockingLowRes: (3) HBondOptions::show: use_hb_env_dep_DNA: true
+protocols.docking.DockingLowRes: (3) HBondOptions::show: smooth_hb_env_dep: true
+protocols.docking.DockingLowRes: (3) HBondOptions::show: bb_donor_acceptor_check: true
+protocols.docking.DockingLowRes: (3) HBondOptions::show: decompose_bb_hb_into_pair_energies: false
+protocols.docking.DockingLowRes: (3) HBondOptions::show: params_database_tag_: standard_params
+protocols.docking.DockingLowRes: (3) HBondOptions::show: use_incorrect_deriv_: false
+protocols.docking.DockingLowRes: (3) HBondOptions::show: use_sp2_chi_penalty_: false
+protocols.docking.DockingLowRes: (3) HBondOptions::show: sp2_BAH180_rise_: 0.75
+protocols.docking.DockingLowRes: (3) HBondOptions::show: measure_sp3acc_BAH_from_hvy_: false
+protocols.docking.DockingLowRes: (3) HBondOptions::show: Mbhbond: false 
+protocols.docking.DockingProtocol: (3)  FILTERS ARE ON... 
+protocols.docking.DockingProtocol: (3) Setting docking foldtree
+protocols.docking.DockingProtocol: (3) old fold tree: FOLD_TREE  EDGE 1 496 -1  EDGE 1 497 1  EDGE 497 570 -1 
+protocols.docking.DockingProtocol: (3) 
+protocols.docking.DockingProtocol: (3) new fold tree: FOLD_TREE  EDGE 1 337 -1  EDGE 337 496 -1  EDGE 337 531 1  EDGE 531 570 -1  EDGE 531 497 -1 
+protocols.docking.DockingProtocol: (3) 
+protocols.docking.DockingProtocol: (3) ////////////////////////////////////////////////////////////////////////////////
+protocols.docking.DockingProtocol: (3) ///                     Rosetta 3 Docking Protocol                           ///
+protocols.docking.DockingProtocol: (3) ///                                                                          ///
+protocols.docking.DockingProtocol: (3) /// Dockable Jumps: 1                                                        ///
+protocols.docking.DockingProtocol: (3) /// Low Resolution Docking Protocol:   on                                    ///
+protocols.docking.DockingProtocol: (3) /// High Resolution Docking Protocol: off                                    ///
+protocols.docking.DockingProtocol: (3) /// Low Resolution Filter:   on                                              ///
+protocols.docking.DockingProtocol: (3) /// High Resolution Filter: off                                              ///
+protocols.docking.DockingProtocol: (3) ////////////////////////////////////////////////////////////////////////////////
+protocols.docking.DockingProtocol: (3) FOLD_TREE  EDGE 1 337 -1  EDGE 337 496 -1  EDGE 337 531 1  EDGE 531 570 -1  EDGE 531 497 -1 
+protocols.docking.DockingProtocol: (3) 
+protocols.docking.DockingInitialPerturbation: (3) randomize1: true
+protocols.moves.RigidBodyMover: (3) Randomize: Jump (before): RT -0.407229 0.906965 0.107609 0.878494 0.421198 -0.225477 -0.249825 0.00271303 -0.968287 -2.49045 -11.9196 30.2988  
+protocols.moves.RigidBodyMover: (3) Randomize: Rot (before): 14.1684 11.754 40.1581
+protocols.geometry.RB_geometry: (3) random_reorientation_matrix phi: 207.485 psi: 260.258 theta: 80.8261
+protocols.moves.RigidBodyMover: (3) Randomize: Jump (after):  RT -0.666488 -0.543628 -0.510159 -0.741696 0.41433 0.527464 -0.07537 0.729931 -0.679352 29.6661 -10.0877 14.1318  
+protocols.moves.RigidBodyMover: (3) Randomize: Rot  (after): 14.1684 11.754 40.1581
+protocols.moves.RigidBodyMover: (3) Randomize: ---
+protocols.docking.DockingInitialPerturbation: (3) randomize2: true
+protocols.moves.RigidBodyMover: (3) Randomize: Jump (before): RT -0.666488 -0.543628 -0.510159 -0.741696 0.41433 0.527464 -0.07537 0.729931 -0.679352 29.6661 -10.0877 14.1318  
+protocols.moves.RigidBodyMover: (3) Randomize: Rot (before): 28.9263 11.9961 63.2895
+protocols.geometry.RB_geometry: (3) random_reorientation_matrix phi: 264.304 psi: 164.203 theta: 116.019
+protocols.moves.RigidBodyMover: (3) Randomize: Jump (after):  RT 0.799099 0.448414 -0.400456 -0.583808 0.737832 -0.338781 0.143555 0.504509 0.851389 28.8824 -7.5122 9.42734  
+protocols.moves.RigidBodyMover: (3) Randomize: Rot  (after): 28.9263 11.9961 63.2895
+protocols.moves.RigidBodyMover: (3) Randomize: ---
+protocols.docking.DockingInitialPerturbation: (3) sliding into contact
+protocols.docking.DockingInitialPerturbation: (3) Moving away
+protocols.moves.RigidBodyMover: (3) Translate: Jump (before): RT 0.799099 0.448414 -0.400456 -0.583808 0.737832 -0.338781 0.143555 0.504509 0.851389 28.8824 -7.5122 9.42734  
+protocols.moves.RigidBodyMover: (3) Translate: Jump (after):  RT 0.799099 0.448414 -0.400456 -0.583808 0.737832 -0.338781 0.143555 0.504509 0.851389 29.7845 -7.69729 9.81706  
+protocols.moves.RigidBodyMover: (3) Translate: Jump (before): RT 0.799099 0.448414 -0.400456 -0.583808 0.737832 -0.338781 0.143555 0.504509 0.851389 29.7845 -7.69729 9.81706  
+protocols.moves.RigidBodyMover: (3) Translate: Jump (after):  RT 0.799099 0.448414 -0.400456 -0.583808 0.737832 -0.338781 0.143555 0.504509 0.851389 30.6867 -7.88239 10.2068  
+protocols.moves.RigidBodyMover: (3) Translate: Jump (before): RT 0.799099 0.448414 -0.400456 -0.583808 0.737832 -0.338781 0.143555 0.504509 0.851389 30.6867 -7.88239 10.2068  
+protocols.moves.RigidBodyMover: (3) Translate: Jump (after):  RT 0.799099 0.448414 -0.400456 -0.583808 0.737832 -0.338781 0.143555 0.504509 0.851389 31.5888 -8.06749 10.5965  
+protocols.moves.RigidBodyMover: (3) Translate: Jump (before): RT 0.799099 0.448414 -0.400456 -0.583808 0.737832 -0.338781 0.143555 0.504509 0.851389 31.5888 -8.06749 10.5965  
+protocols.moves.RigidBodyMover: (3) Translate: Jump (after):  RT 0.799099 0.448414 -0.400456 -0.583808 0.737832 -0.338781 0.143555 0.504509 0.851389 32.491 -8.25258 10.9862  
+protocols.moves.RigidBodyMover: (3) Translate: Jump (before): RT 0.799099 0.448414 -0.400456 -0.583808 0.737832 -0.338781 0.143555 0.504509 0.851389 32.491 -8.25258 10.9862  
+protocols.moves.RigidBodyMover: (3) Translate: Jump (after):  RT 0.799099 0.448414 -0.400456 -0.583808 0.737832 -0.338781 0.143555 0.504509 0.851389 33.3931 -8.43768 11.3759  
+protocols.moves.RigidBodyMover: (3) Translate: Jump (before): RT 0.799099 0.448414 -0.400456 -0.583808 0.737832 -0.338781 0.143555 0.504509 0.851389 33.3931 -8.43768 11.3759  
+protocols.moves.RigidBodyMover: (3) Translate: Jump (after):  RT 0.799099 0.448414 -0.400456 -0.583808 0.737832 -0.338781 0.143555 0.504509 0.851389 34.2953 -8.62278 11.7656  
+protocols.moves.RigidBodyMover: (3) Translate: Jump (before): RT 0.799099 0.448414 -0.400456 -0.583808 0.737832 -0.338781 0.143555 0.504509 0.851389 34.2953 -8.62278 11.7656  
+protocols.moves.RigidBodyMover: (3) Translate: Jump (after):  RT 0.799099 0.448414 -0.400456 -0.583808 0.737832 -0.338781 0.143555 0.504509 0.851389 35.1974 -8.80787 12.1553  
+protocols.moves.RigidBodyMover: (3) Translate: Jump (before): RT 0.799099 0.448414 -0.400456 -0.583808 0.737832 -0.338781 0.143555 0.504509 0.851389 35.1974 -8.80787 12.1553  
+protocols.moves.RigidBodyMover: (3) Translate: Jump (after):  RT 0.799099 0.448414 -0.400456 -0.583808 0.737832 -0.338781 0.143555 0.504509 0.851389 36.0995 -8.99297 12.5451  
+protocols.moves.RigidBodyMover: (3) Translate: Jump (before): RT 0.799099 0.448414 -0.400456 -0.583808 0.737832 -0.338781 0.143555 0.504509 0.851389 36.0995 -8.99297 12.5451  
+protocols.moves.RigidBodyMover: (3) Translate: Jump (after):  RT 0.799099 0.448414 -0.400456 -0.583808 0.737832 -0.338781 0.143555 0.504509 0.851389 37.0017 -9.17806 12.9348  
+protocols.moves.RigidBodyMover: (3) Translate: Jump (before): RT 0.799099 0.448414 -0.400456 -0.583808 0.737832 -0.338781 0.143555 0.504509 0.851389 37.0017 -9.17806 12.9348  
+protocols.moves.RigidBodyMover: (3) Translate: Jump (after):  RT 0.799099 0.448414 -0.400456 -0.583808 0.737832 -0.338781 0.143555 0.504509 0.851389 37.9038 -9.36316 13.3245  
+protocols.moves.RigidBodyMover: (3) Translate: Jump (before): RT 0.799099 0.448414 -0.400456 -0.583808 0.737832 -0.338781 0.143555 0.504509 0.851389 37.9038 -9.36316 13.3245  
+protocols.moves.RigidBodyMover: (3) Translate: Jump (after):  RT 0.799099 0.448414 -0.400456 -0.583808 0.737832 -0.338781 0.143555 0.504509 0.851389 38.806 -9.54826 13.7142  
+protocols.moves.RigidBodyMover: (3) Translate: Jump (before): RT 0.799099 0.448414 -0.400456 -0.583808 0.737832 -0.338781 0.143555 0.504509 0.851389 38.806 -9.54826 13.7142  
+protocols.moves.RigidBodyMover: (3) Translate: Jump (after):  RT 0.799099 0.448414 -0.400456 -0.583808 0.737832 -0.338781 0.143555 0.504509 0.851389 39.7081 -9.73335 14.1039  
+protocols.moves.RigidBodyMover: (3) Translate: Jump (before): RT 0.799099 0.448414 -0.400456 -0.583808 0.737832 -0.338781 0.143555 0.504509 0.851389 39.7081 -9.73335 14.1039  
+protocols.moves.RigidBodyMover: (3) Translate: Jump (after):  RT 0.799099 0.448414 -0.400456 -0.583808 0.737832 -0.338781 0.143555 0.504509 0.851389 40.6103 -9.91845 14.4936  
+protocols.moves.RigidBodyMover: (3) Translate: Jump (before): RT 0.799099 0.448414 -0.400456 -0.583808 0.737832 -0.338781 0.143555 0.504509 0.851389 40.6103 -9.91845 14.4936  
+protocols.moves.RigidBodyMover: (3) Translate: Jump (after):  RT 0.799099 0.448414 -0.400456 -0.583808 0.737832 -0.338781 0.143555 0.504509 0.851389 41.5124 -10.1035 14.8833  
+protocols.moves.RigidBodyMover: (3) Translate: Jump (before): RT 0.799099 0.448414 -0.400456 -0.583808 0.737832 -0.338781 0.143555 0.504509 0.851389 41.5124 -10.1035 14.8833  
+protocols.moves.RigidBodyMover: (3) Translate: Jump (after):  RT 0.799099 0.448414 -0.400456 -0.583808 0.737832 -0.338781 0.143555 0.504509 0.851389 42.4145 -10.2886 15.273  
+protocols.moves.RigidBodyMover: (3) Translate: Jump (before): RT 0.799099 0.448414 -0.400456 -0.583808 0.737832 -0.338781 0.143555 0.504509 0.851389 42.4145 -10.2886 15.273  
+protocols.moves.RigidBodyMover: (3) Translate: Jump (after):  RT 0.799099 0.448414 -0.400456 -0.583808 0.737832 -0.338781 0.143555 0.504509 0.851389 43.3167 -10.4737 15.6628  
+protocols.moves.RigidBodyMover: (3) Translate: Jump (before): RT 0.799099 0.448414 -0.400456 -0.583808 0.737832 -0.338781 0.143555 0.504509 0.851389 43.3167 -10.4737 15.6628  
+protocols.moves.RigidBodyMover: (3) Translate: Jump (after):  RT 0.799099 0.448414 -0.400456 -0.583808 0.737832 -0.338781 0.143555 0.504509 0.851389 44.2188 -10.6588 16.0525  
+protocols.moves.RigidBodyMover: (3) Translate: Jump (before): RT 0.799099 0.448414 -0.400456 -0.583808 0.737832 -0.338781 0.143555 0.504509 0.851389 44.2188 -10.6588 16.0525  
+protocols.moves.RigidBodyMover: (3) Translate: Jump (after):  RT 0.799099 0.448414 -0.400456 -0.583808 0.737832 -0.338781 0.143555 0.504509 0.851389 45.121 -10.8439 16.4422  
+protocols.moves.RigidBodyMover: (3) Translate: Jump (before): RT 0.799099 0.448414 -0.400456 -0.583808 0.737832 -0.338781 0.143555 0.504509 0.851389 45.121 -10.8439 16.4422  
+protocols.moves.RigidBodyMover: (3) Translate: Jump (after):  RT 0.799099 0.448414 -0.400456 -0.583808 0.737832 -0.338781 0.143555 0.504509 0.851389 46.0231 -11.029 16.8319  
+protocols.docking.DockingInitialPerturbation: (3) Moving together
+protocols.moves.RigidBodyMover: (3) Translate: Jump (before): RT 0.799099 0.448414 -0.400456 -0.583808 0.737832 -0.338781 0.143555 0.504509 0.851389 46.0231 -11.029 16.8319  
+protocols.moves.RigidBodyMover: (3) Translate: Jump (after):  RT 0.799099 0.448414 -0.400456 -0.583808 0.737832 -0.338781 0.143555 0.504509 0.851389 45.121 -10.8439 16.4422  
+protocols.moves.RigidBodyMover: (3) Translate: Jump (before): RT 0.799099 0.448414 -0.400456 -0.583808 0.737832 -0.338781 0.143555 0.504509 0.851389 45.121 -10.8439 16.4422  
+protocols.moves.RigidBodyMover: (3) Translate: Jump (after):  RT 0.799099 0.448414 -0.400456 -0.583808 0.737832 -0.338781 0.143555 0.504509 0.851389 46.0231 -11.029 16.8319  
+protocols.docking.DockingProtocol: (3) finished initial perturbation
+protocols.docking.DockingLowRes: (3) in DockingLowRes.apply
+protocols.docking.DockingLowRes: (3) 
+EARLY DOCK_LOW_RES_SCORE: 
+protocols.docking.DockingLowRes: (3) ScoreFunction::show():
+weights: (interchain_pair 1) (interchain_vdw 1) (interchain_env 1) (interchain_contact 2)
+energy_method_options: EnergyMethodOptions::show: etable_type: FA_STANDARD_DEFAULT
+analytic_etable_evaluation: 0
+EnergyMethodOptions::show: unfolded_energies_type: UNFOLDED_SCORE12
+protocols.docking.DockingLowRes: (3) EnergyMethodOptions::show: atom_vdw_atom_type_set_name: centroid
+protocols.docking.DockingLowRes: (3) EnergyMethodOptions::show: exclude_protein_protein_hack_elec: false
+protocols.docking.DockingLowRes: (3) EnergyMethodOptions::show: exclude_monomer_hack_elec: false
+protocols.docking.DockingLowRes: (3) EnergyMethodOptions::show: hackelec_max_dis: 5.5
+protocols.docking.DockingLowRes: (3) EnergyMethodOptions::show: hackelec_min_dis: 1.5
+protocols.docking.DockingLowRes: (3) EnergyMethodOptions::show: hackelec_die: 10
+protocols.docking.DockingLowRes: (3) EnergyMethodOptions::show: hackelec_no_dis_dep_die: false
+protocols.docking.DockingLowRes: (3) EnergyMethodOptions::show: exclude_DNA_DNA: true
+protocols.docking.DockingLowRes: (3) EnergyMethodOptions::show: cst_max_seq_sep: 18446744073709551615
+protocols.docking.DockingLowRes: (3) EnergyMethodOptions::show: bond_angle_central_atoms_to_score:
+protocols.docking.DockingLowRes: (3) EnergyMethodOptions::show: bond_angle_residue_type_param_set: none
+protocols.docking.DockingLowRes: (3) HBondOptions::show: exclude_DNA_DNA: true
+protocols.docking.DockingLowRes: (3) HBondOptions::show: include_intra_res_RNA_: false
+protocols.docking.DockingLowRes: (3) HBondOptions::show: exclude_self_hbonds: true
+protocols.docking.DockingLowRes: (3) HBondOptions::show: use_hb_env_dep: true
+protocols.docking.DockingLowRes: (3) HBondOptions::show: use_hb_env_dep_DNA: true
+protocols.docking.DockingLowRes: (3) HBondOptions::show: smooth_hb_env_dep: true
+protocols.docking.DockingLowRes: (3) HBondOptions::show: bb_donor_acceptor_check: true
+protocols.docking.DockingLowRes: (3) HBondOptions::show: decompose_bb_hb_into_pair_energies: false
+protocols.docking.DockingLowRes: (3) HBondOptions::show: params_database_tag_: standard_params
+protocols.docking.DockingLowRes: (3) HBondOptions::show: use_incorrect_deriv_: false
+protocols.docking.DockingLowRes: (3) HBondOptions::show: use_sp2_chi_penalty_: false
+protocols.docking.DockingLowRes: (3) HBondOptions::show: sp2_BAH180_rise_: 0.75
+protocols.docking.DockingLowRes: (3) HBondOptions::show: measure_sp3acc_BAH_from_hvy_: false
+protocols.docking.DockingLowRes: (3) HBondOptions::show: Mbhbond: false 
+protocols.docking.DockingLowRes: (3) 
+DOCK_LOW_RES_SCORE: 
+protocols.docking.DockingLowRes: (3) ScoreFunction::show():
+weights: (interchain_pair 1) (interchain_vdw 1) (interchain_env 1) (interchain_contact 2)
+energy_method_options: EnergyMethodOptions::show: etable_type: FA_STANDARD_DEFAULT
+analytic_etable_evaluation: 0
+EnergyMethodOptions::show: unfolded_energies_type: UNFOLDED_SCORE12
+protocols.docking.DockingLowRes: (3) EnergyMethodOptions::show: atom_vdw_atom_type_set_name: centroid
+protocols.docking.DockingLowRes: (3) EnergyMethodOptions::show: exclude_protein_protein_hack_elec: false
+protocols.docking.DockingLowRes: (3) EnergyMethodOptions::show: exclude_monomer_hack_elec: false
+protocols.docking.DockingLowRes: (3) EnergyMethodOptions::show: hackelec_max_dis: 5.5
+protocols.docking.DockingLowRes: (3) EnergyMethodOptions::show: hackelec_min_dis: 1.5
+protocols.docking.DockingLowRes: (3) EnergyMethodOptions::show: hackelec_die: 10
+protocols.docking.DockingLowRes: (3) EnergyMethodOptions::show: hackelec_no_dis_dep_die: false
+protocols.docking.DockingLowRes: (3) EnergyMethodOptions::show: exclude_DNA_DNA: true
+protocols.docking.DockingLowRes: (3) EnergyMethodOptions::show: cst_max_seq_sep: 18446744073709551615
+protocols.docking.DockingLowRes: (3) EnergyMethodOptions::show: bond_angle_central_atoms_to_score:
+protocols.docking.DockingLowRes: (3) EnergyMethodOptions::show: bond_angle_residue_type_param_set: none
+protocols.docking.DockingLowRes: (3) HBondOptions::show: exclude_DNA_DNA: true
+protocols.docking.DockingLowRes: (3) HBondOptions::show: include_intra_res_RNA_: false
+protocols.docking.DockingLowRes: (3) HBondOptions::show: exclude_self_hbonds: true
+protocols.docking.DockingLowRes: (3) HBondOptions::show: use_hb_env_dep: true
+protocols.docking.DockingLowRes: (3) HBondOptions::show: use_hb_env_dep_DNA: true
+protocols.docking.DockingLowRes: (3) HBondOptions::show: smooth_hb_env_dep: true
+protocols.docking.DockingLowRes: (3) HBondOptions::show: bb_donor_acceptor_check: true
+protocols.docking.DockingLowRes: (3) HBondOptions::show: decompose_bb_hb_into_pair_energies: false
+protocols.docking.DockingLowRes: (3) HBondOptions::show: params_database_tag_: standard_params
+protocols.docking.DockingLowRes: (3) HBondOptions::show: use_incorrect_deriv_: false
+protocols.docking.DockingLowRes: (3) HBondOptions::show: use_sp2_chi_penalty_: false
+protocols.docking.DockingLowRes: (3) HBondOptions::show: sp2_BAH180_rise_: 0.75
+protocols.docking.DockingLowRes: (3) HBondOptions::show: measure_sp3acc_BAH_from_hvy_: false
+protocols.docking.DockingLowRes: (3) HBondOptions::show: Mbhbond: false 
+protocols.docking.DockingLowRes: (3) ////////////////////////////////////////////////////////////////////////////////
+protocols.docking.DockingLowRes: (3) ///                       Docking Low Res Protocol                           ///
+protocols.docking.DockingLowRes: (3) ///                                                                          ///
+protocols.docking.DockingLowRes: (3) /// Centroid Inner Cycles: 50                                                ///
+protocols.docking.DockingLowRes: (3) /// Centroid Outer Cycles: 10                                                ///
+protocols.docking.DockingLowRes: (3) /// Ensemble 1: off                                                            ///
+protocols.docking.DockingLowRes: (3) /// Ensemble 2: off                                                            ///
+protocols.docking.DockingLowRes: (3) /// Scorefunction:                                                           ///
+protocols.docking.DockingLowRes: (3) ScoreFunction::show():
+weights: (interchain_pair 1) (interchain_vdw 1) (interchain_env 1) (interchain_contact 2)
+energy_method_options: EnergyMethodOptions::show: etable_type: FA_STANDARD_DEFAULT
+analytic_etable_evaluation: 0
+EnergyMethodOptions::show: unfolded_energies_type: UNFOLDED_SCORE12
+protocols.docking.DockingLowRes: (3) EnergyMethodOptions::show: atom_vdw_atom_type_set_name: centroid
+protocols.docking.DockingLowRes: (3) EnergyMethodOptions::show: exclude_protein_protein_hack_elec: false
+protocols.docking.DockingLowRes: (3) EnergyMethodOptions::show: exclude_monomer_hack_elec: false
+protocols.docking.DockingLowRes: (3) EnergyMethodOptions::show: hackelec_max_dis: 5.5
+protocols.docking.DockingLowRes: (3) EnergyMethodOptions::show: hackelec_min_dis: 1.5
+protocols.docking.DockingLowRes: (3) EnergyMethodOptions::show: hackelec_die: 10
+protocols.docking.DockingLowRes: (3) EnergyMethodOptions::show: hackelec_no_dis_dep_die: false
+protocols.docking.DockingLowRes: (3) EnergyMethodOptions::show: exclude_DNA_DNA: true
+protocols.docking.DockingLowRes: (3) EnergyMethodOptions::show: cst_max_seq_sep: 18446744073709551615
+protocols.docking.DockingLowRes: (3) EnergyMethodOptions::show: bond_angle_central_atoms_to_score:
+protocols.docking.DockingLowRes: (3) EnergyMethodOptions::show: bond_angle_residue_type_param_set: none
+protocols.docking.DockingLowRes: (3) HBondOptions::show: exclude_DNA_DNA: true
+protocols.docking.DockingLowRes: (3) HBondOptions::show: include_intra_res_RNA_: false
+protocols.docking.DockingLowRes: (3) HBondOptions::show: exclude_self_hbonds: true
+protocols.docking.DockingLowRes: (3) HBondOptions::show: use_hb_env_dep: true
+protocols.docking.DockingLowRes: (3) HBondOptions::show: use_hb_env_dep_DNA: true
+protocols.docking.DockingLowRes: (3) HBondOptions::show: smooth_hb_env_dep: true
+protocols.docking.DockingLowRes: (3) HBondOptions::show: bb_donor_acceptor_check: true
+protocols.docking.DockingLowRes: (3) HBondOptions::show: decompose_bb_hb_into_pair_energies: false
+protocols.docking.DockingLowRes: (3) HBondOptions::show: params_database_tag_: standard_params
+protocols.docking.DockingLowRes: (3) HBondOptions::show: use_incorrect_deriv_: false
+protocols.docking.DockingLowRes: (3) HBondOptions::show: use_sp2_chi_penalty_: false
+protocols.docking.DockingLowRes: (3) HBondOptions::show: sp2_BAH180_rise_: 0.75
+protocols.docking.DockingLowRes: (3) HBondOptions::show: measure_sp3acc_BAH_from_hvy_: false
+protocols.docking.DockingLowRes: (3) HBondOptions::show: Mbhbond: false 
+protocols.docking.DockingLowRes: (3) 
+
+protocols.docking.DockingLowRes: (3) ////////////////////////////////////////////////////////////////////////////////
+protocols.docking.DockingLowRes: (3) ::::::::::::::::::Centroid Rigid Body Adaptive:::::::::::::::::::
+protocols.TrialMover: (3) Acceptance rate: 0.26
+protocols.TrialMover: (3) Acceptance rate: 0.02
+protocols.TrialMover: (3) Acceptance rate: 0.18
+protocols.TrialMover: (3) Acceptance rate: 0.06
+protocols.TrialMover: (3) Acceptance rate: 0.18
+protocols.TrialMover: (3) Acceptance rate: 0.06
+protocols.TrialMover: (3) Acceptance rate: 0.16
+protocols.TrialMover: (3) Acceptance rate: 0.22
+protocols.TrialMover: (3) Acceptance rate: 0.24
+protocols.TrialMover: (3) Acceptance rate: 0.12
+protocols.docking.DockingLowRes: (3) DockingLowRes.apply end
+protocols.moves.MonteCarlo: (3) MC: 0.8  -34.7959  -34.7959  -34.7959  -34.7959  0  0  0  0
+protocols.moves.TrialCounter: (3) RigidBodyPerturb trials=    500;  accepts= 0.1500;  energy_drop/trial=  -0.02620
+protocols.docking.DockingProtocol: (3)  Scoretype: interchain_contact score: -6, cutoff: 9.99
+protocols.docking.DockingProtocol: (3)  Scoretype: interchain_vdw score: 1.45676, cutoff: 1
+protocols.jd2.JobDistributor: (3) P_0002_0064 reported failure and will retry
+protocols.jd2.PDBJobInputter: (3) PDBJobInputter::pose_from_job
+protocols.jd2.PDBJobInputter: (3) filling pose from saved copy ../../../../dock_targetlib/udock_1bvn/start/P.pdb
+protocols.docking.DockingProtocol: (3) ////////////////////////////////////////////////////////////////////////////////
+protocols.docking.DockingProtocol: (3) ///                     Rosetta 3 Docking Protocol                           ///
+protocols.docking.DockingProtocol: (3) ///                                                                          ///
+protocols.docking.DockingProtocol: (3) /// Dockable Jumps: 1                                                        ///
+protocols.docking.DockingProtocol: (3) /// Low Resolution Docking Protocol:   on                                    ///
+protocols.docking.DockingProtocol: (3) /// High Resolution Docking Protocol: off                                    ///
+protocols.docking.DockingProtocol: (3) /// Low Resolution Filter:   on                                              ///
+protocols.docking.DockingProtocol: (3) /// High Resolution Filter: off                                              ///
+protocols.docking.DockingProtocol: (3) ////////////////////////////////////////////////////////////////////////////////
+protocols.docking.DockingProtocol: (3) FOLD_TREE  EDGE 1 337 -1  EDGE 337 496 -1  EDGE 337 531 1  EDGE 531 570 -1  EDGE 531 497 -1 
+protocols.docking.DockingProtocol: (3) 
+protocols.docking.DockingInitialPerturbation: (3) randomize1: true
+protocols.moves.RigidBodyMover: (3) Randomize: Jump (before): RT -0.407229 0.906965 0.107609 0.878494 0.421198 -0.225477 -0.249825 0.00271303 -0.968287 -2.49045 -11.9196 30.2988  
+protocols.moves.RigidBodyMover: (3) Randomize: Rot (before): 14.1684 11.754 40.1581
+protocols.geometry.RB_geometry: (3) random_reorientation_matrix phi: 259.163 psi: 220.921 theta: 70.5374
+protocols.moves.RigidBodyMover: (3) Randomize: Jump (after):  RT -0.23574 -0.474054 -0.848351 -0.624491 0.742753 -0.241513 0.744605 0.472853 -0.47114 32.1513 5.36892 0.26069  
+protocols.moves.RigidBodyMover: (3) Randomize: Rot  (after): 14.1684 11.754 40.1581
+protocols.moves.RigidBodyMover: (3) Randomize: ---
+protocols.docking.DockingInitialPerturbation: (3) randomize2: true
+protocols.moves.RigidBodyMover: (3) Randomize: Jump (before): RT -0.23574 -0.474054 -0.848351 -0.624491 0.742753 -0.241513 0.744605 0.472853 -0.47114 32.1513 5.36892 0.26069  
+protocols.moves.RigidBodyMover: (3) Randomize: Rot (before): 13.8952 23.7768 64.8217
+protocols.geometry.RB_geometry: (3) random_reorientation_matrix phi: 215.787 psi: 358.219 theta: 47.157
+protocols.moves.RigidBodyMover: (3) Randomize: Jump (after):  RT 0.335109 0.32134 -0.885688 0.923682 -0.297404 0.241582 -0.185777 -0.89905 -0.396479 31.6781 5.53555 1.06625  
+protocols.moves.RigidBodyMover: (3) Randomize: Rot  (after): 13.8952 23.7768 64.8217
+protocols.moves.RigidBodyMover: (3) Randomize: ---
+protocols.docking.DockingInitialPerturbation: (3) sliding into contact
+protocols.docking.DockingInitialPerturbation: (3) Moving away
+protocols.moves.RigidBodyMover: (3) Translate: Jump (before): RT 0.335109 0.32134 -0.885688 0.923682 -0.297404 0.241582 -0.185777 -0.89905 -0.396479 31.6781 5.53555 1.06625  
+protocols.moves.RigidBodyMover: (3) Translate: Jump (after):  RT 0.335109 0.32134 -0.885688 0.923682 -0.297404 0.241582 -0.185777 -0.89905 -0.396479 32.6263 5.83237 0.952812  
+protocols.moves.RigidBodyMover: (3) Translate: Jump (before): RT 0.335109 0.32134 -0.885688 0.923682 -0.297404 0.241582 -0.185777 -0.89905 -0.396479 32.6263 5.83237 0.952812  
+protocols.moves.RigidBodyMover: (3) Translate: Jump (after):  RT 0.335109 0.32134 -0.885688 0.923682 -0.297404 0.241582 -0.185777 -0.89905 -0.396479 33.5744 6.1292 0.839371  
+protocols.moves.RigidBodyMover: (3) Translate: Jump (before): RT 0.335109 0.32134 -0.885688 0.923682 -0.297404 0.241582 -0.185777 -0.89905 -0.396479 33.5744 6.1292 0.839371  
+protocols.moves.RigidBodyMover: (3) Translate: Jump (after):  RT 0.335109 0.32134 -0.885688 0.923682 -0.297404 0.241582 -0.185777 -0.89905 -0.396479 34.5226 6.42602 0.725929  
+protocols.moves.RigidBodyMover: (3) Translate: Jump (before): RT 0.335109 0.32134 -0.885688 0.923682 -0.297404 0.241582 -0.185777 -0.89905 -0.396479 34.5226 6.42602 0.725929  
+protocols.moves.RigidBodyMover: (3) Translate: Jump (after):  RT 0.335109 0.32134 -0.885688 0.923682 -0.297404 0.241582 -0.185777 -0.89905 -0.396479 35.4708 6.72285 0.612487  
+protocols.moves.RigidBodyMover: (3) Translate: Jump (before): RT 0.335109 0.32134 -0.885688 0.923682 -0.297404 0.241582 -0.185777 -0.89905 -0.396479 35.4708 6.72285 0.612487  
+protocols.moves.RigidBodyMover: (3) Translate: Jump (after):  RT 0.335109 0.32134 -0.885688 0.923682 -0.297404 0.241582 -0.185777 -0.89905 -0.396479 36.419 7.01967 0.499046  
+protocols.moves.RigidBodyMover: (3) Translate: Jump (before): RT 0.335109 0.32134 -0.885688 0.923682 -0.297404 0.241582 -0.185777 -0.89905 -0.396479 36.419 7.01967 0.499046  
+protocols.moves.RigidBodyMover: (3) Translate: Jump (after):  RT 0.335109 0.32134 -0.885688 0.923682 -0.297404 0.241582 -0.185777 -0.89905 -0.396479 37.3671 7.3165 0.385604  
+protocols.moves.RigidBodyMover: (3) Translate: Jump (before): RT 0.335109 0.32134 -0.885688 0.923682 -0.297404 0.241582 -0.185777 -0.89905 -0.396479 37.3671 7.3165 0.385604  
+protocols.moves.RigidBodyMover: (3) Translate: Jump (after):  RT 0.335109 0.32134 -0.885688 0.923682 -0.297404 0.241582 -0.185777 -0.89905 -0.396479 38.3153 7.61332 0.272162  
+protocols.moves.RigidBodyMover: (3) Translate: Jump (before): RT 0.335109 0.32134 -0.885688 0.923682 -0.297404 0.241582 -0.185777 -0.89905 -0.396479 38.3153 7.61332 0.272162  
+protocols.moves.RigidBodyMover: (3) Translate: Jump (after):  RT 0.335109 0.32134 -0.885688 0.923682 -0.297404 0.241582 -0.185777 -0.89905 -0.396479 39.2635 7.91015 0.158721  
+protocols.moves.RigidBodyMover: (3) Translate: Jump (before): RT 0.335109 0.32134 -0.885688 0.923682 -0.297404 0.241582 -0.185777 -0.89905 -0.396479 39.2635 7.91015 0.158721  
+protocols.moves.RigidBodyMover: (3) Translate: Jump (after):  RT 0.335109 0.32134 -0.885688 0.923682 -0.297404 0.241582 -0.185777 -0.89905 -0.396479 40.2116 8.20697 0.045279  
+protocols.moves.RigidBodyMover: (3) Translate: Jump (before): RT 0.335109 0.32134 -0.885688 0.923682 -0.297404 0.241582 -0.185777 -0.89905 -0.396479 40.2116 8.20697 0.045279  
+protocols.moves.RigidBodyMover: (3) Translate: Jump (after):  RT 0.335109 0.32134 -0.885688 0.923682 -0.297404 0.241582 -0.185777 -0.89905 -0.396479 41.1598 8.5038 -0.0681626  
+protocols.moves.RigidBodyMover: (3) Translate: Jump (before): RT 0.335109 0.32134 -0.885688 0.923682 -0.297404 0.241582 -0.185777 -0.89905 -0.396479 41.1598 8.5038 -0.0681626  
+protocols.moves.RigidBodyMover: (3) Translate: Jump (after):  RT 0.335109 0.32134 -0.885688 0.923682 -0.297404 0.241582 -0.185777 -0.89905 -0.396479 42.108 8.80062 -0.181604  
+protocols.moves.RigidBodyMover: (3) Translate: Jump (before): RT 0.335109 0.32134 -0.885688 0.923682 -0.297404 0.241582 -0.185777 -0.89905 -0.396479 42.108 8.80062 -0.181604  
+protocols.moves.RigidBodyMover: (3) Translate: Jump (after):  RT 0.335109 0.32134 -0.885688 0.923682 -0.297404 0.241582 -0.185777 -0.89905 -0.396479 43.0561 9.09745 -0.295046  
+protocols.docking.DockingInitialPerturbation: (3) Moving together
+protocols.moves.RigidBodyMover: (3) Translate: Jump (before): RT 0.335109 0.32134 -0.885688 0.923682 -0.297404 0.241582 -0.185777 -0.89905 -0.396479 43.0561 9.09745 -0.295046  
+protocols.moves.RigidBodyMover: (3) Translate: Jump (after):  RT 0.335109 0.32134 -0.885688 0.923682 -0.297404 0.241582 -0.185777 -0.89905 -0.396479 42.108 8.80062 -0.181604  
+protocols.moves.RigidBodyMover: (3) Translate: Jump (before): RT 0.335109 0.32134 -0.885688 0.923682 -0.297404 0.241582 -0.185777 -0.89905 -0.396479 42.108 8.80062 -0.181604  
+protocols.moves.RigidBodyMover: (3) Translate: Jump (after):  RT 0.335109 0.32134 -0.885688 0.923682 -0.297404 0.241582 -0.185777 -0.89905 -0.396479 43.0561 9.09745 -0.295046  
+protocols.docking.DockingProtocol: (3) finished initial perturbation
+protocols.docking.DockingLowRes: (3) in DockingLowRes.apply
+protocols.docking.DockingLowRes: (3) 
+EARLY DOCK_LOW_RES_SCORE: 
+protocols.docking.DockingLowRes: (3) ScoreFunction::show():
+weights: (interchain_pair 1) (interchain_vdw 1) (interchain_env 1) (interchain_contact 2)
+energy_method_options: EnergyMethodOptions::show: etable_type: FA_STANDARD_DEFAULT
+analytic_etable_evaluation: 0
+EnergyMethodOptions::show: unfolded_energies_type: UNFOLDED_SCORE12
+protocols.docking.DockingLowRes: (3) EnergyMethodOptions::show: atom_vdw_atom_type_set_name: centroid
+protocols.docking.DockingLowRes: (3) EnergyMethodOptions::show: exclude_protein_protein_hack_elec: false
+protocols.docking.DockingLowRes: (3) EnergyMethodOptions::show: exclude_monomer_hack_elec: false
+protocols.docking.DockingLowRes: (3) EnergyMethodOptions::show: hackelec_max_dis: 5.5
+protocols.docking.DockingLowRes: (3) EnergyMethodOptions::show: hackelec_min_dis: 1.5
+protocols.docking.DockingLowRes: (3) EnergyMethodOptions::show: hackelec_die: 10
+protocols.docking.DockingLowRes: (3) EnergyMethodOptions::show: hackelec_no_dis_dep_die: false
+protocols.docking.DockingLowRes: (3) EnergyMethodOptions::show: exclude_DNA_DNA: true
+protocols.docking.DockingLowRes: (3) EnergyMethodOptions::show: cst_max_seq_sep: 18446744073709551615
+protocols.docking.DockingLowRes: (3) EnergyMethodOptions::show: bond_angle_central_atoms_to_score:
+protocols.docking.DockingLowRes: (3) EnergyMethodOptions::show: bond_angle_residue_type_param_set: none
+protocols.docking.DockingLowRes: (3) HBondOptions::show: exclude_DNA_DNA: true
+protocols.docking.DockingLowRes: (3) HBondOptions::show: include_intra_res_RNA_: false
+protocols.docking.DockingLowRes: (3) HBondOptions::show: exclude_self_hbonds: true
+protocols.docking.DockingLowRes: (3) HBondOptions::show: use_hb_env_dep: true
+protocols.docking.DockingLowRes: (3) HBondOptions::show: use_hb_env_dep_DNA: true
+protocols.docking.DockingLowRes: (3) HBondOptions::show: smooth_hb_env_dep: true
+protocols.docking.DockingLowRes: (3) HBondOptions::show: bb_donor_acceptor_check: true
+protocols.docking.DockingLowRes: (3) HBondOptions::show: decompose_bb_hb_into_pair_energies: false
+protocols.docking.DockingLowRes: (3) HBondOptions::show: params_database_tag_: standard_params
+protocols.docking.DockingLowRes: (3) HBondOptions::show: use_incorrect_deriv_: false
+protocols.docking.DockingLowRes: (3) HBondOptions::show: use_sp2_chi_penalty_: false
+protocols.docking.DockingLowRes: (3) HBondOptions::show: sp2_BAH180_rise_: 0.75
+protocols.docking.DockingLowRes: (3) HBondOptions::show: measure_sp3acc_BAH_from_hvy_: false
+protocols.docking.DockingLowRes: (3) HBondOptions::show: Mbhbond: false 
+protocols.docking.DockingLowRes: (3) 
+DOCK_LOW_RES_SCORE: 
+protocols.docking.DockingLowRes: (3) ScoreFunction::show():
+weights: (interchain_pair 1) (interchain_vdw 1) (interchain_env 1) (interchain_contact 2)
+energy_method_options: EnergyMethodOptions::show: etable_type: FA_STANDARD_DEFAULT
+analytic_etable_evaluation: 0
+EnergyMethodOptions::show: unfolded_energies_type: UNFOLDED_SCORE12
+protocols.docking.DockingLowRes: (3) EnergyMethodOptions::show: atom_vdw_atom_type_set_name: centroid
+protocols.docking.DockingLowRes: (3) EnergyMethodOptions::show: exclude_protein_protein_hack_elec: false
+protocols.docking.DockingLowRes: (3) EnergyMethodOptions::show: exclude_monomer_hack_elec: false
+protocols.docking.DockingLowRes: (3) EnergyMethodOptions::show: hackelec_max_dis: 5.5
+protocols.docking.DockingLowRes: (3) EnergyMethodOptions::show: hackelec_min_dis: 1.5
+protocols.docking.DockingLowRes: (3) EnergyMethodOptions::show: hackelec_die: 10
+protocols.docking.DockingLowRes: (3) EnergyMethodOptions::show: hackelec_no_dis_dep_die: false
+protocols.docking.DockingLowRes: (3) EnergyMethodOptions::show: exclude_DNA_DNA: true
+protocols.docking.DockingLowRes: (3) EnergyMethodOptions::show: cst_max_seq_sep: 18446744073709551615
+protocols.docking.DockingLowRes: (3) EnergyMethodOptions::show: bond_angle_central_atoms_to_score:
+protocols.docking.DockingLowRes: (3) EnergyMethodOptions::show: bond_angle_residue_type_param_set: none
+protocols.docking.DockingLowRes: (3) HBondOptions::show: exclude_DNA_DNA: true
+protocols.docking.DockingLowRes: (3) HBondOptions::show: include_intra_res_RNA_: false
+protocols.docking.DockingLowRes: (3) HBondOptions::show: exclude_self_hbonds: true
+protocols.docking.DockingLowRes: (3) HBondOptions::show: use_hb_env_dep: true
+protocols.docking.DockingLowRes: (3) HBondOptions::show: use_hb_env_dep_DNA: true
+protocols.docking.DockingLowRes: (3) HBondOptions::show: smooth_hb_env_dep: true
+protocols.docking.DockingLowRes: (3) HBondOptions::show: bb_donor_acceptor_check: true
+protocols.docking.DockingLowRes: (3) HBondOptions::show: decompose_bb_hb_into_pair_energies: false
+protocols.docking.DockingLowRes: (3) HBondOptions::show: params_database_tag_: standard_params
+protocols.docking.DockingLowRes: (3) HBondOptions::show: use_incorrect_deriv_: false
+protocols.docking.DockingLowRes: (3) HBondOptions::show: use_sp2_chi_penalty_: false
+protocols.docking.DockingLowRes: (3) HBondOptions::show: sp2_BAH180_rise_: 0.75
+protocols.docking.DockingLowRes: (3) HBondOptions::show: measure_sp3acc_BAH_from_hvy_: false
+protocols.docking.DockingLowRes: (3) HBondOptions::show: Mbhbond: false 
+protocols.docking.DockingLowRes: (3) ////////////////////////////////////////////////////////////////////////////////
+protocols.docking.DockingLowRes: (3) ///                       Docking Low Res Protocol                           ///
+protocols.docking.DockingLowRes: (3) ///                                                                          ///
+protocols.docking.DockingLowRes: (3) /// Centroid Inner Cycles: 50                                                ///
+protocols.docking.DockingLowRes: (3) /// Centroid Outer Cycles: 10                                                ///
+protocols.docking.DockingLowRes: (3) /// Ensemble 1: off                                                            ///
+protocols.docking.DockingLowRes: (3) /// Ensemble 2: off                                                            ///
+protocols.docking.DockingLowRes: (3) /// Scorefunction:                                                           ///
+protocols.docking.DockingLowRes: (3) ScoreFunction::show():
+weights: (interchain_pair 1) (interchain_vdw 1) (interchain_env 1) (interchain_contact 2)
+energy_method_options: EnergyMethodOptions::show: etable_type: FA_STANDARD_DEFAULT
+analytic_etable_evaluation: 0
+EnergyMethodOptions::show: unfolded_energies_type: UNFOLDED_SCORE12
+protocols.docking.DockingLowRes: (3) EnergyMethodOptions::show: atom_vdw_atom_type_set_name: centroid
+protocols.docking.DockingLowRes: (3) EnergyMethodOptions::show: exclude_protein_protein_hack_elec: false
+protocols.docking.DockingLowRes: (3) EnergyMethodOptions::show: exclude_monomer_hack_elec: false
+protocols.docking.DockingLowRes: (3) EnergyMethodOptions::show: hackelec_max_dis: 5.5
+protocols.docking.DockingLowRes: (3) EnergyMethodOptions::show: hackelec_min_dis: 1.5
+protocols.docking.DockingLowRes: (3) EnergyMethodOptions::show: hackelec_die: 10
+protocols.docking.DockingLowRes: (3) EnergyMethodOptions::show: hackelec_no_dis_dep_die: false
+protocols.docking.DockingLowRes: (3) EnergyMethodOptions::show: exclude_DNA_DNA: true
+protocols.docking.DockingLowRes: (3) EnergyMethodOptions::show: cst_max_seq_sep: 18446744073709551615
+protocols.docking.DockingLowRes: (3) EnergyMethodOptions::show: bond_angle_central_atoms_to_score:
+protocols.docking.DockingLowRes: (3) EnergyMethodOptions::show: bond_angle_residue_type_param_set: none
+protocols.docking.DockingLowRes: (3) HBondOptions::show: exclude_DNA_DNA: true
+protocols.docking.DockingLowRes: (3) HBondOptions::show: include_intra_res_RNA_: false
+protocols.docking.DockingLowRes: (3) HBondOptions::show: exclude_self_hbonds: true
+protocols.docking.DockingLowRes: (3) HBondOptions::show: use_hb_env_dep: true
+protocols.docking.DockingLowRes: (3) HBondOptions::show: use_hb_env_dep_DNA: true
+protocols.docking.DockingLowRes: (3) HBondOptions::show: smooth_hb_env_dep: true
+protocols.docking.DockingLowRes: (3) HBondOptions::show: bb_donor_acceptor_check: true
+protocols.docking.DockingLowRes: (3) HBondOptions::show: decompose_bb_hb_into_pair_energies: false
+protocols.docking.DockingLowRes: (3) HBondOptions::show: params_database_tag_: standard_params
+protocols.docking.DockingLowRes: (3) HBondOptions::show: use_incorrect_deriv_: false
+protocols.docking.DockingLowRes: (3) HBondOptions::show: use_sp2_chi_penalty_: false
+protocols.docking.DockingLowRes: (3) HBondOptions::show: sp2_BAH180_rise_: 0.75
+protocols.docking.DockingLowRes: (3) HBondOptions::show: measure_sp3acc_BAH_from_hvy_: false
+protocols.docking.DockingLowRes: (3) HBondOptions::show: Mbhbond: false 
+protocols.docking.DockingLowRes: (3) 
+
+protocols.docking.DockingLowRes: (3) ////////////////////////////////////////////////////////////////////////////////
+protocols.docking.DockingLowRes: (3) ::::::::::::::::::Centroid Rigid Body Adaptive:::::::::::::::::::
+protocols.TrialMover: (3) Acceptance rate: 0.44
+protocols.TrialMover: (3) Acceptance rate: 0.44
+protocols.TrialMover: (3) Acceptance rate: 0.48
+protocols.TrialMover: (3) Acceptance rate: 0.42
+protocols.TrialMover: (3) Acceptance rate: 0.54
+protocols.TrialMover: (3) Acceptance rate: 0.56
+protocols.TrialMover: (3) Acceptance rate: 0.54
+protocols.TrialMover: (3) Acceptance rate: 0.3
+protocols.TrialMover: (3) Acceptance rate: 0.48
+protocols.TrialMover: (3) Acceptance rate: 0.4
+protocols.docking.DockingLowRes: (3) DockingLowRes.apply end
+protocols.moves.MonteCarlo: (3) MC: 0.8  -20.21  -20.21  -20.21  -20.21  0  0  0  0
+protocols.moves.TrialCounter: (3) RigidBodyPerturb trials=   1000;  accepts= 0.3050;  energy_drop/trial=  -0.00744
+core.conformation.util: (3) Non-ideal residue detected:  Residue #1 atom #3(  C   ) :  Ideal theta=1.20079, Inspected theta=1.17281 (in Radians)
+core.io.silent: (3) detected attempt to write non-ideal pose to silent-file...Automatically switching to binary silent-struct type
+protocols.jd2.JobDistributor: (3) 100 jobs in last batch... in total 4 jobs attempted in 68 seconds
+protocols.docking.DockingLowRes: (3) 
+
+protocols.docking.DockingLowRes: (3) WARNING: Message(s) above was printed in the end instead of proper place because this Tracer object has some contents left in inner buffer when destructor was called. Explicit call Tracer::flush() or end your IO with std::endl to disable this warning.
+
+

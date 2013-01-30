@@ -1,0 +1,3 @@
+SCORE:     score    interchain_pair    interchain_vdw    interchain_env    interchain_contact    min_score    temp_level    temperature        rms     maxsub       time description
+SCORE:   -37.434              1.424             1.807           -22.665               -18.000      -36.519         4.000          1.200     15.906    496.000   1367.000      P_0002
+SCORE:   -34.371              3.674             0.329           -25.374               -13.000      -34.371         7.000          2.500     19.635    496.000   1441.000      P_0001

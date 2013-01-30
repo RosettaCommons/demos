@@ -1,0 +1,3 @@
+partners|partners/partners
+pdb|start/P.pdb
+native|native/protAB.pdb

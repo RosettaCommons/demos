@@ -1,0 +1,62 @@
+core.init: (0) 'RNG device' seed mode, using '/dev/urandom', seed=-2098487511 seed_offset=0 real_seed=-2098487511
+core.init.random: (0) RandomGenerator:init: Normal mode, seed=-2098487511 RG_type=mt19937
+core.chemical.ResidueTypeSet: (0) Finished initializing fa_standard residue type set.  Created 6225 residue types
+core.io.pdb.file_data: (0) [ WARNING ] discarding 1 atoms at position 1 in file ../../../../dock_targetlib/udock_1bvn/native/protAB.pdb. Best match rsd_type:  PRO_p:NtermProteinFull
+core.io.raw_data.DisulfideFile: (0) Fixing a disulfide between 28 and 86
+core.io.raw_data.DisulfideFile: (0) Fixing a disulfide between 70 and 115
+core.io.raw_data.DisulfideFile: (0) Fixing a disulfide between 141 and 160
+core.io.raw_data.DisulfideFile: (0) Fixing a disulfide between 378 and 384
+core.io.raw_data.DisulfideFile: (0) Fixing a disulfide between 450 and 462
+core.io.raw_data.DisulfideFile: (0) Fixing a disulfide between 507 and 523
+core.io.raw_data.DisulfideFile: (0) Fixing a disulfide between 541 and 569
+core.io.pdb.file_data: (0) [ WARNING ] can't find atom for res 1 atom  OE  (trying to set temp)
+core.pack.task: (0) Packer task: initialize from command line() 
+core.scoring.ScoreFunctionFactory: (0) SCOREFUNCTION: docking
+core.scoring.etable: (0) Starting energy table calculation
+core.scoring.etable: (0) smooth_etable: changing atr/rep split to bottom of energy well
+core.scoring.etable: (0) smooth_etable: spline smoothing lj etables (maxdis = 6)
+core.scoring.etable: (0) smooth_etable: spline smoothing solvation etables (max_dis = 6)
+core.scoring.etable: (0) Finished calculating energy tables.
+basic.io.database: (0) Database file opened: scoring/score_functions/PairEPotential/pdb_pair_stats_fine
+basic.io.database: (0) Database file opened: scoring/score_functions/hbonds/standard_params/HBPoly1D.csv
+basic.io.database: (0) Database file opened: scoring/score_functions/hbonds/standard_params/HBFadeIntervals.csv
+basic.io.database: (0) Database file opened: scoring/score_functions/hbonds/standard_params/HBEval.csv
+basic.io.database: (0) Database file opened: scoring/score_functions/EnvPairPotential/env_log.txt
+basic.io.database: (0) Database file opened: scoring/score_functions/EnvPairPotential/cbeta_den.txt
+basic.io.database: (0) Database file opened: scoring/score_functions/EnvPairPotential/pair_log.txt
+basic.io.database: (0) Database file opened: scoring/score_functions/EnvPairPotential/cenpack_log.txt
+basic.io.database: (0) Database file opened: scoring/score_functions/EnvPairPotential/env_log.txt
+basic.io.database: (0) Database file opened: scoring/score_functions/EnvPairPotential/cbeta_den.txt
+basic.io.database: (0) Database file opened: scoring/score_functions/EnvPairPotential/pair_log.txt
+basic.io.database: (0) Database file opened: scoring/score_functions/EnvPairPotential/cenpack_log.txt
+basic.io.database: (0) Database file opened: scoring/score_functions/MembranePotential/CEN6_mem_env_log.txt
+basic.io.database: (0) Database file opened: scoring/score_functions/MembranePotential/CEN10_mem_env_log.txt
+basic.io.database: (0) Database file opened: scoring/score_functions/MembranePotential/memcbeta_den.txt
+basic.io.database: (0) Database file opened: scoring/score_functions/MembranePotential/mem_pair_log.txt
+basic.io.database: (0) Database file opened: scoring/score_functions/P_AA_pp/P_AA
+basic.io.database: (0) Database file opened: scoring/score_functions/P_AA_pp/P_AA_n
+basic.io.database: (0) Database file opened: scoring/score_functions/P_AA_pp/P_AA_pp
+core.io.silent: (0) Reading all structures from ../../../../example_runs/replica_dock/udock_1bvn/run/low_decoys_P_0001_traj.out
+core.io.silent: (0) Finished reading 98 structures from ../../../../example_runs/replica_dock/udock_1bvn/run/low_decoys_P_0001_traj.out
+core.io.pdb.file_data: (0) [ WARNING ] discarding 1 atoms at position 1 in file ../../../../dock_targetlib/udock_1bvn/native/protAB.pdb. Best match rsd_type:  PRO_p:NtermProteinFull
+core.io.raw_data.DisulfideFile: (0) Fixing a disulfide between 28 and 86
+core.io.raw_data.DisulfideFile: (0) Fixing a disulfide between 70 and 115
+core.io.raw_data.DisulfideFile: (0) Fixing a disulfide between 141 and 160
+core.io.raw_data.DisulfideFile: (0) Fixing a disulfide between 378 and 384
+core.io.raw_data.DisulfideFile: (0) Fixing a disulfide between 450 and 462
+core.io.raw_data.DisulfideFile: (0) Fixing a disulfide between 507 and 523
+core.io.raw_data.DisulfideFile: (0) Fixing a disulfide between 541 and 569
+core.io.pdb.file_data: (0) [ WARNING ] can't find atom for res 1 atom  OE  (trying to set temp)
+core.pack.task: (0) Packer task: initialize from command line() 
+core.io.pdb.file_data: (0) [ WARNING ] discarding 1 atoms at position 1 in file ../../../../dock_targetlib/udock_1bvn/native/protAB.pdb. Best match rsd_type:  PRO_p:NtermProteinFull
+core.io.raw_data.DisulfideFile: (0) Fixing a disulfide between 28 and 86
+core.io.raw_data.DisulfideFile: (0) Fixing a disulfide between 70 and 115
+core.io.raw_data.DisulfideFile: (0) Fixing a disulfide between 141 and 160
+core.io.raw_data.DisulfideFile: (0) Fixing a disulfide between 378 and 384
+core.io.raw_data.DisulfideFile: (0) Fixing a disulfide between 450 and 462
+core.io.raw_data.DisulfideFile: (0) Fixing a disulfide between 507 and 523
+core.io.raw_data.DisulfideFile: (0) Fixing a disulfide between 541 and 569
+core.io.pdb.file_data: (0) [ WARNING ] can't find atom for res 1 atom  OE  (trying to set temp)
+core.pack.task: (0) Packer task: initialize from command line() 
+protocols.evaluation.ChiWellRmsdEvaluatorCreator: (0) Evaluation Creator active ... 
+
