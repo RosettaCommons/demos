@@ -3,7 +3,7 @@ This file was written in Jan 2013 by Zhe Zhang (zhe.zhang@tum.de) and correspond
 General description:
 This demo contains all the files neccessary to replicate the results from the paper "Replica Exchange drastically improves sampling in low resolution docking stage of RosettaDock" by Zhe Zhang, and Oliver Lange (2012), PLoS One.
 
-All files (including the benchmark tested in the paper) and commands to setup the runs as well as post analysis are provided. For example output please refer to the files in example_runs
+All files (including the benchmark tested in the paper) and commands to setup the runs as well as post analysis are provided. For example outputs please refer to the silent-files (also trial.stat from replica exchange runs) in example_runs
 
 To run these demos:
 
@@ -82,12 +82,11 @@ can be generally ignored.
 	a) rosetta_dock:
 	use N to denote the total number of decoys produced from RosettaDock low resolution phase. Then we first exclude the decoys with interchain_contact>10, then select N*0.36 decoys by score.
 
-	As an example in $PROTOCOL_CAPTURE/replica_docking/example_runs/rosetta_dock/udock_1bvn/run/decoys.out, we do:
+	For an example decoys file in $PROTOCOL_CAPTURE/replica_docking/example_runs/rosetta_dock/udock_1bvn/run/decoys.out, we do:
 
-	# get the tags of the decoys selected
+	# get the tags of the decoys selected. 200 decoys in all in the example file, so select 200*0.36=72 decoys for analysis and further refinement
 	for i in $(ls decoys_000?.out); do echo $i; cat $i | grep SCORE: >> decoys.fsc; done
 	
-	# 200 decoys in all, so select 200*0.36=72 decoys to refine
 	silent_data.py decoys.fsc score interchain_contact description | awk '$2<=10{print}' | sort -n -k 1 | head -n 72 | awk '{print $3}' > tag_low
 
 	# extract the selected decoys from decoys.out
@@ -104,15 +103,14 @@ can be generally ignored.
 	for i in $(ls decoys_P_000?_traj.out); do echo $i; extract_tagged_decoys.py $i tag_low > low_$i; done
 
 	c) replica_dock_LoT: T=[0.6 0.8 1.0 1.2 1.5 2.0 2.5] and min_score
-	first exclude decoys with interchain_contact > 10, then keep the 0.5*N lowest scoring decoys from the remaining set.As an example in $PROTOCOL_CAPTURE/replica_docking/example_runs/replica_dock_LoT/replica_with_minscore/udock_1bvn/run/
+	first exclude decoys with interchain_contact > 10, then keep the 0.5*N lowest scoring decoys from the remaining set.For the example silent-files of trajectories snapshotse in $PROTOCOL_CAPTURE/replica_docking/example_runs/replica_dock_LoT/replica_with_minscore/udock_1bvn/run/, it is done as follows:
 
-	# get tag
+	# get tag. 700 decoys in all for the 
 	cat scores_* > scores_traj.fsc
 	silent_data.py scores_traj.fsc interchain_contact score description | awk '$1<=10{print}' | sort -n -k 2 | head -n 350 | awk '{print $3}' > tag_low
 
 	# extract selected decoys from the trajectory silent file
 	for i in $(ls decoys_P_000?_traj.out); do echo $i; extract_tagged_decoys.py $i tag_low > low_$i; done
-
 5. refinement of low resolution ensembles
 
 	a) RosettaDock:
