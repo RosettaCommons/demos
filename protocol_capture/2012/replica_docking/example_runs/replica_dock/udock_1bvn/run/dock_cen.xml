@@ -15,7 +15,7 @@
 	<DockingInitialPerturbation name=init_pert randomize2=1 randomize1=1 />	// randomly reorient the two docking partners, actually this does not matter in ReplicaDock sampling low-resolution because ReplicaDock forgets its initial position very fast.
 	// sampling engine
         <TrialCounterObserver name=count file="trial.stats"/> // acceptance rate recorder
-        <HamiltonianExchange name=h_exchange temp_file="hamiltonians_cen.txt"  temp_stride=1000/> // temp_file contains the temperature configuration. exchange between neighbor temperature is attempted every 1000 strides.
+        <HamiltonianExchange name=h_exchange temp_file="hamiltonians_cen.txt"  temp_stride=1000/> // temp_file contains the temperature configuration. exchange between neighbor temperature is attempted every 1000 strides. No specific reason why using HamiltonianExchange mover intead of ParalleTempering, only because I started with it at the very beginning and it works as well if only temperature exchange involved.
 	<SilentTrajectoryRecorder name=traj score_stride=1 stride=1000 cumulate_replicas=1 /> // take snapshots every 1000 stride and output the decoy into a trajectory silent file
 	<MetropolisHastings name=sampler trials=50000 scorefxn=score_dock_low > // normally use trials=5000000. Empirically, it is enough for converge. Here 50000 is only for example_runs. 
 	    <Add mover_name=h_exchange/>
