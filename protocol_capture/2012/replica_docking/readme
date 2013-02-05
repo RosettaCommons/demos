@@ -8,11 +8,14 @@ All files (including the benchmark tested in the paper) and commands to setup th
 To run these demos:
 
 #export the directory where *this* protocol_capture is located
-export PROTOCOL_CAPTURE=~/protocol_capture
+export PROTOCOL_CAPTURE=rosetta/rosetta_demos/protocol_capture/2012/
 
+#export your rosetta bin and database directory if you want to directly repeat the runs under directory example_runs/ (need to first delete the outputted silent-files) instead of generating separate runs of your own
+export ROSETTA3_BIN=rosetta/rosetta_source/bin
+export ROSETTA3_DB=rosetta/rosetta_database
 
 1. input pdbs preparation
-   	 all the targets are from Dockground benchmark3.0 (http://dockground.bioinformatics.ku.edu/UNBOUND/request_new.php), in which unbound docking partners have been superimposed over its corresponding complex. 
+   	 all the targets are from Dockground benchmark3.0 (http://dockground.bioinformatics.ku.edu/UNBOUND/request_new.php), in which unbound docking partners have been superimposed over its corresponding complex.
 
 	get_pdb.py 1bvn_u1.pdb A	# this should output a file with only atom records from chain A, 1bvn_u1.pdbA.pdb
 	chainID.py 1bvn_u2.pdb B	# overwrite its chainID to B, 1bvn_u2_B.pdb
@@ -26,7 +29,7 @@ export PROTOCOL_CAPTURE=~/protocol_capture
 
 	All the input files in dock_targetslib are prepared in this way.
 
-2. setup target library using automated setup tools available with the CS-Rosetta toolbox. (www.csrosetta.org) 
+2. setup target library using automated setup tools available with the CS-Rosetta toolbox. (www.csrosetta.org)
 
 	#RosettaDock:
 	#setup target for RosettaDock as in published paper "Protein-Protein Docking with Simutaneous Optimization of Rigid-body Displacement and Side-chain Conformations", Jeffrey J. Gray et al., J. Mol. Biol. (2003)
@@ -41,14 +44,30 @@ export PROTOCOL_CAPTURE=~/protocol_capture
 
 3. setup run using automated setup tools. The automated setup creates all commandlines and input files for you. In example_runs you'll find runs that have already been setup with 'setup_run'. In example_runs additional comments have been added subsequently to guide you through the automatically generated input files (Flags, RosettaScripts-xml, job-scripts).
 
+	All examples for queuing system with slurm are given in this read me. To run the tests on single-machine/interactive mode, you need to specify with flag '-job interactive' instead of '-job slurm' when setup the runs. Then after the setup_run is done, using 'source production.interactive.job -n $Np' with $Np specifying the processor numbers to start the runs. One example is given for ReplicaDock in the following in a-2).
+
+	For quick test only purpose for ReplicaDock, you can set a smaller value of the trajectory length by replace the value of 'trial' in line <MetropolisHastings name=sampler trials=5000000 scorefxn=score_dock_low > in the RosettaScripts file dock_*.xml after setup_run is done.
+
 	a) ReplicaDock, using temperatures [2.0 3.0 5.0]
 
-	To run ReplicaDock mpi is required. Please note that specific numbers of processors have to be used: calculate number of processes using the formula: nstruct * n_replica + 2. The extra 2 processes are the job distributor and job outputter. n_replica is the number of temperature levels (here 3), and nstruct can be any positive integer. ReplicaDock outputs the trajectory in the form of two silent-files: one containing decoy+score information (name: decoys_<input_pdb>_nnnn_traj.out), and the second file is a copy of just the score information (scores_<input_pdb>_nnnn_traj.out). Decoytags are of the form P_tttt_rrr_ssssssss where tttt informs about trajctory number, rrr about the replica, and ssssssss about the snapshot number within the trajectory. The temperature_levels are switched between different replicas. The current temp_level or temperature of a replica at the moment a decoy was recorded is found in the score-columns temp_level and temperature.
+	ReplicaDock is run in MPI-mode using RosettaScript  (to compile: ./scons.py -j 48 bin/rosetta_scripts.mpi.linuxgccrelease mode=release extras=mpi).
+
+	Please note that specific numbers of processors have to be used: calculate number of processes using the formula: nstruct * n_replica + 2. The extra 2 processes are dedicated to the job distributor and File IO. n_replica is the number of temperature levels (here 3), and nstruct can be any positive integer. ReplicaDock outputs the trajectory in the form of two silent-files: one containing decoy+score information (name: decoys_<input_pdb>_nnnn_traj.out), and the second file is a copy of just the score information (scores_<input_pdb>_nnnn_traj.out). Decoytags are of the form P_tttt_rrr_ssssssss where tttt informs about trajctory number, rrr about the replica, and ssssssss about the snapshot number within the trajectory. The temperature_levels are switched between different replicas. The current temp_level or temperature of a replica at the moment a decoy was recorded is found in the score-columns temp_level and temperature.
        At the end of a trajectory the final decoy is written to the file 'decoys.out'; this file is a relict of using the JD2-framework and
 can be generally ignored.
        Additionally, the file 'trial.stat' is produced which gives information about acceptance rates in each temperature level.
 
-       setup_run -method replica_dock -target udock_1bvn -target_prefix $PROTOCOL_CAPTURE/replica_docking/dock_targetlib -dir $PROTOCOL_CAPTURE/replica_docking/test_runs/replica_dock -job slurm -extras mpi -score interchain_cen -nstruct 2 -protocol rep_cen -xml uniform -n_replica 3
+       a-1) setup run with MPI-mode in queuing system (shown here for slurm)
+
+       setup_run -method replica_dock -target udock_1bvn -target_prefix $PROTOCOL_CAPTURE/replica_docking/dock_targetlib -dir $PROTOCOL_CAPTURE/replica_docking/test_runs/replica_dock -job slurm -extras mpi -score interchain_cen -nstruct 1 -protocol rep_cen -xml uniform -n_replica 3
+
+       a-2) setup run on single-machine/interactive use
+
+       setup_run -method replica_dock -target udock_1bvn -target_prefix $PROTOCOL_CAPTURE/replica_docking/dock_targetlib -dir $PROTOCOL_CAPTURE/replica_docking/test_runs/interactive/replica_dock -job interactive -extras mpi -score interchain_cen -nstruct 1 -protocol rep_cen -xml uniform -n_replica 3
+
+       start running:
+       	     	      cd $PROTOCOL_CAPTURE/replica_docking/test_runs/interactive/replica_dock/udock_1bvn/run/;
+       	     	      source production.interactive.job -n 5
 
 	b) ReplicaDock-LoT, using temperatures [0.6 0.8 1.0 1.2 1.5 2.0 2.5] + min_score
 
@@ -56,11 +75,11 @@ can be generally ignored.
         cat scores_P_000* >scores_traj.fsc
         silent_data.py scores_traj.fsc temperature score | awk '$1==1.5{print}' | median.py
 
-	setup_run -method replica_dock -target udock_1bvn -target_prefix $PROTOCOL_CAPTURE/replica_docking/dock_targetlib -dir $PROTOCOL_CAPTURE/replica_docking/test_runs/min_score/replica_dock_LoT -job slurm -extras mpi -score interchain_cen -min_score -36.519 -nstruct 2 -protocol rep_cen -xml uniform -n_replica 7
+	setup_run -method replica_dock -target udock_1bvn -target_prefix $PROTOCOL_CAPTURE/replica_docking/dock_targetlib -dir $PROTOCOL_CAPTURE/replica_docking/test_runs/replica_dock_LoT -job slurm -extras mpi -score interchain_cen -min_score -36.519 -nstruct 2 -protocol rep_cen -xml uniform -n_replica 7
 
 	c) RosettaDock, only low resolution phase
 
-	setup_run -method rosetta_dock -target udock_1bvn -target_prefix $PROTOCOL_CAPTURE/replica_docking/dock_targetlib -dir $PROTOCOL_CAPTURE/replica_docking/example_runs/rosetta_dock -job slurm -extras mpi -protocol centroid -batches 2 -score interchain_cen -nstruct 100
+	setup_run -method rosetta_dock -target udock_1bvn -target_prefix $PROTOCOL_CAPTURE/replica_docking/dock_targetlib -dir $PROTOCOL_CAPTURE/replica_docking/test_runs/rosetta_dock -job slurm -extras mpi -protocol centroid -batches 2 -score interchain_cen -nstruct 100
 
 	d) refinement of the low-resolution ensembles produced by ReplicaDock
 
@@ -86,7 +105,7 @@ can be generally ignored.
 
 	# get the tags of the decoys selected. 200 decoys in all in the example file, so select 200*0.36=72 decoys for analysis and further refinement
 	for i in $(ls decoys_000?.out); do echo $i; cat $i | grep SCORE: >> decoys.fsc; done
-	
+
 	silent_data.py decoys.fsc score interchain_contact description | awk '$2<=10{print}' | sort -n -k 1 | head -n 72 | awk '{print $3}' > tag_low
 
 	# extract the selected decoys from decoys.out
@@ -105,7 +124,7 @@ can be generally ignored.
 	c) replica_dock_LoT: T=[0.6 0.8 1.0 1.2 1.5 2.0 2.5] and min_score
 	first exclude decoys with interchain_contact > 10, then keep the 0.5*N lowest scoring decoys from the remaining set.For the example silent-files of trajectories snapshotse in $PROTOCOL_CAPTURE/replica_docking/example_runs/replica_dock_LoT/replica_with_minscore/udock_1bvn/run/, it is done as follows:
 
-	# get tag. 700 decoys in all for the 
+	# get tag. 700 decoys in all for the
 	cat scores_* > scores_traj.fsc
 	silent_data.py scores_traj.fsc interchain_contact score description | awk '$1<=10{print}' | sort -n -k 2 | head -n 350 | awk '{print $3}' > tag_low
 
@@ -116,14 +135,15 @@ can be generally ignored.
 	a) RosettaDock:
 
 	# setup run for refinement
-	setup_run -method rosetta_dock -target udock_1bvn -target_prefix $PROTOCOL_CAPTURE/replica_docking/dock_targetlib -dir $PROTOCOL_CAPTURE/replica_docking/example_runs/refine_rosetta_dock -job slurm -extras mpi -protocol refine -pattern "low_decoys_*out" -prefix refine -score docking -nstruct 1 -start $PROTOCOL_CAPTURE/replica_docking/example_runs/rosetta_dock/udock_1bvn/run
+	setup_run -method rosetta_dock -target udock_1bvn -target_prefix $PROTOCOL_CAPTURE/replica_docking/dock_targetlib -dir $PROTOCOL_CAPTURE/replica_docking/test_runs/refine_rosetta_dock -job slurm -extras mpi -protocol refine -pattern "low_decoys_*out" -prefix refine -score docking -nstruct 1 -start $PROTOCOL_CAPTURE/replica_docking/example_runs/rosetta_dock/udock_1bvn/run
 
 	b) ReplicaDock: T=[2.0 3.0 5.0]
 
 	# setup run for refinement
-	setup_run -method rosetta_dock -target udock_1bvn -target_prefix $PROTOCOL_CAPTURE/replica_docking/dock_targetlib -dir $PROTOCOL_CAPTURE/replica_docking/example_runs/refine_replica_dock -job slurm -extras mpi -protocol refine -pattern "low_decoys_*out" -prefix refine -score docking -nstruct 1 -start $PROTOCOL_CAPTURE/replica_docking/example_runs/replica_dock/udock_1bvn/run/
+	setup_run -method rosetta_dock -target udock_1bvn -target_prefix $PROTOCOL_CAPTURE/replica_docking/dock_targetlib -dir $PROTOCOL_CAPTURE/replica_docking/test_runs/refine_replica_dock -job slurm -extras mpi -protocol refine -pattern "low_decoys_*out" -prefix refine -score docking -nstruct 1 -start $PROTOCOL_CAPTURE/replica_docking/example_runs/replica_dock/udock_1bvn/run/
 
 	c) ReplicaDock-LoT: [0.6 0.8 1.0 1.2 1.5 2.0 2.5] + min_score
 
 	# setup run for refinement
-	setup_run -method rosetta_dock -target udock_1bvn -target_prefix $PROTOCOL_CAPTURE/replica_docking/dock_targetlib -dir $PROTOCOL_CAPTURE/replica_docking/example_runs/refine_replica_dock -job slurm -extras mpi -protocol refine -pattern "low_decoys_*out" -prefix refine -score docking -nstruct 1 -start $PROTOCOL_CAPTURE/replica_docking/example_runs/replica_dock_LoT/replica_with_minscore/udock_1bvn/run/
+	setup_run -method rosetta_dock -target udock_1bvn -target_prefix $PROTOCOL_CAPTURE/replica_docking/dock_targetlib -dir $PROTOCOL_CAPTURE/replica_docking/test_runs/refine_replica_dock -job slurm -extras mpi -protocol refine -pattern "low_decoys_*out" -prefix refine -score docking -nstruct 1 -start $PROTOCOL_CAPTURE/replica_docking/example_runs/replica_dock_LoT/replica_with_minscore/udock_1bvn/run/
+
