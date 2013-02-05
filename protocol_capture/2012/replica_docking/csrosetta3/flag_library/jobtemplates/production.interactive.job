@@ -31,4 +31,4 @@ if [ "$1" == "-n" ]; then
    PREFIX="$MPI_RUN -n $2"
 fi
 
-$PREFIX $CM_EXECUTEABLE.$CM_EXEC_EXT -out:level 300 -out:file:silent decoys.out $CM_COMMANDLINE -database $CM_ROSETTA_DATABASE -mute protocols.moves.MonteCarlo -mute_info all -unmute_info protocols.jd2
+$PREFIX $CM_EXECUTEABLE.$CM_EXEC_EXT -out:level 300 -out:file:silent decoys.out $CM_COMMANDLINE -database $CM_ROSETTA_DATABASE
