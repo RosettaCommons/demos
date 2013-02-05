@@ -15,7 +15,7 @@
 	<DockingInitialPerturbation name=init_pert randomize2=1 randomize1=1 />
 	// sampling engine
         <TrialCounterObserver name=count file="trial.stats"/>
-        <HamiltonianExchange name=h_exchange temp_file="hamiltonians_cen_7.txt" exchange_schedule="exchange_schedule_cen.txt" temp_stride=1000/>
+        <HamiltonianExchange name=h_exchange temp_file="hamiltonians_cen_7.txt"  temp_stride=1000/>
 	<SilentTrajectoryRecorder name=traj score_stride=1 stride=1000 cumulate_replicas=1 />
 	<MetropolisHastings name=sampler trials=50000 scorefxn=score_dock_low > # 50000 for example_runs, normally use trials=5000000
 	    <Add mover_name=h_exchange/>
