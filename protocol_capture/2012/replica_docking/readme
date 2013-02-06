@@ -75,11 +75,11 @@ can be generally ignored.
         cat scores_P_000* >scores_traj.fsc
         silent_data.py scores_traj.fsc temperature score | awk '$1==1.5{print}' | median.py
 
-	setup_run -method replica_dock -target udock_1bvn -target_prefix $PROTOCOL_CAPTURE/replica_docking/dock_targetlib -dir $PROTOCOL_CAPTURE/replica_docking/test_runs/replica_dock_LoT -job slurm -extras mpi -score interchain_cen -min_score -36.519 -nstruct 2 -protocol rep_cen -xml uniform -n_replica 7
+	setup_run -method replica_dock -target udock_1bvn -target_prefix $PROTOCOL_CAPTURE/replica_docking/dock_targetlib -dir $PROTOCOL_CAPTURE/replica_docking/test_runs/replica_dock_LoT -job slurm -extras mpi -score interchain_cen -min_score -36.519 -nstruct 1 -protocol rep_cen -xml uniform -n_replica 7
 
 	c) RosettaDock, only low resolution phase
 
-	setup_run -method rosetta_dock -target udock_1bvn -target_prefix $PROTOCOL_CAPTURE/replica_docking/dock_targetlib -dir $PROTOCOL_CAPTURE/replica_docking/test_runs/rosetta_dock -job slurm -extras mpi -protocol centroid -batches 2 -score interchain_cen -nstruct 100
+	setup_run -method rosetta_dock -target udock_1bvn -target_prefix $PROTOCOL_CAPTURE/replica_docking/dock_targetlib -dir $PROTOCOL_CAPTURE/replica_docking/test_runs/rosetta_dock -job slurm -extras mpi -protocol centroid -batches 2 -score interchain_cen -nstruct 25
 
 	d) refinement of the low-resolution ensembles produced by ReplicaDock
 
@@ -92,21 +92,21 @@ can be generally ignored.
 	f) refinement of the low-resolution ensembles produced by ReplicaDock-LoT
 	setup_run -method rosetta_dock -target udock_1bvn -target_prefix $PROTOCOL_CAPTURE/replica_docking/dock_targetlib -dir $PROTOCOL_CAPTURE/replica_docking/test_runs/refine_replica_LoT -job slurm -extras mpi -protocol refine -pattern "low_decoys_*out" -prefix refine -score docking -nstruct 1 -start $PROTOCOL_CAPTURE/replica_docking/example_runs/replica_dock_LoT/udock_1bvn/run
 
-	f) generate near-native ensembles from the superimposed native structure protAB.pdb, used as reference in final analysis
+	f) generate RelaxedNative ensembles with 1000 decoys from the superimposed native structure protAB.pdb, used as reference in final analysis
 
 	setup_run -method rosetta_dock -target udock_1bvn -target_prefix $PROTOCOL_CAPTURE/replica_docking/dock_targetlib -dir $PROTOCOL_CAPTURE/replica_docking/test_runs/relax_native -job slurm -extras mpi -protocol refine -out relax_native.out -score docking -nstruct 1000
 
-4. post-filter of low resolution stages
+4. post-filter of low resolution stages. To save space, some silent-files, especially .out files have been deleted and only score files shown.
 
 	a) rosetta_dock:
 	use N to denote the total number of decoys produced from RosettaDock low resolution phase. Then we first exclude the decoys with interchain_contact>10, then select N*0.36 decoys by score.
 
 	For an example decoys file in $PROTOCOL_CAPTURE/replica_docking/example_runs/rosetta_dock/udock_1bvn/run/decoys.out, we do:
 
-	# get the tags of the decoys selected. 200 decoys in all in the example file, so select 200*0.36=72 decoys for analysis and further refinement
+	# get the tags of the decoys selected. 200 decoys in all in the example file, so select 50*0.36=18 decoys for analysis and further refinement
 	for i in $(ls decoys_000?.out); do echo $i; cat $i | grep SCORE: >> decoys.fsc; done
 
-	silent_data.py decoys.fsc score interchain_contact description | awk '$2<=10{print}' | sort -n -k 1 | head -n 72 | awk '{print $3}' > tag_low
+	silent_data.py decoys.fsc score interchain_contact description | awk '$2<=10{print}' | sort -n -k 1 | head -n 18 | awk '{print $3}' > tag_low
 
 	# extract the selected decoys from decoys.out
 	for i in $(ls decoys_000?.out); do echo $i; extract_tagged_decoys.py $i tag_low > low_$i; done
@@ -124,9 +124,9 @@ can be generally ignored.
 	c) replica_dock_LoT: T=[0.6 0.8 1.0 1.2 1.5 2.0 2.5] and min_score
 	first exclude decoys with interchain_contact > 10, then keep the 0.5*N lowest scoring decoys from the remaining set.For the example silent-files of trajectories snapshotse in $PROTOCOL_CAPTURE/replica_docking/example_runs/replica_dock_LoT/replica_with_minscore/udock_1bvn/run/, it is done as follows:
 
-	# get tag. 700 decoys in all for the
+	# get tag. 14 decoys in all for the
 	cat scores_* > scores_traj.fsc
-	silent_data.py scores_traj.fsc interchain_contact score description | awk '$1<=10{print}' | sort -n -k 2 | head -n 350 | awk '{print $3}' > tag_low
+	silent_data.py scores_traj.fsc interchain_contact score description | awk '$1<=10{print}' | sort -n -k 2 | head -n 7 | awk '{print $3}' > tag_low
 
 	# extract selected decoys from the trajectory silent file
 	for i in $(ls decoys_P_000?_traj.out); do echo $i; extract_tagged_decoys.py $i tag_low > low_$i; done
@@ -146,4 +146,3 @@ can be generally ignored.
 
 	# setup run for refinement
 	setup_run -method rosetta_dock -target udock_1bvn -target_prefix $PROTOCOL_CAPTURE/replica_docking/dock_targetlib -dir $PROTOCOL_CAPTURE/replica_docking/test_runs/refine_replica_dock -job slurm -extras mpi -protocol refine -pattern "low_decoys_*out" -prefix refine -score docking -nstruct 1 -start $PROTOCOL_CAPTURE/replica_docking/example_runs/replica_dock_LoT/replica_with_minscore/udock_1bvn/run/
-

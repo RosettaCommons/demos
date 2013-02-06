@@ -1,0 +1,49 @@
+ P_0001
+ P_0001
+ P_0001
+ P_0001
+ P_0001
+level    6 temperature 2.00 RigidBodyPerturb trials=    999;  accepts= 0.5536;  energy_drop/trial=   0.00000 P_0001
+level    7 temperature 2.50 RigidBodyPerturb trials=   1001;  accepts= 0.6104;  energy_drop/trial=   0.00000 P_0001
+level    1 temperature 0.60 RigidBodyPerturb trials=   1999;  accepts= 0.0855;  energy_drop/trial= 63890780052198638508186210035049784998882565138750164692893696.00000 P_0001
+RigidBodyPerturb trials=      1 NO ACCEPTS. P_0001
+ P_0001
+ P_0001
+ P_0001
+ P_0001
+ P_0001
+ P_0001
+ P_0001
+level    3 temperature 1.00 RigidBodyPerturb trials=      1;  accepts= 1.0000;  energy_drop/trial=   0.00000 P_0001
+level    4 temperature 1.20 RigidBodyPerturb trials=   1000;  accepts= 0.3030;  energy_drop/trial=   0.00000 P_0001
+level    5 temperature 1.50 RigidBodyPerturb trials=    999;  accepts= 0.3774;  energy_drop/trial=   0.00000 P_0001
+ P_0001
+ P_0001
+ P_0001
+level    2 temperature 0.80 RigidBodyPerturb trials=    999;  accepts= 0.1271;  energy_drop/trial=   0.00000 P_0001
+level    3 temperature 1.00 RigidBodyPerturb trials=   1000;  accepts= 0.1710;  energy_drop/trial=   0.00000 P_0001
+RigidBodyPerturb trials=      1 NO ACCEPTS. P_0001
+ P_0001
+ P_0001
+ P_0001
+RigidBodyPerturb trials=      1 NO ACCEPTS. P_0001
+level    2 temperature 0.80 RigidBodyPerturb trials=   1000;  accepts= 0.1150;  energy_drop/trial=   0.00000 P_0001
+level    3 temperature 1.00 RigidBodyPerturb trials=    999;  accepts= 0.1512;  energy_drop/trial=   0.00000 P_0001
+ P_0001
+ P_0001
+ P_0001
+ P_0001
+ P_0001
+ P_0001
+ P_0001
+ P_0001
+RigidBodyPerturb trials=      1 NO ACCEPTS. P_0001
+level    6 temperature 2.00 RigidBodyPerturb trials=   1000;  accepts= 0.4480;  energy_drop/trial=   0.00000 P_0001
+level    7 temperature 2.50 RigidBodyPerturb trials=    999;  accepts= 0.5646;  energy_drop/trial=   0.00000 P_0001
+ P_0001
+ P_0001
+ P_0001
+level    4 temperature 1.20 RigidBodyPerturb trials=    999;  accepts= 0.4545;  energy_drop/trial=   0.00000 P_0001
+level    5 temperature 1.50 RigidBodyPerturb trials=   1000;  accepts= 0.4080;  energy_drop/trial=   0.00000 P_0001
+level    6 temperature 2.00 RigidBodyPerturb trials=      1;  accepts= 1.0000;  energy_drop/trial=   0.00000 P_0001
+ P_0001

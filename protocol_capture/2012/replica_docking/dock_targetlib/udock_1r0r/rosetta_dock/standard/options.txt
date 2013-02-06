@@ -1,0 +1,4 @@
+partners|partners/partners
+native|native/protAB.pdb
+disulf|disulf/disulf_file
+pdb|start/P.pdb
