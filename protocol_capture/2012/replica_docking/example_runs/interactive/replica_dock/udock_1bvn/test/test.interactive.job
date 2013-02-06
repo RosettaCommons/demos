@@ -1,2 +1,0 @@
-/home/zhezhang/rosetta_vanilla/rosetta_source/bin/rosetta_scripts.mpi.linuxgccrelease -out:level 300 -out:file:silent decoys.out  @flags_docking_replica @flags_replica_dock -parser:protocol dock_cen.xml -database /home/zhezhang/rosetta_vanilla/rosetta_database -out:nstruct 10 -run:test_cycles -mpi_tracer_to_file log -mute_info all
-

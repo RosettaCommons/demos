@@ -1,9 +1,0 @@
-level    1 temperature 2.00 RigidBodyPerturb trials=   5000;  accepts= 0.3802;  energy_drop/trial=   0.00000 P_0001
- P_0001
- P_0001
- P_0001
-level    2 temperature 3.00 RigidBodyPerturb trials=   2000;  accepts= 0.7735;  energy_drop/trial=   0.00000 P_0001
-level    3 temperature 5.00 RigidBodyPerturb trials=   3000;  accepts= 0.8510;  energy_drop/trial=   0.00000 P_0001
- P_0001
-level    2 temperature 3.00 RigidBodyPerturb trials=   3000;  accepts= 0.5697;  energy_drop/trial=   0.00000 P_0001
-level    3 temperature 5.00 RigidBodyPerturb trials=   2000;  accepts= 0.7480;  energy_drop/trial=   0.00000 P_0001

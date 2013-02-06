@@ -1,9 +1,0 @@
-#this flag-file is automatically generated
-
--nstruct 2
--in:file:native ../../../../dock_targetlib/udock_1bvn/native/protAB.pdb
-@partners
--in:file:s ../../../../dock_targetlib/udock_1bvn/start/P.pdb
--score:weights interchain_cen
--n_replica 3
-

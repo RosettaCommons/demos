@@ -1,4 +1,0 @@
-partners
-flag_list.txt
-flags_docking_refine
-flags_rosetta_dock

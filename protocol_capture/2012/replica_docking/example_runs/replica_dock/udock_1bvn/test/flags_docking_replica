@@ -1,8 +1,0 @@
--run:intermediate_structures
--out:file:silent decoys.out
--out:file:scorefile scores.fsc
-
--unmute protocols.canonical_sampling.MetropolisHastingsMover
--unmute protocols.canonical_sampling.SilentTrajectoryRecorder
-
-

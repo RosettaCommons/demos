@@ -1,4 +1,0 @@
-partners/partners                                            shark:/home/zhezhang/dock_bench/unbound/1jps/partners
-disulf/disulf_file                                           shark:/home/zhezhang/dock_bench/unbound/1jps/disulf_file
-start/P.pdb                                                  shark:/home/zhezhang/dock_bench/unbound/1jps/P.pdb
-native/protAB.pdb                                            shark:/home/zhezhang/dock_bench/unbound/1jps/protAB.pdb
