@@ -31,7 +31,7 @@ export ROSETTA3_DB=rosetta/rosetta_database
 
 2. setup target library using automated setup tools available with the CS-Rosetta toolbox(www.csrosetta.org).
 
-	This step assembles target related input files to build the target library (dock_targetlib as an example). By default the library is stored in folder cs_targetlib at home of your workspace. You can also specify a directory using the flag -target_prefix as follows. The directory specified with flag '-target_prefix' can either be absolute or relative path.
+	This step assembles target related input files to build the target library (dock_targetlib as an example). By default the library is stored in folder cs_targetlib at home of your workspace. You can also specify a directory using the flag '-target_prefix' as follows. Absolute path is recommended for '-target_prefix'.
 	
 	The following commands for setup demo target 1bvn have been wraped up in scripts/test_target_setup.sh	
 
@@ -46,7 +46,7 @@ export ROSETTA3_DB=rosetta/rosetta_database
         #or you can conviently copy the inputs from a previously prepared 'rosetta_dock' setup as follows:
         setup_target -method replica_dock -target udock_1bvn -target_prefix $PROTOCOL_CAPTURE/replica_docking/dock_targetlib -transfer_method rosetta_dock
 
-3. setup run using automated setup tools. This step creates a run-ready directory as specified with flag '-dir', in which job-scripts, input files, RosettaScripts-xml as well as flag files are contained. The directory for flag '-dir' can be either absolute or relative path. For job scripts, you can use different types (e.g. moab) according to your queuing system. 
+3. setup run using automated setup tools. This step creates a run-ready directory as specified with flag '-dir', in which job-scripts, input files, RosettaScripts-xml as well as flag files are contained. For flag '-dir', absolute path is recommended. For job scripts, you can use different types (e.g. moab) according to your queuing system. 
 
 	In example_runs additional comments have been added subsequently to guide you through the automatically generated input files. All job scripts in example_runs are for queuing system with slurm. 
 
