@@ -11,13 +11,13 @@
 
 	// setup jumps and constraints
 	<DockSetupMover name=setup_jump/>
-	<AddEncounterConstraintMover name=encounter_cst gap=14 />
+	<AddEncounterConstraintMover name=encounter_cst gap=8 />
 	<DockingInitialPerturbation name=init_pert randomize2=1 randomize1=1 />
 	// sampling engine
         <TrialCounterObserver name=count file="trial.stats"/>
         <HamiltonianExchange name=h_exchange temp_file="@@hamiltonians_cen_7.txt"  temp_stride=1000/>
 	<SilentTrajectoryRecorder name=traj score_stride=1 stride=1000 cumulate_replicas=1 />
-	<MetropolisHastings name=sampler trials=5000000 scorefxn=score_dock_low >
+	<MetropolisHastings name=sampler trials=5000 scorefxn=score_dock_low > # 5000 only for text, normally use trials=5000000
 	    <Add mover_name=h_exchange/>
 	    <Add mover_name=traj/>
 	    <Add mover_name=count/>
