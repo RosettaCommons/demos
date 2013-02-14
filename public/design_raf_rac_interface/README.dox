@@ -46,7 +46,16 @@ Step 2. Run dock/design protocol using rosetta_scripts.
 		For production runs, nstruct should be set to 1000 or greater.
 		Output: This protocol returns decoys named raf-rac_####.pdb and a file named score.sc that contains scores for each decoy.
 		
+
 Step 3. Postprocessing output from dock/design run.
+	-- To see the sequence changes in chain B due to design
+	grep out chain B: grep " B " raf-rac.pdb > chainBin.pdb
+	then use rosetta_tools/protein_tools/scripts/SequenceProfile.py to diff the sequences
+
 	-- Run R script to generate Interface Score vs. Interface RMSD plot
-		Command: R CMD BATCH scripts/score_vs_rmsd.R
-		Output: score_vs_rmsd.pdf
+	R is easy to install from here as a pkg that self installs (do "which R" to check install first)
+	http://cran.r-project.org/bin/macosx/
+	Other os versions are also available there
+
+	Command: R CMD BATCH scripts/score_vs_rmsd.R
+	Output: score_vs_rmsd.pdf

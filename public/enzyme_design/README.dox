@@ -160,10 +160,11 @@ end of the design calculation. For each of these 4 criteria, there are
 terms in the scorefile. (refer to documentation linked above). The script DesignSelect.pl, which is part of the Rosetta3 distribution, can read the output scorefile, as well as a file that specifies required values for certain columns, and will then output only those designs in the scorefile that satisfy all required values.
 
 
-command line
+command line:
 perl <rosetta_location>/src/apps/public/enzdes/DesignSelect.pl -d
 rosetta_inputs/mocktim_all_design_scores.out -c
 rosetta_inputs/mocktim_design_selectreqs.txt > selected_designs.txt
+
 
 will output 44 designs from the 3720 produced for the PlosOne
 paper. These 44 would then be visually examined for whether any of

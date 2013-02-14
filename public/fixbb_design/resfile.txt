@@ -1,0 +1,21 @@
+start
+    1 A PIKAA NT
+    2 A PIKAA LA
+    3 A PIKAA YL
+    4 A PIKAA IL
+    5 A PIKAA QL
+    6 A NATAA
+    7 A NATRO  
+    8 A PIKAA KL
+    9 A PIKAA DL
+   10 A NATRO 
+   11 A NATRO 
+   12 A PIKAA PS
+   13 A PIKAA SK
+   14 A PIKAA SA
+   15 A NATRO 
+   16 A PIKAA RM
+   17 A PIKAA PS
+   18 A PIKAA PM
+   19 A PIKAA PI
+   20 A PIKAA SG
