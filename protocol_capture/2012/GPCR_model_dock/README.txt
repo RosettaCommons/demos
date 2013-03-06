@@ -6,13 +6,12 @@ This demo contains all the files necessary to replicate the results from the pap
 1 Structural alignment of GPCR templates
 2 Sequence alignment of the target GPCR to templates
 3 Thread target sequence onto template backbone coordinates
-4 Relax threaded model
-5 Rebuild missing density
-6 Rebuild ECL 1,2 and 3
-7 Evaluate comparative models by clustering by full-receptor RMSD and knowledge-based pocket residue filter
-8 Generate ligand conformations in MOE
-9 Dock ligand into comparative models
-10 Analyze results by clustering binding modes by ligand RMSD
+4 Rebuild missing density
+5 Rebuild ECL 1,2 and 3
+6 Evaluate comparative models by clustering by full-receptor RMSD and knowledge-based pocket residue filter
+7 Generate ligand conformations in MOE
+8 Dock ligand into comparative models
+9 Analyze results by clustering binding modes by ligand RMSD
 
 Input files included in this demo (rosetta_inputs):
 1u19A_clean.pdb 
@@ -95,34 +94,31 @@ Create file that lists residue number of cysteine residues predicted to disulfid
 Fragment files:
 http://www.robetta.org
 
-4b Relax threaded model
-rosetta_source/bin/relax.linuxgccrelease @relax.options -database rosetta_database
-
-5 Rebuilt missing density
+4b Rebuilt missing density
 rosetta_source/bin/loopmodel.linuxgccrelease @ccd_initial.options -database rosetta_database 
 
-6a Rebuilt ECL 1,2 and 3 with CCD
+5a Rebuilt ECL 1,2 and 3 with CCD
 rosetta_source/bin/loopmodel.linuxgccrelease @ccd.options -database rosetta_database 
 
-6b Rebuilt ECL 1,2 and 3 with KIC
+5b Rebuilt ECL 1,2 and 3 with KIC
 rosetta_source/bin/loopmodel.linuxgccrelease @kic.options -database rosetta_database
 
-7a Analyze results by clustering top ten percent of comparative models by full receptor RMSD.
+6a Analyze results by clustering top ten percent of comparative models by full receptor RMSD.
 bcl.exe PDBCompare -quality RMSD -atoms CA -pdb_list 1u19A_models.ls -aaclass AACaCb -prefix 1u19A_10percent_
 bcl.exe Cluster -distance_input_file 1u19A_10percent_RMSD.txt -input_format TableLowerTriangle -output_format Rows Centers -output_file cluster3_1u19A -linkage Average -remove_internally_similar_nodes 3
 
-7b Analyze results by filtering comparative models with a knowledge-based filter.
+6b Analyze results by filtering comparative models with a knowledge-based filter.
 scripts/evaluate_score_vs_pocket_rmsd/01_make_distances.csh
 scripts/evaluate_score_vs_pocket_rmsd/02_filter_models.py
 
-8 Create ligand conformations in MOE.
+7 Create ligand conformations in MOE.
 See MOE operating guide. LowModeMD with the MMFFx94 force field and Generalized Born solvation model was used to generate conformations within the specified energy cutoff. The ligand conformations were then saved as an .sdf file for conversion to .pdb and .params files for Rosetta.
 rosetta_source/src/python/apps/public/molfile_to_params.py -n 1u19A -p 1u19A 1u19A.sdf 
  
-9 Dock ligand into comparative models.
+8 Dock ligand into comparative models.
 rosetta_source/bin/rosettascripts.linuxgccrelease @dock.options -database rosetta_database
 
-10 Filter binding modes by energy, clustering and experimental restraints
+9 Filter binding modes by energy, clustering and experimental restraints
 /scripts/rmsd.tcsh *.pdb
 bcl.exe ScoreSmallMolecule all.sdf output.sdf -comparison RMSD
 bcl.exe Cluster -distance_input_file 1u19A_ligand.cluster.mat -input_format TableLowerTriangle -output_format Rows Centers -output_file cluster3_1u19A_ligand -linkage Average -remove_internally_similar_nodes 3
