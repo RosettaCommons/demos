@@ -1,0 +1,20 @@
+Setting up an integration test style test system
+Lucas Nivon
+
+This simply steals the integration.py system, placing all tests in tests/, each one needs to have a starting_inputs directory and a command file
+
+Make a tests/ directory with one test in it (copy over the prepare_pdb_for_relax demo)
+Copy over integration.py
+
+## run like this
+python ./integration.py -d ../../rosetta_database -j 12
+python ./demo_test.py -d ../../rosetta_database -j 12
+
+python ~/rosetta/rosetta_source/src/apps/public/relax_w_allatom_cst/clean_pdb_keep_ligand.py starting_inputs/1A99_1A99.pdb -ignorechain
+
+outputs: 
+starting_inputs/1A99_1A99_00.pdb
+1A99_1A99.pdb_00_0001.pdb 
+
+### to do: need to svn add the demo_test.py
+## check in and email sergei
