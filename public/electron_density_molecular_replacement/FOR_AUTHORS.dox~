@@ -1,9 +1,0 @@
-Goal: Using Rosetta to rebuild a crude/preliminary molecular replacement hit into the electron density
-
-
-Step 1.  Prepares a template.
-Step 2.  Show the phaser command line.
-Step 3 and 5.  Rebuilding and refinement in density.
-
-If Step 2 yields no plausible MR hits, run Step 5 without -edensity:* flags and rerun Step 2 on all the output models.  Sometimes this will give the correct MR solution.
-
