@@ -1,0 +1,8 @@
+#!/bin/bash
+#PBS -o pseudo_dagman_PBS.out
+#PBS -e pseudo_dagman_PBS.err
+#PBS -l walltime=48:00:00
+
+cd $PBS_O_WORKDIR
+
+/home/rhiju/src/rosetta/rosetta_tools/SWA_protein_python/run_dag_on_cluster/SWA_pseudo_dagman_continuous.py -j 100 protein_build.dag  > SWA_pseudo_dagman_continuous.out 2> SWA_pseudo_dagman_continuous.err
