@@ -1,0 +1,9 @@
++TGProject = TG-MCB090153
+universe = vanilla
+executable = /home/rhiju/src/rosetta//rosetta_source/bin/swa_protein_main.linuxgccrelease
+arguments =  -cluster_test -in:file:silent region_3_2_sample.cluster.out region_4_3_sample.cluster.out region_5_4_sample.cluster.out region_6_5_sample.cluster.out region_7_6_sample.cluster.out region_8_7_sample.cluster.out region_9_8_sample.cluster.out  -in:file:silent_struct_type binary  -database /home/rhiju/src/rosetta//rosetta_database/   -cluster:radius 0.25  -calc_rms_res 3 4 5 6 7 8 -out:file:silent region_FINAL.out   -score_diff_cut   20.000 -silent_read_through_errors  -nstruct 10000  -working_res  1-28
+output = CONDOR/REGION_FINAL_cluster/$(Process).out
+log = CONDOR/REGION_FINAL_cluster.log
+error = CONDOR/REGION_FINAL_cluster/$(Process).err
+notification = never
+Queue 1

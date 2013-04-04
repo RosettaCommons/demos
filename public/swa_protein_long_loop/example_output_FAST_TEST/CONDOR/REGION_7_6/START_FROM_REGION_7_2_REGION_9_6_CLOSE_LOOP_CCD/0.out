@@ -1,0 +1,45 @@
+desired_sequence= GCPRILMRCKQDSDCLAGCVCGPNGFCG
+working_sequence= GCPRILMRCKQDSDCLAGCVCGPNGFCG
+CHAIN 1. Considering jump:  6  to  7. WORKING_RES: 2 1
+CHAIN 2. Considering jump:  28  to  1. WORKING_RES: 2 2
+Adding potential jump! 
+POTENTIAL JUMPS: 1 28   chain: 1 2
+POTENTIAL JUMPS: 28 1   chain: 2 1
+Going to test jump: 1 28? 0
+ADDING JUMP: 1 28
+0 0  FULL POSE ANNOTATED SEQUENCE: G[GLY_p:NtermProteinFull]CPRILMRCKQDSDCLAGCVCGPNGFCG[GLY_p:CtermProteinFull]
+Upstream   jump_point= 1  Downstream jump_point= 28  cut_point= 6
+G[GLY_p:NtermProteinFull]CPRILMRCKQDSDCLAGCVCGPNGFCG[GLY_p:CtermProteinFull]
+G[GLY_p:NtermProteinFull]C[CYD_p:C_methylamidated]M[MET_p:N_acetylated]RC[CYD]KQDSDC[CYD]LAGC[CYD]VC[CYD]GPNGFC[CYD]G[GLY_p:CtermProteinFull]
+IMPORT_POSE DURING COPY_NEXT_SEGMENT: G[GLY_p:NtermProteinFull]C[CYD_p:C_methylamidated]M[MET_p:N_acetylated]RC[CYD]KQDSDC[CYD]LAGC[CYD]VC[CYD]GPNGFC[CYD]G[GLY_p:CtermProteinFull]
+G[GLY_p:NtermProteinFull]CPRILMRCKQDSDCLAGCVCGPNGFCG[GLY_p:CtermProteinFull]
+G[GLY_p:NtermProteinFull]C[CYD]PRIL[LEU_p:C_methylamidated]C[CYD_p:N_acetylated]KQDSDC[CYD]LAGC[CYD]VC[CYD]GPNGFC[CYD]G[GLY_p:CtermProteinFull]
+IMPORT_POSE DURING COPY_NEXT_SEGMENT: G[GLY_p:NtermProteinFull]C[CYD]PRIL[LEU_p:C_methylamidated]C[CYD_p:N_acetylated]KQDSDC[CYD]LAGC[CYD]VC[CYD]GPNGFC[CYD]G[GLY_p:CtermProteinFull]
+PARTITION_DEFINITION ==> 0000000000000000000000000000
+FOLD_TREE FOLD_TREE  EDGE 1 6 -1  JEDGE 1 28 1 N N  INTRA_RES_STUB  EDGE 28 7 -1 
+
+CHECK_CHAIN --> 6 0 7 0
+Applied cutpoint variants to 6
+0 0  FULL POSE ANNOTATED SEQUENCE: G[GLY_p:NtermProteinFull]CPRILMRCKQDSDCLAGCVCGPNGFCG[GLY_p:CtermProteinFull]
+FOUND PAIR: 2--19[in subpose: 2--19]
+FOUND PAIR: 9--21[in subpose: 9--21]
+FOUND PAIR: 15--27[in subpose: 15--27]
+0100000010000010001010000010
+AFTER DISULF: G[GLY_p:NtermProteinFull]C[CYD]PRIL[LEU_p:protein_cutpoint_lower]M[MET_p:protein_cutpoint_upper]RC[CYD]KQDSDC[CYD]LAGC[CYD]VC[CYD]GPNGFC[CYD]G[GLY_p:CtermProteinFull]
+NATIVE sequence: G[GLY_p:NtermProteinFull]C[CYD]PRILMRC[CYD]KQDSDC[CYD]LAGC[CYD]VC[CYD]GPNGFC[CYD]G[GLY_p:CtermProteinFull]
+PoseSetup: Align to NATIVE
+Using StepWisePoseCombineSampleGenerator
+IMPORT_POSE DURING COPY_NEXT_SEGMENT: G[GLY_p:NtermProteinFull]C[CYD_p:C_methylamidated]M[MET_p:N_acetylated]RC[CYD]KQDSDC[CYD]LAGC[CYD]VC[CYD]GPNGFC[CYD]G[GLY_p:CtermProteinFull]
+IMPORT_POSE DURING COPY_NEXT_SEGMENT: G[GLY_p:NtermProteinFull]C[CYD]PRIL[LEU_p:C_methylamidated]C[CYD_p:N_acetylated]KQDSDC[CYD]LAGC[CYD]VC[CYD]GPNGFC[CYD]G[GLY_p:CtermProteinFull]
+CCD closed: 0 out of 1 tries.
+Total time in StepWiseProteinCCD_Closer: 0.15
+Using StepWiseProteinMainChainSampleGenerator with loops
+ Decoy S_00000 : ROT_TRIALS   Number 1 out of 1
+Total time in StepWiseProteinPacker: 0.22
+Total time in StepWiseClusterer: 0
+MOVE TAKEOFF TORSIONS: 1
+ALLOWING BB TO MOVE:  3 4 5 6 7 8 9
+Minimizing decoy 1 out of 1
+Score minimized from  247.885 to   -8.741
+Total time in StepWiseProteinPoseMinimizer: 0.32
+Total time in StepWiseClusterer: 0

@@ -1,0 +1,105 @@
+core.init: Mini-Rosetta version 54625:54672 from https://svn.rosettacommons.org/source/trunk/rosetta/rosetta_source
+core.init: command: condor_scheduniv_exec.4807.0 -cluster_test -silent_read_through_errors -in:file:silent REGION_8_2/start_from_region_9_2_denovo_sample.low4000.out -in:file:silent_struct_type binary -database /home/rhiju/src/rosetta//rosetta_database/ -cluster:radius 0.25 -calc_rms_res 3 4 5 6 7 8 -out:file:silent region_8_2_sample.cluster.out -nstruct 1000 -score_diff_cut 10.000 -working_res 1-2 8-28
+core.init: 'RNG device' seed mode, using '/dev/urandom', seed=-772734797 seed_offset=0 real_seed=-772734797
+core.init.random: RandomGenerator:init: Normal mode, seed=-772734797 RG_type=mt19937
+core.io.silent: Reading all structures from REGION_8_2/start_from_region_9_2_denovo_sample.low4000.out
+core.io.silent: Finished reading 6 structures from REGION_8_2/start_from_region_9_2_denovo_sample.low4000.out
+core.chemical.ResidueTypeSet: Finished initializing fa_standard residue type set.  Created 6400 residue types
+core.conformation.Conformation: Found disulfide between residues 2 14
+core.conformation.Conformation: current variant for 2 CYD
+core.conformation.Conformation: current variant for 14 CYD
+core.conformation.Conformation: current variant for 2 CYD
+core.conformation.Conformation: current variant for 14 CYD
+core.conformation.Conformation: Found disulfide between residues 4 16
+core.conformation.Conformation: current variant for 4 CYD
+core.conformation.Conformation: current variant for 16 CYD
+core.conformation.Conformation: current variant for 4 CYD
+core.conformation.Conformation: current variant for 16 CYD
+core.conformation.Conformation: Found disulfide between residues 10 22
+core.conformation.Conformation: current variant for 10 CYD
+core.conformation.Conformation: current variant for 22 CYD
+core.conformation.Conformation: current variant for 10 CYD
+core.conformation.Conformation: current variant for 22 CYD
+protocols.swa.stepwise_clusterer: Checking: S_0 with score -14.444 against list of size 0 ... added. 
+core.conformation.Conformation: Found disulfide between residues 2 14
+core.conformation.Conformation: current variant for 2 CYD
+core.conformation.Conformation: current variant for 14 CYD
+core.conformation.Conformation: current variant for 2 CYD
+core.conformation.Conformation: current variant for 14 CYD
+core.conformation.Conformation: Found disulfide between residues 4 16
+core.conformation.Conformation: current variant for 4 CYD
+core.conformation.Conformation: current variant for 16 CYD
+core.conformation.Conformation: current variant for 4 CYD
+core.conformation.Conformation: current variant for 16 CYD
+core.conformation.Conformation: Found disulfide between residues 10 22
+core.conformation.Conformation: current variant for 10 CYD
+core.conformation.Conformation: current variant for 22 CYD
+core.conformation.Conformation: current variant for 10 CYD
+core.conformation.Conformation: current variant for 22 CYD
+protocols.swa.stepwise_clusterer: Checking: S_1 with score -13.802 against list of size 1 ... added. 
+core.conformation.Conformation: Found disulfide between residues 2 14
+core.conformation.Conformation: current variant for 2 CYD
+core.conformation.Conformation: current variant for 14 CYD
+core.conformation.Conformation: current variant for 2 CYD
+core.conformation.Conformation: current variant for 14 CYD
+core.conformation.Conformation: Found disulfide between residues 4 16
+core.conformation.Conformation: current variant for 4 CYD
+core.conformation.Conformation: current variant for 16 CYD
+core.conformation.Conformation: current variant for 4 CYD
+core.conformation.Conformation: current variant for 16 CYD
+core.conformation.Conformation: Found disulfide between residues 10 22
+core.conformation.Conformation: current variant for 10 CYD
+core.conformation.Conformation: current variant for 22 CYD
+core.conformation.Conformation: current variant for 10 CYD
+core.conformation.Conformation: current variant for 22 CYD
+protocols.swa.stepwise_clusterer: Checking: S_2 with score -13.602 against list of size 2 ... not added. 
+core.conformation.Conformation: Found disulfide between residues 2 14
+core.conformation.Conformation: current variant for 2 CYD
+core.conformation.Conformation: current variant for 14 CYD
+core.conformation.Conformation: current variant for 2 CYD
+core.conformation.Conformation: current variant for 14 CYD
+core.conformation.Conformation: Found disulfide between residues 4 16
+core.conformation.Conformation: current variant for 4 CYD
+core.conformation.Conformation: current variant for 16 CYD
+core.conformation.Conformation: current variant for 4 CYD
+core.conformation.Conformation: current variant for 16 CYD
+core.conformation.Conformation: Found disulfide between residues 10 22
+core.conformation.Conformation: current variant for 10 CYD
+core.conformation.Conformation: current variant for 22 CYD
+core.conformation.Conformation: current variant for 10 CYD
+core.conformation.Conformation: current variant for 22 CYD
+protocols.swa.stepwise_clusterer: Checking: S_3 with score -10.954 against list of size 2 ... not added. 
+core.conformation.Conformation: Found disulfide between residues 2 14
+core.conformation.Conformation: current variant for 2 CYD
+core.conformation.Conformation: current variant for 14 CYD
+core.conformation.Conformation: current variant for 2 CYD
+core.conformation.Conformation: current variant for 14 CYD
+core.conformation.Conformation: Found disulfide between residues 4 16
+core.conformation.Conformation: current variant for 4 CYD
+core.conformation.Conformation: current variant for 16 CYD
+core.conformation.Conformation: current variant for 4 CYD
+core.conformation.Conformation: current variant for 16 CYD
+core.conformation.Conformation: Found disulfide between residues 10 22
+core.conformation.Conformation: current variant for 10 CYD
+core.conformation.Conformation: current variant for 22 CYD
+core.conformation.Conformation: current variant for 10 CYD
+core.conformation.Conformation: current variant for 22 CYD
+protocols.swa.stepwise_clusterer: Checking: S_4 with score -10.689 against list of size 2 ... not added. 
+core.conformation.Conformation: Found disulfide between residues 2 14
+core.conformation.Conformation: current variant for 2 CYD
+core.conformation.Conformation: current variant for 14 CYD
+core.conformation.Conformation: current variant for 2 CYD
+core.conformation.Conformation: current variant for 14 CYD
+core.conformation.Conformation: Found disulfide between residues 4 16
+core.conformation.Conformation: current variant for 4 CYD
+core.conformation.Conformation: current variant for 16 CYD
+core.conformation.Conformation: current variant for 4 CYD
+core.conformation.Conformation: current variant for 16 CYD
+core.conformation.Conformation: Found disulfide between residues 10 22
+core.conformation.Conformation: current variant for 10 CYD
+core.conformation.Conformation: current variant for 22 CYD
+core.conformation.Conformation: current variant for 10 CYD
+core.conformation.Conformation: current variant for 22 CYD
+protocols.swa.stepwise_clusterer: Checking: S_5 with score -10.495 against list of size 2 ... not added. 
+protocols.swa.stepwise_clusterer: After clustering, number of decoys: 2
+Total time in StepWiseClusterer: 1.89

@@ -1,0 +1,47 @@
+desired_sequence= GCPRILMRCKQDSDCLAGCVCGPNGFCG
+working_sequence= GCMRCKQDSDCLAGCVCGPNGFCG
+CHAIN 1. Considering jump:  2  to  7. WORKING_RES: 1 999
+Adding potential jump! 
+CHAIN 2. Considering jump:  28  to  1. WORKING_RES: 1 1
+Adding potential jump! 
+POTENTIAL JUMPS: 1 24   chain: 1 2
+POTENTIAL JUMPS: 24 1   chain: 2 1
+POTENTIAL JUMPS: 2 3   chain: 1 2
+Going to test jump: 1 24? 0
+ADDING JUMP: 1 24
+0 0  FULL POSE ANNOTATED SEQUENCE: G[GLY_p:NtermProteinFull]CPRILMRCKQDSDCLAGCVCGPNGFCG[GLY_p:CtermProteinFull]
+Upstream   jump_point= 1  Downstream jump_point= 24  cut_point= 2
+G[GLY_p:NtermProteinFull]CMRCKQDSDCLAGCVCGPNGFCG[GLY_p:CtermProteinFull]
+G[GLY_p:NtermProteinFull]C[CYD_p:C_methylamidated]R[ARG_p:N_acetylated]C[CYD]KQDSDC[CYD]LAGC[CYD]VC[CYD]GPNGFC[CYD]G[GLY_p:CtermProteinFull]
+IMPORT_POSE DURING COPY_NEXT_SEGMENT: G[GLY_p:NtermProteinFull]C[CYD_p:C_methylamidated]R[ARG_p:N_acetylated]C[CYD]KQDSDC[CYD]LAGC[CYD]VC[CYD]GPNGFC[CYD]G[GLY_p:CtermProteinFull]
+PARTITION_RES ==> 4
+PARTITION_DEFINITION ==> 001100000000000000000000
+FOLD_TREE FOLD_TREE  EDGE 1 2 -1  JEDGE 1 24 1 N N  INTRA_RES_STUB  EDGE 24 3 -1 
+
+CHECK_CHAIN --> 2 0 7 1
+CUTPOINT CLOSED --> 2 7
+Num. res in partition 0:  22.   Num. res in partition 1: 2. Moving_res is in  partition 1.  New root residue 1
+0 0  FULL POSE ANNOTATED SEQUENCE: G[GLY_p:NtermProteinFull]CPRILMRCKQDSDCLAGCVCGPNGFCG[GLY_p:CtermProteinFull]
+FOUND PAIR: 2--19[in subpose: 2--15]
+FOUND PAIR: 9--21[in subpose: 5--17]
+FOUND PAIR: 15--27[in subpose: 11--23]
+010010000010001010000010
+AFTER DISULF: G[GLY_p:NtermProteinFull]C[CYD_p:C_methylamidated]M[MET_p:N_acetylated]RC[CYD]KQDSDC[CYD]LAGC[CYD]VC[CYD]GPNGFC[CYD]G[GLY_p:CtermProteinFull]
+NATIVE sequence: G[GLY_p:NtermProteinFull]C[CYD]PRILMRC[CYD]KQDSDC[CYD]LAGC[CYD]VC[CYD]GPNGFC[CYD]G[GLY_p:CtermProteinFull]
+PoseSetup: Align to NATIVE
+Total time in StepWiseProteinScreener: 0.01
+Using StepWiseProteinMainChainSampleGenerator. Num poses: 88
+ Decoy S_00008 : ROT_TRIALS   Number 9 out of 88
+ Decoy S_00041 : ROT_TRIALS   Number 42 out of 88
+ Decoy S_00052 : ROT_TRIALS   Number 53 out of 88
+ Decoy S_00074 : ROT_TRIALS   Number 75 out of 88
+Total time in StepWiseProteinPacker: 0.55
+Total time in StepWiseClusterer: 0.01
+MOVE TAKEOFF TORSIONS: 1
+ALLOWING BB TO MOVE:  3 4 5
+Minimizing decoy 1 out of 2
+Score minimized from  -16.205 to  -17.317
+Minimizing decoy 2 out of 2
+Score minimized from  -14.890 to  -17.013
+Total time in StepWiseProteinPoseMinimizer: 0.27
+Total time in StepWiseClusterer: 0

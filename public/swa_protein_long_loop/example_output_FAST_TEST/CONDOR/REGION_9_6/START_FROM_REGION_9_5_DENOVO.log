@@ -1,0 +1,36 @@
+000 (4826.000.000) 04/04 06:05:49 Job submitted from host: <171.64.65.150:35549>
+    DAG Node: REGION_9_6_START_FROM_REGION_9_5_DENOVO
+...
+000 (4826.001.000) 04/04 06:05:49 Job submitted from host: <171.64.65.150:35549>
+    DAG Node: REGION_9_6_START_FROM_REGION_9_5_DENOVO
+...
+001 (4826.000.000) 04/04 06:06:17 Job executing on host: <171.64.65.150:53053>
+...
+001 (4826.001.000) 04/04 06:06:19 Job executing on host: <171.64.65.150:53053>
+...
+005 (4826.000.000) 04/04 06:06:21 Job terminated.
+	(1) Normal termination (return value 0)
+		Usr 0 00:00:02, Sys 0 00:00:00  -  Run Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Run Local Usage
+		Usr 0 00:00:02, Sys 0 00:00:00  -  Total Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Total Local Usage
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+	0  -  Total Bytes Sent By Job
+	0  -  Total Bytes Received By Job
+...
+005 (4826.001.000) 04/04 06:06:23 Job terminated.
+	(1) Normal termination (return value 0)
+		Usr 0 00:00:02, Sys 0 00:00:00  -  Run Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Run Local Usage
+		Usr 0 00:00:02, Sys 0 00:00:00  -  Total Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Total Local Usage
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+	0  -  Total Bytes Sent By Job
+	0  -  Total Bytes Received By Job
+...
+016 (4826.000.000) 04/04 06:06:23 POST Script terminated.
+	(1) Normal termination (return value 0)
+    DAG Node: REGION_9_6_START_FROM_REGION_9_5_DENOVO
+...

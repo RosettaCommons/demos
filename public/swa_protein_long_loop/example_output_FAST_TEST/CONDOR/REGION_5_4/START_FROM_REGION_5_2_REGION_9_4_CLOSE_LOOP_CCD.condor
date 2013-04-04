@@ -1,0 +1,9 @@
++TGProject = TG-MCB090153
+universe = vanilla
+executable = /home/rhiju/src/rosetta//rosetta_source/bin/swa_protein_main.linuxgccrelease
+arguments =  -database /home/rhiju/src/rosetta//rosetta_database/  -rebuild -out:file:silent_struct_type binary  -fasta 2it7.fasta -n_sample 9 -nstruct 10 -cluster:radius    0.100 -extrachi_cutoff 0 -ex1 -ex2 -score:weights score12_no_hb_env_dep.wts -pack_weights pack_no_hb_env_dep.wts -in:detect_disulf false -rmsd_screen    1.000 -add_peptide_plane -disulfide_file 2it7.disulf -native 2it7.pdb -superimpose_res  1-2 9-28 -fixed_res  1-2 9-28 -calc_rms_res  3-8 -jump_res  1 28 -mute all  -silent1 region_5_2_sample.cluster.out -tags1 S_$(Process) -input_res1  1-2 5-28 -silent2 region_9_4_sample.cluster.out  -input_res2  1-4 9-28 -cutpoint_closed 4 -ccd_close -global_optimize -out:file:silent REGION_5_4/START_FROM_REGION_5_2_REGION_9_4_CLOSE_LOOP_CCD_S_$(Process)/region_5_4_sample.out 
+output = CONDOR/REGION_5_4/START_FROM_REGION_5_2_REGION_9_4_CLOSE_LOOP_CCD/$(Process).out
+log = CONDOR/REGION_5_4/START_FROM_REGION_5_2_REGION_9_4_CLOSE_LOOP_CCD.log
+error = CONDOR/REGION_5_4/START_FROM_REGION_5_2_REGION_9_4_CLOSE_LOOP_CCD/$(Process).err
+notification = never
+Queue 2

@@ -1,0 +1,97 @@
+core.init: Mini-Rosetta version 54625:54672 from https://svn.rosettacommons.org/source/trunk/rosetta/rosetta_source
+core.init: command: condor_scheduniv_exec.4838.0 -cluster_test -silent_read_through_errors -in:file:silent REGION_5_4/start_from_region_5_2_region_9_4_close_loop_ccd_sample.low4000.out REGION_5_4/start_from_region_6_2_region_9_4_close_loop_ccd_sample.low4000.out REGION_5_4/start_from_region_7_2_region_9_4_close_loop_ccd_sample.low4000.out -in:file:silent_struct_type binary -database /home/rhiju/src/rosetta//rosetta_database/ -cluster:radius 0.25 -calc_rms_res 3 4 5 6 7 8 -out:file:silent region_5_4_sample.cluster.out -nstruct 1000 -score_diff_cut 10.000 -working_res 1-28
+core.init: 'RNG device' seed mode, using '/dev/urandom', seed=517615747 seed_offset=0 real_seed=517615747
+core.init.random: RandomGenerator:init: Normal mode, seed=517615747 RG_type=mt19937
+core.io.silent: Reading all structures from REGION_5_4/start_from_region_5_2_region_9_4_close_loop_ccd_sample.low4000.out
+core.io.silent: Finished reading 2 structures from REGION_5_4/start_from_region_5_2_region_9_4_close_loop_ccd_sample.low4000.out
+core.io.silent: Reading all structures from REGION_5_4/start_from_region_6_2_region_9_4_close_loop_ccd_sample.low4000.out
+core.io.silent: renamed tag S_0 to S_0_1    (SilentStruct with S_0 already exists!)
+core.io.silent: renamed tag S_0001_000000 to S_0001_000000_1    (SilentStruct with S_0001_000000 already exists!)
+core.io.silent: Finished reading 5 structures from REGION_5_4/start_from_region_6_2_region_9_4_close_loop_ccd_sample.low4000.out
+core.io.silent: Reading all structures from REGION_5_4/start_from_region_7_2_region_9_4_close_loop_ccd_sample.low4000.out
+core.io.silent: renamed tag S_0 to S_0_2    (SilentStruct with S_0 already exists!)
+core.io.silent: renamed tag S_0001_000000 to S_0001_000000_2    (SilentStruct with S_0001_000000 already exists!)
+core.io.silent: renamed tag S_0002_000000 to S_0002_000000_1    (SilentStruct with S_0002_000000 already exists!)
+core.io.silent: Finished reading 8 structures from REGION_5_4/start_from_region_7_2_region_9_4_close_loop_ccd_sample.low4000.out
+core.chemical.ResidueTypeSet: Finished initializing fa_standard residue type set.  Created 6400 residue types
+core.conformation.Conformation: Found disulfide between residues 2 19
+core.conformation.Conformation: current variant for 2 CYD
+core.conformation.Conformation: current variant for 19 CYD
+core.conformation.Conformation: current variant for 2 CYD
+core.conformation.Conformation: current variant for 19 CYD
+core.conformation.Conformation: Found disulfide between residues 9 21
+core.conformation.Conformation: current variant for 9 CYD
+core.conformation.Conformation: current variant for 21 CYD
+core.conformation.Conformation: current variant for 9 CYD
+core.conformation.Conformation: current variant for 21 CYD
+core.conformation.Conformation: Found disulfide between residues 15 27
+core.conformation.Conformation: current variant for 15 CYD
+core.conformation.Conformation: current variant for 27 CYD
+core.conformation.Conformation: current variant for 15 CYD
+core.conformation.Conformation: current variant for 27 CYD
+protocols.swa.stepwise_clusterer: Checking: S_0 with score -22.287 against list of size 0 ... added. 
+core.conformation.Conformation: Found disulfide between residues 2 19
+core.conformation.Conformation: current variant for 2 CYD
+core.conformation.Conformation: current variant for 19 CYD
+core.conformation.Conformation: current variant for 2 CYD
+core.conformation.Conformation: current variant for 19 CYD
+core.conformation.Conformation: Found disulfide between residues 9 21
+core.conformation.Conformation: current variant for 9 CYD
+core.conformation.Conformation: current variant for 21 CYD
+core.conformation.Conformation: current variant for 9 CYD
+core.conformation.Conformation: current variant for 21 CYD
+core.conformation.Conformation: Found disulfide between residues 15 27
+core.conformation.Conformation: current variant for 15 CYD
+core.conformation.Conformation: current variant for 27 CYD
+core.conformation.Conformation: current variant for 15 CYD
+core.conformation.Conformation: current variant for 27 CYD
+protocols.swa.stepwise_clusterer: Checking: S_0001_000000 with score -22.103 against list of size 1 ... not added. 
+core.conformation.Conformation: Found disulfide between residues 2 19
+core.conformation.Conformation: current variant for 2 CYD
+core.conformation.Conformation: current variant for 19 CYD
+core.conformation.Conformation: current variant for 2 CYD
+core.conformation.Conformation: current variant for 19 CYD
+core.conformation.Conformation: Found disulfide between residues 9 21
+core.conformation.Conformation: current variant for 9 CYD
+core.conformation.Conformation: current variant for 21 CYD
+core.conformation.Conformation: current variant for 9 CYD
+core.conformation.Conformation: current variant for 21 CYD
+core.conformation.Conformation: Found disulfide between residues 15 27
+core.conformation.Conformation: current variant for 15 CYD
+core.conformation.Conformation: current variant for 27 CYD
+core.conformation.Conformation: current variant for 15 CYD
+core.conformation.Conformation: current variant for 27 CYD
+protocols.swa.stepwise_clusterer: Checking: S_0_1 with score -18.63 against list of size 1 ... added. 
+core.conformation.Conformation: Found disulfide between residues 2 19
+core.conformation.Conformation: current variant for 2 CYD
+core.conformation.Conformation: current variant for 19 CYD
+core.conformation.Conformation: current variant for 2 CYD
+core.conformation.Conformation: current variant for 19 CYD
+core.conformation.Conformation: Found disulfide between residues 9 21
+core.conformation.Conformation: current variant for 9 CYD
+core.conformation.Conformation: current variant for 21 CYD
+core.conformation.Conformation: current variant for 9 CYD
+core.conformation.Conformation: current variant for 21 CYD
+core.conformation.Conformation: Found disulfide between residues 15 27
+core.conformation.Conformation: current variant for 15 CYD
+core.conformation.Conformation: current variant for 27 CYD
+core.conformation.Conformation: current variant for 15 CYD
+core.conformation.Conformation: current variant for 27 CYD
+protocols.swa.stepwise_clusterer: Checking: S_0001_000000_2 with score -12.769 against list of size 2 ... added. 
+core.conformation.Conformation: Found disulfide between residues 2 19
+core.conformation.Conformation: current variant for 2 CYD
+core.conformation.Conformation: current variant for 19 CYD
+core.conformation.Conformation: current variant for 2 CYD
+core.conformation.Conformation: current variant for 19 CYD
+core.conformation.Conformation: Found disulfide between residues 9 21
+core.conformation.Conformation: current variant for 9 CYD
+core.conformation.Conformation: current variant for 21 CYD
+core.conformation.Conformation: current variant for 9 CYD
+core.conformation.Conformation: current variant for 21 CYD
+core.conformation.Conformation: Found disulfide between residues 15 27
+core.conformation.Conformation: current variant for 15 CYD
+core.conformation.Conformation: current variant for 27 CYD
+core.conformation.Conformation: current variant for 15 CYD
+core.conformation.Conformation: current variant for 27 CYD
+protocols.swa.stepwise_clusterer: After clustering, number of decoys: 3
+Total time in StepWiseClusterer: 1.9
