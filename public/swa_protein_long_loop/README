@@ -39,6 +39,11 @@ This rebuilds residues 3-8 on the knottin scaffold 2it7 which has had the loop a
 
 generate_swa_protein_dag.py  -loop_start_pdb noloop_2it7_stripsidechain.pdb  -native 2it7.pdb -fasta 2it7.fasta -cluster_radius 0.25 -final_number 1000   -denovo 1   -disulfide_file 2it7.disulf  -loop_res 3 4 5 6 7 8
 
+If you want to do a quick run to test the overall workflow, you can keep the models within RMSD of 1.0 A to the experimental loop, use coarser backbone sampling, and save only 10 structures per run:
+
+generate_swa_protein_dag.py  -loop_start_pdb noloop_2it7_stripsidechain.pdb  -native 2it7.pdb -fasta 2it7.fasta -cluster_radius 0.25 -final_number 1000   -denovo 1   -disulfide_file 2it7.disulf  -loop_res 3 4 5 6 7 8 -n_sample 9 -rmsd_screen 1.0 -nstruct 10
+ 
+
 The outputs are:
 
   protein_build.dag
@@ -48,17 +53,15 @@ The outputs are:
     directory with job definitions, in format similar to condor job definition format.
 
   REGION_3_2/, REGION_4_2/, ...
-    directories that will hold outputs of each rosetta job. The numbers correspond to the N-terminal residue of the loop fragment reaching from the C-terminus endpoint of hte loop, and the C-terminal residue of the loop fragment reaching from the N-terminal takeoff of the loop.  REGION_3_2 corresponds to models in which the loop fragments have met at the boundary between residues 2 and 3.
+    directories that will hold outputs of each rosetta job. The numbers correspond to the N-terminal residue of the loop fragment reaching from the C-terminus endpoint of the loop, and the C-terminal residue of the loop fragment reaching from the N-terminal takeoff of the loop.  REGION_3_2 corresponds to models in which the loop fragments have met at the boundary between residues 2 and 3.
 
 # How to run the DAG.
 
 On condor clusters:
 
-condor_dagman protein_build.dag
+condor_submit_dag protein_build.dag
 
-We have found condor_dagman to be extraordinarily slow, unfortunately. 
-
-A further problem is that there is currently no good universal solution to running DAGs on clusters, although packages like Pegasus and newer versions of Hadoop appear promising. 
+We have found condor_dagman can be slow due to latency in queuing rosetta jobs via Condor, unfortunately. A further problem is that there is currently no good universal solution to running DAGs on clusters, although packages like Pegasus and newer versions of Hadoop appear promising. 
 
 For our own purposes, we have developed in-house python scripts [available in rosetta_tools/SWA_protein_python/run_dag_on_cluster/] to run the jobs by kicking off a master node that can queue jobs to slave nodes. Most recently, we have been using PBS/torque ('qsub') queueing, and you can run the jobs using 100 cores with the command:
 
