@@ -1,4 +1,5 @@
-Introduction
+# Introduction #
+================
 
 These demos are designed to guide users through sample procedures in computational modeling from the point of view of solving a specific problem. Each one is self-contained, containing all of the input files and scripts necessary to set up a rosetta run or runs -- inputs are in the starting_inputs/, scripts in scripts/. It also contains any inputs which one would prepare along the way before an actual rosetta run -- for example if in input pdb must be edited before use in rosetta -- these are in rosetta_inputs/ directory.  
 Each directory contains a README file with an introduction to the task at hand and detailed step-by-step instructions.
@@ -7,6 +8,7 @@ The public/ directory contains demos that are in final form ready for use.
 The pilot/ directory contains provisional or not-yet-completed demos that may not be ready for distribution.
 
 Brief Descriptions
+==================
 
 abinitio -- ab initio structure prediction from a sequence with already-prepared fragements and secondary structure prediction.
 
