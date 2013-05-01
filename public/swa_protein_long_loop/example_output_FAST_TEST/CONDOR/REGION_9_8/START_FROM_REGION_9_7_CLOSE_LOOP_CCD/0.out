@@ -1,0 +1,45 @@
+desired_sequence= GCPRILMRCKQDSDCLAGCVCGPNGFCG
+working_sequence= GCPRILMRCKQDSDCLAGCVCGPNGFCG
+CHAIN 1. Considering jump:  8  to  9. WORKING_RES: 999 1
+Adding potential jump! 
+CHAIN 2. Considering jump:  28  to  1. WORKING_RES: 1 1
+Adding potential jump! 
+POTENTIAL JUMPS: 1 28   chain: 1 2
+POTENTIAL JUMPS: 28 1   chain: 2 1
+POTENTIAL JUMPS: 8 9   chain: 1 2
+Going to test jump: 1 28? 0
+ADDING JUMP: 1 28
+0 0  FULL POSE ANNOTATED SEQUENCE: G[GLY_p:NtermProteinFull]CPRILMRCKQDSDCLAGCVCGPNGFCG[GLY_p:CtermProteinFull]
+Upstream   jump_point= 1  Downstream jump_point= 28  cut_point= 8
+G[GLY_p:NtermProteinFull]CPRILMRCKQDSDCLAGCVCGPNGFCG[GLY_p:CtermProteinFull]
+G[GLY_p:NtermProteinFull]C[CYD]PRILM[MET_p:C_methylamidated]C[CYD_p:N_acetylated]KQDSDC[CYD]LAGC[CYD]VC[CYD]GPNGFC[CYD]G[GLY_p:CtermProteinFull]
+IMPORT_POSE DURING COPY_NEXT_SEGMENT: G[GLY_p:NtermProteinFull]C[CYD]PRILM[MET_p:C_methylamidated]C[CYD_p:N_acetylated]KQDSDC[CYD]LAGC[CYD]VC[CYD]GPNGFC[CYD]G[GLY_p:CtermProteinFull]
+PARTITION_RES ==> 7
+PARTITION_DEFINITION ==> 1111111011111111111111111111
+FOLD_TREE FOLD_TREE  EDGE 1 8 -1  JEDGE 1 28 1 N N  INTRA_RES_STUB  EDGE 28 9 -1 
+
+CHECK_CHAIN --> 8 0 9 1
+CUTPOINT CLOSED --> 8 9
+Num. res in partition 0:  1.   Num. res in partition 1: 27. Moving_res is in  partition 0.  New root residue 1
+Applied cutpoint variants to 8
+0 0  FULL POSE ANNOTATED SEQUENCE: G[GLY_p:NtermProteinFull]CPRILMRCKQDSDCLAGCVCGPNGFCG[GLY_p:CtermProteinFull]
+FOUND PAIR: 2--19[in subpose: 2--19]
+FOUND PAIR: 9--21[in subpose: 9--21]
+FOUND PAIR: 15--27[in subpose: 15--27]
+0100000010000010001010000010
+AFTER DISULF: G[GLY_p:NtermProteinFull]C[CYD]PRILMR[ARG_p:protein_cutpoint_lower]C[CYD_p:protein_cutpoint_upper]KQDSDC[CYD]LAGC[CYD]VC[CYD]GPNGFC[CYD]G[GLY_p:CtermProteinFull]
+NATIVE sequence: G[GLY_p:NtermProteinFull]C[CYD]PRILMRC[CYD]KQDSDC[CYD]LAGC[CYD]VC[CYD]GPNGFC[CYD]G[GLY_p:CtermProteinFull]
+PoseSetup: Align to NATIVE
+Total time in StepWiseProteinScreener: 0
+Using StepWiseProteinMainChainSampleGenerator. Num poses: 11
+CCD closed: 0 out of 11 tries.
+Total time in StepWiseProteinCCD_Closer: 0.24
+Using StepWiseProteinMainChainSampleGenerator with loops
+Total time in StepWiseProteinPacker: 0.02
+Total time in StepWiseClusterer: 0
+MOVE TAKEOFF TORSIONS: 1
+ALLOWING BB TO MOVE:  3 4 5 6 7 8
+Minimizing decoy 1 out of 1
+Score minimized from 2762.525 to   -4.173
+Total time in StepWiseProteinPoseMinimizer: 1.7
+Total time in StepWiseClusterer: 0

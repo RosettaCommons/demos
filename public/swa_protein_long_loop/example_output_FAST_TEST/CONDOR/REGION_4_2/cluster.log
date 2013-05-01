@@ -1,0 +1,20 @@
+000 (4837.000.000) 04/04 06:06:52 Job submitted from host: <171.64.65.150:35549>
+    DAG Node: REGION_4_2
+...
+001 (4837.000.000) 04/04 06:06:54 Job executing on host: <171.64.65.150:35549>
+...
+005 (4837.000.000) 04/04 06:06:56 Job terminated.
+	(1) Normal termination (return value 0)
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Run Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Run Local Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Total Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Total Local Usage
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+	0  -  Total Bytes Sent By Job
+	0  -  Total Bytes Received By Job
+...
+016 (4837.000.000) 04/04 06:06:58 POST Script terminated.
+	(1) Normal termination (return value 0)
+    DAG Node: REGION_4_2
+...

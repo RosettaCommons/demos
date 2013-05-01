@@ -1,0 +1,36 @@
+000 (4834.000.000) 04/04 06:06:34 Job submitted from host: <171.64.65.150:35549>
+    DAG Node: REGION_5_4_START_FROM_REGION_5_2_REGION_9_4_CLOSE_LOOP_CCD
+...
+000 (4834.001.000) 04/04 06:06:34 Job submitted from host: <171.64.65.150:35549>
+    DAG Node: REGION_5_4_START_FROM_REGION_5_2_REGION_9_4_CLOSE_LOOP_CCD
+...
+001 (4834.000.000) 04/04 06:06:41 Job executing on host: <171.64.65.150:53053>
+...
+001 (4834.001.000) 04/04 06:06:42 Job executing on host: <171.64.65.150:53053>
+...
+005 (4834.000.000) 04/04 06:06:45 Job terminated.
+	(1) Normal termination (return value 0)
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Run Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Run Local Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Total Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Total Local Usage
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+	0  -  Total Bytes Sent By Job
+	0  -  Total Bytes Received By Job
+...
+005 (4834.001.000) 04/04 06:06:45 Job terminated.
+	(1) Normal termination (return value 0)
+		Usr 0 00:00:03, Sys 0 00:00:00  -  Run Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Run Local Usage
+		Usr 0 00:00:03, Sys 0 00:00:00  -  Total Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Total Local Usage
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+	0  -  Total Bytes Sent By Job
+	0  -  Total Bytes Received By Job
+...
+016 (4834.000.000) 04/04 06:06:46 POST Script terminated.
+	(1) Normal termination (return value 0)
+    DAG Node: REGION_5_4_START_FROM_REGION_5_2_REGION_9_4_CLOSE_LOOP_CCD
+...

@@ -1,0 +1,3 @@
+rm -rf STEP* *~ CONDOR core.* SLAVE*  
+
+generate_swa_protein_dag.py  -loop_start_pdb noloop_2it7_stripsidechain.pdb  -native 2it7.pdb -fasta 2it7.fasta -cluster_radius 0.25 -final_number 1000   -denovo 1   -disulfide_file 2it7.disulf  -loop_res 3 4 5 6 7 8 

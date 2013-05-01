@@ -1,0 +1,9 @@
++TGProject = TG-MCB090153
+universe = vanilla
+executable = /Users/rhiju/src/rosetta//rosetta_source/bin/swa_protein_main.macosgccrelease
+arguments =  -database /Users/rhiju/src/rosetta//rosetta_database/  -rebuild -out:file:silent_struct_type binary  -fasta 2it7.fasta -n_sample 18 -nstruct 400 -cluster:radius    0.100 -extrachi_cutoff 0 -ex1 -ex2 -score:weights score12_no_hb_env_dep.wts -pack_weights pack_no_hb_env_dep.wts -in:detect_disulf false -add_peptide_plane -disulfide_file 2it7.disulf -native 2it7.pdb -superimpose_res  1-2 9-28 -fixed_res  1-2 9-28 -calc_rms_res  3-8 -jump_res  1 28 -mute all  -silent1 region_9_6_sample.cluster.out -tags1 S_$(Process) -input_res1  1-6 9-28 -sample_res 8 -bridge_res  7 -cutpoint_closed 7 -ccd_close -global_optimize -out:file:silent REGION_7_6/START_FROM_REGION_9_6_CLOSE_LOOP_CCD_S_$(Process)/region_7_6_sample.out 
+output = CONDOR/REGION_7_6/START_FROM_REGION_9_6_CLOSE_LOOP_CCD/$(Process).out
+log = CONDOR/REGION_7_6/START_FROM_REGION_9_6_CLOSE_LOOP_CCD.log
+error = CONDOR/REGION_7_6/START_FROM_REGION_9_6_CLOSE_LOOP_CCD/$(Process).err
+notification = never
+Queue 1
