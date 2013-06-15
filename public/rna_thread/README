@@ -22,6 +22,6 @@ rna_thread -in:file:fasta rosetta_inputs/3bo3_REARRANGE_to_GIR1.fasta -s rosetta
 
 Note that insertions will *not* be modeled -- there will just be a chainbreak at those residues, and the residue numbering will skip.
 
-If you don't have any alignment gaps in the target model, you can skip the creation of the alignment.fasta file, and just supply -seq <target sequence> on command line.
+If you don't have any alignment gaps in the target model, you can skip the creation of the alignment.fasta file, and just supply -seq <target sequence> on command line. See demo for rna_mutate.
 
 

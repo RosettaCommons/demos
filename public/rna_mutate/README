@@ -21,4 +21,5 @@ rna_thread -s rosetta_inputs/1zih_RNA.pdb  -seq gggcgcgagccu -o 1zih_A7G.pdb
 
 Changes the seventh residue to g. (Original sequence was gggcgcaagccu.)
 
+See also demo for rna_thread.
 
