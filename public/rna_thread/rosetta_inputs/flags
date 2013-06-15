@@ -1,0 +1,5 @@
+-rebuild 
+-in:file:fasta rosetta_inputs/3bo3_REARRANGE_to_GIR1.fasta 
+-s rosetta_inputs/3bo3_REARRANGE.pdb  
+-o 3bo3_REARRANGE_to_GIR1_thread.pdb 
+-seq_offset 63
