@@ -29,8 +29,8 @@ def main(argv):
 
     parser.add_option("-s", "--source",
       #default=path.join( path.expanduser("~"), "mini"),
-      default= path.join( path.dirname( path.dirname( path.dirname(path.abspath(sys.argv[0])) ) ), 'source'),
-      help="Directory where Rosetta source repository is (default: ../../source/)",
+      default= path.join( path.dirname( path.dirname(path.abspath(sys.argv[0])) ), 'source'),
+      help="Directory where Rosetta source repository is (default: ../source/)",
     )
 
     parser.add_option("-j", "--jobs",
@@ -99,18 +99,18 @@ def main(argv):
     # Make sure the current directory is the script directory:
     # Using argv[] here causes problems when people try to run the script as "python integration.py ..."
     #os.chdir( path.dirname(sys.argv[0]) ) # argv[0] is the script name
-    if not path.isdir("tests"):
+    if not path.isdir("public"):
         print "You must run this script from rosetta/demos/"
         return 2
 
 
-    outdir = "tests.run"
+    outdir = "public.run"
     if path.isdir(outdir): print 'Removing old run-dir: %s...' % outdir;  shutil.rmtree(outdir)  # remove old dir if any
     os.mkdir(outdir)
 
 
     if len(args) > 0: tests = args
-    else: tests = [ d for d in os.listdir("tests") if not d.startswith(".") and path.isdir(path.join("tests", d)) ]
+    else: tests = [ d for d in os.listdir("public") if not d.startswith(".") and path.isdir(path.join("public", d)) ]
 
     def signal_handler(signal_, f):
         print 'Ctrl-C pressed... killing child jobs...'
@@ -131,8 +131,9 @@ def main(argv):
     for test in tests:
         queue.put(test)
         #shutil.copytree( path.join("tests", test), path.join(outdir, test) )
-        copytree( path.join("tests", test), path.join(outdir, test),
-            accept=lambda src, dst: path.basename(src) != '.svn' )
+        print '~~~', path.join("public", test), path.join(outdir, test)
+
+        copytree( path.join("public", test), path.join(outdir, test) )  #  accept=lambda src, dst: path.basename(src) != '.svn' )
 
     while not queue.empty():
         test = queue.get()
