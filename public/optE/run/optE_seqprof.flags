@@ -1,13 +1,12 @@
 # These are the flags that activate the sequence-profile recovery procedure
-# in optE.  Note that -ex1 and -ex2 have been commented out for speed.
-# comment them back in to get a full optE run. (~1 day on 27 processors).
+# in optE.  Note that the -ex1 and -ex2 flags can be commented out for speed.
 
 -s ../inputs/interlaced_jsr54.list
 -optE::optimize_nat_aa
 -ignore_unrecognized_res
 -mute all
-# -ex1
-# -ex2
+-ex1 # comment out this flag to make the demo run more quickly
+-ex2 # comment out this flag to make the demo run more quickly
 -linmem_ig 10
 -optE:free free_wts.txt
 -optE:fixed fixed_wts.txt
