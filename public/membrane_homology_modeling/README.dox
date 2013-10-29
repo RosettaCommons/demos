@@ -54,7 +54,7 @@ DXDR.loopfile – the file that tells which regions are to be rebuilt
 
 Now we are ready to run.
 
-The follow command line options are used:
+The follow command line options are used as arguments to the minirosetta executable (minirosetta.(os)(options)(mode), ex. minirosetta.linuxgccrelease, or minirosetta.macosclangrelease)
 
 -database             /Users/patrickbarth/RosettaCon2011/tutorial/trunk_r43621/minirosetta_database
 ## replace the above command with the path to your own rosetta database
