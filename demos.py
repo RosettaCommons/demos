@@ -129,11 +129,16 @@ def main(argv):
         json.dump(generateIntegrationTestGlobalSubstitutionParameters(), parameters_file, sort_keys=True, indent=2)
 
     for test in tests:
-        queue.put(test)
-        #shutil.copytree( path.join("tests", test), path.join(outdir, test) )
-        print '~~~', path.join("public", test), path.join(outdir, test)
+        #commandfile = path.join("public",test,"/command")
+        commandfilepath = path.join("public",test) + '/command'
 
-        copytree( path.join("public", test), path.join(outdir, test) )  #  accept=lambda src, dst: path.basename(src) != '.svn' )
+        if(os.path.isfile(commandfilepath)):
+            print '### This exists: '+commandfilepath  ## LGN 20131108
+            queue.put(test)
+            #shutil.copytree( path.join("tests", test), path.join(outdir, test) )
+            print '~~~', path.join("public", test), path.join(outdir, test)
+        
+            copytree( path.join("public", test), path.join(outdir, test) )  #  accept=lambda src, dst: path.basename(src) != '.svn' )
 
     while not queue.empty():
         test = queue.get()
