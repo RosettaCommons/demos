@@ -16,11 +16,10 @@
 # Available variables include:
 #   workdir     the directory where test input files have been copied,
 #               and where test output files should end up.
-#   source      the base directory where source live (main/source)
-#   database    where the Mini database lives
-#   bin         where the Mini binaries live
+#   source      directory where Rosetta lives (Rosetta/main/source) (was minidir in older integration.py script, for example)
+#   database    where the Rosetta database lives (Rosetta/main/database)
+#   bin         where the Rosetta binaries live (Rosetta/main/source/bin)
 #   binext      the extension on binary files, like ".linuxgccrelease"
-#   python      the full path to the Python interpretter
 #
 # The most important thing is that the test execute in the right directory.
 # This is especially true when we're using SSH to execute on other hosts.
@@ -29,12 +28,23 @@
 
 cd %(workdir)s
 
+[ -e %(source)s/src/apps/public/relax_w_allatom_cst/clean_pdb_keep_ligand.py ] || exit 1
+python %(source)s/src/apps/public/relax_w_allatom_cst/clean_pdb_keep_ligand.py starting_inputs/1A99_1A99.pdb -ignorechain  2>&1 \
+    | egrep -vf ../../ignore_list \
+    > log
+
+echo "Finished pdb prep, now running constrained relax."
+
+[ -x %(bin)s/relax.%(binext)s ] || exit 1
+%(bin)s/relax.%(binext)s @rosetta_inputs/flags2 -s starting_inputs/1A99_1A99.pdb_00.pdb -database %(database)s -run:constant_seed -nodelay  2>&1 \
+    | egrep -vf ../../ignore_list \
+    > log
+
+test "${PIPESTATUS[0]}" != '0' && exit 1 || true  # Check if the first executable in pipe line return error and exit with error code if so
+
+
 #
 # After that, do whatever you want.
-# It's nice to test that the executable exists first, to ensure the test actually runs:
-#
-## [ -x %(bin)s/MY_MINI_PROGRAM.%(binext)s ] || exit 1
-#
 # Files will be diffed verbatim, so if you want to log output and compare it,
 # you'll need to filter out lines that change randomly (e.g. timings).
 # Prefixing your tests with "nice" is probably good form as well.
@@ -42,17 +52,13 @@ cd %(workdir)s
 # Here's a typical test for a Mini binary, assuming there's a "flags" file
 # in this directory too:
 #
-## %(bin)s/MY_MINI_PROGRAM.%(binext)s %(additional_flags)s @flags -database %(database)s -run:constant_seed -nodelay  2>&1 \
+## %(bin)s/MY_MINI_PROGRAM.%(binext)s @flags -database %(database)s -run:constant_seed -nodelay  2>&1 \
 ##     | egrep -v 'Finished.+in [0-9]+ seconds.' \
 ##     | egrep -v 'Dunbrack library took .+ seconds to load' \
-##     | egrep -v 'core.init: command' \
 ##     > log
-# test "${PIPESTATUS[0]}" != '0' && exit 1 || true  # Check if the first executable in pipe line return error and exit with error code if so
-# ^^^^ you want to add this line after each call to app-protocol in case they terminate abnormally
-
 #
 # Or if you don't care whether the logging output changes:
 #
-## %(bin)s/MY_MINI_PROGRAM.%(binext)s %(additional_flags)s @flags -database %(database)s -run:constant_seed -nodelay  2>&1 \
+## %(bin)s/MY_MINI_PROGRAM.%(binext)s @flags -database %(database)s -run:constant_seed -nodelay  2>&1 \
 ##     > /dev/null
 #
