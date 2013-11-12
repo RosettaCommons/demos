@@ -40,10 +40,10 @@ cat cel_0001.pdb >> rosetta_inputs/cel5A_input.pdb
 5) Run rosetta enzdes
 Now we can run the enzdes app in rosetta with minimal flags.
 This optimizes proton chis on the ligand while also repacking sidechains:
-path/to/enzyme_design.[platform][compiler][mode] -s rosetta_inputs/cel5A_input.pdb -extra_res_fa cel.params -database path/to/minirosetta_database/ -out:file:o cel5A_score.out -nstruct 1 -detect_design_interface -cut1 0.0 -cut2 0.0 -cut3 10.0 -cut4 12.0 -minimize_ligand true
+path/to/EnzdesFixBB.[platform][compiler][mode] -s rosetta_inputs/cel5A_input.pdb -extra_res_fa cel.params -database path/to/minirosetta_database/ -out:file:o cel5A_score.out -nstruct 1 -detect_design_interface -cut1 0.0 -cut2 0.0 -cut3 10.0 -cut4 12.0 -minimize_ligand true
 
 This optimizes proton chis on the ligand without repacking sidechains:
-path/to/enzyme_design.[platform][compiler][mode] -s rosetta_inputs/cel5A_input.pdb -extra_res_fa cel.params -database path/to/minirosetta_database/ -out:file:o cel5A_score.out -nstruct 1 -detect_design_interface -cut1 0.0 -cut2 0.0 -cut3 0 -cut4 0 -minimize_ligand true
+path/to/EnzdesFixBB.[platform][compiler][mode] -s rosetta_inputs/cel5A_input.pdb -extra_res_fa cel.params -database path/to/minirosetta_database/ -out:file:o cel5A_score.out -nstruct 1 -detect_design_interface -cut1 0.0 -cut2 0.0 -cut3 0 -cut4 0 -minimize_ligand true
 
 Both runs should produce the PDB file cel5A_input__DE_1.pdb and the score file cel5A_score.out, which can be placed into the output directory under different names, e.g. cel5A_output_nopack.pdb or cel5A_output_w_repack.pdb
 
