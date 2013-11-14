@@ -14,7 +14,8 @@ Simultaneous optimization of protein rigid-body orientation, backbone and
 side chain conformations on a solid surface.  
 
 Commands:
-1. surface_docking.py@flags
+1. cd rosetta_inputs/Osteocalcin demo
+2. surface_docking.py@flags
 
 Input Files:
 1Q8H100.pdb = input pdb file, extended osteocalcin positioned above HAp 100
@@ -76,6 +77,7 @@ D) To generate plots, simply run:
 Running PyRosetta RosettaSurface
 
 Post-processing:
+(in the directory with output decoys)
 1. GetTop.sh Ads 4
 2. cd TOP4.Ads
 3. PostProcessRS.sh
