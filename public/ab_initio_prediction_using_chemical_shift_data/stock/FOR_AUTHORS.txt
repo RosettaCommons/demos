@@ -1,8 +1,0 @@
-The goal of this tutorial is to use NMR chemical shift data in ab initio structure prediction
-
-Files provided
-starting_inputs/15512_chemical_shifts.cs
-
-scripts/
-
-rosetta_inputs/
