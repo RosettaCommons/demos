@@ -2,6 +2,13 @@ interface_design_demo
 
 Author: Kevin Houlihan (khouli@unc.edu)
 
+## Need to fix broken link to example_outputs/minpac_optE_premin/selected_chains.list
+## Need to fix broken link to example_outputs/minpac_s12mp_premin/selected_chains.list
+## Need to fix broken link to example_outputs/pacrot_s12p_nomin/selected_chains.list
+## also broken link scripts/design/minpac_optE_premin/selected_chains.list
+## and this one /scripts/design/minpac_s12mp_premin/selected_chains.list -> ../../../inputs/selected_chains/selected_chains.list
+## and this one scripts/design/pacrot_s12p_nomin/selected_chains.list -> ../../../inputs/selected_chains/selected_chains.list
+
 A procedure for redesigning protein interfaces from existing complexes is
 described.
 
