@@ -16,7 +16,7 @@
 	</TASKOPERATIONS>
 	<MOVERS>
 		Here is a mover to relax the crystal structure
-		<FastRelax name=relax/>
+		FastRelax name=relax/>
 		Here we pack the rotamers without any design
 		<PackRotamersMover name=pack scorefxn=score12 task_operations=repack_only/>
 		Here we pack the rotamers with design. We specify to read the resfile containing the mutation we want to design
@@ -24,7 +24,7 @@
 	</MOVERS>
 	<PROTOCOLS>
 		Here we include the movers and filters in the order we want them to run
-		<Add mover_name=relax/>
+		Add mover_name=relax/>
 		<Add mover_name=pack/>
 		<Add filter_name=dg_wt/>
 		<Add mover_name=mut_and_pack/>

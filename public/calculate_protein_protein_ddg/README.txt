@@ -45,7 +45,7 @@ see:
 
 http://graylab.jhu.edu/Rosetta.Developer.Documentation/all_else/d1/d97/resfiles.html
 
-In rosetta_inputs/ directory, you will find a sample resfile with the 
+In root directory of this demo, you will find a sample resfile with the 
 following content. It ask Rosetta to mutate residue 641 on chain A (E3a ligase) 
 into a tryptophan.
 
@@ -56,8 +56,6 @@ EX1 EX23
 start 
 641 A PIKAA W
 
-
-Before execution, change directory to the rosetta_inputs/ directory.
 
 #Command Line:
 rosetta_scripts.operatingsystem.release -parser:protocol mutation_script.xml
