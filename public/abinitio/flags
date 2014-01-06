@@ -1,7 +1,6 @@
 -in:file:fasta ./input_files/1elwA.fasta
 -in:file:frag3 ./input_files/aa1elwA03_05.200_v1_3
 -in:file:frag9 ./input_files/aa1elwA09_05.200_v1_3
--database ../../rosetta_database
 
 -in:file:native ./input_files/1elw.pdb
 
