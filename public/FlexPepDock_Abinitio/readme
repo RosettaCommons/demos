@@ -1,0 +1,1 @@
+./FlexPepDocking.linuxgccrelease @flags -database <PATH TO ROSETTA 3 DATABASE>

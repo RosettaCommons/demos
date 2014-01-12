@@ -1,0 +1,14 @@
+-s input/1AWR.ex.pdb 
+-native input/1AWR.pdb 
+-lowres_abininitio
+-pep_refine
+-flexpep_score_only
+-ex1 
+-ex2aro 
+-use_input_sc 
+-nstruct 1
+
+-frag3 ../../../frags/frags.3mers.offset
+-flexPepDocking:frag5 ../../../frags/frags.5mers.offset
+-flexPepDocking:frag5_weight 0.25
+
