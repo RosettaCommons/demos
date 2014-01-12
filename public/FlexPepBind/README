@@ -1,0 +1,31 @@
+To run the protocol on each system go the directory and then
+1.run scripts/fpbind_run.sh  ( This will minize the peptide after threading it on the template)
+2.run scripts/fpbind_analysis.sh ( Extract the scores of the minimized structure & save it in score_analysis/ directory)
+
+Ex. 
+
+cd HDAC8/
+scripts/fpbind_run.sh 
+run scripts/fpbind_analysis.sh
+
+output is the score with different scoring term 
+For example in score_analysis/pep_sc_noref
+$cat score_analysis/pep_sc_noref
+-5.100
+-6.715
+-5.489
+-5.124
+-6.765
+-2.972
+-1.996
+-2.625
+-2.065
+0.831
+
+
+pep_sc_noref scores for 10 peptide (top5 binders & bottom 5 are non binders)
+
+
+
+
+
