@@ -1,7 +1,6 @@
 -s input/1AWR.ex.pdb 
 -native input/1AWR.pdb 
--rbMCM 
--torsionsMCM 
+-pep_refine
 -ex1 
 -ex2aro 
 -use_input_sc 
