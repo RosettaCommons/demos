@@ -1,0 +1,10 @@
+-s input/1AWR.ex.pdb 
+-native input/1AWR.pdb 
+-pep_refine
+-ex1 
+-ex2aro 
+-use_input_sc 
+-nstruct 1
+-lowres_preoptimize  
+-peptide_anchor 166
+
