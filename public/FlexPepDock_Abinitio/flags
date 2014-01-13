@@ -10,5 +10,21 @@
 
 -frag3 ../../../frags/frags.3mers.offset
 -flexPepDocking:frag5 ../../../frags/frags.5mers.offset
+#-flexPepDocking:frag9 ../../../frags/frags.9mers.offset
 -flexPepDocking:frag5_weight 0.25
+#-flexPepDocking:frag5_weight 0.1
+
+-mute core.io.database
+-mute core.util.prof
+-mute protocols.jd2.JobDistributor
+-mute protocols.moves.RigidBodyMover
+-mute core.chemical
+-mute core.scoring.etable
+-mute protocols.evalution
+-mute core.pack.rotamer_trials
+-mute protocols.abinitio.FragmentMover
+-mute core.fragment
+-mute protocols.jd2.PDBJobInputter
+-mute core.pack.task
+-mute protocols.moves.MonteCarlo
 
