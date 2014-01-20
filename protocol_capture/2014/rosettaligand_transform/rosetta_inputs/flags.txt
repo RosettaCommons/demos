@@ -1,0 +1,10 @@
+#-database /home/delucasl/experimental_mini/Rosetta/main/database
+
+-ex1 
+-ex2 
+
+-restore_pre_talaris_2013_behavior true
+-nstruct 200
+-in
+    -file
+        -shuffle_screening_jobs

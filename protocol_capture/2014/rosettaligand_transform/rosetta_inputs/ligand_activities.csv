@@ -1,0 +1,4 @@
+ligand_id,tag,value
+string,string,float
+set1_3_ligand.pdb,set1_3,3.28
+set1_8_ligand.pdb,set1_8,4.82
