@@ -24,13 +24,19 @@ def main(argv):
 
     parser.add_option("-d", "--database",
       default="", # processed below
-      help="Path to Rosetta database. (default: $ROSETTA_DB, ../../database)",
+      help="Path to Rosetta database. (default: $ROSETTA_DB, ../main/database)",
     )
 
     parser.add_option("-s", "--source",
       #default=path.join( path.expanduser("~"), "mini"),
-      default= path.join( path.dirname( path.dirname(path.abspath(sys.argv[0])) ), 'source'),
-      help="Directory where Rosetta source repository is (default: ../source/)",
+      default= path.join( path.dirname( path.dirname(path.abspath(sys.argv[0])) ), 'main/source'),
+      help="Directory where Rosetta source repository is (default: ../main/source/)",
+    )
+
+    parser.add_option("--tools",
+      #default=path.join( path.expanduser("~"), "mini"),
+      default= path.join( path.dirname( path.dirname(path.abspath(sys.argv[0])) ), 'tools'),
+      help="Directory where Rosetta tools repository is (default: ../tools/)",
     )
 
     parser.add_option("-j", "--jobs",
@@ -81,11 +87,16 @@ def main(argv):
     options.source = path.abspath( options.source )
     print 'Using Rosetta source dir at:', options.source
 
+    options.tools = path.abspath( options.tools )
+    print 'Using Rosetta tools dir at:', options.tools
+
     if options.database == parser.get_default_values().database:
         if os.environ.get('ROSETTA3_DB') is not None and \
                 path.isdir(os.environ.get('ROSETTA3_DB')):
             options.database = os.environ.get('ROSETTA3_DB')
-        else:  options.database = path.join( path.dirname( path.dirname( path.dirname(path.abspath(sys.argv[0])) ) ), 'database')
+        else:
+            options.database = path.join( path.dirname( path.dirname(path.abspath(sys.argv[0])) ), 'main/database')
+            print options.database
 
         if not path.isdir( options.database ):
             options.database = path.join( path.expanduser("~"), "rosetta_database")
@@ -344,6 +355,7 @@ def generateIntegrationTestGlobalSubstitutionParameters(host=None):
     python = sys.executable
     source = Options.source
     database = Options.database
+    tools = Options.tools
 
     bin = path.join(source, "bin")
     pyapps = path.join(source, "src", "python", "apps")
