@@ -1,0 +1,28 @@
+cd %(workdir)s
+
+# demonstrate using clean_pdb to get a clean version of 3KB8,
+# stripping out the sucrose ligand.  format_converter is also handy
+# for getting structures into either silent files or feature database
+# formats larger runs.
+
+[ -e %(tools)s/protein_tools/scripts/clean_pdb.py ] || exit 1
+cd input_files
+python %(tools)s/protein_tools/scripts/clean_pdb.py 3KB8 ignorechain > ../output_files/clean_pdb.log
+cd ..
+
+[ -e %(bin)s/format_converter.%(binext)s ] || exit 1
+%(bin)s/format_converter.%(binext)s \
+	-database %(database)s \
+	-s input_files/3KB8_ignorechain.pdb \
+	-out:path:all output_files \
+	> output_files/format_converter.log
+
+
+# Demonstrate converting hatm names to be compatible with Rosetta's
+# H-atom naming convention
+
+[ -e %(tools)s/convert_hatm_names.py ] || exit 1
+python %(tools)s/convert_hatm_names.py \
+	--data_dir input_files \
+	--output_dir prepared_input_files \
+	> output_files/convert_hatm_names.log
