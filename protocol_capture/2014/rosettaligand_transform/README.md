@@ -25,7 +25,7 @@ Conformers can be generated with a number of tools, including MOE and OMEGA.  In
 
     bcl.exe molecule:ConformerGeneration -conformers /home/kothiwsk/fragment_search csd_libraries_2012_RF0.1/rotamer_libraries/Nov2013/pdb_refinedsupplemented_lib.sdf.bz2 -ensemble rosetta_inputs/ligands/all_ligands.sdf -conformation_comparer DihedralBins -temperature 1.0 -max_iterations 1000 -top_models 100 -bin_size 30.0 -scheduler PThread 8 -add_h -conformers_single_file conformers
 
-You can use any conformer generation tool you have availible to you for this step. Your generated conformers should be output to a single SDF file.  Every conformer must have 3D coordinates and hydrogens added.  Conformers of the same ligand should have the same name in the SDF file.  For convenience, an example conformer file is provided at rosetta_inputs/ligands/all_ligands.sdf.
+You can use any conformer generation tool you have available to you for this step. Your generated conformers should be output to a single SDF file.  Every conformer must have 3D coordinates and hydrogens added.  Conformers of the same ligand should have the same name in the SDF file.  For convenience, an example conformer file is provided at rosetta_inputs/ligands/all_ligands.sdf.
 
 ### Params file generation
 
@@ -89,7 +89,7 @@ All the scripts needed for this process are in the tools directory in the Rosett
     
         make_params.py -j 2 --database Rosetta/main/database --path_to_params Rosetta/main/source/src/python/apps/public/molfile_to_params.py ligand_db.db3 params/
 
-    In the command line above, the -j option indicates the number of CPU cores which should be used when generating params files. If you are using a multiple core machine, setting -j equal to the number of availible cpu cores. Be sure that the params/ directory exists before running the script.
+    In the command line above, the -j option indicates the number of CPU cores which should be used when generating params files. If you are using a multiple core machine, setting -j equal to the number of available cpu cores. Be sure that the params/ directory exists before running the script.
 
     The script will create a directory params/ containing all params files, pdb files and conformer files.
     
@@ -119,10 +119,13 @@ All the scripts needed for this process are in the tools directory in the Rosett
 
 ## Docking
 
+After following the procedure above to prepare your ligands, you are ready to dock the ligands.  The screening job file produced in the previous step contains the paths to the input proteins and ligands and the paths to the necessary params files.  In this example, the ligand pdbs are already positioned in the ligand binding site. 
+
+RosettaLigand protocols are built in the RosettaScripts framework, a modular architecture for creating RosettaLigand protocols. The rosetta_inputs/xml directory contains all of the rosetta protocols were tested in the manuscript, and any of these xml files can be used with the docking commands described below.  See the comments in the XML files for details.
+
+The Rosetta ligand docking tool should be run as follows:
+    
+
 ## Analysis
-
-# Input files
-
-# Output Files
 
 # Limitations and Caveats
