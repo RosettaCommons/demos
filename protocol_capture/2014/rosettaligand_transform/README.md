@@ -123,9 +123,24 @@ After following the procedure above to prepare your ligands, you are ready to do
 
 RosettaLigand protocols are built in the RosettaScripts framework, a modular architecture for creating RosettaLigand protocols. The rosetta_inputs/xml directory contains all of the rosetta protocols were tested in the manuscript, and any of these xml files can be used with the docking commands described below.  See the comments in the XML files for details.
 
-The Rosetta ligand docking tool should be run as follows:
-    
+The Rosetta ligand docking command should be run as follows:
+
+    rosetta_scripts.default.linuxgccrelease @rosetta_inputs/flags.txt -in:file:screening_job_file rosetta_inputs/job_01.js -parser:protocol rosetta_inputs/tr_repack.xml -out:file:silent results.out
+
+rosetta_inputs/flags.txt contains flags that are always the same regardless of the input file.
+
+This command will dock every protein-ligand binding pair and place the output in the specified silent file.  In the benchmarking case described in the manual, 2000 models were made for each protein-ligand binding pair.  However, in a practical application 200 models would be appropriate.
 
 ## Analysis
+
+### Practical analysis
+
+If this protocol is being used for an application project in which the correct ligand binding position is not known, the lowest scoring model for each protein-ligand binding pair should be selected.  From that point, we recommend filtering by protein-ligand interface score (interface_delta_X), as well as the packstat score\citep{Sheffler:2009bd} which can be computed through the InterfaceAnalyzer mover.  The cutoffs for these filtering steps should depend on the range of scores present, and the number of compounds it is possible to test.
+
+After filtering, the selected compounds should be visually inspected.  If a crystal structure exists with a known binding pose, the predicted binding poses of the unknown compounds should be compared.  Additionally, the overall binding poses of the filtered compounds should be inspected to assess whether or not they make chemical sense.  While this is a qualitative process, human intuition has proven a valuable aid in the drug design process\citep{Voet:2014de}. 
+
+### Benchmarking analysis
+
+Statistical analysis of the benchmarking study provided in this paper was performed using Python. analysis.ipynb is an ipython Notebook (http://ipython.org/notebook.html) containing the code necessary to reproduce these figures, as well as comments and description of that code.  See the iPython documentation for installation and usage instructions. 
 
 # Limitations and Caveats
