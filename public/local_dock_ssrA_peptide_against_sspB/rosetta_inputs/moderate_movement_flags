@@ -6,5 +6,5 @@
 -out:file:scorefile moderate.sc
 -ex1
 -ex2aro
--nstruct 3
+-nstruct 1
 -mute core basic
