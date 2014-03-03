@@ -1,1 +1,0 @@
-<location of mini directory>/src/apps/public/ligand_docking/arls.py --skip-omega --skip-charges -d <locatin of minirosetta_database> -m <location of mini directory> list.txt
