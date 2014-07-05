@@ -1,0 +1,41 @@
+# [1a] Refine (minimize) and score the tandem GA:AG_mismatch NMR PDB structure
+#      under the CS-ROSETTA-RNA all-atom energy function:
+#      --------------------------------------------------
+       ~/Rosetta/rosetta_git/Rosetta/main/source/bin/cs_rosetta_rna.graphics.macosgccrelease \
+           -mode minimize_pdb \
+           -pdb rosetta_inputs/GA-AG_mismatch/1MIS_NMR.pdb \
+           -score:rna_chemical_shift_exp_data rosetta_inputs/GA-AG_mismatch/1MIS_exp_1H_chem_shifts.str \
+           -params_file rosetta_inputs/GA-AG_mismatch/1MIS_params \
+           -analytic_etable_evaluation false
+
+# [1b] Score (but not refine) the tandem GA:AG_mismatch NMR PDB structure under
+#      the hybrid CS-ROSETTA-RNA all-atom energy function:
+#      --------------------------------------------------
+       ~/Rosetta/rosetta_git/Rosetta/main/source/bin/cs_rosetta_rna.graphics.macosgccrelease \
+            -mode score_pdb \
+            -pdb rosetta_inputs/GA-AG_mismatch/1MIS_NMR.pdb \
+            -score:rna_chemical_shift_exp_data rosetta_inputs/GA-AG_mismatch/1MIS_exp_1H_chem_shifts.str \
+            -params_file rosetta_inputs/GA-AG_mismatch/1MIS_params \
+            -analytic_etable_evaluation false
+
+
+# [2a] Refine (minimize) and score the UAAC tetraloop NMR PDB structure under
+#      the CS-ROSETTA-RNA all-atom energy function:
+#      --------------------------------------------
+       ~/Rosetta/rosetta_git/Rosetta/main/source/bin/cs_rosetta_rna.graphics.macosgccrelease \
+           -mode score_pdb \
+           -pdb rosetta_inputs/UAAC_loop/4A4R_NMR.pdb \
+           -score:rna_chemical_shift_exp_data rosetta_inputs/UAAC_loop/4A4R_exp_1H_chem_shifts.str \
+           -params_file rosetta_inputs/UAAC_loop/4A4R_params \
+           -analytic_etable_evaluation false
+
+
+# [2b] Score (but not refine) the UAAC tetraloop NMR PDB structure under the
+#      hybrid CS-ROSETTA-RNA all-atom energy function:
+#      --------------------------------------------------
+       ~/Rosetta/rosetta_git/Rosetta/main/source/bin/cs_rosetta_rna.graphics.macosgccrelease \
+           -mode minimize_pdb \
+           -pdb rosetta_inputs/UAAC_loop/4A4R_NMR.pdb \
+           -score:rna_chemical_shift_exp_data rosetta_inputs/UAAC_loop/4A4R_exp_1H_chem_shifts.str \
+           -params_file rosetta_inputs/UAAC_loop/4A4R_params \
+           -analytic_etable_evaluation false
