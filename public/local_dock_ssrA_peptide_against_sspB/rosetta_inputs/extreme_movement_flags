@@ -1,0 +1,11 @@
+-lowres_preoptimize
+-pep_refine
+-smove_angle_range 12
+-out:prefix extreme_
+-out:path:pdb output_files
+-out:path:score output_files
+-out:file:scorefile extreme.sc
+-ex1
+-ex2aro
+-nstruct 1
+-mute core basic

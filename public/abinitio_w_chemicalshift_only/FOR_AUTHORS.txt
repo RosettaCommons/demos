@@ -1,0 +1,4 @@
+This tutorial should describe how to create protein models using chemical shift fragments
+
+What models should be used as the 'final' answer?
+Final models are selected based on energy and clustering.

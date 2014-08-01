@@ -1,0 +1,16 @@
+fa_atr 0.8
+fa_rep 0.44
+fa_sol 0.75
+fa_intra_rep 0.004
+fa_elec 0.7
+pro_close 1
+hbond_sr_bb 1.17
+hbond_lr_bb 1.17
+hbond_bb_sc 1.17
+hbond_sc 1.1
+dslf_fa13 1.0
+rama 0.2
+omega 0.5
+fa_dun 0.56
+p_aa_pp 0.32
+yhh_planarity 0.5

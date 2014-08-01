@@ -1,0 +1,10 @@
+-lowres_preoptimize
+-pep_refine
+-out:prefix moderate_
+-out:path:pdb output_files
+-out:path:score output_files
+-out:file:scorefile moderate.sc
+-ex1
+-ex2aro
+-nstruct 1
+-mute core basic

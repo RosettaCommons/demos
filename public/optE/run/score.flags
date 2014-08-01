@@ -1,0 +1,4 @@
+# these are the flags used for the (now default) Talaris2013
+# score function.  You wil need to edit the database path.
+
+-database /nas02/home/l/e/leaverfa/GIT/main/database

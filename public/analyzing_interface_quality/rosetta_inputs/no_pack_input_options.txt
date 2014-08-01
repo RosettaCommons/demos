@@ -1,5 +1,5 @@
 #basic rosetta needs
--database /path/to/minirosetta_database #CHANGE ME
+-database /work/buildbot/builds/release/master/stable/database #CHANGE ME
  
 #specific options for InterfaceAnalyzer
 -compute_packstat true #this will actually run rosetta's packstat calculation (slow)

@@ -1,0 +1,7 @@
+-parser:protocol mutation_script.xml
+-s starting_files/1C4Z.pdb
+-ignore_unrecognized_res
+-out:path:pdb output_files
+-out:path:score output_files
+-nstruct 1
+

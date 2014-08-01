@@ -1,0 +1,24 @@
+#!/bin/csh -f
+
+@ num_procs = 27;
+@ i = 0
+
+# clean up old directories if we're running
+# multiple times in the same starting directory
+rm -rf workdir_* weightdir logdir
+
+while ( $i < $num_procs )
+   mkdir workdir_$i
+   #echo "making directory workdir_" $i
+   @ i = $i + 1
+end
+mkdir weightdir
+mkdir logdir
+
+# this is the queue-submission command for LSF
+# your queue-submission command will probably look a little different
+# the critical parts are that:
+# 1. the number of processors is passed in with the -n flag
+# 2. the flags are all contained within the optE_seqprof.flags file and the score.flags file
+
+bsub -n $num_procs -q week -o logdir/optE_log -a mvapich mpirun /nas02/home/l/e/leaverfa/GIT/main/source/bin/optE_parallel.mpi.linuxgccrelease @optE_seqprof.flags @score.flags > submission.log

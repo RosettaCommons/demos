@@ -43,20 +43,20 @@ STEP 0
 read all existing documentation, i.e.
 1. the above cited PLoS ONE paper,
 2. documentation for the enzyme design app
-(http://www.rosettacommons.org/manuals/archive/rosetta3.3_user_guide/app_enzyme_design.html)
+(https://www.rosettacommons.org/manuals/archive/rosetta3.5_user_guide/d6/dbc/enzyme_design.html)
 3. documentation for the match app
-(http://www.rosettacommons.org/manuals/archive/rosetta3.3_user_guide/app_match.html)
+(https://www.rosettacommons.org/manuals/archive/rosetta3.5_user_guide/d7/dfc/match.html)
 4. documentation about the enzdes cstfile format used for both
-matching and enforcing catalytic geometries during design ( http://www.rosettacommons.org/manuals/archive/rosetta3.3_user_guide/app_match_enzdes_cstfile.html)
-
+matching and enforcing catalytic geometries during design
+(https://www.rosettacommons.org/manuals/archive/rosetta3.5_user_guide/d5/dd4/match_cstfile_format.html)
 5. familiarize yourself with how to generate a .params file and rotamer
 library for your ligand of interest, as described in the ligand
 docking app documentation.
-(http://www.rosettacommons.org/manuals/archive/rosetta3.3_user_guide/app_ligand_dock.html,
+(https://www.rosettacommons.org/manuals/archive/rosetta3.5_user_guide/d4/d47/ligand_dock.html,
 section "Preparing the small-molecule ligand for docking")
 
 The purpose of this tutorial is to reenact all steps described in the
-plose one paper.
+PLoS ONE paper.
 
 STEP 1 -- DEFINING A THEOZYME IN ROSETTA FORMAT
 1.1 -- Inputs required:
@@ -166,6 +166,6 @@ rosetta_inputs/mocktim_all_design_scores.out -c
 rosetta_inputs/mocktim_design_selectreqs.txt > selected_designs.txt
 
 
-will output 44 designs from the 3720 produced for the PlosOne
+will output 44 designs from the 3720 produced for the PLoS ONE
 paper. These 44 would then be visually examined for whether any of
 them look promising enough to be expressed and characterized.

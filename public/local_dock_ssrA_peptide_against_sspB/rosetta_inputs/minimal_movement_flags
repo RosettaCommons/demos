@@ -1,0 +1,9 @@
+-pep_refine
+-out:prefix minimal_
+-out:path:pdb output_files
+-out:path:score output_files
+-out:file:scorefile minimal.sc
+-ex1
+-ex2aro
+-nstruct 1
+-mute core basic

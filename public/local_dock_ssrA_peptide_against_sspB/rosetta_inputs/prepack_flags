@@ -1,0 +1,7 @@
+-flexpep_prepack
+-out:path:pdb input_files
+-out:path:score output_files
+-out:file:scorefile prepack.sc
+-ex1
+-ex2aro
+-mute core basic

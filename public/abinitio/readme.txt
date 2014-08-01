@@ -1,15 +1,14 @@
 
 ## Run on linux
-../../bin/AbinitioRelax.linuxgccrelease @flags
+Rosetta/main/source/bin/AbinitioRelax.linuxgccrelease @flags
 
 ## Run on macs
-~/rosetta/rosetta_source/bin/AbinitioRelax.macosgccrelease @flags
+Rosetta/main/source/bin/AbinitioRelax.macosgccrelease @flags
 
 ## flags ##
 -in:file:fasta ./input_files/1elwA.fasta
 -in:file:frag3 ./input_files/aa1elwA03_05.200_v1_3
 -in:file:frag9 ./input_files/aa1elwA09_05.200_v1_3
--database /Users/lucas/rosetta/rosetta_database/
 
 -in:file:native ./input_files/1elw.pdb
 
@@ -29,7 +28,7 @@
 ###### example output in output_files #####
 
 In score.fsc get a score and rms for each model.
-Typical analysis makes a scatter plot of these with rms on x-axis and score on y. 
+Typical analysis makes a scatter plot of these with rms on x-axis and score on y.
 Look for a "funnel" to low energies and rms in a successful ab initio prediction. A failed prediction will not have low rms/energy structures.
 
 ############################################################################
