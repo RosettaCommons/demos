@@ -2,5 +2,8 @@
 -nstruct 3
 -ex1:level 4
 -dump
--score:weights rna_hires.wts
+-score:weights farna/rna_hires.wts
 -mute core.io.database
+-analytic_etable_evaluation false
+-score:rna_torsion_potential rd2008
+-restore_pre_talaris_2013_behavior
