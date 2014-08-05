@@ -18,7 +18,24 @@ Ab initio and comparative modeling of biopolymers (RNA, protein, protein/RNA) of
 ### running #########
 # Example Rosetta Command Line:
 
-stepwise -in:file:fasta rosetta_inputs/1zih.fasta -s rosetta_inputs/start_helix.pdb  -out:file:silent swm_rebuild.out
+stepwise -in:file:fasta rosetta_inputs/1zih.fasta -s rosetta_inputs/start_helix.pdb  -out:file:silent swm_rebuild.out -extra_min_res 4 9
+
+Currently, we are mainly using a scorefunction with a more stringent torsional and repulsive potential, enabled by flags '-score:rna_torsion_potential RNA11_based_new -chemical::enlarge_H_lj'. These may become default soon (in 2015 onwards), after further tests.
+
+To get out models:
+
+extract_pdbs -silent swm_rebuild.out 
+
+(Or use extract_lowscore_decoys.py which can be installed via tools/rna_tools/.)
+
+# Example Rosetta Command Line for design
+Simply use a fasta file that has n's at positions you want to design.
+
+stepwise -in:file:fasta rosetta_inputs/NNNN.fasta -s rosetta_inputs/start_helix.pdb  -out:file:silent swm_design.out -extra_min_res 4 9
+
+
+
+
 
 
 
