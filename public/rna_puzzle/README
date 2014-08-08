@@ -48,9 +48,11 @@ Done!
 #############################################
 3. Build models of a sub-piece denovo.
 
-In step3_farfar/, there's a file called README_SETUP which has the command to setup the Rosetta job for motifs between H2 and H4, using our starting H2 and H4 helices as fixed boundary conditions. 
+In step3_farfar/, we will see how to setup the Rosetta job for motifs between H2 and H4, using our starting H2 and H4 helices as fixed boundary conditions. 
 
-For completeness, the command there is:
+There is currently a wrapper script that sets up the job for the rna_denovo executable, which actually runs fragment assembly of RNA with full atom refinement (FARFAR) is not yet equipped to map numbers from our full modeling problem into the subproblem. We have to create it a little sub-problem and map all the residue numberings into the local probel.
+
+There's a file called README_SETUP which has the wrapper command to setp the job. For completeness, the command there is:
 
 rna_denovo_setup.py -fasta RNAPZ11.fasta \
     -secstruct_file RNAPZ11_OPEN.secstruct \
@@ -63,14 +65,23 @@ rna_denovo_setup.py -fasta RNAPZ11.fasta \
 You don't need to supply a native if you don't have it -- just useful
 to compute RMSDs as a reference.
 
-You can run thr command by typing:
+You can run the command by typing:
 
-source README_SETUP
+ source README_SETUP
 
 Then try this:
 
-source README_FARFAR
+ source README_FARFAR
 
+Example output after a couple of structures is in example_output/.
+
+Extract 10 lowest energy models:
+
+extract_lowenergy_decoys.py H2H3H4_run1b_openH3_SOLUTION1.out 10
+
+Inspect in pymol.
+
+(For an automated workflow, you can also cluster these runs and just carry forward the top 5 clusters.)
 
 #############################################
 4. Graft together models
