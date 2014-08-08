@@ -1,6 +1,0 @@
-# Input secstruct ((.......((( )))......))
-CUTPOINT_OPEN  12
-STEM  PAIR 1 23 W W A  PAIR 2 22 W W A 
-STEM  PAIR 10 15 W W A  PAIR 11 14 W W A  PAIR 12 13 W W A 
-OBLIGATE  PAIR 2 22 W W X 
-OBLIGATE  PAIR 12 13 W W X 
