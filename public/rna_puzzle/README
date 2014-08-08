@@ -1,0 +1,36 @@
+### General Information ##################
+# Your name:
+Rhiju Das
+rhiju@stanford.edu
+
+# Protocol Name:
+StepWise Monte Carlo (examples for RNA)
+
+# Brief Description:
+
+Steps to build a model of a complex RNA fold
+
+# Abstract
+
+This code allows build-up of three-dimensional de novo models of RNAs of sizes up to ~300 nts, given secondary structure and experimental constraints. It can be carried out reasonably automatically, but human curation of submodels along the build-up path may improve accuracy. A fully automated pipeline is also in preparation.
+
+### running #########
+# Example Rosetta Command Line:
+
+
+1. Make helices
+rna_helix.py  -o H2.pdb -seq cc gg -resnum 14-15 39-40
+
+2. Use threading to build sub-pieces
+This is for a UUCG motif:
+
+Download 1f7y.pdb from 
+http://pdb.org/pdb/explore/explore.do?structureId=1f7y
+
+Slice out the motif of interest
+pdbslice.py  1f7y.pdb  -subset B:31-38 uucg_
+
+Thread it into our actual sequence.
+
+
+
