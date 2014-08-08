@@ -17,9 +17,10 @@ This code allows build-up of three-dimensional de novo models of RNAs of sizes u
 ### running #########
 # Example Rosetta Command Line:
 
-
 1. Make helices
+
 rna_helix.py  -o H2.pdb -seq cc gg -resnum 14-15 39-40
+replace_chain_inplace.py  H2.pdb 
 
 2. Use threading to build sub-pieces
 This is for a UUCG motif:
