@@ -23,15 +23,37 @@ rna_helix.py  -o H2.pdb -seq cc gg -resnum 14-15 39-40
 replace_chain_inplace.py  H2.pdb 
 
 2. Use threading to build sub-pieces
-This is for a UUCG motif:
+
+In the problem above, there is a piece which is a well-recognized motif, 
+the UUCG apical loop. Let's model it by threading from an exemplar
+of the motif from the crystallographic database. There is one here:
 
 Download 1f7y.pdb from 
 http://pdb.org/pdb/explore/explore.do?structureId=1f7y
 
-Slice out the motif of interest
+Slice out the motif of interest:
 pdbslice.py  1f7y.pdb  -subset B:31-38 uucg_
 
-Thread it into our actual sequence.
+Thread it into our actual sequence:
+rna_thread -s uucg_1f7y.pdb  -seq ccuucggg -o uucg_1f7y_thread.pdb
+
+Let's get the numbering to match our actual test case:
+
+renumber_pdb_in_place.py uucg_1f7y_thread.pdb 24-31
+
+Done!
+
+3. Build models of a sub-piece denovo.
+
+
+
+4. Graft together models
+
+rna_graft -s H2H3H4_run1b_openH3_SOLUTION1.pdb  uucg_1f7y_thread.pdb  -o graft_temp.pdb
+rna_graft -s graft_temp.pdb H1H2_run2_SOLUTION1.pdb  -o full_graft.pdb
+
+
+
 
 
 
