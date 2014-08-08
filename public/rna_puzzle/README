@@ -48,9 +48,28 @@ Done!
 #############################################
 3. Build models of a sub-piece denovo.
 
-In step3_farfar/
+In step3_farfar/, there's a file called README_SETUP which has the command to setup the Rosetta job for motifs between H2 and H4, using our starting H2 and H4 helices as fixed boundary conditions. 
+
+For completeness, the command there is:
+
+rna_denovo_setup.py -fasta RNAPZ11.fasta \
+    -secstruct_file RNAPZ11_OPEN.secstruct \
+   -working_res 14-25 30-40 \
+   -s H2.pdb H4.pdb \
+   -fixed_stems \
+   -tag H2H3H4_run1b_openH3_SOLUTION1 \
+   -native example1.pdb 
+
+You don't need to supply a native if you don't have it -- just useful
+to compute RMSDs as a reference.
+
+You can run thr command by typing:
 
 source README_SETUP
+
+Then try this:
+
+source README_FARFAR
 
 
 #############################################
