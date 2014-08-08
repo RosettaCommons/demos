@@ -14,7 +14,11 @@ Steps to build a model of a complex RNA fold
 
 This code allows build-up of three-dimensional de novo models of RNAs of sizes up to ~300 nts, given secondary structure and experimental constraints. It can be carried out reasonably automatically, but human curation of submodels along the build-up path may improve accuracy. A fully automated pipeline is also in preparation.
 
-### running #########
+# More docs
+This documentation (and more) are available in the on-line docs at:
+
+https://www.rosettacommons.org/docs/latest/rna-denovo-setup.html
+
 # Example Rosetta Command Lines:
 
 #############################################
@@ -75,21 +79,29 @@ Then try this:
 
 Example output after a couple of structures is in example_output/.
 
+[You should probably do a full cluster run -- some tools are available for
+ condor, qsub, slurm queueing systems, documented here:
+
+https://www.rosettacommons.org/docs/latest/RNA-tools.html
+
+]
+
 Extract 10 lowest energy models:
 
 extract_lowenergy_decoys.py H2H3H4_run1b_openH3_SOLUTION1.out 10
 
 Inspect in pymol.
-
 (For an automated workflow, you can also cluster these runs and just carry forward the top 5 clusters.)
 
 #############################################
-4. Graft together models
+4. Graft together models for the full-length RNA
+
+These were threading and FARFAR solutions that we liked for each submotif -- now we can graft:
 
 rna_graft -s H2H3H4_run1b_openH3_SOLUTION1.pdb  uucg_1f7y_thread.pdb  -o graft_temp.pdb
 rna_graft -s graft_temp.pdb H1H2_run2_SOLUTION1.pdb  -o full_graft.pdb
 
-
+Done! 
 
 
 
