@@ -24,11 +24,15 @@ https://www.rosettacommons.org/docs/latest/rna-denovo-setup.html
 #############################################
 1. Make helices
 
+Example in step1_helix/
+
 rna_helix.py  -o H2.pdb -seq cc gg -resnum 14-15 39-40
 replace_chain_inplace.py  H2.pdb 
 
 #############################################
 2. Use threading to build sub-pieces
+
+Example in step2_thread/
 
 In the problem above, there is a piece which is a well-recognized motif, 
 the UUCG apical loop. Let's model it by threading from an exemplar
@@ -54,9 +58,9 @@ Done!
 
 In step3_farfar/, we will see how to setup the Rosetta job for motifs between H2 and H4, using our starting H2 and H4 helices as fixed boundary conditions. 
 
-There is currently a wrapper script that sets up the job for the rna_denovo executable, which actually runs fragment assembly of RNA with full atom refinement (FARFAR) is not yet equipped to map numbers from our full modeling problem into the subproblem. We have to create it a little sub-problem and map all the residue numberings into the local probel.
+There is currently a wrapper script that sets up the job for the rna_denovo executable, which actually runs fragment assembly of RNA with full atom refinement (FARFAR) is not yet equipped to map numbers from our full modeling problem into the subproblem. We have to create it a little sub-problem and map all the residue numberings into the local problem.
 
-There's a file called README_SETUP which has the wrapper command to setp the job. For completeness, the command there is:
+There's a file called README_SETUP which has the wrapper command to set up the job. For completeness, the command there is:
 
 rna_denovo_setup.py -fasta RNAPZ11.fasta \
     -secstruct_file RNAPZ11_OPEN.secstruct \
@@ -95,6 +99,8 @@ Inspect in pymol.
 
 #############################################
 4. Graft together models for the full-length RNA
+
+Example in step4_graft/:
 
 These were threading and FARFAR solutions that we liked for each submotif -- now we can graft:
 
