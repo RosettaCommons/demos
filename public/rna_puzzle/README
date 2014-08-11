@@ -104,8 +104,7 @@ Example in step4_graft/:
 
 These were threading and FARFAR solutions that we liked for each submotif -- now we can graft:
 
-rna_graft -s H2H3H4_run1b_openH3_SOLUTION1.pdb  uucg_1f7y_thread.pdb  -o graft_temp.pdb
-rna_graft -s graft_temp.pdb H1H2_run2_SOLUTION1.pdb  -o full_graft.pdb
+rna_graft -s H2H3H4_run1b_openH3_SOLUTION1.pdb  uucg_1f7y_thread.pdb  H1H2_run2_SOLUTION1.pdb -o full_graft.pdb
 
 Done! 
 
