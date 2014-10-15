@@ -1,0 +1,6 @@
+rna_denovo_setup.py -fasta fasta2 -secstruct_file secstruct2 \
+ -tag glycine_rbsw_kinkturn \
+ -working_res 1-167 \
+ -s slice_kinkturn_3P49_native_RNA.pdb \
+ -cycles 20000 \
+ -ignore_zero_occupancy false \
