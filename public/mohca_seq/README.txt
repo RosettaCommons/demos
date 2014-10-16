@@ -222,24 +222,31 @@ silent_file_sort_and_select.py [glycine_riboswitch_min.out] -select [1-60] -o [g
 
 # [27]	Cluster models:
 cluster -in:file:silent glycine_riboswitch_min_sort.out -in:file:fullatom -out:file:silent_struct_type binary -export_only_low false -out:file:silent cluster.out -cluster:radius [radius]
-# Select a radius so that 1/6 of the models in the input sorted silent file are in the largest cluster of models.
+# Select a radius so that 1/6 of the models in the input sorted silent file are in the largest cluster (cluster0) of models.
 
-# [28]	Cut out a segment of a model:
+# [28]	Copy clustered .out file to a new file to isolate cluster0:
+cp cluster.out cluster0.out
+
+# [29]	Extract lowest-energy models to .pdb files for viewing in PyMOL:
+extract_lowscore_decoys.py cluster0.out [15] –no_replace_names
+# Input the number of models in cluster0. The -no_replace_names tag preserves the filenames of the cluster members to reflect their order in the cluster, rather than renaming them in order of Rosetta energy score.
+
+# [30]	Cut out a segment of a model:
 pdbslice.py [3p49_native_RNA.pdb] -subset [2-72 81-159] [slice_kinkturn_]
 # Here, the 3P49 crystal structure includes an additional G at position 0, which must be excised to allow the leader sequence to be added to the 5´ end, and the internal linker that forms the kink-turn motif with the leader sequence is also excised to allow remodeling.
 
-# [29]	Renumber a PDB:
+# [31]	Renumber a PDB:
 renumber_pdb_in_place.py [slice_kinkturn_3P49_native_RNA.pdb] [10-80 89-167]
 # Here, the PDB is renumbered to allow the leader sequence to be added at the 5´ end.
 
-# [F4]	Example revised FASTA file (rosetta_inputs/fasta2):
+# [F4]	Example revised FASTA file:
 >3P49_RNA_kinkturn.pdb
 ucggaugaagauaugaggagagauuucauuuuaaugaaacaccgaagaaguaaaucuuucagguaaaaaggacucauauuggacgaaccucuggagagcuuaucuaagagauaacaccgaaggagcaaagcuaauuuuagccuaaacucucagguaaaaggacggag
 
-# [F5]	Example revised secondary structure file (rosetta_inputs/secstruct2):
+# [F5]	Example revised secondary structure file:
 (((......((((((((......((((((....)))))).(((...((((.....))))..)))........))))))))...)))..(((((......((((((...)))))).(((...((((....((((....)))).....))))..))).......)))))
 
-# [30]	Example README_SETUP for de novo remodeling with a sliced input PDB:
+# [32]	Example README_SETUP for de novo remodeling with a sliced input PDB:
 rna_denovo_setup.py -fasta fasta2 -secstruct_file secstruct2 \
  -fixed_stems \
  -tag glycine_rbsw_kinkturn \
@@ -248,7 +255,7 @@ rna_denovo_setup.py -fasta fasta2 -secstruct_file secstruct2 \
  -cycles 20000 \
  -ignore_zero_occupancy false \
 
-# [31]	Thread an RNA sequence into a template structure:
+# [33]	Thread an RNA sequence into a template structure:
 rna_thread –in:file:fasta [fasta] -in:file:s [template PDB] –o [output PDB]
 # The first input is a FASTA file containing two RNA sequences: 1. the sequence of interest, onto which the structure of the template sequence will be threaded, and 2. the template sequence. The template sequence should be truncated to the regions into which the sequence of interest will be threaded; use hyphens (‘-’) to align the template sequence with the target sequence in the FASTA file. The second input, the template structure in PDB format, should be similarly truncated, using pdbslice.py if necessary. If the template PDB is not correctly formatted for Rosetta modeling, use make_rna_rosetta_ready.py to reformat it. The last input is the name of the output PDB.
 Further documentation for RNA threading in Rosetta can be found at the RosettaCommons (https://www.rosettacommons.org/docs/latest/rna-thread.html).
