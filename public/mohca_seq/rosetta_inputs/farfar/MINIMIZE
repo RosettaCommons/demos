@@ -1,1 +1,0 @@
-parallel_min_setup.py -silent glycine_riboswitch.out -tag glycine_riboswitch_min -proc 96 -nstruct 2000 -out_folder min_out -out_script min_cmdline "-native glycine_riboswitch_3p49_native_RNA.pdb -cst_fa_file glycine_riboswitch_constraints -params_file glycine_riboswitch.params -ignore_zero_occupancy false -skip_coord_constraints"

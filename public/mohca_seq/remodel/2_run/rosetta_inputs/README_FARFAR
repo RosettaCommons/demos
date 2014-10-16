@@ -1,0 +1,1 @@
+/Users/clarencecheng/Rosetta/main/source/bin/rna_denovo -nstruct 500 -params_file glycine_rbsw_kinkturn.params -fasta glycine_rbsw_kinkturn.fasta  -out:file:silent glycine_rbsw_kinkturn.out -include_neighbor_base_stacks  -minimize_rna true -s slice_kinkturn_3P49_native_RNA.pdb -input_res  10-80 89-167 -cycles 20000 -ignore_zero_occupancy false -output_res_num  1-167

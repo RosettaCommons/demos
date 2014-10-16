@@ -1,0 +1,15 @@
+# [33]	Example README_SETUP for de novo remodeling with a sliced input PDB:rna_denovo_setup.py -fasta fasta2 -secstruct_file secstruct2 \ -fixed_stems \ -tag glycine_rbsw_kinkturn \ -working_res 1-167 \ -s slice_kinkturn_3P49_native_RNA.pdb \ -cycles 20000 \ -ignore_zero_occupancy false \# As in other examples, generate README_FARFAR using:
+source README_SETUP
+
+# Test README_FARFAR locally using:
+source README_FARFAR
+# then cancel
+
+# Submit to cluster using:
+rosetta_submit.py README_FARFAR out 96 16
+# or an appropriate number of clusters and walltime (in hours)
+
+# Concatenate models from the output folder using:
+easy_cat.py out
+
+# Extract lowest-energy models using extract_lowscore_decoys.py

@@ -1,0 +1,2 @@
+# [29]	Copy clustered .out file to a new file to isolate cluster0:cp cluster.out cluster0.out# Use a text editor to isolate models from cluster0 (c.0.* in cluster0.out)
+# [30]	Extract lowest-energy models to .pdb files for viewing in PyMOL:extract_lowscore_decoys.py cluster0.out 15 –no_replace_names# Input the number of models in cluster0. The -no_replace_names tag preserves the filenames of the cluster members to reflect their order in the cluster, rather than renaming them in order of Rosetta energy score.

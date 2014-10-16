@@ -1,0 +1,11 @@
+# [4]	Prepare native/reference structure for Rosetta, if available:
+make_rna_rosetta_ready.py 3P49.pdb
+# Outputs reformatted native model as ‘3p49_RNA.pdb’, to be input to README_SETUP. In the glycine riboswitch example presented here, the 3P49 crystal structure includes a protein-binding loop that is not part of the construct used for de novo modeling. Command lines [5] through [14] show how to replace the extraneous residues with a tetraloop matching the experimentally probed construct using a short FARFAR modeling run.
+
+# [5]	Cut out a segment of a model:
+pdbslice.py 3p49_RNA.pdb -subset 1-21 36-169 slice_
+# The first input is the model from which you want to excise regions of interest. The second input is the range of nucleotides that you want to keep in your model. The third input is the prefix that will be added to the beginning of the input model’s filename. Here, the protein-binding loop is excised by specifying the range of residues given in the command line.
+
+# [6]	Renumber a PDB:
+renumber_pdb_in_place.py slice_3p49_RNA.pdb 1-21 26-159
+# The first input is the PDB file to be renumbered and the second input is the desired final ranges of sequence positions. Gaps may be intentionally left in the final sequence range to allow for remodeling in the middle of the RNA. Here, a UUUA tetraloop will be built in place of the excised protein-binding loop.

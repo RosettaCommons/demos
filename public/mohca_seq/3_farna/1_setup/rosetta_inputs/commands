@@ -1,0 +1,30 @@
+## [15]	Example README_SETUP:
+#rna_denovo_setup.py -fasta fasta -secstruct_file secstruct \
+# -fixed_stems \
+# -no_minimize \
+# -tag glycine_riboswitch \
+# -working_res 1-159 \
+# -native 3p49_native_RNA.pdb \
+# -cst_file constraints \
+# -staged_constraints \
+# -cycles 20000 \
+# -ignore_zero_occupancy false \
+# -silent helix0.out helix1.out helix2.out helix3.out helix4.out helix5.out helix6.out helix7.out \
+# -input_silent_res 2-9 65-72 16-21 26-31 33-35 54-56 39-42 48-51 81-85 155-159 92-97 101-106 108-110 145-147 114-117 139-142 \
+
+## Options:
+##	-fasta [fasta]	input FASTA file
+##	-secstruct_file [secstruct]	input secondary structure file
+##	-fixed_stems	specify whether helices should be fixed
+##	-no_minimize	specify not to perform full-atom refinement; minimization will be performed in the next stage of modeling
+##	-tag	name for output files
+##	-working_res	specify range of residues to model
+##	-native [native.pdb]	input reference or native model; used for benchmarking cases and will return rms calculations for all models (see command line [5])
+##	-cst_file [constraints]	input file with pseudoenergy constraints
+##	-staged_constraints	apply constraints
+##	-ignore_zero_occupancy false	
+##	-silent [helix0.out helix1.out …]	input silent files with pre-assembled helices
+##	-input_silent_res [2-9 65-72 16-21 26-31 …]		specify position ranges of helices in silent files
+
+# [16]	Generate command line for FARFAR modeling:
+source README_SETUP

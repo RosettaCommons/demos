@@ -1,6 +1,0 @@
-rna_denovo_setup.py -fasta fasta -secstruct_file secstruct \
- -tag native \
- -working_res 1-159 \
- -s slice_3p49_RNA.pdb \
- -cycles 20000 \
- -ignore_zero_occupancy false \
