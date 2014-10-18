@@ -1,20 +1,29 @@
-Rosetta Membrane Framework: Membrane Protien-Protein Docking Application
-===================================================================================
+Rosetta Membrane Framework Application: Membrane Protein-Protein Docking
+===========================================================================
 
-## Data
-Author: Rebecca F. Alford (rfalford12@gmail.com)
+### About this Protocol Capture
+Author: Julia Koehler Leman (rfalford12@gmail.com)
 Corresponding PI: Jeffrey J. Gray (jgray@jhu.edu)
-Last Updated: September 2014
-Rosetta Revision #<XXX>
-Citation: Modeling membrane proteins in Rosetta 3
+Last Updated: October 2014
 
-Corresponding Documentation Link: 
+Rosetta Revision #<XXX>
+
+Publication describing the method: 
+Alford RF, Koehler Leman JK, Weitzner BW,..., Gray JJ (2014/5)
+A general framework in Rosetta 3 for modeling and design of membrane proteins
+PLoS ONE (submitted)
+
+Documentation Link: <@jkleman insert the link here>  
+
+### Description
+
+### Executable/Script
 
 ## Application Description
 
 ## Executable/Script
 
-## Generating Inputs
+## Generating Inputs (Copied from the other sections so we don't have to write it 5x!)
 Modeling membrane proteins in Rosetta requires 2 inputs: (1) a spanning topology file (required) 
 and (2) a lips file (optional).
 
@@ -43,4 +52,9 @@ This demo contains a script directory with:
 ## Running the Application
 
 ## Example Outputs
+
+## References
+(1) Rosetta dock
+(2) Membrane energy functions
+(3) …? 
 

@@ -50,10 +50,10 @@ def compute_ddG( pose, sfxn, resnum, aa ):
 ## @brief Main - Add Membrane to Pose, Compute ddG
 def main( argv ):
 
-    rosetta.init( extra_options="-membrane_new:setup:spanfiles 1qd6_tr.span -run:constant_seed" )
+    rosetta.init( extra_options="-membrane_new:setup:spanfiles inputs/1qd6_tr.span -run:constant_seed -in:ignore_unrecognized_res" )
 
     # Load Pose, & turn on the membrane
-    pose = pose_from_pdb( "1qd6_tr_native.pdb" );
+    pose = pose_from_pdb( "inputs/1qd6.pdb" );
     sfxn = create_score_function( "fa_menv_smooth_2014" );
     
     # Add Membrane to Pose

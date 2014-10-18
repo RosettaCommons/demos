@@ -1,22 +1,29 @@
-Rosetta Membrane Framework: Computing ddG of Mutation 
-======================================================
+Rosetta Membrane Framework Application: Membrane ddG
+===========================================================================
 
-## Data
+### About this Protocol Capture
 Author: Rebecca F. Alford (rfalford12@gmail.com)
 Corresponding PI: Jeffrey J. Gray (jgray@jhu.edu)
-Last Updated: September 2014
-Rosetta Revision #<XXX>
-Citation: Modeling membrane proteins in Rosetta 3
+Last Updated: October 2014
 
-Corresponding Documentation Link: 
+Rosetta Revision #57363
 
-## Application Description
-This application will compute the ddG of a single point mutation in the membrane using the
-Rosetta membrane framework. In this demo, we include a PyRosetta script for general use, and 
-the specific script used to replicate results for an example case, OmpLA (1qd6)
+Publication describing the method: 
+Alford RF, Koehler Leman JK, Weitzner BD, Gray JJ (2014)
+A general framework in Rosetta 3 for modeling and design of membrane proteins
+PLoS ONE (in preparation) 
 
-## Executable/Script
-The main script for running membrane ddG application is compute_memb_ddG.py
+### Description
+Measuring free energy changes due to mutation can inform our understand of membrane protein stability and
+variation. This application uses tools from Rosetta Design and the membrane framework to compute ddG of 
+mutation in membrane proteins. Mutations are applied using the packer task and structures are rescored
+using the high resolution membrane scoring functions. Resulting ddGs are printed to standard output. This
+script mutates residue 181 to all 20 canonical AAs and can be easily adapted to compute ddGs for other
+mutations. 
+
+### Executable/Script
+The membrane ddG application is implemented as a python script in PyRosetta. The script
+included in this directory is compute_memb_ddG.py
 
 ## Generating Inputs
 Modeling membrane proteins in Rosetta requires 2 inputs: (1) a spanning topology file (required) 
@@ -37,7 +44,6 @@ and (2) a lips file (optional).
     cd mpframework-ddG/scripts/
     ./predict_lips.pl <fasta file> <spanfile> /path/to/blastpgp /path/to/nrdb alignblast.pl
 
-
 ## Useful Scripts
 This demo contains a script directory with: 
   - octopus2span.pl: Convert OCTOPUS topology prediction to Rosetta spanfile format
@@ -46,14 +52,14 @@ This demo contains a script directory with:
     predict_lips.pl)
 
 ## Running the Application
-To run the membrane ddG script, run the following commandline: 
+To run the membrane ddG script for this example case, run the python script (no arguments)
 
-./compute_memb_ddG.py -pdb <pdbfile> -spanfile <spanfile> -position <residue-position> -new_aa <amino acid 3-letter code>
-
-To run the membrane ddG script for OmpLA, run the following commandline: 
-./compute_OmpLA_ddG.py -pdb input_files/1qd6.pdb - spanfile input_files/1qd6.span
+./compute_ompLA_ddG.py
 
 ## Example Outputs
-The PyRosetta script will write a list of mutations and ddG values to a textfile called ddG.out. An 
-exmaple output can be seen in the output/ directory of this demo. 
+The PyRosetta script will write a list of mutations and ddG values to standard output. 
 
+### References
+1. Chaudhury S, Lyskov S, Gray JJ (2010) PyRosetta: a script-based interface for implementing molecular modeling algorithms using Rosetta.
+
+2.  Moon CP, Fleming KG (2011) Side-chain hydrophobicity scale derived from transmembrane protein folding into lipid bilayers. Proc Natl Acad Sci. 
