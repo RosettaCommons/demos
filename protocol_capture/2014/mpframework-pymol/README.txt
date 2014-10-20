@@ -7,8 +7,7 @@ Corresponding PI: Jeffrey J. Gray (jgray@jhu.edu)
 Last Updated: October 2014
 
 Special acknowledgement to Evan Baugh for assistance working with the PyMOL Mover. 
-
-Rosetta Revision: #57363
+Rosetta Revision: #57364
 
 Publication describing the method: 
 Alford RF, Koehler Leman JK, Weitzner BD, Gray JJ (2014)
@@ -52,7 +51,14 @@ flags                                  descriptions
 -show_simulation_in_pymol 0			   Use the PyMOL viewer to visualize membrane planes for structures
 -keep_pymol_simulation_history 1       Keep pymol frames for making movies/replaying simulations (optional)
 
-2. Command line
+2. Startup the PyMOL PyRosetta Session: 
+  - Open a new session of PyMOL 
+  - Run this PyMOLPyRosettaServer.py script located in /src/python/bindings
+
+  You should see a message in the PyMOL terminal window indicating the server
+  script has initialized successfully. 
+
+3. Run this application (or other apps) from the commandline
 
 ./view_membrane_protein.<exe> -database /path/to/my/rosettadb @flags
 

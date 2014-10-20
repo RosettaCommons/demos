@@ -1,3 +1,4 @@
+
 Rosetta Membrane Framework Application: Symmetric Protein-Protein Docking
 ===========================================================================
 
@@ -8,7 +9,7 @@ Last Updated: October 2014
 
 Special acknowledgement to Frank DiMaio for collaboration. 
 
-Rosetta Revision #57363
+Rosetta Revision #57364
 
 Publication describing the method: 
 Alford RF, Koehler Leman JK, Weitzner BD, Gray JJ (2014)
