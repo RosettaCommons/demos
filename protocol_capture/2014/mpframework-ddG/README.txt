@@ -6,7 +6,7 @@ Author: Rebecca F. Alford (rfalford12@gmail.com)
 Corresponding PI: Jeffrey J. Gray (jgray@jhu.edu)
 Last Updated: October 2014
 
-Rosetta Revision #57363
+Rosetta Revision #57364
 
 Publication describing the method: 
 Alford RF, Koehler Leman JK, Weitzner BD, Gray JJ (2014)
