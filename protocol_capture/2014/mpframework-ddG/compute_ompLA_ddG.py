@@ -22,7 +22,7 @@
 from rosetta import *
 
 # tools
-import mutate
+import ddG
 import sys, os
 import commands
 
@@ -31,21 +31,6 @@ import rosetta.protocols.membrane
 
 ## Default Values
 repack_radius = 0.0
-
-## @brief Compute ddG of mutation in a protein at specified residue and AA position
-def compute_ddG( pose, sfxn, resnum, aa ): 
-
-    # Score Native Pose
-    native_score = sfxn( pose )
-
-    # Perform Mutation at residue <resnum> to amino accid <aa>
-    mutated_pose = mutate.mutate_residue( pose, resnum, aa, repack_radius, sfxn )
-
-    # Score Mutated Pose
-    mutant_score = sfxn( mutated_pose )
-
-    # Print resulting ddG
-    return mutant_score - native_score
 
 ## @brief Main - Add Membrane to Pose, Compute ddG
 def main( argv ):
