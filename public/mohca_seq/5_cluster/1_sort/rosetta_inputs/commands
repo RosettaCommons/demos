@@ -1,0 +1,1 @@
+# [27]	Sort models by Rosetta energy and select a subset for clustering:silent_file_sort_and_select.py glycine_riboswitch_min.out -select 1-60 -o glycine_riboswitch_min_sort.out# The range of models under the -select tag includes 0.5% of the total number of FARNA models generated previously. Outputs a new silent file containing selected number of lowest-energy models.

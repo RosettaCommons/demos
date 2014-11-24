@@ -1,0 +1,12 @@
+# cmdlines:
+source helix0.RUN
+source helix1.RUN
+source helix2.RUN
+source helix3.RUN
+source helix4.RUN
+source helix5.RUN
+source helix6.RUN
+source helix7.RUN
+source helix8.RUN
+# cmdlines args for FARFAR:
+# -silent helix0.out helix1.out helix2.out helix3.out helix4.out helix5.out helix6.out helix7.out helix8.out  -input_silent_res 2-9 65-72 16-21 26-31 33-35 54-56 39-42 48-51 81-85 155-159 92-97 101-106 108-110 145-147 114-117 139-142 122-125 130-133 

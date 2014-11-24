@@ -1,0 +1,7 @@
+rna_denovo_setup.py -fasta RNAPZ11.fasta \
+    -secstruct_file RNAPZ11_OPEN.secstruct \
+   -working_res 14-25 30-40 \
+   -s H2.pdb H4.pdb \
+   -fixed_stems \
+   -tag H2H3H4_run1b_openH3_SOLUTION1 \
+   -native example1.pdb 

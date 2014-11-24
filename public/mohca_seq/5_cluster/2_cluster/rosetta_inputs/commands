@@ -1,0 +1,1 @@
+# [28]	Cluster models:cluster -in:file:silent glycine_riboswitch_min_sort.out -in:file:fullatom -out:file:silent_struct_type binary -export_only_low false -out:file:silent cluster.out -cluster:radius 6.7# Select a radius so that 1/6 of the models in the input sorted silent file are in the largest cluster (cluster0) of models.

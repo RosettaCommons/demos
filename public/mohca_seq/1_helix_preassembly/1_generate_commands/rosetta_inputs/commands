@@ -1,0 +1,2 @@
+# [1]	Generate command lines for helix pre-assembly:
+helix_preassemble_setup.py -secstruct secstruct -fasta fasta

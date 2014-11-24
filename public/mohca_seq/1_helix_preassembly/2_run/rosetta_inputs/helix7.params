@@ -1,0 +1,4 @@
+# Input secstruct (((( ))))
+CUTPOINT_OPEN  4
+STEM  PAIR 1 8 W W A  PAIR 2 7 W W A  PAIR 3 6 W W A  PAIR 4 5 W W A 
+OBLIGATE PAIR 1 8 W W A 

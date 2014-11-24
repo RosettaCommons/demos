@@ -1,0 +1,1 @@
+/Users/clarencecheng/Rosetta/main/source/bin/rna_denovo -nstruct 100 -params_file helix7.params -fasta helix7.fasta  -out:file:silent helix7.out -include_neighbor_base_stacks  -minimize_rna true -rna::corrected_geo -score:rna_torsion_potential RNA11_based_new -chemical::enlarge_H_lj -score:weights stepwise/rna/rna_helix -cycles 1000 -output_res_num  114-117 139-142

@@ -1,0 +1,40 @@
+## [7]	Example README_SETUP for de novo remodeling with a sliced input PDB:
+#rna_denovo_setup.py -fasta fasta -secstruct_file secstruct \
+# -tag native \
+# -working_res 1-159 \
+# -s slice_3p49_RNA.pdb \
+# -cycles 20000 \
+# -ignore_zero_occupancy false \
+## Options:
+##	-fasta [fasta]	input FASTA file
+##	-secstruct_file [secstruct]	input secondary structure file
+##	-tag	name for output files
+##	-working_res	specify range of residues to model
+##	-s slice_3p49_RNA.pdb	see below
+##	-ignore_zero_occupancy false
+## The ‘-s’ flag allows users to input a list of PDB files to use in the modeling; the residues that are part of the input PDB files will not be moved relative to each other, though if multiple PDB files are input, the orientations of the residues in the separate files may change. In this example, the full-atom refinement algorithm will be applied in the same run as fragment assembly.
+
+# [8]	Generate command line for FARFAR modeling:
+source README_SETUP
+
+## [9]	Example README_FARFAR:
+#rna_denovo -nstruct 500 -params_file native.params -fasta native.fasta  -out:file:silent native.out -include_neighbor_base_stacks  -minimize_rna true -s slice_3p49_RNA.pdb -input_res  1-21 26-159 -cycles 20000 -ignore_zero_occupancy false -output_res_num  1-159
+
+# [10]	Test command line for FARFAR modeling:
+source README_FARFAR
+# This command runs a single local job on your computer. Wait until sampling begins successfully (command line output similar to “Picked Fragment Library for sequence u and sec. struct H ... found 2308 potential fragments”), then cancel the run and submit the job to the cluster.
+
+# [11]	Submit jobs to the cluster:
+rosetta_submit.py README_FARFAR out 16 1
+# The first number states how many processors to use for the run, while the second number states the maximum time each job will be allowed to run (walltime, in hours). Note that certain supercomputers only allow requests specific multiples of processors (e.g. the Stampede cluster requires a multiple of 16).
+
+# [12]	Concatenate all models from the out folder:
+easy_cat.py out
+# Also outputs the number of models in the final silent file to the screen.
+
+# [13]	Extract lowest-energy models to .pdb files for viewing in PyMOL:
+extract_lowscore_decoys.py native.out 1
+# Input the number of lowest-scoring models to extract from the silent file. Here, extract the single lowest-scoring model to use as the native model input for comparison to the de novo models.
+
+# [14]	Rename lowest-score model for use as reference model ()
+mv native.out.1.pdb 3p49_native_RNA.pdb
