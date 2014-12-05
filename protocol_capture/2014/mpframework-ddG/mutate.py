@@ -17,6 +17,8 @@
 ## @author  Evan H. Baugh (PyRosetta v2.0)
 ## @author  Rebcca Alford (PyRosetta v3.0)
 
+from rostta import *
+
 import random
 from rosetta import Pose
 from rosetta import create_score_function
@@ -25,6 +27,8 @@ from rosetta.utility import vector1_bool
 from rosetta import aa_from_oneletter_code
 from rosetta import PackRotamersMover
 from rosetta.core.pose import PDBInfo
+
+#from rosetta.core.pose import util
 
 
 # @brief Replace teh residue at <resid> in <pose> with <new_res> and allows
@@ -100,3 +104,11 @@ def mutate_residue( pose , mutant_position , mutant_aa ,
     packer.apply( test_pose )
 
     return test_pose
+
+def repack_for_pH( pose, resnum, pack_sfxn ):
+
+    # Add variant type to mutated residue
+    add_variant_type_to_pose_residue( pose, resnum, PROTONATED ) 
+
+
+add_variant_type_to_pose_residue that you can use to add a variant residue type (in your case, you would be using a PROTONATED 
