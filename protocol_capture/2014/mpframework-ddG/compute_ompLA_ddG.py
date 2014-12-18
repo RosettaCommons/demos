@@ -48,10 +48,10 @@ def compute_ddG( pose, sfxn, resnum, aa ):
     native_score = sfxn( pose )
 
     # Perform Mutation at residue <resnum> to amino accid <aa>
-    mutated_pose = mutate.mutate_residue( pose, resnum, aa, repack_radius, sfxn )
+    mutated_pose = mutate_residue( pose, resnum, aa, repack_radius, sfxn )
 
     # Adjust for pH
-    adjust_for_pH( pose, resnum )
+    #adjust_for_pH( pose, resnum )
 
     # Score Mutated Pose
     mutant_score = sfxn( mutated_pose )
@@ -155,8 +155,10 @@ def main( argv ):
     rosetta.init( extra_options="-membrane_new:setup:spanfiles inputs/1qd6_tr.span -run:constant_seed -in:ignore_unrecognized_res" )
 
     # Load Pose, & turn on the membrane
-    pose = pose_from_pdb( "inputs/1qd6.pdb" );
-    sfxn = create_score_function( "fa_menv_pHMode_2014" );
+    pose = pose_from_pdb( "inputs/1qd6_tr.pdb" );
+    sfxn = create_score_function( "mpframework_smooth_fa_2014" );
+
+    #sfxn = create_score_function( "mpframework_pHmode_fa_2014" );
     
     # Add Membrane to Pose
     add_memb = rosetta.protocols.membrane.AddMembraneMover()
@@ -167,8 +169,8 @@ def main( argv ):
     init_mem_pos.apply( pose )
 
     # Compute mutations 
-    AAs = ['D', 'E']
-    #AAs = ['A', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'K', 'L', 'M', 'N', 'P', 'Q', 'R', 'S', 'T', 'V', 'W', 'Y']
+    #AAs = ['D', 'E']
+    AAs = ['A', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'K', 'L', 'M', 'N', 'P', 'Q', 'R', 'S', 'T', 'V', 'W', 'Y']
     ddGs = []
     for aa in AAs:
         print compute_ddG( pose, sfxn, 181, aa  )

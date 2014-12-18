@@ -4,7 +4,7 @@ Rosetta Membrane Framework Application: Membrane ddG
 ### About this Protocol Capture
 Author: Rebecca F. Alford (rfalford12@gmail.com)
 Corresponding PI: Jeffrey J. Gray (jgray@jhu.edu)
-Last Updated: October 2014
+Last Updated: December 2014
 
 Rosetta Revision #57364
 
