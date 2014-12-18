@@ -7,5 +7,4 @@
 # Symmetry Options
 -symmetry:symmetry_definition inputs/1afo_tr.c2.symm  # Symmetry Definition file
 -symmetry:initialize_rigid_body_dofs        # Initialize rigid body config
--symmetry:perturb_rigid_body_dofs 3 8       # Apply perturbation to initial conf.
--symmetry:symmetric_rmsd
+
