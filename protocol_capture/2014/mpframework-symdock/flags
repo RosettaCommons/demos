@@ -1,5 +1,6 @@
 # Basic Options & Membranes
 -in:file:s inputs/1afo_tr_input.pdb
+-in:file:native inputs/1afo_tr_native.pdb
 -membrane_new:setup:spanfiles inputs/1afo_tr.span
 -membrane_new:scoring:hbond
 -nstruct 1
