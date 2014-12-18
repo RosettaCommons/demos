@@ -1,8 +1,0 @@
--parser:protocol relax_mp.xml
--in:ignore_unrecognized_res
--membrane_new:setup:spanfiles inputs/1afo_tr.span
--membrane_new:scoring:hbond
--relax:fast
--out:pdb
--out:file:scorefile relaxed_scores.sc
--packing:pack_missing_sidechains false 
