@@ -1,7 +1,7 @@
 -parser:protocol membrane_relax.xml
--in:file:s inputs/1afo_tr_native.pdb
+-in:file:s inputs/2BS2_TR_C.pdb
 -in:ignore_unrecognized_res
--membrane_new:setup:spanfiles inputs/1afo_tr.span
+-membrane_new:setup:spanfiles inputs/2BS2_tr_C.span
 -membrane_new:scoring:hbond
 -relax:fast
 -out:pdb
