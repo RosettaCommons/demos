@@ -56,8 +56,8 @@ flags                                  descriptions
 -membrane_new:scoring:hbond            Turn on depth-dependent hydrogen bonding term when using the   
                                        membrane high resolution energy function
 -relax:fast                            Use the FastRelax mode of Rosetta Relax (uses 5 repeat cycles)
--packing:pack_missing_sidechains false Skip initial packing (will be reapplied during membrane framework 
-                                       initialization)
+-packing:pack_missing_sidechains false Wait to repack sidechains until the membrane pose is fully 
+                                       initialized
 -nstruct                               Number of structures to generate
 
 2. Recommended # of Decoys
