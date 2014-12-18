@@ -1,0 +1,13 @@
+<ROSETTASCRIPTS>
+  <SCOREFXNS>
+    <memb_hires weights=mpframework_smooth_fa_2014 />
+    </SCOREFXNS>
+  <MOVERS>
+    <AddMembraneMover name=add_memb/>
+    <MPFastRelaxMover name=fast_relax/> 
+    </MOVERS>
+  <PROTOCOLS>
+    <Add mover=add_memb/>
+    <Add mover=fast_relax/>
+    </PROTOCOLS>
+</ROSETTASCRIPTS>
