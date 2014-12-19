@@ -1,0 +1,73 @@
+core.init: Rosetta version eabb5585a55795a82d7795e9f997a0960887e1bc 2014-12-18 14:32:50 -0500 from git@github.com:RosettaCommons/main.git
+core.init: command: /Users/julialeman/Documents/julia/git_final/Rosetta/main/source/bin/docking_prepack_protocol.macosclangrelease -database /Users/julialeman/Documents/julia/git_final/Rosetta/main/database -in:file:s input/1AFO_AB.pdb -membrane_new:setup:spanfiles input/1AFO_AB.span -out:file:scorefile output/score_ppk_1AFO.sc -out:path:pdb output -nstruct 1 -score:weights mpframework_smooth_fa_2014.wts -packing:pack_missing_sidechains 0
+core.init: 'RNG device' seed mode, using '/dev/urandom', seed=-1749888282 seed_offset=0 real_seed=-1749888282
+core.init.random: RandomGenerator:init: Normal mode, seed=-1749888282 RG_type=mt19937
+core.scoring.etable: Starting energy table calculation
+core.scoring.etable: smooth_etable: changing atr/rep split to bottom of energy well
+core.scoring.etable: smooth_etable: spline smoothing lj etables (maxdis = 6)
+core.scoring.etable: smooth_etable: spline smoothing solvation etables (max_dis = 6)
+core.scoring.etable: Finished calculating energy tables.
+basic.io.database: Database file opened: scoring/score_functions/PairEPotential/pdb_pair_stats_fine
+basic.io.database: Database file opened: scoring/score_functions/hbonds/sp2_elec_params/HBPoly1D.csv
+basic.io.database: Database file opened: scoring/score_functions/hbonds/sp2_elec_params/HBFadeIntervals.csv
+basic.io.database: Database file opened: scoring/score_functions/hbonds/sp2_elec_params/HBEval.csv
+core.scoring.ScoreFunctionFactory: SCOREFUNCTION: mpframework_smooth_fa_2014.wts
+core.scoring.etable: Starting energy table calculation
+core.scoring.etable: smooth_etable: changing atr/rep split to bottom of energy well
+core.scoring.etable: smooth_etable: spline smoothing lj etables (maxdis = 6)
+core.scoring.etable: smooth_etable: spline smoothing solvation etables (max_dis = 6)
+core.scoring.etable: Finished calculating energy tables.
+core.scoring.etable: Starting energy table calculation
+core.scoring.etable: smooth_etable: changing atr/rep split to bottom of energy well
+core.scoring.etable: smooth_etable: spline smoothing lj etables (maxdis = 6)
+core.scoring.etable: smooth_etable: spline smoothing solvation etables (max_dis = 6)
+core.scoring.etable: Finished calculating energy tables.
+core.scoring.etable: Using alternate parameters: LK_DGFREE in MembEtable construction.
+core.scoring.etable: Using alternate parameters: MEMB_LK_DGFREE in MembEtable construction.
+core.scoring.etable: Using alternate parameters: LK_DGREFCE in MembEtable construction.
+core.scoring.etable: Using alternate parameters: MEMB_LK_DGREFCE in MembEtable construction.
+core.scoring.etable: Starting membrane specific energy table calculation
+core.scoring.etable: smooth_etable: spline smoothing solvation etables (max_dis = 6)
+core.scoring.etable: Finished calculating membrane specific energy tables.
+core.scoring.etable: Starting energy table calculation
+core.scoring.etable: smooth_etable: changing atr/rep split to bottom of energy well
+core.scoring.etable: smooth_etable: spline smoothing lj etables (maxdis = 6)
+core.scoring.etable: smooth_etable: spline smoothing solvation etables (max_dis = 6)
+core.scoring.etable: Finished calculating energy tables.
+basic.io.database: Database file opened: scoring/score_functions/MembranePotential/CEN10_Menv_smooth_log.txt
+basic.io.database: Database file opened: scoring/score_functions/P_AA_pp/P_AA
+basic.io.database: Database file opened: scoring/score_functions/P_AA_pp/P_AA_n
+basic.io.database: Database file opened: scoring/score_functions/P_AA_pp/P_AA_pp
+basic.io.database: Database file opened: scoring/score_functions/rama/Rama_smooth_dyn.dat_ss_6.4
+protocols.jd2.PDBJobInputter: Instantiate PDBJobInputter
+protocols.jd2.PDBJobInputter: PDBJobInputter::fill_jobs
+protocols.jd2.PDBJobInputter: pushed input/1AFO_AB.pdb nstruct index 1
+protocols.evaluation.ChiWellRmsdEvaluatorCreator: Evaluation Creator active ... 
+protocols.jd2.PDBJobInputter: PDBJobInputter::pose_from_job
+protocols.jd2.PDBJobInputter: filling pose from PDB input/1AFO_AB.pdb
+core.chemical.ResidueTypeSet: Finished initializing fa_standard residue type set.  Created 737 residue types
+protocols.membrane.AddMembraneMover: Adding a new membrane residue to the pose
+protocols.membrane.AddMembraneMover: Adding a membrane residue representing the position of the membrane after residue 80
+   Edge   	   Jump     Jump #
+          	0081--0001  002
+0001--0040
+          	0001--0041  001
+0041--0080
+
+core.conformation.membrane.SpanningTopology: Filling membrane spanning topology from spanfile input/1AFO_AB.span
+core.conformation.membrane.SpanningTopology: nres: 81
+core.conformation.membrane.SpanningTopology: nres_topo: 80
+core.conformation.membrane.SpanningTopology: total residues in spanfile: 80
+basic.io.database: Database file opened: scoring/score_functions/MembranePotential/CEN10_Menv_smooth_log.txt
+core.pack.dunbrack: Dunbrack 2010 library took 0.337199 seconds to load from binary
+protocols.moves.RigidBodyMover: Translate: Jump (before): RT 0.0435651 0.0874868 -0.995213 0.151208 0.984105 0.0931294 0.987542 -0.154541 0.0296439 -9.83852 4.97283 1.46457  
+protocols.moves.RigidBodyMover: Translate: Jump (after):  RT 0.0435651 0.0874868 -0.995213 0.151208 0.984105 0.0931294 0.987542 -0.154541 0.0296439 796.309 -586.539 16.9379  
+core.pack.task: Packer task: initialize from command line() 
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.pack.pack_rotamers: built 815 rotamers at 81 positions.
+core.pack.pack_rotamers: IG: 342888 bytes
+protocols.moves.RigidBodyMover: Translate: Jump (before): RT 0.0435651 0.0874868 -0.995213 0.151208 0.984105 0.0931294 0.987542 -0.154541 0.0296439 796.309 -586.539 16.9379  
+protocols.moves.RigidBodyMover: Translate: Jump (after):  RT 0.0435651 0.0874868 -0.995213 0.151208 0.984105 0.0931294 0.987542 -0.154541 0.0296439 -9.83674 4.9746 1.43911  
+protocols.jd2.JobDistributor: 1AFO_AB_0001 reported success in 2 seconds
+protocols.jd2.JobDistributor: no more batches to process... 
+protocols.jd2.JobDistributor: 1 jobs considered, 1 jobs attempted in 2 seconds
