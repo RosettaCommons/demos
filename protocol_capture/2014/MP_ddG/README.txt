@@ -3,6 +3,7 @@ Rosetta Membrane Framework Application: Membrane ddG
 
 ### About this Protocol Capture
 Author: Rebecca F. Alford (rfalford12@gmail.com)
+Author: JKLeman (julia.koehler1982@gmail.com)
 Corresponding PI: Jeffrey J. Gray (jgray@jhu.edu)
 Last Updated: December 2014
 
@@ -27,7 +28,7 @@ Modeling membrane proteins in Rosetta requires a spanning topology file (require
 describing the transmembrane topology, you can predict topology from seuqnece using the OCTOPUS server
 (http://octopus.cbr.su.se/). This file must be converted to a Rosetta spanfile format using octopus2span.pl
 
-    cd mpframework-ddG/scripts/
+    cd MP_ddG/scripts/
     ./octopus2span.pl octopus_pred.out > spanfile.txt
 
 ## Useful Scripts
@@ -38,6 +39,24 @@ This demo contains a script directory with:
 To run the membrane ddG script for this example case, run the python script (no arguments)
 
 ./compute_ompLA_ddG.py
+
+The ddGs are in the log output printed to the screen.
+Alternatively, for a more general case, you can run the script
+
+./compute_ddG.py
+
+where you can specify the input PDB, input spanfile, output file name with predicted ddGs, the residue number to mutate, and optionally the mutant that you are interested in. Use the flag -h for input options. An example is the commandline:
+
+./compute_ddG.py -p inputs/1qd6_tr.pdb -s inputs/1qd6_tr.span -o ddGs_ompLA.txt -r 181
+
+The flags are:
+-p <input pdb file>
+-s <input spanfile>
+-o <output filename with predicted ddGs>
+-r <residue number to mutate: this is pose residue numbering, so it's always safer to renumber your input PDB starting from 1 before running this script>
+-m <optional: one-letter-code of amino acid to mutate into. For instance: for the 'L5A' mutation it would be 'A'>
+
+The columns in the output file are: amino acid, mutant score, native score, ddG. Running the script multiple times with the same output file will APPEND to the file and not overwrite it.
 
 ## Example Outputs
 The PyRosetta script will write a list of mutations and ddG values to standard output. 
