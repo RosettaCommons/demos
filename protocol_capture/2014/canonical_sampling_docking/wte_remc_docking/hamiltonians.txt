@@ -1,0 +1,10 @@
+GRID_DIM 1
+GLOBAL_PATCH  atom_pair_constraint = 5
+    1    0.4561    docking
+    2    0.35      docking
+    3    0.274     docking
+    4    0.2186    docking
+    5    0.179     docking
+    6    0.15      docking
+#END  first column is first dimension, sencond is sencond dimension in
+#interpolated mover

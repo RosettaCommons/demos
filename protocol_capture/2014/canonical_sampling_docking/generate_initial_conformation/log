@@ -1,0 +1,285 @@
+core.init: (0) Rosetta version 1633fdbda4ab118c06b8f4b238a706fb8ec6a02f 2014-09-25 22:02:00 +0200 from git@github.com:RosettaCommons/main.git
+core.init: (0) command: /home/zzhang/Rosetta_working/Rosetta/main/source/bin/rosetta_scripts.mpi.linuxgccrelease -out:level 300 -mute all_high_mpi_rank_filebuf -database /home/zzhang/Rosetta_working/Rosetta/main/database -parser:protocol gen_initial.xml @flags_replica_dock
+core.init: (0) 'RNG device' seed mode, using '/dev/urandom', seed=507628439 seed_offset=0 real_seed=507628439
+core.init.random: (0) RandomGenerator:init: Normal mode, seed=507628439 RG_type=mt19937
+protocols.jd2.PDBJobInputter: (0) Instantiate PDBJobInputter
+protocols.jd2.PDBJobInputter: (0) PDBJobInputter::fill_jobs
+protocols.jd2.PDBJobInputter: (0) pushed protAB.pdb nstruct index 1
+core.chemical.ResidueTypeSet: (0) Finished initializing fa_standard residue type set.  Created 737 residue types
+core.io.pdb.file_data: (0) PDB reader is ignoring atom  CD  in residue 68 E.  Pass flag -ignore_zero_occupancy false to change this behavior
+core.io.pdb.file_data: (0) PDB reader is ignoring atom  CE  in residue 124 E.  Pass flag -ignore_zero_occupancy false to change this behavior
+core.io.pdb.file_data: (0) PDB reader is ignoring atom  NZ  in residue 124 E.  Pass flag -ignore_zero_occupancy false to change this behavior
+core.io.pdb.file_data: (0) PDB reader is ignoring atom  OG  in residue 126 E.  Pass flag -ignore_zero_occupancy false to change this behavior
+core.io.pdb.file_data: (0) PDB reader is ignoring atom  OD1 in residue 144 E.  Pass flag -ignore_zero_occupancy false to change this behavior
+core.io.pdb.file_data: (0) PDB reader is ignoring atom  OD2 in residue 144 E.  Pass flag -ignore_zero_occupancy false to change this behavior
+core.io.pdb.file_data: (0) PDB reader is ignoring atom  NZ  in residue 148 E.  Pass flag -ignore_zero_occupancy false to change this behavior
+core.io.pdb.file_data: (0) PDB reader is ignoring atom  CG  in residue 166 E.  Pass flag -ignore_zero_occupancy false to change this behavior
+core.io.pdb.file_data: (0) PDB reader is ignoring atom  CD  in residue 166 E.  Pass flag -ignore_zero_occupancy false to change this behavior
+core.io.pdb.file_data: (0) PDB reader is ignoring atom  OE1 in residue 166 E.  Pass flag -ignore_zero_occupancy false to change this behavior
+core.io.pdb.file_data: (0) PDB reader is ignoring atom  OE2 in residue 166 E.  Pass flag -ignore_zero_occupancy false to change this behavior
+core.io.pdb.file_data: (0) PDB reader is ignoring atom  NZ  in residue 169 E.  Pass flag -ignore_zero_occupancy false to change this behavior
+core.io.pdb.file_data: (0) PDB reader is ignoring atom  CD  in residue 11 I.  Pass flag -ignore_zero_occupancy false to change this behavior
+core.io.pdb.file_data: (0) PDB reader is ignoring atom  CD  in residue 24 I.  Pass flag -ignore_zero_occupancy false to change this behavior
+core.io.pdb.file_data: (0) PDB reader is ignoring atom  OE1 in residue 24 I.  Pass flag -ignore_zero_occupancy false to change this behavior
+core.io.pdb.file_data: (0) PDB reader is ignoring atom  OE2 in residue 24 I.  Pass flag -ignore_zero_occupancy false to change this behavior
+core.conformation.Conformation: (0) [ WARNING ] missing heavyatom:  CD  on residue LYS 68
+core.conformation.Conformation: (0) [ WARNING ] missing heavyatom:  CE  on residue LYS 124
+core.conformation.Conformation: (0) [ WARNING ] missing heavyatom:  NZ  on residue LYS 124
+core.conformation.Conformation: (0) [ WARNING ] missing heavyatom:  OG  on residue SER 126
+core.conformation.Conformation: (0) [ WARNING ] missing heavyatom:  OD1 on residue ASP 144
+core.conformation.Conformation: (0) [ WARNING ] missing heavyatom:  OD2 on residue ASP 144
+core.conformation.Conformation: (0) [ WARNING ] missing heavyatom:  NZ  on residue LYS 148
+core.conformation.Conformation: (0) [ WARNING ] missing heavyatom:  CG  on residue GLU 166
+core.conformation.Conformation: (0) [ WARNING ] missing heavyatom:  CD  on residue GLU 166
+core.conformation.Conformation: (0) [ WARNING ] missing heavyatom:  OE1 on residue GLU 166
+core.conformation.Conformation: (0) [ WARNING ] missing heavyatom:  OE2 on residue GLU 166
+core.conformation.Conformation: (0) [ WARNING ] missing heavyatom:  NZ  on residue LYS 169
+core.conformation.Conformation: (0) [ WARNING ] missing heavyatom:  CD  on residue LYS 233
+core.conformation.Conformation: (0) [ WARNING ] missing heavyatom:  CD  on residue GLU 246
+core.conformation.Conformation: (0) [ WARNING ] missing heavyatom:  OE1 on residue GLU 246
+core.conformation.Conformation: (0) [ WARNING ] missing heavyatom:  OE2 on residue GLU 246
+core.conformation.Conformation: (0) Found disulfide between residues 7 136
+core.conformation.Conformation: (0) current variant for 7 CYS
+core.conformation.Conformation: (0) current variant for 136 CYS
+core.conformation.Conformation: (0) current variant for 7 CYD
+core.conformation.Conformation: (0) current variant for 136 CYD
+core.conformation.Conformation: (0) Found disulfide between residues 25 41
+core.conformation.Conformation: (0) current variant for 25 CYS
+core.conformation.Conformation: (0) current variant for 41 CYS
+core.conformation.Conformation: (0) current variant for 25 CYD
+core.conformation.Conformation: (0) current variant for 41 CYD
+core.conformation.Conformation: (0) Found disulfide between residues 108 209
+core.conformation.Conformation: (0) current variant for 108 CYS
+core.conformation.Conformation: (0) current variant for 209 CYS
+core.conformation.Conformation: (0) current variant for 108 CYD
+core.conformation.Conformation: (0) current variant for 209 CYD
+core.conformation.Conformation: (0) Found disulfide between residues 115 182
+core.conformation.Conformation: (0) current variant for 115 CYS
+core.conformation.Conformation: (0) current variant for 182 CYS
+core.conformation.Conformation: (0) current variant for 115 CYD
+core.conformation.Conformation: (0) current variant for 182 CYD
+core.conformation.Conformation: (0) Found disulfide between residues 147 161
+core.conformation.Conformation: (0) current variant for 147 CYS
+core.conformation.Conformation: (0) current variant for 161 CYS
+core.conformation.Conformation: (0) current variant for 147 CYD
+core.conformation.Conformation: (0) current variant for 161 CYD
+core.conformation.Conformation: (0) Found disulfide between residues 172 196
+core.conformation.Conformation: (0) current variant for 172 CYS
+core.conformation.Conformation: (0) current variant for 196 CYS
+core.conformation.Conformation: (0) current variant for 172 CYD
+core.conformation.Conformation: (0) current variant for 196 CYD
+core.conformation.Conformation: (0) Found disulfide between residues 225 242
+core.conformation.Conformation: (0) current variant for 225 CYS
+core.conformation.Conformation: (0) current variant for 242 CYS
+core.conformation.Conformation: (0) current variant for 225 CYD
+core.conformation.Conformation: (0) current variant for 242 CYD
+core.conformation.Conformation: (0) Found disulfide between residues 232 244
+core.conformation.Conformation: (0) current variant for 232 CYS
+core.conformation.Conformation: (0) current variant for 244 CYS
+core.conformation.Conformation: (0) current variant for 232 CYD
+core.conformation.Conformation: (0) current variant for 244 CYD
+core.conformation.Conformation: (0) Found disulfide between residues 238 250
+core.conformation.Conformation: (0) current variant for 238 CYS
+core.conformation.Conformation: (0) current variant for 250 CYS
+core.conformation.Conformation: (0) current variant for 238 CYD
+core.conformation.Conformation: (0) current variant for 250 CYD
+core.pack.task: (0) Packer task: initialize from command line() 
+core.pack.pack_missing_sidechains: (0) packing residue number 68 because of missing atom number 7 atom name  CD 
+core.pack.pack_missing_sidechains: (0) packing residue number 124 because of missing atom number 8 atom name  CE 
+core.pack.pack_missing_sidechains: (0) packing residue number 126 because of missing atom number 6 atom name  OG 
+core.pack.pack_missing_sidechains: (0) packing residue number 144 because of missing atom number 7 atom name  OD1
+core.pack.pack_missing_sidechains: (0) packing residue number 148 because of missing atom number 9 atom name  NZ 
+core.pack.pack_missing_sidechains: (0) packing residue number 166 because of missing atom number 6 atom name  CG 
+core.pack.pack_missing_sidechains: (0) packing residue number 169 because of missing atom number 9 atom name  NZ 
+core.pack.pack_missing_sidechains: (0) packing residue number 233 because of missing atom number 7 atom name  CD 
+core.pack.pack_missing_sidechains: (0) packing residue number 246 because of missing atom number 7 atom name  CD 
+core.scoring.ScoreFunctionFactory: (0) SCOREFUNCTION: docking
+core.scoring.etable: (0) Starting energy table calculation
+core.scoring.etable: (0) smooth_etable: changing atr/rep split to bottom of energy well
+core.scoring.etable: (0) smooth_etable: spline smoothing lj etables (maxdis = 6)
+core.scoring.etable: (0) smooth_etable: spline smoothing solvation etables (max_dis = 6)
+core.scoring.etable: (0) Finished calculating energy tables.
+basic.io.database: (0) Database file opened: scoring/score_functions/PairEPotential/pdb_pair_stats_fine
+basic.io.database: (0) Database file opened: scoring/score_functions/hbonds/sp2_elec_params/HBPoly1D.csv
+basic.io.database: (0) Database file opened: scoring/score_functions/hbonds/sp2_elec_params/HBFadeIntervals.csv
+basic.io.database: (0) Database file opened: scoring/score_functions/hbonds/sp2_elec_params/HBEval.csv
+basic.io.database: (0) Database file opened: scoring/score_functions/disulfides/fa_SS_distance_score
+core.pack.dunbrack: (0) Dunbrack 2010 library took 0.09 seconds to load from binary
+core.pack.interaction_graph.interaction_graph_factory: (0) Instantiating DensePDInteractionGraph
+core.pack.pack_rotamers: (0) built 175 rotamers at 9 positions.
+core.pack.pack_rotamers: (0) IG: 12564 bytes
+protocols.evaluation.ChiWellRmsdEvaluatorCreator: (0) Evaluation Creator active ... 
+protocols.jd2.JobDistributor: (0) Parser is present.  Input mover will be overwritten with whatever the parser creates.
+protocols.jd2.PDBJobInputter: (0) PDBJobInputter::pose_from_job
+protocols.jd2.PDBJobInputter: (0) filling pose from PDB protAB.pdb
+core.conformation.Conformation: (0) Found disulfide between residues 7 137
+core.conformation.Conformation: (0) current variant for 7 CYS
+core.conformation.Conformation: (0) current variant for 137 CYS
+core.conformation.Conformation: (0) current variant for 7 CYD
+core.conformation.Conformation: (0) current variant for 137 CYD
+core.conformation.Conformation: (0) Found disulfide between residues 25 41
+core.conformation.Conformation: (0) current variant for 25 CYS
+core.conformation.Conformation: (0) current variant for 41 CYS
+core.conformation.Conformation: (0) current variant for 25 CYD
+core.conformation.Conformation: (0) current variant for 41 CYD
+core.conformation.Conformation: (0) Found disulfide between residues 109 210
+core.conformation.Conformation: (0) current variant for 109 CYS
+core.conformation.Conformation: (0) current variant for 210 CYS
+core.conformation.Conformation: (0) current variant for 109 CYD
+core.conformation.Conformation: (0) current variant for 210 CYD
+core.conformation.Conformation: (0) Found disulfide between residues 116 183
+core.conformation.Conformation: (0) current variant for 116 CYS
+core.conformation.Conformation: (0) current variant for 183 CYS
+core.conformation.Conformation: (0) current variant for 116 CYD
+core.conformation.Conformation: (0) current variant for 183 CYD
+core.conformation.Conformation: (0) Found disulfide between residues 148 162
+core.conformation.Conformation: (0) current variant for 148 CYS
+core.conformation.Conformation: (0) current variant for 162 CYS
+core.conformation.Conformation: (0) current variant for 148 CYD
+core.conformation.Conformation: (0) current variant for 162 CYD
+core.conformation.Conformation: (0) Found disulfide between residues 173 197
+core.conformation.Conformation: (0) current variant for 173 CYS
+core.conformation.Conformation: (0) current variant for 197 CYS
+core.conformation.Conformation: (0) current variant for 173 CYD
+core.conformation.Conformation: (0) current variant for 197 CYD
+core.conformation.Conformation: (0) Found disulfide between residues 226 243
+core.conformation.Conformation: (0) current variant for 226 CYS
+core.conformation.Conformation: (0) current variant for 243 CYS
+core.conformation.Conformation: (0) current variant for 226 CYD
+core.conformation.Conformation: (0) current variant for 243 CYD
+core.conformation.Conformation: (0) Found disulfide between residues 233 245
+core.conformation.Conformation: (0) current variant for 233 CYS
+core.conformation.Conformation: (0) current variant for 245 CYS
+core.conformation.Conformation: (0) current variant for 233 CYD
+core.conformation.Conformation: (0) current variant for 245 CYD
+core.conformation.Conformation: (0) Found disulfide between residues 239 251
+core.conformation.Conformation: (0) current variant for 239 CYS
+core.conformation.Conformation: (0) current variant for 251 CYS
+core.conformation.Conformation: (0) current variant for 239 CYD
+core.conformation.Conformation: (0) current variant for 251 CYD
+core.pack.task: (0) Packer task: initialize from command line() 
+protocols.rosetta_scripts.RosettaScriptsParser: (0) dock_design_filename=gen_initial.xml
+protocols.rosetta_scripts.RosettaScriptsParser: (0) Parsed script:
+<dock_design>
+	<SCOREFXNS/>
+	<FILTERS/>
+	<MOVERS>
+		<DockSetupMover name=setup_jump/>
+		<AddEncounterConstraintMover gap=8 name=encounter_cst/>
+		<UnbiasedRigidBodyPerturbNoCenter max_move=1 name=scaled_rb ref=protAB.pdb restrict=1 restrict_rot=0 restrict_trans=15/>
+	</MOVERS>
+	<APPLY_TO_POSE/>
+	<PROTOCOLS>
+		<Add mover_name=setup_jump/>
+		<Add mover_name=encounter_cst/>
+		<Add mover_name=scaled_rb/>
+	</PROTOCOLS>
+</dock_design>
+protocols.rosetta_scripts.RosettaScriptsParser: (0) <dock_design> tag is deprecated; please use <ROSETTASCRIPTS> instead.
+core.scoring.ScoreFunctionFactory: (0) SCOREFUNCTION: docking
+core.scoring.etable: (0) Starting energy table calculation
+core.scoring.etable: (0) smooth_etable: changing atr/rep split to bottom of energy well
+core.scoring.etable: (0) smooth_etable: spline smoothing lj etables (maxdis = 6)
+core.scoring.etable: (0) smooth_etable: spline smoothing solvation etables (max_dis = 6)
+core.scoring.etable: (0) Finished calculating energy tables.
+basic.io.database: (0) Database file opened: scoring/score_functions/rama/Rama_smooth_dyn.dat_ss_6.4
+basic.io.database: (0) Database file opened: scoring/score_functions/P_AA_pp/P_AA
+basic.io.database: (0) Database file opened: scoring/score_functions/P_AA_pp/P_AA_n
+basic.io.database: (0) Database file opened: scoring/score_functions/P_AA_pp/P_AA_pp
+core.scoring.etable: (0) Starting energy table calculation
+core.scoring.etable: (0) smooth_etable: changing atr/rep split to bottom of energy well
+core.scoring.etable: (0) smooth_etable: spline smoothing lj etables (maxdis = 6)
+core.scoring.etable: (0) smooth_etable: spline smoothing solvation etables (max_dis = 6)
+core.scoring.etable: (0) Finished calculating energy tables.
+core.scoring.etable: (0) Using alternate parameters: LJ_RADIUS_SOFT in Etable construction.
+core.scoring.etable: (0) Starting energy table calculation
+core.scoring.etable: (0) smooth_etable: changing atr/rep split to bottom of energy well
+core.scoring.etable: (0) smooth_etable: spline smoothing lj etables (maxdis = 6)
+core.scoring.etable: (0) smooth_etable: spline smoothing solvation etables (max_dis = 6)
+core.scoring.etable: (0) Finished calculating energy tables.
+basic.io.database: (0) Database file opened: scoring/score_functions/EnvPairPotential/env_log.txt
+basic.io.database: (0) Database file opened: scoring/score_functions/EnvPairPotential/cbeta_den.txt
+basic.io.database: (0) Database file opened: scoring/score_functions/EnvPairPotential/pair_log.txt
+basic.io.database: (0) Database file opened: scoring/score_functions/EnvPairPotential/cenpack_log.txt
+basic.io.database: (0) Database file opened: scoring/score_functions/InterchainPotential/interchain_env_log.txt
+basic.io.database: (0) Database file opened: scoring/score_functions/InterchainPotential/interchain_pair_log.txt
+basic.io.database: (0) Database file opened: scoring/score_functions/EnvPairPotential/env_log.txt
+basic.io.database: (0) Database file opened: scoring/score_functions/EnvPairPotential/cbeta_den.txt
+basic.io.database: (0) Database file opened: scoring/score_functions/EnvPairPotential/pair_log.txt
+basic.io.database: (0) Database file opened: scoring/score_functions/EnvPairPotential/cenpack_log.txt
+protocols.rosetta_scripts.RosettaScriptsParser: (0) Defined mover named "setup_jump" of type DockSetupMover
+protocols.rosetta_scripts.RosettaScriptsParser: (0) Defined mover named "encounter_cst" of type AddEncounterConstraintMover
+protocols.rosetta_scripts.RosettaScriptsParser: (0) Defined mover named "scaled_rb" of type UnbiasedRigidBodyPerturbNoCenter
+protocols.rosetta_scripts.ParsedProtocol: (0) ParsedProtocol mover with the following movers and filters
+protocols.rosetta_scripts.ParsedProtocol: (0) added mover "setup_jump" with filter "true_filter"
+protocols.rosetta_scripts.ParsedProtocol: (0) added mover "encounter_cst" with filter "true_filter"
+protocols.rosetta_scripts.ParsedProtocol: (0) added mover "scaled_rb" with filter "true_filter"
+protocols.jd2.PDBJobInputter: (0) PDBJobInputter::pose_from_job
+protocols.jd2.PDBJobInputter: (0) filling pose from saved copy protAB.pdb
+protocols.rosetta_scripts.ParsedProtocol: (0) =======================BEGIN MOVER DockSetupMover - setup_jump=======================
+protocols.rosetta_scripts.ParsedProtocol: (0) =======================BEGIN FILTER =======================
+protocols.rosetta_scripts.ParsedProtocol: (0) =======================END FILTER =======================
+protocols.rosetta_scripts.ParsedProtocol: (0) =======================BEGIN MOVER AddEncounterConstraintMover - encounter_cst=======================
+devel.replica_docking.AddEncounterConstraintMover: (0) AtomPair  CA   179  CA   251 BOUNDED     0.1 46.1287 0.5 10000 Encounter
+
+protocols.rosetta_scripts.ParsedProtocol: (0) =======================BEGIN FILTER =======================
+protocols.rosetta_scripts.ParsedProtocol: (0) =======================END FILTER =======================
+protocols.rosetta_scripts.ParsedProtocol: (0) =======================BEGIN MOVER UnbiasedRigidBodyPerturbNoCenter - scaled_rb=======================
+core.conformation.Conformation: (0) Found disulfide between residues 7 137
+core.conformation.Conformation: (0) current variant for 7 CYS
+core.conformation.Conformation: (0) current variant for 137 CYS
+core.conformation.Conformation: (0) current variant for 7 CYD
+core.conformation.Conformation: (0) current variant for 137 CYD
+core.conformation.Conformation: (0) Found disulfide between residues 25 41
+core.conformation.Conformation: (0) current variant for 25 CYS
+core.conformation.Conformation: (0) current variant for 41 CYS
+core.conformation.Conformation: (0) current variant for 25 CYD
+core.conformation.Conformation: (0) current variant for 41 CYD
+core.conformation.Conformation: (0) Found disulfide between residues 109 210
+core.conformation.Conformation: (0) current variant for 109 CYS
+core.conformation.Conformation: (0) current variant for 210 CYS
+core.conformation.Conformation: (0) current variant for 109 CYD
+core.conformation.Conformation: (0) current variant for 210 CYD
+core.conformation.Conformation: (0) Found disulfide between residues 116 183
+core.conformation.Conformation: (0) current variant for 116 CYS
+core.conformation.Conformation: (0) current variant for 183 CYS
+core.conformation.Conformation: (0) current variant for 116 CYD
+core.conformation.Conformation: (0) current variant for 183 CYD
+core.conformation.Conformation: (0) Found disulfide between residues 148 162
+core.conformation.Conformation: (0) current variant for 148 CYS
+core.conformation.Conformation: (0) current variant for 162 CYS
+core.conformation.Conformation: (0) current variant for 148 CYD
+core.conformation.Conformation: (0) current variant for 162 CYD
+core.conformation.Conformation: (0) Found disulfide between residues 173 197
+core.conformation.Conformation: (0) current variant for 173 CYS
+core.conformation.Conformation: (0) current variant for 197 CYS
+core.conformation.Conformation: (0) current variant for 173 CYD
+core.conformation.Conformation: (0) current variant for 197 CYD
+core.conformation.Conformation: (0) Found disulfide between residues 226 243
+core.conformation.Conformation: (0) current variant for 226 CYS
+core.conformation.Conformation: (0) current variant for 243 CYS
+core.conformation.Conformation: (0) current variant for 226 CYD
+core.conformation.Conformation: (0) current variant for 243 CYD
+core.conformation.Conformation: (0) Found disulfide between residues 233 245
+core.conformation.Conformation: (0) current variant for 233 CYS
+core.conformation.Conformation: (0) current variant for 245 CYS
+core.conformation.Conformation: (0) current variant for 233 CYD
+core.conformation.Conformation: (0) current variant for 245 CYD
+core.conformation.Conformation: (0) Found disulfide between residues 239 251
+core.conformation.Conformation: (0) current variant for 239 CYS
+core.conformation.Conformation: (0) current variant for 251 CYS
+core.conformation.Conformation: (0) current variant for 239 CYD
+core.conformation.Conformation: (0) current variant for 251 CYD
+core.pack.task: (0) Packer task: initialize from command line() 
+protocols.rosetta_scripts.ParsedProtocol: (0) =======================BEGIN FILTER =======================
+protocols.rosetta_scripts.ParsedProtocol: (0) =======================END FILTER =======================
+protocols.rosetta_scripts.ParsedProtocol: (0) setting status to success
+protocols.rosetta_scripts.ParsedProtocol.REPORT: (0) ============Begin report for ==================
+protocols.rosetta_scripts.ParsedProtocol.REPORT: (0) ============End report for ==================
+protocols.rosetta_scripts.ParsedProtocol.REPORT: (0) ============Begin report for ==================
+protocols.rosetta_scripts.ParsedProtocol.REPORT: (0) ============End report for ==================
+protocols.rosetta_scripts.ParsedProtocol.REPORT: (0) ============Begin report for ==================
+protocols.rosetta_scripts.ParsedProtocol.REPORT: (0) ============End report for ==================
+protocols.jd2.JobDistributor: (0) protAB_0001 reported success in 2 seconds
+protocols.jd2.JobDistributor: (0) no more batches to process... 
+protocols.jd2.JobDistributor: (0) 1 jobs considered, 1 jobs attempted in 2 seconds
