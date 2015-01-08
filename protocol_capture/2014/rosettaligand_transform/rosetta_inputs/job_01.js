@@ -1,7 +1,7 @@
 {
  "jobs": [
   {
-   "native": "rosetta_inputs/proteins/set1_3_0001_0001.pdb params/80/AA.pdb", 
+   "native": "rosetta_inputs/proteins/set1_3_0001_0001.pdb example_outputs/conformer_generation/params/80/AA.pdb", 
    "proteins": [
     "rosetta_inputs/proteins/set1_3_0001_0001.pdb", 
     "rosetta_inputs/proteins/set1_3_0001_0002.pdb", 
@@ -15,12 +15,12 @@
     "rosetta_inputs/proteins/set1_3_0001_0010.pdb"
    ], 
    "ligands": [
-    "params/80/AA.pdb"
+    "example_outputs/conformer_generation/params/80/AA.pdb"
    ], 
    "group_name": "set1_3"
   }, 
   {
-   "native": "rosetta_inputs/proteins/set1_8_0001_0001.pdb params/06/AB.pdb", 
+   "native": "rosetta_inputs/proteins/set1_8_0001_0001.pdb example_outputs/conformer_generation/params/06/AB.pdb", 
    "proteins": [
     "rosetta_inputs/proteins/set1_8_0001_0001.pdb", 
     "rosetta_inputs/proteins/set1_8_0001_0002.pdb", 
@@ -34,13 +34,13 @@
     "rosetta_inputs/proteins/set1_8_0001_0010.pdb"
    ], 
    "ligands": [
-    "params/06/AB.pdb"
+    "example_outputs/conformer_generation/params/06/AB.pdb"
    ], 
    "group_name": "set1_8"
   }
  ], 
  "params": [
-  "params/80/AA.params", 
-  "params/06/AB.params"
+  "example_outputs/conformer_generation/params/80/AA.params", 
+  "example_outputs/conformer_generation/params/06/AB.params"
  ]
 }
