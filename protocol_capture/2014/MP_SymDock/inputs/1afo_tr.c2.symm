@@ -16,4 +16,3 @@ set_dof JUMP_0_to_com x y z
 set_dof JUMP_0_to_subunit angle_x angle_y angle_z
 set_jump_group JUMPGROUP1  JUMP_0_to_subunit JUMP_1_to_subunit
 set_jump_group JUMPGROUP2  JUMP_0_to_com JUMP_1_to_com
-slide_criteria_type FA_REP_SCORE
