@@ -1,0 +1,2 @@
+bcl::storage::Table<double> data_density aa_type_excl    seq_sep data_set_size  triangulation_0 distance_range_0 exposure_0
+weights                                0            0          1             1                0            10000      10000

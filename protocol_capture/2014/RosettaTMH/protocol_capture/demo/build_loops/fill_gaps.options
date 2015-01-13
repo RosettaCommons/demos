@@ -1,0 +1,33 @@
+-in
+	-file
+		-native ${DIR}/${PDB}/${PDB}.pdb
+#		-s <pdb>
+		-spanfile ${DIR}/${PDB}/${PDB}.span
+		-lipofile ${DIR}/${PDB}/${PDB}.lips4
+		-residue_type_set centroid
+-chemical
+	-patch_selectors CENTROID_HA
+-score
+	-find_neighbors_3dgrid
+-evaluation
+	-rmsd NATIVE _tm_sse ${DIR}/${PDB}/${PDB}_tm_sse_052814.txt
+-membrane
+	-no_interpolate_Mpair
+	-Menv_penalties
+-loops
+	-loop_file ${DIR}/${PDB}/${PDB}.loops
+	-frag_sizes 9 3 1
+	-frag_files ${DIR}/${PDB}/aa${PDB}09_05.200_v1_3 ${DIR}/${PDB}/aa${PDB}03_05.200_v1_3 none
+	-remodel quick_ccd
+	-cen_weights score_membrane
+	-cen_patch ${DIR}/score_membrane_s4.wts_patch
+#	-output_pdb <pdb>
+-out
+	-output
+#	-prefix <prefix>
+	-no_nstruct_label
+	-nstruct 1
+	-file
+		-silent_struct_type binary
+		-residue_type_set centroid
+-overwrite

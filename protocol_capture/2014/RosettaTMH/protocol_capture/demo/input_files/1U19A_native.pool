@@ -1,0 +1,9 @@
+bcl::assemble::SSEPool
+HELIX    1   1 PRO A    2  GLN A   32  1                                  31    
+HELIX    2   2 PRO A   39  HIS A   68  1                                  30    
+HELIX    3   3 PRO A   75  CYS A  108  1                                  34    
+HELIX    4   4 GLU A  118  LEU A  140  1                                  23    
+HELIX    5   5 ASN A  168  GLN A  193  1                                  26    
+HELIX    6   6 THR A  210  THR A  245  1                                  36    
+HELIX    7   7 PRO A  253  MET A  277  1                                  25    
+END

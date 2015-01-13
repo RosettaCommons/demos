@@ -1,0 +1,2 @@
+bcl::storage::Table<double>    add_all add_single filter_aa_type_excl remove_single       swap distance_range_0 filter_exposure_0
+weights                              0          1                   0             1          1                 0                 0

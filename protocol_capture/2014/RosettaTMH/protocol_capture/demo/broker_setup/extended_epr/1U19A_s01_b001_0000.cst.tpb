@@ -1,0 +1,5 @@
+CLAIMER MembraneTopologyClaimer
+END_CLAIMER
+CLAIMER ConstraintClaimer
+FILE /home/hirstsj/rosetta/benchmark_membrane/extended_mp_benchmark_set/protocol_capture/demo/input_files/1U19A_s01_b001_0000.cst
+END_CLAIMER

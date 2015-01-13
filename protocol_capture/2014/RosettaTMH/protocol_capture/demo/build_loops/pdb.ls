@@ -1,0 +1,5 @@
+input_pdbs/1U19Abuild_00_0_final_0000A.pdb
+input_pdbs/1U19Abuild_00_0_final_0001A.pdb
+input_pdbs/1U19Abuild_00_0_final_0002A.pdb
+input_pdbs/1U19Abuild_00_0_final_0003A.pdb
+input_pdbs/1U19Abuild_00_0_final_0004A.pdb

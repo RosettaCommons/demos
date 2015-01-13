@@ -1,0 +1,45 @@
+-in
+	-file
+		-native ./input_files/1U19A.pdb
+		-fasta ./input_files/1U19A.fasta
+		-frag3 ./input_files/aa1U19A03_05.200_v1_3
+		-frag9 ./input_files/aa1U19A09_05.200_v1_3
+		-spanfile ./input_files/1U19A.span
+		-lipofile ./input_files/1U19A.lips4
+-chemical
+	-patch_selectors CENTROID_HA
+-broker
+#	-setup ./broker_setup/extended_epr/1U19A_s00_b000_0000.cst.tpb
+	-setup ./broker_setup/extended_epr/1U19A_s01_b001_0000.cst.tpb
+-run
+	-protocol broker
+-score
+	-find_neighbors_3dgrid
+-membrane
+	-no_interpolate_Mpair
+	-Menv_penalties
+-abinitio
+	-membrane
+	-rg_reweight 4.25
+	-stage2_patch ./input_files/score_membrane_s2.wts_patch
+	-stage3a_patch ./input_files/score_membrane_s3a.wts_patch
+	-stage3b_patch ./input_files/score_membrane_s3b.wts_patch
+	-stage4_patch ./input_files/score_membrane_s4.wts_patch
+-constraints
+#	-cst_file ./input_files/1U19A_s00_b000_0000.cst
+	-cst_file ./input_files/1U19A_s01_b001_0000.cst
+#	-cst_weight 0.00
+	-cst_weight 10.9355
+	-epr_distance
+-fold_cst
+	-force_minimize
+	-seq_sep_stages 1.0 1.0 1.2
+-evaluation
+	-gdtmm
+	-rmsd NATIVE _tm_sse ./input_files/1U19A_tm_sse_052814.txt
+-out
+	-output
+	-file
+		-output_virtual
+		-silent_struct_type binary
+-overwrite
