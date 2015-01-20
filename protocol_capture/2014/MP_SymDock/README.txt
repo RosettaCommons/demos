@@ -93,6 +93,10 @@ use a C4 Symmetric Potassium Channel (PDB ID: 1bl8) as an example:
                                    This file specifically describes needed translations and rotations to regenerate 
                                    and assemble this complex from the input file. 
 
+    Important notes: To generate a correct symmetry, make_symmdef_file.pl requires all chains be of equal length. Subunits
+    shoould also be close to 0Å rmsd to one another. Any asymmetry may result in an incorrect symmetry definiton. To check, 
+    you can visualize the 1bl8_refined_model.pdb to ensure this initial setup is correect. 
+
   Next, you will also need the 1bl8_trA.span file which contains trans-membrane spans for only the asymmetric unit. 
   If your asymmetric unit contains multiple chains, you may need to assemble this file yourself from the full set
   of spans. 
