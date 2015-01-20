@@ -1,6 +1,7 @@
 -in:file:s example_inputs/1bl8_tr.pdb
 -membrane_new:setup:spanfiles example_inputs/1bl8_tr.span
 -membrane_new:scoring:hbond
+-nstruct 10
 -relax:fast
 -relax:jump_move true
 -out:file:scorefile relax_scores_1bl8.sc
