@@ -50,6 +50,8 @@ Three initial input files are required for this protocol:
      = 1bl8_tr.span: Predicted trans-membrane spans for the full symmetric complex
      = 1bl8_tr<A-D>.span: Predicted trans-membrane spans for each chain in the complex
 
+    These inputs can also be found in the example_inputs directory
+
 ## Steps of the protocol ##
 Here, we describe the steps required to run the MP_SymDock protocol. All steps 
 use a C4 Symmetric Potassium Channel (PDB ID: 1bl8) as an example: 
@@ -62,7 +64,7 @@ use a C4 Symmetric Potassium Channel (PDB ID: 1bl8) as an example:
    Rosetta/main/source/bin/rosetta_scripts.linuxgccrelease -parser:protocol membrane_relax.xml @relax_flags
 
    The following output files will be generated: 
-     = 1bl8_native_<1-10>.pdb   : 10 refined models of 1bl8
+     = 1bl8_native_<1-5>.pdb    : 5 refined models of 1bl8
      = relax_scores_1bl8.sc     : Rosetta scores for each resulting models
 
    Examples of these outputs can be found in example_refined_models
