@@ -76,7 +76,7 @@ use a C4 Symmetric Potassium Channel (PDB ID: 1bl8)
 2. Input model selection: Use the score file from the refinement step to select the lowest scoring
    refined model by total Rosetta score. In this example, the model 1bl8_tr_0009.pdb has the lowest
    total Rosetta score and will therefore be used as input to the next step. From this point forward, 
-   this model will be referred to as 1bl8_refined.pdb. 
+   this model will be referred to as 1bl8_refined.pdb and is located in example_symmetry_files/. 
 
 3. Generate inputs for symmetry: To prepare the structure for assembly and docking in the protocol, 
    a set of asymmetric inputs must be generated. These inputs describe the asymmetric unit, which will 
