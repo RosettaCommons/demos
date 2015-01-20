@@ -15,7 +15,7 @@ PLoS ONE (in preparation)
 
 ## Description ## 
 This application assembles and docks symmetric protein complexes in the membrane
-bilayer. The full symmetric native complex is first refined using the MP_Relax
+bilayer. The symmetric native complex is first refined using the MP_Relax
 application. The lowest scoring native conformation (by total Rosetta score) is
 then used as input to the membrane symmetric docking application, which searches
 for possible confromations by reassembling and docking subunits together. 
@@ -33,6 +33,9 @@ Three initial input files are required for this protocol:
   (2) Span file describing trans-membrane spans of the full complex
   (3) Span file describing trans-membrane spans of the asymmetric unit
 
+Steps for generating these inputs are provided below. These inputs can also be found 
+in the example_inputs/ directory
+
 1. PDB File: Generate a PDB file where the membrane protein structure is transformed 
    into PDB coordinates (z-axis is membrane normal). This can be done 
    either by downloading the transformed PDB directly from the PDBTM website 
@@ -42,19 +45,17 @@ Three initial input files are required for this protocol:
 2. Full & Asymmetric Span File: Generate a spanfile from the PDB structure using
    the spanfile_from_pdb application described in the MP_spanfile-from-pdb protocol
    capture in Rosetta/demos/protocol_captures/2014. An example commandline using 
-   1bl8 as an example is also provided here: 
+   1bl8 is also provided here: 
 
    Rosetta/main/source/bin/spanfile_from_pdb.linuxgccrelease -database /path/to/db -in:file:s 1bl8_tr.pdb
 
-   This command will produce 5 output files: 
+   For this example, this command will produce 5 output files: 
      = 1bl8_tr.span: Predicted trans-membrane spans for the full symmetric complex
      = 1bl8_tr<A-D>.span: Predicted trans-membrane spans for each chain in the complex
 
-    These inputs can also be found in the example_inputs directory
-
 ## Steps of the protocol ##
-Here, we describe the steps required to run the MP_SymDock protocol. All steps 
-use a C4 Symmetric Potassium Channel (PDB ID: 1bl8) as an example: 
+Here, we describe the steps required to run the MP_SymDock protocol. As an example, all steps 
+use a C4 Symmetric Potassium Channel (PDB ID: 1bl8) 
 
 1. Initial Refinement: Using the native symmetric complex and full spanfile, generate 
    10 refined models using the MP_Relax protocol. This protocol described in the 
@@ -69,9 +70,13 @@ use a C4 Symmetric Potassium Channel (PDB ID: 1bl8) as an example:
 
    Examples of these outputs can be found in example_refined_models
 
+   Note on timing: Depending on protein size, refinement is a time consuming step. Each decoy will take 0.5-1.0hrs
+   depending on avaialble processing power. 
+
 2. Input model selection: Use the score file from the refinement step to select the lowest scoring
-   refined model by total Rosetta score. This structure will be used as input in the next step and is
-   referred to as 1bl8_refined.pdb from this point forward.  
+   refined model by total Rosetta score. In this example, the model 1bl8_tr_0009.pdb has the lowest
+   total Rosetta score and will therefore be used as input to the next step. This model will be referred to
+   as 1bl8_refined.pdb from this point forward. 
 
 3. Generate inputs for symmetry: To prepare the structure for assembly and docking in the protocol, 
    a set of asymmetric inputs must be generated. These inputs describe the asymmetric unit, which will 
@@ -111,6 +116,7 @@ membrane symmetric docking application. Flags, recommended settings, and command
   flags                                  descriptions
   --------------------------------------------------------------------------------------------------
   -in:file:s <pdbfile>                        Input PDB Structure: Asymmetric input structure
+  -in:file:native <pdbfile>                   Structure of full native symmetric complex (from initial input)
   -membrane_new:setup:spanfiles <spanfile>    Spanfile describing spanning topology of asymmetric unit
   -membrane_new:scoring:hbond                 Turn on depth-dependent hydrogen bonding term when using the   
                                               membrane high resolution energy function
@@ -119,6 +125,8 @@ membrane symmetric docking application. Flags, recommended settings, and command
                                               (before docking algorithm)
   -nstruct                                    Number of structures to generate
   -packing:pack_missing_sidechains 0          Wait to pack until the membrane mode is turned on
+  -docking:dock_lowres_filter 5.0 10.0        Lower van der waals scoring criteria during centroid stage
+                                              to allow wider range of rigid body sampling
 
   (2) Recommended # of Decoys
     - For demo run: 1

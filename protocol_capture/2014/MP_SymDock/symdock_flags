@@ -1,11 +1,9 @@
-# Basic Options & Membranes
--in:file:s inputs/1afo_tr_input.pdb
--in:file:native inputs/1afo_tr_native.pdb
--membrane_new:setup:spanfiles inputs/1afo_tr.span
+-in:file:s example_symmetry_inputs/1bl8_refined_INPUT.pdb
+-in:file:native example_inputs/1bl8_tr.pdb
+-membrane_new:setup:spanfiles example_inputs/1bl8_trA.span
 -membrane_new:scoring:hbond
 -nstruct 1
-
-# Symmetry Options
--symmetry:symmetry_definition inputs/1afo_tr.c2.symm  # Symmetry Definition file
--symmetry:initialize_rigid_body_dofs        # Initialize rigid body config
-
+-symmetry:symmetry_definition example_symmetry_inputs/1bl8.c4.symm
+-symmetry:initialize_rigid_body_dofs        
+-packing:pack_missing_sidechains 0 
+-docking:dock_lowres_filter 5.0 10.0
