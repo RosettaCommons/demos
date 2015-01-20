@@ -20,12 +20,12 @@ application. The lowest scoring native conformation (by total Rosetta score) is
 then used as input to the membrane symmetric docking application, which searches
 for possible confromations by reassembling and docking subunits together. 
 
-This application combines the membrane framework, symmetry machineary, and standard
+This application combines the membrane framework, symmetry machinery, and standard
 symmetric docking algorithm in Rosetta. Currently, docking of Cyclic (C) symmetries is
 supported. 
 
 ## Executable/Script ##
-Rosetta/main/source/bin/membrane_symmdocking.linuxgccrelease
+Rosetta/main/source/bin/membrane_symdocking.linuxgccrelease
 
 ## Generating Inputs ##
 Three initial input files are required for this protocol: 
@@ -80,7 +80,7 @@ use a C4 Symmetric Potassium Channel (PDB ID: 1bl8)
 
 3. Generate inputs for symmetry: To prepare the structure for assembly and docking in the protocol, 
    a set of asymmetric inputs must be generated. These inputs describe the asymmetric unit, which will 
-   later be used to re-assemble the complex based on a defined symmetry definition. A version of these
+   later be used to re-assemble the complex based on a generated symmetry definition. A version of these
    generated input files are provided in the example_symmetry_files/ directory
 
    First, create the asymmetric input structure and symmetry definition file using the make_symmdef_file.pl
@@ -99,9 +99,10 @@ use a C4 Symmetric Potassium Channel (PDB ID: 1bl8)
                                    and assemble this complex from the input file. 
 
     Note: To generate a correct symmetry, make_symmdef_file.pl requires all chains be of equal length. Subunits
-    shoould also be close to <0.5Å rmsd to one another. Any asymmetry may result in an incorrect symmetry definiton. To check, you can visualize the example_symmetry_inputs/1bl8_refined_symm.pdb to ensure this initial setup is correect. 
+    shoould also be close to <0.5Å rmsd to one another. Any asymmetry may result in an incorrect symmetry definiton. 
+    To check, you can visualize the example_symmetry_inputs/1bl8_refined_symm.pdb to ensure this initial setup is correect. 
 
-  Next, you will  need the 1bl8_trA.span file containing trans-membrane spans for only the asymmetric unit. 
+  Next, you will need the 1bl8_trA.span file containing trans-membrane spans for only the asymmetric unit. 
   If your asymmetric unit contains multiple chains, you may need to assemble this file yourself from the full set
   of spans. 
 
@@ -138,8 +139,8 @@ membrane symmetric docking application. Flags, recommended settings, and command
 The folowing outputs will be generated from the symmetric docking protocol. A version of these outputs are also
 provided in the example_outputs/ directory: 
 
-  1. 1bl8_refined_0001.pdb    : Symmetrically docked output model from the protocol
-  2. score.sc                 : Scorefile output by Rosetta containing memrbane and symmetry scores for this model
+  1. 1bl8_refined_INPUT_0001.pdb    : Symmetrically docked output model from the protocol
+  2. score.sc                       : Scorefile output by Rosetta containing memrbane and symmetry scores for this model
 
 ## Additional References ##
 1. DiMaio F, Leaver-Fay A, Bradley P, Baker D, André I (2011) Modeling Symmetric Macromolecular Structures in Rosetta3. PLoS ONE 6: e20450. 
