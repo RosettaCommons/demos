@@ -64,8 +64,8 @@ use a C4 Symmetric Potassium Channel (PDB ID: 1bl8) as an example:
    Rosetta/main/source/bin/rosetta_scripts.linuxgccrelease -parser:protocol membrane_relax.xml @relax_flags
 
    The following output files will be generated: 
-     = 1bl8_native_<1-5>.pdb    : 5 refined models of 1bl8
-     = relax_scores_1bl8.sc     : Rosetta scores for each resulting models
+     = 1bl8_tr_<1-5>.pdb    : 5 refined models of 1bl8
+     = relax_scores_1bl8.sc : Rosetta scores for each resulting models
 
    Examples of these outputs can be found in example_refined_models
 
