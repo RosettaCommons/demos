@@ -83,8 +83,8 @@ use a C4 Symmetric Potassium Channel (PDB ID: 1bl8)
    later be used to re-assemble the complex based on a generated symmetry definition. A version of these
    generated input files are provided in the example_symmetry_files/ directory
 
-   First, create the asymmetric input structure and symmetry definition file using the make_symmdef_file.pl
-   script. An example commandline is provided below: 
+   First, create the asymmetric input structure and symmetry definition file from the refined symmetric
+   complex using the make_symmdef_file.pl script. An example commandline is provided below: 
 
    Rosetta/main/source/src/apps/public/symmetry/make_symmdef_file.pl -p 1bl8_refined.pdb -a A -i B:4 > 1bl8.c4.symm
 
