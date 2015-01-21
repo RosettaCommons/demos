@@ -4,7 +4,7 @@ MP_Framework Application: Membrane Protein-Protein Docking
 ## About this Protocol Capture
 Author: Julia Koehler Leman (julia.koehler1982@gmail.com)
 Corresponding PI: Jeffrey J. Gray (jgray@jhu.edu)
-Last Updated: 12/18/2014
+Last Updated: January 2015
 
 Rosetta Revision #57518
 
