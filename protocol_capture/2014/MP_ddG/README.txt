@@ -34,24 +34,47 @@ two scripts:
   2. compute_ddG.py : A general version of the ddG application that will compute 
      a ddG given any inputs
 
-## Generating Inputs
-Modeling membrane proteins in Rosetta requires a spanning topology file (required). To generate a spanfile
-describing the transmembrane topology, you can predict topology from seuqnece using the OCTOPUS server
-(http://octopus.cbr.su.se/). This file must be converted to a Rosetta spanfile format using octopus2span.pl
+## Generating Inputs ##
+Two inputs are required for the ddG application:  
+  (1) PDB file for the protein structure (membrane-transformed)
+  (2) Span file describing the location of trans-membrane spans
 
-    cd MP_ddG/scripts/
-    ./octopus2span.pl octopus_pred.out > spanfile.txt
+Steps for generating these inputs are found below. A set of example inputs can 
+also be found in inputs/. Here, OmpLA (PDB ID: 1qd6) is used as an example: 
 
-## Useful Scripts
-This demo contains a script directory with: 
-  - octopus2span.pl: Convert OCTOPUS topology prediction to Rosetta spanfile format
+1. PDB File: Generate a PDB file where the membrane protein structure is transformed 
+   into PDB coordinates (z-axis is membrane normal). This can be done 
+   either by downloading the transformed PDB directly from the PDBTM website 
+   (http://pdbtm.enzim.hu/) or by downloading a PDB file from the PDB and running
+   it through the PPM server (http://opm.phar.umich.edu/server.php).
 
-## Running the Application
-To run the membrane ddG script for this example case, run the python script (no arguments)
+2. Span File: Generate a spanfile from the PDB structure using
+   the spanfile_from_pdb application described in the MP_spanfile-from-pdb protocol
+   capture in Rosetta/demos/protocol_captures/2014. An example commandline using 
+   1qd6 is also provided here: 
+
+   Rosetta/main/source/bin/spanfile_from_pdb.linuxgccrelease -database /path/to/db -in:file:s inputs/1qd6_tr.pdb
+
+   For this example, this command will produce 1 output files: 
+     = 1qd6_tr.span: Spanfile containing predicted trans-membrane spans
+
+   Note: For this example, 1qd6 should have 12 transmembrane spans
+
+## Steps for Running each Protocol ##
+Here, we describe the steps required to run the MP_ddG protocol. As an example, all steps 
+use the PDB 1qd6: 
+
+
+To run the membrane ddG application for the ompLA example, run the following command
+(no arguments). Inside this script is also instructions for how to include the membrane
+framework in a general PyRosetta script: 
 
 ./compute_ompLA_ddG.py
 
 The ddGs are in the log output printed to the screen.
+
+
+
 Alternatively, for a more general case, you can run the script
 
 ./compute_ddG.py
