@@ -55,7 +55,7 @@ used as an example:
 
    Rosetta/main/source/bin/spanfile_from_pdb.linuxgccrelease -database /path/to/db -in:file:s example_inputs/3pxo_tr.pdb
 
-   For this example, this command will produce 1 output files: 
+   For this example, this command will produce 1 output file: 
      = 3pxo_tr.span: Spanfile containing predicted trans-membrane spans
 
 ## Steps of the protocol ##
@@ -92,7 +92,7 @@ The folowing outputs will be generated from the relax protocol. A version of the
 provided in the example_outputs/ directory: 
   = 3pxo_tr_0001.pdb      : Output refined model of 3pxo
   = relax_scores_3pxo.sc  : Rosetta scores (including membrane scores) for refinement run
-  
+
 ## References
 1. Tyka MD, Keedy DA, Andre I, DiMaio F, Song Y, et al. (2011) Alternate states of proteins revealed by detailed energy landscape mapping. J Mol Biol. 
 
