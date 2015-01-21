@@ -87,6 +87,10 @@ use the PDB 3pxo:
 
       Rosetta/main/source/bin/rosetta_scripts.linuxgccrelease -database /path/to/db @relax_flags
 
+   Note on timing: Refinement in Rosetta is a time consuming application. Depending on avaialble
+   computing power and size of the protein, refinement of an individual decoy can take between 10-15min
+   for ~200 residues and between 0.5-1.0hrs for proteins > 200 residues. 
+
 ## Example Outputs ##
 The folowing outputs will be generated from the relax protocol. A version of these outputs are also
 provided in the example_outputs/ directory: 

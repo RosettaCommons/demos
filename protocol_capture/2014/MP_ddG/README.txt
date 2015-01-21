@@ -3,9 +3,9 @@ Rosetta Membrane Framework Application: Membrane ddG
 
 ### About this Protocol Capture
 Author: Rebecca F. Alford (rfalford12@gmail.com)
-Author: JKLeman (julia.koehler1982@gmail.com)
+Author: Julia Koehler Leman (julia.koehler1982@gmail.com)
 Corresponding PI: Jeffrey J. Gray (jgray@jhu.edu)
-Last Updated: December 2014
+Last Updated: January 2015
 
 Rosetta Revision #57514
 
