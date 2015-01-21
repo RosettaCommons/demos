@@ -6,68 +6,103 @@ Author: Rebecca F. Alford (rfalford12@gmail.com)
 Corresponding PI: Jeffrey J. Gray (jgray@jhu.edu)
 Last Updated: December 2014
 
-Special acknowledgement to Evan Baugh for assistance working with the PyMOL Mover. 
 Rosetta Revision #57514
+PyMOL Version 1.7.4.1
 
 Publication describing the method: 
 Alford RF, Koehler Leman J, Weitzner BD, Duran A, Elazar A, Tiley D, Gray JJ (2015)
 An integrated framework advancing membrane protein modeling and design
 PLoS ONE (in preparation) 
 
-### Description
-Visualizing the geometry of the membrane is an important step in analysis of membrane models. In particular, we can answer questions about interactions at different hydrophobic layers, membrane embedding, and orientation. This application enables visualization of output Rosetta models with the Rosetta PyMOL viewer. This tool uses the position of the bilayer described by the membrane framework to derive the position of two parallel planes separated by the membrane thickness. These planes are modeled as CGO objects in python and are drawn on the fly during simulations. This tool can also be used in real-time during simulations with any JD2-supported Rosetta application using the same set of flags. 
+## Description ##
+Visualizing the position and orientation of the biomolecule in the membrane bilayer
+(embedding) is an important part of analyzing membrane models from Rosetta. This visualization 
+allows the user to distingish conformations with poor embeddings from conformations with 
+native-like/reasonable embeddings. 
 
-### Executable/Script
-The PyMOL viewer with membranes can be used with any Rosetta application that uses the membrane framework with teh same flags. We also provide an application to explicitly view output models in the C++ code: 
+This application displays a set of two parallel planes in PyMOL, representing the position 
+and geometry of the membrane bilayer. During a simulation, Rosetta extrapolates the membrane center, 
+normal and thickness from the MEM residue, calculates the position of the planes, and sends
+this information to PyMOL in real time. PyMOL then uses this information to draw two CGO plane objects
+representing the membrane. 
 
-Application: view_membrane_protein.<platform-exe> 
+This tool is part of a standalone application and can also be used in combination with any JD2-supported
+Rosetta application. 
+
+## Executable/Script ##
+Rosetta/main/source/bin/view_membrane_protein.linuxgccrelease
+
+"or"
+
+Pass the -show_simulation_in_pymol 0 flag with any Rosetta Membrane Framework application
 
 ### Generating Inputs
-Viewing the membrane planes only requires a spanfile as input. 
+Two inputs are required for using the standalone visualization app: 
+  (1) A PDB to view 
+  (2) Span file describing the location of tran-smembrane spans
 
-  1. Generating a Spanfile
-  A spanfile describing transmembrane spanning regions can be generated using the OCTOPUS server
-  (http://octopus.cbr.su.se/). This file must be converted to a Rosetta spanfile format using octopus2span.pl
+Steps for generating these inputs are found below. A set of example inputs can 
+also be found in example_inputs/. Here, 1c3w is used as an example: 
 
-    cd mpframework-ddG/scripts/
-    ./octopus2span.pl octopus_pred.out > spanfile.txt
+1. PDB File: If an output model is not already available from Rosetta, 
+   generate a PDB file where the membrane protein structure is transformed 
+   into PDB coordinates (z-axis is membrane normal). This can be done 
+   either by downloading the transformed PDB directly from the PDBTM website 
+   (http://pdbtm.enzim.hu/) or by downloading a PDB file from the PDB and running
+   it through the PPM server (http://opm.phar.umich.edu/server.php).
 
-### Useful Scripts
-This demo contains a script directory with: 
-  - octopus2span.pl: Convert OCTOPUS topology prediction to Rosetta spanfile format
+2. Span File: Generate a spanfile from the PDB structure using
+   the spanfile_from_pdb application described in the MP_spanfile-from-pdb protocol
+   capture in Rosetta/demos/protocol_captures/2014. An example commandline using 
+   1c3w is also provided here: 
 
-### Running the Application
+   Rosetta/main/source/bin/spanfile_from_pdb.linuxgccrelease -database /path/to/db -in:file:s 1c3w_tr.pdb
 
-1. Required Flags 
-To run this applicaiton, the minimum required flags are described below. Flags are also included
-in a flags file in this demo: 
+   For this example, this command will produce 2 output files: 
+     = 1c3w_tr.span: Predicted trans-membrane spans for the full symmetric complex
+     = 1c3w_trA.span: Predicted trans-membrane spans for each chain in the complex
 
-flags                                  descriptions
---------------------------------------------------------------------------------------------------
--in:file:s <pdbfile>                   Input PDB Structure: Asymmetric input structure (should have been 
-                                       generated as mystruct_input.pdb after running make_symmdef_file.pl)
--membrane_new:setup:spanfiles          Spanfile describing spanning topology of starting structure 
-                                       for full symmetric structure
--show_simulation_in_pymol 0			       Use the PyMOL viewer to visualize membrane planes for structures
--keep_pymol_simulation_history 1       Keep pymol frames for making movies/replaying simulations (optional)
+## Steps of the protocol ##
+Here, we describe the steps required to run the MP_PyMOLViewer protocol. As an example, all steps 
+use the PDB 1c3w: 
 
-2. Startup the PyMOL PyRosetta Session: 
-  - Open a new session of PyMOL 
-  - Run this PyMOLPyRosettaServer.py script located in /src/python/bindings
+  (1) Required Flags: 
+      To run this applicaiton, the minimum required flags are described below. Flags are also included in the pymol_flags file in this demo: 
 
-  You should see a message in the PyMOL terminal window indicating the server
-  script has initialized successfully. 
+      flags                                  descriptions
+     --------------------------------------------------------------------------------------------------
+      -in:file:s <pdbfile>                   Input PDB Structure: Asymmetric input structure (should have been 
+                                             generated as mystruct_input.pdb after running make_symmdef_file.pl)
+      -membrane_new:setup:spanfiles          Spanfile describing spanning topology of starting structure 
+                                             for full symmetric structure
+      -show_simulation_in_pymol 0			       Use the PyMOL viewer to visualize membrane planes for structures
+      -keep_pymol_simulation_history 1       Keep pymol frames for making movies/replaying simulations (optional)
 
-3. Run this application (or other apps) from the commandline
+  (2) Startup the PyMOL PyRosetta Session: 
+      1. Open a new session of PyMOL\
+      2. Run the PyMOLPyrosettaServer.py script using the following command line in the pymol window:  
 
-./view_membrane_protein.<exe> -database /path/to/my/rosettadb @flags
+        run /path/to/Rosetta/main/source/src/python/bindings/PyMOLPyRosettaServer.py
 
-## Example Outputs
-The following example outputs are included in this demo in the example_outputs/ directory: 
- - 1c3w.pse: Example pymol session file including membrane planes objects
- - 1c3w.png: Example image of PDB 1C3W (bacteriorhodopsin) embedded in the membrane (from session file)
+      Once run, a message should appear in the PyMOL terminal window indicating the server was 
+      initialized successfully. 
 
-## References
+  (3) Run Rosetta application:  
+      From the regular terminal, run the standalone application or other membrane framework apps
+      from the command line: 
+
+      Rosetta/main/source/bin/view_membrane_protein.linuxgccrelease -database /path/to/db @pymol_flags
+
+      Within ~10-20 seconds, 2 parallel planes (PyMOL object entitled membrane_planes) will appear 
+      in the PyMOL session. 
+
+## Example Outputs ##
+The following example outputs are included in the example_outputs/ directory to demonstrate
+what the PyMOL session should look like: 
+  1. 1c3w.pse   : Example pymol session file including membrane planes objects
+  2. 1c3w.png   : Example image of PDB 1c3w (bacteriorhodopsin) embedded in the membrane (from session file)
+
+## Additional References ##
 1. Baugh EH, Lyskov S, Weitzner BD, Gray JJ (2011) Real-Time PyMOL Visualization for Rosetta and PyRosetta. PLoS ONE 6: e21931.
 
 2. DeLano W (n.d.) The PyMOL Manual: Compiled Graphics Objects (CGOs) and Molscript Ribbons. Available: http://pymol.sourceforge.net/newman/user/toc.html.
