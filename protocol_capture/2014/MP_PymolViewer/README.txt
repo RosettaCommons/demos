@@ -96,6 +96,9 @@ use the PDB 1c3w:
       Within ~10-20 seconds, 2 parallel planes (PyMOL object entitled membrane_planes) will appear 
       in the PyMOL session. 
 
+      Note: In earlier versions of PyMOL, small lines will be drawn to the MEM residue as this is a HETATM
+      in the PDB. These can be turned off manually by hiding the line view for the MEM residue. 
+
 ## Example Outputs ##
 The following example outputs are included in the example_outputs/ directory to demonstrate
 what the PyMOL session should look like: 
