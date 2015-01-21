@@ -11,6 +11,8 @@ Rosetta Revision #57514
 Python Version 2.7+
 PyRosetta Release Version: January 2015
 
+PyRosetta can be downloaded from http://www.pyrosetta.org
+
 Publication describing the method: 
 Alford RF, Koehler Leman J, Weitzner BD, Gray JJ (2015)
 An integrated framework advancing membrane protein modeling and design
