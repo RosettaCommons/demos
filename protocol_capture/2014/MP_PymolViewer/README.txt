@@ -65,14 +65,12 @@ also be found in example_inputs/. Here, 1c3w is used as an example:
 Here, we describe the steps required to run the MP_PyMOLViewer protocol. As an example, all steps 
 use the PDB 1c3w: 
 
-  (1) Required Flags: 
-      To run this applicaiton, the minimum required flags are described below. Flags are also included 
-      in the pymol_flags file in this demo: 
+  (1) Required Options: Options (flags) needed to run this application. A file with these flags, pymol_flags, 
+      is also provided for 1c3w in this demo: 
 
       flags                                  descriptions
      --------------------------------------------------------------------------------------------------
-      -in:file:s <pdbfile>                   Input PDB Structure: Asymmetric input structure (should have been 
-                                             generated as mystruct_input.pdb after running make_symmdef_file.pl)
+      -in:file:s <pdbfile>                   Input PDB Structure: PDB file for protein structure
       -membrane_new:setup:spanfiles          Spanfile describing spanning topology of starting structure 
                                              for full symmetric structure
       -show_simulation_in_pymol 0			       Use the PyMOL viewer to visualize membrane planes for structures
@@ -100,8 +98,8 @@ use the PDB 1c3w:
       in the PDB. These can be turned off manually by hiding the line view for the MEM residue. 
 
 ## Example Outputs ##
-The following example outputs are included in the example_outputs/ directory to demonstrate
-what the PyMOL session should look like: 
+The folowing outputs will be generated from the standalone pymol viewer application. A version of these outputs 
+are also provided in the example_outputs/ directory: 
   1. 1c3w.pse          : Example pymol session file including membrane planes objects
   2. 1c3w.png          : Example image of PDB 1c3w (bacteriorhodopsin) embedded in the membrane (from session file)
   3. 1c3w_tr_0001.pdb  : Output PDB file containing membrane position information in MEM residue

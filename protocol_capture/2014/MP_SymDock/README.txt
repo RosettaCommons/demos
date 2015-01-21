@@ -100,7 +100,8 @@ use a C4 Symmetric Potassium Channel (PDB ID: 1bl8)
 
     Note: To generate a correct symmetry, make_symmdef_file.pl requires all chains be of equal length. Subunits
     shoould also be close to <0.5Å rmsd to one another. Any asymmetry may result in an incorrect symmetry definiton. 
-    To check, you can visualize the example_symmetry_inputs/1bl8_refined_symm.pdb to ensure this initial setup is correect. 
+    To check, you can visualize the example_symmetry_inputs/1bl8_refined_symm.pdb to ensure this initial setup is 
+    correect. 
 
   Next, you will need the 1bl8_trA.span file containing trans-membrane spans for only the asymmetric unit. 
   If your asymmetric unit contains multiple chains, you may need to assemble this file yourself from the full set
@@ -110,30 +111,29 @@ use a C4 Symmetric Potassium Channel (PDB ID: 1bl8)
 Using the asymmetric unit PDB, symmetry definition file, and asymmetric unit span file as inputs, you are ready to run the 
 membrane symmetric docking application. Flags, recommended settings, and commandlines are described below: 
 
-  (1) Required flags: flags needed to run this application are described below. A file with these flags, symdock_flags, 
-  is also provided for the 1bl8 example. 
+  (1) Required Options: Options (flags) needed to run this application are described below. A file with these flags,   
+      symdock_flags, is also provided for the 1bl8 example. 
 
-  flags                                  descriptions
-  --------------------------------------------------------------------------------------------------
-  -in:file:s <pdbfile>                        Input PDB Structure: Asymmetric input structure
-  -in:file:native <pdbfile>                   Structure of native symmetric complex
-  -membrane_new:setup:spanfiles <spanfile>    Spanfile describing spanning topology of asymmetric unit
-  -membrane_new:scoring:hbond                 Turn on depth-dependent hydrogen bonding term when using the   
-                                              membrane high resolution energy function
-  -symmetry:symmetry_definition               Symmetry definition file
-  -symmetry:initialize_rigid_body_dofs        Locally sample rigid body conformations during intial complex assembly
-                                              (before docking algorithm)
-  -nstruct                                    Number of structures to generate
-  -packing:pack_missing_sidechains 0          Wait to pack until the membrane mode is turned on
-  -docking:dock_lowres_filter 5.0 10.0        Lower van der waals scoring criteria during centroid stage
-                                              to allow wider range of rigid body sampling
+      flags                                  descriptions
+      --------------------------------------------------------------------------------------------------
+      -in:file:s <pdbfile>                      Input PDB Structure: Asymmetric input structure
+      -in:file:native <pdbfile>                 Structure of native symmetric complex
+      -membrane_new:setup:spanfiles <spanfile>  Spanfile describing spanning topology of asymmetric unit
+      -membrane_new:scoring:hbond               Turn on membrane depth-dependent hydrogen bonding weight
+      -symmetry:symmetry_definition             Symmetry definition file
+      -symmetry:initialize_rigid_body_dofs      Locally sample rigid body conformations during intial complex assembly
+                                                (before docking algorithm)
+      -nstruct                                  Number of structures to generate
+      -packing:pack_missing_sidechains 0        Wait to pack until the membrane mode is turned on
+      -docking:dock_lowres_filter 5.0 10.0      Lower van der waals scoring criteria during centroid stage
+                                                to allow wider range of rigid body sampling
 
   (2) Recommended # of Decoys
     - For demo run: 1
     - For production runs: 1000
 
   (3) Command Line
-  Rosetta/main/source/bin/membrane_symdocking.linuxgccrelease -database /path/to/my/rosettadb @symdock_flags 
+      Rosetta/main/source/bin/membrane_symdocking.linuxgccrelease -database /path/to/my/rosettadb @symdock_flags 
 
 ### Example Outputs
 The folowing outputs will be generated from the symmetric docking protocol. A version of these outputs are also

@@ -4,7 +4,7 @@ Rosetta Membrane Framework Application: Membrane Relax
 ### About this Protocol Capture
 Author: Rebecca F. Alford (rfalford12@gmail.com)
 Corresponding PI: Jeffrey J. Gray (jgray@jhu.edu)
-Last Updated: December 2014
+Last Updated: January 2015
 
 Rosetta Revision #57514
 
@@ -13,68 +13,87 @@ Alford RF, Koehler Leman J, Weitzner BD, Duran A, Elazar A, Tiley D, Gray JJ (20
 An integrated framework advancing membrane protein modeling and design
 PLoS ONE (in preparation) 
 
-### Description
-Structural refinement can reveal an ensemble of states describing the conformation of a protein. It is also necessary to advance many low resolution structures determined by x-ray crystallography to atomic-level detail. These refined structures are used as inputs to several new modeling protocols such as protein-protein docking, ligand docking, etc. 
+## Description ##
+High-resolution refinement is key for advancing low resolution structures from x-ray
+crystallography to atomic level detail. For membrane proteins, this method can also
+reveal an ensemble of possible membrane embeddings: the position and orientation of 
+the biomolecule with respect to the membrane bilayer. 
 
-### Algorithm Description
-The membrane relax application combines the traditional fast relax algorithm with the membrane all atom energy function and an addiitonal step for optimizing the membrane position. To refine the protein structure, several iterations to sample backbone and side chain conformations. In addition, the relative orientation of the membrane and protein is sampled by minimizing the transform in the membrane jump. Combination of high-resolution refinement and orienting the membane posiiton allows for simultaneous refinement of structure and optimization of membrane embedding. 
+The membrane relax application combines the Rosetta FastRelax algorithm with the
+all atom energy function for membrane proteins and a gradient-based technique 
+for optimizing the membrane embedding. First, a series of small backbone moves, 
+rotamer trials, and minimization are used to refine the protein structure. In addition, 
+the membrane position is optimizied by minimizing the "jump" or connecting relating
+the MEM residue to the biomolecule. 
 
-### Executable/Script
-This application uses the membrane framework and is implemented as a Rosetta script. THe script included in this file is called membrane_relax.xml which can be run via the 
-rosetta_scripts executable. 
+## Executable/Script ##
+The membrane framework relax application is implemented in Rosetta script. This script, 
+called membrane_relax.xml is included in the main directory of this protocol capture. 
 
-### Generating Inputs
-The membrane relax application requires 1 input file: 
+It can be run with the following executable: 
+Rosetta/main/source/bin/rosetta_scripts.linuxgccrelease
 
-  1. Generating a Spanfile
-  A spanfile describing transmembrane spanning regions can be generated using the OCTOPUS server (http://octopus.cbr.su.se/). This file must be converted to a Rosetta spanfile format using octopus2span.pl. Example command is given below: 
+## Generating Inputs ##
+Two inputs are required for the membrane relax application: 
+  (1) PDB for the protein structure of interest
+  (2) Span file describing the location of trans-membrane spans
 
-    cd mpframework-relax/scripts/
-    ./octopus2span.pl octopus_pred.out > spanfile.txt
+Steps for generating these inputs are found below. A set of example inputs can 
+also be found in example_inputs/. Here, metarhodopsin II (PDB ID: 3pxo) is 
+used as an example: 
 
-### Useful Scripts
-This demo contains a script directory with: 
-  - octopus2span.pl: Convert OCTOPUS topology prediction to Rosetta spanfile format
-  - predict_lips.pl: Use the TMPLIP server to predict per-residue lipophilicity
-  - alignblast.pl: Perform and parse multiple sequnece alignment from psiblast (needed 
-    for predict_lips.pl)
-    
-### Running the Application
+1. PDB File: Generate a PDB file where the membrane protein structure is transformed 
+   into PDB coordinates (z-axis is membrane normal). This can be done 
+   either by downloading the transformed PDB directly from the PDBTM website 
+   (http://pdbtm.enzim.hu/) or by downloading a PDB file from the PDB and running
+   it through the PPM server (http://opm.phar.umich.edu/server.php).
 
-1. Required Flags 
-To run this applicaiton, the minimum required flags are described below. Flags are also included
-in a flags file in this demo: 
+2. Span File: Generate a spanfile from the PDB structure using
+   the spanfile_from_pdb application described in the MP_spanfile-from-pdb protocol
+   capture in Rosetta/demos/protocol_captures/2014. An example commandline using 
+   3pxo is also provided here: 
 
-flags                                  descriptions
---------------------------------------------------------------------------------------------------
--parser:protocol membrane_relax.xml    Specify membrane relax protocol to rosetta scripts executable
--in:file:s <pdbfile>                   Input PDB Structure: Asymmetric input structure (should have been 
-                                       generated as mystruct_input.pdb after running make_symmdef_file.pl)
--in:ignore_unrecognized_res            Ignore unrecognized residues during initial PDB parsing (standard
-                                       Rosetta flag)
--membrane_new:setup:spanfiles          Spanfile describing spanning topology of starting structure 
--membrane_new:scoring:hbond            Turn on depth-dependent hydrogen bonding term when using the   
-                                       membrane high resolution energy function
--relax:fast                            Use the FastRelax mode of Rosetta Relax (uses 5 repeat cycles)
--packing:pack_missing_sidechains false Wait to repack sidechains until the membrane pose is fully 
-                                       initialized
--nstruct                               Number of structures to generate
+   Rosetta/main/source/bin/spanfile_from_pdb.linuxgccrelease -database /path/to/db -in:file:s example_inputs/3pxo_tr.pdb
 
-2. Recommended # of Decoys
- - For demo run: 1
- - For production runs: 1000
+   For this example, this command will produce 1 output files: 
+     = 3pxo_tr.span: Spanfile containing predicted trans-membrane spans
 
-3. Command line
-To run this application, use the following command line: 
+## Steps of the protocol ##
+Here, we describe the steps required to run the MP_Relax protocol. As an example, all steps 
+use the PDB 3pxo: 
 
-./rosetta_scripts.<exe> -database /path/to/my/rosettadb @flags 
+  (1) Required Options: Options (flags) needed to run this applicaiton. A file with these flags, 
+      relax_flags, is also provided for 3pxo in this demo: 
 
-### Example Outputs
-The following example outputs are included with this demo in the example_outputs/ directory: 
-  -2bs2_tr_output.pdb: Output relaxed decoy
-  -2bs2_score.sc: Scorefile output by relax
+      flags                                  descriptions
+      --------------------------------------------------------------------------------------------------
+      -parser:protocol membrane_relax.xml    Use the membrane relax protocol Rosetta script
+      -in:file:s                             Input PDB Structure: PDB file for protein structure
+      -membrane_new:setup:spanfiles          Spanfile describing trans-membrane spans of the starting structure
+      -membrane_new:scoring:hbond            Turn on membrane depth-dependent hydrogen bonding weight
+      -relax:fast                            Use the FastRelax mode of Rosetta Relax (uses 5-8 repeat cycles)
+      -relax:jump_move true                  Allow the MEM and other jumps to move during refinement
+      -nstruct                               Number of structures to generate
+      -packing:pack_missing_sidechains 0     Wait to pack until the membrane mode is turned on
+      -out:pdb                               Output all PDB structures of refined models
+      -out:file:scorefile                    Specify destination for score file
 
-## Refereces
+  (2) Recommended # of Decoys
+      - For demo run: 1
+      - For production runs: 1000
+
+  (3) Command line: 
+      To run this application, use the following command line: 
+
+      Rosetta/main/source/bin/rosetta_scripts.linuxgccrelease -database /path/to/db @relax_flags
+
+## Example Outputs ##
+The folowing outputs will be generated from the relax protocol. A version of these outputs are also
+provided in the example_outputs/ directory: 
+  = 3pxo_tr_0001.pdb      : Output refined model of 3pxo
+  = relax_scores_3pxo.sc  : Rosetta scores (including membrane scores) for refinement run
+  
+## References
 1. Tyka MD, Keedy DA, Andre I, DiMaio F, Song Y, et al. (2011) Alternate states of proteins revealed by detailed energy landscape mapping. J Mol Biol. 
 
 2. Barth P, Schonbrun J, Baker D (2007) Toward high-resolution prediction and design of transmembrane helical protein structures. Proc Natl Acad Sci 104: 15682–15687. 
