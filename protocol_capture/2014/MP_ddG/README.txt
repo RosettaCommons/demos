@@ -64,38 +64,36 @@ also be found in inputs/. Here, OmpLA (PDB ID: 1qd6) is used as an example:
 Here, we describe the steps required to run the MP_ddG protocol. As an example, all steps 
 use the PDB 1qd6: 
 
+  (1) OmpLA Example: To run the membrane ddG application for the ompLA example, run the following command
+      (no arguments). Inside this script is also instructions for how to include the membrane
+      framework in a general PyRosetta script: 
 
-To run the membrane ddG application for the ompLA example, run the following command
-(no arguments). Inside this script is also instructions for how to include the membrane
-framework in a general PyRosetta script: 
+		./compute_ompLA_ddG.py
 
-./compute_ompLA_ddG.py
+	The ddGs are in the log output printed to the screen.
 
-The ddGs are in the log output printed to the screen.
+  (2) General Script: Use the general case script to run the MP_ddG application for a general case.
+      Here, you will need to specify the input PDB, spanfile, output file name containing predicted ddGs, 
+      residue number to mutate, and optionally the mutant you are interested in. Run the following
+      command line: 
 
+		./compute_ddG.py -p inputs/1qd6_tr.pdb -s inputs/1qd6_tr.span -o ddGs_ompLA.txt -r 181
 
+ 	  The flags are:
+ 	  -p <input pdb file>
+	  -s <input spanfile>
+	  -o <output filename with predicted ddGs>
+	  -r <residue number to mutate: this is pose residue numbering, so it's always safer to renumber your input PDB starting from 1 before running this script>
+	  -m <optional: one-letter-code of amino acid to mutate into. For instance: for the 'L5A' mutation it would be 'A'>
 
-Alternatively, for a more general case, you can run the script
-
-./compute_ddG.py
-
-where you can specify the input PDB, input spanfile, output file name with predicted ddGs, the residue number to mutate, and optionally the mutant that you are interested in. Use the flag -h for input options. An example is the commandline:
-
-./compute_ddG.py -p inputs/1qd6_tr.pdb -s inputs/1qd6_tr.span -o ddGs_ompLA.txt -r 181
-
-The flags are:
--p <input pdb file>
--s <input spanfile>
--o <output filename with predicted ddGs>
--r <residue number to mutate: this is pose residue numbering, so it's always safer to renumber your input PDB starting from 1 before running this script>
--m <optional: one-letter-code of amino acid to mutate into. For instance: for the 'L5A' mutation it would be 'A'>
-
-The columns in the output file are: amino acid, mutant score, native score, ddG. Running the script multiple times with the same output file will APPEND to the file and not overwrite it.
+	  The columns in the output file are: amino acid, mutant score, native score, ddG. Running the script multiple times with the same output file will APPEND to the file and not overwrite it.
 
 ## Example Outputs
-The PyRosetta script will write a list of mutations and ddG values to standard output. 
+  1. The compute_OmpLA_ddG.py script will write a list of mutations and ddG values to standard output. 
+  2. The compute_ddG.py script will write ddGs for each mutation to a file. This file, ddG_ompLA.txt, is included
+     for OmpLA in example_outputs/ 
 
-### References
+## Additional References ##
 1. Chaudhury S, Lyskov S, Gray JJ (2010) PyRosetta: a script-based interface for implementing molecular modeling algorithms using Rosetta.
 
 2.  Moon CP, Fleming KG (2011) Side-chain hydrophobicity scale derived from transmembrane protein folding into lipid bilayers. Proc Natl Acad Sci. 
