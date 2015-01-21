@@ -21,7 +21,7 @@ allows the user to distingish conformations with poor embeddings from conformati
 native-like/reasonable embeddings. 
 
 This application displays a set of two parallel planes in PyMOL, representing the position 
-and geometry of the membrane bilayer. During a simulation, Rosetta extrapolates the membrane center, 
+and geometry of the membrane bilayer. During a simulation, Rosetta extracts the membrane center, 
 normal and thickness from the MEM residue, calculates the position of the planes, and sends
 this information to PyMOL in real time. PyMOL then uses this information to draw two CGO plane objects
 representing the membrane. 
@@ -99,8 +99,9 @@ use the PDB 1c3w:
 ## Example Outputs ##
 The following example outputs are included in the example_outputs/ directory to demonstrate
 what the PyMOL session should look like: 
-  1. 1c3w.pse   : Example pymol session file including membrane planes objects
-  2. 1c3w.png   : Example image of PDB 1c3w (bacteriorhodopsin) embedded in the membrane (from session file)
+  1. 1c3w.pse       : Example pymol session file including membrane planes objects
+  2. 1c3w.png       : Example image of PDB 1c3w (bacteriorhodopsin) embedded in the membrane (from session file)
+  3. 1c3w_0001.pdb  : Output PDB file containing membrane position information in MEM residue
 
 ## Additional References ##
 1. Baugh EH, Lyskov S, Weitzner BD, Gray JJ (2011) Real-Time PyMOL Visualization for Rosetta and PyRosetta. PLoS ONE 6: e21931.
