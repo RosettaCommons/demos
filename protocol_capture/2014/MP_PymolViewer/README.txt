@@ -15,7 +15,7 @@ An integrated framework advancing membrane protein modeling and design
 PLoS ONE (in preparation) 
 
 ## Description ##
-Visualizing the position and orientation of the biomolecule in the membrane bilayer
+Visualizing the position and orientation of a biomolecule in the membrane bilayer
 (embedding) is an important part of analyzing membrane models from Rosetta. This visualization 
 allows the user to distingish conformations with poor embeddings from conformations with 
 native-like/reasonable embeddings. 
@@ -66,7 +66,8 @@ Here, we describe the steps required to run the MP_PyMOLViewer protocol. As an e
 use the PDB 1c3w: 
 
   (1) Required Flags: 
-      To run this applicaiton, the minimum required flags are described below. Flags are also included in the pymol_flags file in this demo: 
+      To run this applicaiton, the minimum required flags are described below. Flags are also included 
+      in the pymol_flags file in this demo: 
 
       flags                                  descriptions
      --------------------------------------------------------------------------------------------------
@@ -98,13 +99,14 @@ use the PDB 1c3w:
 ## Example Outputs ##
 The following example outputs are included in the example_outputs/ directory to demonstrate
 what the PyMOL session should look like: 
-  1. 1c3w.pse       : Example pymol session file including membrane planes objects
-  2. 1c3w.png       : Example image of PDB 1c3w (bacteriorhodopsin) embedded in the membrane (from session file)
-  3. 1c3w_0001.pdb  : Output PDB file containing membrane position information in MEM residue
+  1. 1c3w.pse          : Example pymol session file including membrane planes objects
+  2. 1c3w.png          : Example image of PDB 1c3w (bacteriorhodopsin) embedded in the membrane (from session file)
+  3. 1c3w_tr_0001.pdb  : Output PDB file containing membrane position information in MEM residue
 
-Note: Rosetta will also output a score file (score.sc) which is not important for this analysis. 
+Note: Rosetta will also output a score file (score.sc) which is not needed for this analysis. 
 
 ## Additional References ##
 1. Baugh EH, Lyskov S, Weitzner BD, Gray JJ (2011) Real-Time PyMOL Visualization for Rosetta and PyRosetta. PLoS ONE 6: e21931.
 
 2. DeLano W (n.d.) The PyMOL Manual: Compiled Graphics Objects (CGOs) and Molscript Ribbons. Available: http://pymol.sourceforge.net/newman/user/toc.html.
+
