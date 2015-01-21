@@ -9,6 +9,7 @@ Last Updated: January 2015
 
 Rosetta Revision #57514
 Python Version 2.7+
+PyRosetta Release Version: January 2015
 
 Publication describing the method: 
 Alford RF, Koehler Leman J, Weitzner BD, Gray JJ (2015)
@@ -16,17 +17,22 @@ An integrated framework advancing membrane protein modeling and design
 PLoS ONE (in preparation) 
 
 ## Description ##
-Measuring free energy
+Measuring free energy changes upon mutation can inform our understanding of membrane
+protein stability and variation. It is also an important step toward predicting
+novel membrane protein folds and rational design. 
 
+In this application, we measure the difference in Rosetta energy by scoring the native 
+and mutated proteins to compute the ddG upon mutation. This application uses the all atom 
+energy function for membrane proteins in Rosetta with the membrane framework. 
 
+## Executable/Script ##
+The membrane ddG application is implemented as a python script in PyRosetta. We provide 
+two scripts: 
 
-Measuring free energy changes upon mutation can inform our understanding of membrane protein stability and variation and is a step toward design. In this application, we measure the difference in Rosetta energy by scoring the native and mutated proteins to compute the ddG upon mutation. This application uses the all atom energy function for membrane proteins in Rosetta with the membrane framework. 
-
-In this protocol capture, we compute the ddG upon mutation for mutations in OmpLA described in Moon & Fleming, 2011. For each mutation, the alanine at position 181, located at the midplane of the membrane bilayer, is mutated to all 19 cannonical amino acids. The application prints each ddG as output. This PyRosetta can also be easily adapted to compute ddG for other mutations by changing the input protein and list of mutations. 
-
-### Executable/Script
-The membrane ddG application is implemented as a python script in PyRosetta. The script
-included in this directory is compute_ompLA_ddG.py
+  1. compute_ompLA_ddG.py : This script demonstrates how to assemble a simple PyRosetta 
+     for specialized modeling tasks with the membrane framework
+  2. compute_ddG.py : A general version of the ddG application that will compute 
+     a ddG given any inputs
 
 ## Generating Inputs
 Modeling membrane proteins in Rosetta requires a spanning topology file (required). To generate a spanfile
