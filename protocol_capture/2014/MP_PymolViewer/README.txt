@@ -4,10 +4,10 @@ Rosetta Membrane Framework Application: Visualizing Membranes in PyMOL
 ### About this Protocol Capture
 Author: Rebecca F. Alford (rfalford12@gmail.com)
 Corresponding PI: Jeffrey J. Gray (jgray@jhu.edu)
-Last Updated: December 2014
+Last Updated: January 2015
 
 Rosetta Revision #57514
-PyMOL Version 1.7.4.1
+PyMOL Version 1.7.4
 
 Publication describing the method: 
 Alford RF, Koehler Leman J, Weitzner BD, Duran A, Elazar A, Tiley D, Gray JJ (2015)
@@ -39,7 +39,7 @@ Pass the -show_simulation_in_pymol 0 flag with any Rosetta Membrane Framework ap
 ### Generating Inputs
 Two inputs are required for using the standalone visualization app: 
   (1) A PDB to view 
-  (2) Span file describing the location of tran-smembrane spans
+  (2) Span file describing the location of trans-membrane spans
 
 Steps for generating these inputs are found below. A set of example inputs can 
 also be found in example_inputs/. Here, 1c3w is used as an example: 
@@ -56,11 +56,10 @@ also be found in example_inputs/. Here, 1c3w is used as an example:
    capture in Rosetta/demos/protocol_captures/2014. An example commandline using 
    1c3w is also provided here: 
 
-   Rosetta/main/source/bin/spanfile_from_pdb.linuxgccrelease -database /path/to/db -in:file:s 1c3w_tr.pdb
+   Rosetta/main/source/bin/spanfile_from_pdb.linuxgccrelease -database /path/to/db -in:file:s example_inputs/1c3w_tr.pdb
 
-   For this example, this command will produce 2 output files: 
-     = 1c3w_tr.span: Predicted trans-membrane spans for the full symmetric complex
-     = 1c3w_trA.span: Predicted trans-membrane spans for each chain in the complex
+   For this example, this command will produce 1 output files: 
+     = 1c3w_tr.span: Spanfile containing predicted trans-membrane spans
 
 ## Steps of the protocol ##
 Here, we describe the steps required to run the MP_PyMOLViewer protocol. As an example, all steps 
@@ -79,7 +78,7 @@ use the PDB 1c3w:
       -keep_pymol_simulation_history 1       Keep pymol frames for making movies/replaying simulations (optional)
 
   (2) Startup the PyMOL PyRosetta Session: 
-      1. Open a new session of PyMOL\
+      1. Open a new session of PyMOL
       2. Run the PyMOLPyrosettaServer.py script using the following command line in the pymol window:  
 
         run /path/to/Rosetta/main/source/src/python/bindings/PyMOLPyRosettaServer.py
@@ -102,6 +101,8 @@ what the PyMOL session should look like:
   1. 1c3w.pse       : Example pymol session file including membrane planes objects
   2. 1c3w.png       : Example image of PDB 1c3w (bacteriorhodopsin) embedded in the membrane (from session file)
   3. 1c3w_0001.pdb  : Output PDB file containing membrane position information in MEM residue
+
+Note: Rosetta will also output a score file (score.sc) which is not important for this analysis. 
 
 ## Additional References ##
 1. Baugh EH, Lyskov S, Weitzner BD, Gray JJ (2011) Real-Time PyMOL Visualization for Rosetta and PyRosetta. PLoS ONE 6: e21931.
