@@ -15,13 +15,22 @@
 ## @author: Rebecca F. Alford (rfalford12@gmail.com)
 ## @author: JKLeman (julia.koehler1982@gmail.com)
 
-
 # tools
 import sys, os
 import commands
 import random
 from optparse import OptionParser, IndentedHelpFormatter
 _script_path_ = os.path.dirname( os.path.realpath(__file__) )
+
+# importing Rosetta
+import rosetta.protocols.membrane
+from rosetta import Pose
+from rosetta import create_score_function
+from rosetta import TaskFactory
+from rosetta.utility import vector1_bool
+from rosetta import aa_from_oneletter_code
+from rosetta import PackRotamersMover
+from rosetta.core.pose import PDBInfo
 
 ###############################################################################
 
@@ -60,17 +69,6 @@ def main( args ):
     # check whether all inputs are there
     if ( not Options.in_pdb or not Options.in_span or not Options.res ):
 	    sys.exit( "Must provide flags '-in_pdb', '-in_span', and '-res'! Exiting..." )
-
-    # importing Rosetta
-    import rosetta.protocols.membrane
-    from rosetta import Pose
-    from rosetta import create_score_function
-    from rosetta import TaskFactory
-    from rosetta.utility import vector1_bool
-    global vector1_bool
-    from rosetta import aa_from_oneletter_code
-    from rosetta import PackRotamersMover
-    from rosetta.core.pose import PDBInfo
 
     ## Default Values
     global repack_radius
