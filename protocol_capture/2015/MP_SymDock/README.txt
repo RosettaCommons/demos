@@ -135,7 +135,11 @@ use a C4 Symmetric Potassium Channel (PDB ID: 1bl8)
       -nstruct                                  Number of structures to generate
       -packing:pack_missing_sidechains 0        Wait to pack until the membrane mode is turned on
       -docking:dock_lowres_filter 5.0 10.0      Lower van der Waals scoring criteria during centroid stage
-                                                to allow wider range of rigid body sampling
+                                                to allow wider range of rigid body sampling;
+                                                Both numbers are highest allowed scores for a low-resolution
+                                                model to proceed to the high-resolution stage:
+                                                5.0 = highest allowed van der Waals score
+                                                10.0 = highest allowed interchain contact score
 
   (2) Recommended # of Decoys
     - For demo run: 1
