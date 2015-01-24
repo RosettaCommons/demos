@@ -14,6 +14,9 @@ An integrated framework advancing membrane protein modeling and design, PLosONE 
 
 Documentation Link: <@jkleman insert the link here>  
 
+To run the full application, both steps for prepacking and actual docking needs
+to be carried out. 
+
 =====PREPACKING STEP============================================================
 
 ## Description
@@ -46,15 +49,19 @@ Span file:
    demo spanfile_from_pdb
 
 ## Running the Application
-Run the command.sh script provided in this folder:
+Adjust the paths in the command.sh script provided in this folder and run it:
 >>./command.sh
+For the paper, we used 10 output models and selected the lowest scoring model by
+total Rosetta score. More models might be better, even though probably not totally
+necessary since this does mainly sidechain optimization.
 
 ## Example Outputs
 Outputs are found in the output folder:
 
 1) 1AFO_AB_0001.pdb  - final decoy 
-   The model should have MEM residues at the end representing the virtual membrane
-   residue. This needs to be removed for mpdocking!!!
+   The model should have MEM residues at the end (HETATM lines at residue number 81) 
+   representing the virtual membrane residue. This needs to be removed for mpdocking in
+   this revision even though for newer revisions you can leave that in.
 
 2) score_ppk_1AFO.sc - score file
    Total scores can be >0 because of clashes. This is not worrysome because you 
@@ -70,13 +77,18 @@ accomplished using mpdocking_setup app), transformed into the membrane, and
 prepacked. To do this, use the mpdocking_prepack app - demo available. 
 
 A note on the score function: currently this application uses its own 
-scorefunction (which is a combination of Vladimirs membrane protein scorefunction
+scorefunction (which is a combination of the membrane protein scorefunction 
+[low-resolution from Vladimir Yarov-Yarovoy and high-resolution from Patrick Barth]
 and the docking scorefunction), so PLEASE don't supply a scorefunction on the 
-commandline (in fact, the app might crash if you do). Preliminary data gives 
-good sampling (even below 1A RMSD to the native in many cases) for local docking and the 
-scorefunction is decent but not perfect (more than half of the structures give 
-funnels) with lowest energies in the 5A range. The scorefunction for this will 
-be further optimized soon.
+commandline (in fact, the app might crash if you do). For updates on this, please 
+check the application documentation at
+
+	https://www.rosettacommons.org/docs/latest/Application-Documentation.html
+
+Preliminary data gives good sampling (even below 1A RMSD to the native in many 
+cases) for LOCAL docking and the scorefunction is decent but not perfect 
+(more than half of the structures give funnels) with lowest energies in 
+the 5A range. The scorefunction for this will be further optimized soon.
 
 ## Executable/Script
 Rosetta/main/source/bin/mpdocking.macosclangrelease
@@ -103,7 +115,7 @@ You need:
     single PDB file, transformed into membrane coordinates, and cleaned as in step
     1. Run the MP prepacking protocol described in the demo MPdocking_prepack. 
     MAKE SURE YOU REMOVE THE MEM RESIDUES IN THE PREPACKED AND IN THE NATIVE 
-    STRUCTURE!!! A future revision will have the option to read in a membrane residue
+    STRUCTURE (SEE ABOVE)!!! A future revision will have the option to read in a membrane residue
 	but the current revision does not have this functionality for MP_docking. 
 
 (3) a span file containing the topology information of the membrane protein
@@ -115,8 +127,9 @@ You need:
 Example inputs are found in the input folder. 
 
 ## Running the Application
-Run the command.sh script provided in this folder:
+Adjust the paths in the command.sh script provided in this folder and run it:
 >>./command.sh
+For production runs, build at least 1000 models. 
 
 ## Example Outputs
 Outputs are found in the output folder:
