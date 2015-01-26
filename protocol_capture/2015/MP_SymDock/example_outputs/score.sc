@@ -1,0 +1,3 @@
+SEQUENCE: 
+SCORE: total_score         rms        I_sc     cen_rms dslf_ca_dih dslf_cs_ang dslf_ss_dih dslf_ss_dst      fa_atr      fa_dun     fa_elec fa_intra_rep     fa_mpenv fa_mpenv_smooth fa_mpsolv   fa_pair    fa_rep hbond_bb_sc hbond_lr_bb    hbond_sc hbond_sr_bb       omega     p_aa_pp pro_close      rama       ref   st_rmsd description 
+SCORE:    -921.853       1.810     -19.653       2.255       0.000       0.000       0.000       0.000   -1629.127     244.749      -2.208        3.373      130.991         -69.227   287.530    -8.297   403.868     -69.246      -4.569     -32.958    -195.593      36.301     -28.650     3.113     4.698     3.400     1.681 1bl8_refined_INPUT_0001
