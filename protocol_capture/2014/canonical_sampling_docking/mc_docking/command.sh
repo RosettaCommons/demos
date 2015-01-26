@@ -1,7 +1,8 @@
 #!/bin/bash
 
 if [ "$MPI_RUN" == "" ]; then
-   MPI_RUN=mpiexec
+   echo "MPI_RUN point to nothing, failed"
+   exit -1
 fi
 
 PREFIX=""

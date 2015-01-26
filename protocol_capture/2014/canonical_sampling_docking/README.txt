@@ -69,16 +69,47 @@ refinement, the rigid-body space is restricted with respect to the initial
 conformation by translation of 20Å and rotation of 90° in
 UnbiasedRigidBodyPerturbNoCenterMover. 
 
-10,000,000 Monte-Carlo steps are run for all the four tested protocols, and
+For productive simulation, 2,000,000 Monte-Carlo steps need to be run, and 
 snapshots are stored every 1,000 steps. At the end of the simulation, only
 decoys generated with the reference setting ( hardrep, temperature=0.15) are
 collected and analyzed as final results. To save space and computer time,
-the example output in this folder are from much short simulation.
+the example output in this folder are from much shorter simulation. For 
+productive simulations, please also change the related parameter "trial" in
+dock.xml file.
 
 Details of each protocol please also refer to the rosetta scripts file
 dock.xml in each folder.
 
 All the four protocols need to be run with MPI. 
+
+## Example Outputs
+take the example outputs in wte_remc_docking for example:
+1) decoys_P_0001_rt.out - silent trajectory file with rotation matrices and 
+translation vectors started with “RT”, and scores
+2) decoys_P_0001_traj.out - silent trajectory file with decoys and scores
+3) scores.fsc - silent score file of the trajectory
+4) decoys.out - final decoy of a trajectory; this file is a relict of using 
+the JD2-framework and can be generally ignored. 
+5) trial.stats - acceptance rate for each mover in each replica
+6) tempering.stats - exchange rate between replicas
+7) we_bias.grid - well-tempered ensemble bias information at each replica,
+including grid size, grid range, bias energy in each bin, number of 
+conformations dropped into each bin. Only exist when BiasEnergy is applied,
+for example in wte_remc_docking and wte_h_remc_docking.
+8) decoys_P_0001_m_n.out - checkpoint silent decoy files with m indicating 
+replica number and n indicating the checkpoint number, used for restarting
+the simulation. When BiasEnergy is applied, in the checkpoint silent file, 
+WTE bias energy information is stored as REMARK started with 
+“REMARK BIASENERGY”
+
+## Analysis
+>>ref=5 # the number of reference replica
+>>silent_data.py decoys_P_0001_rt.out Lrmsd Irms score I_sc temp_level Fnat_n
+bias | awk -v ref_rep=“$ref” ’$5==ref_rep’ > collected_data
+>>collect_tempering_stats.py tempering.stats # collect the average exchange
+rate over the whole simulation
+>>collect_trial_stats.py trial.stats # collect average acceptance for each 
+mover at each replica over the whole simulation
 
 ====MC_DOCKING==================================================
 
@@ -94,8 +125,8 @@ sidechain movers to serve the purpose of refinement.
 Rosetta/main/source/bin/rosetta_scripts.mpi.linuxgccrelease
 
 ## Running the Application
-Run the command.sh script provided in folder mc_docking: >>./command.sh -n
-$N_PROC   # N_PROC should be 2 plus nstruct
+Run the command.sh script provided in folder mc_docking: 
+>>./command.sh -n $N_PROC   # N_PROC should be (2 + nstruct)
 
 ====REMC_DOCKING================================================
 
@@ -115,8 +146,8 @@ rigid-body moves are applied.
 Rosetta/main/source/bin/rosetta_scripts.mpi.linuxgccrelease
 
 ## Running the Application
-Run the command.sh script provided in folder remc_docking: >>./command.sh -n
-$N_PROC   # N_PROC should be 2 plus nstruct * n_replica
+Run the command.sh script provided in folder remc_docking: 
+>>./command.sh -n $N_PROC   # N_PROC should be (2 + nstruct * n_replica)
 
 ====WTE_REMC_DOCKING===========================================
 
@@ -130,8 +161,8 @@ maintain an approximately same exchange rate between replicas.
 Rosetta/main/source/bin/rosetta_scripts.mpi.linuxgccrelease
 
 ## Running the Application
-Run the command.sh script provided in folder wte_remc_docking: >>./command.sh
--n $N_PROC   # N_PROC should be 2 plus nstruct * n_replica
+Run the command.sh script provided in folder wte_remc_docking: 
+>>./command.sh -n $N_PROC   # N_PROC should be (2 + nstruct * n_replica)
 
 ====WTE_H_REMC_DOCKING=========================================
 
@@ -149,8 +180,9 @@ steps periodically along the two dimensions.
 Rosetta/main/source/bin/rosetta_scripts.mpi.linuxgccrelease
 
 ## Running the Application
-Run the command.sh script provided in folder wte_remc_docking: >>./command.sh
--n $N_PROC   # N_PROC should be 2 plus nstruct * n_replica
+Run the command.sh script provided in folder wte_remc_docking: 
+>>./command.sh -n $N_PROC   # N_PROC should be (2 + nstruct * n_replica)
+
 
 
 

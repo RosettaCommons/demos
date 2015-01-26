@@ -1,5 +1,5 @@
 -nstruct 1
--n_replica 18
+-n_replica 13
 
 -in:file:s P.pdb
 -in:file:native native.pdb
