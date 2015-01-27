@@ -9,3 +9,6 @@
 # -nstruct is set to 200 because in the example each ligand is docked into an ensemble of 10 models, so 2000 total models will be generated
 # in practice, 150-200 total models should be generated for each ligand, rather than 2000.
 -nstruct 200
+
+# output PDB files for viewing in pymol
+-out:pdb
