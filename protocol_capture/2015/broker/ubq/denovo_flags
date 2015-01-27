@@ -1,0 +1,29 @@
+-out:file:silent_print_all_score_headers
+
+#jumping
+-templates::topology_rank_cutoff 0.8
+-jumps:ramp_chainbreaks
+-jumps:sep_switch_accelerate 0.8
+-abinitio:skip_convergence_check
+-jumps:overlap_chainbreak
+
+#magic energy fixes
+-rsd_wt_helix 0.5
+-rsd_wt_loop 0.5
+-rg_reweight 0.5
+
+# for loop closing
+-overwrite_filter_scorefxn score3
+
+-detect_disulf false
+
+#loop-closing filter in SlidingWindow
+-fast_loops:overwrite_filter_scorefxn score3
+
+-abrelax:fail_unclosed
+
+#log-output
+-unmute memory_usage
+-out:levels core.chemical:error
+-out:levels core.io.pdb:error
+-out:levels protocols.jobdist:error
