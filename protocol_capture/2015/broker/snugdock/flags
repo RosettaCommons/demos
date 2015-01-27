@@ -1,0 +1,8 @@
+-parser:protocol snugdock.xml
+-in:file:s 1ahw_AHO_0001.pdb
+-in:file:native 1ahw_AHO.pdb
+-out:path:pdb out_pdbs
+
+-out:levels protocols.simple_moves.GenericMonteCarloMover:warning
+
+
