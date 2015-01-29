@@ -1,0 +1,4 @@
+ligand_id,filename
+string,string
+set1_3_ligand.pdb,split_conformers//f2/f2ba4777a0aee7ff778644dfcbeeeb96517d9444.mol
+set1_8_ligand.pdb,split_conformers//62/6214f833414d4c7bc5ab3361df2680074145aff0.mol
