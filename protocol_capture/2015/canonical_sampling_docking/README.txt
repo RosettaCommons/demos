@@ -32,11 +32,11 @@ PDB:
 1) download cleaned up pdb files from http://zlab.umassmed.edu/benchmark/, or
 directly from http://www.rcsb.org and clean with clean_pdb.py in folder
 Rosetta/tools/protein_tools/scripts/:
-2) replace chain id if neccessary using replace_chain.py       	
+2) replace chain id if neccessary using scripts/replace_chain.py       	
    >>cat 1PPE_r_b.pdb 1PPE_l_b.pdb > native.pdb
 
-   >>replace_chain.py 1PPE_r_u.pdb A > 1PPE_r_u.pdbA.pdb 
-   >>replace_chain.py 1PPE_l_u.pdb B > 1PPE_l_u.pdbB.pdb
+   >>scripts/replace_chain.py 1PPE_r_u.pdb A > 1PPE_r_u.pdbA.pdb 
+   >>scripts/replace_chain.py 1PPE_l_u.pdb B > 1PPE_l_u.pdbB.pdb
    >>cat 1PPE_r_u.pdbA.pdb 1PPE_l_u.pdbB.pdb > protAB.pdb
 
 ## Running the Application
@@ -104,11 +104,11 @@ WTE bias energy information is stored as REMARK started with
 
 ## Analysis
 >>ref=5 # the number of reference replica
->>silent_data.py decoys_P_0001_rt.out Lrmsd Irms score I_sc temp_level Fnat_n
+>>scripts/silent_data.py decoys_P_0001_rt.out Lrmsd Irms score I_sc temp_level Fnat_n
 bias | awk -v ref_rep=“$ref” ’$5==ref_rep’ > collected_data
->>collect_tempering_stats.py tempering.stats # collect the average exchange
+>>scripts/collect_tempering_stats.py tempering.stats # collect the average exchange
 rate over the whole simulation
->>collect_trial_stats.py trial.stats # collect average acceptance for each 
+>>scripts/collect_trial_stats.py trial.stats # collect average acceptance for each 
 mover at each replica over the whole simulation
 
 ====MC_DOCKING==================================================
