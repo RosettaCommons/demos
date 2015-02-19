@@ -2,7 +2,7 @@
 -database /path/to/Rosetta/main/database \			#path to Rosetta database
 -in:file:s input/1AFO_AB_noMEM.pdb \					#input PDB
 -in:file:native input/native.pdb \					#native for comparison for RMSD calculation
--membrane_new:setup:spanfiles input/1AFO_AB.span \	#input spanfile
+-mp:setup:spanfiles input/1AFO_AB.span \				#input spanfile
 -out:file:scorefile score_mpdock_1AFO.sc \			#name of the output scorefile
 -nstruct 1 \											#number of models to build, at least 1000 for production run
 -docking:partners A_B \								#chains of the partners to dock

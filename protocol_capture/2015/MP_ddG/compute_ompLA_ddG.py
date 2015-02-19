@@ -152,7 +152,7 @@ def adjust_for_pH( pose, resnum ):
 ## @brief Main - Add Membrane to Pose, Compute ddG
 def main( argv ):
 
-    rosetta.init( extra_options="-membrane_new:setup:spanfiles inputs/1qd6_tr_C.span -run:constant_seed -in:ignore_unrecognized_res" )
+    rosetta.init( extra_options="-mp:setup:spanfiles inputs/1qd6_tr_C.span -run:constant_seed -in:ignore_unrecognized_res" )
 
     # Load Pose, & turn on the membrane
     pose = pose_from_pdb( "inputs/1qd6_tr_C.pdb" );

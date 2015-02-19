@@ -75,7 +75,7 @@ def main( args ):
     repack_radius = 0.0
 
     # initialize Rosetta
-    rosetta.init( extra_options="-membrane_new:setup:spanfiles " + Options.in_span + " -run:constant_seed -in:ignore_unrecognized_res" )
+    rosetta.init( extra_options="-mp:setup:spanfiles " + Options.in_span + " -run:constant_seed -in:ignore_unrecognized_res" )
 	
     # Load Pose, & turn on the membrane
     pose = pose_from_pdb( Options.in_pdb );
