@@ -79,8 +79,8 @@ def main( args ):
 	
     # Load Pose, & turn on the membrane
     pose = pose_from_pdb( Options.in_pdb );
-    sfxn = create_score_function( "mpframework_smooth_fa_2014" );
-#    sfxn = create_score_function( "mpframework_pHmode_fa_2014" );
+    sfxn = create_score_function( "mpframework_smooth_fa_2012" );
+#    sfxn = create_score_function( "mpframework_pHmode_fa_2015" );
     
     # Add Membrane to Pose
     add_memb = rosetta.protocols.membrane.AddMembraneMover()
@@ -140,7 +140,7 @@ def mutate_residue( pose , mutant_position , mutant_aa ,
 
     # Create a talaris sfxn by default
     if not pack_scorefxn:
-        pack_scorefxn = create_score_function( 'fa_menv_smooth_2014' )
+        pack_scorefxn = create_score_function( 'mpframework_smooth_fa_2012' )
 
     # Create a packer task (standard)
     task = TaskFactory.create_packer_task( test_pose )
@@ -201,7 +201,7 @@ def adjust_for_pH( pose, resnum ):
     add_variant_type_to_pose_residue( adjusted_pose, resnum, PROTONATED )
 
     # Create a membrane framework pH scorefunction
-    pH_scorefxn = create_score_function( "fa_menv_pHmode_2014" )
+    pH_scorefxn = create_score_function( "mpframework_pHmode_fa_2015" )
 
     # Create a packer task (standard)
     task = TaskFactory.create_packer_task( adjusted_pose )
