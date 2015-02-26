@@ -1,0 +1,13 @@
+#!/bin/bash
+
+if [ "$MPI_RUN" == "" ]; then
+   MPI_RUN=mpiexec
+fi
+
+PREFIX=""
+if [ "$1" == "-n" ]; then
+   PREFIX="$MPI_RUN -n $2"
+fi
+
+$PREFIX minirosetta.mpi.linuxgccrelease -out:level 300 -out:file:silent decoys.out  -out:file:silent decoys.out @flags_denovo @flags_rasrec @flags_iterative -run:archive -mute protocols.moves.MonteCarlo -mute_info all -unmute_info protocols.jd2
+
