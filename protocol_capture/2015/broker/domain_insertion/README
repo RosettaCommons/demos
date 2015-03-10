@@ -2,6 +2,6 @@ This protocol runs ab inito for a domain insertion protein per the Broker paper.
 
 Assuming Rosetta is in your home directory, you run it as follows:
 
-$ ~/Rosetta/main/source/bin/rosetta_scripts.default.[platform][compiler]release @flags -database ~/Rosetta/main/database -nstruct [number of structures]
+$ ~/Rosetta/main/source/bin/rosetta_scripts.default.[platform][compiler]release @flags -nstruct [number of structures]
 
 where platform is "linux" or "mac" and compiler is "gcc" or "clang". It takes quite a long time, because we don't have constraints active during relaxation, and because scoring still scores the fixed regions, but 20000 structures should be enough to see kind of what's going on.
