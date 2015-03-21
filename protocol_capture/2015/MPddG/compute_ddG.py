@@ -15,14 +15,14 @@
 ## @author: Rebecca F. Alford (rfalford12@gmail.com)
 ## @author: JKLeman (julia.koehler1982@gmail.com)
 
-# tools
+# Tools
 import sys, os
 import commands
 import random
 from optparse import OptionParser, IndentedHelpFormatter
 _script_path_ = os.path.dirname( os.path.realpath(__file__) )
 
-# importing Rosetta
+# Rosetta-specific imports
 import rosetta.protocols.membrane
 from rosetta import Pose
 from rosetta import create_score_function
@@ -31,6 +31,7 @@ from rosetta.utility import vector1_bool
 from rosetta import aa_from_oneletter_code
 from rosetta import PackRotamersMover
 from rosetta.core.pose import PDBInfo
+from rosetta.core.chemical import VariantType
 
 ###############################################################################
 
@@ -61,6 +62,14 @@ def main( args ):
        action="store",
        help="One-letter code of residue identity of the mutant. Example: A181F would be 'F'", )
 
+    parser.add_option('--include_pH', '-t', 
+        action="store", default=0,
+        help="Include pH energy terms: pH_energy and fa_elec. Default false.", )
+
+    parser.add_option('--pH_value', '-v', 
+        action="store", default=7,
+        help="Predict ddG and specified pH value. Default 7", )
+
     #parse options
     (options, args) = parser.parse_args(args=args[1:])
     global Options
@@ -74,14 +83,38 @@ def main( args ):
     global repack_radius
     repack_radius = 0.0
 
-    # initialize Rosetta
-    rosetta.init( extra_options="-mp:setup:spanfiles " + Options.in_span + " -run:constant_seed -in:ignore_unrecognized_res" )
+    # initialize Options and pH mode where applicable
+    rosetta_options = ""
+    standard_options = "-membrane_new:setup:spanfiles " + Options.in_span +  " -run:constant_seed -in:ignore_unrecognized_res"
+    if ( Options.include_pH ): 
+        if ( float(Options.pH_value) < 0 or float(Options.pH_value) > 14 ): 
+            sys.exit( "Specified pH value must be between 0-14: Exiting..." )
+        else: 
+            pH_options = " -pH_mode -value_pH " + Options.pH
+            rosetta_options = standard_options + pH_options
+    else: 
+        rosetta_options = standard_options
+
+    # Initialize Rosetta based on user inputs
+    rosetta.init( extra_options=rosetta_options )
 	
     # Load Pose, & turn on the membrane
-    pose = pose_from_pdb( Options.in_pdb );
-    sfxn = create_score_function( "mpframework_smooth_fa_2012" );
-#    sfxn = create_score_function( "mpframework_pHmode_fa_2015" );
-    
+    pose = pose_from_pdb( Options.in_pdb )
+
+    # check the user has specified a reasonable value for the pH
+    sfxn = rosetta.core.scoring.ScoreFunction()
+    if ( Options.include_pH ):
+
+        # Create a membrane energy function enabled by pH mode
+        # Includes two terms not standard in the smoothed energy function: pH energy
+        # and full atom electrostatics 
+        sfxn = create_score_function( "mpframework_pHmode_fa_2014")
+
+    else: 
+
+        # Create a smoothed membrane full atom energy function (pH 7 calculations)
+        sfxn = create_score_function( "mpframework_pHmode_fa_2014")
+
     # Add Membrane to Pose
     add_memb = rosetta.protocols.membrane.AddMembraneMover()
     add_memb.apply( pose )
@@ -97,7 +130,6 @@ def main( args ):
             f.write( Options.in_pdb + " " + Options.res + " " + str(ddGs[0]) + " " + str(ddGs[1]) + " " + str(ddGs[2]) + " " + str(ddGs[3]) + "\n" )
 	    f.close
     else:
-        #AAs = ['D', 'E']
         AAs = ['A', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'K', 'L', 'M', 'N', 'P', 'Q', 'R', 'S', 'T', 'V', 'W', 'Y']
         for aa in AAs:
             with file( Options.out, 'a' ) as f:
@@ -115,9 +147,6 @@ def compute_ddG( pose, sfxn, resnum, aa ):
 
     # Perform Mutation at residue <resnum> to amino acid <aa>
     mutated_pose = mutate_residue( pose, resnum, aa, repack_radius, sfxn )
-
-    # Adjust for pH
-    #adjust_for_pH( pose, resnum )
 
     # Score Mutated Pose
     mutant_score = sfxn( mutated_pose )
@@ -140,11 +169,10 @@ def mutate_residue( pose , mutant_position , mutant_aa ,
 
     # Create a talaris sfxn by default
     if not pack_scorefxn:
-        pack_scorefxn = create_score_function( 'mpframework_smooth_fa_2012' )
+        pack_scorefxn = create_score_function( 'mpframework_pHmode_fa_2015' )
 
     # Create a packer task (standard)
     task = TaskFactory.create_packer_task( test_pose )
-
 
     # the Vector1 of booleans (a specific object) is needed for specifying the
     #    mutation, this demonstrates another more direct method of setting
@@ -187,38 +215,6 @@ def mutate_residue( pose , mutant_position , mutant_aa ,
     packer.apply( test_pose )
 
     return test_pose
-
-###############################################################################
-
-## Protonate selected residues in the pose (for Moon & Fleming case only)
-def adjust_for_pH( pose, resnum ):
-
-    ## Create a copy of the pose to return
-    adjusted_pose = Pose()
-    adjusted_pose.assign( pose )
-
-    ## Apply residue variant type at the mutated position
-    add_variant_type_to_pose_residue( adjusted_pose, resnum, PROTONATED )
-
-    # Create a membrane framework pH scorefunction
-    pH_scorefxn = create_score_function( "mpframework_pHmode_fa_2015" )
-
-    # Create a packer task (standard)
-    task = TaskFactory.create_packer_task( adjusted_pose )
-
-    # Prevent all residues from repacking except for the 
-    # protonated residue by setting per-residue options
-    # of the packer task
-    for i in range( 1, adjusted_pose.total_residue() + 1 ): 
-        task.nonconst_residue_task( i ).prevent_repacking()
-
-    # Repack the protonated residue, restricting to protonated rotamers
-    # only
-    packer = PackRotamersMover( pH_scorefxn , task )
-    packer.apply( adjusted_pose )
-
-    return adjusted_pose
-
 
 if __name__ == "__main__" : main(sys.argv)
 
