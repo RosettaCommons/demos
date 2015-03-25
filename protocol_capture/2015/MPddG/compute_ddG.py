@@ -33,6 +33,8 @@ from rosetta import PackRotamersMover
 from rosetta.core.pose import PDBInfo
 from rosetta.core.chemical import VariantType
 
+# Create a 
+
 ###############################################################################
 
 ## @brief Main - Add Membrane to Pose, Compute ddG
@@ -66,10 +68,6 @@ def main( args ):
         action="store", default=0, 
         help="Repack the residues within this radius",)
 
-    parser.add_option('--output_sc', '-c', 
-        action="store", default="score.sc", 
-        help="Output mutant and native score breakdown into a scorefile", )
-
     parser.add_option('--include_pH', '-t', 
         action="store", default=0,
         help="Include pH energy terms: pH_energy and fa_elec. Default false.", )
@@ -78,16 +76,20 @@ def main( args ):
         action="store", default=7,
         help="Predict ddG and specified pH value. Default 7. Will not work if include pH is not passed", )
 
+    parser.add_option('--output_breakdown', '-b', 
+        action="store", default="scores.sc", 
+        help="Output mutant and native score breakdown by weighted energy term into a scorefile", )
+
     #parse options
     (options, args) = parser.parse_args(args=args[1:])
     global Options
     Options = options
 
-    # check whether all inputs are there
+    # Check the required inputs (PDB file, spanfile) are present
     if ( not Options.in_pdb or not Options.in_span or not Options.res ):
 	    sys.exit( "Must provide flags '-in_pdb', '-in_span', and '-res'! Exiting..." )
 
-    # initialize Options and pH mode where applicable
+    # Initialize Rosetta options from user options. Enable pH mode if applicable
     rosetta_options = ""
     standard_options = "-membrane_new:setup:spanfiles " + Options.in_span +  " -run:constant_seed -in:ignore_unrecognized_res"
     if ( Options.include_pH ): 
@@ -105,13 +107,21 @@ def main( args ):
     # Load Pose, & turn on the membrane
     pose = pose_from_pdb( Options.in_pdb )
 
+    # Add Membrane to Pose
+    add_memb = rosetta.protocols.membrane.AddMembraneMover()
+    add_memb.apply( pose )
+    
+    # Setup in a topology based membrane
+    init_mem_pos = rosetta.protocols.membrane.MembranePositionFromTopologyMover()
+    init_mem_pos.apply( pose )
+
     # check the user has specified a reasonable value for the pH
     sfxn = rosetta.core.scoring.ScoreFunction()
     if ( Options.include_pH ):
 
         # Create a membrane energy function enabled by pH mode
         # Includes two terms not standard in the smoothed energy function: pH energy
-        # and full atom electrostatics 
+        # and fa_elec
         sfxn = create_score_function( "mpframework_pHmode_fa_2014")
 
     else: 
@@ -119,17 +129,14 @@ def main( args ):
         # Create a smoothed membrane full atom energy function (pH 7 calculations)
         sfxn = create_score_function( "mpframework_smooth_fa_2014")
 
-    # Add Membrane to Pose
-    add_memb = rosetta.protocols.membrane.AddMembraneMover()
-    add_memb.apply( pose )
-	
-    # Setup in a topology based membrane
-    init_mem_pos = rosetta.protocols.membrane.MembranePositionFromTopologyMover()
-    init_mem_pos.apply( pose )
-
     # Repack the native rotamer and residues within the repack radius 
     native_res = pose.residue( int( Options.res ) ).name1()
     repacked_native = mutate_residue( pose, int( Options.res), native_res, Options.repack_radius, sfxn )
+
+    # If user specified output breakdown, start by printing the score labels in
+    # the top of the file
+    if ( Options.output_breakdown ): 
+        print_score_labels_to_file( repacked_native, sfxn )
 
     # Compute mutations
     if ( Options.mut ):
@@ -156,6 +163,11 @@ def compute_ddG( pose, sfxn, resnum, aa, repack_radius ):
     # Perform Mutation at residue <resnum> to amino acid <aa>
     mutated_pose = mutate_residue( pose, resnum, aa, repack_radius, sfxn )
 
+    # If specified the user, print the breakdown of ddG values into a file  
+
+
+    # Get ddG breakdown
+    get_ddG_breakdown( pose, mutated_pose, sfxn )
     # If user specified full scorefile, output breakdown
    # if Options.output_sc: 
 
@@ -224,6 +236,55 @@ def mutate_residue( pose, mutant_position, mutant_aa, pack_radius, pack_scorefxn
     packer.apply( test_pose )
 
     return test_pose
+
+###############################################################################
+#@brief Print ddG breakdown from the pose
+# Extract weighted energies from the native and mutated pose. Calculate the ddG
+# of each and print the component-wise ddG vlaues
+def get_ddG_breakdown( native_pose, mutated_pose, sfxn ): 
+
+    # Extract scores
+    tmp_native = native_pose.energies().total_energies().weighted_string_of( sfxn.weights() )
+    tmp_mutant = mutated_pose.energies().total_energies().weighted_string_of( sfxn.weights() )
+
+    # Parse out scores
+    array_native = filter( None, tmp_native.split(' ') )
+    array_mutant = filter( None, tmp_mutant.split(' ') )
+
+    # Pull out only the scores from these arrays
+    native_scores = []
+    for i in range( len(array_native) ): 
+        if ( i % 2 != 0 ): 
+            native_scores.append( float( array_native[i] ) )
+
+    mutant_scores = []
+    for i in range( len(array_mutant) ): 
+        if ( i % 2 != 0 ): 
+            mutant_scores.append( float( array_mutant[i] ) )
+
+    # Calculate ddG of individual components
+    ddGs = []
+    for i in range( len( mutant_scores ) ): 
+        ddG_component = mutant_scores[i] - native_scores[i]
+        ddGs.append( round( ddG_component, 3 ) )
+
+    return ddGs
+
+###############################################################################
+#@brief Get header for ddG breakdown output
+# Save the score labels, to be printed at the top of the output breakdown file
+def print_score_labels_to_file( native_pose, sfxn ): 
+
+ tmp_native = native_pose.energies().total_energies().weighted_string_of( sfxn.weights() )
+ array_native = filter( None, tmp_native.split(' ') )
+ labels = []
+    for i in range( len(array_native) ): 
+        if ( i % 2 == 0 ): 
+            labels.append( array_native[i] )
+
+###############################################################################
+#@brief Convert an array to a space deliminted string
+# Save the score labels, to be printed at the top of the output breakdown file
 
 if __name__ == "__main__" : main(sys.argv)
 
