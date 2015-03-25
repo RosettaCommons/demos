@@ -33,8 +33,6 @@ from rosetta import PackRotamersMover
 from rosetta.core.pose import PDBInfo
 from rosetta.core.chemical import VariantType
 
-# Create a 
-
 ###############################################################################
 
 ## @brief Main - Add Membrane to Pose, Compute ddG
@@ -133,10 +131,9 @@ def main( args ):
     native_res = pose.residue( int( Options.res ) ).name1()
     repacked_native = mutate_residue( pose, int( Options.res), native_res, Options.repack_radius, sfxn )
 
-    # If user specified output breakdown, start by printing the score labels in
+    # to output score breakdown, start by printing the score labels in
     # the top of the file
-    if ( Options.output_breakdown ): 
-        print_score_labels_to_file( repacked_native, sfxn )
+    print_score_labels_to_file( repacked_native, sfxn, Options.output_breakdown )
 
     # Compute mutations
     if ( Options.mut ):
@@ -155,7 +152,7 @@ def main( args ):
 ###############################################################################
 
 ## @brief Compute ddG of mutation in a protein at specified residue and AA position
-def compute_ddG( pose, sfxn, resnum, aa, repack_radius ): 
+def compute_ddG( pose, sfxn, resnum, aa, repack_radius, sc_file="" ): 
 
     # Score Native Pose
     native_score = sfxn( pose )
@@ -163,19 +160,12 @@ def compute_ddG( pose, sfxn, resnum, aa, repack_radius ):
     # Perform Mutation at residue <resnum> to amino acid <aa>
     mutated_pose = mutate_residue( pose, resnum, aa, repack_radius, sfxn )
 
-    # If specified the user, print the breakdown of ddG values into a file  
-
-
-    # Get ddG breakdown
-    get_ddG_breakdown( pose, mutated_pose, sfxn )
-    # If user specified full scorefile, output breakdown
-   # if Options.output_sc: 
-
-        # Output scores breakdown into a scorefile
-    #    output_scorefile( mutated_pose, "tmp", "current_name", str(Options.output_sc), sfxn, 1 )
-
     # Score Mutated Pose
     mutant_score = sfxn( mutated_pose )
+
+    # If specified the user, print the breakdown of ddG values into a file  
+    if ( sc_file != "" ): 
+        output_ddG_breakdown( pose, mutated_pose, sfxn ) 
 
 	# return scores
     return aa, round( mutant_score, 3 ), round( native_score, 3 ), round ( mutant_score - native_score, 3 )
@@ -268,25 +258,46 @@ def get_ddG_breakdown( native_pose, mutated_pose, sfxn ):
         ddG_component = mutant_scores[i] - native_scores[i]
         ddGs.append( round( ddG_component, 3 ) )
 
-    return ddGs
+    # Make a label for the mutation
+
+    ddGs_str = convert_array_to_str( ddGs ) 
+    with file( fn, 'a' ) as f:
+        f.write( ddGs + "\n" )
+    f.close()
 
 ###############################################################################
 #@brief Get header for ddG breakdown output
 # Save the score labels, to be printed at the top of the output breakdown file
-def print_score_labels_to_file( native_pose, sfxn ): 
+def print_score_labels_to_file( native_pose, sfxn, fn ): 
 
- tmp_native = native_pose.energies().total_energies().weighted_string_of( sfxn.weights() )
- array_native = filter( None, tmp_native.split(' ') )
- labels = []
+    tmp_native = native_pose.energies().total_energies().weighted_string_of( sfxn.weights() )
+    array_native = filter( None, tmp_native.split(' ') )
+    labels = []
+    labels.append( 'mutation ' ) # Append field for mutation label
     for i in range( len(array_native) ): 
         if ( i % 2 == 0 ): 
             labels.append( array_native[i] )
 
+    labels_str = convert_array_to_str( labels )
+    with file( fn, 'a' ) as f:
+        f.write( labels_str + "\n" )
+    f.close()
+
+
 ###############################################################################
 #@brief Convert an array to a space deliminted string
 # Save the score labels, to be printed at the top of the output breakdown file
+def convert_array_to_str( array ): 
+
+    linestr = ""
+    for elem in array: 
+        if ( linestr == "" ): 
+            linestr = linestr + str( elem )
+        else: 
+            linestr = linestr + " " + str( elem )
+
+    return linestr
+
 
 if __name__ == "__main__" : main(sys.argv)
-
-
 
