@@ -66,7 +66,7 @@ def main( args ):
         action="store", default=0, 
         help="Repack the residues within this radius",)
 
-    parser.add_option('--output_sc', '-s', 
+    parser.add_option('--output_sc', '-c', 
         action="store", default="score.sc", 
         help="Output mutant and native score breakdown into a scorefile", )
 
@@ -126,25 +126,29 @@ def main( args ):
     # Setup in a topology based membrane
     init_mem_pos = rosetta.protocols.membrane.MembranePositionFromTopologyMover()
     init_mem_pos.apply( pose )
-	
+
+    # Repack the native rotamer and residues within the repack radius 
+    native_res = pose.residue( int( Options.res ) ).name1()
+    repacked_native = mutate_residue( pose, int( Options.res), native_res, Options.repack_radius, sfxn )
+
     # Compute mutations
     if ( Options.mut ):
         with file( Options.out, 'a' ) as f:
-            ddGs = compute_ddG( pose, sfxn, int( Options.res ), Options.mut )
+            ddGs = compute_ddG( repacked_native, sfxn, int( Options.res ), Options.mut, Options.repack_radius )
             f.write( Options.in_pdb + " " + Options.res + " " + str(ddGs[0]) + " " + str(ddGs[1]) + " " + str(ddGs[2]) + " " + str(ddGs[3]) + "\n" )
 	    f.close
     else:
         AAs = ['A', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'K', 'L', 'M', 'N', 'P', 'Q', 'R', 'S', 'T', 'V', 'W', 'Y']
         for aa in AAs:
             with file( Options.out, 'a' ) as f:
-                ddGs = compute_ddG( pose, sfxn, int( Options.res ), aa )
+                ddGs = compute_ddG( repacked_native, sfxn, int( Options.res ), aa, Options.repack_radius )
                 f.write( str(ddGs[0]) + " " + str(ddGs[1]) + " " + str(ddGs[2]) + " " + str(ddGs[3]) + "\n" )
             f.close
 
 ###############################################################################
 
 ## @brief Compute ddG of mutation in a protein at specified residue and AA position
-def compute_ddG( pose, sfxn, resnum, aa, repack_radius, sfxn ): 
+def compute_ddG( pose, sfxn, resnum, aa, repack_radius ): 
 
     # Score Native Pose
     native_score = sfxn( pose )
@@ -153,10 +157,10 @@ def compute_ddG( pose, sfxn, resnum, aa, repack_radius, sfxn ):
     mutated_pose = mutate_residue( pose, resnum, aa, repack_radius, sfxn )
 
     # If user specified full scorefile, output breakdown
-    if Options.output_sc: 
+   # if Options.output_sc: 
 
         # Output scores breakdown into a scorefile
-        output_scorefile( mutated_pose, "tmp", "current_name", str(Options.output_sc), sfxn, 1 )
+    #    output_scorefile( mutated_pose, "tmp", "current_name", str(Options.output_sc), sfxn, 1 )
 
     # Score Mutated Pose
     mutant_score = sfxn( mutated_pose )
@@ -168,18 +172,13 @@ def compute_ddG( pose, sfxn, resnum, aa, repack_radius, sfxn ):
 
 # @brief Replace the residue at <resid> in <pose> with <new_res> and allows
 # repacking within a given <pack_radius> 
-def mutate_residue( pose , mutant_position , mutant_aa ,
-        pack_radius = 0.0 , pack_scorefxn = '' ):
+def mutate_residue( pose, mutant_position, mutant_aa, pack_radius, pack_scorefxn ):
 
     if pose.is_fullatom() == False:
         IOError( 'mutate_residue only works with fullatom poses' )
 
     test_pose = Pose()
     test_pose.assign( pose )
-
-    # Create a talaris sfxn by default
-    if not pack_scorefxn:
-        pack_scorefxn = create_score_function( 'mpframework_smooth_fa_2014' )
 
     # Create a packer task (standard)
     task = TaskFactory.create_packer_task( test_pose )
@@ -217,7 +216,7 @@ def mutate_residue( pose , mutant_position , mutant_aa ,
     for i in range( 1, pose.total_residue() + 1 ): 
         dist = center.distance_squared( test_pose.residue( i ).nbr_atom_xyz() );  
         # only pack the mutating residue and any within the pack_radius
-        if i != mutant_position and dist > pow( pack_radius, 2 ) :
+        if i != mutant_position and dist > pow( float( pack_radius ), 2 ) :
             task.nonconst_residue_task( i ).prevent_repacking()
 
     # apply the mutation and pack nearby residues
