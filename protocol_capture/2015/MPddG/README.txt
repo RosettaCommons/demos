@@ -5,39 +5,33 @@ Rosetta Membrane Framework Application: Membrane ddG
 Author: Rebecca F. Alford (rfalford12@gmail.com)
 Author: Julia Koehler Leman (julia.koehler1982@gmail.com)
 Corresponding PI: Jeffrey J. Gray (jgray@jhu.edu)
-Last Updated: January 2015
+Last Updated: March 2015
 
 Rosetta Revision #57740
 Python Version 2.7+
 PyRosetta Release Version: March 2015
 
 PyRosetta can be downloaded from http://www.pyrosetta.org. Follow the instructions
-provided in the README to setup your shell environment for PyRosetta
+provided in the README to setup your shell environment
 
-Documentation Link: https://www.rosettacommons.org/docs/wiki/Membrane-ddG
+Documentation Link: 
+https://www.rosettacommons.org/docs/wiki/Membrane-ddG
 
 Publication describing the method: 
 Alford RF, Koehler Leman J, Weitzner BD, Gray JJ (2015)
 An integrated framework advancing membrane protein modeling and design
-PLosCompBio (in preparation) 
+PLosCompBio (Under Review) 
 
 ## Description ##
-Measuring free energy changes upon mutation can inform our understanding of membrane
-protein stability and variation. It is also an important step toward predicting
-novel membrane protein folds and rational design. 
-
-In this application, we measure the difference in Rosetta energy by scoring the native 
-and mutated proteins to compute the ddG upon mutation. This application uses the all atom 
-energy function for membrane proteins in Rosetta with the membrane framework. 
+Measuring free energy changes upon mutation can inform our understanding of membrane protein stability and variation and is a step toward design. In this application, we predict ddGs by measuring the difference in Rosetta energy for the native and mutated conformation. This application uses a modified version of the all atom energy function for membrane proteins, which includes the fa_elec term and pH energy (see below). The Membrane ddG application is part of the RosettaMP Framework.
 
 ## Executable/Script ##
-The membrane ddG application is implemented as a python script in PyRosetta. The script can be found in two places: 
+The membrane ddG application is implemented as a python script in PyRosetta. The scripts described here can be found in this protocol capture. Developmental versions can also be found: 
 
   1. In the Rosetta Source Code: 
      /path/to/Rosetta/source/src/python/bindings/app/membrane/predict_ddG.py
   2. In the PyRosetta package: 
      /path/to/PyRosetta/app/membrane/predict_ddG.py
-  3. In this directiory!
 
 ## Generating Inputs ##
 Three inputs are required for the ddG application:  
@@ -78,20 +72,22 @@ also be found in inputs/. Here, OmpLA (PDB ID: 1qd6) is used as an example:
 Here, we describe the steps required to run the MP_ddG protocol. First, we describe how to 
 assemble a simple PyRosetta script using the membrane framework for ddG predictions (predict_ompLA_ddG.py). Next, we describe use of a general ddG prediction application for larger scale use. 
 
-   (1) Creating your own Membrane Framework PyRosetta Protocol 
-       To create a PyRosetta protocol using the membrane framework, follow typical
-       steps for initializng Rosetta and loading in a pose from PDB. Then: 
+   (1) Application-Specific Membrane ddG PyRosetta Protocol
+       PyRosetta calculations can be adapted to use the Rosetta Membrane Framework
+       with only a few additional steps. These include: 
           = Use AddMembraneMover (in protcols.membrane) to initialize the membrane framework
           = Use MembranePositionFromTopologyMover to orient the pose in the membrane based on the transmembrane spans (optional, but recommended)
           = Setup a membrane energy function
           = Proceed with normal Rosetta functions
 
-          An example ddG script for a specific application case (predicting OmpLA ddGs
-          for comparison with experimental values from Moon & Fleming, 2011) is provided here in predict_OmpLA_ddG.py
+       Here, we provide an example application-specific ddG calculation script for computing ddGs of mutation in OmpLA for comparison with experimental values in Moon & Fleming, 2011. The script can be run with no arguments by the following command: 
 
-          This script can be run with no arguments using the following command: 
+          ./predict_OmpLA_ddG.py 
 
-            ./predict_OmpLA_ddG.py 
+       Step-by-step instructions on how to setup this script are provided in the predict_OmpLA_ddG.py script (in this protocol capture). 
+
+       A single output file is created by this script: 
+         - ompLA_ddG.out: Predicted ddGs for each mutation
 
     (2) Large Scale ddG predictions with the RosettaMP Framework
         Here, we describe the steps to run the MPddG protocol, incorporating both
@@ -99,15 +95,18 @@ assemble a simple PyRosetta script using the membrane framework for ddG predicti
 
         Here, you will need to specify the input PDB, spanfile, and residue position to 
         mutate. By default, ddGs to all canonical residues will be computed. A specific 
-        ddG of mutation can be computed using the flag --mut <AA>. Here, we also specify
-        a repack radius of 8.0A. This means all residues within 8A of the mutant position 
-        are repacked. We also specify the pH at which predictions are carried out. 
+        ddG of mutation can be computed using the flag --mut <AA>. In this example, we specify a repack radius of 8.0A. This means all residues within 8A of the mutant position are repacked. We also specify the pH at which predictions are carried out. 
 
         This application can be run using the following command line: 
 
         ./predict_ddG.py --in_pdb --in_span inputs/1qd6_tr_C.span --res 181 --repack_radius 8.0 --include_pH true --pH_value 4.0
 
+        Two output files (with default names) are created by this script
+           - ddG.out: predicted ddGs per mutation
+           - scores.sc: Breakdown of ddGs by Rosetta score term (weighted)
+
 ## Example Outputs
+**Outputs from the two scripts above were renamed for clarity
 
   1. The predict_OmpLA_ddG.py script will write a list of mutations and ddG values to an 
      output file. The columns in the file are residu position, mutant amino acid (1-letter code) and predicted ddG
@@ -126,7 +125,6 @@ assemble a simple PyRosetta script using the membrane framework for ddG predicti
           example_outputs/OmpLA_ddG_breakdown.sc
 
 ** For all scripts - running multiple times with the same output path specified will APPEND to the file and not overwrite it
-
 
 ## Additional References ##
 1. Chaudhury S, Lyskov S, Gray JJ (2010) PyRosetta: a script-based interface for implementing molecular modeling algorithms using Rosetta.
