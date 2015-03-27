@@ -7,14 +7,12 @@ Author: Julia Koehler Leman (julia.koehler1982@gmail.com)
 Corresponding PI: Jeffrey J. Gray (jgray@jhu.edu)
 Last Updated: January 2015
 
-Rosetta Revision #57514
+Rosetta Revision #57740
 Python Version 2.7+
-PyRosetta Release Version: January 2015
+PyRosetta Release Version: March 2015
 
-PyRosetta can be downloaded from http://www.pyrosetta.org
-Import errors can be prevented by running the SetPyRosettaEnvironment script:
-
-  source /path/to/PyRosetta/SetPyRosettaEnvironment.sh
+PyRosetta can be downloaded from http://www.pyrosetta.org. Follow the instructions
+provided in the download to setup your environment for PyRosetta
 
 Publication describing the method: 
 Alford RF, Koehler Leman J, Weitzner BD, Gray JJ (2015)
@@ -31,18 +29,18 @@ and mutated proteins to compute the ddG upon mutation. This application uses the
 energy function for membrane proteins in Rosetta with the membrane framework. 
 
 ## Executable/Script ##
-The membrane ddG application is implemented as a python script in PyRosetta. We provide 
-two scripts: 
+The membrane ddG application is implemented as a python script in PyRosetta. The script can be found in two places: 
 
-  1. compute_ompLA_ddG.py : This script demonstrates how to assemble a simple PyRosetta 
-     script for specialized modeling tasks with the membrane framework
-  2. compute_ddG.py : A general version of the ddG application that will compute 
-     a ddG given any inputs
+  1. In the Rosetta Source Code: 
+     /path/to/Rosetta/source/src/python/bindings/app/membrane/predict_ddG.py
+  2. In the PyRosetta package: 
+     /path/to/PyRosetta/app/membrane/predict_ddG.py
 
 ## Generating Inputs ##
-Two inputs are required for the ddG application:  
+Three inputs are required for the ddG application:  
   (1) PDB file for the protein structure transformed into the membrane coordinate frame.
   (2) Span file describing the location of trans-membrane spans
+  (3) Residue position to mutate to
 
 Steps for generating these inputs are found below. A set of example inputs can 
 also be found in inputs/. Here, OmpLA (PDB ID: 1qd6) is used as an example: 
