@@ -12,7 +12,9 @@ Python Version 2.7+
 PyRosetta Release Version: March 2015
 
 PyRosetta can be downloaded from http://www.pyrosetta.org. Follow the instructions
-provided in the download to setup your environment for PyRosetta
+provided in the README to setup your shell environment for PyRosetta
+
+Documentation Link: https://www.rosettacommons.org/docs/wiki/Membrane-ddG
 
 Publication describing the method: 
 Alford RF, Koehler Leman J, Weitzner BD, Gray JJ (2015)
@@ -35,12 +37,13 @@ The membrane ddG application is implemented as a python script in PyRosetta. The
      /path/to/Rosetta/source/src/python/bindings/app/membrane/predict_ddG.py
   2. In the PyRosetta package: 
      /path/to/PyRosetta/app/membrane/predict_ddG.py
+  3. In this directiory!
 
 ## Generating Inputs ##
 Three inputs are required for the ddG application:  
   (1) PDB file for the protein structure transformed into the membrane coordinate frame.
   (2) Span file describing the location of trans-membrane spans
-  (3) Residue position to mutate to
+  (3) Residue position to mutate to (uses pose numbering)
 
 Steps for generating these inputs are found below. A set of example inputs can 
 also be found in inputs/. Here, OmpLA (PDB ID: 1qd6) is used as an example: 
@@ -51,25 +54,43 @@ also be found in inputs/. Here, OmpLA (PDB ID: 1qd6) is used as an example:
    (http://pdbtm.enzim.hu/) or by downloading a PDB file from the PDB and running
    it through the PPM server (http://opm.phar.umich.edu/server.php).
 
-   We use OmpLA as an example here: 
-     = download the PDB 1qd6 transformed into membrane coordinates from the PDBTM
-     = clean the PDB and extract chain C using 
-        Rosetta/tools/protein_tools/scripts/clean_pdb.py 1qd6_tr.pdb C
-        (the resulting PDB is referred as 1qd6_tr_C.pdb from here)
+   Once the PDB is downloaded from the PDBTM, clean the PDB and extract chain 
+   C using teh clean_pdb.py script in Rosetta tools using the following command: 
+
+   /path/to/Rosetta/tools/protein_tools/scripts/clean_pdb.py 1qd6_tr.pdb C
+
+   The resulting PDB is referred to as 1qd6_tr_C.pdb from here. 
 
 2. Span File: Generate a spanfile from the PDB structure using
    the spanfile_from_pdb application described in the MP_spanfile-from-pdb protocol
-   capture in Rosetta/demos/protocol_captures/2014. An example commandline using 
+   capture in Rosetta/demos/protocol_captures/2015. An example commandline using 
    1qd6 is also provided here: 
 
-   Rosetta/main/source/bin/spanfile_from_pdb.linuxgccrelease 
-                -database /path/to/Rosetta/main/database -in:file:s inputs/1qd6_tr_C.pdb
+   Rosetta/main/source/bin/spanfile_from_pdb.linuxgccrelease -in:file:s inputs/1qd6_tr_C.pdb
 
    For this example, this command will produce 1 output file: 
      = 1qd6_tr_C.span: Spanfile containing predicted trans-membrane spans
 
    Note: For this example, 1qd6 should have 12 transmembrane spans. Adjust the spanfile,
    if needed. 
+
+## Steps for Running the protocol ##
+Here, we describe the steps required to run the MP_ddG protocol. First, we describe how to 
+assemble a simple PyRosetta script using the membrane framework for ddG predictions (predict_ompLA_ddG.py). Next, we describe use of a general ddG prediction application for larger scale use. 
+
+   (1) Creating your own Membrane Framework PyRosetta Protocol 
+       To create a PyRosetta protocol using the membrane framework, follow typical
+       steps for initializng Rosetta and loading in a pose from PDB. Then: 
+          = Use AddMembraneMover (in protcols.membrane) to initialize the membrane framework
+          = Use MembranePositionFromTopologyMover to orient the pose in the membrane based on the transmembrane spans (optional, but recommended)
+          = Setup a membrane energy function
+          = Proceed with normal Rosetta functions
+
+          An example ddG script for a specific application case (predicting OmpLA ddGs
+          for comparison with experimental values from Moon & Fleming, 2011) is provided here in predict_OmpLA_ddG.py
+
+    (2) Large Scale ddG predictions with the RosettaMP Framework
+
 
 ## Steps for Running each Protocol ##
 Here, we describe the steps required to run the MP_ddG protocol. As an example, all steps 
