@@ -20,6 +20,8 @@
 ##
 ## @author: Rebecca F. Alford (rfalford12@gmail.com)
 
+## *** Note - this script is not currently using the pH correction ** ##
+
 from rosetta import *
 
 # tools
@@ -37,6 +39,7 @@ from rosetta import aa_from_oneletter_code
 from rosetta import PackRotamersMover
 from rosetta.core.pose import PDBInfo
 
+###############################################################################
 ## @brief:  Main Function for ddG Prediction
 ## @details: Load in pose, setup membrane energy function, setup the membrane
 ## framework, calculate ddGs 
@@ -60,17 +63,19 @@ def main( argv ):
     sfxn = create_score_function( "mpframework_smooth_fa_2012" );
 
     ## Step 5: Repack neighbors within 8.0 angstroms of the mutant position
-    repacked_native = mutate_residue( pose, 181, 'A', 8.0 )
+    repacked_native = mutate_residue( pose, 181, 'A', 8.0, sfxn )
 
     ## Step 6: Compute the ddG of mutation from alanine to each of the 20 canonical
     ## amino acids. Then print the ddG file to an output file (ompLA_ddG.out)
     AAs = ['A', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'K', 'L', 'M', 'N', 'P', 'Q', 'R', 'S', 'T', 'V', 'W', 'Y']
-    with file( 'ompLA_ddG.out' ) as f: 
+    with file( 'ompLA_ddG.out', 'a' ) as f: 
+        f.write( "Res AA ddG\n" )
         for aa in AAs: 
             ddG = compute_ddG( repacked_native, sfxn, 181, aa, 8.0 )
             f.write( str(181) + " " + aa + " " + str( round( ddG, 3 ) ) + "\n" )
     f.close
 
+###############################################################################
 ## @brief Compute the ddG of mutation
 ## @brief Compute ddG of mutation in a protein at specified residue and AA position
 def compute_ddG( pose, sfxn, resnum, aa, repack_radius ): 
@@ -87,6 +92,7 @@ def compute_ddG( pose, sfxn, resnum, aa, repack_radius ):
     # Print resulting ddG
     return mutant_score - native_score
 
+###############################################################################
 # @brief Replace the residue at <resid> in <pose> with <new_res> and allows
 # repacking within a given <pack_radius> 
 def mutate_residue( pose, mutant_position, mutant_aa, pack_radius, sfxn ):
@@ -137,7 +143,7 @@ def mutate_residue( pose, mutant_position, mutant_aa, pack_radius, sfxn ):
             task.nonconst_residue_task( i ).prevent_repacking()
 
     # apply the mutation and pack nearby residues
-    packer = PackRotamersMover( pack_scorefxn , task )
+    packer = PackRotamersMover( sfxn , task )
     packer.apply( test_pose )
 
     return test_pose
