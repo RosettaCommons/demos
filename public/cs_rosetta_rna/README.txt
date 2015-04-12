@@ -12,6 +12,10 @@ INTRODUCTION:
     Assembly [3] structure modeling methods, or can be an experimental NMR or
     crystallographic structure.
 
+    CS-ROSETTA-RNA can now also utilize ribose (C1',C2',C3',C4',C5') and base
+    (C2,C5,C6,C5) carbon and exchangeable imino (N1,N3,H1,H3) chemical shifts. 
+    When present these, predictions are carried out using LARMORD [4].
+
 EXAMPLE_INFILES:
 
     (1) rosetta_inputs/GA-AG_mismatch/1MIS_NMR.pdb
@@ -23,7 +27,7 @@ EXAMPLE_INFILES:
         ---------------------------------------------------------
 
         Experimental non-exchangeable 1H chemical shift data for the
-        tandem GA:AG mismatch interna loop.
+        tandem GA:AG mismatch internal loop.
 
         Each line in this file represent one chemical shift data point and 
         contains the following nine space-delimited columns (based on the STAR
@@ -110,6 +114,58 @@ OPTIONAL_ARGS:
                 Use this mode only if the the experimental non-exchangeable 1H
                 chemical shift data have unambiguous assignments of the
                 diastereotopic 1H5´ and 2H5´ protons. Note that this is uncommon.
+
+    -score::rna_chemical_shift_verbose:
+    -----------------------------------
+
+        Print out comparison between predicted and measured chemical shifts to
+        standard out.
+
+    -score:rna_chemical_shift_larmord:
+    ----------------------------------
+
+        Force all chemical shifts to be predicted using LARMORD, including
+        proton chemical shifts.
+
+        NOTE: In this mode, user must also specify:
+              -score:rna_chemical_shift_H5_prime_mode UNIQUE
+
+        -score:rna_chemical_shift_larmord_wt:
+        -------------------------------------
+
+            File containing weights that determine the contribution of each
+            nucleus type to the error type. Typical all the weight for a given
+            nucleus = 1/expected_error
+
+            Format for weight file:
+                col 1: nucleus_type (e.g. C1') (STRING)
+                col 2: weight (FLOAT)
+
+            larmord_noweight.dat
+            --------------------
+                - default
+                - all nuclei equally weighted
+
+            larmord_nuchemics_1.0_nocut_accuracy.dat
+            ----------------------------------------
+                - each nucleus is differential weighted (1/expected_error)
+                - use when predicting non-exchangeable proton shifts with
+                  NUCHEMICS and other nuclei with LARMORD
+
+            larmord_1.0_nocut_accuracy.dat
+            ------------------------------
+                - each nucleus is differential weighted (1/expected_error)
+                - use when predicting all chemical shifts with LARMORD
+
+        -score:rna_chemical_shift_larmord_par:
+        --------------------------------------
+
+            File containing the LARMORD parameters
+
+            larmord_1.0_nocut_parameters.dat
+            --------------------------------
+                - default
+                - correspond to that published in [4]
 
 OUTPUTS:
 
@@ -334,3 +390,6 @@ REFERENCES:
 
     [3] Sripakdeevong, P., Kladwang, W. & Das, R. Proc Natl Acad Sci U S A 108, 
         20573-20578 (2011).
+    
+    [4] Frank, AT., Law, SM & Brooks III, CL J. Phys. Chem B 118,
+        12168-12175 (2014).
