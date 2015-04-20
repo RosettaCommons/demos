@@ -47,9 +47,9 @@
                  weights=".30,      .30,      .30,    .045, .045, .02,     .01" 
     <RandomMover name="dock_bag"
 		 movers= "Dock_Ab_L,Dock_Ab_H,Dock_Ag,Ab_L,Ab_H,MinLoops,closer"
-                 weights=".30,      .30,      .30,    .045, .045, .02,     .01" />
+                 weights=".30,      .30,      .30,    .045,.045,.02,     .01" />
 
-    <GenericMonteCarlo name="dock" mover_name="dock_bag" scorefxn_name="talaris2013" temperature=2.0 trials=1000 />
+    <GenericMonteCarlo name="dock" mover_name="dock_bag" scorefxn_name="talaris2013" temperature=2.0 trials=10 />
 
     <Environment name=env auto_cut=1 >
       <!-- We only register the antigen Center of Mass, becaue the antigen is fixed backbone -->

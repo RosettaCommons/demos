@@ -3,6 +3,9 @@
 -in:file:native 1ahw_AHO.pdb
 -out:path:pdb out_pdbs
 
+-loops:max_inner_cycles 2
+-loops:refine_outer_cycles 1
+
 -out:levels protocols.simple_moves.GenericMonteCarloMover:warning
 
 
