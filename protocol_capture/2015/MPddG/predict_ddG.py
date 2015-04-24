@@ -78,7 +78,7 @@ def main( args ):
         action="store", default=7,
         help="Predict ddG and specified pH value. Default 7. Will not work if include pH is not passed", )
 
-    parser.add_option('-fix_protonation_state', '-f', 
+    parser.add_option('--fix_protonation_state', '-f', 
         action="store", default=0, 
         help="Fix protonation of state of the residue to not be the default. Only available for mutations to D, E, H, R, and K", )
 
@@ -93,7 +93,7 @@ def main( args ):
 
     # Initialize Rosetta options from user options. Enable pH mode if applicable
     rosetta_options = ""
-    standard_options = "-mp:setup:spanfiles " + Options.in_span +  " -in:ignore_unrecognized_res"
+    standard_options = "-membrane_new:setup:spanfiles " + Options.in_span +  " -in:ignore_unrecognized_res -pH:fix_protonation_states true "
     if ( Options.include_pH ): 
         if ( float( Options.pH_value ) < 0 or float(Options.pH_value) > 14 ): 
             sys.exit( "Specified pH value must be between 0-14: Exiting..." )
@@ -127,7 +127,7 @@ def main( args ):
         # Create a membrane energy function enabled by pH mode
         # Includes two terms not standard in the smoothed energy function: pH energy
         # and fa_elec
-        sfxn = create_score_function( "mpframework_pHmode_fa_2015")
+        sfxn = create_score_function( "mpframework_pHmode_fa_2014")
 
     else: 
 
@@ -161,25 +161,29 @@ def main( args ):
 ## @brief Compute ddG of mutation in a protein at specified residue and AA position
 def compute_ddG( pose, sfxn, resnum, aa, repack_radius, sc_file ): 
 
-    # Score Native Pose
-    native_score = sfxn( pose )
+    # Make some movers
+    add_memb = rosetta.protocols.membrane.AddMembraneMover()
+    init_mem_pos = rosetta.protocols.membrane.MembranePositionFromTopologyMover()
+
+    # Read in and repack native
+    native_pose = pose_from_pdb( "A181A.pdb" )
+    add_memb.apply( native_pose )
+    init_mem_pos.apply( native_pose )
+    repacked_native = mutate_residue( native_pose, resnum, 'A', repack_radius, sfxn )
+    native_score = sfxn( repacked_native )
 
     # Perform Mutation at residue <resnum> to amino acid <aa>
-    mutated_pose = mutate_residue( pose, resnum, aa, repack_radius, sfxn )
+    mutant_pose = pose_from_pdb( "A181D.pdb" )
+    add_memb.apply( mutant_pose )
+    init_mem_pos.apply( mutant_pose )
+    repacked_mutant = mutate_residue( mutant_pose, resnum, aa, repack_radius, sfxn )
+    mutant_score = sfxn( repacked_mutant )
 
-    # Score Mutated Pose
-    mutant_score = sfxn( mutated_pose )
-
-    #mutated_pose.residue(181).set_chi( 1, 62 )    
-    #mutated_pose.residue(181).set_chi( 2, 90 )
-
-    #print mutated_pose.residue( 181 ).chi( 1 )
-    #print mutated_pose.residue( 181 ).chi( 2 ) 
-
-    mutated_pose.dump_pdb( "A181" + aa + "_modified.pdb")
+    repacked_native.dump_pdb( "A181A_final.pdb" )
+    repacked_mutant.dump_pdb( "A181" + aa + "_final.pdb" ) 
 
     # If specified the user, print the breakdown of ddG values into a file  
-    print_ddG_breakdown( pose, mutated_pose, sfxn, resnum, aa, sc_file )
+    print_ddG_breakdown( repacked_native, repacked_mutant, sfxn, resnum, aa, sc_file )
 
 	# return scores
     return aa, round( mutant_score, 3 ), round( native_score, 3 ), round ( mutant_score - native_score, 3 )
@@ -199,32 +203,8 @@ def mutate_residue( pose, mutant_position, mutant_aa, pack_radius, pack_scorefxn
     # Create a packer task (standard)
     task = TaskFactory.create_packer_task( test_pose )
 
-    # the Vector1 of booleans (a specific object) is needed for specifying the
-    #    mutation, this demonstrates another more direct method of setting
-    #    PackerTask options for design
-    aa_bool = vector1_bool()
-
-    # PyRosetta uses several ways of tracking amino acids (ResidueTypes)
-    # the numbers 1-20 correspond individually to the 20 proteogenic amino acids
-    # aa_from_oneletter returns the integer representation of an amino acid
-    #    from its one letter code
-    # convert mutant_aa to its integer representation
-    mutant_aa = aa_from_oneletter_code( mutant_aa )
-
-    # mutation is performed by using a PackerTask with only the mutant
-    #    amino acid available during design
-    # to do this, construct a Vector1 of booleans indicating which amino acid
-    #    (by its numerical designation, see above) to allow
-    for i in range( 1 , 21 ):
-        # in Python, logical expression are evaluated with priority, thus the
-        #    line below appends to aa_bool the truth (True or False) of the
-        #    statement i == mutant_aa
-        aa_bool.append( i == mutant_aa )
-
-    # modify the mutating residue's assignment in the PackerTask using the
-    #    Vector1 of booleans across the proteogenic amino acids
-    task.nonconst_residue_task( mutant_position
-        ).restrict_absent_canonical_aas( aa_bool )
+    # Make the mutant position not designable
+    task.nonconst_residue_task( mutant_position ).restrict_to_repacking(); 
 
     # prevent residues from packing by setting the per-residue "options" of
     #    the PackerTask
@@ -236,6 +216,7 @@ def mutate_residue( pose, mutant_position, mutant_aa, pack_radius, pack_scorefxn
             task.nonconst_residue_task( i ).prevent_repacking()
         elif i != mutant_position: 
             task.nonconst_residue_task( i ).restrict_to_repacking()
+            print pose.residue( i ).name1()
 
     # apply the mutation and pack nearby residues
     packer = PackRotamersMover( pack_scorefxn , task )
@@ -248,7 +229,7 @@ def mutate_residue( pose, mutant_position, mutant_aa, pack_radius, pack_scorefxn
 #@details Given user option, fix the protonation state to be protonated or 
 # deprotonated, independnet of the system pH or side chain pKa. Only available
 # for Asp, Glu, Lys, Arg, and His
-def fix_protonation_state( pose, resnum, aa, sfxn, repack_radius, protonated ): 
+def fix_protonation_state( pose, resnum, aa, sfxn, repack_radius ): 
 
     # First, make the standard mutation without repacking
     mutate_only_pose = mutate_residue( pose, resnum, aa, 0.0, sfxn )
