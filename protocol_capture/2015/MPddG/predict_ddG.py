@@ -78,6 +78,10 @@ def main( args ):
         action="store", default=7,
         help="Predict ddG and specified pH value. Default 7. Will not work if include pH is not passed", )
 
+    parser.add_option('-fix_protonation_state', '-f', 
+        action="store", default=0, 
+        help="Fix protonation of state of the residue to not be the default. Only available for mutations to D, E, H, R, and K", )
+
     #parse options
     (options, args) = parser.parse_args(args=args[1:])
     global Options
@@ -89,11 +93,13 @@ def main( args ):
 
     # Initialize Rosetta options from user options. Enable pH mode if applicable
     rosetta_options = ""
-    standard_options = "-membrane_new:setup:spanfiles " + Options.in_span +  " -run:constant_seed -in:ignore_unrecognized_res"
+    standard_options = "-mp:setup:spanfiles " + Options.in_span +  " -in:ignore_unrecognized_res"
     if ( Options.include_pH ): 
-        print Options.pH_value
         if ( float( Options.pH_value ) < 0 or float(Options.pH_value) > 14 ): 
             sys.exit( "Specified pH value must be between 0-14: Exiting..." )
+        elif ( Options.fix_protonation_state ): 
+            pH_options = " -pH_mode -pH:fix_protonation_states -value_pH " + str(Options.pH_value)
+            rosetta_options = standard_options + pH_options
         else: 
             pH_options = " -pH_mode -value_pH " + str(Options.pH_value)
             rosetta_options = standard_options + pH_options
@@ -121,7 +127,7 @@ def main( args ):
         # Create a membrane energy function enabled by pH mode
         # Includes two terms not standard in the smoothed energy function: pH energy
         # and fa_elec
-        sfxn = create_score_function( "mpframework_pHmode_fa_2014")
+        sfxn = create_score_function( "mpframework_pHmode_fa_2015")
 
     else: 
 
@@ -163,6 +169,14 @@ def compute_ddG( pose, sfxn, resnum, aa, repack_radius, sc_file ):
 
     # Score Mutated Pose
     mutant_score = sfxn( mutated_pose )
+
+    #mutated_pose.residue(181).set_chi( 1, 62 )    
+    #mutated_pose.residue(181).set_chi( 2, 90 )
+
+    #print mutated_pose.residue( 181 ).chi( 1 )
+    #print mutated_pose.residue( 181 ).chi( 2 ) 
+
+    mutated_pose.dump_pdb( "A181" + aa + "_modified.pdb")
 
     # If specified the user, print the breakdown of ddG values into a file  
     print_ddG_breakdown( pose, mutated_pose, sfxn, resnum, aa, sc_file )
@@ -220,9 +234,56 @@ def mutate_residue( pose, mutant_position, mutant_aa, pack_radius, pack_scorefxn
         # only pack the mutating residue and any within the pack_radius
         if i != mutant_position and dist > pow( float( pack_radius ), 2 ) :
             task.nonconst_residue_task( i ).prevent_repacking()
+        elif i != mutant_position: 
+            task.nonconst_residue_task( i ).restrict_to_repacking()
 
     # apply the mutation and pack nearby residues
     packer = PackRotamersMover( pack_scorefxn , task )
+    packer.apply( test_pose )
+
+    return test_pose
+
+###############################################################################
+#@brief Fix Protoonation State of the residue
+#@details Given user option, fix the protonation state to be protonated or 
+# deprotonated, independnet of the system pH or side chain pKa. Only available
+# for Asp, Glu, Lys, Arg, and His
+def fix_protonation_state( pose, resnum, aa, sfxn, repack_radius, protonated ): 
+
+    # First, make the standard mutation without repacking
+    mutate_only_pose = mutate_residue( pose, resnum, aa, 0.0, sfxn )
+
+    # Based on the specified residue of the pose and user option, add variant type
+    # PROTONATED or DEPROTONATED
+    if ( aa == 'D' or aa == 'E' ): 
+        add_variant_type_to_pose_residue( PROTONATED )
+
+    if ( aa == 'H' or aa == 'R' or aa == 'K' ):
+        add_variant_type_to_pose_residue( DEPROTONATED )
+
+    # Don't mutate, just pack again
+    test_pose = Pose()
+    test_pose.assign( mmutate_only_pose )
+
+    # Create a packer task (standard)
+    task = TaskFactory.create_packer_task( test_pose )
+
+    # Restrict the mutant position to repack only
+    task.nonconst_residue_task( mutant_position ).restrict_to_repacking(); 
+
+    # prevent residues from packing by setting the per-residue "options" of
+    #    the PackerTask
+    center = pose.residue( mutant_position ).nbr_atom_xyz()
+    for i in range( 1, pose.total_residue() + 1 ): 
+        dist = center.distance_squared( test_pose.residue( i ).nbr_atom_xyz() );  
+        # only pack the mutating residue and any within the pack_radius
+        if i != mutant_position and dist > pow( float( pack_radius ), 2 ) :
+            task.nonconst_residue_task( i ).prevent_repacking()
+        elif i != mutant_position: 
+            task.nonconst_residue_task( i ).restrict_to_repacking()
+
+    # apply the mutation and pack nearby residues
+    packer = PackRotamersMover( sfxn, task )
     packer.apply( test_pose )
 
     return test_pose
@@ -300,6 +361,8 @@ def convert_array_to_str( array ):
             linestr = linestr + " " + str( elem )
 
     return linestr
+
+
 
 
 if __name__ == "__main__" : main(sys.argv)
