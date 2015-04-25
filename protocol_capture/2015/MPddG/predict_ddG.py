@@ -93,15 +93,15 @@ def main( args ):
 
     # Initialize Rosetta options from user options. Enable pH mode if applicable
     rosetta_options = ""
-    standard_options = "-membrane_new:setup:spanfiles " + Options.in_span +  " -in:ignore_unrecognized_res -pH:fix_protonation_states true "
+    standard_options = "-membrane_new:setup:spanfiles " + Options.in_span +  " -in:ignore_unrecognized_res -keep_input_protonation_state true -pH:fix_protonation_states true "
     if ( Options.include_pH ): 
         if ( float( Options.pH_value ) < 0 or float(Options.pH_value) > 14 ): 
             sys.exit( "Specified pH value must be between 0-14: Exiting..." )
         elif ( Options.fix_protonation_state ): 
-            pH_options = " -pH_mode -pH:fix_protonation_states -value_pH " + str(Options.pH_value)
+            pH_options = " -pH_mode true -value_pH " + str(Options.pH_value)
             rosetta_options = standard_options + pH_options
         else: 
-            pH_options = " -pH_mode -value_pH " + str(Options.pH_value)
+            pH_options = " -pH_mode true -value_pH " + str(Options.pH_value)
             rosetta_options = standard_options + pH_options
     else: 
         rosetta_options = standard_options
@@ -173,7 +173,7 @@ def compute_ddG( pose, sfxn, resnum, aa, repack_radius, sc_file ):
     native_score = sfxn( repacked_native )
 
     # Perform Mutation at residue <resnum> to amino acid <aa>
-    mutant_pose = pose_from_pdb( "A181D.pdb" )
+    mutant_pose = pose_from_pdb( "A181H.pdb" )
     add_memb.apply( mutant_pose )
     init_mem_pos.apply( mutant_pose )
     repacked_mutant = mutate_residue( mutant_pose, resnum, aa, repack_radius, sfxn )
@@ -202,6 +202,8 @@ def mutate_residue( pose, mutant_position, mutant_aa, pack_radius, pack_scorefxn
 
     # Create a packer task (standard)
     task = TaskFactory.create_packer_task( test_pose )
+
+    print task 
 
     # Make the mutant position not designable
     task.nonconst_residue_task( mutant_position ).restrict_to_repacking(); 
