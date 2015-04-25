@@ -89,7 +89,7 @@ def main( args ):
 
     # Initialize Rosetta options from user options. Enable pH mode if applicable
     rosetta_options = ""
-    standard_options = "-membrane_new:setup:spanfiles " + Options.in_span +  " -run:constant_seed -in:ignore_unrecognized_res"
+    standard_options = "-mp:setup:spanfiles " + Options.in_span +  " -run:constant_seed -in:ignore_unrecognized_res"
     if ( Options.include_pH ): 
         print Options.pH_value
         if ( float( Options.pH_value ) < 0 or float(Options.pH_value) > 14 ): 
@@ -121,12 +121,12 @@ def main( args ):
         # Create a membrane energy function enabled by pH mode
         # Includes two terms not standard in the smoothed energy function: pH energy
         # and fa_elec
-        sfxn = create_score_function( "mpframework_pHmode_fa_2014")
+        sfxn = create_score_function( "mpframework_pHmode_fa_2015")
 
     else: 
 
         # Create a smoothed membrane full atom energy function (pH 7 calculations)
-        sfxn = create_score_function( "mpframework_smooth_fa_2014")
+        sfxn = create_score_function( "mpframework_smooth_fa_2012")
 
     # Repack the native rotamer and residues within the repack radius 
     native_res = pose.residue( int( Options.res ) ).name1()
