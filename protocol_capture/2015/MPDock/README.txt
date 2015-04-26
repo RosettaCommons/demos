@@ -114,9 +114,8 @@ You need:
     You can use the native from step 1. If not, make sure both partners are in a
     single PDB file, transformed into membrane coordinates, and cleaned as in step
     1. Run the MP prepacking protocol described in the demo MPdocking_prepack. 
-    MAKE SURE YOU REMOVE THE MEM RESIDUES IN THE PREPACKED AND IN THE NATIVE 
-    STRUCTURE (SEE ABOVE)!!! A future revision will have the option to read in a membrane residue
-	but the current revision does not have this functionality for MP_docking. 
+    If things crash (they really shouldn't), remove the MEM residue in the prepacked
+		and in the native structure. 
 
 (3) a span file containing the topology information of the membrane protein
     here: 1AFO_AB.span
