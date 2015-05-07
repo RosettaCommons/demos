@@ -49,6 +49,7 @@
 		 movers= "Dock_Ab_L,Dock_Ab_H,Dock_Ag,Ab_L,Ab_H,MinLoops,closer"
                  weights=".30,      .30,      .30,    .045,.045,.02,     .01" />
 
+    <!-- We use this number of trials just because it's fast. In a real simulation, it would have to be higher than this. -->
     <GenericMonteCarlo name="dock" mover_name="dock_bag" scorefxn_name="talaris2013" temperature=2.0 trials=10 />
 
     <Environment name=env auto_cut=1 >
