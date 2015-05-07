@@ -9,7 +9,6 @@
 
 @denovo_flags
 
--evaluation:rmsd_column _
 -evaluation:rmsd 1ubqA.pdb _notail notail.rigid
 
 
