@@ -11,7 +11,6 @@
          not modeled in the crystal structure ARE present (i.e. simulation numbering). -->
     <Index name="host_domain_w_linker" resnums="1-159,295-346" />
     <Not name="inserted_domain" selector="host_domain_w_linker" />
-    <Index name="cheat_region" resnums="236-264"/>
   </RESIDUE_SELECTORS>
   <MOVERS>
     <SwitchResidueTypeSetMover name="centroid" set="centroid" />
@@ -34,13 +33,6 @@
                   template="1uufA.pdb" selector="host_domain_w_linker"
                   apply_to_template="centroid" />
 
-    <!-- This rigid chunk claimer is added to make the loop closure problem easier.
-	 We're obviously cheating, but it just makes the demo results a bit less
-	 computaitonally intensive to generate. Otherwise, only ~15% of the loop
-	 closures are successful. -->
-    <RigidChunkCM name="cheat" region_selector="cheat_region"
-		  template="1uufA.pdb" selector="cheat_region"
-		  apply_to_template="centroid" />
     <AbscriptLoopCloserCM name="closer" fragments="1uufA.frag3" />
     
     <Environment name="env" auto_cut=1 >
