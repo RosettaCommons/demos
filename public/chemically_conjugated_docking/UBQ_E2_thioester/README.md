@@ -1,6 +1,6 @@
 This demo contains the starting structures for the original published use of UBQ_E2_thioester, and is a copy of UBQ_E2_thioester's integration test.  To run the demo (in the inputs subfolder):
 
-UBQ_E2_thioester.linuxgccrelease @options
+    UBQ_E2_thioester.linuxgccrelease @options
 
 Edit the options file first to set paths as needed.
 
