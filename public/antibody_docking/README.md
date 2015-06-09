@@ -49,9 +49,10 @@ Running the demo
     of the light and heavy chain. You will get best 10 structures.
 
     If you want to manually run the scripts yourself, you can download 
-    the scripts source code, example, and instructions from the link below:
+    the scripts source code, example, and instructions from the link below:  
     https://svn.rosettacommons.org/source/trunk/antibody/
-    Again, please realize that the H3 loop modeling is still from Rosetta++
+
+    Again, please realize that the H3 loop modeling is still from Rosetta++.
 
 3.  Download the released version of Rosetta++:  
     https://svn.rosettacommons.org/source/branches/releases/rosetta-2.3.1/ 
