@@ -50,16 +50,16 @@ Running the Demo
       ```
       ~/mini/bin/rosetta_scripts.macosgccrelease -s ../rosetta_inputs/raf-rac.pdb -database ~/minirosetta_database/ -parser:protocol ../rosetta_inputs/design_script.xml -in:file:native ../rosetta_inputs/raf-rac.pdb -ex1 -ex2 -ignore_unrecognized_res -nstruct 1 -overwrite
       ```
-      Options:
+    * Options:
       * `-ex1 -ex2`: expand rotamer library for chi1 and chi2 angles used in repacking/design
       * `-ignore_unrecognized_res`: ignores HETATM lines in input PDB file
       * `-nstruct 1`: specifies how many times the protocol is run (one decoy is output for each run)
       * `-overwrite`: overwrites decoys from previous runs
 
-      Each run should take about 90 seconds to complete.
-      For production runs, nstruct should be set to 1000 or greater.
-      This protocol returns decoys named `raf-rac_####.pdb` and a file named 
-      score.sc that contains scores for each decoy.
+    Each run should take about 90 seconds to complete.
+    For production runs, nstruct should be set to 1000 or greater.
+    This protocol returns decoys named `raf-rac_####.pdb` and a file named 
+    `score.sc` that contains scores for each decoy.
 
 3. Postprocessing output from dock/design run.
     * To see the sequence changes in chain B due to design grep out chain B: 
