@@ -89,10 +89,10 @@ following commands...
 NOTE: To save space, the script has been modified to only produce resfiles and 
 folders for position 610 in the peptide and residue type MPA 
 (4-methyl-phenylalanine). To modify the script to produce folders and resfiles 
-for each position simply uncomment the lines that read "#foreach i ( 601 602 
-603 604 605 606 607 608 609 610 611 )" and "#foreach j ( ABA APA HLU ..... C92 
-C93 C94 )" comment out the line that reads "foreach i ( 610 )" and "foreach j ( 
-MPA )".
+for each position simply uncomment the lines that read `#foreach i ( 601 602 
+603 604 605 606 607 608 609 610 611 )` and `#foreach j ( ABA APA HLU ..... C92 
+C93 C94 )` comment out the line that reads `foreach i ( 610 )` and `foreach j ( 
+MPA )`.
 
 Using the templates in the run_dir the make_folders_resfiles.tcsh script makes 
 folders and resfiles to preform all of the DDDMI runs.
