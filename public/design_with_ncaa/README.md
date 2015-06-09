@@ -12,11 +12,11 @@ Below is the command line for making point-mutations including the possibility
 of incorporating two non-canonical amino acids. In this procedure the backbone 
 is kept fixed and the Trp6 residue is allowed to be altered.
 
-* Trp6 -> Canonical amino acids plus NVL and HLU
+* Trp6 → Canonical amino acids plus NVL and HLU
 
         ~/svn/mini/bin/fixbb.linuxiccrelease -s 1l2y.pdb -use_input_sc -nstruct 1 -database ~/minirosetta_database/ -ex1 -ex2 -overwrite -minimize_sidechains -resfile ncaa_resfile_pluscanon
 
-* Trp6 -> NVL or HLU
+* Trp6 → NVL or HLU
 
         ~/svn/mini/bin/fixbb.linuxiccrelease -s 1l2y.pdb -use_input_sc -nstruct 1 -database ~/minirosetta_database/ -ex1 -ex2 -overwrite -minimize_sidechains -resfile ncaa_resfile
 
