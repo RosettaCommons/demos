@@ -1,44 +1,38 @@
-The entire workflow for this demo should be described in a file
-named README.dox.  It should describe an entire work flow, with
-command lines, tested if possible.
+The entire workflow for this demo should be described in this file.
+It should describe an entire work flow, with command lines, tested if possible.
 
 The contents of each demo directory should be:
 
-starting_files/
-  -- directory in which the raw input files are given - these
+1. `starting_files/`
+  * directory in which the raw input files are given - these
      are provided for you and serve as the base for your
      tutorial
-rosetta_inputs/
-  -- empty in this demo
-  -- directory in which the modified starting files should
+2. `rosetta_inputs/`
+  * empty in this demo
+  * directory in which the modified starting files should
      be placed which will be used as inputs to Rosetta.
      You may need to make modifications like stripping
      extra chains from the input PDB; store the modified
      PDB here and leave the unaltered one in starting_files 
-scripts/
-  -- empty in this demo
-  -- python scripts, shell scripts, used in the workflow
-  -- awk, grep, sed, etc. command lines
+3. `scripts/`
+  * empty in this demo
+  * python scripts, shell scripts, used in the workflow
+  * awk, grep, sed, etc. command lines
 
-README.dox
-  -- A prose or list description of how to perform the protocol
+4. `README.md`
+  * A prose or list description of how to perform the protocol
 
-FOR_AUTHORS.txt
-  -- A description for the demo creators of what their demo
+5. `FOR_AUTHORS.txt`
+  * A description for the demo creators of what their demo
      should achieve.
-  -- Most of what starts in this file should end up in the
+  * Most of what starts in this file should end up in the
      README file as well.
 
-
-
-
-
 Authors:
-Jianqing Xu      xubest@gmail.com
-Christine Tinberg
-Jeff Gray
-Angela Loihl
-
+* Jianqing Xu (xubest@gmail.com)
+* Christine Tinberg
+* Jeff Gray
+* Angela Loihl
 
 1.  The first thing a user should notice is that there’s an antibody 
     modeler in Rosetta 3, but still under development.  As of August 
@@ -50,10 +44,8 @@ Angela Loihl
 2.  Obviously, you need structures of both antibody and antigen in order 
     to do antibody-antigen docking. If you don’t have antibody structures, 
     but have antibody sequences, you can use Gray lab antibody homology 
-    modeling server:
-    http://antibody.graylab.jhu.edu/
-    and input the sequence of the light and heavy chain. You will get 
-    best 10 structures.
+    modeling server (http://antibody.graylab.jhu.edu/) and input the sequence 
+    of the light and heavy chain. You will get best 10 structures.
 
     If you want to manually run the scripts yourself, you can download 
     the scripts source code, example, and instructions from the link below:
