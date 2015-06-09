@@ -1,12 +1,27 @@
 
-In this tutorial, we will demonstrate how to perform domain insertion with Rosetta.  Domain insertion is when you have two well-folded domains, and you insert one (B) into a flexible loop of the other (A), such that domain A is split into halves in primary sequence, but the whole protein still folds into A and B.  We will also allow for redesign of the remodeled loop accepting the insertion.
+In this tutorial, we will demonstrate how to perform domain insertion with 
+Rosetta.  Domain insertion is when you have two well-folded domains, and you 
+insert one (B) into a flexible loop of the other (A), such that domain A is 
+split into halves in primary sequence, but the whole protein still folds into A 
+and B.  We will also allow for redesign of the remodeled loop accepting the 
+insertion.
 
-The sample PDBs are 1ema (a GFP) and 2lct (an SH2 domain).  
+The sample PDBs are 1EMA (GFP) and 2LCT (an SH2 domain).
 
-==A note on domain insertion in Rosetta3.3==
-A dirty little secret is that there is no proper way to do domain insertion in rosetta.  Nobody's gotten around to writing a real mode for it.  We are instead performing what is technically known as an “epic hack” to use a totally different suite, AnchoredDesign, for the purpose.  Unfortunately, there are many strange nomenclature issues forced by this: the “anchor” is the inserted domain, and the “scaffold” is the domain receiving the insertion, and the “target” is non-existent for domain insertion but must pretend-exist for the purpose of the code.  AnchoredDesign and AnchoredPDBCreator are extensively documented with a protocol capture released in 3.3, please refer to that documentation for more details.
+A dirty little secret is that there is no proper way to do domain insertion in 
+rosetta.  Nobody's gotten around to writing a real mode for it.  We are instead 
+performing what is technically known as an "epic hack" to use a totally 
+different suite, AnchoredDesign, for the purpose.  Unfortunately, there are 
+many strange nomenclature issues forced by this: the "anchor" is the inserted 
+domain, and the "scaffold" is the domain receiving the insertion, and the 
+"target" is non-existent for domain insertion but must pretend-exist for the 
+purpose of the code.  `AnchoredDesign` and `AnchoredPDBCreator` are 
+[[extensively documented|protocol_capture/AnchoredDesign/README]] with a 
+protocol capture released in 3.3, please refer to that documentation for more 
+details.
 
-==Where the insertion will occur==
+Where the insertion will occur
+------------------------------
 
 Open the structures in the Pymol. The goal is to insert SH2 domain into GFP. Presumably you will have a scientific problem where you are either interested in a particular insertion isomer/position, or you only care that it's a good structure but not exactly where the insertion occurs.  
 
