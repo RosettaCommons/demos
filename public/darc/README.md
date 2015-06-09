@@ -271,7 +271,7 @@ The output should look similar to:
 In this case the DARC score for the final docked pose is 4.29993. This score 
 can be use to compare with other ligand that are docked using the same ray 
 file. The lower the score the better the match between the protein pocket and 
-ligand. 'DARC_4ERF_0001_LG1.pdb' is the out file that containfs the final 
+ligand. `DARC_4ERF_0001_LG1.pdb` is the out file that contains the final 
 docked pose for single conformer.
 
 If we use the flag `-minimize_output_complex` the model will be minimized and 
