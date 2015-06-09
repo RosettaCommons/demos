@@ -1,4 +1,4 @@
-# Instructions for Calculating explicit unfolded state energies for noncanonical amino acids
+# Instructions for Calculating Explicit Unfolded State Energies for Noncanonical Amino Acids
 
 This README was written by P. Douglas Renfrew (renfrew@nyu.edu).
 
