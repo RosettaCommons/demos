@@ -11,12 +11,14 @@ is chain B.
 Protocol
 --------
 
-A general overview of the protocol is available at 
-(http://www.rosettacommons.org/manuals/archive/rosetta3.2.1_user_guide/app_docking.html). 
-A write-up of the file format for Constraints is available at 
-(http://www.rosettacommons.org/manuals/archive/rosetta3.2.1_user_guide/constraint_file.html).
+A general overview of the protocol is available at:  
+http://www.rosettacommons.org/manuals/archive/rosetta3.2.1_user_guide/app_docking.html
+
+A write-up of the file format for Constraints is available at:  
+http://www.rosettacommons.org/manuals/archive/rosetta3.2.1_user_guide/constraint_file.html
 
 High level overview:
+
 1. Docking Prepack (http://graylab.jhu.edu/Rosetta.Developer.Documentation/all_else/de/d69/docking_prepack_protocol.html)
     - Useful to optimize all of the sidechains on both partners
 
