@@ -22,6 +22,9 @@ Cd into rosetta_input/ and type `sh cmdline` to run the commands.
 After the job finished successfully, you should see the output pdb files in the corresponding folders and log files in the current folder.
 Sample outputs are given in the example_output folder for comparison.
 
+Command-lines
+-------------
+
 1. Redesigning
    ```
    beta_peptide_modeling.linuxgccrelease -database  ../../../../rosetta_database -force_field beta_peptide -native redesign/acdy_LLLL_LLLL.pdb -algorithm redesign -ex1 -ex2 -packing::pack_missing_sidechains false -packing::extrachi_cutoff 0 -repack_res 2 5 8 11 14 17 20 23 -n_repeat 4 -repeat_size 24
@@ -45,7 +48,7 @@ Sample outputs are given in the example_output folder for comparison.
    ```
    Minimize a given pdb, return the final model and Rosetta energies.
 
-Extra flags / scoring files
+Extra flags and score files
 ---------------------------
 
 `-score::no_smooth_etables` true Use the old Rosetta attractive/repulsive score without smoothing.
