@@ -15,7 +15,9 @@ FKBP12.  In the third section we will dock the result from section 2 with FRAP.
 
 To complete this quest you must have at least a 3 member party, including a 
 cleric (level 43, must have blessing spell), a warrior proficient with hammer, 
-and a thief (unlock skill level 10).  ;-)
+and a thief (unlock skill level 10).
+
+;-)
 
 Part 1: Preparing the ligand
 ----------------------------
