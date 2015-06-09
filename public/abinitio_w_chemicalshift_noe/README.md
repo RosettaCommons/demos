@@ -47,15 +47,17 @@ Download NOE data from http://restraintsgrid.bmrb.wisc.edu/NRG/MRGridServlet?pdb
     echo "save file as starting_inputs/NOE_data.upl"
     ```
 
-3. Format data for Rosetta use
-Formatting NOE: (Note only residues seperate by more than 3 are kept in constraint)
-This script  scripts/upl2mini.csh only works with cyana format NOE
-
-scripts/upl2mini.csh starting_inputs/NOE_data.upl > rosetta_inputs/NOE.cst
-scripts/cst_map_toCB.py rosetta_inputs/NOE.cst > rosetta_inputs/NOE.centroid.cst
-
+3. Format data for Rosetta use  
+Formatting NOE: (Note only residues separated by more than 3 are kept in constraint)
+The script `scripts/upl2mini.csh` only works with cyana format NOE:
+    ```
+    scripts/upl2mini.csh starting_inputs/NOE_data.upl > rosetta_inputs/NOE.cst
+    scripts/cst_map_toCB.py rosetta_inputs/NOE.cst > rosetta_inputs/NOE.centroid.cst
+    ```
 Formmatting chemical shift data for TALOS:
-scripts/bmrb2talos.com starting_inputs/raw.cs.bmrb > rosetta_inputs/cs.talos
+    ```
+    scripts/bmrb2talos.com starting_inputs/raw.cs.bmrb > rosetta_inputs/cs.talos
+    ```
 
 4. Generating talos predictions using http://spin.niddk.nih.gov/bax/nmrserver/talosn/ using rosetta_inputs/cs.talos
 Save/copy pred.tab and predSS.tab to rosetta_inputs/talos_output
