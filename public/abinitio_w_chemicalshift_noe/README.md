@@ -1,17 +1,17 @@
-abinitio structure prediction using chemicalshift generated fragments, NOE distance restraints
-**************************************************************************************************************
-Author: Lei Shi
-Nikolas Sgourakis drafted the previous version
+AbInitio Structure Prediction Using NOE Distance Restraints
+===========================================================
+Written by Lei Shi.
+Nikolas Sgourakis drafted the previous version.
 
-We will use the chemical shifts to improve the fragments from which Rosetta builds up structures, and the NOEs to guide the Rosetta calculations towards the native structure. 
+We will use the chemical shifts to improve the fragments from which Rosetta builds up structures, and the NOEs to guide the Rosetta calculations towards the native structure.
 
 Please see references at:
-rosetta abinitio: Bradley, P et al Science 2005
-chemical shift fragments: Shen Y et al. PNAS 2008;105:4685-4690
-chemical shift+NOE+RDC: Raman S, et al Science 2010
+* rosetta abinitio: Bradley, P et al Science 2005
+* chemical shift fragments: Shen Y et al. PNAS 2008;105:4685-4690
+* chemical shift+NOE+RDC: Raman S, et al Science 2010
 
-These Rosetta calculation steps are also described separately Sgourakis NG et al JACS,2011,133(16):6288-98:
-**************************************************************************************************************
+These Rosetta calculation steps are also described separately:
+* Sgourakis NG et al JACS,2011,133(16):6288-98:
 
 In this demo, we will use PDB 2JY7, which is a small protein (for demo purpose) and has experimental data deposited. Several scripts are provided in the scripts folder for formatting purposes:
 
@@ -22,8 +22,8 @@ In this demo, we will use PDB 2JY7, which is a small protein (for demo purpose) 
 
 If you are from David Baker lab, there are scripts available to make setup easier without going through public servers. The following instructions should work just fine without having direct access to any Baker lab cluster.
 
-Detailed steps
---------------
+Running the demo
+----------------
 1. Create following folders:  
     ```
     mkdir starting_inputs
