@@ -1,10 +1,25 @@
 Design with non-canonical amino acids (NCAA)
 ============================================
 
-In the first part of this tutorial we show how to incorporate novel 
-non-canonical amino acid side-chains into rosetta for design.
-In the second part of this tutorial we show how to make a point mutation in a 
+In the first part of this tutorial we show how to make a point mutation in a 
 PDB file (1l2y) including two non-canonical amino acids (NVL and HLU). 
+In the second part of this tutorial we show how to incorporate novel 
+non-canonical amino acid side-chains into rosetta for design.
+
+Designing with NCAA
+===================
+
+Below are two command-lines for making point-mutations including the possibility 
+of incorporating non-canonical amino acids. In this procedure the backbone is 
+kept fixed and the Trp6 residue is allowed to be altered.
+
+* Trp6 → Canonical amino acids plus NVL and HLU
+
+        ~/svn/mini/bin/fixbb.linuxiccrelease -s 1l2y.pdb -use_input_sc -nstruct 1 -database ~/minirosetta_database/ -ex1 -ex2 -overwrite -minimize_sidechains -resfile ncaa_resfile_pluscanon
+
+* Trp6 → NVL or HLU
+
+        ~/svn/mini/bin/fixbb.linuxiccrelease -s 1l2y.pdb -use_input_sc -nstruct 1 -database ~/minirosetta_database/ -ex1 -ex2 -overwrite -minimize_sidechains -resfile ncaa_resfile
 
 Adding new sidechains to Rosetta
 ================================
@@ -318,19 +333,4 @@ program from the Richardson lab at Duke
 
 For questions on backbone-dependent rotamer library design please contact 
 either Doug Renfrew (dougrenfrew at gmail dot com) or Tim Craven (twc254 at nyu dot edu).
-
-Designing with NCAA
-===================
-
-Below are two command-lines for making point-mutations including the possibility 
-of incorporating non-canonical amino acids. In this procedure the backbone is 
-kept fixed and the Trp6 residue is allowed to be altered.
-
-* Trp6 → Canonical amino acids plus NVL and HLU
-
-        ~/svn/mini/bin/fixbb.linuxiccrelease -s 1l2y.pdb -use_input_sc -nstruct 1 -database ~/minirosetta_database/ -ex1 -ex2 -overwrite -minimize_sidechains -resfile ncaa_resfile_pluscanon
-
-* Trp6 → NVL or HLU
-
-        ~/svn/mini/bin/fixbb.linuxiccrelease -s 1l2y.pdb -use_input_sc -nstruct 1 -database ~/minirosetta_database/ -ex1 -ex2 -overwrite -minimize_sidechains -resfile ncaa_resfile
 
