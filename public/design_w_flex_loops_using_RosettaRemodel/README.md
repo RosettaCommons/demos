@@ -87,7 +87,7 @@ the monobody part of interface.
         LOOP 85 89 0 0.0 0
         LOOP 179 185 0 0.0 0
 
-    Where
+    where
 
         column1  "LOOP":     The loop file identify tag
         column2  "integer":  Loop start residue number
