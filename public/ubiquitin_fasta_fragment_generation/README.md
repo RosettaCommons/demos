@@ -31,18 +31,18 @@ The following tutorial will allow you to generate protein fragment files using t
 The directory provides also other necessary files, such as fragment database (vall.jul19.2011) or a script useful to convert between secondary structure prediction file formats (ss_pred_converter.py, also in `tools/fragment_tools/` dir).
 
 **Note, that:**
-    - All commands listed below assume use of the bash shell.
-    - It requires the use of third party software that is not included as part of the Rosetta distribution. In particular, you will need to use secondary structure prediction software such as PsiPred, SAM, Jufo, or Porter.
+- All commands listed below assume use of the bash shell.
+- It requires the use of third party software that is not included as part of the Rosetta distribution. In particular, you will need to use secondary structure prediction software such as PsiPred, SAM, Jufo, or Porter.
 
 ### Instructions for Installation of PsiPred
 
-    - Download PsiPred into using the following command:
+- Download PsiPred into using the following command:
 	`curl –O http://bioinfadmin.cs.ucl.ac.uk/downloads/psipred/psipred3.5.tar.gz`
 
-    - PsiPred should then be extracted with the following command:
+- PsiPred should then be extracted with the following command:
 	`tar –xzf psipred3.5.tar.gz`
 
-    - You then need to compile PsiPred using the following commands, entered sequentially:
+- You then need to compile PsiPred using the following commands, entered sequentially:
 	```
 	cd psipred/src/
 
