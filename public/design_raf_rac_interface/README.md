@@ -69,8 +69,9 @@ Running the Demo
 
     * Run R script to generate Interface Score vs. Interface RMSD plot. R is 
       easy to install from [[here|http://cran.r-project.org/bin/macosx/]] as a 
-      pkg that self installs (do "which R" to check install first). Other OS 
-      versions are also available.
+      pkg that self installs (do "which R" to check install first). The above 
+      link is fro MacOSX, but R is available for many other operating systems 
+      as well.
 
             CMD BATCH scripts/score_vs_rmsd.R
 
