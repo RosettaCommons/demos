@@ -3,11 +3,10 @@ Docking with constraints
 
 In this demo, a peptide (chain B) is docked onto a protein (chain A) with 
 user-defined constraints. The purpose of this demo is to illustrate the use of 
-constraint files and as many different types of constraints as possible.
-
-The input files are based on PDB ID (2o2m) which is a "Crystal Structure Of 
-Human Gαi1 Bound To The Goloco Motif Of Rgs14". The protein is chain A. 
-The peptide is chain B. 
+constraint files and as many different types of constraints as possible. The 
+input files are based on PDB ID (2o2m) which is a "Crystal Structure Of Human 
+Gαi1 Bound To The Goloco Motif Of Rgs14". The protein is chain A. The peptide 
+is chain B. 
 
 Protocol
 --------
