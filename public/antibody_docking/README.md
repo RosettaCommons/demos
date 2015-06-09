@@ -53,12 +53,13 @@ Running the demo
     https://svn.rosettacommons.org/source/trunk/antibody/
     Again, please realize that the H3 loop modeling is still from Rosetta++
 
-3.  Download the released version of Rosetta++  
+3.  Download the released version of Rosetta++:  
     https://svn.rosettacommons.org/source/branches/releases/rosetta-2.3.1/ 
 
-    For people outside of the rosetta community  
+    For people outside of the rosetta community:  
     https://www.rosettacommons.org/software/academic/2.3.1/RosettaSnugDock-2.3.1.tgz
 
+    Compile rosetta:
     ```
     tar –zxvf RosettaSnugDock-2.3.1.tgz (if you download the second link)
     cd rosetta++
