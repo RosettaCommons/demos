@@ -22,16 +22,21 @@ Running the Demo
 ----------------
 
 1. Create model of Raf-Rac interaction.
-    * Uncompress pdb files.
-            gunzip 1c1y.pdb.gz
-            gunzip 2ov2.pdb.gz
+    * Uncompress pdb files:
+      ```
+      gunzip 1c1y.pdb.gz
+      gunzip 2ov2.pdb.gz
+      ```
     * Open 1c1y and 2ov2 with Pymol.
-    * Superimpose chain A of 1c1y with chain A of 2ov2.
-            PyMol Command: super 2ov2 and chain A, 1c1y and chain A
-    * Select modeled Raf-Rac complex
-            PyMol Command: select raf-rac, (1c1y and chain B)+(2ov2 and chain A)
-    * Save Molecule raf-rac.
-            File->Save Molecule->raf-rac.pdb
+    * Superimpose chain A of 1c1y with chain A of 2ov2.  Pymol command:
+      ```
+      super 2ov2 and chain A, 1c1y and chain A
+      ```
+    * Select modeled Raf-Rac complex. Pymol command:
+      ```
+      select raf-rac, (1c1y and chain B)+(2ov2 and chain A)
+      ```
+    * Save Molecule raf-rac.  In pymol: `File->Save Molecule->raf-rac.pdb`
 
 2. Run dock/design protocol using rosetta_scripts.
     * Change working directory to the output directory.
