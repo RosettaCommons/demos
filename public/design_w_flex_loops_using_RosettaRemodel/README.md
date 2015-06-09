@@ -123,7 +123,7 @@ the monobody part of interface.
 
         ~/mini/bin/fixbb.macosgccrelease -database ~/minirosetta_database  -l list -resfile resfile -extrachi_cutoff 1 -ex1 -ex2 -nstruct 5
 
-    Refile format:
+    Resfile format:
 
         NATAA
         start
