@@ -26,7 +26,7 @@ working directory:
         python rosetta/rosetta/tools/protein_tools/scripts/SequenceProfile.py -l list.txt -t 1l2y.pdb
 
 * To control which residues are allowed at each sequence position you would add 
-  a resfile (included here) like this:
+  a resfile (included in this demo) like so:
 
         rosetta/rosetta_source/bin/fixbb.linuxgccrelease @flags_fullatom_dun10 -database ~/rosetta/rosetta_database/ -resfile resfile.txt -out:suffix _resout > log_resout.txt &
 
