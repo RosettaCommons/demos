@@ -24,7 +24,7 @@ Running the Demo
     rosetta/rosetta_source/bin/exposed_strand_finder.linuxgccrelease -s 2a7b_mpm.pdb.gz -database rosetta/rosetta_database @finder_options > exposed_strands.txt
     ```
 
-    The contents of finder_options are:
+    The contents of `finder_options` are:
 
     * general options  
         `-ignore_unrecognized_res true`  
