@@ -1,3 +1,6 @@
+Antibody Docking
+================
+
 The entire workflow for this demo should be described in this file.
 It should describe an entire work flow, with command lines, tested if possible.
 
@@ -39,10 +42,10 @@ Authors:
     2011, Rosetta3 should be used for camelid antibody modeling, but 
     Rosetta2 should be used for other antibody modeling and for antibody 
     docking via SnugDock.  The current stable version of Rosetta2 
-    (Rosetta++) is the released Rosetta-2.3.1 
+    (Rosetta++) is the released Rosetta-2.3.1
 
 2.  Obviously, you need structures of both antibody and antigen in order 
-    to do antibody-antigen docking. If you don’t have antibody structures, 
+    to do antibody-antigen docking. If you don't have antibody structures, 
     but have antibody sequences, you can use Gray lab antibody homology 
     modeling server (http://antibody.graylab.jhu.edu/) and input the sequence 
     of the light and heavy chain. You will get best 10 structures.
