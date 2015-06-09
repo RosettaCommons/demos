@@ -173,9 +173,9 @@ bin/SymDock.macosgccrelease @flags.d3  >& 1ZEH.d3.log
 ```
 
 ## Authors
-Sebastian Rämisch
-Charlie E. M. Strauss
-Bruno Correia
+- Sebastian Rämisch
+- Charlie E. M. Strauss
+- Bruno Correia
 
 ## Rosetta Revision: 43611
 
