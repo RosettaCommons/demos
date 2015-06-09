@@ -34,8 +34,8 @@ working directory:
   natural rotamer (and amino acid). NATAA leaves the amino acid at a position 
   but allows rotamer to change. ALLAA allows full design with any amino acid. 
   PIKAA followed by a list of single-letter-code amino acids restricts design 
-  to just those amino acids.  So, for example,
+  to just those amino acids.  So, for example:
 
         1 A PIKAA NT
 
-  indicates that residue 1 can be either N or T
+  indicates that residue 1 can be either N or T.
