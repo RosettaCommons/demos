@@ -5,11 +5,13 @@ This outlines how to use the applications involved in finding exposed beta-stran
 Written by Ben Stranges (stranges at unc dot edu)
 
 There are three applications associated with this demo:
+
     rosetta/rosetta_source/src/apps/public/scenarios/beta_strand_homodimer_design/homodimer_design.cc
     rosetta/rosetta_source/src/apps/public/scenarios/beta_strand_homodimer_design/homodimer_maker.cc
     rosetta/rosetta_source/src/apps/public/scenarios/beta_strand_homodimer_design/exposed_strand_finder.cc
 
 It would also be a good idea to look at the doxygen for these apps at:
+
     rosetta/rosetta_source/doc/apps/public/scenarios/beta_strand_homodimer_design.dox
 
 It explains how everything works. 
