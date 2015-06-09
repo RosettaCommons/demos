@@ -74,14 +74,23 @@ Rosetta/main/source/bin/fragment_picker -database Rosetta/main/database/ -in::fi
 ```
 Rosetta/main/source/bin/minirosetta -database Rosetta/main/database/ -cst_fa_file rosetta_inputs/NOE.cst -cst_file rosetta_inputs/NOE.centroid.cst -abinitio:stage1_patch scripts/patch_atom_pair_constraint -abinitio:stage2_patch scripts/patch_atom_pair_constraint -abinitio:stage3a_patch scripts/patch_atom_pair_constraint -abinitio:stage3b_patch scripts/patch_atom_pair_constraint -abinitio:stage4_patch scripts/patch_atom_pair_constraint -score:patch scripts/patch_atom_pair_constraint -in:file:fasta starting_inputs/t000_.fasta -file:frag3 rosetta_inputs/pick_cs_fragments/frags.score.200.3mers -file:frag9 rosetta_inputs/pick_cs_fragments/frags.score.200.9mers -nstruct 1 -out:file:silent csrosetta_noe.out -run:protocol abrelax -abinitio::relax -overwrite
 ```
+You can/should adjust the weights of NOE constraints in `scripts/patch_atom_pair_constraint`.
+You should also change nstruct to generate desired number of models.
+Larger is better depending on your available computer time, etc.
+Note that the demo in abinitio_w_chemicalshift_only, you can add flags such as:
+```
+    -abinitio::rg_reweight 0.5
+    -abinitio::rsd_wt_helix 0.5
+    -abinitio::rsd_wt_loop 0.5
+    -disable_co_filter true
+    -abinitio::increase_cycles 10
+```
+to help sampling in centroid stage.
+They are not used probably NOE constraint helps guided the search.
 
-*****You can adjust/should the weights of NOE constraints in scripts/patch_atom_pair_constraint
-*****(Change nstruct to generate desired number of models. Larger is better depending on your available computer time, etc).
-*****Note that the demo in abinitio_w_chemicalshift_only, you can add flags such as "-abinitio::rg_reweight 0.5 -abinitio::rsd_wt_helix 0.5 -abinitio::rsd_wt_loop 0.5 -disable_co_filter true -abinitio::increase_cycles 10" to help sampling in centroid stage. They are not used probably NOE constraint helps guided the search.
-
-8. Process output
-
-8.1 Extract the low energy models:
+Processing the output
+---------------------
+1 Extract the low energy models:
 grep SCORE csrosetta_noe.out | sort –nk2 | head
 
 The second column contains the energies of the lowest energy 10 models.
@@ -90,17 +99,17 @@ Select as the cutoff the energy on the last line
 You should also use NOE constraint energy as a criteria to select structures. Example is only provided for total score
 .
 
-8.2
+2
 cull_silent.pl csrosetta_noe.out “score < cutoff”
 above this will produce csrosetta.select.silent which contains the lowest energy 10 models.
   
-8.3 extract pdbs from selected silent file
+3 extract pdbs from selected silent file
 Rosetta/main/source/bin/extract_pdbs -database Rosetta/main/database/ -in::file::silent csrosetta.select.silent
 
-8.4 Check convergence by superimposing the ten low energy models in pymol or your favorite molecular graphics
+4 Check convergence by superimposing the ten low energy models in pymol or your favorite molecular graphics
 
-8.5 Check convergence by clustering the lowest energy models (see clustering demo for instructions)
+5 Check convergence by clustering the lowest energy models (see clustering demo for instructions)
 
-8.6 To see how NOE constraints are satisfied by a model:
+6 To see how NOE constraints are satisfied by a model:
 Rosetta/main/source/bin/r_cst_tool.linuxgccrelease -database Rosetta/main/database/ -in:file:s lowscore_1.pdb -cst_file rosetta_inputs/NOE.cst
 r_cst_tool is a pilot program by Oliver Lange in Rosetta/main/source/src/apps/pilot/olli/
