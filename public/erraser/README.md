@@ -90,7 +90,7 @@ Arguments for erraser.py are listed below for your reference:
 Required:
 
 * -pdb  
-  Format: -pdb <input pdb>  
+  Format: -pdb \<input pdb>  
 
   The starting structure in standard pdb format
 
