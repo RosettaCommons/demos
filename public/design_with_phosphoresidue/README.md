@@ -1,45 +1,62 @@
-PART 1: MAKE SURE THE PHOSPHORESIDUE IS READ PROPERLY
+Design with Phosphoresidues
+===========================
 
-We create the parameter file for the phosphoresidue as follow:
+Make sure the phosphoresidue is read properly
+---------------------------------------------
 
-STEP 1: EXTRACTION OF PHOSPHOTYROSINE RESIDUE FROM PDB
+We create the parameter file for the phosphoresidue as follows:
 
-We use one model of the NMR ensembles of the 2lct.pdb by deleting other models and keep the first one (3lct.pdb refers to first model).
+1.  Extract a phosphotyrosine (PTR) residue from a PDB file
 
-From the "3lct.pdb" file, extract the part containing the atoms of the phosphoresidues 342 and 346 to generate "PT1.pdb" and "PT2.pdb". You can use the sample command line
+    We use one model of the NMR ensembles of the 2lct.pdb by deleting other 
+    models and keep the first one (3lct.pdb refers to first model).
 
-grep PTR 3lct.pdb | grep 342 | grep HETATM > PT1.pdb
-grep PTR 3lct.pdb | grep 346 | grep HETATM > PT2.pdb
+    From the "3lct.pdb" file, extract the part containing the atoms of the 
+    phosphoresidues 342 and 346 to generate "PT1.pdb" and "PT2.pdb". You can use 
+    the sample command line
 
-STEP 2: CREATE MOLFILE FOR PTR FROM PDB FILE
+        grep PTR 3lct.pdb | grep 342 | grep HETATM > PT1.pdb
+        grep PTR 3lct.pdb | grep 346 | grep HETATM > PT2.pdb
 
--Either use avogadro(free chemical software) or go to the adress:
-www.molecular-networks.com/online_demos/convert_demo
-to generate an "PT1.mdl" file from the "PT1.pdb" with the original geometry of the phosphoresidue.
+2.  Create a MOLFILE for PTR
 
-STEP 3: CREATE THE *.PARAMS FILE 
--Copy the "PTR.mdl" file (molfile format) into folder
+    Either use avogadro(free chemical software) or go to the adress: 
+    www.molecular-networks.com/online_demos/convert_demo to generate an 
+    "PT1.mdl" file from the "PT1.pdb" with the original geometry of the 
+    phosphoresidue.
 
-mini/src/python/apps/public/molfile_to_params.py PT1.mdl -n PT1
-mini/src/python/apps/public/molfile_to_params.py PT2.mdl -n PT2
+3.  Create a Rosetta PARAMS file PTR
 
-This script creates PT1.params and PT1_0001.pdb. You'll need to delete the older PTR residues in 3lct.pdb and replace them with the co-ordinates for generated new residues PT1_0001.pdb and PT2_0001.pdb (4lct.pdb refers to 3lct.pdb with new phoshoresidues)
+    Copy the "PTR.mdl" file (molfile format) into your working directory.  Then 
+    run:
 
-Also, change the "HETATM" tags for phoshoresidues in the PDB file to "ATOM".
+        mini/src/python/apps/public/molfile_to_params.py PT1.mdl -n PT1
+        mini/src/python/apps/public/molfile_to_params.py PT2.mdl -n PT2
 
-PART 2: DESIGN AROUND THE PHOSPHORESIDUE
+    This script creates PT1.params and PT1_0001.pdb. You'll need to delete the 
+    older PTR residues in 3lct.pdb and replace them with the co-ordinates for 
+    generated new residues PT1_0001.pdb and PT2_0001.pdb (4lct.pdb refers to 
+    3lct.pdb with new phoshoresidues). Also, change the "HETATM" tags for 
+    phoshoresidues in the PDB file to "ATOM".
 
--Using pyMol, identify the neighbouring residues, within the desired radius (5 A in our case, PRT.resfile)
+Design around the phosphoresidue
+--------------------------------
 
--Write the resfile. Use the option ALLAA next to the sequence position to design the selected residue to all of posibble amino acids.
+1.  Using pyMol, identify the neighbouring residues, within the desired radius 
+    (5 A in our case, PRT.resfile)
 
-sample command line:
+2.  Write the resfile. Use the option ALLAA next to the sequence position to 
+    design the selected residue to all of posibble amino acids.
 
-~/mini/bin/fixbb.default.macosgccrelease -s 4lct.pdb -database ~/minirosetta_database -extra_res_fa PT1.params PT2.params -resfile PTR.resfile
+3.  Run the following command-line:
 
-This will generate a single pdb file with designed residues around the phosphoresidues. The sample outputs have been copied to /outputs.
+        ~/mini/bin/fixbb.default.macosgccrelease -s 4lct.pdb -database ~/minirosetta_database -extra_res_fa PT1.params PT2.params -resfile PTR.resfile
 
-If you want more structures, then use the flag -nstruct 1000 or -nstruct 10,000 depending on your need.
+    This will generate a single pdb file with designed residues around the 
+    phosphoresidues. The sample outputs have been copied to /outputs. If you 
+    are using this protocol for a real design application, use the flag 
+    `-nstruct 1000` or `-nstruct 10,000` to generate enough designs to give 
+    meaningful results.
 
 
 
