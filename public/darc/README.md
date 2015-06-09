@@ -26,7 +26,7 @@ Generating input files
   they were obtained or generated. 4ERF.pdb was downloaded from The Protein 
   Databank. The small molecule used for docking was found in ZINC, the database 
   of commercially available compounds at http://zinc.docking.org/. We download 
-  ZINC13989607 in mol2 format. The file name is zinc_13989607.mol2
+  ZINC13989607 in mol2 format. The file name is `zinc_13989607.mol2`.
 
   Since the charges assigned to the atom is same for all conformers, it is fast 
   to assign charges before generating conformers. The charges were added to the 
