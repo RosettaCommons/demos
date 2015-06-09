@@ -1,3 +1,6 @@
+Calculate Protein Protein ΔΔG
+=============================
+
 A common computational problem involves finding the binding energy of a
 protein-protein complex. In this tutorial, we will calculate the change in 
 binding energy caused by point mutations in the complex. 
@@ -15,7 +18,6 @@ where E represents the E3a ligase and P represents the UBC protein.
 The binding energy change due to the mutation can be obtained by: 
 
 (3) Delta_Delta_G = Delta_G' - Delta_G
-
 
 To obtain Delta_G in Rosetta, we calculate the energy of the complex
 using the Rosetta scoring function. We then score the protein and ligase
@@ -38,8 +40,7 @@ perform operations on the complex in a stepwise manner. The protocol will:
 6. Using Equation (3) to obtain the change in binding energy. The energy value
 is in Rosetta energy unit. 
 
-
-Resfiles - Contain information for how the packer should behave, such as
+Resfiles contain information for how the packer should behave, such as
 telling the packer to make a point mutation. For full Resfile documentaion, 
 see:
 
@@ -49,43 +50,47 @@ In root directory of this demo, you will find a sample resfile with the
 following content. It ask Rosetta to mutate residue 641 on chain A (E3a ligase) 
 into a tryptophan.
 
-#Resfile
-NATAA
-USE_INPUT_SC
-EX1 EX23
-start 
-641 A PIKAA W
+Resfile
+-------
 
+    NATAA
+    USE_INPUT_SC
+    EX1 EX23
+    start 
+    641 A PIKAA W
 
-#Command Line:
-rosetta_scripts.operatingsystem.release -parser:protocol mutation_script.xml
--s ../starting_files/1C4Z.pdb -ignore_unrecognized_res -database
-/path/to/database -out:path:pdb ../output_files -out:path:score ../output_files -nstruct 1
+Command-line
+------------
+
+    rosetta_scripts.operatingsystem.release -parser:protocol mutation_script.xml -s ../starting_files/1C4Z.pdb -ignore_unrecognized_res -database /path/to/database -out:path:pdb ../output_files -out:path:score ../output_files -nstruct 1
 
 The command line arguments are explained below. 
 
-operatingsystem            indicates the platform of the user. 
+* operatingsystem:
+  indicates the platform of the user. 
 
--parser:protocol           this flag indicates the XML file that contains 
-                           the point mutation ddg protocol.
+* `-parser:protocol`:
+  this flag indicates the XML file that contains the point mutation ddg protocol.
 
--s                         input PDB file.
+* `-s`:
+  input PDB file.
 
--ignore_unrecognized_res   this flag ignores lines in the PDB file that 
-                           Rosetta doesn't recognize. 
+* `-ignore_unrecognized_res`:
+  this flag ignores lines in the PDB file that Rosetta doesn't recognize.
 
--database                  a path to the Rosetta database shipped with the 
-                           release
+* `-database`:
+  a path to the Rosetta database shipped with the release.
 
--out:path:pdb              indicates the output directory for pdbs
+* `-out:path:pdb`:
+  indicates the output directory for pdbs.
 
--out:path:score 				   indicates the output directory for the score file
+* `-out:path:score`:
+  the output directory for the score file.
 
--nstruct                   the number of models to output. To get an 
-			   accurate representation of the energy landscape, 
-			   many models should be created (e.g., >1000). During
-			   testing, you may set nstruct to 1. 
- 
+* `-nstruct`:
+  the number of models to output.
+  To get an accurate representation of the energy landscape, many models should be created (e.g., >1000).
+  During testing, you may set nstruct to 1. 
 
 The output file will be a repacked and mutated PDB file with the dg_wt and
 dg_mut lines at the end of the file. Subtration of these two numbers yields
