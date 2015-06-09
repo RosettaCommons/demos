@@ -48,10 +48,7 @@ http://graylab.jhu.edu/Rosetta.Developer.Documentation/all_else/d1/d97/resfiles.
 
 In root directory of this demo, you will find a sample resfile with the 
 following content. It ask Rosetta to mutate residue 641 on chain A (E3a ligase) 
-into a tryptophan.
-
-Resfile
--------
+into a tryptophan.  The contents of this resfile are:
 
     NATAA
     USE_INPUT_SC
