@@ -1,0 +1,49 @@
+<ROSETTASCRIPTS>
+  <RESIDUE_SELECTORS>
+    <Index name="helix" resnums="17-40" />
+  </RESIDUE_SELECTORS>
+  <MOVERS>
+    <SwitchResidueTypeSetMover name="centroid" set="centroid" />
+
+    <FragmentJumpCM name="jumps" topol_file="1ubqA.top" />
+    <RigidChunkCM name="chunk" region_selector="helix" selector="helix"
+                  template="1ubqA.pdb" apply_to_template="centroid"  />
+    <AbscriptLoopCloserCM name="closer" fragments="frags/1d3z.frags3.dat.gz" />
+
+    <!-- Define the abinitio mover that will do torsion and beta-straind pairing insertions -->
+    <AbscriptMover name="abinitio" cycles=2 >
+      <!-- Abscript mover has special macros for defining the usual ab initio fragment movers, since there's three -->
+      <!-- and they're very stereotyped. You could use the <Stage> tag syntax to do it, but it's a pain. -->
+      <Fragments large_frags="frags/1d3z.frags9.dat.gz" small_frags="frags/1d3z.frags3.dat.gz" />
+      <!-- Add the mover "jumps" (fragment jumps) to stages I through IVb (i.e. all of them) -->
+      <Stage ids="I-IVb" >
+        <Mover name="jumps" />
+      </Stage>
+    </Abscriptmover>
+
+    <!-- Make the environment, and add the abinitio mover, followed by a loop closer. The loop closer obviously -->
+    <!-- Only gets run once at the end, so it's not inside the Abscript mover. -->
+    <Environment name="env" auto_cut=1 allow_pure_movers=1 >
+      <Register mover="chunk" />
+      <Apply mover="abinitio" />
+      <Apply mover="closer" />
+    </Environment>
+
+    <!-- It's good to quckly idealize structures that come out of broken-chain abinitio environment runs, -->
+    <!-- because sometimes the idealizer in the AbinitioLoopCloser doesn't quite get the loop closed. -->
+    <Idealize name="idealize" />
+
+    <!-- Switch to full atom and relax. Abrelax actually only uses 5 FastRelax repetitions, but the RosettaScripts default is 8-->
+    <SwitchResidueTypeSetMover name="fullatom" set="fa_standard" />
+    <FastRelax name="relax" repeats=5 />
+  </MOVERS>
+  <FILTERS>
+  </FILTERS>
+  <PROTOCOLS>
+    <Add mover="centroid" />
+    <Add mover="env" />
+    <Add mover="idealize" />
+    <Add mover="fullatom" />
+    <Add mover="relax" />
+  </PROTOCOLS>
+</ROSETTASCRIPTS>

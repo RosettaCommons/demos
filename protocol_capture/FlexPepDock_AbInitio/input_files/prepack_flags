@@ -1,0 +1,8 @@
+-s start.pdb 
+-native native.pdb 
+-ex1 
+-ex2aro 
+-use_input_sc 
+-unboundrot native.pdb 
+-flexpep_prepack 
+-nstruct 1

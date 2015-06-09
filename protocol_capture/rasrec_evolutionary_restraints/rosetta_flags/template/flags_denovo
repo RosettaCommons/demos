@@ -1,0 +1,47 @@
+-run:protocol broker
+
+-frag3 FRAGS_3MERS
+-frag9 FRAGS_9MERS
+-in:file:fasta FASTA_SEQUENCE
+
+-out:file:silent_print_all_score_headers
+
+
+#-out:file:silent_struct_type protein_float
+#-in:file:silent_struct_type protein_float
+
+#don't have prove that this actually helps.. maybe in the refinement stage..
+-increase_cycles 2.000000
+
+#jumping
+-templates::topology_rank_cutoff 0.8
+-jumps:ramp_chainbreaks
+-jumps:sep_switch_accelerate 0.8
+-abinitio:skip_convergence_check
+-jumps:overlap_chainbreak
+
+#magic energy fixes
+-rsd_wt_helix 0.5
+-rsd_wt_loop 0.5
+-rg_reweight 0.5
+#-correct
+
+# for loop closing
+-overwrite_filter_scorefxn score3
+#-score:weights score12_full
+
+
+-detect_disulf false
+
+#loop-closing filter in SlidingWindow
+-fast_loops:overwrite_filter_scorefxn score3
+
+-abrelax:fail_unclosed
+
+#log-output
+-unmute memory_usage
+-out:levels core.chemical:error
+-out:levels core.io.pdb:error
+-out:levels protocols.jobdist:error
+
+@flags_nmr_patches

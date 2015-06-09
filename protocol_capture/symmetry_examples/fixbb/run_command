@@ -1,0 +1,4 @@
+# make symmetry definition file
+make_symmdef_file.pl -p input_files/2akf.pdb > input_files/2akf_symmdef.dat
+# run rosetta
+fixbb.linuxgccrelease @input_files/fixbb-symmetry-flags -database my_location/minirosetta_database

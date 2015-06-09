@@ -1,0 +1,10 @@
+#this flag-file is automatically generated
+
+-nstruct 25
+-in:file:native ../../../../dock_targetlib/udock_1bvn/native/protAB.pdb
+-score:weights interchain_cen
+-in:file:s ../../../../dock_targetlib/udock_1bvn/start/P.pdb
+@partners
+
+-run:batches ../inputs/flags_batch0001 ../inputs/flags_batch0002 
+

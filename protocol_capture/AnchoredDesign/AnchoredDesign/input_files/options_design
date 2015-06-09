@@ -1,0 +1,70 @@
+#database path
+#-database /path/to/database
+
+#altering output
+#mute at your choice
+#-mute core.chemical core.scoring.etable core.io.database core.io.pdb.file_data core.conformation core.pack.pack_rotamers core.pack.task
+-unmute protocols.loops.CcdLoopClosureMover
+
+#repeating options for safety
+-run::version
+-options::user
+
+#input files
+-s 1zr0.CD.pdb
+-loops::loop_file loopsfile_native
+
+#packing options - these are about as high as they can go
+-ex1
+-ex2
+-use_input_sc
+-extrachi_cutoff 8
+-resfile resfile
+-linmem_ig 42
+
+#minimization options
+-run::min_type dfpmin_armijo
+-nblist_autoupdate
+
+#useful in MPI, depending on how you choose to run it
+#-mpi_work_partition_job_distributor
+#-mpi_tracer_to_file proc
+
+#loops options
+-loops::vicinity_sampling true
+
+#AnchoredDesign options
+-AnchoredDesign
+	-anchor anchor
+	-allow_anchor_repack false
+	-vary_cutpoints true
+	-debug false
+	-show_extended false
+	-refine_only false
+	-perturb_show false
+	-perturb_temp 0.8 
+	-refine_temp 0.8
+	-refine_repack_cycles 50
+	-rmsd false
+	-unbound_mode false
+	-no_frags false
+	-perturb_CCD_off false
+	-perturb_KIC_off false
+	-refine_CCD_off false
+	-refine_KIC_off false
+	-chainbreak_weight 2.0
+	-testing::VDW_weight 2
+
+
+#no filters
+
+
+#production command
+#-AnchoredDesign::perturb_cycles 5000
+#-AnchoredDesign::refine_cycles 10000
+#-nstruct 9999
+
+#sample-size command
+-AnchoredDesign::perturb_cycles 50
+-AnchoredDesign::refine_cycles 100
+-nstruct 4

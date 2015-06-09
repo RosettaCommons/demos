@@ -1,0 +1,10 @@
+#this flag-file is automatically generated
+
+-nstruct 1
+-in:file:native ../../../../../dock_targetlib/udock_1bvn/native/protAB.pdb
+@partners
+-in:file:s ../../../../../dock_targetlib/udock_1bvn/start/P.pdb
+-score:weights interchain_cen
+-score:min_score_score -36.51900
+-n_replica 7
+
