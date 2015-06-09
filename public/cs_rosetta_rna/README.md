@@ -113,7 +113,7 @@ Running the demo
 Optional arguments
 ------------------
 
-*   `-score::rna_chemical_shift_H5_prime_mode`:  
+*   `-score::rna_chemical_shift_H5_prime_mode MODE`:  
 
     Specify how to handle assignment of the diastereotopic H5' and H5'' proton pair.
     Valid modes:
