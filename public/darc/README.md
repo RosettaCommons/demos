@@ -174,7 +174,7 @@ To build with GPU enabled:
 
     $ ./scons.py mode=release extras=opencl bin
 
-NOTE: Building with opencl results in different binary extension (eg: 
+Note: Building with opencl results in different binary extension (eg: 
 DARC.opencl.linuxgccrelease) run on gpu systems, we need to use the 
 'opencl.linuxgccrelease' binary extension.
 
