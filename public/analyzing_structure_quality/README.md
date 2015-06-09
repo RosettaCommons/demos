@@ -6,8 +6,6 @@ Scoring Structures
 ------------------
 To score structures, use the score application. This application can accept any input structure that Rosetta recognizes.
 
-Running Rosetta
----------------
     /path/to/rosetta/bin/score.macosgccrelease -database /path/to/minirosetta_database/ -s ../starting_files/1ubq.pdb.gz -in:file:fullatom -ignore_unrecognized_res -out:output
 
 Description of parameters
