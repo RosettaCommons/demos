@@ -51,8 +51,8 @@ Demo inputs
     are provided in the Supplemental Data Zip file, available at the following
     URI: http://dx.doi.org/10.1038/nmeth.2876
 
-Running the demo
-----------------
+Example command-lines
+---------------------
 
 1.  Refine (minimize) and score a PDB structure under the hybrid CS-ROSETTA-RNA all-atom energy function:
 
