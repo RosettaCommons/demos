@@ -188,28 +188,28 @@ Run DARC with the following command:
 
 * DARC shape only:
 
-      $ Rosetta/main/source/bin/score.linuxgccrelease -in:file:s 4ERF.pdb -out:output -no_optH false
-      $ Rosetta/main/source/bin/make_ray_files.linuxgccrelease -pocket_static_grid -protein 4ERF_0001.pdb -central_relax_pdb_num 61 -darc_shape_only
-      $ Rosetta/main/source/bin/DARC.linuxgccrelease -protein 4ERF_0001.pdb -ligand 4ERF_XTL_0001.pdb -extra_res_fa 4ERF_XTL.params -ray_file ray_4ERF_0001_61.txt -darc_shape_only -num_particles 50 -num_runs 50 
+        $ Rosetta/main/source/bin/score.linuxgccrelease -in:file:s 4ERF.pdb -out:output -no_optH false
+        $ Rosetta/main/source/bin/make_ray_files.linuxgccrelease -pocket_static_grid -protein 4ERF_0001.pdb -central_relax_pdb_num 61 -darc_shape_only
+        $ Rosetta/main/source/bin/DARC.linuxgccrelease -protein 4ERF_0001.pdb -ligand 4ERF_XTL_0001.pdb -extra_res_fa 4ERF_XTL.params -ray_file ray_4ERF_0001_61.txt -darc_shape_only -num_particles 50 -num_runs 50 
 
   Expected output: `DARC_4ERF_0001_LG1.pdb`
 
 * DARC shape and electrostatics:
 
-      $ Rosetta/main/source/bin/make_ray_files.linuxgccrelease -pocket_static_grid -protein 4ERF_0001.pdb -central_relax_pdb_num 61 -espGrid_file 4ERF.agd
-      $ Rosetta/main/source/bin/DARC.linuxgccrelease -protein 4ERF_0001.pdb -ligand 4ERF_XTL_0001.pdb -extra_res_fa 4ERF_XTL.params -ray_file ray_4ERF_0001_61.txt -espGrid_file DARC_4ERF.agd -num_particles 50 -num_runs 50
+        $ Rosetta/main/source/bin/make_ray_files.linuxgccrelease -pocket_static_grid -protein 4ERF_0001.pdb -central_relax_pdb_num 61 -espGrid_file 4ERF.agd
+        $ Rosetta/main/source/bin/DARC.linuxgccrelease -protein 4ERF_0001.pdb -ligand 4ERF_XTL_0001.pdb -extra_res_fa 4ERF_XTL.params -ray_file ray_4ERF_0001_61.txt -espGrid_file DARC_4ERF.agd -num_particles 50 -num_runs 50
 
   Expected output: `DARC_4ERF_0001_LG1.pdb`
 
 * DARC sampling conformers on the fly
 
-      $ Rosetta/main/source/bin/DARC.linuxgccrelease -protein 4ERF_0001.pdb -ligand 000_conformers.pdb -extra_res_fa 000.params -ray_file ray_4ERF_0001_61.txt -espGrid_file DARC_4ERF.agd -num_particles 500 -num_runs 500 -search conformers true
+        $ Rosetta/main/source/bin/DARC.linuxgccrelease -protein 4ERF_0001.pdb -ligand 000_conformers.pdb -extra_res_fa 000.params -ray_file ray_4ERF_0001_61.txt -espGrid_file DARC_4ERF.agd -num_particles 500 -num_runs 500 -search conformers true
 
   Expected output: `DARC_4ERF_0001_000.pdb`
 
 * DARC sampling conformers iteratively one-by-one
 
-      $ Rosetta/main/source/bin/DARC.linuxgccrelease -protein 4ERF_0001.pdb -ligand 000_conformers.pdb -extra_res_fa 000.params -ray_file ray_4ERF_0001_61.txt -espGrid_file DARC_4ERF.agd -num_particles 500 -num_runs 500 -search conformers false
+        $ Rosetta/main/source/bin/DARC.linuxgccrelease -protein 4ERF_0001.pdb -ligand 000_conformers.pdb -extra_res_fa 000.params -ray_file ray_4ERF_0001_61.txt -espGrid_file DARC_4ERF.agd -num_particles 500 -num_runs 500 -search conformers false
 
   Expected output: `DARC_4ERF_0001_000.pdb`
 
