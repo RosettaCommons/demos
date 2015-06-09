@@ -50,5 +50,5 @@ Extra flags / scoring files
 
 `-no_symmetry` true Disable the symmetry-based redesigning.
 
-`-force_field beta_peptide_mm` / `-force_field beta_peptide_soft_rep_mm` Use the molecular mechanics-based Rosetta scoring files. Replace the corresponding “-force_field” flags with the MM ones in the above command lines. Also, extra flags “-apply_dihedral_cst false” should be used to turn off dihedral constraint when MM potential is used.
+`-force_field beta_peptide_mm` / `-force_field beta_peptide_soft_rep_mm` Use the molecular mechanics-based Rosetta scoring files. Replace the corresponding `-force_field` flags with the MM ones in the above command lines. Also, extra flags `-apply_dihedral_cst false` should be used to turn off dihedral constraint when MM potential is used.
 
