@@ -6,30 +6,24 @@ It should describe an entire work flow, with command lines, tested if possible.
 
 The contents of each demo directory should be:
 
-1. `starting_files/`
-  - directory in which the raw input files are given - these
-     are provided for you and serve as the base for your
-     tutorial
-2. `rosetta_inputs/`
-  - empty in this demo
-  - directory in which the modified starting files should
-     be placed which will be used as inputs to Rosetta.
-     You may need to make modifications like stripping
-     extra chains from the input PDB; store the modified
-     PDB here and leave the unaltered one in starting_files 
-3. `scripts/`
-  - empty in this demo
-  - python scripts, shell scripts, used in the workflow
-  - awk, grep, sed, etc. command lines
+`starting_files/`
+- directory in which the raw input files are given - these are provided for you and serve as the base for your tutorial
 
-4. `README.md`
-  - A prose or list description of how to perform the protocol
+`rosetta_inputs/`
+- empty in this demo
+- directory in which the modified starting files should be placed which will be used as inputs to Rosetta.  You may need to make modifications like stripping extra chains from the input PDB; store the modified PDB here and leave the unaltered one in starting_files 
 
-5. `FOR_AUTHORS.txt`
-  - A description for the demo creators of what their demo
-     should achieve.
-  - Most of what starts in this file should end up in the
-     README file as well.
+`scripts/`
+- empty in this demo
+- python scripts, shell scripts, used in the workflow
+- awk, grep, sed, etc. command lines
+
+`README.md`
+- A prose or list description of how to perform the protocol
+
+`FOR_AUTHORS.txt`
+- A description for the demo creators of what their demo should achieve.
+- Most of what starts in this file should end up in the README file as well.
 
 Authors:
 - Jianqing Xu (xubest@gmail.com)
