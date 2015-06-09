@@ -1,7 +1,7 @@
 Enzyme Design Demo
 ==================
 
-Tutorial for a complete deNovo enzyme design run, using the TIM reaction as an 
+Tutorial for a complete *de novo* enzyme design run, using the TIM reaction as an 
 example, as published in 
 
 * Richter F, Leaver-Fay A, Khare SD, Bjelic S, Baker D (2011) De Novo Enzyme 
