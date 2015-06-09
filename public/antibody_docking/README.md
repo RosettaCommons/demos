@@ -54,10 +54,10 @@ Running the demo
 
     Again, please realize that the H3 loop modeling is still from Rosetta++.
 
-3.  Download the released version of Rosetta++:  
+3.  Download the released version of Rosetta++: 
     https://svn.rosettacommons.org/source/branches/releases/rosetta-2.3.1/ 
 
-    For people outside of the rosetta community:  
+    For people outside of the rosetta community: 
     https://www.rosettacommons.org/software/academic/2.3.1/RosettaSnugDock-2.3.1.tgz
 
 4.  Compile rosetta:
@@ -67,18 +67,18 @@ Running the demo
     scons mode=release –j12    (assuming you can use 12 CPUs)
     ```
 
-5.  The SnugDock example in Rosetta++ can be found at:  
+5.  The SnugDock example in Rosetta++ can be found at:
     https://svn.rosettacommons.org/source/branches/releases/rosetta-2.3.1/example/
     * Besides the original example shown above, we made a new example in the current directory.
       Please be careful with different flags used in the command line.
-      The documentations of SnugDock options can be found at:  
-        http://www.rosettacommons.org/guide/SnugDock.
+      The documentations of SnugDock options can be found at:
+      http://www.rosettacommons.org/guide/SnugDock.
       Please also be careful with each "paths.txt" file.
     * Do Ensemble Prepack:
       ```
       cd ./PrePack_input # you need AB_model*.pdb, ABRM.fab, ABRM.pdb, ABRM.unbound.pdb, Antigen.pdb, pdblist1, pdblist2
-      cd ../Prepack # you need “paths.txt” and “prepack.bash” file available
-          ./prepack.bash
+      cd ../Prepack # you need `paths.txt` and `prepack.bash` file available
+      ./prepack.bash
       ```
       After prepack, you will see `*.ppk` files in the PrePack_input directory.
       Your original pdblist1 and pdblist2 files will be modified as well, please see the README file inside that folder.
