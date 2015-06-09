@@ -29,7 +29,7 @@ Running the Demo
 
    `-repack_res` specify the residue being redesigned/repacked.
 
-   `-n_repeat` and `-repeat_size` set up the symmetry based repacking. In this example, each residue n listed in "repack_res" and n+24, n+48, n+72 (4 copies total) are repacked/redesigned. Also each set of 4 residues are enforced to be the same residue type and have the same rotameric conformation.
+   `-n_repeat` and `-repeat_size` set up the symmetry based repacking. In this example, each residue n listed in `repack_res` and n+24, n+48, n+72 (4 copies total) are repacked/redesigned. Also each set of 4 residues are enforced to be the same residue type and have the same rotameric conformation.
 
 2. Repacking
    ```
