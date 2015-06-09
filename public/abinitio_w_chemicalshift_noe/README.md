@@ -25,10 +25,12 @@ If you are from David Baker lab, there are scripts available to make setup easie
 Detailed steps
 --------------
 1. Create following folders:  
+    ```
     mkdir starting_inputs
     mkdir rosetta_inputs
     mkdir rosetta_inputs/talos_output
     mkdir rosetta_inputs/pick_cs_fragments
+    ```
 
 2. Download protein fasta and experimental data
 Download fasta from http://www.pdb.org/pdb/explore/explore.do?structureId=2JY7  
