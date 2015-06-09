@@ -1,6 +1,11 @@
 Design with Phosphoresidues
 ===========================
 
+Phosphoresidues are very important in biology.  Many signaling pathways depend 
+on the fact that phosphorylation of residues like serine, threonine, and 
+tyrosine can introduce dramatic allosteric changes.  This demo shows how to 
+design with phosphoresidues in Rosetta.
+
 Make sure the phosphoresidue is read properly
 ---------------------------------------------
 
