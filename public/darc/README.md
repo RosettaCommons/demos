@@ -133,7 +133,7 @@ To run DARC with shape only (without including electrostatics score):
 
 Expected output: `DARC_4ERF_0001_000.pdb`
 
-TO search conformers on-the-fly:
+To search conformers on-the-fly:
 
     $  Rosetta/main/source/bin/DARC.linuxgccrelease -protein 4ERF_0001.pdb -ligand 000_conformers.pdb -extra_res_fa 000.params -ray_file ray_4ERF_0001_61.txt -espGrid_file DARC_4ERF.agd -search_conformers true
 
