@@ -1,6 +1,4 @@
-####################
-   Rosetta VIP
-####################
+# Rosetta VIP
 
 This README was written in Feb. 2012, by Jim Havranek (havranek@genetics.wustl.edu).
 
@@ -8,14 +6,17 @@ This demo illustrates a protocol to identify candidate mutations for stabilizing
 
 It has been published in the paper "Automated selection of stabilizing mutations in designed and natural proteins" by B. Borgo J.J. Havranek (2012), Proc. Natl. Acad. Sci. USA 109(5) pp 1494-99.
 
-The source code is found at:  (rosetta_source)/src/apps/public/vip.cc
+The source code is found at:  `(rosetta_source)/src/apps/public/vip.cc`
 
 The app can be run as follows:
 
+```
 ./(executables_path)/vip.(arch)(mode) -database (database_path) -s input.pdb -cp:ncycles 3 -cp:cutoff 6.0 -sasa_calculator_probe_radius 1.0 -run:silent
+```
 
 options are:
 
+```
 -cp:ncycles (Size)
 	This will run the iterative protocol (find point mutations, relax, output best relaxed pose) a fixed number of times. If you don't use this option it will continue to run until it no longer finds favorable mutations. The latter option can take a while for large proteins.
 
@@ -26,10 +27,11 @@ options are:
 	This is the cutoff for choosing mutatable residues (ie distance from cavity ball to a non-bb, non-surface atom on the residue). The smallest cutoff you can use is best since that will mutated the smallest # of residues that line the cavity.
 
 -sasa_calculator_probe_radius (real) Increasing this will likely give you surface clefts in addition to buried voids.
-
+```
 
 further options for the fast relax mover, sasa metric options, etc.:
 
+```
 -cp:pack_sfxn (score function) (e.g. -cp:pack_sfxn score12_full)
 	Allows you to use a different score for the point mutant trials
 
@@ -52,7 +54,7 @@ This option outputs a fullatom pdb for each accepted mutation, named "vip_iter_1
 
 -cp:exclude_file
 This allows you to specify a file that contains positions that should not be allowed to mutate.  The format is one position per line, with pdb number and chain separated by a space ("128 A").
-
+```
 
 a couple of other notes:
 
