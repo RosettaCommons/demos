@@ -87,7 +87,7 @@ change at residue 63-64 after ERRASER.
 
 Arguments for erraser.py are listed below for your reference:
 
-Required:
+#### Required:
 
 * -pdb  
   Format: -pdb \<input pdb>  
@@ -99,7 +99,7 @@ Required:
 
   2mFo-DFc map file in CCP4 format. Rfree should be excluded.
 
-Commonly used:
+#### Commonly used:
 
 * -map_reso  
   Format: -map_reso <float>  
@@ -143,7 +143,7 @@ Commonly used:
   in the temp folder. The default is to remove the temp folder after job 
   completion.
 
-Other:
+#### Other:
 
 * -rebuild_extra_res  
   Format/Default: Same as -fixed_res  
