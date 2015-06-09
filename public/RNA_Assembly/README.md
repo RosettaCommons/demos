@@ -1,6 +1,9 @@
 RNA Assembly
 ============
 
+Overview
+--------
+
 This README was written in Sep. 2011, by Rhiju Das (rhiju@stanford.edu); updated in Feb. 2012 after directory restructuring. Thanks to P. Kerpedjiev for suggestions.
 
 This demo illustrates a protocol to assemble models of large RNAs by first building their helical stems and inter-helical motifs, and then putting them together.
@@ -39,7 +42,8 @@ or using scripts like my `extract_lowscore_decoys.py`.
 Caveat: The above protocol is a bit inflexible in that the motifs are modeled separately from each other -- if a loop/loop interaction occurs in the final global model it will not really be modeled correctly by the isolated loops. We are working on iterative methods to tackled this global de novo assembly question. For now the protocol seems to work well if there are experimental constraints that e.g., connect the loops.
 
 Appendix: Generating lots of models on a cluster
-================================================
+------------------------------------------------
+
 We often use either condor or LSF ('bsub') queuing systems on clusters, and have some handy scripts to set up these jobs, which are included in the Rosetta distribution.
 
 The syntax (e.g., for README_MOTIFS) is:
