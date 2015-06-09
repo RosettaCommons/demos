@@ -51,7 +51,7 @@ Relevant documentation
    https://www.rosettacommons.org/manuals/archive/rosetta3.5_user_guide/d5/dd4/match_cstfile_format.html)
 5. Familiarize yourself with how to generate a .params file and rotamer library 
    for your ligand of interest, as described in the ligand docking app 
-   documentation.
+   documentation.  
    https://www.rosettacommons.org/manuals/archive/rosetta3.5_user_guide/d4/d47/ligand_dock.html (section "Preparing the small-molecule ligand for docking")
 
 The purpose of this tutorial is to reenact all steps described in the
