@@ -11,7 +11,7 @@ insertion.
 The sample PDBs are 1EMA (GFP) and 2LCT (an SH2 domain).
 
 A dirty little secret is that there is no proper way to do domain insertion in 
-rosetta.  Nobody's gotten around to writing a real mode for it.  We are instead 
+Rosetta.  Nobody's gotten around to writing a real mode for it.  We are instead 
 performing what is technically known as an "epic hack" to use a totally 
 different suite, AnchoredDesign, for the purpose.  Unfortunately, there are 
 many strange nomenclature issues forced by this: the "anchor" is the inserted 
@@ -39,7 +39,7 @@ Preparing input structures for the first step, AnchoredPDBCreator
 -----------------------------------------------------------------
 
 We will have to do some manual editing to get the input PDBs ready.  Some of 
-these tweaks are just rosetta idiosyncrasies, some are AnchoredDesign issues.
+these tweaks are just Rosetta idiosyncrasies, some are AnchoredDesign issues.
 
 - Prepare the SH2 pdb
     - Delete all the PDB file head matter, up to the first ATOM record.
