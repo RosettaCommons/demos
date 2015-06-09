@@ -29,7 +29,7 @@ High level overview:
       below. 
 
 3. Analysis
-    - The expected output of the docking run is a (1) decoy with both docked 
+    - The expected output of the docking run is (1) a decoy with both docked 
       partners and (2) a score file with score breakdown for each decoy 
     - Typical analysis would be to sort the generated score file with a command 
       line i.e. 'sort -nk 28` where the integer identifies the column number 
