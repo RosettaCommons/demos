@@ -91,8 +91,8 @@ Running the demo
     1.  Make fab file:
     The CDR loops of antibody should point to the antigen.
     By specifying the antibody loops in the fab file, one can reduce the computational cost for global docking.
-	The scripts to make fab file can be found at:
-    https://svn.rosettacommons.org/source/branches/releases/rosetta-2.3.0/rosetta_scripts/docking/
+	The scripts to make fab file can be found at:  
+    https://svn.rosettacommons.org/source/branches/releases/rosetta-2.3.0/rosetta_scripts/docking/  
 	Run makefab.pl on your pdb of choice.
     ```
     ./makefab.pl `input pdb` <heavy and/or light chain i.e. HL>
