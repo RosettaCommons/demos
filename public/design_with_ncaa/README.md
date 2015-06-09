@@ -1,8 +1,8 @@
 Design with non-canonical amino acids (NCAA)
 ============================================
 
-In the first part of this tutorial we show how to incorporate a novel 
-non-canonical amino acid side-chain into rosetta for design.
+In the first part of this tutorial we show how to incorporate novel 
+non-canonical amino acid side-chains into rosetta for design.
 In the second part of this tutorial we show how to make a point mutation in a 
 PDB file (1l2y) including two non-canonical amino acids (NVL and HLU). 
 
