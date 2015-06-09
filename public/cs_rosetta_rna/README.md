@@ -177,11 +177,8 @@ Outputs
     chem_shit_RMSD indicates that the RNA 3D structure agrees well with
     the experimental 1H chemical shift data
 
-4.  The RNA PDB structure after refinement under the hybrid
-    CS-ROSETTA-RNA all-atom energy function (if -mode minimize_pdb).
-
-    The refined PDB is outputted to the run directory under the
-    filename: `<in_pdb_basename>_out`.
+4.  The RNA PDB structure after refinement under the hybrid CS-ROSETTA-RNA all-atom energy function (if -mode minimize_pdb).
+    The refined PDB is outputted to the run directory under the filename: `<in_pdb_basename>_out`.
 
 Best Practices
 --------------
@@ -201,138 +198,141 @@ internal loop:
                              AG                                    GC-5'
                                                                     7
 
-### How many canonical base-pairs should be include at each helical boundary.
+1.  How many canonical base-pairs should be included at each helical boundary?
 
-2 base-pairs should be included at each helical boundary (for rationale,
-see ref. [2]).
+    2 base-pairs should be included at each helical boundary (for rationale,
+    see ref. [2]).
 
-For example, in the case of the tandem GA:AG mismatch internal loop,
-the structure consists of the a 2 base-pairs H1 helix, a 2x2 mismatch,
-and a 2 base-pairs H2 helix.
+    For example, in the case of the tandem GA:AG mismatch internal loop,
+    the structure consists of the a 2 base-pairs H1 helix, a 2x2 mismatch,
+    and a 2 base-pairs H2 helix.
 
-### Which atoms' chemical shift data should be included.
+2.  Which atoms' chemical shift data should be included?
 
-The chemical shift data of all non-exchangeable proton should be 
-included in the chemical shift data file.
+    The chemical shift data of all non-exchangeable proton should be 
+    included in the chemical shift data file.
 
-The non-exchangeable protons consist of the H1', H2', H3', H4', H5' and
-H5'' ribose protons, and the H2, H5, H6 and H8 base protons.
+    The non-exchangeable protons consist of the H1', H2', H3', H4', H5' and
+    H5'' ribose protons, and the H2, H5, H6 and H8 base protons.
 
-Data lines belonging to other atom types will be ignored.
+    Data lines belonging to other atom types will be ignored.
 
-### Which nucleotides' chemical shift data should be included.
+3.  Which nucleotides' chemical shift data should be included?
 
-The chemical shift data of all nucleotides EXCEPT those that are right
-at 5' and 3' edges should be included in the chemical shift data file.
+    The chemical shift data of all nucleotides EXCEPT those that are right
+    at 5' and 3' edges should be included in the chemical shift data file.
 
-For example, in the case of the tandem GA:AG mismatch internal loop,
-the chemical shift data of all nucleotides except C1, G6, C7 and G12
-should be included.
+    For example, in the case of the tandem GA:AG mismatch internal loop,
+    the chemical shift data of all nucleotides except C1, G6, C7 and G12
+    should be included.
 
-### How to prepare the parameters file.
+4. How to prepare the parameters file.
 
-1. Add a "OBLIGATE  PAIR" line for each helical base-pair located
-   right at the 5' and 3' edges of the structure. 
+    1. Add a "OBLIGATE  PAIR" line for each helical base-pair located
+       right at the 5' and 3' edges of the structure. 
 
-   In the case of the tandem GA:AG mismatch internal loop, the OBLIGATE
-   PAIRS are "C1-G12" and "G6-C7":
+       In the case of the tandem GA:AG mismatch internal loop, the OBLIGATE
+       PAIRS are "C1-G12" and "G6-C7":
+
+            OBLIGATE   PAIR 1 12 H H A
+            OBLIGATE   PAIR 6 7 H H A
+
+       Note that the cs_rosetta_rna app will refine (minimize) ALL nucleotides
+       EXCEPT nucleotides that are specified as "OBLIGATE  PAIR", which will
+       be be kept static.
+
+    2. Add "ALLOW_INSERT" lines to include all non-canonical loop
+       nucleotides position:
+
+       In the case of the tandem GA:AG mismatch internal loop, the
+       "ALLOW_INSERT" nucleotide positions are G3, A4, G9 and A10:
+
+            ALLOW_INSERT 3 4
+            ALLOW_INSERT 9 10
+
+    3. Add "CUTPOINT_CLOSED" line to include the position intermediately 5'
+       of the first non-canonical loop nucleotide position.
+
+       In the case of the tandem GA:AG mismatch internal loop, the
+       first non-canonical loop nucleotide position is G3. The
+       "CUTPOINT_CLOSED" position is the position intermediately 5' of
+       G3, which is G2:
+
+            CUTPOINT_CLOSED 2
+
+       Note that if the "CUTPOINT_CLOSED" line was not included in the 
+       parameter line, the cs_rosetta_rna app will still be able run by
+       selecting a random loop position as the cutpoint_closed position.
+       However, it is recommended that the "CUTPOINT_CLOSED" line be
+       explictly included to prevents this random selection.
+
+    4. Add "CUTPOINT_OPEN" line for all position intermediately 5' of 
+       chain-breaks.
+
+       In the case of the tandem GA:AG mismatch internal loop, there is
+       chain-break between G6 and C7. The "CUTPOINT_OPEN" is the position
+       intermediately 5' of the chain-break which is G6:
+
+            CUTPOINT_OPEN 6
+
+    Adding all the above parameter lines together, we get the parameter file
+    for the tandem GA:AG mismatch ("rosetta_inputs/GA-AG_mismatch/1MIS_params"):
 
         OBLIGATE   PAIR 1 12 H H A
         OBLIGATE   PAIR 6 7 H H A
-
-   Note that the cs_rosetta_rna app will refine (minimize) ALL nucleotides
-   EXCEPT nucleotides that are specified as "OBLIGATE  PAIR", which will
-   be be kept static.
-
-2. Add "ALLOW_INSERT" lines to include all non-canonical loop
-   nucleotides position:
-
-   In the case of the tandem GA:AG mismatch internal loop, the
-   "ALLOW_INSERT" nucleotide positions are G3, A4, G9 and A10:
-
-        ALLOW_INSERT 3 4
-        ALLOW_INSERT 9 10
-
-3. Add "CUTPOINT_CLOSED" line to include the position intermediately 5'
-   of the first non-canonical loop nucleotide position.
-
-   In the case of the tandem GA:AG mismatch internal loop, the
-   first non-canonical loop nucleotide position is G3. The
-   "CUTPOINT_CLOSED" position is the position intermediately 5' of
-   G3, which is G2:
-
-        CUTPOINT_CLOSED 2
-
-   Note that if the "CUTPOINT_CLOSED" line was not included in the 
-   parameter line, the cs_rosetta_rna app will still be able run by
-   selecting a random loop position as the cutpoint_closed position.
-   However, it is recommended that the "CUTPOINT_CLOSED" line be
-   explictly included to prevents this random selection.
-
-4. Add "CUTPOINT_OPEN" line for all position intermediately 5' of 
-   chain-breaks.
-
-   In the case of the tandem GA:AG mismatch internal loop, there is
-   chain-break between G6 and C7. The "CUTPOINT_OPEN" is the position
-   intermediately 5' of the chain-break which is G6:
-
-        CUTPOINT_OPEN 6
-
-Adding all the above parameter lines together, we get the parameter file
-for the tandem GA:AG mismatch ("rosetta_inputs/GA-AG_mismatch/1MIS_params"):
-
-        OBLIGATE   PAIR 1 12 H H A
-        OBLIGATE   PAIR 6 7 H H A
         ALLOW_INSERT 3 4
         ALLOW_INSERT 9 10
         CUTPOINT_CLOSED 2
         CUTPOINT_OPEN 6
 
-Finally, the cs_rosetta_rna app can also run WITHOUT an input parameter
-file, although this is not recommended. For this case, a simple
-fold-tree with not chain-break/cutpoints will be used and all
-nucleotides will be refined (minimized).
+    Finally, the cs_rosetta_rna app can also run WITHOUT an input parameter
+    file, although this is not recommended. For this case, a simple
+    fold-tree with not chain-break/cutpoints will be used and all
+    nucleotides will be refined (minimized).
 
-### How to specify the chemical shift data for the diastereotopic H5' and H5'' proton pairs.
+5.  How to specify the chemical shift data for the diastereotopic H5' and H5'' proton pairs.
 
-Case 1:
+    Case 1:
+
     If two chemical shift data points are measured for the diastereotopic
     H5' and  H5'' protons pair and unambiguous assignment is possible,
     then include correct the unambiguous assignment in the data lines,
     e.g.:
 
-                 1  1  1 G H5'  H   4.180 . . 
-                 2  1  1 G H5'' H   4.540 . .  
+        1  1  1 G H5'  H   4.180 . . 
+        2  1  1 G H5'' H   4.540 . .  
 
     In this case, please explicitly include the command line option:
         -score:rna_chemical_shift_H5_prime_mode UNIQUE
 
-Case 2:
+    Case 2:
+
     If two chemical shift data points are measured for the diastereotopic
     H5' and  H5'' protons pair BUT unambiguously assignment is not
     possible, then include either of the two possible assignments in the
     data lines, e.g.:
 
-                 1  1  1 G H5'  H   4.180 . . 
-                 2  1  1 G H5'' H   4.540 . .  
+        1  1  1 G H5'  H   4.180 . . 
+        2  1  1 G H5'' H   4.540 . .  
 
-                           OR
+                  OR
 
-                 1  1  1 G H5'  H   4.540 . . 
-                 2  1  1 G H5'' H   4.180 . .  
+        1  1  1 G H5'  H   4.540 . . 
+        2  1  1 G H5'' H   4.180 . .  
 
     The cs_rosetta_rna app with automatically select the assignments
     which leads to better agreement between the experimental and
     back-calculated chemical shift.
 
-Case 3:
+    Case 3:
+
     If only one chemical shift data point is measured for the
     diastereotopic H5' and  H5'' proton pair AND unambiguous assignment
     is not possible, then please still include two chemical shift data
     lines (with same cs-value), one for each proton, e.g.:
 
-                 1  1  1 G H5'  H   4.180 . . 
-                 2  1  1 G H5'' H   4.180 . . 
+        1  1  1 G H5'  H   4.180 . . 
+        2  1  1 G H5'' H   4.180 . . 
 
 References
 ----------
