@@ -4,7 +4,14 @@ Antibody Docking
 The entire workflow for this demo should be described in this file.
 It should describe an entire work flow, with command lines, tested if possible.
 
-The contents of each demo directory should be:
+Authors:
+* Jianqing Xu (xubest@gmail.com)
+* Christine Tinberg
+* Jeff Gray
+* Angela Loihl
+
+Demo files
+----------
 
 `starting_files/`
 * directory in which the raw input files are given - these are provided for you and serve as the base for your tutorial
@@ -24,12 +31,6 @@ The contents of each demo directory should be:
 `FOR_AUTHORS.txt`
 * A description for the demo creators of what their demo should achieve.
 * Most of what starts in this file should end up in the README file as well.
-
-Authors:
-* Jianqing Xu (xubest@gmail.com)
-* Christine Tinberg
-* Jeff Gray
-* Angela Loihl
 
 Running the demo
 ----------------
