@@ -14,6 +14,9 @@ Chou, F.C., Sripakdeevong, P., Dibrov, S.M., Hermann, T., and Das, R. Correcting
 
 A preprint is available at http://arxiv.org/abs/1110.0276
 
+Setting up the demo
+-------------------
+
 The example input files are in rosetta_input; you may wish to copy them locally 
 with the command:
 
@@ -50,6 +53,9 @@ The following setup steps are required prior to running this demo.
         PATH=$PATH:YOUR_ROSETTA_PATH/rosetta_tools/ERRASER/" # Change YOUR_ROSETTA_PATH to the path in your machine!
 
 Now you are ready to go!
+
+Running the demo
+----------------
 
 As a fast quick run, run the following command:
 
