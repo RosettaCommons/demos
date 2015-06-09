@@ -1,11 +1,6 @@
 Dock protein complex with ligand
 ================================
 
-Demo written by:
-* Gordon Lemmon
-* Sergey Lyskov
-* Loren Looger
-
 We are predicting the conformation of the complex of FKBP12, FRAP, and 
 rapamycin.  Rapamycin is a dimerizer that allows FK506-binding-protein (FKBP12) 
 to form an interface with FKBP-rapamycin-associated protein (FRAP). The first 
@@ -16,6 +11,11 @@ FKBP12.  In the third section we will dock the result from section 2 with FRAP.
 To complete this quest you must have at least a 3 member party, including a 
 cleric (level 43, must have blessing spell), a warrior proficient with hammer, 
 and a thief (unlock skill level 10).
+
+Demo written by:
+* Gordon Lemmon
+* Sergey Lyskov
+* Loren Looger
 
 Part 1: Preparing the ligand
 ----------------------------
