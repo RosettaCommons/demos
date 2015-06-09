@@ -262,13 +262,13 @@ The variable are described bellow.
   ```
   if (pose.residue(10).type().is_protein() ) { /* do someting */ }
   ```
-  Note: You will want to create a new property "BETAPEPTIDE" and 
-  corresponding functions to the residue type class. 
+  You will want to create a new property called "BETAPEPTIDE" and corresponding 
+  functions to the residue type class. 
 
 * END: The end of the file.
 
-Note: There are 2 spaces between the "M" and the variable name. If you have to 
-make multiple residue types (which it sounds like you will, keeping the atoms 
+Note that there are 2 spaces between the "M" and the variable name. If you have to 
+make multiple residue types (which it sounds like you will), keeping the atoms 
 in the same order makes assigning all these numbers easier. 
 
 Additional info for peptide ornithine:
