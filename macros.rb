@@ -17,10 +17,10 @@ class Gollum::Macro::LinkDemos < Gollum::Macro
 
     Dir[abs_demos_glob].sort.each do |abs_demo_dir|
         demo_name = File.basename(abs_demo_dir)
-        demo_readme = File.join(demos_dir, demo_name, 'readme')
-        abs_readme_glob = File.join(abs_demo_dir, '*')
+        demo_readme = File.join(demos_dir, demo_name, 'README')
+        abs_readme_glob = File.join(abs_demo_dir, '[Rr][Ee][Aa][Dd][Mm][Ee]*')
         readme_exists = Dir[abs_readme_glob].select{|x|
-            x =~ /readme.*/i && Gollum::Page.parse_filename(x)
+            Gollum::Page.parse_filename(x) != []
         }.any?
 
         html += %{<li><a class="internal #{readme_exists ? 'present' : 'absent'}" href="#{demo_readme}">#{demo_name}</a></li>\n}
