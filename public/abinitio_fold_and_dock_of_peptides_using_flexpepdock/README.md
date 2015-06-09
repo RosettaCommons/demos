@@ -65,6 +65,6 @@ How to run
 
 Further information
 -------------------
-please visit https://www.rosettacommons.org/manuals/archive/rosetta3.4_user_guide/d7/d14/_flex_pep_dock.html
+Please visit https://www.rosettacommons.org/manuals/archive/rosetta3.4_user_guide/d7/d14/_flex_pep_dock.html
 
 
