@@ -59,14 +59,14 @@ Running the demo
     For people outside of the rosetta community:  
     https://www.rosettacommons.org/software/academic/2.3.1/RosettaSnugDock-2.3.1.tgz
 
-    Compile rosetta:
+4.  Compile rosetta:
     ```
     tar –zxvf RosettaSnugDock-2.3.1.tgz (if you download the second link)
     cd rosetta++
     scons mode=release –j12    (assuming you can use 12 CPUs)
     ```
 
-4.  The SnugDock example in Rosetta++ can be found at:  
+5.  The SnugDock example in Rosetta++ can be found at:  
     https://svn.rosettacommons.org/source/branches/releases/rosetta-2.3.1/example/
     * Besides the original example shown above, we made a new example in the current directory.
       Please be careful with different flags used in the command line.
@@ -87,7 +87,7 @@ Running the demo
       ./EnsembleDock_plus_SnugDock.bash # please realize that the example we used here is a little slow, due to the protein size
       ```
 
-5.  Some extra information you may need, besides the example tutorial linked above:
+6.  Some extra information you may need, besides the example tutorial linked above:
 
     * Make fab file:
       The CDR loops of antibody should point to the antigen.
@@ -104,9 +104,4 @@ Running the demo
       Use pymol to open both the antibody and antigen in one session and save both into one pdb file.
       In the example: `ABRM.pdb`.
       It's better to point the antibody CDRs to the antigen, and keep them at a certain distance.
-
-
-
-
-
 
