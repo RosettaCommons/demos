@@ -52,8 +52,7 @@ We will add this to the command lines given above; so now run these:
     /path/to/rosetta/mini/bin/InterfaceAnalyzer.default.macosgccrelease -s ../rosetta_inputs/3r2x_scored.pdb -fixedchains A B @../rosetta_inputs/no_pack_input_options.txt
     /path/to/rosetta/mini/bin/InterfaceAnalyzer.default.macosgccrelease -s ../rosetta_inputs/3r2x_scored.pdb -fixedchains A B @../rosetta_inputs/pack_input_options.txt
 
-Now in the current directory (example_output) we have two different score files, one for when we repacked the interface(pack_input_score.sc), and one for when we kept the input rotamers fixed (no_pack_input_score.sc)
-
+Now in the current directory (`example_output`) we have two different score files, one for when we repacked the interface (`pack_input_score.sc`), and one for when we kept the input rotamers fixed (`no_pack_input_score.sc`)
 From here we can get some important info.  We will only concentrate on a few here. For a full description of what everything means see the documentiation page for this application: `/path/to/rosetta/doc/apps/public/analysis/interface_analyzer.dox`
 
 Looking at the results
