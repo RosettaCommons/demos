@@ -21,7 +21,6 @@ should have a header with the string "VFORMAT"
         [path]/rosetta/rosetta_source/bin/fragment_picker.linuxgccrelease @best-frags.flags 
 
   Output:
-
   * `frags.200.3mers`: for use with `-in:file:frag3`
   * `frags.200.9mers`: for use with `-in:file:frag9`
   * fsc files for fragment information.
@@ -30,8 +29,7 @@ should have a header with the string "VFORMAT"
 
         [path]/rosetta/rosetta_source/bin/r_frag_quality.linuxgccrelease -database [path]/rosetta/rosetta_database -in:file:native input_files/2jsvX.pdb -f output_files/frags.200.9mers
 
-  Output:
-
+  Output:  
   * frag_qual.dat
 
   To plot this use gnuplot:
