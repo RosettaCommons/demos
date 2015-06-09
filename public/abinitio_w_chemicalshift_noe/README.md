@@ -90,26 +90,32 @@ They are not used probably NOE constraint helps guided the search.
 
 Processing the output
 ---------------------
-1 Extract the low energy models:
-grep SCORE csrosetta_noe.out | sort –nk2 | head
-
+1. Extract the low energy models:
+    ```
+    grep SCORE csrosetta_noe.out | sort –nk2 | head
+    ```
 The second column contains the energies of the lowest energy 10 models.
-Select as the cutoff the energy on the last line
+Select as the cutoff the energy on the last line.
+You should also use NOE constraint energy as a criteria to select structures.
+Example is only provided for total score.
 
-You should also use NOE constraint energy as a criteria to select structures. Example is only provided for total score
-.
+2.  This command
+    ```
+    cull_silent.pl csrosetta_noe.out “score < cutoff”
+    ```
+will produce csrosetta.select.silent which contains the lowest energy 10 models.
 
-2
-cull_silent.pl csrosetta_noe.out “score < cutoff”
-above this will produce csrosetta.select.silent which contains the lowest energy 10 models.
-  
-3 extract pdbs from selected silent file
-Rosetta/main/source/bin/extract_pdbs -database Rosetta/main/database/ -in::file::silent csrosetta.select.silent
+3. Extract pdbs from selected silent file
+    ```
+    Rosetta/main/source/bin/extract_pdbs -database Rosetta/main/database/ -in::file::silent csrosetta.select.silent
+    ```
 
-4 Check convergence by superimposing the ten low energy models in pymol or your favorite molecular graphics
+4. Check convergence by superimposing the ten low energy models in pymol or your favorite molecular graphics.
 
-5 Check convergence by clustering the lowest energy models (see clustering demo for instructions)
+5. Check convergence by clustering the lowest energy models (see clustering demo for instructions).
 
-6 To see how NOE constraints are satisfied by a model:
-Rosetta/main/source/bin/r_cst_tool.linuxgccrelease -database Rosetta/main/database/ -in:file:s lowscore_1.pdb -cst_file rosetta_inputs/NOE.cst
-r_cst_tool is a pilot program by Oliver Lange in Rosetta/main/source/src/apps/pilot/olli/
+6. To see how NOE constraints are satisfied by a model:
+    ```
+    Rosetta/main/source/bin/r_cst_tool.linuxgccrelease -database Rosetta/main/database/ -in:file:s lowscore_1.pdb -cst_file rosetta_inputs/NOE.cst
+    ```
+`r_cst_tool` is a pilot program by Oliver Lange in `Rosetta/main/source/src/apps/pilot/olli/`
