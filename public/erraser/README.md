@@ -10,7 +10,8 @@ at stanford dot edu) and based on a paper to be published:
 
 Chou, F.C., Sripakdeevong, P., Dibrov, S.M., Hermann, T., and Das, R. Correcting pervasive errors in RNA crystallography with Rosetta, arXiv:1110.0276. 
 
-A preprint is available at: http://arxiv.org/abs/1110.0276
+A preprint is available at:  
+http://arxiv.org/abs/1110.0276
 
 Setting up the demo
 -------------------
