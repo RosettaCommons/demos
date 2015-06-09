@@ -116,7 +116,6 @@ Optional arguments
 *   `-score::rna_chemical_shift_H5_prime_mode`:  
 
     Specify how to handle assignment of the diastereotopic H5' and H5'' proton pair.
-
     Valid modes:
 
     * LEAST_SQUARE_IGNORE_DUPLICATES (default)
