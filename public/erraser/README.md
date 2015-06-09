@@ -85,7 +85,8 @@ or other refinement packages without any post-processing.
 By inspecting the structure, you should be able to see a backbone conformation 
 change at residue 63-64 after ERRASER.
 
-Arguments for erraser.py are listed below for your reference:
+Arguments for erraser.py
+------------------------
 
 #### Required:
 
