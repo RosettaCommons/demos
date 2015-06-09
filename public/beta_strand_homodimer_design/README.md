@@ -72,7 +72,10 @@ Running the Demo
 
     If you need to run a bunch of these from the output of the exposed strand finder I have provided a script that reads a file (runner_input).
     This file should be multiple lines instead of just the one here.
-    It's structure is `/path/to/pdb/1av3.pdb chainletter betastart betaend`.
+    It's structure is
+    ```
+    /path/to/pdb/1av3.pdb chainletter betastart betaend
+    ```
     You will need to modify some of the paths in runner.sh. Then run this command:
     ```
     ./runner.sh runner_input
