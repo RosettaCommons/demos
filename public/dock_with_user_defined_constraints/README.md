@@ -47,10 +47,9 @@ The three constraints which are honored by the Docking Protocol are:
 * SiteConstraint.
 
 AtomPair and AmbiguousConstraint are described the above documentation for 
-Rosetta 3.2.1.
-
-A SiteConstraint allows you to specify that a particular residue should be in 
-contact with a particular chain. An example of a SiteConstraint is:
+Rosetta 3.2.1.  A SiteConstraint allows you to specify that a particular 
+residue should be in contact with a particular chain. An example of a 
+SiteConstraint is:
 
     SiteConstraint CA 4A D FLAT_HARMONIC 0 1 5
 
