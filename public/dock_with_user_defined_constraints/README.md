@@ -38,8 +38,9 @@ High level overview:
 Constraints
 -----------
 
-A good overview of constraints is available in the documentation 
-(http://www.rosettacommons.org/manuals/archive/rosetta3.2.1_user_guide/constraint_file.html).
+A good overview of constraints is available in the documentation:  
+http://www.rosettacommons.org/manuals/archive/rosetta3.2.1_user_guide/constraint_file.html
+
 The three constraints which are honored by the Docking Protocol are: 
 
 * AtomPairConstraint
