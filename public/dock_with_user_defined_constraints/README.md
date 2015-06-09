@@ -19,17 +19,21 @@ http://www.rosettacommons.org/manuals/archive/rosetta3.2.1_user_guide/constraint
 
 High level overview:
 
-1. Docking Prepack (http://graylab.jhu.edu/Rosetta.Developer.Documentation/all_else/de/d69/docking_prepack_protocol.html)
+1. Docking Prepack
     - Useful to optimize all of the sidechains on both partners
+    - http://graylab.jhu.edu/Rosetta.Developer.Documentation/all_else/de/d69/docking_prepack_protocol.html
 
 2. Docking with constraints. In general, constraints are typically defined for CA atoms of the partner sidechains.
-    - Docking will honor AtomPairContraint, AmbiguousConstraint, SiteContraint. For additional information on
-        contraints, see "Constraints" section below. 
+    - Docking will honor AtomPairContraint, AmbiguousConstraint, SiteContraint. 
+      For additional information on contraints, see "Constraints" section 
+      below. 
 
 3. Analysis
-    - The expected output of the docking run is a (1) decoy with both docked partners and (2) a score file with score breakdown for each decoy 
-    - Typical analysis would be to sort the generated score file with a command line i.e. 'sort -nk 28' where the integer identifies the 
-        column number for the quality to sort on.
+    - The expected output of the docking run is a (1) decoy with both docked 
+      partners and (2) a score file with score breakdown for each decoy 
+    - Typical analysis would be to sort the generated score file with a command 
+      line i.e. 'sort -nk 28` where the integer identifies the column number 
+      for the quality to sort on.
 
 Constraints
 -----------
