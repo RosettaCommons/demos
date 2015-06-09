@@ -10,7 +10,9 @@ The source code is found at:  `(rosetta_source)/src/apps/public/vip.cc`
 
 The app can be run as follows:
 
-`./(executables_path)/vip.(arch)(mode) -database (database_path) -s input.pdb -cp:ncycles 3 -cp:cutoff 6.0 -sasa_calculator_probe_radius 1.0 -run:silent`
+```
+./(executables_path)/vip.(arch)(mode) -database (database_path) -s input.pdb -cp:ncycles 3 -cp:cutoff 6.0 -sasa_calculator_probe_radius 1.0 -run:silent
+```
 
 options are:
 
