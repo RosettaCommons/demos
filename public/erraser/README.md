@@ -1,18 +1,16 @@
 ERRASER Demo
 ============
 
-This README was written in Mar. 2012, by Fang-Chieh Chou (fcchou at stanford dot edu).
 
 This demo illustrates the ERRASER (Enumerative Real-Space Refinement ASsitted 
 by Electron density under Rosetta) protocol, which improves an RNA 
 crystallographic model using Rosetta under the constraint of experimental 
-electron density map.
-
-A paper is to be published:
+electron density map. It was written in Mar. 2012, by Fang-Chieh Chou (fcchou 
+at stanford dot edu) and based on a paper to be published:
 
 Chou, F.C., Sripakdeevong, P., Dibrov, S.M., Hermann, T., and Das, R. Correcting pervasive errors in RNA crystallography with Rosetta, arXiv:1110.0276. 
 
-A preprint is available at http://arxiv.org/abs/1110.0276
+A preprint is available at: http://arxiv.org/abs/1110.0276
 
 Setting up the demo
 -------------------
