@@ -9,4 +9,4 @@ Included are demos for three applications:
 
 All are closely related.
 These demos are copies of their integration tests.
-See their readmes for further details.
+See the linked READMEs for further details.
