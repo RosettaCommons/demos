@@ -34,12 +34,18 @@ Detailed steps
 
 2. Download protein fasta and experimental data
 Download fasta from http://www.pdb.org/pdb/explore/explore.do?structureId=2JY7  
-    `wget http://www.pdb.org/pdb/files/fasta.txt?structureIdList=2JY7 -O starting_inputs/t000_.fasta`
+    ```
+    wget http://www.pdb.org/pdb/files/fasta.txt?structureIdList=2JY7 -O starting_inputs/t000_.fasta
+    ```
 Download chemical shift data from http://www.bmrb.wisc.edu/data_library/summary/index.php?bmrbId=15591  
-    `wget http://rest.bmrb.wisc.edu/bmrb/NMR-STAR2/15591 -O starting_inputs/raw.cs.bmrb`
+    ```
+    wget http://rest.bmrb.wisc.edu/bmrb/NMR-STAR2/15591 -O starting_inputs/raw.cs.bmrb
+    ```
 Download NOE data from http://restraintsgrid.bmrb.wisc.edu/NRG/MRGridServlet?pdb_id=2JY7&show_blocks=true&min_items=0:
-    `wget http://restraintsgrid.bmrb.wisc.edu/NRG/MRGridServlet?db_username=wattos1&format=ambi&mrblock_id=434910&pdb_id=2jy7&program=DYANA%2FDIANA&request_type=block&subtype=general+distance&type=distance`
-    `echo "save file as starting_inputs/NOE_data.upl"`
+    ```
+    wget http://restraintsgrid.bmrb.wisc.edu/NRG/MRGridServlet?db_username=wattos1&format=ambi&mrblock_id=434910&pdb_id=2jy7&program=DYANA%2FDIANA&request_type=block&subtype=general+distance&type=distance
+    echo "save file as starting_inputs/NOE_data.upl"
+    ```
 
 3. Format data for Rosetta use
 Formatting NOE: (Note only residues seperate by more than 3 are kept in constraint)
