@@ -20,27 +20,27 @@ Description of score terms
 --------------------------
 Rosetta scoring values are reported in REU (Rosetta Energy Units). One study reported a conversion factor of 0.58 from REU to kcal/mol (Kellogg, Leaver-Fay, Baker; Proteins 2011). This conversion may not apply for other applications. Lower (more negative) values indicate a more favorable conformation.
 
-* `fa_atr`          Lennard-Jones attractive
-* `fa_rep`          Lennard-Jones repulsive
-* `fa_sol`          Lazaridis-Karplus solvation energy
-* `fa_intra_rep`    Lennard-Jones repulsive between atoms in the same residue
-* `fa_pair`         statistics based pair term, favors salt bridges
-* `fa_plane`        pi-pi interaction between aromatic groups, by default = 0
-* `fa_dun`          internal energy of sidechain rotamers as derived from Dunbrack's statistics
-* `ref`             reference energy for each amino acid
-* `hbond_lr_bb`     backbone-backbone hbonds distant in primary sequence
-* `hbond_sr_bb`     backbone-backbone hbonds close in primary sequence
-* `hbond_bb_sc`     sidechain-backbone hydrogen bond energy
-* `hbond_sc`        sidechain-sidechain hydrogen bond energy
-* `p_aa_pp`         Probability of amino acid at phipsi
-* `dslf_ss_dst`     distance score in current disulfide
-* `dslf_cs_ang`     csangles score in current disulfide
-* `dslf_ss_dih`     dihedral score in current disulfide
-* `dslf_ca_dih`     ca dihedral score in current disulfide
-* `pro_close`       proline ring closure energy
-* `rama`            ramachandran preferences
-* `omega`           omega dihedral in the backbone
-* `total`           total energy for structure/residue
+* `fa_atr`:         Lennard-Jones attractive
+* `fa_rep`:         Lennard-Jones repulsive
+* `fa_sol`:         Lazaridis-Karplus solvation energy
+* `fa_intra_rep`:   Lennard-Jones repulsive between atoms in the same residue
+* `fa_pair`:        statistics based pair term, favors salt bridges
+* `fa_plane`:       pi-pi interaction between aromatic groups, by default = 0
+* `fa_dun`:         internal energy of sidechain rotamers as derived from Dunbrack's statistics
+* `ref`:            reference energy for each amino acid
+* `hbond_lr_bb`:    backbone-backbone hbonds distant in primary sequence
+* `hbond_sr_bb`:    backbone-backbone hbonds close in primary sequence
+* `hbond_bb_sc`:    sidechain-backbone hydrogen bond energy
+* `hbond_sc`:       sidechain-sidechain hydrogen bond energy
+* `p_aa_pp`:        Probability of amino acid at phipsi
+* `dslf_ss_dst`:    distance score in current disulfide
+* `dslf_cs_ang`:    csangles score in current disulfide
+* `dslf_ss_dih`:    dihedral score in current disulfide
+* `dslf_ca_dih`:    ca dihedral score in current disulfide
+* `pro_close`:      proline ring closure energy
+* `rama`:           ramachandran preferences
+* `omega`:          omega dihedral in the backbone
+* `total`:          total energy for structure/residue
 
 Evaluating results
 ------------------
