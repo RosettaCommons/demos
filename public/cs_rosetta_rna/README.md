@@ -292,47 +292,30 @@ internal loop:
 
 5.  How to specify the chemical shift data for the diastereotopic H5' and H5'' proton pairs.
 
-    Case 1:
+    * If two chemical shift data points are measured for the diastereotopic H5' and  H5'' protons pair and unambiguous assignment is possible, then include correct the unambiguous assignment in the data lines, e.g.:
 
-    If two chemical shift data points are measured for the diastereotopic
-    H5' and  H5'' protons pair and unambiguous assignment is possible,
-    then include correct the unambiguous assignment in the data lines,
-    e.g.:
+            1  1  1 G H5'  H   4.180 . . 
+            2  1  1 G H5'' H   4.540 . .  
 
-        1  1  1 G H5'  H   4.180 . . 
-        2  1  1 G H5'' H   4.540 . .  
-
-    In this case, please explicitly include the command line option:
+      In this case, please explicitly include the command line option:
         -score:rna_chemical_shift_H5_prime_mode UNIQUE
 
-    Case 2:
+    * If two chemical shift data points are measured for the diastereotopic H5' and  H5'' protons pair BUT unambiguously assignment is not possible, then include either of the two possible assignments in the data lines, e.g.:
 
-    If two chemical shift data points are measured for the diastereotopic
-    H5' and  H5'' protons pair BUT unambiguously assignment is not
-    possible, then include either of the two possible assignments in the
-    data lines, e.g.:
+            1  1  1 G H5'  H   4.180 . . 
+            2  1  1 G H5'' H   4.540 . .  
 
-        1  1  1 G H5'  H   4.180 . . 
-        2  1  1 G H5'' H   4.540 . .  
+                      OR
 
-                  OR
+            1  1  1 G H5'  H   4.540 . . 
+            2  1  1 G H5'' H   4.180 . .  
 
-        1  1  1 G H5'  H   4.540 . . 
-        2  1  1 G H5'' H   4.180 . .  
+      The cs_rosetta_rna app with automatically select the assignments which leads to better agreement between the experimental and back-calculated chemical shift.
 
-    The cs_rosetta_rna app with automatically select the assignments
-    which leads to better agreement between the experimental and
-    back-calculated chemical shift.
+    * If only one chemical shift data point is measured for the diastereotopic H5' and  H5'' proton pair AND unambiguous assignment is not possible, then please still include two chemical shift data lines (with same cs-value), one for each proton, e.g.:
 
-    Case 3:
-
-    If only one chemical shift data point is measured for the
-    diastereotopic H5' and  H5'' proton pair AND unambiguous assignment
-    is not possible, then please still include two chemical shift data
-    lines (with same cs-value), one for each proton, e.g.:
-
-        1  1  1 G H5'  H   4.180 . . 
-        2  1  1 G H5'' H   4.180 . . 
+            1  1  1 G H5'  H   4.180 . . 
+            2  1  1 G H5'' H   4.180 . . 
 
 References
 ----------
