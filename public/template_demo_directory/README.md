@@ -1,9 +1,11 @@
-The entire workflow for this demo should be described in a file
-named README.dox.  It should describe an entire work flow, with
-command lines, tested if possible.
+# Template Demo Directory
+
+The entire workflow for this demo should be described in a file named README.md, formatted in gollum markdown.  
+It should describe an entire work flow, with command lines, tested if possible.
 
 The contents of each demo directory should be:
 
+```
 starting_files/
   -- directory in which the raw input files are given - these
      are provided for you and serve as the base for your
@@ -26,3 +28,4 @@ FOR_AUTHORS.txt
      should achieve.
   -- Most of what starts in this file should end up in the
      README file as well.
+```
