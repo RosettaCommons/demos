@@ -1,6 +1,0 @@
-#this flag-file is automatically generated
-
--in:file:native ../../../inputs/1wvnA_ref.pdb
--evaluation:rmsd NATIVE _full ../../../inputs/1wvnA_core.rigid
--broker:setup setup_init.tpb
-

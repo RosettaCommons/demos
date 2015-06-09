@@ -1,7 +1,0 @@
-bcl::biol::Rotamer
-e_One -68.41 degree
-e_Two -56.01 degree
-e_Three 101.92 degree
-e_Four nan degree
-e_Five nan degree
-bcl::biol::Rotamer

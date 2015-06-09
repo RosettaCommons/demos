@@ -1,9 +1,0 @@
-+TGProject = TG-MCB090153
-universe = vanilla
-executable = /Users/rhiju/src/mini/bin/rna_swa_test.macosgccrelease
-arguments =  -algorithm rna_resample_test  -database /Users/rhiju/minirosetta_database -fasta gcuucggc.fasta -output_virtual  -native motif2_1f7y_RNA.pdb  -in:file:silent_struct_type binary_rna -in:file:silent region_3_0_sample.cluster.out -tags S_$(Process)  -input_res 1 2 5 6 7 8 -out:file:silent REGION_3_1/START_FROM_REGION_3_0_S_$(PROCESS)/region_3_1_sample.out  -sample_res 3 
-output = CONDOR/REGION_3_1_START_FROM_REGION_3_0/$(Process).out
-log = CONDOR/REGION_3_1_START_FROM_REGION_3_0.log
-error = CONDOR/REGION_3_1_START_FROM_REGION_3_0/$(Process).err
-notification = never
-Queue 100

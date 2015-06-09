@@ -1,2 +1,0 @@
-/home/zhezhang/csrosetta3/com_alias/setup_run -method replica_dock -target udock_1bvn -target_prefix /home/zhezhang/rosetta_vanilla/rosetta_demos/protocol_capture/replica_docking/dock_targetlib -job slurm -extras mpi -score interchain_cen -nstruct 2 -protocol rep_cen -xml uniform -n_replica 3
-# -dir /home/zhezhang/rosetta_vanilla/rosetta_demos/protocol_capture/replica_docking/example_runs/replica_dock

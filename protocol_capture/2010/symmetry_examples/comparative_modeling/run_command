@@ -1,4 +1,0 @@
-# make symmetry definition
-make_symmdef_file.pl -mode NCS -a A -i B -p input_files/2qs7A.pdb >  input_files/symm_def_trimer.dat
-# Rosetta run
-minirosetta.linuxgccrelease @input_files/comparative_modeling-flags -database my_location/minirosetta_database

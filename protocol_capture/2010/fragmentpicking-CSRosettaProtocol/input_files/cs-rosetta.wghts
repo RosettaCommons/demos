@@ -1,6 +1,0 @@
-# score name          priority	wght   min_allowed  extras 
-CSScore                 375     3.0     -
-RamaScore		400	9.9	-	talos
-SecondarySimilarity	350	3.0	-	talos
-ProfileScoreL1      	200	1.0     -
-FragmentCrmsd        	30 	0.0  	-

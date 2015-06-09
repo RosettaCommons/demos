@@ -1,7 +1,0 @@
-PAIRING_STATISTICS 1
-STRAND_TOPOLOGY  5 22.6 SINGLE_TOP
-PAIRSTAT_ENTRY:  4.00   . A 2-16 to 6-12 reg: 18 pleating: 1 2 1 2 1 
-PAIRSTAT_ENTRY:  2.60   . A 22-55 to 22-55 reg: 77 pleating: 1 
-PAIRSTAT_ENTRY:  1.00   . A 44-49 to 45-48 reg: 93 pleating: 1 2 
-PAIRSTAT_ENTRY:  3.60   . A 42-70 to 44-68 reg: 112 pleating: 2 1 2 
-PAIRSTAT_ENTRY: 11.40   . P 4-66 to 7-69 reg: 62 pleating: 2 1 2 1 

@@ -1,9 +1,0 @@
-#this flag-file is automatically generated
-
--nstruct 2
--in:file:native $CM_NATIVE_PDB
-@$CM_PARTNERS
--in:file:s $CM_INPUT_PDB
--score:weights interchain_cen
--score:min_score_score -34.850000
--n_replica 7
