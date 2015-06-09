@@ -5,6 +5,7 @@ bind Rac.
 Demo files
 ----------
 
+    README.md
     starting_files/
       -- 1c1y.pdb.gz
       -- 2ov2.pdb.gz
@@ -15,8 +16,6 @@ Demo files
       -- score_vs_rmsd.R (creates score vs rmsd plot)
     output_files/
       -- directory to store output files
-
-    README.md
 
 Running the Demo
 ----------------
