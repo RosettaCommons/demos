@@ -58,9 +58,9 @@ All the scripts required are provided in the scripts/ directory
 How to run
 ----------
 1. Prepacking:  
-`$ROSETTA_BIN/FlexPepDocking.linuxgccrelease @input/prepack_flags -database <PATH TO ROSETTA DATABASE>`
+    $ROSETTA_BIN/FlexPepDocking.linuxgccrelease @input/prepack_flags -database <PATH TO ROSETTA DATABASE>
 2. Low-resolution modeling:  
-`$ROSETTA_BIN/FlexPepDocking.linuxgccrelease @input/abinitio_flags -database <PATH TO ROSETTA DATABASE>`
+    $ROSETTA_BIN/FlexPepDocking.linuxgccrelease @input/abinitio_flags -database <PATH TO ROSETTA DATABASE>
 3. Selection of top scoring models and clustering
 
 Further information
