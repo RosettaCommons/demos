@@ -1,15 +1,14 @@
 RNA Assembly
 ============
 
-Overview
---------
-
 This README was written in Sep. 2011, by Rhiju Das (rhiju@stanford.edu); updated in Feb. 2012 after directory restructuring. Thanks to P. Kerpedjiev for suggestions.
 
 This demo illustrates a protocol to assemble models of large RNAs by first building their helical stems and inter-helical motifs, and then putting them together.
 
 It is being published in a (primarily experimental) paper "A two-dimensional mutate-and-map strategy for non-coding RNA structure" by W. Kladwang, C. VanLang, P. Cordero, and R. Das (2011), Nature Chemistry.
 
+Running the Demo
+----------------
 
 The example input files are in rosetta_input; you may wish to copy them locally with the command:
 
