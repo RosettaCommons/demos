@@ -177,6 +177,6 @@ bin/SymDock.macosgccrelease @flags.d3  >& 1ZEH.d3.log
 - Charlie E. M. Strauss
 - Bruno Correia
 
-## Rosetta Revision: 43611
+**Rosetta Revision: 43611**
 
-## Date: 08/05/2011
+**Date: 08/05/2011**
