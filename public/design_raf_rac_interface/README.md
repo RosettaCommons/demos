@@ -1,6 +1,3 @@
-The entire workflow for this demo, complete with command-lines, is described in 
-this document.  These command-lines should have be tested.
-
 This demo will walk through the steps of designing a protein-protein interface.
 The goal of this protocol is to predict mutations on Raf that will enable it to 
 bind Rac.
