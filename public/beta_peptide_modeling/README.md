@@ -8,14 +8,11 @@ Detailed application of the method is described in the following paper:
 * Molski, M.A., Goodman, J.L., Chou, F.C., Baker, D., Das, R., and Schepartz, A. (2012). Remodeling a beta-peptide bundle. Chemical Science.
 
 The example input files are in rosetta_input.
-
 The beta-3-peptide residues is less commonly used so is not turned on by default. Therefore the following setup steps are required prior to running this demo.
-
 Before running the command lines, edit the file rosetta_database/chemical/residue_type_sets/fa_standard/residue_types.txt, find the section "Beta-peptide Types" and uncommented all the items listed below (residue_types/beta-peptide/B3A.params etc.).
-
-The example command lines are given in rosetta_input/cmdline. Cd into rosetta_input/ and type "sh cmdline" to run the commands.
-
-After the job finished sucessfully, you should see the output pdb files in the corresponding folders and log files in the current folder. Sample outputs are given in the example_output folder for comparsion.
+The example command lines are given in rosetta_input/cmdline.
+Cd into rosetta_input/ and type "sh cmdline" to run the commands.
+After the job finished successfully, you should see the output pdb files in the corresponding folders and log files in the current folder. Sample outputs are given in the example_output folder for comparison.
 
 Running the Demo
 ----------------
