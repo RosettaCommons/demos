@@ -1,5 +1,5 @@
-Design with flexible loops using RosettaRemodel
-===============================================
+Design with flexible loops
+==========================
 
 Method 1: RosettaRemodel
 ------------------------
