@@ -69,10 +69,10 @@ Step 1: Defining a theozyme in Rosetta format
 
 2.  Outputs generated:
 
-    * A .cst (constraints) file. This file is written by the user and defines 
-      the geometry of the theozyme in Rosetta format (see enzdes cstfile 
-      documentation linked above) for use in subsequent steps of the design 
-      process. 
+    A .cst (constraints) file. This file is written by the user and defines the 
+    geometry of the theozyme in Rosetta format (see enzdes cstfile 
+    documentation linked above) for use in subsequent steps of the design 
+    process. 
 
 3.  Defining a theozyme:
 
