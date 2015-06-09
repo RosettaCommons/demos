@@ -153,10 +153,10 @@ There are other flags associated with both "docking" and "symmetry" available be
 
 # Links
 
-https://www.rosettacommons.org/docs/latest/symmetry.html
-https://www.rosettacommons.org/docs/latest/sym-dock.html
-https://www.rosettacommons.org/docs/latest/docking-protocol.html
-https://www.rosettacommons.org/docs/latest/docking-prepack-protocol.html
+- https://www.rosettacommons.org/docs/latest/symmetry.html
+- https://www.rosettacommons.org/docs/latest/sym-dock.html
+- https://www.rosettacommons.org/docs/latest/docking-protocol.html
+- https://www.rosettacommons.org/docs/latest/docking-prepack-protocol.html
 
 # Appendix
 
