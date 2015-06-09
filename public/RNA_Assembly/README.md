@@ -7,7 +7,7 @@ This demo illustrates a protocol to assemble models of large RNAs by first build
 
 It is being published in a (primarily experimental) paper "A two-dimensional mutate-and-map strategy for non-coding RNA structure" by W. Kladwang, C. VanLang, P. Cordero, and R. Das (2011), Nature Chemistry.
 
-Running the Demo
+Running the demo
 ----------------
 
 The example input files are in rosetta_input; you may wish to copy them locally with the command:
