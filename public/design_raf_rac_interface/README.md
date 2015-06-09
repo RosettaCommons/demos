@@ -68,7 +68,7 @@ Running the Demo
       to diff the sequences
 
     * Run R script to generate Interface Score vs. Interface RMSD plot. R is 
-      easy to install from [here|http://cran.r-project.org/bin/macosx/] as a 
+      easy to install from [[here|http://cran.r-project.org/bin/macosx/]] as a 
       pkg that self installs (do "which R" to check install first). Other os 
       versions are also available.
 
