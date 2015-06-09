@@ -3,7 +3,7 @@ Chemically Conjugated Docking
 
 Included are demos for three applications:
 
-* [[UBQ_E2_thioester|/demos/public/chemically_conjugated_docking/UBQ_E2_thioester/readme]]
+* [[UBQ_E2_thioester|/public/chemically_conjugated_docking/UBQ_E2_thioester/readme]]
                      /demos/public/chemically_conjugated_docking/UBQ_E2_thioester
 * UBQ_Gp_CYD-CYD
 * UBQ_Gp_LYX-Cterm
