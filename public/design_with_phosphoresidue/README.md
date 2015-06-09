@@ -14,11 +14,10 @@ We create the parameter file for the phosphoresidue as follows:
 1.  Extract a phosphotyrosine (PTR) residue from a PDB file
 
     We use one model of the NMR ensembles of the 2lct.pdb by deleting other 
-    models and keep the first one (3lct.pdb refers to first model).
-
-    From the "3lct.pdb" file, extract the part containing the atoms of the 
-    phosphoresidues 342 and 346 to generate "PT1.pdb" and "PT2.pdb". You can use 
-    the sample command line
+    models and keep the first one (3lct.pdb refers to first model). From the 
+    "3lct.pdb" file, extract the part containing the atoms of the 
+    phosphoresidues 342 and 346 to generate "PT1.pdb" and "PT2.pdb". You can 
+    use the sample command line
 
         grep PTR 3lct.pdb | grep 342 | grep HETATM > PT1.pdb
         grep PTR 3lct.pdb | grep 346 | grep HETATM > PT2.pdb
