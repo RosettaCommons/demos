@@ -32,7 +32,7 @@ should have a header with the string "VFORMAT"
   Output:
   * frag_qual.dat
 
-  To plot this use gnuplot:
+  Use gnuplot to visualize the quality data:
 
         plot "frag_qual.dat" u 2:4 w p
 
