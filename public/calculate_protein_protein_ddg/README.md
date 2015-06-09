@@ -10,14 +10,14 @@ complex as an example. For instance, when we introduce a mutation in the E3a
 enzyme, the binding reactions for the wild-type and the mutant are as the 
 following:
 
-(1) E + P --> EP    Delta_G   (wild-type or WT)
+    (1) E + P --> EP    Delta_G   (wild-type or WT)
 
-(2) E' + P --> E'P  Delta_G'  (mutant or WT)
+    (2) E' + P --> E'P  Delta_G'  (mutant or WT)
 
 where E represents the E3a ligase and P represents the UBC protein. 
 The binding energy change due to the mutation can be obtained by: 
 
-(3) Delta_Delta_G = Delta_G' - Delta_G
+    (3) Delta_Delta_G = Delta_G' - Delta_G
 
 To obtain Delta_G in Rosetta, we calculate the energy of the complex
 using the Rosetta scoring function. We then score the protein and ligase
