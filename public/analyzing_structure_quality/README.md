@@ -2,22 +2,22 @@ Analyzing Structure Quality
 ===========================
 One of the simplest initial steps to evaluate structural quality is to score the structure in the Rosetta score function and evaluate the results.
 
-Scoring Structures
+Scoring structures
 ------------------
 To score structures, use the score application. This application can accept any input structure that Rosetta recognizes.
 
     /path/to/rosetta/bin/score.macosgccrelease -database /path/to/minirosetta_database/ -s ../starting_files/1ubq.pdb.gz -in:file:fullatom -ignore_unrecognized_res -out:output
 
-Description of parameters
--------------------------
+Description of command-line options
+-----------------------------------
 * `-database`: Location of the Rosetta database on your system
 * `-s`: One or more input strucutre to score, in PDB format.  To use a silent file as input, use `-in:file:silent` instead of `-s` (optionally with `-in:file:tags`).
 * `-in:file:fullatom`: Score the structure using the full atom energy function.
 * `-out:file:score`: Name of the summary scorefile.
 * `-out:output`: Force production of the scored PDBs.
 
-Description of Score Parameters
--------------------------------
+Description of score terms
+--------------------------
 Rosetta scoring values are reported in REU (Rosetta Energy Units). One study reported a conversion factor of 0.58 from REU to kcal/mol (Kellogg, Leaver-Fay, Baker; Proteins 2011). This conversion may not apply for other applications. Lower (more negative) values indicate a more favorable conformation.
 
 * `fa_atr`          Lennard-Jones attractive
@@ -42,7 +42,7 @@ Rosetta scoring values are reported in REU (Rosetta Energy Units). One study rep
 * `omega`           omega dihedral in the backbone
 * `total`           total energy for structure/residue
 
-Evaluating Results
+Evaluating results
 ------------------
 The score application outputs one summary file (`scorefile.sc`), containing summary information for all input files, and then one scored PDB file per input structure.
 In the summary file, there is one line per input structure, listing the total energy from each term over the whole conformation.
