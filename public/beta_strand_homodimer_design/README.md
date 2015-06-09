@@ -26,17 +26,17 @@ Running the Demo
 
     The contents of finder_options are:
 
-    * general options
-        `-ignore_unrecognized_res true`
-        `-packing::pack_missing_sidechains`
-        `-out::nooutput`: this protocol manages its own output, prevent job distributor from helping
+    * general options  
+        `-ignore_unrecognized_res true`  
+        `-packing::pack_missing_sidechains`  
+        `-out::nooutput`: this protocol manages its own output, prevent job distributor from helping  
         `-mute core basic protocols.jd2.PDBJobInputter`
 
-    * app specific options
-        `-beta_length 5`: how long of an exposed strand do you look for
+    * app specific options  
+        `-beta_length 5`: how long of an exposed strand do you look for  
         `-sat_allow 2`: how many satisfied bb atoms do you allow in this range
 
-    * allow alignment of a found strand to some target protein
+    * allow alignment of a found strand to some target protein  
         `-check_rmsd false`: setting this to false prevents the code from doing rmsd comparisons
 
     * `-native anti_model.pdb`
