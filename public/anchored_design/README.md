@@ -1,4 +1,6 @@
-﻿This document describes how to use the AnchoredDesign protocol, both in  benchmarking and design mode.  Presented at RosettaCon2010 (in poster form) was a description of the protocol itself, plus benchmarking results, plus some early design results.  The accompanying paper describes only benchmarking results, but the tools to do design are described here.
+﻿Anchored Design
+===============
+This document describes how to use the AnchoredDesign protocol, both in  benchmarking and design mode.  Presented at RosettaCon2010 (in poster form) was a description of the protocol itself, plus benchmarking results, plus some early design results.  The accompanying paper describes only benchmarking results, but the tools to do design are described here.
 
 Contained here:
 * Instructions on choosing appropriate benchmarks – AnchorFinder or otherwise
@@ -15,8 +17,7 @@ Sort-of contained here:
 * The raw_documentation directory includes copies of the doxygen-style manual documentation for AnchorFinder, AnchoredDesign and AnchoredPDBCreator.  These copies are not guaranteed to be up to date; look in developer trunk or your copy of the code instead.
 
 Overview
-========
-
+--------
 The purpose of the AnchoredDesign protocol is to create new protein-protein interactions using information (the anchor) borrowed from a known interaction at the same interface of one partner.  Because this protocol is intended to design protein-protein interactions, the obvious test is to see whether it can recover known structures of such interactions.  This document is massively overconcerned with benchmarking because it accompanies the paper in which AnchoredDesign is benchmarked; unless you are actually trying to replicate the benchmarking you can ignore most of those details and skip to the design tools.
 
 The protocol modifies a loop region around an anchor in designing binders.   Selection of structures for benchmarking therefore requires interface loops with anchor regions.
@@ -34,8 +35,7 @@ After finding suitable structures with the help of AnchorFinder, the next step i
 
 
 Compiling AnchorFinder
-======================
-
+----------------------
 (This section applies to benchmarking only)
 
 Your Rosetta code distribution should include an application called AnchorFinder. If you wish to search large numbers of PDBs for potential anchors (I searched a local copy of the entire PDB structure set), then you will wish to modify the code slightly before running it.  Running any part of Rosetta against huge numbers of unprepared, straight-from-the-PDB structures is challenging because the PDB reader in Rosetta is not robust against nonstandard file formats, etc.
@@ -47,8 +47,7 @@ You do not want to use compiled executeables OTHER than AnchorFinder with these 
 When running AnchorFinder, watch your memory usage.  When I used it, there was a patch in the JobDistributor which deleted starting poses for PDBs that had already been processed.  This patch was rejected by the community and since been replaced by a different patch to do the same thing; AnchorFinder is a run-once sort of thing so it has not been tested against the new method.
 
 Using AnchorFinder
-==================
-
+------------------
 (This section is minimally relevant if not benchmarking)
 
 At this point you should have a compiled copy of AnchorFinder with the necessary changes to the code.  You can then list your PDBs in one or many -l files (or -s) for use in Rosetta.  The format for Rosetta's -l flag is one path per line:
@@ -75,13 +74,12 @@ Running AnchorFinder, while not particularly slow, is still something you only w
 A suggested options file for AnchorFinder is available with this document.
 
 Interpreting AnchorFinder Results
-=================================
-
+---------------------------------
 (This section is minimally relevant if not benchmarking)
 
 After you've run AnchorFinder, you'll have a fairly large pile of output: pdbname.data for all pdbs, plus goodfile.out for the better windows.
 
-Pdbname.data looks like this:
+`pdbname.data` looks like this:
 
 Rows are residues, columns are chains, data are neighbors in that chain for each residue
 
@@ -89,11 +87,11 @@ Rows are residues, columns are chains, data are neighbors in that chain for each
     1       1       2 D     L       7       0
     2       1       3 D     L       10      0
     3       1       4 D     L       14      0
-...
+    ...
 
 The columns are residue and chain in Rosetta numbering, residue/chain in PDB numbering, DSSP value, and then N columns for the N chains in the protein.  The number in those columns is the number of cross-interface neighbors on that chain for that position.
 
-Goodfile.out looks like this:
+`goodfile.out` looks like this:
 
     PDB pdb2vk1 window 45 loopness 5 nbrs 0 28 0 0 start 46 A pymol select pdb2vk1 and chain A and resi 46-50
     PDB pdb2vk1 window 108 loopness 5 nbrs 0 25 0 0 start 109 A pymol select pdb2vk1 and chain A and resi 109-113
@@ -109,15 +107,14 @@ Inputs and outputs for this stage from a convenience sample (PDBs 3cy?) are incl
 At this point, the data is yours to play with.  I searched for windows with large numbers of neighbors on only one chain using sifter.py (included), then sorted for those with the largest number of neighbors (sort -n -k1 `input`).  After that it was all manual filtering to choose structures for the benchmarks.
 
 Choosing Loop and Anchor — Benchmarking
-=======================================
-
+---------------------------------------
 (This section applies to benchmarking only)
 
 OK, so you ran AnchorFinder, looked at the results, and/or picked what protein you want to run through AnchoredDesign.  How do you choose a loop/anchor?
 
 If you ran AnchorFinder, look at the AnchorFinder result lines that came up as good:
 
-92 PDB pdb1zr0 window 526 loopness 5 nbrs 0 0 92 0 start 13 D pymol select pdb1zr0 and chain D and resi 13-17
+    92 PDB pdb1zr0 window 526 loopness 5 nbrs 0 0 92 0 start 13 D pymol select pdb1zr0 and chain D and resi 13-17
 
 Load this PDB into pymol (1zr0.pdb) and activate the suggested selection.  You'll see that it is in a surface loop of one partner which sticks an arginine straight into its binding partner – a perfect anchor.  (This is a chosen example; not all AnchorFinder hits are this nice.)
 
@@ -133,8 +130,7 @@ If you are doing benchmarking, skip to the [Running AnchorDesign](#Running
 AnchorDesign) section.
 
 Choosing a System and Anchor — Design
-=====================================
-
+-------------------------------------
 (This section applies to the design case only)
 
 In the design case, you will be choosing your proteins based on what you want designed.  Your target is forced by what targets:
@@ -147,8 +143,7 @@ Choosing an anchor then requires:
 You can run this cocrystal through AnchorFinder and let it suggest anchors to you, but for one structure you can just look at it yourself.  Look for loops on the partner that insert into the target, or do computational alanine scanning, or examine the literature for mutations that disrupt the interface.
 
 Choosing a Scaffold, Design Positions, and Loops — Design
-=========================================================
-
+---------------------------------------------------------
 (This section applies to the design case only)
 
 In the design case, you will be replacing your target's partner with some new scaffold to form a mostly de novo interface.  Your scaffold must meet a few requirements:
@@ -163,8 +158,7 @@ Choosing which loops are flexible is dependent on biological knowledge of the sc
 Choosing which positions are designable is similarly dependent on your scaffold.  AnchoredDesign carries the assumption that the non-anchor loop positions are designable, and non-loop positions are not, but nothing in the code enforces that.  Use a resfile (documented with the manual) to specify which positions are designable.  The code will automatically prevent design of the anchor (you can turn that off).  The code will automatically prevent design of positions that are not close to either the interface or a flexible loop (you cannot turn that off), so take care in specifying designable positions on opposite faces of your protein.  Proximity is redetermined at each design opportunity so positions peripheral to the interface may not be designed regularly.
 
 Choosing Loop Lengths and Anchor Position
-=========================================
-
+-----------------------------------------
 (This section applies to the design case only)
 
 OK, so you know which scaffold to use, and which anchor, and which target.  You are ready to create your starting structure for AnchoredDesign, in which the anchor will be inserted into the scaffold, and the anchor will be aligned properly to the target, dragging the scaffold and target together.  The protocol used for this is called AnchoredPDBCreator; further details are below.
@@ -187,8 +181,7 @@ A paired space is anchor placement space.  Besides choosing which anchor to use 
 Again, this space is not searched by AnchoredDesign and must be searched by trying all the inputs.
 
 Using AnchorPdbCreator
-======================
-
+----------------------
 (This section applies to the design case only)
 
 AnchoredPDBCreator is the protocol which assembles an anchor, scaffold, and target into a starting structure for AnchoredDesign.  Its code documentation is included in this packet.
@@ -235,8 +228,7 @@ In this particular example, position 29 is clearly problematic: the peptide bond
 You should be running AnchoredPDBCreator for at least 100 trajectories before choosing a starting structure.
 
 Running AnchorDesign
-====================
-
+--------------------
 If you are benchmarking, the crystal structure of the complex is the appropriate input for AnchoredDesign.  If you are designing, the best result from AnchoredPDBCreator is your starting structure.
 
 The input files for AnchoredDesign provide an example with 1zr0 for running AnchoredDesign.  It is a heterodimer so you can pretend it was AnchoredPDBCreator sourced if you want.  (You can also look in the AnchoredDesign integration test at test/integration/tests/AnchoredDesign for such an input).
@@ -249,15 +241,13 @@ The input files for AnchoredDesign provide an example with 1zr0 for running Anch
 * A resfile is necessary if you wish to design, and is only active in that option set.  
 
 Interpreting AnchorDesign — Benchmarking
-========================================
-
+----------------------------------------
 (This section applies to the benchmarking case only)
 
 If you are duplicating the benchmarking results, you passed the rmsd flag. AnchoredDesign will have output a lot of RMSD values allowing you to determine the performance of the protocol against the structures you chose to benchmark.  The paper describes the score versus RMSD metrics used to determine quality (including the I_sup_bb_RMSD, ch2_CA_RMSD, and loop_CA_sup_RMSD.  The structures themselves don't really matter; you are ensuring that the low-scoring structures have low RMSD.
 
 Interpreting AnchorDesign — Design
-==================================
-
+----------------------------------
 (This section applies to the design case only)
 
 In the design case, the other fields of the AnchoredDesign output come in to play. There are three classes of output:
@@ -270,8 +260,7 @@ Generally, you should rank your structures according to total_score (the Rosetta
 Next, you use the LoopAnalyzerMover output (described above) and InterfaceAnalyzerMover output to determine which structures have flaws not caught by total_score.  Toss structures that those filters think have problems.  Pick the ones you think are best, order the DNA, and pray.  When it works great, feel free to send me kudos, citations, or money!
 
 InterfaceAnalyzerMover
-======================
-
+----------------------
 InterfaceAnalyzerMover output looks like this:
 
     Residues missing H-bonds:
