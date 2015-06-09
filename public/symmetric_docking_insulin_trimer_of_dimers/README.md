@@ -146,17 +146,17 @@ The result is again a pdbfile 1ZEH_haptomer_00001.pdb which has 6 monomers in d3
 
 # Remarks
 
-Not shown in this example is the optional but recommended practice of "pre-packing".  The docking protocol packs the rotamers of all residues in the interfaces.  However it does not pack any residues that are not in the interface.  Therefore a recommended practice is the pack the monomer ahead of time.  This is simply running the packer on the monomer file with any desired packing options.  Then follow the above protocol as written to the symmetric docking.  A possible point of confusion here is that there is a flag for docking named "prepack" however this does not pack the interior as desired here.  Instead use the Docking_prepack application (http://graylab.jhu.edu/Rosetta.Developer.Documentation/all_else/de/d69/docking_prepack_protocol.html)
+Not shown in this example is the optional but recommended practice of "pre-packing".  The docking protocol packs the rotamers of all residues in the interfaces.  However it does not pack any residues that are not in the interface.  Therefore a recommended practice is the pack the monomer ahead of time.  This is simply running the packer on the monomer file with any desired packing options.  Then follow the above protocol as written to the symmetric docking.  A possible point of confusion here is that there is a flag for docking named "prepack" however this does not pack the interior as desired here.  Instead use the Docking_prepack application (see below).
 
 
 There are other flags associated with both "docking" and "symmetry" available beyond the ones show in this tutorial.  These flags are documented in their respective formal documentation section.
 
 # Links
 
-http://graylab.jhu.edu/Rosetta.Developer.Documentation/all_else/d1/dd2/symmetry.html
-http://graylab.jhu.edu/Rosetta.Developer.Documentation/all_else/d4/dae/symmetric_docking.html
-http://graylab.jhu.edu/Rosetta.Developer.Documentation/all_else/d0/de4/docking_protocol.html
-http://graylab.jhu.edu/Rosetta.Developer.Documentation/all_else/de/d69/docking_prepack_protocol.html
+https://www.rosettacommons.org/docs/latest/symmetry.html
+https://www.rosettacommons.org/docs/latest/sym-dock.html
+https://www.rosettacommons.org/docs/latest/docking-protocol.html
+https://www.rosettacommons.org/docs/latest/docking-prepack-protocol.html
 
 # Appendix
 
