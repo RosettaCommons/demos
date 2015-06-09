@@ -14,8 +14,7 @@ Demo inputs
 1.  `rosetta_inputs/GA-AG_mismatch/1MIS_NMR.pdb`  
     NMR PDB structure of a tandem GA:AG mismatch internal loop.
 
-2.  `rosetta_inputs/GA-AG_mismatch/1MIS_exp_1H_chem_shifts.str`
-
+2.  `rosetta_inputs/GA-AG_mismatch/1MIS_exp_1H_chem_shifts.str`  
     Experimental non-exchangeable 1H chemical shift data for the
     tandem GA:AG mismatch interna loop.
 
@@ -38,8 +37,7 @@ Demo inputs
     Also, col 8 and col 9 are currently not used internally by
     the cs_rosetta_rna application.
 
-3. `rosetta_inputs/GA-AG_mismatch/1MIS_params`
-
+3. `rosetta_inputs/GA-AG_mismatch/1MIS_params`  
     Parameters file (in FARNA format) for the tandem GA:AG mismatch.
 
     Also, the input data files for all 23 RNA motifs benchmarked in ref. [2]
