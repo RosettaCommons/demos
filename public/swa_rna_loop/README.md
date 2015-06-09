@@ -52,10 +52,15 @@ The SWA_RNA_python package located at `rosetta_tools/SWA_RNA_python/` contains t
     ```
 
     The "-s" flag specifies the template_PDB file
+
     The "-fasta" flag specifies the fasta file
+
     The "-sample_res" flag specifies the sequence number of nucleotides in the missing loop. In this demo case, this correspond to nucleotides at sequence number 3 4 5 6 7 and 8.
+
     The "-single_stranded_loop_mode" flag specifies that the job involve modeling a single-stranded loop (i.e. the lock-and-key problem).
+
     The "-local_demo" flag indicate that this is demo to be run on a local laptop or desktop. The calculation perform here is to only build the first (5' most) nucleotide of the 6-nucleotides RNA loop.
+
     The "-native_pdb" flag specifies the native_PDB file and is optional. 
 
 4. Type `source LOCAL_DEMO` to execute the Rosetta protocol.
