@@ -36,8 +36,8 @@ should have a header with the string "VFORMAT"
 
         plot "frag_qual.dat" u 2:4 w p
 
-  To plot this in plotting software (e.g. R or excel, or whatever you prefer) 
-  do a scatter plot with column 2 as x-axis and col 4 as y-axis. 
+  This command simply makes a scatter plot with column 2 on the x-axis and 
+  column 4 on the y-axis. 
 
 More detailed information in:  
 http://www.rosettacommons.org/manuals/archive/rosetta3.4_user_guide/dc/d10/app_fragment_picker.html
