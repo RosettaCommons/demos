@@ -5,7 +5,7 @@ The entire workflow for this demo should be described in this file.
 It should describe an entire work flow, with command lines, tested if possible.
 
 Authors:
-* Jianqing Xu (xubest@gmail.com)
+* Jianqing Xu (xubest at gmail dot com)
 * Christine Tinberg
 * Jeff Gray
 * Angela Loihl
