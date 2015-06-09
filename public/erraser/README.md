@@ -110,7 +110,7 @@ Commonly used:
 
 * -out_pdb  
   Format: -out_pdb <string>  
-  Default: <input pdb name>\_erraser.pdb.  
+  Default: \<input pdb name>\_erraser.pdb.  
 
   The user can output to other name using this option.
 
