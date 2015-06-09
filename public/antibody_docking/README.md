@@ -53,56 +53,56 @@ Running the demo
     https://svn.rosettacommons.org/source/trunk/antibody/
     Again, please realize that the H3 loop modeling is still from Rosetta++
 
-3.  Download the released version of Rosetta++ 
-    https://svn.rosettacommons.org/source/branches/releases/rosetta-2.3.1/
+3.  Download the released version of Rosetta++  
+    https://svn.rosettacommons.org/source/branches/releases/rosetta-2.3.1/ 
 
-    For people outside of the rosetta community
+    For people outside of the rosetta community  
     https://www.rosettacommons.org/software/academic/2.3.1/RosettaSnugDock-2.3.1.tgz
 
+    ```
     tar –zxvf RosettaSnugDock-2.3.1.tgz (if you download the second link)
     cd rosetta++
     scons mode=release –j12    (assuming you can use 12 CPUs)
+    ```
 
-4.  The SnugDock example in Rosetta++ can be found at:
+4.  The SnugDock example in Rosetta++ can be found at:  
     https://svn.rosettacommons.org/source/branches/releases/rosetta-2.3.1/example/
-
-	a.  Besides the original example shown above, we made a new example 
-	    in the current directory. Please be careful with different flags
-	    used in the command line. The documentations of SnugDock options 
-	    can be found at: 
-	    http://www.rosettacommons.org/guide/SnugDock.
-	    Please also be careful with each “paths.txt” file.
-	b.  Do Ensemble Prepack:
-		i.  cd ./PrePack_input (you need AB_model*.pdb, ABRM.fab, ABRM.pdb, 
-		    ABRM.unbound.pdb, Antigen.pdb, pdblist1, pdblist2)
-		ii. cd ../Prepack (you need “paths.txt” and “prepack.bash” file available)
-		iii.	./prepack.bash
-		iv. after prepack, you will see *.ppk files in the PrePack_input directory. 
-		    Your original pdblist1 and pdblist2 files will be modified as well, 
-		    please see the README file inside that folder.
-	c.  Do SnugDock+Ensemble:
-		i.  cd ../SnugDock (you need EnsembleDock_plus_SnugDock.bash and paths.txt file)
-		ii. ./EnsembleDock_plus_SnugDock.bash (please realize that the example 
-		    we used here is a little slow, due to the protein size)
-
+    * Besides the original example shown above, we made a new example in the current directory.
+      Please be careful with different flags used in the command line.
+      The documentations of SnugDock options can be found at:  
+        http://www.rosettacommons.org/guide/SnugDock.
+      Please also be careful with each "paths.txt" file.
+    * Do Ensemble Prepack:
+      ```
+      cd ./PrePack_input # you need AB_model*.pdb, ABRM.fab, ABRM.pdb, ABRM.unbound.pdb, Antigen.pdb, pdblist1, pdblist2
+      cd ../Prepack # you need “paths.txt” and “prepack.bash” file available
+          ./prepack.bash
+      ```
+      After prepack, you will see `*.ppk` files in the PrePack_input directory.
+      Your original pdblist1 and pdblist2 files will be modified as well, please see the README file inside that folder.
+    * Do SnugDock+Ensemble:
+      ```
+      cd ../SnugDock # you need EnsembleDock_plus_SnugDock.bash and paths.txt file
+      ./EnsembleDock_plus_SnugDock.bash # please realize that the example we used here is a little slow, due to the protein size
+      ```
 
 5.  Some extra information you may need, besides the example tutorial linked above:
 
-    1.  Make fab file:
-    The CDR loops of antibody should point to the antigen.
-    By specifying the antibody loops in the fab file, one can reduce the computational cost for global docking.
-	The scripts to make fab file can be found at:  
-    https://svn.rosettacommons.org/source/branches/releases/rosetta-2.3.0/rosetta_scripts/docking/  
-	Run makefab.pl on your pdb of choice.
-    ```
-    ./makefab.pl `input pdb` <heavy and/or light chain i.e. HL>
-    ./makefab.pl AB_model1.pdb HL
-    ```
+    * Make fab file:
+      The CDR loops of antibody should point to the antigen.
+      By specifying the antibody loops in the fab file, one can reduce the computational cost for global docking.
+      The scripts to make fab file can be found at:  
+      https://svn.rosettacommons.org/source/branches/releases/rosetta-2.3.0/rosetta_scripts/docking/  
+      Run makefab.pl on your pdb of choice.
+      ```
+      ./makefab.pl `input pdb` <heavy and/or light chain i.e. HL>
+      ./makefab.pl AB_model1.pdb HL
+      ```
 
-    2.  Make `FR02.pdb` complex file:
-	Use pymol to open both the antibody and antigen in one session and save both into one pdb file.
-	In the example: `ABRM.pdb`.
-    It's better to point the antibody CDRs to the antigen, and keep them at a certain distance.
+    * Make `FR02.pdb` complex file:
+      Use pymol to open both the antibody and antigen in one session and save both into one pdb file.
+      In the example: `ABRM.pdb`.
+      It's better to point the antibody CDRs to the antigen, and keep them at a certain distance.
 
 
 
