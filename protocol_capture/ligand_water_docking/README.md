@@ -42,7 +42,7 @@ but smaller movements.
 Tools and Input Files
 ---------------------
 
-### Scripts:
+#### Scripts:
 
 Use find_waters_pymol.py to identify waters within the protein/ligand interface. The script
 takes 3 arguments, each specifying a PDB file (protein.pdb, ligand.pdb, water.pdb).
@@ -51,18 +51,18 @@ This script requires that you have installed pymol as a python library
 The script "ligand_properties_from_bcl" requires that you download and install BCL,
 available from the Meiler Lab website, www.meilerlab.org
 
-### Required flags:
+#### Required flags:
 
     -in:file:s <pdb file> # a starting structure upon which docking will be performed. Should contain a protein, a ligand, and one or more waters
     -in:file:extra_res_fa # the .params file for your ligand. This is created by providing a .mol file to the script: rosetta_source/src/python/apps/public/molfile_to_params.py
     -treat_residues_with_this_chain_as_separate_chemical_entities <1 letter chain from PDB> # Useful for giving waters the same chain and having Rosetta treat them separately.
 
-### Optional flags:
+#### Optional flags:
 
     -ex1, -ex1aro, and -ex2 # expand the rotamer sets that are sampled during packing.
     -in:file:native # allows calculation of comparison metrics between Rosetta models and the correct pose if this is known
 
-### Example Rosetta Command Line (Use Rosetta3.5 or revision 48472):
+#### Example Rosetta Command Line (Use Rosetta3.5 or revision 48472):
 
 The three XML files, standard.xml, protein_centric.xml and ligand_centric.xml, demonstrate how to dock waters using
 RosettaLigand. Simply run the following command from the directory where this readme is found:
