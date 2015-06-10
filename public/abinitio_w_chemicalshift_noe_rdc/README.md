@@ -1,7 +1,10 @@
-AbInitio structure prediction using chemical-shift generated fragments, NOE distance restraints and RDC restraints
-==========================================================================
+AbInitio Structure Prediction Using Chemical-Shift Generated Fragments, NOE Distance Restraints and RDC Restraints
+==================================================================================================================
+
 Written by Lei Shi.
 Nikolas Sgourakis drafted the previous version
+
+---
 
 We will use the chemical shifts to improve the fragments from which Rosetta builds up structures, and the NOEs+RDCs to guide the Rosetta calculations towards the native structure. 
 

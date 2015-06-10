@@ -1,3 +1,6 @@
+Floppy Tail Demo
+================
+
 This demo contains the starting structure for the original published use of 
 FloppyTail, and is a copy of FloppyTail's integration test.  To run the demo 
 (in the inputs subfolder):
