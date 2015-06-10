@@ -110,7 +110,7 @@ What this script is doing:
 
 This script is a convenient way to execute the script
 interface_design_demo/scripts/analyze/infpro.sh with the proper working
-directory. "../../../analyze/infpro.sh" from within the output directory is
+directory. `../../../analyze/infpro.sh` from within the output directory is
 awkward.
 
 In turn, infpro.sh is runs a script to score interfaces of output pdbs,
