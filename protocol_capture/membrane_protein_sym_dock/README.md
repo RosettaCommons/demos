@@ -128,7 +128,7 @@ use a C4 Symmetric Potassium Channel (PDB ID: 1bl8)
    1. Required Options: Options (flags) needed to run this application are described below. A file with these flags,   
       symdock_flags, is also provided for the 1bl8 example. 
 
-            flags                                  descriptions
+            flags                                     descriptions
             --------------------------------------------------------------------------------------------------
             -in:file:s <pdbfile>                      Input PDB Structure: Asymmetric input structure
             -in:file:native <pdbfile>                 Structure of native symmetric complex for RMSD calculations
