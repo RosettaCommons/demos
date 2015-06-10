@@ -58,22 +58,25 @@ description of what each flag is doing.
   File holding all rosetta commandline flags. See section "Option file" below.
 
 * `-in:file:fullatom`  
-  Necessary for pretty much all loop modeling runs to read in PDBs properly
+  Necessary for pretty much all loop modeling runs to read in PDBs properly.
 
 * `-loops:input_pdb rosetta_inputs/1FNA_del.pdb`  
-  Path to input pdb
+  Path to input pdb.
 
 * `-loops:loop_file rosetta_inputs/loop_file`  
-  Path to loops file
+  Path to loops file.
 
 * `-loops:frag_sizes 9 3 1`  
-  what sizes are the fragments?  9 and 3 are traditional.  The flag seems to require a third argument, but you can pass no fragments in that size.
+  what sizes are the fragments?  9 and 3 are traditional.  The flag seems to 
+  require a third argument, but you can pass no fragments in that size.
 
 * `-loops:frag_files rosetta_inputs/aa1FNA_09_05.200_v1_3 rosetta_inputs/aa1FNA_03_05.200_v1_3 none`  
-  Paths to the fragments in the same vein as previous - none for 1mer fragments
+  Paths to the fragments in the same vein as previous - none for 1mer 
+  fragments.
 
 * `-loops::build_initial`  
-  This flag triggers build initial mode, which fixes the broken loop before re-solving it
+  This flag triggers build initial mode, which fixes the broken loop before 
+  re-solving it.
 
 * `-loops:remodel perturb_kic -loops:refine refine_kic`  
   These flags specify KIC loop modeling to remodel the loops.
@@ -82,7 +85,7 @@ description of what each flag is doing.
   These flags could be used instead of those above to specify CCD remodeling.
 
 * `-out:path sample_output`  
-  Output directory
+  Output directory.
 
 * `-out:prefix 1FNA_del_`  
   Prefix for output.  Would not be necessary if someone would rewrite loop 
