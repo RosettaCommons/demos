@@ -93,8 +93,10 @@ Running the demo
 ----------------
 
 The following command line options are used as arguments to the minirosetta 
-executable (minirosetta.(os)(options)(mode), ex. minirosetta.linuxgccrelease, 
-or minirosetta.macosclangrelease)
+executable (minirosetta.(os)(options)(mode), for example:
+
+    minirosetta.linuxgccrelease
+    minirosetta.macosclangrelease
 
 Replace the above command with the path to your own rosetta database
 
