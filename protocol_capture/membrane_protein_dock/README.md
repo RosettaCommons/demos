@@ -5,10 +5,6 @@ Author: Julia Koehler Leman (julia.koehler1982@gmail.com)
 Corresponding PI: Jeffrey J. Gray (jgray@jhu.edu)  
 Last Updated: January 2015  
 Rosetta Revision: #57518  
-Reference:
-* Alford RF, Koehler Leman J, Weitzner BD, Duran A, Elazar A, Tilley D, Gray JJ 
-  (2015): An integrated framework advancing membrane protein modeling and 
-  design, PLosONE (in preparation)
 
 ---
 
@@ -157,3 +153,8 @@ Outputs are found in the output folder:
    RMSD over the docked partner, disregarding the fixed partner. The Irms in column
    5 is the interface RMSD.
 
+## References
+
+* Alford RF, Koehler Leman J, Weitzner BD, Duran A, Elazar A, Tilley D, Gray JJ 
+  (2015): An integrated framework advancing membrane protein modeling and 
+  design, PLosONE (in preparation)
