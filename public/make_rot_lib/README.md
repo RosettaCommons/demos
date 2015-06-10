@@ -1,5 +1,5 @@
-CREATING NONCANONICAL AMINO ACID ROTAMER LIBRARIES
---------------------------------------------------
+Creating non-canonical amino acid rotamer libraries
+===================================================
 
 This demo was written by P. Douglas Renfrew (renfrew at nyu dot edu)
 
