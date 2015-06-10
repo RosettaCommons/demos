@@ -40,7 +40,15 @@ P82).
 Rebuilding the loop with Rosetta
 --------------------------------
 
+The only executable we'll need here is loop modeling. Briefly, we will run 
+loop modeling with the build_initial mode active. This option triggers Rosetta 
+to rebuild the loop in a closed state. To do the bulk of the loop remodeling, 
+we will choose KIC remodeling.  CCD would work as well.
+
     path/to/loopmodel.[platform][compiler][mode] @rosetta_inputs/options -database path/to/rosetta_database
+
+An options file has been provided (rosetta_inputs/options), annotated with a 
+description of what each flag is doing.
 
 * `-database`:
 
@@ -50,14 +58,6 @@ Rebuilding the loop with Rosetta
 * `@rosetta_inputs/options`:
 
   File holding all rosetta commandline flags. See section "Option file" below.
-
-The only executable we'll need here is loop modeling. Briefly, we will run 
-loop modeling with the build_initial mode active. This option triggers Rosetta 
-to rebuild the loop in a closed state. To do the bulk of the loop remodeling, 
-we will choose KIC remodeling.  CCD would work as well.
-
-An options file has been provided (rosetta_inputs/options), annotated with a 
-description of what each flag is doing.
 
 * `-in:file:fullatom`:
   Necessary for pretty much all loop modeling runs to read in PDBs properly
