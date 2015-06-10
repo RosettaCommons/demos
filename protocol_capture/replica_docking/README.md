@@ -92,13 +92,13 @@ To run these demos:
         ./scons.py -j 48 bin/rosetta_scripts.mpi.linuxgccrelease mode=release extras=mpi
         ```
 
-	    Please note that specific numbers of processors have to be used: calculate number of processes using the formula: nstruct * n_replica + 2. 
+	    Please note that specific numbers of processors have to be used: calculate number of processes using the formula: nstruct \* n_replica + 2. 
         The extra 2 processes are dedicated to the job distributor and File IO. n_replica is the number of temperature levels (here 3), and nstruct 
         can be any positive integer. ReplicaDock outputs the trajectory in the form of two silent-files: one containing decoy+score information 
-        (name: decoys_<input_pdb>_nnnn_traj.out), and the second file is a copy of just the score information (scores_<input_pdb>_nnnn_traj.out). 
-        Decoytags are of the form P_tttt_rrr_ssssssss where tttt informs about trajctory number, rrr about the replica, and ssssssss about the 
-        snapshot number within the trajectory. The temperature_levels are switched between different replicas. The current temp_level or temperature
-        of a replica at the moment a decoy was recorded is found in the score-columns temp_level and temperature.
+        (name: decoys\_<input_pdb>\_nnnn\_traj.out), and the second file is a copy of just the score information (scores\_<input_pdb>\_nnnn\_traj.out). 
+        Decoytags are of the form P\_tttt\_rrr\_ssssssss where tttt informs about trajctory number, rrr about the replica, and ssssssss about the 
+        snapshot number within the trajectory. The temperature\_levels are switched between different replicas. The current temp\_level or temperature
+        of a replica at the moment a decoy was recorded is found in the score-columns temp\_level and temperature.
         At the end of a trajectory the final decoy is written to the file 'decoys.out'; this file is a relict of using the JD2-framework and
         can be generally ignored.
         Additionally, the file 'trial.stat' is produced which gives information about acceptance rates in each temperature level.
