@@ -153,7 +153,8 @@ Outputs are found in the output folder:
    RMSD over the docked partner, disregarding the fixed partner. The Irms in column
    5 is the interface RMSD.
 
-#### References
+References
+----------
 
 * Alford RF, Koehler Leman J, Weitzner BD, Duran A, Elazar A, Tilley D, Gray JJ 
   (2015): An integrated framework advancing membrane protein modeling and 
