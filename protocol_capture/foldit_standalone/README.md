@@ -5,11 +5,11 @@ Authors: Seth Cooper, David Kim, Firas Khatib, Adrien Treuille (PI), Janos
 Barbero, Jeehyung Lee, Michael Beenen, Andrew Leaver-Fay, Matthew Smith 
 (Speaker), David Baker (PI), Zoran Popovic (PI)
 
-Session: Interfaces to Rosetta
+Title of Talk: Standalone Foldit: A New and Powerful Interface to Rosetta
 
 Date of Talk: Wednesday, August 4, 2010
 
-Title of Talk: Standalone Foldit: A New and Powerful Interface to Rosetta
+Session: Interfaces to Rosetta
 
 ---
 
