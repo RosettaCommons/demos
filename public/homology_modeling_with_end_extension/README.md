@@ -1,18 +1,18 @@
 Homology Modeling with End Extension
 ====================================
 
+Created: Aug 5, 2011  
+Last Updated: Aug 5, 2011
+
 This demo will illustrate a protocol for modeling the structure of a protein 
 given its sequence, provided:
 
-- there are sequence homologs in the PDB, but
-- an n-terminal region of around 140 residues has no identifiable sequence 
-  similarity to a protein structure in the pdb
+- There are sequence homologs in the PDB.
+- But an n-terminal region of around 140 residues has no identifiable sequence 
+  similarity to a protein structure in the pdb.
 
 The input to the protocol is a sequence of interest.  The output will be a set 
 of Rosetta-generated structural models.
-
-Created: Aug 5, 2011  
-Last Updated: Aug 5, 2011
 
 Outline
 -------
@@ -213,8 +213,8 @@ I.  To do this, we will use the fragment insertion sampling protocol with the
     world applications, we suggest making many more, perhaps 10000 model 
     structures, dependent on the length of the extension.
 
-5.  Evaluate the models via clustering.  Refer to the 
-    [[clustering|public/clustering/readme]] demo for more information.
+5.  Evaluate the models via clustering.  Refer to the [[clustering 
+    demo|public/clustering/readme]] for more information.
 
 
 
