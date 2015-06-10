@@ -16,9 +16,9 @@ Documentation Link:
 https://www.rosettacommons.org/docs/wiki/Membrane-ddG
 
 Publication describing the method:  
-Alford RF, Koehler Leman J, Weitzner BD, Gray JJ (2015)
-An integrated framework advancing membrane protein modeling and design
-PLosCompBio (Under Review) 
+* Alford RF, Koehler Leman J, Weitzner BD, Gray JJ (2015) An integrated 
+  framework advancing membrane protein modeling and design PLosCompBio (Under 
+  Review) 
 
 ---
 
