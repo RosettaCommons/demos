@@ -23,7 +23,7 @@ to be able to replicate the following steps (from Figure 1):
 9. Analyze results by clustering binding modes by ligand RMSD
 
 You can also download the [[Supplementary 
-Material|protocol_captures/gpcr_model_dock/SupplementaryMaterial_ProtocolCapture.docx]].
+Material|protocol_capture/gpcr_model_dock/SupplementaryMaterial_ProtocolCapture.docx]].
 
 Files included in this protocol capture
 ---------------------------------------
