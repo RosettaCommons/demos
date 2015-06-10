@@ -6,8 +6,9 @@ Author: Julia Koehler Leman (julia.koehler1982@gmail.com)
 Corresponding PI: Jeffrey J. Gray (jgray@jhu.edu)  
 Last Updated: March 2015  
 
-PyRosetta can be downloaded from http://www.pyrosetta.org. Follow the instructions
-provided in the README to setup your shell environment
+---
+
+Measuring free energy changes upon mutation can inform our understanding of membrane protein stability and variation and is a step toward design. In this application, we predict ddGs by measuring the difference in Rosetta energy for the native and mutated conformation. This application uses a modified version of the all atom energy function for membrane proteins, which includes the fa_elec term and pH energy (see below). The Membrane ddG application is part of the RosettaMP Framework.
 
 Documentation Link:  
 * https://www.rosettacommons.org/docs/wiki/Membrane-ddG
@@ -16,10 +17,6 @@ Publication describing the method:
 * Alford RF, Koehler Leman J, Weitzner BD, Gray JJ (2015) An integrated 
   framework advancing membrane protein modeling and design PLosCompBio (Under 
   Review) 
-
----
-
-Measuring free energy changes upon mutation can inform our understanding of membrane protein stability and variation and is a step toward design. In this application, we predict ddGs by measuring the difference in Rosetta energy for the native and mutated conformation. This application uses a modified version of the all atom energy function for membrane proteins, which includes the fa_elec term and pH energy (see below). The Membrane ddG application is part of the RosettaMP Framework.
 
 ## Executable/Script ##
 The membrane ddG application is implemented as a python script in PyRosetta. The scripts described here can be found in this protocol capture. Developmental versions can also be found: 
@@ -134,6 +131,9 @@ For all scripts - running multiple times with the same output path specified wil
 Rosetta Revision: #57740  
 Python Version: 2.7+  
 PyRosetta Release Version: March 2015  
+
+PyRosetta can be downloaded from http://www.pyrosetta.org. Follow the instructions
+provided in the README to setup your shell environment
 
 ## Additional References ##
 1. Chaudhury S, Lyskov S, Gray JJ (2010) PyRosetta: a script-based interface for implementing molecular modeling algorithms using Rosetta.
