@@ -1,4 +1,4 @@
-Symmetric Membrane Protein-Protein Docking
+Membrane Symmetric Protein-Protein Docking
 ==========================================
 
 Author: Rebecca F. Alford (rfalford12@gmail.com)  
