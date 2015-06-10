@@ -42,9 +42,9 @@ This protocol uses 2 separate rosetta runs — one is centroid mode to build
 backbone coordinates and the other is a design run to find a low-energy 
 sequence — and 2 additional scripts.  Step-by-step instructions are below:
 
-1. Generate fragments - you can do this on Robetta at 
-   http://robetta.bakerlab.org/fragmentsubmit.jsp. I named my fragment files 
-   aag00003_04.200_v1_3 and aag00009_04.200_v1_3
+1. Generate fragments - you can do this using the [[Robetta 
+   server|http://robetta.bakerlab.org/fragmentsubmit.jsp]]. I named my fragment 
+   files `aag00003_04.200_v1_3 and aag00009_04.200_v1_3`.
 
 2. Make starting structure using createTemplate.pl and the g000.zones file.  I 
    also included a fasta file (see g000\_.fasta) because I felt that setting the 
