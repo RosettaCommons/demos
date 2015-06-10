@@ -24,7 +24,6 @@ to be able to replicate the following steps (from Figure 1):
 
 You can also download the [[Supplementary 
 Material|/protocol_capture/gpcr_model_dock/SupplementaryMaterial_ProtocolCapture.docx]].
-         protocol_capture/gpcr_model_dock/README
 
 Files included in this protocol capture
 ---------------------------------------
