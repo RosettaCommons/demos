@@ -50,8 +50,7 @@ If there are unrecognized residues but you don't actually care about them,
   3. Run with `-ignore_unrecognized_res` or just `-ignore_water`. Simply
   ignoring unrecognized residues can coding assumptions that are not
   rigerously checked (i.e. expose bugs in Rosetta). So be prepared
-  Rosetta to fail in unusual ways with `-ignore_unrecognized_res`. For
-  example, 
+  Rosetta to fail in unusual ways: 
      
     1. if the first residue of a chain is ignored (e.g. with 1mhm.pdb)
     then Rosetta may fail with this error:
