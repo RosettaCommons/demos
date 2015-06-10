@@ -12,7 +12,7 @@ Each one includes:
 Downloading the demos
 =====================
 
-All the demos documented here are included in the `docs` directory at the root of the weekly releases of Rosetta.
+All the demos documented here are included in the `demos` directory at the root of the weekly releases of Rosetta.
 Weekly releases are available to academic users free of charge.
 If you are a [[Rosetta Developer]] (i.e. you have signed the RosettaCommons developer's agreement and have access to the Rosetta source code repositories on GitHub), you can download all the demos by checking out the `demos.git` repository:
 
