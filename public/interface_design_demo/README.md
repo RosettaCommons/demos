@@ -3,12 +3,6 @@ Interface Design Demo
 
 Author: Kevin Houlihan (khouli at unc dot edu)
 
-A procedure for redesigning protein interfaces from existing complexes is
-described.
-
-Executive Summary
------------------
-
 This demo contains scripts to redesign residue sequences at the interface of
 existing heterodimers. Protocols for running with PackRotamers, MinMover,
 and MinMover with a scorefunction produced by optE are included.
