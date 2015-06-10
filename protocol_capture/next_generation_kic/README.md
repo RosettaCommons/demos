@@ -5,6 +5,9 @@ Authors: Amelie Stein, Tanja Kortemme
 
 ---
 
+Setting up the demo
+-------------------
+
 Before running the demo, make sure to change the following variables in your 
 local environment:
 
