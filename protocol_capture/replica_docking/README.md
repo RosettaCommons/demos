@@ -48,8 +48,8 @@ To run these demos:
 4. setup target library using automated setup tools available with the CS-Rosetta toolbox(www.csrosetta.org).
 
 	This step assembles target related input files to build the target library (`dock_targetlib` as an example). By default 
-the library is stored in folder cs\_targetlib at home of your workspace. You can also specify a directory using the flag 
-`-target_prefix` as follows. Absolute path is recommended for `-target_prefix`.
+    the library is stored in folder cs\_targetlib at home of your workspace. You can also specify a directory using the flag 
+    `-target_prefix` as follows. Absolute path is recommended for `-target_prefix`.
 
 	The following commands for setup demo target 1bvn have been wraped up in `scripts/test_target_setup.sh`
     ```
@@ -57,16 +57,16 @@ the library is stored in folder cs\_targetlib at home of your workspace. You can
 	#setup target for RosettaDock as in published paper "Protein-Protein Docking with Simutaneous Optimization of Rigid-body 
 	#Displacement and Side-chain Conformations", Jeffrey J. Gray et al., J. Mol. Biol. (2003)
 	setup_target -method rosetta_dock -target udock_1bvn -target_prefix $PROTOCOL_CAPTURE/replica_docking/dock_targetlib \
--disulf disulf_file -native protAB.pdb -pdb P.pdb -partners partners
+    -disulf disulf_file -native protAB.pdb -pdb P.pdb -partners partners
 
 	#ReplicaDock:
 	#setup target for ReplicaDock as described in Zhang and Lange, PLOS One 2012.
 	setup_target -method replica_dock -target udock_1bvn -target_prefix $PROTOCOL_CAPTURE/replica_docking/dock_targetlib \
--native protAB.pdb -pdb P.pdb -partners partners
+    -native protAB.pdb -pdb P.pdb -partners partners
 
-        #or you can conviently copy the inputs from a previously prepared 'rosetta_dock' setup as follows:
-        setup_target -method replica_dock -target udock_1bvn -target_prefix $PROTOCOL_CAPTURE/replica_docking/dock_targetlib \
--transfer_method rosetta_dock
+    #or you can conviently copy the inputs from a previously prepared 'rosetta_dock' setup as follows:
+    setup_target -method replica_dock -target udock_1bvn -target_prefix $PROTOCOL_CAPTURE/replica_docking/dock_targetlib \
+    -transfer_method rosetta_dock
     ```
 
 5. setup run using automated setup tools. This step creates a run-ready directory as specified with flag `-dir`, in which job-scripts, 
@@ -108,11 +108,11 @@ the library is stored in folder cs\_targetlib at home of your workspace. You can
         -nstruct 1 -protocol rep_cen -xml uniform -n_replica 3
         ```
 
-       start running:
-       ```
-       cd $PROTOCOL_CAPTURE/replica_docking/test_runs/replica_dock/udock_1bvn/run/;
-       source production.interactive.job -n 5
-       ```
+        start running:
+        ```
+        cd $PROTOCOL_CAPTURE/replica_docking/test_runs/replica_dock/udock_1bvn/run/;
+        source production.interactive.job -n 5
+        ```
 
 	    2. ReplicaDock-LoT, using temperatures [0.6 0.8 1.0 1.2 1.5 2.0 2.5] + min_score
 
@@ -135,9 +135,7 @@ the library is stored in folder cs\_targetlib at home of your workspace. You can
         -score interchain_cen -nstruct 25
         ```
 
-    2. refinement. To refine the decoys generated in the centroid stage, we don't want to copy all the decoy-files into the run 
-directory of refinement, but only specify the path of the decoys files. For this, we use the flag `-start` with absolute path specified 
-together with flag `-pattern` to only include the files with a certain name pattern.
+    2. refinement. To refine the decoys generated in the centroid stage, we don't want to copy all the decoy-files into the run directory of refinement, but only specify the path of the decoys files. For this, we use the flag `-start` with absolute path specified together with flag `-pattern` to only include the files with a certain name pattern.
 
 	    1. refinement of the low-resolution ensembles produced by ReplicaDock
         ```
@@ -214,7 +212,7 @@ together with flag `-pattern` to only include the files with a certain name patt
 
 7. refinement of low resolution ensembles
 
-	refinement is setup with the automated tool box as shown in part 4.2.1-4.2.4.
+	refinement is setup with the automated tool box as shown in part 5.2.1-5.2.4.
 
 8. analysis
 
