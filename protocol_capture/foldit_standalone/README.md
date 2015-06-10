@@ -1,32 +1,25 @@
-### General Information ##################
-# Your name:
-
-# Protocol Name:
-
-Foldit Standalone
-
-# Brief Description:
-
-This protocol describes how to obtain the binaries and code for Foldit Standalone.  It also includes the example files used to demonstrate the software as well as the scripts and wrappers used to make the scripts.
-
-Title:
+Foldit Standalone Protocol Capture
+==================================
 
 Authors & Lab:
+
 Seth Cooper, David Kim, Firas Khatib, Adrien Treuille (Lab), Janos Barbero,
 Jeehyung Lee, Michael Beenen, Andrew Leaver-Fay, Matthew Smith (Speaker), David
 Baker (Lab), Zoran Popovic (Lab)
 
-Year:
-2010
+Year: 2010
 
-Session:
-Interfaces to Rosetta
+Session: Interfaces to Rosetta
 
-Day of talk:
-Wednesday, August 4
+Day of talk: Wednesday, August 4
 
 Title:
+
 Standalone Foldit: A New and Powerful Interface to Rosetta
+
+---
+
+This protocol describes how to obtain the binaries and code for Foldit Standalone.  It also includes the example files used to demonstrate the software as well as the scripts and wrappers used to make the scripts.
 
 Abstract:
 Protein design with Rosetta typically involves transitioning between
