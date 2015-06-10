@@ -53,7 +53,7 @@ Whatever makes the most sense for your demo.
 
 Once you have finished writing your demo and have made sure that it runs properly, commit your changes and push them like usual: `git commit && git push`.
 At this point, you can now edit your readme using the online Gollum interface available at the [[internal documentation site]].
-However, only your readme can be maintained online.
+However, only your readme can be maintained in this way.
 You have to use git if you want to make any changes to your demo scripts or input data.
 
 Demos
