@@ -62,7 +62,7 @@ How-Tos
 -------
 
 How-to demos demonstrate the best way to solve a particular problem using the Rosetta framework.
-Each demo defines a particular problem, and as new and improved ways to solve those problems are developed, the demos will be updated by members of the Rosetta community.
+Each demo defines a particular problem, and as new and improved ways to solve those problems are developed, the demos are updated by members of the Rosetta community.
 These demos are located in the `demos/public` directory.
 
 <<LinkDemos(public)>>
