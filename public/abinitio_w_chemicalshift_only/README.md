@@ -9,9 +9,9 @@ Ray Wang drafted the previous version.
 We will use the chemical shifts to improve the fragments from which Rosetta builds up structures, and the NOEs to guide the Rosetta calculations towards the native structure.
 
 Please see references at:
-* rosetta abinitio: Bradley, P et al Science 2005
-* chemical shift fragments: Shen Y et al. PNAS 2008;105:4685-4690
-* chemical shift+NOE+RDC: Raman S, et al Science 2010
+* Rosetta abinitio: Bradley, P et al Science 2005
+* Chemical shift fragments: Shen Y et al. PNAS 2008;105:4685-4690
+* Chemical shift+NOE+RDC: Raman S, et al Science 2010
 
 In this demo, we will use PDB 2JY7, which is a small protein (for demo purpose) and has experimental data deposited. Several scripts are provided in the scripts folder for formatting purposes:
 
