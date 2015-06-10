@@ -2,8 +2,8 @@ Fragment Picking for CS-Rosetta
 ===============================
 
 Presenting author: Dominik Gront (dgront at chem dot uw dot edu dot pl)  
-Protocol Name: fragment picker : CS-Rosetta style  
-Brief Description: The protocol substitutes CS-Rosetta application
+Protocol name: fragment picker : CS-Rosetta style  
+Brief description: The protocol substitutes CS-Rosetta application
 
 Source code location
 --------------------
