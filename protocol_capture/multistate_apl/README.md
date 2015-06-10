@@ -126,8 +126,8 @@ Versions
 --------
 
 * Committed to trunk at revision 36337
-* The InterfaceAnalyzer was used with version "32988:33373M"
-* and docking_protocol was used with version "34393:34892M"
+* InterfaceAnalyzer was used with version "32988:33373M"
+* docking_protocol was used with version "34393:34892M"
 
 Other Comments
 --------------
