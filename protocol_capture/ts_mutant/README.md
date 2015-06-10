@@ -32,14 +32,14 @@ mutations given a protein of interest.
 ## Running
 ### Flags
 scripts/generate-scripts.sh flags (all required):
--protein: name of input protein (must be PDB file name without .pdb extension)
--species: species name abbreviation (used for display only, but required)
--cutoff: % surface area accessibility cutoff for residues to mutate in input structure
--mini\_bin: path of Rosetta bin directory on computer where runs will be executed
--mini\_db: path of Rosetta database directory on computer where runs will be executed
+- protein: name of input protein (must be PDB file name without .pdb extension)
+- species: species name abbreviation (used for display only, but required)
+- cutoff: % surface area accessibility cutoff for residues to mutate in input structure
+- mini\_bin: path of Rosetta bin directory on computer where runs will be executed
+- mini\_db: path of Rosetta database directory on computer where runs will be executed
 
 scripts/predict-ts.sh flags (required):
--protein: name of input protein (must be PDB file name without .pdb extension)
+- protein: name of input protein (must be PDB file name without .pdb extension)
 
 ### Command Line
 
