@@ -45,8 +45,13 @@ they've been repacked using the sequence encoded in that entity.  There are six 
 commands in the fitness file; STATE, STATE_VECTOR, VECTOR_VARIABLE, SCALAR_EXPRESSION,
 VECTOR_EXPRESSION, ENTITY_FUNCTION, and FITNESS.  Each command must be on its own line.
 The syntax for command X may be found on in the @details section preceeding the
-function definition for void DynamicAggregateFunction::process_X_command in the file
-/mini/src/devel/pack_daemon/DynamicAggregateFunction.cc
+function definition for:
+
+    void DynamicAggregateFunction::process_X_command
+
+in the file
+
+    /mini/src/devel/pack_daemon/DynamicAggregateFunction.cc
 
 #### Important Flags
 
