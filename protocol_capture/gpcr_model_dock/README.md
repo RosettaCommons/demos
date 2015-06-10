@@ -11,7 +11,7 @@ paper:
 Challenges of recovering native conformations of ligands docked into 
 comparative models of G-protein coupled receptors" by Nguyen,E.D.*, Norn, C.*, 
 Frimurer, T., and Meiler,J. (2012), PLOS One. [[Supplementary 
-Material|/protocol_capture/gpcr_model_dock/SupplementaryMaterial_ProtocolCapture.docx]]
+Material|/protocol_capture/gpcr_model_dock/SupplementaryMaterial_ProtocolCapture.docx]].
 
 Commands and files are provided to be able to replicate the following steps 
 (from Figure 1):
