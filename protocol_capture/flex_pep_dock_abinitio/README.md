@@ -19,7 +19,7 @@ local environment:
     FlexPepDockAbInitio/run_example:                     set PATH_TO_EXE and PATH_TO_DB
     FlexPepDockAbInitio/scripts/frags/make.sh:set        set PATH_TO_EXE and PATH_TO_DB
     FlexPepDockAbInitio/scripts/clustering/cluster.sh:   set PATH_TO_EXE and PATH_TO_DB 
-    FlexPepDockAbInitio/scripts/prep_abinitio.sh:set pathToDemo and pathToVall
+    FlexPepDockAbInitio/scripts/prep_abinitio.sh:        set pathToDemo and pathToVall
     FlexPepDockAbInitio/scripts/frags/make_fragments.pl: set $scratch and $pathToDemo
 
 Running the demo
