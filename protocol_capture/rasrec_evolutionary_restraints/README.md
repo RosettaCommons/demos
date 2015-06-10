@@ -50,13 +50,11 @@ folder. In case of the standard scoring method (PLM), the file is named
 An exemplary prediction for 1wvn is provided in 
 inputs/ev_couplings/1wvn_PLM.txt.
 
-From this score file, the l top-ranked residue pairing scores having a 
-minimum distance of 5 residues are extracted and translated into Rosetta 
-specific distance restraints.
+From this score file, the N top-ranked residue pairing scores having a minimum 
+distance of 5 residues are extracted and translated into Rosetta specific 
+distance restraints. This can be done with the following two steps:
 
-This can be done with the following two steps:
-
-1.  Generate lxl contact map
+1.  Generate NxN contact map
 
         $PROTOCOL/scripts/create_evfold_contactmap.py -i inputs/ev_couplings/1wvn_PLM.txt -f inputs/1wvn.fasta -o 1wvn_PLM.cmp
 
