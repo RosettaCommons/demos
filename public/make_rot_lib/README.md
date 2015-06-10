@@ -101,24 +101,26 @@ MakeRotLib options file template as shown bellow.
     CENTROID  60 3  60 3  60 3
     <<<<< C40_rot_lib_options_XXX_YYY.in end >>>>>
 
-* AA_NAME <three letter code for the amno acid> 
+Field definitions:
 
-* PHI_RANGE <phi value for this bin> <phi value for this bin> 0 : The phi range 
+* AA_NAME \<three letter code for the amno acid> 
+
+* PHI_RANGE \<phi value for this bin> \<phi value for this bin> 0 : The phi range 
   functionality is not functional. Both values need to be the same and the 
   interval set to 0
 
-* PSI_RANGE <psi value for this bin> <psi value for this bin> 0 : The psi range 
+* PSI_RANGE \<psi value for this bin> \<psi value for this bin> 0 : The psi range 
   functionality is not functional. Both values need to be the same and the 
   interval set to 0
 
-* NUM_CHI <number side chain dihedral angles> : This should be the same as in 
+* NUM_CHI \<number side chain dihedral angles> : This should be the same as in 
   the parameter file.
 
-* CHI_RANGE <chi number> <starting value> <ending value> <interval> : The 
+* CHI_RANGE \<chi number> \<starting value> \<ending value> \<interval> : The 
   number of CHI_RANGE fields needs to equal the values specified for NUM_CHI.
 
-* CENTROID <Rotamer number for chi 1> <starting value> {<rotamer number for chi 
-  2> <starting value>}{etc.} : CENTROIDS specify the starting points for the 
+* CENTROID \<Rotamer number for chi 1> \<starting value> {\<rotamer number for chi 
+  2> \<starting value>}{etc.} : CENTROIDS specify the starting points for the 
   K-means clustering described in the related publication. A CENTROID field is 
   needs for each potential rotamer. The number of CENTROID fields defines the 
   number of rotamers listed in the resulting rotamer library.
