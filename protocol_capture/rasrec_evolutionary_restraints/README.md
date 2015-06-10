@@ -1,3 +1,6 @@
+RASREC Evolutionary Restraints
+==============================
+
 This protocol capture has been written by Tatjana Braun in January 2015 and 
 demonstrates on an exemplary structure how the results presented in the PLos 
 ONE RosettaCon collection paper "Combining evolutionary information and an 
