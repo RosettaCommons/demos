@@ -15,7 +15,7 @@ the specified sequence positions. Interactions within and between different
 parts of the structure can be individually reweighted, depending on the
 desired objective.
 
-Updates to this protocol capture can be found at:  
+Updates to this protocol capture can be found at:
 http://kortemmelab.ucsf.edu/data/
 
 Running the Protocol
