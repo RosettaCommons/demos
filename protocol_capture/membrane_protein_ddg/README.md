@@ -5,9 +5,6 @@ Author: Rebecca F. Alford (rfalford12@gmail.com)
 Author: Julia Koehler Leman (julia.koehler1982@gmail.com)  
 Corresponding PI: Jeffrey J. Gray (jgray@jhu.edu)  
 Last Updated: March 2015  
-Rosetta Revision: #57740  
-Python Version: 2.7+  
-PyRosetta Release Version: March 2015  
 
 PyRosetta can be downloaded from http://www.pyrosetta.org. Follow the instructions
 provided in the README to setup your shell environment
@@ -132,6 +129,11 @@ Outputs from the two scripts above were renamed for clarity
         example_outputs/OmpLA_ddG_breakdown.sc
 
 For all scripts - running multiple times with the same output path specified will APPEND to the file and not overwrite it
+
+## Version Info ##
+Rosetta Revision: #57740  
+Python Version: 2.7+  
+PyRosetta Release Version: March 2015  
 
 ## Additional References ##
 1. Chaudhury S, Lyskov S, Gray JJ (2010) PyRosetta: a script-based interface for implementing molecular modeling algorithms using Rosetta.
