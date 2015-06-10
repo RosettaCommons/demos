@@ -112,7 +112,7 @@ Command lines to run this protocol capture
 
   * Transmembrane span prediction based on Jufo9D:
 
-        perl scripts/jufo9d_span.pl 1u19A.jufo9d > 1u19A.span 
+            perl scripts/jufo9d_span.pl 1u19A.jufo9d > 1u19A.span 
 
   * Disulfide bond constraint file: Create file that lists residue number of 
     cysteine residues predicted to disulfide bond according to the alignment 
