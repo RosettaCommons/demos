@@ -117,6 +117,6 @@ SVN revision 51851 (Dec 2012)
 References
 ----------
 
-Stein A, Kortemme T (2013) Improvements to robotics-inspired conformational 
-sampling in Rosetta. PLoS ONE (submitted)
+* Stein A, Kortemme T (2013) Improvements to robotics-inspired conformational 
+  sampling in Rosetta. PLoS ONE (submitted)
 
