@@ -1,7 +1,7 @@
 Creating non-canonical amino acid rotamer libraries
 ===================================================
 
-This demo was written by P. Douglas Renfrew (renfrew at nyu dot edu)
+This demo was written by P. Douglas Renfrew (renfrew at nyu dot edu).
 
 This demo illustrates the make_rot_lib protocol. It was originally written as 
 the 2nd (of 4) parts of a "protocol capture" acompanying the paper "Using 
