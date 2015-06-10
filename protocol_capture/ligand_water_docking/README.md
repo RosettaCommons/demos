@@ -44,11 +44,11 @@ Tools and Input Files
 
 #### Scripts:
 
-Use find_waters_pymol.py to identify waters within the protein/ligand interface. The script
+Use `find_waters_pymol.py` to identify waters within the protein/ligand interface. The script
 takes 3 arguments, each specifying a PDB file (protein.pdb, ligand.pdb, water.pdb).
 This script requires that you have installed pymol as a python library
 
-The script "ligand_properties_from_bcl" requires that you download and install BCL,
+The script `ligand_properties_from_bcl` requires that you download and install BCL,
 available from the Meiler Lab website, www.meilerlab.org
 
 #### Required flags:
