@@ -7,9 +7,9 @@ Setting up the demo
 Before running the demo, make sure to change the following variables in your 
 local environment:
 
-    PATH_TO_EXE     # path to directory with Rosetta binaries
-    ROSETTA_BINARY  # extension of Rosetta binaries, e.g. linuxgccrelease
-    PATH_TO_DB      # path to Rosetta database
+    PATH_TO_EXE                                         # path to directory with Rosetta binaries
+    ROSETTA_BINARY                                      # extension of Rosetta binaries, e.g. linuxgccrelease
+    PATH_TO_DB                                          # path to Rosetta database
 
 Running the demo
 ----------------
