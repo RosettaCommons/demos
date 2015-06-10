@@ -22,10 +22,10 @@ to be able to replicate the following steps (from Figure 1):
 8. Dock ligand into comparative models
 9. Analyze results by clustering binding modes by ligand RMSD
 
-Files included (or not included) in this protocol capture
----------------------------------------------------------
+Files included in this protocol capture
+---------------------------------------
 
-Input files included in this demo (rosetta_inputs):
+Input files (rosetta_inputs):
 
     1u19A_clean.pdb 
     2vt4A_clean.pdb 
@@ -67,7 +67,7 @@ Input files included in this demo (rosetta_inputs):
     dock.xml 
     1u19A_ligand.cluster.mat
 
-Output files included in this demo (example_outputs):
+Output files (example_outputs):
 
     1u19A_10percent_RMSD.txt
     cluster3_1u19A.Centers
