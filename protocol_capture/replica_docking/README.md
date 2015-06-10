@@ -85,7 +85,7 @@ To run these demos:
     `csrosetta3/flag_library/methods/_docking_base/` and modified accordingly for production purpose use.
 
     1. centroid stage
-	    1. ReplicaDock, using temperatures [2.0 3.0 5.0]
+	    - ReplicaDock, using temperatures [2.0 3.0 5.0]
 
 	    ReplicaDock is run in MPI-mode using RosettaScript to compile: 
         ```
@@ -114,7 +114,7 @@ To run these demos:
         source production.interactive.job -n 5
         ```
 
-	    2. ReplicaDock-LoT, using temperatures [0.6 0.8 1.0 1.2 1.5 2.0 2.5] + min_score
+	    - ReplicaDock-LoT, using temperatures [0.6 0.8 1.0 1.2 1.5 2.0 2.5] + min_score
 
 	    Min_score is used to flatten the score function. A reasonble min_score value is determined as the average score of the first 50 
         snapshots of temperature 1.5 when simulated without min-score. As shown in example_runs/replica_dock_LoT/get_min_score/udock_1bvn/run/, 
@@ -128,7 +128,7 @@ To run these demos:
         -min_score -36.519 -nstruct 1 -protocol rep_cen -xml uniform -n_replica 7
         ```
 
-	    3. RosettaDock's original low-resolution stage (shotgun sampling)
+	    - RosettaDock's original low-resolution stage (shotgun sampling)
         ```
 	    setup_run -method rosetta_dock -target udock_1bvn -target_prefix $PROTOCOL_CAPTURE/replica_docking/dock_targetlib \
         -dir $PROTOCOL_CAPTURE/replica_docking/test_runs/rosetta_dock -job interactive -extras mpi -protocol centroid -batches 2 \
