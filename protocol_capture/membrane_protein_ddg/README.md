@@ -1,28 +1,27 @@
-Rosetta Membrane Framework Application: Membrane ddG
-===========================================================================
+Rosetta Membrane Framework: Membrane ΔΔG
+========================================
 
-### About this Protocol Capture
-Author: Rebecca F. Alford (rfalford12@gmail.com)
-Author: Julia Koehler Leman (julia.koehler1982@gmail.com)
-Corresponding PI: Jeffrey J. Gray (jgray@jhu.edu)
-Last Updated: March 2015
-
-Rosetta Revision #57740
-Python Version 2.7+
-PyRosetta Release Version: March 2015
+Author: Rebecca F. Alford (rfalford12@gmail.com)  
+Author: Julia Koehler Leman (julia.koehler1982@gmail.com)  
+Corresponding PI: Jeffrey J. Gray (jgray@jhu.edu)  
+Last Updated: March 2015  
+Rosetta Revision: #57740  
+Python Version: 2.7+  
+PyRosetta Release Version: March 2015  
 
 PyRosetta can be downloaded from http://www.pyrosetta.org. Follow the instructions
 provided in the README to setup your shell environment
 
-Documentation Link: 
+Documentation Link:  
 https://www.rosettacommons.org/docs/wiki/Membrane-ddG
 
-Publication describing the method: 
+Publication describing the method:  
 Alford RF, Koehler Leman J, Weitzner BD, Gray JJ (2015)
 An integrated framework advancing membrane protein modeling and design
 PLosCompBio (Under Review) 
 
-## Description ##
+---
+
 Measuring free energy changes upon mutation can inform our understanding of membrane protein stability and variation and is a step toward design. In this application, we predict ddGs by measuring the difference in Rosetta energy for the native and mutated conformation. This application uses a modified version of the all atom energy function for membrane proteins, which includes the fa_elec term and pH energy (see below). The Membrane ddG application is part of the RosettaMP Framework.
 
 ## Executable/Script ##
@@ -35,9 +34,10 @@ The membrane ddG application is implemented as a python script in PyRosetta. The
 
 ## Generating Inputs ##
 Three inputs are required for the ddG application:  
-  (1) PDB file for the protein structure transformed into the membrane coordinate frame.
-  (2) Span file describing the location of trans-membrane spans
-  (3) Residue position to mutate to (uses pose numbering)
+
+1. PDB file for the protein structure transformed into the membrane coordinate frame.
+2. Span file describing the location of trans-membrane spans
+3. Residue position to mutate to (uses pose numbering)
 
 Steps for generating these inputs are found below. A set of example inputs can 
 also be found in inputs/. Here, OmpLA (PDB ID: 1qd6) is used as an example: 
