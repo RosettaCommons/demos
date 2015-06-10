@@ -3,8 +3,6 @@ Next Generation KIC
 
 Authors: Amelie Stein, Tanja Kortemme
 
----
-
 Setting up the demo
 -------------------
 
