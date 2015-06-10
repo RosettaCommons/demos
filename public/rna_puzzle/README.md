@@ -1,12 +1,9 @@
-### General Information ##################
-# Your name:
-Rhiju Das
-rhiju@stanford.edu
+# StepWise Monte Carlo (examples for RNA)
 
-# Protocol Name:
-StepWise Monte Carlo (examples for RNA)
+# Author
+Rhiju Das, rhiju@stanford.edu
 
-# Brief Description:
+# Brief Description
 
 Steps to build a model of a complex RNA fold
 
@@ -19,18 +16,18 @@ This documentation (and more) are available in the on-line docs at:
 
 https://www.rosettacommons.org/docs/latest/rna-denovo-setup.html
 
-# Example Rosetta Command Lines:
+# Example Rosetta Command Lines
 
-#############################################
-1. Make helices
+## Make helices
 
 Example in step1_helix/
 
+```
 rna_helix.py  -o H2.pdb -seq cc gg -resnum 14-15 39-40
 replace_chain_inplace.py  H2.pdb 
+```
 
-#############################################
-2. Use threading to build sub-pieces
+## Use threading to build sub-pieces
 
 Example in step2_thread/
 
@@ -42,19 +39,23 @@ Download 1f7y.pdb from
 http://pdb.org/pdb/explore/explore.do?structureId=1f7y
 
 Slice out the motif of interest:
+```
 pdbslice.py  1f7y.pdb  -subset B:31-38 uucg_
+```
 
 Thread it into our actual sequence:
+```
 rna_thread -s uucg_1f7y.pdb  -seq ccuucggg -o uucg_1f7y_thread.pdb
+```
 
 Let's get the numbering to match our actual test case:
-
+```
 renumber_pdb_in_place.py uucg_1f7y_thread.pdb 24-31
+```
 
 Done!
 
-#############################################
-3. Build models of a sub-piece denovo.
+## Build models of a sub-piece denovo
 
 In step3_farfar/, we will see how to setup the Rosetta job for motifs between H2 and H4, using our starting H2 and H4 helices as fixed boundary conditions. 
 
@@ -62,24 +63,30 @@ There is currently a wrapper script that sets up the job for the rna_denovo exec
 
 There's a file called README_SETUP which has the wrapper command to set up the job. For completeness, the command there is:
 
+```
 rna_denovo_setup.py -fasta RNAPZ11.fasta \
     -secstruct_file RNAPZ11_OPEN.secstruct \
-   -working_res 14-25 30-40 \
-   -s H2.pdb H4.pdb \
-   -fixed_stems \
-   -tag H2H3H4_run1b_openH3_SOLUTION1 \
-   -native example1.pdb 
+    -working_res 14-25 30-40 \
+    -s H2.pdb H4.pdb \
+    -fixed_stems \
+    -tag H2H3H4_run1b_openH3_SOLUTION1 \
+    -native example1.pdb 
+```
 
 You don't need to supply a native if you don't have it -- just useful
 to compute RMSDs as a reference.
 
 You can run the command by typing:
 
+```
  source README_SETUP
+```
 
 Then try this:
 
+```
  source README_FARFAR
+```
 
 Example output after a couple of structures is in example_output/.
 
@@ -92,22 +99,22 @@ https://www.rosettacommons.org/docs/latest/RNA-tools.html
 
 Extract 10 lowest energy models:
 
+```
 extract_lowenergy_decoys.py H2H3H4_run1b_openH3_SOLUTION1.out 10
+```
 
 Inspect in pymol.
 (For an automated workflow, you can also cluster these runs and just carry forward the top 5 clusters.)
 
-#############################################
-4. Graft together models for the full-length RNA
+## Graft together models for the full-length RNA
 
 Example in step4_graft/:
 
 These were threading and FARFAR solutions that we liked for each submotif -- now we can graft:
 
+```
 rna_graft -s H2H3H4_run1b_openH3_SOLUTION1.pdb  uucg_1f7y_thread.pdb  H1H2_run2_SOLUTION1.pdb -o full_graft.pdb
+```
 
 Done! 
-
-
-
 
