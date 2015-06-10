@@ -50,7 +50,7 @@ Rosetta primarily uses backbone dependent rotamer libraries. Backbone-dependent
 rotamer libraries list provide side chain conformations sampled from residue 
 positions whose backbone dihedral angles fall in particular bins. In the case 
 of the Drunbrack rotamer libraries used by Rosetta the bins are in 10 degree 
-intervals for for both phi and psi for a total of 1296 (36\*36) phi/psi bins. 
+intervals for for both phi and psi for a total of 1296 (36x36) phi/psi bins. 
 To replicate this for the NCAAs we need to create a set of side chain rotamers 
 for each member of a set of phi/psi bins.
 
