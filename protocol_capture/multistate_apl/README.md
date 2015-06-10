@@ -26,9 +26,7 @@ and BB homodimers.
 Running the protocol
 --------------------
 
-#### Important Flags
-
-Essential (described below):
+#### Essential Flags
 
     -entity_resfile  <fname>
     -fitness_file    <fname>
@@ -49,6 +47,8 @@ VECTOR_EXPRESSION, ENTITY_FUNCTION, and FITNESS.  Each command must be on its ow
 The syntax for command X may be found on in the @details section preceeding the
 function definition for void DynamicAggregateFunction::process_X_command in the file
 /mini/src/devel/pack_daemon/DynamicAggregateFunction.cc
+
+#### Important Flags
 
     -ms::generations <int>
 
@@ -142,4 +142,4 @@ energy is output.
 Output pdbs are named with "msd\_output\_", the rank of the source entity 
 (1..numresults), the name for the state variable or the state-vector variable 
 (this name comes from the fitness file) and a ".pdb".
-  
+
