@@ -1,24 +1,21 @@
-### General Information ##################
-# Your name:
+# Symmetry Examples
+## Authors
 Frank Dimaio and Ingemar André
+
 dimaio@u.washington.edu and ingemar.andre@biochemistry.lu.se
 
-# Protocol Name:
-Symmetry examples
+## Brief Description
+Examples of how to run symmetry-enabled rosetta protocols.
 
-# Brief Description:
-
-	Examples of how to run symmetry-enabled rosetta protocols.
-
-# Abstract
+## Abstract
 
 Symmetric protein assemblies play important roles in many biochemical processes. However, the large size of such systems is challenging for traditional structure modeling methods. This paper describes the implementation of a general framework for modeling arbitrary complex symmetries in Rosetta3.  We describe the various types of symmetries relevant to the study of protein structure that may be modeled using Rosetta’s symmetric framework.  We then describe how this symmetric framework is efficiently implemented within Rosetta, which restricts the conformational search space by sampling only symmetric degrees of freedom, and explicitly simulates only a subset of the interacting monomers.  Finally, we describe structure prediction and design applications that utilize the Rosetta3 symmetric modeling capabilities, and provide a guide to running simulations on symmetric systems.
 
-# Software
+## Software
 
 Rosetta can be downloaded at www.rosettacommons.org/software
 
-# Documentation
+## Documentation
 
 The applications that are exemplified are fully documented in the regular Rosetta documentation. For a general description see http://www.rosettacommons.org/manuals/archive/rosetta3.2_user_guide/.
 

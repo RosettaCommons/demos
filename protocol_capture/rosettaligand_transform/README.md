@@ -1,33 +1,15 @@
-# General Description
+# RosettaLigand Transform
 
-## Citation
-
-## Summary
-
-<!--- What is this, why should we use it-->
-
-#Algorithm
-
-#Protocol
-
-
-## Protein Pre-processing
-
-
-
-## Ligand Pre-processing
-
-<!--- Conformer generation -->
-
-### Conformer Generation
+## Conformer Generation
 
 Conformers can be generated with a number of tools, including MOE and OMEGA.  In this case, the Conformer Generation tool included as part of the BioChemical Library (BCL) suite was used.  The following command was used to generate conformers:
-
+```
     bcl.exe molecule:ConformerGeneration -conformers /home/kothiwsk/fragment_search csd_libraries_2012_RF0.1/rotamer_libraries/Nov2013/pdb_refinedsupplemented_lib.sdf.bz2 -ensemble rosetta_inputs/ligands/all_ligands.sdf -conformation_comparer DihedralBins -temperature 1.0 -max_iterations 1000 -top_models 100 -bin_size 30.0 -scheduler PThread 8 -add_h -conformers_single_file conformers
+```
 
-You can use any conformer generation tool you have available to you for this step. Your generated conformers should be output to a single SDF file.  Every conformer must have 3D coordinates and hydrogens added.  Conformers of the same ligand should have the same name in the SDF file.  For convenience, an example conformer file is provided at rosetta_inputs/ligands/all_ligands.sdf.
+You can use any conformer generation tool you have available to you for this step. Your generated conformers should be output to a single SDF file.  Every conformer must have 3D coordinates and hydrogens added.  Conformers of the same ligand should have the same name in the SDF file.  For convenience, an example conformer file is provided at `rosetta_inputs/ligands/all_ligands.sdf`.
 
-### Params file generation
+## Params File Generation
 
 Params files contain the parameterization information for a ligand.  Every ligand or Residue in a protein structure input into Rosetta must have a corresponding params file.  Rosetta is distributed with a script called molfile_to_params.py which generates these files. However, this script is generally cumbersome for the generation of more than a small handful of ligands. The following a protocol for generating params files for large numbers of ligands:
 
