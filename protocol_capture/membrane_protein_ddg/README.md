@@ -1,5 +1,5 @@
-Rosetta Membrane Framework: Membrane ΔΔG
-========================================
+Membrane ΔΔG
+============
 
 Author: Rebecca F. Alford (rfalford12@gmail.com)  
 Author: Julia Koehler Leman (julia.koehler1982@gmail.com)  
