@@ -45,20 +45,21 @@ What those assumptions are and where they can be found:
 
 - Your rosetta path contains:
 
-  `rosetta_database/`: referenced by design scripts, e.g. 
-  `pacrot_s12p_nomin.sh` (run by `run.sh`)
+  rosetta_database/: referenced by design scripts, e.g. 
+  pacrot_s12p_nomin.sh (run by run.sh)
 
-  `rosetta_source/bin/sequence_recovery.linuxgccrelease`: referenced by 
-  `scripts/analyze/seqRec.sh` (run by `infpro.sh`)
+  rosetta_source/bin/sequence_recovery.linuxgccrelease: referenced by 
+  scripts/analyze/seqRec.sh (run by infpro.sh)
 
-  `rosetta_source/bin/rosetta_scripts.mpi.linuxgccrelease`: referenced by 
-  design scripts referenced by `scripts/analyze/seqRec.sh` (run by `infpro.sh`)
+  rosetta_source/bin/rosetta_scripts.mpi.linuxgccrelease: referenced by 
+  design scripts referenced by scripts/analyze/seqRec.sh (run by infpro.sh)
 
 - Your mpi system is the same as mine and you want to use the same options 
   referenced in design scripts
 
 This can also be done manually. Files with absolute paths:
-    -design scripts in /scripts/design/
+
+-design scripts in /scripts/design/
      e.g. scripts/design/pacrot_s12p_nomin/pacrot_s12p_nomin.sh
     -scripts/analyze/seqRec.sh
     -inputs/selected_chains/selected_chains.list
