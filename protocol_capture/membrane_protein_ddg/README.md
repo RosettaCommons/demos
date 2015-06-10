@@ -13,7 +13,7 @@ PyRosetta can be downloaded from http://www.pyrosetta.org. Follow the instructio
 provided in the README to setup your shell environment
 
 Documentation Link:  
-https://www.rosettacommons.org/docs/wiki/Membrane-ddG
+* https://www.rosettacommons.org/docs/wiki/Membrane-ddG
 
 Publication describing the method:  
 * Alford RF, Koehler Leman J, Weitzner BD, Gray JJ (2015) An integrated 
