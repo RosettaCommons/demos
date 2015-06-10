@@ -85,55 +85,55 @@ To run these demos:
     `csrosetta3/flag_library/methods/_docking_base/` and modified accordingly for production purpose use.
 
     1. centroid stage
-	    - ReplicaDock, using temperatures [2.0 3.0 5.0]
+	    1. ReplicaDock, using temperatures [2.0 3.0 5.0]
 
-	    ReplicaDock is run in MPI-mode using RosettaScript to compile: 
-        ```
-        ./scons.py -j 48 bin/rosetta_scripts.mpi.linuxgccrelease mode=release extras=mpi
-        ```
+	        ReplicaDock is run in MPI-mode using RosettaScript to compile: 
+            ```
+            ./scons.py -j 48 bin/rosetta_scripts.mpi.linuxgccrelease mode=release extras=mpi
+            ```
 
-	    Please note that specific numbers of processors have to be used: calculate number of processes using the formula: nstruct \* n_replica + 2. 
-        The extra 2 processes are dedicated to the job distributor and File IO. n_replica is the number of temperature levels (here 3), and nstruct 
-        can be any positive integer. ReplicaDock outputs the trajectory in the form of two silent-files: one containing decoy+score information 
-        (name: decoys\_<input_pdb>\_nnnn\_traj.out), and the second file is a copy of just the score information (scores\_<input_pdb>\_nnnn\_traj.out). 
-        Decoytags are of the form P\_tttt\_rrr\_ssssssss where tttt informs about trajctory number, rrr about the replica, and ssssssss about the 
-        snapshot number within the trajectory. The temperature\_levels are switched between different replicas. The current temp\_level or temperature
-        of a replica at the moment a decoy was recorded is found in the score-columns temp\_level and temperature.
-        At the end of a trajectory the final decoy is written to the file 'decoys.out'; this file is a relict of using the JD2-framework and
-        can be generally ignored.
-        Additionally, the file 'trial.stat' is produced which gives information about acceptance rates in each temperature level.
-        ```
-        setup_run -method replica_dock -target udock_1bvn -target_prefix $PROTOCOL_CAPTURE/replica_docking/dock_targetlib \
-        -dir $PROTOCOL_CAPTURE/replica_docking/test_runs/replica_dock -job interactive -extras mpi -score interchain_cen \
-        -nstruct 1 -protocol rep_cen -xml uniform -n_replica 3
-        ```
+	        Please note that specific numbers of processors have to be used: calculate number of processes using the formula: nstruct \* n_replica + 2. 
+            The extra 2 processes are dedicated to the job distributor and File IO. n_replica is the number of temperature levels (here 3), and nstruct 
+            can be any positive integer. ReplicaDock outputs the trajectory in the form of two silent-files: one containing decoy+score information 
+            (name: decoys\_<input_pdb>\_nnnn\_traj.out), and the second file is a copy of just the score information (scores\_<input_pdb>\_nnnn\_traj.out). 
+            Decoytags are of the form P\_tttt\_rrr\_ssssssss where tttt informs about trajctory number, rrr about the replica, and ssssssss about the 
+            snapshot number within the trajectory. The temperature\_levels are switched between different replicas. The current temp\_level or temperature
+            of a replica at the moment a decoy was recorded is found in the score-columns temp\_level and temperature.
+            At the end of a trajectory the final decoy is written to the file 'decoys.out'; this file is a relict of using the JD2-framework and
+            can be generally ignored.
+            Additionally, the file 'trial.stat' is produced which gives information about acceptance rates in each temperature level.
+            ```
+            setup_run -method replica_dock -target udock_1bvn -target_prefix $PROTOCOL_CAPTURE/replica_docking/dock_targetlib \
+            -dir $PROTOCOL_CAPTURE/replica_docking/test_runs/replica_dock -job interactive -extras mpi -score interchain_cen \
+            -nstruct 1 -protocol rep_cen -xml uniform -n_replica 3
+            ```
 
-        start running:
-        ```
-        cd $PROTOCOL_CAPTURE/replica_docking/test_runs/replica_dock/udock_1bvn/run/;
-        source production.interactive.job -n 5
-        ```
+            start running:
+            ```
+            cd $PROTOCOL_CAPTURE/replica_docking/test_runs/replica_dock/udock_1bvn/run/;
+            source production.interactive.job -n 5
+            ```
 
-	    - ReplicaDock-LoT, using temperatures [0.6 0.8 1.0 1.2 1.5 2.0 2.5] + min_score
+	    2. ReplicaDock-LoT, using temperatures [0.6 0.8 1.0 1.2 1.5 2.0 2.5] + min_score
 
-	    Min_score is used to flatten the score function. A reasonble min_score value is determined as the average score of the first 50 
-        snapshots of temperature 1.5 when simulated without min-score. As shown in example_runs/replica_dock_LoT/get_min_score/udock_1bvn/run/, 
-        several trajectories are run and an average value of -36.519 can be get by:
-        ```
-        cat scores_P_000* >scores_traj.fsc
-        silent_data.py scores_traj.fsc temperature score | awk '$1==1.5{print}' | median.py
+	        Min_score is used to flatten the score function. A reasonble min_score value is determined as the average score of the first 50 
+            snapshots of temperature 1.5 when simulated without min-score. As shown in example_runs/replica_dock_LoT/get_min_score/udock_1bvn/run/, 
+            several trajectories are run and an average value of -36.519 can be get by:
+            ```
+            cat scores_P_000* >scores_traj.fsc
+            silent_data.py scores_traj.fsc temperature score | awk '$1==1.5{print}' | median.py
 
-        setup_run -method replica_dock -target udock_1bvn -target_prefix $PROTOCOL_CAPTURE/replica_docking/dock_targetlib \
-        -dir $PROTOCOL_CAPTURE/replica_docking/test_runs/replica_dock_LoT -job interactive -extras mpi -score interchain_cen \
-        -min_score -36.519 -nstruct 1 -protocol rep_cen -xml uniform -n_replica 7
-        ```
+            setup_run -method replica_dock -target udock_1bvn -target_prefix $PROTOCOL_CAPTURE/replica_docking/dock_targetlib \
+            -dir $PROTOCOL_CAPTURE/replica_docking/test_runs/replica_dock_LoT -job interactive -extras mpi -score interchain_cen \
+            -min_score -36.519 -nstruct 1 -protocol rep_cen -xml uniform -n_replica 7
+            ```
 
-	    - RosettaDock's original low-resolution stage (shotgun sampling)
-        ```
-	    setup_run -method rosetta_dock -target udock_1bvn -target_prefix $PROTOCOL_CAPTURE/replica_docking/dock_targetlib \
-        -dir $PROTOCOL_CAPTURE/replica_docking/test_runs/rosetta_dock -job interactive -extras mpi -protocol centroid -batches 2 \
-        -score interchain_cen -nstruct 25
-        ```
+	    3. RosettaDock's original low-resolution stage (shotgun sampling)
+            ```
+	        setup_run -method rosetta_dock -target udock_1bvn -target_prefix $PROTOCOL_CAPTURE/replica_docking/dock_targetlib \
+            -dir $PROTOCOL_CAPTURE/replica_docking/test_runs/rosetta_dock -job interactive -extras mpi -protocol centroid -batches 2 \
+            -score interchain_cen -nstruct 25
+            ```
 
     2. refinement. To refine the decoys generated in the centroid stage, we don't want to copy all the decoy-files into the run directory of refinement, but only specify the path of the decoys files. For this, we use the flag `-start` with absolute path specified together with flag `-pattern` to only include the files with a certain name pattern.
 
