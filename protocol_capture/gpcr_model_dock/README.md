@@ -8,8 +8,8 @@ Written in Jan 2013 by Elizabeth Nguyen (e dot dong dot nguyen at vanderbilt dot
 This demo contains all the files necessary to replicate the results from the 
 paper:
 
-"Challenges of recovering native conformations of ligands docked into 
-comparative models of G-protein coupled receptors" by Nguyen,E.D.*, Norn, C.*, 
+Challenges of recovering native conformations of ligands docked into 
+comparative models of G-protein coupled receptors. Nguyen,E.D.*, Norn, C.*, 
 Frimurer, T., and Meiler,J. (2012), PLOS One. [[Supplementary 
 Material|/protocol_capture/gpcr_model_dock/SupplementaryMaterial_ProtocolCapture.docx]].
 
