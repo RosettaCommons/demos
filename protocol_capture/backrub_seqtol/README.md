@@ -1,7 +1,7 @@
 Backrub Sequence Tolerance
 ==========================
 
-Author: Colin A. Smith
+Author: Colin A. Smith  
 Protocol backrub_seqtol
 
 ---
