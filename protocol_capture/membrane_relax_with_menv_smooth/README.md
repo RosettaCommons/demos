@@ -1,4 +1,4 @@
-Membrane Relax with Menv_smooth term
+Membrane Relax with Menv_smooth Term
 ====================================
 
 Author: Vladimir Yarov-Yarovoy
