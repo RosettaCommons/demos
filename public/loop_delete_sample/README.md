@@ -32,7 +32,7 @@ The loop file format is:
 
     LOOP START STOP CUT SAMPLE EXTENDED
 
-In our case, the loop start and stop are 71 (T76) and 81 (87P), respectively.  
+In our case, the loop start and stop are 71 (T76) and 81 (87P), respectively. 
 Note that this file is in Rosetta numbering, not in PDB numbering.  The 
 cutpoint is 77, the position before the removed residue (A83 was removed; 77 is 
 P82).
