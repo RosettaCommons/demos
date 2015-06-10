@@ -94,21 +94,21 @@ assemble a simple PyRosetta script using the membrane framework for ddG predicti
 
    * ompLA_ddG.out: Predicted ddGs for each mutation
 
- 2. Large Scale ddG predictions with the RosettaMP Framework
-    Here, we describe the steps to run the MPddG protocol, incorporating both
-    repacking and pH effects. Additional options are described in the documentation above. Here, we also use OmpLA as an example: 
+2. Large Scale ddG predictions with the RosettaMP Framework
+   Here, we describe the steps to run the MPddG protocol, incorporating both
+   repacking and pH effects. Additional options are described in the documentation above. Here, we also use OmpLA as an example: 
 
-    Here, you will need to specify the input PDB, spanfile, and residue position to 
-    mutate. By default, ddGs to all canonical residues will be computed. A specific 
-    ddG of mutation can be computed using the flag --mut <AA>. In this example, we specify a repack radius of 8.0A. This means all residues within 8A of the mutant position are repacked. We also specify the pH at which predictions are carried out. 
+   Here, you will need to specify the input PDB, spanfile, and residue position to 
+   mutate. By default, ddGs to all canonical residues will be computed. A specific 
+   ddG of mutation can be computed using the flag --mut <AA>. In this example, we specify a repack radius of 8.0A. This means all residues within 8A of the mutant position are repacked. We also specify the pH at which predictions are carried out. 
 
-    This application can be run using the following command line: 
+   This application can be run using the following command line: 
 
-        ./predict_ddG.py --in_pdb --in_span inputs/1qd6_tr_C.span --res 181 --repack_radius 8.0 --include_pH true --pH_value 4.0
+       ./predict_ddG.py --in_pdb --in_span inputs/1qd6_tr_C.span --res 181 --repack_radius 8.0 --include_pH true --pH_value 4.0
 
-    Two output files (with default names) are created by this script
-    * ddG.out: predicted ddGs per mutation
-    * scores.sc: Breakdown of ddGs by Rosetta score term (weighted)
+   Two output files (with default names) are created by this script
+   * ddG.out: predicted ddGs per mutation
+   * scores.sc: Breakdown of ddGs by Rosetta score term (weighted)
 
 ## Example Outputs
 Outputs from the two scripts above were renamed for clarity
