@@ -184,7 +184,7 @@ ignored:
 
 The final RASREC models are stored in fullatom_pool/decoys.out
 
-#### Extract top Scoring Ensemble
+##### Extract top Scoring Ensemble
 
 Using the CSRosetta Toolbox, the top scoring ensemble can be extracted from the 
 pool of final models with the following commands:
@@ -199,7 +199,7 @@ Without the toolbox, the PDB ensemble can be extracted as follows:
     extract_pdbs.default.<ext> -in:file:silent decoys.out -in:file:tags $(cat pdb_list.txt)
     for i in $(echo batch*.pdb); do echo "MODEL $i"; cat "$i"; echo "ENDMDL"; done >> low_30.pdb
 
-#### Analyze Energy and Rmsd of low-energy decoys
+##### Analyze Energy and Rmsd of low-energy decoys
 
 The average energy and rmsd of 30 lowest-energy models can be analyzed with the 
 following command
@@ -212,7 +212,7 @@ which yields
     -280.880 -281.639 -278.708 -277.760 -284.937    #score
        3.091    2.810    3.261    3.621    2.795    #rms_full
 
-#### Analyze convergence of ensemble
+##### Analyze convergence of ensemble
 
 The following command shows the residues being converged within 2A
 
@@ -239,7 +239,7 @@ If the convergence of the initial RASREC run is not sufficient enough (< 90%),
 a second RASREC run can be carried out. This run will reuse restraints from 
 both predicted contact map and the previous result    
 
-#### Repick Restraints
+##### Repick Restraints
 
 The following command generates two restraint files given a model ensemble and 
 a contact map. 
@@ -256,7 +256,7 @@ As output, the following files are generated:
   contactmap that do not completely disagree with the previous results. Here a 
   more widely bounded potential is used.
 
-#### Setup RASREC run
+##### Setup RASREC run
 
 The flags and patches used for the refinement RASREC run are identical to the 
 ones listed in Section 2.3). The two RASREC runs only differ in the restraints 
