@@ -34,7 +34,7 @@ the rosetta database
 
 ## Post-processing
 (in the directory with output decoys)
-t
+
 1. GetTop.sh Ads 4
 2. cd TOP4.Ads
 3. PostProcessRS.sh
