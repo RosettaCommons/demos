@@ -98,15 +98,15 @@ executable (minirosetta.(os)(options)(mode), for example:
     minirosetta.linuxgccrelease
     minirosetta.macosclangrelease
 
-Provide the path to your own rosetta database
+Provide the path to your own rosetta database:
 
     -database /Users/patrickbarth/RosettaCon2011/tutorial/trunk_r43621/minirosetta_database
 
-Membrane proteins use the same protocol as regular proteins.
+Membrane proteins use the same protocol as regular proteins:
 
     -run:protocol looprelax
 
-Information for fragments files
+Information for fragments files:
 
     -loops:frag_sizes 9 3 1
     -loops:frag_files ./frags/aaDXDR_09_05.200_v1_3 ./frags/aaDXDR_03_05.200_v1_3 none
