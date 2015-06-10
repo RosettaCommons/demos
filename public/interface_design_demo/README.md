@@ -156,27 +156,22 @@ Where to change parameters
 
 * Adding/removing input heterodimer structures:
 
-  In the run.sh file for the design, change the variable $input_pdb_list to
-  the filename of a text file containing a list of pdbs to use as inputs.
-
-  Alternatively, add pdbs to inputs/selected_chains/ and re-run configure.
-  The new pdbs will be added to inputs/selected_chains/selected_chains.list
-
-  Either way, if you want sequence recovery to function you'll need to add a
+  In the run.sh file for the design, change the variable $input_pdb_list to the 
+  filename of a text file containing a list of pdbs to use as inputs. 
+  Alternatively, add pdbs to inputs/selected_chains/ and re-run configure. The 
+  new pdbs will be added to inputs/selected_chains/selected_chains.list Either 
+  way, if you want sequence recovery to function you'll need to add a 
   corresponding structure to the set used for sequence recovery.
 
 * Adding/removing native structures for sequence recovery:
 
-  In the post_run.sh file for the design, change the assignment of
-  $native_pdb_list to the filename of a text file containing a list of pdbs
-  to use as natives.
-
-  Alternatively, add pdbs to inputs/min_nats/ and re-run configure. The
-  new pdbs will be added to inputs/min_nats/nats.list
-
-  If you want sequence recovery to function you'll need to have added a
-  corresponding structure to the set used for input. (They have to align
-  by simple ls, i.e. cap-sensitive non-numerical alphabetical order).
+  In the post_run.sh file for the design, change the assignment of 
+  $native_pdb_list to the filename of a text file containing a list of pdbs to 
+  use as natives. Alternatively, add pdbs to inputs/min_nats/ and re-run 
+  configure. The new pdbs will be added to inputs/min_nats/nats.list. If you 
+  want sequence recovery to function you'll need to have added a corresponding 
+  structure to the set used for input. (They have to align by simple ls, i.e. 
+  cap-sensitive non-numerical alphabetical order). 
 
 * Number of trajectories used for sequence recovery:
 
