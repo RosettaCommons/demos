@@ -16,7 +16,7 @@ Publication describing the method:
 Description
 -----------
 
-The method described here is applicable to two-domain proteins, fusion proteins and proteins that exhibit distinct conformational states.where  one-of-two domains/part of the structure is always constant and part of the structure which is variable due to induced conformational change. Experimentntally measured Pseudocontact Shifts (bertini et al) are used as restraints in Rosetta's ab initio executables minirosetta/AbRelax protocol to direct the conformational sampling that fits the experimentally observed PCS data (Schmitz et al).
+The method described here is applicable to two-domain proteins, fusion proteins and proteins that exhibit distinct conformational states.where  one-of-two domains/part of the structure is always constant and part of the structure which is variable due to induced conformational change. Experimentally Measured Pseudocontact Shifts (Bertini et al) are used as restraints in Rosetta's ab initio executables minirosetta/AbRelax protocol to direct the conformational sampling that fits the experimentally observed PCS data (Schmitz et al).
 
 This protocol particularly uses PCS data from multiple metal centers in a manner analogous to GPS-satellites to accurately position the 3D corrdinates of the atoms, a.k.a GPS-Rosetta (Yagi et al).
 
