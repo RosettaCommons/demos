@@ -98,7 +98,7 @@ use a C4 Symmetric Potassium Channel (PDB ID: 1bl8)
 
         Rosetta/main/source/src/apps/public/symmetry/make_symmdef_file.pl -p 1bl8_refined.pdb -a A -i B:4 > 1bl8.c4.symm
 
-   In this command-line, 
+   In this command-line: 
    * `-p` specifies the input PDB file
    * `-a` specifies the chain or chains to use as the asymmetric unit, 
    * `-i` specifies how to organize the remaining chains. In this example, 
