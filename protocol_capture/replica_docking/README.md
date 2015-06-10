@@ -1,34 +1,35 @@
-######### General Information ###################
-### Author Information
+# Replica Docking
+
+## Authors
 This file was written in Jan 2013 by Zhe Zhang (zhe.zhang@tum.de) and corresponding PI is Oliver Lange (oliver.lange@tum.de)
 
 
-### General description:
+## General Description
 This demo contains all the files neccessary to replicate the results from the PLoS ONE RosettaCon
 collection paper "Replica Exchange drastically improves sampling in low resolution docking stage
 of RosettaDock" by Zhe Zhang, and Oliver Lange (2012).
 
-All files, including the benchmark (tar -xf dock_targetlib.tar.gz) tested in the paper, and commands to setup the runs as well
+All files, including the benchmark (`tar -xf dock_targetlib.tar.gz`) tested in the paper, and commands to setup the runs as well
  as post analysis are provided. For example outputs please refer to the silent-files (also trial.stat
-from replica exchange runs) in example_runs
+from replica exchange runs) in example\_runs
 
-########## How to use this demo ##################
+## How to Run Demo
 To run these demos:
 
-#export the directory where *this* protocol_capture is located
-export PROTOCOL_CAPTURE=rosetta/rosetta_demos/protocol_capture/2012/
+1. export the directory where *this* protocol_capture is located
+    ```
+    export PROTOCOL_CAPTURE=rosetta/rosetta_demos/protocol_capture/2012/
+    ```
 
-#export your rosetta bin and database directory if you want to directly repeat the runs under
-#directory example_runs/ (need to first delete the outputted silent-files) instead of generating
-#separate runs of your own. But this would only work for linux with slurm.
+2. export your rosetta bin and database directory if you want to directly repeat the runs under directory example\_runs/ (need to first delete the outputted silent-files) instead of generating separate runs of your own. But this would only work for linux with slurm.
+    ```
+    export ROSETTA3_BIN=rosetta/rosetta_source/bin
+    export ROSETTA3_DB=rosetta/rosetta_database
+    ```
 
-export ROSETTA3_BIN=rosetta/rosetta_source/bin
-export ROSETTA3_DB=rosetta/rosetta_database
-
-1. input pdbs preparation
-   	 all the targets are from Dockground benchmark3.0 (http://dockground.bioinformatics.ku.edu/UNBOUND/request_new.php), 
-in which unbound docking partners have been superimposed over its corresponding complex.
-
+3. input pdbs preparation
+   	 all the targets are from Dockground benchmark3.0 (http://dockground.bioinformatics.ku.edu/UNBOUND/request\_new.php), in which unbound docking partners have been superimposed over its corresponding complex.
+    ```
 	get_pdb.py 1bvn_u1.pdb A	# this should output a file with only atom records from chain A, 1bvn_u1.pdbA.pdb
 	replace_chain.py 1bvn_u2.pdb B > 1bvn_u2_B.pdb	# overwrite its chainID to B, 1bvn_u2_B.pdb
 	get_pdb.py 1bvn_u2_B.pdb B	# 1bvn_u2_B.pdbB.pdb
@@ -36,19 +37,19 @@ in which unbound docking partners have been superimposed over its corresponding 
 	cat 1bvn_u1.pdbA.pdb 1bvn_u2_B.pdbB.pdb > protAB.pdb	# superimposed native structure, used for rmsd related calculation.
 	scripts/initial_randomize.sh	# output P.pdb, both docking partners are randomly reoriented, and then slided into contact.
 					# used as the input pdb for docking.
-	write flag "-partners A_B" into file "partners" for later use.
+	# write flag "-partners A_B" into file "partners" for later use.
 	scripts/get_disulf_pairs.sh	# get the disulfide residue pairs, later used in refinement
+    ```
+	All the input files in dock_targetslib (`tar -xf dock_targetlib.tar.gz`)  are prepared in this way.
 
-	All the input files in dock_targetslib (tar -xf dock_targetlib.tar.gz)  are prepared in this way.
-
-2. setup target library using automated setup tools available with the CS-Rosetta toolbox(www.csrosetta.org).
+4. setup target library using automated setup tools available with the CS-Rosetta toolbox(www.csrosetta.org).
 
 	This step assembles target related input files to build the target library (dock_targetlib as an example). By default 
 the library is stored in folder cs_targetlib at home of your workspace. You can also specify a directory using the flag 
 '-target_prefix' as follows. Absolute path is recommended for '-target_prefix'.
 
 	The following commands for setup demo target 1bvn have been wraped up in scripts/test_target_setup.sh
-
+    ```
 	#RosettaDock:
 	#setup target for RosettaDock as in published paper "Protein-Protein Docking with Simutaneous Optimization of Rigid-body 
 	#Displacement and Side-chain Conformations", Jeffrey J. Gray et al., J. Mol. Biol. (2003)
@@ -63,8 +64,9 @@ the library is stored in folder cs_targetlib at home of your workspace. You can 
         #or you can conviently copy the inputs from a previously prepared 'rosetta_dock' setup as follows:
         setup_target -method replica_dock -target udock_1bvn -target_prefix $PROTOCOL_CAPTURE/replica_docking/dock_targetlib \
 -transfer_method rosetta_dock
+    ```
 
-3. setup run using automated setup tools. This step creates a run-ready directory as specified with flag '-dir', in which job-scripts, 
+4. setup run using automated setup tools. This step creates a run-ready directory as specified with flag '-dir', in which job-scripts, 
 input files, RosettaScripts-xml as well as flag files are contained. For flag '-dir', absolute path is recommended. For job scripts, 
 you can use different types (e.g. moab) according to your queuing system.
 
@@ -153,7 +155,7 @@ in final analysis
 -dir $PROTOCOL_CAPTURE/replica_docking/test_runs/relax_native -job interactive -extras mpi -protocol refine \
 -out relax_native.out -score docking -nstruct 1000
 
-4. post-filter of low resolution ensembles. To save space, some .out files have been deleted and only score files shown.
+5. post-filter of low resolution ensembles. To save space, some .out files have been deleted and only score files shown.
 
 	a) RosettaDock's shotgun approach sampled ensembles:
 	use N to denote the total number of decoys produced from RosettaDock low resolution phase. Then we first exclude the 
@@ -194,11 +196,11 @@ $PROTOCOL_CAPTURE/replica_docking/example_runs/replica_dock_LoT/replica_with_min
 	# extract selected decoys from the trajectory silent file
 	for i in $(ls decoys_P_000?_traj.out); do echo $i; scripts/extract_tagged_decoys.py $i tag_low > low_$i; done
 
-5. refinement of low resolution ensembles
+6. refinement of low resolution ensembles
 
 	refinement is setup with the automated tool box as shown in part 4d-4f.
 
-6. analysis
+7. analysis
 
 	scripts for quick checking and analysis are given, i.e. scripts/outfile_plot.py and scripts/hist.py. To run these two scripts,
 extra python library matplotlib.pyplot is required.
