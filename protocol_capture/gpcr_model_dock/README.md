@@ -6,10 +6,15 @@ Written in Jan 2013 by Elizabeth Nguyen (e dot dong dot nguyen at vanderbilt dot
 ---
 
 This demo contains all the files necessary to replicate the results from the 
-paper, "Challenges of recovering native conformations of ligands docked into 
+paper:
+
+Challenges of recovering native conformations of ligands docked into 
 comparative models of G-protein coupled receptors" by Nguyen,E.D.*, Norn, C.*, 
-Frimurer, T., and Meiler,J. (2012), PLOS One. Commands and files are provided 
-to be able to replicate the following steps (from Figure 1):
+Frimurer, T., and Meiler,J. (2012), PLOS One. [[Supplementary 
+Material|/protocol_capture/gpcr_model_dock/SupplementaryMaterial_ProtocolCapture.docx]]
+
+Commands and files are provided to be able to replicate the following steps 
+(from Figure 1):
 
 1. Structural alignment of GPCR templates
 2. Sequence alignment of the target GPCR to templates
@@ -22,8 +27,6 @@ to be able to replicate the following steps (from Figure 1):
 8. Dock ligand into comparative models
 9. Analyze results by clustering binding modes by ligand RMSD
 
-You can also download the [[Supplementary 
-Material|/protocol_capture/gpcr_model_dock/SupplementaryMaterial_ProtocolCapture.docx]].
 
 Files included in this protocol capture
 ---------------------------------------
