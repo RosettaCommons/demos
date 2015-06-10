@@ -70,8 +70,8 @@ These demos are located in the `demos/public` directory.
 Protocol Captures
 -----------------
 
-Protocol captures are demos from published papers.
-They aren't meant to show the best way to solve a certain problem in the current version of Rosetta, they are meant to show how the problem was solved by the authors of a publication at the time they addressed it.
+Protocol captures are demos from published papers. 
+They aren't meant to show the best way to solve problems in the current version of Rosetta, they are meant to show published solutions to problems that have been addressed by members of the Rosetta community.
 The purpose of these protocol captures is both to serve as a historical record and to assist those trying to reproduce past results.
 These demos are located in the `demos/protocol_capture` directory.
 
