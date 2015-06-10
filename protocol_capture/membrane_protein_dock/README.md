@@ -19,11 +19,11 @@ it for membrane protein docking. It pull the partners apart along the axis betwe
 the center-of-masses projected onto the membrane plane, does a side-chain packing
 round, and pulls them back together.
 
-## Executable/Script
+#### Executable/Script
 
     Rosetta/main/source/bin/docking_prepack_protocol.macosclangrelease
 
-## Generating Inputs 
+#### Generating Inputs 
 
 You need:
 1. A PDB file transformed into membrane coordinates and cleaned
@@ -44,7 +44,7 @@ Span file:
 1. Prepare the spanfile from the PDB file according to the instructions in the 
    demo spanfile_from_pdb
 
-## Running the Application
+#### Running the Application
 
 Adjust the paths in the command.sh script provided in this folder and run it:
 
@@ -54,7 +54,7 @@ For the paper, we used 10 output models and selected the lowest scoring model by
 total Rosetta score. More models might be better, even though probably not totally
 necessary since this does mainly sidechain optimization.
 
-## Example Outputs
+#### Example Outputs
 
 Outputs are found in the output folder:
 
@@ -92,11 +92,11 @@ cases) for LOCAL docking and the scorefunction is decent but not perfect
 (more than half of the structures give funnels) with lowest energies in 
 the 5A range. The scorefunction for this will be further optimized soon.
 
-## Executable/Script
+#### Executable/Script
 
     Rosetta/main/source/bin/mpdocking.macosclangrelease
 
-## Generating Inputs 
+#### Generating Inputs 
 
 You need:
 
@@ -132,7 +132,7 @@ You need:
 
 Example inputs are found in the input folder.
 
-## Running the Application
+#### Running the Application
 
 Adjust the paths in the command.sh script provided in this folder and run it:
 
@@ -140,7 +140,7 @@ Adjust the paths in the command.sh script provided in this folder and run it:
 
 For production runs, build at least 1000 models. 
 
-## Example Outputs
+#### Example Outputs
 
 Outputs are found in the output folder:
 
@@ -153,7 +153,7 @@ Outputs are found in the output folder:
    RMSD over the docked partner, disregarding the fixed partner. The Irms in column
    5 is the interface RMSD.
 
-## References
+#### References
 
 * Alford RF, Koehler Leman J, Weitzner BD, Duran A, Elazar A, Tilley D, Gray JJ 
   (2015): An integrated framework advancing membrane protein modeling and 
