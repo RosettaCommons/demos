@@ -1,9 +1,6 @@
 Homology Modeling with End Extension
 ====================================
 
-Created: Aug 5, 2011  
-Last Updated: Aug 5, 2011
-
 This demo will illustrate a protocol for modeling the structure of a protein 
 given its sequence, provided:
 
@@ -13,6 +10,9 @@ given its sequence, provided:
 
 The input to the protocol is a sequence of interest.  The output will be a set 
 of Rosetta-generated structural models.
+
+Created: Aug 5, 2011  
+Last Updated: Aug 5, 2011
 
 Outline
 -------
