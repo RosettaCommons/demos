@@ -104,7 +104,7 @@ assemble a simple PyRosetta script using the membrane framework for ddG predicti
 
    This application can be run using the following command line: 
 
-       ./predict_ddG.py --in_pdb --in_span inputs/1qd6_tr_C.span --res 181 --repack_radius 8.0 --include_pH true --pH_value 4.0
+        ./predict_ddG.py --in_pdb --in_span inputs/1qd6_tr_C.span --res 181 --repack_radius 8.0 --include_pH true --pH_value 4.0
 
    Two output files (with default names) are created by this script
    * ddG.out: predicted ddGs per mutation
