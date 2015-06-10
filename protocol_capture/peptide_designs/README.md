@@ -62,8 +62,8 @@ sequence — and 2 additional scripts.  Step-by-step instructions are below:
    with no "TER" between chains A and B, and the numbering is sequential 
    through B.
 
-   * input: g000.zones, g000_.fasta, gpep_nat.pdb
-   * output: g000.pdb
+   input: g000.zones, g000_.fasta, gpep_nat.pdb  
+   output: g000.pdb
 
 3. Making centroid models
 
@@ -89,31 +89,31 @@ sequence — and 2 additional scripts.  Step-by-step instructions are below:
 
             rosetta.mactel aa input_pdb _ -s g000.pdb -loops 
 
-   * input: g000.loops, g000.cst (I didn't use constraints)  
-   * output example: aag000_0001.pdb
+   input: g000.loops, g000.cst (I didn't use constraints)  
+   output example: aag000_0001.pdb
 
 4. Merge centroid designs with fullatom starting structure (in this case 
-   gpep1.pdb) using merge_pdb.csh like this: merge_pdb.csh gpep1_nat.pdb [list 
-   of pdbfiles].  You will need to edit merge_pdb.csh if you want to change 
-   which residues are being merged.  For example, if you start the design at 
-   sequence position 342, like we do here, check your gpep_nat.pdb file 
-   (original all-atom pdb file) for the line # for the last atom in sequence 
-   position 341 and put this # in after "head -", then check your centroid 
-   files for the first atom at position 342 and put this # after "tail -".  
-   This step is so that you don't have to repack all of the gpep1.pdb positions 
-   during the fullatom simulations.  (NOTE: When bilding with centroid mode, we 
-   don't use a TER in between chains A and B.  The TER needs to be added back 
-   in.  Another merge file can be used for this.)
+   gpep1.pdb) using merge_pdb.csh like this:
 
-   * input: gpep_nat.pdb, list_of_pdbs (example of pdbs in list - aag000_0001.pdb)  
-   * output example: aag000_0001.m.pdb~ and with the TER added, aag000_0001.m.pdb
+        merge_pdb.csh gpep1_nat.pdb [list of pdbfiles].
+
+   You will need to edit merge_pdb.csh if you want to change which residues are 
+   being merged.  For example, if you start the design at sequence position 
+   342, like we do here, check your gpep_nat.pdb file (original all-atom pdb 
+   file) for the line # for the last atom in sequence position 341 and put this 
+   # in after "head -", then check your centroid files for the first atom at 
+   position 342 and put this # after "tail -".  This step is so that you don't 
+   have to repack all of the gpep1.pdb positions during the fullatom 
+   simulations.  (NOTE: When building with centroid mode, we don't use a TER in 
+   between chains A and B.  The TER needs to be added back in.  Another merge 
+   file can be used for this.)
+
+   input: gpep_nat.pdb, list_of_pdbs (example of pdbs in list - aag000_0001.pdb)  
+   output example: aag000_0001.m.pdb~ and with the TER added, aag000_0001.m.pdb
 
 5. Making Fullatom models:
 
         rosetta.mactel -design -l list_of_pdbs (the *.m.pdb merged files from step 4 above WITH a TER added between chains A and B) -tail -begin 342 -end 351 -chain_ -series bb -protein g000 -resfile tail.resfile -ex1 -ex2 -extrachi_cutoff 1 -exOH -no_his_his_pairE -tight_hb -try_both_his_tautomers -linmem_ig 10 -output_hbond_info -decoystats -group_uns 
-
-   * input: g000_resfile  
-   * output example: aag000_0001.m_0001.pdb
 
    * `-linmem_ig 10` is optional.  I used it because I was running on a 
      BlueGene and each node had very limited memory.  `-output_hbond_info`, 
@@ -126,6 +126,9 @@ sequence — and 2 additional scripts.  Step-by-step instructions are below:
      centroid models (3) were named aag00003_04.200_v1_3 and 
      aag00009_04.200_v1_3.  I just renamed the fragment files so I could get 
      this done quickly.
+
+   input: g000_resfile  
+   output example: aag000_0001.m_0001.pdb
 
 See example of resfile (g000_resfile).  In this file the sequence positions of 
 the designed region are allowed to vary, and any neighboring sequence positions 
