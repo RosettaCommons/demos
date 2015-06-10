@@ -1,4 +1,4 @@
-Membrane homology modeling
+Membrane Homology Modeling
 ==========================
 
 This demo shows how to generate a homology model of a membrane protein.  It 
