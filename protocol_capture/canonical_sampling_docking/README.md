@@ -1,20 +1,15 @@
-canonical sampling for protein-protein docking refinement
-=================================================================
+Canonical Sampling for Protein-Protein Docking Refinement
+=========================================================
 
-## About this Protocol Capture
-Author: Zhe Zhang (zhezhang1986@gmail.com) 
-Corresponding PI: Martin Zacharias
-(martin.zacharias@ph.tum.de) 
-Last Updated: 06/01/2015
-
-Rosetta Revision #
+Author: Zhe Zhang (zhezhang1986 at gmail dot com)  
+Corresponding PI: Martin Zacharias (martin.zacharias at ph dot tum dot de)  
+Last Updated: 06/01/2015  
 
 Reference: Zhang Z, Schindler C, Lange OF, Zacharias M (2015): Comparison of
 Replica-Exchange Approaches for Protein-Protein Docking Refinement in Rosetta
 
-====GENERATING INITIAL CONFORMATION==============================
+---
 
-## Description
 The different protocols described in this paper are tested on unbound docking
 targets selected from docking benchmark4.0. In docking refinement practice,
 approximate interaction site is known. Thus the initial start conformation is
@@ -25,38 +20,48 @@ which r denoting the radii of the second binding partner. The translation
 direction and rotation axis are both drawn from uniformly distributed vectors
 on unit sphere.
 
-## Executable/Script
-Rosetta/main/source/bin/rosetta_scripts.linuxgccrelease
+Generating an initial conformation
+----------------------------------
 
-PDB: 
-1) download cleaned up pdb files from http://zlab.umassmed.edu/benchmark/, or
-directly from http://www.rcsb.org and clean with clean_pdb.py in folder
-Rosetta/tools/protein_tools/scripts/:
-2) replace chain id if neccessary using scripts/replace_chain.py       	
-   >>cat 1PPE_r_b.pdb 1PPE_l_b.pdb > native.pdb
+### Executable/Script:
 
-   >>scripts/replace_chain.py 1PPE_r_u.pdb A > 1PPE_r_u.pdbA.pdb 
-   >>scripts/replace_chain.py 1PPE_l_u.pdb B > 1PPE_l_u.pdbB.pdb
-   >>cat 1PPE_r_u.pdbA.pdb 1PPE_l_u.pdbB.pdb > protAB.pdb
+    Rosetta/main/source/bin/rosetta_scripts.linuxgccrelease
 
-## Running the Application
+### PDB:
+
+1. Download cleaned up pdb files from http://zlab.umassmed.edu/benchmark/, or 
+   directly from http://www.rcsb.org and clean with clean_pdb.py in folder 
+   Rosetta/tools/protein_tools/scripts/
+2. Replace chain id if neccessary using scripts/replace_chain.py
+       $ cat 1PPE_r_b.pdb 1PPE_l_b.pdb > native.pdb
+       $ scripts/replace_chain.py 1PPE_r_u.pdb A > 1PPE_r_u.pdbA.pdb
+       $ scripts/replace_chain.py 1PPE_l_u.pdb B > 1PPE_l_u.pdbB.pdb
+       $ cat 1PPE_r_u.pdbA.pdb 1PPE_l_u.pdbB.pdb > protAB.pdb
+
+### Running the Application:
+
 Before run the test, please export your rosetta bin and database directory, 
 as well as executable of mpirun
->>export MPI_RUN=$YOUR_MPIRUN_EXECUTABLE
->>export ROSETTA_BIN=$YOUR_ROSETTA_BIN_DIRECTORY
->>export ROSETTA_DATABASE=$YOUR_ROSETTA_DATABASE_DIRECTORY
+
+    $ export MPI_RUN=$YOUR_MPIRUN_EXECUTABLE
+    $ export ROSETTA_BIN=$YOUR_ROSETTA_BIN_DIRECTORY
+    $ export ROSETTA_DATABASE=$YOUR_ROSETTA_DATABASE_DIRECTORY
+
 Run the command.sh script provided in folder generate_initial_conformation
->>./command.sh
 
-## Example Outputs
+    $ ./command.sh
+
+### Example Outputs:
+
 Example outputs are found in the folder generate_initial_conformation.  
-1) P.pdb - final decoy, will be used as the initial starting conformation for all
+
+1. P.pdb - final decoy, will be used as the initial starting conformation for all
 the tests 
-2) score.sc - score file
+2. score.sc - score file
 
-====COMMON RULES IN THIS WORK===================================
+Common rules in this work
+-------------------------
 
-## Description
 For rigid-body docking refinement, we have applied rigid-body mover
 UnbiasedRigidBodyPerturbNoCenterMover and sidechain movers including
 PerturbChiSidechainMover, PerturbRotamerSidechainMover and
@@ -82,38 +87,38 @@ dock.xml in each folder.
 
 All the four protocols need to be run with MPI. 
 
-## Example Outputs
-take the example outputs in wte_remc_docking for example:
-1) decoys_P_0001_rt.out - silent trajectory file with rotation matrices and 
-translation vectors started with “RT”, and scores
-2) decoys_P_0001_traj.out - silent trajectory file with decoys and scores
-3) scores.fsc - silent score file of the trajectory
-4) decoys.out - final decoy of a trajectory; this file is a relict of using 
-the JD2-framework and can be generally ignored. 
-5) trial.stats - acceptance rate for each mover in each replica
-6) tempering.stats - exchange rate between replicas
-7) we_bias.grid - well-tempered ensemble bias information at each replica,
-including grid size, grid range, bias energy in each bin, number of 
-conformations dropped into each bin. Only exist when BiasEnergy is applied,
-for example in wte_remc_docking and wte_h_remc_docking.
-8) decoys_P_0001_m_n.out - checkpoint silent decoy files with m indicating 
-replica number and n indicating the checkpoint number, used for restarting
-the simulation. When BiasEnergy is applied, in the checkpoint silent file, 
-WTE bias energy information is stored as REMARK started with 
-“REMARK BIASENERGY”
+### Example Outputs
 
-## Analysis
->>ref=5 # the number of reference replica
->>scripts/silent_data.py decoys_P_0001_rt.out Lrmsd Irms score I_sc temp_level Fnat_n
-bias | awk -v ref_rep=“$ref” ’$5==ref_rep’ > collected_data
->>scripts/collect_tempering_stats.py tempering.stats # collect the average exchange
-rate over the whole simulation
->>scripts/collect_trial_stats.py trial.stats # collect average acceptance for each 
-mover at each replica over the whole simulation
+Take the example outputs in wte_remc_docking for example:
 
-====MC_DOCKING==================================================
+1. decoys_P_0001_rt.out - silent trajectory file with rotation matrices and 
+   translation vectors started with “RT”, and scores
+2. decoys_P_0001_traj.out - silent trajectory file with decoys and scores
+3. scores.fsc - silent score file of the trajectory
+4. decoys.out - final decoy of a trajectory; this file is a relict of using the 
+   JD2-framework and can be generally ignored. 
+5. trial.stats - acceptance rate for each mover in each replica
+6. tempering.stats - exchange rate between replicas
+7. we_bias.grid - well-tempered ensemble bias information at each replica, 
+   including grid size, grid range, bias energy in each bin, number of 
+   conformations dropped into each bin. Only exist when BiasEnergy is applied, 
+   for example in wte_remc_docking and wte_h_remc_docking.
+8. decoys_P_0001_m_n.out - checkpoint silent decoy files with m indicating 
+   replica number and n indicating the checkpoint number, used for restarting 
+   the simulation. When BiasEnergy is applied, in the checkpoint silent file, 
+   WTE bias energy information is stored as REMARK started with `REMARK 
+   BIASENERGY`
 
-## Description
+### Analysis
+
+    $ ref=5 # the number of reference replica
+    $ scripts/silent_data.py decoys_P_0001_rt.out Lrmsd Irms score I_sc temp_level Fnat_n bias | awk -v ref_rep=“$ref” ’$5==ref_rep’ > collected_data
+    $ scripts/collect_tempering_stats.py tempering.stats # collect the average exchange rate over the whole simulation
+    $ scripts/collect_trial_stats.py trial.stats # collect average acceptance for each mover at each replica over the whole simulation
+
+MC Docking
+----------
+
 This protocol using standard monte-carlo sampling protein-protein docking
 refinement. FixedTemperatureController with temperature 0.15 in Rosetta is
 used with the MetropolisHastings framework. The magnitude of the step size and
@@ -121,16 +126,19 @@ sampling weight of the rigid-body and sidechain movers are fixed along the
 entire simulation. Rigid-body mover has a much lower sampling weight than the
 sidechain movers to serve the purpose of refinement. 
 
-## Executable/Script
+### Executable/Script
+
 Rosetta/main/source/bin/rosetta_scripts.mpi.linuxgccrelease
 
-## Running the Application
+### Running the Application
+
 Run the command.sh script provided in folder mc_docking: 
->>./command.sh -n $N_PROC   # N_PROC should be (2 + nstruct)
 
-====REMC_DOCKING================================================
+    $ ./command.sh -n $N_PROC   # N_PROC should be (2 + nstruct)
 
-## Description
+REMC Docking
+------------
+
 This protocol using parallel tempering sampling protein-protein docking
 refinement. Temperatures are drawn from geometric progression withe the lowest
 temperature same as used in mc-docking. HamiltonianExchange is used to control
@@ -139,34 +147,40 @@ Exchange is attempted between neighbor temperatures every 1,000 steps. The
 magnitude of the step size and the sampling weight all the movers are
 modulated according to the temperature in the initialization such that in the
 lower levels more frequent sidechain moves and few small rigid-body moves are
-applied and in higher levels less frequent sidechain mvoes and more bigger
+applied and in higher levels less frequent sidechain moves and more bigger
 rigid-body moves are applied. 
 
-## Executable/Script
+### Executable/Script
+
 Rosetta/main/source/bin/rosetta_scripts.mpi.linuxgccrelease
 
-## Running the Application
+### Running the Application
+
 Run the command.sh script provided in folder remc_docking: 
->>./command.sh -n $N_PROC   # N_PROC should be (2 + nstruct * n_replica)
 
-====WTE_REMC_DOCKING===========================================
+    $ ./command.sh -n $N_PROC   # N_PROC should be (2 + nstruct * n_replica)
 
-## Description
+WTE REMC Docking
+----------------
+
 This protocol applied well-tempered ensemble technique with parallel tempering
 to sampling protein-protein docking refinement. By increasing the tunable
 factor gamma of BiasedEnergy, we can reduce the number of replicas, but
 maintain an approximately same exchange rate between replicas. 
 
-## Executable/Script
-Rosetta/main/source/bin/rosetta_scripts.mpi.linuxgccrelease
+### Executable/Script
 
-## Running the Application
+    Rosetta/main/source/bin/rosetta_scripts.mpi.linuxgccrelease
+
+### Running the Application
+
 Run the command.sh script provided in folder wte_remc_docking: 
->>./command.sh -n $N_PROC   # N_PROC should be (2 + nstruct * n_replica)
 
-====WTE_H_REMC_DOCKING=========================================
+    $ ./command.sh -n $N_PROC   # N_PROC should be (2 + nstruct * n_replica)
 
-## Description
+WTE H REMC Docking
+------------------
+
 In this protocol, two dimensional replica exchange, with variable of the first
 dimension as temperature, and of the second dimension as the scaling of
 softness of repulsive Lennard-Jones potential. In this second scaling
@@ -176,14 +190,13 @@ we have five temperatures with lowest equal 0.15. In total 25 levels are run
 in parallel and exchange between neighbor levels is attempted every 1,000
 steps periodically along the two dimensions.
 
-## Executable/Script
-Rosetta/main/source/bin/rosetta_scripts.mpi.linuxgccrelease
+### Executable/Script
+
+    Rosetta/main/source/bin/rosetta_scripts.mpi.linuxgccrelease
 
 ## Running the Application
+
 Run the command.sh script provided in folder wte_remc_docking: 
->>./command.sh -n $N_PROC   # N_PROC should be (2 + nstruct * n_replica)
 
-
-
-
+    $ ./command.sh -n $N_PROC   # N_PROC should be (2 + nstruct * n_replica)
 
