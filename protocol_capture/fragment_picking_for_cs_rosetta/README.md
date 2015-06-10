@@ -18,5 +18,6 @@ Running the protocol capture
 1. Set up the path to minirosetta database
 2. Set up the path to vall database
 3. Run the picker:
-
-        picker.linuxgccrelease @cs-rosetta.flags
+   ```
+   picker.linuxgccrelease @cs-rosetta.flags
+   ```
