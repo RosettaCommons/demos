@@ -17,9 +17,9 @@ Detailed steps
 
 1.  Create fragments for target sequence
 
-    Obtain a FASTA file of your target sequence. You can get this from NCBI for 
-    example (http://www.ncbi.nlm.nih.gov/guide/proteins/) or make the file 
-    manually having the following format:
+    Obtain a FASTA file of your target sequence. You can get this from 
+    [[NCBI|http://www.ncbi.nlm.nih.gov/guide/proteins/]] or you can make the 
+    file manually using the following format:
 
         >template
         AAAAKDLLEKDF
