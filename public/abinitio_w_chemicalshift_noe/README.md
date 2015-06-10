@@ -1,6 +1,5 @@
-AbInitio Structure Prediction Using Chemical-Shift Generated Fragments and NOE 
-Distance Restraints
-==============================================================================
+AbInitio Structure Prediction Using Chemical-Shift Generated Fragments and NOE Distance Restraints
+==================================================================================================
 
 Written by Lei Shi.
 Nikolas Sgourakis drafted the previous version.
