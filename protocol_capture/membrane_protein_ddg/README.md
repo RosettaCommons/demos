@@ -27,10 +27,13 @@ Measuring free energy changes upon mutation can inform our understanding of memb
 ## Executable/Script ##
 The membrane ddG application is implemented as a python script in PyRosetta. The scripts described here can be found in this protocol capture. Developmental versions can also be found: 
 
-  1. In the Rosetta Source Code: 
-     /path/to/Rosetta/source/src/python/bindings/app/membrane/predict_ddG.py
-  2. In the PyRosetta package: 
-     /path/to/PyRosetta/app/membrane/predict_ddG.py
+1. In the Rosetta Source Code: 
+
+        /path/to/Rosetta/source/src/python/bindings/app/membrane/predict_ddG.py
+
+2. In the PyRosetta package: 
+
+        /path/to/PyRosetta/app/membrane/predict_ddG.py
 
 ## Generating Inputs ##
 Three inputs are required for the ddG application:  
@@ -51,7 +54,7 @@ also be found in inputs/. Here, OmpLA (PDB ID: 1qd6) is used as an example:
    Once the PDB is downloaded from the PDBTM, clean the PDB and extract chain 
    C using teh clean_pdb.py script in Rosetta tools using the following command: 
 
-   /path/to/Rosetta/tools/protein_tools/scripts/clean_pdb.py 1qd6_tr.pdb C
+        /path/to/Rosetta/tools/protein_tools/scripts/clean_pdb.py 1qd6_tr.pdb C
 
    The resulting PDB is referred to as 1qd6_tr_C.pdb from here. 
 
@@ -60,7 +63,7 @@ also be found in inputs/. Here, OmpLA (PDB ID: 1qd6) is used as an example:
    capture in Rosetta/demos/protocol_captures/2015. An example commandline using 
    1qd6 is also provided here: 
 
-   Rosetta/main/source/bin/spanfile_from_pdb.linuxgccrelease -in:file:s inputs/1qd6_tr_C.pdb
+        Rosetta/main/source/bin/spanfile_from_pdb.linuxgccrelease -in:file:s inputs/1qd6_tr_C.pdb
 
    For this example, this command will produce 1 output file: 
      = 1qd6_tr_C.span: Spanfile containing predicted trans-membrane spans
@@ -72,64 +75,68 @@ also be found in inputs/. Here, OmpLA (PDB ID: 1qd6) is used as an example:
 Here, we describe the steps required to run the MP_ddG protocol. First, we describe how to 
 assemble a simple PyRosetta script using the membrane framework for ddG predictions (predict_ompLA_ddG.py). Next, we describe use of a general ddG prediction application for larger scale use. 
 
-   (1) Application-Specific Membrane ddG PyRosetta Protocol
-       PyRosetta calculations can be adapted to use the Rosetta Membrane Framework
-       with only a few additional steps. These include: 
-          = Use AddMembraneMover (in protcols.membrane) to initialize the membrane framework
-          = Use MembranePositionFromTopologyMover to orient the pose in the membrane based on the transmembrane spans (optional, but recommended)
-          = Setup a membrane energy function
-          = Proceed with normal Rosetta functions
+1. Application-Specific Membrane ddG PyRosetta Protocol
+   PyRosetta calculations can be adapted to use the Rosetta Membrane Framework
+   with only a few additional steps. These include: 
 
-       Here, we provide an example application-specific ddG calculation script for computing ddGs of mutation in OmpLA for comparison with experimental values in Moon & Fleming, 2011. The script can be run with no arguments by the following command: 
+   * Use AddMembraneMover (in protcols.membrane) to initialize the membrane framework
+   * Use MembranePositionFromTopologyMover to orient the pose in the membrane based on the transmembrane spans (optional, but recommended)
+   * Setup a membrane energy function
+   * Proceed with normal Rosetta functions
 
-          ./predict_OmpLA_ddG.py 
+   Here, we provide an example application-specific ddG calculation script for computing ddGs of mutation in OmpLA for comparison with experimental values in Moon & Fleming, 2011. The script can be run with no arguments by the following command: 
 
-       Step-by-step instructions on how to setup this script are provided in the predict_OmpLA_ddG.py script (in this protocol capture). 
+        ./predict_OmpLA_ddG.py 
 
-       A single output file is created by this script: 
-         - ompLA_ddG.out: Predicted ddGs for each mutation
+   Step-by-step instructions on how to setup this script are provided in the predict_OmpLA_ddG.py script (in this protocol capture). 
 
-    (2) Large Scale ddG predictions with the RosettaMP Framework
-        Here, we describe the steps to run the MPddG protocol, incorporating both
-        repacking and pH effects. Additional options are described in the documentation above. Here, we also use OmpLA as an example: 
+   A single output file is created by this script: 
 
-        Here, you will need to specify the input PDB, spanfile, and residue position to 
-        mutate. By default, ddGs to all canonical residues will be computed. A specific 
-        ddG of mutation can be computed using the flag --mut <AA>. In this example, we specify a repack radius of 8.0A. This means all residues within 8A of the mutant position are repacked. We also specify the pH at which predictions are carried out. 
+   * ompLA_ddG.out: Predicted ddGs for each mutation
 
-        This application can be run using the following command line: 
+ 2. Large Scale ddG predictions with the RosettaMP Framework
+    Here, we describe the steps to run the MPddG protocol, incorporating both
+    repacking and pH effects. Additional options are described in the documentation above. Here, we also use OmpLA as an example: 
+
+    Here, you will need to specify the input PDB, spanfile, and residue position to 
+    mutate. By default, ddGs to all canonical residues will be computed. A specific 
+    ddG of mutation can be computed using the flag --mut <AA>. In this example, we specify a repack radius of 8.0A. This means all residues within 8A of the mutant position are repacked. We also specify the pH at which predictions are carried out. 
+
+    This application can be run using the following command line: 
 
         ./predict_ddG.py --in_pdb --in_span inputs/1qd6_tr_C.span --res 181 --repack_radius 8.0 --include_pH true --pH_value 4.0
 
-        Two output files (with default names) are created by this script
-           - ddG.out: predicted ddGs per mutation
-           - scores.sc: Breakdown of ddGs by Rosetta score term (weighted)
+    Two output files (with default names) are created by this script
+    * ddG.out: predicted ddGs per mutation
+    * scores.sc: Breakdown of ddGs by Rosetta score term (weighted)
 
 ## Example Outputs
-**Outputs from the two scripts above were renamed for clarity
+Outputs from the two scripts above were renamed for clarity
 
-  1. The predict_OmpLA_ddG.py script will write a list of mutations and ddG values to an 
-     output file. The columns in the file are residu position, mutant amino acid (1-letter code) and predicted ddG
+1. The predict_OmpLA_ddG.py script will write a list of mutations and ddG 
+   values to an output file. The columns in the file are residu position, 
+   mutant amino acid (1-letter code) and predicted ddG
 
-     An example is provided in example_outputs/OmpLA_predicted_ddGds_specific.out
+   An example is provided in example_outputs/OmpLA_predicted_ddGds_specific.out
 
-  2. The predict_ddG.py script will create two output files: 
-       = A list of mutations and their predicted ddGs. The columns in this file are
-         pdb name, mutant amino acid, mutant score, native score, ddG. An example is provided in
+2. The predict_ddG.py script will create two output files: 
 
-          example_outputs/OmpLA_predicted_ddGds_general.out
+   * A list of mutations and their predicted ddGs. The columns in this file are
+     pdb name, mutant amino acid, mutant score, native score, ddG. An example is provided in
 
-      = A breakdown of each ddG by Rosetta score term (weighted). An example output file 
-        is provided in
+        example_outputs/OmpLA_predicted_ddGds_general.out
 
-          example_outputs/OmpLA_ddG_breakdown.sc
+   * A breakdown of each ddG by Rosetta score term (weighted). An example 
+     output file is provided in
 
-** For all scripts - running multiple times with the same output path specified will APPEND to the file and not overwrite it
+        example_outputs/OmpLA_ddG_breakdown.sc
+
+For all scripts - running multiple times with the same output path specified will APPEND to the file and not overwrite it
 
 ## Additional References ##
 1. Chaudhury S, Lyskov S, Gray JJ (2010) PyRosetta: a script-based interface for implementing molecular modeling algorithms using Rosetta.
 
-2.  Moon CP, Fleming KG (2011) Side-chain hydrophobicity scale derived from transmembrane protein folding into lipid bilayers. Proc Natl Acad Sci. 
+2. Moon CP, Fleming KG (2011) Side-chain hydrophobicity scale derived from transmembrane protein folding into lipid bilayers. Proc Natl Acad Sci. 
 
 3. Kellogg, Elizabeth H., Leaver-Fay A, and Baker D. “Role of Conformational Sampling in Computing Mutation-Induced Changes in Protein Structure and Stability.” Proteins 79, no. 3 (March 2011): 830–38. doi:10.1002/prot.22921.
 
