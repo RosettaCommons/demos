@@ -34,7 +34,7 @@ Executable/Script
 
     Rosetta/main/source/bin/view_membrane_protein.linuxgccrelease
 
-- or -
+"or"
 
 Pass the `-show_simulation_in_pymol 0` flag with any Rosetta Membrane Framework application
 
