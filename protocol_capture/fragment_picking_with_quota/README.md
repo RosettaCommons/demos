@@ -1,5 +1,5 @@
-Fragment Picking with Psi Jufo SAM L1 Quota
-===========================================
+Fragment Picking with Quota
+===========================
 
 Presenting author: Dominik Gront (dgront at chem dot uw dot edu dot pl)  
 Protocol name: fragment picker : CS-Rosetta style  
