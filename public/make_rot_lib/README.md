@@ -35,7 +35,7 @@ protein structures. Rosetta uses the backbone dependent Drunbrack rotamer
 libraries. Since there are not enough structures containing NCAAs they must be 
 generated.
 
-Running the MakeRotLib protocol consists of four steps
+Running the MakeRotLib protocol consists of four steps:
 
 1. Creating and input template and generating the MakeRotLib options files.
 2. Running the MakeRotLib protocol on each option file.
