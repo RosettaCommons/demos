@@ -66,8 +66,8 @@ _starting at 0_.  The sixth line is '--'.
 The results for this demo appear in the folder 'templates'.  For each 
 alignement in the starting .hhr file, 3 files are produced.
 
-Steps 2-3: run_phaser.sh and make_maps.sh
------------------------------------------
+Steps 2 & 3: run_phaser.sh and make_maps.sh
+-------------------------------------------
 
 This command line shows the use of Phaser to generate initial molecular 
 replacement solutions.  For each template we run phaser to find potential 
@@ -87,10 +87,10 @@ also help in some cases.
 Finally, for each template/orientation, we generate the 2mfo-dfc map for input 
 to Rosetta in the next step.
 
-Steps 4 (A & B): run_rosetta_mr.sh
-----------------------------------
+Steps 4A & 4B: run_rosetta_mr.sh
+--------------------------------
 
-The final step illustrate the use of rosetta's comparative modelling into 
+The final step illustrate the use of rosetta's comparative modeling into 
 density.  After running the script and an initial phaser run, density maps are 
 generated from each phaser hit, and cm-into-density is done.  The flag 
 -MR::mode cm is used to run this mode.  This first application does not try to 
@@ -102,7 +102,7 @@ not many models are needed to adequately cover conformational space, generally
 
 This script is the same as above, but also rebuilds gaps in the alignment.  The 
 main difference is that a non-zero value is given for 
-'-MR::max_gaplength_to_model'; additionally, some flags must be given that 
+`-MR::max_gaplength_to_model`; additionally, some flags must be given that 
 describe how rosetta should rebuild gaps.
 
 Several additional input files must be provided as well.  Rebuilding of gaps is 
@@ -113,7 +113,6 @@ tools/databases.  The easiest way to generate fragments is to use the Robetta
 server (http://robetta.bakerlab.org/fragmentsubmit.jsp).  The fragment files 
 should be built with the full-length sequence; rosetta handles remapping the 
 fragments if not all gaps are rebuilt.
-
 
 A brief overview of flags is given below:
 
