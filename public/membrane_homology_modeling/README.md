@@ -98,7 +98,7 @@ executable (minirosetta.(os)(options)(mode), for example:
     minirosetta.linuxgccrelease
     minirosetta.macosclangrelease
 
-Replace the above command with the path to your own rosetta database
+Provide the path to your own rosetta database
 
     -database /Users/patrickbarth/RosettaCon2011/tutorial/trunk_r43621/minirosetta_database
 
