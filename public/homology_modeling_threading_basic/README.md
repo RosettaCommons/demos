@@ -1,4 +1,5 @@
-HOMOLOGY MODELING - BASIC PROTOCOL
+Basic Homology Modeling Demo
+============================
 
 Conceptual steps
 ----------------
