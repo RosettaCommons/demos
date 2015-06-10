@@ -17,6 +17,9 @@ Afterwards, this PDB structure can be used to model the loop. For this demo,
 the water molecules (HOH) have been removed and the structure was truncated to 
 the first 132 residues.
 
+Running the demo
+----------------
+
 1.  Insert the new residues into the structure file
 
     Open the file 1TR2_missing_density.pdb in the text editor of your choice. 
