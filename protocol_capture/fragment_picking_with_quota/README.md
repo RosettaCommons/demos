@@ -19,5 +19,5 @@ Running the protocol capture
 2. Set up the path to vall database
 3. Run the picker:
    ```
-   picker.linuxgccrelease @2jsvX-ss_sim_l1-Q.flags
+   picker.linuxgccrelease @quota-protocol.flags
    ```
