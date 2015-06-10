@@ -36,7 +36,7 @@ Executable/Script
 
 "or"
 
-Pass the `-show_simulation_in_pymol` 0 flag with any Rosetta Membrane Framework application
+Pass the `-show_simulation_in_pymol 0` flag with any Rosetta Membrane Framework application
 
 Generating Inputs
 -----------------
