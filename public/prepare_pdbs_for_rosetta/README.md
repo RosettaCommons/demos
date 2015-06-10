@@ -55,6 +55,7 @@ If there are unrecognized residues but you don't actually care about them,
      
     1. if the first residue of a chain is ignored (e.g. with 1mhm.pdb)
     then Rosetta may fail with this error:
+
         ```
         ERROR: ( anchor_rsd.is_polymer() && !anchor_rsd.is_upper_terminus() ) && ( new_rsd.is_polymer() && !new_rsd.is_lower_terminus() )
         ERROR:: Exit from: src/core/conformation/Conformation.cc line: 428
