@@ -1,8 +1,6 @@
 Next Generation KIC
 ===================
 
-Authors: Amelie Stein, Tanja Kortemme
-
 Setting up the demo
 -------------------
 
@@ -106,8 +104,13 @@ Overall protocol execution (demo):
     clustering of their results to identify the most commonly sampled 
     conformations (see Figure S1 of Stein & Kortemme, PLoS ONE, 2013).
 
-Versions
---------
+Authors
+-------
+* Amelie Stein
+* Tanja Kortemme
+
+Version
+-------
 
 SVN revision 51851 (Dec 2012)
 
