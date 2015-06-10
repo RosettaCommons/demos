@@ -19,10 +19,10 @@ Applications are in: https://svn.rosettacommons.org/source/trunk/mini/src/apps/p
 Running the protocol capture
 ----------------------------
 
-1. set up the path to minirosetta database
+1. Set up the path to minirosetta database
 
-2. set up the path to vall database
+2. Set up the path to vall database
 
-3. run the picker:
+3. Run the picker:
 
         picker.linuxgccrelease @cs-rosetta.flags
