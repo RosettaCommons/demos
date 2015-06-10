@@ -109,8 +109,8 @@ Authors
 * Amelie Stein
 * Tanja Kortemme
 
-Version
--------
+Rosetta Version
+---------------
 
 SVN revision 51851 (Dec 2012)
 
