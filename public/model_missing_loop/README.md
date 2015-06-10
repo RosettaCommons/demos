@@ -65,7 +65,7 @@ Running the demo
 
         loopmodel.linuxgccrelease -database /pathtoyourdb/ -loops:input_pdb 1TR2_manually_added_dummy_residues_renumbered.pdb -loops:loop_file 1TR2.loop -loops:remodel perturb_kic -loops:refine refine_kic -ex1 -ex2 -nstruct 1 -loops:max_kic_build_attempts 100 -in:file:fullatom
 
-    Brief descriptions for everything on this command-line:
+    Brief descriptions for all the components of this command-line:
 
         loopmodel.linuxgccrelease : loopmodel application (linuxgccrealease or macosgccrelease)
         -database : path to your Rosetta 3.3 DB
