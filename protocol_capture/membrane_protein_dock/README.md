@@ -1,19 +1,16 @@
 Membrane Protein-Protein Docking
 ================================
 
-## About this Protocol Capture
 Author: Julia Koehler Leman (julia.koehler1982@gmail.com)  
 Corresponding PI: Jeffrey J. Gray (jgray@jhu.edu)  
 Last Updated: January 2015  
-
-Rosetta Revision #57518
-
+Rosetta Revision: #57518  
 Reference:
 * Alford RF, Koehler Leman J, Weitzner BD, Duran A, Elazar A, Tilley D, Gray JJ 
   (2015): An integrated framework advancing membrane protein modeling and 
   design, PLosONE (in preparation)
 
-Documentation Link: <@jkleman insert the link here>  
+---
 
 To run the full application, both steps for prepacking and actual docking needs
 to be carried out. 
