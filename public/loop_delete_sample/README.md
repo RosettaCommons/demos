@@ -50,47 +50,45 @@ we will choose KIC remodeling.  CCD would work as well.
 An options file has been provided (rosetta_inputs/options), annotated with a 
 description of what each flag is doing.
 
-* `-database`:
-
+* `-database`:  
   Specify the path to the Rosetta database, required for any Rosetta 
   simulation
 
-* `@rosetta_inputs/options`:
-
+* `@rosetta_inputs/options`:  
   File holding all rosetta commandline flags. See section "Option file" below.
 
-* `-in:file:fullatom`:
+* `-in:file:fullatom`:  
   Necessary for pretty much all loop modeling runs to read in PDBs properly
 
-* `-loops:input_pdb rosetta_inputs/1FNA_del.pdb`:
+* `-loops:input_pdb rosetta_inputs/1FNA_del.pdb`:  
   Path to input pdb
 
-* `-loops:loop_file rosetta_inputs/loop_file`:
+* `-loops:loop_file rosetta_inputs/loop_file`:  
   Path to loops file
 
-* `-loops:frag_sizes 9 3 1`:
+* `-loops:frag_sizes 9 3 1`:  
   what sizes are the fragments?  9 and 3 are traditional.  The flag seems to require a third argument, but you can pass no fragments in that size.
 
-* `-loops:frag_files rosetta_inputs/aa1FNA_09_05.200_v1_3 rosetta_inputs/aa1FNA_03_05.200_v1_3 none`:
+* `-loops:frag_files rosetta_inputs/aa1FNA_09_05.200_v1_3 rosetta_inputs/aa1FNA_03_05.200_v1_3 none`:  
   Paths to the fragments in the same vein as previous - none for 1mer fragments
 
-* `-loops::build_initial`:
+* `-loops::build_initial`:  
   This flag triggers build initial mode, which fixes the broken loop before re-solving it
 
-* `-loops:remodel perturb_kic -loops:refine refine_kic`:
+* `-loops:remodel perturb_kic -loops:refine refine_kic`:  
   These flags specify KIC loop modeling to remodel the loops.
 
-* `-loops:remodel perturb_ccd -loops:refine refine_ccd`:
+* `-loops:remodel perturb_ccd -loops:refine refine_ccd`:  
   These flags could be used instead of those above to specify CCD remodeling.
 
-* `-out:path sample_output`:
+* `-out:path sample_output`:  
   Output directory
 
-* `-out:prefix 1FNA_del_`:
+* `-out:prefix 1FNA_del_`:  
   Prefix for output.  Would not be necessary if someone would rewrite loop 
   modeling to use jd2.
 
-* `-nstruct 1`:
+* `-nstruct 1`:  
   This option controls how many output structures you get; larger is better!  1 
   is used here because the tutorial can only take so long; in production you'd 
   use 10000 or more.
