@@ -23,13 +23,16 @@ round, and pulls them back together.
 
     Rosetta/main/source/bin/docking_prepack_protocol.macosclangrelease
 
-#### Generating Inputs 
+#### Generating Inputs
 
 You need:
+
 1. A PDB file transformed into membrane coordinates and cleaned
+
 2. A span file containing the topology information of the membrane protein
 
 PDB:
+
 1. Generate a PDB file where the membrane protein structure (our case 1AFO) is 
    transformed into PDB coordinates (z-axis is membrane normal). This can be done 
    either by downloading the transformed PDB directly from the PDBTM website 
@@ -41,6 +44,7 @@ PDB:
    $ clean_pdb.pl 1AFO_tr.pdb ignorechain
 
 Span file:
+
 1. Prepare the spanfile from the PDB file according to the instructions in the 
    demo spanfile_from_pdb
 
