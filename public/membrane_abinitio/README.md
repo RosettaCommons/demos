@@ -1,5 +1,5 @@
-Membrane AbInitio Modeling
-==========================
+Membrane Ab Initio Modeling
+===========================
 
 This document was created on August 5, 2011 by:
 
