@@ -8,14 +8,9 @@ Brief description: The protocol substitutes CS-Rosetta application
 Source code location
 --------------------
 
-Check out the mini SVN:  
-https://svn.rosettacommons.org/source/trunk/mini/
-
-Fragment picker is located in:  
-https://svn.rosettacommons.org/source/trunk/mini/src/core/fragment/picking
-
-Applications are in:  
-https://svn.rosettacommons.org/source/trunk/mini/src/apps/pilot/dgront/fragmentpicker
+* Check out the mini SVN: https://svn.rosettacommons.org/source/trunk/mini/
+* Fragment picker is located in: https://svn.rosettacommons.org/source/trunk/mini/src/core/fragment/picking
+* Applications are in: https://svn.rosettacommons.org/source/trunk/mini/src/apps/pilot/dgront/fragmentpicker
 
 Running the protocol capture
 ----------------------------
