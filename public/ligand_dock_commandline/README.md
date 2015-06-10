@@ -27,6 +27,6 @@ real case you'd have many more:
     [path]/rosetta/rosetta_source/src/apps/public/ligand_docking/best_ifaceE.py
     -n 1 silent.out
 
-For more information, see the ligand dock entry in the manual:
+For more information, see the ligand dock entry in the manual:  
 http://www.rosettacommons.org/manuals/archive/rosetta3.1_user_guide/app_ligand_docking.html
 
