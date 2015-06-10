@@ -1,7 +1,10 @@
 AbInitio structure prediction using chemical-shift generated fragments
 ======================================================================
+
 Written by Lei Shi.
 Ray Wang drafted the previous version.
+
+---
 
 We will use the chemical shifts to improve the fragments from which Rosetta builds up structures, and the NOEs to guide the Rosetta calculations towards the native structure.
 
