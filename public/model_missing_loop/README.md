@@ -1,9 +1,14 @@
------
-Model missing loop (Documentation during RosettaCon 9: August 2011)
-Authors: Roland Pache, Michal Sperber, Steven Combs, George Rosenberger
------
+Model a Missing Loop
+====================
 
-This demo shows how missing electron densities of several consecutive residues can be modelled using the loop modelling application (loopmodel) and the Kinematic Loop Closure algorithm (KIC).
+Authors: Roland Pache, Michal Sperber, Steven Combs, George Rosenberger  
+Last updated: August 2011 (RosettaCon9)
+
+---
+
+This demo shows how missing electron densities of several consecutive residues 
+can be modelled using the loop modelling application (loopmodel) and the 
+Kinematic Loop Closure algorithm (KIC).
 
 The starting structure (1tr2_missing_density.pdb) is based on vinculin (1TR2). 5 loop residues have been removed (32-36) and should be replaced by the sequence VDGKA for loop modeling (simulating missing electron density). Afterwards, this PDB structure can be used to model the loop. For this demo, the water molecules (HOH) have been removed and the structure was truncated to the first 132 residues.
 
