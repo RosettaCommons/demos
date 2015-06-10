@@ -52,7 +52,7 @@ description of what each flag is doing.
 
 * `-database`  
   Specify the path to the Rosetta database, required for any Rosetta 
-  simulation
+  simulation.
 
 * `@rosetta_inputs/options`  
   File holding all rosetta commandline flags. See section "Option file" below.
