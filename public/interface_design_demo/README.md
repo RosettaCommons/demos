@@ -60,13 +60,13 @@ What those assumptions are and where they can be found:
 This can also be done manually. Files with absolute paths:
 
 - design scripts in /scripts/design/ e.g. 
-  scripts/design/pacrot_s12p_nomin/pacrot_s12p_nomin.sh
+  `scripts/design/pacrot_s12p_nomin/pacrot_s12p_nomin.sh`
 
-- scripts/analyze/seqRec.sh
+- `scripts/analyze/seqRec.sh`
 
-- inputs/selected_chains/selected_chains.list
+- `inputs/selected_chains/selected_chains.list`
 
-- inputs/min_nats/nats.list
+- `inputs/min_nats/nats.list`
 
 Running Design Protocols
 ------------------------
