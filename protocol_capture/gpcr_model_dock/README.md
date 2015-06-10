@@ -22,6 +22,9 @@ to be able to replicate the following steps (from Figure 1):
 8. Dock ligand into comparative models
 9. Analyze results by clustering binding modes by ligand RMSD
 
+Needed files
+------------
+
 Input files included in this demo (rosetta_inputs):
 
     1u19A_clean.pdb 
@@ -80,7 +83,8 @@ Scripts and applications not included in the Rosetta 3.4 release (scripts):
     jufo9d_span.pl
     rmsd.tcsh
 
-Command lines from protocol:
+Command lines from protocol
+---------------------------
 
 * Prepare GPCR crystal structures from the Protein Data Bank.
 
