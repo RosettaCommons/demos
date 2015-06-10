@@ -14,32 +14,32 @@ Publication describing the method:
 ---
 
 Description
-===========
+-----------
 
 The method described here is applicable to two-domain proteins, fusion proteins and proteins that exhibit distinct conformational states.where  one-of-two domains/part of the structure is always constant and part of the structure which is variable due to induced conformational change. Experimentntally measured Pseudocontact Shifts (bertini et al) are used as restraints in Rosetta's ab initio executables minirosetta/AbRelax protocol to direct the conformational sampling that fits the experimentally observed PCS data (Schmitz et al).
 
 This protocol particularly uses PCS data from multiple metal centers in a manner analogous to GPS-satellites to accurately position the 3D corrdinates of the atoms, a.k.a GPS-Rosetta (Yagi et al).
 
 Example System
-==============
+--------------
 
 To demonstrate this protocol the two domain (NS2B, NS3pro) Dengue viral protease is taken as an example system. The viral protease exhibits distinct conformational states (Open and closed) as found in crystal structures (PDB IDs: 2FOM, 3U1I). NS3pro remains unchanged, but NS2B adopts closed conformation when bound to a ligand and (PDBID 3U1I) and an open conformation in ligand free form as observed in crystal structure (PDBID: 2FOM)
 
 The Protocol
-============
+------------
 
 Different conformational states for NS2B can be preferentially sampled only by changing input PCS data without changing the computational procedure. The protocol is demonstrated for each of the conformational states in seperate folders, namely 'open' & 'closed'.
 
 
 Requirements
-============
+------------
 
 1. Pseudocontact shifts for protein backbone atoms from more than 2 metal centers (in '.npc' Numbat format)
 2. Starting model structure in pdb format.
 3. Rosetta's 9 and 3 mer fragment files.
 
 References
-==========
+----------
 
 1. Bertini I, Luchinat C, Parigi G (2002) Magnetic susceptibility in paramagnetic NMR. Prog Nucl Magn Reson Spectrosc 40: 249–273. doi:10.1016/S0079-6565(02)00002-X.
 2. Schmitz C, Vernon R, Otting G, Baker D, Huber T (2012) Protein structure determination from pseudocontact shifts using ROSETTA. J Mol Biol 416: 668–677. doi:10.1016/j.jmb.2011.12.056
