@@ -1,21 +1,15 @@
 Foldit Standalone Protocol Capture
 ==================================
 
-Authors & Lab:
-
-Seth Cooper, David Kim, Firas Khatib, Adrien Treuille (Lab), Janos Barbero,
-Jeehyung Lee, Michael Beenen, Andrew Leaver-Fay, Matthew Smith (Speaker), David
-Baker (Lab), Zoran Popovic (Lab)
-
-Year: 2010
+Authors: Seth Cooper, David Kim, Firas Khatib, Adrien Treuille (PI), Janos 
+Barbero, Jeehyung Lee, Michael Beenen, Andrew Leaver-Fay, Matthew Smith 
+(Speaker), David Baker (PI), Zoran Popovic (PI)
 
 Session: Interfaces to Rosetta
 
-Day of talk: Wednesday, August 4
+Date of Talk: Wednesday, August 4, 2010
 
-Title:
-
-Standalone Foldit: A New and Powerful Interface to Rosetta
+Title of Talk: Standalone Foldit: A New and Powerful Interface to Rosetta
 
 ---
 
