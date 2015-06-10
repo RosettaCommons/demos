@@ -38,6 +38,8 @@ Documentation for setting up Rosetta and RNA tools:
 * https://www.rosettacommons.org/docs/latest/Build-Documentation.html
 * https://www.rosettacommons.org/docs/latest/RNA-tools.html 
 
+Step-by-step instructions for running the demo:
+
 1.  Example FASTA file:
 
         >3P49_RNA.pdb
