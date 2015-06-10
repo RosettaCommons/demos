@@ -1,7 +1,11 @@
-AbInitio Structure Prediction Using NOE Distance Restraints
-===========================================================
+AbInitio Structure Prediction Using Chemical-Shift Generated Fragments and NOE 
+Distance Restraints
+==============================================================================
+
 Written by Lei Shi.
 Nikolas Sgourakis drafted the previous version.
+
+---
 
 We will use the chemical shifts to improve the fragments from which Rosetta builds up structures, and the NOEs to guide the Rosetta calculations towards the native structure.
 
