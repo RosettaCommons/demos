@@ -1,9 +1,9 @@
 Fragment Picking with Psi Jufo SAM L1 Quota
 ===========================================
 
-Presenting author: Dominik Gront (dgront at chem dot uw dot edu dot pl)
-Protocol name: fragment picker : CS-Rosetta style
-Brief description: The protocol substitutes nnmake
+Presenting author: Dominik Gront (dgront at chem dot uw dot edu dot pl)  
+Protocol name: fragment picker : CS-Rosetta style  
+Brief description: The protocol substitutes nnmake  
 
 Source code location
 --------------------
