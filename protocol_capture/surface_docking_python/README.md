@@ -84,10 +84,9 @@ in each Plot\* file for the plots to be generated automatically. The version use
     ``` 
     Make sure that the folder contains either only adsorbed state PDBs (and native.pdb) or solution state PDBs. 
     
-## Running PyRosetta RosettaSurface
-
-### Post-processing
+## Post-processing
 (in the directory with output decoys)
+
 1. GetTop.sh Ads 4
 2. cd TOP4.Ads
 3. PostProcessRS.sh
@@ -95,13 +94,13 @@ in each Plot\* file for the plots to be generated automatically. The version use
 These commands will extract the top 4 adsorbed-state decoys for analysis and generate
 secondary structure, protein-protein contact maps, and protein-surface contact maps
 
-### Example output:
-- Ads_SecStruct.png = adsorbed state secondary structure
-- Sol_SecStruct.png = solution state secondary struccture
-- Ads_ContactMap = adsorbed state contact map
-- Sol_ContactMap = solution state contact map
-- Surface_ContactMap.png = protein-surface contact map
-- Diff_ContactMap.png = difference map between contacts in the ads/sol state
+## Example output:
+- Ads\_SecStruct.png = adsorbed state secondary structure
+- Sol\_SecStruct.png = solution state secondary struccture
+- Ads\_ContactMap = adsorbed state contact map
+- Sol\_ContactMap = solution state contact map
+- Surface\_ContactMap.png = protein-surface contact map
+- Diff\_ContactMap.png = difference map between contacts in the ads/sol state
 
 ## Limitations
 This app requires a single protein positioned above a solid surface whose parameters are 
