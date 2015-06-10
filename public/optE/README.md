@@ -1,3 +1,5 @@
+# optE
+
 This demo contains the input files and command lines
 necessary to refit the reference energies for the
 Talaris2013 score function using optE's sequence-
