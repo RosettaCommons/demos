@@ -1,4 +1,4 @@
-AbInitio structure prediction using chemical-shift generated fragments
+AbInitio Structure Prediction Using Chemical-Shift Generated Fragments
 ======================================================================
 
 Written by Lei Shi.
