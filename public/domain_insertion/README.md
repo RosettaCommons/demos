@@ -18,7 +18,7 @@ many strange nomenclature issues forced by this: the "anchor" is the inserted
 domain, and the "scaffold" is the domain receiving the insertion, and the 
 "target" is non-existent for domain insertion but must pretend-exist for the 
 purpose of the code.  `AnchoredDesign` and `AnchoredPDBCreator` are 
-[[extensively documented|protocol_capture/AnchoredDesign/README]] with a 
+[[extensively documented|public/anchored_design/README]] with a 
 protocol capture released in 3.3, please refer to that documentation for more 
 details.
 
