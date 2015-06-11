@@ -18,6 +18,30 @@ If you are a [[Rosetta Developer]] (i.e. you have signed the RosettaCommons deve
 
     git clone git@github.com:RosettaCommons/demos.git
 
+Demos
+=====
+
+How-Tos
+-------
+
+How-to demos demonstrate the best way to solve a particular problem using the Rosetta framework.
+Each demo defines a particular problem, and as new and improved ways to solve those problems are developed, the demos are updated by members of the Rosetta community.
+These demos are located in the `demos/public` directory.
+
+<<LinkDemos(public)>>
+
+Protocol Captures
+-----------------
+
+Protocol captures are demos from published papers. 
+They aren't meant to show the best way to solve problems in the current version of Rosetta, they are meant to show published solutions to problems that were addressed by members of the Rosetta community.
+The purpose of these protocol captures is both to serve as a historical record and to assist those trying to reproduce past results.
+These demos are located in the `demos/protocol_capture` directory.
+
+<<LinkDemos(protocol_capture)>>
+
+<!--- BEGIN_INTERNAL --->
+
 Adding new demos
 ================
 
@@ -55,30 +79,6 @@ Once you have finished writing your demo and have made sure that it runs properl
 At this point, you can now edit your readme using the online Gollum interface available at the [[internal documentation site]].
 However, only your readme can be maintained in this way.
 You have to use git if you want to make any changes to your demo scripts or input data.
-
-Demos
-=====
-
-How-Tos
--------
-
-How-to demos demonstrate the best way to solve a particular problem using the Rosetta framework.
-Each demo defines a particular problem, and as new and improved ways to solve those problems are developed, the demos are updated by members of the Rosetta community.
-These demos are located in the `demos/public` directory.
-
-<<LinkDemos(public)>>
-
-Protocol Captures
------------------
-
-Protocol captures are demos from published papers. 
-They aren't meant to show the best way to solve problems in the current version of Rosetta, they are meant to show published solutions to problems that were addressed by members of the Rosetta community.
-The purpose of these protocol captures is both to serve as a historical record and to assist those trying to reproduce past results.
-These demos are located in the `demos/protocol_capture` directory.
-
-<<LinkDemos(protocol_capture)>>
-
-<!--- BEGIN_INTERNAL --->
 
 Under Development
 -----------------
