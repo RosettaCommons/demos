@@ -28,9 +28,8 @@ Not contained here:
 Sort-of contained here:
 
 1. The raw_documentation directory includes copies of the doxygen-style manual 
-   documentation for AnchorFinder, AnchoredDesign and AnchoredPDBCreator.  
-   These copies are guaranteed NOT to be up to date; look in  
-   your copy of the code or the web links above instead.
+   documentation for AnchorFinder, AnchoredDesign and AnchoredPDBCreator. 
+   These copies are guaranteed NOT to be up to date; look in your copy of the code or the web links above instead.
 
 Overview
 --------
