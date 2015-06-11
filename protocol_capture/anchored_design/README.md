@@ -5,8 +5,10 @@ This document describes how to use the AnchoredDesign protocol, both in
 benchmarking and design mode.  As the protocol's components [AnchorFinder](http://www.rosettacommons.org/docs/latest/anchor-finder.html), [AnchoredPDBCreator](http://www.rosettacommons.org/docs/latest/anchored-pdb-creator.html), and [AnchoredDesign](http://www.rosettacommons.org/docs/latest/anchored-design.html) are reasonably extensively documented elsewhere, this protocol capture is meant to be used alongside that online documentation. 
 Presented at RosettaCon2010 (in poster form) was 
 a description of the protocol itself, plus benchmarking results, plus some 
-early design results.  The accompanying paper describes only benchmarking 
-results, but the tools to do design are described here.
+early design results.  The accompanying paper ([Lewis SM, Kuhlman BA. Anchored design of protein-protein interfaces. PLoS One. 2011;6(6):e20872. Epub 2011 Jun 17.](http://www.ncbi.nlm.nih.gov/pubmed/21698112) (pubmed link)) describes only benchmarking 
+results, but the tools to do design are described here.  A paper on design results is forthcoming.
+
+Note that this protocol capture is somewhat focused on just the AnchorFinder portion (the least important part of the process), because the other portions are documented elsewhere but AnchorFinder largely is not.  
 
 Contained here:
 
@@ -19,10 +21,7 @@ Contained here:
 
 Not contained here:
 
-1. A speck of code – this code is intended to be released with whatever Rosetta 
-   release accompanies the PLoSone issue.  The code is all checked in to trunk 
-   if you want it in the meantime.  (Note to Sherriff Doug – once you guys 
-   decide on distribution, this can change...)
+1. A speck of code – that lives in your Rosetta release.
 2. Submission scripts for running jobs.  I don't know your architecture.  It's 
    all MPI compatible so it's not hard.
 
@@ -30,8 +29,8 @@ Sort-of contained here:
 
 1. The raw_documentation directory includes copies of the doxygen-style manual 
    documentation for AnchorFinder, AnchoredDesign and AnchoredPDBCreator.  
-   These copies are not guaranteed to be up to date; look in developer trunk or 
-   your copy of the code instead.
+   These copies are guaranteed NOT to be up to date; look in  
+   your copy of the code or the web links above instead.
 
 Overview
 --------
