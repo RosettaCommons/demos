@@ -17,7 +17,7 @@ Not contained here:
 * Submission scripts for running jobs.  I don't know your architecture.  It's all MPI compatible so it's not hard.
 
 Sort-of contained here:
-* The raw_documentation directory includes copies of the doxygen-style manual documentation for AnchorFinder, AnchoredDesign and AnchoredPDBCreator.  These copies are guaranteed NOT to be up to date; look in developer trunk or your copy of the code instead.
+* The raw_documentation directory includes copies of the doxygen-style manual documentation for AnchorFinder, AnchoredDesign and AnchoredPDBCreator.  These copies are guaranteed NOT to be up to date; look in your copy of the code or the web links above instead.
 
 Overview
 --------
