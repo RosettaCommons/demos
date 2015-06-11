@@ -2,7 +2,8 @@
 ===============================
 
 This document describes how to use the AnchoredDesign protocol, both in 
-benchmarking and design mode.  Presented at RosettaCon2010 (in poster form) was 
+benchmarking and design mode.  As the protocol's components [AnchorFinder](http://www.rosettacommons.org/docs/latest/anchor-finder.html), [AnchoredPDBCreator](http://www.rosettacommons.org/docs/latest/anchored-pdb-creator.html), and [AnchoredDesign](http://www.rosettacommons.org/docs/latest/anchored-design.html) are reasonably extensively documented elsewhere, this protocol capture is meant to be used alongside that online documentation. 
+Presented at RosettaCon2010 (in poster form) was 
 a description of the protocol itself, plus benchmarking results, plus some 
 early design results.  The accompanying paper describes only benchmarking 
 results, but the tools to do design are described here.
