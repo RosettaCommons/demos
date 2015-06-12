@@ -53,12 +53,17 @@ Then you will be able to check out the `demos.git` repository:
 The demos are organized into three directories:
 
 * `demos/public`:
+
   For demos that are meant to show the best way to solve a particular problem.
 These demos may be updated by the community as new ways to solve these problems are developed.
+
 * `demos/protocol_capture`:
+
   For demos that are associated with published papers and tht demostrate the specific algorithm described in that paper.
 These demos are static, may only work with previous old of rosetta, and meant to serve more as a historical records.
+
 * `demos/pilot`:
+
   For demos that aren't meant to be included in the weekly releases yet.  I can't think of any good reasons for putting new demos here.
 
 Each demo should go in its own directory within one of these three directories.
