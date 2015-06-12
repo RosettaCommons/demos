@@ -60,7 +60,7 @@ map '/demos/wiki' do
     end,
     :dummy_auth => false,
     :route_prefix => '/__omnigollum__',
-    :base_path => '/docs/wiki',
+    :base_path => '/demos/wiki',
   }
 
   # :omnigollum options *must* be set before the Omnigollum extension is 
