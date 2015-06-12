@@ -52,11 +52,14 @@ Then you will be able to check out the `demos.git` repository:
 
 The demos are organized into three directories:
 
-* `demos/public`: For demos that are meant to show the best way to solve a particular problem.
+* `demos/public`:
+  For demos that are meant to show the best way to solve a particular problem.
 These demos may be updated by the community as new ways to solve these problems are developed.
-* `demos/protocol_capture`: For demos that are associated with published papers and tht demostrate the specific algorithm described in that paper.
+* `demos/protocol_capture`:
+  For demos that are associated with published papers and tht demostrate the specific algorithm described in that paper.
 These demos are static, may only work with previous old of rosetta, and meant to serve more as a historical records.
-* `demos/pilot`: For demos that aren't meant to be included in the weekly releases yet.  I can't think of any good reasons for putting new demos here.
+* `demos/pilot`:
+  For demos that aren't meant to be included in the weekly releases yet.  I can't think of any good reasons for putting new demos here.
 
 Each demo should go in its own directory within one of these three directories.
 So to add a new demo, the first step is to create a descriptively named directory for it in the proper location.
@@ -66,7 +69,7 @@ For example, this is how you'd make a public demo called `my_demo`:
     mkdir my_demo
 
 The only file that absolutely has to be in this directory is `README.md`.
-A link to this file will automatically be added to the list of demos below.
+A link to this file will automatically be added to the list of demos on this page.
 Your readme should contain your name and email address, any relevant citations, a description of the problem your demo solves, links to all the scripts and input data your demo uses, and step-by-step instructions on how to run your demo.
 
 Scripts and input files should of course be included in the directory as well.
