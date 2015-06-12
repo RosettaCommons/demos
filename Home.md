@@ -85,6 +85,14 @@ At this point, you can now edit your readme using the online Gollum interface av
 However, only your readme can be maintained in this way.
 You have to use git if you want to make any changes to your demo scripts or input data.
 
+A few days after you push you demo to the `demos` repository, your demo will 
+become available from this website.  A link to it will automatically be added 
+to this page.  However, it will be hard to find (especially for new users) with 
+just that.  To make your demo easier to find, spend a few minutes browsing the 
+[[documentation wiki|https://www.rosettacommons.org/docs/wiki]] and adding 
+links to any relevant pages you find.  The application section in particular 
+would benefit from having lots of links to demos.
+
 Under Development
 -----------------
 
