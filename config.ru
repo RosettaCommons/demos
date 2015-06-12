@@ -41,8 +41,8 @@ require_relative './rosetta_gollum_config.rb'
 # Have Gollum pull from and push to origin whenever an edit is made.
 
 Gollum::Hook.register(:post_commit, :hook_id) do |committer, sha1|
-  committer.wiki.repo.git.pull
-  committer.wiki.repo.git.push
+  committer.wiki.repo.git.pull('origin', 'master')
+  committer.wiki.repo.git.push('origin', 'master')
 end
 
 # Serve the Gollum wiki out of `/demos/wiki`.  Force all requests to go through 
