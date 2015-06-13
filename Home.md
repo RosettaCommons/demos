@@ -91,7 +91,10 @@ to this page.  However, it will be hard to find (especially for new users) with
 just that.  To make your demo easier to find, spend a few minutes browsing the 
 [[documentation wiki|https://www.rosettacommons.org/docs/wiki]] and adding 
 links to any relevant pages you find.  The application section in particular 
-would benefit from having lots of links to demos.
+would benefit from having lots of links to demos.  Note that (for technical 
+reasons — Gollum gets really slow when there are too many pages in the wiki) 
+the demos wiki is actually a whole different website than the documentation 
+wiki.  So you have to use external links to link between the two wikis.
 
 Under Development
 -----------------
