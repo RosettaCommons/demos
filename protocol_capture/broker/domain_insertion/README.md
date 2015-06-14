@@ -15,6 +15,11 @@ the sampling protocol starts near a correct (or probably any closable)
 structure, so you can run with -s native.pdb to produce a closed structure
 nearly every time.
 
+An additional tip for producing output more quickly is to disable (or
+turn down) the relaxation step at the end. Because relaxation is done
+system-wide and not exclusively for the inserted domain, it can have
+a very long runtime.
+
 Assuming Rosetta is in your home directory, you run it as follows:
 
     $ ~/Rosetta/main/source/bin/rosetta_scripts.default.[platform][compiler]release @flags -nstruct [number of structures]
