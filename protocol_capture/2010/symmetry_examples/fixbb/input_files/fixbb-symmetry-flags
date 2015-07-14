@@ -1,4 +1,0 @@
--in::file::s input_files/2akf_INPUT.pdb
--symmetry::symmetry_definition input_files/2akf_symmdef.dat # This is the location of the symmetry definition file
-# -symmetry:initialize_rigid_body_dofs # Initialize the rigid body positions of the subunits according to the symmetry definition file. Not strictly necessary for this test case as it will initialize correctly anyway.
--resfile input_files/2akf.resfile # the resfile specifiying what positions to design/repack

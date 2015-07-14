@@ -1,0 +1,8 @@
+env         1.0
+pair        1.0
+cbeta       1.0
+vdw         1.0
+hbond_lr_bb 4.0
+hbond_sr_bb 1.0
+rama        0.2
+rg          2.0

@@ -1,4 +1,0 @@
-#!/bin/tcsh/
-source /work/rvernon/envs/nmrInit.linux9.com
-source ~shenyang/TALOS+/talos+Init.com
-talos+ -in ???.talos

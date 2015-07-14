@@ -1,6 +1,0 @@
--database ~/minirosetta_database
--s pdb2gb1.ent
-#-ex1
-#-ex2aro
--parser:protocol flxbb.xml
--run:constant_seed

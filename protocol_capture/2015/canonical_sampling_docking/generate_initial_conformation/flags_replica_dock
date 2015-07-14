@@ -1,8 +1,0 @@
-
--nstruct 1 
-
--in:file:s protAB.pdb 
--in:file:native native.pdb 
-@partners 
--score:weights docking 
-

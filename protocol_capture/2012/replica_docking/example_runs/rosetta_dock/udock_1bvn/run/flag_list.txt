@@ -1,4 +1,0 @@
-flags_docking_centroid
-partners
-flag_list.txt
-flags_rosetta_dock

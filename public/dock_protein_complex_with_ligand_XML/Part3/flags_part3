@@ -1,4 +1,0 @@
--in
-	-file
-		-s combined.pdb
-		-extra_res_cen RAP.cen.params

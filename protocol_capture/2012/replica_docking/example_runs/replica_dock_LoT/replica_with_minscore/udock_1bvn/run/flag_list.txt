@@ -1,6 +1,0 @@
-partners
-flags_docking_replica
-flag_list.txt
-hamiltonians_cen_7.txt
-dock_cen_7.xml
-flags_replica_dock

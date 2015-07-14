@@ -1,0 +1,17 @@
+-run
+ -constant_seed
+ -rng mt19937
+-in
+ -file
+  -s FKBP+RAP.pdb
+-extra_res_fa RAP.params
+-out
+ -overwrite	
+-packing
+ -no_optH
+ -ex1
+ -ex1aro
+ -ex2
+
+-mute core.util.prof ## dont show timing info
+-mute core.io.database

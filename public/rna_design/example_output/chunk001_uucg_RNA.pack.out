@@ -1,0 +1,5 @@
+SEQUENCE: cuuggg
+SCORE:     score     fa_atr     fa_rep    fa_intra_rep    lk_nonpolar    hack_elec_rna_phos_phos    ch_bond    rna_torsion    rna_sugar_close    hbond_sr_bb_sc    hbond_lr_bb_sc    hbond_sc    geom_sol description
+SCORE:   -16.624    -11.470      3.157           0.122          0.309                      0.085     -7.848          0.341              2.036             0.000             0.000     -15.792      12.435      S_0001
+SCORE:   -16.624    -11.470      3.157           0.122          0.309                      0.085     -7.848          0.341              2.036             0.000             0.000     -15.792      12.435      S_0002
+SCORE:   -16.624    -11.470      3.157           0.122          0.309                      0.085     -7.848          0.341              2.036             0.000             0.000     -15.792      12.435      S_0003

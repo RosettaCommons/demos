@@ -1,0 +1,79 @@
+core.init: Constant seed mode, seed=1111111 seed_offset=0 real_seed=1111111
+core.chemical.ResidueTypeSet: Finished initializing fa_standard residue type set.  Created 7533 residue types
+core.pack.task: Packer task: initialize from command line() 
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  OXT on residue ARG_p:CtermProteinFull 6
+core.pack.task: Packer task: initialize from command line() 
+core.pack.task: Packer task: initialize from command line() 
+core.conformation.Residue: WARNING: Residue connection id changed when creating a new residue at seqpos 1
+core.conformation.Residue: WARNING: ResConnID info stored on residue 2 is now out of date!
+protocols.toolbox.pose_manipulation.insert_pose_into_pose: loop_start insert_start loop_end
+protocols.toolbox.pose_manipulation.insert_pose_into_pose: scaffold numbering 18 21 30
+protocols.toolbox.pose_manipulation.insert_pose_into_pose: insertlength 6
+modified numbering
+protocols.toolbox.pose_manipulation.insert_pose_into_pose: loop_start 18
+protocols.toolbox.pose_manipulation.insert_pose_into_pose: loop_start_foldtree_anchor 17
+protocols.toolbox.pose_manipulation.insert_pose_into_pose: insert_point 21
+protocols.toolbox.pose_manipulation.insert_pose_into_pose: insert_start 22
+protocols.toolbox.pose_manipulation.insert_pose_into_pose: insert_end 27
+protocols.toolbox.pose_manipulation.insert_pose_into_pose: loop_end 30
+protocols.toolbox.pose_manipulation.insert_pose_into_pose: cutpoint_lower 29
+protocols.toolbox.pose_manipulation.insert_pose_into_pose: cutpoint_upper 30
+protocols.toolbox.pose_manipulation.insert_pose_into_pose: loop_end_foldtree_anchor 31
+protocols.toolbox.pose_manipulation.insert_pose_into_pose: FOLD_TREE  EDGE 1 21 -1  EDGE 21 22 1  EDGE 22 87 -1 
+protocols.toolbox.pose_manipulation.insert_pose_into_pose: 
+protocols.toolbox.pose_manipulation.insert_pose_into_pose: FOLD_TREE  EDGE 1 17 -1  EDGE 17 29 -1  EDGE 17 31 1  EDGE 31 30 -1  EDGE 31 93 -1 
+protocols.toolbox.pose_manipulation.insert_pose_into_pose: 
+protocols.toolbox.pose_manipulation.insert_pose_into_pose: LOOP  begin  end  cut  skip_rate  extended
+protocols.toolbox.pose_manipulation.insert_pose_into_pose: LOOP 18 30 29 0 0
+protocols.toolbox.pose_manipulation.insert_pose_into_pose: 
+protocols.toolbox.pose_manipulation.insert_pose_into_pose: mobile 18
+protocols.toolbox.pose_manipulation.insert_pose_into_pose: mobile 19
+protocols.toolbox.pose_manipulation.insert_pose_into_pose: mobile 20
+protocols.toolbox.pose_manipulation.insert_pose_into_pose: mobile 21
+protocols.toolbox.pose_manipulation.insert_pose_into_pose: ideal 22
+protocols.toolbox.pose_manipulation.insert_pose_into_pose: ideal 27
+protocols.toolbox.pose_manipulation.insert_pose_into_pose: mobile 28
+protocols.toolbox.pose_manipulation.insert_pose_into_pose: mobile 29
+protocols.toolbox.pose_manipulation.insert_pose_into_pose: mobile 30
+core.chemical.ResidueTypeSet: Finished initializing centroid residue type set.  Created 1202 residue types
+basic.io.database: Database file opened: /home/smlewis/MINI_CRON/minirosetta_database/env_log.txt
+basic.io.database: Database file opened: /home/smlewis/MINI_CRON/minirosetta_database/cbeta_den.txt
+basic.io.database: Database file opened: /home/smlewis/MINI_CRON/minirosetta_database/pair_log.txt
+basic.io.database: Database file opened: /home/smlewis/MINI_CRON/minirosetta_database/cenpack_log.txt
+basic.io.database: Database file opened: /home/smlewis/MINI_CRON/minirosetta_database/Rama_smooth_dyn.dat_ss_6.4
+basic.io.database: Database file opened: /home/smlewis/MINI_CRON/minirosetta_database/scoring/score_functions/hbonds/standard_params/HBPoly1D.csv
+basic.io.database: Database file opened: /home/smlewis/MINI_CRON/minirosetta_database/scoring/score_functions/hbonds/standard_params/HBFadeIntervals.csv
+basic.io.database: Database file opened: /home/smlewis/MINI_CRON/minirosetta_database/scoring/score_functions/hbonds/standard_params/HBEval.csv
+basic.io.database: Database file opened: /home/smlewis/MINI_CRON/minirosetta_database/env_log.txt
+basic.io.database: Database file opened: /home/smlewis/MINI_CRON/minirosetta_database/cbeta_den.txt
+basic.io.database: Database file opened: /home/smlewis/MINI_CRON/minirosetta_database/pair_log.txt
+basic.io.database: Database file opened: /home/smlewis/MINI_CRON/minirosetta_database/cenpack_log.txt
+basic.io.database: Database file opened: /home/smlewis/MINI_CRON/minirosetta_database/env_log.txt
+basic.io.database: Database file opened: /home/smlewis/MINI_CRON/minirosetta_database/cbeta_den.txt
+basic.io.database: Database file opened: /home/smlewis/MINI_CRON/minirosetta_database/pair_log.txt
+basic.io.database: Database file opened: /home/smlewis/MINI_CRON/minirosetta_database/cenpack_log.txt
+basic.io.database: Database file opened: /home/smlewis/MINI_CRON/minirosetta_database/CEN6_mem_env_log.txt
+basic.io.database: Database file opened: /home/smlewis/MINI_CRON/minirosetta_database/CEN10_mem_env_log.txt
+basic.io.database: Database file opened: /home/smlewis/MINI_CRON/minirosetta_database/memcbeta_den.txt
+basic.io.database: Database file opened: /home/smlewis/MINI_CRON/minirosetta_database/mem_pair_log.txt
+protocols.toolbox.pose_manipulation.insert_pose_into_pose: start 8475.95
+protocols.toolbox.pose_manipulation.insert_pose_into_pose: 1 322.354
+protocols.toolbox.pose_manipulation.insert_pose_into_pose: 2 317.512
+protocols.toolbox.pose_manipulation.insert_pose_into_pose: 3 273.727
+protocols.toolbox.pose_manipulation.insert_pose_into_pose: 4 266.032
+protocols.toolbox.pose_manipulation.insert_pose_into_pose: 5 137.992
+protocols.toolbox.pose_manipulation.insert_pose_into_pose: 6 130.706
+protocols.toolbox.pose_manipulation.insert_pose_into_pose: 9 96.9525
+protocols.toolbox.pose_manipulation.insert_pose_into_pose: 15 95.1158
+protocols.toolbox.pose_manipulation.insert_pose_into_pose: 16 84.1131
+protocols.toolbox.pose_manipulation.insert_pose_into_pose: 23 84.6582
+protocols.toolbox.pose_manipulation.insert_pose_into_pose: 24 83.0372
+protocols.toolbox.pose_manipulation.insert_pose_into_pose: 25 81.1675
+protocols.toolbox.pose_manipulation.insert_pose_into_pose: 36 14.0733
+protocols.toolbox.pose_manipulation.insert_pose_into_pose: 49 11.1042
+core.optimization.LineMinimizer: Inaccurate G! step= 3.8147e-06 Deriv= -0.698965 Finite Diff= 0.63516
+protocols.toolbox.pose_manipulation.insert_pose_into_pose: 82 10.7757
+core.optimization.LineMinimizer: Inaccurate G! step= 1.49012e-08 Deriv= -1.50601 Finite Diff= 0.570754
+protocols.toolbox.pose_manipulation.insert_pose_into_pose: finish 10.7757
+devel.AnchoredDesign.LoopAnalyzerMover: running LoopAnalyzerMover
+protocols.jd2.JobDistributor: no more batches to process... 

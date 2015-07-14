@@ -1,9 +1,0 @@
-This tutorial should describe how to create protein models using NOE data as constraints.
-Instructions for how to interpret the results should be provided, for instance how well do the models match the NOE data.  Is there a way to get a list of violations?  
-An instruction is now added in the README.
-What models should be used as the 'final' answer?
-Final models are selected based on energy and clustering.
-
-Files provided:
-starting_inputs/NOE_data.upl
-starting_inputs/testA.fasta

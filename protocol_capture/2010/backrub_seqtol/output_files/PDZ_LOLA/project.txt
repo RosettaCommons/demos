@@ -1,6 +1,0 @@
-#ProjectFile
-2I0L_A_C_V2006.txt
-2IWP_B_A_V1927.txt
-2FNE_A_C_V2048.txt
-1N7T.txt
-1N7T_V83K.txt

@@ -1,0 +1,65 @@
+#!/usr/bin/awk -f
+
+function usage(msg) {
+  if(msg) print msg > "/dev/stderr";
+  print "usage: cutoff-sasa [--list] <sasa-file.txt> <cutoff> ..." > "/dev/stderr";
+  print "Calculates the number of positions meeting one or more cutoffs" > "/dev/stderr";
+  print "essentially, cutoff-stats-csv for sasa files" > "/dev/stderr";
+  print "assumes sasa file contains only ACCP in ABS/POT format" > "/dev/stderr";
+  print "scecify file \"-\" to read from stdin" > "/dev/stderr";
+  print " --list: output actual matching lines from sasa file (one cutoff only)" > "/dev/stderr";
+  bail = 1;
+  exit(1);
+}
+BEGIN {
+  i = 1;
+  while(i < ARGC && ARGV[i] ~ /^-/) {
+    if(ARGV[i] ~ /-+(usage|help)/) {
+      usage();
+    } else if(ARGV[i] == "--list") {
+      list = 1;
+      delete ARGV[i];
+      i++;
+    } else if(ARGV[i] == "-") {
+      stdin = 1;
+      delete ARGV[i];
+      i++;
+    } else {
+      usage("error: unknown option \"" ARGV[i] "\"");
+    }
+  }
+  # ARGV[i] is input file, all following args are cutoffs
+  ncut = 0;
+  for(j = i+1-stdin; j < ARGC; j++) {
+    ncut++;
+    cutoff[j-i+stdin] = ARGV[j] + 0;
+    delete ARGV[j];
+  }
+  if(list && ncut != 1)
+    usage("must specify exactly one cutoff when using --list option");
+}
+!/^RES/ {
+  n++;
+  abs = $3 + 0;
+  pot = $4 + 0;
+  acc = 100 * abs / pot;
+  for(i = 1; i <= ncut; i++)
+    if(acc <= cutoff[i])
+      if(list)
+	printf("%s\t%s\t%.2f\n", $1, $2, acc);
+      else
+	ccnt[i]++;
+}
+END {
+  if(!bail && !list) {
+    printf("cutoff");
+    for(i = 1; i <= ncut; i++)
+      printf("\t%d", cutoff[i]);
+    printf("\tall\n");
+    printf("count");
+    for(i = 1; i <= ncut; i++)
+      printf("\t%d", ccnt[i]);
+    printf("\t%d", n);
+    printf("\n");
+  }
+}

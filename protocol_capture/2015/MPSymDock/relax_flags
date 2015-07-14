@@ -1,8 +1,0 @@
--in:file:s example_inputs/1bl8_tr.pdb
--mp:setup:spanfiles example_inputs/1bl8_tr.span
--mp:scoring:hbond
--nstruct 10
--relax:fast
--relax:jump_move true
--out:file:scorefile relax_scores_1bl8.sc
--packing:pack_missing_sidechains false 

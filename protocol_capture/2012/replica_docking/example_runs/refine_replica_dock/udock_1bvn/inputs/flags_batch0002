@@ -1,2 +1,0 @@
--in:file:silent ../../../../example_runs/replica_dock/udock_1bvn/run/low_decoys_P_0002_traj.out
--out:file:silent refine_low_decoys_P_0002_traj.out

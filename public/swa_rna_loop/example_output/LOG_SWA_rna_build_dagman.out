@@ -1,0 +1,235 @@
+['/Users/sripakpa/SWA_RNA_python/SWA_dagman_python/SWA_DAG/SWA_rna_build_dagman.py', '-s', 'template.pdb', '-fasta', 'fasta', '-native', 'native.pdb', '-clusterer_num_pose_kept', '1000', '-force_field_file', 'rna/rna_loop_hires_04092010.wts', '-sampler_extra_anti_chi_rotamer', 'false', '-sampler_extra_syn_chi_rotamer', 'false', '-clusterer_quick_alignment', 'true', '-clusterer_optimize_memory_usage', 'true', '-clusterer_keep_pose_in_memory', 'true', '-allow_combine_DS_regions', 'False', '-dinucleotide_at_single_element_cc', 'pure_append_prepend', '-allow_bulge', 'True', '-input_res', '1', '2', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31', '32', '33', '34', '35', '36', '37', '38', '39', '40', '41', '42', '43', '44', '45', '46', '47', '-rmsd_res', '3', '4', '5', '6', '7', '8', '-jump_point_pair_list', '1-47', '-fixed_res', '1', '2', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31', '32', '33', '34', '35', '36', '37', '38', '39', '40', '41', '42', '43', '44', '45', '46', '47', '-alignment_res_list', '1-47', '-optimize_long_loop_mode', 'True', '-OLLM_chain_closure_only', 'True', '-rna_torsion_potential_folder', 'ps_03242010/', '-sample_virt_ribose_in_sep_DAG', 'True']
+print len(argv)= 130
+fasta=fasta
+native=native.pdb
+cutpoint_open is list, default=  []
+pathway_bulge_res is list, default=  []
+allow_normal_move_at_pathway_bulge_res=False
+allow_bulge_move_at_non_pathway_bulge_res=False
+build_from_helix_to_helix_mode=True
+allow_bulge=True
+starting_elements is list, default=  []
+allow_build_from_scratch=False
+allow_bulge_right_next_to_input_helix=True
+dinucleotide_at_single_element_cc=pure_append_prepend
+floating_base=True
+optimize_long_loop_mode=True
+OLLM_chain_closure_only=True
+pure_append_prepend_only=False
+no_combine_file_BOTH_element_list is list, default=  []
+no_combine_file_EITHER_element_list is list, default=  []
+duplex_frame_BP is list, default=  []
+sample_virt_ribose_in_sep_DAG=True
+final_rebuild_bulge_step_only=False
+allow_combine_DS_regions=False
+enforce_path_base_pair_list=  []
+------------------------------------------------------------------------------------
+clusterer_num_pose_kept=1000 | full_length_clusterer_num_pose_kept=10000 | final_clusterer_num_pose_kept=10000
+post_process_filtered_nstruct=25000 | full_length_post_process_filtered_nstruct=75000 
+------------------------------------------------------------------------------------
+force_field_file=rna/rna_loop_hires_04092010.wts
+force_syn_chi_res_list is list, default=  []
+force_north_ribose_list is list, default=  []
+force_south_ribose_list is list, default=  []
+protonated_H1_adenosine_list is list, default=  []
+rna_torsion_potential_folder=ps_03242010/
+native_virtual_res is list, default=  []
+minimize_res is list, default=  []
+terminal_res is list, default=  []
+virtual_res is list, default=  []
+sampler_extra_anti_chi_rotamer=false
+sampler_extra_syn_chi_rotamer=false
+clusterer_quick_alignment=true
+clusterer_optimize_memory_usage=true
+clusterer_keep_pose_in_memory=true
+all_res=                 [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47]
+input_res_full=          [1, 2, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47]
+global_sample_res_list=  [3, 4, 5, 6, 7, 8]
+global_sample_res_plus_bound=  [2, 3, 4, 5, 6, 7, 8, 9]
+user_input_pdb_info_list: 
+tag: template.pdb  silent_file:  
+element_id=0, Is_outer_element=True seq_list= [1, 2, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47]
+element_id=1, Is_outer_element=False seq_list= [3]
+element_id=2, Is_outer_element=False seq_list= [4]
+element_id=3, Is_outer_element=False seq_list= [5]
+element_id=4, Is_outer_element=False seq_list= [6]
+element_id=5, Is_outer_element=False seq_list= [7]
+element_id=6, Is_outer_element=False seq_list= [8]
+#################################
+       DEFINITION OF ELEMENTS    
+#################################
+{0: [9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 1, 2], 1: [3], 2: [4], 3: [5], 4: [6], 5: [7], 6: [8]}
+ or: 
+[0, 0, 1, 2, 3, 4, 5, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+
+tag: template.pdb  silent_file:  
+starting_regions:  ['REGION_0_0']  build_from_scratch_tags:  []
+allow_combine_DS_regions=False | combine_DS_regions=False 
+Skipping region REGION_0_1 since len(pose_info_list)=0, combine_long_loop=True
+
+ Modeling elements:  [0, 1] 
+ job_specific_common_args_INSTANCE:     -in:file:silent_struct_type binary_rna  -score:weights rna/rna_loop_hires_04092010.wts  -score:rna_torsion_potential ps_03242010/  -fixed_res  1 2 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47  -rmsd_res  3 4 5 6 7 8  -jump_point_pairs  1-47  -alignment_res  1-47  -fasta fasta  -global_sample_res_list  3 4 5 6 7 8  -sample_res  3  -input_res 1 2 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 
+Skipping region REGION_6_0 since len(pose_info_list)=0, combine_long_loop=True
+
+ Modeling elements:  [6, 0] 
+ job_specific_common_args_INSTANCE:     -in:file:silent_struct_type binary_rna  -score:weights rna/rna_loop_hires_04092010.wts  -score:rna_torsion_potential ps_03242010/  -fixed_res  1 2 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47  -rmsd_res  3 4 5 6 7 8  -jump_point_pairs  1-47  -alignment_res  1-47  -fasta fasta  -global_sample_res_list  3 4 5 6 7 8  -sample_res  8  -input_res 1 2 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 
+standard_sampler_job_tag= REGION_0_2_START_FROM_REGION_0_1, sample_virtual_ribose_list  3-A 
+Skipping region REGION_0_2 since len(pose_info_list)=0, combine_long_loop=True
+Skipping region REGION_0_2 since len(pose_info_list)=0, combine_long_loop=True
+
+ Modeling elements:  [0, 1, 2] 
+ job_specific_common_args_INSTANCE:     -in:file:silent_struct_type binary_rna  -score:weights rna/rna_loop_hires_04092010.wts  -score:rna_torsion_potential ps_03242010/  -fixed_res  1 2 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47  -rmsd_res  3 4 5 6 7 8  -jump_point_pairs  1-47  -alignment_res  1-47  -fasta fasta  -global_sample_res_list  3 4 5 6 7 8  -sample_res  4  -input_res 1 2 3 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 
+standard_sampler_job_tag= REGION_5_0_START_FROM_REGION_6_0, sample_virtual_ribose_list  8-P 
+Skipping region REGION_5_0 since len(pose_info_list)=0, combine_long_loop=True
+Skipping region REGION_5_0 since len(pose_info_list)=0, combine_long_loop=True
+
+ Modeling elements:  [5, 6, 0] 
+ job_specific_common_args_INSTANCE:     -in:file:silent_struct_type binary_rna  -score:weights rna/rna_loop_hires_04092010.wts  -score:rna_torsion_potential ps_03242010/  -fixed_res  1 2 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47  -rmsd_res  3 4 5 6 7 8  -jump_point_pairs  1-47  -alignment_res  1-47  -fasta fasta  -global_sample_res_list  3 4 5 6 7 8  -sample_res  7  -input_res 1 2 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 
+Skipping region REGION_6_1 since len(pose_info_list)=0, combine_long_loop=False
+Skipping region REGION_6_1 since len(pose_info_list)=0, combine_long_loop=True
+Skipping region REGION_6_1 since len(pose_info_list)=0, combine_long_loop=False
+Skipping region REGION_6_1 since len(pose_info_list)=0, combine_long_loop=True
+standard_sampler_job_tag= REGION_0_3_START_FROM_REGION_0_2, sample_virtual_ribose_list  4-A 
+Skipping region REGION_0_3 since len(pose_info_list)=0, combine_long_loop=True
+Skipping region REGION_0_3 since len(pose_info_list)=0, combine_long_loop=True
+
+ Modeling elements:  [0, 1, 2, 3] 
+ job_specific_common_args_INSTANCE:     -in:file:silent_struct_type binary_rna  -score:weights rna/rna_loop_hires_04092010.wts  -score:rna_torsion_potential ps_03242010/  -fixed_res  1 2 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47  -rmsd_res  3 4 5 6 7 8  -jump_point_pairs  1-47  -alignment_res  1-47  -fasta fasta  -global_sample_res_list  3 4 5 6 7 8  -sample_res  5  -input_res 1 2 3 4 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 
+standard_sampler_job_tag= REGION_4_0_START_FROM_REGION_5_0, sample_virtual_ribose_list  7-P 
+Skipping region REGION_4_0 since len(pose_info_list)=0, combine_long_loop=True
+Skipping region REGION_4_0 since len(pose_info_list)=0, combine_long_loop=True
+
+ Modeling elements:  [4, 5, 6, 0] 
+ job_specific_common_args_INSTANCE:     -in:file:silent_struct_type binary_rna  -score:weights rna/rna_loop_hires_04092010.wts  -score:rna_torsion_potential ps_03242010/  -fixed_res  1 2 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47  -rmsd_res  3 4 5 6 7 8  -jump_point_pairs  1-47  -alignment_res  1-47  -fasta fasta  -global_sample_res_list  3 4 5 6 7 8  -sample_res  6  -input_res 1 2 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 
+Skipping region REGION_5_1 since len(pose_info_list)=0, combine_long_loop=False
+Skipping region REGION_5_1 since len(pose_info_list)=0, combine_long_loop=True
+Skipping region REGION_5_1 since len(pose_info_list)=0, combine_long_loop=False
+Skipping region REGION_5_1 since len(pose_info_list)=0, combine_long_loop=True
+Skipping region REGION_6_2 since len(pose_info_list)=0, combine_long_loop=False
+Skipping region REGION_6_2 since len(pose_info_list)=0, combine_long_loop=True
+Skipping region REGION_6_2 since len(pose_info_list)=0, combine_long_loop=False
+Skipping region REGION_6_2 since len(pose_info_list)=0, combine_long_loop=True
+standard_sampler_job_tag= REGION_0_4_START_FROM_REGION_0_3, sample_virtual_ribose_list  5-A 
+Skipping region REGION_0_4 since len(pose_info_list)=0, combine_long_loop=True
+Skipping region REGION_0_4 since len(pose_info_list)=0, combine_long_loop=True
+
+ Modeling elements:  [0, 1, 2, 3, 4] 
+ job_specific_common_args_INSTANCE:     -in:file:silent_struct_type binary_rna  -score:weights rna/rna_loop_hires_04092010.wts  -score:rna_torsion_potential ps_03242010/  -fixed_res  1 2 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47  -rmsd_res  3 4 5 6 7 8  -jump_point_pairs  1-47  -alignment_res  1-47  -fasta fasta  -global_sample_res_list  3 4 5 6 7 8  -sample_res  6  -input_res 1 2 3 4 5 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 
+standard_sampler_job_tag= REGION_3_0_START_FROM_REGION_4_0, sample_virtual_ribose_list  6-P 
+Skipping region REGION_3_0 since len(pose_info_list)=0, combine_long_loop=True
+Skipping region REGION_3_0 since len(pose_info_list)=0, combine_long_loop=True
+
+ Modeling elements:  [3, 4, 5, 6, 0] 
+ job_specific_common_args_INSTANCE:     -in:file:silent_struct_type binary_rna  -score:weights rna/rna_loop_hires_04092010.wts  -score:rna_torsion_potential ps_03242010/  -fixed_res  1 2 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47  -rmsd_res  3 4 5 6 7 8  -jump_point_pairs  1-47  -alignment_res  1-47  -fasta fasta  -global_sample_res_list  3 4 5 6 7 8  -sample_res  5  -input_res 1 2 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 
+Skipping region REGION_4_1 since len(pose_info_list)=0, combine_long_loop=False
+Skipping region REGION_4_1 since len(pose_info_list)=0, combine_long_loop=True
+Skipping region REGION_5_2 since len(pose_info_list)=0, combine_long_loop=False
+Skipping region REGION_5_2 since len(pose_info_list)=0, combine_long_loop=True
+Skipping region REGION_5_2 since len(pose_info_list)=0, combine_long_loop=False
+Skipping region REGION_5_2 since len(pose_info_list)=0, combine_long_loop=True
+Skipping region REGION_6_3 since len(pose_info_list)=0, combine_long_loop=False
+Skipping region REGION_6_3 since len(pose_info_list)=0, combine_long_loop=True
+standard_sampler_job_tag= REGION_0_5_START_FROM_REGION_0_4, sample_virtual_ribose_list  6-A 
+Skipping region REGION_0_5 since len(pose_info_list)=0, combine_long_loop=True
+Skipping region REGION_0_5 since len(pose_info_list)=0, combine_long_loop=True
+
+ Modeling elements:  [0, 1, 2, 3, 4, 5] 
+ job_specific_common_args_INSTANCE:     -in:file:silent_struct_type binary_rna  -score:weights rna/rna_loop_hires_04092010.wts  -score:rna_torsion_potential ps_03242010/  -fixed_res  1 2 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47  -rmsd_res  3 4 5 6 7 8  -jump_point_pairs  1-47  -alignment_res  1-47  -fasta fasta  -global_sample_res_list  3 4 5 6 7 8  -sample_res  7  -input_res 1 2 3 4 5 6 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 
+standard_sampler_job_tag= REGION_2_0_START_FROM_REGION_3_0, sample_virtual_ribose_list  5-P 
+Skipping region REGION_2_0 since len(pose_info_list)=0, combine_long_loop=True
+Skipping region REGION_2_0 since len(pose_info_list)=0, combine_long_loop=True
+
+ Modeling elements:  [2, 3, 4, 5, 6, 0] 
+ job_specific_common_args_INSTANCE:     -in:file:silent_struct_type binary_rna  -score:weights rna/rna_loop_hires_04092010.wts  -score:rna_torsion_potential ps_03242010/  -fixed_res  1 2 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47  -rmsd_res  3 4 5 6 7 8  -jump_point_pairs  1-47  -alignment_res  1-47  -fasta fasta  -global_sample_res_list  3 4 5 6 7 8  -sample_res  4  -input_res 1 2 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 
+Skipping region REGION_3_1 since len(pose_info_list)=0, combine_long_loop=False
+Skipping region REGION_3_1 since len(pose_info_list)=0, combine_long_loop=True
+Skipping region REGION_4_2 since len(pose_info_list)=0, combine_long_loop=False
+Skipping region REGION_4_2 since len(pose_info_list)=0, combine_long_loop=True
+Skipping region REGION_5_3 since len(pose_info_list)=0, combine_long_loop=False
+Skipping region REGION_5_3 since len(pose_info_list)=0, combine_long_loop=True
+Skipping region REGION_6_4 since len(pose_info_list)=0, combine_long_loop=False
+Skipping region REGION_6_4 since len(pose_info_list)=0, combine_long_loop=True
+standard_sampler_job_tag= REGION_0_6_START_FROM_REGION_0_5, sample_virtual_ribose_list  7-A 8-A 9-P 
+Skipping region REGION_0_6 since len(pose_info_list)=0, combine_long_loop=True
+standard_sampler_job_tag= REGION_0_6_START_FROM_REGION_0_4, sample_virtual_ribose_list  8-A 9-P 
+Skipping region REGION_0_6 since len(pose_info_list)=0, combine_long_loop=True
+
+ Modeling elements:  [0, 1, 2, 3, 4, 5, 6] 
+ job_specific_common_args_INSTANCE:     -in:file:silent_struct_type binary_rna  -score:weights rna/rna_loop_hires_04092010.wts  -score:rna_torsion_potential ps_03242010/  -fixed_res  1 2 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47  -rmsd_res  3 4 5 6 7 8  -jump_point_pairs  1-47  -alignment_res  1-47  -fasta fasta  -global_sample_res_list  3 4 5 6 7 8  -sample_res  8  -cutpoint_closed 8  -input_res 1 2 3 4 5 6 7 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 
+standard_sampler_job_tag= REGION_1_0_START_FROM_REGION_2_0, sample_virtual_ribose_list  4-P 2-A 3-P 
+Skipping region REGION_1_0 since len(pose_info_list)=0, combine_long_loop=True
+standard_sampler_job_tag= REGION_1_0_START_FROM_REGION_3_0, sample_virtual_ribose_list  2-A 3-P 
+Skipping region REGION_1_0 since len(pose_info_list)=0, combine_long_loop=True
+
+ Modeling elements:  [1, 2, 3, 4, 5, 6, 0] 
+ job_specific_common_args_INSTANCE:     -in:file:silent_struct_type binary_rna  -score:weights rna/rna_loop_hires_04092010.wts  -score:rna_torsion_potential ps_03242010/  -fixed_res  1 2 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47  -rmsd_res  3 4 5 6 7 8  -jump_point_pairs  1-47  -alignment_res  1-47  -fasta fasta  -global_sample_res_list  3 4 5 6 7 8  -sample_res  3  -cutpoint_closed 2  -input_res 1 2 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 
+satisfy_optimize_long_loop_mode(i=2,j=1, i_prev=3, j_prev=1, num_elements=7)==true
+region i=2 j=1, Is_combine_long_loop_chain_closure_step= True
+standard_sampler_job_tag= REGION_2_1_START_FROM_REGION_0_1_AND_3_0, sample_virtual_ribose_list  5-P 3-A 4-P 
+standard_sampler_job_tag= REGION_2_1_START_FROM_REGION_0_1_AND_3_0, sample_virtual_ribose_list  5-P 3-A 4-P 
+Skipping region REGION_2_1 since len(pose_info_list)=0, combine_long_loop=False
+satisfy_optimize_long_loop_mode(i=2,j=1, i_prev=2, j_prev=0, num_elements=7)==true
+region i=2 j=1, Is_combine_long_loop_chain_closure_step= True
+standard_sampler_job_tag= REGION_2_1_START_FROM_REGION_0_0_AND_2_0, sample_virtual_ribose_list  2-A 3-A 4-P 
+
+ Modeling elements:  [2, 3, 4, 5, 6, 0, 1] 
+ job_specific_common_args_INSTANCE:     -in:file:silent_struct_type binary_rna  -score:weights rna/rna_loop_hires_04092010.wts  -score:rna_torsion_potential ps_03242010/  -fixed_res  1 2 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47  -rmsd_res  3 4 5 6 7 8  -jump_point_pairs  1-47  -alignment_res  1-47  -fasta fasta  -global_sample_res_list  3 4 5 6 7 8  -sample_res  4  -cutpoint_closed 3  -input_res 1 2 3 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47  -input_res2 1 2 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 
+satisfy_optimize_long_loop_mode(i=3,j=2, i_prev=4, j_prev=2, num_elements=7)==true
+region i=3 j=2, Is_combine_long_loop_chain_closure_step= True
+standard_sampler_job_tag= REGION_3_2_START_FROM_REGION_0_2_AND_4_0, sample_virtual_ribose_list  6-P 4-A 5-P 
+standard_sampler_job_tag= REGION_3_2_START_FROM_REGION_0_2_AND_4_0, sample_virtual_ribose_list  6-P 4-A 5-P 
+satisfy_optimize_long_loop_mode(i=3,j=2, i_prev=3, j_prev=1, num_elements=7)==true
+region i=3 j=2, Is_combine_long_loop_chain_closure_step= True
+standard_sampler_job_tag= REGION_3_2_START_FROM_REGION_0_1_AND_3_0, sample_virtual_ribose_list  3-A 4-A 5-P 
+standard_sampler_job_tag= REGION_3_2_START_FROM_REGION_0_1_AND_3_0, sample_virtual_ribose_list  3-A 4-A 5-P 
+
+ Modeling elements:  [3, 4, 5, 6, 0, 1, 2] 
+ job_specific_common_args_INSTANCE:     -in:file:silent_struct_type binary_rna  -score:weights rna/rna_loop_hires_04092010.wts  -score:rna_torsion_potential ps_03242010/  -fixed_res  1 2 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47  -rmsd_res  3 4 5 6 7 8  -jump_point_pairs  1-47  -alignment_res  1-47  -fasta fasta  -global_sample_res_list  3 4 5 6 7 8  -sample_res  5  -cutpoint_closed 4  -input_res 1 2 3 4 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47  -input_res2 1 2 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 
+satisfy_optimize_long_loop_mode(i=4,j=3, i_prev=5, j_prev=3, num_elements=7)==true
+region i=4 j=3, Is_combine_long_loop_chain_closure_step= True
+standard_sampler_job_tag= REGION_4_3_START_FROM_REGION_0_3_AND_5_0, sample_virtual_ribose_list  7-P 5-A 6-P 
+standard_sampler_job_tag= REGION_4_3_START_FROM_REGION_0_3_AND_5_0, sample_virtual_ribose_list  7-P 5-A 6-P 
+satisfy_optimize_long_loop_mode(i=4,j=3, i_prev=4, j_prev=2, num_elements=7)==true
+region i=4 j=3, Is_combine_long_loop_chain_closure_step= True
+standard_sampler_job_tag= REGION_4_3_START_FROM_REGION_0_2_AND_4_0, sample_virtual_ribose_list  4-A 5-A 6-P 
+standard_sampler_job_tag= REGION_4_3_START_FROM_REGION_0_2_AND_4_0, sample_virtual_ribose_list  4-A 5-A 6-P 
+
+ Modeling elements:  [4, 5, 6, 0, 1, 2, 3] 
+ job_specific_common_args_INSTANCE:     -in:file:silent_struct_type binary_rna  -score:weights rna/rna_loop_hires_04092010.wts  -score:rna_torsion_potential ps_03242010/  -fixed_res  1 2 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47  -rmsd_res  3 4 5 6 7 8  -jump_point_pairs  1-47  -alignment_res  1-47  -fasta fasta  -global_sample_res_list  3 4 5 6 7 8  -sample_res  6  -cutpoint_closed 5  -input_res 1 2 3 4 5 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47  -input_res2 1 2 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 
+satisfy_optimize_long_loop_mode(i=5,j=4, i_prev=6, j_prev=4, num_elements=7)==true
+region i=5 j=4, Is_combine_long_loop_chain_closure_step= True
+standard_sampler_job_tag= REGION_5_4_START_FROM_REGION_0_4_AND_6_0, sample_virtual_ribose_list  8-P 6-A 7-P 
+standard_sampler_job_tag= REGION_5_4_START_FROM_REGION_0_4_AND_6_0, sample_virtual_ribose_list  8-P 6-A 7-P 
+satisfy_optimize_long_loop_mode(i=5,j=4, i_prev=5, j_prev=3, num_elements=7)==true
+region i=5 j=4, Is_combine_long_loop_chain_closure_step= True
+standard_sampler_job_tag= REGION_5_4_START_FROM_REGION_0_3_AND_5_0, sample_virtual_ribose_list  5-A 6-A 7-P 
+standard_sampler_job_tag= REGION_5_4_START_FROM_REGION_0_3_AND_5_0, sample_virtual_ribose_list  5-A 6-A 7-P 
+
+ Modeling elements:  [5, 6, 0, 1, 2, 3, 4] 
+ job_specific_common_args_INSTANCE:     -in:file:silent_struct_type binary_rna  -score:weights rna/rna_loop_hires_04092010.wts  -score:rna_torsion_potential ps_03242010/  -fixed_res  1 2 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47  -rmsd_res  3 4 5 6 7 8  -jump_point_pairs  1-47  -alignment_res  1-47  -fasta fasta  -global_sample_res_list  3 4 5 6 7 8  -sample_res  7  -cutpoint_closed 6  -input_res 1 2 3 4 5 6 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47  -input_res2 1 2 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 
+Skipping region REGION_6_5 since len(pose_info_list)=0, combine_long_loop=False
+satisfy_optimize_long_loop_mode(i=6,j=5, i_prev=0, j_prev=5, num_elements=7)==true
+region i=6 j=5, Is_combine_long_loop_chain_closure_step= True
+standard_sampler_job_tag= REGION_6_5_START_FROM_REGION_0_5_AND_0_0, sample_virtual_ribose_list  9-P 7-A 8-P 
+satisfy_optimize_long_loop_mode(i=6,j=5, i_prev=6, j_prev=4, num_elements=7)==true
+region i=6 j=5, Is_combine_long_loop_chain_closure_step= True
+standard_sampler_job_tag= REGION_6_5_START_FROM_REGION_0_4_AND_6_0, sample_virtual_ribose_list  6-A 7-A 8-P 
+standard_sampler_job_tag= REGION_6_5_START_FROM_REGION_0_4_AND_6_0, sample_virtual_ribose_list  6-A 7-A 8-P 
+
+ Modeling elements:  [6, 0, 1, 2, 3, 4, 5] 
+ job_specific_common_args_INSTANCE:     -in:file:silent_struct_type binary_rna  -score:weights rna/rna_loop_hires_04092010.wts  -score:rna_torsion_potential ps_03242010/  -fixed_res  1 2 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47  -rmsd_res  3 4 5 6 7 8  -jump_point_pairs  1-47  -alignment_res  1-47  -fasta fasta  -global_sample_res_list  3 4 5 6 7 8  -sample_res  8  -cutpoint_closed 7  -input_res 1 2 3 4 5 6 7 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 
+
+FINAL_COMMON_ARGS_LINE:     -in:file:silent_struct_type binary_rna  -score:weights rna/rna_loop_hires_04092010.wts  -score:rna_torsion_potential ps_03242010/  -fixed_res  1 2 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47  -rmsd_res  3 4 5 6 7 8  -jump_point_pairs  1-47  -alignment_res  1-47  -fasta fasta  -global_sample_res_list  3 4 5 6 7 8  -sample_res  8  -cutpoint_closed 8  -input_res 1 2 3 4 5 6 7 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 
+
+Total number of samplerer_jobs to run = 32
+Total number of 'other' jobs to run = 47
+Num bulge move = 10
+
+jobs_already_done   =  ['REGION_0_0']
+
+
+all_job_tags        =  ['REGION_0_0', 'REGION_0_1', 'REGION_6_0', 'VIRT_RIBOSE_SAMPLER_REGION_0_1_FOR_REGION_0_2_START_FROM_REGION_0_1', 'REGION_0_2', 'VIRT_RIBOSE_SAMPLER_REGION_6_0_FOR_REGION_5_0_START_FROM_REGION_6_0', 'REGION_5_0', 'VIRT_RIBOSE_SAMPLER_REGION_0_2_FOR_REGION_0_3_START_FROM_REGION_0_2', 'REGION_0_3', 'VIRT_RIBOSE_SAMPLER_REGION_5_0_FOR_REGION_4_0_START_FROM_REGION_5_0', 'REGION_4_0', 'VIRT_RIBOSE_SAMPLER_REGION_0_3_FOR_REGION_0_4_START_FROM_REGION_0_3', 'REGION_0_4', 'VIRT_RIBOSE_SAMPLER_REGION_4_0_FOR_REGION_3_0_START_FROM_REGION_4_0', 'REGION_3_0', 'VIRT_RIBOSE_SAMPLER_REGION_0_4_FOR_REGION_0_5_START_FROM_REGION_0_4', 'REGION_0_5', 'VIRT_RIBOSE_SAMPLER_REGION_3_0_FOR_REGION_2_0_START_FROM_REGION_3_0', 'REGION_2_0', 'VIRT_RIBOSE_SAMPLER_REGION_0_5_FOR_REGION_0_6_START_FROM_REGION_0_5', 'VIRT_RIBOSE_SAMPLER_REGION_0_4_FOR_REGION_0_6_START_FROM_REGION_0_4', 'REGION_0_6', 'VIRT_RIBOSE_SAMPLER_REGION_2_0_FOR_REGION_1_0_START_FROM_REGION_2_0', 'VIRT_RIBOSE_SAMPLER_REGION_3_0_FOR_REGION_1_0_START_FROM_REGION_3_0', 'REGION_1_0', 'VIRT_RIBOSE_SAMPLER_REGION_0_1_FOR_REGION_2_1_START_FROM_REGION_0_1_AND_3_0', 'VIRT_RIBOSE_SAMPLER_REGION_3_0_FOR_REGION_2_1_START_FROM_REGION_0_1_AND_3_0', 'VIRT_RIBOSE_SAMPLER_REGION_2_0_FOR_REGION_2_1_START_FROM_REGION_0_0_AND_2_0', 'REGION_2_1', 'VIRT_RIBOSE_SAMPLER_REGION_0_2_FOR_REGION_3_2_START_FROM_REGION_0_2_AND_4_0', 'VIRT_RIBOSE_SAMPLER_REGION_4_0_FOR_REGION_3_2_START_FROM_REGION_0_2_AND_4_0', 'VIRT_RIBOSE_SAMPLER_REGION_0_1_FOR_REGION_3_2_START_FROM_REGION_0_1_AND_3_0', 'VIRT_RIBOSE_SAMPLER_REGION_3_0_FOR_REGION_3_2_START_FROM_REGION_0_1_AND_3_0', 'REGION_3_2', 'VIRT_RIBOSE_SAMPLER_REGION_0_3_FOR_REGION_4_3_START_FROM_REGION_0_3_AND_5_0', 'VIRT_RIBOSE_SAMPLER_REGION_5_0_FOR_REGION_4_3_START_FROM_REGION_0_3_AND_5_0', 'VIRT_RIBOSE_SAMPLER_REGION_0_2_FOR_REGION_4_3_START_FROM_REGION_0_2_AND_4_0', 'VIRT_RIBOSE_SAMPLER_REGION_4_0_FOR_REGION_4_3_START_FROM_REGION_0_2_AND_4_0', 'REGION_4_3', 'VIRT_RIBOSE_SAMPLER_REGION_0_4_FOR_REGION_5_4_START_FROM_REGION_0_4_AND_6_0', 'VIRT_RIBOSE_SAMPLER_REGION_6_0_FOR_REGION_5_4_START_FROM_REGION_0_4_AND_6_0', 'VIRT_RIBOSE_SAMPLER_REGION_0_3_FOR_REGION_5_4_START_FROM_REGION_0_3_AND_5_0', 'VIRT_RIBOSE_SAMPLER_REGION_5_0_FOR_REGION_5_4_START_FROM_REGION_0_3_AND_5_0', 'REGION_5_4', 'VIRT_RIBOSE_SAMPLER_REGION_0_5_FOR_REGION_6_5_START_FROM_REGION_0_5_AND_0_0', 'VIRT_RIBOSE_SAMPLER_REGION_0_4_FOR_REGION_6_5_START_FROM_REGION_0_4_AND_6_0', 'VIRT_RIBOSE_SAMPLER_REGION_6_0_FOR_REGION_6_5_START_FROM_REGION_0_4_AND_6_0', 'REGION_6_5']
+
+-------------------------------------------------------------------------------------------
+Successfully RAN:  /Users/sripakpa/SWA_RNA_python/SWA_dagman_python/SWA_DAG/SWA_rna_build_dagman.py -s template.pdb -fasta fasta -native native.pdb -clusterer_num_pose_kept 1000 -force_field_file rna/rna_loop_hires_04092010.wts -sampler_extra_anti_chi_rotamer false -sampler_extra_syn_chi_rotamer false -clusterer_quick_alignment true -clusterer_optimize_memory_usage true -clusterer_keep_pose_in_memory true -allow_combine_DS_regions False -dinucleotide_at_single_element_cc pure_append_prepend -allow_bulge True -input_res 1 2 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 -rmsd_res 3 4 5 6 7 8 -jump_point_pair_list 1-47 -fixed_res 1 2 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 -alignment_res_list 1-47 -optimize_long_loop_mode True -OLLM_chain_closure_only True -rna_torsion_potential_folder ps_03242010/ -sample_virt_ribose_in_sep_DAG True
+-------------------------------------------------------------------------------------------

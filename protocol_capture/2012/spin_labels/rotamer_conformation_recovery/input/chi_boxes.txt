@@ -1,6 +1,0 @@
--68.41 -56.01 60 fs empty border -1 linewidth 0.5 front
--76.44 -55.52 30 fs empty border  0 linewidth 0.5 front
--73.00    173 30 fs empty border  0 linewidth 0.5 front
-169.68 -77.10 30 fs empty border  0 linewidth 0.5 front
-172.70  72.60 30 fs empty border  0 linewidth 0.5 front
-180.00 180.00 30 fs empty border  0 linewidth 0.5 front

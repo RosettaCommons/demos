@@ -1,0 +1,16 @@
+<dock_design>
+    <SCOREFXNS>
+    </SCOREFXNS>
+    <FILTERS>
+    </FILTERS>
+    <MOVERS>
+        <DockSetupMover name=setup_jump/>
+        <DockingInitialPerturbation name=init_pert randomize1=1 randomize2=1 />
+    </MOVERS>
+    <APPLY_TO_POSE>
+    </APPLY_TO_POSE>
+    <PROTOCOLS>
+        <Add mover_name=setup_jump/>
+        <Add mover_name=init_pert/>
+    </PROTOCOLS>
+ </dock_design>

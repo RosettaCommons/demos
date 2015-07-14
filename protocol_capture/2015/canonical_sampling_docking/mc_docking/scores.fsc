@@ -1,5 +1,0 @@
-SEQUENCE: 
-SCORE: total_score atom_pair_constraint dslf_ca_dih dslf_cs_ang dslf_ss_dih dslf_ss_dst      fa_atr      fa_dun     fa_elec     fa_pair      fa_rep      fa_sol hbond_bb_sc hbond_lr_bb    hbond_sc hbond_sr_bb description 
-SCORE:    4376.024                0.000       1.380      13.528      16.167      -1.759    -479.569      35.788      -2.238      -4.760    4606.732     215.157      -4.027     -13.737      -0.408      -6.229 P_0001_trajP_0001
-SCORE:    3855.257                0.000       1.327      14.287      17.012      -4.192    -468.228      34.349      -2.380      -4.976    4083.133     209.422      -3.881     -13.782      -0.605      -6.229 P_0001_trajP_0001
-SCORE:    3855.257       1.327      14.287      17.012      -4.192    -468.228      34.349      -2.380      -4.976    4083.133     209.422      -3.881     -13.782      -0.605      -6.229 P_0001

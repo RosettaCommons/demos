@@ -1,5 +1,0 @@
-Stats for job: P_0001
-level    1 temperature 0.15 JumpRotamerSidec trials=    354;  accepts= 0.2373; 
-level    1 temperature 0.15 PerturbChiSidech trials=   1021;  accepts= 0.5495; 
-level    1 temperature 0.15 PerturbRotamerSi trials=    570;  accepts= 0.3421; 
-level    1 temperature 0.15 RigidBodyPerturb trials=     55;  accepts= 0.3273; 

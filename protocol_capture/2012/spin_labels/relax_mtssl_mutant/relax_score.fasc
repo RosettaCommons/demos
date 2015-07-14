@@ -1,3 +1,0 @@
-SEQUENCE: 
-SCORE: total_score dslf_ca_dih dslf_cs_ang dslf_ss_dih dslf_ss_dst      fa_atr      fa_dun fa_intra_rep      fa_pair       fa_rep       fa_sol hbond_bb_sc hbond_lr_bb    hbond_sc hbond_sr_bb       omega     p_aa_pp pro_close      rama       ref description 
-SCORE:    -391.592       0.000       0.000       0.000       0.000    -672.747      85.225        1.408      -13.297       65.872      318.091     -17.437     -14.061     -16.039     -68.973       9.373     -14.361     0.155   -12.342   -42.460 relax_lysozyme_start_mtssl_mutant_0001

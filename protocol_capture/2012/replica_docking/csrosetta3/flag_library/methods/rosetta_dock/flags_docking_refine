@@ -1,7 +1,0 @@
--evaluation:rmsd IRMS _input FULL
--docking_local_refine
--ex1
--ex2aro
-#-use_input_sc
--jd2:delete_old_poses
--jd2:mpi_timeout_factor 0

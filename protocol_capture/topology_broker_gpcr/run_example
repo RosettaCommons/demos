@@ -1,0 +1,4 @@
+#!/bin/bash
+
+#rosetta command line
+~/r_broker.linuxgccrelease -database ~/minirosetta_database -out:file:residue_type_set centroid -out:file:silent rbroker_run1.out -nstruct 1 @flags.txt

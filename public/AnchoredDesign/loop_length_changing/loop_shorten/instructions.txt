@@ -1,3 +1,0 @@
-Shortening loops is simple: just delete a number of residues equivalent to the number you want it shortened.  Compare 1FNA.pdb and 1FNA_BCdel.pdb in this directory for an example.
-
-AnchoredPDBCreator will close the broken loop as it inserts the anchor into the gap - see the AnchoredPDBCreator example, in which the anchor is inserted into a pre-existing gap from a deletion.
