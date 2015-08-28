@@ -4,7 +4,7 @@ Visualizing Membranes in PyMOL
 Author: Rebecca F. Alford (rfalford12@gmail.com)  
 Corresponding PI: Jeffrey J. Gray (jgray@jhu.edu)  
 Last Updated: January 2015  
-Rosetta Revision: #57514  
+Rosetta Revision #58069 
 PyMOL Version: 1.7.4  
 
 ---
