@@ -128,7 +128,7 @@ Outputs from the two scripts above were renamed for clarity
 For all scripts - running multiple times with the same output path specified will APPEND to the file and not overwrite it
 
 ## Version Info ##
-Rosetta Revision: #57740  
+Rosetta Revision #58069 
 Python Version: 2.7+  
 PyRosetta Release Version: March 2015  
 
