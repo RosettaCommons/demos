@@ -4,7 +4,7 @@ Membrane Symmetric Protein-Protein Docking
 Author: Rebecca F. Alford (rfalford12@gmail.com)  
 Corresponding PI: Jeffrey J. Gray (jgray@jhu.edu)  
 Last Updated: January 2015  
-Rosetta Revision: #57518  
+Rosetta Revision #58069 
 
 ---
 
