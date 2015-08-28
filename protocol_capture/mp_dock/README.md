@@ -4,7 +4,7 @@ Membrane Protein-Protein Docking
 Author: Julia Koehler Leman (julia dot koehler1982 at gmail dot com)  
 Corresponding PI: Jeffrey J. Gray (jgray at jhu dot edu)  
 Last Updated: January 2015  
-Rosetta Revision: #57518  
+Rosetta Revision #58069
 
 ---
 
