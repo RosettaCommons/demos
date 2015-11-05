@@ -501,7 +501,7 @@ for i in range( motif_count ):
     command += ' -in:file:silent_struct_type rna -in:file:silent '
     for n in which_stems: command += ' stem%d_%s.out' % (n+1, fasta_file.replace('.fasta',''))
 
-    command += ' -chunk_res '
+    command += ' -input_res '
     command += ' '+make_tag_with_dashes( stem_chunk_res )
 
     fid_README_MOTIFS.write( command+'\n' )
@@ -597,7 +597,7 @@ for motif_out_file in motif_out_files:
     command += ' '+motif_out_file
 
 chunk_res = []
-command += ' -chunk_res '
+command += ' -input_res '
 for n in range( len( stems )  ):
     stem = stems[n]
     for q in range( len( stem ) ):        chunk_res.append(stem[q][0] + 1)
