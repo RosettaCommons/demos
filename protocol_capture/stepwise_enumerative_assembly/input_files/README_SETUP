@@ -1,0 +1,3 @@
+rm -rf CONDOR* SLAVE*  core*  REGION*  # region*
+
+grinder_dagman.py  -loop_start_pdb noloop_mini_1alc_H.pdb  -loop_res  `seq 12 19`   -align_pdb mini_1alc_H.pdb  -fasta mini_1alc.fasta  -nstruct 200  -native mini_1alc_H.pdb   -final_number 50 -denovo 1

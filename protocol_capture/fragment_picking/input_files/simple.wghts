@@ -1,0 +1,4 @@
+# score name          priority  wght   max_allowed  extras 
+RamaScore               400    2.0     -       predA
+SecondarySimilarity     350     1.0     -       predA
+FragmentCrmsd             0     0.0     -

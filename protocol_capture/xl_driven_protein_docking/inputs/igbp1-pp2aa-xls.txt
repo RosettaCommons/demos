@@ -1,0 +1,29 @@
+1	complex	LYS-166-D-CB	LYS-158-D-CB
+2	complex	LYS-176-D-CB	LYS-166-D-CB
+3	complex	LYS-295-D-CB	LYS-276-D-CB
+4	complex	LYS-306-D-CB	LYS-276-D-CB
+5	complex	LYS-295-D-CB	LYS-325-D-CB
+6	complex	LYS-253-D-CB	LYS-276-D-CB
+7	complex	LYS-295-D-CB	LYS-163-D-CB
+8	complex	LYS-176-D-CB	LYS-165-D-CB
+9	complex	LYS-325-D-CB	LYS-97-D-CB
+10	complex	LYS-306-D-CB	LYS-97-D-CB
+11	complex	LYS-40-C-CB	LYS-33-C-CB
+12	complex	LYS-28-C-CB	LYS-158-D-CB
+13	complex	LYS-33-C-CB	LYS-166-D-CB
+14	complex	LYS-35-C-CB	LYS-163-D-CB
+15	complex	LYS-40-C-CB	LYS-163-D-CB
+16	complex	LYS-73-C-CB	LYS-253-D-CB
+17	complex	LYS-33-C-CB	LYS-306-D-CB
+18	complex	LYS-40-C-CB	LYS-166-D-CB
+19	complex	LYS-40-C-CB	LYS-158-D-CB
+20	complex	LYS-7-C-CB
+21	complex	LYS-20-C-CB
+22	complex	LYS-40-C-CB
+23	complex	LYS-176-D-CB
+24	complex	LYS-241-D-CB
+25	complex	LYS-253-D-CB
+26	complex	LYS-287-D-CB
+27	complex	LYS-295-D-CB
+28	complex	LYS-306-D-CB
+29	complex	LYS-325-D-CB

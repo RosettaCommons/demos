@@ -1,5 +1,0 @@
-bcl::storage::Table<double> sl_cb_max_angle cos( sl_cb_max_angle) SLeffective_cb_ca_angle cos( SLeffective_cb_ca_angle) SLeffective_cb_distance 
-input/pdbs_mutant_105.ls             90.657             -0.011467                 102.996                     -0.224878                 6.23921 
-input/pdbs_mutant_106.ls            112.599             -0.384276                  107.86                     -0.306699                 7.32144 
-mean                                101.628             -0.197871                 105.428                     -0.265789                 6.78032 
-standard_deviation                  10.9709              0.186404                 2.43238                     0.0409109                0.541112 

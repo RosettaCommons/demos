@@ -1,0 +1,5 @@
+In this tutorial, your job is to show how to shorten loops with Rosetta.  The input is 1FNA.pdb, a small beta sandwich.
+
+Pick a loop (I suggest the FG loop, residues 76-87 or so).  Delete one residue in the loop and remodel the loop to close the gap.  I suggest deleting A83.
+
+You have been provided with 1FNA.pdb and fragments.  Describe how to get fragments in your instructions; they are provided here for time reasons.  (NOTE FOR SCIENCE: these are NOT really good fragments for this problem due to time restrictions, they're just fragments that will let the code not crash.  DO NOT USE THEM FOR REAL SCIENCE.)

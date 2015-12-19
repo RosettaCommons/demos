@@ -1,0 +1,3 @@
+mkdir -p 1d3z.fasta.talos
+cd 1d3z.fasta.talos
+talos+ -in ../1d3z.talos 2>/dev/null

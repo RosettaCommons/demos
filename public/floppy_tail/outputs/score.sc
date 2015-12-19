@@ -1,0 +1,3 @@
+SEQUENCE: 
+SCORE: total_score Binding energy crosslink distance dslf_ca_dih dslf_cs_ang dslf_ss_dih dslf_ss_dst      fa_atr      fa_dun fa_intra_rep      fa_pair       fa_rep       fa_sol hbond_bb_sc hbond_lr_bb    hbond_sc hbond_sr_bb       omega     p_aa_pp pro_close      rama       ref description 
+SCORE:     817.599         -7.028             20.434       0.000       0.000       0.000       0.000   -2427.911     585.653        8.476      -53.103     1511.123     1181.152     -37.603     -65.397     -18.640    -139.272     101.214       4.181    74.941   229.495  -136.710 complex_readytail_final_nozn_0001

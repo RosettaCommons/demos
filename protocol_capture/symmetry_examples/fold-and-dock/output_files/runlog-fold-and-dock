@@ -1,0 +1,228 @@
+core.init: Mini-Rosetta version 39675:39676M from https://svn.rosettacommons.org/source/trunk/mini
+core.init: command: /home/ingemar/mini/bin/minirosetta.linuxgccrelease @input_files/fold-and-dock-flags -database /scratch/shared/minirosetta_database
+core.init: 'RNG device' seed mode, using '/dev/urandom', seed=1219679548 seed_offset=0 real_seed=1219679548
+core.init.random: RandomGenerator:init: Normal mode, seed=1219679548 RG_type=mt19937
+core.io.fragments: reading fragments from file: ./input_files/aa2akf_09_05.200_v1_3 ... 
+core.io.fragments: rosetta++ fileformat detected! Calling legacy reader... 
+core.fragments.ConstantLengthFragSet: finished reading top 25 9mer fragments from file ./input_files/aa2akf_09_05.200_v1_3
+core.io.fragments: reading fragments from file: ./input_files/aa2akf_03_05.200_v1_3 ... 
+core.io.fragments: rosetta++ fileformat detected! Calling legacy reader... 
+core.fragments.ConstantLengthFragSet: finished reading top 200 3mer fragments from file ./input_files/aa2akf_03_05.200_v1_3
+core.fragment: compute strand/loop fractions for 32 residues... 
+protocols.topo_broker: read fasta sequence: 32 residues
+VSRLEEDVRNLNAIVQKLQERLDRLEETVQAK
+protocols.topo_broker: make pose from sequence: VSRLEEDVRNLNAIVQKLQERLDRLEETVQAK
+core.chemical.ResidueTypeSet: Finished initializing centroid residue type set.  Created 1202 residue types
+basic.io.database: Database file opened: /scratch/shared/minirosetta_database/env_log.txt
+basic.io.database: Database file opened: /scratch/shared/minirosetta_database/cbeta_den.txt
+basic.io.database: Database file opened: /scratch/shared/minirosetta_database/pair_log.txt
+basic.io.database: Database file opened: /scratch/shared/minirosetta_database/cenpack_log.txt
+basic.io.database: Database file opened: /scratch/shared/minirosetta_database/phi.theta.36.HS.resmooth
+basic.io.database: Database file opened: /scratch/shared/minirosetta_database/phi.theta.36.SS.resmooth
+core.scoring.ScoreFunctionFactory: SCOREFUNCTION: score13_env_hb
+core.scoring.etable: Starting energy table calculation
+core.scoring.etable: smooth_etable: changing atr/rep split to bottom of energy well
+core.scoring.etable: smooth_etable: spline smoothing lj etables (maxdis = 6)
+core.scoring.etable: smooth_etable: spline smoothing solvation etables (max_dis = 6)
+core.scoring.etable: Finished calculating energy tables.
+basic.io.database: Database file opened: /scratch/shared/minirosetta_database/pdb_pair_stats_fine
+basic.io.database: Database file opened: /scratch/shared/minirosetta_database/scoring/score_functions/hbonds/standard_params/HBPoly1D.csv
+basic.io.database: Database file opened: /scratch/shared/minirosetta_database/scoring/score_functions/hbonds/standard_params/HBFadeIntervals.csv
+basic.io.database: Database file opened: /scratch/shared/minirosetta_database/scoring/score_functions/hbonds/standard_params/HBEval.csv
+basic.io.database: Database file opened: /scratch/shared/minirosetta_database/P_AA
+basic.io.database: Database file opened: /scratch/shared/minirosetta_database/P_AA_n
+basic.io.database: Database file opened: /scratch/shared/minirosetta_database/P_AA_pp
+basic.io.database: Database file opened: /scratch/shared/minirosetta_database/Rama_smooth_dyn.dat_ss_6.4
+core.chemical.ResidueTypeSet: Finished initializing fa_standard residue type set.  Created 6765 residue types
+core.pack.task: Packer task: initialize from command line() 
+core.fragment: compute strand/loop fractions for 32 residues... 
+protocols.topo_broker: read fasta sequence: 32 residues
+VSRLEEDVRNLNAIVQKLQERLDRLEETVQAK
+protocols.topo_broker: make pose from sequence: VSRLEEDVRNLNAIVQKLQERLDRLEETVQAK
+core.scoring.ScoreFunctionFactory: SCOREFUNCTION: score13_env_hb
+protocols.general_abinitio: AbrelaxMover: S_0001
+core.conformation.symmetry.SymmData: symmetry name: c3
+core.conformation.symmetry.SymmData: number of subunits: 3
+core.conformation.symmetry.SymmData: number of interfaces: 1
+core.conformation.symmetry.SymmData: score subunit number: VRT0001
+core.conformation.symmetry.SymmData: anchor the subunits at residue: 17
+core.conformation.symmetry.SymmData:  Virtual coordinate system VRT0001
+core.conformation.symmetry.SymmData: x: -1 0 0
+core.conformation.symmetry.SymmData: y: 0 1 0
+core.conformation.symmetry.SymmData: origin: 0 0 0
+core.conformation.symmetry.SymmData:  Virtual coordinate system VRT0002
+core.conformation.symmetry.SymmData: x: 0.5 -0.866025 0
+core.conformation.symmetry.SymmData: y: -0.866025 -0.5 0
+core.conformation.symmetry.SymmData: origin: 0 0 0
+core.conformation.symmetry.SymmData:  Virtual coordinate system VRT0003
+core.conformation.symmetry.SymmData: x: 0.5 0.866025 0
+core.conformation.symmetry.SymmData: y: 0.866025 -0.5 0
+core.conformation.symmetry.SymmData: origin: 0 0 0
+core.conformation.symmetry.SymmData: Dof for jump: 1
+core.conformation.symmetry.SymmData: x 1:50,50:0,0 n2c
+core.conformation.symmetry.SymmData: y 0:0,0:0,0 n2c
+core.conformation.symmetry.SymmData: z 0:0,0:0,0 n2c
+core.conformation.symmetry.SymmData: x_angle 1:0,360:0,0 n2c
+core.conformation.symmetry.SymmData: y_angle 1:0,360:0,0 n2c
+core.conformation.symmetry.SymmData: z_angle 1:0,360:0,0 n2c
+core.conformation.symmetry.SymmData: Jump BASEJUMP VRT0001 SUBUNIT
+core.conformation.symmetry.SymmData: Jump CLONE0002 VRT0002 SUBUNIT
+core.conformation.symmetry.SymmData: Jump CLONE0003 VRT0003 SUBUNIT
+core.conformation.symmetry.SymmData: Jump JUMP1 VRT0001 VRT0002
+core.conformation.symmetry.SymmData: Jump JUMP2 VRT0002 VRT0003
+core.conformation.symmetry.SymmData: Include subunit: 1 2 3
+core.conformation.symmetry.SymmData: Output subunit: 1 2 3
+core.conformation.symmetry.SymmData: SlideType: RANDOM
+core.conformation.symmetry.SymmData: SlideCriteriaType: CEN_DOCK_SCORE
+core.conformation.symmetry.SymmData: SlideCriteriaVal: AUTOMATIC
+core.conformation.symmetry.SymmData: SlideOrder: none
+core.conformation.SymmetryInfo: SYMMETRY_INFO N 3 N_VIRT 3 N_INTERFACE 1 TYPE simple BB_CLONES_SIZE 32 CHI_CLONES_SIZE 32 JUMP_CLONES_SIZE 1 BB_FOLLOWS_SIZE 96 CHI_FOLLOWS_SIZE 96 JUMP_FOLLOWS_SIZE 3 DOFS_SIZE 1 SCORE_MULTIPLY_SIZE 99 BB_CLONES 1,33,65 2,34,66 3,35,67 4,36,68 5,37,69 6,38,70 7,39,71 8,40,72 9,41,73 10,42,74 11,43,75 12,44,76 13,45,77 14,46,78 15,47,79 16,48,80 17,49,81 18,50,82 19,51,83 20,52,84 21,53,85 22,54,86 23,55,87 24,56,88 25,57,89 26,58,90 27,59,91 28,60,92 29,61,93 30,62,94 31,63,95 32,64,96 CHI_CLONES 1,33,65 2,34,66 3,35,67 4,36,68 5,37,69 6,38,70 7,39,71 8,40,72 9,41,73 10,42,74 11,43,75 12,44,76 13,45,77 14,46,78 15,47,79 16,48,80 17,49,81 18,50,82 19,51,83 20,52,84 21,53,85 22,54,86 23,55,87 24,56,88 25,57,89 26,58,90 27,59,91 28,60,92 29,61,93 30,62,94 31,63,95 32,64,96 JUMP_CLONES 1,2,3 BB_FOLLOWS 1,0 2,0 3,0 4,0 5,0 6,0 7,0 8,0 9,0 10,0 11,0 12,0 13,0 14,0 15,0 16,0 17,0 18,0 19,0 20,0 21,0 22,0 23,0 24,0 25,0 26,0 27,0 28,0 29,0 30,0 31,0 32,0 33,1 34,2 35,3 36,4 37,5 38,6 39,7 40,8 41,9 42,10 43,11 44,12 45,13 46,14 47,15 48,16 49,17 50,18 51,19 52,20 53,21 54,22 55,23 56,24 57,25 58,26 59,27 60,28 61,29 62,30 63,31 64,32 65,1 66,2 67,3 68,4 69,5 70,6 71,7 72,8 73,9 74,10 75,11 76,12 77,13 78,14 79,15 80,16 81,17 82,18 83,19 84,20 85,21 86,22 87,23 88,24 89,25 90,26 91,27 92,28 93,29 94,30 95,31 96,32 CHI_FOLLOWS 1,0 2,0 3,0 4,0 5,0 6,0 7,0 8,0 9,0 10,0 11,0 12,0 13,0 14,0 15,0 16,0 17,0 18,0 19,0 20,0 21,0 22,0 23,0 24,0 25,0 26,0 27,0 28,0 29,0 30,0 31,0 32,0 33,1 34,2 35,3 36,4 37,5 38,6 39,7 40,8 41,9 42,10 43,11 44,12 45,13 46,14 47,15 48,16 49,17 50,18 51,19 52,20 53,21 54,22 55,23 56,24 57,25 58,26 59,27 60,28 61,29 62,30 63,31 64,32 65,1 66,2 67,3 68,4 69,5 70,6 71,7 72,8 73,9 74,10 75,11 76,12 77,13 78,14 79,15 80,16 81,17 82,18 83,19 84,20 85,21 86,22 87,23 88,24 89,25 90,26 91,27 92,28 93,29 94,30 95,31 96,32 JUMP_FOLLOWS 1,0 2,1 3,1 DOFS 1,x(50:50;0:0;n2c)angle_x(0:360;0:0;n2c)angle_y(0:360;0:0;n2c)angle_z(0:360;0:0;n2c) SCORE_MULTIPLY 3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1
+protocols.symmetric_docking.SymDockingInitialPerturbation: Reading options...
+protocols.symmetric_docking.SymDockingInitialPerturbation: initialize_rigid_body_dofs: true
+protocols.geometry.RB_geometry: random_reorientation_matrix phi: 13.7636 psi: 212.977 theta: 78.2603
+basic.io.database: Database file opened: /scratch/shared/minirosetta_database/env_log.txt
+basic.io.database: Database file opened: /scratch/shared/minirosetta_database/cbeta_den.txt
+basic.io.database: Database file opened: /scratch/shared/minirosetta_database/pair_log.txt
+basic.io.database: Database file opened: /scratch/shared/minirosetta_database/cenpack_log.txt
+basic.io.database: Database file opened: /scratch/shared/minirosetta_database/interchain_env_log.txt
+basic.io.database: Database file opened: /scratch/shared/minirosetta_database/interchain_pair_log.txt
+protocols.topo_broker: FragmentClaimer  movemap: 
+****************1**************C****************2**************C****************3**************C1/4/C2/4/5/C3/5/C
+*************************************************************************************************.*.**.*.*.**.*.*
+protocols.topo_broker: 
+protocols.topo_broker: FragmentClaimer  movemap: 
+****************1**************C****************2**************C****************3**************C1/4/C2/4/5/C3/5/C
+*************************************************************************************************.*.**.*.*.**.*.*
+protocols.topo_broker: 
+protocols.topo_broker: FragmentClaimer  movemap: 
+****************1**************C****************2**************C****************3**************C1/4/C2/4/5/C3/5/C
+*************************************************************************************************.*.**.*.*.**.*.*
+protocols.topo_broker: 
+protocols.topo_broker: LoopFragmentClaimer  movemap: 
+****************1**************C****************2**************C****************3**************C1/4/C2/4/5/C3/5/C
+*************************************************************************************************.*.**.*.*.**.*.*
+protocols.topo_broker: 
+core.scoring.ScoreFunctionFactory: SCOREFUNCTION: score13_env_hb
+protocols.abinitio: ConstraintFragment Sampler: S_0001
+protocols.abinitio: Fragment Sampler: S_0001
+protocols.abinitio: 
+===================================================================
+   stage1                                                        
+--------------------------------------------------------------------
+FragmentSampler: stage1
+protocols.abinitio: ResiduePairConstraints: ... total violations: 0
+protocols.abinitio: ResiduePairConstraints: ... total violations: 0
+protocols.abinitio: ------------------------------------------------------------
+ Scores                       Weight   Raw Score Wghtd.Score
+------------------------------------------------------------
+ vdw                          0.100       0.000       0.000
+ atom_pair_constraint         1.000       0.000       0.000
+---------------------------------------------------
+ Total weighted score:                        0.000
+
+protocols.moves.MonteCarlo: ClassicFragmentM trials=    299;  accepts= 0.9632;  energy_drop/trial=   0.02256
+protocols.moves.MonteCarlo: SymFoldandDockMo trials=    277;  accepts= 1.0000;  energy_drop/trial=   0.00000
+protocols.moves.MonteCarlo: SymFoldandDockRb trials=   1399;  accepts= 0.9893;  energy_drop/trial=  -0.00482
+protocols.moves.MonteCarlo: SymFoldandDockSl trials=     25;  accepts= 1.0000;  energy_drop/trial=  -0.00011
+protocols.abinitio: ResiduePairConstraints: ... total violations: 0
+protocols.abinitio: 
+===================================================================
+   stage2                                                        
+--------------------------------------------------------------------
+FragmentSampler: stage2
+protocols.abinitio: ------------------------------------------------------------
+ Scores                       Weight   Raw Score Wghtd.Score
+------------------------------------------------------------
+ vdw                          1.000       0.008       0.008
+ pair                         1.000     -12.398     -12.398
+ atom_pair_constraint         1.000       0.000       0.000
+ env                          1.000     -34.338     -34.338
+ hs_pair                      1.000       0.000       0.000
+ ss_pair                      0.300       0.000       0.000
+ sheet                        1.000       0.000       0.000
+ linear_chainbreak            0.083       0.000       0.000
+---------------------------------------------------
+ Total weighted score:                      -46.728
+
+protocols.moves.MonteCarlo: ClassicFragmentM trials=    298;  accepts= 0.0470;  energy_drop/trial=  -0.10297
+protocols.moves.MonteCarlo: SymFoldandDockMo trials=    267;  accepts= 1.0000;  energy_drop/trial=   0.00000
+protocols.moves.MonteCarlo: SymFoldandDockRb trials=   1405;  accepts= 0.9950;  energy_drop/trial=  -0.01603
+protocols.moves.MonteCarlo: SymFoldandDockSl trials=     30;  accepts= 0.7000;  energy_drop/trial=   0.05620
+protocols.abinitio: 
+===================================================================
+   stage3                                                        
+--------------------------------------------------------------------
+FragmentSampler: stage3
+protocols.abinitio: ResiduePairConstraints: ... total violations: 0
+protocols.abinitio: ResiduePairConstraints: ... total violations: 0
+protocols.abinitio: ResiduePairConstraints: ... total violations: 0
+protocols.abinitio: ResiduePairConstraints: ... total violations: 0
+protocols.abinitio: ResiduePairConstraints: ... total violations: 0
+protocols.abinitio: ResiduePairConstraints: ... total violations: 0
+protocols.abinitio: ResiduePairConstraints: ... total violations: 0
+protocols.abinitio: ResiduePairConstraints: ... total violations: 0
+protocols.abinitio: ResiduePairConstraints: ... total violations: 0
+protocols.abinitio: ResiduePairConstraints: ... total violations: 0
+protocols.abinitio: ------------------------------------------------------------
+ Scores                       Weight   Raw Score Wghtd.Score
+------------------------------------------------------------
+ vdw                          1.000       0.057       0.057
+ cenpack                      0.500      -4.683      -2.341
+ pair                         1.000     -19.842     -19.842
+ atom_pair_constraint         1.000       0.000       0.000
+ env                          1.000     -35.824     -35.824
+ cbeta                        0.250      41.069      10.267
+ hs_pair                      1.000       0.000       0.000
+ ss_pair                      1.000       0.000       0.000
+ sheet                        1.000       0.000       0.000
+ linear_chainbreak            0.833       0.000       0.000
+---------------------------------------------------
+ Total weighted score:                      -47.683
+
+protocols.moves.MonteCarlo: ClassicFragmentM trials=   2761;  accepts= 0.0163;  energy_drop/trial=  -0.00027
+protocols.moves.MonteCarlo: SymFoldandDockMo trials=   2858;  accepts= 1.0000;  energy_drop/trial=   0.00000
+protocols.moves.MonteCarlo: SymFoldandDockRb trials=  14096;  accepts= 0.9973;  energy_drop/trial=  -0.00411
+protocols.moves.MonteCarlo: SymFoldandDockSl trials=    285;  accepts= 0.2175;  energy_drop/trial=   0.13956
+protocols.abinitio: 
+===================================================================
+   stage4                                                        
+--------------------------------------------------------------------
+FragmentSampler: stage4
+protocols.abinitio: ResiduePairConstraints: ... total violations: 0
+protocols.abinitio: ResiduePairConstraints: ... total violations: 0
+protocols.abinitio: ResiduePairConstraints: ... total violations: 0
+protocols.abinitio: ------------------------------------------------------------
+ Scores                       Weight   Raw Score Wghtd.Score
+------------------------------------------------------------
+ vdw                          1.000       3.260       3.260
+ cenpack                      1.000     -26.492     -26.492
+ pair                         1.000     -14.594     -14.594
+ atom_pair_constraint         1.000       0.000       0.000
+ env                          1.000     -52.951     -52.951
+ cbeta                        1.000      39.572      39.572
+ rg                           0.003      17.449       0.052
+ hs_pair                      1.000       0.000       0.000
+ ss_pair                      1.000       0.000       0.000
+ rsigma                       1.000       0.000       0.000
+ sheet                        1.000       0.000       0.000
+ linear_chainbreak            1.333       0.000       0.000
+---------------------------------------------------
+ Total weighted score:                      -51.152
+
+protocols.moves.MonteCarlo: ClassicFragmentM trials=    538;  accepts= 0.0335;  energy_drop/trial=   0.01772
+protocols.moves.MonteCarlo: SmoothFragmentMo trials=   1148;  accepts= 0.0549;  energy_drop/trial=   0.03297
+protocols.moves.MonteCarlo: SymFoldandDockMo trials=   1647;  accepts= 1.0000;  energy_drop/trial=   0.00000
+protocols.moves.MonteCarlo: SymFoldandDockRb trials=   8499;  accepts= 0.9212;  energy_drop/trial=  -0.00868
+protocols.moves.MonteCarlo: SymFoldandDockSl trials=    168;  accepts= 0.2440;  energy_drop/trial=  -0.03358
+protocols.abinitio: 
+===================================================================
+   Finished Abinitio                                                 
+
+protocols.relax.ClassicRelax: Setting up default relax setting
+protocols::checkpoint: Deleting checkpoints of ClassicRelax
+protocols::checkpoint: Deleting checkpoints of FragmentSampler
+protocols.jd2.JobDistributor: S_0001 reported success in 149 seconds
+protocols.jd2.JobDistributor: no more batches to process... 
+protocols.jd2.JobDistributor: 1 jobs considered, 1 jobs attempted in 149 seconds
+protocols::checkpoint: Deleting checkpoints of FragmentSampler
+protocols::checkpoint: Deleting checkpoints of FragmentSampler

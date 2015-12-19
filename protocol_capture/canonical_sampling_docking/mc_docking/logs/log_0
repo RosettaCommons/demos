@@ -1,0 +1,589 @@
+core.init: (0) Rosetta version 1633fdbda4ab118c06b8f4b238a706fb8ec6a02f 2014-09-25 22:02:00 +0200 from git@github.com:RosettaCommons/main.git
+core.init: (0) command: /home/zzhang/Rosetta_working/Rosetta/main/source/bin/rosetta_scripts.mpi.linuxgccrelease -out:level 300 -mute all_high_mpi_rank_filebuf -out:mpi_tracer_to_file logs/log -database /home/zzhang/Rosetta_working/Rosetta/main/database -parser:protocol dock.xml @flags_replica_dock
+core.init: (0) 'RNG device' seed mode, using '/dev/urandom', seed=1513364935 seed_offset=0 real_seed=1513364935
+core.init.random: (0) RandomGenerator:init: Normal mode, seed=1513364935 RG_type=mt19937
+protocols.jd2.PDBJobInputter: (0) Instantiate PDBJobInputter
+protocols.jd2.PDBJobInputter: (0) PDBJobInputter::fill_jobs
+protocols.jd2.PDBJobInputter: (0) pushed P.pdb nstruct index 1
+core.chemical.ResidueTypeSet: (0) Finished initializing fa_standard residue type set.  Created 737 residue types
+core.io.pdb.file_data: (0) PDB reader is ignoring atom  CD  in residue 87 E.  Pass flag -ignore_zero_occupancy false to change this behavior
+core.io.pdb.file_data: (0) PDB reader is ignoring atom  CE  in residue 145 E.  Pass flag -ignore_zero_occupancy false to change this behavior
+core.io.pdb.file_data: (0) PDB reader is ignoring atom  NZ  in residue 145 E.  Pass flag -ignore_zero_occupancy false to change this behavior
+core.io.pdb.file_data: (0) PDB reader is ignoring atom  OG  in residue 147 E.  Pass flag -ignore_zero_occupancy false to change this behavior
+core.io.pdb.file_data: (0) PDB reader is ignoring atom  OD1 in residue 165 E.  Pass flag -ignore_zero_occupancy false to change this behavior
+core.io.pdb.file_data: (0) PDB reader is ignoring atom  OD2 in residue 165 E.  Pass flag -ignore_zero_occupancy false to change this behavior
+core.io.pdb.file_data: (0) PDB reader is ignoring atom  NZ  in residue 169 E.  Pass flag -ignore_zero_occupancy false to change this behavior
+core.io.pdb.file_data: (0) PDB reader is ignoring atom  CG  in residue 186 E.  Pass flag -ignore_zero_occupancy false to change this behavior
+core.io.pdb.file_data: (0) PDB reader is ignoring atom  CD  in residue 186 E.  Pass flag -ignore_zero_occupancy false to change this behavior
+core.io.pdb.file_data: (0) PDB reader is ignoring atom  OE1 in residue 186 E.  Pass flag -ignore_zero_occupancy false to change this behavior
+core.io.pdb.file_data: (0) PDB reader is ignoring atom  OE2 in residue 186 E.  Pass flag -ignore_zero_occupancy false to change this behavior
+core.io.pdb.file_data: (0) PDB reader is ignoring atom  NZ  in residue 188 E.  Pass flag -ignore_zero_occupancy false to change this behavior
+core.io.pdb.file_data: (0) PDB reader is ignoring atom  CD  in residue 11 I.  Pass flag -ignore_zero_occupancy false to change this behavior
+core.io.pdb.file_data: (0) PDB reader is ignoring atom  CD  in residue 24 I.  Pass flag -ignore_zero_occupancy false to change this behavior
+core.io.pdb.file_data: (0) PDB reader is ignoring atom  OE1 in residue 24 I.  Pass flag -ignore_zero_occupancy false to change this behavior
+core.io.pdb.file_data: (0) PDB reader is ignoring atom  OE2 in residue 24 I.  Pass flag -ignore_zero_occupancy false to change this behavior
+core.conformation.Conformation: (0) [ WARNING ] missing heavyatom:  CD  on residue LYS 69
+core.conformation.Conformation: (0) [ WARNING ] missing heavyatom:  CE  on residue LYS 125
+core.conformation.Conformation: (0) [ WARNING ] missing heavyatom:  NZ  on residue LYS 125
+core.conformation.Conformation: (0) [ WARNING ] missing heavyatom:  OG  on residue SER 127
+core.conformation.Conformation: (0) [ WARNING ] missing heavyatom:  OD1 on residue ASP 145
+core.conformation.Conformation: (0) [ WARNING ] missing heavyatom:  OD2 on residue ASP 145
+core.conformation.Conformation: (0) [ WARNING ] missing heavyatom:  NZ  on residue LYS 149
+core.conformation.Conformation: (0) [ WARNING ] missing heavyatom:  CG  on residue GLU 167
+core.conformation.Conformation: (0) [ WARNING ] missing heavyatom:  CD  on residue GLU 167
+core.conformation.Conformation: (0) [ WARNING ] missing heavyatom:  OE1 on residue GLU 167
+core.conformation.Conformation: (0) [ WARNING ] missing heavyatom:  OE2 on residue GLU 167
+core.conformation.Conformation: (0) [ WARNING ] missing heavyatom:  NZ  on residue LYS 170
+core.conformation.Conformation: (0) [ WARNING ] missing heavyatom:  CD  on residue LYS 234
+core.conformation.Conformation: (0) [ WARNING ] missing heavyatom:  CD  on residue GLU 247
+core.conformation.Conformation: (0) [ WARNING ] missing heavyatom:  OE1 on residue GLU 247
+core.conformation.Conformation: (0) [ WARNING ] missing heavyatom:  OE2 on residue GLU 247
+core.conformation.Conformation: (0) Found disulfide between residues 7 137
+core.conformation.Conformation: (0) current variant for 7 CYS
+core.conformation.Conformation: (0) current variant for 137 CYS
+core.conformation.Conformation: (0) current variant for 7 CYD
+core.conformation.Conformation: (0) current variant for 137 CYD
+core.conformation.Conformation: (0) Found disulfide between residues 25 41
+core.conformation.Conformation: (0) current variant for 25 CYS
+core.conformation.Conformation: (0) current variant for 41 CYS
+core.conformation.Conformation: (0) current variant for 25 CYD
+core.conformation.Conformation: (0) current variant for 41 CYD
+core.conformation.Conformation: (0) Found disulfide between residues 109 210
+core.conformation.Conformation: (0) current variant for 109 CYS
+core.conformation.Conformation: (0) current variant for 210 CYS
+core.conformation.Conformation: (0) current variant for 109 CYD
+core.conformation.Conformation: (0) current variant for 210 CYD
+core.conformation.Conformation: (0) Found disulfide between residues 116 183
+core.conformation.Conformation: (0) current variant for 116 CYS
+core.conformation.Conformation: (0) current variant for 183 CYS
+core.conformation.Conformation: (0) current variant for 116 CYD
+core.conformation.Conformation: (0) current variant for 183 CYD
+core.conformation.Conformation: (0) Found disulfide between residues 148 162
+core.conformation.Conformation: (0) current variant for 148 CYS
+core.conformation.Conformation: (0) current variant for 162 CYS
+core.conformation.Conformation: (0) current variant for 148 CYD
+core.conformation.Conformation: (0) current variant for 162 CYD
+core.conformation.Conformation: (0) Found disulfide between residues 173 197
+core.conformation.Conformation: (0) current variant for 173 CYS
+core.conformation.Conformation: (0) current variant for 197 CYS
+core.conformation.Conformation: (0) current variant for 173 CYD
+core.conformation.Conformation: (0) current variant for 197 CYD
+core.conformation.Conformation: (0) Found disulfide between residues 226 243
+core.conformation.Conformation: (0) current variant for 226 CYS
+core.conformation.Conformation: (0) current variant for 243 CYS
+core.conformation.Conformation: (0) current variant for 226 CYD
+core.conformation.Conformation: (0) current variant for 243 CYD
+core.conformation.Conformation: (0) Found disulfide between residues 233 245
+core.conformation.Conformation: (0) current variant for 233 CYS
+core.conformation.Conformation: (0) current variant for 245 CYS
+core.conformation.Conformation: (0) current variant for 233 CYD
+core.conformation.Conformation: (0) current variant for 245 CYD
+core.conformation.Conformation: (0) Found disulfide between residues 239 251
+core.conformation.Conformation: (0) current variant for 239 CYS
+core.conformation.Conformation: (0) current variant for 251 CYS
+core.conformation.Conformation: (0) current variant for 239 CYD
+core.conformation.Conformation: (0) current variant for 251 CYD
+core.pack.task: (0) Packer task: initialize from command line() 
+core.pack.pack_missing_sidechains: (0) packing residue number 69 because of missing atom number 7 atom name  CD 
+core.pack.pack_missing_sidechains: (0) packing residue number 125 because of missing atom number 8 atom name  CE 
+core.pack.pack_missing_sidechains: (0) packing residue number 127 because of missing atom number 6 atom name  OG 
+core.pack.pack_missing_sidechains: (0) packing residue number 145 because of missing atom number 7 atom name  OD1
+core.pack.pack_missing_sidechains: (0) packing residue number 149 because of missing atom number 9 atom name  NZ 
+core.pack.pack_missing_sidechains: (0) packing residue number 167 because of missing atom number 6 atom name  CG 
+core.pack.pack_missing_sidechains: (0) packing residue number 170 because of missing atom number 9 atom name  NZ 
+core.pack.pack_missing_sidechains: (0) packing residue number 234 because of missing atom number 7 atom name  CD 
+core.pack.pack_missing_sidechains: (0) packing residue number 247 because of missing atom number 7 atom name  CD 
+core.scoring.ScoreFunctionFactory: (0) SCOREFUNCTION: docking
+core.scoring.etable: (0) Starting energy table calculation
+core.scoring.etable: (0) smooth_etable: changing atr/rep split to bottom of energy well
+core.scoring.etable: (0) smooth_etable: spline smoothing lj etables (maxdis = 6)
+core.scoring.etable: (0) smooth_etable: spline smoothing solvation etables (max_dis = 6)
+core.scoring.etable: (0) Finished calculating energy tables.
+basic.io.database: (0) Database file opened: scoring/score_functions/PairEPotential/pdb_pair_stats_fine
+basic.io.database: (0) Database file opened: scoring/score_functions/hbonds/sp2_elec_params/HBPoly1D.csv
+basic.io.database: (0) Database file opened: scoring/score_functions/hbonds/sp2_elec_params/HBFadeIntervals.csv
+basic.io.database: (0) Database file opened: scoring/score_functions/hbonds/sp2_elec_params/HBEval.csv
+basic.io.database: (0) Database file opened: scoring/score_functions/disulfides/fa_SS_distance_score
+core.pack.dunbrack: (0) Dunbrack 2010 library took 0.11 seconds to load from binary
+core.pack.interaction_graph.interaction_graph_factory: (0) Instantiating DensePDInteractionGraph
+core.pack.pack_rotamers: (0) built 175 rotamers at 9 positions.
+core.pack.pack_rotamers: (0) IG: 12564 bytes
+protocols.evaluation.ChiWellRmsdEvaluatorCreator: (0) Evaluation Creator active ... 
+devel.replica_docking.WrapFilterAsEvaluatorCreator: (0) Add I_sc evaluator 
+core.scoring.ScoreFunctionFactory: (0) SCOREFUNCTION: docking
+devel.replica_docking.WrapFilterAsEvaluator: (0) Evaluator I_sc
+devel.replica_docking.WrapFilterAsEvaluatorCreator: (0) Add Irms evaluator 
+core.io.pdb.file_data: (0) PDB reader is ignoring atom  CD  in residue 87 E.  Pass flag -ignore_zero_occupancy false to change this behavior
+core.io.pdb.file_data: (0) PDB reader is ignoring atom  CE  in residue 145 E.  Pass flag -ignore_zero_occupancy false to change this behavior
+core.io.pdb.file_data: (0) PDB reader is ignoring atom  NZ  in residue 145 E.  Pass flag -ignore_zero_occupancy false to change this behavior
+core.io.pdb.file_data: (0) PDB reader is ignoring atom  OG  in residue 147 E.  Pass flag -ignore_zero_occupancy false to change this behavior
+core.io.pdb.file_data: (0) PDB reader is ignoring atom  OD1 in residue 165 E.  Pass flag -ignore_zero_occupancy false to change this behavior
+core.io.pdb.file_data: (0) PDB reader is ignoring atom  OD2 in residue 165 E.  Pass flag -ignore_zero_occupancy false to change this behavior
+core.io.pdb.file_data: (0) PDB reader is ignoring atom  NZ  in residue 169 E.  Pass flag -ignore_zero_occupancy false to change this behavior
+core.io.pdb.file_data: (0) PDB reader is ignoring atom  CG  in residue 186 E.  Pass flag -ignore_zero_occupancy false to change this behavior
+core.io.pdb.file_data: (0) PDB reader is ignoring atom  CD  in residue 186 E.  Pass flag -ignore_zero_occupancy false to change this behavior
+core.io.pdb.file_data: (0) PDB reader is ignoring atom  OE1 in residue 186 E.  Pass flag -ignore_zero_occupancy false to change this behavior
+core.io.pdb.file_data: (0) PDB reader is ignoring atom  OE2 in residue 186 E.  Pass flag -ignore_zero_occupancy false to change this behavior
+core.io.pdb.file_data: (0) PDB reader is ignoring atom  NZ  in residue 188 E.  Pass flag -ignore_zero_occupancy false to change this behavior
+core.io.pdb.file_data: (0) PDB reader is ignoring atom  CD  in residue 11 I.  Pass flag -ignore_zero_occupancy false to change this behavior
+core.io.pdb.file_data: (0) PDB reader is ignoring atom  CD  in residue 24 I.  Pass flag -ignore_zero_occupancy false to change this behavior
+core.io.pdb.file_data: (0) PDB reader is ignoring atom  OE1 in residue 24 I.  Pass flag -ignore_zero_occupancy false to change this behavior
+core.io.pdb.file_data: (0) PDB reader is ignoring atom  OE2 in residue 24 I.  Pass flag -ignore_zero_occupancy false to change this behavior
+core.conformation.Conformation: (0) [ WARNING ] missing heavyatom:  CD  on residue LYS 69
+core.conformation.Conformation: (0) [ WARNING ] missing heavyatom:  CE  on residue LYS 125
+core.conformation.Conformation: (0) [ WARNING ] missing heavyatom:  NZ  on residue LYS 125
+core.conformation.Conformation: (0) [ WARNING ] missing heavyatom:  OG  on residue SER 127
+core.conformation.Conformation: (0) [ WARNING ] missing heavyatom:  OD1 on residue ASP 145
+core.conformation.Conformation: (0) [ WARNING ] missing heavyatom:  OD2 on residue ASP 145
+core.conformation.Conformation: (0) [ WARNING ] missing heavyatom:  NZ  on residue LYS 149
+core.conformation.Conformation: (0) [ WARNING ] missing heavyatom:  CG  on residue GLU 167
+core.conformation.Conformation: (0) [ WARNING ] missing heavyatom:  CD  on residue GLU 167
+core.conformation.Conformation: (0) [ WARNING ] missing heavyatom:  OE1 on residue GLU 167
+core.conformation.Conformation: (0) [ WARNING ] missing heavyatom:  OE2 on residue GLU 167
+core.conformation.Conformation: (0) [ WARNING ] missing heavyatom:  NZ  on residue LYS 170
+core.conformation.Conformation: (0) [ WARNING ] missing heavyatom:  CD  on residue LYS 234
+core.conformation.Conformation: (0) [ WARNING ] missing heavyatom:  CD  on residue GLU 247
+core.conformation.Conformation: (0) [ WARNING ] missing heavyatom:  OE1 on residue GLU 247
+core.conformation.Conformation: (0) [ WARNING ] missing heavyatom:  OE2 on residue GLU 247
+core.conformation.Conformation: (0) Found disulfide between residues 7 137
+core.conformation.Conformation: (0) current variant for 7 CYS
+core.conformation.Conformation: (0) current variant for 137 CYS
+core.conformation.Conformation: (0) current variant for 7 CYD
+core.conformation.Conformation: (0) current variant for 137 CYD
+core.conformation.Conformation: (0) Found disulfide between residues 25 41
+core.conformation.Conformation: (0) current variant for 25 CYS
+core.conformation.Conformation: (0) current variant for 41 CYS
+core.conformation.Conformation: (0) current variant for 25 CYD
+core.conformation.Conformation: (0) current variant for 41 CYD
+core.conformation.Conformation: (0) Found disulfide between residues 109 210
+core.conformation.Conformation: (0) current variant for 109 CYS
+core.conformation.Conformation: (0) current variant for 210 CYS
+core.conformation.Conformation: (0) current variant for 109 CYD
+core.conformation.Conformation: (0) current variant for 210 CYD
+core.conformation.Conformation: (0) Found disulfide between residues 116 183
+core.conformation.Conformation: (0) current variant for 116 CYS
+core.conformation.Conformation: (0) current variant for 183 CYS
+core.conformation.Conformation: (0) current variant for 116 CYD
+core.conformation.Conformation: (0) current variant for 183 CYD
+core.conformation.Conformation: (0) Found disulfide between residues 148 162
+core.conformation.Conformation: (0) current variant for 148 CYS
+core.conformation.Conformation: (0) current variant for 162 CYS
+core.conformation.Conformation: (0) current variant for 148 CYD
+core.conformation.Conformation: (0) current variant for 162 CYD
+core.conformation.Conformation: (0) Found disulfide between residues 173 197
+core.conformation.Conformation: (0) current variant for 173 CYS
+core.conformation.Conformation: (0) current variant for 197 CYS
+core.conformation.Conformation: (0) current variant for 173 CYD
+core.conformation.Conformation: (0) current variant for 197 CYD
+core.conformation.Conformation: (0) Found disulfide between residues 226 243
+core.conformation.Conformation: (0) current variant for 226 CYS
+core.conformation.Conformation: (0) current variant for 243 CYS
+core.conformation.Conformation: (0) current variant for 226 CYD
+core.conformation.Conformation: (0) current variant for 243 CYD
+core.conformation.Conformation: (0) Found disulfide between residues 233 245
+core.conformation.Conformation: (0) current variant for 233 CYS
+core.conformation.Conformation: (0) current variant for 245 CYS
+core.conformation.Conformation: (0) current variant for 233 CYD
+core.conformation.Conformation: (0) current variant for 245 CYD
+core.conformation.Conformation: (0) Found disulfide between residues 239 251
+core.conformation.Conformation: (0) current variant for 239 CYS
+core.conformation.Conformation: (0) current variant for 251 CYS
+core.conformation.Conformation: (0) current variant for 239 CYD
+core.conformation.Conformation: (0) current variant for 251 CYD
+core.pack.task: (0) Packer task: initialize from command line() 
+core.pack.pack_missing_sidechains: (0) packing residue number 69 because of missing atom number 7 atom name  CD 
+core.pack.pack_missing_sidechains: (0) packing residue number 125 because of missing atom number 8 atom name  CE 
+core.pack.pack_missing_sidechains: (0) packing residue number 127 because of missing atom number 6 atom name  OG 
+core.pack.pack_missing_sidechains: (0) packing residue number 145 because of missing atom number 7 atom name  OD1
+core.pack.pack_missing_sidechains: (0) packing residue number 149 because of missing atom number 9 atom name  NZ 
+core.pack.pack_missing_sidechains: (0) packing residue number 167 because of missing atom number 6 atom name  CG 
+core.pack.pack_missing_sidechains: (0) packing residue number 170 because of missing atom number 9 atom name  NZ 
+core.pack.pack_missing_sidechains: (0) packing residue number 234 because of missing atom number 7 atom name  CD 
+core.pack.pack_missing_sidechains: (0) packing residue number 247 because of missing atom number 7 atom name  CD 
+core.scoring.ScoreFunctionFactory: (0) SCOREFUNCTION: docking
+core.pack.interaction_graph.interaction_graph_factory: (0) Instantiating DensePDInteractionGraph
+core.pack.pack_rotamers: (0) built 175 rotamers at 9 positions.
+core.pack.pack_rotamers: (0) IG: 12564 bytes
+core.scoring.ScoreFunctionFactory: (0) SCOREFUNCTION: docking
+devel.replica_docking.IrmsdFilter: (0) End constructer
+devel.replica_docking.WrapFilterAsEvaluator: (0) Evaluator Irms
+devel.replica_docking.WrapFilterAsEvaluatorCreator: (0) Add Irms evaluator 
+core.io.pdb.file_data: (0) PDB reader is ignoring atom  CD  in residue 87 E.  Pass flag -ignore_zero_occupancy false to change this behavior
+core.io.pdb.file_data: (0) PDB reader is ignoring atom  CE  in residue 145 E.  Pass flag -ignore_zero_occupancy false to change this behavior
+core.io.pdb.file_data: (0) PDB reader is ignoring atom  NZ  in residue 145 E.  Pass flag -ignore_zero_occupancy false to change this behavior
+core.io.pdb.file_data: (0) PDB reader is ignoring atom  OG  in residue 147 E.  Pass flag -ignore_zero_occupancy false to change this behavior
+core.io.pdb.file_data: (0) PDB reader is ignoring atom  OD1 in residue 165 E.  Pass flag -ignore_zero_occupancy false to change this behavior
+core.io.pdb.file_data: (0) PDB reader is ignoring atom  OD2 in residue 165 E.  Pass flag -ignore_zero_occupancy false to change this behavior
+core.io.pdb.file_data: (0) PDB reader is ignoring atom  NZ  in residue 169 E.  Pass flag -ignore_zero_occupancy false to change this behavior
+core.io.pdb.file_data: (0) PDB reader is ignoring atom  CG  in residue 186 E.  Pass flag -ignore_zero_occupancy false to change this behavior
+core.io.pdb.file_data: (0) PDB reader is ignoring atom  CD  in residue 186 E.  Pass flag -ignore_zero_occupancy false to change this behavior
+core.io.pdb.file_data: (0) PDB reader is ignoring atom  OE1 in residue 186 E.  Pass flag -ignore_zero_occupancy false to change this behavior
+core.io.pdb.file_data: (0) PDB reader is ignoring atom  OE2 in residue 186 E.  Pass flag -ignore_zero_occupancy false to change this behavior
+core.io.pdb.file_data: (0) PDB reader is ignoring atom  NZ  in residue 188 E.  Pass flag -ignore_zero_occupancy false to change this behavior
+core.io.pdb.file_data: (0) PDB reader is ignoring atom  CD  in residue 11 I.  Pass flag -ignore_zero_occupancy false to change this behavior
+core.io.pdb.file_data: (0) PDB reader is ignoring atom  CD  in residue 24 I.  Pass flag -ignore_zero_occupancy false to change this behavior
+core.io.pdb.file_data: (0) PDB reader is ignoring atom  OE1 in residue 24 I.  Pass flag -ignore_zero_occupancy false to change this behavior
+core.io.pdb.file_data: (0) PDB reader is ignoring atom  OE2 in residue 24 I.  Pass flag -ignore_zero_occupancy false to change this behavior
+core.conformation.Conformation: (0) [ WARNING ] missing heavyatom:  CD  on residue LYS 69
+core.conformation.Conformation: (0) [ WARNING ] missing heavyatom:  CE  on residue LYS 125
+core.conformation.Conformation: (0) [ WARNING ] missing heavyatom:  NZ  on residue LYS 125
+core.conformation.Conformation: (0) [ WARNING ] missing heavyatom:  OG  on residue SER 127
+core.conformation.Conformation: (0) [ WARNING ] missing heavyatom:  OD1 on residue ASP 145
+core.conformation.Conformation: (0) [ WARNING ] missing heavyatom:  OD2 on residue ASP 145
+core.conformation.Conformation: (0) [ WARNING ] missing heavyatom:  NZ  on residue LYS 149
+core.conformation.Conformation: (0) [ WARNING ] missing heavyatom:  CG  on residue GLU 167
+core.conformation.Conformation: (0) [ WARNING ] missing heavyatom:  CD  on residue GLU 167
+core.conformation.Conformation: (0) [ WARNING ] missing heavyatom:  OE1 on residue GLU 167
+core.conformation.Conformation: (0) [ WARNING ] missing heavyatom:  OE2 on residue GLU 167
+core.conformation.Conformation: (0) [ WARNING ] missing heavyatom:  NZ  on residue LYS 170
+core.conformation.Conformation: (0) [ WARNING ] missing heavyatom:  CD  on residue LYS 234
+core.conformation.Conformation: (0) [ WARNING ] missing heavyatom:  CD  on residue GLU 247
+core.conformation.Conformation: (0) [ WARNING ] missing heavyatom:  OE1 on residue GLU 247
+core.conformation.Conformation: (0) [ WARNING ] missing heavyatom:  OE2 on residue GLU 247
+core.conformation.Conformation: (0) Found disulfide between residues 7 137
+core.conformation.Conformation: (0) current variant for 7 CYS
+core.conformation.Conformation: (0) current variant for 137 CYS
+core.conformation.Conformation: (0) current variant for 7 CYD
+core.conformation.Conformation: (0) current variant for 137 CYD
+core.conformation.Conformation: (0) Found disulfide between residues 25 41
+core.conformation.Conformation: (0) current variant for 25 CYS
+core.conformation.Conformation: (0) current variant for 41 CYS
+core.conformation.Conformation: (0) current variant for 25 CYD
+core.conformation.Conformation: (0) current variant for 41 CYD
+core.conformation.Conformation: (0) Found disulfide between residues 109 210
+core.conformation.Conformation: (0) current variant for 109 CYS
+core.conformation.Conformation: (0) current variant for 210 CYS
+core.conformation.Conformation: (0) current variant for 109 CYD
+core.conformation.Conformation: (0) current variant for 210 CYD
+core.conformation.Conformation: (0) Found disulfide between residues 116 183
+core.conformation.Conformation: (0) current variant for 116 CYS
+core.conformation.Conformation: (0) current variant for 183 CYS
+core.conformation.Conformation: (0) current variant for 116 CYD
+core.conformation.Conformation: (0) current variant for 183 CYD
+core.conformation.Conformation: (0) Found disulfide between residues 148 162
+core.conformation.Conformation: (0) current variant for 148 CYS
+core.conformation.Conformation: (0) current variant for 162 CYS
+core.conformation.Conformation: (0) current variant for 148 CYD
+core.conformation.Conformation: (0) current variant for 162 CYD
+core.conformation.Conformation: (0) Found disulfide between residues 173 197
+core.conformation.Conformation: (0) current variant for 173 CYS
+core.conformation.Conformation: (0) current variant for 197 CYS
+core.conformation.Conformation: (0) current variant for 173 CYD
+core.conformation.Conformation: (0) current variant for 197 CYD
+core.conformation.Conformation: (0) Found disulfide between residues 226 243
+core.conformation.Conformation: (0) current variant for 226 CYS
+core.conformation.Conformation: (0) current variant for 243 CYS
+core.conformation.Conformation: (0) current variant for 226 CYD
+core.conformation.Conformation: (0) current variant for 243 CYD
+core.conformation.Conformation: (0) Found disulfide between residues 233 245
+core.conformation.Conformation: (0) current variant for 233 CYS
+core.conformation.Conformation: (0) current variant for 245 CYS
+core.conformation.Conformation: (0) current variant for 233 CYD
+core.conformation.Conformation: (0) current variant for 245 CYD
+core.conformation.Conformation: (0) Found disulfide between residues 239 251
+core.conformation.Conformation: (0) current variant for 239 CYS
+core.conformation.Conformation: (0) current variant for 251 CYS
+core.conformation.Conformation: (0) current variant for 239 CYD
+core.conformation.Conformation: (0) current variant for 251 CYD
+core.pack.task: (0) Packer task: initialize from command line() 
+core.pack.pack_missing_sidechains: (0) packing residue number 69 because of missing atom number 7 atom name  CD 
+core.pack.pack_missing_sidechains: (0) packing residue number 125 because of missing atom number 8 atom name  CE 
+core.pack.pack_missing_sidechains: (0) packing residue number 127 because of missing atom number 6 atom name  OG 
+core.pack.pack_missing_sidechains: (0) packing residue number 145 because of missing atom number 7 atom name  OD1
+core.pack.pack_missing_sidechains: (0) packing residue number 149 because of missing atom number 9 atom name  NZ 
+core.pack.pack_missing_sidechains: (0) packing residue number 167 because of missing atom number 6 atom name  CG 
+core.pack.pack_missing_sidechains: (0) packing residue number 170 because of missing atom number 9 atom name  NZ 
+core.pack.pack_missing_sidechains: (0) packing residue number 234 because of missing atom number 7 atom name  CD 
+core.pack.pack_missing_sidechains: (0) packing residue number 247 because of missing atom number 7 atom name  CD 
+core.scoring.ScoreFunctionFactory: (0) SCOREFUNCTION: docking
+core.pack.interaction_graph.interaction_graph_factory: (0) Instantiating DensePDInteractionGraph
+core.pack.pack_rotamers: (0) built 175 rotamers at 9 positions.
+core.pack.pack_rotamers: (0) IG: 12564 bytes
+core.scoring.ScoreFunctionFactory: (0) SCOREFUNCTION: docking
+devel.replica_docking.CaIrmsdFilter: (0) End constructer
+devel.replica_docking.WrapFilterAsEvaluator: (0) Evaluator Ca_Irms
+devel.replica_docking.WrapFilterAsEvaluatorCreator: (0) Add evaluator of Fnat 
+core.io.pdb.file_data: (0) PDB reader is ignoring atom  CD  in residue 87 E.  Pass flag -ignore_zero_occupancy false to change this behavior
+core.io.pdb.file_data: (0) PDB reader is ignoring atom  CE  in residue 145 E.  Pass flag -ignore_zero_occupancy false to change this behavior
+core.io.pdb.file_data: (0) PDB reader is ignoring atom  NZ  in residue 145 E.  Pass flag -ignore_zero_occupancy false to change this behavior
+core.io.pdb.file_data: (0) PDB reader is ignoring atom  OG  in residue 147 E.  Pass flag -ignore_zero_occupancy false to change this behavior
+core.io.pdb.file_data: (0) PDB reader is ignoring atom  OD1 in residue 165 E.  Pass flag -ignore_zero_occupancy false to change this behavior
+core.io.pdb.file_data: (0) PDB reader is ignoring atom  OD2 in residue 165 E.  Pass flag -ignore_zero_occupancy false to change this behavior
+core.io.pdb.file_data: (0) PDB reader is ignoring atom  NZ  in residue 169 E.  Pass flag -ignore_zero_occupancy false to change this behavior
+core.io.pdb.file_data: (0) PDB reader is ignoring atom  CG  in residue 186 E.  Pass flag -ignore_zero_occupancy false to change this behavior
+core.io.pdb.file_data: (0) PDB reader is ignoring atom  CD  in residue 186 E.  Pass flag -ignore_zero_occupancy false to change this behavior
+core.io.pdb.file_data: (0) PDB reader is ignoring atom  OE1 in residue 186 E.  Pass flag -ignore_zero_occupancy false to change this behavior
+core.io.pdb.file_data: (0) PDB reader is ignoring atom  OE2 in residue 186 E.  Pass flag -ignore_zero_occupancy false to change this behavior
+core.io.pdb.file_data: (0) PDB reader is ignoring atom  NZ  in residue 188 E.  Pass flag -ignore_zero_occupancy false to change this behavior
+core.io.pdb.file_data: (0) PDB reader is ignoring atom  CD  in residue 11 I.  Pass flag -ignore_zero_occupancy false to change this behavior
+core.io.pdb.file_data: (0) PDB reader is ignoring atom  CD  in residue 24 I.  Pass flag -ignore_zero_occupancy false to change this behavior
+core.io.pdb.file_data: (0) PDB reader is ignoring atom  OE1 in residue 24 I.  Pass flag -ignore_zero_occupancy false to change this behavior
+core.io.pdb.file_data: (0) PDB reader is ignoring atom  OE2 in residue 24 I.  Pass flag -ignore_zero_occupancy false to change this behavior
+core.conformation.Conformation: (0) [ WARNING ] missing heavyatom:  CD  on residue LYS 69
+core.conformation.Conformation: (0) [ WARNING ] missing heavyatom:  CE  on residue LYS 125
+core.conformation.Conformation: (0) [ WARNING ] missing heavyatom:  NZ  on residue LYS 125
+core.conformation.Conformation: (0) [ WARNING ] missing heavyatom:  OG  on residue SER 127
+core.conformation.Conformation: (0) [ WARNING ] missing heavyatom:  OD1 on residue ASP 145
+core.conformation.Conformation: (0) [ WARNING ] missing heavyatom:  OD2 on residue ASP 145
+core.conformation.Conformation: (0) [ WARNING ] missing heavyatom:  NZ  on residue LYS 149
+core.conformation.Conformation: (0) [ WARNING ] missing heavyatom:  CG  on residue GLU 167
+core.conformation.Conformation: (0) [ WARNING ] missing heavyatom:  CD  on residue GLU 167
+core.conformation.Conformation: (0) [ WARNING ] missing heavyatom:  OE1 on residue GLU 167
+core.conformation.Conformation: (0) [ WARNING ] missing heavyatom:  OE2 on residue GLU 167
+core.conformation.Conformation: (0) [ WARNING ] missing heavyatom:  NZ  on residue LYS 170
+core.conformation.Conformation: (0) [ WARNING ] missing heavyatom:  CD  on residue LYS 234
+core.conformation.Conformation: (0) [ WARNING ] missing heavyatom:  CD  on residue GLU 247
+core.conformation.Conformation: (0) [ WARNING ] missing heavyatom:  OE1 on residue GLU 247
+core.conformation.Conformation: (0) [ WARNING ] missing heavyatom:  OE2 on residue GLU 247
+core.conformation.Conformation: (0) Found disulfide between residues 7 137
+core.conformation.Conformation: (0) current variant for 7 CYS
+core.conformation.Conformation: (0) current variant for 137 CYS
+core.conformation.Conformation: (0) current variant for 7 CYD
+core.conformation.Conformation: (0) current variant for 137 CYD
+core.conformation.Conformation: (0) Found disulfide between residues 25 41
+core.conformation.Conformation: (0) current variant for 25 CYS
+core.conformation.Conformation: (0) current variant for 41 CYS
+core.conformation.Conformation: (0) current variant for 25 CYD
+core.conformation.Conformation: (0) current variant for 41 CYD
+core.conformation.Conformation: (0) Found disulfide between residues 109 210
+core.conformation.Conformation: (0) current variant for 109 CYS
+core.conformation.Conformation: (0) current variant for 210 CYS
+core.conformation.Conformation: (0) current variant for 109 CYD
+core.conformation.Conformation: (0) current variant for 210 CYD
+core.conformation.Conformation: (0) Found disulfide between residues 116 183
+core.conformation.Conformation: (0) current variant for 116 CYS
+core.conformation.Conformation: (0) current variant for 183 CYS
+core.conformation.Conformation: (0) current variant for 116 CYD
+core.conformation.Conformation: (0) current variant for 183 CYD
+core.conformation.Conformation: (0) Found disulfide between residues 148 162
+core.conformation.Conformation: (0) current variant for 148 CYS
+core.conformation.Conformation: (0) current variant for 162 CYS
+core.conformation.Conformation: (0) current variant for 148 CYD
+core.conformation.Conformation: (0) current variant for 162 CYD
+core.conformation.Conformation: (0) Found disulfide between residues 173 197
+core.conformation.Conformation: (0) current variant for 173 CYS
+core.conformation.Conformation: (0) current variant for 197 CYS
+core.conformation.Conformation: (0) current variant for 173 CYD
+core.conformation.Conformation: (0) current variant for 197 CYD
+core.conformation.Conformation: (0) Found disulfide between residues 226 243
+core.conformation.Conformation: (0) current variant for 226 CYS
+core.conformation.Conformation: (0) current variant for 243 CYS
+core.conformation.Conformation: (0) current variant for 226 CYD
+core.conformation.Conformation: (0) current variant for 243 CYD
+core.conformation.Conformation: (0) Found disulfide between residues 233 245
+core.conformation.Conformation: (0) current variant for 233 CYS
+core.conformation.Conformation: (0) current variant for 245 CYS
+core.conformation.Conformation: (0) current variant for 233 CYD
+core.conformation.Conformation: (0) current variant for 245 CYD
+core.conformation.Conformation: (0) Found disulfide between residues 239 251
+core.conformation.Conformation: (0) current variant for 239 CYS
+core.conformation.Conformation: (0) current variant for 251 CYS
+core.conformation.Conformation: (0) current variant for 239 CYD
+core.conformation.Conformation: (0) current variant for 251 CYD
+core.pack.task: (0) Packer task: initialize from command line() 
+core.pack.pack_missing_sidechains: (0) packing residue number 69 because of missing atom number 7 atom name  CD 
+core.pack.pack_missing_sidechains: (0) packing residue number 125 because of missing atom number 8 atom name  CE 
+core.pack.pack_missing_sidechains: (0) packing residue number 127 because of missing atom number 6 atom name  OG 
+core.pack.pack_missing_sidechains: (0) packing residue number 145 because of missing atom number 7 atom name  OD1
+core.pack.pack_missing_sidechains: (0) packing residue number 149 because of missing atom number 9 atom name  NZ 
+core.pack.pack_missing_sidechains: (0) packing residue number 167 because of missing atom number 6 atom name  CG 
+core.pack.pack_missing_sidechains: (0) packing residue number 170 because of missing atom number 9 atom name  NZ 
+core.pack.pack_missing_sidechains: (0) packing residue number 234 because of missing atom number 7 atom name  CD 
+core.pack.pack_missing_sidechains: (0) packing residue number 247 because of missing atom number 7 atom name  CD 
+core.scoring.ScoreFunctionFactory: (0) SCOREFUNCTION: docking
+core.pack.interaction_graph.interaction_graph_factory: (0) Instantiating DensePDInteractionGraph
+core.pack.pack_rotamers: (0) built 175 rotamers at 9 positions.
+core.pack.pack_rotamers: (0) IG: 12564 bytes
+core.scoring.ScoreFunctionFactory: (0) SCOREFUNCTION: docking
+devel.replica_docking.FnatFilter: (0) End constructer
+devel.replica_docking.WrapFilterAsEvaluator: (0) Evaluator Fnat_n
+devel.replica_docking.WrapFilterAsEvaluatorCreator: (0) Add Lrmsd evaluator 
+core.io.pdb.file_data: (0) PDB reader is ignoring atom  CD  in residue 87 E.  Pass flag -ignore_zero_occupancy false to change this behavior
+core.io.pdb.file_data: (0) PDB reader is ignoring atom  CE  in residue 145 E.  Pass flag -ignore_zero_occupancy false to change this behavior
+core.io.pdb.file_data: (0) PDB reader is ignoring atom  NZ  in residue 145 E.  Pass flag -ignore_zero_occupancy false to change this behavior
+core.io.pdb.file_data: (0) PDB reader is ignoring atom  OG  in residue 147 E.  Pass flag -ignore_zero_occupancy false to change this behavior
+core.io.pdb.file_data: (0) PDB reader is ignoring atom  OD1 in residue 165 E.  Pass flag -ignore_zero_occupancy false to change this behavior
+core.io.pdb.file_data: (0) PDB reader is ignoring atom  OD2 in residue 165 E.  Pass flag -ignore_zero_occupancy false to change this behavior
+core.io.pdb.file_data: (0) PDB reader is ignoring atom  NZ  in residue 169 E.  Pass flag -ignore_zero_occupancy false to change this behavior
+core.io.pdb.file_data: (0) PDB reader is ignoring atom  CG  in residue 186 E.  Pass flag -ignore_zero_occupancy false to change this behavior
+core.io.pdb.file_data: (0) PDB reader is ignoring atom  CD  in residue 186 E.  Pass flag -ignore_zero_occupancy false to change this behavior
+core.io.pdb.file_data: (0) PDB reader is ignoring atom  OE1 in residue 186 E.  Pass flag -ignore_zero_occupancy false to change this behavior
+core.io.pdb.file_data: (0) PDB reader is ignoring atom  OE2 in residue 186 E.  Pass flag -ignore_zero_occupancy false to change this behavior
+core.io.pdb.file_data: (0) PDB reader is ignoring atom  NZ  in residue 188 E.  Pass flag -ignore_zero_occupancy false to change this behavior
+core.io.pdb.file_data: (0) PDB reader is ignoring atom  CD  in residue 11 I.  Pass flag -ignore_zero_occupancy false to change this behavior
+core.io.pdb.file_data: (0) PDB reader is ignoring atom  CD  in residue 24 I.  Pass flag -ignore_zero_occupancy false to change this behavior
+core.io.pdb.file_data: (0) PDB reader is ignoring atom  OE1 in residue 24 I.  Pass flag -ignore_zero_occupancy false to change this behavior
+core.io.pdb.file_data: (0) PDB reader is ignoring atom  OE2 in residue 24 I.  Pass flag -ignore_zero_occupancy false to change this behavior
+core.conformation.Conformation: (0) [ WARNING ] missing heavyatom:  CD  on residue LYS 69
+core.conformation.Conformation: (0) [ WARNING ] missing heavyatom:  CE  on residue LYS 125
+core.conformation.Conformation: (0) [ WARNING ] missing heavyatom:  NZ  on residue LYS 125
+core.conformation.Conformation: (0) [ WARNING ] missing heavyatom:  OG  on residue SER 127
+core.conformation.Conformation: (0) [ WARNING ] missing heavyatom:  OD1 on residue ASP 145
+core.conformation.Conformation: (0) [ WARNING ] missing heavyatom:  OD2 on residue ASP 145
+core.conformation.Conformation: (0) [ WARNING ] missing heavyatom:  NZ  on residue LYS 149
+core.conformation.Conformation: (0) [ WARNING ] missing heavyatom:  CG  on residue GLU 167
+core.conformation.Conformation: (0) [ WARNING ] missing heavyatom:  CD  on residue GLU 167
+core.conformation.Conformation: (0) [ WARNING ] missing heavyatom:  OE1 on residue GLU 167
+core.conformation.Conformation: (0) [ WARNING ] missing heavyatom:  OE2 on residue GLU 167
+core.conformation.Conformation: (0) [ WARNING ] missing heavyatom:  NZ  on residue LYS 170
+core.conformation.Conformation: (0) [ WARNING ] missing heavyatom:  CD  on residue LYS 234
+core.conformation.Conformation: (0) [ WARNING ] missing heavyatom:  CD  on residue GLU 247
+core.conformation.Conformation: (0) [ WARNING ] missing heavyatom:  OE1 on residue GLU 247
+core.conformation.Conformation: (0) [ WARNING ] missing heavyatom:  OE2 on residue GLU 247
+core.conformation.Conformation: (0) Found disulfide between residues 7 137
+core.conformation.Conformation: (0) current variant for 7 CYS
+core.conformation.Conformation: (0) current variant for 137 CYS
+core.conformation.Conformation: (0) current variant for 7 CYD
+core.conformation.Conformation: (0) current variant for 137 CYD
+core.conformation.Conformation: (0) Found disulfide between residues 25 41
+core.conformation.Conformation: (0) current variant for 25 CYS
+core.conformation.Conformation: (0) current variant for 41 CYS
+core.conformation.Conformation: (0) current variant for 25 CYD
+core.conformation.Conformation: (0) current variant for 41 CYD
+core.conformation.Conformation: (0) Found disulfide between residues 109 210
+core.conformation.Conformation: (0) current variant for 109 CYS
+core.conformation.Conformation: (0) current variant for 210 CYS
+core.conformation.Conformation: (0) current variant for 109 CYD
+core.conformation.Conformation: (0) current variant for 210 CYD
+core.conformation.Conformation: (0) Found disulfide between residues 116 183
+core.conformation.Conformation: (0) current variant for 116 CYS
+core.conformation.Conformation: (0) current variant for 183 CYS
+core.conformation.Conformation: (0) current variant for 116 CYD
+core.conformation.Conformation: (0) current variant for 183 CYD
+core.conformation.Conformation: (0) Found disulfide between residues 148 162
+core.conformation.Conformation: (0) current variant for 148 CYS
+core.conformation.Conformation: (0) current variant for 162 CYS
+core.conformation.Conformation: (0) current variant for 148 CYD
+core.conformation.Conformation: (0) current variant for 162 CYD
+core.conformation.Conformation: (0) Found disulfide between residues 173 197
+core.conformation.Conformation: (0) current variant for 173 CYS
+core.conformation.Conformation: (0) current variant for 197 CYS
+core.conformation.Conformation: (0) current variant for 173 CYD
+core.conformation.Conformation: (0) current variant for 197 CYD
+core.conformation.Conformation: (0) Found disulfide between residues 226 243
+core.conformation.Conformation: (0) current variant for 226 CYS
+core.conformation.Conformation: (0) current variant for 243 CYS
+core.conformation.Conformation: (0) current variant for 226 CYD
+core.conformation.Conformation: (0) current variant for 243 CYD
+core.conformation.Conformation: (0) Found disulfide between residues 233 245
+core.conformation.Conformation: (0) current variant for 233 CYS
+core.conformation.Conformation: (0) current variant for 245 CYS
+core.conformation.Conformation: (0) current variant for 233 CYD
+core.conformation.Conformation: (0) current variant for 245 CYD
+core.conformation.Conformation: (0) Found disulfide between residues 239 251
+core.conformation.Conformation: (0) current variant for 239 CYS
+core.conformation.Conformation: (0) current variant for 251 CYS
+core.conformation.Conformation: (0) current variant for 239 CYD
+core.conformation.Conformation: (0) current variant for 251 CYD
+core.pack.task: (0) Packer task: initialize from command line() 
+core.pack.pack_missing_sidechains: (0) packing residue number 69 because of missing atom number 7 atom name  CD 
+core.pack.pack_missing_sidechains: (0) packing residue number 125 because of missing atom number 8 atom name  CE 
+core.pack.pack_missing_sidechains: (0) packing residue number 127 because of missing atom number 6 atom name  OG 
+core.pack.pack_missing_sidechains: (0) packing residue number 145 because of missing atom number 7 atom name  OD1
+core.pack.pack_missing_sidechains: (0) packing residue number 149 because of missing atom number 9 atom name  NZ 
+core.pack.pack_missing_sidechains: (0) packing residue number 167 because of missing atom number 6 atom name  CG 
+core.pack.pack_missing_sidechains: (0) packing residue number 170 because of missing atom number 9 atom name  NZ 
+core.pack.pack_missing_sidechains: (0) packing residue number 234 because of missing atom number 7 atom name  CD 
+core.pack.pack_missing_sidechains: (0) packing residue number 247 because of missing atom number 7 atom name  CD 
+core.scoring.ScoreFunctionFactory: (0) SCOREFUNCTION: docking
+core.pack.interaction_graph.interaction_graph_factory: (0) Instantiating DensePDInteractionGraph
+core.pack.pack_rotamers: (0) built 175 rotamers at 9 positions.
+core.pack.pack_rotamers: (0) IG: 12564 bytes
+devel.replica_docking.LrmsdFilter: (0) End constructer
+devel.replica_docking.WrapFilterAsEvaluator: (0) Evaluator Lrmsd
+devel.replica_docking.WrapFilterAsEvaluatorCreator: (0) Add evaluator of Fnonnat 
+core.io.pdb.file_data: (0) PDB reader is ignoring atom  CD  in residue 87 E.  Pass flag -ignore_zero_occupancy false to change this behavior
+core.io.pdb.file_data: (0) PDB reader is ignoring atom  CE  in residue 145 E.  Pass flag -ignore_zero_occupancy false to change this behavior
+core.io.pdb.file_data: (0) PDB reader is ignoring atom  NZ  in residue 145 E.  Pass flag -ignore_zero_occupancy false to change this behavior
+core.io.pdb.file_data: (0) PDB reader is ignoring atom  OG  in residue 147 E.  Pass flag -ignore_zero_occupancy false to change this behavior
+core.io.pdb.file_data: (0) PDB reader is ignoring atom  OD1 in residue 165 E.  Pass flag -ignore_zero_occupancy false to change this behavior
+core.io.pdb.file_data: (0) PDB reader is ignoring atom  OD2 in residue 165 E.  Pass flag -ignore_zero_occupancy false to change this behavior
+core.io.pdb.file_data: (0) PDB reader is ignoring atom  NZ  in residue 169 E.  Pass flag -ignore_zero_occupancy false to change this behavior
+core.io.pdb.file_data: (0) PDB reader is ignoring atom  CG  in residue 186 E.  Pass flag -ignore_zero_occupancy false to change this behavior
+core.io.pdb.file_data: (0) PDB reader is ignoring atom  CD  in residue 186 E.  Pass flag -ignore_zero_occupancy false to change this behavior
+core.io.pdb.file_data: (0) PDB reader is ignoring atom  OE1 in residue 186 E.  Pass flag -ignore_zero_occupancy false to change this behavior
+core.io.pdb.file_data: (0) PDB reader is ignoring atom  OE2 in residue 186 E.  Pass flag -ignore_zero_occupancy false to change this behavior
+core.io.pdb.file_data: (0) PDB reader is ignoring atom  NZ  in residue 188 E.  Pass flag -ignore_zero_occupancy false to change this behavior
+core.io.pdb.file_data: (0) PDB reader is ignoring atom  CD  in residue 11 I.  Pass flag -ignore_zero_occupancy false to change this behavior
+core.io.pdb.file_data: (0) PDB reader is ignoring atom  CD  in residue 24 I.  Pass flag -ignore_zero_occupancy false to change this behavior
+core.io.pdb.file_data: (0) PDB reader is ignoring atom  OE1 in residue 24 I.  Pass flag -ignore_zero_occupancy false to change this behavior
+core.io.pdb.file_data: (0) PDB reader is ignoring atom  OE2 in residue 24 I.  Pass flag -ignore_zero_occupancy false to change this behavior
+core.conformation.Conformation: (0) [ WARNING ] missing heavyatom:  CD  on residue LYS 69
+core.conformation.Conformation: (0) [ WARNING ] missing heavyatom:  CE  on residue LYS 125
+core.conformation.Conformation: (0) [ WARNING ] missing heavyatom:  NZ  on residue LYS 125
+core.conformation.Conformation: (0) [ WARNING ] missing heavyatom:  OG  on residue SER 127
+core.conformation.Conformation: (0) [ WARNING ] missing heavyatom:  OD1 on residue ASP 145
+core.conformation.Conformation: (0) [ WARNING ] missing heavyatom:  OD2 on residue ASP 145
+core.conformation.Conformation: (0) [ WARNING ] missing heavyatom:  NZ  on residue LYS 149
+core.conformation.Conformation: (0) [ WARNING ] missing heavyatom:  CG  on residue GLU 167
+core.conformation.Conformation: (0) [ WARNING ] missing heavyatom:  CD  on residue GLU 167
+core.conformation.Conformation: (0) [ WARNING ] missing heavyatom:  OE1 on residue GLU 167
+core.conformation.Conformation: (0) [ WARNING ] missing heavyatom:  OE2 on residue GLU 167
+core.conformation.Conformation: (0) [ WARNING ] missing heavyatom:  NZ  on residue LYS 170
+core.conformation.Conformation: (0) [ WARNING ] missing heavyatom:  CD  on residue LYS 234
+core.conformation.Conformation: (0) [ WARNING ] missing heavyatom:  CD  on residue GLU 247
+core.conformation.Conformation: (0) [ WARNING ] missing heavyatom:  OE1 on residue GLU 247
+core.conformation.Conformation: (0) [ WARNING ] missing heavyatom:  OE2 on residue GLU 247
+core.conformation.Conformation: (0) Found disulfide between residues 7 137
+core.conformation.Conformation: (0) current variant for 7 CYS
+core.conformation.Conformation: (0) current variant for 137 CYS
+core.conformation.Conformation: (0) current variant for 7 CYD
+core.conformation.Conformation: (0) current variant for 137 CYD
+core.conformation.Conformation: (0) Found disulfide between residues 25 41
+core.conformation.Conformation: (0) current variant for 25 CYS
+core.conformation.Conformation: (0) current variant for 41 CYS
+core.conformation.Conformation: (0) current variant for 25 CYD
+core.conformation.Conformation: (0) current variant for 41 CYD
+core.conformation.Conformation: (0) Found disulfide between residues 109 210
+core.conformation.Conformation: (0) current variant for 109 CYS
+core.conformation.Conformation: (0) current variant for 210 CYS
+core.conformation.Conformation: (0) current variant for 109 CYD
+core.conformation.Conformation: (0) current variant for 210 CYD
+core.conformation.Conformation: (0) Found disulfide between residues 116 183
+core.conformation.Conformation: (0) current variant for 116 CYS
+core.conformation.Conformation: (0) current variant for 183 CYS
+core.conformation.Conformation: (0) current variant for 116 CYD
+core.conformation.Conformation: (0) current variant for 183 CYD
+core.conformation.Conformation: (0) Found disulfide between residues 148 162
+core.conformation.Conformation: (0) current variant for 148 CYS
+core.conformation.Conformation: (0) current variant for 162 CYS
+core.conformation.Conformation: (0) current variant for 148 CYD
+core.conformation.Conformation: (0) current variant for 162 CYD
+core.conformation.Conformation: (0) Found disulfide between residues 173 197
+core.conformation.Conformation: (0) current variant for 173 CYS
+core.conformation.Conformation: (0) current variant for 197 CYS
+core.conformation.Conformation: (0) current variant for 173 CYD
+core.conformation.Conformation: (0) current variant for 197 CYD
+core.conformation.Conformation: (0) Found disulfide between residues 226 243
+core.conformation.Conformation: (0) current variant for 226 CYS
+core.conformation.Conformation: (0) current variant for 243 CYS
+core.conformation.Conformation: (0) current variant for 226 CYD
+core.conformation.Conformation: (0) current variant for 243 CYD
+core.conformation.Conformation: (0) Found disulfide between residues 233 245
+core.conformation.Conformation: (0) current variant for 233 CYS
+core.conformation.Conformation: (0) current variant for 245 CYS
+core.conformation.Conformation: (0) current variant for 233 CYD
+core.conformation.Conformation: (0) current variant for 245 CYD
+core.conformation.Conformation: (0) Found disulfide between residues 239 251
+core.conformation.Conformation: (0) current variant for 239 CYS
+core.conformation.Conformation: (0) current variant for 251 CYS
+core.conformation.Conformation: (0) current variant for 239 CYD
+core.conformation.Conformation: (0) current variant for 251 CYD
+core.pack.task: (0) Packer task: initialize from command line() 
+core.pack.pack_missing_sidechains: (0) packing residue number 69 because of missing atom number 7 atom name  CD 
+core.pack.pack_missing_sidechains: (0) packing residue number 125 because of missing atom number 8 atom name  CE 
+core.pack.pack_missing_sidechains: (0) packing residue number 127 because of missing atom number 6 atom name  OG 
+core.pack.pack_missing_sidechains: (0) packing residue number 145 because of missing atom number 7 atom name  OD1
+core.pack.pack_missing_sidechains: (0) packing residue number 149 because of missing atom number 9 atom name  NZ 
+core.pack.pack_missing_sidechains: (0) packing residue number 167 because of missing atom number 6 atom name  CG 
+core.pack.pack_missing_sidechains: (0) packing residue number 170 because of missing atom number 9 atom name  NZ 
+core.pack.pack_missing_sidechains: (0) packing residue number 234 because of missing atom number 7 atom name  CD 
+core.pack.pack_missing_sidechains: (0) packing residue number 247 because of missing atom number 7 atom name  CD 
+core.scoring.ScoreFunctionFactory: (0) SCOREFUNCTION: docking
+core.pack.interaction_graph.interaction_graph_factory: (0) Instantiating DensePDInteractionGraph
+core.pack.pack_rotamers: (0) built 175 rotamers at 9 positions.
+core.pack.pack_rotamers: (0) IG: 12564 bytes
+core.scoring.ScoreFunctionFactory: (0) SCOREFUNCTION: docking
+devel.replica_docking.FnonnatFilter: (0) End constructer
+devel.replica_docking.WrapFilterAsEvaluator: (0) Evaluator Fnonnat
+

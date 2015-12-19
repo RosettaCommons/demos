@@ -1,0 +1,445 @@
+core.init: Mini-Rosetta version 47966:47972M from https://svn.rosettacommons.org/source/trunk/rosetta/rosetta_source
+core.init: command: /Users/sripakpa/ROSETTA/rosetta_UPDATE_V3/rosetta_source/bin/swa_rna_main.macosgccrelease -algorithm rna_cluster -database /Users/sripakpa/ROSETTA/rosetta_UPDATE_V3/rosetta_database/ -suite_cluster_radius 1.0 -loop_cluster_radius 0.7 -clusterer_quick_alignment true -clusterer_optimize_memory_usage true -in:file:silent_struct_type binary_rna -score:weights rna/rna_loop_hires_04092010.wts -score:rna_torsion_potential ps_03242010/ -fixed_res 1 2 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 -rmsd_res 3 4 5 6 7 8 -jump_point_pairs 1-47 -alignment_res 1-47 -fasta fasta -global_sample_res_list 3 4 5 6 7 8 -sample_res 3 -input_res 1 2 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 -in:file:silent region_0_1_sample.out -out:file:silent region_0_1_sample.cluster.out -clusterer_num_pose_kept 1000
+core.init: 'RNG device' seed mode, using '/dev/urandom', seed=-1620722644 seed_offset=0 real_seed=-1620722644
+core.init.random: RandomGenerator:init: Normal mode, seed=-1620722644 RG_type=mt19937
+user did not specify both input_res2 and missing_res2
+
+------------------------------------------------------------------------------Enter StepWiseRNA_JobParameters_Setup::constructor------------------------------------------------------------------------------
+                   input_res=    1   2                           9  10  11  12  13  14  15  16  17  18  19  20  21  22  23  24  25  26  27  28  29  30  31  32  33  34  35  36  37  38  39  40  41  42  43  44  45  46  47
+                  input_res2= 
+             moving_res_list=            3
+moving_res= 3
+full_sequence_= cugaugaaggacggauuuccgaaugauacaauccaaugaggagagga
+working_sequence_= 
+
+----------------------------------------------------------------Enter StepWiseRNA_JobParameters_Setup::figure_out_working_sequence_and_mapping----------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------Exit StepWiseRNA_JobParameters_Setup::constructor-------------------------------------------------------------------------------
+
+-----------------------------------------------------------------------------Enter StepWiseRNA_JobParameters_Setup::set_fixed_res-----------------------------------------------------------------------------
+             moving_res_list=            3
+allow_fixed_res_at_moving_res_=    F
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+jump_point_pair_list:                    :( 1, 47 ) 
+assert_in_fixed_res=    T
+---------------------------------------------------------------------------StepWiseRNA_JobParameters_Setup::set_native_alignment_res---------------------------------------------------------------------------
+native_alignment=                       
+working_native_alignment=               
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------Enter StepWiseRNA_JobParameter_Setup::apply----------------------------------------------------------------------------------
+
+--------------------------------------------------------------------Enter StepWiseRNA_JobParameters_Setup::setup_additional_cutpoint_closed--------------------------------------------------------------------
+Is_working_res=                  1   1 999   0   0   0   0   0   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1
+Is_working_res=                  T   T   T   F   F   F   F   F   T   T   T   T   T   T   T   T   T   T   T   T   T   T   T   T   T   T   T   T   T   T   T   T   T   T   T   T   T   T   T   T   T   T   T   T   T   T   T
+fixed res=                       1   2                           9  10  11  12  13  14  15  16  17  18  19  20  21  22  23  24  25  26  27  28  29  30  31  32  33  34  35  36  37  38  39  40  41  42  43  44  45  46  47
+non_fixed res=                           3   4   5   6   7   8
+added_cutpoint_closed_= 
+cutpoint_closed_=             
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------Enter StepWiseRNA_JobParameters_Setup::figure_out_chain_boundaries----------------------------------------------------------------------
+start_chain= 1 end_chain= 3
+start_chain= 9 end_chain= 47
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------StepWiseRNA_JobParameters_Setup::figure_out_jump_partners---------------------------------------------------------------------------
+allow_chain_boundary_jump_partner_right_at_fixed_BP_=    F
+num_chains= 2
+exterior_fixed_base_pair_case : jump_partner1=                                  1  jump_partner2= 47
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------Enter StepWiseRNA_JobParameters_Setup::setup_fold_tree----------------------------------------------------------------------------
+upstream_res= 1c upstream_jump_atom=  C2  downstream_res= 1a downstream_jump_atom=  C4 
+fold tree of StepWiseRNA_JobParameters_Setup::setup_fold_tree(): 
+jump_point_num=               1   cutpoint= 3   5' jump_point= 1, C4    3' jump_point= 42, C2 
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------Enter StepWiseRNA_JobParameters_Setup::reroot_fold_tree----------------------------------------------------------------------------
+Num. res in partition 0:  1.   Num. res in partition 1: 41
+Moving_res full seq_num   = 3, partition 0
+fake_working_moving_suite = 2, partition 1
+New root res full seq_num = 1, partition 1
+fold tree of StepWiseRNA_JobParameters_Setup::reroot_fold_tree(): 
+jump_point_num=               1   cutpoint= 3   5' jump_point= 1, C4    3' jump_point= 42, C2 
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------Enter StepWiseRNA_JobParameters_Setup::figure_out_Prepend_Internal----------------------------------------------------------------------
+
+-------------------------------------------------------------------Enter StepWiseRNA_JobParameters_Setup::figure_out_Is_residue_prepend_map-------------------------------------------------------------------
+rmsd_res_list=                           3
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+------------------------------------------------------------------------------------Enter get_user_input_alignment_res_list------------------------------------------------------------------------------------
+filter_user_alignment_res_=    T
+fixed_res=                       1   2                           9  10  11  12  13  14  15  16  17  18  19  20  21  22  23  24  25  26  27  28  29  30  31  32  33  34  35  36  37  38  39  40  41  42  43  44  45  46  47
+best_working_align=              1                                                                                                                                                                                      47
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------Exit StepWiseRNA_JobParameter_Setup::apply----------------------------------------------------------------------------------
+
+---------------------------------------------------------------------printing JobParameters Information for standard_clusterer_job_params---------------------------------------------------------------------
+full_sequence= cugaugaaggacggauuuccgaaugauacaauccaaugaggagagga working_sequence= cugggacggauuuccgaaugauacaauccaaugaggagagga moving_res= 3 working_moving_res= 3 working_moving_suite= 2
+gap_size= 5 five_prime_chain_break_res= 3 Is_prepend=    F Is_internal=    F output_extra_RMSDs=    F
+------------full_stuff------------
+is_working_res=                            T   T   T   F   F   F   F   F   T   T   T   T   T   T   T   T   T   T   T   T   T   T   T   T   T   T   T   T   T   T   T   T   T   T   T   T   T   T   T   T   T   T   T   T   T   T   T
+input_res_vectors[1]                       1   2                           9  10  11  12  13  14  15  16  17  18  19  20  21  22  23  24  25  26  27  28  29  30  31  32  33  34  35  36  37  38  39  40  41  42  43  44  45  46  47
+input_res_vectors[2]                    
+global_sample_res_list=                            3   4   5   6   7   8
+Is_prepend_map=                         -   -   A   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   
+rmsd_res_list=                                     3
+native_alignment=                       
+cutpoint_closed_list=                   
+------------working_stuff------------
+working_global_sample_res_list=                    3
+working_fixed_res=                         1   2       4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19  20  21  22  23  24  25  26  27  28  29  30  31  32  33  34  35  36  37  38  39  40  41  42
+working_moving_res_list=                           3
+working_moving_suite_list=                     2
+working_terminal_res=                   
+working_moving_partition_pos=                      3
+working_best_alignment=                    1                                                                                                                                                                  42
+working_native_alignment=               
+partition_definition=                      T   T   F   T   T   T   T   T   T   T   T   T   T   T   T   T   T   T   T   T   T   T   T   T   T   T   T   T   T   T   T   T   T   T   T   T   T   T   T   T   T   T
+root_res= 1
+fold tree of fold_tree: 
+jump_point_num=               1   cutpoint= 3   5' jump_point= 1, C4    3' jump_point= 42, C2 
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Checking that input_silent_file region_0_1_sample.out contain actual silent_structs or the correct exit_key_string
+Open "region_0_1_sample.out" successful!
+adding input_silent_file region_0_1_sample.out to non_empty_silent_files_in 
+core.chemical.ResidueTypeSet: Finished initializing rna residue type set.  Created 2774 residue types
+core.io.silent: Reading all structures from region_0_1_sample.out
+core.io.silent: Finished reading 108 structures from region_0_1_sample.out
+
+---------------------------------------------------------------------------------------StepWiseRNA_Clusterer::cluster()---------------------------------------------------------------------------------------
+verbose_=    F
+skip_clustering_=    F
+perform_VDW_rep_screen_=    F
+perform_filters_=    F
+suite_cluster_radius_= 1
+loop_cluster_radius_= 0.7
+job_parameters_exist_=    T
+quick_alignment_=    T
+align_only_over_base_atoms_=   T
+two_stage_clustering_=    F
+keep_pose_in_memory_=    T
+keep_pose_in_memory_hydrid_=    T
+optimize_memory_usage_(by slicing out fixed region of the pose)=    T
+distinguish_pucker_=    T
+add_lead_zero_to_tag_=    F
+PBP_clustering_at_chain_closure_=    F
+full_length_loop_rmsd_clustering_=    F
+ignore_FARFAR_no_auto_bulge_tag_=    F
+ignore_FARFAR_no_auto_bulge_parent_tag_=    F
+ignore_unmatched_virtual_res_=    F
+max_decoys_= 1000
+score_diff_cut_= 1e+06
+perform_score_diff_cut_=    F
+
+------------------------------------------------------------------------------------Enter SlicedPoseJobParameters::setup()------------------------------------------------------------------------------------
+seq_num 1 is in working_best_alignment res 
+seq_num 2 is in working_rmsd_res_list-1 
+seq_num 3 is in working_rmsd_res_list 
+seq_num 4 is in working_rmsd_res_list+1 
+seq_num 42 is in working_best_alignment res 
+------------Before slice to After slice seq_num------------
+1----> 1
+2----> 2
+3----> 3
+4----> 4
+5----> 0
+6----> 0
+7----> 0
+8----> 0
+9----> 0
+10----> 0
+11----> 0
+12----> 0
+13----> 0
+14----> 0
+15----> 0
+16----> 0
+17----> 0
+18----> 0
+19----> 0
+20----> 0
+21----> 0
+22----> 0
+23----> 0
+24----> 0
+25----> 0
+26----> 0
+27----> 0
+28----> 0
+29----> 0
+30----> 0
+31----> 0
+32----> 0
+33----> 0
+34----> 0
+35----> 0
+36----> 0
+37----> 0
+38----> 0
+39----> 0
+40----> 0
+41----> 0
+42----> 5
+-----------------------------------------------------------
+------------After slice to Before slice seq_num------------
+1----> 1
+2----> 2
+3----> 3
+4----> 4
+5----> 42
+-----------------------------------------------------------
+sliced_pose_best_alignment=                          1               5
+sliced_pose_rmsd_res_list=                                   3
+sliced_pose_Is_prepend_map=                       P   P   A   P   P   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   
+delete_res_range_list=                             :( 5, 41 ) 
+
+-------------------------------------------------------------------------------------Exit SlicedPoseJobParameters::setup()-------------------------------------------------------------------------------------
+found quick alignment_pose, tag= S_000001
+--------------StepWiseRNA_Clusterer::initialize_max_memory_pose_num----------
+optimize_memory_usage_ (by slicing)=    T
+first_pose total_res (before_slicing)= 42
+first_pose total_res (already account for slicing)= 5
+num_silent_struct= 108
+memory_taken_by_silent_struct= 2494.8
+max_memory_pose_num_= 29455
+time in function= 0.00788
+--------------StepWiseRNA_Clusterer::initialize_max_memory_pose_num----------
+protocols.swa.rna_stepwise_rna_clusterer: CHECKING S_000001 with score -126.738 ( score_min= -126.738 ) against list of size 0 Num_pose_clustered so far 0
+protocols.swa.rna_stepwise_rna_clusterer: ADDING S_000001
+protocols.swa.rna_stepwise_rna_clusterer: CHECKING S_000002 with score -126.718 ( score_min= -126.738 ) against list of size 1 Num_pose_clustered so far 1
+S_000002 is a neighbor of S_000001
+protocols.swa.rna_stepwise_rna_clusterer: CHECKING S_000003 with score -126.661 ( score_min= -126.738 ) against list of size 1 Num_pose_clustered so far 2
+S_000003 is a neighbor of S_000001
+protocols.swa.rna_stepwise_rna_clusterer: CHECKING S_000004 with score -126.599 ( score_min= -126.738 ) against list of size 1 Num_pose_clustered so far 3
+S_000004 is a neighbor of S_000001
+protocols.swa.rna_stepwise_rna_clusterer: CHECKING S_000005 with score -126.575 ( score_min= -126.738 ) against list of size 1 Num_pose_clustered so far 4
+S_000005 is a neighbor of S_000001
+protocols.swa.rna_stepwise_rna_clusterer: CHECKING S_000006 with score -126.552 ( score_min= -126.738 ) against list of size 1 Num_pose_clustered so far 5
+S_000006 is a neighbor of S_000001
+protocols.swa.rna_stepwise_rna_clusterer: CHECKING S_000007 with score -126.548 ( score_min= -126.738 ) against list of size 1 Num_pose_clustered so far 6
+S_000007 is a neighbor of S_000001
+protocols.swa.rna_stepwise_rna_clusterer: CHECKING S_000008 with score -126.486 ( score_min= -126.738 ) against list of size 1 Num_pose_clustered so far 7
+S_000008 is a neighbor of S_000001
+protocols.swa.rna_stepwise_rna_clusterer: CHECKING S_000009 with score -126.331 ( score_min= -126.738 ) against list of size 1 Num_pose_clustered so far 8
+S_000009 is a neighbor of S_000001
+protocols.swa.rna_stepwise_rna_clusterer: CHECKING S_000010 with score -126.278 ( score_min= -126.738 ) against list of size 1 Num_pose_clustered so far 9
+S_000010 is a neighbor of S_000001
+protocols.swa.rna_stepwise_rna_clusterer: CHECKING S_000011 with score -125.658 ( score_min= -126.738 ) against list of size 1 Num_pose_clustered so far 10
+S_000011 is a neighbor of S_000001
+protocols.swa.rna_stepwise_rna_clusterer: CHECKING S_000012 with score -125.04 ( score_min= -126.738 ) against list of size 1 Num_pose_clustered so far 11
+S_000012 is a neighbor of S_000001
+protocols.swa.rna_stepwise_rna_clusterer: CHECKING S_000013 with score -124.996 ( score_min= -126.738 ) against list of size 1 Num_pose_clustered so far 12
+protocols.swa.rna_stepwise_rna_clusterer: ADDING S_000013
+protocols.swa.rna_stepwise_rna_clusterer: CHECKING S_000014 with score -124.903 ( score_min= -126.738 ) against list of size 2 Num_pose_clustered so far 13
+S_000014 is a neighbor of S_000013
+protocols.swa.rna_stepwise_rna_clusterer: CHECKING S_000015 with score -124.826 ( score_min= -126.738 ) against list of size 2 Num_pose_clustered so far 14
+S_000015 is a neighbor of S_000013
+protocols.swa.rna_stepwise_rna_clusterer: CHECKING S_000016 with score -124.819 ( score_min= -126.738 ) against list of size 2 Num_pose_clustered so far 15
+S_000016 is a neighbor of S_000013
+protocols.swa.rna_stepwise_rna_clusterer: CHECKING S_000017 with score -124.51 ( score_min= -126.738 ) against list of size 2 Num_pose_clustered so far 16
+S_000017 is a neighbor of S_000001
+protocols.swa.rna_stepwise_rna_clusterer: CHECKING S_000018 with score -124.113 ( score_min= -126.738 ) against list of size 2 Num_pose_clustered so far 17
+S_000018 is a neighbor of S_000013
+protocols.swa.rna_stepwise_rna_clusterer: CHECKING S_000019 with score -124.056 ( score_min= -126.738 ) against list of size 2 Num_pose_clustered so far 18
+S_000019 is a neighbor of S_000001
+protocols.swa.rna_stepwise_rna_clusterer: CHECKING S_000020 with score -123.968 ( score_min= -126.738 ) against list of size 2 Num_pose_clustered so far 19
+S_000020 is a neighbor of S_000001
+protocols.swa.rna_stepwise_rna_clusterer: CHECKING S_000021 with score -123.942 ( score_min= -126.738 ) against list of size 2 Num_pose_clustered so far 20
+protocols.swa.rna_stepwise_rna_clusterer: ADDING S_000021
+protocols.swa.rna_stepwise_rna_clusterer: CHECKING S_000022 with score -123.932 ( score_min= -126.738 ) against list of size 3 Num_pose_clustered so far 21
+S_000022 is a neighbor of S_000001
+protocols.swa.rna_stepwise_rna_clusterer: CHECKING S_000023 with score -123.923 ( score_min= -126.738 ) against list of size 3 Num_pose_clustered so far 22
+protocols.swa.rna_stepwise_rna_clusterer: ADDING S_000023
+protocols.swa.rna_stepwise_rna_clusterer: CHECKING S_000024 with score -123.914 ( score_min= -126.738 ) against list of size 4 Num_pose_clustered so far 23
+S_000024 is a neighbor of S_000021
+protocols.swa.rna_stepwise_rna_clusterer: CHECKING S_000025 with score -123.868 ( score_min= -126.738 ) against list of size 4 Num_pose_clustered so far 24
+S_000025 is a neighbor of S_000023
+protocols.swa.rna_stepwise_rna_clusterer: CHECKING S_000026 with score -123.861 ( score_min= -126.738 ) against list of size 4 Num_pose_clustered so far 25
+S_000026 is a neighbor of S_000021
+protocols.swa.rna_stepwise_rna_clusterer: CHECKING S_000027 with score -123.857 ( score_min= -126.738 ) against list of size 4 Num_pose_clustered so far 26
+S_000027 is a neighbor of S_000023
+protocols.swa.rna_stepwise_rna_clusterer: CHECKING S_000028 with score -123.782 ( score_min= -126.738 ) against list of size 4 Num_pose_clustered so far 27
+S_000028 is a neighbor of S_000001
+protocols.swa.rna_stepwise_rna_clusterer: CHECKING S_000029 with score -123.773 ( score_min= -126.738 ) against list of size 4 Num_pose_clustered so far 28
+S_000029 is a neighbor of S_000021
+protocols.swa.rna_stepwise_rna_clusterer: CHECKING S_000030 with score -123.516 ( score_min= -126.738 ) against list of size 4 Num_pose_clustered so far 29
+S_000030 is a neighbor of S_000021
+protocols.swa.rna_stepwise_rna_clusterer: CHECKING S_000031 with score -123.236 ( score_min= -126.738 ) against list of size 4 Num_pose_clustered so far 30
+protocols.swa.rna_stepwise_rna_clusterer: ADDING S_000031
+protocols.swa.rna_stepwise_rna_clusterer: CHECKING S_000032 with score -123.19 ( score_min= -126.738 ) against list of size 5 Num_pose_clustered so far 31
+S_000032 is a neighbor of S_000021
+protocols.swa.rna_stepwise_rna_clusterer: CHECKING S_000033 with score -123.124 ( score_min= -126.738 ) against list of size 5 Num_pose_clustered so far 32
+S_000033 is a neighbor of S_000021
+protocols.swa.rna_stepwise_rna_clusterer: CHECKING S_000034 with score -123.114 ( score_min= -126.738 ) against list of size 5 Num_pose_clustered so far 33
+S_000034 is a neighbor of S_000021
+protocols.swa.rna_stepwise_rna_clusterer: CHECKING S_000035 with score -123.11 ( score_min= -126.738 ) against list of size 5 Num_pose_clustered so far 34
+protocols.swa.rna_stepwise_rna_clusterer: ADDING S_000035
+protocols.swa.rna_stepwise_rna_clusterer: CHECKING S_000036 with score -123.093 ( score_min= -126.738 ) against list of size 6 Num_pose_clustered so far 35
+S_000036 is a neighbor of S_000035
+protocols.swa.rna_stepwise_rna_clusterer: CHECKING S_000037 with score -123.084 ( score_min= -126.738 ) against list of size 6 Num_pose_clustered so far 36
+S_000037 is a neighbor of S_000021
+protocols.swa.rna_stepwise_rna_clusterer: CHECKING S_000038 with score -123.081 ( score_min= -126.738 ) against list of size 6 Num_pose_clustered so far 37
+S_000038 is a neighbor of S_000021
+protocols.swa.rna_stepwise_rna_clusterer: CHECKING S_000039 with score -123.07 ( score_min= -126.738 ) against list of size 6 Num_pose_clustered so far 38
+S_000039 is a neighbor of S_000021
+protocols.swa.rna_stepwise_rna_clusterer: CHECKING S_000040 with score -123.029 ( score_min= -126.738 ) against list of size 6 Num_pose_clustered so far 39
+S_000040 is a neighbor of S_000021
+protocols.swa.rna_stepwise_rna_clusterer: CHECKING S_000041 with score -123.025 ( score_min= -126.738 ) against list of size 6 Num_pose_clustered so far 40
+S_000041 is a neighbor of S_000021
+protocols.swa.rna_stepwise_rna_clusterer: CHECKING S_000042 with score -123.024 ( score_min= -126.738 ) against list of size 6 Num_pose_clustered so far 41
+S_000042 is a neighbor of S_000031
+protocols.swa.rna_stepwise_rna_clusterer: CHECKING S_000043 with score -122.994 ( score_min= -126.738 ) against list of size 6 Num_pose_clustered so far 42
+S_000043 is a neighbor of S_000021
+protocols.swa.rna_stepwise_rna_clusterer: CHECKING S_000044 with score -122.907 ( score_min= -126.738 ) against list of size 6 Num_pose_clustered so far 43
+S_000044 is a neighbor of S_000035
+protocols.swa.rna_stepwise_rna_clusterer: CHECKING S_000045 with score -122.842 ( score_min= -126.738 ) against list of size 6 Num_pose_clustered so far 44
+S_000045 is a neighbor of S_000035
+protocols.swa.rna_stepwise_rna_clusterer: CHECKING S_000046 with score -122.815 ( score_min= -126.738 ) against list of size 6 Num_pose_clustered so far 45
+S_000046 is a neighbor of S_000021
+protocols.swa.rna_stepwise_rna_clusterer: CHECKING S_000047 with score -122.678 ( score_min= -126.738 ) against list of size 6 Num_pose_clustered so far 46
+S_000047 is a neighbor of S_000021
+protocols.swa.rna_stepwise_rna_clusterer: CHECKING S_000048 with score -122.568 ( score_min= -126.738 ) against list of size 6 Num_pose_clustered so far 47
+S_000048 is a neighbor of S_000021
+protocols.swa.rna_stepwise_rna_clusterer: CHECKING S_000049 with score -122.481 ( score_min= -126.738 ) against list of size 6 Num_pose_clustered so far 48
+S_000049 is a neighbor of S_000021
+protocols.swa.rna_stepwise_rna_clusterer: CHECKING S_000050 with score -122.065 ( score_min= -126.738 ) against list of size 6 Num_pose_clustered so far 49
+S_000050 is a neighbor of S_000021
+protocols.swa.rna_stepwise_rna_clusterer: CHECKING S_000051 with score -122.062 ( score_min= -126.738 ) against list of size 6 Num_pose_clustered so far 50
+S_000051 is a neighbor of S_000021
+protocols.swa.rna_stepwise_rna_clusterer: CHECKING S_000052 with score -121.978 ( score_min= -126.738 ) against list of size 6 Num_pose_clustered so far 51
+protocols.swa.rna_stepwise_rna_clusterer: ADDING S_000052
+protocols.swa.rna_stepwise_rna_clusterer: CHECKING S_000053 with score -121.887 ( score_min= -126.738 ) against list of size 7 Num_pose_clustered so far 52
+protocols.swa.rna_stepwise_rna_clusterer: ADDING S_000053
+protocols.swa.rna_stepwise_rna_clusterer: CHECKING S_000054 with score -121.869 ( score_min= -126.738 ) against list of size 8 Num_pose_clustered so far 53
+S_000054 is a neighbor of S_000052
+protocols.swa.rna_stepwise_rna_clusterer: CHECKING S_000055 with score -121.853 ( score_min= -126.738 ) against list of size 8 Num_pose_clustered so far 54
+S_000055 is a neighbor of S_000053
+protocols.swa.rna_stepwise_rna_clusterer: CHECKING S_000056 with score -121.672 ( score_min= -126.738 ) against list of size 8 Num_pose_clustered so far 55
+S_000056 is a neighbor of S_000013
+protocols.swa.rna_stepwise_rna_clusterer: CHECKING S_000057 with score -121.644 ( score_min= -126.738 ) against list of size 8 Num_pose_clustered so far 56
+protocols.swa.rna_stepwise_rna_clusterer: ADDING S_000057
+protocols.swa.rna_stepwise_rna_clusterer: CHECKING S_000058 with score -121.598 ( score_min= -126.738 ) against list of size 9 Num_pose_clustered so far 57
+protocols.swa.rna_stepwise_rna_clusterer: ADDING S_000058
+protocols.swa.rna_stepwise_rna_clusterer: CHECKING S_000059 with score -121.504 ( score_min= -126.738 ) against list of size 10 Num_pose_clustered so far 58
+protocols.swa.rna_stepwise_rna_clusterer: ADDING S_000059
+protocols.swa.rna_stepwise_rna_clusterer: CHECKING S_000060 with score -121.131 ( score_min= -126.738 ) against list of size 11 Num_pose_clustered so far 59
+S_000060 is a neighbor of S_000035
+protocols.swa.rna_stepwise_rna_clusterer: CHECKING S_000061 with score -121.078 ( score_min= -126.738 ) against list of size 11 Num_pose_clustered so far 60
+S_000061 is a neighbor of S_000058
+protocols.swa.rna_stepwise_rna_clusterer: CHECKING S_000062 with score -121.077 ( score_min= -126.738 ) against list of size 11 Num_pose_clustered so far 61
+S_000062 is a neighbor of S_000058
+protocols.swa.rna_stepwise_rna_clusterer: CHECKING S_000063 with score -120.988 ( score_min= -126.738 ) against list of size 11 Num_pose_clustered so far 62
+S_000063 is a neighbor of S_000059
+protocols.swa.rna_stepwise_rna_clusterer: CHECKING S_000064 with score -120.917 ( score_min= -126.738 ) against list of size 11 Num_pose_clustered so far 63
+S_000064 is a neighbor of S_000021
+protocols.swa.rna_stepwise_rna_clusterer: CHECKING S_000065 with score -120.799 ( score_min= -126.738 ) against list of size 11 Num_pose_clustered so far 64
+S_000065 is a neighbor of S_000059
+protocols.swa.rna_stepwise_rna_clusterer: CHECKING S_000066 with score -120.776 ( score_min= -126.738 ) against list of size 11 Num_pose_clustered so far 65
+S_000066 is a neighbor of S_000035
+protocols.swa.rna_stepwise_rna_clusterer: CHECKING S_000067 with score -120.745 ( score_min= -126.738 ) against list of size 11 Num_pose_clustered so far 66
+protocols.swa.rna_stepwise_rna_clusterer: ADDING S_000067
+protocols.swa.rna_stepwise_rna_clusterer: CHECKING S_000068 with score -120.59 ( score_min= -126.738 ) against list of size 12 Num_pose_clustered so far 67
+S_000068 is a neighbor of S_000059
+protocols.swa.rna_stepwise_rna_clusterer: CHECKING S_000069 with score -120.509 ( score_min= -126.738 ) against list of size 12 Num_pose_clustered so far 68
+S_000069 is a neighbor of S_000057
+protocols.swa.rna_stepwise_rna_clusterer: CHECKING S_000070 with score -120.368 ( score_min= -126.738 ) against list of size 12 Num_pose_clustered so far 69
+protocols.swa.rna_stepwise_rna_clusterer: ADDING S_000070
+protocols.swa.rna_stepwise_rna_clusterer: CHECKING S_000071 with score -120.335 ( score_min= -126.738 ) against list of size 13 Num_pose_clustered so far 70
+protocols.swa.rna_stepwise_rna_clusterer: ADDING S_000071
+protocols.swa.rna_stepwise_rna_clusterer: CHECKING S_000072 with score -120.026 ( score_min= -126.738 ) against list of size 14 Num_pose_clustered so far 71
+protocols.swa.rna_stepwise_rna_clusterer: ADDING S_000072
+protocols.swa.rna_stepwise_rna_clusterer: CHECKING S_000073 with score -120.021 ( score_min= -126.738 ) against list of size 15 Num_pose_clustered so far 72
+protocols.swa.rna_stepwise_rna_clusterer: ADDING S_000073
+protocols.swa.rna_stepwise_rna_clusterer: CHECKING S_000074 with score -119.974 ( score_min= -126.738 ) against list of size 16 Num_pose_clustered so far 73
+S_000074 is a neighbor of S_000059
+protocols.swa.rna_stepwise_rna_clusterer: CHECKING S_000075 with score -119.957 ( score_min= -126.738 ) against list of size 16 Num_pose_clustered so far 74
+S_000075 is a neighbor of S_000031
+protocols.swa.rna_stepwise_rna_clusterer: CHECKING S_000076 with score -119.949 ( score_min= -126.738 ) against list of size 16 Num_pose_clustered so far 75
+S_000076 is a neighbor of S_000073
+protocols.swa.rna_stepwise_rna_clusterer: CHECKING S_000077 with score -119.949 ( score_min= -126.738 ) against list of size 16 Num_pose_clustered so far 76
+protocols.swa.rna_stepwise_rna_clusterer: ADDING S_000077
+protocols.swa.rna_stepwise_rna_clusterer: CHECKING S_000078 with score -119.93 ( score_min= -126.738 ) against list of size 17 Num_pose_clustered so far 77
+S_000078 is a neighbor of S_000059
+protocols.swa.rna_stepwise_rna_clusterer: CHECKING S_000079 with score -119.867 ( score_min= -126.738 ) against list of size 17 Num_pose_clustered so far 78
+S_000079 is a neighbor of S_000077
+protocols.swa.rna_stepwise_rna_clusterer: CHECKING S_000080 with score -119.804 ( score_min= -126.738 ) against list of size 17 Num_pose_clustered so far 79
+S_000080 is a neighbor of S_000073
+protocols.swa.rna_stepwise_rna_clusterer: CHECKING S_000081 with score -119.78 ( score_min= -126.738 ) against list of size 17 Num_pose_clustered so far 80
+S_000081 is a neighbor of S_000059
+protocols.swa.rna_stepwise_rna_clusterer: CHECKING S_000082 with score -119.757 ( score_min= -126.738 ) against list of size 17 Num_pose_clustered so far 81
+S_000082 is a neighbor of S_000070
+protocols.swa.rna_stepwise_rna_clusterer: CHECKING S_000083 with score -119.692 ( score_min= -126.738 ) against list of size 17 Num_pose_clustered so far 82
+S_000083 is a neighbor of S_000073
+protocols.swa.rna_stepwise_rna_clusterer: CHECKING S_000084 with score -119.654 ( score_min= -126.738 ) against list of size 17 Num_pose_clustered so far 83
+S_000084 is a neighbor of S_000077
+protocols.swa.rna_stepwise_rna_clusterer: CHECKING S_000085 with score -119.628 ( score_min= -126.738 ) against list of size 17 Num_pose_clustered so far 84
+S_000085 is a neighbor of S_000077
+protocols.swa.rna_stepwise_rna_clusterer: CHECKING S_000086 with score -119.624 ( score_min= -126.738 ) against list of size 17 Num_pose_clustered so far 85
+protocols.swa.rna_stepwise_rna_clusterer: ADDING S_000086
+protocols.swa.rna_stepwise_rna_clusterer: CHECKING S_000087 with score -119.598 ( score_min= -126.738 ) against list of size 18 Num_pose_clustered so far 86
+S_000087 is a neighbor of S_000086
+protocols.swa.rna_stepwise_rna_clusterer: CHECKING S_000088 with score -119.595 ( score_min= -126.738 ) against list of size 18 Num_pose_clustered so far 87
+protocols.swa.rna_stepwise_rna_clusterer: ADDING S_000088
+protocols.swa.rna_stepwise_rna_clusterer: CHECKING S_000089 with score -119.534 ( score_min= -126.738 ) against list of size 19 Num_pose_clustered so far 88
+S_000089 is a neighbor of S_000072
+protocols.swa.rna_stepwise_rna_clusterer: CHECKING S_000090 with score -119.519 ( score_min= -126.738 ) against list of size 19 Num_pose_clustered so far 89
+protocols.swa.rna_stepwise_rna_clusterer: ADDING S_000090
+protocols.swa.rna_stepwise_rna_clusterer: CHECKING S_000091 with score -119.482 ( score_min= -126.738 ) against list of size 20 Num_pose_clustered so far 90
+S_000091 is a neighbor of S_000090
+protocols.swa.rna_stepwise_rna_clusterer: CHECKING S_000092 with score -119.467 ( score_min= -126.738 ) against list of size 20 Num_pose_clustered so far 91
+S_000092 is a neighbor of S_000090
+protocols.swa.rna_stepwise_rna_clusterer: CHECKING S_000093 with score -119.369 ( score_min= -126.738 ) against list of size 20 Num_pose_clustered so far 92
+S_000093 is a neighbor of S_000090
+protocols.swa.rna_stepwise_rna_clusterer: CHECKING S_000094 with score -119.318 ( score_min= -126.738 ) against list of size 20 Num_pose_clustered so far 93
+S_000094 is a neighbor of S_000086
+protocols.swa.rna_stepwise_rna_clusterer: CHECKING S_000095 with score -119.283 ( score_min= -126.738 ) against list of size 20 Num_pose_clustered so far 94
+protocols.swa.rna_stepwise_rna_clusterer: ADDING S_000095
+protocols.swa.rna_stepwise_rna_clusterer: CHECKING S_000096 with score -119.262 ( score_min= -126.738 ) against list of size 21 Num_pose_clustered so far 95
+S_000096 is a neighbor of S_000070
+protocols.swa.rna_stepwise_rna_clusterer: CHECKING S_000097 with score -119.2 ( score_min= -126.738 ) against list of size 21 Num_pose_clustered so far 96
+S_000097 is a neighbor of S_000057
+protocols.swa.rna_stepwise_rna_clusterer: CHECKING S_000098 with score -119.194 ( score_min= -126.738 ) against list of size 21 Num_pose_clustered so far 97
+protocols.swa.rna_stepwise_rna_clusterer: ADDING S_000098
+protocols.swa.rna_stepwise_rna_clusterer: CHECKING S_000099 with score -119.189 ( score_min= -126.738 ) against list of size 22 Num_pose_clustered so far 98
+S_000099 is a neighbor of S_000090
+protocols.swa.rna_stepwise_rna_clusterer: CHECKING S_000100 with score -119.121 ( score_min= -126.738 ) against list of size 22 Num_pose_clustered so far 99
+protocols.swa.rna_stepwise_rna_clusterer: ADDING S_000100
+num_pose_clustered= 100 num_cluster_centers= 23 time_taken_so_far= 0.832578
+protocols.swa.rna_stepwise_rna_clusterer: CHECKING S_000101 with score -119.105 ( score_min= -126.738 ) against list of size 23 Num_pose_clustered so far 100
+protocols.swa.rna_stepwise_rna_clusterer: ADDING S_000101
+protocols.swa.rna_stepwise_rna_clusterer: CHECKING S_000102 with score -119.066 ( score_min= -126.738 ) against list of size 24 Num_pose_clustered so far 101
+protocols.swa.rna_stepwise_rna_clusterer: ADDING S_000102
+protocols.swa.rna_stepwise_rna_clusterer: CHECKING S_000103 with score -118.907 ( score_min= -126.738 ) against list of size 25 Num_pose_clustered so far 102
+protocols.swa.rna_stepwise_rna_clusterer: ADDING S_000103
+protocols.swa.rna_stepwise_rna_clusterer: CHECKING S_000104 with score -118.893 ( score_min= -126.738 ) against list of size 26 Num_pose_clustered so far 103
+S_000104 is a neighbor of S_000102
+protocols.swa.rna_stepwise_rna_clusterer: CHECKING S_000105 with score -118.873 ( score_min= -126.738 ) against list of size 26 Num_pose_clustered so far 104
+protocols.swa.rna_stepwise_rna_clusterer: ADDING S_000105
+protocols.swa.rna_stepwise_rna_clusterer: CHECKING S_000106 with score -118.651 ( score_min= -126.738 ) against list of size 27 Num_pose_clustered so far 105
+S_000106 is a neighbor of S_000102
+protocols.swa.rna_stepwise_rna_clusterer: CHECKING S_000107 with score -118.438 ( score_min= -126.738 ) against list of size 27 Num_pose_clustered so far 106
+protocols.swa.rna_stepwise_rna_clusterer: ADDING S_000107
+protocols.swa.rna_stepwise_rna_clusterer: CHECKING S_000108 with score -117.837 ( score_min= -126.738 ) against list of size 28 Num_pose_clustered so far 107
+protocols.swa.rna_stepwise_rna_clusterer: ADDING S_000108
+protocols.swa.rna_stepwise_rna_clusterer: After clustering, number of decoys: 29 from 108 input poses 
+Final cluster_pose_list size= 29
+Total clustering time : 0.928706
+Total time took to run algorithm (rna_cluster): 2.08465 seconds.
+JOB_SUCCESSFULLY_COMPLETED

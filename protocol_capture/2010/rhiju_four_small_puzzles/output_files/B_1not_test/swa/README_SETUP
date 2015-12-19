@@ -1,2 +1,0 @@
-rm -rf STEP* *~ CONDOR core.* SLAVE*  
-grinder_dagman.py -native 1not.pdb -fasta 1not.fasta -cluster_radius 0.25 -final_number 1000   -denovo 1   -cst_file 1not_native_disulf.cst  -weights score12.wts

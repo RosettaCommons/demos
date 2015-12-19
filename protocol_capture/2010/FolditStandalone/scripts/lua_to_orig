@@ -1,5 +1,0 @@
-pdb_fasta.pl $1 | grep -v \> | sed 's/[-.]//g' > original.thisistrash
-pos_id_lua.py original.thisistrash  > table.thisistrash
-cat table.thisistrash `which revert_to_orig.lua`
-rm -f original.thisistrash
-rm -f table.thisistrash

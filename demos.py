@@ -77,6 +77,8 @@ def main(argv):
       help="Add additional flags to integration tests. (default: None)",
     )
 
+    if os.path.isfile('results.json'): os.remove('results.json')
+
     (options, remaining_args) = parser.parse_args(args=argv)
     global Options;  Options = options
     Options.num_procs = Options.jobs
@@ -148,14 +150,18 @@ def main(argv):
             queue.put(test)
             #shutil.copytree( path.join("tests", test), path.join(outdir, test) )
             print '~~~', path.join("public", test), path.join(outdir, test)
-        
+
             copytree( path.join("public", test), path.join(outdir, test) )  #  accept=lambda src, dst: path.basename(src) != '.svn' )
 
+
+    test_work_dirs = {}
+    _test_did_not_run_, _test_exceeded_timeout_ = '.test_did_not_run.log', ".test_got_timeout_kill.log"
     while not queue.empty():
         test = queue.get()
         if test is None: break
 
         cmd_line_sh, workdir = generateIntegrationTestCommandline(test, outdir);
+        test_work_dirs[test] = workdir
 
         def run(times):
             #execute('Running Test %s' % test, 'bash ' + cmd_line_sh)
@@ -177,14 +183,14 @@ def main(argv):
 
         def error_finish(nt, times):
             error_string = "*** Test %s did not run!  Check your --mode flag and paths. [%s]\n" % (test, datetime.datetime.now())
-            file(path.join(nt.workdir, ".test_did_not_run.log"), 'w').write(error_string)
+            file(path.join(nt.workdir, _test_did_not_run_), 'w').write(error_string)
             print error_string,
             times[nt.test] = float('nan')
             normal_finish(nt, times)
 
         def timeout_finish(nt, times):
             error_string = "*** Test %s exceeded the timeout=%s  and will be killed! [%s]\n" % (test, Options.timeout, datetime.datetime.now())
-            file(path.join(nt.workdir, ".test_got_timeout_kill.log"), 'w').write(error_string)
+            file(path.join(nt.workdir, _test_exceeded_timeout_), 'w').write(error_string)
             print error_string,
             times[nt.test] = float('inf')
             normal_finish(nt, times)
@@ -202,6 +208,19 @@ def main(argv):
             else: normal_finish(nt,runtimes)
 
     mWait(all_=True)  # waiting for all jobs to finish before movinf in to next phase
+
+
+    results = {}
+    for t in test_work_dirs:
+        for f in [_test_did_not_run_, _test_exceeded_timeout_]:
+            if os.path.isfile(test_work_dirs[t]+'/'+f):
+                results[t] = dict(state='failed')
+                break
+        else: results[t] = dict(state='finished')
+
+    #print results
+
+    with file('results.json', 'w') as f: json.dump(dict(tests=results), f, sort_keys=True, indent=2)
 
 
 # -------------------------------------

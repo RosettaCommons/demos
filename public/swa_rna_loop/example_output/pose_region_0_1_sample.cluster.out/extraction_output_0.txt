@@ -1,0 +1,12 @@
+core.init: Mini-Rosetta version 48010M from https://svn.rosettacommons.org/source/trunk/rosetta/rosetta_source
+core.init: command: /Users/sripakpa/ROSETTA/rosetta_UPDATE_V3/rosetta_source/bin/rna_extract.macosgccrelease -database /Users/sripakpa/ROSETTA/rosetta_UPDATE_V3/rosetta_database/ -tags S_0 S_1 S_2 S_3 S_4 -in:file:silent ../region_0_1_sample.cluster.out -in:file:silent_struct_type binary_rna -output_virtual true -remove_variant_cutpoint_atoms true
+core.init: 'RNG device' seed mode, using '/dev/urandom', seed=-1665869122 seed_offset=0 real_seed=-1665869122
+core.init.random: RandomGenerator:init: Normal mode, seed=-1665869122 RG_type=mt19937
+core.chemical.ResidueTypeSet: Finished initializing rna residue type set.  Created 2774 residue types
+core.io.silent: Reading all structures from ../region_0_1_sample.cluster.out
+core.io.silent: Finished reading 29 structures from ../region_0_1_sample.cluster.out
+Extracting: S_0
+Extracting: S_1
+Extracting: S_2
+Extracting: S_3
+Extracting: S_4

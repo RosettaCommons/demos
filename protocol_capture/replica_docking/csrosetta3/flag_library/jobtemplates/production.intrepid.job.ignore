@@ -1,0 +1,23 @@
+###
+###
+### This file is part of the CS-Rosetta Toolbox and is made available under
+### GNU General Public License
+### Copyright (C) 2011-2012 Oliver Lange
+### email: oliver.lange@tum.de
+### web: www.csrosetta.org
+###
+### This program is free software: you can redistribute it and/or modify
+### it under the terms of the GNU General Public License as published by
+### the Free Software Foundation, either version 3 of the License, or
+### (at your option) any later version.
+###
+### This program is distributed in the hope that it will be useful,
+### but WITHOUT ANY WARRANTY; without even the implied warranty of
+### MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+### GNU General Public License for more details.
+###
+### You should have received a copy of the GNU General Public License
+### along with this program.  If not, see <http://www.gnu.org/licenses/>.
+###
+###
+qsub  -t $CM_RUN_TIME -q $CM_ENV_QUEUE -n $CM_ENV_BG_NODES --env HOME=$HOME -A ProteinStruct --mode vn $HOME/rosetta_src/mini/bin/minirosetta.static.linuxxlcrelease -out:level 300 -mute all_high_mpi_rank_filebuf -out:file:silent syd/s.out $CM_COMMANDLINE -database $CM_ROSETTA_DATABASE

@@ -1,0 +1,19 @@
+NATAA
+start
+#anchor
+#it is ok for the anchor to be NATAA: the protocol automatically NATRO's it, under separate (but command-line) control
+
+
+
+242 B NATAA #anchor
+
+#loops
+
+237 B NOTAA C
+238 B NOTAA C
+239 B NOTAA C
+240 B NOTAA C
+241 B NOTAA C
+#242 B NOTAA C
+243 B NOTAA C
+244 B NOTAA C

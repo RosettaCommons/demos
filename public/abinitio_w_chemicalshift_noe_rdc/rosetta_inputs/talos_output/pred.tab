@@ -1,0 +1,94 @@
+REMARK TALOS-N Protein Backbone Torsion Angle Prediction Table
+REMARK  Prediction Summary for Chemical Shift Input cs.talos
+REMARK 
+REMARK  PHI is the predicted torsion angle C(i-1) N(i)  CA(i) C(i)   (degrees).
+REMARK  PSI is the predicted torsion angle N(i)   CA(i) C(i)  N(i+1) (degrees).
+REMARK 
+REMARK  DPHI and DPSI are the estimated standard deviations of the
+REMARK  prediction errors in PHI and PSI (degrees).
+REMARK 
+REMARK  DIST is the TALOS-N database matching score.
+REMARK 
+REMARK  S2 is the Wishart RCI chemical shift order parameter,
+REMARK  JACS, 127(43), 14970-14971.
+REMARK 
+REMARK  COUNT is the number of database triplets used to form
+REMARK  the torsion angle predictions.
+REMARK 
+REMARK  CLASS is the classification of the prediction result:
+REMARK    None: no torsion prediction was made.
+REMARK 
+REMARK    Strong/Generous: majority consensus in database matches;
+REMARK    prediction is likely to be good.
+REMARK 
+REMARK    Warn: no consensus in database matches, do not use prediction.
+REMARK 
+REMARK    Dyn:  RCI-S2 value indicates that residue has dynamic conformation.
+REMARK 
+REMARK Reference:
+REMARK  Y. Shen, and A. Bax:
+REMARK  Protein backbone and sidechain torsion angles predicted from 
+REMARK  NMR chemical shifts using artificial neural networks
+REMARK  J. Biomol. NMR (in press).
+REMARK 
+REMARK  TALOS-N Version 4.01 Rev 2013.282.01.00 TALOSN_INFO
+
+DATA FIRST_RESID 1
+DATA SEQUENCE GSPPEADPRL IESLSQMLSM GFSDEGGWLT RLLQTKNYDI GAALDTIQYS 
+DATA SEQUENCE KH
+
+VARS   RESID RESNAME PHI PSI DPHI DPSI DIST S2 COUNT CS_COUNT CLASS 
+FORMAT %4d %s %8.3f %8.3f %8.3f %8.3f %8.3f %5.3f %2d %2d %s
+
+   1 G 9999.000 9999.000    0.000    0.000    0.000 0.000  0  5 None
+   2 S  -65.763  145.327    9.392   11.947    0.742 0.366 25  8 Dyn
+   3 P  -64.583  148.160    6.184    8.224    0.561 0.411 25 10 Dyn
+   4 P  -64.437  142.521   10.688   12.253    0.467 0.444  7 13 Dyn
+   5 E  -90.447   -8.630   11.492   14.369    0.327 0.536  4 16 Dyn
+   6 A  -77.929  133.020   15.967   10.572    0.209 0.628 25 18 Strong
+   7 D  -64.986  130.299    7.780    7.800    0.182 0.804 25 16 Strong
+   8 P  -54.310  -34.001    3.724    4.984    0.131 0.849 25 16 Strong
+   9 R  -65.846  -37.253    3.619    4.594    0.101 0.881 25 16 Strong
+  10 L  -70.974  -40.802    4.502    4.627    0.094 0.888 25 18 Strong
+  11 I  -64.959  -40.842    3.817    4.397    0.074 0.905 25 18 Strong
+  12 E  -65.587  -41.296    3.898    6.179    0.062 0.907 25 18 Strong
+  13 S  -66.239  -38.815    3.710    5.699    0.059 0.906 25 18 Strong
+  14 L  -63.019  -43.134    2.525    3.184    0.055 0.904 25 18 Strong
+  15 S  -63.703  -42.109    3.734    3.635    0.073 0.905 25 18 Strong
+  16 Q  -65.544  -42.160    3.363    4.073    0.084 0.905 25 18 Strong
+  17 M  -66.566  -39.880    2.659    4.617    0.102 0.891 25 18 Strong
+  18 L  -63.784  -37.690    3.701    3.799    0.137 0.853 25 18 Strong
+  19 S  -66.183  -21.075    4.858    5.551    0.109 0.760 25 18 Strong
+  20 M  -87.082   -1.842    7.017    9.350    0.122 0.716 25 17 Strong
+  21 G   98.644    5.413    7.767    8.657    0.159 0.717 25 17 Strong
+  22 F  -82.834  148.205    9.907    7.593    0.244 0.788 25 17 Strong
+  23 S -115.667  149.290   24.850   11.629    0.851 0.839 25 18 Strong
+  24 D  -86.789  132.285   26.460   15.368    1.849 0.849 25 18 Strong
+  25 E  -57.653  129.802    6.648    9.648    0.921 0.835  9 17 Warn
+  26 G   92.482   -4.107   10.404    9.921    1.143 0.830 25 16 Strong
+  27 G   -2.869  165.456   89.213   56.975    1.356 0.846  7 16 Warn
+  28 W  -65.295  -35.150    5.786    7.371    0.976 0.883 25 17 Strong
+  29 L  -66.766  -39.251    5.890    5.136    0.792 0.911 25 18 Strong
+  30 T  -62.639  -41.900    3.473    4.491    0.423 0.921 25 18 Strong
+  31 R  -65.233  -39.612    4.189    4.190    0.248 0.911 25 18 Strong
+  32 L  -63.756  -45.401    2.498    3.078    0.170 0.912 25 18 Strong
+  33 L  -63.043  -42.119    3.866    3.966    0.138 0.918 25 18 Strong
+  34 Q  -64.147  -39.823    3.487    4.963    0.132 0.926 25 18 Strong
+  35 T  -65.722  -29.065    4.768    6.798    0.224 0.916 25 18 Strong
+  36 K -104.070   23.001   13.754   12.074    0.331 0.913 25 18 Strong
+  37 N   56.314   36.178    5.391    5.567    0.295 0.905 25 18 Strong
+  38 Y   63.624   27.845    6.958   13.151    0.396 0.910 25 18 Strong
+  39 D  -94.499  109.643   12.083   12.300    0.221 0.889 25 18 Strong
+  40 I  -61.727  -39.899    6.855    7.223    0.294 0.884 25 17 Strong
+  41 G  -63.301  -44.359    6.001    7.126    0.228 0.871 25 17 Strong
+  42 A  -67.558  -39.264    4.180    5.400    0.130 0.876 25 17 Strong
+  43 A  -66.734  -42.342    3.558    3.080    0.120 0.886 25 18 Strong
+  44 L  -62.894  -38.781    3.330    5.490    0.137 0.905 25 18 Strong
+  45 D  -66.558  -40.611    4.690    3.527    0.133 0.923 25 18 Strong
+  46 T  -64.611  -35.138    4.497    5.264    0.183 0.922 25 18 Strong
+  47 I  -92.906    6.724    8.671    6.402    0.253 0.904 25 18 Strong
+  48 Q   56.362   41.405    8.113    9.352    0.303 0.858 25 18 Strong
+  49 Y  -85.861  142.182   21.171   16.597    0.685 0.774 10 18 Generous
+  50 S  -81.714  140.924   21.409   14.103    0.957 0.674 25 18 Strong
+  51 K  -67.159  140.311    7.892   11.397    1.251 0.601 25 18 Strong
+  52 H 9999.000 9999.000    0.000    0.000    0.000 0.000  0 12 None

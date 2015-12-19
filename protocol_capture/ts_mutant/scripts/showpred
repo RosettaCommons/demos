@@ -1,0 +1,133 @@
+#!/usr/bin/awk -f
+
+function usage(msg) {
+  if(msg) print msg > "/dev/stderr";
+  print "usage: showpred [--raw] [--vote] [--all] [--predonly] <file.out> ..." > "/dev/stderr";
+  print "accumulates scores from multiple prediction algorithm" > "/dev/stderr";
+  print "  --raw: generate raw tab-delimited data" > "/dev/stderr";
+  print "  --vote: shows only samples with a majority ts vote" > "/dev/stderr";
+  print "  --all: show both ts and non-ts predictions" > "/dev/stderr";
+  print "  --predonly: show only output fields relevant for prediction on unknown samples" > "/dev/stderr";
+  bail = 1;
+  exit(1);
+}
+BEGIN {
+  i = 1;
+  tsonly = 1;
+  while(i < ARGC && ARGV[i] ~ /^-/) {
+    if(ARGV[i] ~ /^-+(usage|help)/) {
+      usage();
+    } else if(ARGV[i] == "--raw") {
+      raw = 1;
+      delete ARGV[i];
+      i++;
+    } else if(ARGV[i] == "--vote") {
+      vote = 1;
+      delete ARGV[i];
+      i++;
+    } else if(ARGV[i] == "--all") {
+      tsonly = 0;
+      delete ARGV[i];
+      i++;
+    } else if(ARGV[i] == "--predonly") {
+      predonly = 1;
+      delete ARGV[i];
+      i++;
+    } else {
+      usage("unrecognized argument: " ARGV[i]);
+    }
+    if(i == ARGC)
+      usage("missing input file");
+  }
+}
+/inst\#/,/^$/ {
+  if(lastfile != FILENAME) {
+    fcnt++;
+    lastfile = FILENAME;
+  }
+  if($0 ~ /inst\#/) {
+    if($5 ~ /probability/)
+      dist = 1;
+  } else if($0 !~ /(inst\#|^$)/) {
+    act = substr($2, 3);
+    prd = substr($3, 3);
+    err = ($4 == "+");
+    con_st = err ? 5 : 4;  # confidence/probability starting column
+    if(!dist) {
+      con = $con_st + 0;
+      cf = con_st + 1;
+    } else {                 # will have multiple columns if full distribution shown
+      cf = con_st;
+      while($cf !~ /^\(/) {
+	if($cf ~ /^\*/)
+	  con = substr($cf, 2) + 0;
+	cf++;
+      }
+    }
+    ext = gensub(/\((.*)\)/, "\\1", 1, $cf);  # cf has index of first non-confidence field
+    split(ext, s, ",");    # protein ID, mutation, label, species, ACCP
+    id = s[1];
+    mut_all = s[2];        # mutation field is RES[(:RES)*]|POS[(:POS)]*
+    mut = gensub(/\|.*/, "", 1, mut_all);
+    lab = s[3];
+    spec = s[4];
+    accp = s[5];
+    if(lab != "wt") {
+      idx = id "_" mut "_" spec;
+      if(prd == "ts") {
+	conftab[idx] += con;
+	ts[idx] = 1;
+	votes[idx]++;
+      }
+      while(length(errtab[idx]) < fcnt-1)
+	errtab[idx] = errtab[idx] " ";
+      errtab[idx] = errtab[idx] (err ? "X" : ".");
+      idtab[idx] = idx;
+      l = split(patab[idx], pf);
+      for(i = l; i < fcnt-1; i++)
+	patab[idx] = patab[idx] (patab[idx] == "" ? "" : "\t") "_";
+      patab[idx] = patab[idx] (patab[idx]=="" ? "" : "\t") act ":" prd;
+    }
+  }
+}
+END {
+  if(!bail)
+    if(raw) {
+      for(i in idtab) {
+	if(ts[i] && (!vote || vote && votes[i] >= fcnt/2)) {
+	  pt = patab[i];
+	  k = split(pt, f);
+	  j = 1;
+	  while(j <= k && f[j] == "_")
+	    j++;
+	  if(j > k) {
+	    bail = 1;
+	    print "internal error: j > k" > "/dev/stderr";
+	    exit(1);
+	  }
+	  act = gensub("([^:]+):.*", "\\1", 1, f[j]);
+	  printf("%d\t%.3f\n", (act == "ts" ? 1 : 0), conftab[i]/fcnt);
+	}
+      }
+    } else {
+      tmpcmd = "mktemp";
+      tmpcmd | getline tmp;
+      close(tmpcmd);
+      for(i in idtab) {
+	if((tsonly && !ts[i]) || (vote && votes[i] < fcnt/2))
+	  continue;
+	printf("%.3f\t%s\t%s\t%s\n", conftab[i], errtab[i], i, patab[i]) > tmp;
+      }
+      close(tmp);
+      cmd = "sort -k1,1nr -k2,2nr " tmp;
+      r = 0;
+      printf("%s%s%s%s%s\n", "rank\t", "conf\t", (!predonly ? "err\t" : ""),
+	     "id\t", (!predonly ? "act:pred" : ""));
+      while(cmd | getline) {
+	r++;
+	printf("%s\t%s\n", r, (!predonly ? $0 : $1 "\t" $3));
+      }
+      close(cmd);
+      system("rm " tmp);
+    }
+}
