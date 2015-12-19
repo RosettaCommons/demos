@@ -1,0 +1,1 @@
+/home/fcchou/src/rosetta/main/source/bin/rna_denovo -nstruct 500 -params_file quest.params -fasta quest.fasta  -out:file:silent quest.out  -include_neighbor_base_stacks -minimize_rna -s loop.pdb helix.pdb -input_res  7-12 1-3 15-17 -cycles 10000 -filter_lores_base_pairs_early -autofilter -filter_chain_closure_halfway

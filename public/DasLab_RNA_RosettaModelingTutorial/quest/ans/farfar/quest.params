@@ -1,0 +1,4 @@
+# Input secstruct ((((.((....))))))
+STEM  PAIR 1 17 W W A  PAIR 2 16 W W A  PAIR 3 15 W W A  PAIR 4 14 W W A 
+STEM  PAIR 6 13 W W A  PAIR 7 12 W W A 
+OBLIGATE  PAIR 3 15 W W X 

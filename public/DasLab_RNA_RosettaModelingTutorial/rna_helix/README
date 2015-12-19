@@ -1,0 +1,1 @@
+rna_helix.py -seq ggac gucc -resnum 1-4 45-48

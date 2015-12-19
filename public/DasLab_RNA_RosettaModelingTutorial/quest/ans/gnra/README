@@ -1,0 +1,3 @@
+make_rna_rosetta_ready.py 2gis_cut.pdb
+pdb2fasta.py 2gis_cut_RNA.pdb >> fasta
+rna_graft -s 2gis_cut_RNA.pdb -fasta fasta -o loop.pdb

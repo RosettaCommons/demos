@@ -1,0 +1,3 @@
+make_rna_rosetta_ready.py -pdb 2z75_cut.pdb
+pdb2fasta.py 2z75_cut_RNA.pdb >> fasta
+rna_thread -fasta fasta -s 2z75_cut_RNA.pdb  -o pseudoknot.pdb
