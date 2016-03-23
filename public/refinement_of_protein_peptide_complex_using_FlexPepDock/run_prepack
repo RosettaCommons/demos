@@ -1,0 +1,9 @@
+#!/bin/bash
+
+ROSETTA_BIN="/vol/ek/nalam82/RosettaRelases/rosetta_2014.35.57232_bundle/main/source/bin"
+ROSETTA_DB="/vol/ek/nalam82/RosettaRelases/rosetta_2014.35.57232_bundle/main/database/"
+
+$ROSETTA_BIN/FlexPepDocking.mpi.linuxgccrelease -database $ROSETTA_DB @prepack_flags >output/ppk.log
+
+mv input/1AWR.ex_0001.pdb input/1AWR.ex.ppk.pdb
+echo "FlexPepDock prepack done!"

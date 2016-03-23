@@ -1,0 +1,15 @@
+-s input/1AWR.ex.ppk.pdb      # the prepacked structure will be used as the input structure for refinement
+-native input/1AWR.pdb        # the native structure to be used for RMSD calculations. If it is not provided then the starting structure will be used as reference for RMSD calculations
+-ex1                          # extra rotamers for chi-1 angles used during packing  
+-ex2aro                       # extra rotamers for aromatic chi-2 angles used during packing
+-use_input_sc                 # add the starting structure's rotamers to the rotamer library
+-unboundrot input/unbound.pdb # add position-sepcific rotamers to the rotamer library (most useful for including rotamers of unbound receptor if available) 
+-pep_refine                   # flag for running FlexPepDock refinement 
+-lowres_preoptimize           # this is an optional step to perform low resolution optimization before the high resolution refinement begins
+-nstruct 1                    # create one refined structure
+-flexpep_score_only           # add FlexPepDock specific scores to the scorefile
+-scorefile refine.score.sc    # name of the scorefile
+-peptide_anchor 166           # manually choose the anchor by which the peptide and receptor are connected; this is optional; by default the peptide residue closest to it's center
+                              # of mass will be assigned the anchor
+-out:path:pdb output          # location of the refined structure
+-out:path:score output        # location of the scorefile

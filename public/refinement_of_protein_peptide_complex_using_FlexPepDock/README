@@ -1,0 +1,28 @@
+General purpose
+---------------
+The FlexPepDock Refinement protocol is designed to create high-resolution models of complexes between flexible peptides and globular proteins, with side chains of binding motifs modeled at nearly atomic accuracy. The Refinement protocol is intended for cases where an approximate, coarse model of the interaction is available. The protocol iteratively optimizes the peptide backbone and its rigid-body orientation relative to the receptor protein, in addition to on-the-fly side-chain optimization. The protocol is able to account for a considerable diversity of peptide conformations within a given binding site. However, it is not intended for cases where there is no prior information regarding the peptide backbone (the ab-initio protocol is best optimized for such cases - see demo in demos/public/abinitio_fold_and_dock_of_peptides_using_FlexPepDock/ ).
+A detailed documentation on FlexPepDock is available at https://www.rosettacommons.org/docs/latest/application_documentation/docking/flex-pep-dock
+
+Protocol workflow
+-----------------
+1. prepacking step: This preliminary step involves the packing of the side-chains in each monomer to remove internal clashes that are not related to inter-molecular interactions. The prepacking guarantees a uniform conformational background in non-interface regions, prior to molecular docking. The prepack_flags file contains the flags for running the prepacking job. The run_prepack script will run prepacking of the input structure 1AWR.ex.pdb located in the input direcotry.
+
+Run the run_prepack script as:
+$./run_prepack
+
+You need to change the paths of the Rosetta executables and database directories.
+
+ROSETTA_BIN="/vol/ek/nalam82/RosettaRelases/rosetta_2014.35.57232_bundle/main/source/bin"   
+ROSETTA_DB="/vol/ek/nalam82/RosettaRelases/rosetta_2014.35.57232_bundle/main/database/"
+
+Do the same in the run_refine script (see below).
+
+The output will be a prepacked structure (1AWR.ex.ppk.pdb) located in the input directory which will be used as a starting structure in the refinement stage; a scorefile name ppk.score.sc and a log file named prepack.log file loacted in the output directory. 
+
+2. refinement step: This is the main part of the protocol. In this step, the peptide backbone and its rigid-body orientation are optimized relative to the receptor protein using the Monte-Carlo with Minimization approach, in addition to on-the-fly side-chain optimization. An optional low-resolution (centroid) pre-optimization may improve performance further.
+The flags file contains the refine_flags for running the refinement job. The run_refine script will run refinement of the prepacked structure generated in the prepacking step located in the input direcotry. 
+
+Run the run_refine script as:
+./run_refine
+
+The output will be a refined structure (1AWR.ex.ppk_0001.pdb) located in the output directory; a scorefile name refine.score.sc and a log file named prefine.log file loacted in the output directory. This script has to be modifed to run on a cluster during a production run. 
