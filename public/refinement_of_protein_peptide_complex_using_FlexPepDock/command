@@ -1,3 +1,5 @@
+# Please go through the README file to learn how to run FlexPepDock prepacking and refinement. This file a just meant for checking whether the demo is running properly or not.
+
 # Available variables include:
 #   workdir     the directory where test input files have been copied,
 #               and where test output files should end up.

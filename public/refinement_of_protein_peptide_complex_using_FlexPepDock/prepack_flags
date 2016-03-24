@@ -1,4 +1,4 @@
--s input/1AWR.ex.pdb           # the input peptide-protein complex structure     
+-s input/1AWR.ex.pdb           # the input peptide-protein complex structure. the peptide is in extended (ex) conformation.
 -native input/1AWR.pdb         # the native structure to be used for RMSD calculations. If it is not provided, then the starting structure is used as reference for RMSD calculations
 -ex1                           # extra rotamers for chi-1 angles utilized during side-chain packing  
 -ex2aro                        # extra rotamers for aromatic chi-2 angles utilized during side-chain packing
