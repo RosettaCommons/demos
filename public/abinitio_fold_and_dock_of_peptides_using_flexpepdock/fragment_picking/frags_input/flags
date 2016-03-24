@@ -1,0 +1,17 @@
+-in:file:vall 			vall.dat.2006-05-05 
+#-native 			ref.pdb 
+-in:file:checkpoint 		B.checkpoint 
+#-frags:describe_fragments 	frags.fsc
+-frags:frag_sizes 		9 5 3
+-frags:n_candidates		2000
+-frags:n_frags			500
+-out:file:frag_prefix		frags
+#-in:file:s 			ref.pdb
+-in:file:fasta B.fasta
+-frags:ss_pred			B.psipred_ss2 psipred 
+-frags:scoring:config		psi_L1.cfg
+-frags:bounded_protocol	true
+-mute				core.util.prof
+-mute 				core.conformation
+-mute				core.chemical
+-mute			        protocols.jumping

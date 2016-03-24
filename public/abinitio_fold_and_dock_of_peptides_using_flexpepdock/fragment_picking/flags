@@ -1,13 +1,13 @@
--in:file:vall 			vall.dat.2006-05-05 
--native 			ref.pdb 
--in:file:checkpoint 		1awrB.checkpoint 
+-in:file:vall 			 /vol/ek/share/rosetta/rosetta_fragments_latest/nnmake_database/vall.jul19.2011 
+-in:file:checkpoint 		xxxxx.checkpoint 
 -frags:describe_fragments 	frags.fsc
--frags:frag_sizes 		5 3
+-frags:frag_sizes 	3 5 9	
 -frags:n_candidates		2000
 -frags:n_frags			500
+-in:file:s ref.pdb
+-native ref.pdb
 -out:file:frag_prefix		frags
--in:file:s 			ref.pdb
--frags:ss_pred			1awrB.psipred_ss2 psipred 
+-frags:ss_pred			xxxxx.psipred_ss2 psipred 
 -frags:scoring:config		psi_L1.cfg
 -frags:bounded_protocol	true
 -mute				core.util.prof

@@ -1,0 +1,463 @@
+core.init: (0) Rosetta version 314852bac7e7d9ce1012bc47c23e4a027b42d81f 2016-03-10 17:35:36 +0200 from https://nawsad@github.com/RosettaCommons/main.git
+core.init: (0) command: /vol/ek/nalam82/rosetta_git/Rosetta/main/source/bin/FlexPepDocking.mpi.linuxgccrelease -database /vol/ek/nalam82/rosetta_git/Rosetta/main/database/ @abinitio_flags
+core.init: (0) 'RNG device' seed mode, using '/dev/urandom', seed=-957283054 seed_offset=0 real_seed=-957283054
+core.init.random: (0) RandomGenerator:init: Normal mode, seed=-957283054 RG_type=mt19937
+core.scoring.ScoreFunctionFactory: (0) SCOREFUNCTION: talaris2013
+core.scoring.etable: (0) Starting energy table calculation
+core.scoring.etable: (0) smooth_etable: changing atr/rep split to bottom of energy well
+core.scoring.etable: (0) smooth_etable: spline smoothing lj etables (maxdis = 6)
+core.scoring.etable: (0) smooth_etable: spline smoothing solvation etables (max_dis = 6)
+core.scoring.etable: (0) Finished calculating energy tables.
+basic.io.database: (0) Database file opened: scoring/score_functions/hbonds/sp2_elec_params/HBPoly1D.csv
+basic.io.database: (0) Database file opened: scoring/score_functions/hbonds/sp2_elec_params/HBFadeIntervals.csv
+basic.io.database: (0) Database file opened: scoring/score_functions/hbonds/sp2_elec_params/HBEval.csv
+basic.io.database: (0) Database file opened: scoring/score_functions/rama/Rama_smooth_dyn.dat_ss_6.4
+basic.io.database: (0) Database file opened: scoring/score_functions/P_AA_pp/P_AA
+basic.io.database: (0) Database file opened: scoring/score_functions/P_AA_pp/P_AA_n
+basic.io.database: (0) Database file opened: scoring/score_functions/P_AA_pp/P_AA_pp
+basic.io.database: (0) Database file opened: scoring/score_functions/EnvPairPotential/env_log.txt
+basic.io.database: (0) Database file opened: scoring/score_functions/EnvPairPotential/cbeta_den.txt
+basic.io.database: (0) Database file opened: scoring/score_functions/EnvPairPotential/pair_log.txt
+basic.io.database: (0) Database file opened: scoring/score_functions/EnvPairPotential/cenpack_log.txt
+core.scoring.etable: (0) Using alternate parameters: LJ_RADIUS_SOFT in Etable construction.
+core.scoring.etable: (0) Starting energy table calculation
+core.scoring.etable: (0) smooth_etable: changing atr/rep split to bottom of energy well
+core.scoring.etable: (0) smooth_etable: spline smoothing lj etables (maxdis = 6)
+core.scoring.etable: (0) smooth_etable: spline smoothing solvation etables (max_dis = 6)
+core.scoring.etable: (0) Finished calculating energy tables.
+basic.io.database: (0) Database file opened: scoring/score_functions/PairEPotential/pdb_pair_stats_fine
+core.pack.rotamer_set.UnboundRotamersOperation: (0) Adding 'unbound' rotamers from input/unbound.pdb
+core.chemical.ResidueTypeSet: (0) Finished initializing fa_standard residue type set.  Created 801 residue types
+core.chemical.ResidueTypeSet: (0) Total time to initialize 0.128114 seconds.
+core.conformation.Conformation: (0) [ WARNING ] missing heavyatom:  CG  on residue LEU:NtermProteinFull 1
+core.conformation.Conformation: (0) [ WARNING ] missing heavyatom:  CD1 on residue LEU:NtermProteinFull 1
+core.conformation.Conformation: (0) [ WARNING ] missing heavyatom:  CD2 on residue LEU:NtermProteinFull 1
+core.conformation.Conformation: (0) [ WARNING ] missing heavyatom:  CG  on residue ARG 6
+core.conformation.Conformation: (0) [ WARNING ] missing heavyatom:  CD  on residue ARG 6
+core.conformation.Conformation: (0) [ WARNING ] missing heavyatom:  NE  on residue ARG 6
+core.conformation.Conformation: (0) [ WARNING ] missing heavyatom:  CZ  on residue ARG 6
+core.conformation.Conformation: (0) [ WARNING ] missing heavyatom:  NH1 on residue ARG 6
+core.conformation.Conformation: (0) [ WARNING ] missing heavyatom:  NH2 on residue ARG 6
+core.conformation.Conformation: (0) [ WARNING ] missing heavyatom:  CG  on residue GLU 37
+core.conformation.Conformation: (0) [ WARNING ] missing heavyatom:  CD  on residue GLU 37
+core.conformation.Conformation: (0) [ WARNING ] missing heavyatom:  OE1 on residue GLU 37
+core.conformation.Conformation: (0) [ WARNING ] missing heavyatom:  OE2 on residue GLU 37
+core.conformation.Conformation: (0) [ WARNING ] missing heavyatom:  CG  on residue GLU 121
+core.conformation.Conformation: (0) [ WARNING ] missing heavyatom:  CD  on residue GLU 121
+core.conformation.Conformation: (0) [ WARNING ] missing heavyatom:  OE1 on residue GLU 121
+core.conformation.Conformation: (0) [ WARNING ] missing heavyatom:  OE2 on residue GLU 121
+core.conformation.Conformation: (0) [ WARNING ] missing heavyatom:  CG  on residue ARG 135
+core.conformation.Conformation: (0) [ WARNING ] missing heavyatom:  CD  on residue ARG 135
+core.conformation.Conformation: (0) [ WARNING ] missing heavyatom:  NE  on residue ARG 135
+core.conformation.Conformation: (0) [ WARNING ] missing heavyatom:  CZ  on residue ARG 135
+core.conformation.Conformation: (0) [ WARNING ] missing heavyatom:  NH1 on residue ARG 135
+core.conformation.Conformation: (0) [ WARNING ] missing heavyatom:  NH2 on residue ARG 135
+core.conformation.Conformation: (0) [ WARNING ] missing heavyatom:  CG  on residue LYS 161
+core.conformation.Conformation: (0) [ WARNING ] missing heavyatom:  CD  on residue LYS 161
+core.conformation.Conformation: (0) [ WARNING ] missing heavyatom:  CE  on residue LYS 161
+core.conformation.Conformation: (0) [ WARNING ] missing heavyatom:  NZ  on residue LYS 161
+core.conformation.Conformation: (0) [ WARNING ] missing heavyatom:  OG  on residue SER 162
+core.conformation.Conformation: (0) [ WARNING ] missing heavyatom:  CG  on residue LYS 179
+core.conformation.Conformation: (0) [ WARNING ] missing heavyatom:  CD  on residue LYS 179
+core.conformation.Conformation: (0) [ WARNING ] missing heavyatom:  CE  on residue LYS 179
+core.conformation.Conformation: (0) [ WARNING ] missing heavyatom:  NZ  on residue LYS 179
+core.conformation.Conformation: (0) [ WARNING ] missing heavyatom:  OG  on residue SER 183
+core.conformation.Conformation: (0) [ WARNING ] missing heavyatom:  CG  on residue GLN 185
+core.conformation.Conformation: (0) [ WARNING ] missing heavyatom:  CD  on residue GLN 185
+core.conformation.Conformation: (0) [ WARNING ] missing heavyatom:  OE1 on residue GLN 185
+core.conformation.Conformation: (0) [ WARNING ] missing heavyatom:  NE2 on residue GLN 185
+core.conformation.Conformation: (0) [ WARNING ] missing heavyatom:  OXT on residue ARG:CtermProteinFull 252
+core.scoring.ScoreFunctionFactory: (0) SCOREFUNCTION: talaris2013
+core.conformation.Conformation: (0) [ WARNING ] missing heavyatom:  CG  on residue ARG:NtermProteinFull 1
+core.conformation.Conformation: (0) [ WARNING ] missing heavyatom:  CD  on residue ARG:NtermProteinFull 1
+core.conformation.Conformation: (0) [ WARNING ] missing heavyatom:  NE  on residue ARG:NtermProteinFull 1
+core.conformation.Conformation: (0) [ WARNING ] missing heavyatom:  CZ  on residue ARG:NtermProteinFull 1
+core.conformation.Conformation: (0) [ WARNING ] missing heavyatom:  NH1 on residue ARG:NtermProteinFull 1
+core.conformation.Conformation: (0) [ WARNING ] missing heavyatom:  NH2 on residue ARG:NtermProteinFull 1
+core.pack.task: (0) Packer task: initialize from command line() 
+core.pack.pack_missing_sidechains: (0) packing residue number 1 because of missing atom number 6 atom name  CG 
+core.scoring.ScoreFunctionFactory: (0) SCOREFUNCTION: talaris2013
+core.pack.dunbrack.RotamerLibrary: (0) Dunbrack 2010 library took 0.12841 seconds to load from binary
+core.pack.interaction_graph.interaction_graph_factory: (0) Instantiating DensePDInteractionGraph
+core.pack.pack_rotamers: (0) built 25 rotamers at 1 positions.
+core.pack.pack_rotamers: (0) IG: 880 bytes
+protocols.jd2.PDBJobInputter: (0) Instantiate PDBJobInputter
+protocols.jd2.PDBJobInputter: (0) PDBJobInputter::fill_jobs
+protocols.jd2.PDBJobInputter: (0) pushed input/2A3I.ex.ppk.pdb nstruct index 1
+core.conformation.Conformation: (0) [ WARNING ] missing heavyatom:  CG  on residue ARG:NtermProteinFull 1
+core.conformation.Conformation: (0) [ WARNING ] missing heavyatom:  CD  on residue ARG:NtermProteinFull 1
+core.conformation.Conformation: (0) [ WARNING ] missing heavyatom:  NE  on residue ARG:NtermProteinFull 1
+core.conformation.Conformation: (0) [ WARNING ] missing heavyatom:  CZ  on residue ARG:NtermProteinFull 1
+core.conformation.Conformation: (0) [ WARNING ] missing heavyatom:  NH1 on residue ARG:NtermProteinFull 1
+core.conformation.Conformation: (0) [ WARNING ] missing heavyatom:  NH2 on residue ARG:NtermProteinFull 1
+core.pack.task: (0) Packer task: initialize from command line() 
+core.pack.pack_missing_sidechains: (0) packing residue number 1 because of missing atom number 6 atom name  CG 
+core.scoring.ScoreFunctionFactory: (0) SCOREFUNCTION: talaris2013
+core.pack.interaction_graph.interaction_graph_factory: (0) Instantiating DensePDInteractionGraph
+core.pack.pack_rotamers: (0) built 25 rotamers at 1 positions.
+core.pack.pack_rotamers: (0) IG: 880 bytes
+protocols.evaluation.ChiWellRmsdEvaluatorCreator: (0) Evaluation Creator active ... 
+protocols.jd2.PDBJobInputter: (0) PDBJobInputter::pose_from_job
+protocols.jd2.PDBJobInputter: (0) filling pose from PDB input/2A3I.ex.ppk.pdb
+core.pack.task: (0) Packer task: initialize from command line() 
+FlexPepDockingProtocol: (0) apply
+protocols.flexPepDocking.FlexPepDockingFlags: (0) Receptor chain: A
+protocols.flexPepDocking.FlexPepDockingFlags: (0) Receptor first res: 1
+protocols.flexPepDocking.FlexPepDockingFlags: (0) Receptor nres: 253
+protocols.flexPepDocking.FlexPepDockingFlags: (0) Peptide chain: B
+protocols.flexPepDocking.FlexPepDockingFlags: (0) Peptide first res: 254
+protocols.flexPepDocking.FlexPepDockingFlags: (0) Peptide nres: 12
+protocols.flexPepDocking.FlexPepDockingFlags: (0) Peptide anchor: 260
+protocols.flexPepDocking.FlexPepDockingFlags: (0) # peptide anchors: 1
+protocols.flexPepDocking.FlexPepDockingFlags: (0) # peptide cuts: 0
+protocols.flexPepDocking.FlexPepDockingFlags: (0) Receptor anchor: 227
+FlexPepDockingProtocol: (0) Old FoldTree : FOLD_TREE  EDGE 1 253 -1  EDGE 1 254 1  EDGE 254 265 -1 
+FlexPepDockingProtocol: (0) New FoldTree : FOLD_TREE  EDGE 1 227 -1  EDGE 227 253 -1  EDGE 227 260 1  EDGE 260 254 -1  EDGE 260 265 -1 
+core.scoring.ScoreFunctionFactory: (0) SCOREFUNCTION: talaris2013
+core.fragments.ConstantLengthFragSet: (0) finished reading top 500 3mer fragments from file input/frags/frags.3mers.offset
+core.fragments.ConstantLengthFragSet: (0) finished reading top 500 9mer fragments from file input/frags/frags.9mers.offset
+core.fragments.ConstantLengthFragSet: (0) finished reading top 500 5mer fragments from file input/frags/frags.5mers.offset
+FlexPepDockingProtocol: (0) Running lowres abinitio docking
+gamma = 0.874787
+core.chemical.ResidueTypeSet: (0) Finished initializing centroid residue type set.  Created 1042 residue types
+core.chemical.ResidueTypeSet: (0) Total time to initialize 0.046565 seconds.
+temperature = 2
+protocols.flexPepDockingAbInitio: (0) Lowres abinitio RB docking
+protocols.TrialMover: (0) Acceptance rate: 0.62
+protocols.flexPepDockingAbInitio: (0) Lowres abinitio torsional sampling
+protocols.TrialMover: (0) Acceptance rate: 0.38
+temperature = 1.74957
+protocols.flexPepDockingAbInitio: (0) Lowres abinitio RB docking
+protocols.TrialMover: (0) Acceptance rate: 0.14
+protocols.flexPepDockingAbInitio: (0) Lowres abinitio torsional sampling
+protocols.TrialMover: (0) Acceptance rate: 0.22
+temperature = 1.5305
+protocols.flexPepDockingAbInitio: (0) Lowres abinitio RB docking
+protocols.TrialMover: (0) Acceptance rate: 0.02
+protocols.flexPepDockingAbInitio: (0) Lowres abinitio torsional sampling
+protocols.TrialMover: (0) Acceptance rate: 0.32
+temperature = 1.33887
+protocols.flexPepDockingAbInitio: (0) Lowres abinitio RB docking
+protocols.TrialMover: (0) Acceptance rate: 0.1
+protocols.flexPepDockingAbInitio: (0) Lowres abinitio torsional sampling
+protocols.TrialMover: (0) Acceptance rate: 0.34
+temperature = 1.17122
+protocols.flexPepDockingAbInitio: (0) Lowres abinitio RB docking
+protocols.TrialMover: (0) Acceptance rate: 0.18
+protocols.flexPepDockingAbInitio: (0) Lowres abinitio torsional sampling
+protocols.TrialMover: (0) Acceptance rate: 0.18
+temperature = 1.02457
+protocols.flexPepDockingAbInitio: (0) Lowres abinitio RB docking
+protocols.TrialMover: (0) Acceptance rate: 0.02
+protocols.flexPepDockingAbInitio: (0) Lowres abinitio torsional sampling
+protocols.TrialMover: (0) Acceptance rate: 0.26
+temperature = 0.896281
+protocols.flexPepDockingAbInitio: (0) Lowres abinitio RB docking
+protocols.TrialMover: (0) Acceptance rate: 0.04
+protocols.flexPepDockingAbInitio: (0) Lowres abinitio torsional sampling
+protocols.TrialMover: (0) Acceptance rate: 0.12
+temperature = 0.784055
+protocols.flexPepDockingAbInitio: (0) Lowres abinitio RB docking
+protocols.TrialMover: (0) Acceptance rate: 0
+protocols.flexPepDockingAbInitio: (0) Lowres abinitio torsional sampling
+protocols.TrialMover: (0) Acceptance rate: 0.16
+temperature = 0.685881
+protocols.flexPepDockingAbInitio: (0) Lowres abinitio RB docking
+protocols.TrialMover: (0) Acceptance rate: 0.02
+protocols.flexPepDockingAbInitio: (0) Lowres abinitio torsional sampling
+protocols.TrialMover: (0) Acceptance rate: 0.04
+temperature = 0.6
+protocols.flexPepDockingAbInitio: (0) Lowres abinitio RB docking
+protocols.TrialMover: (0) Acceptance rate: 0
+protocols.flexPepDockingAbInitio: (0) Lowres abinitio torsional sampling
+protocols.TrialMover: (0) Acceptance rate: 0.08
+FlexPepDockingProtocol: (0) Running hires docking protocol
+core.pack.task: (0) Packer task: initialize from command line() 
+core.pack.interaction_graph.interaction_graph_factory: (0) Instantiating DensePDInteractionGraph
+core.pack.pack_rotamers: (0) built 242 rotamers at 18 positions.
+core.pack.pack_rotamers: (0) IG: 91656 bytes
+FlexPepDockingProtocol: (0) Hires rb docking
+core.pack.task: (0) Packer task: initialize from command line() 
+core.pack.task: (0) Packer task: initialize from command line() 
+core.pack.task: (0) Packer task: initialize from command line() 
+core.pack.task: (0) Packer task: initialize from command line() 
+core.pack.task: (0) Packer task: initialize from command line() 
+core.pack.task: (0) Packer task: initialize from command line() 
+core.pack.task: (0) Packer task: initialize from command line() 
+core.pack.task: (0) Packer task: initialize from command line() 
+core.pack.interaction_graph.interaction_graph_factory: (0) Instantiating DensePDInteractionGraph
+core.pack.pack_rotamers: (0) built 836 rotamers at 28 positions.
+core.pack.pack_rotamers: (0) IG: 734928 bytes
+FlexPepDockingProtocol: (0) Hires torsional sampling
+core.pack.task: (0) Packer task: initialize from command line() 
+core.pack.task: (0) Packer task: initialize from command line() 
+core.pack.task: (0) Packer task: initialize from command line() 
+core.pack.task: (0) Packer task: initialize from command line() 
+core.pack.task: (0) Packer task: initialize from command line() 
+core.pack.task: (0) Packer task: initialize from command line() 
+core.pack.task: (0) Packer task: initialize from command line() 
+core.pack.task: (0) Packer task: initialize from command line() 
+core.pack.interaction_graph.interaction_graph_factory: (0) Instantiating DensePDInteractionGraph
+core.pack.pack_rotamers: (0) built 889 rotamers at 29 positions.
+core.pack.pack_rotamers: (0) IG: 872944 bytes
+FlexPepDockingProtocol: (0) Hires rb docking
+core.pack.task: (0) Packer task: initialize from command line() 
+core.pack.task: (0) Packer task: initialize from command line() 
+core.pack.task: (0) Packer task: initialize from command line() 
+core.pack.task: (0) Packer task: initialize from command line() 
+core.pack.task: (0) Packer task: initialize from command line() 
+core.pack.task: (0) Packer task: initialize from command line() 
+core.pack.task: (0) Packer task: initialize from command line() 
+core.pack.task: (0) Packer task: initialize from command line() 
+core.pack.interaction_graph.interaction_graph_factory: (0) Instantiating DensePDInteractionGraph
+core.pack.pack_rotamers: (0) built 769 rotamers at 29 positions.
+core.pack.pack_rotamers: (0) IG: 631596 bytes
+FlexPepDockingProtocol: (0) Hires torsional sampling
+core.pack.task: (0) Packer task: initialize from command line() 
+core.pack.task: (0) Packer task: initialize from command line() 
+core.pack.task: (0) Packer task: initialize from command line() 
+core.pack.task: (0) Packer task: initialize from command line() 
+core.pack.task: (0) Packer task: initialize from command line() 
+core.pack.task: (0) Packer task: initialize from command line() 
+core.pack.task: (0) Packer task: initialize from command line() 
+core.pack.task: (0) Packer task: initialize from command line() 
+core.pack.interaction_graph.interaction_graph_factory: (0) Instantiating DensePDInteractionGraph
+core.pack.pack_rotamers: (0) built 699 rotamers at 27 positions.
+core.pack.pack_rotamers: (0) IG: 516172 bytes
+FlexPepDockingProtocol: (0) Hires rb docking
+core.pack.task: (0) Packer task: initialize from command line() 
+core.pack.task: (0) Packer task: initialize from command line() 
+core.pack.task: (0) Packer task: initialize from command line() 
+core.pack.task: (0) Packer task: initialize from command line() 
+core.pack.task: (0) Packer task: initialize from command line() 
+core.pack.task: (0) Packer task: initialize from command line() 
+core.pack.task: (0) Packer task: initialize from command line() 
+core.pack.task: (0) Packer task: initialize from command line() 
+core.pack.interaction_graph.interaction_graph_factory: (0) Instantiating DensePDInteractionGraph
+core.pack.pack_rotamers: (0) built 469 rotamers at 26 positions.
+core.pack.pack_rotamers: (0) IG: 270052 bytes
+FlexPepDockingProtocol: (0) Hires torsional sampling
+core.pack.task: (0) Packer task: initialize from command line() 
+core.pack.task: (0) Packer task: initialize from command line() 
+core.pack.task: (0) Packer task: initialize from command line() 
+core.pack.task: (0) Packer task: initialize from command line() 
+core.pack.task: (0) Packer task: initialize from command line() 
+core.pack.task: (0) Packer task: initialize from command line() 
+core.pack.task: (0) Packer task: initialize from command line() 
+core.pack.task: (0) Packer task: initialize from command line() 
+core.pack.interaction_graph.interaction_graph_factory: (0) Instantiating DensePDInteractionGraph
+core.pack.pack_rotamers: (0) built 537 rotamers at 24 positions.
+core.pack.pack_rotamers: (0) IG: 304672 bytes
+FlexPepDockingProtocol: (0) Hires rb docking
+core.pack.task: (0) Packer task: initialize from command line() 
+core.pack.task: (0) Packer task: initialize from command line() 
+core.pack.task: (0) Packer task: initialize from command line() 
+core.pack.task: (0) Packer task: initialize from command line() 
+core.pack.task: (0) Packer task: initialize from command line() 
+core.pack.task: (0) Packer task: initialize from command line() 
+core.pack.task: (0) Packer task: initialize from command line() 
+core.pack.task: (0) Packer task: initialize from command line() 
+core.pack.interaction_graph.interaction_graph_factory: (0) Instantiating DensePDInteractionGraph
+core.pack.pack_rotamers: (0) built 490 rotamers at 22 positions.
+core.pack.pack_rotamers: (0) IG: 263692 bytes
+FlexPepDockingProtocol: (0) Hires torsional sampling
+core.pack.task: (0) Packer task: initialize from command line() 
+core.pack.task: (0) Packer task: initialize from command line() 
+core.pack.task: (0) Packer task: initialize from command line() 
+core.pack.task: (0) Packer task: initialize from command line() 
+core.pack.task: (0) Packer task: initialize from command line() 
+core.pack.task: (0) Packer task: initialize from command line() 
+core.pack.task: (0) Packer task: initialize from command line() 
+core.pack.task: (0) Packer task: initialize from command line() 
+core.pack.interaction_graph.interaction_graph_factory: (0) Instantiating DensePDInteractionGraph
+core.pack.pack_rotamers: (0) built 528 rotamers at 25 positions.
+core.pack.pack_rotamers: (0) IG: 271460 bytes
+FlexPepDockingProtocol: (0) Hires rb docking
+core.pack.task: (0) Packer task: initialize from command line() 
+core.pack.task: (0) Packer task: initialize from command line() 
+core.pack.task: (0) Packer task: initialize from command line() 
+core.pack.task: (0) Packer task: initialize from command line() 
+core.pack.task: (0) Packer task: initialize from command line() 
+core.pack.task: (0) Packer task: initialize from command line() 
+core.pack.task: (0) Packer task: initialize from command line() 
+core.pack.task: (0) Packer task: initialize from command line() 
+core.pack.interaction_graph.interaction_graph_factory: (0) Instantiating DensePDInteractionGraph
+core.pack.pack_rotamers: (0) built 667 rotamers at 26 positions.
+core.pack.pack_rotamers: (0) IG: 461224 bytes
+FlexPepDockingProtocol: (0) Hires torsional sampling
+core.pack.task: (0) Packer task: initialize from command line() 
+core.pack.task: (0) Packer task: initialize from command line() 
+core.pack.task: (0) Packer task: initialize from command line() 
+core.pack.task: (0) Packer task: initialize from command line() 
+core.pack.task: (0) Packer task: initialize from command line() 
+core.pack.task: (0) Packer task: initialize from command line() 
+core.pack.task: (0) Packer task: initialize from command line() 
+core.pack.task: (0) Packer task: initialize from command line() 
+core.pack.interaction_graph.interaction_graph_factory: (0) Instantiating DensePDInteractionGraph
+core.pack.pack_rotamers: (0) built 401 rotamers at 22 positions.
+core.pack.pack_rotamers: (0) IG: 178268 bytes
+FlexPepDockingProtocol: (0) Hires rb docking
+core.pack.task: (0) Packer task: initialize from command line() 
+core.pack.task: (0) Packer task: initialize from command line() 
+core.pack.task: (0) Packer task: initialize from command line() 
+core.pack.task: (0) Packer task: initialize from command line() 
+core.pack.task: (0) Packer task: initialize from command line() 
+core.pack.task: (0) Packer task: initialize from command line() 
+core.pack.task: (0) Packer task: initialize from command line() 
+core.pack.task: (0) Packer task: initialize from command line() 
+core.pack.interaction_graph.interaction_graph_factory: (0) Instantiating DensePDInteractionGraph
+core.pack.pack_rotamers: (0) built 397 rotamers at 24 positions.
+core.pack.pack_rotamers: (0) IG: 184076 bytes
+FlexPepDockingProtocol: (0) Hires torsional sampling
+core.pack.task: (0) Packer task: initialize from command line() 
+core.pack.task: (0) Packer task: initialize from command line() 
+core.pack.task: (0) Packer task: initialize from command line() 
+core.pack.task: (0) Packer task: initialize from command line() 
+core.pack.task: (0) Packer task: initialize from command line() 
+core.pack.task: (0) Packer task: initialize from command line() 
+core.pack.task: (0) Packer task: initialize from command line() 
+core.pack.task: (0) Packer task: initialize from command line() 
+core.pack.interaction_graph.interaction_graph_factory: (0) Instantiating DensePDInteractionGraph
+core.pack.pack_rotamers: (0) built 372 rotamers at 22 positions.
+core.pack.pack_rotamers: (0) IG: 156688 bytes
+FlexPepDockingProtocol: (0) Hires rb docking
+core.pack.task: (0) Packer task: initialize from command line() 
+core.pack.task: (0) Packer task: initialize from command line() 
+core.pack.task: (0) Packer task: initialize from command line() 
+core.pack.task: (0) Packer task: initialize from command line() 
+core.pack.task: (0) Packer task: initialize from command line() 
+core.pack.task: (0) Packer task: initialize from command line() 
+core.pack.task: (0) Packer task: initialize from command line() 
+core.pack.task: (0) Packer task: initialize from command line() 
+core.pack.interaction_graph.interaction_graph_factory: (0) Instantiating DensePDInteractionGraph
+core.pack.pack_rotamers: (0) built 322 rotamers at 19 positions.
+core.pack.pack_rotamers: (0) IG: 133572 bytes
+FlexPepDockingProtocol: (0) Hires torsional sampling
+core.pack.task: (0) Packer task: initialize from command line() 
+core.pack.task: (0) Packer task: initialize from command line() 
+core.pack.task: (0) Packer task: initialize from command line() 
+core.pack.task: (0) Packer task: initialize from command line() 
+core.pack.task: (0) Packer task: initialize from command line() 
+core.pack.task: (0) Packer task: initialize from command line() 
+core.pack.task: (0) Packer task: initialize from command line() 
+core.pack.task: (0) Packer task: initialize from command line() 
+core.pack.interaction_graph.interaction_graph_factory: (0) Instantiating DensePDInteractionGraph
+core.pack.pack_rotamers: (0) built 386 rotamers at 21 positions.
+core.pack.pack_rotamers: (0) IG: 176452 bytes
+FlexPepDockingProtocol: (0) Hires rb docking
+core.pack.task: (0) Packer task: initialize from command line() 
+core.pack.task: (0) Packer task: initialize from command line() 
+core.pack.task: (0) Packer task: initialize from command line() 
+core.pack.task: (0) Packer task: initialize from command line() 
+core.pack.task: (0) Packer task: initialize from command line() 
+core.pack.task: (0) Packer task: initialize from command line() 
+core.pack.task: (0) Packer task: initialize from command line() 
+core.pack.task: (0) Packer task: initialize from command line() 
+core.pack.interaction_graph.interaction_graph_factory: (0) Instantiating DensePDInteractionGraph
+core.pack.pack_rotamers: (0) built 288 rotamers at 18 positions.
+core.pack.pack_rotamers: (0) IG: 110468 bytes
+FlexPepDockingProtocol: (0) Hires torsional sampling
+core.pack.task: (0) Packer task: initialize from command line() 
+core.pack.task: (0) Packer task: initialize from command line() 
+core.pack.task: (0) Packer task: initialize from command line() 
+core.pack.task: (0) Packer task: initialize from command line() 
+core.pack.task: (0) Packer task: initialize from command line() 
+core.pack.task: (0) Packer task: initialize from command line() 
+core.pack.task: (0) Packer task: initialize from command line() 
+core.pack.task: (0) Packer task: initialize from command line() 
+core.pack.interaction_graph.interaction_graph_factory: (0) Instantiating DensePDInteractionGraph
+core.pack.pack_rotamers: (0) built 455 rotamers at 20 positions.
+core.pack.pack_rotamers: (0) IG: 243944 bytes
+FlexPepDockingProtocol: (0) Hires rb docking
+core.pack.task: (0) Packer task: initialize from command line() 
+core.pack.task: (0) Packer task: initialize from command line() 
+core.pack.task: (0) Packer task: initialize from command line() 
+core.pack.task: (0) Packer task: initialize from command line() 
+core.pack.task: (0) Packer task: initialize from command line() 
+core.pack.task: (0) Packer task: initialize from command line() 
+core.pack.task: (0) Packer task: initialize from command line() 
+core.pack.task: (0) Packer task: initialize from command line() 
+core.pack.interaction_graph.interaction_graph_factory: (0) Instantiating DensePDInteractionGraph
+core.pack.pack_rotamers: (0) built 392 rotamers at 20 positions.
+core.pack.pack_rotamers: (0) IG: 186600 bytes
+FlexPepDockingProtocol: (0) Hires torsional sampling
+core.pack.task: (0) Packer task: initialize from command line() 
+core.pack.task: (0) Packer task: initialize from command line() 
+core.pack.task: (0) Packer task: initialize from command line() 
+core.pack.task: (0) Packer task: initialize from command line() 
+core.pack.task: (0) Packer task: initialize from command line() 
+core.pack.task: (0) Packer task: initialize from command line() 
+core.pack.task: (0) Packer task: initialize from command line() 
+core.pack.task: (0) Packer task: initialize from command line() 
+core.pack.interaction_graph.interaction_graph_factory: (0) Instantiating DensePDInteractionGraph
+core.pack.pack_rotamers: (0) built 311 rotamers at 18 positions.
+core.pack.pack_rotamers: (0) IG: 126756 bytes
+FlexPepDockingProtocol: (0) Hires rb docking
+core.pack.task: (0) Packer task: initialize from command line() 
+core.pack.task: (0) Packer task: initialize from command line() 
+core.pack.task: (0) Packer task: initialize from command line() 
+core.pack.task: (0) Packer task: initialize from command line() 
+core.pack.task: (0) Packer task: initialize from command line() 
+core.pack.task: (0) Packer task: initialize from command line() 
+core.pack.task: (0) Packer task: initialize from command line() 
+core.pack.task: (0) Packer task: initialize from command line() 
+core.pack.interaction_graph.interaction_graph_factory: (0) Instantiating DensePDInteractionGraph
+core.pack.pack_rotamers: (0) built 188 rotamers at 13 positions.
+core.pack.pack_rotamers: (0) IG: 61424 bytes
+FlexPepDockingProtocol: (0) Hires torsional sampling
+core.pack.task: (0) Packer task: initialize from command line() 
+core.pack.task: (0) Packer task: initialize from command line() 
+core.pack.task: (0) Packer task: initialize from command line() 
+core.pack.task: (0) Packer task: initialize from command line() 
+core.pack.task: (0) Packer task: initialize from command line() 
+core.pack.task: (0) Packer task: initialize from command line() 
+core.pack.task: (0) Packer task: initialize from command line() 
+core.pack.task: (0) Packer task: initialize from command line() 
+core.pack.interaction_graph.interaction_graph_factory: (0) Instantiating DensePDInteractionGraph
+core.pack.pack_rotamers: (0) built 199 rotamers at 13 positions.
+core.pack.pack_rotamers: (0) IG: 64604 bytes
+protocols.moves.RigidBodyMover: (0) Translate: Jump (before): RT -0.902418 -0.343005 -0.260749 -0.381749 0.355916 0.852989 -0.199775 0.869293 -0.452127 4.63393 -6.00815 -10.3565  
+protocols.moves.RigidBodyMover: (0) Translate: Jump (after):  RT -0.902418 -0.343005 -0.260749 -0.381749 0.355916 0.852989 -0.199775 0.869293 -0.452127 491.382 -817.265 313.586  
+FlexPepDockingPoseMetrics: (0) Isc: -4.41293
+FlexPepDockingPoseMetrics: (0) Total BSA  is: 484.751
+FlexPepDockingPoseMetrics: (0) Interface HB #: 1
+FlexPepDockingPoseMetrics: (0) Total packstats: 0.0368682
+FlexPepDockingPoseMetrics: (0) Interface Unsat polar groups: 0
+FlexPepDockingPoseMetrics: (0) 254 bsa: 0 HB: 0 pack: 0.405785 unsat: 0
+FlexPepDockingPoseMetrics: (0) 255 bsa: 0 HB: 0 pack: 0.311085 unsat: 0
+FlexPepDockingPoseMetrics: (0) 256 bsa: 51.3127 HB: 1 pack: 0.443994 unsat: 0
+FlexPepDockingPoseMetrics: (0) 257 bsa: 22.1558 HB: 0 pack: 0.801733 unsat: 0
+FlexPepDockingPoseMetrics: (0) 258 bsa: 58.4772 HB: 0 pack: 0.342867 unsat: 0
+FlexPepDockingPoseMetrics: (0) 259 bsa: 0 HB: 0 pack: 0.693475 unsat: 0
+FlexPepDockingPoseMetrics: (0) 260 bsa: 29.6948 HB: 0 pack: 0.447615 unsat: 0
+FlexPepDockingPoseMetrics: (0) 261 bsa: 0 HB: 0 pack: 0.167854 unsat: 0
+FlexPepDockingPoseMetrics: (0) 262 bsa: 8.70984 HB: 0 pack: 0.333557 unsat: 0
+FlexPepDockingPoseMetrics: (0) 263 bsa: 69.4045 HB: 0 pack: 0.259457 unsat: 0
+FlexPepDockingPoseMetrics: (0) 264 bsa: 0 HB: 0 pack: 0.118164 unsat: 0
+FlexPepDockingPoseMetrics: (0) 265 bsa: 0 HB: 0 pack: 0.463235 unsat: 0
+protocols.moves.RigidBodyMover: (0) Translate: Jump (before): RT -0.902418 -0.343005 -0.260749 -0.381749 0.355916 0.852989 -0.199775 0.869293 -0.452127 4.63393 -6.00815 -10.3565  
+protocols.moves.RigidBodyMover: (0) Translate: Jump (after):  RT -0.902418 -0.343005 -0.260749 -0.381749 0.355916 0.852989 -0.199775 0.869293 -0.452127 491.382 -817.265 313.586  
+FlexPepDockingPoseMetrics: (0) Isc: -4.41293
+FlexPepDockingPoseMetrics: (0) Total BSA  is: 484.751
+FlexPepDockingPoseMetrics: (0) Interface HB #: 1
+FlexPepDockingPoseMetrics: (0) Total packstats: 0.0302626
+FlexPepDockingPoseMetrics: (0) Interface Unsat polar groups: 0
+FlexPepDockingPoseMetrics: (0) 254 bsa: 0 HB: 0 pack: 0.405785 unsat: 0
+FlexPepDockingPoseMetrics: (0) 255 bsa: 0 HB: 0 pack: 0.311085 unsat: 0
+FlexPepDockingPoseMetrics: (0) 256 bsa: 51.3127 HB: 1 pack: 0.443994 unsat: 0
+FlexPepDockingPoseMetrics: (0) 257 bsa: 22.1558 HB: 0 pack: 0.801733 unsat: 0
+FlexPepDockingPoseMetrics: (0) 258 bsa: 58.4772 HB: 0 pack: 0.342867 unsat: 0
+FlexPepDockingPoseMetrics: (0) 259 bsa: 0 HB: 0 pack: 0.693475 unsat: 0
+FlexPepDockingPoseMetrics: (0) 260 bsa: 29.6948 HB: 0 pack: 0.447615 unsat: 0
+FlexPepDockingPoseMetrics: (0) 261 bsa: 0 HB: 0 pack: 0.167854 unsat: 0
+FlexPepDockingPoseMetrics: (0) 262 bsa: 8.70984 HB: 0 pack: 0.333557 unsat: 0
+FlexPepDockingPoseMetrics: (0) 263 bsa: 69.4045 HB: 0 pack: 0.259457 unsat: 0
+FlexPepDockingPoseMetrics: (0) 264 bsa: 0 HB: 0 pack: 0.118164 unsat: 0
+FlexPepDockingPoseMetrics: (0) 265 bsa: 0 HB: 0 pack: 0.463235 unsat: 0
+FlexPepDockingPoseMetrics: (0) nat 40
+FlexPepDockingPoseMetrics: (0) rec 5
+FlexPepDockingPoseMetrics: (0) nat 28
+FlexPepDockingPoseMetrics: (0) rec 1
+protocols.jd2.JobDistributor: (0) 2A3I.ex.ppk_0001 reported success in 92 seconds
+protocols.jd2.JobDistributor: (0) no more batches to process... 
+protocols.jd2.JobDistributor: (0) 1 jobs considered, 1 jobs attempted in 93 seconds

@@ -1,0 +1,8 @@
+#!/bin/bash
+
+ROSETTA_BIN="/vol/ek/nalam82/rosetta_git/Rosetta/main/source/bin"
+ROSETTA_DB="/vol/ek/nalam82/rosetta_git/Rosetta/main/database/"
+
+$ROSETTA_BIN/FlexPepDocking.mpi.linuxgccrelease -database $ROSETTA_DB @abinitio_flags >output/abinitio.log
+
+echo "FlexPepDock ab-initio done!"

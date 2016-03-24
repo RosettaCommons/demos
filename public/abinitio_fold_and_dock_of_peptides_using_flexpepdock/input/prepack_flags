@@ -1,9 +1,0 @@
-# flags for prepacking the starting structure
--s input/1AWR.ex.pdb 
--native input/1AWR.pdb 
--ex1 
--ex2aro 
--use_input_sc 
--unboundrot input/1AWR.pdb 
--flexpep_prepack 
--nstruct 1

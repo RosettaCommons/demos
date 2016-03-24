@@ -1,4 +1,4 @@
-position:          254 neighbors:          500
+position:            1 neighbors:          500
 
  1tl0 D    61 Q L    0.000  -30.115 -178.671
  1tl0 D    62 K H  -62.696  -45.575  174.435
@@ -3000,7 +3000,7 @@ position:          254 neighbors:          500
  1uhg A   263 K H  -61.465  -46.793 -178.295
  1uhg A   264 L H  -59.469  -39.523 -179.275
 
-position:          255 neighbors:          500
+position:            2 neighbors:          500
 
  1qoy A   146 Q H  -53.896  -39.949  179.858
  1qoy A   147 K H  -63.565  -39.187  178.628
@@ -6002,7 +6002,7 @@ position:          255 neighbors:          500
  1wl9 A   289 I H  -73.334  -40.713  180.876
  1wl9 A   290 Y H  -59.699  -39.929 -175.796
 
-position:          256 neighbors:          500
+position:            3 neighbors:          500
 
  1g6u A    40 K H  -64.130  -39.989  179.065
  1g6u A    41 S H  -67.931  -45.077  179.211
@@ -9004,7 +9004,7 @@ position:          256 neighbors:          500
  1w8i A   149 L H  -55.728  -54.050 -173.648
  1w8i A   150 R H  -81.022  -30.346 -177.675
 
-position:          257 neighbors:          500
+position:            4 neighbors:          500
 
  1s12 A    27 S H  -56.506  -44.264 -178.191
  1s12 A    28 L H  -67.858  -45.931  181.309
@@ -12006,7 +12006,7 @@ position:          257 neighbors:          500
  1bgf _    63 I H  -66.847  -43.750  177.183
  1bgf _    64 Q H  -65.707  -38.375  177.376
 
-position:          258 neighbors:          500
+position:            5 neighbors:          500
 
  1xme A    60 L H  -72.783  -40.630  178.618
  1xme A    61 L H  -65.166  -41.749 -179.334
@@ -15008,7 +15008,7 @@ position:          258 neighbors:          500
  1vns _   112 S H  -64.183  -36.139 -176.941
  1vns _   113 L H  -70.511  -44.797 -168.303
 
-position:          259 neighbors:          500
+position:            6 neighbors:          500
 
  1qys A    29 L H  -75.846  -37.629  173.427
  1qys A    30 Q H  -60.640  -28.384  175.809
@@ -18010,7 +18010,7 @@ position:          259 neighbors:          500
  2bpt A   724 I H  -66.801  -41.270  180.307
  2bpt A   725 M H  -63.892  -35.678  176.643
 
-position:          260 neighbors:          500
+position:            7 neighbors:          500
 
  1s35 A    64 E H  -61.128  -50.373 -179.432
  1s35 A    65 K H  -61.624  -41.696 -179.616
@@ -21012,7 +21012,7 @@ position:          260 neighbors:          500
  1yxc A   174 K H  -50.439  -42.640 -176.081
  1yxc A   175 E L  -71.011  -15.166 -174.134
 
-position:          261 neighbors:          500
+position:            8 neighbors:          500
 
  1no1 A    35 R H  -66.223  -31.361  176.531
  1no1 A    36 V H  -90.335  -40.541 -167.708

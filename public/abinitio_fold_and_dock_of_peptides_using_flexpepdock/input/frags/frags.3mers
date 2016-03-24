@@ -1,4 +1,4 @@
-position:          254 neighbors:          500
+position:            1 neighbors:          500
 
  1yoz A    31 D L  -93.212  114.185 -171.108
  1yoz A    32 Q H  -59.279  -26.081  176.556
@@ -2000,7 +2000,7 @@ position:          254 neighbors:          500
  2c1i A   277 N L -121.962   27.243 -175.420
  2c1i A   278 E H  -62.434  -41.671 -178.590
 
-position:          255 neighbors:          500
+position:            2 neighbors:          500
 
  1zgm A   240 E H  -63.891  -39.167  175.870
  1zgm A   241 K H  -58.320  -42.333  182.237
@@ -4002,7 +4002,7 @@ position:          255 neighbors:          500
  1f0k A   176 R H  -67.544  -39.867 -174.482
  1f0k A   177 L H  -93.710    1.014 -177.397
 
-position:          256 neighbors:          500
+position:            3 neighbors:          500
 
  1zgm A   241 K H  -58.320  -42.333  182.237
  1zgm A   242 S H  -75.108  -33.966  174.364
@@ -6004,7 +6004,7 @@ position:          256 neighbors:          500
  1ikp A   449 S H  -66.929  -46.926 -174.290
  1ikp A   450 I H  -66.892  -45.920 -174.917
 
-position:          257 neighbors:          500
+position:            4 neighbors:          500
 
  1s12 A    27 S H  -56.506  -44.264 -178.191
  1s12 A    28 L H  -67.858  -45.931  181.309
@@ -8006,7 +8006,7 @@ position:          257 neighbors:          500
  1o5l A   109 L H  -61.719  -43.160  177.167
  1o5l A   110 L H  -55.953  -39.869 -174.090
 
-position:          258 neighbors:          500
+position:            5 neighbors:          500
 
  1vk5 A    89 L H  -60.312  -43.323 -178.737
  1vk5 A    90 L H  -64.161  -40.776  176.201
@@ -10008,7 +10008,7 @@ position:          258 neighbors:          500
  1qoy A   164 L H  -66.236  -44.396  176.921
  1qoy A   165 A H  -61.903  -37.629  179.242
 
-position:          259 neighbors:          500
+position:            6 neighbors:          500
 
  1hx6 A    31 L H  -64.799  -38.651 -176.886
  1hx6 A    32 Q H  -74.767  -39.073 -173.326
@@ -12010,7 +12010,7 @@ position:          259 neighbors:          500
  1f0x A   542 Q H  -59.912  -44.215  178.577
  1f0x A   543 K H  -64.399  -35.183 -179.924
 
-position:          260 neighbors:          500
+position:            7 neighbors:          500
 
  1s0y B    18 Q H  -66.791  -34.753  177.848
  1s0y B    19 Q H  -72.633  -38.886  177.782
@@ -14012,7 +14012,7 @@ position:          260 neighbors:          500
  1jih A   315 E H  -69.430  -43.687  180.435
  1jih A   316 L H  -60.046  -37.586  181.370
 
-position:          261 neighbors:          500
+position:            8 neighbors:          500
 
  1qoy A   107 Q H  -67.858  -38.161  180.011
  1qoy A   108 L H  -71.099  -39.759  177.161
@@ -16014,7 +16014,7 @@ position:          261 neighbors:          500
  1jrr A    77 L H  -62.537  -43.312  179.372
  1jrr A    78 S H  -61.328  -43.088  178.398
 
-position:          262 neighbors:          500
+position:            9 neighbors:          500
 
  1xme A   130 L H  -64.381  -48.958  180.692
  1xme A   131 L H  -66.461  -24.563 -179.856
@@ -18016,7 +18016,7 @@ position:          262 neighbors:          500
  1xzp A   128 L H  -65.019  -36.995  179.184
  1xzp A   129 K L  -89.906  -12.198  179.265
 
-position:          263 neighbors:          500
+position:           10 neighbors:          500
 
  1no1 A    37 L H  -77.403   -6.164  182.561
  1no1 A    38 A L  -65.854  -18.324 -176.192
