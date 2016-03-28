@@ -3,9 +3,9 @@
 -lowres_abinitio                                                  # Low-resolution ab-initio folding and docking
 -pep_refine                                                       # Refine low resolution models produced using -lowre_abinitio flag 
 -flexpep_score_only                                               # Read in a complex, score it and output interface statistics
--ex1                                                              # Adding extra side-chain rotamers
+-ex1                                                              # Add extra side-chain rotamers
 -ex2aro                                                           
--unboundrot input/unbound.pdb                                     # Add the position-sepcific rotamers to the rotamer library (usually used to include rotamers of unbound receptor)
+-unboundrot input/unbound.pdb                                     # Add position-specific rotamers to the rotamer library (usually used to include rotamers of unbound receptor)
 -use_input_sc                                                     # Include rotamer conformations from the input structure during side-chain repacking. 
 -nstruct 1																												# Number of models to create in the simulation
 
