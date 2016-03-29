@@ -13,21 +13,13 @@ cd %(workdir)s
 
 [ -x %(bin)s/FlexPepDocking.%(binext)s ] || exit 1
 
-%(bin)s/FlexPepDocking.%(binext)s @prepack_flags -database %(database)s  2>&1 \
-    | egrep -vf ../../ignore_list \
-    > output/ppk.log
+%(bin)s/FlexPepDocking.%(binext)s @prepack_flags -database %(database)s  >output/ppk.log
 
 mv input/1AWR.ex_0001.pdb input/1AWR.ex.ppk.pdb
-
-%(bin)s/FlexPepDocking.%(binext)s @refine_flags -database %(database)s -nodelay  2>&1 \
-    | egrep -vf ../../ignore_list \
-    > refine.log
-
-test "${PIPESTATUS[0]}" != '0' && exit 1 || true  # Check if the first executable in pipe line return error and exit with error code if so
-
-
-#Check for output
 [ -r input/1AWR.ex.ppk.pdb ] || exit 1
+
+%(bin)s/FlexPepDocking.%(binext)s @refine_flags -database %(database)s >output/refine.log
+
 [ -r output/1AWR.ex.ppk_0001.pdb ] || exit 1
 
 # Here's a typical test for a Mini binary, assuming there's a "flags" file

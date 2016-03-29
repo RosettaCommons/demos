@@ -1,0 +1,12 @@
+#!/bin/bash
+#SBATCH -N 15
+#SBATCH --ntasks=600 
+#SBATCH --time=24:00:00
+#SBATCH --get-user-env
+
+ROSETTA_BIN="rosetta/main/source/bin"
+ROSETTA_DB="rosetta/rrmain/database/"
+
+mpirun $ROSETTA_BIN/FlexPepDocking.mpi.linuxgccrelease -database $ROSETTA_DB @abinitio_flags >output/abinitio.log
+
+echo "FlexPepDock ab-initio done!"

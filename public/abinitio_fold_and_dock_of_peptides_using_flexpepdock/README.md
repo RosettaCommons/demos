@@ -4,8 +4,8 @@ This demo illustrates how to run FlexPepDock ab-initio folding and docking of a 
 
 Protocol overview
 -----------------
-The input to the ab-initio protocol is a model of the peptide-protein complex in PDB format,starting from arbitrary (e.g., extended) peptide backbone conformation. It is required that the peptide is initially positioned in some proximity to the true binding pocket, but the exact starting orientation may vary. 
-Preliminary steps: (1) Generation of fragment libraries for the peptide sequence, including 3-mer, 5-mer and 9-mer fragments. (2) Pre-packing of the receptor and peptide to remove internal clashes that might confuse ranking. 
+The input to the ab-initio protocol is a model of the peptide-protein complex in PDB format,starting from arbitrary (e.g., extended) peptide backbone conformation. It is required that the peptide is initially positioned in some proximity to the true binding pocket, but the exact starting orientation may vary.
+Preliminary steps: (1) Generation of fragment libraries for the peptide sequence, including 3-mer, 5-mer and 9-mer fragments. (2) Pre-packing of the receptor and peptide to remove internal clashes that might confuse ranking.
 Main protocol: Step 1: Monte-Carlo simulation for de-novo folding and docking of the peptide over the protein surface in low-resolution (centroid) mode, using a combination of fragment insertions, random backbone perturbations and rigid-body transformation moves. Step 2: The resulting low-resolution model is refined with FlexPepDock Refinement. As in the independent refinement protocol, the output models are then ranked based on their energy score, after their clustering for improved coverage of distinct conformations.
 
 Refinement vs. ab-initio protocol
@@ -27,9 +27,9 @@ You need to change the paths of the Rosetta executables and database directories
 After changing the paths, run the run_prepack script as:
    $./run_prepack
 
-The output will be a prepacked structure, 2A3I.ex.ppk.pdb, located in the input directory; a scorefile named ppk.score.sc and a log file named prepack.log file located in the output directory. This prepacked structure will be used as the input for the refinement step.
+The output will be a prepacked structure, 2A3I.ex.ppk.pdb, located in the input directory; a scorefile named ppk.score.sc and a log file named prepack.log file located in the output directory. This prepacked structure will be used as the input for the ab-initio modeling step.
 
-3. Create 3mer, 5mer & 9mer fragment libraries: The scripts necessary for creating fragments are provided in the fragment_picking directory.
+3. Create 3mer, 5mer & 9mer (peptide lingth >=9) fragment libraries: The scripts necessary for creating fragments are provided in the fragment_picking directory.
     a. Go to the fragment_picking directory.
     b. Save the peptide sequence in the xxxxx.fasta file.
     c. Run the make_fragments.pl script to generate the PSIPred secondary structure and PSI-Blast sequence profiles. You need to chnage the paths in the upper section of the make_fragments.pl file.
@@ -39,26 +39,40 @@ The output will be a prepacked structure, 2A3I.ex.ppk.pdb, located in the input 
     Run as $ROSETTA_BIN/fragment_picker.linuxgccrelease -database $ROSETTA_DB @flags >log
     e. Change the fragment numbering using shift.sh script.
     Run as $bash shift.sh frags.500.3mer X >frags.3mers.offset ; where X is the number of residues in the receptor. Do the same for 5mer and 9mer frags
-    The offset fragment files will be used as input to the FlexPepDock abinitio protocol. Put them in the input/frags directory.
+    The offset fragment files will be used as input to the FlexPepDock ab-initio protocol. Put them in the input/frags directory.
 
 4. Ab-initio folding and docking of the prepacked model: This is the main part of the protocol. In this step, the peptide backbone and its rigid-body orientation are optimized relative to the receptor protein using the Monte-Carlo with Minimization approach, including periodic on-the-fly side-chain optimization. The peptide backbone conformational space is extensively sampled using fragments derived from solved structures. The file abinitio_flags contains flags for running the ab-initio job. The run_abinitio script will run ab-initio modeling of the prepacked structure generated in the prepacking step located in the input directory.
 
 After changing the Rosetta related paths run the run_abinitio script as:
     $./run_abinitio
 
-The output will be an optimized structure (2A3I.ex.ppk_0001.pdb) located in the output directory; a scorefile named abintio.score.sc and a log file named abinitio.log, located in the output directory. This script has to be modified to run on a cluster during a production run.
+The output will be an optimized structure (2A3I.ex.ppk_0001.pdb) located in the output directory; a scorefile named abintio.score.sc and a log file named abinitio.log, located in the output directory. This script has to be modified to run on a cluster during a production run (see below).
 
 
-Post Processing
----------------
+Specific changes needed for a production run
+--------------------------------------------
+For a production run it is recommended to generate large number of decoys (~10,000 to 50,000). In such a case you can run the job on a cluster. It is advided to use silent output format in such scenario to save space (See https://www.rosettacommons.org/manuals/rosetta3.1_user_guide/app_silentfile.html for details). Include the following lines to the abinitio_flags file:
+
+-out:file:silent_struct_type binary
+-out:file:silent decoys.silent
+
+This will create the decoys.silent file containing data related to all the decoys in a compressed format. You can extract speicific decoy using the extract_pdbs.linuxgccrelease executable.
+For example:
+  $ROSETTA_BIN/extract_pdbs.linuxgccrelease -database $ROSETTA_DB -in:file:silent decoys.silent -in:file:tags 2A3I.ex.ppk_1234.pdb
+
+
+Along with changes in the flags file you need to modify the run_abinitio file to run on a cluster. The file run_abinitio_slurm is the modified version of run_abinitio adapted to run on a slurm cluster. You should ask your cluster manager for relevent changes required.
+
+
+Post Processing after a production run
+--------------------------------------
 In order to diversify our prediction, we cluster the results and select representative models. A clustering scripts is provided in the clustering directory. It will cluster the top 500 decoys based on a cutoff radius of 2.0 Angstrom, and select for each the top-scoring member (according to reweighted score,  reweighted_sc). A top scoring member from each cluster is reported in the file  cluster_list_reweighted_sc_sorted.
 
 Runs as
-$bash cluster.sh 2.0 ../input/2A3I.ex.pdb ../../output/decoys.silent
-The decoys.silent file is a compress output format that isconvenient for production runs. See https://www.rosettacommons.org/manuals/rosetta3.1_user_guide/app_silentfile.html for details.
+$bash cluster.sh 2.0 ../input/2A3I.ex.pdb ../output/decoys.silent
 
 Further information
 -------------------
-Detailed documentation on ab initio FlexPepDock is available under: https://www.rosettacommons.org/docs/latest/application_documentation/docking/flex-pep-dock. 
+Detailed documentation on ab initio FlexPepDock is available under: https://www.rosettacommons.org/docs/latest/application_documentation/docking/flex-pep-dock.
 Please cite: Raveh B, London N, Zimmerman L, Schueler-Furman O (2011) Rosetta FlexPepDock ab-initio: Simultaneous Folding, Docking and Refinement of Peptides onto Their Receptors. PLoS ONE 6(4): e18934. doi: 10.1371/journal.pone.0018934
 
