@@ -1,0 +1,22 @@
+To run the protocol on each system go the directory and then
+1.run fpbind_run.sh script located in the scripts directory.This will minimize the peptide-protein complexes after threading peptide sequence one by one onto the template.
+2.run fpbind_analysis.sh located in the scripts directory. It will extract the relevent scores (I_sc, reweighted_sc, pep_sc, pep_sc_noref) of the minimized structures & save it in score_analysis/ directory.
+
+Ex.
+
+$ cd FTase/
+$ scripts/fpbind_run.sh 
+$ scripts/fpbind_analysis.sh
+
+The output is the score with different scoring term 
+For example in score_analysis/pep_sc_noref
+
+$ paste input_files/peptide.list score_analysis/pep_sc_noref
+CSII	-4.9
+CLIT	-3.2
+CFLS	-2.2
+CKKP	 7.6
+CTKR	10.7
+CSIP	 5.4
+
+Pep_sc_noref scores for 6 peptide (top 3 are FTase substrates & bottom 3 are not FTase substrates)

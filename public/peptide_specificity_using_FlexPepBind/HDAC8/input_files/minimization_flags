@@ -1,0 +1,10 @@
+-s start.ppk.pdb
+-ex1
+-ex2
+-ex3
+-ex4
+-flexPepDockingMinimizeOnly
+-constraints:cst_fa_file constraints.cst
+-constraints:cst_fa_weight 1.0
+-flexPepDocking:flexpep_score_only 
+-scorefile min.score.sc

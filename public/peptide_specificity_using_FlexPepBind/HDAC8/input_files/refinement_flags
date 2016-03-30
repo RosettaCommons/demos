@@ -1,0 +1,24 @@
+-s start.ppk.pdb 
+-out:pdb
+-out:file:silent_struct_type binary
+-out:file:silent decoys.silent
+-pep_refine 
+-ex1 
+-ex2 
+-use_input_sc
+-score:patch helec_score 
+-constraints:cst_fa_file constraints.cst 
+-flexPepDocking:flexpep_score_only 
+-nstruct 200
+-scorefile score.sc
+-smove_angle_range 30.0
+-peptide_anchor 366
+
+-mute protocols.moves.RigidBodyMover
+-mute core.chemical
+-mute core.scoring.etable
+-mute protocols.evalution
+-mute core.pack.rotamer_trials
+-mute protocols.abinitio.FragmentMover
+-mute core.fragment
+-mute protocols.jd2.PDBJobInputter

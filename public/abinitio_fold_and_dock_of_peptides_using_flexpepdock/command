@@ -32,21 +32,11 @@ cd %(workdir)s
 
 [ -x %(bin)s/FlexPepDocking.%(binext)s ] || exit 1
 
-%(bin)s/FlexPepDocking.%(binext)s @prepack_flags -database %(database)s  2>&1 \
-    | egrep -vf ../../ignore_list \
-        > output/ppk.log
-
+%(bin)s/FlexPepDocking.%(binext)s @prepack_flags -database %(database)s >output/ppk.log
+[ -r input/2A3I.ex.ppk.pdb ] || exit 1
 mv input/2A3I.ex_0001.pdb input/2A3I.ex.ppk.pdb
 
-%(bin)s/FlexPepDocking.%(binext)s @refine_flags -database %(database)s -nodelay  2>&1 \
-            | egrep -vf ../../ignore_list \
-        > refine.log
-
-test "${PIPESTATUS[0]}" != '0' && exit 1 || true  # Check if the first executable in pipe line return error and exit with error code if so
-
-
-#Check for output
-[ -r input/2A3I.ex.ppk.pdb ] || exit 1
+%(bin)s/FlexPepDocking.%(binext)s @abinitio_flags -database %(database)s >abintio.log
 [ -r output/2A3I.ex.ppk_0001.pdb ] || exit 1
 
 # After that, do whatever you want.
