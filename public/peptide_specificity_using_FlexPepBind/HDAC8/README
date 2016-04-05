@@ -1,15 +1,13 @@
-To run the protocol on each system go the directory and then
-1.run fpbind_run.sh script located in the scripts directory.This will minimize the peptide-protein complexes after threading peptide sequence one by one onto the template.
-2.run fpbind_analysis.sh located in the scripts directory. It will extract the relevent scores (I_sc, reweighted_sc, pep_sc, pep_sc_noref) of the minimized structures & save it in score_analysis/ directory.
+To run the HDAC8 FlexPepBind protocol: 
+1.run fpbind_run.sh script (located in the scripts directory).This will minimize the peptide-protein complexes after threading peptide sequences one by one onto the template.
+2.run fpbind_analysis.sh (located in the scripts directory). This will extract the relevant scores (I_sc, reweighted_sc, pep_sc, pep_sc_noref) of the minimized structures & save them in the score_analysis/ directory.
 
-Ex.
+Example
 
-$ cd HDAC8/
 $ scripts/fpbind_run.sh 
 $ scripts/fpbind_analysis.sh
 
-The output is the score with different scoring term 
-For example in score_analysis/I_sc
+The output contains scores for each peptide, according to different scoring terms. For HDAC8 FlexPepBind, we found that the interface score (I_sc) provides the best ranking.
 
 $ paste input_files/peptide.list score_analysis/I_sc 
 GYKFGC	-16.757
@@ -19,4 +17,4 @@ GMKDGC	-13.870
 GDKDGC	-13.179
 GQKIGC	-13.408
 
-Interface scores for 6 peptide (top 3 are HDAC8 substrates & bottom 3 are not HDAC8 substrates)
+The Interface scores are given for 6 peptides (the top 3 are HDAC8 substrates & the bottom 3 are not HDAC8 substrates.
