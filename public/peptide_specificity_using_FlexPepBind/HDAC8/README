@@ -15,7 +15,7 @@ constraints.cst : list of constraints used during the minimization
 
 Generation of the template structure (template.pdb) for HDAC8 FlexPepBind:
 --------------------------------------------------------------------------
-The solves structure of a complex of HDAC8 bound to a substrate (2v5w.pdb) contains only a short peptide-coumarine ligand. Therefore, we needed to generate a structure to serve as template for hexamer-HDAC8 interactions. It was generated following the steps mentioned below:
+The solved structure of a complex of HDAC8 bound to a substrate (2v5w.pdb) contains only a short peptide-coumarine ligand. Therefore, we needed to generate a structure to serve as template for hexamer-HDAC8 interactions. It was generated following the steps mentioned below:
 a. The input pdb was cleaned by removing solvent molecules.
 b. Only a monomer bound to a peptide was copied from the solved dimeric structure.
 c. The receptor structure was prepacked to remove internal clashes (see the demo refinement_of_protein_peptide_complex_using_FlexPepDock/ for more information on how to run prepacking).
