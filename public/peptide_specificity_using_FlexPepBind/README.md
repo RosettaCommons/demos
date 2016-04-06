@@ -38,6 +38,7 @@ Scores currently considered are:
 You need to change the paths of the Rosetta executables and database directories in the fpbind_run script.
 
  ROSETTA_BIN="rosetta/main/source/bin"
+
  ROSETTA_DB="rosetta/main/database/"
 
 Example run:
