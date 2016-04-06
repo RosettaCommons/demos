@@ -1,5 +1,8 @@
-Here we describe the various input files needed to run the FlexPepBind protocol on HDAC8.
 
+This file contains information specific for HDAC8 FlexPepBind. For general information about FlexPepBind, see README file in the upper level directory.
+
+Input files needed to run the FlexPepBind protocol on HDAC8:
+------------------------------------------------------------
 2v5w.pdb      : The HDAC8-peptide complex structure
 template.pdb  : The template structure created from 2v5w
 substrates    : list of HDAC8 peptide substrates
@@ -10,14 +13,18 @@ resfile       : threading instruction (see more on resfile at https://www.rosett
 minimization_flags : file containing list of flags for running FlexPepDock minimization
 constraints.cst : list of constraints used during the minimization
 
-Starting with the complex structure 2v5w a template pdb was created following the steps mentioned below:
+Generation of the template structure (template.pdb) for HDAC8 FlexPepBind:
+--------------------------------------------------------------------------
+The solves structure of a complex of HDAC8 bound to a substrate (2v5w.pdb) contains only a short peptide-coumarine ligand. Therefore, we needed to generate a structure to serve as template for hexamer-HDAC8 interactions. It was generated following the steps mentioned below:
 a. The input pdb was cleaned by removing solvent molecules.
-b. Only a monomer bound to a peptide was copied from the solved dimeric structure
-c. The receptor structure was prepacked to remove internal clashes. (see the demo refinement_of_protein_peptide_complex_using_FlexPepDock/ to know how to run prepacking).
-d. The peptide substrates GYKacFGC was threaded to the template peptide backbone and optimize extensively using the refinement protocol (see the demo refinement_of_protein_peptide_complex_using_FlexPepDock/ to know how to run refinement) and the best optmized structure was used as the template.
+b. Only a monomer bound to a peptide was copied from the solved dimeric structure.
+c. The receptor structure was prepacked to remove internal clashes (see the demo refinement_of_protein_peptide_complex_using_FlexPepDock/ for more information on how to run prepacking).
+d. The peptide substrates GYKacFGC was threaded onto the template peptide backbone (missing residues were added in extended conformation), and optimize extensively using the FlexPepDock refinement protocol (see the demo refinement_of_protein_peptide_complex_using_FlexPepDock/ for more information on how to run FlexPepDock refinement), and the top-scoring optmized structure (according to interface score; I_sc) was used as the template.
 
+The underlying assumption was that a structural model of a strong substrate (GYKacFGC) would be a good representative of the preferred binding conformation of HDAC8 substrates. Therefore, we used it as a template to evaluate binding ability of other peptides. 
 
-Run the HDAC8 FlexPepBind protocol as: 
+How to run the HDAC8 FlexPepBind protocol: 
+------------------------------------------
 
 $ scripts/fpbind_run.sh 
 $ scripts/fpbind_analysis.sh
