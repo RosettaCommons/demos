@@ -7,7 +7,7 @@
 
 		# @extracting different scoring terms
 		for j in total_score I_sc pep_sc_noref reweighted_sc
-			do ../../scripts/printScoreFile_byHeader.pl min.score.sc $j | awk '{print $2}' >${j}_1
+			do ../../../scripts/printScoreFile_byHeader.pl min.score.sc $j | awk '{print $2}' >${j}_1
 		done
 		cd ../..
 

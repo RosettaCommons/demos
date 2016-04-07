@@ -29,8 +29,8 @@ ROSETTA_DB="rosetta/main/database"
 		cd minimization;
 		ln -s ../../input_files/minimization_flags .
     ln -s ../../input_files/constraints.cst .
-		ln -s ../$i.pdb ./start.ppk.pdb
-    $ROSETTA_BIN/FlexPepDocking.linuxgccrelease -database $ROSETTA_DB  @minimization_flags -extra_res_fa ../../input_files/fpp.params > minimization.log
+		ln -s ../$i.pdb start.ppk.pdb
+    $ROSETTA_BIN/FlexPepDocking.linuxgccrelease -database $ROSETTA_DB  @minimization_flags  >minimization.log
 	
 		cd ../..
 	done;

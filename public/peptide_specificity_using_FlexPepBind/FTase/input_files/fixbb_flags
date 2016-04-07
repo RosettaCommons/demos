@@ -1,0 +1,9 @@
+-s ../input_files/template.pdb 
+-ex1 
+-ex2 
+-ex3 
+-ex4 
+-use_input_sc 
+-scorefile design.score.sc 
+-extra_res_fa ../input_files/fpp.params 
+-nstruct 1 

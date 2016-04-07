@@ -6,6 +6,7 @@ substrates    : list of Ftase peptide substrates
 nonsubstrates : list of FTase peptide non-substrates
 peptide.list  : list of peptide sequence to the the FlexPepBind protocol on. It contains both the substrates and the non-substrates
 resfile       : threading instruction (see more on resfile at https://www.rosettacommons.org/manuals/archive/rosetta3.5_user_guide/d1/d97/resfiles.html)
+fixbb_flags   : list of flags for running peptdide threading
 minimization_flags : file containing list of flags for running FlexPepDock minimization
 fpp.params    : param file for the small non-peptidic molecule bound to FTase at the active site (see more on how to create param files for non-protein molecules here: https://www.rosettacommons.org/manuals/archive/rosetta3.5_user_guide/df/de9/preparing_ligands.html)
 constraints.cst : list of constraints used during the minimization
@@ -18,8 +19,8 @@ d. The prepacked structure was used for running FlexPepBind.
 
 
 Run the FTase FlexPepBind protocol as:
-$ scripts/fpbind_run.sh
-$ scripts/fpbind_analysis.sh
+$ bash ../scripts/fpbind_run.sh
+$ bash ../scripts/fpbind_analysis.sh
 
 The scoring term that worked best for FTase FlexPepBind is pep_sc_noref. The output is in score_analysis/pep_sc_noref
 

@@ -21,7 +21,8 @@ ROSETTA_DB="rosetta/main/database"
 		rm tmp1 tmp2 tmp3
 
 		#@Gnerating Initial Structure From The Template Complex
-		$ROSETTA_BIN/fixbb.linuxgccrelease -database $ROSETTA_DB -s ../input_files/template.pdb -resfile resfile.$i -ex1 -ex2 -ex3 -ex4 -use_input_sc -ndruns 100 -scorefile design.score.sc -nstruct 1 >design.log
+    cp ../input_files/fixbb_flags .
+		$ROSETTA_BIN/fixbb.linuxgccrelease -database $ROSETTA_DB -resfile resfile.$i @fixbb_flags >design.log
 		mv template_0001.pdb $i.pdb
 
     #@Running Minimization 

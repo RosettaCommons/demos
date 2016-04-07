@@ -7,6 +7,7 @@ nonsubstrates : list of HDAC8 peptide non-substrates
 peptide.list  : list of peptide sequence to the the FlexPepBind protocol on. It contains both the substrates and the non-substrates
 activity      : percent deacetylation of the peptides listed in peptide.list file
 resfile       : threading instruction (see more on resfile at https://www.rosettacommons.org/manuals/archive/rosetta3.5_user_guide/d1/d97/resfiles.html)
+fixbb_flags   : file containing list of flags for peptide threading
 minimization_flags : file containing list of flags for running FlexPepDock minimization
 constraints.cst : list of constraints used during the minimization
 
@@ -17,14 +18,14 @@ c. The receptor structure was prepacked to remove internal clashes. (see the dem
 d. The peptide substrates GYKacFGC was threaded to the template peptide backbone and optimize extensively using the refinement protocol (see the demo refinement_of_protein_peptide_complex_using_FlexPepDock/ to know how to run refinement) and the best optmized structure was used as the template.
 
 
-Run the HDAC8 FlexPepBind protocol as: 
+Run the HDAC8 FlexPepBind protocol as:
 
-$ scripts/fpbind_run.sh 
-$ scripts/fpbind_analysis.sh
+$ bash ../scripts/fpbind_run.sh
+$ bash ../scripts/fpbind_analysis.sh
 
 The output contains scores for each peptide, according to different scoring terms. For HDAC8 FlexPepBind, we found that the interface score (I_sc) provides the best ranking.
 
-$ paste input_files/peptide.list score_analysis/I_sc 
+$ paste input_files/peptide.list score_analysis/I_sc
 GYKFGC	-16.757
 GFKWGC	-17.108
 GFKFGC	-16.352

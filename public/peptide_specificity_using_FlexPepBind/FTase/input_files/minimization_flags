@@ -4,6 +4,7 @@
 -ex3
 -ex4
 -flexPepDockingMinimizeOnly
+-extra_res_fa ../../input_files/fpp.params
 
 -constraints:cst_fa_file constraints.cst
 -constraints:cst_fa_weight 1.0
