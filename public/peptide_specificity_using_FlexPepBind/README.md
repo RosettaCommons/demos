@@ -44,15 +44,8 @@ You need to change the paths of the Rosetta executables and database directories
 Example run:
 
  $ cd HDAC8/
-<<<<<<< HEAD
  $ bash ../scripts/fpbind_run.sh
  $ bash ../scripts/fpbind_analysis.sh
-=======
- 
- $ scripts/fpbind_run.sh
- 
- $ scripts/fpbind_analysis.sh
->>>>>>> 23699e6fdf3d678f785a4c364b6983f7369af3c6
 
 The output is the score with different scoring terms:
 For example, in score_analysis/I_sc

@@ -7,14 +7,11 @@ Input files needed to run the FlexPepBind protocol on FTase:
 template.pdb  : The template structure created from 1tn6
 substrates    : list of Ftase peptide substrates
 nonsubstrates : list of FTase peptide non-substrates
-<<<<<<< HEAD
 peptide.list  : list of peptide sequence to the the FlexPepBind protocol on. It contains both the substrates and the non-substrates
 resfile       : threading instruction (see more on resfile at https://www.rosettacommons.org/manuals/archive/rosetta3.5_user_guide/d1/d97/resfiles.html)
 fixbb_flags   : list of flags for running peptdide threading
-=======
 peptide.list  : list of peptide sequence on which to run the FlexPepBind protocol. It contains both the substrates and the non-substrates
 resfile       : threading instructions (see more on resfile at https://www.rosettacommons.org/manuals/archive/rosetta3.5_user_guide/d1/d97/resfiles.html)
->>>>>>> 23699e6fdf3d678f785a4c364b6983f7369af3c6
 minimization_flags : file containing list of flags for running FlexPepDock minimization
 fpp.params    : param file for the small non-peptidic molecule bound to FTase at the active site (see more on how to create param files for non-protein molecules here: https://www.rosettacommons.org/manuals/archive/rosetta3.5_user_guide/df/de9/preparing_ligands.html)
 constraints.cst : list of constraints used during the minimization
@@ -29,7 +26,7 @@ c. The receptor structure was prepacked to remove internal clashes. (see the dem
 d. The prepacked structure was used for running FlexPepBind.
 
 
-How to run the FTase FlexPepBind protocol: 
+How to run the FTase FlexPepBind protocol:
 ------------------------------------------
 
 Run the FTase FlexPepBind protocol as:

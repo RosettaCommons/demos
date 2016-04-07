@@ -1,4 +1,3 @@
-
 This file contains information specific for HDAC8 FlexPepBind. For general information about FlexPepBind, see README file in the upper level directory.
 
 Input files needed to run the FlexPepBind protocol on HDAC8:
@@ -21,15 +20,10 @@ b. Only a monomer bound to a peptide was copied from the solved dimeric structur
 c. The receptor structure was prepacked to remove internal clashes (see the demo refinement_of_protein_peptide_complex_using_FlexPepDock/ for more information on how to run prepacking).
 d. The peptide substrates GYKacFGC was threaded onto the template peptide backbone (missing residues were added in extended conformation), and optimize extensively using the FlexPepDock refinement protocol (see the demo refinement_of_protein_peptide_complex_using_FlexPepDock/ for more information on how to run FlexPepDock refinement), and the top-scoring optmized structure (according to interface score; I_sc) was used as the template.
 
-The underlying assumption was that a structural model of a strong substrate (GYKacFGC) would be a good representative of the preferred binding conformation of HDAC8 substrates. Therefore, we used it as a template to evaluate binding ability of other peptides. 
+The underlying assumption was that a structural model of a strong substrate (GYKacFGC) would be a good representative of the preferred binding conformation of HDAC8 substrates. Therefore, we used it as a template to evaluate binding ability of other peptides.
 
-<<<<<<< HEAD:public/peptide_specificity_using_FlexPepBind/HDAC8/README.md
-Run the HDAC8 FlexPepBind protocol as:
-=======
-How to run the HDAC8 FlexPepBind protocol: 
+How to run the HDAC8 FlexPepBind protocol:
 ------------------------------------------
->>>>>>> 23699e6fdf3d678f785a4c364b6983f7369af3c6:public/peptide_specificity_using_FlexPepBind/HDAC8/README
-
 $ bash ../scripts/fpbind_run.sh
 $ bash ../scripts/fpbind_analysis.sh
 
