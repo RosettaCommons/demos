@@ -25,7 +25,7 @@ Now run the following commands:
     recces_turner -score:weights stepwise/rna/turner -n_cycle 300000 -seq1 gu -seq2 ac -temps 7.0 -out_prefix prerun
     recces_turner -score:weights stepwise/rna/turner -n_cycle 300000 -seq1 gu -seq2 ac -temps 30  -out_prefix prerun
 ```
-These preruns generate data for computing the ST weights in the following run.
+These preruns generate data for computing the ST weights in the following run. They may each take about 1 hour.
 
 The ST weights can then be determined using the following code snippet:
 ```
