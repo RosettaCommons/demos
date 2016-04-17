@@ -7,7 +7,7 @@ This README was written in May 2015, by Fang-Chieh Chou (fcchou@stanford.edu).
 ## Brief
 This demo illustrates the RECCES pipeline for computing the folding free energy of RNA heliices. To keep it simple, we just show how to run RECCES simulated tempering (ST) on one construct.
 
-Python codes needed to run the job is located at tools/recces/. You need to include this path into your PYTHONPATH to run the following demo. The python codes have only been tested with Python v2.7.
+Python codes needed to run the job are located at tools/recces/. You need to include this path into your PYTHONPATH to run the following demo. The python codes have only been tested with Python v2.7.
 
 ## Detail
 We first do a quick a prerun. First create a separate folder:
@@ -27,7 +27,7 @@ Now run the following commands:
 ```
 These preruns generate data for computing the ST weights in the following run.
 
-The ST weights can then be determined using the following code snnippet:
+The ST weights can then be determined using the following code snippet:
 ```
     from recces.util import weight_evaluate
     weight_evaluate('./', 'prerun_hist_scores.gz')
