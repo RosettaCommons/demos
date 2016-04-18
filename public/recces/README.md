@@ -5,7 +5,7 @@
 This README was written in May 2015, by Fang-Chieh Chou (fcchou@stanford.edu).
 
 ## Brief
-This demo illustrates the RECCES pipeline for computing the folding free energy of RNA heliices. To keep it simple, we just show how to run RECCES simulated tempering (ST) on one construct.
+This demo illustrates the RECCES pipeline for computing the folding free energy of RNA helices. To keep it simple, we just show how to run RECCES simulated tempering (ST) on one construct.
 
 Python codes needed to run the job are located at tools/recces/. You need to include this path into your PYTHONPATH to run the following demo. The python codes have only been tested with Python v2.7.
 
@@ -56,6 +56,7 @@ Here sim.value gives the free energy of the molecule in the unit of kT (T = 37C)
 
 We may also reweight the score function and obtain the new free energy:
 ```
+    import numpy as np
     sim.reweight(np.ones(N_SCORE_TERMS))
     print sim.value, sim.value * KT_IN_KCAL
 ```
