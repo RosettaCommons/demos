@@ -52,7 +52,7 @@ After the end of the run, the free energy can be computed using python codes:
     sim = SingleSimulation('ST/', curr_wt)
     print sim.value, sim.value * KT_IN_KCAL
 ```
-Here sim.value gives the free energy of the molecule in the unit of kT (T = 37C). To convert it to kcal/mol, we multiply the number by KT_IN_KCAL.
+Here sim.value gives the free energy of the molecule in the unit of kT (T = 37C). To convert it to kcal/mol, we multiply the number by KT_IN_KCAL. In the output directory, the values in kT and in kcal/mol were: `1.35766728357 0.836772916126`.
 
 We may also reweight the score function and obtain the new free energy:
 ```
