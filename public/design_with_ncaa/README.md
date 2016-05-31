@@ -331,6 +331,13 @@ assignments, and other stuff. You can open kinemage files using the KiNG
 program from the Richardson lab at Duke 
 (http://kinemage.biochem.duke.edu/software/king.php).
 
+Using your shiny new params file
+================================
+Rosetta params files live in the database at database/chemical/residue_type_sets/(fa_standard)/..., but you can just pass your new parameters in on command line via `-extra_res_fa` or `-extra_res` (the latter for centroid).
+
+Rotamer library design
+======================
+
 For questions on backbone-dependent rotamer library design please contact 
 either Doug Renfrew (dougrenfrew at gmail dot com) or Tim Craven (twc254 at nyu dot edu).
 
