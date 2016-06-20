@@ -16,6 +16,7 @@ Rosetta's primary algorithm for optimizing side-chains is called the *packer*.  
 The tutorial also introduces:
 - Common ways of invoking the packer from the RosettaScripts scripting language.
 - Common ways of controlling the packer from the RosettaScripts scripting language.
+- A brief overview of how the packing algorithm works.
 
 ## The problem of optimizing side-chains
 
@@ -37,7 +38,7 @@ You may need to change "linuxgccrelease", in the above, to whatever is appropria
 
 This application packs the side-chains of the input structure (the trp cage mini-protein, 1l2y.pdb).  Five output structures, from five separate runs, are produced.  If you compare these structures to the input structure, you'll find that Rosetta chooses slightly different rotamers for the side-chains, as compared to the input.  This is to be expected, particularly given the discrete nature of rotamers: the truly "best" rotamer might lie between two rotamers tested, and may never be sampled.
 
-Work through the [[rest of the demo|../../public/fixbb/Readme.md]].  This teaches about how the packer can be tweaked, both at the commandline and with configuration files called *resfiles*, to control the amount of sampling, the time taken for a run, and the likelihood of converging to the optimal solution.
+Work through the [rest of the demo](../../public/fixbb/Readme.md).  This teaches about how the packer can be tweaked, both at the commandline and with configuration files called *resfiles*, to control the amount of sampling, the time taken for a run, and the likelihood of converging to the optimal solution.
 
 ## The sequence design problem
 
@@ -87,7 +88,7 @@ In general, it is a good idea to limit the packer's options as much as possible 
 
 > **Each run of the packer can by controlled with one or more TaskOperations.**
 
-TaskOperations can be passed to the packer in one of several ways, and different TaskOperations modify packer behaviour in different ways.  We've already seen some examples: a user can control packer behaviour with a resfile specified with the "-resfile" option on the commandline, which implicitly invokes the ReadResfile TaskOperation.  Resfiles can control amino acid identity, presence of extra rotamers, and other packer behaviours on a residue-by-residue basis, specified by residue index.  For more information about resfiles and their full features, see the [[ReadResfile TaskOperation documentation|https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/TaskOperations/taskoperations_pages/ReadResfileOperation]] and the documentation for the [[resfile syntax|https://www.rosettacommons.org/docs/latest/rosetta_basics/file_types/resfiles]].  The extra residue options ("-ex1", "-ex2", etc.) also invoke TaskOperations that modify the number of rotamers per amino acid type per position.
+TaskOperations can be passed to the packer in one of several ways, and different TaskOperations modify packer behaviour in different ways.  We've already seen some examples: a user can control packer behaviour with a resfile specified with the "-resfile" option on the commandline, which implicitly invokes the ReadResfile TaskOperation.  Resfiles can control amino acid identity, presence of extra rotamers, and other packer behaviours on a residue-by-residue basis, specified by residue index.  For more information about resfiles and their full features, see the [ReadResfile TaskOperation documentation](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/TaskOperations/taskoperations_pages/ReadResfileOperation) and the documentation for the [resfile syntax](https://www.rosettacommons.org/docs/latest/rosetta_basics/file_types/resfiles).  The extra residue options ("-ex1", "-ex2", etc.) also invoke TaskOperations that modify the number of rotamers per amino acid type per position.
 
 One important property of TaskOperations is **commutativity**:
 
@@ -101,7 +102,7 @@ The packer is a fundamental Rosetta algorithm called in the context of many larg
 
 ## Calling and controlling the packer from RosettaScripts
 
-In the context of [[RosettaScripts|https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/RosettaScripts]], the packer may be invoked directly using the [[PackRotamers|https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/Movers/movers_pages/PackRotamersMover]] mover.  Many other movers, including [[FastRelax|https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/Movers/movers_pages/FastRelaxMover]], [[FastDesign|https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/Movers/movers_pages/FastDesignMover]], and [[Disulfidize|https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/Movers/movers_pages/DisulfidizeMover]] call the packer.  Typically, any Rosetta component that calls the packer can receive one or more TaskOperations to control packer behaviour.  In the RosettaScripts context, [[TaskOperations|https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/Movers/movers_pages/PackRotamersMover]] are declared separately in a section of the script preceding the movers that call the packer, and are then passed by name to such movers.
+In the context of [RosettaScripts](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/RosettaScripts), the packer may be invoked directly using the [PackRotamers](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/Movers/movers_pages/PackRotamersMover) mover.  Many other movers, including [FastRelax](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/Movers/movers_pages/FastRelaxMover), [FastDesign](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/Movers/movers_pages/FastDesignMover), and [Disulfidize](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/Movers/movers_pages/DisulfidizeMover) call the packer.  Typically, any Rosetta component that calls the packer can receive one or more TaskOperations to control packer behaviour.  In the RosettaScripts context, [TaskOperations](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/Movers/movers_pages/PackRotamersMover) are declared separately in a section of the script preceding the movers that call the packer, and are then passed by name to such movers.
 
 ## How the packer algorithm works under the hood
 
