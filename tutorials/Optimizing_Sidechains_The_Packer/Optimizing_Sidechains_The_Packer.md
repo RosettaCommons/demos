@@ -105,4 +105,12 @@ In the context of [[RosettaScripts|https://www.rosettacommons.org/docs/latest/sc
 
 ## How the packer algorithm works under the hood
 
-While a detailed understanding of the workings of the packer is not a strict requirement to use Rosetta, having some idea of what's going on under the hood can help a user to use his or her tools more effectively.
+While a detailed understanding of the workings of the packer is not a strict requirement to use Rosetta, having some idea of what's going on under the hood can help a user to use his or her tools more effectively.  A typical packer run consists of three steps:
+
+1.  TaskOperations are evaluated, and the packer makes a list of possible rotamers at each position.
+2.  The packer carries out a precomputation in which all possible pairs of interacting rotamers are enumerated and their pairwise interaction energies are calculated and stored.
+3.  The packer carries out a simulated annealing-based search of rotamer combinations, in which moves consist of randomly selecting a position and replacing the current rotamer at that position with a randomly-selected rotamer from the allowed rotamers for that position.  Because all pairwise interaction energies are precomputed, updating the overall energy of the structure following such a substitution is extremely fast, since it depends only on the internal energies of the old and new rotamers and their pairwise interaction eneriges with their neighbours in the pose.  This allows the packer to evaluate hundreds of thousands or millions of Monte Carlo moves in seconds.
+
+There are variants on the above behaviour in which only parts of the interaction network are precomputed and other parts are computed on the fly, but this general scheme is fairly representative.  Note that the above depends heavily on being able to rapidly update the energy as moves are considered:
+
+> **In order to be compatible with the packer, an energy term must either be residue-level pairwise-decomposible, or must otherwise be very fast to compute and update as rotamer subsitutions are considered.**
