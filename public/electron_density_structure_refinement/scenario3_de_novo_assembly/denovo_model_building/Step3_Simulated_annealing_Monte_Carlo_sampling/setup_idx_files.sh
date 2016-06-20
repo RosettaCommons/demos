@@ -1,0 +1,1 @@
+../../scripts/setup_idx_files.sh

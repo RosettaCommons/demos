@@ -1,0 +1,34 @@
+# i/o
+-in:file:fasta starting.fasta
+-parser:protocol rosetta_cm.xml
+-database ../../rosetta/rosetta_trunk_database 
+
+## if you would to evaluate results during modeling, turn these options on
+#-in:file:native ../../../data/3j06A.pdb
+#-evaluation:align_rmsd_target ../../../data/3j06A.pdb
+#-evaluation:align_rmsd_column ref
+
+-out:file:silent_struct_type binary
+-out:file:silent rosetta_cm.out
+-nstruct 100
+
+-sog_upper_bound 15
+-hybridize:stage1_probability 1
+
+# relax args
+-default_max_cycles 200
+-relax:minimize_bond_angles
+-relax:minimize_bond_lengths
+-relax:min_type lbfgs_armijo_nonmonotone
+-relax:jump_move true
+-score:weights stage3_rlx.wts
+-bonded_params 400 100 100 10
+-use_bicubic_interpolation
+# density map args
+-edensity:mapfile starting.mrc
+-edensity:mapreso 3.3
+-edensity:grid_spacing 1.1
+-edensity:fastdens_wt 20.0
+-edensity:realign no
+# reduce memory footprint
+-chemical:exclude_patches LowerDNA  UpperDNA Cterm_amidation SpecialRotamer  VirtualBB ShoveBB VirtualDNAPhosphate VirtualNTerm CTermConnect sc_orbitals pro_hydroxylated_case1 pro_hydroxylated_case2 ser_phosphorylated thr_phosphorylated  tyr_phosphorylated tyr_sulfated lys_dimethylated lys_monomethylated  lys_trimethylated lys_acetylated glu_carboxylated cys_acetylated tyr_diiodinated N_acetylated C_methylamidated MethylatedProteinCterm

@@ -1,0 +1,1 @@
+../../../scripts/cluster_and_extract.sh
