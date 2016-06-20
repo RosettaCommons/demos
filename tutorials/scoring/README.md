@@ -65,7 +65,7 @@ Demo
 ###Basic Scoring
 In this tutorial, we are going to score the PDB 1QYS (a refined version is provided in `Rosetta/demos/tutorials/scoring/input_files`). First, we will use the default score function, i.e. talaris2014.
 
-    $>Rosetta/main/source/bin/scoring_jd2.linuxgccrelease @flag
+    $> Rosetta/main/source/bin/scoring_jd2.linuxgccrelease @flag
     
 The only option that we will pass in the flags file is the input PDB:
 
