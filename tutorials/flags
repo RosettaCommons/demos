@@ -1,0 +1,14 @@
+-s 3hon.pdb
+
+# Minimization-specific flags
+
+# Necessary
+
+-run:min_type lbfgs_armijo_nonmonotone
+-run:min_tolerance 0.001
+
+# Optional
+
+#- in:file:fullatom  #Adds FA constraints from cmdline to pose
+#	If not specified, constraints added to pose.
+# All chi and bb set to true

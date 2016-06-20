@@ -1,0 +1,1 @@
+~/Rosetta/main/source/bin/score.linuxgccrelease -database ~/Rosetta/main/database -s 3hon.pdb
