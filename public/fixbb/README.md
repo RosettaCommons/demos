@@ -10,7 +10,7 @@ This demo was created on 20 June 2016 by Vikram K. Mulligan, Ph.D. (vmullig@uw.e
 After compiling Rosetta, you can run this demo with the following command:
 
 ```
-<path_to_Rosetta_directory>/main/source/bin/fixbb.default.linuxgccrelease -in:file:s 1l2y.pdb -in:file:fullatom -resfile resfile.txt -nstruct 5 >log.txt 2>err.txt &
+<path_to_Rosetta_directory>/main/source/bin/fixbb.default.linuxgccrelease -in:file:s 1l2y.pdb -in:file:fullatom -resfile resfile.txt -nstruct 5 >log.txt &
 ```
 
 (Note that the executable file's suffix will have to be modified depending on your operating system and compiler.  For example, on Macs with the clang compiler, the suffix would be macosclangrelease instead of linuxgccrelease.)
@@ -24,7 +24,6 @@ The following files should be produced:
 1l2y_0004.pdb
 1l2y_0005.pdb
 log.txt
-err.txt
 score.sc
 ```
 
@@ -40,22 +39,22 @@ Open all of the output PDB files (1l2y_0001.pdb through 1l2y_0005.pdb).  Most li
 
 Now let's understand the various options that we're passing to the fixbb application.  In the command that we ran above, the "-in:file:s 1l2y.pdb" option specifies the input PDB file.  The application loads this file and then calls the packer to run on this input structure, optimizing the side-chains while keeping the backbone fixed.  The "-in:file:fullatom" option tells the application that the input file is a full-atom respresentation (as opposed to a centroid-only model).  This option can be omitted in this case, since it is generally assumed for PDB files.  The "-resfile resfile.txt" option specifies a resfile -- a special type of Rosetta input for controlling the packer.  In this case, our resfile tells the packer to keep the amino acid identity fixed at each position, and to vary only the side-chain conformation.  Finally, "-nstruct 5" tells Rosetta to repeat the protocol five times, producing five independent outputs.  In the case of stochastic algorithms, repeated sampling is important to confirm that an algorithm is successfully converging to the global optimum, or to produce many samples near the global optimum in cases in which the optimum can't quite be reached.
 
-The ">log.txt 2>err.txt" part directs the output to the file log.txt, and any error messages to the file err.txt.  If everything executes properly, err.txt should be empty.
+The ">log.txt" part directs the output to the file log.txt.
 
 Finally, the terminal ampersand ("&") allows the application toi run as a background process, so that you can continue working at the command-line while it executes.  Omitting this would result in realtime output to the screen.
 
-Let's run the application again, but this time, append the flags "-ex1 -ex2 -ex3 -ex4 -extrachi_cutoff 0", so that the overall command is:
+Let's delete the output and run the application again, but this time, append the flags "-ex1 -ex2 -ex3 -ex4 -extrachi_cutoff 0 -out:prefix run2_ -out:file:scorefile run2.sc", so that the overall command is:
 
 ```
-<path_to_Rosetta_directory>/main/source/bin/fixbb.default.linuxgccrelease -in:file:s 1l2y.pdb -in:file:fullatom -resfile resfile.txt -nstruct 5 -ex1 -ex2 -ex3 -ex4 -extrachi_cutoff 0 >log.txt 2>err.txt &
+<path_to_Rosetta_directory>/main/source/bin/fixbb.default.linuxgccrelease -in:file:s 1l2y.pdb -in:file:fullatom -resfile resfile.txt -nstruct 5 -ex1 -ex2 -ex3 -ex4 -extrachi_cutoff 0 -out:prefix run2_ -out:file:scorefile run2.sc >log2.txt &
 ```
 
-You'll notice that this time, the app takes much longer to run.  Examining the output, you'll find a few things.  First, the rotamer chosen for the central tryptophan and for many other side-chains is much closer to the original.  Second, you may see some variation in the five output structures.  So what did we change?  Well, the "-ex1", "-ex2", "-ex3", and "-ex4" flags activate extra rotamers for the first, second, third, and fourth side-chain chi angles, respectively.  The "-extrachi_cutoff" flag determines the number of residue neighbours (nearby residues) that a resiude must have in order to receive the additional rotamers.  By including additional rotamers, it becomes more likely that, at any given position, one of the rotamers included will be very close to the optimal side-chain conformation.  The cost, though, is an increase in the computational complexity (reducing the probability of convergence somewhat), and a concamitant increase in the running time.  Similarly, performing the same task on a larger input structure will also result in a longer running time and a lower probability of convergence.
+You'll notice that this time, the app takes much longer to run.  Examining the output, you'll find a few things.  First, the rotamer chosen for the central tryptophan and for many other side-chains is much closer to the original.  Second, you may see some variation in the five output structures.  So what did we change?  Well, the "-ex1", "-ex2", "-ex3", and "-ex4" flags activate extra rotamers for the first, second, third, and fourth side-chain chi angles, respectively.  The "-extrachi_cutoff" flag determines the number of residue neighbours (nearby residues) that a resiude must have in order to receive the additional rotamers.  By including additional rotamers, it becomes more likely that, at any given position, one of the rotamers included will be very close to the optimal side-chain conformation.  The cost, though, is an increase in the computational complexity (reducing the probability of convergence somewhat), and a concamitant increase in the running time.  Similarly, performing the same task on a larger input structure will also result in a longer running time and a lower probability of convergence.  The "-out:prefix run2_" flag allows us to write PDB files with the prefix "run2_" in the filename, so that we don't try to overwrite the previous output.  Similarly , "-out:file:scorefile run2_.sc" directs the final scores to a new file, so that we don't overwrite the scorefile from the first run.
 
 ##Varying the resfile to alter packer behaviour
 
-The same behaviour shown above can also be accomplished by altering the resfile.  If compare resfile2.txt to resfile.txt, you'll notice that the first line is different.  The additional text ("EX 1 EX 2 EX 3 EX 4 EX_CUTOFF 0") accomplishes much the same thing as the extra options that we passed at the commandline earlier.  Running the following shoulkd produce the same behaviour:
+The same behaviour shown above can also be accomplished by altering the resfile.  If compare resfile2.txt to resfile.txt, you'll notice that the first line is different.  The additional text ("EX 1 EX 2 EX 3 EX 4 EX_CUTOFF 0") accomplishes much the same thing as the extra options that we passed at the commandline earlier.  Deleting the output and running the following shoulkd produce the same behaviour:
 
 ```
-<path_to_Rosetta_directory>/main/source/bin/fixbb.default.linuxgccrelease -in:file:s 1l2y.pdb -in:file:fullatom -resfile resfile2.txt -nstruct 5 >log.txt 2>err.txt &
+<path_to_Rosetta_directory>/main/source/bin/fixbb.default.linuxgccrelease -in:file:s 1l2y.pdb -in:file:fullatom -resfile resfile2.txt -nstruct 5 -out:prefix run3_ -out:file:scorefile run3.sc >log3.txt &
 ```
