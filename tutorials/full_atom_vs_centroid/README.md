@@ -12,15 +12,131 @@ Centroid representation
 
 To get around this problem, poses are often converted into centroid mode for portions of a protocol that require extensive sampling (for example, the initial stages of [ab initio structure prediction](https://www.rosettacommons.org/demos/latest/public/abinitio/README)). In centroid mode, the backbone remains fully atomic, but the representation of each side chain is simplified to a single _pseudo-atom_ of varying size. For protein backbones, this representation preserves five backbone atoms for each amino acid: nitrogen (N), the alpha carbon (CA), the carbonyl carbon (C), the carbonyl oxygen (O), and the polar hydrogen on nitrogen. The side chain is replaced by the `CEN` atom whose radius and properties (polarity, charge, etc.) are determined by the residue's identity.
 
-Centroid score functions
+Centroid score function
 ------------------------
-Centroid score functions are kind of vague, in the same way that the protein representation is kind of fuzzy. This has a disadvantage in terms of interpreting their results, but a huge advantage in that the energy landscape is not nearly as rugged, and sampling very different conformations is easier.
+Centroid score functions typically have fewer and more simple energy terms than full atom score functions. The following are a list of terms in the optimized _cen_std_smooth_ score function:
+
+```html
+cen_env_smooth      context-dependent one-body energy term that describes the solvation of a particular residue (based on the hydrophobic effect)
+cen_pair_smooth     two-body energy term for residue pair interactions (electrostatics and disulfide bonds)
+cbeta_smooth        solvation term intended to correct for the excluded volume effect introduced by the simulation and favor compact structures
+vdw                 represents only steric repulsion and not attractive van der Waals' forces
+```
+
+Owing to the primitive scoring, this has a disadvantage in terms of interpreting results, but a huge advantage in that the energy landscape is not nearly as rugged, and sampling very different conformations is easier.
+
 
 Converting to full atom
 -----------------------
 After large-scale sampling in centroid mode, poses are generally converted back to their all-atom representation for refinement, which generally entails some combination of side chain repacking and minimization. This allows Rosetta to more accurately score interactions between side chains and other finer details of the protein's structure.
 
-Demo
-----
+Example
+-------
+The PDB 1QYS in the full atom representation.
+
 [[images/1qys.png]]
+
+The PDB 1QYS in the centroid representation.
+
 [[images/1qys_centroid.png]]
+
+PDB files generated in the centroid format have the sidechain atoms  (C<sub>γ</sub> onwards) replaced by one `CEN` pseudo-atom. For example, the first two residues of the PDB 1QYS in full atom look like:
+```html
+ATOM      1  N   ASP A   3      -4.524  18.589  17.199  1.00  0.00           N  
+ATOM      2  CA  ASP A   3      -3.055  18.336  17.160  1.00  0.00           C  
+ATOM      3  C   ASP A   3      -2.676  17.087  16.375  1.00  0.00           C  
+ATOM      4  O   ASP A   3      -3.539  16.391  15.835  1.00  0.00           O  
+ATOM      5  CB  ASP A   3      -2.498  18.208  18.580  1.00  0.00           C  
+ATOM      6  CG  ASP A   3      -3.070  17.016  19.336  1.00  0.00           C  
+ATOM      7  OD1 ASP A   3      -3.497  16.083  18.699  1.00  0.00           O  
+ATOM      8  OD2 ASP A   3      -3.073  17.050  20.543  1.00  0.00           O  
+ATOM      9 1H   ASP A   3      -4.705  19.419  17.727  1.00  0.00           H  
+ATOM     10 2H   ASP A   3      -4.868  18.706  16.268  1.00  0.00           H  
+ATOM     11 3H   ASP A   3      -4.985  17.814  17.630  1.00  0.00           H  
+ATOM     12  HA  ASP A   3      -2.571  19.180  16.669  1.00  0.00           H  
+ATOM     13 1HB  ASP A   3      -1.413  18.107  18.538  1.00  0.00           H  
+ATOM     14 2HB  ASP A   3      -2.720  19.116  19.141  1.00  0.00           H  
+ATOM     15  N   ILE A   4      -1.373  16.806  16.326  1.00  0.00           N  
+ATOM     16  CA  ILE A   4      -0.849  15.654  15.587  1.00  0.00           C  
+ATOM     17  C   ILE A   4      -0.739  14.399  16.448  1.00  0.00           C  
+ATOM     18  O   ILE A   4       0.070  14.317  17.374  1.00  0.00           O  
+ATOM     19  CB  ILE A   4       0.533  15.978  14.992  1.00  0.00           C  
+ATOM     20  CG1 ILE A   4       0.459  17.237  14.124  1.00  0.00           C  
+ATOM     21  CG2 ILE A   4       1.053  14.800  14.183  1.00  0.00           C  
+ATOM     22  CD1 ILE A   4      -0.526  17.135  12.983  1.00  0.00           C  
+ATOM     23  H   ILE A   4      -0.728  17.411  16.816  1.00  0.00           H  
+ATOM     24  HA  ILE A   4      -1.540  15.420  14.778  1.00  0.00           H  
+ATOM     25  HB  ILE A   4       1.235  16.191  15.798  1.00  0.00           H  
+ATOM     26 1HG1 ILE A   4       0.179  18.089  14.743  1.00  0.00           H  
+ATOM     27 2HG1 ILE A   4       1.444  17.448  13.706  1.00  0.00           H  
+ATOM     28 1HG2 ILE A   4       2.031  15.046  13.769  1.00  0.00           H  
+ATOM     29 2HG2 ILE A   4       1.142  13.926  14.828  1.00  0.00           H  
+ATOM     30 3HG2 ILE A   4       0.359  14.582  13.371  1.00  0.00           H  
+ATOM     31 1HD1 ILE A   4      -0.521  18.065  12.413  1.00  0.00           H  
+ATOM     32 2HD1 ILE A   4      -0.243  16.308  12.330  1.00  0.00           H  
+ATOM     33 3HD1 ILE A   4      -1.525  16.958  13.379  1.00  0.00           H  
+```
+The first two residues of 1QYS in the centroid mode look like:
+```html
+ATOM      1  N   ASP A   3      -4.524  18.589  17.199  1.00  0.00           N  
+ATOM      2  CA  ASP A   3      -3.055  18.336  17.160  1.00  0.00           C  
+ATOM      3  C   ASP A   3      -2.676  17.087  16.375  1.00  0.00           C  
+ATOM      4  O   ASP A   3      -3.539  16.391  15.835  1.00  0.00           O  
+ATOM      5  CB  ASP A   3      -2.496  18.220  18.580  1.00  0.00           C  
+ATOM      6  CEN ASP A   3      -2.022  18.783  19.285  1.00  0.00           X  
+ATOM      7  H   ASP A   3      -5.003  18.619  18.076  1.00  0.00           H  
+ATOM      8  N   ILE A   4      -1.373  16.806  16.326  1.00  0.00           N  
+ATOM      9  CA  ILE A   4      -0.849  15.654  15.587  1.00  0.00           C  
+ATOM     10  C   ILE A   4      -0.739  14.399  16.448  1.00  0.00           C  
+ATOM     11  O   ILE A   4       0.070  14.317  17.374  1.00  0.00           O  
+ATOM     12  CB  ILE A   4       0.535  15.962  14.987  1.00  0.00           C  
+ATOM     13  CEN ILE A   4       1.064  16.400  14.140  1.00  0.00           X  
+ATOM     14  H   ILE A   4      -0.728  17.411  16.816  1.00  0.00           H   
+```
+The full PDBs are available in `Rosetta/demos/tutorials/full_atom_vs_centroid/input_files`.
+
+Common Errors
+-------------
+###Centroid input when protocol expects full atom
+If we provide a centroid pdb input to a protocol that expects a full atom input, typically the program does not stop. Instead, Rosetta first discards the centroid psedu-atoms and displays the following warnings:
+```html
+...
+core.io.pose_from_sfr.PoseFromSFRBuilder: [ WARNING ] discarding 1 atoms at position 1 in file input_files/1qys_centroid.pdb. Best match rsd_type:  ASP:NtermProteinFull
+core.io.pose_from_sfr.PoseFromSFRBuilder: [ WARNING ] discarding 1 atoms at position 2 in file input_files/1qys_centroid.pdb. Best match rsd_type:  ILE
+...
+```
+Then, Rosetta realizes that the sidechains are missing.
+```html
+...
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  CG  on residue ASP:NtermProteinFull 1
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  OD1 on residue ASP:NtermProteinFull 1
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  OD2 on residue ASP:NtermProteinFull 1
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  CG1 on residue ILE 2
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  CG2 on residue ILE 2
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  CD1 on residue ILE 2
+...
+```
+Finally, Rosetta builds the missing sidechains. Since there is no information about the conformation of the sidechains in the centroid representation, **different runs produce slightly different sidechain conformations**.
+```html
+...
+core.pack.pack_missing_sidechains: packing residue number 1 because of missing atom number 6 atom name  CG 
+core.pack.pack_missing_sidechains: packing residue number 2 because of missing atom number 6 atom name  CG
+...
+```
+###Full atom input when protocol expects centroid
+If we provide a full atom pdb input to a protocol that expects a centroid input, typically the program does not stop. Instead, Rosetta first discards all sidechain atoms beyond C<sub>β</sub> and displays the following warnings:
+```html
+...
+core.io.pose_from_sfr.PoseFromSFRBuilder: [ WARNING ] discarding 9 atoms at position 1 in file input_files/1qys.pdb. Best match rsd_type:  ASP:NtermProteinFull
+core.io.pose_from_sfr.PoseFromSFRBuilder: [ WARNING ] discarding 13 atoms at position 2 in file input_files/1qys.pdb. Best match rsd_type:  ILE
+...
+```
+Then, Rosetta realizes that the centroid pseudo-atoms are missing.
+```html
+...
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  CEN on residue ASP:NtermProteinFull 1
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  CEN on residue ILE 2
+...
+```
+Finally, Rosetta builds the missing centroid pseudo-atomatom. Since no information explicitly required to add the centroid pseudo-atom, different runs produce the same result.
+```html
