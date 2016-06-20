@@ -59,7 +59,7 @@ By default, Relax will not change the input sequence. It can be allowed to do so
 which will set its internal packer to respect the provided resfile. This only controls packing behavior, not the minimizer; it can also be used to increase [rotamer] sampling around critical residues.
 To demonstrate this, run 
 
-	$> ../../../main/source/bin/relax.default.linuxclangrelease -s 1ubq.pdb -relax:respect_resfile 1ubq.resfile @general_relax_flags
+	$> ../../../main/source/bin/relax.default.linuxclangrelease -s 1ubq.pdb -relax:respect_resfile -packing:resfile 1ubq.resfile @general_relax_flags
 
 and compare to 1ubq.pdb. Note that the two structures are different; these differences arise during the minimization step.
 
