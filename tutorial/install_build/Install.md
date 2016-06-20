@@ -6,7 +6,7 @@ For any academic or commercial use, you need to [request a license](https://els.
 
 The downloaded file is in form of [tar archive](https://en.wikipedia.org/wiki/Tar_(computing)) with .tgz extension. In a linux or mac, you can untar/uncompress the file by either double clicking on it or run this command in your terminal:
 ```
-$tar -xvzf Rosetta[releasenumber].tar.gz
+$ tar -xvzf Rosetta[releasenumber].tar.gz
 ```
 Unfortunatley,  currently there is no support for the whole Rosetta on Windows.  [Dual booting](https://en.wikipedia.org/wiki/Multi-booting) or [virtual machines](https://en.wikipedia.org/wiki/Virtual_machine) running Linux/MacOS are options. 
 
@@ -14,7 +14,7 @@ Unfortunatley,  currently there is no support for the whole Rosetta on Windows. 
 
 Open the file that you unzipped and navigat through the folders: Rosetta -> main -> source or use the following bash command:
 ```
-$cd Rosetta/main/source
+$ cd Rosetta/main/source
 ```
 You can see that currently the directory is empty. The reason is that the file you downloaded it comes in form of a collection of instructions, which is called [source code](https://en.wikipedia.org/wiki/Source_code). In order to be able to run or execute Rosetta, you need to first compile the code.
 
@@ -23,12 +23,12 @@ Rosetta uses [SCons](http://www.scons.org/) to assist compiling, so you need to 
 Now you can build Rosetta using this general command line (make sure you are in the source folder)
 
 ```
-$./scons.py -j <number_of_processors_to_use> mode=release bin
+$ ./scons.py -j <number_of_processors_to_use> mode=release bin
 ```
 -j is indicating how many processors you want to use. This number depends on your computer. For example the command below uses 20 processors to build:
 
 ```
-$./scons.py -j 20 mode=release bin
+$ ./scons.py -j 20 mode=release bin
 ```
 Expect a long time for the compilation to finish, several hours on one processor.
 
@@ -54,13 +54,13 @@ As you noticed, the command you ran had a "mode" option and that you mentioned "
     - extras=mpi compiles rosetta in mpi [**M**assage **P**assing **I**nterface](https://computing.llnl.gov/tutorials/mpi/#What) format (for those executables that allow mpi run). for example the code below compiles only the rosetta_scripts in mpi format and release mode using 5 processors:
 
 ```
-$./scons.py -j 5 mode=release bin/rosetta_scripts.mpi.linuxgccrelease extras=mpi
+$ ./scons.py -j 5 mode=release bin/rosetta_scripts.mpi.linuxgccrelease extras=mpi
 ```
 - Compiler specification
     - by default scons build rosetta using GCC compiler. However you can specify what compiler you want to use and what version using "__cxx__". For example the command below builds Rosetta completely in release mode using clang compiler version 4.5 using 10 processors:
 
 ```
-$./scons.py -j 10 mode=release bin cxx=clang cxx_ver=4.5
+$ ./scons.py -j 10 mode=release bin cxx=clang cxx_ver=4.5
 ```
 # Building Rosetta using the Rosetta Xcode project (Mac)
  If you are interested in working with Rosetta code, you can Build Rosetta using the Rosetta Xcode project.You can use it to build, run, debug, browse, and edit the source code. You can find the isntructions on how to use Xcode to build Rosetta [here](https://www.rosettacommons.org/docs/latest/build_documentation/Build-Documentation).
