@@ -27,7 +27,7 @@ Now run
 
 	$ ../main/source/bin/fixbb.default.linuxgccrelease -s 1ubq.pdb
 
-and observe that the program generates an output pdb file(1ubq_0001.pdb), a score file (score.sc) and a log file (output).
+from within the tutorials directory you just created and observe that the program generates an output pdb file(1ubq_0001.pdb), a score file (score.sc) and a log file (output).
 Try running the following commands:
 
 	$ ../main/source/bin/fixbb.default.linuxgccrelease -s 1ubq.pdb -nstruct 10
