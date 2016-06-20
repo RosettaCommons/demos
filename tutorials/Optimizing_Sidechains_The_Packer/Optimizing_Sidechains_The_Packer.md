@@ -27,7 +27,7 @@ This problem is actually quite a difficult one: given N possibilities at each po
 
 ## Invoking the packer through the <i>fixbb</i> application
 
-To illustrate what the packer does, let's run it.  The simplest way to run the packer is by running the Rosetta <i>fixbb</i> application: its sole <i>raison d'être</i> is to call the packer.  Navigate to the demos/fixbb directory, and run the following:
+To illustrate what the packer does, let's run it.  The simplest way to run the packer is by running the Rosetta <i>fixbb</i> application: its sole <i>raison d'être</i> is to call the packer.  Navigate to the demos/public/fixbb directory, and run the following:
 
 ```
 <path_to_Rosetta_directory>/main/source/bin/fixbb.default.linuxgccrelease -in:file:s 1l2y.pdb -in:file:fullatom -resfile resfile.txt -nstruct 5 >log.txt 2>err.txt &
@@ -37,10 +37,20 @@ You may need to change "linuxgccrelease", in the above, to whatever is appropria
 
 This application packs the side-chains of the input structure (the trp cage mini-protein, 1l2y.pdb).  Five output structures, from five separate runs, are produced.  If you compare these structures to the input structure, you'll find that Rosetta chooses slightly different rotamers for the side-chains, as compared to the input.  This is to be expected, particularly given the discrete nature of rotamers: the truly "best" rotamer might lie between two rotamers tested, and may never be sampled.
 
-Work through the [[rest of the demo|../../fixbb/Readme.md]].  This teaches about how the packer can be tweaked, both at the commandline and with configuration files called <i>resfiles</i>, to control the amount of sampling, the time taken for a run, and the likelihood of converging to the optimal solution.
+Work through the [[rest of the demo|../../public/fixbb/Readme.md]].  This teaches about how the packer can be tweaked, both at the commandline and with configuration files called <i>resfiles</i>, to control the amount of sampling, the time taken for a run, and the likelihood of converging to the optimal solution.
 
 ## The Sequence Design Problem
 
 It is important to note that the packer problem, as described above, makes no assumptions about the nature of the candidate side-chains at each position.  The lists of possibilities can just as easily contain different side-chain identities as it can contain different conformations of the same side-chain.  The packer is therefore a powerful tool (and, indeed, the primary tool in Rosetta) for designing amino acid sequences.
+
+To see the packer design a sequence, navigate to the demos/public/fixbb_design directory and run the following:
+
+```
+<path_to_Rosetta_directory>/main/source/bin/fixbb.default.linuxgccrelease -in:file:s 1l2y.pdb >log.txt &
+```
+
+This will produce the output files 1l2y_0001.pdb and score.sc.  If you open 1l2y_0001.pdb in a PDB viewer and compare it to the input file, 1l2y.pdb, you'll see that the sequence has changed considerably.  The rotamers chosen, however, should be interacting with one another reasonably favourably -- that is, there shouldn't be side-chains occupying the same space (clashing), for example.  Note that the only flag here is the one to specify our input file; that is, we're not passing any options to the fixbb application in this case to control the behaviour of the packer.  This brings up a very important point:
+
 > <b>The default behaviour of the packer is to <i>design</i> at every position, allowing every rotamer of each of the 20 canonical amino acids.</b>
 
+If you complete the rest of the fixbb_design demo, you'll learn how to use resfiles to control the behaviour of the packer, allowing only certain positions to be designed, and only with certain amino acid residue types.
