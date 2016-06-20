@@ -19,6 +19,8 @@ Try running the following commands:
 	'$ ./main/source/bin/fixbb.linuxgccrelease -s 1ubq.pdb -nstruct 10'
 	'$ ./main/source/bin/fixbb.linuxgccrelease -s 1ubq.pdb -ignore_unrecognized_residue'
 The first command should produce ten output files; the second should run identically to the command provided at the start of this tutorial.
+Also, try making a list of PDBs including 1ubq and 1a2b and running
+	'$ ./main/source/bin/fixbb.linuxgccrelease -l pdblist'
 #Running Rosetta via RosettaScripts
 Running RosettaScripts is similar to running an executable directly from the command line: execute rosetta_scripts and pass in the relevant options. The key difference is that the executable run is always rosetta_scripts, which requires the option "parser:protocol" indicating the XML script that it is to run. RosettaScripts is covered in more detail [here]. Try creating a file named "fixbb_script.xml" containing the following:
 	<ROSETTASCRIPTS>
