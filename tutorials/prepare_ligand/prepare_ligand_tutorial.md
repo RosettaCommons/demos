@@ -102,6 +102,14 @@ PDB_ROTAMERS SRO_conformers.pdb
 ```
 This line tells Rosetta where the conformers are stored.
 
+#### Using Params File during the Run
+
+Now that you generated the params file, you should inform Rosetta where it is. This can be done by adding this option to the your command line:
+
+```
+-extra_res_fa <path-to-params-file>
+```
+
 #### More Advanced Preparation
 Often times, you need to generate conformers for a ligand (i.e. different conformations a ligand can take that are energetically favorable). Rosetta cannot do this but there are different softwares that can perform this function. After the conformers are generated, the rest of the process is the same and you can continue from [Generating the Params File](#Generating-the-Params-File).
 
