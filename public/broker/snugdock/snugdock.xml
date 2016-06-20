@@ -1,0 +1,70 @@
+<ROSETTASCRIPTS>
+  <RESIDUE_SELECTORS>
+    <Chain name="Ab_L" chains="L" />
+    <Chain name="Ab_H" chains="H" />
+    <Or name="Ab" selectors="Ab_L,Ab_H" />
+    <Chain name="Ag" chains="C" />
+
+    <Index name=CDRL_loops resnums="27L-39L,57L-77L,110L-136L" />
+    <Index name=CDRH_loops resnums="27H-39H,57H-77H,110H-136H" />
+
+    <And name=Ab_L_noloops selectors="Ab_L" >
+      <Not selector="CDRL_loops"/>
+    </And>
+
+    <And name=Ab_H_noloops selectors="Ab_H" >
+      <Not selector="CDRH_loops"/>
+    </And>
+
+  </RESIDUE_SELECTORS>
+  <MOVERS>
+    <!-- Define centers of mass for the antibody's mobile loops -->
+    <CoMTrackerCM name="Ab_L" mobile_selector="Ab_L" />
+    <CoMTrackerCM name="Ab_H" mobile_selector="Ab_H" />
+    <CoMTrackerCM name="Ag_com" mobile_selector="Ag" />
+
+    <!-- Define the movers that will be perturbing the rigid body DoFs between Ab chains and Ag -->
+    <UniformRigidBodyCM name="Dock_Ab_L"
+			mobile="Ab_L" stationary="star_center"
+			rotation_magnitude=2.5 translation_magnitude=0.05 />
+    <UniformRigidBodyCM name="Dock_Ab_H"
+			mobile="Ab_H" stationary="star_center"
+			rotation_magnitude=2.5 translation_magnitude=0.05 />
+    <UniformRigidBodyCM name="Dock_Ag" 
+			mobile="Ag_com" stationary="star_center" 
+			rotation_magnitude=5.0 translation_magnitude=0.05 />
+
+    <!-- Minimize all loops -->
+    <ScriptCM name=MinLoops >
+      <MinMover bb=1 chi=1 />
+      <!-- The RigidChunkCMs will prevent the MinMover from getting control, so we can just select the whole Ab -->
+      <TorsionClaim backbone=1 sidechain=1 control_strength=CAN_CONTROL selector="Ab" />
+    </ScriptCM>
+
+    <LoopCM name=closer style=refine algorithm="CCD" selector="CDRH_loops" />
+    
+    <!-- Docking == 90% com recentering = 7% minimization = 2%, loop closure @ CDRH loops == 1% -->
+                 weights=".30,      .30,      .30,    .045, .045, .02,     .01" 
+    <RandomMover name="dock_bag"
+		 movers= "Dock_Ab_L,Dock_Ab_H,Dock_Ag,Ab_L,Ab_H,MinLoops,closer"
+                 weights=".30,      .30,      .30,    .045,.045,.02,     .01" />
+
+    <!-- We use this number of trials just because it's fast. In a real simulation, it would have to be higher than this. -->
+    <GenericMonteCarlo name="dock" mover_name="dock_bag" scorefxn_name="talaris2013" temperature=2.0 trials=10 />
+
+    <Environment name=env auto_cut=1 >
+      <!-- We only register the antigen Center of Mass, becaue the antigen is fixed backbone -->
+      <!-- so we never need to update the CoM -->
+      <Register mover="Ag_com" />
+      <Apply mover="dock" />
+      <!-- These guys will close the loops we opened. -->
+      <Apply mover="closer" />
+    </Environment> 
+
+  </MOVERS>
+  <FILTERS>
+  </FILTERS>
+  <PROTOCOLS>
+    <Add mover=env />
+  </PROTOCOLS>
+</ROSETTASCRIPTS>

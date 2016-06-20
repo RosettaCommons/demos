@@ -1,0 +1,14 @@
+#this flag-file is automatically generated
+
+-nstruct 1
+-in:file:native $CM_NATIVE_PDB
+-score:weights docking
+-use_input_sc
+-unboundrot $CM_NATIVE_PDB
+
+-detect_disulf true
+-rebuild_disulf true
+-fix_disulf $CM_TARGETPATH/disulf/disulf_file
+
+
+-run:batches /home/zhezhang/rosetta_vanilla/rosetta_demos/protocol_capture/replica_docking/example_runs/refine_replica_dock/udock_1bvn/inputs/flags_batch0001 /home/zhezhang/rosetta_vanilla/rosetta_demos/protocol_capture/replica_docking/example_runs/refine_replica_dock/udock_1bvn/inputs/flags_batch0002

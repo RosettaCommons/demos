@@ -1,0 +1,14 @@
+-parser:protocol fixed_core.xml
+-in:file:fasta 1ubqA.fasta
+-in:file:native 1ubqA.pdb
+#-out:file:silent fixed_core.out
+#-out:file:silent_struct_type protein
+-out:path:pdb out_pdbs
+
+-out:levels core.util.switchresiduetypeset:error
+
+@denovo_flags
+
+-evaluation:rmsd 1ubqA.pdb _notail notail.rigid
+
+

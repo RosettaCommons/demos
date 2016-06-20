@@ -1,0 +1,2 @@
+ rm -rf blah.* 
+bsub -W 96:0 -o blah.out -e blah.err SWA_pseudo_dagman_continuous.py  -j 60 protein_build.dag  

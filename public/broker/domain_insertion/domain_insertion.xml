@@ -1,0 +1,57 @@
+<ROSETTASCRIPTS>
+  <RESIDUE_SELECTORS>
+    <!-- The crystal structure is missing density inside the inserted domain
+         (resids 267-275). As a result, we need to use a different numbering
+         scheme when we talk about the pdb as we do when we talk about the
+         extended chain that we're simulating. -->
+    <!-- host_domain_wo_linker selects the host domain when the residues
+         not modeled in the crystal structure are not present (i.e. crystal structure numbering). -->
+    <Index name="host_domain_wo_linker" resnums="1-159,288-339" />
+    <!-- "host domain_w_linker" selects the host domain when the residues
+         not modeled in the crystal structure ARE present (i.e. simulation numbering). -->
+    <Index name="host_domain_w_linker" resnums="1-159,295-346" />
+    <Not name="inserted_domain" selector="host_domain_w_linker" />
+  </RESIDUE_SELECTORS>
+  <MOVERS>
+    <SwitchResidueTypeSetMover name="centroid" set="centroid" />
+
+    <FragmentJumpCM name="jumps" topol_file="1uufA.top" />
+
+    <AbscriptMover name="abinitio" cycles=2 >
+      <Fragments large_frags="1uufA.frag9" small_frags="1uufA.frag3" />
+      <Stage ids="I-IVb" >
+        <Mover name="jumps" />
+      </Stage>
+    </AbscriptMover>
+    
+    <!-- "region_selector" : the selector that selects the residues from the pdb
+         "selector" : selector that selects the destination for residues selected by "region_selector"
+         "apply_to_template" : applies a mover to the template PDB before copying atomic coordinates;
+                               required, since we need a match in atom numbers and types to copy.
+    -->
+    <RigidChunkCM name="chunk" region_selector="host_domain_wo_linker"
+                  template="1uufA.pdb" selector="host_domain_w_linker"
+                  apply_to_template="centroid" />
+
+    <AbscriptLoopCloserCM name="closer" fragments="1uufA.frag3" />
+    
+    <Environment name="env" auto_cut=1 >
+      <Register mover="chunk" />
+      <Apply mover="abinitio" />
+      <Apply mover="closer" />
+    </Environment>
+
+    <SwitchResidueTypeSetMover name="fullatom" set="fa_standard" />
+
+    <FastRelax name="relax" repeats=5 />
+    
+  </MOVERS>
+  <FILTERS>
+  </FILTERS>
+  <PROTOCOLS>
+    <Add mover=centroid />
+    <Add mover=env />
+    <Add mover=fullatom />
+    <Add mover=relax />
+  </PROTOCOLS>
+</ROSETTASCRIPTS>

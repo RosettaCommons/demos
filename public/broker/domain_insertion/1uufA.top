@@ -1,0 +1,7 @@
+PAIRING_STATISTICS 1
+STRAND_TOPOLOGY  5 21 SINGLE_TOP
+PAIRSTAT_ENTRY:  3.00   . P 200-219 to 203-222 reg: 19 pleating: 1 2 1 2 
+PAIRSTAT_ENTRY:  5.00   . P 236-256 to 241-264 reg: 20, 23 bulges: 237  pleating: 2 0 1 2 1 2 
+PAIRSTAT_ENTRY:  4.60   . P 175-198 to 179-202 reg: 23 pleating: 1 2 1 2 1 
+PAIRSTAT_ENTRY:  4.00   . P 261-286 to 264-289 reg: 25 pleating: 1 2 1 2 
+PAIRSTAT_ENTRY:  4.40   . P 176-238 to 179-241 reg: 62 pleating: 1 2 1 2 

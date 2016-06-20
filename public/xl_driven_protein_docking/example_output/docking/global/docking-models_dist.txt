@@ -1,0 +1,58 @@
+6	complex-relaxed_0004.pdb	LYS-253-D-CB	LYS-276-D-CB	23	8.0	12.1	-	-	-
+17	complex-relaxed_0004.pdb	LYS-33-C-CB	LYS-306-D-CB	581	10.6	12.1	-	-	-
+11	complex-relaxed_0004.pdb	LYS-40-C-CB	LYS-33-C-CB	7	12.5	15.2	-	-	-
+1	complex-relaxed_0004.pdb	LYS-166-D-CB	LYS-158-D-CB	8	12.4	15.9	-	-	-
+2	complex-relaxed_0004.pdb	LYS-176-D-CB	LYS-166-D-CB	10	14.5	19.3	-	-	-
+13	complex-relaxed_0004.pdb	LYS-33-C-CB	LYS-166-D-CB	441	17.2	19.6	-	-	-
+18	complex-relaxed_0004.pdb	LYS-40-C-CB	LYS-166-D-CB	434	19.7	21.6	-	-	-
+8	complex-relaxed_0004.pdb	LYS-176-D-CB	LYS-165-D-CB	11	16.1	21.8	-	-	-
+15	complex-relaxed_0004.pdb	LYS-40-C-CB	LYS-163-D-CB	431	21.8	24.3	-	-	-
+14	complex-relaxed_0004.pdb	LYS-35-C-CB	LYS-163-D-CB	436	22.0	24.6	-	-	-
+9	complex-relaxed_0004.pdb	LYS-325-D-CB	LYS-97-D-CB	228	16.9	29.5	-	-	-
+4	complex-relaxed_0004.pdb	LYS-306-D-CB	LYS-276-D-CB	30	26.7	32.2	-	-	-
+16	complex-relaxed_0004.pdb	LYS-73-C-CB	LYS-253-D-CB	488	52.1	-3.0	-	-	-
+5	complex-relaxed_0004.pdb	LYS-295-D-CB	LYS-325-D-CB	30	7.9	-2.0	-	-	-
+3	complex-relaxed_0004.pdb	LYS-295-D-CB	LYS-276-D-CB	19	17.6	-2.0	-	-	-
+7	complex-relaxed_0004.pdb	LYS-295-D-CB	LYS-163-D-CB	132	21.4	-2.0	-	-	-
+10	complex-relaxed_0004.pdb	LYS-306-D-CB	LYS-97-D-CB	209	26.6	-1.0	-	-	-
+12	complex-relaxed_0004.pdb	LYS-28-C-CB	LYS-158-D-CB	438	30.5	-1.0	-	-	-
+19	complex-relaxed_0004.pdb	LYS-40-C-CB	LYS-158-D-CB	426	30.6	-1.0	-	-	-
+6	complex-relaxed_0001.pdb	LYS-253-D-CB	LYS-276-D-CB	23	8.0	12.1	-	-	-
+11	complex-relaxed_0001.pdb	LYS-40-C-CB	LYS-33-C-CB	7	12.5	14.9	-	-	-
+1	complex-relaxed_0001.pdb	LYS-166-D-CB	LYS-158-D-CB	8	12.4	15.9	-	-	-
+2	complex-relaxed_0001.pdb	LYS-176-D-CB	LYS-166-D-CB	10	14.5	17.4	-	-	-
+8	complex-relaxed_0001.pdb	LYS-176-D-CB	LYS-165-D-CB	11	16.1	21.8	-	-	-
+17	complex-relaxed_0001.pdb	LYS-33-C-CB	LYS-306-D-CB	581	23.2	25.4	-	-	-
+19	complex-relaxed_0001.pdb	LYS-40-C-CB	LYS-158-D-CB	426	24.5	27.8	-	-	-
+9	complex-relaxed_0001.pdb	LYS-325-D-CB	LYS-97-D-CB	228	16.9	29.5	-	-	-
+13	complex-relaxed_0001.pdb	LYS-33-C-CB	LYS-166-D-CB	441	27.2	29.6	-	-	-
+15	complex-relaxed_0001.pdb	LYS-40-C-CB	LYS-163-D-CB	431	28.0	29.9	-	-	-
+12	complex-relaxed_0001.pdb	LYS-28-C-CB	LYS-158-D-CB	438	28.5	31.2	-	-	-
+14	complex-relaxed_0001.pdb	LYS-35-C-CB	LYS-163-D-CB	436	27.1	31.4	-	-	-
+18	complex-relaxed_0001.pdb	LYS-40-C-CB	LYS-166-D-CB	434	27.0	31.6	-	-	-
+4	complex-relaxed_0001.pdb	LYS-306-D-CB	LYS-276-D-CB	30	26.7	32.2	-	-	-
+16	complex-relaxed_0001.pdb	LYS-73-C-CB	LYS-253-D-CB	488	55.0	-3.0	-	-	-
+5	complex-relaxed_0001.pdb	LYS-295-D-CB	LYS-325-D-CB	30	7.9	-2.0	-	-	-
+3	complex-relaxed_0001.pdb	LYS-295-D-CB	LYS-276-D-CB	19	17.6	-2.0	-	-	-
+7	complex-relaxed_0001.pdb	LYS-295-D-CB	LYS-163-D-CB	132	21.4	-2.0	-	-	-
+10	complex-relaxed_0001.pdb	LYS-306-D-CB	LYS-97-D-CB	209	26.6	-1.0	-	-	-
+20	complex-relaxed_0001.pdb	LYS-7-C-CB	1
+21	complex-relaxed_0001.pdb	LYS-20-C-CB	1
+22	complex-relaxed_0001.pdb	LYS-40-C-CB	1
+23	complex-relaxed_0001.pdb	LYS-176-D-CB	1
+24	complex-relaxed_0001.pdb	LYS-241-D-CB	1
+25	complex-relaxed_0001.pdb	LYS-253-D-CB	1
+26	complex-relaxed_0001.pdb	LYS-287-D-CB	1
+27	complex-relaxed_0001.pdb	LYS-295-D-CB	0
+28	complex-relaxed_0001.pdb	LYS-306-D-CB	1
+29	complex-relaxed_0001.pdb	LYS-325-D-CB	1
+20	complex-relaxed_0004.pdb	LYS-7-C-CB	1
+21	complex-relaxed_0004.pdb	LYS-20-C-CB	1
+22	complex-relaxed_0004.pdb	LYS-40-C-CB	1
+23	complex-relaxed_0004.pdb	LYS-176-D-CB	1
+24	complex-relaxed_0004.pdb	LYS-241-D-CB	1
+25	complex-relaxed_0004.pdb	LYS-253-D-CB	1
+26	complex-relaxed_0004.pdb	LYS-287-D-CB	1
+27	complex-relaxed_0004.pdb	LYS-295-D-CB	0
+28	complex-relaxed_0004.pdb	LYS-306-D-CB	1
+29	complex-relaxed_0004.pdb	LYS-325-D-CB	1

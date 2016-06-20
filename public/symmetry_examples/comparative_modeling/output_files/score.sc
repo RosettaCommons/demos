@@ -1,0 +1,3 @@
+SEQUENCE: 
+SCORE: total_score aln_ident   aln_len  aln_perc coordinate_constraint dslf_ca_dih dslf_cs_ang dslf_ss_dih dslf_ss_dst      fa_atr      fa_dun fa_intra_rep      fa_pair       fa_rep       fa_sol hbond_bb_sc hbond_lr_bb    hbond_sc hbond_sr_bb        nres       omega     p_aa_pp pro_close      rama       ref description 
+SCORE:    -736.036     0.195   136.000     0.855                18.800       0.000       0.000       0.000       0.000   -1730.760     378.566        5.166      -34.089      191.577      873.246     -37.792    -136.049     -24.726    -119.728     159.000      32.751     -22.092     1.526   -11.743  -120.690 S_2QS7A_1_0001

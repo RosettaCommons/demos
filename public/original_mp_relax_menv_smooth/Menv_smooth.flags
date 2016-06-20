@@ -1,0 +1,19 @@
+-relax:fast
+-relax:constrain_relax_to_start_coords
+-relax:default_repeats 2
+-in:file:fullatom
+-in:file:native input_files/BRD4.pdb
+-in:file:spanfile input_files/BRD4.span
+-s input_files/BRD4.pdb
+-score:weights membrane_highres_Menv_smooth.wts
+-membrane:normal_cycles 40
+-membrane:normal_mag 15
+-membrane:center_mag 2
+-nstruct 1
+-out:file:silent_struct_type binary
+-out:file:silent output_files/Menv_smooth-BRD4_frlx.out
+-constant_seed
+-mute core.util.prof
+-mute core.io.database
+-run:no_prof_info_in_silentout
+-out:file:scorefile output_files/Menv_smooth_score.sc
