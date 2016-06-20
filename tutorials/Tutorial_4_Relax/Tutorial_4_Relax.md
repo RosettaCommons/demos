@@ -27,4 +27,16 @@ To demonstrate this, run
 
 and align it to the original 1ubq.pdb. You should see a close alignment between the backbones before and after the run -- and a correspondingly higher final energy.
 
+It can also be useful to disfavor dramatic movements in Relax without completely disallowing them. This may be done by adding constraints via
+	-relax:constrain_relax_to_start_coords
+	-relax:constrain_relax_to_native_coords -in:file:native
+The former option disfavors output that is structurally dissimilar to the input; the latter similarly disfavors divergence from a provided input file. These are implemented as harmonic constraints, so a linear divergence is reflected in a quadratic increase in score. If small changes are not to be disfavored, these constraints can be modified with 
+
+	-relax:coord_cst_width    <width> 
+
+which replaces the normal harmonic constraints with flat constraints out to a distance of *width*, such that any changes that leave the output within *width* of the input see no change at all.
+###Restricting the sequence it can sample
+By default, Relax will not change the input sequence. It can be allowed to do so in a controlled way via [resfiles] and the option
+
+	-relax:resfile 
 

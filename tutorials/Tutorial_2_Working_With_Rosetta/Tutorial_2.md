@@ -4,11 +4,24 @@ Rosetta relies upon a number of additional programs to function. In order to pro
 
 1. A text editor capable of outputting plain text files; most people use [emacs](https://www.gnu.org/software/emacs/manual/html_node/emacs/index.html),[vi](https://www.washington.edu/computing/unix/vi.html),[nano](https://www.nano-editor.org/dist/v2.0/nano.html), or some more graphical way of interfacing with one of them.
 2. A molecular viewing tool. Rosetta does not include a way to actually visualize the output files it creates; a tool such as [PyMOL](https://www.pymol.org/) is necessary to examine the output PDBs. Rosetta does include a PyMOLObserver for directly viewing its output in Pymol; instructions for setting up PyMOLObserver are found [here].
+3. A terminal. Unix and Apple users have suitable terminals installed by default. Windows users attempting to run Rosetta remotely on a Mac or Unix machine will require a tool like PuTTY to provide the necessary interface.
+
+It may also help to familiarize yourself with the basics of [command line interfaces.](https://bash.cyberciti.biz/guide/Main_Page) Particularly useful commands include:
+
+	ls *foo* 	displays a list of files in the directory *foo*
+	cd *foo* 	moves the current working directory to the directory *foo*
+	mv *foo* *bar* 	moves all of *foo* into *bar* if *bar* is a directory or into a file called *bar* if not
+	cp *foo* *bar* 	moves all of *foo* into *bar* if *bar* is a directory or into a file called *bar* if not
+	ln -s *foo* 	*path_to_bar* establishes a link called a *symbolic link* or *symlink* from *foo* to *bar* 
+	top 		lists the currently running processes, together with their process IDs. This is useful for:
+	kill *foo_pid* stops the process with process ID *foo_pid*
+	nohup		when prepended to a command, runs that command in the background, preventing it from writing output to the terminal
+	
 
 #The Three Main Interfaces to Rosetta
 Rosetta is not a single program; it is instead built with a large number of executable files built to be run either individually, sequentially, or in concert. These files may be run directly from the command line, through an XML interface called RosettaScripts, or through Python via Pyrosetta.
 ##Running the Rosetta Executables directly
-The executables that comprise Rosetta can be run directly by calling them through a [command line interface](https://bash.cyberciti.biz/guide/Main_Page). These commands are constructed by first indicating the path to the executable you want to run, followed by the flags, options, and input files that dictate how you want the program to execute. 
+The executables that comprise Rosetta can be run directly by calling them through the terminal directly. These commands are constructed by first indicating the path to the executable you want to run, followed by the flags, options, and input files that dictate how you want the program to execute. 
 As an example, consider the command 
 
 	$ ./main/source/bin/fixbb.default.linuxgccrelease -s 1ubq.pdb
