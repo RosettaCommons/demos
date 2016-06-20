@@ -34,7 +34,7 @@ Now we are at the stage of generating the params file. use cd ../ to get out of 
 ```
 $> ../../../main/source/scripts/python/public/molfile_to_params.py -n SRO -p SRO inputs/serotonin_withH.sdf
 ```
--n is a _flag_ that says what is the three letter name you want to give to the ligand and -p defines the name given to the params file. After you are done with this command you should have a file named SRO.params like the one provided in the outputs directory. Also, 27 PDB files (or any number you saw during download) are generated based on each conformer found from PDB.
+-n is a _flag_ that says what is the three letter name you want to give to the ligand and -p defines the name given to the params file. After you are done with this command you should have a file named SRO.params like the one provided in the outputs directory. Also, 27 PDB files (or any number you saw during download) are generated based on each conformer found from PDB. Open these files in pymol, or your prefered visualization tool. You should be able to see different confroamtions of the same molecule.
 
 Note1. To learn better what the molfile_to_params.py works and what are the other options, you can run:
 ```
