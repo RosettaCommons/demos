@@ -1,0 +1,9 @@
++TGProject = TG-MCB090153
+universe = vanilla
+executable = /Users/rhiju/src/mini/bin/rna_swa_test.macosgccrelease
+arguments =  -algorithm cluster_old -in:file:silent REGION_4_1/start_from_region_0_1_sample.low4000.out REGION_4_1/start_from_region_4_0_sample.low4000.out  -in:file:silent_struct_type binary_rna  -database /Users/rhiju/minirosetta_database   -cluster:radius 0.25  -out:file:silent region_4_1_sample.cluster.out  -score_diff_cut 1000000.000 -silent_read_through_errors  -nstruct 100 
+output = CONDOR/REGION_4_1_cluster/$(Process).out
+log = CONDOR/REGION_4_1_cluster.log
+error = CONDOR/REGION_4_1_cluster/$(Process).err
+notification = never
+Queue 1

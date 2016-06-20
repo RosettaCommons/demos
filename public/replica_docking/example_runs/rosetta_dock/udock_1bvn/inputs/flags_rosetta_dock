@@ -1,0 +1,9 @@
+#this flag-file is automatically generated
+
+-nstruct 1000
+-in:file:native $CM_NATIVE_PDB
+-score:weights interchain_cen
+-in:file:s $CM_INPUT_PDB
+@$CM_PARTNERS
+
+-run:batches /home/zhezhang/rosetta_vanilla/rosetta_demos/protocol_capture/replica_docking/example_runs/rosetta_dock/udock_1bvn/inputs/flags_batch0001 /home/zhezhang/rosetta_vanilla/rosetta_demos/protocol_capture/replica_docking/example_runs/rosetta_dock/udock_1bvn/inputs/flags_batch0002

@@ -1,0 +1,58 @@
+#!/usr/bin/awk -f
+
+function usage(msg) {
+  if(msg) print msg;
+  print "usage: mergescores <filerescore.sc> ..." > "/dev/stderr";
+  print "merges unique fields from original relax run .sc files with rescore.sc file" > "/dev/stderr";
+  bail = 1;
+  exit(1);
+}
+# pull in Repack_average_score and Repack_stdev_score
+BEGIN {
+  i = 1;
+  while(i < ARGC && ARGV[i] ~ /^-/) {
+    if(ARGV[i] ~ /^-+(usage|help)/) {
+      usage();
+    } else {
+      usage("unrecognized argument: " ARGV[i]);
+    }
+  }
+  field[1] = "Repack_average_score";
+  field[2] = "Repack_stdev_score";
+  fldcnt = 2;
+}
+/.*/ {
+  if(FILENAME != lastfile) {  # new input file
+    # CSP: should have some error checking here...
+    src = gensub(/rescore/, "", 1, FILENAME);  # corresponding .sc file
+    # parse header line for desired fields
+    delete idx;
+    lc = 0;
+    while(getline line < src) {
+      lc++;
+      if(lc == 1)    # header line: build list of positions of desired fields
+	for(i = 1; i <= fldcnt; i++)
+	  idx[i] = index(line, field[i]);
+      for(i = 1; i <= fldcnt; i++) # all lines: store text to insert
+	data[lc,i] = substr(line, idx[i], length(field[i]));
+    }
+    # find insert position in rescore file
+    insert = index($0, "gdtmm1_1");
+    lastfile = FILENAME;
+    if(debug) {
+      for(i = 1; i <= fldcnt; i++) {
+	print i ": " idx[i];
+	print data[1,i];
+      }
+      print "insert: " insert;
+    }
+  }
+  printf substr($0, 1, insert-1);
+  for(i = 1; i <= fldcnt; i++)
+    printf data[FNR,i] "    ";
+  print substr($0, insert);
+}
+END {
+  if(!bail)
+    ;
+}

@@ -1,0 +1,30 @@
+GRID_DIM 2
+GLOBAL_PATCH  atom_pair_constraint = 5
+1	1	0.3	docking NOPATCH ETABLE FA_STANDARD_SOFT65
+2	1	0.25	docking NOPATCH ETABLE FA_STANDARD_SOFT65
+3	1	0.21	docking NOPATCH ETABLE FA_STANDARD_SOFT65
+4	1	0.175	docking NOPATCH ETABLE FA_STANDARD_SOFT65
+5	1	0.15	docking NOPATCH ETABLE FA_STANDARD_SOFT65
+1       2       0.3     docking NOPATCH ETABLE FA_STANDARD_SOFT60
+2       2       0.25    docking NOPATCH ETABLE FA_STANDARD_SOFT60
+3       2       0.21    docking NOPATCH ETABLE FA_STANDARD_SOFT60
+4       2       0.175   docking NOPATCH ETABLE FA_STANDARD_SOFT60
+5       2       0.15    docking NOPATCH ETABLE FA_STANDARD_SOFT60
+1       3       0.3     docking NOPATCH ETABLE FA_STANDARD_SOFT55
+2       3       0.25    docking NOPATCH ETABLE FA_STANDARD_SOFT55
+3       3       0.21    docking NOPATCH ETABLE FA_STANDARD_SOFT55
+4       3       0.175   docking NOPATCH ETABLE FA_STANDARD_SOFT55
+5       3       0.15    docking NOPATCH ETABLE FA_STANDARD_SOFT55
+1       4       0.3     docking NOPATCH ETABLE FA_STANDARD_SOFT50
+2       4       0.25    docking NOPATCH ETABLE FA_STANDARD_SOFT50
+3       4       0.21    docking NOPATCH ETABLE FA_STANDARD_SOFT50
+4       4       0.175   docking NOPATCH ETABLE FA_STANDARD_SOFT50
+5       4       0.15    docking NOPATCH ETABLE FA_STANDARD_SOFT50
+1       5       0.3     docking 
+2       5       0.25    docking 
+3       5       0.21    docking 
+4       5       0.175   docking 
+5       5       0.15    docking 
+
+#END  first column is first dimension, sencond is sencond dimension in
+#interpolated mover
