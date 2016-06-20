@@ -1,0 +1,6 @@
+#this flag-file is automatically generated
+
+-in:file:native REFERENCE_STRUCTURE
+-evaluation:rmsd NATIVE _full REFERENCE_RESIDUES
+-broker:setup BROKER_FILE
+

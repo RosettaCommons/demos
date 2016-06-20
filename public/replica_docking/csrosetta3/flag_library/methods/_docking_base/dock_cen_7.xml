@@ -1,0 +1,37 @@
+<dock_design>
+    <SCOREFXNS>
+	<score_dock_low weights="interchain_cen" />
+    </SCOREFXNS>
+    <FILTERS>
+    </FILTERS>
+    <MOVERS>
+	// the move
+	<SwitchResidueTypeSetMover name=switch2centroid set=centroid/>
+	<ThermodynamicRigidBodyPerturbNoCenter name=rb_mover rot_mag=1 trans_mag=0.5/>
+
+	// setup jumps and constraints
+	<DockSetupMover name=setup_jump/>
+	<AddEncounterConstraintMover name=encounter_cst gap=8 />
+	<DockingInitialPerturbation name=init_pert randomize2=1 randomize1=1 />
+	// sampling engine
+        <TrialCounterObserver name=count file="trial.stats"/>
+        <HamiltonianExchange name=h_exchange temp_file="@@hamiltonians_cen_7.txt"  temp_stride=1000/>
+	<SilentTrajectoryRecorder name=traj score_stride=1 stride=1000 cumulate_replicas=1 />
+	<MetropolisHastings name=sampler trials=5000 scorefxn=score_dock_low > # 5000 only for text, normally use trials=5000000
+	    <Add mover_name=h_exchange/>
+	    <Add mover_name=traj/>
+	    <Add mover_name=count/>
+	    <Add mover_name=rb_mover/>
+	</MetropolisHastings>
+
+    </MOVERS>
+    <APPLY_TO_POSE>
+    </APPLY_TO_POSE>
+    <PROTOCOLS>
+	<Add mover_name=switch2centroid/>
+	<Add mover_name=setup_jump/>
+	<Add mover_name=encounter_cst/>
+	<Add mover_name=init_pert/>
+	<Add mover_name=sampler/>
+    </PROTOCOLS>
+</dock_design>
