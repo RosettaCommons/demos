@@ -49,7 +49,7 @@ To see the packer design a sequence, open a terminal window, navigate to the dem
 <path_to_Rosetta_directory>/main/source/bin/fixbb.default.linuxgccrelease -in:file:s 1l2y.pdb >log.txt &
 ```
 
-This will produce the output files 1l2y_0001.pdb and score.sc.  If you open 1l2y_0001.pdb in a PDB viewer and compare it to the input file, 1l2y.pdb, you'll see that the sequence has changed considerably.  The rotamers chosen, however, should be interacting with one another reasonably favourably -- that is, there shouldn't be side-chains occupying the same space (clashing), for example.  Note that the only flag here is the one to specify our input file; that is, we're not passing any options to the fixbb application in this case to control the behaviour of the packer.  This brings up a very important point:
+This will produce the output files 1l2y_0001.pdb and score.sc.  If you open 1l2y_0001.pdb in a PDB viewer and compare it to the input file, 1l2y.pdb, you'll see that the sequence has changed considerably.  The rotamers chosen, however, should be interacting with one another reasonably favourably -- that is, there shouldn't be side-chains occupying the same space (clashing), for example.  Note that the only command-line option here is the one to specify our input file; that is, we're not passing any options to the fixbb application in this case to control the behaviour of the packer.  This brings up a very important point:
 
 > **The default behaviour of the packer is to *design* at every position, allowing every rotamer of each of the 20 canonical amino acids.**
 
@@ -87,4 +87,22 @@ In general, it is a good idea to limit the packer's options as much as possible 
 
 > **Each run of the packer can by controlled with one or more TaskOperations.**
 
-TaskOperations can be passed to the packer in one of several ways, and different TaskOperations modify packer behaviour in different ways.  We've already seen one example: a user can control packer behaviour with a resfile specified with the "-resfile" flag on the commandline, which implicitly invokes the ReadResfile TaskOperation.  Resfiles can control amino acid identity, presence of extra rotamers, and other packer behaviours on a residue-by-residue basis, specified by residue index.  For more information about resfiles and their full features 
+TaskOperations can be passed to the packer in one of several ways, and different TaskOperations modify packer behaviour in different ways.  We've already seen some examples: a user can control packer behaviour with a resfile specified with the "-resfile" option on the commandline, which implicitly invokes the ReadResfile TaskOperation.  Resfiles can control amino acid identity, presence of extra rotamers, and other packer behaviours on a residue-by-residue basis, specified by residue index.  For more information about resfiles and their full features, see the [[ReadResfile TaskOperation documentation|https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/TaskOperations/taskoperations_pages/ReadResfileOperation]] and the documentation for the [[resfile syntax|https://www.rosettacommons.org/docs/latest/rosetta_basics/file_types/resfiles]].  The extra residue options ("-ex1", "-ex2", etc.) also invoke TaskOperations that modify the number of rotamers per amino acid type per position.
+
+One important property of TaskOperations is **commutativity**:
+
+> **TaskOperations can be applied in any order, and still produce the same packer behaviour.**
+
+In order to achieve this, certain TaskOperation-controlled packer behaviours obey AND commutativity: if TaskOperation A *and* TaskOperation B *and* TaskOperation C allow the behaviour, then the behaviour will be allowed if A, B, and C are all applied together.  Allowed canonical amino acid identities at each position obey AND commutativity: the packer will only design with tyrosine if TaskOperation A *and* B *and* C allow tyrosine at that position.  Other TaskOperation functionality obeys OR commutativity.  Turning on extra rotamers, for example, occurs if TaskOperation A turns them on *or* TaskOperation B turns them on *or* TaskOperation C turns them on.  (Noncanonical residue identities also obey OR commutativity: where design with a particular canonical residue type at a particular position is on by default and can only be turned *off*, design with a particular noncanonical residue type at a particular position is off by default and can only be turned *on*.)
+
+## Protocols that use the packer
+
+The packer is a fundamental Rosetta algorithm called in the context of many larger protocols.  Many or most protocols call the packer, including *abinitio* (which uses the packer to place and optimize full-atom side-chains after a centroid-mode backbone conformational search) and *relax* (which carries out alternating rounds of packing and energy minimization while ramping the repulsive term in the scoring function).  Nearly every protocol that carries out any sort of design uses the packer for design.
+
+## Calling and controlling the packer from RosettaScripts
+
+In the context of [[RosettaScripts|https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/RosettaScripts]], the packer may be invoked directly using the [[PackRotamers|https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/Movers/movers_pages/PackRotamersMover]] mover.  Many other movers, including [[FastRelax|https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/Movers/movers_pages/FastRelaxMover]], [[FastDesign|https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/Movers/movers_pages/FastDesignMover]], and [[Disulfidize|https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/Movers/movers_pages/DisulfidizeMover]] call the packer.  Typically, any Rosetta component that calls the packer can receive one or more TaskOperations to control packer behaviour.  In the RosettaScripts context, [[TaskOperations|https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/Movers/movers_pages/PackRotamersMover]] are declared separately in a section of the script preceding the movers that call the packer, and are then passed by name to such movers.
+
+## How the packer algorithm works under the hood
+
+While a detailed understanding of the workings of the packer is not a strict requirement to use Rosetta, having some idea of what's going on under the hood can help a user to use his or her tools more effectively.
