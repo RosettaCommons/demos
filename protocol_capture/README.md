@@ -11,4 +11,7 @@ they were originally tested, or at least a general time period.)
 Most of the protocol captures here have a corresponding demo in the demos/public/ directory.
 The version in demos/public should be kept up-to-date with the most recent version of Rosetta.
 
-Final note: the layout of this directory has changed several times. The protocol captures may have been moved.
+Note: the layout of this directory has changed several times. The protocol captures may have been moved.
+
+Note to Rosetta developers: If you add a protocol capture here, you should also add a copy as the 
+updatable version in the demos/public/ directory.
