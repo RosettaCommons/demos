@@ -85,6 +85,7 @@ SCORE:    -163.023    -163.023     0.000  -423.638   109.662   -46.146        1.
 The first column called `total_score` represents the total weighted score for the structure 1QYS. For a refined structure of this size, a score of -100 REU to -300 REU is typical. (A rule of thumb: -2 Rosetta units per resdiue is typical). The column `fa_atr` represents the weighted score of the Lennard-Jones attractive potential between atoms in different residues, and so on. This breakdown can be helpful in determining which energy terms are contributing more than others, i.e. what kind of interactions occur in the protein.
 
 ###More Scoring Options
+####Changing the score function
 Now, we will try to score two structures using an older score function called _score12_. We also want to rename our score file _score_score12.sc.
 
 A detailed list of score functions can be found in `Rosetta/main/database/scoring/weights`.
@@ -112,8 +113,9 @@ SCORE:    -142.718    -142.718       0.000       0.000       0.000       0.000  
 SCORE:     -28.876     -28.876       0.000       0.000       0.000       0.000    -282.611      71.216        0.541       -6.108      102.326      177.549     -14.555     -18.144     -15.085      -7.308             0.000             3.964              0.000             -9.016     0.051    -7.703   -23.990     1.000 1ubq_0001
 ```
 
-In this score file, we can see that the `total_score` of 1QYS has changed from the previous run. We can also see that `dslf_fa13` energy term is missing and is instead replaced by four terms to describe disulphide geometry.
+In this score file, we can see that the `total_score` of 1QYS has changed from the previous run. We can also see that `dslf_fa13` energy term from the previous example is missing and is instead replaced by four terms to describe disulphide geometry.
 
+####Patch files and changing term weights
 Now, say we want to modify the weights of some of the terms in this score function. There are two ways to go about doing this:
 * Patch files providing a list of weights
 * Seting the weight of specific terms from the command line
@@ -153,8 +155,9 @@ SCORE: total_score       score ch_bond_bb_bb dslf_ca_dih dslf_cs_ang dslf_ss_dih
 SCORE:    -222.439    -222.439        -6.807       0.000       0.000       0.000       0.000    -423.638             0.000            87.730        0.832       -7.700       39.293      167.307      -3.934     -26.998     -11.234      -6.373             0.000             3.368              0.000             -5.441     0.000    -3.924   -24.920     1.000 1qys_0001
 SCORE:     -95.233     -95.233        -3.867       0.000       0.000       0.000       0.000    -353.263             0.000            71.216        0.541       -6.108      102.326      177.549     -14.555     -18.144     -15.085      -3.654             0.000             3.964              0.000             -4.508     0.051    -7.703   -23.990     0.000 1ubq_0001
 ```
-Note that we have new energy terms `ch_bond_bb_bb` and `fa_cust_pair_dist` which were defined in the patch file. Also, the weighted scores of `hbond_sr_bb`, `rama` and others have changed as defined by the patch file. The decrease in weighted score of `fa_atr` is a result of the increased weight we fed in through the command line via the flag file. (This incidentally is the same weight as the _talaris2014_ score function, and hence both the columns have the same weighted score.)
+Note that we have new energy terms `ch_bond_bb_bb` and `fa_cust_pair_dist` which were defined in the patch file. Also, the weighted scores of `hbond_sr_bb`, `rama` and others have changed as defined by the patch file. The decrease in weighted score of `fa_atr` is a result of the increased weight we fed in through the command line via the flag file. (This incidentally is the same weight as the _talaris2014_ score function, and hence `fa_atr` has the same weighted score as in the basic example.)
 
+####Advanced options
 Other options to add to the flag file:
 ```html
 -score_app:linmin                           #Run a quick minimization before scoring
