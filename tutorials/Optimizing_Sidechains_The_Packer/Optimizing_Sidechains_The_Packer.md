@@ -6,8 +6,8 @@ Created 20 June 2016.
 
 ## Summary
 
-Rosetta's primary algorithm for optimizing side-chains is called the <i>packer</i>.  By the end of this tutorial, you will understand:
-- The types of problem that the packer solves.
+Rosetta's primary algorithm for optimizing side-chains is called the <i>packer</i>.  By the end of this tutorial, you should understand:
+- The types of problems that the packer solves.
 - The way in which the algorithm works, and what you can do to ensure optimal packer behaviour.
 - How to invoke the packer using the <i>fixbb</i> application.
 - How to control the packer's behaviour.
@@ -27,11 +27,17 @@ This problem is actually quite a difficult one: given N possibilities at each po
 
 ## Invoking the packer through the <i>fixbb</i> application
 
-To illustrate what the packer does, let's run it.  Navigate to the demos/fixbb directory, and run the following:
+To illustrate what the packer does, let's run it.  The simplest way to run the packer is by running the Rosetta <i>fixbb</i> application: its sole <i>raison d'être</i> is to call the packer.  Navigate to the demos/fixbb directory, and run the following:
 
 ```
 <path_to_Rosetta_directory>/main/source/bin/fixbb.default.linuxgccrelease -in:file:s 1l2y.pdb -in:file:fullatom -resfile resfile.txt -nstruct 5 >log.txt 2>err.txt &
 ```
+
+You may need to change "linuxgccrelease", in the above, to whatever is appropriate given your operating system and compiler.
+
+This application packs the side-chains of the input structure (the trp cage mini-protein, 1l2y.pdb).  Five output structures, from five separate runs, are produced.  If you compare these structures to the input structure, you'll find that Rosetta chooses slightly different rotamers for the side-chains, as compared to the input.  This is to be expected, particularly given the discrete nature of rotamers: the truly "best" rotamer might lie between two rotamers tested, and may never be sampled.
+
+Work through the [[rest of the demo|../../fixbb/Readme.md]].  This teaches about how the packer can be tweaked, both at the commandline and with configuration files called <i>resfiles</i>, to control the amount of sampling, the time taken for a run, and the likelihood of converging to the optimal solution.
 
 ## The Sequence Design Problem
 
