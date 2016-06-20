@@ -19,20 +19,22 @@ The second part, -s 1ubq.pdb, is an option, or *flag*, that modifies the executi
 	-database: This option should not be required for a successful Rosetta install, but indicates the path to the Rosetta database (which is now detected automatically.)
 	-out::file [...] This option indicates the name and location to which Rosetta is to write any output files.
 	-ignore_unrecognized_residue This option should not be required for a successful Rosetta install, but indicates that residues that Rosetta cannot process should be left out of the execution.
+In order to demonstrate how Rosetta exectuables may be run and their execution controlled via flags, create a folder in your main Rosetta directory named *tutorials* or something similar, and there put the files 1ubq.pdb and 1qys.pdb. 
+
 Now run 
 
-	$ ./main/source/bin/fixbb.linuxgccrelease -s 1ubq.pdb
+	$ ../main/source/bin/fixbb.linuxgccrelease -s 1ubq.pdb
 
 and observe that the program generates an output pdb file(1ubq_0001.pdb), a score file (score.sc) and a log file (output).
 Try running the following commands:
 
-	$ ./main/source/bin/fixbb.linuxgccrelease -s 1ubq.pdb -nstruct 10
-	$ ./main/source/bin/fixbb.linuxgccrelease -s 1ubq.pdb -ignore_unrecognized_residue
+	$ ../main/source/bin/fixbb.linuxgccrelease -s 1ubq.pdb -nstruct 10
+	$ ../main/source/bin/fixbb.linuxgccrelease -s 1ubq.pdb -ignore_unrecognized_residue
 
 The first command should produce ten output files; the second should run similarly, albeit not identically, to the command provided at the start of this tutorial.
-Also, try making a list of PDBs including 1ubq and 1qys and running
+Also, try making a list of PDBs named *pdblist* including 1ubq and 1qys and running
 
-	$ ./main/source/bin/fixbb.linuxgccrelease -l pdblist
+	$ ../main/source/bin/fixbb.linuxgccrelease -l pdblist
 
 ##Running Rosetta via RosettaScripts
 Running RosettaScripts is similar to running an executable directly from the command line: execute rosetta_scripts and pass in the relevant options. The key difference is that the executable run is always rosetta_scripts, which requires the option "parser:protocol" indicating the XML script that it is to run. RosettaScripts is covered in more detail [here]. Try creating a file named "fixbb_script.xml" containing the following:
@@ -41,7 +43,7 @@ Running RosettaScripts is similar to running an executable directly from the com
 	</ROSETTASCRIPTS>
 saving it, and running it with 
 
-	$./main/source/bin/rosetta_scripts.linuxgccrelease -parser:protocol fixbb_script.xml'. You should see output similar to the command run at the start of this tutorial.
+	$../main/source/bin/rosetta_scripts.linuxgccrelease -parser:protocol fixbb_script.xml'. You should see output similar to the command run at the start of this tutorial.
 
 ##Running Rosetta via PyRosetta
 PyRosetta functions are run within Python scripts; it requires that rosetta be imported with the command
