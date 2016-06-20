@@ -3,13 +3,13 @@
 ## Introduction
 Proteins are not static structures, but rather they undergo fluctuations in their conformations and exist as ensembles of states. 
 
-Each snapshot of a protein's repertoire of conformations can be associated with an energy, where some conformations will have high energies and some will have low energies. In molecular modeling, it is usually desirable to find the global minimum (representing the lowest-energy conformation) of this energy function. This, however, is a very difficult task given the vast energy landscape we would need to search, and so we'll settle for the next best thing: **a local minimum**.
+Each snapshot of a protein's repertoire of conformations can be associated with an energy, where some conformations will have high energies and some will have low energies. In molecular modeling, it is usually desirable to find the global minimum (representing the lowest-energy conformation) of this energy function. This, however, is a very difficult task given the vast energy landscape that needs to be searched, so we'll settle for the next best thing: **a local minimum**.
 
 Minimization is a sampling technique for the purpose of finding the nearest local minimum in the energy function given your starting structure's conformation and energy.
 
-In Rosetta, we use the `minimizer` executable to perform minimization on protein structures, which carries out a _gradient-based minimization_ to find the nearest local minimum in the energy function. 
+In Rosetta, we use the `minimize` executable to perform minimization on protein structures, which in general carries out a _gradient-based minimization_ to find the nearest local minimum in the energy function. 
 
-All minimization algorithms choose a vector as the descent direction, determine a step along that vector, then choose a new direction and repeat. However, there are many different minimization algorithms that can work under-the-hood of the `minimization` executable. In this tutorial, we will use `lbfgs_armijo_nonmonotone` algorithm, which is a multi-step algorithm that need only be called once to reach the local mimimum of a function.
+All minimization algorithms choose a vector as the descent direction, determine a step along that vector, then choose a new direction and repeat. However, there are many different minimization algorithms that the user can choose that work under-the-hood of the `minimize` executable. In this tutorial, we will use `lbfgs_armijo_nonmonotone` algorithm, which is a multi-step algorithm that needs to only be called once to reach the local mimimum of a function (rather than 
 
 ## Goals
 What are the goals of this tutorial?
@@ -31,11 +31,11 @@ $> score.default.linuxgccrelease -database <database> -s 3hon.pdb
 
 This command will output a `default.sc` file, which contains the Rosetta score for this conformation. 
 
-[put a photo here?]
+[picture]
 
 The first line of this file is the header line that tells us which columns correspond to which score terms.
 
-On the second line of this file, we see that this conformation's score is total score is 240.074, and that it has a particularly high repulsive score, _fa_rep_ meaning there are clashes between atoms in the structure, and a high dunbrack score, _fa_dun_, meaning many of the rotamers in this structure are of low probability.
+On the second line of this file, we see that this conformation's score is total score is 240.074, and that it has a particularly high repulsive score, _fa_rep_, which means there are clashes between atoms in the structure, and a high dunbrack score, _fa_dun_, which means many of the rotamers in this structure are of low probability.
 
 Let's try and fix these issues using the minimizer.
 
@@ -62,6 +62,7 @@ $> minimization.default.linuxgccrelease @minimization_flags
 ```
 If this executable runs with no errors and the log file ends with something like this:
 
+[picture]
 
 then you have successfully minimized the input structure. Check to make sure a `score.sc` file and a `3hon_0001.pdb` output structure have also been generated. Now let's analyze the output scores and structure.
 
@@ -70,7 +71,7 @@ then you have successfully minimized the input structure. Check to make sure a `
 The `score.sc` file contains the NEW scores for the minimized structure. Open this file and compare the initial scores to the minimized scores:
 
 | Score Term	| Old Scores	| New Scores 	|
-| ------------- | :-----------: |  -----------: |
+| ------------- | -----------: |  -----------: |
 | total_score	| 240.074		| -40.93		|
 | fa_atr		| -213.265		| -213.025		|
 | fa_rep		| 131.638		| 22.807		|
@@ -86,15 +87,33 @@ The `score.sc` file contains the NEW scores for the minimized structure. Open th
 | fa_dun		| 215.208		| 91.005		|
 | p_aa_pp		| -3.773		| -12.833		|
 
-Many score terms have gone down in energy (which is good!). But how has the minimization affected the structure? Open the `3hon_0001.pdb` to see what has changed:
+Most of the score terms have gone down in value (which is good!). But how has the minimization affected the structure? Open the `3hon_0001.pdb` to see what has changed:
 
 [picture]
 
-The minimized structure has moved out of alignment with the native structure, so first let's align the two structures. If you are using PyMOL, type `align 3hon_0001, 3hon` and hit `enter`.
+The minimized structure has moved out of alignment with the native structure, so first let's align the two structures. If you are using PyMOL, type `align 3hon_0001, 3hon` and hit `Enter`.
 
 [picture]
 
-Notice that the last nine residues of the loop region have moved quite significantly, and that most of the minimized rotamers are not in they native conformations.
+Now that the structure are aligned, notice that the last nine residues of the loop region have moved quite significantly. Furthermore, most of the minimized rotamers are no longer in their native conformations.
+
+In some cases, it may be undesirable to allow large movements in the starting conformation. To this end, we can use minimization with constraints to minimize our input structure, while movements in certain atoms will be penalized by the score function.
+
+
+## How-To: Minimization with Constraints
+
+For this walk-through, we will use the same crystal structure as before, 3hon.pdb.
+
+
+
+
+
+
+
+
+
+
+
 
 
 ######Notes
