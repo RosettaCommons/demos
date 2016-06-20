@@ -6,7 +6,7 @@ Rosetta relies upon a number of additional programs to function. In order to pro
 2. A molecular viewing tool. Rosetta does not include a way to actually visualize the output files it creates; a tool such as [PyMOL](https://www.pymol.org/) is necessary to examine the output PDBs. Rosetta does include a PyMOLObserver for directly viewing its output in Pymol; instructions for setting up PyMOLObserver are found [here].
 
 ##The Three Main Interfaces to Rosetta
-Rosetta is not a single program; it is instead a large number of individually executable files built to be run either individually, sequentially, or in concert.
+Rosetta is not a single program; it is instead built with a large number of executable files built to be run either individually, sequentially, or in concert. These files may be run directly from the command line, through an XML interface called RosettaScripts, or through Python via Pyrosetta.
 #Running the Rosetta Executables directly
 The executables that comprise Rosetta can be run directly by calling them through a [command line interface](https://bash.cyberciti.biz/guide/Main_Page). These commands are constructed by first indicating the path to the executable you want to run, followed by the flags, options, and input files that dictate how you want the program to execute. 
 As an example, consider the command '$ ./main/source/bin/fixbb.linuxgccrelease -s 1ubq.pdb'
