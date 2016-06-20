@@ -13,7 +13,6 @@ is very simple and has few options.
 
         1l2y_0001.pdb
         log.txt
-	err.txt
         score.sc
 
 * Open the structure and the input structure in pymol to observe sequence 
