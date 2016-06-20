@@ -51,3 +51,11 @@ Let's run the application again, but this time, append the flags "-ex1 -ex2 -ex3
 ```
 
 You'll notice that this time, the app takes much longer to run.  Examining the output, you'll find a few things.  First, the rotamer chosen for the central tryptophan and for many other side-chains is much closer to the original.  Second, you may see some variation in the five output structures.  So what did we change?  Well, the "-ex1", "-ex2", "-ex3", and "-ex4" flags activate extra rotamers for the first, second, third, and fourth side-chain chi angles, respectively.  The "-extrachi_cutoff" flag determines the number of residue neighbours (nearby residues) that a resiude must have in order to receive the additional rotamers.  By including additional rotamers, it becomes more likely that, at any given position, one of the rotamers included will be very close to the optimal side-chain conformation.  The cost, though, is an increase in the computational complexity (reducing the probability of convergence somewhat), and a concamitant increase in the running time.  Similarly, performing the same task on a larger input structure will also result in a longer running time and a lower probability of convergence.
+
+##Varying the resfile to alter packer behaviour
+
+The same behaviour shown above can also be accomplished by altering the resfile.  If compare resfile2.txt to resfile.txt, you'll notice that the first line is different.  The additional text ("EX 1 EX 2 EX 3 EX 4 EX_CUTOFF 0") accomplishes much the same thing as the extra options that we passed at the commandline earlier.  Running the following shoulkd produce the same behaviour:
+
+```
+<path_to_Rosetta_directory>/main/source/bin/fixbb.default.linuxgccrelease -in:file:s 1l2y.pdb -in:file:fullatom -resfile resfile2.txt -nstruct 5 >log.txt 2>err.txt &
+```
