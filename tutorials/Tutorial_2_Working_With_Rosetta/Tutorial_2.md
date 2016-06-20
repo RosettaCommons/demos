@@ -25,7 +25,7 @@ Try running the following commands:
 	$ ./main/source/bin/fixbb.linuxgccrelease -s 1ubq.pdb -ignore_unrecognized_residue
 
 The first command should produce ten output files; the second should run identically to the command provided at the start of this tutorial.
-Also, try making a list of PDBs including 1ubq and 1a2b and running
+Also, try making a list of PDBs including 1ubq and 1qys and running
 
 	$ ./main/source/bin/fixbb.linuxgccrelease -l pdblist
 
