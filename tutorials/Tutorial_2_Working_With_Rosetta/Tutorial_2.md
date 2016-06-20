@@ -1,8 +1,9 @@
 ## Working With Rosetta
 #Required Software
 Rosetta relies upon a number of additional programs to function. In order to productively use Rosetta, you must have:
-1. 	A text editor capable of outputting plain text files; most people use [emacs](https://www.gnu.org/software/emacs/manual/html_node/emacs/index.html),[vi](https://www.washington.edu/computing/unix/vi.html),[nano](https://www.nano-editor.org/dist/v2.0/nano.html), or some more graphical way of interfacing with one of them.
-2. 	A molecular viewing tool. Rosetta does not include a way to actually visualize the output files it creates; a tool such as [PyMOL](https://www.pymol.org/) is necessary to examine the output PDBs. Rosetta does include a PyMOLObserver for directly viewing its output in Pymol; instructions for setting up PyMOLObserver are found [here].
+
+	1. A text editor capable of outputting plain text files; most people use [emacs](https://www.gnu.org/software/emacs/manual/html_node/emacs/index.html),[vi](https://www.washington.edu/computing/unix/vi.html),[nano](https://www.nano-editor.org/dist/v2.0/nano.html), or some more graphical way of interfacing with one of them.
+	2. A molecular viewing tool. Rosetta does not include a way to actually visualize the output files it creates; a tool such as [PyMOL](https://www.pymol.org/) is necessary to examine the output PDBs. Rosetta does include a PyMOLObserver for directly viewing its output in Pymol; instructions for setting up PyMOLObserver are found [here].
 
 ##The Three Main Interfaces to Rosetta
 Rosetta is not a single program; it is instead a large number of individually executable files built to be run either individually, sequentially, or in concert.
