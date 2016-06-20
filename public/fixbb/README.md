@@ -23,6 +23,8 @@ The following files should be produced:
 	err.txt
         score.sc
 
+At any time, the output files can be deleted selectively by running the clean.sh script ("bash clean.sh").
+
 UNDERSTANDING THE RUN:
 
 Open the 1l2y_0001.pdb (output) file and the 1l2y.pdb (input) file in PyMol or another molecular viewer.  Note the changes to side-chain rotamers.  Although the optimal rotamer found by Rosetta for certain residues, such as tryptophan 6, is close to that in the input structure, other, more surface-exposed residues, vary more.  This is to be expected.
@@ -37,7 +39,7 @@ The ">log.txt 2>err.txt" part directs the output to the file log.txt, and any er
 
 Finally, the terminal ampersand ("&") allows the application to run as a background process, so that you can continue working at the command-line while it executes.
 
-Let's run the application again, but this time, append the flags "-ex1 -ex2 -ex3 -ex4", so that the overall command is:
+Let's run the application again, but this time, append the flags "-ex1 -ex2 -ex3 -ex4 -extrachi_cutoff 0", so that the overall command is:
 
-<path_to_Rosetta_directory>/main/source/bin/fixbb.default.linuxgccrelease -in:file:s 1l2y.pdb -in:file:fullatom -resfile resfile.txt -nstruct 5 >log.txt 2>err.txt &
+<path_to_Rosetta_directory>/main/source/bin/fixbb.default.linuxgccrelease -in:file:s 1l2y.pdb -in:file:fullatom -resfile resfile.txt -nstruct 5 -ex1 -ex2 -ex3 -ex4 -extrachi_cutoff 0 >log.txt 2>err.txt &
 
