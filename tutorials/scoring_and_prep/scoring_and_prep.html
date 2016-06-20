@@ -1,0 +1,153 @@
+<p></p>
+<h1 id="pdb-scoring-and-preparation-with-rosetta">PDB scoring and preparation with Rosetta</h1>
+<p><strong>Bold text means that these files and/or this information is provided.</strong></p>
+<p><em>Italicized text means that this material will NOT be conducted during the workshop.</em></p>
+<pre><code>Fixed width text means you should type the command into your terminal.</code></pre>
+<p>If you want to try making files that already exist (e.g., input files), write them to a different directory!</p>
+<h2 id="scoring-structures-with-rosetta">Scoring structures with Rosetta</h2>
+<p>One of the simplest tasks in Rosetta is scoring a given protein structure. The prefered method of scoring a protein structure is with the &quot;score_jd2&quot; application. This is version of the scoring application which uses the unified input/output options (the &quot;JD2&quot; system). There is also an older version of the scoring application called &quot;score&quot;, which uses a slightly different set of options.</p>
+<ol style="list-style-type: decimal">
+<li><p>Prepare your working directory. You will work in this directory for the rest of the tutorial.</p>
+<ol style="list-style-type: decimal">
+<li><p>Create a directory in the protein_folding directory called my_files and switch to that directory.</p>
+<pre><code>mkdir my_files
+cd my_files</code></pre></li>
+</ol></li>
+<li><p>Scoring PDBs.</p>
+<ol style="list-style-type: decimal">
+<li><p>From the ~/rosetta_workshop/tutorials/scoring_and_prep/inputs/ directory, copy over the PDB files <strong>1QYS.pdb</strong>, <strong>3R2X.pdb</strong>, and <strong>3TDM.pdb</strong>.</p></li>
+<li><p>Score the PDBs using the score_jd2 application. &quot;-in:file:s&quot; (or just &quot;-s&quot; for short) is used to specify PDB <strong>s</strong>tructure input.</p>
+<pre><code> ~/rosetta_workshop/rosetta/main/source/bin/score_jd2.linuxgccrelease \
+ -s 1QYS.pdb 3R2X.pdb 3TDM.pdb</code></pre></li>
+<li><p>You should find that you get a number of errors. This is because these are files directly from the PDB, which contain residues which Rosetta does not read by default. (Sugars, phosphates, water, etc.) You can tell Rosetta to ignore these by passing the option &quot;-ignore_unrecognized_res&quot;.</p>
+<pre><code> ~/rosetta_workshop/rosetta/main/source/bin/score_jd2.linuxgccrelease \
+ -s 1QYS.pdb 3R2X.pdb 3TDM.pdb -ignore_unrecognized_res</code></pre></li>
+<li><p>Examine the tracer output. (The messages which get printed to the console.) This contains a number of informational and diagnostic messages about the run. (The amount of tracer output can be controlled by the &quot;-mute&quot;, &quot;-unmute&quot; and &quot;-out:levels&quot; options.) In this output the important things to notice is that Rosetta is able to reinterpret the selenomethionine (MSE) residues in 1QYS.pdb as regular methionine (MET), that it recognizes when atoms are missing and adds them back in, that it will do conformational sampling (packing) for residues which are missing sidechains, and that it is able to autodetect disulfide bonds.</p></li>
+<li><p>In the directory, you should have a new file named &quot;score.sc&quot;. This contains the tabular output of the scoring. For each structure scored, it not only lists the total score, but also has columns for individual components of the scorefunction. (For example, fa_atr is the atractive component of the van der Waals interaction energy, and fa_elec is the Coulombic energy. See <a href="https://www.rosettacommons.org/docs/latest/rosetta_basics/scoring/score-types">https://www.rosettacommons.org/docs/latest/rosetta_basics/scoring/score-types</a> for more details.)</p></li>
+<li><p>score_jd2 can also output the actual edited structures it does the scoring on. Use the &quot;-out:pdb&quot; option to get output of the structures in PDB format.</p>
+<pre><code> ~/rosetta_workshop/rosetta/main/source/bin/score_jd2.linuxgccrelease \
+ -s 1QYS.pdb 3R2X.pdb 3TDM.pdb -ignore_unrecognized_res -out:pdb</code></pre></li>
+<li><p>In the directory, there should be three new PDBs, 1QYS_0001.pdb, 3R2X_0001.pdb, and 3TDM_0001.pdb. These correspond to the names of the input structures, with &quot;_0001&quot; added. Using PyMol or Chimera, compare these structures to the starting structures. Can you see where missing atoms were added, and where the unrecognized residues were removed?</p></li>
+<li><p>Open 1QYS.pdb and 1QYS_0001.pdb in a text editor and compare them side-by-side. Notice that the PDB header lines are gone. (Rosetta for the most part ignores these lines.) At the end of the file is now a table, listing a residue-by-residue breakdown of the scoring terms.</p>
+<ol style="list-style-type: decimal">
+<li><p>Which residue has the highest total score?</p></li>
+<li><p>Notice that the residue numbering differs in the score table versus in the ATOM lines and in PyMol. (For example, the first valine is residue 6 by PyMol, but residue 4 in the score table.) The numbering scheme in the score table is called &quot;pose numbering&quot; in Rosetta. It starts at 1 for the first residue in the file, and increments by one for each residue, regardless of gaps, missing density, or different chains. In contrast, the values reported by PyMol and Chimera are refered to as &quot;PDB numbering&quot; in Rosetta. These can start at any number, skip numbers, or even jump around in numbering. In addition, there is a chain letter associated with the PDB numbering. In this way you can have a residue 4 on chain A and another residue 4 on chain B. In pose numbering there is only ever a single residue 4. -- The presense or absence of the chain letter designation is a good indication as to which numbering scheme is being used. Different contexts in Rosetta may use one or the other to specify residues. If a chain letter is present, it's likely PDB numbering. If it's absent, it's likely pose numbering.</p></li>
+</ol></li>
+<li><p>Often it's helpful to renumber your PDBs so that PDB numbering and pose numbering are the same - some protocols in Rosetta actually require this. There is a Python script called clean_pdb.py which will both renumber your PDB, as well as remove any unrecognized (non-protein) residues. To use, give the PDB filename (which must be in all uppercase) without the &quot;.pdb&quot; extension, as well as the chain letters for the chains you want to extract (or ignorechain to get all chains).</p>
+<pre><code>~/rosetta_workshop/rosetta/tools/protein_tools/scripts/clean_pdb.py 1QYS A
+~/rosetta_workshop/rosetta/tools/protein_tools/scripts/clean_pdb.py 3TDM AB
+~/rosetta_workshop/rosetta/tools/protein_tools/scripts/clean_pdb.py 3R2X ignorechain</code></pre>
+<ul>
+<li>The &quot;-out:file:renumber_pdb&quot; option of JD2 can be used to get score_jd2 to renumber the output PDBs as well, though this will keep all the chains.</li>
+</ul></li>
+<li><p>Score the output structures (1QYS_A.pdb 3TDM_AB.pdb and 3R2X_ignorechain.pdb)</p>
+<ol style="list-style-type: decimal">
+<li><p>This time we use a text file which lists the filenames of the PDBs. The format is one PDB per line.</p>
+<pre><code>    cp ~/rosetta_workshop/tutorials/scoring_and_prep/inputs/cleaned_structures.txt .</code></pre></li>
+<li><p>Score the files using the &quot;-in:file:l&quot; (&quot;-l&quot;; PDB filename <strong>l</strong>ist file) to specify the list file. To separate out the scores, we specify the output scorefile name with &quot;-out:file:scorefile&quot;</p>
+<pre><code>    ~/rosetta_workshop/rosetta/main/source/bin/score_jd2.linuxgccrelease \
+    -l cleaned_structures.txt -out:pdb -out:file:scorefile cleaned.sc </code></pre></li>
+<li><p>Examine the ouput files ( 1QYS_A_0001.pdb 3TDM_AB_0001.pdb and 3R2X_ignorechain_0001.pdb ) in PyMol and a text editor. Note the renumbering.</p></li>
+</ol></li>
+<li><p>Sometimes it's helpful to get a more detailed analysis of the scoring of structures. There are two utilities in Rosetta for detailed breakdowns of scoring information</p>
+<ol style="list-style-type: decimal">
+<li><p>per_residue_energies gives the same information as in the table at the end of a PDB, but in a tabular format without the atom lines, which can be easier to deal with.</p>
+<pre><code>    ~/rosetta_workshop/rosetta/main/source/bin/per_residue_energies.linuxgccrelease \
+    -s 1QYS_A_0001.pdb -out:file:silent per_res.sc</code></pre></li>
+<li><p>residue_energy_breakdown decomposes the energy contributions further, into internal residue energies (onebody) as well as residue interaction energies.</p>
+<pre><code>    ~/rosetta_workshop/rosetta/main/source/bin/residue_energy_breakdown.linuxgccrelease \
+    -s 1QYS_A_0001.pdb -out:file:silent energy_breakdown.sc</code></pre></li>
+<li><p>The files are in whitespace separated tabular format, and can be read by many data processing programs, including spreadsheets.</p>
+<ol style="list-style-type: decimal">
+<li><p>Open the files in the Open Office spreadsheet program. It's easiest to launch it from the commandline:</p>
+<pre><code>ooffice -calc per_res.sc energy_breakdown.sc</code></pre></li>
+<li><p>In the import/formatting option window, make sure that you separate by space, and that you are merging delimiters.</p></li>
+<li><p>You can sort the table by using the sorting quick buttons, or by going to the data menu and selecting the sort entry.</p></li>
+<li><p>All energy values are negative better, so higher numbers are worse scores.</p></li>
+<li><p>From the per_res.sc file, which residue in 1QYS has the highest (worse) total energy (score)? Which has the worst steric clash score (fa_rep - the Lennard-Jones repulsive contribution). Which two residues have the worst internal conformation energy (fa_dun - derived from the rotamer probability)?</p></li>
+<li><p>From the energy_breakdown.sc file, which residue pair has the highest score in 1QYS? Which three pairs have the worst fa_rep score?</p></li>
+</ol></li>
+</ol></li>
+</ol></li>
+<li><p>Working with silent files</p>
+<p>Silent files are a Rosetta-specific file format. The benefit of this format is that they take up less space on disk than PDBs do, and can store a large number of structures in a single file. (Many filesystems have difficulties working with directories that contain thousands of files. Silent files allow you to simultaneously work with thousands of structures without encountering filesystem issues.)</p>
+<ol style="list-style-type: decimal">
+<li><p>Copy <strong>4TQ5_silent.out</strong> from the inputs directory to your working directory</p></li>
+<li><p>Open 4TQ5_silent.out in a text editor and take a brief look - this file is in the &quot;binary&quot; silent file format. (You don't need to understand ther details of the format.)</p></li>
+<li><p>Most applications (including the set of &quot;JD2&quot; applications) can read in silent files with -in:file:silent</p>
+<pre><code>~/rosetta_workshop/rosetta/main/source/bin/score_jd2.linuxgccrelease \
+-in:file:silent 4TQ5_silent.out -out:file:scorefile 4TQ5_silent.sc </code></pre></li>
+<li><p>Silent files contain scorelines from the application that produced them. You can extract these</p>
+<pre><code>grep SCORE 4TQ5_silent.out &gt; 4TQ5_silent.scorelines</code></pre>
+<p>The numbers in 4TQ5_silent.sc should be the same as for 4TQ5_silent.scorelines, as when the silent file was generated it was with the default talaris2013 scorefunction.</p></li>
+<li><p>There are different scorefunctions in Rosetta depending on the application and protocol. The talaris2013 scorefunction is the current default and works well for most cases, but you may need to specify a different scorefunction for different applications. For example, 4TQ5 is a membrane protein, so would be better scored using a membrane scorefunction. Here we use the &quot;membrane_highres_Menv_smooth&quot; scorefunction. This scorefunction requires additional information - a &quot;spanfile&quot; which specifies where the membrane is. The <strong>4TQ5.span</strong> file is provided for you in the inputs directory.</p>
+<pre><code>~/rosetta_workshop/rosetta/main/source/bin/score_jd2.linuxgccrelease \
+-in:file:silent 4TQ5_silent.out -score:weights membrane_highres_Menv_smooth \
+-in:file:spanfile 4TQ5.span -out:file:scorefile 4TQ5_membrane.sc</code></pre>
+<ul>
+<li><p>Note that the scores are different for the membrane scoring versus the default talaris2013 scoring.</p></li>
+<li><p>Most protocols can take alternative scorefunctions, although some may not have been adequately tested for use with membrane proteins, symmetric proteins, etc.</p></li>
+</ul></li>
+<li><p>The score_jd2 application can be used to convert silent files to PDBs. We'll specifically be extracting the four best scoring (lowest total_score) structures. We can do so with the -in:file:tags, which takes the names (tags) of the structures we want to extract. Keep in mind that rescoring added a &quot;_0001&quot; to the structure name, so the input tag should be without it</p>
+<pre><code>~/rosetta_workshop/rosetta/main/source/bin/score_jd2.linuxgccrelease \
+-in:file:silent 4TQ5_silent.out -score:weights membrane_highres_Menv_smooth \
+-in:file:spanfile 4TQ5.span -in:file:tags 4TQ5_0002 4TQ5_0007 4TQ5_0009 4TQ5_0019 \
+-out:pdb</code></pre>
+<ul>
+<li><p>You should get PDB structures 4TQ5_0002_0001.pdb 4TQ5_0007_0001.pdb 4TQ5_0009_0001.pdb and 4TQ5_0019_0001.pdb as output, which can be opened in a regular structure viewer.</p></li>
+<li><p>The option &quot;-no_nstruct_label&quot; can be used to keep Rosetta from adding &quot;_0001&quot; to the structure names.</p></li>
+<li><p>This conversion is general - you can convert multiple PDBs to silent files with &quot;-in:file:s&quot; and &quot;-out:file:silent&quot;, or combine multiple silent files with &quot;-in:file:silent&quot; and &quot;-out:file:silent&quot;</p></li>
+</ul></li>
+</ol></li>
+<li><p>Preparing structures with relax</p>
+<p>What you saw with the 1QYS residue scores - that starting structures have residues with very poor scores - is common with experimental structures, or structures prepared with other computational modeling software. This is because the Rosetta scorefunction can be sensitive to small changes in atom location. Small, sub-angstrom changes which do not substantially change the fit to experimental structural determination data can have big effects on Rosetta scoring. As these poor scoring regions can affect protocols, it is often useful to relax a structure into the Rosetta energy function.</p>
+<ol style="list-style-type: decimal">
+<li><p>Use the relax application to create a number of models relaxed into the Rosetta energy function:</p>
+<pre><code>~/rosetta_workshop/rosetta/main/source/bin/relax.linuxgccrelease \
+-s 1QYS_A_0001.pdb -nstruct 3</code></pre>
+<ul>
+<li>&quot;-nstruct&quot; specifies the number of structures to output.</li>
+</ul></li>
+<li><p>Open the relaxed structures (1QYS_A_0001_0001.pdb 1QYS_A_0001_0002.pdb and 1QYS_A_0001_0003.pdb) and the starting structure (1QYS_A_0001.pdb) in a structure viewer and compare them. You may want to use the alignment command to overlay the structures</p></li>
+<li><p>The loop region of residues 10-13 moves significantly (2-3 Angstroms). This may be due to a crystal contact that isn't being represented in the monomer form, or it may be an artifact of how the relax application works. If the structure of the backbone from the input structure is important to us, we can have relax restrain (&quot;constrain&quot; in Rosetta terminology) the backbone coordinates to their input values. By default, relax will reduce the influence of the constraints (ramp them down) as the protocol progresses. The option &quot;-relax:ramp_constraints false&quot; will keep the constraints on throughout the protocol.</p>
+<pre><code>~/rosetta_workshop/rosetta/main/source/bin/relax.linuxgccrelease -s 1QYS_A_0001.pdb \
+-relax:constrain_relax_to_start_coords -relax:ramp_constraints false -nstruct 3 \ 
+-out:prefix bb_</code></pre></li>
+<li><p>Open the output PDBs (bb_1QYS_A_0001_0001.pdb, bb_1QYS_A_0001_0002.pdb, and bb_1QYS_A_0001_0003.pdb) in a structure viewer and compare them to the starting structure (1QYS_A_0001.pdb). Notice how the backbone atoms stay more-or-less in the same place as the input structure, but how the sidechain atoms are free to move.</p></li>
+<li><p>If you want to preserve the coordinates of the sidechain atoms as well, the &quot;-relax:coord_constrain_sidechains&quot; option, in conjunction with the -relax:constrain_relax_to_start_coords option, will do that by restraining the positions of all the sidechain heavy atoms.</p>
+<pre><code>~/rosetta_workshop/rosetta/main/source/bin/relax.linuxgccrelease -s 1QYS_A_0001.pdb \
+-relax:constrain_relax_to_start_coords -relax:coord_constrain_sidechains \
+-relax:ramp_constraints false -nstruct 3 -out:prefix sc_</code></pre></li>
+<li><p>Rescore all the relaxed structures into a single scorefile.</p>
+<pre><code>~/rosetta_workshop/rosetta/main/source/bin/score_jd2.linuxgccrelease \
+-s 1QYS_A_0001.pdb 1QYS_A_0001_*.pdb bb_1QYS_A_0001_*.pdb sc_1QYS_A_0001_*.pdb \
+-out:file:scorefile relax_rescore.sc</code></pre></li>
+<li><p>Sort the structures by total score, and examine which runs gave the lowest energies, and by how much the energies were reduced in comparison to the starting structure.</p>
+<pre><code>sort -nk2 relax_rescore.sc | awk &#39;{print $2, $NF}&#39;</code></pre>
+<ul>
+<li>This sorts all the lines from the relax_rescore.sc file numerically with the sorting key being the second field, and then prints just the second and last entry on each line.</li>
+</ul></li>
+<li><p>Examine the contributions to the score for the lowest energy backbone restrained structure.</p>
+<pre><code>~/rosetta_workshop/rosetta/main/source/bin/residue_energy_breakdown.linuxgccrelease \
+-s bb_1QYS_A_0001_0001.pdb -out:file:silent relax_breakdown.sc</code></pre>
+<ol style="list-style-type: decimal">
+<li>Open the relax_breakdown.sc file with OpenOffice as before, and examine the energies. Which residue pair has the highest fa_rep score? How does that compare numerically to those for the structure before relax? Which residue has the worst fa_dun score? How does that compare numerically to those before relax?</li>
+</ol></li>
+</ol></li>
+<li><p>Computing other metrics.</p>
+<p>There are a number of other metrics which can be calculated on proteins besides scores. Many protocols will add relevant metrics to the scorefile that is output. Alternatively, you can calculate the metrics afterwards using analysis applications. The following are a few examples.</p>
+<ol style="list-style-type: decimal">
+<li><p>Evaluating interactions. The InterfaceAnalyzer application <a href="https://www.rosettacommons.org/docs/latest/application_documentation/analysis/interface-analyzer">https://www.rosettacommons.org/docs/latest/application_documentation/analysis/interface-analyzer</a> allows you to evaluation the interaction across an interface, for example, in protein-protein interactions.</p>
+<pre><code>~/rosetta_workshop/rosetta/main/source/bin/InterfaceAnalyzer.linuxgccrelease \
+-s 3R2X_ignorechain_0001.pdb -interface AB_C -out:file:score_only interface.sc \
+-compute_packstat </code></pre></li>
+<li><p>Custom metric calcuation. The RosettaScripts framework can be used as a custom metric calculation tool. Most RosettaScripts filters have an associated metric. (See <a href="https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/Filters/Filters-RosettaScripts">https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/Filters/Filters-RosettaScripts</a>) If the filter is used in the main protocol block, the calculated value for the final output PDB will be placed in the scorefile as the name of the filter. Adding &quot;confidence=0&quot; to the filters prevents them from acting as filters, leaving them with just their calculation function.</p>
+<ul>
+<li><p>We'll talk about RosettaScripts more later in the course.</p></li>
+<li><p><strong>metrics.xml</strong> and <strong>4TQ5.pdb</strong> as well as <strong>4TQ5_silent.out</strong> are provided for you in the inputs directory.</p>
+<pre><code>~/rosetta_workshop/rosetta/main/source/bin/rosetta_scripts.linuxgccrelease \
+-in:file:silent 4TQ5_silent.out -parser:protocol metrics.xml -in:file:native 4TQ5.pdb \
+-out:file:score_only metrics.sc </code></pre></li>
+</ul></li>
+</ol></li>
+</ol>
