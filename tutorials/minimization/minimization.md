@@ -169,7 +169,7 @@ As before, the `score_minwithcsts.sc` file contains the score of the minimized s
 
 Again, most of the new scores from the minimized-with-constraints structure are lower than those in the crystal structure. Notice also the addition of the coordinate constraint term to the list of energy terms for the newly minimized structure. 
 
-Comparing the minimized structure to the minimized-with-csts structure, we see an increase in total energy caused predominantly by differences in the fa_atr and fa_dun terms. (Why?) 
+Comparing the minimized structure to the minimized-with-csts structure, we see an increase in total energy caused predominantly by differences in the fa_atr and fa_dun terms. This comes from two sources.  First, we see that the coordinate constraint term itself adds a small positive value to the score, since mainchain heavyatoms have moved slightly from their starting coordinates.  Second, because the structure has not been allowed to move as far this time, minor clashes and imperfections do not resolve themselves as completely, resulting in a slightly higher score than before.  So there is a trade-off between keeping the structure close to the crystal structure and tunnelling down deeply to the nearest local energy minimum. 
 
 Now let's take a look at the minimized-with-csts structure to see how it compares to our previous structures.
 
