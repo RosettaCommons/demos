@@ -1,23 +1,24 @@
 # Fold tree
 
-In this tutorial we will learn about the concept of fold tree, internal coordinates, and how to use them wisely to obtain meaningfull outputs.
+In this tutorial you will learn about the concept of fold tree, internal coordinates, and how to use them wisely to obtain meaningfull outputs.
 
 #### Internal Coordinates
-If you open a PDB file and look at it, you can see that it has the information of all the atoms with their (x,y,z) coodrinates in the 3D space. When you want to move a protein, you can change all 3 coordinates of each atom. In other words, each atom has 3 degrees of freedom. However, 3 degrees of freedom is simply too much for our calculations. In order to make things simpler, Rosetta uses **internal coordinates** instead. You can imagin that another way of defining an atom uniquely is to use the bond, angle, and torsion of an atom with regards to its neighbor atoms. When you use bond, angle, and torsion angle values of residues, instead of the x,y,z values, to describe an atom, you are using its **internal coordinates**. 
+If you open a PDB file and look at it, you can see that it has the information of all the atoms with their (x,y,z) coodrinates in the 3D space. When you want to move a protein, you can change all 3 coordinates of each atom. In other words, each atom has 3 degrees of freedom. However, 3 degrees of freedom is simply too much for our calculations. In order to make things simpler, Rosetta uses **internal coordinates** instead. You can imagin that another way of defining an atom uniquely is to use the bond, angle, and torsion of it with regards to its neighbor atoms. When you use bond, angle, and torsion angle values of residues, instead of the x,y,z values, to describe an atom, you are using its **internal coordinates**. 
+
 In the internal coordinate world, you move objects by changing the bond, angle, and torsions, so there are again 3 degrees of freedom. However, within proteins and for most of the applications we are interested in, the bonds an the angles between atoms remain unchanged. So, the motions are mostly happening by a change in the torsion angles. Hence, we are reducing the degrees of freedom to 1.
 
 If you go to
 ```
 <path-to-Rosetta>/Rosetta/main/database/chemical/residue_type_sets/fa_standard/residue_types/l-caa
 ```
-you can find several [params] files for all 20 amino acids. Open one and look at it. The lines started with ICOOR_INTERNAL show the internal coordinates of the atoms in that residue (see [here](https://www.rosettacommons.org/docs/latest/rosetta_basics/file_types/Residue-Params-file) for details of what each column in ICOOR_INERNAL line means.
+you can find several [params](https://www.rosettacommons.org/docs/latest/rosetta_basics/file_types/Residue-Params-file) files for all 20 amino acids. Open one and look at it. The lines started with ICOOR_INTERNAL show the internal coordinates of the atoms in that residue (see [here](https://www.rosettacommons.org/docs/latest/rosetta_basics/file_types/Residue-Params-file) for details of what each column in ICOOR_INERNAL line means.
 
 #### The Lever Arm Effect
 When you change the torsion angles in a given sets of residues but you set the rest to not move, what will happen? Let's see the simple scheme below:
 
 ![Figure for changes in the torsion](https://github.com/RosettaCommons/demos/blob/hssnzdh2/parisa_XRW/tutorials/figures/small_moves.png)
 
-You can see that in order to change one specific torsion angle in the cyan residue, all of the atoms that are to the right of that change should all move. In other words, although they are held fixed "WITH RESPECT TO EACH OTHER", they can still move together to accomodate changes in the _downstrem_ cyan residue.
+You can see that in order to change one specific torsion angle in the cyan residue, all of the atoms that are to the right of that change should all move. In other words, although they are held fixed "WITH RESPECT TO EACH OTHER", they still move together to accommodate changes in the _downstream_ cyan residue.
 
 Now let's look at the same example, but with a small difference:
 
@@ -44,8 +45,11 @@ In your fold_tree folder, run the script using the command below:
 ```
 $> ../../../main/source/bin/rosetta_scripts.default.linuxgccrelease -in:file:s inputs/capsid.pdb -parser:protocol inputs/caps_relax1.xml -out:prefix test1_
 ```
+NOTE: you may need to change your executable from what is provided here depending on your compilation. Check [here].
+
 After 5-10 minutes, you can see that the output (test1_capsid_0001.pdb) is generated. 
-Now compare the native structure with the output. You can see that the N-terminal part has moved drastically compared to the original structure. If we align the N-terminal parts, you can see that the rest of the protein has moved drastically to accomodate changes in the small 20 residue N-terminal.
+Now compare the original structure with the output. You can see that the N-terminal part has moved drastically compared to the original structure. If we align the N-terminal parts, you can see that the rest of the protein has moved drastically to accomodate changes in the small 20 residue N-terminal.
+
 ![showing the monomer movement](https://github.com/RosettaCommons/demos/blob/hssnzdh2/parisa_XRW/tutorials/figures/ubq1_test1.png)
 
 Now, let's see what happens when we sweep the position of the downstream and upstream, telling Rosetta that movements should propagate from C to N terminal. This is shown in caps_tree2.ft file:
@@ -72,7 +76,7 @@ Let's see what happens if I relax the pose. In the ubq_relax1.xml [Rosetta scrip
 ```
 FOLD_TREE EDGE 1 76 -1 EDGE 76 77 1 EDGE 77 152 -1
 ```
-You can see that we have three **EDGEs**. The first one should be familiar. It says the first edge start from residue 1 and goes through residu 76 by covalent linkage (basically, chain A). The third one is doing the same thing but for the chain B.(Note that these are pose numberings. See [here]). Now let's look at the second edge. You can see that it goes from the last residue of chain A (76) to the first residue of chain B (77). This is not a covalent interaction but we want Rosetta to know these are part of the same complex and they should remain somewhat close. So, we connect this two with an imaginary link that we call a **JUMP**. Each jump is an edge on its own. Jumps are shown by positive numbers. The first jump is shown by 1 and the numbers go up for each jump.
+You can see that we have three **EDGEs**. The first one should be familiar. It says the first edge start from residue 1 and goes through residu 76 by covalent linkage (basically, chain A). The third one is doing the same thing but for the chain B.(Note that these are pose numberings. See [here]). Now let's look at the second edge. You can see that it goes from the last residue of chain A (76) to the first residue of chain B (77). This is not a covalent interaction but we want Rosetta to know these are part of the same complex and they should remain somewhat close. So, we connect this two with an imaginary link that we call a **JUMP**. Each jump is an edge by tiself. Jumps are shown by positive numbers. The first jump is shown by 1 and the numbers go up for each jump.
 
 Now let's relax our dimer using this default fold tree. Run this command in your fold-tree directory:
 
