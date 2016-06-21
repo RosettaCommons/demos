@@ -12,7 +12,7 @@ To demonstrate how to run the `relax` executable on an input structure, in your 
 
 	$>../../../main/source/bin/score_jd2.default.linuxclangrelease -s 1ubq.pdb -out:suffix _crystal @crystal_score_flags
 
-and note the score in the `score.sc` file. Now, run
+and note the score in the `score_crystal.sc` file. Now, run
 
 	$>../../../main/source/bin/relax.default.linuxclangrelease -s 1ubq.pdb -out:suffix _relaxed @general_relax_flags
 
@@ -27,13 +27,13 @@ where the contents of the `general_relax_flags` file are expanded below:
 
 These flags instruct Rosetta to run two separate relax trajectories on the input structure (`-nstruct 2`), to perform the relaxation algorithm with five cycles of sidechain repack and minimization (`-relax:range:cycles 5`), and to output the relaxed structures in a directory that is in this folder named `tutorial_output/` (`-out:path:pdb`) and the scorefile in a directory that is in this folder named `expected_output/` (`-out:path:score`).
 
-The previous command should have generate two structures (as per out `nstruct 2` command) in the `tutorial_output/` folder, namely `1ubq_relaxed_0001.pdb` and `1ubq_relaxed_0002.pdb`. It will also create a `score_relaxed.sc` file in the `expected_output/` directory. Open this score file and note the dramatic difference in score compared to the relatively minor difference in structure; this may be 300-500 REU depending on the success of the relaxation. In the first case, 1ubq.pdb was pulled directly from the [Protein Data Bank](http://www.rcsb.org/pdb/home/home.do) and optimized according to some crystallographic energy function. In the second, Rosetta has moved the protein until it is optimal according to its internal score function.  
+The previous command should have generate two structures (as per the `nstruct 2` command) in the `tutorial_output/` folder, namely `1ubq_relaxed_0001.pdb` and `1ubq_relaxed_0002.pdb`. It will also create a `score_relaxed.sc` file in the `expected_output/` directory. Open this score file and note the dramatic difference in score compared to the relatively minor difference in structure; this may be 300-500 REU depending on the success of the relaxation. In the first case, 1ubq.pdb was pulled directly from the [Protein Data Bank](http://www.rcsb.org/pdb/home/home.do) and optimized according to some crystallographic energy function. In the second, Rosetta has moved the protein until it is optimal according to its internal score function.  
 
-To further explore this, change "N" iteratively in the following command to 1 through 10
+To further explore this, change "N" iteratively in the following command to the integers between 1 and 10
 
 	>../../../main/source/bin/relax.default.linuxclangrelease -s 1ubq.pdb -out:suffix _N_relax_cycles -default_cycles N -nstruct 10 -out:path:pdb ./tutorial_output -out:path:score ./expected_output
 
-which will run the relax protocl between 1 and 10 cycles. Then, plot the relationship between cycle number and average score. You should see diminishing returns, particularly for very large N, as well as increasing divergence from the starting structure. Production runs generally include between 5 and 15 cycles of Relax; 5 is most often sufficient.
+which will run the relax protocol with 1 to 10 cycles. Then, plot the relationship between cycle number and average score. You should see diminishing returns, particularly for very large N, as well as increasing divergence from the starting structure. Production runs generally include between 5 and 15 cycles of Relax; 5 is most often sufficient.
 
 ## Modifying the scope of Relax
 
@@ -55,15 +55,13 @@ To explore how a movemap influences the `relax` application, run
 
 	$>../../../main/source/bin/relax.default.linuxclangrelease -s 1ubq.pdb @general_relax_flags -out:suffix _lever_arm -in:file:movemap lever_arm_movemap
 
-and observe that everything c-terminal to the region allowed to move has also moved. This is endemic to [movemaps] using [internal coordinates], and is called the [lever-arm effect]; while some protocols in Rosetta are written with this in mind, Relax allows lever-arm effects if not specifically prohibited from doing so within its MoveMap.
+and observe that everything C-terminal to the region allowed to move has also moved. This is endemic to [movemaps] using [internal coordinates], and is called the [lever-arm effect]; while some protocols in Rosetta are written with this in mind, Relax allows lever-arm effects if not specifically prohibited from doing so within its MoveMap.
 
-To demonstrate how these flags affect the final structure, run
+To demonstrate how the `relax:chi_move`, `relax:bb_move`, `relax:jump_move` flags affect the final structure, run
 
 	$>../../../main/source/bin/relax.default.linuxclangrelease -s 1ubq.pdb -relax:bb_move false -out:suffix _no_sidechain_motion @general_relax_flags
 
-and align the  to the original 1ubq.pdb. You should see a close alignment between the backbones before and after the run -- and a correspondingly higher final energy.
-
-
+and align one or both of the two output structures in `tutorial_output/` directory to the original 1ubq.pdb. You should see a close alignment between the backbones before and after the run -- and a correspondingly higher final energy.
 
 It can also be useful to disfavor dramatic movements in Relax without completely disallowing them. This may be done by adding constraints via
 
@@ -81,8 +79,8 @@ To demonstrate this, run
 
 and compare to the results of the original, unconstrained relax run.
 
-
 ###Restricting the sequence it can sample
+
 By default, Relax will not change the input sequence. It can be allowed to do so in a controlled way via [resfiles] and the options
 
 	-relax:respect_resfile -packing:resfile *resfile*
@@ -95,7 +93,7 @@ To demonstrate this, run
 and compare to 1ubq.pdb. Note that the two structures are different; these differences arise during the minimization step.
 
 ###Changing the behavior of constraints
-By default, Relax gradually decreases the weight of any constraints given as the run progresses in order to explore more space in which the constraints hold while also optimizing the final structure. This behavior may be deactivate with
+By default, Relax gradually decreases the weight of any constraints given as the run progresses in order to explore more space in which the constraints hold while also optimizing the final structure. This behavior may be deactivated with
 	-relax:ramp_constraints false
 if the constraints must be absolutely maintained. 
 
