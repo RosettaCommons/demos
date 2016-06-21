@@ -1,4 +1,8 @@
 #Constraints
+Written by Frank Teets
+Last Modified Jun 21 2016
+
+
 Many of the biological problems users wish to solve with Rosetta involve some biological or functional considerations that may not be reflected within a PDB file or evaluated by normal score functions. Constraints are a general way of scoring how well a structure adheres to these additional considerations; for example, one might wish to relax a structure with constraints in place to ensure that suspected disulfides are maintained.
 
 Constraints are written like so: a geometrical function is written that, in a perfect sequence, will return some value N. This value, together with the output of the function in the structure under consideration, are compared by some function, and the output of that function multiplied by the some scalar weight and added to the score.

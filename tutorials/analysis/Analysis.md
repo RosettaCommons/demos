@@ -42,7 +42,7 @@ The models that Rosetta produces are in pdb file format. If you open the file, y
  | THR:NtermP[...] | scores for residue #1 (N-terminus, threonine)   |
  | VAL_2 | scores for residue #2 (here a Valine)
  
-* Extract the total score for each individual residue:  
+* Extract the total score for each individual residue using [egrep](http://www.cs.columbia.edu/~tal/3261/fall07/handout/egrep_mini-tutorial.htm):  
 
         $ egrep '[^A-Z]*_[0-9]+\s' 1ubq_0001.pdb | cut -d'_' -f2 | awk '{print $1 "\t" $NF}' > total_score_per_res.dat   
  This selects all lines that contains the pattern "Letters_[some-number] ", then gets rid of everything before the underscore and finally prints out the first field (the number after _), a tab, and the very last field (here: the total_score)

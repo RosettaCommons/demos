@@ -1,4 +1,6 @@
 # Working With Rosetta
+Written by Frank Teets
+Last Modified Jun 21 2016
 ##Required Software
 Rosetta relies upon a number of additional programs to function. In order to productively use Rosetta, you must have:
 
