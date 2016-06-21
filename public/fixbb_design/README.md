@@ -9,7 +9,7 @@ is very simple and has few options.
 
         <path_to_Rosetta_directory>/main/source/bin/fixbb.default.linuxgccrelease -in:file:s 1l2y.pdb >log.txt &
 
-  The following files should be produced:
+  The above should take on the order of ten seconds to run.  During that time, you will be able to use the command prompt.  The following files should be produced:
 
         1l2y_0001.pdb
         log.txt
