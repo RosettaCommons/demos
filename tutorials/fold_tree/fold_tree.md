@@ -52,6 +52,8 @@ Now compare the original structure with the output. You can see that the N-termi
 
 ![showing the monomer movement](https://github.com/RosettaCommons/demos/blob/hssnzdh2/parisa_XRW/tutorials/figures/ubq1_test1.png)
 
+The original structure is in grey and the test1 structure is shown in green.
+
 Now, let's see what happens when we sweep the position of the downstream and upstream, telling Rosetta that movements should propagate from C to N terminal. This is shown in caps_tree2.ft file:
 ```
 FOLD_TREE EDGE 133 1 -1
@@ -60,11 +62,13 @@ You can see that the fold tree is directional.
 
 let's run one round of relax on the capsid.pdb structure but this time with the new fold tree:
 ```
-$> ../../../main/source/bin/rosetta_scripts.default.linuxgccrelease -in:file:s inputs/capsid.pdb -parser:protocol inputs/caps_relax1.xml -out:prefix test1_
+$> ../../../main/source/bin/rosetta_scripts.default.linuxgccrelease -in:file:s inputs/capsid.pdb -parser:protocol inputs/caps_relax2.xml -out:prefix test2_
 ```
 This shouldn't take longer than 10 min. Look at the test2_capsid_0001.pdb output structure and compare it with both the capsid.pdb and the test1_capsid_0001.pdb structure. (the two outpus are provided in the outputs directory). You can see now that the movements in the protein are much slighter. This is because now the C-terminal parts are downstream of where the changes are happening and are not moving as a result of movements in the N-terminal.
 
 ![showing monomer improved](https://github.com/RosettaCommons/demos/blob/hssnzdh2/parisa_XRW/tutorials/figures/ubq_test2.png)
+
+The original structure is in grey and the test2 structure is shown in cyan.
 
 So if you have a protein with very flexible N-terminal that will move a lot during your run, you may want to change the fold tree.
 
@@ -87,13 +91,17 @@ After 5-10 min, you should have an output called test1_ubq_dimer_0001.pdb. Take 
 
 ![dimer with default fold_tree](https://github.com/RosettaCommons/demos/blob/hssnzdh2/parisa_XRW/tutorials/figures/ubq_dimer1.png)
 
+The original structure is in grey and the test1 structure is shown in green.
+
 Now, let's see how we can fix it. I know based on my experiments that the Val71 in chain A and Val146 in chain B are important in the interface formation and I want to make sure they stay close during relaxation. So, I want to re-define my fold tree so that residues 71 and 146 are the immediate parents, or the most downstream. Take a look at the modified fold tree (inputs/ubq_tree2.ft)
 ```
 FOLD_TREE EDGE 71 1 -1 EDGE 71 76 -1 EDGE 71 146 1 EDGE 146 77 -1 EDGE 146 152 -1
 ```
-You can see that now I have multiple **EDGEs**. Chain A is now defined by two edge: the first one goes through from residue 71 all the way back to N-terminal of chain A and the second 1 goes from residue 71 to C-terminal of chain A. The **JUMP** is now from 71 to 146, the two parents. And then the chain B is also defined by two edges now. The scheme below shows how the two fold tree differ:
+You can see that now I have multiple **EDGEs**. Chain A is now defined by two edges: the first one goes through from residue 71 all the way back to N-terminal of chain A and the second 1 goes from residue 71 to C-terminal of chain A. The **JUMP** is now from 71 to 146, the two parents. And chain B is also defined by two edges. The scheme below shows how the two fold tree differ:
 
-![scheme of fold tree](https://github.com/RosettaCommons/demos/blob/hssnzdh2/parisa_XRW/tutorials/figures/FT_scheme.png)
+![scheme of fold tree](https://github.com/RosettaCommons/demos/blob/hssnzdh2/parisa_XRW/tutorials/figures/FT_scheme.png) 
+
+The dashed red lines show the jumps and the arrows show the direction of each edge.
 
 Now, let's run again, but this time with the new fold tree we just defined:
 ```
@@ -102,6 +110,8 @@ $> ../../../main/source/bin/rosetta_scripts.default.linuxgccrelease -s inputs/ub
 Take a look at the test2_ubq_dimer_0001.pdb output and compare it with the original one. You can see that the drastic movements of chain B due C-terminal relaxation of chain A is now diminished.
 
 ![dimer with modified fold tree](https://github.com/RosettaCommons/demos/blob/hssnzdh2/parisa_XRW/tutorials/figures/ubq_dimer2.png)
+
+The original structure is in grey and the test2 structure is shown in cyan.
 
 #### Final Points
 Now you know what a fold tree is and how it is used to control the movements in your structure and how to control it. You can use fold tree to also mention how different chains in a structure are supposed to move with respect to each other. For example, if your chain C is between chain A and B in a complex and its movements should affect chain B, you can use a fold tree that places chain C downstream of chain B. The same principles appply for any chains, including a ligand or a metal. So, you can control the behavior of their movements by applying different fold trees. If you are intrested in fold tree set up for a symmetruc pose, please check [here](https://www.rosettacommons.org/docs/latest/rosetta_basics/structural_concepts/symmetry). Please note that a fold tree should contain NO CYCLEs. In other words, you cannot define a residue both as upstream and downstream of other set of residues. 
