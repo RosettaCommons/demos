@@ -16,7 +16,7 @@ In Rosetta, one of the simplest ways in which to move a structure to its nearest
 > **In general, minimization is determinisitic, unlike methods that depend on Monte Carlo searches.  There is generally little advantage to repeating a minimization trajectory many times; there should be no diversity to the ensemble produced.**  This being said, minimization *is* sensitive to small numeric precision differences from platform to platform, or even from compiler to compiler.
 
 ## Goals
-In this tutorial, you will learn to use one of the many minimization algorithms in three different ways, first by allowing all residues in the structure to move during the minimation and then by using two methods that allow only a subset of the degrees of freedom (DOFs) to be sampled. Specifically, we will:
+In this tutorial, you will learn to use one of the many minimization algorithms in three different ways, first by allowing all residues in the structure to move during the minimation and then by using two methods that allow only a subset of the degrees of freedom (DOFs) to change. Specifically, we will:
 * Learn to run the `score` and `minimize` executables via the command line.
 * Create and utilize a **constraints file** to prevent the movement of CA atoms from ocurring in part of the structure.
 * Create and utilize a **move map** to control the degrees of freedom allowed to move during the minimization.
@@ -36,7 +36,7 @@ $> <path/to/Rosetta/bin/>score.default.linuxgccrelease -s 3hon.pdb
 
 This command will output a `default.sc` file, which contains the Rosetta score for this conformation. Inside this file, we see:
 
-![default scorefile](https://github.com/RosettaCommons/demos/blob/XRW2016_kmb/tutorials/default_score.png)
+![default scorefile](default_score.png)
 
 The first line of this file is the header line that tells us which columns correspond to which score terms.
 
@@ -96,15 +96,15 @@ The `score.sc` file contains the new scores for the minimized structure. Open th
 
 Note that the exact values that you obtain might be slightly different (+/- 0.5 energy units) from what's listed above: tiny numerical precision differences from platform to platform can accumulate over the trajectory to produce noticeable (but still small) differences in the final output.  What's important is that most of the score terms have gone down in value (which is good!). But how has the minimization affected the structure? Open the `3hon_0001.pdb` to see what has changed.
 
-![3hon minimized](https://github.com/RosettaCommons/demos/blob/XRW2016_kmb/tutorials/3hon_min_on_xtal.png)
+![3hon minimized](3hon_min_on_xtal.png)
 
 The minimized structure (in green) has moved out of alignment with the native structure (in cyan), so first let's align the two structures. If you are using PyMOL, type `align 3hon_0001, 3hon` and hit `Enter`.
 
-![3hon minimized_aligned](https://github.com/RosettaCommons/demos/blob/XRW2016_kmb/tutorials/3hon_minaligned_on_xtal.png)
+![3hon minimized_aligned](3hon_minaligned_on_xtal.png)
 
 Now that the structures are aligned, notice that the last nine residues of the loop region have moved quite significantly from their original conformation. Furthermore, most of the minimized rotamers are no longer in their native conformations.
 
-![3hon minimized_aligned sticks](https://github.com/RosettaCommons/demos/blob/XRW2016_kmb/tutorials/3hon_minaligned_on_xtal_sticks.png)
+![3hon minimized_aligned sticks](3hon_minaligned_on_xtal_sticks.png)
 
 Sometimes it may be undesirable to allow such large movements in the starting conformation. To this end, we can use minimization with constraints to minimize our input structure in which movements of certain atoms will be penalized by the score function.
 
@@ -141,7 +141,7 @@ $> <path/to/Rosetta/bin/>minimize.cc @minwithcsts_flags
 
 This time, look for a few lines coming from the `core.scoring.constraints` tracers in the log output. They should look similar to this (though again, numeric differences are possible from platform to platform):
 
-![mincsts log](https://github.com/RosettaCommons/demos/blob/XRW2016_kmb/tutorials/minwithcsts.png)
+![mincsts log](minwithcsts.png)
 
 These lines indicate that our constraints were read and applied to the pose. If the executable ended without errors and generated a `3hon_minwithcsts_0001.pdb` file as well as a `score_minwithcsts.sc` file, then you have succesfully run minimization with coordinate constraints.
 
@@ -169,26 +169,27 @@ As before, the `score_minwithcsts.sc` file contains the score of the minimized s
 
 Again, most of the new scores from the minimized-with-constraints structure are lower than those in the crystal structure. Notice also the addition of the coordinate constraint term to the list of energy terms for the newly minimized structure. 
 
-Comparing the minimized structure to the minimized-with-csts structure, we see an increase in total energy caused predominantly by differences in the fa_atr and fa_dun terms. (Why?) 
+Comparing the minimized structure to the minimized-with-csts structure, we see an increase in total energy caused predominantly by differences in the fa_atr and fa_dun terms. This comes from two sources.  First, we see that the coordinate constraint term itself adds a small positive value to the score, since mainchain heavyatoms have moved slightly from their starting coordinates.  Second, because the structure has not been allowed to move as far this time, minor clashes and imperfections do not resolve themselves as completely, resulting in a slightly higher score than before.  So there is a trade-off between keeping the structure close to the crystal structure and tunnelling down deeply to the nearest local energy minimum. 
 
 Now let's take a look at the minimized-with-csts structure to see how it compares to our previous structures.
 
 Opening the `3hon_minwithcsts_0001.pdb` file and comparing it to the crystal structure,
 
-![3hon mincsts](https://github.com/RosettaCommons/demos/blob/XRW2016_kmb/tutorials/3hon_minwithcsts_onxtal.png)
+![3hon mincsts](3hon_minwithcsts_onxtal.png)
 
 we immediately see little to no movement in the position of the nine C-terminal CA atoms.
 
-In some cases, the user may want to prevent the internal geometry of certain residues from moving during minimization, rather than the XYZ coordinates of the atoms. To disallow movements in backbone phi/psi angles and/or sidechain chi angles, we can supply the minimizer with a MoveMap that specifies which of these degrees of freedom are allowed to be sampled.
+In some cases, the user may want to prevent the internal geometry of certain residues from moving during minimization, rather than the XYZ coordinates of the atoms. To disallow movements in backbone phi/psi angles and/or sidechain chi angles, we can supply the minimizer with a MoveMap that specifies which of these degrees of freedom are allowed to change.
 
 ## How-To: Minimization with a MoveMap
 
-### The [MoveMap](https://www.rosettacommons.org/docs/wiki/rosetta_basics/structural_concepts/Rosetta-overview#scoring_movemap)
-Certain protocols accept a user-defined move map file that tells the algorithm what torsion angles and rigid-body degrees of freedom (DOFs) are allowed to move. For example, one may not want to move highly-conserved sidechains in modeling applications, or one may want to preserve certain interactions in design applications.
+#### The MoveMap
 
-In the context of the minimizer, a move map allows the user to specify if the backbone (BB) torsions angles (phi, psi) or the sidechain torsions angles (CHI) are allowed to be moved during the minimization of the energy function. In addition, if the input structure has more than one chain (separated by one or more JUMPS), the move map can also specify if rigid-body movements between the different chains are allowed.
+The [movemap](https://www.rosettacommons.org/docs/latest/rosetta_basics/structural_concepts/Rosetta-overview#scoring_movemap) is an important concept in Rosetta minimization.  It allows users to control what degrees of freedom can change during minimization, and what degrees of freedom are fixed. For example, one may not want to move highly-conserved sidechains in modeling applications, or one may want to preserve certain interactions in design applications.  Certain protocols that call the Rosetta minimizer accept a user-defined move map file.
 
-##### Caveat: Even if a residue's backbone and sidechain torsion movements are turned off in a move map, its relative position with respect to other residues may still change depending on the motion of residues upstream in the FoldTree.
+In the context of the minimizer, a move map allows the user to specify whether the backbone (BB) torsions angles (phi and psi, in the case of α-amino acid residues) and/or the sidechain torsions angles (CHI) are allowed to be moved during the minimization of the energy function. In addition, if the input structure has more than one chain (separated by one or more *JUMPS*, or rigid-body transformations), the move map can also specify whether rigid-body movements between the different chains are allowed.
+
+> **Caveat: Even if a residue's backbone and sidechain torsion movements are turned off in a move map, its relative position with respect to other residues may still change depending on the motion of residues upstream in the FoldTree.**
 
 #### Description of the move map file format
 Each line in the move map file identifies a jump, residue, or residue range, followed by the allowed degrees of freedom. These entities may be specified as follows:
@@ -275,12 +276,12 @@ The total score of the minimized-with-movemap structure is lower still than the 
 
 Let's open the minimized-with-movemap structure and compare it visually to the crystal structure.
 
-![3hon minmm](https://github.com/RosettaCommons/demos/blob/XRW2016_kmb/tutorials/3hon_minwithmm_xtal.png)
+![3hon minmm](3hon_minwithmm_xtal.png)
 
 
 After aligning the minimized-with-movemap structure to the crystal structure as a whole, it appears that the nine C-terminal residues have moved. However, when we align only the nine C-terminal residues against each other, it becomes clear that the minimizer has not changed the backbone or sidechain angles:
 
-![3hon minmm](https://github.com/RosettaCommons/demos/blob/XRW2016_kmb/tutorials/3hon_minwithmm_9resicterm.png)
+![3hon minmm](3hon_minwithmm_9resicterm.png)
 
 #### This is an important point to reiterate: The movemap can prevent internal geometries from changing, but not necessarily the global position of the residues.
 
