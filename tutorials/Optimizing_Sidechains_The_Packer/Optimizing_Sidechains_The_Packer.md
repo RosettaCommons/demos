@@ -20,15 +20,15 @@ The tutorial also introduces:
 
 ## The problem of optimizing side-chains
 
-A common task in Rosetta is the optimization of side-chains.  We might think about the problem as follows: let's suppose that we have a structure (which we will call the *pose*) with a fixed backbone conformation.  At each position in the structure, we have a list of discrete possibilities (which we term *rotamers*) for the side-chain, and we would like to select one rotamer for each position such that the combination of rotamers represents the lowest-energy solution.  This is the problem solved by the packer.
+A common task in Rosetta is the optimization of side-chains.  We might think about the problem as follows: let's suppose that we have a structure (which we will call the *pose*) with a fixed backbone conformation.  At each position in the structure, we have a list of discrete possibilities for the side-chain, which we call *rotamers*, where a rotamer is a particular conformation of a particular residue type's side-chain.  We would like to select one rotamer for each position such that the combination of rotamers represents the lowest-energy solution.  This is the problem solved by the packer.
 
-This problem is actually quite a difficult one: given N possibilities at each position in an M-residue protein, there are N to the power of M possibilities.  This rapidly becomes an astronomical number of possibilities -- for example, 3 rotamers at each of 100 positions would be about 5x10<sup>47</sup> possible combinations.  This makes exhastive enumeration impossible.  To solve this problem, the packer uses Monte Carlo methods (discussed in detail further on).  This means that the packer is stochastic, and that the solution returned, while likely to be a *good* solution, is not guaranteed to be the *best* solution.
+This problem is actually quite a difficult one: given N possibilities at each position in an M-residue protein, there are N to the power of M possibilities.  This rapidly becomes an astronomical number of possibilities -- for example, 3 rotamers at each of 100 positions would be about 5x10<sup>47</sup> possible combinations.  This makes exhastive enumeration impossible.  To solve this problem, the packer uses Monte Carlo methods (discussed in detail further on).  This means that the packer is stochastic, that it never comes close to exhaustively exploring the search space in any but the smallest of packer problems, and that the solution returned, while likely to be a *good* solution, is not guaranteed to be the *best* solution.
 
 > **Repeated packer runs are likely to yield a variety of similar solutions near the global optimum; none of these will necessarily *be* the best possible solution.**
 
 ## Invoking the packer through the *fixbb* application
 
-To illustrate what the packer does, let's run it.  The simplest way to run the packer is by running the Rosetta *fixbb* application: its sole *raison d'être* is to call the packer.  Navigate to the demos/public/fixbb directory, and run the following:
+To illustrate what the packer does, let's run it.  The simplest way to run the packer is by running the Rosetta *fixbb* application: its sole *raison d'être* is to call the packer on an input pose.  In a terminal, navigate to the demos/public/fixbb directory, and run the following:
 
 ```
 <path_to_Rosetta_directory>/main/source/bin/fixbb.default.linuxgccrelease -in:file:s 1l2y.pdb -in:file:fullatom -resfile resfile.txt -nstruct 5 >log.txt 2>err.txt &
