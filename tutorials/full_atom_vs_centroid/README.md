@@ -14,7 +14,7 @@ Rosetta uses two primary representations while working with protein structures â
 * How to convert your structure from one representation to the other   
 * How to identify when a protocol requires a particular representation and you have provided the other one
 
-Need for a reduced represenation
+Need for a reduced representation
 --------------------------------
 In an ideal world with infinite time and computer power, we could perform all of our simulations with all atoms. In practice, trying to perform extensive backbone sampling while including all side chain atoms is impractical at best.
 
@@ -108,11 +108,11 @@ ATOM     13  CEN ILE A   4       1.064  16.400  14.140  1.00  0.00           X
 ATOM     14  H   ILE A   4      -0.728  17.411  16.816  1.00  0.00           H   
 ...
 ```
-The full PDBs are available in `Rosetta/demos/tutorials/full_atom_vs_centroid/input_files`.
+The full PDBs are available at `<path_to_Rosetta_directory>/demos/tutorials/full_atom_vs_centroid/input_files`.
 
 Navigating to the Demos
 -----------------------
-The demos are available at: `Rosetta/demos/tutorials/full_atom_vs_centroid`. All demo commands listed in this tutorial should be executed when in this directory. All the demos here use the `linuxgccrelease` binary. You may be required to change it to whatever is appropriate given your operating system and compiler.
+The demos are available at `<path_to_Rosetta_directory>/demos/tutorials/full_atom_vs_centroid`. All demo commands listed in this tutorial should be executed when in this directory. All the demos here use the `linuxgccrelease` binary. You may be required to change it to whatever is appropriate given your operating system and compiler.
 
 Using the wrong representation
 ------------------------------
@@ -176,7 +176,7 @@ Converting from one representation to the other
 -----------------------------------------------
 Unfotunately, there is not a dedicated executable to switch one representation to the other. Instead, in this section, we will exploit the automatic residue building functionality of the scoring protocol to convert from centroid to full atom. To convert full atom to centroid, we will write a short XML script using [RosettaScripts](https://www.rosettacommons.org/demos/latest/tutorials/rosetta_scripting/README).
 
->Converting from full atom to centroid and back will not give you the same structure as sidechain building in Rosetta is not deterministic.
+>Converting from full atom to centroid and back will not give you the same structure as sidechain building in Rosetta is not deterministic. The vice-versa should return the same structure.
 
 ###Converting from centroid to full atom
 As we discussed in the section above, if you provide a centroid input to the default [scoring protocol](https://www.rosettacommons.org/demos/latest/tutorials/scoring/README), it automatically builds the side chains for scoring. This funcunality can be exploited to output a full atom PDB like the following:
@@ -185,7 +185,13 @@ As we discussed in the section above, if you provide a centroid input to the def
     
 This should produce a full atom file  `<path_to_Rosetta_directory>/demos/tutorials/full_atom_vs_centroid/output_files/1qys_centroid_0001.pdb`
 
-###Converting from centroid to full atom
+(The file has the word `centroid` in it because the input file did. For output file naming, Rosetta adds suffixes to input file names.)
+
+Compare this to the pdb `<path_to_Rosetta_directory>/demos/tutorials/full_atom_vs_centroid/output_files/expected_output/1qys_centroid_0001.pdb`. You will notice that the files have different side chain orientations, but the same backbone atom positions.
+
+This can also be accomplished by using [RosettaScripts](https://www.rosettacommons.org/demos/latest/tutorials/rosetta_scripting/README) as described in the next section.
+
+###Converting from full atom to centroid
 To convert a full atom pdb to centroid, we need to interface with Rosetta at a level deeper than any executable will allow us to do. The simplest way to do this is to write a script using [RosettaScripts](https://www.rosettacommons.org/demos/latest/tutorials/rosetta_scripting/README). The following XML script calls an internal Rosetta class called _SwitchResidueTypeSetMover_ and asks it to convert the structure to centroid: 
 
 ```html
@@ -210,3 +216,5 @@ This can be found at `<path_to_Rosetta_directory>/demos/tutorials/full_atom_vs_c
 
 
 This should produce a centroid file  `<path_to_Rosetta_directory>/demos/tutorials/full_atom_vs_centroid/output_files/1qys_0001.pdb`
+
+Compare this to the pdb `<path_to_Rosetta_directory>/demos/tutorials/full_atom_vs_centroid/output_files/expected_output/1qys_0001.pdb`. The files should be exactly the same.
