@@ -16,14 +16,14 @@ Rosetta uses two primary representations while working with protein structures �
 
 Need for a reduced representation
 --------------------------------
-In an ideal world with infinite time and computer power, we could perform all of our simulations with all atoms. In practice, trying to perform extensive backbone sampling while including all side chain atoms is impractical at best.
+In an ideal world with infinite time and computer power, we could perform all of our simulations with all atoms. In practice, trying to perform extensive backbone sampling while including all sidechain atoms is impractical at best.
 
 The first problem is that having all atoms is expensive, because calculating interactions between all atom pairs grows rapidly (n<sup>2</sup>) with the number of atoms. The bigger problem is that fully atomic conformational space is _very rugged_, so most moves are rejected by Monte Carlo.
 
 Centroid representation
 -----------------------
 
-To get around this problem, poses are often converted into centroid mode for portions of a protocol that require extensive sampling (for example, the initial stages of [ab initio structure prediction](https://www.rosettacommons.org/demos/latest/public/abinitio/README)). In centroid mode, the backbone remains fully atomic, but the representation of each side chain is simplified to a single _pseudo-atom_ of varying size. For protein backbones, this representation preserves five backbone atoms for each amino acid: nitrogen (N), the alpha carbon (CA), the carbonyl carbon (C), the carbonyl oxygen (O), and the polar hydrogen on nitrogen. The side chain is replaced by the `CEN` atom whose radius and properties (polarity, charge, etc.) are determined by the residue's identity.
+To get around this problem, poses are often converted into centroid mode for portions of a protocol that require extensive sampling (for example, the initial stages of [ab initio structure prediction](https://www.rosettacommons.org/demos/latest/public/abinitio/README)). In centroid mode, the backbone remains fully atomic, but the representation of each sidechain is simplified to a single _pseudo-atom_ of varying size. For protein backbones, this representation preserves five backbone atoms for each amino acid: nitrogen (N), the alpha carbon (CA), the carbonyl carbon (C), the carbonyl oxygen (O), and the polar hydrogen on nitrogen. The sidechain is replaced by the `CEN` atom whose radius and properties (polarity, charge, etc.) are determined by the residue's identity.
 
 Centroid score function
 ------------------------
@@ -41,7 +41,7 @@ Owing to the primitive scoring, this has a disadvantage in terms of interpreting
 
 Returning to the full atom representation
 -----------------------------------------
-After large-scale sampling in centroid mode, poses are generally converted back to their all-atom representation for refinement, which generally entails some combination of side chain repacking and minimization. This allows Rosetta to more accurately score interactions between side chains and other finer details of the protein's structure.
+After large-scale sampling in centroid mode, poses are generally converted back to their all-atom representation for refinement, which generally entails some combination of sidechain repacking and minimization. This allows Rosetta to more accurately score interactions between sidechains and other finer details of the protein's structure.
 
 Example
 -------
@@ -121,7 +121,7 @@ The following demo runs the [scoring protocol](https://www.rosettacommons.org/de
 
     $> <path_to_Rosetta_directory>/main/source/bin/score_jd2.linuxgccrelease @flag_cen_for_fa
 
-If we provide a centroid pdb input to a protocol that expects a full atom input, typically, the program does not crash. Instead, Rosetta first discards the centroid psedu-atoms and displays the following warnings:
+If we provide a centroid PDB input to a protocol that expects a full atom input, typically, the program does not crash. Instead, Rosetta first discards the centroid psedu-atoms and displays the following warnings:
 
 ```html
 ...
@@ -156,7 +156,7 @@ core.pack.pack_missing_sidechains: packing residue number 2 because of missing a
 The following demo runs the [scoring protocol](https://www.rosettacommons.org/demos/latest/tutorials/scoring/README) with an option to score the structure assuming it to be in centroid, but the input PDB supplied is full atom.
 
     $> <path_to_Rosetta_directory>/main/source/bin/score_jd2.linuxgccrelease @flag_fa_for_cen
-If we provide a full atom pdb input to a protocol that expects a centroid input, typically the program does not stop. Instead, Rosetta first discards all sidechain atoms beyond C<sub>β</sub> and displays the following warnings:
+If we provide a full atom PDB input to a protocol that expects a centroid input, typically the program does not stop. Instead, Rosetta first discards all sidechain atoms beyond C<sub>β</sub> and displays the following warnings:
 ```html
 ...
 core.io.pose_from_sfr.PoseFromSFRBuilder: [ WARNING ] discarding 9 atoms at position 1 in file input_files/1qys.pdb. Best match rsd_type:  ASP:NtermProteinFull
@@ -179,7 +179,7 @@ Unfotunately, there is not a dedicated executable to switch one representation t
 >Converting from full atom to centroid and back will not give you the same structure as sidechain building in Rosetta is not deterministic. The vice-versa should return the same structure.
 
 ###Converting from centroid to full atom
-As we discussed in the section above, if you provide a centroid input to the default [scoring protocol](https://www.rosettacommons.org/demos/latest/tutorials/scoring/README), it automatically builds the side chains for scoring. This funcunality can be exploited to output a full atom PDB like the following:
+As we discussed in the section above, if you provide a centroid input to the default [scoring protocol](https://www.rosettacommons.org/demos/latest/tutorials/scoring/README), it automatically builds the sidechains for scoring. This funcunality can be exploited to output a full atom PDB like the following:
 
     $> <path_to_Rosetta_directory>/main/source/bin/score_jd2.linuxgccrelease @flag_from_cen_to_fa
     
@@ -187,12 +187,12 @@ This should produce a full atom file  `<path_to_Rosetta_directory>/demos/tutoria
 
 (The file has the word `centroid` in it because the input file did. For output file naming, Rosetta adds suffixes to input file names.)
 
-Compare this to the pdb `<path_to_Rosetta_directory>/demos/tutorials/full_atom_vs_centroid/output_files/expected_output/1qys_centroid_0001.pdb`. You will notice that the files have different side chain orientations, but the same backbone atom positions.
+Compare this to the PDB `<path_to_Rosetta_directory>/demos/tutorials/full_atom_vs_centroid/output_files/expected_output/1qys_centroid_0001.pdb`. You will notice that the files have different sidechain orientations, but the same backbone atom positions.
 
 This can also be accomplished by using [RosettaScripts](https://www.rosettacommons.org/demos/latest/tutorials/rosetta_scripting/README) as described in the next section.
 
 ###Converting from full atom to centroid
-To convert a full atom pdb to centroid, we need to interface with Rosetta at a level deeper than any executable will allow us to do. The simplest way to do this is to write a script using [RosettaScripts](https://www.rosettacommons.org/demos/latest/tutorials/rosetta_scripting/README). The following XML script calls an internal Rosetta class called _SwitchResidueTypeSetMover_ and asks it to convert the structure to centroid: 
+To convert a full atom PDB to centroid, we need to interface with Rosetta at a level deeper than any executable will allow us to do. The simplest way to do this is to write a script using [RosettaScripts](https://www.rosettacommons.org/demos/latest/tutorials/rosetta_scripting/README). The following XML script calls an internal Rosetta class called _SwitchResidueTypeSetMover_ and asks it to convert the structure to centroid: 
 
 ```html
 <ROSETTASCRIPTS>
@@ -217,4 +217,4 @@ This can be found at `<path_to_Rosetta_directory>/demos/tutorials/full_atom_vs_c
 
 This should produce a centroid file  `<path_to_Rosetta_directory>/demos/tutorials/full_atom_vs_centroid/output_files/1qys_0001.pdb`
 
-Compare this to the pdb `<path_to_Rosetta_directory>/demos/tutorials/full_atom_vs_centroid/output_files/expected_output/1qys_0001.pdb`. The files should be exactly the same.
+Compare this to the PDB `<path_to_Rosetta_directory>/demos/tutorials/full_atom_vs_centroid/output_files/expected_output/1qys_0001.pdb`. The files should be exactly the same.
