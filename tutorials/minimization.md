@@ -20,7 +20,7 @@ In this tutorial, you will learn to use one of the many minimization algorithms,
 
 ### Analyzing the input structure
 
-Take a look at the crystal structure file `3hon.pdb` in your favorite PDB Viewer (eg. PyMOL). This structure was taken directly from the RCSB PDB and contains many physical _errors_. 
+Take a look at the crystal structure file `3hon.pdb` in your favorite PDB Viewer (eg. PyMOL). This structure was taken directly from the RCSB PDB and contains many physical "errors". 
 
 Let's get an initial score for this conformation. In your command line, type:
 
@@ -28,9 +28,9 @@ Let's get an initial score for this conformation. In your command line, type:
 $> score.default.linuxgccrelease -database <database> -s 3hon.pdb
 ```
 
-This command will output a `default.sc` file, which contains the Rosetta score for this conformation. 
+This command will output a `default.sc` file, which contains the Rosetta score for this conformation. Inside this file, we see:
 
-[picture]
+![default scorefile](https://github.com/RosettaCommons/demos/blob/XRW2016_kmb/tutorials/default_score.png)
 
 The first line of this file is the header line that tells us which columns correspond to which score terms.
 
@@ -42,9 +42,11 @@ Let's try and fix these issues using the minimizer.
 
 First, we will need to specify how to run the minimizer. Open the `minimizer_flags` file and analyze its contents:
 
- - -s 3hon.pdb
- - -run:min_type lbfgs_armijo_nonmonotone
- - -run:min_tolerance 0.001
+```
+ -s 3hon.pdb
+ -run:min_type lbfgs_armijo_nonmonotone
+ -run:min_tolerance 0.001
+```
 
 The first flag specifies our input file, in this case, the crystal structure of 3hon.
 
@@ -61,7 +63,7 @@ $> minimize.default.linuxgccrelease @minimization_flags
 ```
 If this executable runs with no errors and the terminal output ends with something like this,
 
-[picture],
+![min log](https://github.com/RosettaCommons/demos/blob/XRW2016_kmb/tutorials/min.png)
 
 then you have successfully minimized the input structure. Check to make sure a `score.sc` file and a `3hon_0001.pdb` output structure have also been generated. Now let's analyze the output scores and structure.
 
@@ -88,15 +90,15 @@ The `score.sc` file contains the NEW scores for the minimized structure. Open th
 
 Most of the score terms have gone down in value (which is good!). But how has the minimization affected the structure? Open the `3hon_0001.pdb` to see what has changed.
 
-[picture]
+![3hon minimized](https://github.com/RosettaCommons/demos/blob/XRW2016_kmb/tutorials/3hon_min_on_xtal.png)
 
 The minimized structure has moved out of alignment with the native structure, so first let's align the two structures. If you are using PyMOL, type `align 3hon_0001, 3hon` and hit `Enter`.
 
-[picture]
+![3hon minimized_aligned](https://github.com/RosettaCommons/demos/blob/XRW2016_kmb/tutorials/3hon_minaligned_on_xtal.png)
 
 Now that the structures are aligned, notice that the last nine residues of the loop region have moved quite significantly from their original conformation. Furthermore, most of the minimized rotamers are no longer in their native conformations.
 
-[picture with sticks]
+![3hon minimized_aligned sticks](https://github.com/RosettaCommons/demos/blob/XRW2016_kmb/tutorials/3hon_minaligned_on_xtal_sticks.png)
 
 **SOMETHING SOMETHING ABOUT WHAT IT ALL MEANS.**
 
@@ -110,12 +112,14 @@ For this section of the tutorial, we will use the same crystal structure as befo
 
 We will need to add extra options to our flagsfile in order to tell Rosetta to read the constraints that specify how to hold the atoms in place. Furthermore, we need to be sure we are using a scorefunction that has non-zero weights for the constraint terms. The new flags file looks like this:
 
-- -s 3hon.pdb
-- -run:min_type lbfgs_armijo_nonmonotone
-- -run:min_toleranace 0.001
-- -constraints:cst_file cstfile
-- -score:weights talaris2014_cst
-- -out:suffix _minwithcsts
+```
+-s 3hon.pdb
+-run:min_type lbfgs_armijo_nonmonotone
+-run:min_toleranace 0.001
+-constraints:cst_file cstfile
+-score:weights talaris2014_cst
+-out:suffix _minwithcsts
+```
 
 The flag `constraints:cst_file` specifies the name of the constraints file to use.
 
@@ -133,7 +137,7 @@ $> minimize.cc @minwithcsts_flags
 
 This time, look for a few lines coming from the `core.scoring.constraints` tracers in the log output. They should look similar to this:
 
-[picture]
+![mincsts log](https://github.com/RosettaCommons/demos/blob/XRW2016_kmb/tutorials/minwithcsts.png)
 
 These lines indicate that our constraints were read and applied to the pose. If the executable ended without errors and generated a `3hon_minwithcsts_0001.pdb` file as well as a `score_minwithcsts.sc` file, then you have succesfully run minimization with coordinate constraints.
 
@@ -167,7 +171,7 @@ Now lets take a look at the minimized-with-csts structure to see how it compares
 
 Opening the `3hon_minwithcsts_0001.pdb` file and comparing it to the crystal structure,
 
-[picture]
+![3hon mincsts](https://github.com/RosettaCommons/demos/blob/XRW2016_kmb/tutorials/3hon_minwithcsts_onxtal.png)
 
 we immediately see little to no movement in the nine C-terminal residues.
 
@@ -215,11 +219,13 @@ will only allow backbone (BB) movements for all residues and will disallow sidec
 
 For the next minimization walkthrough, we will need to add one option to our flags file to tell Rosetta to read the move map file. The contents of the new flags file, `minwithmm_flags`, should look like this:
 
-- -s 3hon.pdb
-- -run:min_type lbfgs_armijo_nonmonotone
-- -run:min_toleranace 0.001
-- -movemap movemapfile
-- -out:suffix _minwithmm
+```
+-s 3hon.pdb
+-run:min_type lbfgs_armijo_nonmonotone
+-run:min_toleranace 0.001
+-movemap movemapfile
+-out:suffix _minwithmm
+```
 
 The flag `movemap` specifies the movemap file to apply to the pose.
 
@@ -265,11 +271,14 @@ The total score of the minimized-with-movemap structure is lower still than the 
 
 Let's open the minimized-with-movemap structure and compare it visually to the crystal structure.
 
-[picture]
+![3hon minmm](https://github.com/RosettaCommons/demos/blob/XRW2016_kmb/tutorials/3hon_minwithmm_xtal.png)
+
 
 After aligning the minimized-with-movemap structure to the crystal structure as a whole, it appears that the nine C-terminal residues have moved. However, when we align only the nine C-terminal residues against each other, it becomes clear that the minimizer has not changed the backbone or sidechain angles:
 
-[picture]
+![3hon minmm](https://github.com/RosettaCommons/demos/blob/XRW2016_kmb/tutorials/3hon_minwithmm_9resicterm.png)
+
+#### This is an important point to reiterate: The movemap can prevent internal geometries from changing, but not necessarily the global position of the residues.
 
 ## Summary
 
