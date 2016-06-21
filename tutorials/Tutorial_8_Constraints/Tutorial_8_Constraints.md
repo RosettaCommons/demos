@@ -36,7 +36,7 @@ CoordinateConstraints work like AtomPair constraints, except the second "atom" i
 
 HARMONIC constraints square the distance between the ideal and actual value, and are commonly used for various types of distance constraints. CIRCULARHARMONIC is the angular equivalent.
 
-######Further constraints that Rosetta can handle:
+### Other constraints that Rosetta can handle:
   
 * Distance constraints
 * Torsional constraints
@@ -46,7 +46,7 @@ HARMONIC constraints square the distance between the ideal and actual value, and
 
 To learn more about the other constraint types and function types that Rosetta can impose, click [here]().
 
-##How to Use Constraints
+## How to Use Constraints
 
 As mentioned above, constraints are a way to make Rosetta's scores reflect some experimental data about the system being scored (or designed) and disfavor structures that would conflict with that data. As an example, suppose we wish to relax one half of a protein-protein interaction but we know, perhaps from mutational studies, that certain residues on each subunit interact. It may make sense to include that information via constraints, which might look like this:
 
