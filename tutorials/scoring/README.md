@@ -97,7 +97,7 @@ The only options that we will pass in the flags file is the input PDB and the ou
     
     -out:file:scorefile output_files/score.sc
     
-Running this should produce a file called `score.sc` in the directory `output_files`. Compare this to the file `<path_to_Rosetta_directory>/demos/tutorials/scoring/output_files/expected_output/score.sc`. They should be the same.
+Running this should produce a file called `score.sc` in the directory `output_files`. Compare this to the file `<path_to_Rosetta_directory>/demos/tutorials/scoring/output_files/expected_output/score.sc`. They should be the same (expect for the `time` column which depends on your CPU speed).
 
 ####Analysis of the Score File
 The `score.sc` file should look like:
@@ -110,7 +110,7 @@ SCORE:    -163.023    -163.023     0.000  -423.638   109.662   -46.146        1.
 
 The first column called `total_score` represents the total weighted score for the structure 1QYS. For a refined structure of this size, a score of -100 REU to -300 REU is typical. The lower the score, the more stable the structure is likely to be for a given protein size.
 
->A rule of thumb: -1 to -3 REU per resdiue is typical.
+>A rule of thumb: -1 to -3 REU per resdiue is typical while scoring with _talaris2014_ score function.
 
 The column `fa_atr` represents the weighted score of the Lennard-Jones attractive potential between atoms in different residues, and so on. This breakdown can be helpful in determining which energy terms are contributing more than others, i.e. what kind of interactions occur in the protein. In this particular example, Rosetta predicts that the inter-residue van der Waals' forces have the largest stabilizing contribution (`-423.638`), whereas solvation (represented by `fa_sol`) has the highest destabilizing contribution (`241.309`).
 
@@ -118,7 +118,7 @@ The column `fa_atr` represents the weighted score of the Lennard-Jones attractiv
 
 ###More Scoring Options
 ####Changing the Score Function
-Now, we will try to score two structures using an older score function called _score12_. We also want to rename our score file `score_score12.sc`.
+Now, we will try to score two structures using a score function that was optimized to bind two proteins called _docking_. We also want to rename our score file `score_docking.sc`.
 
 A detailed list of score functions can be found in `<path_to_Rosetta_directory>/main/database/scoring/weights`.
 
@@ -127,22 +127,22 @@ The flags file we will use now is:
 ```html
 -in:file:l input_files/pdblist
 
--score:weights score12
+-score:weights docking
 
--out:file:scorefile output_files/score_score12.sc
+-out:file:scorefile output_files/score_docking.sc
 ```
 
 On running the command
 
-    $> <path_to_Rosetta_directory>/main/source/bin/score_jd2.linuxgccrelease @flag_score12
+    $> <path_to_Rosetta_directory>/main/source/bin/score_jd2.linuxgccrelease @flag_docking
 
-we should get a score file `score_score12.sc` in the directory `output_files`. Compare this to `<path_to_Rosetta_directory>/demos/tutorials/scoring/output_files/expected_output/score_score12.sc`). They should be the same.
+we should get a score file `score_docking.sc` in the directory `output_files`. Compare this to `<path_to_Rosetta_directory>/demos/tutorials/scoring/output_files/expected_output/score_docking.sc`). They should be the same (expect for the `time` column which depends on your CPU speed).
 
 ```html
 SEQUENCE: 
-SCORE: total_score       score dslf_ca_dih dslf_cs_ang dslf_ss_dih dslf_ss_dst      fa_atr      fa_dun fa_intra_rep      fa_pair       fa_rep       fa_sol hbond_bb_sc hbond_lr_bb    hbond_sc hbond_sr_bb linear_chainbreak             omega overlap_chainbreak            p_aa_pp pro_close      rama       ref      time description 
-SCORE:    -142.718    -142.718       0.000       0.000       0.000       0.000    -338.910      87.730        0.832       -7.700       39.293      167.307      -3.934     -26.998     -11.234     -12.745             0.000             3.368              0.000            -10.882     0.000    -3.924   -24.920     1.000 1qys_0001
-SCORE:     -28.876     -28.876       0.000       0.000       0.000       0.000    -282.611      71.216        0.541       -6.108      102.326      177.549     -14.555     -18.144     -15.085      -7.308             0.000             3.964              0.000             -9.016     0.051    -7.703   -23.990     1.000 1ubq_0001
+SCORE: total_score       score dslf_ca_dih dslf_cs_ang dslf_ss_dih dslf_ss_dst      fa_atr      fa_dun     fa_elec     fa_pair      fa_rep      fa_sol hbond_bb_sc hbond_lr_bb    hbond_sc hbond_sr_bb linear_chainbreak overlap_chainbreak               time description 
+SCORE:     -89.596     -89.596       0.000       0.000       0.000       0.000    -143.190       5.640      -1.371      -2.577       3.929      62.290      -0.824      -5.653      -2.502      -5.338             0.000              0.000              0.000 1qys_0001
+SCORE:     -55.214     -55.214       0.000       0.000       0.000       0.000    -119.403       4.578      -1.412      -2.044      10.233      66.103      -3.048      -3.799      -3.360      -3.061             0.000              0.000              0.000 1ubq_0001
 ```
 
 In this score file, we can see that the `total_score` of 1QYS has changed from the previous run. But since we scored the same PDB file, the stability must be the same.
@@ -154,46 +154,57 @@ We can also see that `dslf_fa13` energy term from the previous example is missin
 >There does not exist a good correlation between total score and stability of a structure across different proteins.
 
 ####Patch Files and Changing Term Weights
-Now, say we want to modify the weights of some of the terms in the score function, score12. We may, for example, wish to downweight a more general score term in favor of a more specific set of them, or to add score terms for [constraints]We may, for example, wish to downweight a more general score term in favor of a more specific set of them, or to add score terms for [constraints]  There are two ways to do this:
+Now, say we want to modify the weights of some of the terms in the _docking_ score function. We may, for example, wish to downweight a more general score term in favor of a more specific set of them, or to add score terms for [constraints](). There are two ways to do this:
 * Adding a patch file providing a list of weights
 * Seting the weight of specific terms from the command line
 
-In the following example, we do both. We use the patch file `score12_w_corrections.wts_patch` which is:
+In the following example, we do both. We use the patch file `docking.wts_patch` which is:
 
 ```html
-hbond_sr_bb *= 0.5
-p_aa_pp *= 0.5
-rama = 0.2
-omega = 0.5
-ch_bond_bb_bb = 0.5
-fa_cust_pair_dist = 1.0
+fa_atr *= 0.423
+fa_rep *= 0.100
+fa_sol *= 0.372
+fa_intra_rep *= 0.000
+fa_pair *= 0.000
+fa_dun *= 0.064
+hbond_lr_bb *= 0.245
+hbond_sr_bb *= 0.245
+hbond_bb_sc *= 0.245
+hbond_sc *= 0.245
+p_aa_pp *= 0.00
+fa_elec = 0.026
+dslf_ss_dst *= 1.0
+dslf_cs_ang *= 1.0
+dslf_ss_dih *= 1.0
+dslf_ca_dih *= 1.0
+pro_close *= 0.000
 ```
-We then set the `fa_atr` weight to `1.0` (originally `0.8` in score12) from the command line using the following flags:
+We then set the `fa_atr` weight to `1.0` (originally `0.338` in _docking_) from the command line using the following flags:
 
 
 ```html
 -in:file:s input_files/pdblist
 
--score:weights score12
--score:patch score12_w_corrections
+-score:weights docking
+-score:patch docking
 -score:set_weights fa_atr 1
 
--out:file:scorefile output_files/score_score12_patch.sc
+-out:file:scorefile output_files/score_docking_patch.sc
 ```
 
 Now on running
 
-    $> <path_to_Rosetta_directory>/main/source/bin/score_jd2.linuxgccrelease @flag_score12_patch
+    $> <path_to_Rosetta_directory>/main/source/bin/score_jd2.linuxgccrelease @flag_docking_patch
 
-we should get a score file `score_score12_patch.sc` in the directory `output_files`. Compare this to `<path_to_Rosetta_directory>/demos/tutorials/scoring/output_files/expected_output/score_score12_patch.sc`). They should be the same.
+we should get a score file `score_docking_patch.sc` in the directory `output_files`. Compare this to `<path_to_Rosetta_directory>/demos/tutorials/scoring/output_files/expected_output/score_docking_patch.sc`). They should be the same (expect for the `time` column which depends on your CPU speed).
 
 ```html
 SEQUENCE: 
-SCORE: total_score       score ch_bond_bb_bb dslf_ca_dih dslf_cs_ang dslf_ss_dih dslf_ss_dst      fa_atr fa_cust_pair_dist            fa_dun fa_intra_rep      fa_pair       fa_rep       fa_sol hbond_bb_sc hbond_lr_bb    hbond_sc hbond_sr_bb linear_chainbreak             omega overlap_chainbreak            p_aa_pp pro_close      rama       ref      time description 
-SCORE:    -222.439    -222.439        -6.807       0.000       0.000       0.000       0.000    -423.638             0.000            87.730        0.832       -7.700       39.293      167.307      -3.934     -26.998     -11.234      -6.373             0.000             3.368              0.000             -5.441     0.000    -3.924   -24.920     1.000 1qys_0001
-SCORE:     -95.233     -95.233        -3.867       0.000       0.000       0.000       0.000    -353.263             0.000            71.216        0.541       -6.108      102.326      177.549     -14.555     -18.144     -15.085      -3.654             0.000             3.964              0.000             -4.508     0.051    -7.703   -23.990     0.000 1ubq_0001
+SCORE: total_score       score dslf_ca_dih dslf_cs_ang dslf_ss_dih dslf_ss_dst      fa_atr      fa_dun     fa_elec      fa_rep      fa_sol hbond_bb_sc hbond_lr_bb    hbond_sc hbond_sr_bb linear_chainbreak overlap_chainbreak               time description 
+SCORE:    -404.591    -404.591       0.000       0.000       0.000       0.000    -423.638       0.361      -1.371       0.393      23.172      -0.202      -1.385      -0.613      -1.308             0.000              0.000              1.000 1qys_0001
+SCORE:    -332.020    -332.020       0.000       0.000       0.000       0.000    -353.263       0.293      -1.412       1.023      24.590      -0.747      -0.931      -0.823      -0.750             0.000              0.000              0.000 1ubq_0001
 ```
-Note that we have new energy terms `ch_bond_bb_bb` and `fa_cust_pair_dist` which were defined in the patch file. Also, the weighted scores of `hbond_sr_bb`, `rama` and others have changed as defined by the patch file. The decrease in weighted score of `fa_atr` is a result of the increased weight we fed in through the command line via the flag file. (This, incidentally, is the same weight as the _talaris2014_ score function, and hence `fa_atr` has the same weighted score as in the basic scoring example.)
+Note that we have set the weight of `fa_pair` to zero in the patch file. This eliminates the any contribution from that term, and the score file is missing the `fa_pair` column. Also, the weighted scores of `fa_atr`, `fa_dun` and others have changed as defined by the patch file. The decrease in weighted score of `fa_atr` is a result of the increased weight we fed in through the command line via the flag file. (This, incidentally, is the same weight as the _talaris2014_ score function, and hence `fa_atr` has the same weighted score as in the basic scoring example.)
 
 ####Advanced Options
 Several other optons that you could add to the flag file are given [here](https://www.rosettacommons.org/docs/latest/application_documentation/analysis/score-commands).
@@ -202,4 +213,4 @@ Tips
 ----
 * While the scoring step is deterministic and should provide the same score for given score function and input structure, you may not get the same score if you run `score_jd2` on PDBs which have not been prepared well. For example, there might be missing sidechain atoms which Rosetta tries to model (non-deterministically), thus, producing different scores on different runs.
 * Do not compare scores produced by different score functions. They could mean very different things.
-* Structures should be [relaxed] into the same score function prior to comparison.
+* Structures should be [relaxed]() into the same score function prior to comparison.
