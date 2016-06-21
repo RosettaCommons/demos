@@ -14,7 +14,7 @@ Easy preparation of mutated versions of an RNA. Not optimized currently to remem
 # Running
 
 ```
-$> rna_thread -s rosetta_inputs/1zih_RNA.pdb  -seq gggcgcgagccu -o 1zih_A7G.pdb 
+$> rna_thread -s rosetta_inputs/1zih_RNA.pdb -seq gggcgcgagccu -o 1zih_A7G.pdb 
 ```
 
 Changes the seventh residue to g. (Original sequence was gggcgcaagccu.)
