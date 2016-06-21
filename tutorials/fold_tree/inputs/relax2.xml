@@ -1,0 +1,21 @@
+<ROSETTASCRIPTS>
+    <SCOREFXNS>
+    </SCOREFXNS>
+    <RESIDUE_SELECTORS>
+    </RESIDUE_SELECTORS>
+    <TASKOPERATIONS>
+    </TASKOPERATIONS>
+    <FILTERS>
+    </FILTERS>
+    <MOVERS>
+	<AtomTree name="tree" fold_tree_file="inputs/tree2.ft"/>
+	<FastRelax name="relax" repeats=7 />
+    </MOVERS>
+    <APPLY_TO_POSE>
+    </APPLY_TO_POSE>
+    <PROTOCOLS>
+	<Add mover=tree/>
+	<Add mover=relax/>
+    </PROTOCOLS>
+    <OUTPUT />
+</ROSETTASCRIPTS>
