@@ -10,7 +10,7 @@ Starting from a TS ensemble model and a set of zinc-containing PDBs (only one - 
 
 ## Input
 
-Requires an input TS model including the metal, and a (set of) PDB file(s). The TS ensemble is generated using a starting molfile, and converted to Rosetta parameters using the script `~/rosetta/rosetta_source/src/python/apps/public/molfile_to_params.py`
+Requires an input TS model including the metal, and a (set of) PDB file(s). The TS ensemble is generated using a starting molfile, and converted to Rosetta parameters using the script `~/Rosetta/main/source/src/python/apps/public/molfile_to_params.py.
 
 ## Overview of the Procedure
 
@@ -31,33 +31,49 @@ For most Python scripts, running with a -h option will give a list of available 
 
 1. Given a PDB file, obtain the co-ordination sphere details of metal (how many protein-metal, and HETATM-metal interactions, in what geometry in each chain).
 
-    `python analyze_zinc_site.py -f 1A4L.pdb`
+```bash
+$> python $ROSETTA_TOOLS/zinc_site_redesign/analyze_zinc_site.py -f 1A4L.pdb
+```
 
 2. Given an input PDB, "clean" it i.e. keep one chain, change MSE->MET, KCX->LYS etc. Keep HETATMS.
 
-    `python cleanPDBfile.py -f 1A4L.pdb`
+```bash
+$> python $ROSETTA_TOOLS/zinc_site_redesign/cleanPDBfile.py -f 1A4L.pdb
+```
 
 3. Align transition state model(s) onto the zinc site according to co-ordination sphere details: 
 
 	1. Given TS model (LG_0001.pdb) and "clean" PDBfile (1A4L_clean.pdb) align them.
 
-	    `python align.py -f 1A4L_clean_A.pdb -l LG_0001.pdb`
+	```bash
+	$> python $ROSETTA_TOOLS/zinc_site_redesign/align.py -f 1A4L_clean_A.pdb -l LG_0001.pdb
+	```
 
 	2. Generate Rosetta Inputs given the aligned ligand.
 
-	    `python generate_metal_cstfile.py -f 1A4L_clean_A.pdb -m ZN -a aligned_ligand.pdb`
+	```bash
+	$> python $ROSETTA_TOOLS/zinc_site_redesign/generate_metal_cstfile.py -f 1A4L_clean_A.pdb -m ZN -a aligned_ligand.pdb
+	```
 
 4. Minimize the constraints energy for the superimposed ligand using Rosetta. Except the metal-chelating protein residues, every other ligand-proximal protein residue is temporarily converted to Ala.
 
-    `~/rosetta/bin/enzyme_design.static.linuxiccrelease @optcst.flags -linmem_ig 10 -in:file::s rosetta_cst.pdb`
+```bash
+$> <path_to_Rosetta_directory>/main/source/bin/enzyme_design.default.linuxgccrelease @optcst.flags -linmem_ig 10 -in:file::s rosetta_cst.pdb
+```
+
+Note that, in the above, you may need to change "default.linuxgccrelease" to match your build, operating system, and compiler (*e.g.* static.macosclangrelease).
 
 5. To introduce additional catalytic residues, run a round of RosettaMatch.
 
-    `~/rosetta/bin/match.linuxiccrelease @general_matching.flags @scaf.flags @subs.flags  -linmem_ig 10 -in:file::s 1A4LA_clean_r.pdb`
+```bash
+$> <path_to_Rosetta_directory>/main/source/bin/match.default.linuxgccrelease @general_matching.flags @scaf.flags @subs.flags  -linmem_ig 10 -in:file::s 1A4LA_clean_r.pdb
+```
 
 6. Design the rest of the pocket for maximizing TS affinity.
 
-    `~/rosetta/bin/enzyme_design.linuxiccrelease @enzdes.flags -correct -linmem_ig 10 -in:file::s <file_from_matching.pdb> > design.log&`
+```bash
+$> <path_to_Rosetta_directory>/main/source/bin/enzyme_design.default.linuxgccrelease @enzdes.flags -correct -linmem_ig 10 -in:file::s <file_from_matching.pdb> > design.log &
+```
 
 7. For a semi-automated refinement step, generate a so-called resfile, so that the wildtype and any other user-specified residue can be introduced at any given position. Use this resfile with similar commandline as Step 6.
 
