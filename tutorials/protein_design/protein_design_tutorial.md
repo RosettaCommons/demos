@@ -2,6 +2,7 @@
 
 # Protein Design
 
+![top7_plan](tutorial_figures/top7_plan.png)
 **Bold text means that these files and/or this information is provided.**
 
 *Italicized text means that this material will NOT be conducted during the workshop*
@@ -12,6 +13,8 @@ If you want to try making files that already exist (e.g., input files), write th
 (NOTE: For many of the commands you will be using for this tutorial, remove \'s before hitting enter. Otherwise you will get an error.)
 
 ##Introduction
+![top7](tutorial_figures/top7.png)
+
 **Objective:** In this exercise, we will examine the Rosetta design features by mutating user-specified residues. The membrane protein we will be using is a homo-dimer, so we will employ RosettaMembrane and RosettaSymmetry to model the dimer during design. RosettaScripts will be used to combine the two applications. 
 
 **Rosetta Applications:** RosettaDesign, RosettaMembrane, RosettaSymmetry, RosettaScripts
@@ -34,18 +37,21 @@ You should notice that this file shows two homo-dimers. We will focus on the dim
 
     1. Rosetta Symmetry. In this step, we will create the proper symmetry definition file for this particular protein structure. We will need the input structure from the preparation step. 
 
-            cd Step1_symm
+            $> cd Step1_symm
 
-            cp ../3UKM.pdb .
+            $> cp ../3UKM.pdb .
         (this copies the pdb file to the Step1 directory)
 
         Next, we will use a perl script in Rosetta to generate a symmetry file from the input crystal structure. First, if you'd like to display the available options for this script, simply enter:
 
-            $ROSETTA3/src/apps/public/symmetry/make_symmdef_file.pl
-        Next, we will use non-crystallographic mode (NCS), Chain A as the reference, Chain B as an interacting chain, and include the input structure. The output will be redirected, using the greater than sign, into a new file called 3UKM.symm.
+            $> $ROSETTA3/src/apps/public/symmetry/make_symmdef_file.pl
 
-            ~/rosetta_workshop/rosetta/main/source/src/apps/public/symmetry/make_symmdef_file.pl \
-            -m NCS -a A -i B -p 3UKM.pdb > 3UKM.symm
+            $> $ROSETTA3/src/apps/public/symmetry/make_symmdef_file.pl -m NCS -a A -i B -p 3UKM.pdb > 3UKM.symm
+
+        Here we are using symmetry to model an already-symmetric starting protein.  This is called non-crystallographic (NCS) mode. 
+        We pass the mode (-m NCS), the chain we want to keep (-a A), the chain we want to base the symmetry off of (-i B), and the input PDB (-p 3UKM.pdb).
+
+        WThe output will be redirected, using the greater than sign, into a new file called 3UKM.symm.
 
         The perl script will generate a couple of outputs:
 
@@ -55,19 +61,19 @@ You should notice that this file shows two homo-dimers. We will focus on the dim
         * 3UKM_symm.pdb = model generated to show the full point group symmetry
         * 3UKM.symm = symmetry definition file that you just created
 
-        Examine symmetry file equation. `gedit 3UKM.symm`
+        Examine symmetry file equation, '3UKM.symm' in your favorite editor.  Here is an overview of the file:
+        ![symm_file1](tutorial_figures/rosetta_symm_file1.png) 
+        ![symm_file2](tutorial_figures/rosetta_symm_file2.png)
 
-         Does this make sense? Refer to the slide in the Tutorial Overview section entitled Rosetta Symmetry Definition File. This will explain the sections that make up the symm file. 
-
-    2. Next, we will use clean_pdb.py to prepare the input protomer for setting up symmetry. 
+    2. Next, we will use clean_pdb.py to prepare the input protomer for setting up symmetry, grabbing only chain A. 
     
-            ~/rosetta_workshop/rosetta/tools/protein_tools/scripts/clean_pdb.py 3UKM A
+            $> $ROSETTA_TOOLS/protein_tools/scripts/clean_pdb.py 3UKM A
 
-        clean_pdb.py strips PDB code that Rosetta can not parse such as comments, anisotropic atom positions, unnatural amino acid types, and waters. The first argument in the script is the 4-letter PDB code and the second argument is a string containing the chains to return, in this case, only chain A. 
+        clean_pdb.py strips PDB code that Rosetta can not parse such as comments, anisotropic atom positions, unnatural amino acid types, and waters and renumbers from 1 to match Rosetta numbering. The first argument in the script is the 4-letter PDB code and the second argument is a string containing the chains to return, in this case, only chain A. 
         
     3. Now, we will use the clean input structure to test the symmetry definition file. We will accomplish this through a very basic use of RosettaScripts. While still in the same directory:
 
-            gedit setup_symm.xml
+            open setup_symm.xml
 
         And look at the contents of the file, which should look like this:
     
@@ -88,18 +94,17 @@ You should notice that this file shows two homo-dimers. We will focus on the dim
                 </PROTOCOLS>
             </ROSETTASCRIPTS>
 
-        Next, run this protocol using RosettaScripts. We applied the setup`_`symm protocol to the input structure, 3UKM_A.pdb.
+        Next, run this protocol using RosettaScripts. We will apply the setup for the protocol to the input structure, 3UKM_A.pdb.
 
-            ~/rosetta_workshop/rosetta/main/source/bin/rosetta_scripts.default.linuxgccrelease \
-            -parser:protocol setup_symm.xml -s 3UKM_A.pdb -out:prefix setupsymm_ 
+            $> rosetta_scripts.default.linuxgccrelease -parser:protocol setup_symm.xml -s 3UKM_A.pdb -out:prefix setupsymm_ 
 
         When Rosetta is finished, examine the output structure using pymol:
 
-            pymol setupsymm_3UKM_A_0001.pdb
+            open setupsymm_3UKM_A_0001.pdb
 
         Does the resulting structure look as you would expect? Sometimes you have to make manual adjustments to the symmetry definition file by paying careful attention to the jumps. In this case, it looks great. Before we move forward, examine the score file generated from setting up symmetry:
 
-            gedit setupsymm_score.sc
+            open setupsymm_score.sc
 
         The total energy score of the protein is the first number. For this protein, you will probably see a number in the positive 5000s. We know that this is not a good score for a protein. Before moving on to an application such as design, it is recommended to energetically minimize the structure in some way to get rid of imperfections in the crystal structure. 
 
