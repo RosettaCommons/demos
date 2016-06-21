@@ -110,7 +110,7 @@ For this section of the tutorial, we will use the same crystal structure as befo
 
 ### Setting up the flags file and constraints file
 
-We will need to add extra options to our flagsfile in order to tell Rosetta to read the constraints that specify how to hold the atoms in place. Furthermore, we need to be sure we are using a scorefunction that has non-zero weights for the constraint terms. The new flags file looks like this:
+We will need to add extra options to our flagsfile in order to tell Rosetta to read the constraints that specify how to hold the atoms in place. Furthermore, we need to be sure we are using a scorefunction that has non-zero weights for the constraint terms. The new flags file, `minwithcsts_flags`, looks like this:
 
 ```
 -s 3hon.pdb
