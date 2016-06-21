@@ -2,11 +2,11 @@
 ##The Relax protocol
 Relax is the main protocol for relaxing a structure in Rosetta; that is, it samples conformations of a given structure close to it in 3d space to find the lowest-scoring variant, running both the [packer] and the [minimizer]. This is usually done to enable an apples-to-apples comparison between disparate structures, including crystal structures and the output of Rosetta's sampling protocols, by first minimizing them in local space according to the same score function. It is therefore advisable to run relax on any structures you intend to compare to each other.
 
-To demonstrate this, run 
+To demonstrate this, in your terminal window, run the command
 
 	$>../../../main/source/bin/score_jd2.default.linuxclangrelease -s 1ubq.pdb -out:suffix _crystal @crystal_score_flags
 
-and note the score. Now, run
+and note the score in the `score_crystal.sc` file. Now, run
 
 	$>../../../main/source/bin/relax.default.linuxclangrelease -s 1ubq.pdb -out:file:name relaxed.pdb -out:suffix _relaxed @general_relax_flags
 

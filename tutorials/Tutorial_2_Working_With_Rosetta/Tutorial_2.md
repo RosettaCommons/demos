@@ -18,9 +18,9 @@ It may also help to familiarize yourself with the basics of [command line interf
 	nohup		when prepended to a command, runs that command in the background, preventing it from writing output to the terminal
 	
 
-#The Three Main Interfaces to Rosetta
+##The Three Main Interfaces to Rosetta
 Rosetta is not a single program; it is instead built with a large number of executable files built to be run either individually, sequentially, or in concert. These files may be run directly from the command line, through an XML interface called RosettaScripts, or through Python via Pyrosetta.
-##Running the Rosetta Executables directly
+###Running the Rosetta Executables directly
 The executables that comprise Rosetta can be run directly by calling them through the terminal directly. These commands are constructed by first indicating the path to the executable you want to run, followed by the flags, options, and input files that dictate how you want the program to execute. 
 As an example, consider the command 
 
@@ -35,7 +35,9 @@ The second part, -s 1ubq.pdb, is an option, or *flag*, that modifies the executi
 	-out:suffix This option adds a specified string to the end of all the output PDB files.
 	-ignore_unrecognized_residue This option should not be required for a successful Rosetta install, but indicates that residues that Rosetta cannot process should be left out of the execution.
 
-In order to demonstrate how Rosetta exectuables may be run and their execution controlled via flags, create a folder in your main Rosetta directory named *tutorials* or something similar, and there put the files 1ubq.pdb and 1qys.pdb. 
+The third part of this command is an options file, or *flags file*, which is simply a newline-delimited list of options. It is functionally equivalent to writing each option individually.
+
+In order to demonstrate how Rosetta exectuables may be run and their execution controlled via options, create a folder in your main Rosetta directory named *tutorials* or something similar, and there put the files 1ubq.pdb and 1qys.pdb. 
 
 Now run 
 
@@ -57,7 +59,7 @@ and running
 
 	$> ../../../main/source/bin/fixbb.default.linuxgccrelease -l pdblist
 
-##Running Rosetta via RosettaScripts
+###Running Rosetta via RosettaScripts
 Running RosettaScripts is similar to running an executable directly from the command line: execute rosetta_scripts and pass in the relevant options. The key difference is that the executable run is always rosetta_scripts, which requires the option "parser:protocol" indicating the XML script that it is to run. RosettaScripts is covered in more detail [here]. Try creating a file named "fixbb_script.xml" containing the following:
 	<ROSETTASCRIPTS>
 	script goes here
@@ -66,34 +68,43 @@ saving it, and running it with
 
 	>../../../main/source/bin/rosetta_scripts.default.linuxgccrelease -parser:protocol fixbb_script.xml'. You should see output similar to the command run at the start of this tutorial.
 
-##Running Rosetta via PyRosetta
+###Running Rosetta via PyRosetta
 PyRosetta functions are run within Python scripts; it requires that rosetta be imported with the command
 	from rosetta import /*
 or similar, after which the Pyrosetta functions may be called within the script itself. PyRosetta tutorials may be called [here].
 
-#Constructing a Rosetta Job
+##Constructing a Rosetta Job
 
-##Considerations of Scale
+###Considerations of Scale
 Rosetta is capable of running processes at many scales. The deterministic scoring functions may be run on a single processor in a matter of seconds; running an ab initio folding job can require a national-scale supercomputer running for thousands of CPU-hours. It may be worthwhile to review the CPU time required to run Rosetta for different tasks [here].
 
-##Post-Processing
+###Post-Processing
 Because Rosetta is stochastic software, it is often necessary to perform statistical analysis on the structures it generates, called *decoys*. This may be done with a statistics package such as R, documentation for which is [here](https://cran.r-project.org/doc/manuals/r-release/R-intro.pdf).
 
-# Where to Find Things In Rosetta
-###Binaries
+##Where to Find Things In Rosetta
+####Binaries
 The Rosetta executables are all symlinked into Rosetta/source/bin and may be run from there; the actual executables are compiled into Rosetta/source/build, but should be run from source/bin to ensure robustness to updates.
 
-###Source Code
+####Source Code
 The Rosetta source code exists in Rosetta/source/src, but does not contain content required for non-developer users of Rosetta.
 
-###Weights files
+####Weights files
 Rosetta weights files (.wts files), used to parameterize the scorefunction weights, are in Rosetta/main/database/scoring/weights .
 
-##Params files
+####Params files
 Parameter files are in the corresponding subdirectories of /Rosetta/main/database/chemical/residue_type_sets .
 
-###Tools
+####Tools
 The tools directory, Rosetta/tools, contains a number of useful tools for manipulating Rosetta inputs and outputs.
 
-###Scripts
+####Scripts
 RosettaScripts and useful python scripts may be found in Rosetta/main/source/scripts
+
+##Troubleshooting
+Rosetta will occaisionally throw an informative error message rather than successfully completing a job; these may be indicative of errors in the input or options provided and are not necessarily bugs. Segmentation faults certainly indicate a bug in Rosetta itself, and should be reported.
+
+##Core Rosetta Concepts
+### Rosetta numbering
+*Rosetta (or Pose) numbering* refers to a specific way in which Rosetta internally numbers the residues in polypeptides. These may not necessarily correspond to PDB numbering, as Rosetta numbering always starts at 1. To see this, compare the input and output PDBs from 
+
+	$> ../../../main/source/bin/fixbb.default.linuxgccrelease -s 1qys.pdb @general_flags
