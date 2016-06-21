@@ -19,7 +19,7 @@ Rosetta calculates the energy of a biomolecule using energy functions based on p
 Scoring in Rosetta
 ------------------
 
-In Rosetta, the energy of a biomolecule is calculated by _scoring_ it. Rosetta has an optimized energy function or _score function_ called _talaris2014_ for calculating the energy of all atomic interactions in a globular protein made of L-amino acids. There are also several all-atom score functions for specialized applications on other biomolecules as well as score functions for the reduced [_centroid represenation_](https://www.rosettacommons.org/demos/latest/tutorials/full_atom_vs_centroid/README). Additionally, you can create a custom score function to suit your requirements.
+In Rosetta, the energy of a biomolecule is calculated by _scoring_ it. Rosetta has an optimized energy function or _score function_ called _talaris2014_ for calculating the energy of all atomic interactions in a globular protein made of L-amino acids. There are also several all-atom score functions for specialized applications on other biomolecules as well as score functions for the reduced [_centroid representation_](https://www.rosettacommons.org/demos/latest/tutorials/full_atom_vs_centroid/README). Additionally, you can create a custom score function to suit your requirements.
 
 Score Function
 --------------
@@ -193,7 +193,7 @@ SCORE: total_score       score ch_bond_bb_bb dslf_ca_dih dslf_cs_ang dslf_ss_dih
 SCORE:    -222.439    -222.439        -6.807       0.000       0.000       0.000       0.000    -423.638             0.000            87.730        0.832       -7.700       39.293      167.307      -3.934     -26.998     -11.234      -6.373             0.000             3.368              0.000             -5.441     0.000    -3.924   -24.920     1.000 1qys_0001
 SCORE:     -95.233     -95.233        -3.867       0.000       0.000       0.000       0.000    -353.263             0.000            71.216        0.541       -6.108      102.326      177.549     -14.555     -18.144     -15.085      -3.654             0.000             3.964              0.000             -4.508     0.051    -7.703   -23.990     0.000 1ubq_0001
 ```
-Note that we have new energy terms `ch_bond_bb_bb` and `fa_cust_pair_dist` which were defined in the patch file. Also, the weighted scores of `hbond_sr_bb`, `rama` and others have changed as defined by the patch file. The decrease in weighted score of `fa_atr` is a result of the increased weight we fed in through the command line via the flag file. (This incidentally is the same weight as the _talaris2014_ score function, and hence `fa_atr` has the same weighted score as in the basic scoring example.)
+Note that we have new energy terms `ch_bond_bb_bb` and `fa_cust_pair_dist` which were defined in the patch file. Also, the weighted scores of `hbond_sr_bb`, `rama` and others have changed as defined by the patch file. The decrease in weighted score of `fa_atr` is a result of the increased weight we fed in through the command line via the flag file. (This, incidentally, is the same weight as the _talaris2014_ score function, and hence `fa_atr` has the same weighted score as in the basic scoring example.)
 
 ####Advanced Options
 Several other optons that you could add to the flag file are given [here](https://www.rosettacommons.org/docs/latest/application_documentation/analysis/score-commands).
