@@ -183,11 +183,13 @@ In some cases, the user may want to prevent the internal geometry of certain res
 
 ## How-To: Minimization with a MoveMap
 
+#### The MoveMap
+
 The [movemap](https://www.rosettacommons.org/docs/latest/rosetta_basics/structural_concepts/Rosetta-overview#scoring_movemap) is an important concept in Rosetta minimization.  It allows users to control what degrees of freedom can change during minimization, and what degrees of freedom are fixed. For example, one may not want to move highly-conserved sidechains in modeling applications, or one may want to preserve certain interactions in design applications.  Certain protocols that call the Rosetta minimizer accept a user-defined move map file.
 
-In the context of the minimizer, a move map allows the user to specify if the backbone (BB) torsions angles (phi, psi) or the sidechain torsions angles (CHI) are allowed to be moved during the minimization of the energy function. In addition, if the input structure has more than one chain (separated by one or more JUMPS), the move map can also specify if rigid-body movements between the different chains are allowed.
+In the context of the minimizer, a move map allows the user to specify whether the backbone (BB) torsions angles (phi and psi, in the case of α-amino acid residues) and/or the sidechain torsions angles (CHI) are allowed to be moved during the minimization of the energy function. In addition, if the input structure has more than one chain (separated by one or more *JUMPS*, or rigid-body transformations), the move map can also specify whether rigid-body movements between the different chains are allowed.
 
-##### Caveat: Even if a residue's backbone and sidechain torsion movements are turned off in a move map, its relative position with respect to other residues may still change depending on the motion of residues upstream in the FoldTree.
+> **Caveat: Even if a residue's backbone and sidechain torsion movements are turned off in a move map, its relative position with respect to other residues may still change depending on the motion of residues upstream in the FoldTree.**
 
 #### Description of the move map file format
 Each line in the move map file identifies a jump, residue, or residue range, followed by the allowed degrees of freedom. These entities may be specified as follows:
