@@ -8,14 +8,14 @@ Rosetta relies upon a number of additional programs to function. In order to pro
 
 It may also help to familiarize yourself with the basics of [command line interfaces](https://bash.cyberciti.biz/guide/Main_Page). Particularly useful commands include:
 
-	ls *foo* 	displays a list of files in the directory `foo`
-	`cd foo` 	moves the current working directory to the directory `foo`
-	`mv foo bar` 	moves all of `foo` into `bar` if `bar` is a directory or into a file called `bar` if not
-	`cp foo bar` 	moves all of `foo` into `bar` if `bar` is a directory or into a file called `bar` if not
-	`ln -s foo` 	`path_to_bar` establishes a link called a *symbolic link* or *symlink* from `foo` to `bar` 
-	`top` 		lists the currently running processes, together with their process IDs. This is useful for:
-	`kill *foo_pid*` stops the process with process ID `foo_pid`
-	`nohup`		when prepended to a command, runs that command in the background, preventing it from writing output to the terminal
+	ls foo		displays a list of files in the directory foo
+	cd foo		moves the current working directory to the directory foo
+	mv foo bar 	moves all of foo into bar if bar is a directory or into a file called bar if not
+	cp foo bar	moves all of foo into bar if bar is a directory or into a file called bar if not
+	ln -s foo 	<path_to_bar> establishes a link called a <i>symbolic link</i> or symlink from foo to bar
+	top 		lists the currently running processes, together with their process IDs. This is useful for:
+	kill foo_pid	stops the process with process ID foo_pid
+	nohup		when prepended to a command, runs that command in the background, preventing it from writing output to the terminal
 	
 
 #The Three Main Interfaces to Rosetta
