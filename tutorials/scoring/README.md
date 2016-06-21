@@ -88,13 +88,15 @@ Demo
 ###Basic Scoring
 In this tutorial, we are going to score the PDB 1QYS (a refined version is provided in `<path_to_Rosetta_directory>/demos/tutorials/scoring/input_files`). First, we will use the default score function, i.e. talaris2014.
 
-    $> <path_to_Rosetta_directory>/main/source/bin/scoring_jd2.linuxgccrelease @flag
+    $> <path_to_Rosetta_directory>/main/source/bin/score_jd2.linuxgccrelease @flag
     
 The only option that we will pass in the flags file is the input PDB:
 
     -in:file:s input_files/1qys.pdb
     
-Running this should produce a file called `score.sc` in the current working directory. Compare this to the file `<path_to_Rosetta_directory>/demos/tutorials/scoring/output_files/score.sc`. They should be the same.
+    -out:file:scorefile output_files/score.sc
+    
+Running this should produce a file called `score.sc` in the directory `output_files`. Compare this to the file `<path_to_Rosetta_directory>/demos/tutorials/scoring/output_files/expected_output/score.sc`. They should be the same.
 
 ####Analysis of the Score File
 The `score.sc` file should look like:
@@ -124,14 +126,14 @@ The flags file we will use now is:
 
 -score:weights score12
 
--out:file:scorefile score_score12.sc
+-out:file:scorefile output_files/score_score12.sc
 ```
 
 On running the command
 
-    $> <path_to_Rosetta_directory>/main/source/bin/scoring_jd2.linuxgccrelease @flag_score12
+    $> <path_to_Rosetta_directory>/main/source/bin/score_jd2.linuxgccrelease @flag_score12
 
-we should get the following score file (can be found at `<path_to_Rosetta_directory>/demos/tutorials/scoring/output_files/score_score12.sc`):
+We should get a score file `score_score12.sc` in the directory `output_files`. Compare this to `<path_to_Rosetta_directory>/demos/tutorials/scoring/output_files/expected_output/score_score12.sc`). They should be the same.
 
 ```html
 SEQUENCE: 
@@ -167,14 +169,14 @@ We then set the `fa_atr` weight to `1.0` (originally `0.8` in score12) from the 
 -score:patch score12_w_corrections
 -score:set_weights fa_atr 1
 
--out:file:scorefile score_score12_patch.sc
+-out:file:scorefile output_files/score_score12_patch.sc
 ```
 
 Now on running
 
-    $> <path_to_Rosetta_directory>/main/source/bin/scoring_jd2.linuxgccrelease @flag_score12_patch
+    $> <path_to_Rosetta_directory>/main/source/bin/score_jd2.linuxgccrelease @flag_score12_patch
 
-we should get the following score file (can be found at `<path_to_Rosetta_directory>/demos/tutorials/scoring/output_files/score_score12_patch.sc`):
+We should get a score file `score_score12_patch.sc` in the directory `output_files`. Compare this to `<path_to_Rosetta_directory>/demos/tutorials/scoring/output_files/expected_output/score_score12_patch.sc`). They should be the same.
 
 ```html
 SEQUENCE: 
