@@ -110,12 +110,12 @@ SCORE:    -163.023    -163.023     0.000  -423.638   109.662   -46.146        1.
 
 The first column called `total_score` represents the total weighted score for the structure 1QYS. For a refined structure of this size, a score of -100 REU to -300 REU is typical.
 
->A rule of thumb: -2 REU per resdiue is typical.
+>A rule of thumb: -1 to -2 REU per resdiue is typical.
 
 The column `fa_atr` represents the weighted score of the Lennard-Jones attractive potential between atoms in different residues, and so on. This breakdown can be helpful in determining which energy terms are contributing more than others, i.e. what kind of interactions occur in the protein.
 
 ###More Scoring Options
-####Changing the score function
+####Changing the Score Function
 Now, we will try to score two structures using an older score function called _score12_. We also want to rename our score file _score_score12.sc.
 
 A detailed list of score functions can be found in `<path_to_Rosetta_directory>/main/database/scoring/weights`.
@@ -145,7 +145,7 @@ SCORE:     -28.876     -28.876       0.000       0.000       0.000       0.000  
 
 In this score file, we can see that the `total_score` of 1QYS has changed from the previous run. We can also see that `dslf_fa13` energy term from the previous example is missing and is instead replaced by four terms to describe disulphide geometry.
 
-####Patch files and changing term weights
+####Patch Files and Changing Term Weights
 Now, say we want to modify the weights of some of the terms in the score function, score12. There are two ways to do this:
 * Adding a patch file providing a list of weights
 * Seting the weight of specific terms from the command line
@@ -187,7 +187,7 @@ SCORE:     -95.233     -95.233        -3.867       0.000       0.000       0.000
 ```
 Note that we have new energy terms `ch_bond_bb_bb` and `fa_cust_pair_dist` which were defined in the patch file. Also, the weighted scores of `hbond_sr_bb`, `rama` and others have changed as defined by the patch file. The decrease in weighted score of `fa_atr` is a result of the increased weight we fed in through the command line via the flag file. (This incidentally is the same weight as the _talaris2014_ score function, and hence `fa_atr` has the same weighted score as in the basic scoring example.)
 
-####Advanced options
+####Advanced Options
 Several other optons that you could add to the flag file are given [here](https://www.rosettacommons.org/docs/latest/application_documentation/analysis/score-commands).
 
 Tips
