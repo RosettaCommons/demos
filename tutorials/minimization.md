@@ -274,6 +274,6 @@ After aligning the minimized-with-movemap structure to the crystal structure as 
 ## Summary
 
 In this tutorial, we learned how to run the `minimize` executable in three ways: 
-1. By using the default behavior, which allowed movement in all backbone and chi angles,
-2. By applying coordinate constraints to the input structure, which disallowed global movements a subset of atoms,
-3. And by applying a MoveMap, which disallowed local movements in the backbone and sidechain torsion angles.
+  1. By using the default behavior, which allowed movement in all backbone and chi angles,
+  2. By applying coordinate constraints to the input structure, which disallowed global movements a subset of atoms,
+  3. And by applying a MoveMap, which disallowed local movements in the backbone and sidechain torsion angles.
