@@ -7,20 +7,20 @@ Each snapshot of a protein in its repertoire of conformations can be associated 
 
 Minimization is a sampling technique for the purpose of finding the nearest local minimum in the energy function given a starting structure's conformation and energy.
 
-In Rosetta, we use the `minimize` executable to perform minimization on protein structures, which in general carries out a _gradient-based minimization_ to find the nearest local minimum in the energy function. There are many different [minimization algorithms](https://www.rosettacommons.org/docs/latest/rosetta_basics/structural_concepts/minimization-overview#flavors-of-minimization-in-rosetta) that the `minimize` executable can use, but essentially all minimization algorithms choose a vector as the descent direction, determine a step along that vector, then choose a new direction and repeat. In this tutorial, we will use `lbfgs_armijo_nonmonotone` algorithm, which is a multi-step algorithm that needs to only be called once to reach the local mimimum of a function (rather than invoking repeated iterations to reach convergence).
+In Rosetta, we use the `minimize` executable to perform minimization on protein structures, which in general carries out a _gradient-based minimization_ to find the nearest local minimum in the energy function. There are many different [minimization algorithms](https://www.rosettacommons.org/docs/latest/rosetta_basics/structural_concepts/minimization-overview#flavors-of-minimization-in-rosetta) that the `minimize` application can use, but essentially all minimization algorithms choose a vector as the descent direction, determine a step along that vector, then choose a new direction and repeat. In this tutorial, we will use the `lbfgs_armijo_nonmonotone` algorithm, which is a multi-step algorithm that needs to only be called once to reach the local mimimum of a function (rather than invoking repeated iterations to reach convergence).
 
 ## Goals
-In this tutorial, you will learn to use one of the many minimization algorithms, both by allowing all residues in the structure to move during the minimation, or only a subset of the degrees of freedom (DOFs). Specifically, we will:
+In this tutorial, you will learn to use one of the many minimization algorithms in three different ways, first by allowing all residues in the structure to move during the minimation and then by using two methods that allow only a subset of the degrees of freedom (DOFs) to be sampled. Specifically, we will:
 * Learn to run the `score` and `minimize` executables via the command line.
-* Create and utilize a **constraints file** to prevent movement from ocurring in part of the structure.
+* Create and utilize a **constraints file** to prevent the movement of CA atoms from ocurring in part of the structure.
 * Create and utilize a **move map** to control the degrees of freedom allowed to move during the minimization.
-* Compare and analyze the output files and structure from each type of minimization.
+* Compare and analyze the output files and structures from each type of minimization.
 
 ## How-To: Minimize
 
 ### Analyzing the input structure
 
-Take a look at the crystal structure file `3hon.pdb` in your favorite PDB Viewer (eg. PyMOL). This structure was taken directly from the RCSB PDB and contains many physical "errors". 
+Take a look at the crystal structure file `3hon.pdb` in your favorite PDB Viewer (e.g. PyMOL). This structure was taken directly from the [RCSB PDB](http://www.rcsb.org/pdb/explore.do?structureId=3HON) and contains many physical "errors". 
 
 Let's get an initial score for this conformation. In your command line, type:
 
@@ -34,7 +34,7 @@ This command will output a `default.sc` file, which contains the Rosetta score f
 
 The first line of this file is the header line that tells us which columns correspond to which score terms.
 
-On the second line of this file, we see that this conformation has a total Rosetta score of 240.074, and that it has a particularly high repulsive score, _fa_rep_, which means there are clashes between atoms in the structure, and a high dunbrack score, _fa_dun_, which means many of the rotamers in this structure are of low probability.
+On the second line of this file, we see that the crystal conformation has a total Rosetta score of 240.074, and that it has a particularly high repulsive score, _fa_rep_, which means there are clashes between atoms in the structure, and a high dunbrack score, _fa_dun_, which means many of the rotamers in this structure are of low probability.
 
 Let's try and fix these issues using the minimizer.
 
@@ -48,18 +48,18 @@ First, we will need to specify how to run the minimizer. Open the `minimizer_fla
  -run:min_tolerance 0.001
 ```
 
-The first flag specifies our input file, in this case, the crystal structure of 3hon.
+The first flag, `s`, specifies our input file, in this case, the crystal structure of 3hon.
 
-The second flag specifies the type of minimization algorithm to use, in this case, lbfgs_armijo_nonmonotone.
+The second flag, `run:min_type`, specifies the type of minimization algorithm to use, in this case, lbfgs_armijo_nonmonotone.
 
-The third flag specifies the convergence tolerance for the minimization algorithm. Rosetta has at least two kinds of "tolerance" for function minimization, "regular" (for lack of a better name) tolerance and absolute tolerance. "Regular" tolerance is _fractional_ tolerance for the _value_ of the function being minimized; i.e. a tolerance of 0.01 means the minimum function value found will be within 1% of the true minimum value. Absolute tolerance is specified without regard to the current function value; i.e. an absolute tolerance of 0.01 means that the minimum function value found will be equal to the actual minimum plus or minus 0.01, period. Minimizers use "regular" fractional tolerance by default. (Click [here](https://www.rosettacommons.org/docs/latest/rosetta_basics/structural_concepts/minimization-overview#the-meaning-of-tolerance) for more information on absolute tolerance). In general, setting the fractional tolerance to 0.01 is very loose, and so it is recommended to specify a tolerance setting of something less than 0.01. Therefore, for this tutorial we have set the tolerance to 0.001.
+The third flag, `run:min_tolerance`, specifies the convergence tolerance for the minimization algorithm. Rosetta has at least two kinds of "tolerance" for function minimization, "regular" (for lack of a better name) tolerance and absolute tolerance. "Regular" tolerance is _fractional_ tolerance for the _value_ of the function being minimized; i.e. a tolerance of 0.01 means the minimum function value found will be within 1% of the true minimum value. Absolute tolerance is specified without regard to the current function value; i.e. an absolute tolerance of 0.01 means that the minimum function value found will be equal to the actual minimum plus or minus 0.01, period. Minimizers use "regular" fractional tolerance by default. (Click [here](https://www.rosettacommons.org/docs/latest/rosetta_basics/structural_concepts/minimization-overview#the-meaning-of-tolerance) for more information on absolute tolerance). In general, setting the fractional tolerance to 0.01 is very loose, and so it is recommended to specify a tolerance setting of something less than 0.01. Therefore, for this tutorial we have set the tolerance to 0.001.
 
 ### Running the minimization command
 
 In your terminal window, run the minimization executable by typing,
 
 ```bash
-$> <path/to/Rosetta/bin/>minimize.default.linuxgccrelease @minimization_flags
+$> <path/to/Rosetta/bin/>minimize.default.linuxgccrelease @minimizer_flags
 ```
 If this executable runs with no errors and the terminal output ends with something like this,
 
@@ -69,7 +69,7 @@ then you have successfully minimized the input structure. Check to make sure a `
 
 ### Analyzing the output
 
-The `score.sc` file contains the NEW scores for the minimized structure. Open this file and compare the initial crystal (xtal) structure scores to the minimized scores:
+The `score.sc` file contains the new scores for the minimized structure. Open this file and compare the initial crystal (xtal) structure scores to the minimized scores:
 
 | Score Term | Xtal Scores | Minimized Scores 	|
 | ------------- | -----------: |  -----------: |
@@ -92,7 +92,7 @@ Most of the score terms have gone down in value (which is good!). But how has th
 
 ![3hon minimized](https://github.com/RosettaCommons/demos/blob/XRW2016_kmb/tutorials/3hon_min_on_xtal.png)
 
-The minimized structure has moved out of alignment with the native structure, so first let's align the two structures. If you are using PyMOL, type `align 3hon_0001, 3hon` and hit `Enter`.
+The minimized structure (in green) has moved out of alignment with the native structure (in cyan), so first let's align the two structures. If you are using PyMOL, type `align 3hon_0001, 3hon` and hit `Enter`.
 
 ![3hon minimized_aligned](https://github.com/RosettaCommons/demos/blob/XRW2016_kmb/tutorials/3hon_minaligned_on_xtal.png)
 
@@ -100,13 +100,11 @@ Now that the structures are aligned, notice that the last nine residues of the l
 
 ![3hon minimized_aligned sticks](https://github.com/RosettaCommons/demos/blob/XRW2016_kmb/tutorials/3hon_minaligned_on_xtal_sticks.png)
 
-**SOMETHING SOMETHING ABOUT WHAT IT ALL MEANS.**
-
-Sometimes it may be undesirable to allow such large movements in the starting conformation. To this end, we can use minimization with constraints to minimize our input structure where movements of certain atoms will be penalized by the score function.
+Sometimes it may be undesirable to allow such large movements in the starting conformation. To this end, we can use minimization with constraints to minimize our input structure in which movements of certain atoms will be penalized by the score function.
 
 ## How-To: Minimization with Constraints
 
-For this section of the tutorial, we will use the same crystal structure as before, `3hon.pdb`, but this time we will apply harmonic coordinate constraints on the backbone heavy atoms of the nine C-terminal tail residues.
+For this section of the tutorial, we will use the same crystal structure as before, `3hon.pdb`, but this time we will apply harmonic coordinate constraints (csts) on the backbone heavy atoms of the nine C-terminal tail residues.
 
 ### Setting up the flags file and constraints file
 
@@ -163,7 +161,7 @@ As before, the `score_minwithcsts.sc` file contains the score of the minimized s
 | p_aa_pp		    | -3.773		    | -12.833		        | -10.393 |
 | coordinate_constraint | | | 0.727 |
 
-As before, most of the new scores from the minimized-with-constraints structure are lower than those in the crystal structure. Notice also the addition of the coordinate constraint term to the list of energy terms for the newly minimized structure. 
+Again, most of the new scores from the minimized-with-constraints structure are lower than those in the crystal structure. Notice also the addition of the coordinate constraint term to the list of energy terms for the newly minimized structure. 
 
 Comparing the minimized structure to the minimized-with-csts structure, we see an increase in total energy caused predominantly by differences in the fa_atr and fa_dun terms. (Why?) 
 
@@ -173,18 +171,18 @@ Opening the `3hon_minwithcsts_0001.pdb` file and comparing it to the crystal str
 
 ![3hon mincsts](https://github.com/RosettaCommons/demos/blob/XRW2016_kmb/tutorials/3hon_minwithcsts_onxtal.png)
 
-we immediately see little to no movement in the nine C-terminal residues.
+we immediately see little to no movement in the position of the nine C-terminal CA atoms.
 
-(Segue: There is another way to prevent motion in all or a subset of residues of the protein structure, and this is by using a MoveMap.)
+In some cases, the user may want to prevent the internal geometry of certain residues from moving during minimization, rather than the XYZ coordinates of the atoms. To disallow movements in backbone phi/psi angles and/or sidechain chi angles, we can supply the minimizer with a MoveMap that specifies which of these degrees of freedom are allowed to be sampled.
 
 ## How-To: Minimization with a MoveMap
 
 ### The [MoveMap](https://www.rosettacommons.org/docs/wiki/rosetta_basics/structural_concepts/Rosetta-overview#scoring_movemap)
-Certain protocols accept a user-specific move map file that tells the algorithm what torsion angles and rigid-body degrees of freedom (DOFs) are allowed to move. For example, one may not want to move highly-conserved sidechains in modeling applications, or one may want to preserve certain interactions in design applications.
+Certain protocols accept a user-defined move map file that tells the algorithm what torsion angles and rigid-body degrees of freedom (DOFs) are allowed to move. For example, one may not want to move highly-conserved sidechains in modeling applications, or one may want to preserve certain interactions in design applications.
 
 In the context of the minimizer, a move map allows the user to specify if the backbone (BB) torsions angles (phi, psi) or the sidechain torsions angles (CHI) are allowed to be moved during the minimization of the energy function. In addition, if the input structure has more than one chain (separated by one or more JUMPS), the move map can also specify if rigid-body movements between the different chains are allowed.
 
-#### Caveat: Even if a residue's backbone torsions are turned off via a move map, movements in this residue's phi and psi angles may still occur, depending on the motion of residues upstream in the FoldTree.
+##### Caveat: Even if a residue's backbone and sidechain torsion movements are turned off in a move map, its relative position with respect to other residues may still change depending on the motion of residues upstream in the FoldTree.
 
 #### Description of the move map file format
 Each line in the move map file identifies a jump, residue, or residue range, followed by the allowed degrees of freedom. These entities may be specified as follows:
@@ -202,8 +200,8 @@ JUMP 1 YES           # allows rigid-body movements between the structures separa
 ```
 Is is also possible to choose all residues or all jumps with the a `*` symbol:
 ```
-RESIDUE *  CHI   # allows sidechain movements at all residues
-JUMP * YES  # allows rigid body movements between all structures separated by jumps
+RESIDUE *  CHI    # allows sidechain movements at all residues
+JUMP * YES        # allows rigid body movements between all structures separated by jumps
 ```
 
 If a residue appears more than once, the last appearance in the file determines the movement (i.e. move map lines are NOT additive). For example, the movemap speficied here
@@ -211,7 +209,7 @@ If a residue appears more than once, the last appearance in the file determines 
 RESIDUE * CHI
 RESIDUE * BB
 ```
-will only allow backbone (BB) movements for all residues and will disallow sidechain (CHI) movements for all residues (which is probably not what the user meant).
+will only allow backbone (BB) movements for all residues and will disallow sidechain (CHI) movements for all residues, which is probably not what the user meant.
 
 ##### Note: If a residue or jump is not specified in the move map, it will revert to the default behavior, which is protocol-specific.
 
@@ -229,13 +227,13 @@ For the next minimization walkthrough, we will need to add one option to our fla
 
 The flag `movemap` specifies the movemap file to apply to the pose.
 
-Our move map file `movemapfile` (expanded below) tells the minimizer to first set all backbone (BB) and sidechain (CHI) torsion angles to movable. Then, it reverts residues 45 through 57 (in pose numbering) to be fixed.
+Our move map file `movemapfile` (expanded below) tells the minimizer to first set all backbone (BB) and sidechain (CHI) torsion angles to movable. Then, it reverts residues 47 through 55 (in pose numbering) to be fixed.
 ```
 RESIDUE * BBCHI
-RESIDUE 45 57 NO
+RESIDUE 47 55 NO
 ```
 
-### Running the minimizer with a movemap
+### Running the minimization command
 
 Run the minimization executable in the same way as before, but now with the new flags file:
 
