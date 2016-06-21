@@ -87,9 +87,15 @@ Demo
 ----
 
 ###Basic Scoring
-In this tutorial, we are going to score the PDB 1QYS (a refined version is provided in `<path_to_Rosetta_directory>/demos/tutorials/scoring/input_files`). First, we will use the default score function, i.e. talaris2014. When in the right demo directory, run:
+In this tutorial, we are going to score the PDB 1QYS (a refined version is provided in `<path_to_Rosetta_directory>/demos/tutorials/scoring/input_files`). First, we will use the default score function, i.e. talaris2014. 
 
-    $> <path_to_Rosetta_directory>/main/source/bin/score_jd2.linuxgccrelease @flag
+If you are not in the tutorial directory, cd into it:
+
+    cd <path_to_Rosetta_directory>/demos/tutorials/scoring
+    
+Then run:
+
+    $> score_jd2.linuxgccrelease @flag
     
 The only options that we will pass in the flags file is the input PDB and the output score file name:
 
@@ -97,7 +103,7 @@ The only options that we will pass in the flags file is the input PDB and the ou
     
     -out:file:scorefile output_files/score.sc
     
-Running this should produce a file called `score.sc` in the directory `output_files`. Compare this to the file `<path_to_Rosetta_directory>/demos/tutorials/scoring/output_files/expected_output/score.sc`. They should be the same.
+Running this should produce a file called `score.sc` in the directory `output_files`. Compare this to the file `output_files/expected_output/score.sc`. They should be the same.
 
 ####Analysis of the Score File
 The `score.sc` file should look like:
@@ -134,9 +140,9 @@ The flags file we will use now is:
 
 On running the command
 
-    $> <path_to_Rosetta_directory>/main/source/bin/score_jd2.linuxgccrelease @flag_score12
+    $> score_jd2.linuxgccrelease @flag_score12
 
-we should get a score file `score_score12.sc` in the directory `output_files`. Compare this to `<path_to_Rosetta_directory>/demos/tutorials/scoring/output_files/expected_output/score_score12.sc`). They should be the same.
+we should get a score file `score_score12.sc` in the directory `output_files`. Compare this to `output_files/expected_output/score_score12.sc`). They should be the same.
 
 ```html
 SEQUENCE: 
@@ -183,9 +189,9 @@ We then set the `fa_atr` weight to `1.0` (originally `0.8` in score12) from the 
 
 Now on running
 
-    $> <path_to_Rosetta_directory>/main/source/bin/score_jd2.linuxgccrelease @flag_score12_patch
+    $> score_jd2.linuxgccrelease @flag_score12_patch
 
-we should get a score file `score_score12_patch.sc` in the directory `output_files`. Compare this to `<path_to_Rosetta_directory>/demos/tutorials/scoring/output_files/expected_output/score_score12_patch.sc`). They should be the same.
+we should get a score file `score_score12_patch.sc` in the directory `output_files`. Compare this to `output_files/expected_output/score_score12_patch.sc`). They should be the same.
 
 ```html
 SEQUENCE: 
@@ -196,7 +202,9 @@ SCORE:     -95.233     -95.233        -3.867       0.000       0.000       0.000
 Note that we have new energy terms `ch_bond_bb_bb` and `fa_cust_pair_dist` which were defined in the patch file. Also, the weighted scores of `hbond_sr_bb`, `rama` and others have changed as defined by the patch file. The decrease in weighted score of `fa_atr` is a result of the increased weight we fed in through the command line via the flag file. (This, incidentally, is the same weight as the _talaris2014_ score function, and hence `fa_atr` has the same weighted score as in the basic scoring example.)
 
 ####Advanced Options
-Several other optons that you could add to the flag file are given [here](https://www.rosettacommons.org/docs/latest/application_documentation/analysis/score-commands).
+Several other optons that you could add to the flags file are given [here](https://www.rosettacommons.org/docs/latest/application_documentation/analysis/score-commands).
+
+For example, the option ```-scorefile_format json``` will write the output score file as a JSON file (which can be very useful for reading the file into any programming language easily)
 
 Tips
 ----
