@@ -8,7 +8,7 @@ Rosetta relies upon a number of additional programs to function. In order to pro
 
 It may also help to familiarize yourself with the basics of [command line interfaces](https://bash.cyberciti.biz/guide/Main_Page). Particularly useful commands include:
 
-	`ls foo` 	displays a list of files in the directory `foo`
+	ls *foo* 	displays a list of files in the directory `foo`
 	`cd foo` 	moves the current working directory to the directory `foo`
 	`mv foo bar` 	moves all of `foo` into `bar` if `bar` is a directory or into a file called `bar` if not
 	`cp foo bar` 	moves all of `foo` into `bar` if `bar` is a directory or into a file called `bar` if not
