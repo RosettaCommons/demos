@@ -2,20 +2,20 @@
 ##Required Software
 Rosetta relies upon a number of additional programs to function. In order to productively use Rosetta, you must have:
 
-1. A text editor capable of outputting plain text files; most people use [emacs](https://www.gnu.org/software/emacs/manual/html_node/emacs/index.html),[vi](https://www.washington.edu/computing/unix/vi.html),[nano](https://www.nano-editor.org/dist/v2.0/nano.html), or some more graphical way of interfacing with one of them.
+1. A text editor capable of outputting plain text files; most people use [emacs](https://www.gnu.org/software/emacs/manual/html_node/emacs/index.html), [vi](https://www.washington.edu/computing/unix/vi.html), [nano](https://www.nano-editor.org/dist/v2.0/nano.html), or some more graphical way of interfacing with one of them.
 2. A molecular viewing tool. Rosetta does not include a way to actually visualize the output files it creates; a tool such as [PyMOL](https://www.pymol.org/) is necessary to examine the output PDBs. Rosetta does include a PyMOLObserver for directly viewing its output in Pymol; instructions for setting up PyMOLObserver are found [here].
 3. A terminal. Unix and Apple users have suitable terminals installed by default. Windows users attempting to run Rosetta remotely on a Mac or Unix machine will require a tool like PuTTY to provide the necessary interface.
 
-It may also help to familiarize yourself with the basics of [command line interfaces.](https://bash.cyberciti.biz/guide/Main_Page) Particularly useful commands include:
+It may also help to familiarize yourself with the basics of [command line interfaces](https://bash.cyberciti.biz/guide/Main_Page). Particularly useful commands include:
 
-	ls *foo* 	displays a list of files in the directory *foo*
-	cd *foo* 	moves the current working directory to the directory *foo*
-	mv *foo* *bar* 	moves all of *foo* into *bar* if *bar* is a directory or into a file called *bar* if not
-	cp *foo* *bar* 	moves all of *foo* into *bar* if *bar* is a directory or into a file called *bar* if not
-	ln -s *foo* 	*path_to_bar* establishes a link called a *symbolic link* or *symlink* from *foo* to *bar* 
-	top 		lists the currently running processes, together with their process IDs. This is useful for:
-	kill *foo_pid* stops the process with process ID *foo_pid*
-	nohup		when prepended to a command, runs that command in the background, preventing it from writing output to the terminal
+	`ls foo` 	displays a list of files in the directory `foo`
+	`cd foo` 	moves the current working directory to the directory `foo`
+	`mv foo bar` 	moves all of `foo` into `bar` if `bar` is a directory or into a file called `bar` if not
+	`cp foo bar` 	moves all of `foo` into `bar` if `bar` is a directory or into a file called `bar` if not
+	`ln -s foo` 	`path_to_bar` establishes a link called a *symbolic link* or *symlink* from `foo` to `bar` 
+	`top` 		lists the currently running processes, together with their process IDs. This is useful for:
+	`kill *foo_pid*` stops the process with process ID `foo_pid`
+	`nohup`		when prepended to a command, runs that command in the background, preventing it from writing output to the terminal
 	
 
 #The Three Main Interfaces to Rosetta
@@ -34,7 +34,7 @@ The second part, -s 1ubq.pdb, is an option, or *flag*, that modifies the executi
 	-out::file [...] This option indicates the name and location to which Rosetta is to write any output files.
 	-ignore_unrecognized_residue This option should not be required for a successful Rosetta install, but indicates that residues that Rosetta cannot process should be left out of the execution.
 
-In order to demonstrate how Rosetta exectuables may be run and their execution controlled via flags, create a folder in your main Rosetta directory named *tutorials* or something similar, and there put the files 1ubq.pdb and 1qys.pdb. 
+In order to demonstrate how Rosetta exectuables may be run and their execution controlled via flags, create a folder in your main Rosetta directory named `tutorials` or something similar, and there put the files 1ubq.pdb and 1qys.pdb. 
 
 Now run 
 
@@ -57,13 +57,13 @@ and running
 	$> ../../../main/source/bin/fixbb.default.linuxgccrelease -l pdblist
 
 ##Running Rosetta via RosettaScripts
-Running RosettaScripts is similar to running an executable directly from the command line: execute rosetta_scripts and pass in the relevant options. The key difference is that the executable run is always rosetta_scripts, which requires the option "parser:protocol" indicating the XML script that it is to run. RosettaScripts is covered in more detail [here]. Try creating a file named "fixbb_script.xml" containing the following:
+Running RosettaScripts is similar to running an executable directly from the command line: execute rosetta_scripts and pass in the relevant options. The key difference is that the executable run is always rosetta_scripts, which requires the option "parser:protocol" indicating the XML script that it is to run. RosettaScripts is covered in more detail [here](). Try creating a file named "fixbb_script.xml" containing the following:
 	<ROSETTASCRIPTS>
 	script goes here
 	</ROSETTASCRIPTS>
 saving it, and running it with 
 
-	>../../../main/source/bin/rosetta_scripts.default.linuxgccrelease -parser:protocol fixbb_script.xml'. You should see output similar to the command run at the start of this tutorial.
+	>../../../main/source/bin/rosetta_scripts.default.linuxgccrelease -parser:protocol fixbb_script.xml. You should see output similar to the command run at the start of this tutorial.
 
 ##Running Rosetta via PyRosetta
 PyRosetta functions are run within Python scripts; it requires that rosetta be imported with the command
@@ -73,7 +73,7 @@ or similar, after which the Pyrosetta functions may be called within the script 
 #Constructing a Rosetta Job
 
 ##Considerations of Scale
-Rosetta is capable of running processes at many scales. The deterministic scoring functions may be run on a single processor in a matter of seconds; running an ab initio folding job can require a national-scale supercomputer running for thousands of CPU-hours. It may be worthwhile to review the CPU time required to run Rosetta for different tasks [here].
+Rosetta is capable of running processes at many scales. The deterministic scoring functions may be run on a single processor in a matter of seconds; running an ab initio folding job can require a national-scale supercomputer running for thousands of CPU-hours. It may be worthwhile to review the CPU time required to run Rosetta for different tasks [here]().
 
 ##Post-Processing
 Because Rosetta is stochastic software, it is often necessary to perform statistical analysis on the structures it generates, called *decoys*. This may be done with a statistics package such as R, documentation for which is [here](https://cran.r-project.org/doc/manuals/r-release/R-intro.pdf).
