@@ -112,12 +112,11 @@ The full PDBs are available in `Rosetta/demos/tutorials/full_atom_vs_centroid/in
 
 Navigating to the Demos
 -----------------------
-The demos are available at: `Rosetta/demos/tutorials/full_atom_vs_centroid`. All demo commands listed in this tutorial should be executed when in this directory. All the demos are here use the `linuxgccrelease` binary. You may be required to change it to whatever is appropriate given your operating system and compiler.
+The demos are available at: `Rosetta/demos/tutorials/full_atom_vs_centroid`. All demo commands listed in this tutorial should be executed when in this directory. All the demos here use the `linuxgccrelease` binary. You may be required to change it to whatever is appropriate given your operating system and compiler.
 
-Common Problems
----------------
+Using the wrong representation
+------------------------------
 ###Centroid input when protocol expects full atom
-####Demo
 The following demo runs the [scoring protocol](https://www.rosettacommons.org/demos/latest/tutorials/scoring/README) (which expects to a full atom input) with an centroid PDB as input.
 
     $> <path_to_Rosetta_directory>/main/source/bin/score_jd2.linuxgccrelease @flag_cen_for_fa
@@ -154,7 +153,6 @@ core.pack.pack_missing_sidechains: packing residue number 2 because of missing a
 >Since there is no information about the conformation of the sidechains in the centroid representation, different runs produce slightly different sidechain conformations.
 
 ###Full atom input when protocol expects centroid
-####Demo
 The following demo runs the [scoring protocol](https://www.rosettacommons.org/demos/latest/tutorials/scoring/README) with an option to score the structure assuming it to be in centroid, but the input PDB supplied is full atom.
 
     $> <path_to_Rosetta_directory>/main/source/bin/score_jd2.linuxgccrelease @flag_fa_for_cen
@@ -174,3 +172,41 @@ core.conformation.Conformation: [ WARNING ] missing heavyatom:  CEN on residue I
 ```
 Finally, Rosetta builds the missing centroid pseudo-atomatom. Since no information explicitly required to add the centroid pseudo-atom, different runs produce the same result.
 
+Converting from one representation to the other
+-----------------------------------------------
+Unfotunately, there is not a dedicated executable to switch one representation to the other. Instead, in this section, we will exploit the automatic residue building functionality of the scoring protocol to convert from centroid to full atom. To convert full atom to centroid, we will write a short XML script using [RosettaScripts](https://www.rosettacommons.org/demos/latest/tutorials/rosetta_scripting/README).
+
+>Converting from full atom to centroid and back will not give you the same structure as sidechain building in Rosetta is not deterministic.
+
+###Converting from centroid to full atom
+As we discussed in the section above, if you provide a centroid input to the default [scoring protocol](https://www.rosettacommons.org/demos/latest/tutorials/scoring/README), it automatically builds the side chains for scoring. This funcunality can be exploited to output a full atom PDB like the following:
+
+    $> <path_to_Rosetta_directory>/main/source/bin/score_jd2.linuxgccrelease @flag_from_cen_to_fa
+    
+This should produce a full atom file  `<path_to_Rosetta_directory>/demos/tutorials/full_atom_vs_centroid/output_files/1qys_centroid_0001.pdb`
+
+###Converting from centroid to full atom
+To convert a full atom pdb to centroid, we need to interface with Rosetta at a level deeper than any executable will allow us to do. The simplest way to do this is to write a script using [RosettaScripts](https://www.rosettacommons.org/demos/latest/tutorials/rosetta_scripting/README). The following XML script calls an internal Rosetta class called _SwitchResidueTypeSetMover_ and asks it to convert the structure to centroid: 
+
+```html
+<ROSETTASCRIPTS>
+	<SCOREFXNS>
+	</SCOREFXNS>
+	<FILTERS>
+	</FILTERS>
+	<MOVERS>
+		<SwitchResidueTypeSetMover name=sw set=centroid />
+	</MOVERS>
+	<APPLY_TO_POSE>
+	</APPLY_TO_POSE>
+	<PROTOCOLS>
+		<Add mover=sw />
+	</PROTOCOLS>
+</ROSETTASCRIPTS>
+```
+This can be found at `<path_to_Rosetta_directory>/demos/tutorials/full_atom_vs_centroid\fa_to_cen.xml`. To run this script from the terminal, we will use the `rosetta_scripts` executable:
+
+    $> <path_to_Rosetta_directory>/main/source/bin/rosetta_scripts.linuxgccrelease @flag_from_fa_to_cen
+
+
+This should produce a centroid file  `<path_to_Rosetta_directory>/demos/tutorials/full_atom_vs_centroid/output_files/1qys_0001.pdb`
