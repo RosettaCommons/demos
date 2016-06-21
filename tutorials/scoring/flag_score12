@@ -1,5 +1,0 @@
--in:file:l input_files/pdblist
-
--score:weights score12
-
--out:file:scorefile output_files/score_score12.sc
