@@ -1,0 +1,4 @@
+SEQUENCE: 
+SCORE: total_score       score dslf_fa13 elec_dens_fast         fa_atr         fa_dun        fa_elec fa_intra_rep       fa_rep       fa_sol hbond_bb_sc hbond_lr_bb    hbond_sc hbond_sr_bb linear_chainbreak             omega overlap_chainbreak            p_aa_pp pro_close      rama       ref      time description 
+SCORE:   -6815.478   -6815.478    -4.321      -6859.018      -1711.085        727.994       -103.088        3.956      315.248      975.649     -23.377     -56.062     -15.478     -78.376             0.000             1.323              0.000            -29.500    24.438    21.852    -5.635     0.000 1isrA_0001
+SCORE:   -7183.857   -7183.857    -4.094      -8244.675      -1714.633       1125.820       -107.652        5.674      821.189      982.008     -20.868     -42.484     -16.447     -91.956             0.000             2.954              0.000            -14.068    79.827    60.859    -5.311     0.000 1issA_0001

@@ -1,0 +1,19 @@
+#options file for rebuilding loops with CCD and KIC
+-in:file:s XP0_on_4O68.pdb  #starting pdb with loops to rebuild
+-in:file:fullatom #input structures are in full atom format
+-loops:loop_file XP0.loops #loop file
+-out:file:silent_struct_type binary #output file type
+-out:file:silent XP0_on_4O68_loops.out #output file name
+-out:prefix XP0_on_4O68_loops #prefix for output pdb file names
+-out:file:fullatom #output file will be fullatom
+-nstruct 2 #number of models to build. 10000 recommended for production runs
+-loops:relax fastrelax #does a minimization of the structure in the torsion space
+-loops:extended true #force phi-psi angles to be set to 180 degrees independent of loop input file (recommended for production runs)
+-loops:idealize_after_loop_close #give idealized phi and psi angles after it has been closed
+-loops:fast #decreases the monte carlo inner and outer cycles of loop rebuilding, greatly decreasing computation time 
+-ex1 #rotamer libraries used in the repack step
+-ex2
+-loops:frag_sizes 9 3 1 #sizes of fragments
+-loops:frag_files XP0_9.frags XP0_3.frags none #fragment files
+-loops:remodel quick_ccd #the centroid phase of loop modeling using CCD
+-loops:refine refine_kic #the all-atom phase of loop modeling

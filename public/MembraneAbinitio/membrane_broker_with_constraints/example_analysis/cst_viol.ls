@@ -1,0 +1,10 @@
+S_0013_4_0001.pdb_cst_viol.txt
+S_0023_0001.pdb_cst_viol.txt
+S_0109_1_0001.pdb_cst_viol.txt
+S_0157_2_0001.pdb_cst_viol.txt
+S_0158_3_0001.pdb_cst_viol.txt
+S_0163_0001.pdb_cst_viol.txt
+S_0165_2_0001.pdb_cst_viol.txt
+S_0171_4_0001.pdb_cst_viol.txt
+S_0185_1_0001.pdb_cst_viol.txt
+S_0197_1_0001.pdb_cst_viol.txt
