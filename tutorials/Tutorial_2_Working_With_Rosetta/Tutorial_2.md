@@ -18,9 +18,9 @@ It may also help to familiarize yourself with the basics of [command line interf
 	nohup			when prepended to a command, runs that command in the background, preventing it from writing output to the terminal
 	
 
-#The Three Main Interfaces to Rosetta
+##The Three Main Interfaces to Rosetta
 Rosetta is not a single program; it is instead built with a large number of executable files built to be run either individually, sequentially, or in concert. These files may be run directly from the command line, through an XML interface called RosettaScripts, or through Python via Pyrosetta.
-##Running the Rosetta Executables directly
+###Running the Rosetta Executables directly
 The executables that comprise Rosetta can be run directly by calling them through the terminal directly. These commands are constructed by first indicating the path to the executable you want to run, followed by the flags, options, and input files that dictate how you want the program to execute. 
 As an example, consider the command 
 
@@ -33,7 +33,9 @@ The first part of this command is the path to and name of the executable we want
 	-out::file						This option indicates the name and location to which Rosetta is to write any output files.
 	-ignore_unrecognized_residue	This option should not be required for a successful Rosetta install, but indicates that residues that Rosetta cannot process should be left out of the execution.
 
-In order to demonstrate how Rosetta exectuables may be run and their execution controlled via flags, create a folder in your main Rosetta directory named `tutorials` or something similar, and there put the files `1ubq.pdb` and `1qys.pdb`. 
+The third part of this command is an options file, or *flags file*, which is simply a newline-delimited list of options. It is functionally equivalent to writing each option individually.
+
+In order to demonstrate how Rosetta exectuables may be run and their execution controlled via options, create a folder in your main Rosetta directory named *tutorials* or something similar, and there put the files 1ubq.pdb and 1qys.pdb. 
 
 Now run 
 
@@ -65,6 +67,7 @@ saving it, and running it with
 
 	$> <path_to_Rosetta_directory>/main/source/bin/rosetta_scripts.default.linuxgccrelease -parser:protocol fixbb_script.xml. You should see output similar to the command run at the start of this tutorial.
 
+<<<<<<< HEAD
 ##Running Rosetta via PyRosetta
 PyRosetta functions are run within Python scripts; it requires that rosetta be imported and initiliazed with the commands
 
@@ -72,8 +75,14 @@ PyRosetta functions are run within Python scripts; it requires that rosetta be i
 	rosetta.init()
 	
 after which the Pyrosetta functions may be called within the script itself. Detailed PyRosetta tutorials can be found [here](http://www.pyrosetta.org/tutorials).
+=======
+###Running Rosetta via PyRosetta
+PyRosetta functions are run within Python scripts; it requires that rosetta be imported with the command
+	from rosetta import /*
+or similar, after which the Pyrosetta functions may be called within the script itself. PyRosetta tutorials may be called [here].
+>>>>>>> cb32500d08bc26653fe0b1932ae256dd563a708b
 
-#Constructing a Rosetta Job
+##Constructing a Rosetta Job
 
 ##Considerations of Scale
 Rosetta is capable of running processes at many scales. The deterministic scoring functions may be run on a single processor in a matter of seconds; running an ab initio folding job can require a national-scale supercomputer running for thousands of CPU-hours. It may be worthwhile to review the CPU time required to run Rosetta for different tasks [here]().

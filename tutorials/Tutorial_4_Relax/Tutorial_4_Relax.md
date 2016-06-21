@@ -8,11 +8,11 @@ The demos are available at `<path_to_Rosetta_directory>/demos/tutorials/Tutorial
 
 ##Demo
 
-To demonstrate this, run 
+To demonstrate this, in your terminal window, run the command
 
 	$>../../../main/source/bin/score_jd2.default.linuxclangrelease -s 1ubq.pdb -out:suffix _crystal @crystal_score_flags
 
-and note the score. Now, run
+and note the score in the `score_crystal.sc` file. Now, run
 
 	$>../../../main/source/bin/relax.default.linuxclangrelease -s 1ubq.pdb -out:file:name relaxed.pdb -out:suffix _relaxed @general_relax_flags
 

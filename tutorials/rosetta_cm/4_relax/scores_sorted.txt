@@ -1,0 +1,9 @@
+SCORE:    -695.452     -32.670     177.577       0.108       0.072       0.419      -1.840   -1299.173     239.148        3.281       65.335   249.263    -9.525   170.417     -27.429     -15.031     -54.885    -156.735      15.735     -19.826      -4.232       4.540 S_0001.pdb_relax_S_0001_0001
+SCORE:    -628.465     -36.878     237.642       0.090       0.070       0.292      -1.857   -1320.688     242.765        3.558       69.564   254.118   -11.230   183.220     -39.845     -12.805     -54.455    -161.350      30.745     -17.381       1.420       4.540 S_0003.pdb_relax_S_0003_0001
+SCORE:    -608.422     -28.923     245.067       0.467       0.033       0.001      -1.851   -1310.009     234.158        3.175       69.426   250.684    -9.433   175.839     -37.851     -14.153     -45.879    -157.815      35.888     -18.646      -3.140       4.540 S_0002.pdb_relax_S_0002_0001
+SCORE: total_score Menv_smooth cart_bonded dslf_ca_dih dslf_cs_ang dslf_ss_dih dslf_ss_dst      fa_atr      fa_dun fa_intra_rep     fa_mbenv fa_mbsolv   fa_pair    fa_rep hbond_bb_sc hbond_lr_bb    hbond_sc hbond_sr_bb       omega     p_aa_pp        rama         ref description 
+SCORE: total_score Menv_smooth cart_bonded dslf_ca_dih dslf_cs_ang dslf_ss_dih dslf_ss_dst      fa_atr      fa_dun fa_intra_rep     fa_mbenv fa_mbsolv   fa_pair    fa_rep hbond_bb_sc hbond_lr_bb    hbond_sc hbond_sr_bb       omega     p_aa_pp        rama         ref description 
+SCORE: total_score Menv_smooth cart_bonded dslf_ca_dih dslf_cs_ang dslf_ss_dih dslf_ss_dst      fa_atr      fa_dun fa_intra_rep     fa_mbenv fa_mbsolv   fa_pair    fa_rep hbond_bb_sc hbond_lr_bb    hbond_sc hbond_sr_bb       omega     p_aa_pp        rama         ref description 
+SEQUENCE: 
+SEQUENCE: 
+SEQUENCE: 
