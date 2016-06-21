@@ -3,8 +3,8 @@ Step 3.1:
 Align the transition state model on to the zinc site in the "clean" protein PDB file. 
 
 Input:
-Protein PDB file: 1A4L_clean_A.pdb
-Ligand PDB file: LG_0001.pdb
+- Protein PDB file: 1A4L_clean_A.pdb
+- Ligand PDB file: LG_0001.pdb
 
 Usage: 
 
@@ -13,7 +13,7 @@ $> python $ROSETTA_TOOLS/zinc_site_redesign/align.py -f 1A4L_clean_A.pdb -l LG_0
 ```
 
 Output:
-A file named aligned_ligand.pdb which is the transformed co-ordinates of the ligand after alignment (protein is held fixed).
+- A file named aligned_ligand.pdb which is the transformed co-ordinates of the ligand after alignment (protein is held fixed).
 
 Notes:
 
@@ -26,9 +26,9 @@ Generate files for next steps in Rosetta
 
 Input:
 
-Clean PDB file: 1A4L_clean_A.pdb
-Aligned ligand: aligned_ligand.pdb
-name of metal: ZN
+- Clean PDB file: 1A4L_clean_A.pdb
+- Aligned ligand: aligned_ligand.pdb
+- name of metal: ZN
 
 Usage:
 
@@ -38,8 +38,8 @@ $> python $ROSETTA_TOOLS/zinc_site_redesign/generate_metal_cstfile.py -f 1A4L_cl
 
 Output:
 
-Protein-ligand match contraints in a file (constraint.cst)
-PDB for Rosetta: rosetta_cst.pdb
+- Protein-ligand match contraints in a file: constraint.cst
+- PDB for Rosetta: rosetta_cst.pdb
 
 Other options:
 
