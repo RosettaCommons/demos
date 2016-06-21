@@ -108,11 +108,11 @@ Sometimes it may be undesirable to allow such large movements in the starting co
 
 ## How-To: Minimization with Constraints
 
-For this section of the tutorial, we will use the same crystal structure as before, `3hon.pdb`, but this time we will apply harmonic coordinate constraints (csts) on the backbone heavy atoms of the nine C-terminal tail residues.  You can think of these constraints as "elastics" or "rubber bands" that lightly pull each backbone heavy atom back towards its original positoin during the minimization trajectory.
+For this section of the tutorial, we will use the same crystal structure as before, `3hon.pdb`, but this time we will apply harmonic coordinate constraints (csts) on the backbone heavy atoms of the nine C-terminal tail residues.  You can think of these constraints as "elastics" or "rubber bands" that lightly pull each backbone heavy atom back towards its original positoin during the minimization trajectory.  Practically, constraints are an additional, artificial potential added to the overall energy function (a series of harmonic potentials penalizing deviations from the input coordinates).
 
 ### Setting up the flags file and constraints file
 
-We will need to add extra options to our flagsfile in order to tell Rosetta to read the constraints that specify how to hold the atoms in place. Furthermore, we need to be sure we are using a scorefunction that has non-zero weights for the constraint terms. The new flags file, `minwithcsts_flags`, looks like this:
+We will need to add extra options to our flagsfile in order to tell Rosetta to read the constraints that specify how to hold the atoms in place. Furthermore, we need to tell Rosetta to add the additional constraints potentials to the energy function that it's using.  We do this by setting non-zero weights for the constraint score terms in the weights file (see the [tutorial on scoring](../scoring/README.md)). The new flags file, `minwithcsts_flags`, looks like this:
 
 ```
 -s 3hon.pdb
@@ -125,7 +125,7 @@ We will need to add extra options to our flagsfile in order to tell Rosetta to r
 
 The flag `constraints:cst_file` specifies the name of the constraints file to use.
 
-The flag `score:weights` specifies which set of weights to use for the energy function. In this case, we have specified the talaris2014_cst weights file, which is identical to talaris2014 except for the addition of the constraint terms _chainbreak_, _coordinate_constraint_, _atom_pair_constraint_, _angle_constraint_, _dihedral_constraint_, and _res_type_constraint_, each with a weight of 1.0. 
+The flag `score:weights` specifies which set of weights to use for the energy function. In this case, we have specified the talaris2014_cst weights file, a pre-defined weights file in the Rosetta database that is identical to talaris2014 except for the addition of the constraint terms _chainbreak_, _coordinate_constraint_, _atom_pair_constraint_, _angle_constraint_, _dihedral_constraint_, and _res_type_constraint_, each with a weight of 1.0. 
 
 The flag `out:suffix` will prevent us from overwriting our previous output by appending the suffix "_minwithcsts" to the end of our new output file names.
 
