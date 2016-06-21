@@ -50,7 +50,7 @@ First, we will need to specify how to run the minimizer. Open the `minimizer_fla
 
 The first flag, `s`, specifies our input file, in this case, the crystal structure of 3hon.
 
-The second flag, `-run:min_type`, specifies the type of minimization algorithm to use, in this case, lbfgs_armijo_nonmonotone.
+The second flag, `run:min_type`, specifies the type of minimization algorithm to use, in this case, lbfgs_armijo_nonmonotone.
 
 The third flag, `run:min_tolerance`, specifies the convergence tolerance for the minimization algorithm. Rosetta has at least two kinds of "tolerance" for function minimization, "regular" (for lack of a better name) tolerance and absolute tolerance. "Regular" tolerance is _fractional_ tolerance for the _value_ of the function being minimized; i.e. a tolerance of 0.01 means the minimum function value found will be within 1% of the true minimum value. Absolute tolerance is specified without regard to the current function value; i.e. an absolute tolerance of 0.01 means that the minimum function value found will be equal to the actual minimum plus or minus 0.01, period. Minimizers use "regular" fractional tolerance by default. (Click [here](https://www.rosettacommons.org/docs/latest/rosetta_basics/structural_concepts/minimization-overview#the-meaning-of-tolerance) for more information on absolute tolerance). In general, setting the fractional tolerance to 0.01 is very loose, and so it is recommended to specify a tolerance setting of something less than 0.01. Therefore, for this tutorial we have set the tolerance to 0.001.
 
