@@ -10,9 +10,9 @@ Minimization is a sampling technique for the purpose of finding the nearest loca
 In Rosetta, we use the `minimize` executable to perform minimization on protein structures, which in general carries out a _gradient-based minimization_ to find the nearest local minimum in the energy function. There are many different [minimization algorithms](https://www.rosettacommons.org/docs/latest/rosetta_basics/structural_concepts/minimization-overview#flavors-of-minimization-in-rosetta) that the `minimize` application can use, but essentially all minimization algorithms choose a vector as the descent direction, determine a step along that vector, then choose a new direction and repeat. In this tutorial, we will use the `lbfgs_armijo_nonmonotone` algorithm, which is a multi-step algorithm that needs to only be called once to reach the local mimimum of a function (rather than invoking repeated iterations to reach convergence).
 
 ## Goals
-In this tutorial, you will learn to use one of the many minimization algorithms in three different ways, either by allowing all residues in the structure to move during the minimation or allowing only a subset of the degrees of freedom (DOFs) to be sampled. Specifically, we will:
+In this tutorial, you will learn to use one of the many minimization algorithms in three different ways, first by allowing all residues in the structure to move during the minimation and then by using two methods that allow only a subset of the degrees of freedom (DOFs) to be sampled. Specifically, we will:
 * Learn to run the `score` and `minimize` executables via the command line.
-* Create and utilize a **constraints file** to prevent movement from ocurring in part of the structure.
+* Create and utilize a **constraints file** to prevent the movement of CA atoms from ocurring in part of the structure.
 * Create and utilize a **move map** to control the degrees of freedom allowed to move during the minimization.
 * Compare and analyze the output files and structures from each type of minimization.
 
