@@ -350,8 +350,8 @@ $> cp <path-to-Rosetta>/Rosetta/demos/tutorials/rosetta_cm/4_relax/relax.options
 Perform this step once per each of the three models generated from hybridize (**S_0001.pdb** through **S_0003.pdb**): Note that for the purpose of this tutorial, the "nstruct" value has been placed at one. Additional relax runs may be necessary for individual cases. 
 ```
 $>  <path-to-Rosetta>/Rosetta/main/source/bin/relax.default.linuxgccrelease @relax.options -s S_0001.pdb -out:prefix S_0001_relax_ -nstruct 1
-$>  <path-to-Rosetta>/Rosetta/main/source/bin/relax.default.linuxgccrelease @relax.options -s S_0002.pdb -out:prefix S_0002_relax_ -nstruct 1
-$>  <path-to-Rosetta>/Rosetta/main/source/bin/relax.default.linuxgccrelease @relax.options -s S_0003.pdb -out:prefix S_0003_relax_ -nstruct 1
+>  <path-to-Rosetta>/Rosetta/main/source/bin/relax.default.linuxgccrelease @relax.options -s S_0002.pdb -out:prefix S_0002_relax_ -nstruct 1
+>  <path-to-Rosetta>/Rosetta/main/source/bin/relax.default.linuxgccrelease @relax.options -s S_0003.pdb -out:prefix S_0003_relax_ -nstruct 1
 ```
 
 Final models relax can be found in:
