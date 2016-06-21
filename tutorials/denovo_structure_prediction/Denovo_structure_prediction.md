@@ -35,17 +35,17 @@ Here, a fasta file is provided for you.
     
 ###2. Run the Rosetta AbinitioRelax application.
 
-    $> ../../../main/source/bin/AbinitioRelax.default.linuxclangrelease @options
+    $> ../../../main/source/bin/AbinitioRelax.default.linuxclangrelease @input_files/options
 
 *Alternatively*, run in the background:
 
-    $ nohup ../../../main/source/bin/ AbinitioRelax.default.linuxclangrelease @options > log &
+    $ nohup ../../../main/source/bin/ AbinitioRelax.default.linuxclangrelease @input_files/options > log &
      
         
 >NOTE: This will take 10-20 minutes per structure.
 
 #### Expected output:
-- 2LZMA_0001.pdb (the generated model)
+- S_00000001.pdb (the generated model)
 - score.sc (shows the total score and individual terms)
 
 > * **For an actual production run, 50,000 to 100,000 models need to be generated.**
@@ -58,7 +58,27 @@ Details of how to analyze data and how to select which of the 50,000 models woul
 
 For *de novo* structure prediction, in general you will want to perform the following steps:
 
-####3.1. Extract the best (by score) of the generated models.
+
+####3.1. Plot score vs. rmsd
+To see how confident you can be about the correctness of a prediction, you can plot score vs. rmsd for the top 5% or 10% of the models. Both *total_score* and *rms* are provided in the score file. This is only possible, if the native structure is known. In a real world case, you could use a homologous protein. However, if no related structure is known, you would use e.g. the lowest energy model (and rescore the top models with e.g. *-native best_E.pdb*).  
+ 
+ * Find in which column *total_score* and *rms* is reported (here, column 14). 
+ * Then try:  
+ 
+            $ sort -n -k2 score.sc | head -n 5000 | awk '{print $14 "\t" $2}' > score_rmsd.dat
+ -> The new file (score_rmsd.dat) contains the scores from the top 5000 models.   
+ * Use your favourite ploting program and plot *score_rmsd.dat* as a scatter plot.
+ 
+ 
+ Here are examples of such plots:  
+
+ ![folding_funnels.png](folding_funnels.png)  
+The left plot shows that the lowest energy models also have the lowest rmsd - the simulation converged. On the right hand side, however, there is no convergence. Many very different models have low energies. A prediction would be highly questionable.  
+> The plot you will get, should converge towards an rmsd of approx. 5 Angstrom. 
+
+####3.2. Extract the best (by score) of the generated models.
+5 Angstrom does not quite sound like Rosetta really solved the problem. The only way to find out is by looking at the best structure(s)
+
 > More instructions and helpful scripts are part of the Analysis tutorial ([../analysis](demos/tutorials/analysis/)).  
 
  * In the output_files/ directory, you will find a binary silent file from a full AbinitioRelax run (AbRelax.out) and score file (score.sc).  
@@ -84,22 +104,9 @@ For *de novo* structure prediction, in general you will want to perform the foll
  **WARNING**   
  >A good Rosetta score does not allways mean that the structure is good. Inaccuracies in the energy function leave unfavourable features 'unpunished'. So, allways ask yourself:  
 
-	*Does the result make sense?*
+	* Does the result make sense?
+ 
 
-####3.2. Plot score vs. rmsd
-To see how confident you can be about the correctness of a prediction, you can plot score vs. rmsd for the top 5% or 10% of the models. Both *total_score* and *rms_* are provided in the score file. This is only possible, if the native structure is known. In a real world case, you could use a homologous protein. However, if no related structure is known, you would use e.g. the lowest energy model (and rescore the top models with e.g. *-native best_E.pdb*).  
- 
- * Find in which column the rms_ is reported (E.g. column 23). 
- * Then try:  
- 
-            $ sort -n -k2 score.sc | head 5000 | awk '{print $23 "\t" $2}' > score_rmsd.dat  
- * Use your favourite ploting program and plot *score_rmsd.sc* as a scatter plot.
- 
- 
- Here are examples of such plots:  
-
- ![folding_funnels.png](folding_funnels.png)  
-The left plot shows that the lowest energy models also have the lowest rmsd - the simulation converged. On the right hand side, however, there is no convergence. Many very different models have low energies. A prediction would be highly questionable.
 
 ####3.3. Clustering analysis  
 This sorts the structures by similarity. (See [Analysis](demos/tutorials/analysis/Analysis.md))
