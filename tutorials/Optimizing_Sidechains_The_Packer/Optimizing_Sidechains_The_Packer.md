@@ -1,4 +1,4 @@
-#Optimizing Side-Chains: Introduction To The Packer
+#Optimizing Side-Chains: Introduction to the *Packer*
 Tutorial by Vikram K. Mulligan, Ph.D.
 Created 20 June 2016.
 

@@ -1,4 +1,4 @@
-# Minimization
+# Finding Local Energy Minima Using the *Minimizer*
 
 Tutorial by Kristen Blacklock (kristin.blacklock@rutgers.edu).
 Edited by Vikram K. Mulligan (vmullig@uw.edu).
