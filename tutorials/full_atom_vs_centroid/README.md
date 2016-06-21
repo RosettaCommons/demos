@@ -143,6 +143,7 @@ core.conformation.Conformation: [ WARNING ] missing heavyatom:  CD1 on residue I
 ```
 Finally, Rosetta builds the missing sidechains.
 >Since there is no information about the conformation of the sidechains in the centroid representation, different runs produce slightly different sidechain conformations.
+
 ```html
 ...
 core.pack.pack_missing_sidechains: packing residue number 1 because of missing atom number 6 atom name  CG 
