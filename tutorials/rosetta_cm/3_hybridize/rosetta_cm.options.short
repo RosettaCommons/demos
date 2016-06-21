@@ -1,13 +1,13 @@
 # i/o
 -in:file:fasta 1u19.fasta
 -parser:protocol rosetta_cm.xml
--nstruct 3
+-nstruct 1 
  
 # relax options
 -relax:minimize_bond_angles
 -relax:minimize_bond_lengths
 -relax:jump_move true
--default_max_cycles 200
+-default_max_cycles 5 
 -relax:min_type lbfgs_armijo_nonmonotone
 -relax:jump_move true
 -score:weights stage3_rlx_membrane.wts
