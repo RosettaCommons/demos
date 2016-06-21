@@ -1,6 +1,7 @@
 # i/o
 -in:file:fasta 1u19.fasta
 -parser:protocol rosetta_cm.xml
+-nstruct 3
  
 # relax options
 -relax:minimize_bond_angles
