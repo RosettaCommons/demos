@@ -81,7 +81,7 @@ The left plot shows that the lowest energy models also have the lowest rmsd - th
 
 > More instructions and helpful scripts are part of the Analysis tutorial ([../analysis](demos/tutorials/analysis/)).  
 
- * In the output_files/ directory, you will find a binary silent file from a full AbinitioRelax run (AbRelax.out) and score file (score.sc).  
+ * In the example_outputs directory, you will find a binary silent file from a full AbinitioRelax run (AbRelax.out) and score file (score.sc).  
  Run:
  
          $ cd output_files/
