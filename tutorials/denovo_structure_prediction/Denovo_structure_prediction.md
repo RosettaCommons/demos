@@ -62,10 +62,10 @@ For *de novo* structure prediction, in general you will want to perform the foll
 ####3.1. Plot score vs. rmsd
 To see how confident you can be about the correctness of a prediction, you can plot score vs. rmsd for the top 5% or 10% of the models. Both *total_score* and *rms* are provided in the score file. This is only possible, if the native structure is known. In a real world case, you could use a homologous protein. However, if no related structure is known, you would use e.g. the lowest energy model (and rescore the top models with e.g. *-native best_E.pdb*).  
  
- * Find in which column *total_score* and *rms* is reported (here, column 14). 
+ * Find in which column *total_score* and *rms* is reported (here, column 25). 
  * Then try:  
  
-            $ sort -n -k2 score.sc | head -n 5000 | awk '{print $14 "\t" $2}' > score_rmsd.dat
+            $ sort -n -k2 score.sc | head -n 5000 | awk '{print $25 "\t" $2}' > score_rmsd.dat
  -> The new file (score_rmsd.dat) contains the scores from the top 5000 models.   
  * Use your favourite ploting program and plot *score_rmsd.dat* as a scatter plot.
  
@@ -74,7 +74,7 @@ To see how confident you can be about the correctness of a prediction, you can p
 
  ![folding_funnels.png](folding_funnels.png)  
 The left plot shows that the lowest energy models also have the lowest rmsd - the simulation converged. On the right hand side, however, there is no convergence. Many very different models have low energies. A prediction would be highly questionable.  
-> The plot you will get, should converge towards an rmsd of approx. 5 Angstrom. 
+> The plot you will get, should converge towards an rmsd of approx. 5 Angstrom. You can see what a larger run will look like by running the same steps using the score.sc file provided in the example_outputs directory.
 
 ####3.2. Extract the best (by score) of the generated models.
 5 Angstrom does not quite sound like Rosetta really solved the problem. The only way to find out is by looking at the best structure(s)
@@ -88,17 +88,15 @@ The left plot shows that the lowest energy models also have the lowest rmsd - th
          $ ls
   
  * Identify the best 5 structures:
-  
-          $ sort -n -k2 score.sc | head -l 5  
+```  
+          $ sort -n -k2 score.sc | head -l 5 
+```
   This will sort the score file by the second column (total_score) and print the first 5 lines to the screen. The last column gives you the name (tag) of a model.
   
  * Extract those models from the silent file:
- 
-        $  ../../../main/source/bin/extract_pdbs.default.clangrelease \  
-        -in:file:silent_struct_type binary \  
-        -in:file:silent AbRelax.out \  
-        -in:file:tags <e.g. S_0013 S_0780_1 ...>
-
+ ```
+        $  ../../../main/source/bin/extract_pdbs.default.linuxgccrelease -in:file:silent_struct_type binary -in:file:silent AbRelax.out -in:file:tags <e.g. S_0013 S_0780_1 ...>
+```
  Now you can look at the best structure in a molecule viewer.  
 
  **WARNING**   
