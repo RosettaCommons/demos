@@ -55,7 +55,7 @@ DOWNLOAD TEMPLATE PDB's:
 
 1.	Go to www.rcsb.org.
 2.	Search for *2RH1*.
-3.	Click *Download Files* -> *PDB File (text)*.
+3.	Click *Download Files* -> *PDB File (PDB format)*.
 4.	Remove the T4 lysozyme residues from chain A. These residues appear within the chain A sequence and are numbered 1002-1161. Simply delete any line for chain A residues 1002-1161 (between residues 230 and 263) from **2RH1.pdb**
 
 	gedit 2RH1.pdb
