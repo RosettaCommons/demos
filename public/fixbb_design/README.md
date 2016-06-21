@@ -21,7 +21,9 @@ is very simple and has few options.
 * Systematically list sequence changes in the form of a sequence profile:
 
         ls 1l2y_0001.pdb > list.txt  # this would typically be many designed structures all in a list
-        python rosetta/rosetta/tools/protein_tools/scripts/SequenceProfile.py -l list.txt -t 1l2y.pdb
+        python $ROSETTA_TOOLS/protein_tools/scripts/SequenceProfile.py -l list.txt -t 1l2y.pdb
+
+  In the above, the ROSETTA_TOOLS environment variable must be set to point to your Rosetta/tools directory.  Alternatively, you may manually type the location of the Rosetta/tools directory.
 
 * To control which residues are allowed at each sequence position you would add 
   a resfile (included in this demo) like so.  (Note that we're also changing appending
