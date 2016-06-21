@@ -154,7 +154,7 @@ We can also see that `dslf_fa13` energy term from the previous example is missin
 >There does not exist a good correlation between total score and stability of a structure across different proteins.
 
 ####Patch Files and Changing Term Weights
-Now, say we want to modify the weights of some of the terms in the score function, score12. There are two ways to do this:
+Now, say we want to modify the weights of some of the terms in the score function, score12. We may, for example, wish to downweight a more general score term in favor of a more specific set of them, or to add score terms for [constraints]We may, for example, wish to downweight a more general score term in favor of a more specific set of them, or to add score terms for [constraints]  There are two ways to do this:
 * Adding a patch file providing a list of weights
 * Seting the weight of specific terms from the command line
 
