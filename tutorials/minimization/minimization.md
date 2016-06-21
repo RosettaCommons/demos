@@ -35,7 +35,7 @@ Take a look at the crystal structure file `3hon.pdb` in your favorite PDB Viewer
 Let's get an initial score for this conformation. In your command line, type:
 
 ```bash
-$> <path/to/Rosetta/bin/>score.default.linuxgccrelease -s 3hon.pdb
+$> <path_to_Rosetta>/main/source/bin/score.default.linuxgccrelease -s 3hon.pdb
 ```
 
 This command will output a `default.sc` file, which contains the Rosetta score for this conformation. Inside this file, we see:
@@ -69,7 +69,7 @@ The third flag, `run:min_tolerance`, specifies the convergence tolerance for the
 In your terminal window, run the minimization executable by typing,
 
 ```bash
-$> <path/to/Rosetta/bin/>minimize.default.linuxgccrelease @minimizer_flags
+$> <path_to_Rosetta>/main/source/bin/minimize.default.linuxgccrelease @minimizer_flags
 ```
 If this executable runs with no errors and the terminal output ends with something like this,
 
@@ -140,7 +140,7 @@ The flag `out:suffix` will prevent us from overwriting our previous output by ap
 Run the minimization executable in the same way as before, but now with the new flags file:
 
 ```bash
-$> <path/to/Rosetta/bin/>minimize.cc @minwithcsts_flags
+$> <path_to_Rosetta>/main/source/bin/minimize.default.linuxgccrelease @minwithcsts_flags
 ```
 
 This time, look for a few lines coming from the `core.scoring.constraints` tracers in the log output. They should look similar to this (though again, numeric differences are possible from platform to platform):
@@ -255,7 +255,7 @@ RESIDUE 47 55 NO
 Run the minimization executable in the same way as before, but now with the new flags file:
 
 ```bash
-$> minimize.cc @minwithmm_flags
+$> <path_to_Rosetta>/main/source/bin/minimize.default.linuxgccrelease@minwithmm_flags
 ```
 
 The log output should be similar to the first minimization protocol except for a difference in score. You should also have a `3hon_minwithmm_0001.pdb` file and a `score_minwithmm.sc` file after running this command.
