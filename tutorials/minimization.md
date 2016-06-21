@@ -202,8 +202,8 @@ JUMP 1 YES           # allows rigid-body movements between the structures separa
 ```
 Is is also possible to choose all residues or all jumps with the a `*` symbol:
 ```
-RESIDUE *  CHI   # allows sidechain movements at all residues
-JUMP * YES  # allows rigid body movements between all structures separated by jumps
+RESIDUE *  CHI    # allows sidechain movements at all residues
+JUMP * YES        # allows rigid body movements between all structures separated by jumps
 ```
 
 If a residue appears more than once, the last appearance in the file determines the movement (i.e. move map lines are NOT additive). For example, the movemap speficied here
@@ -211,7 +211,7 @@ If a residue appears more than once, the last appearance in the file determines 
 RESIDUE * CHI
 RESIDUE * BB
 ```
-will only allow backbone (BB) movements for all residues and will disallow sidechain (CHI) movements for all residues (which is probably not what the user meant).
+will only allow backbone (BB) movements for all residues and will disallow sidechain (CHI) movements for all residues, which is probably not what the user meant.
 
 ##### Note: If a residue or jump is not specified in the move map, it will revert to the default behavior, which is protocol-specific.
 
