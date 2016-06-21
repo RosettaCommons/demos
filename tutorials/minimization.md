@@ -175,7 +175,7 @@ Opening the `3hon_minwithcsts_0001.pdb` file and comparing it to the crystal str
 
 we immediately see little to no movement in the nine C-terminal residues.
 
-(Segue: There is another way to prevent motion in all or a subset of residues of the protein structure, and this is by using a MoveMap.)
+(Insert nice segue here: There is another way to prevent motion in all or a subset of residues of the protein structure and this is by using a MoveMap.)
 
 ## How-To: Minimization with a MoveMap
 
