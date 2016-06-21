@@ -104,7 +104,7 @@ The packer is a fundamental Rosetta algorithm called in the context of many larg
 
 In the context of [RosettaScripts](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/RosettaScripts), the packer may be invoked directly using the [PackRotamers](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/Movers/movers_pages/PackRotamersMover) mover.  Many other movers, including [FastRelax](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/Movers/movers_pages/FastRelaxMover), [FastDesign](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/Movers/movers_pages/FastDesignMover), and [Disulfidize](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/Movers/movers_pages/DisulfidizeMover) call the packer.  Typically, any Rosetta component that calls the packer can receive one or more TaskOperations to control packer behaviour.  In the RosettaScripts context, [TaskOperations](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/Movers/movers_pages/PackRotamersMover) are declared separately in a section of the script preceding the movers that call the packer, and are then passed by name to such movers.
 
-## How the packer algorithm works under the hood
+## How the packer algorithm works under the hood (for advanced users)
 
 While a detailed understanding of the workings of the packer is not a strict requirement to use Rosetta, having some idea of what's going on under the hood can help a user to use his or her tools more effectively.  To understand the packer, we must first understand the concept of *Monte Carlo methods*.
 
