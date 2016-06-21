@@ -228,7 +228,7 @@ RESIDUE * BB
 ```
 ...will only allow backbone (BB) movements for all residues and will disallow sidechain (CHI) movements for all residues, which is probably not what the user meant.
 
-> **Note: If a residue or jump is not specified in the movemap, it will revert to the default behavior, which is protocol-specific.**
+> **Note: If a residue or jump is not specified in the movemap, it will revert to the default behavior, which is protocol-specific.**  In many but not all cases, the default behaviour is for all torsional degrees of freedom (bb, chi) and all rigid-body degrees of freedom (jumps) to be movable.  When in doubt, it's better to be explicit about the user-requested behaviour.
 
 ### Setting up the flagsfile and movemap file
 
