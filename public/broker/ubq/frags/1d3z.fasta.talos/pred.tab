@@ -1,0 +1,118 @@
+REMARK TALOS+ Protein Backbone Torsion Angle Prediction Table
+REMARK  Prediction Summary for Chemical Shift Input ../1d3z.talos
+REMARK 
+REMARK  PHI is the predicted torsion angle C(i-1) N(i)  CA(i) C(i)   (degrees).
+REMARK  PSI is the predicted torsion angle N(i)   CA(i) C(i)  N(i+1) (degrees).
+REMARK 
+REMARK  DPHI and DPSI are the estimated standard deviations of the
+REMARK  prediction errors in PHI and PSI (degrees).
+REMARK 
+REMARK  DIST is the TALOS+ database matching score.
+REMARK 
+REMARK  S2 is the Wishart RCI chemical shift order parameter,
+REMARK  JACS, 127(43), 14970-14971.
+REMARK 
+REMARK  COUNT is the number of database triplets used to form
+REMARK  the torsion angle predictions.
+REMARK 
+REMARK  CLASS is the classification of the prediction result:
+REMARK    None: no torsion prediction was made.
+REMARK 
+REMARK    Good: majority consensus in database matches;
+REMARK          prediction is likely to be good.
+REMARK 
+REMARK    Warn: no consensus in database matches, do not use prediction.
+REMARK 
+REMARK    Dyn:  RCI S2 value indicates that residue has dynamic conformation.
+REMARK 
+REMARK Reference:
+REMARK  Y. Shen, F. Delaglio, G. Cornilescu, and A. Bax:
+REMARK  TALOS plus: A hybrid method for predicting protein
+REMARK  torsion angles from NMR chemical shifts.
+REMARK  J. Biomol. NMR 44, 213-223 (2009).
+REMARK 
+REMARK  TALOS+ Version 3.80F1 Rev 2012.080.14.41 TALOS_INFO
+
+DATA FIRST_RESID 1
+DATA SEQUENCE MQIFVKTLTG KTITLEVEPS DTIENVKAKI QDKEGIPPDQ QRLIFAGKQL 
+DATA SEQUENCE EDGRTLSDYN IQKESTLHLV LRLRGG
+
+VARS   RESID RESNAME PHI PSI DPHI DPSI DIST S2 COUNT CS_COUNT CLASS 
+FORMAT %4d %s %8.3f %8.3f %8.3f %8.3f %8.3f %5.3f %2d %2d %s
+
+   1 M 9999.000 9999.000    0.000    0.000    0.000 0.000  0 10 None
+   2 Q -109.292  140.928   11.569   13.296   41.026 0.889 10 16 Good
+   3 I -142.185  167.875    9.709    4.668   21.572 0.900 10 18 Good
+   4 F -123.042  141.719   17.606   13.933   20.868 0.908 10 18 Good
+   5 V -117.025  125.867   15.005   10.806   16.191 0.904 10 18 Good
+   6 K -115.293  134.186   13.349   13.622   16.149 0.892 10 18 Good
+   7 T  -91.852  171.952   15.602   14.167   14.089 0.864 10 18 Good
+   8 L  -65.336  -19.147    5.883   14.175   21.780 0.809 10 18 Good
+   9 T  -99.815    2.847    3.957   14.068   19.803 0.721 10 17 Good
+  10 G   95.915    2.633   16.921   11.814   17.271 0.687 10 17 Good
+  11 K  -73.890  132.752   13.483   10.156   16.256 0.706 10 17 Good
+  12 T  -98.299  127.341   18.959   12.066   12.994 0.784 10 18 Good
+  13 I -108.697  127.616   16.716   14.668   11.619 0.844 10 18 Good
+  14 T -112.374  131.496   19.616   12.357   16.036 0.863 10 18 Good
+  15 L -130.003  151.980   10.842    8.327   15.525 0.876 10 18 Good
+  16 E -112.596  132.887   26.162   22.112   20.994 0.881 10 18 Good
+  17 V -136.470  168.406    7.140    7.175   19.252 0.895 10 18 Good
+  18 E -113.942  158.759   27.429   28.785   44.058 0.891 10 17 Good
+  19 P  -58.675  -21.556    7.289   11.199   50.190 0.879 10 17 Good
+  20 S -103.479   -0.381   15.795   18.927   37.754 0.869 10 17 Good
+  21 D  -90.846   -8.730   14.688   30.489   28.413 0.869  5 18 Warn
+  22 T -107.928  162.672   30.425    9.205   27.463 0.888 10 18 Good
+  23 I  -64.721  -35.208    7.689    8.208   25.363 0.900 10 18 Good
+  24 E  -65.971  -38.487    5.926    7.589   12.763 0.912 10 18 Good
+  25 N  -64.617  -42.746    3.377    6.570    6.117 0.913 10 18 Good
+  26 V  -64.440  -42.336    3.416    4.930    8.227 0.917 10 18 Good
+  27 K  -59.961  -41.577    2.929    5.037    9.575 0.912 10 18 Good
+  28 A  -65.353  -41.235    2.993    3.743    9.240 0.907 10 18 Good
+  29 K  -66.727  -41.752    4.949    7.432    6.912 0.906 10 18 Good
+  30 I  -63.799  -43.571    7.736    8.615    9.107 0.913 10 18 Good
+  31 Q  -64.539  -38.808    6.867    7.952    8.746 0.912 10 18 Good
+  32 D  -67.126  -38.650    8.818    8.771    9.674 0.899 10 18 Good
+  33 K  -81.868  -35.404   10.625   18.029   15.752 0.849 10 18 Good
+  34 E  -98.959   -8.562   12.184   18.234   28.930 0.791 10 17 Good
+  35 G   74.346   18.821   11.899   15.756   29.922 0.720 10 17 Good
+  36 I -111.207  140.683   21.410   12.553   37.528 0.722 10 16 Good
+  37 P  -65.057  145.129   12.097   12.409   51.837 0.769 10 16 Good
+  38 P  -57.007  -32.515   10.469   10.734   50.186 0.845 10 16 Good
+  39 D  -67.665  -26.840    6.598   18.473   27.831 0.853 10 17 Good
+  40 Q  -93.308  -13.812    8.800    8.768   14.749 0.798 10 18 Good
+  41 Q -108.210  142.180   69.165   22.887   17.939 0.795 10 18 Warn
+  42 R -111.988  123.716   20.006   20.154   15.337 0.819 10 18 Good
+  43 L -115.762  134.878   18.343   15.329   12.387 0.879 10 18 Good
+  44 I -127.680  133.425   13.040   13.418   13.663 0.882 10 18 Good
+  45 F -139.551  124.643   13.620    9.497   27.967 0.858 10 18 Good
+  46 A   54.563   38.694    7.607    7.144   44.639 0.837 10 17 Good
+  47 G   75.809    7.584    7.465   10.682   30.334 0.804 10 17 Good
+  48 K -113.711  144.062   14.242   14.047   17.745 0.785 10 17 Good
+  49 Q  -96.695  132.500   18.809   18.153   12.962 0.715 10 18 Good
+  50 L  -84.288  119.555   58.050   20.773   10.542 0.726 10 18 Warn
+  51 E -104.086  153.662   24.458   24.096   15.553 0.727 10 18 Good
+  52 D  -65.091  -37.981   24.813   15.761   30.645 0.799  9 17 Warn
+  53 G   80.959   17.084   14.159   19.259   30.484 0.815 10 17 Good
+  54 R  -99.299  159.391   20.559    7.475   28.171 0.864 10 17 Good
+  55 T  -97.366  167.637   16.272    6.100   32.261 0.894 10 18 Good
+  56 L  -62.540  -36.739    3.527    3.451   22.154 0.917 10 18 Good
+  57 S  -65.729  -31.652    7.810   13.795    8.850 0.908 10 18 Good
+  58 D  -62.324  -35.401    4.312    5.531    9.625 0.889 10 18 Good
+  59 Y  -92.780    4.669    8.900    9.906   13.981 0.858 10 18 Good
+  60 N   62.820   31.793   12.704   16.858   31.942 0.840 10 18 Good
+  61 I  -79.935  136.553   54.565   19.019   26.284 0.825 10 18 Warn
+  62 Q -109.679  164.178   11.978   18.373   18.096 0.836 10 18 Good
+  63 K  -85.361    6.000   15.814   36.002   34.940 0.853  6 18 Warn
+  64 E   62.405   24.878    8.547   15.902   25.910 0.880 10 18 Good
+  65 S  -98.919  146.201   20.695   45.577   35.603 0.885 10 18 Warn
+  66 T -115.986  125.558   21.381   22.384   20.270 0.878 10 18 Good
+  67 L -114.029  146.101   12.871   14.839   18.404 0.872 10 18 Good
+  68 H -112.478  129.835   20.939   17.027   15.848 0.871 10 18 Good
+  69 L -102.265  126.075   12.389    9.057   14.529 0.881 10 18 Good
+  70 V -128.070  141.055   14.316   12.672   14.953 0.872 10 18 Good
+  71 L -103.188  128.510   10.486   19.857   15.863 0.812 10 18 Good
+  72 R  -78.123  129.942   72.322   41.469   12.153 0.594 10 18 Dyn
+  73 L  -91.339  131.038   80.993   42.310   13.299 0.419 10 18 Dyn
+  74 R  -77.266  129.101   58.357   15.732   17.129 0.232 10 17 Dyn
+  75 G  -71.140  157.646   82.596   50.611   28.616 0.139 10 16 Dyn
+  76 G 9999.000 9999.000    0.000    0.000    0.000 0.000  0 10 None

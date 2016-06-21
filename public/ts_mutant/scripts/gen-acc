@@ -1,0 +1,257 @@
+#!/usr/bin/awk -f
+#
+# assumes <infile> ends in .pdb, and that <infile-prefix>-reduce.pdb and
+# <infile>.rsa (naccess output) exist
+# gets res number from input file, then calculates accessibility or surface area
+# if -p flag is supplied, outputs one colum for each ACC type which is % accessibility
+# otherwise, first column pair is from .rsa and naccess standard files
+#   following ACC columns are in pairs: actual, potential
+#
+# in all cases, skips all chains after the first chain!!
+function usage(msg) {
+  if(msg != "")
+    print msg > "/dev/stderr";
+  print "usage: gen-acc [-p] [--types TYPESTR] <file.pdb>" > "/dev/stderr";
+  print "generate accessbility for FIRST CHAIN ONLY of a pdb" > "/dev/stderr";
+  print "by default, generates column pairs suitable for  makecsv.sh input" > "/dev/stderr";
+  print "  -p: generate human-readable output instead" > "/dev/stderr";
+  print " --types: generate only acc columns named in comma-separated list TYPESTR or \"all\" (default ACCP)" > "/dev/stderr";
+  bail = 1;
+  exit(1);
+}
+BEGIN {
+  typeval["ACC"]     = 1;
+  typeval["ACCF"]    = 2;
+  typeval["ACCFSA"]  = 4;
+  typeval["ACCP"]    = 8;
+  typeval["ACCPSA"]  = 16;
+  typeval["ACCPR"]   = 32;
+  typeval["ACCPRSA"] = 64;
+  typestr = "ACCP";
+  makeTypeList(typeval);
+  mode = "r";       # modes: r = raw, p = pct
+  i = 1;
+  while(i < ARGC && ARGV[i] ~ "^-") {
+    if(ARGV[i] ~ /^-+usage/ || ARGV[i] ~ /^-+help/) {
+      usage();
+    } else if(ARGV[i] == "-p") {
+      mode = "p";
+      delete ARGV[i];
+      i++;
+    } else if(ARGV[i] == "--types") {
+      typestr = ARGV[i+1];
+      delete ARGV[i];
+      delete ARGV[i+1];
+      i += 2;
+    } else {
+      usage("error: unrecognized argument \"" ARGV[i] "\"");
+    }
+  }
+  types = makeTypes(typestr);
+  fn = ARGV[i];
+  dir = ENVIRON["MODELLER_ROOT"] "/ts/sasa/";
+  # ACC type-specific preparation
+  if(and(types, typeval["ACCF"])) {
+    INFILE_F = dir "sasa-kevin.txt";
+    checkfile(INFILE_F, "kevin-sasa input");
+    while( (getline < INFILE_F) > 0)
+      sasa[$1] = $2;
+    close(INFILE_F);
+  }
+  if(and(types, typeval["ACCFSA"])) {
+    INFILE_F_SCA = dir "sasa-sca-kevin.txt";
+    checkfile(INFILE_F_SCA, "kevin-sasa sca input");
+    while( (getline < INFILE_F_SCA) > 0)
+      sasa_sca[$1] = $2;
+    close(INFILE_F_SCA);
+  }
+  if(and(types, typeval["ACC"])) {
+  # read in and index naccess standard.data
+    nacpotf = ENVIRON["HOME"] "/naccess2.1.1/standard.data";
+    checkfile(nacpotf, "naccess standard data");
+    while( (getline < nacpotf) > 0)
+      if($0 ~ /^ATOM/)
+	nacpot[$4] = $11;
+    close(nacpotf);
+    nacf = gensub("\\.pdb", ".rsa", 1, fn);
+    checkfile(nacf, "naccess accessibility");
+    accchain = "";
+    while( (getline < nacf) >0) {
+      if($1 ~ /^RES/) {
+	; # figure out if file has chain info
+	ch = substr($0, 9, 1);
+	; # read only first chain
+	if(accchain == "") {
+	  accchain = ch;
+	}
+	if(accchain != ch) {
+	  continue;
+	} else {
+	  ; # account for blank chain, which changes field numbering
+	  bc = ch == " ";
+	  n = $(bc ? 3 : 4) + 0;
+	  a = $(bc ? 7 : 8) + 0;
+	  v = $(bc ? 6 : 7) + 0;
+	  nac[n] = v;
+	  nacp[n] = a;
+	}
+      }
+    }
+    close(nacf);
+  }
+  if(or(and(types, typeval["ACCPR"]), and(types, typeval["ACCPRSA"])))
+    rfn = gensub(".pdb", "-reduce.pdb", 1, fn);
+  lastresi = "";
+  pdbchain = "";
+  if(mode == "r") {
+    printf("RESNUM\tRES");
+    for(i = 1; i <= length(typelist); i++)
+      if(and(types, typeval[typelist[i]]))
+	printf("\t%sABS\tPOT", gensub("ACC", "", 1, typelist[i]));
+    printf("\n");
+  } else {
+    printf("RESNUM\tRES");
+    for(i = 1; i <= length(typelist); i++)
+      if(and(types, typeval[typelist[i]]))
+	printf("\t%s", typelist[i]);
+    printf("\n");
+  }
+}
+/^ATOM/ {
+  ch = substr($0, 22, 1)
+  if(pdbchain == "")
+    pdbchain = ch;
+  else if(ch != pdbchain)
+    next;
+  resn = substr($0, 18, 3);
+  resi = substr($0, 23, 4) + 0;
+  if(resi != lastresi) {
+    if(mode == "r") {
+      printf("%-d\t%s", resi, resn);
+      if(and(types, typeval["ACC"]))
+	printf("\t%.2f\t%.2f", nac[resi], nacpot[resn]);
+      if(and(types, typeval["ACCF"]))
+	printf("\t%.1f\t%.1f", getsa(resi, pdbchain, FILENAME), sasa[resn]);
+      if(and(types, typeval["ACCFSA"]))
+	printf("\t%.1f\t%.1f", getsasca(resi, pdbchain, FILENAME),sasa_sca[resn]);
+      if(and(types, typeval["ACCP"])) {
+	split(getsaraw(resi, pdbchain, FILENAME), p_v, "/");
+	printf("\t%.1f\t%.1f", p_v[1], p_v[2]);
+      }
+      if(and(types, typeval["ACCPSA"])) {
+	split(getsascaraw(resi, pdbchain, FILENAME), psa_v, "/");
+	printf("\t%.1f\t%.1f", psa_v[1], psa_v[2]);
+      }
+      if(and(types, typeval["ACCPR"])) {
+	split(getsaraw(resi, pdbchain, rfn), pr_v, "/");
+	printf("\t%.1f\t%.1f", pr_v[1], pr_v[2]);
+      }
+      if(and(types, typeval["ACCPRSA"])) {
+	split(getsascaraw(resi, pdbchain, rfn), prsa_v, "/");
+	printf("\t%.1f\t%.1f", prsa_v[1], prsa_v[2]);
+      }
+      printf("\n");
+    } else if(mode == "p") {
+      printf("%-d\t%s", resi, resn);
+      if(and(types, typeval["ACC"]))
+	printf("\t%.1f", nacp[resi]);
+      if(and(types, typeval["ACCF"]))
+	printf("\t%.0f", getsa(resi, pdbchain, FILENAME) * 100 / sasa[resn]);
+      if(and(types, typeval["ACCFSA"]))
+	printf("\t%.0f", getsasca(resi, pdbchain, FILENAME) * 100 / sasa_sca[resn]);
+      if(and(types, typeval["ACCP"]))
+	printf("\t%.1f", getpct(resi, pdbchain, FILENAME));
+      if(and(types, typeval["ACCPSA"]))
+	printf("\t%.1f", getpctsca(resi, pdbchain, FILENAME));
+      if(and(types, typeval["ACCPR"]))
+	printf("\t%.1f", getpct(resi, pdbchain, rfn));
+      if(and(types, typeval["ACCPRSA"]))
+	printf("\t%.1f", getpctsca(resi, pdbchain, rfn));
+      printf("\n");
+    } else {
+      usage("internal error: unknown mode \"" mode "\", aborting");
+    }
+  }
+  lastresi = resi;
+}
+END {
+  if(!bail)
+    ;
+}
+function makeTypeList(tv,  a) {
+  for(a in tv)
+    typelist[int(log(tv[a])/log(2)+.1) + 1] = a;
+}
+function makeTypes(s,   r,a,l,f,i) {
+  r = 0;
+  if(s == "all") {
+    for(a in typeval)
+      r = or(r, typeval[a]+0);
+  } else {
+    l = split(s, f, ",");
+    for(i = 1; i <= l; i++)
+      if(typeval[f[i]] == "")
+	usage("error: unknown ACC type \"" f[i] "\"");
+      else
+	r = or(r, typeval[f[i]]);
+  }
+  return r;
+}
+function getsaraw(resi, ch, fn,   a) {
+  chs = (ch != " " ? " chain" ch : "");
+  pcmd = "probe -rad1.4 -C -Q \"" resi chs "\" -out " fn " | egrep \"potential area:|contact surface area:\"";
+  pcmd | getline po;
+  a = gensub("potential area: ([[:digit:].]*).*", "\\1", 1, po);
+  pcmd | getline po;
+  a = gensub("[[:space:]]*contact surface area: ([[:digit:].]*).*", "\\1", 1, po) "/" a;
+  close(pcmd);
+  return a;
+}
+function getsa(resi, ch, fn,   a) {
+  chs = (ch != " " ? " chain" ch : "");
+  pcmd = "probe -rad1.4 -C -Q \"" resi chs "\" -out " fn " | grep \"contact surface area:\"";
+  pcmd | getline po;
+  close(pcmd);
+  i = split(po, a);
+  return a[i-1];
+}
+function getsascaraw(resi, ch, fn,   a) {
+  chs = (ch != " " ? " chain" ch : "");
+  pcmd = "probe -rad1.4 -C -Q \"(ATOM_CA_|SC) " resi chs "\" -out " fn " | egrep \"potential area:|contact surface area:\"";
+  pcmd | getline po;
+  a = gensub("potential area: ([[:digit:].]*).*", "\\1", 1, po);
+  pcmd | getline po;
+  a = gensub("[[:space:]]*contact surface area: ([[:digit:].]*).*", "\\1", 1, po) "/" a;
+  close(pcmd);
+  return a;
+}
+function getsasca(resi, ch, fn,   a) {
+  chs = (ch != " " ? " chain" ch : "");
+  pcmd = "probe -rad1.4 -C -Q \"(ATOM_CA_|SC) " resi chs "\" -out " fn " | grep \"contact surface area:\"";
+  pcmd | getline po;
+  close(pcmd);
+  i = split(po, a);
+  return a[i-1];
+}
+function getpct(resi, ch, fn,   a) {
+  chs = (ch != " " ? " chain" ch : "");
+  pcmd = "probe -rad1.4 -C -Q \"" resi chs "\" -out " fn " | grep \"tot:\"";
+  pcmd | getline po;
+  close(pcmd);
+  i = split(po, a);
+  return a[i];
+}
+function getpctsca(resi, ch, fn,   a) {
+  chs = (ch != " " ? " chain" ch : "");
+  pcmd = "probe -rad1.4 -C -Q \"(ATOM_CA_|SC) " resi chs "\" -out " fn " | grep \"tot:\"";
+  pcmd | getline po;
+  close(cmd);
+  i = split(po, a);
+  return a[i];
+}
+function checkfile(fn, desc) {
+  if(system("test -f \"" fn "\"") != 0) {
+    print "missing required " desc " file (" fn "), aborting" > "/dev/stderr";
+    exit;
+  }
+}

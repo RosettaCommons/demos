@@ -1,0 +1,16 @@
+cd /csrosetta3/
+
+# check all the options availabel for the installation
+install.py -h
+
+# using option -nopicking if you don't do fragment picking, and provide -rosetta and -rosetta_database, for example
+install.py -nopicking -rosetta ~/rosetta -rosetta_database ~/rosetta/rosetta_database
+
+# You will see some installation informations. At the end you will see for example on my local computer
+# created symlink /home/<USER>/csrosetta3/com/init.bashrc --> /home/<USER>/csrosetta3/com/init
+# then
+
+#Now source the init file
+source com/init
+
+

@@ -1,0 +1,15 @@
+-nstruct 1
+-n_replica 13
+
+-in:file:s P.pdb
+-in:file:native native.pdb
+-score:weights docking
+-evaluation:DockMetrics
+@partners
+
+-out:file:silent decoys.out
+-out:file:scorefile scores.fsc
+-run:intermediate_structures
+
+-jd2:mpi_timeout_factor 0
+

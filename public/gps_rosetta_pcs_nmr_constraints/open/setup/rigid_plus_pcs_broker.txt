@@ -1,0 +1,388 @@
+CLAIMER CoordConstraintClaimer
+PDB_FILE ../setup/ideal_model.pdb
+ASK_FOR_ROOT ALL
+POTENTIAL BOUNDED 0.0 4 1 xyz
+END_CLAIMER
+
+CLAIMER RigidChunkClaimer
+pdb ../setup/ideal_model.pdb
+REGION
+RIGID 1 15 0 0
+RIGID 54 247 0 0
+END_REGION
+END_CLAIMER
+
+CLAIMER PseudocontactShiftEnergyController_Ts1
+
+# The flag NPC_INPUT_FILE is used to give the input file name. Use 1 per lanthanide.
+
+
+TS1_PCS_INPUT_FILE ../setup/B_C1Tm_input.npc
+TS1_PCS_INPUT_FILE ../setup/B_C1Tb_input.npc
+
+
+
+
+# The size of the edge of the cube that determine the grid search.
+# 4 strictly positif numbers (int or float) for the 4 stages.
+# If not set, default value is 50.0 for all stages
+
+TS1_GRID_EDGE_SIZE 20 20 20 20
+
+
+
+# The size of the step of the grid search.
+# 4 strictly positif numbers (int or float) for the 4 stages.
+# If not set, default value is 3.0 for all stages
+
+TS1_GRID_STEP_SIZE 3 3 3 3
+
+
+
+# A spherical cutoff: skip points of the grid search within that sphere (centered on the center of the grid search)
+# 4 positif numbers (int or float) for the 4 stages.
+# If not set, default value is 0.0 for all stages
+
+TS1_GRID_SMALL_CUTOFF 5 5 5 5
+
+
+
+# A spherical cutoff: skip points of the grid search outside that sphere (centered on the center of the grid search)
+# 4 strictly positif numbers (int or float) for the 4 stages.
+# If not set, default value is 25.0 for all stages
+
+TS1_GRID_LARGE_CUTOFF 10 10 10 10
+
+
+
+# A conic cutoff: skip points of the grid search that are outside the cone (axis determined by the 2 Atom points)
+# The axis vector is the vector ATOM2_ATOM1
+# 4 numbers betwwen 0 and 180 (int or float) for the 4 stages.
+# Typicall values are 180 (full space) or 90 (half space, away from ATOM2)
+# If not set, default value is 180.0 for all stages
+
+TS1_GRID_CONE_ANGLE_CUTOFF 180 180 180 180
+
+
+# The first atom that will determine the vector (used as axes of GRID_CONE_ANGLE_CUTOFF)
+# Must be specified
+
+TS1_VECTOR_ATOM1_NAME CA CA CA CA
+TS1_VECTOR_ATOM1_RESIDUE_NUM 96 96 96 96
+
+
+
+# The first atom that will determine the vector (used as axes of GRID_CONE_ANGLE_CUTOFF)
+# Must be specified
+
+TS1_VECTOR_ATOM2_NAME CB CB CB CB
+TS1_VECTOR_ATOM2_RESIDUE_NUM 96 96 96 96
+
+
+
+# The center C of the grid search (which is also the center of the spheres) is specified by the following vector equality
+# ATOM2_C = K_vector * ATOM1_ATOM2
+# Example, if you defined ATOM1 as CA 68 and ATOM2 as CB 68, and if you want to center the grid search on the point C that is on the line (ATOM1, ATOM2) such that the distance (ATOM2, C) is equal to twice the distance (ATOM1, ATOM2), then you would chose K_VECTOR = 2.
+# or, if you want to center the grid search on ATOM2, chose K_VECTOR = 0.
+# If not set, default value is 0.0 for all stages
+
+TS1_K_VECTOR 0 0 0 0
+
+
+
+# At the end of the grid search, the best tensor found can be further minimize (including the lanthanide coordinate)
+# 4 boolean (0 for false, 1 for true) for the 4 stages.
+# If not set, default value is 0 (false) for all stages
+
+TS1_MINIMIZE_BEST_TENSOR 0 0 1 1
+
+
+
+# The weight to use for the PCS score.
+# 4 positif numbers (int or float) for the 4 stages.
+# If not set, default value is 10 for all stages
+
+TS1_PCS_WEIGHT 0 0 1 1
+
+END_CLAIMER
+
+CLAIMER PseudocontactShiftEnergyController_Ts2
+
+# The flag NPC_INPUT_FILE is used to give the input file name. Use 1 per lanthanide.
+
+
+TS2_PCS_INPUT_FILE ../setup/B_C2Tm_input.npc
+TS2_PCS_INPUT_FILE ../setup/B_C2Tb_input.npc
+
+
+
+
+# The size of the edge of the cube that determine the grid search.
+# 4 strictly positif numbers (int or float) for the 4 stages.
+# If not set, default value is 50.0 for all stages
+
+TS2_GRID_EDGE_SIZE 20 20 20 20
+
+
+
+# The size of the step of the grid search.
+# 4 strictly positif numbers (int or float) for the 4 stages.
+# If not set, default value is 3.0 for all stages
+
+TS2_GRID_STEP_SIZE 3 3 3 3
+
+
+
+# A spherical cutoff: skip points of the grid search within that sphere (centered on the center of the grid search)
+# 4 positif numbers (int or float) for the 4 stages.
+# If not set, default value is 0.0 for all stages
+
+TS2_GRID_SMALL_CUTOFF 5 5 5 5
+
+
+
+# A spherical cutoff: skip points of the grid search outside that sphere (centered on the center of the grid search)
+# 4 strictly positif numbers (int or float) for the 4 stages.
+# If not set, default value is 25.0 for all stages
+
+TS2_GRID_LARGE_CUTOFF 10 10 10 10
+
+
+
+# A conic cutoff: skip points of the grid search that are outside the cone (axis determined by the 2 Atom points)
+# The axis vector is the vector ATOM2_ATOM1
+# 4 numbers betwwen 0 and 180 (int or float) for the 4 stages.
+# Typicall values are 180 (full space) or 90 (half space, away from ATOM2)
+# If not set, default value is 180.0 for all stages
+
+TS2_GRID_CONE_ANGLE_CUTOFF 180 180 180 180
+
+
+# The first atom that will determine the vector (used as axes of GRID_CONE_ANGLE_CUTOFF)
+# Must be specified
+
+TS2_VECTOR_ATOM1_NAME CA CA CA CA
+TS2_VECTOR_ATOM1_RESIDUE_NUM 96 96 96 96
+
+
+
+# The first atom that will determine the vector (used as axes of GRID_CONE_ANGLE_CUTOFF)
+# Must be specified
+
+TS2_VECTOR_ATOM2_NAME CB CB CB CB
+TS2_VECTOR_ATOM2_RESIDUE_NUM 96 96 96 96
+
+
+
+# The center C of the grid search (which is also the center of the spheres) is specified by the following vector equality
+# ATOM2_C = K_vector * ATOM1_ATOM2
+# Example, if you defined ATOM1 as CA 68 and ATOM2 as CB 68, and if you want to center the grid search on the point C that is on the line (ATOM1, ATOM2) such that the distance (ATOM2, C) is equal to twice the distance (ATOM1, ATOM2), then you would chose K_VECTOR = 2.
+# or, if you want to center the grid search on ATOM2, chose K_VECTOR = 0.
+# If not set, default value is 0.0 for all stages
+
+TS2_K_VECTOR 0 0 0 0
+
+
+
+# At the end of the grid search, the best tensor found can be further minimize (including the lanthanide coordinate)
+# 4 boolean (0 for false, 1 for true) for the 4 stages.
+# If not set, default value is 0 (false) for all stages
+
+TS2_MINIMIZE_BEST_TENSOR 0 0 1 1
+
+
+
+# The weight to use for the PCS score.
+# 4 positif numbers (int or float) for the 4 stages.
+# If not set, default value is 10 for all stages
+
+TS2_PCS_WEIGHT 0 0 1 1
+
+END_CLAIMER
+
+CLAIMER PseudocontactShiftEnergyController_Ts3
+
+# The flag NPC_INPUT_FILE is used to give the input file name. Use 1 per lanthanide.
+
+
+TS3_PCS_INPUT_FILE ../setup/C_C1Tm_input.npc
+TS3_PCS_INPUT_FILE ../setup/C_C1Tb_input.npc
+
+
+
+
+# The size of the edge of the cube that determine the grid search.
+# 4 strictly positif numbers (int or float) for the 4 stages.
+# If not set, default value is 50.0 for all stages
+
+TS3_GRID_EDGE_SIZE 20 20 20 20
+
+
+
+# The size of the step of the grid search.
+# 4 strictly positif numbers (int or float) for the 4 stages.
+# If not set, default value is 3.0 for all stages
+
+TS3_GRID_STEP_SIZE 3 3 3 3
+
+
+
+# A spherical cutoff: skip points of the grid search within that sphere (centered on the center of the grid search)
+# 4 positif numbers (int or float) for the 4 stages.
+# If not set, default value is 0.0 for all stages
+
+TS3_GRID_SMALL_CUTOFF 5 5 5 5
+
+
+
+# A spherical cutoff: skip points of the grid search outside that sphere (centered on the center of the grid search)
+# 4 strictly positif numbers (int or float) for the 4 stages.
+# If not set, default value is 25.0 for all stages
+
+TS3_GRID_LARGE_CUTOFF 10 10 10 10
+
+
+
+# A conic cutoff: skip points of the grid search that are outside the cone (axis determined by the 2 Atom points)
+# The axis vector is the vector ATOM2_ATOM1
+# 4 numbers betwwen 0 and 180 (int or float) for the 4 stages.
+# Typicall values are 180 (full space) or 90 (half space, away from ATOM2)
+# If not set, default value is 180.0 for all stages
+
+TS3_GRID_CONE_ANGLE_CUTOFF 180 180 180 180
+
+
+# The first atom that will determine the vector (used as axes of GRID_CONE_ANGLE_CUTOFF)
+# Must be specified
+
+TS3_VECTOR_ATOM1_NAME CA CA CA CA
+TS3_VECTOR_ATOM1_RESIDUE_NUM 130 130 130 130
+
+
+
+# The first atom that will determine the vector (used as axes of GRID_CONE_ANGLE_CUTOFF)
+# Must be specified
+
+TS3_VECTOR_ATOM2_NAME CB CB CB CB
+TS3_VECTOR_ATOM2_RESIDUE_NUM 130 130 130 130
+
+
+
+# The center C of the grid search (which is also the center of the spheres) is specified by the following vector equality
+# ATOM2_C = K_vector * ATOM1_ATOM2
+# Example, if you defined ATOM1 as CA 68 and ATOM2 as CB 68, and if you want to center the grid search on the point C that is on the line (ATOM1, ATOM2) such that the distance (ATOM2, C) is equal to twice the distance (ATOM1, ATOM2), then you would chose K_VECTOR = 2.
+# or, if you want to center the grid search on ATOM2, chose K_VECTOR = 0.
+# If not set, default value is 0.0 for all stages
+
+TS3_K_VECTOR 0 0 0 0
+
+
+
+# At the end of the grid search, the best tensor found can be further minimize (including the lanthanide coordinate)
+# 4 boolean (0 for false, 1 for true) for the 4 stages.
+# If not set, default value is 0 (false) for all stages
+
+TS3_MINIMIZE_BEST_TENSOR 0 0 1 1
+
+
+
+# The weight to use for the PCS score.
+# 4 positif numbers (int or float) for the 4 stages.
+# If not set, default value is 10 for all stages
+
+TS3_PCS_WEIGHT 0 0 1 1
+
+END_CLAIMER
+
+CLAIMER PseudocontactShiftEnergyController_Ts4
+
+# The flag NPC_INPUT_FILE is used to give the input file name. Use 1 per lanthanide.
+
+
+TS4_PCS_INPUT_FILE ../setup/C_C2Tm_input.npc
+TS4_PCS_INPUT_FILE ../setup/C_C2Tb_input.npc
+
+
+
+
+# The size of the edge of the cube that determine the grid search.
+# 4 strictly positif numbers (int or float) for the 4 stages.
+# If not set, default value is 50.0 for all stages
+
+TS4_GRID_EDGE_SIZE 20 20 20 20
+
+
+
+# The size of the step of the grid search.
+# 4 strictly positif numbers (int or float) for the 4 stages.
+# If not set, default value is 3.0 for all stages
+
+TS4_GRID_STEP_SIZE 3 3 3 3
+
+
+
+# A spherical cutoff: skip points of the grid search within that sphere (centered on the center of the grid search)
+# 4 positif numbers (int or float) for the 4 stages.
+# If not set, default value is 0.0 for all stages
+
+TS4_GRID_SMALL_CUTOFF 5 5 5 5
+
+
+
+# A spherical cutoff: skip points of the grid search outside that sphere (centered on the center of the grid search)
+# 4 strictly positif numbers (int or float) for the 4 stages.
+# If not set, default value is 25.0 for all stages
+
+TS4_GRID_LARGE_CUTOFF 10 10 10 10
+
+
+
+# A conic cutoff: skip points of the grid search that are outside the cone (axis determined by the 2 Atom points)
+# The axis vector is the vector ATOM2_ATOM1
+# 4 numbers betwwen 0 and 180 (int or float) for the 4 stages.
+# Typicall values are 180 (full space) or 90 (half space, away from ATOM2)
+# If not set, default value is 180.0 for all stages
+
+TS4_GRID_CONE_ANGLE_CUTOFF 180 180 180 180
+
+
+# The first atom that will determine the vector (used as axes of GRID_CONE_ANGLE_CUTOFF)
+# Must be specified
+
+TS4_VECTOR_ATOM1_NAME CA CA CA CA
+TS4_VECTOR_ATOM1_RESIDUE_NUM 130 130 130 130
+
+
+
+# The first atom that will determine the vector (used as axes of GRID_CONE_ANGLE_CUTOFF)
+# Must be specified
+
+TS4_VECTOR_ATOM2_NAME CB CB CB CB
+TS4_VECTOR_ATOM2_RESIDUE_NUM 130 130 130 130
+
+
+
+# The center C of the grid search (which is also the center of the spheres) is specified by the following vector equality
+# ATOM2_C = K_vector * ATOM1_ATOM2
+# Example, if you defined ATOM1 as CA 68 and ATOM2 as CB 68, and if you want to center the grid search on the point C that is on the line (ATOM1, ATOM2) such that the distance (ATOM2, C) is equal to twice the distance (ATOM1, ATOM2), then you would chose K_VECTOR = 2.
+# or, if you want to center the grid search on ATOM2, chose K_VECTOR = 0.
+# If not set, default value is 0.0 for all stages
+
+TS4_K_VECTOR 0 0 0 0
+
+
+
+# At the end of the grid search, the best tensor found can be further minimize (including the lanthanide coordinate)
+# 4 boolean (0 for false, 1 for true) for the 4 stages.
+# If not set, default value is 0 (false) for all stages
+
+TS4_MINIMIZE_BEST_TENSOR 0 0 1 1
+
+
+
+# The weight to use for the PCS score.
+# 4 positif numbers (int or float) for the 4 stages.
+# If not set, default value is 10 for all stages
+
+TS4_PCS_WEIGHT 0 0 1 1
+

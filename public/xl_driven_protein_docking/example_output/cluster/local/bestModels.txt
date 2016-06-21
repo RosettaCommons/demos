@@ -1,0 +1,2 @@
+complex-relaxed_0001_0001.pdb	-586.188
+	1	0
