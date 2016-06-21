@@ -15,6 +15,7 @@ Rosetta calculates the energy of a biomolecule using energy functions based on p
 * How to score a biomolecule
 * How to change the energy function to other preset functions
 * How to customize the terms in an energy function for your purpose
+* How to get every resdiue's contribution to the energy score
 
 Scoring in Rosetta
 ------------------
@@ -85,17 +86,57 @@ The demos are available at `<path_to_Rosetta_directory>/demos/tutorials/scoring`
 
 Demo
 ----
+###Preparing PDBs for Scoring
+To score a biomoleule in Rosetta, we use the `score_jd2` executable. This application, along with most in Rosetta, expect the input PDB to be formatted in a certain manner. A PDB downloaded directly from the Protein Data Bank may or may not work with Rosetta in general, and `score_jd2` in particular. Here's an example where we try to score the PDB 3TDM. When in the right demo directory, run:
+
+    $><path_to_Rosetta_directory>/main/source/bin/score_jd2.linuxgccrelease -in:file:s input_files/from_rcsb/3tdm.pdb
+   
+The application will exit with the following error:
+
+    ERROR: Unrecognized residue: PO4
+    
+This PDB contains a phosphate ion that Rosetta is unable to process without additional options. To score this PDB, we will add an option `-ignore_unrecognized_res`, which simply ignores the phosphates in the PDB.
+
+    $><path_to_Rosetta_directory>/main/source/bin/score_jd2.linuxgccrelease -in:file:s input_files/from_rcsb/3tdm.pdb -ignore_unrecognized_res
+
+Now the PDB will be scored and the score will be dsplayed in a file `score.sc`(henceforth called the _score file_) in your current working directory. We will learn how to analyze and interpret this file in the next section.
+
+If an input PDB does not meet the exact specifications that Rosetta requires, eg. it has missing heavy atoms or unusual residues that Rosetta recognizes by default (unlike phosphates), Rosetta adds or changes atoms to satisfy the specifications. You can ask it to output the structure it actually scores by including the option `out:pdb`. In this example, we will score the PDB 1QYS taken directly from the Protein Data Bank:
+
+    $><path_to_Rosetta_directory>/main/source/bin/score_jd2.linuxgccrelease -in:file:s input_files/from_rcsb/1qys.pdb -out:pdb
+    
+In the log, you will see the following lines:
+```html
+...
+core.io.pose_from_sfr.PoseFromSFRBuilder: Reading MSE as MET!
+...
+core.pack.pack_missing_sidechains: packing residue number 13 because of missing atom number 6 atom name  CG
+...
+```
+The first line indicates that it converts the residue _MSE_, i.e. selenomethionine to _MET_, i.e. regular methionine. The second line tells you that Rosetta found that the C<sub>γ</sub> atom was missing in residue number 13, and built the sidechain for residue number 13. You should see that `score.sc` has been overwritten and a new file `1qys_0001.pdb` is present in your current working directory.
+
+>Since Rosetta does not build the sidechain deterministically, every run of this example will produce a different result, both in terms of the PDB structure and the score file.
+
+The PDB file now contains the missing atoms and MET in place of MSE. This is the structure that was actually scored. Also, the score file will show a large positive `total_score` indicating an unfavorable structure. **This does not mean that the structure is unstable, it simply means that Rosetta believes that some minor steric clashes may exist in this PDB.** It will have a similar format to the following:
+
+```html
+SEQUENCE: 
+SCORE: total_score dslf_fa13    fa_atr    fa_dun   fa_elec fa_intra_rep       fa_rep       fa_sol hbond_bb_sc hbond_lr_bb    hbond_sc hbond_sr_bb linear_chainbreak             omega overlap_chainbreak            p_aa_pp pro_close      rama       ref yhh_planarity description 
+SCORE:     267.496     0.000  -422.275   290.201   -25.824        1.313      238.436      248.433      -1.045     -23.835      -2.245     -22.744             0.000             1.234              0.000             -4.258     0.000     2.749   -12.643         0.000 1qys_0001
+```
+
+To avoid these issues, it is recommended that you always refine the PDB with the [relax]() protocol with the same _score function_ that you intend to eventually score with. This relieves clashes and prepares the structure for scoring in Rosetta. More details on how to do this in later tutorials. Let us switch our focus to scoring refined PDBs.
 
 ###Basic Scoring
-In this tutorial, we are going to score the PDB 1QYS (a refined version is provided in `<path_to_Rosetta_directory>/demos/tutorials/scoring/input_files`). First, we will use the default score function, i.e. talaris2014. When in the right demo directory, run:
-
-    $> <path_to_Rosetta_directory>/main/source/bin/score_jd2.linuxgccrelease @flag
-    
-The only options that we will pass in the flags file is the input PDB and the output score file name:
+In this section, we are going to score the PDB 1QYS (a refined version is provided in `<path_to_Rosetta_directory>/demos/tutorials/scoring/input_files`). First, we will use the default score function, i.e. _talaris2014_. Instead of passing a whitespace separated list of options, we will start using flags files as we start using more options. For now, the only options that we will pass in the flags file is the input PDB and the output score file name:
 
     -in:file:s input_files/1qys.pdb
     
     -out:file:scorefile output_files/score.sc
+    
+To score this structure, run:
+
+    $> <path_to_Rosetta_directory>/main/source/bin/score_jd2.linuxgccrelease @flag
     
 Running this should produce a file called `score.sc` in the directory `output_files`. Compare this to the file `<path_to_Rosetta_directory>/demos/tutorials/scoring/output_files/expected_output/score.sc`. They should be the same (expect for the `time` column which depends on your CPU speed).
 
@@ -108,13 +149,15 @@ SCORE: total_score       score dslf_fa13    fa_atr    fa_dun   fa_elec fa_intra_
 SCORE:    -163.023    -163.023     0.000  -423.638   109.662   -46.146        1.040       49.117      241.309      -3.934     -26.998     -11.234     -25.491             0.000             4.211              0.000            -13.603     0.000    -4.905   -12.643     1.000         0.230 1qys_0001
 ```
 
-The first column called `total_score` represents the total weighted score for the structure 1QYS. For a refined structure of this size, a score of -100 REU to -300 REU is typical. The lower the score, the more stable the structure is likely to be for a given protein size.
+The first column called `total_score` represents the total weighted score for the structure 1QYS. Notice how much lower the `total_score` is when compared to the unrefined structure in the previous section. For a refined structure of this size, a score of -100 REU to -300 REU is typical. The lower the score, the more stable the structure is likely to be for a given protein.
 
->A rule of thumb: -1 to -3 REU per resdiue is typical while scoring with _talaris2014_ score function.
+>A rule of thumb: -1 to -3 REU per resdiue is typical while scoring a refined structure with _talaris2014_ score function.
 
 The column `fa_atr` represents the weighted score of the Lennard-Jones attractive potential between atoms in different residues, and so on. This breakdown can be helpful in determining which energy terms are contributing more than others, i.e. what kind of interactions occur in the protein. In this particular example, Rosetta predicts that the inter-residue van der Waals' forces have the largest stabilizing contribution (`-423.638`), whereas solvation (represented by `fa_sol`) has the highest destabilizing contribution (`241.309`).
 
 >A large `fa_rep` weighted score (i.e. much larger than stabilizing effect of `fa_atr`) indicates clashes in the structure.
+
+In the previous example, the `fa_rep` weighted score was `238.436`, whereas in the refined structure it is `49.117`. This reduction of ~200 REU indicates that refinement relieved the minor clashes that existed in the original PDB.
 
 ###More Scoring Options
 ####Changing the Score Function
@@ -208,6 +251,9 @@ Note that we have set the weight of `fa_pair` to zero in the patch file. This el
 
 ####Advanced Options
 Several other optons that you could add to the flag file are given [here](https://www.rosettacommons.org/docs/latest/application_documentation/analysis/score-commands).
+
+###Getting Per Residue Scores
+
 
 Tips
 ----
