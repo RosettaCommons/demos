@@ -10,9 +10,9 @@ This tutorial will go through some examples of what to do with the output that R
 
 The main question that you have to answer is: 
 
-*Does the result answer my question?"*
+*"Does the result answer my question?"*
 
-This tutorial is primarily focused on statistical and analytical methods to inform the answer to that question. As with any stochastic simulation, many of the results Rosetta generates for any given run will explore regions of conformation space that are not relevant to the problem at hand; statistical analysis can help separate signal from noise and evaluate the relevance of the results as a whole.
+This tutorial is primarily focused on statistical and analytical methods to inform the answer to that question. As with any stochastic simulation, many of the results Rosetta generates for any given run will explore regions of conformation space that are not relevant to the problem at hand; statistical analysis can help select the best/most informative results from a given run while also evaluating the success of the run as a whole.
 
 ###1. PDB file
 
