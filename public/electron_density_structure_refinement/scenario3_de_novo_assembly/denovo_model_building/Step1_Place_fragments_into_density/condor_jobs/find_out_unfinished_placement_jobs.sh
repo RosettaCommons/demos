@@ -1,0 +1,1 @@
+../../../scripts/find_out_unfinished_placement_jobs.sh

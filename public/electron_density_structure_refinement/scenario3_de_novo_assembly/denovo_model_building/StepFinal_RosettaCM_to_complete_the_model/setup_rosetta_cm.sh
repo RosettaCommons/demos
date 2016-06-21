@@ -1,0 +1,1 @@
+../../scripts/setup_rosetta_cm.sh
