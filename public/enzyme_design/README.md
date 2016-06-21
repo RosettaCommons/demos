@@ -221,7 +221,7 @@ output scorefile, as well as a file that specifies required values for certain
 columns, and will then output only those designs in the scorefile that satisfy 
 all required values:
 
-    $Rosetta3/src/apps/public/enzdes/DesignSelect.pl -d rosetta_inputs/mocktim_all_design_scores.out -c rosetta_inputs/mocktim_design_selectreqs.txt > selected_designs.txt
+    $> $Rosetta3/src/apps/public/enzdes/DesignSelect.pl -d rosetta_inputs/mocktim_all_design_scores.out -c rosetta_inputs/mocktim_design_selectreqs.txt > selected_designs.txt
 
 These commands will output 44 designs from the 3720 produced for the PLoS ONE 
 paper. These 44 would then be visually examined for whether any of them look 
