@@ -11,9 +11,14 @@ The following files are needed
 5. Parameters for the ligand (LG.params) and optionally ligand rotamers as a concatanated PDB file - in this example, all atoms except the phosphorous and oxygens bonded to it are made virtual in the LG.params file to avoid using the rotamer ensemble for speed reasons.
 
 Usage:
-./match.sh 1A4LA_clean_r.pdb
+
+```bash
+$> <path_to_Rosetta_directory>/main/source/bin/match.default.linuxgccrelease @general_matching.flags @scaf.flags @subs.flags -linmem_ig 10 -in:file::s 1A4LA_clean_r.pdb
+```
+
+In the above, ".default.linuxgccrelease" may need to be updated for your build, operating system, and compiler.
 
 Output:
 If any matches are found new pdb files will be return with the residue inserted, named  UM_*pdb
 
-Notes: For more details on the setup see the matcher documentation
+Notes: For more details on the setup see the [matcher documentation](https://www.rosettacommons.org/docs/latest/application_documentation/design/match).
