@@ -1,5 +1,5 @@
 -nstruct 2
 -relax:range:cycles 5
 -out:path:pdb ./tutorial_output
--out:path_score ./expected_output
+-out:path:score ./expected_output
 

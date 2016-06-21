@@ -31,7 +31,8 @@ The second part, -s 1ubq.pdb, is an option, or *flag*, that modifies the executi
 
 	-nstruct: This option dictates the number of output structures Rosetta is to generate; this is important for [Monte Carlo simulations].
 	-database: This option should not be required for a successful Rosetta install, but indicates the path to the Rosetta database (which is now detected automatically.)
-	-out::file [...] This option indicates the name and location to which Rosetta is to write any output files.
+	-out:file:path [...] This option indicates the relative location to which Rosetta is to write any output files.
+	-out:suffix This option adds a specified string to the end of all the output PDB files.
 	-ignore_unrecognized_residue This option should not be required for a successful Rosetta install, but indicates that residues that Rosetta cannot process should be left out of the execution.
 
 In order to demonstrate how Rosetta exectuables may be run and their execution controlled via flags, create a folder in your main Rosetta directory named *tutorials* or something similar, and there put the files 1ubq.pdb and 1qys.pdb. 
@@ -81,13 +82,18 @@ Because Rosetta is stochastic software, it is often necessary to perform statist
 # Where to Find Things In Rosetta
 ###Binaries
 The Rosetta executables are all symlinked into Rosetta/source/bin and may be run from there; the actual executables are compiled into Rosetta/source/build, but should be run from source/bin to ensure robustness to updates.
+
 ###Source Code
 The Rosetta source code exists in Rosetta/source/src, but does not contain content required for non-developer users of Rosetta.
+
 ###Weights files
 Rosetta weights files (.wts files), used to parameterize the scorefunction weights, are in Rosetta/main/database/scoring/weights .
+
 ##Params files
 Parameter files are in the corresponding subdirectories of /Rosetta/main/database/chemical/residue_type_sets .
+
 ###Tools
 The tools directory, Rosetta/tools, contains a number of useful tools for manipulating Rosetta inputs and outputs.
+
 ###Scripts
 RosettaScripts and useful python scripts may be found in Rosetta/main/source/scripts

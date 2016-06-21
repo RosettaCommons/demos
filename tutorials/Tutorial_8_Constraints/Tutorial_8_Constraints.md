@@ -45,3 +45,4 @@ and
 
 You should see that, while the rest of each subunit moves, the N terminus of each subunit moves very little relative to residue 423, as per the constraints we entered. (You may verify this more rigorously by measuring the distance from residue 356 to residue 423 on the other subunit.) As mentioned in the Relax tutorial, if we wished to prevent any of the amino acids from moving particularly far from their starting position, we could use the option
 	-relax:constrain_to_starting_coords
+

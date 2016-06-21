@@ -34,18 +34,18 @@ To further explore this, run
 
 	$>../../../main/source/bin/relax.default.linuxclangrelease -s 1ubq.pdb @general_relax_flags -out:suffix _lever_arm -in:file:movemap lever_arm_movemap
 
-and observe that everything c-terminal to the region allowed to move has also moved. This is endemic to [movemaps] using [relative coordinates], and is called the [lever-arm effect]; while some protocols in Rosetta are written with this in mind, Relax allows lever-arm effects if not specifically prohibited from doing so within its MoveMap.
+and observe that everything c-terminal to the region allowed to move has also moved. This is endemic to [movemaps] using [internal coordinates], and is called the [lever-arm effect]; while some protocols in Rosetta are written with this in mind, Relax allows lever-arm effects if not specifically prohibited from doing so within its MoveMap.
 
 It can also be useful to disfavor dramatic movements in Relax without completely disallowing them. This may be done by adding constraints via
 
 	-relax:constrain_relax_to_start_coords
 	-relax:constrain_relax_to_native_coords -in:file:native
 
-The former option disfavors output that is structurally dissimilar to the input; the latter similarly disfavors divergence from a provided input file. These are implemented as harmonic constraints, so a linear divergence is reflected in a quadratic increase in score. If small changes are not to be disfavored, these constraints can be modified with 
+The former option disfavors output that is structurally dissimilar to the input; the latter similarly disfavors divergence from a provided input file. As the name implies, this is particularly useful for ensuring fidelity to some kind of native structure. These are implemented as harmonic constraints, so a linear divergence is reflected in a quadratic increase in score. If small changes are not to be disfavored, these constraints can be modified with 
 
 	-relax:coord_cst_width    <width> 
 
-which replaces the normal harmonic constraints with flat constraints out to a distance of *width*, such that any changes that leave the output within *width* of the input see no change in score at all.
+which replaces the normal harmonic constraints with flat harmonic constraints out to a distance of *width*, such that any changes that leave the output within *width* of the input see no change in score at all.
 To demonstrate this, run
 
 	$>../../../main/source/bin/relax.default.linuxclangrelease -s 1ubq.pdb -out:suffix _constrained_relax -relax:constrain_relax_to_start_coords @general_relax_flags 
@@ -58,7 +58,7 @@ By default, Relax will not change the input sequence. It can be allowed to do so
 
 	-relax:respect_resfile -packing:resfile *resfile*
 
-which will set its internal packer to respect the provided resfile. This only controls packing behavior, not the minimizer; it can also be used to increase [rotamer] sampling around critical residues.
+which will set its internal packer to respect the provided resfile. This only controls packing behavior, not the minimizer; it can also be used to increase [rotamer] sampling around critical residues, but will not by itself ensure that particular rotamers are preserved.
 To demonstrate this, run 
 
 	$> ../../../main/source/bin/relax.default.linuxclangrelease -s 1ubq.pdb -out:suffix _relaxed_with_resfile -relax:respect_resfile -packing:resfile 1ubq.resfile @general_relax_flags
@@ -68,7 +68,7 @@ and compare to 1ubq.pdb. Note that the two structures are different; these diffe
 ###Changing the behavior of constraints
 By default, Relax gradually decreases the weight of any constraints given as the run progresses in order to explore more space in which the constraints hold while also optimizing the final structure. This behavior may be deactivate with
 	-relax:ramp_constraints false
-if the constraints are particularly important or believed to be absolutely accurate.
+if the constraints must be absolutely maintained. 
 
 ##FastRelax
 
