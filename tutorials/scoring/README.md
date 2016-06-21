@@ -302,6 +302,13 @@ SCORE:  input_files/1qys.pdb          1         3A         ASP          2       
 ```
 The first line (after the header line) tells us the score breakdown of residue 3 internal energies. Further down the file, a line indicates the interaction energy of residues 3 and 4 (shown above). **Be sure to use the same score function in `residue_energy_breakdown` as you did in `score_jd2` to have valid results.**
 
+###Advanced Scoring Protocols
+Some proteins require additional files for scoring. For example, a membrane file requires a definition of the membrane spanning region, while a symmetric protein (using the symmetry framework) requires a definition of the symmetry. Such protocols are beyond the scope of this tutorial. Here are links to the documentation for these methods:
+
+* [Scoring membrane proteins](https://www.rosettacommons.org/docs/latest/application_documentation/membrane_proteins/RosettaMP-App-MPScoring)
+
+* [Symmetric scoring](https://www.rosettacommons.org/docs/latest/rosetta_basics/structural_concepts/symmetry#implementation-of-symmetry_symmetric-scoring)
+
 Tips
 ----
 * While the scoring step is deterministic and should provide the same score for given score function and input structure, you may not get the same score if you run `score_jd2` on PDBs which have not been prepared well. For example, there might be missing sidechain atoms which Rosetta tries to model (non-deterministically), thus, producing different scores on different runs.
