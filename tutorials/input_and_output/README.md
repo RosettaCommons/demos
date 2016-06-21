@@ -25,14 +25,20 @@ Controlling Input
 ###Input Search Paths
 ###Informing a Protocol about the Input Representation - Centroid or Full Atom
 ###Input a Known Structure For Comparison
-
+###Other Specific Flags
 
 
 Output File Formats
 -------------------
 ###Common Stucture Input Files
-####Gzipped PDB
+####Gzipped Files
 
 ###Adding Prefixes and Suffixes
-
+###Setting Output Paths
+####Output Structure
+####Score File
+###Forcing and Supressing Output of Structures
+####Only Output a Score File
+###Adjusting Detail Level in Logs
+###
 
