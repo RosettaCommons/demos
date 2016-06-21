@@ -229,10 +229,10 @@ For the next minimization walkthrough, we will need to add one option to our fla
 
 The flag `movemap` specifies the movemap file to apply to the pose.
 
-Our move map file `movemapfile` (expanded below) tells the minimizer to first set all backbone (BB) and sidechain (CHI) torsion angles to movable. Then, it reverts residues 45 through 57 (in pose numbering) to be fixed.
+Our move map file `movemapfile` (expanded below) tells the minimizer to first set all backbone (BB) and sidechain (CHI) torsion angles to movable. Then, it reverts residues 47 through 55 (in pose numbering) to be fixed.
 ```
 RESIDUE * BBCHI
-RESIDUE 45 57 NO
+RESIDUE 47 55 NO
 ```
 
 ### Running the minimizer with a movemap
