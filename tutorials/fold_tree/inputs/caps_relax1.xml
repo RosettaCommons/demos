@@ -8,8 +8,12 @@
     <FILTERS>
     </FILTERS>
     <MOVERS>
-	<AtomTree name="tree" fold_tree_file="inputs/tree1.ft"/>
-	<FastRelax name="relax" repeats=7 />
+	<AtomTree name="tree" fold_tree_file="inputs/caps_tree1.ft"/>
+	<FastRelax name="relax" repeats=7>
+		<MoveMap name="part">
+			<Span begin=1 end=20 bb=1 chi=1/>
+		</MoveMap>
+	</FastRelax>
     </MOVERS>
     <APPLY_TO_POSE>
     </APPLY_TO_POSE>
