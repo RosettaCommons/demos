@@ -69,9 +69,11 @@ saving it, and running it with
 
 ##Running Rosetta via PyRosetta
 PyRosetta functions are run within Python scripts; it requires that rosetta be imported and initiliazed with the commands
+
 	from rosetta import /*
 	rosetta.init()
-or similar, after which the Pyrosetta functions may be called within the script itself. Detailed PyRosetta tutorials can be found [here](http://www.pyrosetta.org/tutorials).
+	
+after which the Pyrosetta functions may be called within the script itself. Detailed PyRosetta tutorials can be found [here](http://www.pyrosetta.org/tutorials).
 
 #Constructing a Rosetta Job
 
