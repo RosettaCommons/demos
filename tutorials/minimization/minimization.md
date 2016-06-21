@@ -13,6 +13,8 @@ Each snapshot of a protein in its repertoire of conformations can be associated 
 
 In Rosetta, one of the simplest ways in which to move a structure to its nearest local energy minimum is to use the `minimize` executable.  This carries out a _gradient-based minimization_ to find the nearest local minimum in the energy function. There are many different flavours to the [minimization algorithm](https://www.rosettacommons.org/docs/latest/rosetta_basics/structural_concepts/minimization-overview#flavors-of-minimization-in-rosetta) that the `minimize` application can use, but essentially all minimization flavours choose a vector as the descent direction, march along that vector until the energy ceases to decrease (a "line search"), then choose a new direction and repeat. In this tutorial, we will use the `lbfgs_armijo_nonmonotone` algorithm, which is a multi-step algorithm that needs to only be called once to reach the local mimimum of a function (rather than invoking repeated iterations to reach convergence).
 
+> **In general, minimization is determinisitic, unlike methods that depend on Monte Carlo searches.  There is generally little advantage to repeating a minimization trajectory many times; there should be no diversity to the ensemble produced.**  This being said, minimization *is* sensitive to small numeric precision differences from platform to platform, or even from compiler to compiler.
+
 ## Goals
 In this tutorial, you will learn to use one of the many minimization algorithms in three different ways, first by allowing all residues in the structure to move during the minimation and then by using two methods that allow only a subset of the degrees of freedom (DOFs) to be sampled. Specifically, we will:
 * Learn to run the `score` and `minimize` executables via the command line.
@@ -137,7 +139,7 @@ Run the minimization executable in the same way as before, but now with the new 
 $> <path/to/Rosetta/bin/>minimize.cc @minwithcsts_flags
 ```
 
-This time, look for a few lines coming from the `core.scoring.constraints` tracers in the log output. They should look similar to this:
+This time, look for a few lines coming from the `core.scoring.constraints` tracers in the log output. They should look similar to this (though again, numeric differences are possible from platform to platform):
 
 ![mincsts log](https://github.com/RosettaCommons/demos/blob/XRW2016_kmb/tutorials/minwithcsts.png)
 
