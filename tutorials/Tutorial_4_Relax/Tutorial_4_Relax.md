@@ -1,6 +1,12 @@
 #Relax
+[[TOC]]
 ##The Relax protocol
 Relax is the main protocol for relaxing a structure in Rosetta; that is, it samples conformations of a given structure close to it in 3d space to find the lowest-scoring variant, running both the [packer] and the [minimizer]. This is usually done to enable an apples-to-apples comparison between disparate structures, including crystal structures and the output of Rosetta's sampling protocols, by first minimizing them in local space according to the same score function. It is therefore advisable to run relax on any structures you intend to compare to each other.
+
+##Navigating to the Demos
+The demos are available at `<path_to_Rosetta_directory>/demos/tutorials/Tutorial_4_Relax`. All demo commands listed in this tutorial should be executed when in this directory. All the demos here use the `linuxgccrelease` binary. You may be required to change it to whatever is appropriate given your operating system and compiler.
+
+##Demo
 
 To demonstrate this, run 
 
