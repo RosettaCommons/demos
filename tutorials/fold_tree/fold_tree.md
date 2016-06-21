@@ -15,13 +15,13 @@ you can find several [params] files for all 20 amino acids. Open one and look at
 #### The Lever Arm Effect
 When you change the torsion angles in a given sets of residues but you set the rest to not move, what will happen? Let's see the simple scheme below:
 
-![Figure for changes in the torsion](https://github.com/RosettaCommons/demos/blob/hssnzdh2/parisa_XRW/tutorials/figures/small_angle.png)
+![Figure for changes in the torsion](https://github.com/RosettaCommons/demos/blob/hssnzdh2/parisa_XRW/tutorials/figures/small_moves.png)
 
 You can see that in order to change one specific torsion angle in the cyan residue, all of the atoms that are to the right of that change should all move. In other words, although they are held fixed "WITH RESPECT TO EACH OTHER", they can still move together to accomodate changes in the _downstrem_ cyan residue.
 
 Now let's look at the same example, but with a small difference:
 
-![figure for bigger protein changes](https://github.com/RosettaCommons/demos/blob/hssnzdh2/parisa_XRW/tutorials/figures/big_angle.png)
+![figure for bigger protein changes](https://github.com/RosettaCommons/demos/blob/hssnzdh2/parisa_XRW/tutorials/figures/big_moves.png)
 
 You can see that a small change in one torsion angle at the N-terminal of the protein can cause huge movements in the rest of the protein. This is called **the lever arm effect**.
 How can we avoid this? 
@@ -46,7 +46,7 @@ $> ../../../main/source/bin/rosetta_scripts.default.linuxgccrelease -in:file:s i
 ```
 After 5-10 minutes, you can see that the output (test1_capsid_0001.pdb) is generated. 
 Now compare the native structure with the output. You can see that the N-terminal part has moved drastically compared to the original structure. If we align the N-terminal parts, you can see that the rest of the protein has moved drastically to accomodate changes in the small 20 residue N-terminal.
-![showing the monomer movement](https://github.com/RosettaCommons/demos/blob/hssnzdh2/parisa_XRW/tutorials/figures/caps1.png)
+![showing the monomer movement](https://github.com/RosettaCommons/demos/blob/hssnzdh2/parisa_XRW/tutorials/figures/ubq1_test1.png)
 
 Now, let's see what happens when we sweep the position of the downstream and upstream, telling Rosetta that movements should propagate from C to N terminal. This is shown in caps_tree2.ft file:
 ```
@@ -60,7 +60,7 @@ $> ../../../main/source/bin/rosetta_scripts.default.linuxgccrelease -in:file:s i
 ```
 This shouldn't take longer than 10 min. Look at the test2_capsid_0001.pdb output structure and compare it with both the capsid.pdb and the test1_capsid_0001.pdb structure. (the two outpus are provided in the outputs directory). You can see now that the movements in the protein are much slighter. This is because now the C-terminal parts are downstream of where the changes are happening and are not moving as a result of movements in the N-terminal.
 
-![showing monomer improved](https://github.com/RosettaCommons/demos/blob/hssnzdh2/parisa_XRW/tutorials/figures/caps2.png)
+![showing monomer improved](https://github.com/RosettaCommons/demos/blob/hssnzdh2/parisa_XRW/tutorials/figures/ubq_test2.png)
 
 So if you have a protein with very flexible N-terminal that will move a lot during your run, you may want to change the fold tree.
 
@@ -81,7 +81,7 @@ $> ../../../main/source/bin/rosetta_scripts.default.linuxgccrelease -s inputs/ub
 ```
 After 5-10 min, you should have an output called test1_ubq_dimer_0001.pdb. Take a look at the structure and compare it to the original dimer. You can see that the second chain moved a lot from it's original position. This is another example of the **lever effect**. The movements in the last few residues in C_terminal of chain A has propagated all the way to chain A.
 
-![dimer with default fold_tree](https://github.com/RosettaCommons/demos/blob/hssnzdh2/parisa_XRW/tutorials/figures/ubq1.png)
+![dimer with default fold_tree](https://github.com/RosettaCommons/demos/blob/hssnzdh2/parisa_XRW/tutorials/figures/ubq_dimer1.png)
 
 Now, let's see how we can fix it. I know based on my experiments that the Val71 in chain A and Val146 in chain B are important in the interface formation and I want to make sure they stay close during relaxation. So, I want to re-define my fold tree so that residues 71 and 146 are the immediate parents, or the most downstream. Take a look at the modified fold tree (inputs/ubq_tree2.ft)
 ```
@@ -89,7 +89,7 @@ FOLD_TREE EDGE 71 1 -1 EDGE 71 76 -1 EDGE 71 146 1 EDGE 146 77 -1 EDGE 146 152 -
 ```
 You can see that now I have multiple **EDGEs**. Chain A is now defined by two edge: the first one goes through from residue 71 all the way back to N-terminal of chain A and the second 1 goes from residue 71 to C-terminal of chain A. The **JUMP** is now from 71 to 146, the two parents. And then the chain B is also defined by two edges now. The scheme below shows how the two fold tree differ:
 
-![scheme of fold tree]()
+![scheme of fold tree](https://github.com/RosettaCommons/demos/blob/hssnzdh2/parisa_XRW/tutorials/figures/FT_scheme.png)
 
 Now, let's run again, but this time with the new fold tree we just defined:
 ```
@@ -97,7 +97,7 @@ $> ../../../main/source/bin/rosetta_scripts.default.linuxgccrelease -s inputs/ub
 ```
 Take a look at the test2_ubq_dimer_0001.pdb output and compare it with the original one. You can see that the drastic movements of chain B due C-terminal relaxation of chain A is now diminished.
 
-![dimer with modified fold tree](https://github.com/RosettaCommons/demos/blob/hssnzdh2/parisa_XRW/tutorials/figures/ubq2.png)
+![dimer with modified fold tree](https://github.com/RosettaCommons/demos/blob/hssnzdh2/parisa_XRW/tutorials/figures/ubq_dimer2.png)
 
 #### Final Points
 Now you know what a fold tree is and how it is used to control the movements in your structure and how to control it. You can use fold tree to also mention how different chains in a structure are supposed to move with respect to each other. For example, if your chain C is between chain A and B in a complex and its movements should affect chain B, you can use a fold tree that places chain C downstream of chain B. The same principles appply for any chains, including a ligand or a metal. So, you can control the behavior of their movements by applying different fold trees. If you are intrested in fold tree set up for a symmetruc pose, please check [here](https://www.rosettacommons.org/docs/latest/rosetta_basics/structural_concepts/symmetry). Please note that a fold tree should contain NO CYCLEs. In other words, you cannot define a residue both as upstream and downstream of other set of residues. 
