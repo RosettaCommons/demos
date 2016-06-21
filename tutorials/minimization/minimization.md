@@ -36,7 +36,7 @@ $> <path/to/Rosetta/bin/>score.default.linuxgccrelease -s 3hon.pdb
 
 This command will output a `default.sc` file, which contains the Rosetta score for this conformation. Inside this file, we see:
 
-![default scorefile](default_score.png)
+![default scorefile](images/default_score.png)
 
 The first line of this file is the header line that tells us which columns correspond to which score terms.
 
@@ -69,7 +69,7 @@ $> <path/to/Rosetta/bin/>minimize.default.linuxgccrelease @minimizer_flags
 ```
 If this executable runs with no errors and the terminal output ends with something like this,
 
-![min log](https://github.com/RosettaCommons/demos/blob/XRW2016_kmb/tutorials/min.png)
+![min log](images/min.png)
 
 then you have successfully minimized the input structure. Check to make sure a `score.sc` file and a `3hon_0001.pdb` output structure have also been generated. Now let's analyze the output scores and structure.
 
@@ -96,15 +96,15 @@ The `score.sc` file contains the new scores for the minimized structure. Open th
 
 Note that the exact values that you obtain might be slightly different (+/- 0.5 energy units) from what's listed above: tiny numerical precision differences from platform to platform can accumulate over the trajectory to produce noticeable (but still small) differences in the final output.  What's important is that most of the score terms have gone down in value (which is good!). But how has the minimization affected the structure? Open the `3hon_0001.pdb` to see what has changed.
 
-![3hon minimized](3hon_min_on_xtal.png)
+![3hon minimized](images/3hon_min_on_xtal.png)
 
 The minimized structure (in green) has moved out of alignment with the native structure (in cyan), so first let's align the two structures. If you are using PyMOL, type `align 3hon_0001, 3hon` and hit `Enter`.
 
-![3hon minimized_aligned](3hon_minaligned_on_xtal.png)
+![3hon minimized_aligned](images/3hon_minaligned_on_xtal.png)
 
 Now that the structures are aligned, notice that the last nine residues of the loop region have moved quite significantly from their original conformation. Furthermore, most of the minimized rotamers are no longer in their native conformations.
 
-![3hon minimized_aligned sticks](3hon_minaligned_on_xtal_sticks.png)
+![3hon minimized_aligned sticks](images/3hon_minaligned_on_xtal_sticks.png)
 
 Sometimes it may be undesirable to allow such large movements in the starting conformation. To this end, we can use minimization with constraints to minimize our input structure in which movements of certain atoms will be penalized by the score function.
 
@@ -141,7 +141,7 @@ $> <path/to/Rosetta/bin/>minimize.cc @minwithcsts_flags
 
 This time, look for a few lines coming from the `core.scoring.constraints` tracers in the log output. They should look similar to this (though again, numeric differences are possible from platform to platform):
 
-![mincsts log](minwithcsts.png)
+![mincsts log](images/minwithcsts.png)
 
 These lines indicate that our constraints were read and applied to the pose. If the executable ended without errors and generated a `3hon_minwithcsts_0001.pdb` file as well as a `score_minwithcsts.sc` file, then you have succesfully run minimization with coordinate constraints.
 
@@ -175,7 +175,7 @@ Now let's take a look at the minimized-with-csts structure to see how it compare
 
 Opening the `3hon_minwithcsts_0001.pdb` file and comparing it to the crystal structure,
 
-![3hon mincsts](3hon_minwithcsts_onxtal.png)
+![3hon mincsts](images/3hon_minwithcsts_onxtal.png)
 
 we immediately see little to no movement in the position of the nine C-terminal CA atoms.
 
@@ -276,12 +276,12 @@ The total score of the minimized-with-movemap structure is lower still than the 
 
 Let's open the minimized-with-movemap structure and compare it visually to the crystal structure.
 
-![3hon minmm](3hon_minwithmm_xtal.png)
+![3hon minmm](images/3hon_minwithmm_xtal.png)
 
 
 After aligning the minimized-with-movemap structure to the crystal structure as a whole, it appears that the nine C-terminal residues have moved. However, when we align only the nine C-terminal residues against each other, it becomes clear that the minimizer has not changed the backbone or sidechain angles:
 
-![3hon minmm](3hon_minwithmm_9resicterm.png)
+![3hon minmm](images/3hon_minwithmm_9resicterm.png)
 
 #### This is an important point to reiterate: The movemap can prevent internal geometries from changing, but not necessarily the global position of the residues.
 
