@@ -30,10 +30,10 @@ The first part of this command is the path to and name of the executable we want
 
 The second part, `-s 1ubq.pdb`, is an option, or _flag_, that modifies the execution of the program. In this case, the `-s` option indicates that we want to run `fixbb` on a single structure; the following `1ubq.pdb` is simply the filename of that structure. An alternative to the `-s` option is `-l`, which takes as its argument a newline-delimited list of input files and is broadly conceptually equivalent to running multiple `-s` commands in sequence. Other common options include:
 
-	-nstruct					This option dictates the number of output structures Rosetta is to generate; this is important for [Monte Carlo simulations]().
-	-database					This option should not be required for a successful Rosetta install, but indicates the path to the Rosetta database (which is now detected automatically.)
-	-out::file					This option indicates the name and location to which Rosetta is to write any output files.
-	-ignore_unrecognized_residue This option should not be required for a successful Rosetta install, but indicates that residues that Rosetta cannot process should be left out of the execution.
+	-nstruct						This option dictates the number of output structures Rosetta is to generate; this is important for Monte Carlo simulations.
+	-database						This option should not be required for a successful Rosetta install, but indicates the path to the Rosetta database (which is now detected automatically.)
+	-out::file						This option indicates the name and location to which Rosetta is to write any output files.
+	-ignore_unrecognized_residue	This option should not be required for a successful Rosetta install, but indicates that residues that Rosetta cannot process should be left out of the execution.
 
 In order to demonstrate how Rosetta exectuables may be run and their execution controlled via flags, create a folder in your main Rosetta directory named `tutorials` or something similar, and there put the files `1ubq.pdb` and `1qys.pdb`. 
 
