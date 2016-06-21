@@ -6,13 +6,13 @@ This tutorial will go through some examples of what to do with the output that R
 * score file
 * log file
 
-**IMPORTANT**  Rosetta will always give you answer!
+**IMPORTANT**  Rosetta will always give you a result!
 
 The main question that you have to answer is: 
 
-*Can I trust the result?*
+*Does the result answer my question?"*
 
-This tutorial is primarily focussed on ways how to approach that question. Eventually, it comes down to your judgement, whether the nice looking structures you've got are spot on correct and simply garbage - that latter is more often the case anyone would like. 
+This tutorial is primarily focused on statistical and analytical methods to inform the answer to that question. As with any stochastic simulation, many of the results Rosetta generates for any given run will explore regions of conformation space that are not relevant to the problem at hand; statistical analysis can help separate signal from noise and evaluate the relevance of the results as a whole.
 
 ###1. PDB file
 
