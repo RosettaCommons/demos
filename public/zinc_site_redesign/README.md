@@ -14,7 +14,7 @@ Requires an input TS model including the metal, and a (set of) PDB file(s). The 
 
 ## Overview of the Procedure
 
-Each Step is included as a directory with a separate README.
+Each Step is included as a subdirectory with a separate README.  In each case, the relevant command is intended to be run from the relevant subdirectory.
 
 1.	Analysis of ZincSite
 2. 	CleanPDB after running the zinc analysis. 
@@ -28,6 +28,8 @@ Each Step is included as a directory with a separate README.
 ## Details
 
 For most Python scripts, running with a -h option will give a list of available options.  To run the commands shown below, you will either need to set your ROSETTA_TOOLS environment variable to point to the Rosetta/tools directory, or you will need to replace $ROSETTA_TOOLS with the path to your Rosetta/tools directory manually.  (To set the environment variable temporarily, for the current session, use ```ROSETTA_TOOLS=<path_to_Rosetta_tools_directory>```.  For example, if your Rosetta tools directory were /programs/Rosetta/tools/, use ```ROSETTA_TOOLS=/programs/Rosetta/tools```.
+
+Each of the following commands is intended to be run from the relevant subdirectory for the step.  For example, before running the first command, navigate to the 1_Analyze_ZincSite subdirectory.
 
 1. Given a PDB file, obtain the co-ordination sphere details of metal (how many protein-metal, and HETATM-metal interactions, in what geometry in each chain).
 
