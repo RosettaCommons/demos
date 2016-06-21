@@ -8,9 +8,9 @@ Created 20 June 2016.
 
 Rosetta's primary algorithm for optimizing side-chains is called the *packer*.  By the end of this tutorial, you should understand:
 - The types of problems that the packer solves.
-- The way in which the algorithm works, and what you can do to ensure optimal packer behaviour.
 - How to invoke the packer using the *fixbb* application.
 - How to control the packer's behaviour.
+- How to ensure optimal packer behaviour.
 - What applications and algorithms invoke the packer.
 
 The tutorial also introduces:
