@@ -38,7 +38,7 @@ You may need to change "linuxgccrelease", in the above, to whatever is appropria
 
 This application packs the side-chains of the input structure (the trp cage mini-protein, 1l2y.pdb).  Five output structures, from five separate runs, are produced.  If you compare these structures to the input structure, you'll find that Rosetta chooses slightly different rotamers for the side-chains, as compared to the input.  This is to be expected, particularly given the discrete nature of rotamers: the truly "best" rotamer might lie between two rotamers tested, and may never be sampled.
 
-Work through the [rest of the demo](../../public/fixbb/Readme.md).  This teaches about how the packer can be tweaked, both at the commandline and with configuration files called *resfiles*, to control the amount of sampling, the time taken for a run, and the likelihood of converging to the optimal solution.
+Work through the [rest of the demo](../../public/fixbb/README.md).  This teaches about how the packer can be tweaked, both at the commandline and with configuration files called *resfiles*, to control the amount of sampling, the time taken for a run, and the likelihood of converging to the optimal solution.
 
 ## The sequence design problem
 
@@ -54,7 +54,7 @@ This will produce the output files 1l2y_0001.pdb and score.sc.  If you open 1l2y
 
 > **The default behaviour of the packer is to *design* at every position, allowing every rotamer of each of the 20 canonical amino acids.**
 
-If you complete the rest of the fixbb_design demo, you'll learn how to use resfiles to control the behaviour of the packer, allowing only certain positions to be designed, and only with certain amino acid residue types.
+If you complete the rest of the [fixbb_design demo](../../public/fixbb_design/README.md), you'll learn how to use resfiles to control the behaviour of the packer, allowing only certain positions to be designed, and only with certain amino acid residue types.
 
 ## Working efficiently with the packer: TaskOperations
 
