@@ -47,11 +47,11 @@ Example
 -------
 The PDB 1QYS in the full atom representation.
 
-[[images/1qys.png]]
+![PDB 1QYS in the full atom representation](images/1qys.png)
 
 The PDB 1QYS in the centroid representation.
 
-[[images/1qys_centroid.png]]
+![PDB 1QYS in the centroid representation](images/1qys_centroid.png)
 
 PDB files generated in the centroid format have the sidechain atoms  (C<sub>γ</sub> onwards) replaced by one `CEN` pseudo-atom. For example, the first two residues of the PDB 1QYS in full atom look like:
 ```html
