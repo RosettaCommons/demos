@@ -235,7 +235,7 @@ RESIDUE * BBCHI
 RESIDUE 47 55 NO
 ```
 
-### Running the minimizer with a movemap
+### Running the minimization command
 
 Run the minimization executable in the same way as before, but now with the new flags file:
 
