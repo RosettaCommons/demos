@@ -2,4 +2,4 @@
 
 -score:weights score12
 
--out:file:scorefile score_score12.sc
+-out:file:scorefile output_files/score_score12.sc

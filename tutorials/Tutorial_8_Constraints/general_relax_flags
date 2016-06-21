@@ -1,0 +1,4 @@
+-nstruct 1
+-relax:range:cycles 3
+-out:file:path ./tutorial_output
+

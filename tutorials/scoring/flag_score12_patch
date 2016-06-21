@@ -4,4 +4,4 @@
 -score:patch score12_w_corrections
 -score:set_weights fa_atr 1
 
--out:file:scorefile score_score12_patch.sc
+-out:file:scorefile output_files/score_score12_patch.sc

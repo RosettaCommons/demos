@@ -1,0 +1,3 @@
+-in:file:s input_files/1qys_centroid.pdb
+
+-out:file:scorefile /dev/null	#to prevent output of the score file

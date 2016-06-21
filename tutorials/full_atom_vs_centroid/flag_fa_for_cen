@@ -1,0 +1,5 @@
+-in:file:s input_files/1qys.pdb
+-in:file:centroid
+
+-score:weights cen_std_smooth
+-out:file:scorefile /dev/null   #to prevent output of the score file
