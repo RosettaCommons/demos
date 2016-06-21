@@ -1,0 +1,11 @@
+#!/blue/meilerlab/apps/Linux2/x86_64/bin/Rscript --vanilla
+library(ggplot2,quietly=TRUE)
+args <- commandArgs(TRUE)
+
+data <-read.table(args[1],header=T)
+pdf(args[2], width=11, height=8, useDingbats=FALSE)
+
+ggplot(data) + 
+    theme_bw() +
+    geom_point(aes(ALL_ATOM_RMSD, total)) 
+dev.off()

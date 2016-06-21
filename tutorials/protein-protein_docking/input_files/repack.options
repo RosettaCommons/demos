@@ -1,0 +1,8 @@
+-in:file:fullatom
+-out:file:fullatom
+-linmem_ig 10
+-ex1
+-ex2
+-use_input_sc
+-score:weights talaris2013.wts
+-out:file:scorefile repack.fasc

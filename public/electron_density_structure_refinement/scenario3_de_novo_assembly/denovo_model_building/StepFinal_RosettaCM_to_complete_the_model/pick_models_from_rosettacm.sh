@@ -1,0 +1,1 @@
+../../scripts/pick_models_from_rosettacm.sh

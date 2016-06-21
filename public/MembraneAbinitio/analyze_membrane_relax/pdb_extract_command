@@ -1,0 +1,1 @@
+Rosetta/main/source/bin/score_jd2.default.linuxgccrelease -database Rosetta/main/database -in:file:silent BRD4A_native_mem_rlx.out -in:file:silent_struct_type binary -in:file:fullatom -in:file:spanfile ../../4-input_MembraneAbinitio/BRD4A.span -score:weights Rosetta/main/database/scoring/weights/membrane_highres_Menv_smooth.wts -out:output -out:pdb -out:file:fullatom

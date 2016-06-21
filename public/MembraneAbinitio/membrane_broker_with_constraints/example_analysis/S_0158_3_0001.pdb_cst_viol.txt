@@ -1,0 +1,22 @@
+residueA: 8	CB	residueB: 82	CB	exp_val:	32.6603	Distance: 30.168793976558	 Current_viol: 2.49150602344204
+residueA: 54	CB	residueB: 109	CB	exp_val:	21.0682	Distance: 18.9846161404438	 Current_viol: 2.08358385955618
+residueA: 5	CB	residueB: 81	CB	exp_val:	42.4868	Distance: 34.4047040533704	 Current_viol: 8.08209594662963
+residueA: 6	CB	residueB: 82	CB	exp_val:	33.3618	Distance: 34.0972790116748	 Current_viol: 0.735479011674819
+residueA: 5	CB	residueB: 115	CB	exp_val:	12.4018	Distance: 17.6815653718781	 Current_viol: 5.27976537187814
+residueA: 37	1HA	residueB: 81	CB	exp_val:	28.312	Distance: 34.4047040533704	 Current_viol: 6.09270405337037
+residueA: 55	CB	residueB: 109	CB	exp_val:	19.03	Distance: 19.0743674338102	 Current_viol: 0.0443674338102227
+residueA: 30	1HA	residueB: 114	CB	exp_val:	34.5857	Distance: 16.3940782601524	 Current_viol: 18.1916217398477
+residueA: 4	CB	residueB: 107	CB	exp_val:	21.1725	Distance: 23.0944195207414	 Current_viol: 1.92191952074137
+residueA: 19	CB	residueB: 51	CB	exp_val:	26.3051	Distance: 25.176491455324	 Current_viol: 1.12860854467605
+residueA: 8	CB	residueB: 114	CB	exp_val:	13.2779	Distance: 16.1812925936094	 Current_viol: 2.90339259360945
+residueA: 37	1HA	residueB: 82	CB	exp_val:	22.6903	Distance: 30.168793976558	 Current_viol: 7.47849397655796
+residueA: 29	CB	residueB: 116	1HA	exp_val:	33.3286	Distance: 10.9763577292288	 Current_viol: 22.3522422707712
+residueA: 54	CB	residueB: 107	CB	exp_val:	32.4389	Distance: 23.4451644907857	 Current_viol: 8.99373550921427
+residueA: 12	CB	residueB: 116	1HA	exp_val:	22.9412	Distance: 14.0069423858314	 Current_viol: 8.93425761416861
+residueA: 5	CB	residueB: 79	1HA	exp_val:	36.9863	Distance: 20.8910351347175	 Current_viol: 16.0952648652825
+residueA: 28	CB	residueB: 114	CB	exp_val:	36.7523	Distance: 29.0256763745481	 Current_viol: 7.72662362545189
+residueA: 12	CB	residueB: 52	CB	exp_val:	25.545	Distance: 16.6377830854955	 Current_viol: 8.90721691450451
+residueA: 4	CB	residueB: 37	1HA	exp_val:	27.3771	Distance: 9.50757035209311	 Current_viol: 17.8695296479069
+residueA: 40	1HA	residueB: 82	CB	exp_val:	25.2267	Distance: 37.6556172967593	 Current_viol: 12.4289172967593
+residueA: 30	1HA	residueB: 112	CB	exp_val:	34.169	Distance: 19.7980854124837	 Current_viol: 14.3709145875163
+Filename: S_0158_3_0001.pdb	 Restraintfile: ../input/BRD4A_example.cst	 sum_current_viol: 174.112240407369	 max_current_viol: 22.3522422707712
