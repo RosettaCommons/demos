@@ -1,0 +1,10 @@
+Filename: S_0013_4_0001.pdb	 Restraintfile: ../input/BRD4A_example.cst	 sum_current_viol: 163.575292716339	 max_current_viol: 22.5323876549227
+Filename: S_0023_0001.pdb	 Restraintfile: ../input/BRD4A_example.cst	 sum_current_viol: 174.432735708282	 max_current_viol: 22.854174908378
+Filename: S_0109_1_0001.pdb	 Restraintfile: ../input/BRD4A_example.cst	 sum_current_viol: 175.866733972936	 max_current_viol: 22.5455139389505
+Filename: S_0157_2_0001.pdb	 Restraintfile: ../input/BRD4A_example.cst	 sum_current_viol: 163.82425952477	 max_current_viol: 21.7909545565546
+Filename: S_0158_3_0001.pdb	 Restraintfile: ../input/BRD4A_example.cst	 sum_current_viol: 174.112240407369	 max_current_viol: 22.3522422707712
+Filename: S_0163_0001.pdb	 Restraintfile: ../input/BRD4A_example.cst	 sum_current_viol: 164.717283493267	 max_current_viol: 20.2166503054145
+Filename: S_0165_2_0001.pdb	 Restraintfile: ../input/BRD4A_example.cst	 sum_current_viol: 170.077915323005	 max_current_viol: 22.5355273041421
+Filename: S_0171_4_0001.pdb	 Restraintfile: ../input/BRD4A_example.cst	 sum_current_viol: 169.415245412014	 max_current_viol: 24.558665269288
+Filename: S_0185_1_0001.pdb	 Restraintfile: ../input/BRD4A_example.cst	 sum_current_viol: 168.787797605011	 max_current_viol: 21.7375282448135
+Filename: S_0197_1_0001.pdb	 Restraintfile: ../input/BRD4A_example.cst	 sum_current_viol: 170.628455431416	 max_current_viol: 17.6394098041996

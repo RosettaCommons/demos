@@ -1,0 +1,3 @@
+1QYS_A.pdb
+3TDM_AB.pdb
+3R2X_ignorechain.pdb

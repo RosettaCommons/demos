@@ -1,0 +1,2 @@
+~/rosetta_workshop/rosetta/main/source/bin/rosetta_scripts.default.linuxgccrelease @docking.options -database ~/rosetta_workshop/rosetta/main/database/ -parser:protocol docking_full.xml -out:suffix _full -nstruct 50 >& docking_full.log &
+~/rosetta_workshop/rosetta/main/source/bin/rosetta_scripts.default.linuxgccrelease @docking.options -database ~/rosetta_workshop/rosetta/main/database/ -parser:protocol docking_minimize.xml -out:suffix _minimize -nstruct 10 >& docking_minimize.log &
