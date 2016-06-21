@@ -173,7 +173,7 @@ Opening the `3hon_minwithcsts_0001.pdb` file and comparing it to the crystal str
 
 we immediately see little to no movement in the position of the nine C-terminal CA atoms.
 
-In some cases, the user may want to prevent the internal geometry of certain residues from moving during minimization, rather than the XYZ coordinates of the atoms. To disallow movements in backbone phi/psi angles and/or sidechain chi angles, we can supply the minimizer with a MoveMap that specifies which of these degrees of freedom can be sampled.
+In some cases, the user may want to prevent the internal geometry of certain residues from moving during minimization, rather than the XYZ coordinates of the atoms. To disallow movements in backbone phi/psi angles and/or sidechain chi angles, we can supply the minimizer with a MoveMap that specifies which of these degrees of freedom are allowed to be sampled.
 
 ## How-To: Minimization with a MoveMap
 
