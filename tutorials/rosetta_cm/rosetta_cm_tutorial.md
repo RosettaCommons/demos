@@ -232,9 +232,9 @@ $>  <path-to-Rosetta>/Rosetta/main/source/bin/partial_thread.default.linuxgccrel
 2.	After running these commands, you should have three new pdbs: **2rh1.pdb.pdb, 3eml.pdb.pdb**, and **3odu.pdb.pdb**. For clarity, rename these files appropriately:
 
 ```
-$>  mv 2rh1.pdb.pdb 1u19_on_2rh1.pdb .
-$> mv 3eml.pdb.pdb 1u19_on_3eml.pdb .
-$> mv 3odu.pdb.pdb 1u19_on_3odu.pdb .
+$>  mv 2rh1.pdb.pdb 1u19_on_2rh1.pdb
+$> mv 3eml.pdb.pdb 1u19_on_3eml.pdb
+$> mv 3odu.pdb.pdb 1u19_on_3odu.pdb
 ```
 
 Prepared threaded pdbs can be found in
