@@ -25,7 +25,7 @@ Take a look at the crystal structure file `3hon.pdb` in your favorite PDB Viewer
 Let's get an initial score for this conformation. In your command line, type:
 
 ```bash
-$> score.default.linuxgccrelease -database <database> -s 3hon.pdb
+$> <path/to/Rosetta/bin/>score.default.linuxgccrelease -s 3hon.pdb
 ```
 
 This command will output a `default.sc` file, which contains the Rosetta score for this conformation. Inside this file, we see:
@@ -59,7 +59,7 @@ The third flag specifies the convergence tolerance for the minimization algorith
 In your terminal window, run the minimization executable by typing,
 
 ```bash
-$> minimize.default.linuxgccrelease @minimization_flags
+$> <path/to/Rosetta/bin/>minimize.default.linuxgccrelease @minimization_flags
 ```
 If this executable runs with no errors and the terminal output ends with something like this,
 
@@ -132,7 +132,7 @@ The flag `out:suffix` will prevent us from overwriting our previous output by ap
 Run the minimization executable in the same way as before, but now with the new flags file:
 
 ```bash
-$> minimize.cc @minwithcsts_flags
+$> <path/to/Rosetta/bin/>minimize.cc @minwithcsts_flags
 ```
 
 This time, look for a few lines coming from the `core.scoring.constraints` tracers in the log output. They should look similar to this:
