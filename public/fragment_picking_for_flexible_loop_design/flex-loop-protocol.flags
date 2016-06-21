@@ -1,0 +1,21 @@
+# Input structure to design
+-s input_files/flexloop_pdb.pdb 
+
+# Input databases
+-database	    ../minirosetta_database
+-in::file::vall      ../minirosetta_database/filtered.vall.dat.2006-05-05.gz
+
+# Weights file
+-frags::scoring::config	input_files/flexloop_protocol.wghts
+
+# Residue file for which residue will be designed
+-resfile	    input_files/flexloop_resfile.txt
+
+# Loop defintion file
+-loops::loop_file	input_files/flexloop_loopdef.txt 
+
+# Run Structure prediction/Structure design cycle 10 times
+-dwkulp::nSteps 10
+
+# Constant seed for protocol demo
+-run::constant_seed

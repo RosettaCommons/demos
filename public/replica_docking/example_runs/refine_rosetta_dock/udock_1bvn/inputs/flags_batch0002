@@ -1,0 +1,2 @@
+-in:file:silent ../../../../example_runs/rosetta_dock/udock_1bvn/run/low_decoys_0002.out 
+-out:file:silent refine_low_decoys_0002.out

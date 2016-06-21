@@ -1,0 +1,7 @@
+rm -rf REGION* *~ CONDOR core.* SLAVE*
+
+#rna_build_dagman.py -native motif2_1f7y_RNA.pdb -fasta gcuucggc.fasta  -s gcgc.pdb -input_res 1 2 7 8   -nstruct 100  -cluster_radius 0.25  -score_weights rna_hires_2008.wts -rna_torsion_potential rd2008
+    
+rna_build_dagman.py -native motif2_1f7y_RNA.pdb -fasta gcuucggc.fasta  -s gcgc.pdb -input_res 1 2 7 8   -nstruct 100  -cluster_radius 0.25  -score_weights rna_hires_2008.wts -rna_torsion_potential rd2008  -native_rmsd_screen -sampler_native_rmsd_screen_cutoff 1.5 -cst_file uucg_polar_fade.cst
+    
+

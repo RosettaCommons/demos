@@ -1,0 +1,37 @@
+# Input databases
+-in::path::database		/work/dgront/CPP/database
+-in::file::vall              	../../DATA/vall.dat.apr24.combo.aug09
+#-in::file::vall	 	../../DATA/vall.dat.test
+
+# Query-related input files
+-in::file::checkpoint 		input_files/2jsvX.checkpoint
+-in::file::s 			input_files/2jsvX.pdb
+-frags::ss_pred			input_files/2jsvX.psipred.ss2 psipred input_files/2jsvX.sam.ss2 sam input_files/2jsvX.jufo.ss2 jufo
+
+# the name root for the output fragment files
+-out::file::frag_prefix		output_files/frags
+
+# Show score components for each selected fragment
+-frags::describe_fragments 	output_files/frags.fsc
+
+# Weights file
+-frags::scoring::config		psi_sam_jufo_L1-Q.cfg
+
+# we need nine-mers and three-mers
+-frags::frag_sizes 		9 3
+
+# Select 200 fragments from 1000 candidates. We need more candidates than fragments 
+# to fill quota pools. 
+-frags::n_candidates		1000
+-frags::n_frags			200
+
+# Quota.def file defines the shares between difefrent quota pools. The total should be 1.0
+-frags::picking::quota_config_file 	Quota.def
+
+# Get rid of homologues fragments
+-frags::denied_pdb 		input_files/2jsvX.homolog_vall
+
+# Limit output 
+-out::level			451
+-mute 				core.conformation
+-mute				core.chemical

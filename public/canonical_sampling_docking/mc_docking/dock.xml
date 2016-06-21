@@ -1,0 +1,41 @@
+<dock_design>
+    <SCOREFXNS>
+	<score_dock_fa weights="docking" >
+		<Reweight scoretype="atom_pair_constraint" weight=5/>
+	</score_dock_fa>
+    </SCOREFXNS>
+    <FILTERS>
+    	<I_sc name=isc />
+    </FILTERS>
+    <MOVERS>
+	<!--setup jumps and constraints-->
+	<DockSetupMover name=setup_jump/>
+	<AddEncounterConstraintMover name=encounter_cst gap=8 />
+
+	<!--sidechain moves-->
+        <PerturbRotamerSidechain name=prs_mover/>
+        <JumpRotamerSidechain name=jrs_mover/>
+        <PerturbChiSidechain name=scaled_pcs magnitude=10 gaussian=1/>
+	<!--sampling engine-->
+        <TrialCounterObserver name=count file="trial.stats"/>
+        <UnbiasedRigidBodyPerturbNoCenter name=scaled_rb ref="P.pdb" restrict=1 restrict_trans=20 restrict_rot=90  rot_mag=1 trans_mag=0.1/>
+	<SilentTrajectoryRecorder name=traj score_stride=1 stride=1000 cumulate_replicas=1 />
+	<SilentTrajectoryRecorder name=rt_traj filename="rt" silent_struct_type="rigid_body" score_stride=1 stride=1000 cumulate_replicas=1 />
+	<MetropolisHastings name=sampler trials=2000 checkpoint_interval=360 temperature=0.15 scorefxn=score_dock_fa> <!--trial number normally use 10000000 for productive simulation-->
+	    <Add mover_name=traj/>
+	    <Add mover_name=rt_traj/>
+	    <Add mover_name=count/>
+	    <Add mover_name=scaled_rb sampling_weight=0.5/>
+            <Add mover_name=scaled_pcs sampling_weight=10/>
+            <Add mover_name=prs_mover sampling_weight=6 />
+            <Add mover_name=jrs_mover sampling_weight=4/>
+	</MetropolisHastings>
+     </MOVERS>
+     <APPLY_TO_POSE>
+     </APPLY_TO_POSE>
+     <PROTOCOLS>
+	<Add mover_name=setup_jump/>
+	<Add mover_name=encounter_cst/>
+	<Add mover_name=sampler/>
+    </PROTOCOLS>
+</dock_design>
