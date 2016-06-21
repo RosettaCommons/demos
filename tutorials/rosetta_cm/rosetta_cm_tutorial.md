@@ -223,9 +223,7 @@ $>  cp  <path-to-Rosetta>/Rosetta/demos/tutorials/rosetta_cm/2_threading/3odu.pd
 
 ```
 $>  <path-to-Rosetta>/Rosetta/main/source/bin/partial_thread.default.linuxgccrelease -in:file:fasta 1u19.fasta -in:file:alignment 1u19_2rh1.grishin -in:file:template_pdb 2rh1.pdb
-
 $>  <path-to-Rosetta>/Rosetta/main/source/bin/partial_thread.default.linuxgccrelease -in:file:fasta 1u19.fasta -in:file:alignment 1u19_3eml.grishin -in:file:template_pdb 3eml.pdb
-
 $>  <path-to-Rosetta>/Rosetta/main/source/bin/partial_thread.default.linuxgccrelease -in:file:fasta 1u19.fasta -in:file:alignment 1u19_3odu.grishin -in:file:template_pdb 3odu.pdb
 ```
 
@@ -352,9 +350,7 @@ $> cp <path-to-Rosetta>/Rosetta/demos/tutorials/rosetta_cm/4_relax/relax.options
 Perform this step once per each of the three models generated from hybridize (**S_0001.pdb** through **S_0003.pdb**): Note that for the purpose of this tutorial, the "nstruct" value has been placed at one. Additional relax runs may be necessary for individual cases. 
 ```
 $>  <path-to-Rosetta>/Rosetta/main/source/bin/relax.default.linuxgccrelease @relax.options -s S_0001.pdb -out:prefix S_0001_relax_ -nstruct 1
-
 $>  <path-to-Rosetta>/Rosetta/main/source/bin/relax.default.linuxgccrelease @relax.options -s S_0002.pdb -out:prefix S_0002_relax_ -nstruct 1
-
 $>  <path-to-Rosetta>/Rosetta/main/source/bin/relax.default.linuxgccrelease @relax.options -s S_0003.pdb -out:prefix S_0003_relax_ -nstruct 1
 ```
 
