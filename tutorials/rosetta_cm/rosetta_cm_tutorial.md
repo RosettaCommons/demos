@@ -9,10 +9,10 @@ This tutorial will guide you through modeling the rhodopsin, a class A GPCR usin
 Comparative modeling requires various input files that are either generated manually or downloaded from the internet. These files have already been created and are available in their appropriate directories but it is recommended that you try to gather/generate these files yourself.  **Boldface** indicates specific filenames. *Italics* indicates webpage entries such as query terms or menu selections.
 
 To start, create your own working directory & move into it by typing:
-
+```
     mkdir my_model/
     cd my_model/
-
+```
 Prepared files can be copied from the indicated directories into your working directory at any step if you wish to skip creating a particular file yourself.
 
 
@@ -35,17 +35,17 @@ DOWNLOAD THE SEQUENCE FOR RHODOPSIN IN FASTA FORMAT:
     b. Delete  `KNPLGDDEASTTVSKTETSQVAPA `from the end of the sequence.
     c. Save the changes to **1u19.fasta**.
 **1u19.fasta** should look like this:
-
+```
     >1u19
     PWQFSMLAAYMFLLIMLGFPINFLTLYVTVQHKKLRTPLNYILLNLAVADLFMVFGGFTTTLYTSLHGYFVF
     GPTGCNLEGFFATLGGEIALWSLVVLAIERYVVVCKPMSNFRFGENHAIMGVAFTVMALACAAPPLVGWS
     RYIPEGMQCSCGIDYYTPHEETNNESFVIYMFVVHFIIPLIVIFFCYGQLVFTVKEAAAQQQESATTQKAEKE
     VTRMVIIMVIAFLICWLPYAGVAFYIFTHQGSDFGPIFMTIPAFFAKTSAVYNPVIYIMMNKQFRNCMVTTLCCG
-
+```
 The prepared **1u19.fasta** can be found in
-
+```
      ~/rosetta_workshop/tutorials/rosetta_cm/1_setup/
-
+```
 
 
 ## b. Template structures ##
@@ -66,26 +66,26 @@ DOWNLOAD TEMPLATE PDB's:
 	The extra residues to be removed from **3EML.pdb** include chain A residues numbered 1002-1161 (between residues 208 and 222). 
 	The extra residues to be removed from **3ODU.pdb** include the first 7 residues of chain A (27-33), the end of chain A (residues 303-328) and the lysozyme residues including those numbered 900-901 and 1002-1161 and 1200-1201 (between residues 229 and 230).
 7.	In addition to extra residues, these PDB's contain additional information that is not useful for Rosetta and may cause problems during the modeling. A script has been prepared to remove all of this extraneous information. This script has the following usage: clean_pdb.py \<pdb file\> \<chain letter\>
-    
-        ~/rosetta_workshop/tutorials/rosetta_cm/scripts/clean_pdb.py 2RH1_ISOLATED A
-        ~/rosetta_workshop/tutorials/rosetta_cm/scripts/clean_pdb.py 3EML_ISOLATED A
-        ~/rosetta_workshop/tutorials/rosetta_cm/scripts/clean_pdb.py 3ODU_ISOLATED A
-
+```    
+> <path-to-Rosetta>/Rosetta/demos/tutorials/rosetta_cm/scripts/clean_pdb.py 2RH1_ISOLATED A
+> <path-to-Rosetta>/Rosetta/demos/tutorials/rosetta_cm/scripts/clean_pdb.py 3EML_ISOLATED A
+> <path-to-Rosetta>/Rosetta/demos/tutorials/rosetta_cm/scripts/clean_pdb.py 3ODU_ISOLATED A
+```
 Running these three commands should yield the files: **2RH1_ISOLATED_A.pdb, 2RH1_A.fasta, 3EML_ISOLATED_A.pdb, 3EML_A.fasta, 3ODU_ISOLATED_A.pdb**, and **3ODU_A.fasta**.
 
 To make sure that you removed all necessary residues from chain A, compare your **2RH1_A.fasta, 3EML_A.fasta**, and **3ODU_A.fasta** to those that have already been prepared. They should be identical.
 
 RENAME CLEANED TEMPLATES:
-    
-	    mv 2RH1_ISOLATED_A.pdb 2rh1.pdb
-	    mv 3EML_ISOLATED_A.pdb 3eml.pdb
-	    mv 3ODU_ISOLATED_A.pdb 3odu.pdb
+```
+> mv 2RH1_ISOLATED_A.pdb 2rh1.pdb
+> mv 3EML_ISOLATED_A.pdb 3eml.pdb
+> mv 3ODU_ISOLATED_A.pdb 3odu.pdb
 
 Note: Rosetta's threading is very particular with its interpretation of filenames so renaming them is necessary for it to function properly.
 All prepared files for this step can be found in 
-
-    ~/rosetta_workshop/tutorials/rosetta_cm/1_setup/
-
+```
+   /tutorials/rosetta_cm/1_setup/
+```
 
 ## c. Align target sequence to templates ##
 Comparative modeling uses template structures to guide initial placement of target amino acids in three-dimensional space. This is done according to the sequence alignment of target and template. Residues in the target sequence will be assigned the coordinates of those residues they align with in the template structure. Residues in the target sequence that do not have an alignment partner in any template will be filled in during the hybridize step.
@@ -105,8 +105,9 @@ SIMULTANEOUSLY ALIGN TARGET AND ALL TEMPLATE SEQUENCES:
 The prepared alignment can be found in `~/rosetta_workshop/tutorials/rosetta_cm/2_threading/`
 
 5. 	Copy the adjusted alignment file **1u19_2rh1_3eml_3odu_adjusted.aln** to your directory. Don't forget to include the "." at the end of the line:
-
-        cp ~/rosetta_workshop/tutorials/rosetta_cm/2_threading/1u19_2rh1_3eml_3odu_adjusted.aln .
+```
+$> cp <path-to-Rosetta>/Rosetta/demos/tutorials/rosetta_cm/2_threading/1u19_2rh1_3eml_3odu_adjusted.aln .
+```
 
 **It is recommended that you skip the following step during this tutorial and use the prepared "adjusted alignment" file that you just copied and return to this step while either the hybridize or relax processes are running.**
 
@@ -119,10 +120,10 @@ CLUSTAL format alignments can be edited with a number of sequence alignment edit
 To get an idea of how these alignments were adjusted to align conserved residues and remove trans-membrane gaps, color-coded alignments before and after adjustments were made are provided as open office spreadsheet files. To open the files type *ooffice* and use the *file* *toolbar* to find and open the files.
 
 These files can be found at 
-
-    ~/rosetta_workshop/tutorials/rosetta_cm/2_threading/alignment_analysis.ods
-    ~/rosetta_workshop/tutorials/rosetta_cm/2_threading/alignment_analysis_adjusted.ods
-
+```
+   /tutorials/rosetta_cm/2_threading/alignment_analysis.ods
+   /tutorials/rosetta_cm/2_threading/alignment_analysis_adjusted.ods
+```
 
     
 ## d. Fragment files ##
@@ -131,7 +132,7 @@ RosettaCM will use fragments to fill in missing residues that didn’t align wit
 
 GENERATE 3MER AND 9MER FRAGMENT LIBRARIES:
 
-1. Go to robetta.bakerlab.org and register as an academic or non-profit user.
+1. Go to [robetta.bakerlab.org](http://robetta.bakerlab.org/) and register as an academic or non-profit user.
 2. Go to robetta.bakerlab.org/fragmentsubmit.jsp
 3. Fill in your *username*.
 4. Put *1u19* under "Target name"
