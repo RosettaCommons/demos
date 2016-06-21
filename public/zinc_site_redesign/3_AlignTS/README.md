@@ -8,15 +8,16 @@ Ligand PDB file: LG_0001.pdb
 
 Usage: 
 
-python align.py -f 1A4L_clean_A.pdb -l LG_0001.pdb
+```bash
+$> python $ROSETTA_TOOLS/zinc_site_redesign/align.py -f 1A4L_clean_A.pdb -l LG_0001.pdb
+```
 
 Output:
 A file named aligned_ligand.pdb which is the transformed co-ordinates of the ligand after alignment (protein is held fixed).
 
 Notes:
 
-MANUALLY SET THE ATOMNAMES USED TO ALIGN CORRECTLY IN THE ALIGN.PY FILE 
-ORDER DOES MATTER: ZINC SHOULD BE SPECIFIED FIRST.
+> **MANUALLY SET THE ATOMNAMES USED TO ALIGN CORRECTLY IN THE ALIGN.PY FILE. ORDER DOES MATTER: ZINC SHOULD BE SPECIFIED FIRST.**
 
 ------------------------------------------------------------------------------------------------------------------------------------------
 Step 3.2
@@ -31,7 +32,9 @@ name of metal: ZN
 
 Usage:
 
-python generate_metal_cstfile.py -f 1A4L_clean_A.pdb -m ZN -a aligned_ligand.pdb 
+```bash
+$> python $ROSETTA_TOOLS/zinc_site_redesign/generate_metal_cstfile.py -f 1A4L_clean_A.pdb -m ZN -a aligned_ligand.pdb 
+```
 
 Output:
 
