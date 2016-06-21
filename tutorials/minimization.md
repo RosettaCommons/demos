@@ -102,7 +102,7 @@ Now that the structures are aligned, notice that the last nine residues of the l
 
 _Something something about what it all means blah blah._
 
-Sometimes it may be undesirable to allow such large movements in the starting conformation. To this end, we can use minimization with constraints to minimize our input structure where movements of certain atoms will be penalized by the score function.
+Sometimes it may be undesirable to allow such large movements in the starting conformation. To this end, we can use minimization with constraints to minimize our input structure in which movements of certain atoms will be penalized by the score function.
 
 ## How-To: Minimization with Constraints
 
