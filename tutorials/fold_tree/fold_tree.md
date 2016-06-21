@@ -62,13 +62,13 @@ You can see that the fold tree is directional.
 
 let's run one round of relax on the capsid.pdb structure but this time with the new fold tree:
 ```
-$> ../../../main/source/bin/rosetta_scripts.default.linuxgccrelease -in:file:s inputs/capsid.pdb -parser:protocol inputs/caps_relax1.xml -out:prefix test1_
+$> ../../../main/source/bin/rosetta_scripts.default.linuxgccrelease -in:file:s inputs/capsid.pdb -parser:protocol inputs/caps_relax2.xml -out:prefix test2_
 ```
 This shouldn't take longer than 10 min. Look at the test2_capsid_0001.pdb output structure and compare it with both the capsid.pdb and the test1_capsid_0001.pdb structure. (the two outpus are provided in the outputs directory). You can see now that the movements in the protein are much slighter. This is because now the C-terminal parts are downstream of where the changes are happening and are not moving as a result of movements in the N-terminal.
 
 ![showing monomer improved](https://github.com/RosettaCommons/demos/blob/hssnzdh2/parisa_XRW/tutorials/figures/ubq_test2.png)
 
-The original structure is in grey and the test1 structure is shown in cyan.
+The original structure is in grey and the test2 structure is shown in cyan.
 
 So if you have a protein with very flexible N-terminal that will move a lot during your run, you may want to change the fold tree.
 
@@ -111,7 +111,7 @@ Take a look at the test2_ubq_dimer_0001.pdb output and compare it with the origi
 
 ![dimer with modified fold tree](https://github.com/RosettaCommons/demos/blob/hssnzdh2/parisa_XRW/tutorials/figures/ubq_dimer2.png)
 
-The original structure is in grey and the test1 structure is shown in cyan.
+The original structure is in grey and the test2 structure is shown in cyan.
 
 #### Final Points
 Now you know what a fold tree is and how it is used to control the movements in your structure and how to control it. You can use fold tree to also mention how different chains in a structure are supposed to move with respect to each other. For example, if your chain C is between chain A and B in a complex and its movements should affect chain B, you can use a fold tree that places chain C downstream of chain B. The same principles appply for any chains, including a ligand or a metal. So, you can control the behavior of their movements by applying different fold trees. If you are intrested in fold tree set up for a symmetruc pose, please check [here](https://www.rosettacommons.org/docs/latest/rosetta_basics/structural_concepts/symmetry). Please note that a fold tree should contain NO CYCLEs. In other words, you cannot define a residue both as upstream and downstream of other set of residues. 
