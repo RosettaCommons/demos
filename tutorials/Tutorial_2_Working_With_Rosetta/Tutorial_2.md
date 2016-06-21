@@ -54,7 +54,7 @@ Also, try making a list of PDBs named *pdblist* including 1ubq and 1qys in the f
 	
 and running
 
-	> ../../../main/source/bin/fixbb.default.linuxgccrelease -l pdblist
+	$> ../../../main/source/bin/fixbb.default.linuxgccrelease -l pdblist
 
 ##Running Rosetta via RosettaScripts
 Running RosettaScripts is similar to running an executable directly from the command line: execute rosetta_scripts and pass in the relevant options. The key difference is that the executable run is always rosetta_scripts, which requires the option "parser:protocol" indicating the XML script that it is to run. RosettaScripts is covered in more detail [here]. Try creating a file named "fixbb_script.xml" containing the following:
