@@ -1,6 +1,6 @@
 #Protein-Protein-Docking
 
-This tutorial will introduce you the main steps required to predict how two proteins interact.
+This tutorial will introduce you the main steps required for predicting how two proteins interact.
 
 ######Input files
 * COL_D.pdb
@@ -9,6 +9,8 @@ This tutorial will introduce you the main steps required to predict how two prot
 ##1. Preparation
 
 1. First, you have to check that there are no missing residues in any of the structures. If a protein chain is interrupted, the docking protocol might start moving around two parts of the same chain, instead of moving the two chains to be docked.
+
+ If chain breaks are present, you can use loop modeling to close the gaps, before proceeding with docking.
 
 2. Then, you have to combine the protein structures into a single file. 
 
@@ -42,21 +44,37 @@ Here is a minimal commandline to start a docking simulation (here we include als
      -ex1
      -ex2
      -nstruct 2
+     
 1. Run the docking protocol  
      
  Rosetta will internally connect the centers of the two chains with a so-called jump (see [Fold Tree]()). Along this jump the chains are being pulled together (slide into contact). The Monte Carlo moves, which are selected randomly, are:   
  
  * Translations (in x,y or z direction)
- * Rotations (around x,y, z axis)
+ * Rotations (around x,y, z axis)  
+ 
+ > You can test the docking protocol by running with:  
+ > -nstruct 20000  
+ > -out:file:silent\_struct_type binary  
+ > -out:file:silent dock.out  
+ > -native 1V74.pdb                 
+ 
+ 1V74.pdb is the native complex.
 
 2. Open the ouput files combined\_ppk\_0001.pdb and combined\_ppk_0002.pdb in Pymol. The two chains should now be in contact and you can see the different orientations that the chains have now.
 
 ### Local refinement only:
 
-* If you already know where two proteins interact, but not exactly how, you can do a **local docking** by including:
+If you already know where two proteins interact, but not exactly how, you can do a **local docking** by including:
 
         -docking_local_refine
         
+This will move the chains only by a few degrees and Angstroms. An example case would docking antibodies to antigens, when the sequence of th epitope is known. The required steps would be:
+
+1. Fix chain chain breaks, if present. 
+2. Prepare a combined file, where the two chains are in conformation that you anticipate to be close to the native one.
+3. Run a docking simulation using the above option. The required nstruct is usually smaller than for global docking, as the sampling space is much smaller. 5000 is a reasoable number to start with. 
+
+	
 ### More stuff that is good to know
 1. **Dock a group of chains** against a protein. There is an options that allows you tell Rosetta to leave a group of chains unchanged, relative to each other:
 
