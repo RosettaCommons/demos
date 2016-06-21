@@ -214,9 +214,9 @@ Rosetta's partial thread application will generate .pdb files for each target-te
 
 If you skipped the preparation step, run these commands from the rosetta_cm directory:
 ```
-$>  cp  <path-to-Rosetta>/Rosetta/demos/tutorials/rosetta_cm/2_threading/2rh1.pdb
-$>  cp  <path-to-Rosetta>/Rosetta/demos/tutorials/rosetta_cm/2_threading/3eml.pdb
-$>  cp  <path-to-Rosetta>/Rosetta/demos/tutorials/rosetta_cm/2_threading/3odu.pdb
+$>  cp  <path-to-Rosetta>/Rosetta/demos/tutorials/rosetta_cm/2_threading/2rh1.pdb .
+$>  cp  <path-to-Rosetta>/Rosetta/demos/tutorials/rosetta_cm/2_threading/3eml.pdb .
+$>  cp  <path-to-Rosetta>/Rosetta/demos/tutorials/rosetta_cm/2_threading/3odu.pdb .
 ```
 
 1.	Run the following commands:
