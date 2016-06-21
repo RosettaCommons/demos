@@ -14,7 +14,7 @@ It may also help to familiarize yourself with the basics of [command line interf
 	cp foo bar		moves all of foo into bar if bar is a directory or into a file called bar if not
 	ln -s foo 		<path_to_bar> establishes a link called a symbolic link or symlink from foo to bar
 	top 			lists the currently running processes, together with their process IDs. This is useful for how much computational resource your process (and others are consuming). They can also be used to identify your process ID
-	kill foo_pid		stops the process with process ID foo_pid
+	kill foo_pid	stops the process with process ID foo_pid
 	nohup			when prepended to a command, runs that command in the background, preventing it from writing output to the terminal
 	
 
