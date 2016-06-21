@@ -1,7 +1,19 @@
 #Constraints
 Many of the biological problems users wish to solve with Rosetta involve some biological or functional considerations that may not be reflected within a PDB file or evaluated by normal score functions. Constraints are a general way of scoring how well a structure adheres to these additional considerations; for example, one might wish to relax a structure with constraints in place to ensure that suspected disulfides are maintained.
 
-Constraints are written like so: a geometrical function is written that, in a perfect sequence, will return some value N. This value, together with the output of the function in the structure under consideration, are compared by some function, and the output of that function multiplied by the some scalar weight and added to the score.
+######Further constraints that Rosetta can handle:
+  
+* Distance contraints
+* Torsional contraints
+* other angle contraits
+* Ambigous contrainst
+* Density contraints
+
+Constraints work in the following way:   
+
+1. Some measure is calculated in a given conformation (e.g. 3.2 A)  
+2. There a suitable function that described which values are good and which ones are bad. E.g. the ideal bond length could be the minimum of a parablic function (harmonic potential). By evaluating the function for the measured value, a penalty is calculated. For the harmonic point:tential, the penalty increases the further away the measured bond length is from the ideal length. 
+3. This penalty is multiplied by a weighting factor and added to the energy.
 
 For example, a simple constraint might measure the distance between two atoms, subtract the ideal distance, and subtract the difference from the score. That constraint might look like this:
 	
