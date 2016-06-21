@@ -3,7 +3,7 @@ Scoring Tutorial
 Tutorial by Shourya S. Roy Burman   
 Created 20 June 2016
 
-[[_TOC_]]
+[[_TOC_]] !This does not work
 
 Summary
 -------
@@ -202,3 +202,4 @@ Tips
 ----
 * While the scoring step is deterministic and should provide the same score for given score function and input structure, you may not get the same score if you run `score_jd2` on PDBs which have not been prepared well. For example, there might be missing sidechain atoms which Rosetta tries to model (non-deterministically), thus, producing different scores on different runs.
 * Do not compare scores produced by different score functions. They could mean very different things.
+* Structures should be [relaxed] into the same score function prior to comparison.
