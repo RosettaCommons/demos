@@ -1,10 +1,10 @@
 # Make sure all variable names have been replaced with absolute path and that no line begins with a $ or ~s
 -in
 	-file
-		-native 2LZMA.pdb 	# native PDB file (optional)
-		-fasta 2LZMA.fasta 	# protein sequence in fasta format
-		-frag3 aa2LZMA03_05.200_v1_3 	# protein 3-residue fragments file
-		-frag9 aa2LZMA09_05.200_v1_3	# protein 9-residue fragments file
+		-native input_files/2LZMA.pdb 	# native PDB file (optional)
+		-fasta input_files/2LZMA.fasta 	# protein sequence in fasta format
+		-frag3 input_files/aa2LZMA03_05.200_v1_3 	# protein 3-residue fragments file
+		-frag9 input_files/aa2LZMA09_05.200_v1_3	# protein 9-residue fragments file
 -abinitio
 	-increase_cycles 10	# Increase the number of cycles at each stage in AbinitioRelax by this factor
 	-rg_reweight 0.5	# Reweight contribution of radius of gyration to total score by this scale factor
@@ -17,3 +17,5 @@
 	-file
 		-scorefile score.sc
 -overwrite	# overwrite any existing output with the same name you may have generated
+
+-nstruct 1

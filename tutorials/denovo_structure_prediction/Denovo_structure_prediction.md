@@ -49,17 +49,17 @@ Here, a fasta file is provided for you.
 - score.sc (shows the total score and individual terms)
 
 > * **For an actual production run, 50,000 to 100,000 models need to be generated.**
-> * **You pobably want to use the** [silent file options](../Tips.md)  
+> * **You pobably want to use the** [silent file options](demos/tutorials/Tips.md)  
 
 ##3. Analyze your results
-Details of how to analyze data and how to select which of the 50,000 models would be your prediction are explained in the [Analysis](../analysis/Analysis.md) tutorial.
+Details of how to analyze data and how to select which of the 50,000 models would be your prediction are explained in the [Analysis](demos/tutorials/analysis/Analysis.md) tutorial.
 
 ######Short walk through of initial steps
 
 For *de novo* structure prediction, in general you will want to perform the following steps:
 
 ####3.1. Extract the best (by score) of the generated models.
-> More instructions and helpful scripts are part of the Analysis tutorial ([../analysis](../analysis/)).  
+> More instructions and helpful scripts are part of the Analysis tutorial ([../analysis](demos/tutorials/analysis/)).  
 
  * In the output_files/ directory, you will find a binary silent file from a full AbinitioRelax run (AbRelax.out) and score file (score.sc).  
  Run:
@@ -102,6 +102,6 @@ To see how confident you can be about the correctness of a prediction, you can p
 The left plot shows that the lowest energy models also have the lowest rmsd - the simulation converged. On the right hand side, however, there is no convergence. Many very different models have low energies. A prediction would be highly questionable.
 
 ####3.3. Clustering analysis  
-This sorts the structures by similarity. (See [Analysis](../analysis/Analysis.md))
+This sorts the structures by similarity. (See [Analysis](demos/tutorials/analysis/Analysis.md))
 
 
