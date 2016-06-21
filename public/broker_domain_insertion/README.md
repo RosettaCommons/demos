@@ -20,8 +20,10 @@ turn down) the relaxation step at the end. Because relaxation is done
 system-wide and not exclusively for the inserted domain, it can have
 a very long runtime.
 
-Assuming Rosetta is in your home directory, you run it as follows:
+Assuming Rosetta is in your home directory, you run as follows:
+    
+    $> tar -xvf frags.tar.gz
 
-    $> rosetta_scripts.default.linuxgccrelease @flags -nstruct [number of structures]
+    $> rosetta_scripts.default.linuxgccrelease @flags
 
-where platform is "linux" or "mac" and compiler is "gcc" or "clang".
+where platform and compiler is replaced with your platform and compiler

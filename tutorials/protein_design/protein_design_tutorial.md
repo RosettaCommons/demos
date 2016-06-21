@@ -22,7 +22,7 @@ If you want to try making files that already exist (e.g., input files), write th
 ##Tutorial
 Preparation: Locate the necessary input PDB file. 
     
-        cd ~/rosetta_workshop/tutorials/protein_design
+        cd path/to/demos/tutorials/protein_design
 
    Included in this folder is a PDB file downloaded from the Protein Data Bank (www.rcsb.org ID:3UKM). Open this in pymol to familiarize yourself with the structure:
 
@@ -41,7 +41,7 @@ You should notice that this file shows two homo-dimers. We will focus on the dim
 
         Next, we will use a perl script in Rosetta to generate a symmetry file from the input crystal structure. First, if you'd like to display the available options for this script, simply enter:
 
-            ~/rosetta_workshop/rosetta/main/source/src/apps/public/symmetry/make_symmdef_file.pl
+            $ROSETTA3/src/apps/public/symmetry/make_symmdef_file.pl
         Next, we will use non-crystallographic mode (NCS), Chain A as the reference, Chain B as an interacting chain, and include the input structure. The output will be redirected, using the greater than sign, into a new file called 3UKM.symm.
 
             ~/rosetta_workshop/rosetta/main/source/src/apps/public/symmetry/make_symmdef_file.pl \
