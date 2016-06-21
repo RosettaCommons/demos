@@ -1,5 +1,18 @@
 Full Atom Representation vs Centroid Representation
 ===================================================
+Tutorial by Shourya S. Roy Burman   
+Created 20 June 2016
+
+[[_TOC_]]
+
+Summary
+-------
+Rosetta uses two primary representations while working with protein structures — full atom and centroid. By the end of this tutorial, you should understand:
+
+* The need for the centroid representation   
+* How centroid representation differs from full atom   
+* How to convert your structure from one representation to the other   
+* How to identify when a protocol requires a particular representation and you have provided the other one
 
 Need for a reduced represenation
 --------------------------------
@@ -26,8 +39,8 @@ vdw                 represents only steric repulsion and not attractive van der 
 Owing to the primitive scoring, this has a disadvantage in terms of interpreting results, but a huge advantage in that the energy landscape is not nearly as rugged, and sampling very different conformations is easier.
 
 
-Converting to full atom
------------------------
+Returning to the full atom representation
+-----------------------------------------
 After large-scale sampling in centroid mode, poses are generally converted back to their all-atom representation for refinement, which generally entails some combination of side chain repacking and minimization. This allows Rosetta to more accurately score interactions between side chains and other finer details of the protein's structure.
 
 Example
@@ -75,6 +88,7 @@ ATOM     30 3HG2 ILE A   4       0.359  14.582  13.371  1.00  0.00           H
 ATOM     31 1HD1 ILE A   4      -0.521  18.065  12.413  1.00  0.00           H  
 ATOM     32 2HD1 ILE A   4      -0.243  16.308  12.330  1.00  0.00           H  
 ATOM     33 3HD1 ILE A   4      -1.525  16.958  13.379  1.00  0.00           H  
+...
 ```
 The first two residues of 1QYS in the centroid mode look like:
 ```html
@@ -92,13 +106,24 @@ ATOM     11  O   ILE A   4       0.070  14.317  17.374  1.00  0.00           O
 ATOM     12  CB  ILE A   4       0.535  15.962  14.987  1.00  0.00           C  
 ATOM     13  CEN ILE A   4       1.064  16.400  14.140  1.00  0.00           X  
 ATOM     14  H   ILE A   4      -0.728  17.411  16.816  1.00  0.00           H   
+...
 ```
 The full PDBs are available in `Rosetta/demos/tutorials/full_atom_vs_centroid/input_files`.
 
-Common Errors
--------------
+Navigating to the Demos
+-----------------------
+The demos are available at: `Rosetta/demos/tutorials/full_atom_vs_centroid`. All demo commands listed in this tutorial should be executed when in this directory. All the demos are here use the `linuxgccrelease` binary. You may be required to change it to whatever is appropriate given your operating system and compiler.
+
+Common Problems
+---------------
 ###Centroid input when protocol expects full atom
-If we provide a centroid pdb input to a protocol that expects a full atom input, typically the program does not stop. Instead, Rosetta first discards the centroid psedu-atoms and displays the following warnings:
+####Demo
+The following demo runs the [scoring protocol](https://www.rosettacommons.org/demos/latest/tutorials/scoring/README) (which expects to a full atom input) with an centroid PDB as input.
+
+    $> <path_to_Rosetta_directory>/main/source/bin/score_jd2.linuxgccrelease @flag_cen_for_fa
+
+If we provide a centroid pdb input to a protocol that expects a full atom input, typically, the program does not crash. Instead, Rosetta first discards the centroid psedu-atoms and displays the following warnings:
+
 ```html
 ...
 core.io.pose_from_sfr.PoseFromSFRBuilder: [ WARNING ] discarding 1 atoms at position 1 in file input_files/1qys_centroid.pdb. Best match rsd_type:  ASP:NtermProteinFull
@@ -116,7 +141,8 @@ core.conformation.Conformation: [ WARNING ] missing heavyatom:  CG2 on residue I
 core.conformation.Conformation: [ WARNING ] missing heavyatom:  CD1 on residue ILE 2
 ...
 ```
-Finally, Rosetta builds the missing sidechains. Since there is no information about the conformation of the sidechains in the centroid representation, **different runs produce slightly different sidechain conformations**.
+Finally, Rosetta builds the missing sidechains.
+>Since there is no information about the conformation of the sidechains in the centroid representation, different runs produce slightly different sidechain conformations.
 ```html
 ...
 core.pack.pack_missing_sidechains: packing residue number 1 because of missing atom number 6 atom name  CG 
@@ -124,6 +150,10 @@ core.pack.pack_missing_sidechains: packing residue number 2 because of missing a
 ...
 ```
 ###Full atom input when protocol expects centroid
+####Demo
+The following demo runs the [scoring protocol](https://www.rosettacommons.org/demos/latest/tutorials/scoring/README) with an option to score the structure assuming it to be in centroid, but the input PDB supplied is full atom.
+
+    $> <path_to_Rosetta_directory>/main/source/bin/score_jd2.linuxgccrelease @flag_fa_for_cen
 If we provide a full atom pdb input to a protocol that expects a centroid input, typically the program does not stop. Instead, Rosetta first discards all sidechain atoms beyond C<sub>β</sub> and displays the following warnings:
 ```html
 ...
@@ -139,4 +169,4 @@ core.conformation.Conformation: [ WARNING ] missing heavyatom:  CEN on residue I
 ...
 ```
 Finally, Rosetta builds the missing centroid pseudo-atomatom. Since no information explicitly required to add the centroid pseudo-atom, different runs produce the same result.
-```html
+
