@@ -4,16 +4,16 @@ Relax is the main protocol for relaxing a structure in Rosetta; that is, it samp
 
 To demonstrate this, run 
 
-	$>../../../main/source/bin/score_jd2.default.linuxclangrelease -s 1ubq.pdb -out:suffix crystal @crystal_score_flags
+	$>../../../main/source/bin/score_jd2.default.linuxclangrelease -s 1ubq.pdb -out:suffix _crystal @crystal_score_flags
 
 and note the score. Now, run
 
-	$>../../../main/source/bin/relax.default.linuxclangrelease -s 1ubq.pdb -out:file:name relaxed.pdb -out:suffix relaxed @general_relax_flags
+	$>../../../main/source/bin/relax.default.linuxclangrelease -s 1ubq.pdb -out:file:name relaxed.pdb -out:suffix _relaxed @general_relax_flags
 
 and note the dramatic difference in score compared to the relatively minor difference in structure; this may be 300-500 REU depending on the success of the relaxation. In the first case, 1ubq.pdb was pulled directly from the Protein Databank and optimized according to some crystallographic energy function. In the second, Rosetta has moved the protein until it is optimal according to its internal score function.  
 To further explore this, run
 
-	>../../../main/source/bin/relax.default.linuxclangrelease -s 1ubq.pdb -out:suffix N_relax_cycles -relax:cycles N -nstruct 10
+	>../../../main/source/bin/relax.default.linuxclangrelease -s 1ubq.pdb -out:suffix _N_relax_cycles -relax:cycles N -nstruct 10
 
 for N between 1 and 10 cycles, plotting the relationship between cycle number and average score. You should see diminishing returns, particularly for very large N, as well as increasing divergence from the starting structure. Production runs generally include between 5 and 15 cycles of Relax; 5 is most often sufficient.
 ## Modifying the scope of Relax
@@ -27,12 +27,12 @@ In lieu of a specified MoveMap, the options
 will disable side chain, backbone, and interdomain motion, respectively. It can be useful, for example. to prevent motion between a designed protein and its native binding partner.
 To demonstrate this, run
 
-	$>../../../main/source/bin/relax.default.linuxclangrelease -s 1ubq.pdb -relax:bb_move false -out:suffix no_sidechain_motion @general_relax_flags
+	$>../../../main/source/bin/relax.default.linuxclangrelease -s 1ubq.pdb -relax:bb_move false -out:suffix _no_sidechain_motion @general_relax_flags
 
 and align it to the original 1ubq.pdb. You should see a close alignment between the backbones before and after the run -- and a correspondingly higher final energy.
 To further explore this, run
 
-	$>../../../main/source/bin/relax.default.linuxclangrelease -s 1ubq.pdb @general_relax_flags -out:suffix lever_arm -in:file:movemap lever_arm_movemap
+	$>../../../main/source/bin/relax.default.linuxclangrelease -s 1ubq.pdb @general_relax_flags -out:suffix _lever_arm -in:file:movemap lever_arm_movemap
 
 and observe that everything c-terminal to the region allowed to move has also moved. This is endemic to [movemaps] using [relative coordinates], and is called the [lever-arm effect]; while some protocols in Rosetta are written with this in mind, Relax allows lever-arm effects if not specifically prohibited from doing so within its MoveMap.
 
@@ -48,7 +48,7 @@ The former option disfavors output that is structurally dissimilar to the input;
 which replaces the normal harmonic constraints with flat constraints out to a distance of *width*, such that any changes that leave the output within *width* of the input see no change in score at all.
 To demonstrate this, run
 
-	$>../../../main/source/bin/relax.default.linuxclangrelease -s 1ubq.pdb -out:suffix constrained_relax -relax:constrain_relax_to_start_coords @general_relax_flags 
+	$>../../../main/source/bin/relax.default.linuxclangrelease -s 1ubq.pdb -out:suffix _constrained_relax -relax:constrain_relax_to_start_coords @general_relax_flags 
 
 and compare to the results of the original, unconstrained relax run.
 
@@ -61,14 +61,14 @@ By default, Relax will not change the input sequence. It can be allowed to do so
 which will set its internal packer to respect the provided resfile. This only controls packing behavior, not the minimizer; it can also be used to increase [rotamer] sampling around critical residues.
 To demonstrate this, run 
 
-	$> ../../../main/source/bin/relax.default.linuxclangrelease -s 1ubq.pdb -out:suffix relaxed_with_resfile -relax:respect_resfile -packing:resfile 1ubq.resfile @general_relax_flags
+	$> ../../../main/source/bin/relax.default.linuxclangrelease -s 1ubq.pdb -out:suffix _relaxed_with_resfile -relax:respect_resfile -packing:resfile 1ubq.resfile @general_relax_flags
 
 and compare to 1ubq.pdb. Note that the two structures are different; these differences arise during the minimization step.
 
-###Changing the behavior of the repulsive algorithm
-By default, Relax employs a ramping repulsive energy; this increases the structural space the algorithm is permitted to explore by gradually decreasing the weight of the repulsive term as the run continues. This behavior may be disabled by 
+###Changing the behavior of constraints
+By default, Relax gradually decreases the weight of any constraints given as the run progresses in order to explore more space in which the constraints hold while also optimizing the final structure. This behavior may be deactivate with
 	-relax:ramp_constraints false
-if the particular positions of the atoms in a given structure are believed to be accurate.
+if the constraints are particularly important or believed to be absolutely accurate.
 
 ##FastRelax
 
