@@ -6,6 +6,14 @@ This tutorial will go through some examples of what to do with the output that R
 * score file
 * log file
 
+**IMPORTANT**  Rosetta will always give you answer!
+
+The main question that you have to answer is: 
+
+*Can I trust the result?*
+
+This tutorial is primarily focussed on ways how to approach that question. Eventually, it comes down to your judgement, whether the nice looking structures you've got are spot on correct and simply garbage - that latter is more often the case anyone would like. 
+
 ###1. PDB file
 
 The models that Rosetta produces are in pdb file format. If you open the file, you will of course find all atom positions. Additionally, Rosetta will append all scoring terms for every residue at the end of the pdb file.
@@ -42,3 +50,83 @@ The models that Rosetta produces are in pdb file format. If you open the file, y
 * Now, you can plot the residue position vs. total score, e.g. as a histogram. You should notice, that there are regions with relatively bad energies (around positions 35-40). 
 
 ### The score file
+The score file contains the scores for all models generated in a run, broken down into the individual terms. You can extract certain columns (i.e scoring terms) or sort them by any column.
+
+     $ sort -n -k2 example_score_file.sc
+   this will sort the entire file by column 2 (total score)
+   
+   	 $ sort -n -k2 example_score_file | awk '{print $2 "\t" $3}'
+   this will do the same, but only print out columns 2 and 3
+  
+  * Extract score and rmsd values for the best 1000 models!   
+           
+        $ sort -n -k2 example_score_file.sc | head -n 1000 | awk '{print $2 "\t" $25 "\t" $NF}' > score_rmsd.dat
+  this will sort by total score, take only the top 1000, extract columns 2 (score), 25 (rms) and the verly last one (description,tag) and write this into a new file, called score_rmsd.dat.
+  > **Note:** The position of scoring terms in the score file depends on what protocol you are running and what options you are using!
+  
+  * Plot column 2 (rmsd) vs column 1 (score) of score_rmsd.dat
+  	> Having gnuplot installed, makes it easy to quickly take a look. But you can use any software to plot the two columns.
+  	  
+  	    $ gnuplot
+  	    Terminal type set to 'x11'   
+        gnuplot> plot "score_rmsd.dat" u 2:1 
+  	
+  ![](analysis_plot.png)
+  
+   You can see that the lower energy values (y-axis) correspond to lower rmsds (x-values). That means, that there is a significant degree of convergence. 
+ 
+### Extracting silent files
+When you produce a large number of models (e.g. for *de novo* structure prediction), it is recommended to output the models as binary silent files:
+
+    -out:file:silentfile_struct_type binary
+    -out:file:silent <file name of your choice>
+    
+Rosetta provides multiple ways to extract structures from those files.
+
+**1. Scoring** - The scoreing application can use silent files as input and generates pdb files.  
+*Try the following:*
+
+        $> ../../../main/source/bin/score.linuxgccrelease \
+        -in:file:silent_struct_type binary \
+        -in:file:silent example.out \
+        -out:output \
+        -out:file:scorefile extracted_scorefile.sc
+        
+   this will give you a new scorefile and the extracted pdb file (here there is only one structure in the silent file)
+   
+   For scoring particular structures, you can add:
+   
+         -in:file:tags S_00000170_1
+
+This can take multiple tags (S\_00000170\_1 S\_00000170\_2 S\_00000168\_1)  
+  
+ **2. Extract application**
+ 
+ First, remove the extracted pdb file:
+   
+      $> rm S_00000170_1.pdb
+ 
+ *Then try this:*
+ 
+         $> ../../../main/source/bin/extract_pdbs.linuxgccrelease \
+        -in:file:silent_struct_type binary \
+        -in:file:silent example.out
+ 
+ You should now have the pdb extracted. The *-in:file:tags* option works here, too.
+ 
+> You can get the best energy models by sorting the score file and  then extracting them using their tags.
+
+### Clustering
+
+For a result to be reasonably reliable, you should allwas get multiple similar solutions with similar energies. **Outliers** do appear - structures with artificially good scores. To find out whether your low energy solutions are outliers or have been sampled multiple times with slight very differences in structure and enegery, clustering the models by structural similarity is exteremely useful.
+
+While Rosetta has a clustering applications, it's use is very limitted. There is much more sophisticated clustering software that should rather be used.
+
+More information on clustering can also be found in the [Rosetta manual](https://www.rosettacommons.org/docs/latest/getting_started/Analyzing-Results).
+
+### Controls
+A good way to evaluate whether you can trust your results from Rosetta is to include control runs. Often you might find homologous proteins, protein complexes, peptides e.c.t.. Using those as positive controls is a good idea - if Rosetta fails to dock the known peptide TRRTFGAH correctly, then you might not want to trust your result for TRRSYGAH. 
+
+### Compare with experimental results
+Sometimes you might be lucky and have experimental results that you can compare with. For instance, there is (not extremely good, but still) a correlation between binding affnities and Rosetta's ddG. Hence, when docking molecule X to predict how it binds, you could compare the experimental affinity to the Rosetta ddG for the predicted conformation. A large mismatch should make you think!
+ 
