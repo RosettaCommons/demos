@@ -171,7 +171,7 @@ Again, most of the new scores from the minimized-with-constraints structure are 
 
 Comparing the minimized structure to the minimized-with-csts structure, we see an increase in total energy caused predominantly by differences in the fa_atr and fa_dun terms. (Why?) 
 
-Now lets take a look at the minimized-with-csts structure to see how it compares to our previous structures.
+Now let's take a look at the minimized-with-csts structure to see how it compares to our previous structures.
 
 Opening the `3hon_minwithcsts_0001.pdb` file and comparing it to the crystal structure,
 
