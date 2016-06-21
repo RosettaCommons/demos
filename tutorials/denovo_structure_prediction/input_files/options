@@ -1,0 +1,23 @@
+# Make sure all variable names have been replaced with absolute path and that no line begins with a $ or ~s
+-in
+	-file
+		-native input_files/2LZMA.pdb 	# native PDB file (optional)
+		-fasta input_files/2LZMA.fasta 	# protein sequence in fasta format
+		-frag3 input_files/aa2LZMA03_05.200_v1_3 	# protein 3-residue fragments file
+		-frag9 input_files/aa2LZMA09_05.200_v1_3	# protein 9-residue fragments file
+-abinitio
+	-relax
+	-increase_cycles 10	# Increase the number of cycles at each stage in AbinitioRelax by this factor
+	-rg_reweight 0.5	# Reweight contribution of radius of gyration to total score by this scale factor
+	-rsd_wt_helix 0.5	# Reweight env, pair, and cb scores for helix residues by this factor
+	-rsd_wt_loop 0.5	# Reweight env, pair, and cb scores for loop residues by this factor
+-relax
+	-fast	# At the end of the de novo protein_folding, do a relax step of type "FastRelax".  This has been shown to be the best deal for speed and robustness.
+-out
+	-pdb
+	-nstruct 1	# how many structures do you want to generate?  Usually want to fold at least 1,000.
+	-file
+		-scorefile score.sc
+-overwrite	# overwrite any existing output with the same name you may have generated
+
+-nstruct 1
