@@ -46,7 +46,7 @@ After large-scale sampling in centroid mode, poses are generally converted back 
 Example
 -------
 ![PDB 1QYS in the full atom representation vs centroid representation](images/1qys_combined.png)
-The PDB 1QYS in the full atom representation            The PDB 1QYS in the centroid representation
+The PDB 1QYS in the (L) full atom representation, and (R) the centroid representation
 
 PDB files generated in the centroid format have the sidechain atoms  (C<sub>γ</sub> onwards) replaced by one `CEN` pseudo-atom. For example, the first two residues of the PDB 1QYS in full atom look like:
 ```html
