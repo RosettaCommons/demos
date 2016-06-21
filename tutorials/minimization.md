@@ -106,7 +106,7 @@ Sometimes it may be undesirable to allow such large movements in the starting co
 
 ## How-To: Minimization with Constraints
 
-For this section of the tutorial, we will use the same crystal structure as before, `3hon.pdb`, but this time we will apply harmonic coordinate constraints on the backbone heavy atoms of the nine C-terminal tail residues.
+For this section of the tutorial, we will use the same crystal structure as before, `3hon.pdb`, but this time we will apply harmonic coordinate constraints (csts) on the backbone heavy atoms of the nine C-terminal tail residues.
 
 ### Setting up the flags file and constraints file
 
@@ -163,7 +163,7 @@ As before, the `score_minwithcsts.sc` file contains the score of the minimized s
 | p_aa_pp		    | -3.773		    | -12.833		        | -10.393 |
 | coordinate_constraint | | | 0.727 |
 
-As before, most of the new scores from the minimized-with-constraints structure are lower than those in the crystal structure. Notice also the addition of the coordinate constraint term to the list of energy terms for the newly minimized structure. 
+Again, most of the new scores from the minimized-with-constraints structure are lower than those in the crystal structure. Notice also the addition of the coordinate constraint term to the list of energy terms for the newly minimized structure. 
 
 Comparing the minimized structure to the minimized-with-csts structure, we see an increase in total energy caused predominantly by differences in the fa_atr and fa_dun terms. (Why?) 
 
