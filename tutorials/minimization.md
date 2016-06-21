@@ -3,7 +3,7 @@
 ## Introduction
 Proteins are not static structures, but rather they undergo fluctuations in their conformations and exist as an ensemble of states. 
 
-Each snapshot of a protein in its ensemble of conformations can be associated with an energy, where some conformations will have high energies and some will have low energies. In molecular modeling, it is usually desirable to find the global minimum (representing the lowest-energy conformation) of this energy function. This, however, is a very difficult task given the vast energy landscape that needs to be searched, so we'll settle for the next best thing: **a local minimum**.
+Each snapshot of a protein in its repertoire of conformations can be associated with an energy, where some conformations will have high energies and some will have low energies. In molecular modeling, it is usually desirable to find the global minimum (representing the lowest-energy conformation) of this energy function. This, however, is a very difficult task given the vast energy landscape that needs to be searched, so we'll settle for the next best thing: **a local minimum**.
 
 Minimization is a sampling technique for the purpose of finding the nearest local minimum in the energy function given a starting structure's conformation and energy.
 
@@ -50,14 +50,14 @@ The first flag specifies our input file, in this case, the crystal structure of 
 
 The second flag specifies the type of minimization algorithm to use, in this case, lbfgs_armijo_nonmonotone.
 
-The third flag specifies the convergence tolerance for the minimization algorithm. Rosetta has at least two kinds of "tolerance" for function minimization, "regular" (for lack of a better name) tolerance and absolute tolerance. "Regular" tolerance is _fractional_ tolerance for the _value_ of the function being minimized; i.e. a tolerance of 0.01 means the minimum function value found will be within 1% of the true minimum value. Absolute tolerance is specified without regard to the current function value; i.e. an absolute tolerance of 0.01 means that the minimum function value found will be equal to the actual minimum plus or minus 0.01, period. Minimizers use "regular" fractional tolerance by default. (Click [here](https://www.rosettacommons.org/docs/latest/rosetta_basics/structural_concepts/minimization-overview#the-meaning-of-tolerance) for more information on absolute tolerance]). In general, setting the fractional tolerance to 0.01 is very loose, and so it is recommended to specify a tolerance setting of something less than 0.01. Therefore, for this tutorial we have set the tolerance to 0.001.
+The third flag specifies the convergence tolerance for the minimization algorithm. Rosetta has at least two kinds of "tolerance" for function minimization, "regular" (for lack of a better name) tolerance and absolute tolerance. "Regular" tolerance is _fractional_ tolerance for the _value_ of the function being minimized; i.e. a tolerance of 0.01 means the minimum function value found will be within 1% of the true minimum value. Absolute tolerance is specified without regard to the current function value; i.e. an absolute tolerance of 0.01 means that the minimum function value found will be equal to the actual minimum plus or minus 0.01, period. Minimizers use "regular" fractional tolerance by default. (Click [here](https://www.rosettacommons.org/docs/latest/rosetta_basics/structural_concepts/minimization-overview#the-meaning-of-tolerance) for more information on absolute tolerance). In general, setting the fractional tolerance to 0.01 is very loose, and so it is recommended to specify a tolerance setting of something less than 0.01. Therefore, for this tutorial we have set the tolerance to 0.001.
 
 ### Running the minimization command
 
 In your terminal window, run the minimization executable by typing,
 
 ```bash
-$> minimization.default.linuxgccrelease @minimization_flags
+$> minimize.default.linuxgccrelease @minimization_flags
 ```
 If this executable runs with no errors and the terminal output ends with something like this,
 
@@ -94,13 +94,13 @@ The minimized structure has moved out of alignment with the native structure, so
 
 [picture]
 
-Now that the structure are aligned, notice that the last nine residues of the loop region have moved quite significantly from their original conformation. Furthermore, most of the minimized rotamers are no longer in their native conformations.
+Now that the structures are aligned, notice that the last nine residues of the loop region have moved quite significantly from their original conformation. Furthermore, most of the minimized rotamers are no longer in their native conformations.
 
 [picture with sticks]
 
 **SOMETHING SOMETHING ABOUT WHAT IT ALL MEANS.**
 
-Sometimes it may be undesirable to allow such large movements in the starting conformation. To this end, we can use minimization with constraints to minimize our input structure penalized the movement of certain atoms by the score function.
+Sometimes it may be undesirable to allow such large movements in the starting conformation. To this end, we can use minimization with constraints to minimize our input structure where movements of certain atoms will be penalized by the score function.
 
 ## How-To: Minimization with Constraints
 
@@ -159,7 +159,7 @@ As before, the `score_minwithcsts.sc` file contains the score of the minimized s
 | p_aa_pp		    | -3.773		    | -12.833		        | -10.393 |
 | coordinate_constraint | | | 0.727 |
 
-As before, most of the new scores from the minimized structure with constraints are lower than those in the crystal structure. Notice also the addition of the coordinate constraint term to the list of energy terms for the newly minimized structure. 
+As before, most of the new scores from the minimized-with-constraints structure are lower than those in the crystal structure. Notice also the addition of the coordinate constraint term to the list of energy terms for the newly minimized structure. 
 
 Comparing the minimized structure to the minimized-with-csts structure, we see an increase in total energy caused predominantly by differences in the fa_atr and fa_dun terms. (Why?) 
 
@@ -175,10 +175,10 @@ we immediately see little to no movement in the nine C-terminal residues.
 
 ## How-To: Minimization with a MoveMap
 
-### The MoveMap (https://www.rosettacommons.org/docs/wiki/rosetta_basics/structural_concepts/Rosetta-overview#scoring_movemap)
+### The [MoveMap](https://www.rosettacommons.org/docs/wiki/rosetta_basics/structural_concepts/Rosetta-overview#scoring_movemap)
 Certain protocols accept a user-specific move map file that tells the algorithm what torsion angles and rigid-body degrees of freedom (DOFs) are allowed to move. For example, one may not want to move highly-conserved sidechains in modeling applications, or one may want to preserve certain interactions in design applications.
 
-In the context of the minimizer, a move map allows the user to specify if the backbone (BB) torsions angles (phi, psi) or the sidechain torsions angles (CHI) should be allowed to be altered during the minimization of the energy function. In addition, if the input structure had more than one chain (separated by one or more JUMPS), the move map can also specify if rigid-body movements between the different chains are allowed.
+In the context of the minimizer, a move map allows the user to specify if the backbone (BB) torsions angles (phi, psi) or the sidechain torsions angles (CHI) are allowed to be moved during the minimization of the energy function. In addition, if the input structure has more than one chain (separated by one or more JUMPS), the move map can also specify if rigid-body movements between the different chains are allowed.
 
 #### Caveat: Even if a residue's backbone torsions are turned off via a move map, movements in this residue's phi and psi angles may still occur, depending on the motion of residues upstream in the FoldTree.
 
@@ -209,7 +209,7 @@ RESIDUE * BB
 ```
 will only allow backbone (BB) movements for all residues and will disallow sidechain (CHI) movements for all residues (which is probably not what the user meant).
 
-##### Note: If a residue or jump is not specified in the move map, it will revert to the default behaior, which is protocol-specific.
+##### Note: If a residue or jump is not specified in the move map, it will revert to the default behavior, which is protocol-specific.
 
 ### Setting up the flagsfile and movemap file
 
@@ -223,7 +223,7 @@ For the next minimization walkthrough, we will need to add one option to our fla
 
 The flag `movemap` specifies the movemap file to apply to the pose.
 
-Our move map file `movemapfile` (expanded below) tells the minimizer to first set all backbone (BB) and sidechain (CHI) torsion angles to movable. Then, it reverts residues 1 through 20 to be immovable.
+Our move map file `movemapfile` (expanded below) tells the minimizer to first set all backbone (BB) and sidechain (CHI) torsion angles to movable. Then, it reverts residues 1 through 20 to be fixed.
 ```
 RESIDUE * BBCHI
 RESIDUE 1 20 NO
@@ -273,4 +273,7 @@ After aligning the minimized-with-movemap structure to the crystal structure as 
 
 ## Summary
 
-In this tutorial, we learned 
+In this tutorial, we learned how to run the `minimize` executable in three ways: 
+1. By using the default behavior, which allowed movement in all backbone and chi angles,
+2. By applying coordinate constraints to the input structure, which disallowed global movements a subset of atoms,
+3. And by applying a MoveMap, which disallowed local movements in the backbone and sidechain torsion angles.
