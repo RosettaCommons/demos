@@ -14,7 +14,7 @@ In this tutorial, you will learn to use one of the many minimization algorithms,
 * Learn to run the `score` and `minimize` executables via the command line.
 * Create and utilize a **constraints file** to prevent movement from ocurring in part of the structure.
 * Create and utilize a **move map** to control the degrees of freedom allowed to move during the minimization.
-* Compare and analyze the output files and structure from each type of minimization.
+* Compare and analyze the output files and structures from each type of minimization.
 
 ## How-To: Minimize
 
