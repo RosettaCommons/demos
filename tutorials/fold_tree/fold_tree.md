@@ -1,19 +1,21 @@
 # Fold tree
 
-In this tutorial we will learn about the concept of fold tree, internal coordinates, and how to use them wisely to obtain more meaningfull outputs.
+In this tutorial we will learn about the concept of fold tree, internal coordinates, and how to use them wisely to obtain meaningfull outputs.
 
 #### Internal Coordinates
-If you open a PDB file and look at it, you can see that it has the information of all the atoms with their (x,y,z) coodrinates in the 3D space. When you want to move a protein, you can change all 3 coordinates of each atom. In other words, each atom has 3 degrees of freedom. However, 3 degrees of freedom is simply too much for our calculations. In order to make things simpler, Rosetta uses **internal coordinates** instead. You can imagin that another way of defining an atom uniquely is to use the bond, angle, and torsion of that residue with regards to its neighbor atoms. When you use bond, angle, and torsion angle values of residues, instead of the x,y,z values, to describe an atom, you are using its **internal coordinates**. 
-In the internal coordinate world, you move objects by changing the bond, angle, and torsion angle, so there are again 3 degrees of freedom. However, within proteins and for most of the applications we are interested in, the bonds between the angles between atoms remain unchanged. So, the motions are mostly happening by a change in the torsion angles. Hence, we are reducing the degrees of freedom to 1.
+If you open a PDB file and look at it, you can see that it has the information of all the atoms with their (x,y,z) coodrinates in the 3D space. When you want to move a protein, you can change all 3 coordinates of each atom. In other words, each atom has 3 degrees of freedom. However, 3 degrees of freedom is simply too much for our calculations. In order to make things simpler, Rosetta uses **internal coordinates** instead. You can imagin that another way of defining an atom uniquely is to use the bond, angle, and torsion of an atom with regards to its neighbor atoms. When you use bond, angle, and torsion angle values of residues, instead of the x,y,z values, to describe an atom, you are using its **internal coordinates**. 
+In the internal coordinate world, you move objects by changing the bond, angle, and torsions, so there are again 3 degrees of freedom. However, within proteins and for most of the applications we are interested in, the bonds an the angles between atoms remain unchanged. So, the motions are mostly happening by a change in the torsion angles. Hence, we are reducing the degrees of freedom to 1.
 
 If you go to
 ```
 <path-to-Rosetta>/Rosetta/main/database/chemical/residue_type_sets/fa_standard/residue_types/l-caa
 ```
-you can find several [params] files for all 20 amino acids. Open one and look at it. The lines started with ICOOR_INTERNAL show the internal coordinates of the atoms in that residue (see [here](https://www.rosettacommons.org/docs/latest/rosetta_basics/file_types/Residue-Params-file) for details of what each column in ICOOR_INERNAL means.
+you can find several [params] files for all 20 amino acids. Open one and look at it. The lines started with ICOOR_INTERNAL show the internal coordinates of the atoms in that residue (see [here](https://www.rosettacommons.org/docs/latest/rosetta_basics/file_types/Residue-Params-file) for details of what each column in ICOOR_INERNAL line means.
 
 #### The Lever Arm Effect
-When you change the torsion angles in a given sets of residues, but you set the rest to not move, what will happen? Let's see the simple scheme below:
+When you change the torsion angles in a given sets of residues but you set the rest to not move, what will happen? Let's see the simple scheme below:
+
+
 
 You can see that in order to change one specific torsion angle but not the rest, I have to rotate all of the atoms that come after the change torsion should all move. In other words, although you kept them fixed "WITH RESPECT TO EACH OTHER", they can still move together to accomodate changes in the downstream.
 Now let's look at the same example, but with a small difference:
