@@ -4,6 +4,10 @@ This is a demo for the mononuclear zinc metalloenzyme redesign procedure describ
 
 Authors: Sagar Khare (khares@uw.edu), Per Jr Greisen (pgreisen@gmail.com)
 
+## Requirements
+
+The scripts in this demo require that [SciPy](https://www.scipy.org/) is installed on the user's system.
+
 ## Summary
 
 Starting from a TS ensemble model and a set of zinc-containing PDBs (only one - PDBid 1A4L - is included here, list of other PDB codes used in the paper is in list\_of\_input\_pdbs file) as inputs, we generate a design model and evaluate it. 
