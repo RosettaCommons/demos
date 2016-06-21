@@ -1,0 +1,256 @@
+core.init: Mini-Rosetta version 51211M from https://svn.rosettacommons.org/source/trunk/rosetta/rosetta_source
+core.init: command: /home/zhezhang/rosetta_vanilla/rosetta_source/bin/score_jd2.default.linuxgccrelease -in:file:s protAB.pdb
+core.init: 'RNG device' seed mode, using '/dev/urandom', seed=-1510350003 seed_offset=0 real_seed=-1510350003
+core.init.random: RandomGenerator:init: Normal mode, seed=-1510350003 RG_type=mt19937
+core.init: found database environment variable ROSETTA3_DB: /home/zhezhang/rosetta_change/rosetta_database
+core.scoring.ScoreFunctionFactory: SCOREFUNCTION: standard
+core.scoring.ScoreFunctionFactory: SCOREFUNCTION PATCH: score12
+core.scoring.etable: Starting energy table calculation
+core.scoring.etable: smooth_etable: changing atr/rep split to bottom of energy well
+core.scoring.etable: smooth_etable: spline smoothing lj etables (maxdis = 6)
+core.scoring.etable: smooth_etable: spline smoothing solvation etables (max_dis = 6)
+core.scoring.etable: Finished calculating energy tables.
+basic.io.database: Database file opened: scoring/score_functions/PairEPotential/pdb_pair_stats_fine
+basic.io.database: Database file opened: scoring/score_functions/hbonds/standard_params/HBPoly1D.csv
+basic.io.database: Database file opened: scoring/score_functions/hbonds/standard_params/HBFadeIntervals.csv
+basic.io.database: Database file opened: scoring/score_functions/hbonds/standard_params/HBEval.csv
+basic.io.database: Database file opened: scoring/score_functions/EnvPairPotential/env_log.txt
+basic.io.database: Database file opened: scoring/score_functions/EnvPairPotential/cbeta_den.txt
+basic.io.database: Database file opened: scoring/score_functions/EnvPairPotential/pair_log.txt
+basic.io.database: Database file opened: scoring/score_functions/EnvPairPotential/cenpack_log.txt
+basic.io.database: Database file opened: scoring/score_functions/EnvPairPotential/env_log.txt
+basic.io.database: Database file opened: scoring/score_functions/EnvPairPotential/cbeta_den.txt
+basic.io.database: Database file opened: scoring/score_functions/EnvPairPotential/pair_log.txt
+basic.io.database: Database file opened: scoring/score_functions/EnvPairPotential/cenpack_log.txt
+basic.io.database: Database file opened: scoring/score_functions/MembranePotential/CEN6_mem_env_log.txt
+basic.io.database: Database file opened: scoring/score_functions/MembranePotential/CEN10_mem_env_log.txt
+basic.io.database: Database file opened: scoring/score_functions/MembranePotential/memcbeta_den.txt
+basic.io.database: Database file opened: scoring/score_functions/MembranePotential/mem_pair_log.txt
+basic.io.database: Database file opened: scoring/score_functions/P_AA_pp/P_AA
+basic.io.database: Database file opened: scoring/score_functions/P_AA_pp/P_AA_n
+basic.io.database: Database file opened: scoring/score_functions/P_AA_pp/P_AA_pp
+basic.io.database: Database file opened: scoring/score_functions/rama/Rama_smooth_dyn.dat_ss_6.4
+protocols.evaluation.ChiWellRmsdEvaluatorCreator: Evaluation Creator active ... 
+protocols.jd2.PDBJobInputter: Instantiate PDBJobInputter
+protocols.jd2.PDBJobInputter: PDBJobInputter::fill_jobs
+protocols.jd2.PDBJobInputter: pushing protAB.pdb nstruct index 1
+protocols.evaluation.ChiWellRmsdEvaluatorCreator: Evaluation Creator active ... 
+protocols.jd2.PDBJobInputter: PDBJobInputter::pose_from_job
+core.chemical.ResidueType: WARNING:: unrecognized residuetype property: PHOSPHONATE
+core.chemical.ResidueType: WARNING:: unrecognized residuetype property: ALDOSE
+core.chemical.ResidueType: WARNING:: unrecognized residuetype property: D_SUGAR
+core.chemical.ResidueType: WARNING:: unrecognized residuetype property: PYRANOSE
+core.chemical.ResidueType: WARNING:: unrecognized residuetype property: ALPHA_SUGAR
+core.chemical.ResidueType: WARNING:: unrecognized residuetype property: ALDOSE
+core.chemical.ResidueType: WARNING:: unrecognized residuetype property: D_SUGAR
+core.chemical.ResidueType: WARNING:: unrecognized residuetype property: PYRANOSE
+core.chemical.ResidueType: WARNING:: unrecognized residuetype property: ALPHA_SUGAR
+core.chemical.ResidueType: WARNING:: unrecognized residuetype property: ALDOSE
+core.chemical.ResidueType: WARNING:: unrecognized residuetype property: D_SUGAR
+core.chemical.ResidueType: WARNING:: unrecognized residuetype property: PYRANOSE
+core.chemical.ResidueType: WARNING:: unrecognized residuetype property: BETA_SUGAR
+core.chemical: patch_operation_from_patch_file_line: bad line: ADD_PROTON_CHI 4 SAMPLES 2 0 180 EXTRA 1 20 
+core.chemical.ResidueType: WARNING:: unrecognized residuetype property: PHOSPHONATE_UPPER
+core.chemical.ResidueType: WARNING:: unrecognized residuetype property: PHOSPHONATE_UPPER
+core.chemical.ResidueType: WARNING:: unrecognized residuetype property: PHOSPHONATE_UPPER
+core.chemical.ResidueType: WARNING:: unrecognized residuetype property: PHOSPHONATE_UPPER
+core.chemical.ResidueType: WARNING:: unrecognized residuetype property: ACETYLATED_NTERMINUS
+core.chemical.ResidueType: WARNING:: unrecognized residuetype property: ACETYLATED_NTERMINUS
+core.chemical.ResidueType: WARNING:: unrecognized residuetype property: ACETYLATED_NTERMINUS
+core.chemical.ResidueType: WARNING:: unrecognized residuetype property: ACETYLATED_NTERMINUS
+core.chemical.ResidueType: WARNING:: unrecognized residuetype property: ACETYLATED_NTERMINUS
+core.chemical.ResidueType: WARNING:: unrecognized residuetype property: ACETYLATED_NTERMINUS
+core.chemical.ResidueType: WARNING:: unrecognized residuetype property: ACETYLATED_NTERMINUS
+core.chemical.ResidueType: WARNING:: unrecognized residuetype property: ACETYLATED_NTERMINUS
+core.chemical.ResidueType: WARNING:: unrecognized residuetype property: ACETYLATED_NTERMINUS
+core.chemical.ResidueType: WARNING:: unrecognized residuetype property: ACETYLATED_NTERMINUS
+core.chemical.ResidueType: WARNING:: unrecognized residuetype property: ACETYLATED_NTERMINUS
+core.chemical.ResidueType: WARNING:: unrecognized residuetype property: ACETYLATED_NTERMINUS
+core.chemical.ResidueType: WARNING:: unrecognized residuetype property: ACETYLATED_NTERMINUS
+core.chemical.ResidueType: WARNING:: unrecognized residuetype property: ACETYLATED_NTERMINUS
+core.chemical.ResidueType: WARNING:: unrecognized residuetype property: ACETYLATED_NTERMINUS
+core.chemical.ResidueType: WARNING:: unrecognized residuetype property: ACETYLATED_NTERMINUS
+core.chemical.ResidueType: WARNING:: unrecognized residuetype property: ACETYLATED_NTERMINUS
+core.chemical.ResidueType: WARNING:: unrecognized residuetype property: ACETYLATED_NTERMINUS
+core.chemical.ResidueType: WARNING:: unrecognized residuetype property: ACETYLATED_NTERMINUS
+core.chemical.ResidueType: WARNING:: unrecognized residuetype property: ACETYLATED_NTERMINUS
+core.chemical.ResidueType: WARNING:: unrecognized residuetype property: ACETYLATED_NTERMINUS
+core.chemical.ResidueType: WARNING:: unrecognized residuetype property: ACETYLATED_NTERMINUS
+core.chemical.ResidueType: WARNING:: unrecognized residuetype property: ACETYLATED_NTERMINUS
+core.chemical.ResidueType: WARNING:: unrecognized residuetype property: ACETYLATED_NTERMINUS
+core.chemical.ResidueType: WARNING:: unrecognized residuetype property: ACETYLATED_NTERMINUS
+core.chemical.ResidueType: WARNING:: unrecognized residuetype property: ACETYLATED_NTERMINUS
+core.chemical.ResidueType: WARNING:: unrecognized residuetype property: ACETYLATED_NTERMINUS
+core.chemical.ResidueType: WARNING:: unrecognized residuetype property: ACETYLATED_NTERMINUS
+core.chemical.ResidueType: WARNING:: unrecognized residuetype property: ACETYLATED_NTERMINUS
+core.chemical.ResidueType: WARNING:: unrecognized residuetype property: ACETYLATED_NTERMINUS
+core.chemical.ResidueType: WARNING:: unrecognized residuetype property: ACETYLATED_NTERMINUS
+core.chemical.ResidueType: WARNING:: unrecognized residuetype property: ACETYLATED_NTERMINUS
+core.chemical.ResidueType: WARNING:: unrecognized residuetype property: ACETYLATED_NTERMINUS
+core.chemical.ResidueType: WARNING:: unrecognized residuetype property: ACETYLATED_NTERMINUS
+core.chemical.ResidueType: WARNING:: unrecognized residuetype property: ACETYLATED_NTERMINUS
+core.chemical.ResidueType: WARNING:: unrecognized residuetype property: ACETYLATED_NTERMINUS
+core.chemical.ResidueType: WARNING:: unrecognized residuetype property: ACETYLATED_NTERMINUS
+core.chemical.ResidueType: WARNING:: unrecognized residuetype property: ACETYLATED_NTERMINUS
+core.chemical.ResidueType: WARNING:: unrecognized residuetype property: ACETYLATED_NTERMINUS
+core.chemical.ResidueType: WARNING:: unrecognized residuetype property: ACETYLATED_NTERMINUS
+core.chemical.ResidueType: WARNING:: unrecognized residuetype property: ACETYLATED_NTERMINUS
+core.chemical.ResidueType: WARNING:: unrecognized residuetype property: ACETYLATED_NTERMINUS
+core.chemical.ResidueType: WARNING:: unrecognized residuetype property: ACETYLATED_NTERMINUS
+core.chemical.ResidueType: WARNING:: unrecognized residuetype property: ACETYLATED_NTERMINUS
+core.chemical.ResidueType: WARNING:: unrecognized residuetype property: ACETYLATED_NTERMINUS
+core.chemical.ResidueType: WARNING:: unrecognized residuetype property: ACETYLATED_NTERMINUS
+core.chemical.ResidueType: WARNING:: unrecognized residuetype property: ACETYLATED_NTERMINUS
+core.chemical.ResidueType: WARNING:: unrecognized residuetype property: ACETYLATED_NTERMINUS
+core.chemical.ResidueType: WARNING:: unrecognized residuetype property: ACETYLATED_NTERMINUS
+core.chemical.ResidueType: WARNING:: unrecognized residuetype property: ACETYLATED_NTERMINUS
+core.chemical.ResidueType: WARNING:: unrecognized residuetype property: ACETYLATED_NTERMINUS
+core.chemical.ResidueType: WARNING:: unrecognized residuetype property: ACETYLATED_NTERMINUS
+core.chemical.ResidueType: WARNING:: unrecognized residuetype property: ACETYLATED_NTERMINUS
+core.chemical.ResidueType: WARNING:: unrecognized residuetype property: ACETYLATED_NTERMINUS
+core.chemical.ResidueType: WARNING:: unrecognized residuetype property: ACETYLATED_NTERMINUS
+core.chemical.ResidueType: WARNING:: unrecognized residuetype property: ACETYLATED_NTERMINUS
+core.chemical.ResidueType: WARNING:: unrecognized residuetype property: ACETYLATED_NTERMINUS
+core.chemical.ResidueType: WARNING:: unrecognized residuetype property: ACETYLATED_NTERMINUS
+core.chemical.ResidueType: WARNING:: unrecognized residuetype property: ACETYLATED_NTERMINUS
+core.chemical.ResidueType: WARNING:: unrecognized residuetype property: ACETYLATED_NTERMINUS
+core.chemical.ResidueType: WARNING:: unrecognized residuetype property: ACETYLATED_NTERMINUS
+core.chemical.ResidueType: WARNING:: unrecognized residuetype property: ACETYLATED_NTERMINUS
+core.chemical.ResidueType: WARNING:: unrecognized residuetype property: ACETYLATED_NTERMINUS
+core.chemical.ResidueType: WARNING:: unrecognized residuetype property: ACETYLATED_NTERMINUS
+core.chemical.ResidueType: WARNING:: unrecognized residuetype property: ACETYLATED_NTERMINUS
+core.chemical.ResidueType: WARNING:: unrecognized residuetype property: ACETYLATED_NTERMINUS
+core.chemical.ResidueType: WARNING:: unrecognized residuetype property: ACETYLATED_NTERMINUS
+core.chemical.ResidueType: WARNING:: unrecognized residuetype property: ACETYLATED_NTERMINUS
+core.chemical.ResidueType: WARNING:: unrecognized residuetype property: ACETYLATED_NTERMINUS
+core.chemical.ResidueType: WARNING:: unrecognized residuetype property: ACETYLATED_NTERMINUS
+core.chemical.ResidueType: WARNING:: unrecognized residuetype property: ACETYLATED_NTERMINUS
+core.chemical.ResidueType: WARNING:: unrecognized residuetype property: ACETYLATED_NTERMINUS
+core.chemical.ResidueType: WARNING:: unrecognized residuetype property: ACETYLATED_NTERMINUS
+core.chemical.ResidueType: WARNING:: unrecognized residuetype property: ACETYLATED_NTERMINUS
+core.chemical.ResidueType: WARNING:: unrecognized residuetype property: ACETYLATED_NTERMINUS
+core.chemical.ResidueType: WARNING:: unrecognized residuetype property: ACETYLATED_NTERMINUS
+core.chemical.ResidueType: WARNING:: unrecognized residuetype property: ACETYLATED_NTERMINUS
+core.chemical.ResidueType: WARNING:: unrecognized residuetype property: ACETYLATED_NTERMINUS
+core.chemical.ResidueType: WARNING:: unrecognized residuetype property: ACETYLATED_NTERMINUS
+core.chemical.ResidueType: WARNING:: unrecognized residuetype property: ACETYLATED_NTERMINUS
+core.chemical.ResidueType: WARNING:: unrecognized residuetype property: ACETYLATED_NTERMINUS
+core.chemical.ResidueType: WARNING:: unrecognized residuetype property: ACETYLATED_NTERMINUS
+core.chemical.ResidueType: WARNING:: unrecognized residuetype property: ACETYLATED_NTERMINUS
+core.chemical.ResidueType: WARNING:: unrecognized residuetype property: ACETYLATED_NTERMINUS
+core.chemical.ResidueType: WARNING:: unrecognized residuetype property: ACETYLATED_NTERMINUS
+core.chemical.ResidueType: WARNING:: unrecognized residuetype property: ACETYLATED_NTERMINUS
+core.chemical.ResidueType: WARNING:: unrecognized residuetype property: ACETYLATED_NTERMINUS
+core.chemical.ResidueType: WARNING:: unrecognized residuetype property: ACETYLATED_NTERMINUS
+core.chemical.ResidueType: WARNING:: unrecognized residuetype property: ACETYLATED_NTERMINUS
+core.chemical.ResidueType: WARNING:: unrecognized residuetype property: ACETYLATED_NTERMINUS
+core.chemical.ResidueType: WARNING:: unrecognized residuetype property: ACETYLATED_NTERMINUS
+core.chemical.ResidueType: WARNING:: unrecognized residuetype property: ACETYLATED_NTERMINUS
+core.chemical.ResidueType: WARNING:: unrecognized residuetype property: ACETYLATED_NTERMINUS
+core.chemical.ResidueType: WARNING:: unrecognized residuetype property: ACETYLATED_NTERMINUS
+core.chemical.ResidueType: WARNING:: unrecognized residuetype property: ACETYLATED_NTERMINUS
+core.chemical.ResidueType: WARNING:: unrecognized residuetype property: ACETYLATED_NTERMINUS
+core.chemical.ResidueType: WARNING:: unrecognized residuetype property: ACETYLATED_NTERMINUS
+core.chemical.ResidueType: WARNING:: unrecognized residuetype property: ACETYLATED_NTERMINUS
+core.chemical.ResidueType: WARNING:: unrecognized residuetype property: ACETYLATED_NTERMINUS
+core.chemical.ResidueType: WARNING:: unrecognized residuetype property: ACETYLATED_NTERMINUS
+core.chemical.ResidueType: WARNING:: unrecognized residuetype property: ACETYLATED_NTERMINUS
+core.chemical.ResidueType: WARNING:: unrecognized residuetype property: ACETYLATED_NTERMINUS
+core.chemical.ResidueType: WARNING:: unrecognized residuetype property: ACETYLATED_NTERMINUS
+core.chemical.ResidueType: WARNING:: unrecognized residuetype property: ACETYLATED_NTERMINUS
+core.chemical.ResidueType: WARNING:: unrecognized residuetype property: ACETYLATED_NTERMINUS
+core.chemical.ResidueType: WARNING:: unrecognized residuetype property: ACETYLATED_NTERMINUS
+core.chemical.ResidueType: WARNING:: unrecognized residuetype property: ACETYLATED_NTERMINUS
+core.chemical.ResidueType: WARNING:: unrecognized residuetype property: ACETYLATED_NTERMINUS
+core.chemical.ResidueType: WARNING:: unrecognized residuetype property: ACETYLATED_NTERMINUS
+core.chemical.ResidueType: WARNING:: unrecognized residuetype property: ACETYLATED_NTERMINUS
+core.chemical.ResidueType: WARNING:: unrecognized residuetype property: ACETYLATED_NTERMINUS
+core.chemical.ResidueType: WARNING:: unrecognized residuetype property: ACETYLATED_NTERMINUS
+core.chemical.ResidueType: WARNING:: unrecognized residuetype property: ACETYLATED_NTERMINUS
+core.chemical.ResidueType: WARNING:: unrecognized residuetype property: ACETYLATED_NTERMINUS
+core.chemical.ResidueType: WARNING:: unrecognized residuetype property: ACETYLATED_NTERMINUS
+core.chemical.ResidueType: WARNING:: unrecognized residuetype property: ACETYLATED_NTERMINUS
+core.chemical.ResidueType: WARNING:: unrecognized residuetype property: ACETYLATED_NTERMINUS
+core.chemical.ResidueType: WARNING:: unrecognized residuetype property: ACETYLATED_NTERMINUS
+core.chemical.ResidueType: WARNING:: unrecognized residuetype property: ACETYLATED_NTERMINUS
+core.chemical.ResidueType: WARNING:: unrecognized residuetype property: ACETYLATED_NTERMINUS
+core.chemical.ResidueType: WARNING:: unrecognized residuetype property: ACETYLATED_NTERMINUS
+core.chemical.ResidueType: WARNING:: unrecognized residuetype property: ACETYLATED_NTERMINUS
+core.chemical.ResidueType: WARNING:: unrecognized residuetype property: ACETYLATED_NTERMINUS
+core.chemical.ResidueType: WARNING:: unrecognized residuetype property: ACETYLATED_NTERMINUS
+core.chemical.ResidueType: WARNING:: unrecognized residuetype property: ACETYLATED_NTERMINUS
+core.chemical.ResidueType: WARNING:: unrecognized residuetype property: ACETYLATED_NTERMINUS
+core.chemical.ResidueType: WARNING:: unrecognized residuetype property: ACETYLATED_NTERMINUS
+core.chemical.ResidueType: WARNING:: unrecognized residuetype property: ACETYLATED_NTERMINUS
+core.chemical.ResidueType: WARNING:: unrecognized residuetype property: ACETYLATED_NTERMINUS
+core.chemical.ResidueType: WARNING:: unrecognized residuetype property: ACETYLATED_NTERMINUS
+core.chemical.ResidueType: WARNING:: unrecognized residuetype property: ACETYLATED_NTERMINUS
+core.chemical.ResidueType: WARNING:: unrecognized residuetype property: ACETYLATED_NTERMINUS
+core.chemical.ResidueType: WARNING:: unrecognized residuetype property: ACETYLATED_NTERMINUS
+core.chemical.ResidueType: WARNING:: unrecognized residuetype property: ACETYLATED_NTERMINUS
+core.chemical.ResidueType: WARNING:: unrecognized residuetype property: ACETYLATED_NTERMINUS
+core.chemical.ResidueType: WARNING:: unrecognized residuetype property: ACETYLATED_NTERMINUS
+core.chemical.ResidueType: WARNING:: unrecognized residuetype property: ACETYLATED_NTERMINUS
+core.chemical.ResidueType: WARNING:: unrecognized residuetype property: ACETYLATED_NTERMINUS
+core.chemical.ResidueType: WARNING:: unrecognized residuetype property: ACETYLATED_NTERMINUS
+core.chemical.ResidueType: WARNING:: unrecognized residuetype property: ACETYLATED_NTERMINUS
+core.chemical.ResidueType: WARNING:: unrecognized residuetype property: ACETYLATED_NTERMINUS
+core.chemical.ResidueType: WARNING:: unrecognized residuetype property: ACETYLATED_NTERMINUS
+core.chemical.ResidueType: WARNING:: unrecognized residuetype property: ACETYLATED_NTERMINUS
+core.chemical.ResidueType: WARNING:: unrecognized residuetype property: ACETYLATED_NTERMINUS
+core.chemical.ResidueType: WARNING:: unrecognized residuetype property: ACETYLATED_NTERMINUS
+core.chemical.ResidueType: WARNING:: unrecognized residuetype property: ACETYLATED_NTERMINUS
+core.chemical.ResidueType: WARNING:: unrecognized residuetype property: ACETYLATED_NTERMINUS
+core.chemical.ResidueType: WARNING:: unrecognized residuetype property: ACETYLATED_NTERMINUS
+core.chemical.ResidueType: WARNING:: unrecognized residuetype property: ACETYLATED_NTERMINUS
+core.chemical.ResidueType: WARNING:: unrecognized residuetype property: ACETYLATED_NTERMINUS
+core.chemical.ResidueType: WARNING:: unrecognized residuetype property: ACETYLATED_NTERMINUS
+core.chemical.ResidueType: WARNING:: unrecognized residuetype property: BRANCH_POINT
+core.chemical.ResidueType: WARNING:: unrecognized residuetype property: BRANCH_POINT
+core.chemical.ResidueType: WARNING:: unrecognized residuetype property: BRANCH_POINT
+core.chemical.ResidueType: WARNING:: unrecognized residuetype property: BRANCH_POINT
+core.chemical.ResidueTypeSet: Finished initializing fa_standard residue type set.  Created 6262 residue types
+core.io.pdb.file_data: [ WARNING ] discarding 1 atoms at position 1 in file protAB.pdb. Best match rsd_type:  PRO_p:NtermProteinFull
+core.conformation.Conformation: Found disulfide between residues 28 86
+core.conformation.Conformation: current variant for 28 CYS
+core.conformation.Conformation: current variant for 86 CYS
+core.conformation.Conformation: current variant for 28 CYD
+core.conformation.Conformation: current variant for 86 CYD
+core.conformation.Conformation: Found disulfide between residues 70 115
+core.conformation.Conformation: current variant for 70 CYS
+core.conformation.Conformation: current variant for 115 CYS
+core.conformation.Conformation: current variant for 70 CYD
+core.conformation.Conformation: current variant for 115 CYD
+core.conformation.Conformation: Found disulfide between residues 141 160
+core.conformation.Conformation: current variant for 141 CYS
+core.conformation.Conformation: current variant for 160 CYS
+core.conformation.Conformation: current variant for 141 CYD
+core.conformation.Conformation: current variant for 160 CYD
+core.conformation.Conformation: Found disulfide between residues 378 384
+core.conformation.Conformation: current variant for 378 CYS
+core.conformation.Conformation: current variant for 384 CYS
+core.conformation.Conformation: current variant for 378 CYD
+core.conformation.Conformation: current variant for 384 CYD
+core.conformation.Conformation: Found disulfide between residues 450 462
+core.conformation.Conformation: current variant for 450 CYS
+core.conformation.Conformation: current variant for 462 CYS
+core.conformation.Conformation: current variant for 450 CYD
+core.conformation.Conformation: current variant for 462 CYD
+core.conformation.Conformation: Found disulfide between residues 507 523
+core.conformation.Conformation: current variant for 507 CYS
+core.conformation.Conformation: current variant for 523 CYS
+core.conformation.Conformation: current variant for 507 CYD
+core.conformation.Conformation: current variant for 523 CYD
+core.conformation.Conformation: Found disulfide between residues 541 569
+core.conformation.Conformation: current variant for 541 CYS
+core.conformation.Conformation: current variant for 569 CYS
+core.conformation.Conformation: current variant for 541 CYD
+core.conformation.Conformation: current variant for 569 CYD
+core.io.pdb.file_data: [ WARNING ] can't find atom for res 1 atom  OE  (trying to set temp)
+core.pack.task: Packer task: initialize from command line() 
+protocols.jd2.PDBJobInputter: filling pose from PDB protAB.pdb
+basic.io.database: Database file opened: scoring/score_functions/disulfides/fa_SS_distance_score
+core.pack.dunbrack: Dunbrack library took 0.05 seconds to load from binary
+protocols.jd2.JobDistributor: protAB_0001 reported success in 2 seconds
+protocols.jd2.JobDistributor: no more batches to process... 
+protocols.jd2.JobDistributor: 1 jobs considered, 1 jobs attempted in 2 seconds

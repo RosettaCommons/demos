@@ -1,0 +1,18 @@
+-798.744	5.60021	../example_outputs/NGK_1a8d//1a8d_MinPacked_committed_1_NGK1a8d_MinPacked_0001.pdb.gz
+-796.496	4.72323	../example_outputs/NGK_1a8d//1a8d_MinPacked_committed_2_NGK1a8d_MinPacked_0001.pdb.gz
+-786.812	6.23376	../example_outputs/NGK_1a8d//1a8d_MinPacked_committed_3_NGK1a8d_MinPacked_0001.pdb.gz
+-783.213	4.40274	../example_outputs/NGK_1a8d//1a8d_MinPacked_committed_4_NGK1a8d_MinPacked_0001.pdb.gz
+-789.736	5.1805	../example_outputs/NGK_1a8d//1a8d_MinPacked_committed_5_NGK1a8d_MinPacked_0001.pdb.gz
+
+
+## top10
+-783.213	4.40274	../example_outputs/NGK_1a8d//1a8d_MinPacked_committed_4_NGK1a8d_MinPacked_0001.pdb.gz
+-786.812	6.23376	../example_outputs/NGK_1a8d//1a8d_MinPacked_committed_3_NGK1a8d_MinPacked_0001.pdb.gz
+-789.736	5.1805	../example_outputs/NGK_1a8d//1a8d_MinPacked_committed_5_NGK1a8d_MinPacked_0001.pdb.gz
+-796.496	4.72323	../example_outputs/NGK_1a8d//1a8d_MinPacked_committed_2_NGK1a8d_MinPacked_0001.pdb.gz
+-798.744	5.60021	../example_outputs/NGK_1a8d//1a8d_MinPacked_committed_1_NGK1a8d_MinPacked_0001.pdb.gz
+
+
+## top1
+-798.744	5.60021	../example_outputs/NGK_1a8d//1a8d_MinPacked_committed_1_NGK1a8d_MinPacked_0001.pdb.gz
+

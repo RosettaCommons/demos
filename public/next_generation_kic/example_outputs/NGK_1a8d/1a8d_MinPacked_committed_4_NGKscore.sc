@@ -1,0 +1,3 @@
+SEQUENCE: 
+SCORE: total_score chainbreak  dslf_ca_dih dslf_cs_ang dslf_ss_dih dslf_ss_dst      fa_atr      fa_dun fa_intra_rep      fa_pair       fa_rep       fa_sol hbond_bb_sc hbond_lr_bb    hbond_sc hbond_sr_bb loop_cenrms  loop_rms      omega   p_aa_pp pro_close      rama       ref total_energy  description 
+SCORE:    -783.213       0.000       0.265       0.384       2.826       1.720   -1712.931     316.122        4.327      -43.783      213.755      860.403     -74.781    -216.235     -43.651     -41.873        6.174     4.403    81.340   -46.136     4.026     0.759   -89.750      -783.213 1a8d_MinPacked_committed_4_NGK1a8d_MinPacked_0001

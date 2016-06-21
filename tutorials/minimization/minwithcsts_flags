@@ -1,0 +1,6 @@
+-s 3hon.pdb
+-run:min_type lbfgs_armijo_nonmonotone
+-run:min_tolerance 0.001
+-constraints:cst_file cstfile
+-score:weights talaris2014_cst
+-out:suffix _minwithcsts

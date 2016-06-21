@@ -1,0 +1,3148 @@
+command executed: ../../rosetta_5-1-09.mactel -design -l list_of_pdbs_m_TER -tail -begin 342 -end 351 -chain_ -series b -protein g000 resfile g000_resfile -no_hs_his_pairE
+[T/F  OPT]Default FALSE value for [-no_option_display]
+[T/F  OPT]Default FALSE value for [-args_file]
+[STR  OPT]Default value for [-paths] paths.txt.
+[T/F  OPT]Default FALSE value for [-version]
+[T/F  OPT]Default FALSE value for [-score]
+[T/F  OPT]Default FALSE value for [-abinitio]
+[T/F  OPT]Default FALSE value for [-refine]
+[T/F  OPT]Default FALSE value for [-assemble]
+[T/F  OPT]Default FALSE value for [-idealize]
+[T/F  OPT]Default FALSE value for [-relax]
+[T/F  OPT]Default FALSE value for [-abrelax]
+[T/F  OPT]Default FALSE value for [-abrelax_mode]
+[T/F  OPT]New TRUE value for [-design]
+[T/F  OPT]Default FALSE value for [-onlypack]
+[T/F  OPT]Default FALSE value for [-fixbb]
+[T/F  OPT]Default FALSE value for [-pack_in_parallel]
+[T/F  OPT]Default FALSE value for [-directed_design]
+[REAL OPT]Default value for [-interface_electrostatic_complementarity_shift]   0
+[T/F  OPT]Default FALSE value for [-reverse_comp]
+[INT  OPT]Default value for [-conv_limit_mod]  3
+[STR  OPT]Default value for [-chain_in_preferred_state] none.
+[STR  OPT]Default value for [-chain_in_ref_state] none.
+[T/F  OPT]Default FALSE value for [-rotamerize]
+[T/F  OPT]Default FALSE value for [-point_mutation]
+[T/F  OPT]Default FALSE value for [-mcmin_trials]
+[T/F  OPT]Default FALSE value for [-output_design_movie]
+[T/F  OPT]Default FALSE value for [-no_new_CG]
+[T/F  OPT]Default FALSE value for [-multistate]
+[T/F  OPT]Default FALSE value for [-dna_motifs]
+[REAL OPT]Default value for [-motifs_close_enough]   1.20000005
+[REAL OPT]Default value for [-motifs_far_dist]   5
+[REAL OPT]Default value for [-Motifs_bump_value]   100
+[REAL OPT]Default value for [-motifs_match_weight]   1
+[INT  OPT]Default value for [-motifs_rots_required]  2
+[T/F  OPT]Default FALSE value for [-design_loops]
+[T/F  OPT]Default FALSE value for [-design_min_inter]
+[T/F  OPT]Default FALSE value for [-dock_des_min_inter]
+[T/F  OPT]Default FALSE value for [-flex_peptide]
+[T/F  OPT]Default FALSE value for [-mut_list]
+[T/F  OPT]Default FALSE value for [-cluster_design]
+[T/F  OPT]Default FALSE value for [-design_trials]
+[T/F  OPT]Default FALSE value for [-mvbb]
+[T/F  OPT]Default FALSE value for [-desock]
+[T/F  OPT]Default FALSE value for [-fixseq]
+[T/F  OPT]New TRUE value for [-tail]
+[T/F  OPT]Default FALSE value for [-tail_fix_helix]
+[T/F  OPT]Default FALSE value for [-fake_native]
+[T/F  OPT]Default FALSE value for [-docking_hb_stats]
+[T/F  OPT]Default FALSE value for [-output_position_hetatm]
+[T/F  OPT]Default FALSE value for [-repack_inter]
+[INT  OPT]Default value for [-fix_target_seq]  0
+[T/F  OPT]Default FALSE value for [-design_inter]
+[T/F  OPT]Default FALSE value for [-alter_spec]
+[T/F  OPT]Default FALSE value for [-mutate_cluster]
+[T/F  OPT]Default FALSE value for [-output_pdb]
+[T/F  OPT]Default FALSE value for [-design_in_pieces]
+[T/F  OPT]Default FALSE value for [-chain_limit]
+[T/F  OPT]Default FALSE value for [-dna_interface]
+[T/F  OPT]Default FALSE value for [-natrot]
+[T/F  OPT]Default FALSE value for [-optE]
+[T/F  OPT]Default FALSE value for [-optE_ctsa]
+[T/F  OPT]Default FALSE value for [-optE_inter]
+[T/F  OPT]Default FALSE value for [-optE_ctsa]
+[T/F  OPT]Default FALSE value for [-optE_jk]
+[T/F  OPT]Default FALSE value for [-optE_inter]
+[STR  OPT]Default value for [-ms_comp_list] default.
+[STR  OPT]Default value for [-ms_out_name] best_fit.pdb.
+[STR  OPT]Default value for [-Eout] default.
+[STR  OPT]Default value for [-sqc] none.
+[STR  OPT]Default value for [-pdbout] des.
+[INT  OPT]Default value for [-ndruns]  1
+[INT  OPT]New value for [-begin]  342
+[INT  OPT]New value for [-end]  351
+[STR  OPT]Default value for [-alter_spec_mutlist] mutlist.
+[STR  OPT]Default value for [-point_mut_energies] none.
+[STR  OPT]Default value for [-mut_mut_energies] none.
+[STR  OPT]Default value for [-design_mutlist] none.
+[T/F  OPT]Default FALSE value for [-safety]
+[T/F  OPT]Default FALSE value for [-design_dock]
+[T/F  OPT]Default FALSE value for [-favor_native_residue]
+[T/F  OPT]Default FALSE value for [-favor_polar]
+[T/F  OPT]Default FALSE value for [-favor_nonpolar]
+[T/F  OPT]Default FALSE value for [-favor_charged]
+[T/F  OPT]Default FALSE value for [-favor_aromatic]
+[T/F  OPT]Default FALSE value for [-dump_rotamers_pdb]
+Rosetta mode: design
+[T/F  OPT]Default FALSE value for [-chain]
+[T/F  OPT]New TRUE value for [-protein]
+[STR  OPT]New value for [-protein] g000.
+[T/F  OPT]New TRUE value for [-series]
+[STR  OPT]New value for [-series] b.
+series_code = b :: protein_name is g000:: chain_id is l.
+[INT  OPT]Default value for [-nstruct]  1
+[T/F  OPT]Default FALSE value for [-concatenate_pdbs]
+[T/F  OPT]Default FALSE value for [-single_silent_writer]
+[T/F  OPT]Default FALSE value for [-read_all_chains]
+[T/F  OPT]Default FALSE value for [-preserve_header]
+[T/F  OPT]Default FALSE value for [-use_pdb_numbering]
+[T/F  OPT]Default FALSE value for [-flip_symmetric_sidechains]
+[T/F  OPT]Default FALSE value for [-repack]
+[T/F  OPT]Default FALSE value for [-no_optH]
+[T/F  OPT]Default FALSE value for [-overwrite]
+[T/F  OPT]Default FALSE value for [-output_pdb_gz]
+[T/F  OPT]Default FALSE value for [-output_silent_gz]
+[T/F  OPT]Default FALSE value for [-output_scorefile_gz]
+[T/F  OPT]Default FALSE value for [-pose_silent_out]
+[T/F  OPT]Default FALSE value for [-sasapack_bvalues]
+[T/F  OPT]Default FALSE value for [-cenlist_values]
+[T/F  OPT]Default FALSE value for [-termini]
+[T/F  OPT]Default FALSE value for [-Nterminus]
+[T/F  OPT]Default FALSE value for [-Cterminus]
+[T/F  OPT]Default FALSE value for [-use_trie]
+[T/F  OPT]Default FALSE value for [-no_trie]
+[T/F  OPT]Default FALSE value for [-use_conformer]
+[T/F  OPT]Default FALSE value for [-use_bbind_conformer]
+[T/F  OPT]Default FALSE value for [-trials_trie]
+[T/F  OPT]Default FALSE value for [-no_trials_trie]
+[T/F  OPT]Default FALSE value for [-pose_relax]
+[T/F  OPT]Default FALSE value for [-output_interaction_graph_memory_usage]
+[T/F  OPT]Default FALSE value for [-read_interaction_graph]
+[T/F  OPT]Default FALSE value for [-write_interaction_graph]
+[STR  OPT]Default value for [-ig_file] .
+[T/F  OPT]Default FALSE value for [-packer_precompute_only]
+[T/F  OPT]Default FALSE value for [-tight_memory_restrictions]
+[T/F  OPT]Default FALSE value for [-lazy_ig]
+[T/F  OPT]Default FALSE value for [-linmem_ig]
+[T/F  OPT]Default FALSE value for [-minimalist_ig]
+[T/F  OPT]Default FALSE value for [-use_sasa_pack_score]
+[T/F  OPT]Default FALSE value for [-output_dot_kinemage]
+[T/F  OPT]Default FALSE value for [-pack_low_temp_annealing]
+[T/F  OPT]Default FALSE value for [-multi_cool_annealer]
+[T/F  OPT]Default FALSE value for [-debug_annealer_design]
+[T/F  OPT]Default FALSE value for [-no_his_his_pairE]
+[T/F  OPT]Default FALSE value for [-silent_input]
+[T/F  OPT]Default FALSE value for [-skip_scorefile_check]
+[T/F  OPT]Default FALSE value for [-timer]
+[T/F  OPT]Default FALSE value for [-count_attempts]
+[T/F  OPT]Default FALSE value for [-status]
+[T/F  OPT]Default FALSE value for [-decoy_status]
+[T/F  OPT]Default FALSE value for [-ise_movie]
+[T/F  OPT]Default FALSE value for [-output_all]
+[T/F  OPT]Default FALSE value for [-output_chi_silent]
+[T/F  OPT]Default FALSE value for [-accept_all]
+[T/F  OPT]Default FALSE value for [-skip_missing_residues]
+[T/F  OPT]Default FALSE value for [-use_input_sc]
+[T/F  OPT]Default FALSE value for [-use_input_cb]
+[STR  OPT]Default value for [-weightfile] none.
+[STR  OPT]Default value for [-cst] cst.
+[STR  OPT]Default value for [-dpl] dpl.
+[STR  OPT]Default value for [-resfile] none.
+[STR  OPT]Default value for [-equiv_resfile] none.
+[T/F  OPT]Default FALSE value for [-auto_resfile]
+[T/F  OPT]Default FALSE value for [-chain_inc]
+[T/F  OPT]Default FALSE value for [-full_filename]
+[T/F  OPT]Default FALSE value for [-map_sequence]
+[INT  OPT]Default value for [-max_frags]  200
+[T/F  OPT]Default FALSE value for [-output_centroids]
+[STR  OPT]Default value for [-protein_name_prefix] .
+[STR  OPT]Default value for [-frags_name_prefix] .
+[T/F  OPT]Default FALSE value for [-protein_name_prefix_homolog]
+[T/F  OPT]Default FALSE value for [-use_homolog_env_stats]
+[T/F  OPT]Default FALSE value for [-use_homolog_pair_stats]
+[T/F  OPT]Default FALSE value for [-use_homolog_cendist_stats]
+[T/F  OPT]Default FALSE value for [-use_homolog_env_stats_in_farlx]
+[T/F  OPT]Default FALSE value for [-use_homolog_pair_stats_in_farlx]
+[T/F  OPT]Default FALSE value for [-use_homolog_cendist_stats_in_farlx]
+[T/F  OPT]Default FALSE value for [-output_hbond_info]
+[T/F  OPT]Default FALSE value for [-output_interface_hbonds_only]
+[T/F  OPT]Default FALSE value for [-monomer_input]
+[REAL OPT]Default value for [-vdw_reweight]   1
+[REAL OPT]Default value for [-env_reweight]   1
+[REAL OPT]Default value for [-pair_reweight]   1
+[REAL OPT]Default value for [-cb_reweight]   1
+[REAL OPT]Default value for [-sheet_reweight]   1
+[REAL OPT]Default value for [-ss_reweight]   1
+[REAL OPT]Default value for [-hs_reweight]   1
+[REAL OPT]Default value for [-rsigma_reweight]   1
+[REAL OPT]Default value for [-rg_reweight]   1
+[REAL OPT]Default value for [-pc_reweight]   1
+[REAL OPT]Default value for [-fa_atr_reweight]   1
+[REAL OPT]Default value for [-fa_rep_reweight]   1
+[REAL OPT]Default value for [-fa_dun_reweight ]   1
+[REAL OPT]Default value for [-fa_pair_reweight]   1
+[REAL OPT]Default value for [-fa_plane_reweight]   1
+[REAL OPT]Default value for [-fa_solv_reweight]   1
+[REAL OPT]Default value for [-fa_ref_reweight ]   1
+[REAL OPT]Default value for [-fa_pH_reweight]   1
+[REAL OPT]Default value for [-fa_h2o_reweight]   1
+[REAL OPT]Default value for [-fa_prob1b_reweight]   1
+[REAL OPT]Default value for [-fa_gb_elec_reweigh]   1
+[REAL OPT]Default value for [-hb_srbb_reweight]   1
+[REAL OPT]Default value for [-hb_lrbb_reweight]   1
+[REAL OPT]Default value for [-hb_sc_reweight]   1
+[REAL OPT]Default value for [-chainbreak_reweight]   1
+[REAL OPT]Default value for [-electron_density_reweight]   1
+[REAL OPT]Default value for [-dummy_model_reweight]   1
+[REAL OPT]Default value for [-saxs_model_reweight]   1
+[REAL OPT]Default value for [-Wplane_total]   0
+[REAL OPT]Default value for [-barcode_reweight]   1
+[REAL OPT]Default value for [-barcode_energy_reweight]   1
+[T/F  OPT]Default FALSE value for [-fa_max_dis]
+[T/F  OPT]Default FALSE value for [-hydrogen_interaction_cutoff]
+[T/F  OPT]Default FALSE value for [-no_hb_env_dep]
+[T/F  OPT]Default FALSE value for [-find_disulf]
+[T/F  OPT]Default FALSE value for [-fix_disulf]
+[T/F  OPT]Default FALSE value for [-prna]
+[T/F  OPT]Default FALSE value for [-enable_dna]
+[T/F  OPT]Default FALSE value for [-enable_rna]
+[T/F  OPT]Default FALSE value for [-dna_interface]
+[T/F  OPT]Default FALSE value for [-enable_ligand_aa]
+[T/F  OPT]Default FALSE value for [-phospho_ser]
+[T/F  OPT]Default FALSE value for [-surface]
+[T/F  OPT]Default FALSE value for [-loops]
+[T/F  OPT]Default FALSE value for [-taboo]
+[T/F  OPT]Default FALSE value for [-vary_omega]
+[T/F  OPT]Default FALSE value for [-fine_hb_categories]
+[T/F  OPT]Default FALSE value for [-geometric_sol]
+[T/F  OPT]Default FALSE value for [-ex1]
+[T/F  OPT]Default FALSE value for [-ex2]
+[T/F  OPT]Default FALSE value for [-ex3]
+[T/F  OPT]Default FALSE value for [-ex4]
+[T/F  OPT]Default FALSE value for [-ex1aro]
+[T/F  OPT]Default FALSE value for [-ex1aro_half]
+[T/F  OPT]Default FALSE value for [-ex2aro_only]
+[T/F  OPT]Default FALSE value for [-ex1aro_exposed]
+[T/F  OPT]Default FALSE value for [-ex2aro_exposed]
+[T/F  OPT]Default FALSE value for [-exOH]
+[INT  OPT]Default value for [-extrachi_cutoff]  18
+[T/F  OPT]Default FALSE value for [-rot_pert]
+[T/F  OPT]Default FALSE value for [-rot_pert_input]
+[T/F  OPT]Default FALSE value for [-exdb]
+[T/F  OPT]Default FALSE value for [-rotamer_explosion]
+[T/F  OPT]Default FALSE value for [-min_best_rots]
+[T/F  OPT]Default FALSE value for [-rot_opt]
+[T/F  OPT]Default FALSE value for [-use_electrostatic_repulsion]
+[T/F  OPT]Default FALSE value for [-explicit_h2o]
+[T/F  OPT]Default FALSE value for [-solvate]
+[T/F  OPT]Default FALSE value for [-pH]
+[T/F  OPT]Default FALSE value for [-try_both_his_tautomers]
+[T/F  OPT]Default FALSE value for [-hydrate_dna]
+[T/F  OPT]Default FALSE value for [-ex_dna_waters]
+[T/F  OPT]Default FALSE value for [-minimize_rot]
+[T/F  OPT]Default FALSE value for [-read_hetero_h2o]
+[T/F  OPT]Default FALSE value for [-Wint_score_only]
+[T/F  OPT]Default FALSE value for [-Wint_repack_only]
+[T/F  OPT]Default FALSE value for [-ligand]
+[T/F  OPT]Default FALSE value for [-enzyme_design]
+[T/F  OPT]Default FALSE value for [-score_contact_flag]
+[T/F  OPT]Default FALSE value for [-score_contact_weight]
+[T/F  OPT]Default FALSE value for [-score_contact_threshold]
+[T/F  OPT]Default FALSE value for [-scorefxn]
+default centroid scorefxn:  4
+default fullatom scorefxn:  12
+[INT  OPT]Default value for [-run_level]  0
+[T/F  OPT]Default FALSE value for [-silent]
+[T/F  OPT]Default FALSE value for [-output_silent_gz]
+[T/F  OPT]Default FALSE value for [-verbose]
+[T/F  OPT]Default FALSE value for [-gush]
+[T/F  OPT]Default FALSE value for [-yap]
+[T/F  OPT]Default FALSE value for [-chat]
+[T/F  OPT]Default FALSE value for [-inform]
+[T/F  OPT]Default FALSE value for [-quiet]
+run level:  0
+[T/F  OPT]Default FALSE value for [-benchmark]
+[T/F  OPT]Default FALSE value for [-debug]
+[INT  OPT]Default value for [-sym_des_units]  1
+[T/F  OPT]Default FALSE value for [-mj_min]
+[REAL OPT]Default value for [-mod_hhrep_height]   1
+[REAL OPT]Default value for [-mod_hhrep_width]   1
+[REAL OPT]Default value for [-mod_hhrep_center]   2.79999995
+[REAL OPT]Default value for [-mod_hhrep_exponent]   4
+[REAL OPT]Default value for [-smooth_etable_ljweight]   1.15999997
+[REAL OPT]Default value for [-smooth_etable_solvweight]   1.5
+[STR  OPT]Default value for [-s] none.
+[STR  OPT]New value for [-l] list_of_pdbs_m_TER.
+Reading in structure names from list: list_of_pdbs_m_TER
+Number of starting structures: 21
+Reading /Users/deannewsammond/rosetta_database/Rama_smooth_dyn.dat_ss_6.4
+Reading /Users/deannewsammond/rosetta_database/phi.theta.36.HS.resmooth
+Reading /Users/deannewsammond/rosetta_database/phi.theta.36.SS.resmooth
+[STR  OPT]Default value for [-atom_vdw_set] default.
+[T/F  OPT]Default FALSE value for [-IUPAC]
+Atom_mode set to all
+[STR  OPT]Default value for [-paircutoffs] paircutoffs.
+Reading /Users/deannewsammond/rosetta_database/paircutoffs
+[T/F  OPT]Default FALSE value for [-interface_ds]
+[T/F  OPT]Default FALSE value for [-decoystats]
+set_decoystats_flag: from,to F F
+[T/F  OPT]Default FALSE value for [-decoyfeatures]
+[T/F  OPT]Default FALSE value for [-t32s3]
+[T/F  OPT]Default FALSE value for [-evolution]
+[T/F  OPT]Default FALSE value for [-evol_recomb]
+[T/F  OPT]Default FALSE value for [-profile]
+[T/F  OPT]Default FALSE value for [-dummy_model]
+[T/F  OPT]Default FALSE value for [-saxs_model]
+ Profile defined from q = 0 to 1.
+Searching for dat file: ./g000.dat
+Searching for dat file: ./g000.dat
+WARNING!! .dat file not found!
+Looking for fasta file: ./g000l.fasta
+fasta file not found!
+setup_protein_sstype: query sequence not defined !!!
+fasta file needed to read in psipred prediction !!!
+query sstype will not be defined in this run !!!
+[T/F  OPT]Default FALSE value for [-new_centroid_packing]
+[REAL OPT]Default value for [-centroid_pack_weight]   2
+[T/F  OPT]Default FALSE value for [-separate_centroid_pack_score]
+[REAL OPT]Default value for [-cb_weight]   1
+[REAL OPT]Default value for [-localstrandpair_penalty]   0
+[REAL OPT]Default value for [-rsd_wt_helix]   1
+[REAL OPT]Default value for [-rsd_wt_loop]   1
+[REAL OPT]Default value for [-rsd_wt_strand]   1
+[REAL OPT]Default value for [-strand_dist_cutoff]   6.5
+[T/F  OPT]Default FALSE value for [-stretch_strand_dist_cutoff]
+[REAL OPT]Default value for [-seq_sep_scale]   20
+[REAL OPT]Default value for [-max_strand_dist_cutoff]   12
+[T/F  OPT]Default FALSE value for [-ignore_sspair_barcode_in_score]
+[T/F  OPT]Default FALSE value for [-handedness_score]
+WARNING:: Protein sequence not defined by fasta
+          Unable to process constraints
+To use constraints:  
+  Define PDB ID and chain and provide fasta file
+fragment file: ./aag000l03_05.200_v1_3
+Total Residue 351
+frag size: 3    frags/residue: 200
+fragment file: ./aag000l09_05.200_v1_3
+Total Residue 351
+frag size: 9    frags/residue: 200
+generating 1mer library from 3mer library
+[T/F  OPT]Default FALSE value for [-ssblocks]
+[T/F  OPT]Default FALSE value for [-check_homs]
+calculating fragment_diversity...
+[T/F  OPT]Default FALSE value for [-barcode_mode]
+disabling all filters
+[REAL OPT]Default value for [-co]  -1
+[REAL OPT]Default value for [-rms]  -1
+Searching for pdb...: ./g000.pdb
+WARNING: 32 missing backbone atoms at 8 residues in pdb file
+allow_missing= 0
+skip_missing= 0
+Failed to input native: 
+[T/F  OPT]Default FALSE value for [-repeatin]
+[T/F  OPT]Default FALSE value for [-repeatout]
+[T/F  OPT]Default FALSE value for [-clnt]
+reading starting structure: ./aag000_0001.m.pdb
+[T/F  OPT]Default FALSE value for [-use_native_centroid]
+initializing full atom functions
+[T/F  OPT]Default FALSE value for [-dna_weights]
+[T/F  OPT]Default FALSE value for [-soft_rep]
+[T/F  OPT]Default FALSE value for [-soft_rep_design]
+[T/F  OPT]Default FALSE value for [-use_aw]
+[T/F  OPT]Default FALSE value for [-use_bw]
+[T/F  OPT]Default FALSE value for [-use_packing_etables_always]
+[T/F  OPT]Default FALSE value for [-smooth_etable]
+[T/F  OPT]Default FALSE value for [-reduce_templates]
+[T/F  OPT]Default FALSE value for [-gen_born]
+[T/F  OPT]Default FALSE value for [-small_radii]
+[STR  OPT]Default value for [-fa_lj_rep_slope] highres.
+Starting energy table calculation
+Energy table parameter set: polh_aroh  Revision: 14003 Date: 2007-04-06 12:24:40 -0600 (Fri, 06 Apr 2007)
+[T/F  OPT]Default FALSE value for [-mod_hhrep]
+Finished calculating energy tables.
+[T/F  OPT]Default FALSE value for [-mod_etable]
+[T/F  OPT]Default FALSE value for [-input_etables]
+[T/F  OPT]Default FALSE value for [-output_etables]
+Reading /Users/deannewsammond/rosetta_database/bbdep02.May.sortlib
+Reading /Users/deannewsammond/rosetta_database/plane_data_table_1015.dat
+Reading /Users/deannewsammond/rosetta_database/pdbpairstats_fine
+Reading /Users/deannewsammond/rosetta_database/Paa
+Reading /Users/deannewsammond/rosetta_database/Paa_n
+Reading /Users/deannewsammond/rosetta_database/Paa_pp
+Reading /Users/deannewsammond/rosetta_database/avgE_from_pdb
+Filling missing atoms
+optimizing missing atoms
+[T/F  OPT]Default FALSE value for [-disallow_hbond_o4star]
+[T/F  OPT]Default FALSE value for [-disallow_hbond_ho2star]
+[T/F  OPT]Default FALSE value for [-dun_sd_correction]
+Instantiating PDInteractionGraph
+[T/F  OPT]Default FALSE value for [-simple_elec]
+[T/F  OPT]Default FALSE value for [-record_annealer_trajectory]
+[T/F  OPT]Default FALSE value for [-disallow_quench]
+[T/F  OPT]Default FALSE value for [-use_time_as_seed]
+[INT  OPT]Default value for [-seed_offset]  0
+[T/F  OPT]Default FALSE value for [-delay_at_start]
+[T/F  OPT]Default FALSE value for [-constant_seed]
+# =====================================
+# random seed: 1600351321
+# =====================================
+optimizing hydrogen positions
+Instantiating PDInteractionGraph
+secondary structure defined, not reading dssp file
+[T/F  OPT]Default FALSE value for [-use_input_bond]
+[T/F  OPT]Default FALSE value for [-regions]
+Docking partners detected: Residues
+ 1- 320
+ 321- 351
+----------------------------------------------
+
+Docking partners: Residues
+1-320
+321-351
+
+Centroids:
+(    19.594,     6.052,    17.291)
+(    16.616,     7.862,    29.957)
+
+Centroid bond:
+(     2.978,    -1.810,   -12.666)
+
+Docking basis vectors:
+(     0.227,    -0.138,    -0.964)
+(     0.974,     0.032,     0.224)
+(     0.000,    -0.990,     0.141)
+Contact point:
+(    18.105,     6.957,    23.624)
+
+----------------------------------------------
+loading docking site constraints from ./g000.cst
+loading 0 docking site constraints
+
+Docking constraints:
+
+site constraint filter set to 9999
+
+File: ./g000.dst not found
+Running without dist constraints
+[T/F  OPT]Default FALSE value for [-apply_filters]
+[T/F  OPT]Default FALSE value for [-knot_filter]
+[T/F  OPT]Default FALSE value for [-poke_filter]
+[T/F  OPT]Default FALSE value for [-score_contact_fullatom]
+[T/F  OPT]Default FALSE value for [-long_range_hb_weight]
+[T/F  OPT]Default FALSE value for [-short_range_hb_weight]
+[T/F  OPT]Default FALSE value for [-rand_envpair_res_wt]
+[REAL OPT]Default value for [-parallel_weight]   1
+[REAL OPT]Default value for [-antiparallel_weight]   1
+[T/F  OPT]Default FALSE value for [-rand_SS_wt]
+[T/F  OPT]Default FALSE value for [-random_parallel_antiparallel]
+[T/F  OPT]Default FALSE value for [-rand_cst_res_wt]
+[T/F  OPT]Default FALSE value for [-use_barcode_to_score]
+[T/F  OPT]Default FALSE value for [-ss_vdw]
+[T/F  OPT]Default FALSE value for [-use_alpha_rama]
+[T/F  OPT]Default FALSE value for [-saxs_model_score]
+[T/F  OPT]Default FALSE value for [-ssweight_for_homolog]
+Reading /Users/deannewsammond/rosetta_database/SASA-masks.dat
+Reading /Users/deannewsammond/rosetta_database/SASA-angles.dat
+========================================
+Reading /Users/deannewsammond/rosetta_database/sasa_offsets.txt
+Reading /Users/deannewsammond/rosetta_database/sasa_prob_cdf.txt
+[T/F  OPT]Default FALSE value for [-t32s3]
+PACKNG: deleting curent protein_sasa oject
+[T/F  OPT]Default FALSE value for [-packing_heavy_atoms_only]
+[STR  OPT]Default value for [-scorefile] bg000.
+score file: ./bg000
+WARNING: ###calc_docking_frac_native_contact###
+No native exists or no contacts in the native structure
+fraction of native contacts will not be evaluated!!!
+WARNING: ###calc_docking_interf_rmsd###
+No native exists !!!
+docking_interf_rmsd will not be evaluated!!!
+[T/F  OPT]Default FALSE value for [-server_models]
+[T/F  OPT]Default FALSE value for [-output_input_pdb]
+NEXT STRUCTURE: ./aag000_0001.m_0001.pdb
+[T/F  OPT]Default FALSE value for [-movie]
+[T/F  OPT]Default FALSE value for [-trajectory]
+
+Start of design structure
+
+initializing full atom coordinates
+total_domains 2
+setting up the tail
+ 342 to  351
+starting centroid relax...
+[REAL OPT]Default value for [-ediff_cutoff]   25
+pre-computing chuck/gunn move set for frag length 3
+[T/F  OPT]Default FALSE value for [-replace_chuck_with_smooth]
+[T/F  OPT]Default FALSE value for [-wobble_CCD]
+[T/F  OPT]Default FALSE value for [-minimize_exclude_frag_in_wobble]
+ 1     1       2.10      1.38  0.33  0.00   -1285.49   380.45
+ 2     1       2.14      1.38  0.29  0.00   -1288.81   562.91
+ 3     3       0.97      0.97  0.31  0.00   -1286.69   459.69
+ 4     3       1.60      0.97  0.34  0.00   -1289.59   756.17
+ 5     3      12.16      0.97  0.39  0.00   -1293.32  1637.16
+ 6     3      15.03      0.97  0.49  0.00   -1294.07  1950.16
+ 7     3      21.01      0.97  0.61  0.00   -1297.55  3201.10
+ 8     3       7.07      0.97  0.56  0.00   -1297.79  2148.54
+ 9     3       9.47      0.97  0.64  0.00   -1297.87  2942.39
+10     3      11.73      0.97  0.50  0.00   -1288.78  2053.65
+11     3       1.47      0.97  0.52  0.00   -1293.81  1508.75
+12     4       0.95      0.95  0.46  0.00   -1290.89   601.72
+13     7       0.95      0.95  0.44  0.00   -1287.59   378.76
+14    10       0.95      0.95  0.37  0.00   -1292.72   925.65
+15    10       2.37      0.95  0.32  0.00   -1300.20  1404.28
+16    10      40.01      0.95  0.42  0.00   -1304.15  4405.01
+17    10      15.63      0.95  0.41  0.00   -1303.43  2581.55
+18    10      69.68      0.95  0.47  0.00   -1307.20  6301.87
+19    10     103.48      0.95  0.63  0.00   -1312.03  8476.34
+20    10     112.54      0.95  0.68  0.00   -1313.56  9592.09
+21    10      53.82      0.95  0.74  0.00   -1306.91  6558.84
+22    10      13.69      0.95  0.52  0.00   -1298.35  2800.78
+23    10      49.90      0.95  0.41  0.00   -1296.17  3286.87
+24    10      75.59      0.95  0.50  0.00   -1297.58  5150.02
+25    10      56.73      0.95  0.63  0.00   -1302.69  5211.18
+jk nlowacc   score    low_sc st_rms   low_rms    atr    rep
+-2    10     632.88    632.88  0.37  0.00   -1292.70   925.64
+ Protein Complex defined as Residues  1- 320 and  321- 351
+jk nlowacc   score    low_sc st_rms   low_rms    atr    rep
+-1    10     632.88    632.88  0.37  0.00   -1292.70   925.64
+[T/F  OPT]Default FALSE value for [-pack_bump_cutoff]
+designing with this many rotamers  40263
+Instantiating PDInteractionGraph
+monte carlo id for design run 3
+rotamers_exist flag 0
+score vs  best_score -586.340515 -586.340515
+seq 0NMSYVFVVIKGPGNSGANRLVRAFIMIKSNAFQEQECKKFQAVAYADAVAALAQILKAMQELNIPFSRPEAQELAQRLAQQSSTSLPNTMPPQLAEIMKRLEEENGVRQCRDEREKTLLDDSAEEFLKKLDEMAQPNHIPSREDVLLTQTDDDSIKRVFYVANNLIFITLSTNNYPILKLIKDLCDKNTQAVIHCVSLSAHDLQPQDNLQYPPMRLAMFHFKEECNDDSHETVAIFLSLSNAKRAEEIHQEKPLQICFPNDNSSLSHDDDAQFIKCEFESLDNNPQKDVIYVYFTCPSDKDRVKEVAEKQFKDIFLTNTESNEERAEKHNRLSSSGPTNNHDTNAESQNNA  0.28774929
+ 2    11    -586.34   -586.34  0.37  0.00   -1183.52   122.60
+total atompair constraints: 81872
+[T/F  OPT]Default FALSE value for [-electron_density_file]
+[T/F  OPT]Default FALSE value for [-use_inexact_line_search]
+[T/F  OPT]Default FALSE value for [-use_non_monotone_line_search]
+[T/F  OPT]Default FALSE value for [-dfunc_dump]
+[T/F  OPT]Default FALSE value for [-deriv_check]
+ 3    11    -704.95   -704.95  0.47  0.00   -1213.27    70.63
+designing with this many rotamers  40332
+Instantiating PDInteractionGraph
+monte carlo id for design run 3
+rotamers_exist flag 1
+score vs  best_score -706.633606 -706.633606
+seq 0NMSYVIVIIKGPGNSGANRLVRAFILIFSSAKQEEECKKYQAVAYADAVAALAQILKAMQELNIPFSRPEAQELAQRLAQQSSTSPPNYMPPQLAEIMKRLEEENGVRQCRDEREKTLLDDSAEEFLRKLEEMAQPNYIPSRETVLLTRTDDDSIKRVEYVANNLIFRTYSTNNYPILLLIKLLCDFNTHAVIHCVSLSSHDLQPQDNLQYPPMRLAMFHFKEECNDDSHETVAIFLSLSNAERHREESQRHPLQLCFPEDNSSLSADDDMQFIKCEFESLDNNPQKDVIYVYFTCPSDKDRVKEVALKQIQDIFLTNTERNSERMEKHNKLSSSGPTNNHDTKAESQKNS  0.279202282
+ 4    12    -706.63   -706.63  0.47  0.00   -1230.47    74.56
+ 5    12    -706.70   -706.70  0.47  0.00   -1230.43    74.49
+designing with this many rotamers  40085
+Instantiating PDInteractionGraph
+monte carlo id for design run 0
+rotamers_exist flag 0
+score vs  best_score -674.951782 -706.701599
+seq 0NMSYVIVIIKGPGNSGANRLVRAFILIFSSAKQEEECKKYQAVAYADAVAALAQILKAMQELNIPFSRPEAQELAQRLAQQSSTSPPNYMPPQLAEIMKRLEEENGVRQCRDEREKTLLDDSAEEFLRKLEEMAQPNYIPSRETVLLTRTDDDSIKRVEYVANNLIFRTYSTNNYPILLLIKLLCDFNTHAVIHCVSLSSHDLQPQDNLQYPPMRLAMFHFKEECNDDSHETVAIFLSLSNAERHREESQRHPLQLCFPEDNSSLSADDDMQFIKCEFESLDNNPQKDVIYVYFTCPSDKDRVKEVALKQIQDIFLTNTERNSERMEKHNKLSSSGPTNNHDTKAESQKNS  0.279202282
+ 6    12    -706.70   -706.70  0.47  0.00   -1230.43    74.49
+ 7    12    -706.71   -706.71  0.47  0.00   -1230.42    74.48
+designing with this many rotamers  40260
+Instantiating PDInteractionGraph
+monte carlo id for design run 0
+rotamers_exist flag 1
+score vs  best_score -701.278625 -706.705505
+seq 0NMSYVIVIIKGPGNSGANRLVRAFILIFSSAKQEEECKKYQAVAYADAVAALAQILKAMQELNIPFSRPEAQELAQRLAQQSSTSPPNYMPPQLAEIMKRLEEENGVRQCRDEREKTLLDDSAEEFLRKLEEMAQPNYIPSRETVLLTRTDDDSIKRVEYVANNLIFRTYSTNNYPILLLIKLLCDFNTHAVIHCVSLSSHDLQPQDNLQYPPMRLAMFHFKEECNDDSHETVAIFLSLSNAERHREESQRHPLQLCFPEDNSSLSADDDMQFIKCEFESLDNNPQKDVIYVYFTCPSDKDRVKEVALKQIQDIFLTNTERNSERMEKHNKLSSSGPTNNHDTKAESQKNS  0.279202282
+ 8    12    -706.71   -706.71  0.47  0.00   -1230.42    74.48
+ 9    12    -706.73   -706.73  0.46  0.00   -1230.45    74.50
+FINAL:
+jk nlowacc   score    low_sc st_rms   low_rms    atr    rep
+-1    12    -752.58   -752.58  0.46  0.00   -1230.45    74.50
+seq 0NMSYVIVIIKGPGNSGANRLVRAFILIFSSAKQEEECKKYQAVAYADAVAALAQILKAMQELNIPFSRPEAQELAQRLAQQSSTSPPNYMPPQLAEIMKRLEEENGVRQCRDEREKTLLDDSAEEFLRKLEEMAQPNYIPSRETVLLTRTDDDSIKRVEYVANNLIFRTYSTNNYPILLLIKLLCDFNTHAVIHCVSLSSHDLQPQDNLQYPPMRLAMFHFKEECNDDSHETVAIFLSLSNAERHREESQRHPLQLCFPEDNSSLSADDDMQFIKCEFESLDNNPQKDVIYVYFTCPSDKDRVKEVALKQIQDIFLTNTERNSERMEKHNKLSSSGPTNNHDTKAESQKNS  0.279202282
+wobblemin    trials:     25 accepts:     25 %: 100.00 e/trial: -28.68633
+shearmin     trials:     25 accepts:     25 %: 100.00 e/trial: -28.94622
+smallmin     trials:     25 accepts:     25 %: 100.00 e/trial: -22.17576
+unknown      trials:      4 accepts:      2 %:  50.00 e/trial: -305.22681
+[T/F  OPT]Default FALSE value for [-topology_info]
+[T/F  OPT]Default FALSE value for [-topology_filter]
+writing pdb file: ./aag000_0001.m_0001.pdb
+[T/F  OPT]Default FALSE value for [-remark_output]
+WARNING: ###calc_docking_frac_native_contact###
+No native exists or no contacts in the native structure
+fraction of native contacts will not be evaluated!!!
+WARNING: ###calc_docking_interf_rmsd###
+No native exists !!!
+docking_interf_rmsd will not be evaluated!!!
+[T/F  OPT]Default FALSE value for [-output_flavor]
+[T/F  OPT]Default FALSE value for [-output_filter]
+[STR  OPT]Default value for [-user_tag] .
+[T/F  OPT]Default FALSE value for [-output_saxs_profile]
+[T/F  OPT]Default FALSE value for [-dummy_model_score]
+reading starting structure: ./aag000_0002.m.pdb
+Filling missing atoms
+optimizing missing atoms
+Instantiating PDInteractionGraph
+optimizing hydrogen positions
+Instantiating PDInteractionGraph
+secondary structure defined, not reading dssp file
+Docking partners detected: Residues
+ 1- 320
+ 321- 351
+----------------------------------------------
+
+Docking partners: Residues
+1-320
+321-351
+
+Centroids:
+(    19.594,     6.052,    17.291)
+(    16.103,     7.807,    29.403)
+
+Centroid bond:
+(     3.491,    -1.755,   -12.111)
+
+Docking basis vectors:
+(     0.274,    -0.138,    -0.952)
+(     0.962,     0.039,     0.271)
+(     0.000,    -0.990,     0.143)
+Contact point:
+(    17.848,     6.930,    23.347)
+
+----------------------------------------------
+loading docking site constraints from ./g000.cst
+loading 0 docking site constraints
+
+Docking constraints:
+
+site constraint filter set to 9999
+
+File: ./g000.dst not found
+Running without dist constraints
+[T/F  OPT]Default FALSE value for [-output_input_pdb]
+NEXT STRUCTURE: ./aag000_0002.m_0001.pdb
+
+Start of design structure
+
+initializing full atom coordinates
+total_domains 2
+setting up the tail
+ 342 to  351
+starting centroid relax...
+ 1     0       1.67      1.23  0.33  0.00   -1288.60  1821.57
+ 2     0      20.65      1.23  0.58  0.00   -1289.37  5615.82
+ 3     0      26.29      1.23  0.74  0.00   -1289.68  4447.23
+ 4     0      17.18      1.23  0.53  0.00   -1297.15  4501.60
+ 5     0       2.95      1.23  0.55  0.00   -1298.74  4406.46
+ 6     0      41.54      1.23  0.67  0.00   -1293.88  4907.76
+ 7     0      29.60      1.23  0.70  0.00   -1291.57  3153.82
+ 8     0      37.68      1.23  0.82  0.00   -1289.65  3482.14
+ 9     0      40.07      1.23  0.83  0.00   -1289.31  3018.03
+10     0       9.15      1.23  0.70  0.00   -1290.32  1113.49
+11     0       1.96      1.23  0.70  0.00   -1291.94  1245.45
+12     2       0.95      0.95  0.63  0.00   -1292.40  1488.58
+13     2       1.99      0.95  0.57  0.00   -1292.28  1761.33
+14     2      12.44      0.95  0.54  0.00   -1293.81  2359.95
+15     2       4.72      0.95  0.52  0.00   -1296.03  3577.01
+16     3       0.95      0.95  0.62  0.00   -1292.30  1167.82
+17     6       0.95      0.95  0.88  0.00   -1282.70   297.74
+18     9       0.95      0.95  0.82  0.00   -1285.68   336.77
+19    12       0.95      0.95  0.70  0.00   -1289.18   341.33
+20    14       0.95      0.95  0.59  0.00   -1293.56  1929.86
+21    14       3.44      0.95  0.60  0.00   -1295.85  2664.78
+22    14       3.62      0.95  0.61  0.00   -1296.52  2535.05
+23    14      12.18      0.95  0.65  0.00   -1297.69  3456.88
+24    14       1.02      0.95  0.66  0.00   -1294.47  2498.79
+25    14       1.79      0.95  0.65  0.00   -1297.39  2818.64
+jk nlowacc   score    low_sc st_rms   low_rms    atr    rep
+-2    14     635.20    635.20  0.66  0.00   -1292.18   927.61
+ Protein Complex defined as Residues  1- 320 and  321- 351
+jk nlowacc   score    low_sc st_rms   low_rms    atr    rep
+-1    14     635.20    635.20  0.66  0.00   -1292.18   927.61
+designing with this many rotamers  40314
+Instantiating PDInteractionGraph
+monte carlo id for design run 3
+rotamers_exist flag 0
+score vs  best_score -580.964905 -580.964905
+seq 0NMSYVFVLIMGPGNSGADELVRAFIMIFSNAFQEQECKKFQAMAYADMVAAVAQIILAMIILNIPPSLPQALQLMQRAQVYAATSLPNTMPPELAEVLARLIQSNGVLQCRDESHKTRIPLIAEEFERRWQEMAQPNHIPSRQDVAETSTDDDSIKRVFYVANNLIFITLSTNNYPILREILEKCKKNTQAVIFCVSLSAHDLAPEKFLQYPPMRLAIFLAKEICNDDSFKTVLIVILLSDKEFHKRLSKRFPLQICFPNDNSSLSHDDDAAFIACEFKSEDNNPQDLELKIYFTCPQDKDRVKEVAEKIIKDIFLTNTENNSDRAKLHNLVSSSGPQYNHSIQKSRYAIR  0.267806262
+ 2    15    -580.97   -580.96  0.66  0.00   -1173.85   122.30
+total atompair constraints: 81616
+ 3    15    -706.17   -706.17  0.71  0.00   -1214.77    71.73
+designing with this many rotamers  40317
+Instantiating PDInteractionGraph
+monte carlo id for design run 3
+rotamers_exist flag 1
+score vs  best_score -708.577515 -708.577515
+seq 0NMSYVFVLIMGPGNSGADELVRAFIEIFSNAFQEQECKKYQAMTYADHAAALAQIIMSMQILNIPPSIDQALQLMQRHQIYAATSLPNYMPPELAEVEARLIDSNGVRQCRDEKHKSWIPNVAEEFEKRWQEHAQPYHIPSRQDVLESLTDDDSIKMVLYVAQNLIFMTFSTNRYPILKDILDNCKDNTKAVIFCVSLSSHDFMPMKFLQYPPMRLAIFLFKAICNSPSFETVLIVLLLSNAEDHEKLSQRFPLQLCFPEDNSSLSHDDTAQFIACRFQSEDNNPQQLELKTYFVCPQDKDRVKEVALKIIQDIIQTNTENNSDEAKLHNLVSSSGPQYVHSIDNAKYAIL  0.262108266
+ 4    16    -708.58   -708.58  0.71  0.00   -1240.08    77.64
+ 5    16    -710.91   -710.91  0.71  0.00   -1241.22    76.70
+designing with this many rotamers  40025
+Instantiating PDInteractionGraph
+monte carlo id for design run 0
+rotamers_exist flag 0
+score vs  best_score -674.306274 -710.910828
+seq 0NMSYVFVLIMGPGNSGADELVRAFIEIFSNAFQEQECKKYQAMTYADHAAALAQIIMSMQILNIPPSIDQALQLMQRHQIYAATSLPNYMPPELAEVEARLIDSNGVRQCRDEKHKSWIPNVAEEFEKRWQEHAQPYHIPSRQDVLESLTDDDSIKMVLYVAQNLIFMTFSTNRYPILKDILDNCKDNTKAVIFCVSLSSHDFMPMKFLQYPPMRLAIFLFKAICNSPSFETVLIVLLLSNAEDHEKLSQRFPLQLCFPEDNSSLSHDDTAQFIACRFQSEDNNPQQLELKTYFVCPQDKDRVKEVALKIIQDIIQTNTENNSDEAKLHNLVSSSGPQYVHSIDNAKYAIL  0.262108266
+ 6    16    -710.91   -710.91  0.71  0.00   -1241.22    76.70
+ 7    16    -710.91   -710.91  0.71  0.00   -1241.22    76.70
+designing with this many rotamers  40187
+Instantiating PDInteractionGraph
+monte carlo id for design run 0
+rotamers_exist flag 1
+score vs  best_score -706.703857 -710.911255
+seq 0NMSYVFVLIMGPGNSGADELVRAFIEIFSNAFQEQECKKYQAMTYADHAAALAQIIMSMQILNIPPSIDQALQLMQRHQIYAATSLPNYMPPELAEVEARLIDSNGVRQCRDEKHKSWIPNVAEEFEKRWQEHAQPYHIPSRQDVLESLTDDDSIKMVLYVAQNLIFMTFSTNRYPILKDILDNCKDNTKAVIFCVSLSSHDFMPMKFLQYPPMRLAIFLFKAICNSPSFETVLIVLLLSNAEDHEKLSQRFPLQLCFPEDNSSLSHDDTAQFIACRFQSEDNNPQQLELKTYFVCPQDKDRVKEVALKIIQDIIQTNTENNSDEAKLHNLVSSSGPQYVHSIDNAKYAIL  0.262108266
+ 8    16    -710.91   -710.91  0.71  0.00   -1241.22    76.70
+ 9    16    -710.91   -710.91  0.71  0.00   -1241.22    76.70
+FINAL:
+jk nlowacc   score    low_sc st_rms   low_rms    atr    rep
+-1    16    -756.76   -756.76  0.71  0.00   -1241.22    76.70
+seq 0NMSYVFVLIMGPGNSGADELVRAFIEIFSNAFQEQECKKYQAMTYADHAAALAQIIMSMQILNIPPSIDQALQLMQRHQIYAATSLPNYMPPELAEVEARLIDSNGVRQCRDEKHKSWIPNVAEEFEKRWQEHAQPYHIPSRQDVLESLTDDDSIKMVLYVAQNLIFMTFSTNRYPILKDILDNCKDNTKAVIFCVSLSSHDFMPMKFLQYPPMRLAIFLFKAICNSPSFETVLIVLLLSNAEDHEKLSQRFPLQLCFPEDNSSLSHDDTAQFIACRFQSEDNNPQQLELKTYFVCPQDKDRVKEVALKIIQDIIQTNTENNSDEAKLHNLVSSSGPQYVHSIDNAKYAIL  0.262108266
+wobblemin    trials:     50 accepts:     50 %: 100.00 e/trial: -18.42775
+shearmin     trials:     50 accepts:     50 %: 100.00 e/trial: -18.74172
+smallmin     trials:     50 accepts:     50 %: 100.00 e/trial: -16.30958
+unknown      trials:      8 accepts:      4 %:  50.00 e/trial: -304.93503
+writing pdb file: ./aag000_0002.m_0001.pdb
+WARNING: ###calc_docking_frac_native_contact###
+No native exists or no contacts in the native structure
+fraction of native contacts will not be evaluated!!!
+WARNING: ###calc_docking_interf_rmsd###
+No native exists !!!
+docking_interf_rmsd will not be evaluated!!!
+reading starting structure: ./aag000_0003.m.pdb
+Filling missing atoms
+optimizing missing atoms
+Instantiating PDInteractionGraph
+optimizing hydrogen positions
+Instantiating PDInteractionGraph
+secondary structure defined, not reading dssp file
+Docking partners detected: Residues
+ 1- 320
+ 321- 351
+----------------------------------------------
+
+Docking partners: Residues
+1-320
+321-351
+
+Centroids:
+(    19.594,     6.052,    17.291)
+(    16.329,     7.971,    29.825)
+
+Centroid bond:
+(     3.264,    -1.919,   -12.534)
+
+Docking basis vectors:
+(     0.249,    -0.147,    -0.957)
+(     0.968,     0.038,     0.246)
+(     0.000,    -0.988,     0.151)
+Contact point:
+(    17.962,     7.012,    23.558)
+
+----------------------------------------------
+loading docking site constraints from ./g000.cst
+loading 0 docking site constraints
+
+Docking constraints:
+
+site constraint filter set to 9999
+
+File: ./g000.dst not found
+Running without dist constraints
+[T/F  OPT]Default FALSE value for [-output_input_pdb]
+NEXT STRUCTURE: ./aag000_0003.m_0001.pdb
+
+Start of design structure
+
+initializing full atom coordinates
+total_domains 2
+setting up the tail
+ 342 to  351
+starting centroid relax...
+ 1     2       0.95      0.95  0.20  0.00   -1290.39   982.83
+ 2     4       0.95      0.95  0.26  0.00   -1289.78   476.12
+ 3     6       1.58      0.95  0.45  0.00   -1286.36   261.83
+ 4     7       0.95      0.95  0.53  0.00   -1286.71   269.16
+ 5    10       0.95      0.95  0.57  0.00   -1288.00   351.07
+ 6    13       0.95      0.95  0.51  0.00   -1288.10   245.05
+ 7    16       0.95      0.95  0.53  0.00   -1291.93   764.16
+ 8    19       0.95      0.95  0.46  0.00   -1294.52   760.11
+ 9    22       0.95      0.95  0.42  0.00   -1292.91   592.55
+10    25       0.95      0.95  0.35  0.00   -1290.83   365.45
+11    28       0.95      0.95  0.54  0.00   -1287.13   329.05
+12    31       0.95      0.95  0.45  0.00   -1289.52   334.86
+13    34       0.95      0.95  0.49  0.00   -1287.18   397.81
+14    37       0.95      0.95  0.56  0.00   -1285.95   304.97
+15    40       0.95      0.95  0.51  0.00   -1285.60   351.25
+16    42       0.95      0.95  0.46  0.00   -1286.29   329.77
+17    45       0.95      0.95  0.49  0.00   -1286.25   328.52
+18    47       0.99      0.95  0.61  0.00   -1287.03   317.72
+19    49       0.95      0.95  0.58  0.00   -1285.60   308.73
+20    52       0.95      0.95  0.59  0.00   -1284.19   311.81
+21    55       0.95      0.95  0.54  0.00   -1286.45   312.30
+22    58       0.95      0.95  0.59  0.00   -1286.18   315.58
+23    61       0.95      0.95  0.54  0.00   -1287.35   249.01
+24    64       0.95      0.95  0.47  0.00   -1288.13   244.19
+25    67       0.95      0.95  0.46  0.00   -1290.78   291.69
+jk nlowacc   score    low_sc st_rms   low_rms    atr    rep
+-2    67      -1.36     -1.36  0.46  0.00   -1290.77   291.69
+ Protein Complex defined as Residues  1- 320 and  321- 351
+jk nlowacc   score    low_sc st_rms   low_rms    atr    rep
+-1    67      -1.36     -1.36  0.46  0.00   -1290.77   291.69
+designing with this many rotamers  40396
+Instantiating PDInteractionGraph
+monte carlo id for design run 3
+rotamers_exist flag 0
+score vs  best_score -584.866577 -584.866577
+seq 0NMSEVVVLIVGPGNSGANTLVRAFIIIFSNAFQEQKCKNFRAYTDADWVAATLQVLEAMEKLNIPPSKPQALELAQRARQQAATSLPNVTPPQLARILAYLEESNGVRQCKNLRHLTRLADTAEIFAKNWQQIAQPNHIPSRLDVLATLTDDDSVKFVKYVAQNLDFKTFSPNNYPILVEILLKCKKNTHAVKHCVSLSSHDEAPADNLEKPTMELAKKLFKEICNDDSFETVAIFLLLSNAEEHEKEEIYFPSQICHPWDNSTLTHDNSAQHHRCEFESLDNNPQKDVIYVYFTCPYDIDRVKEVAEKEIKDIILTNTERNQERADLFNKVSSSGPTNNHSADNTLKAAQ  0.270655274
+ 2    68    -584.87   -584.87  0.46  0.00   -1165.76   113.62
+total atompair constraints: 81632
+ 3    68    -652.52   -652.52  0.51  0.00   -1195.02    91.24
+designing with this many rotamers  40187
+Instantiating PDInteractionGraph
+monte carlo id for design run 3
+rotamers_exist flag 1
+score vs  best_score -654.907837 -654.907837
+seq 0NVSEVVVLIMGPGNSGANTLVRAFIIIFSNAFQEQKCKKYRAYVVADWVAATLQVLEAMRQLNIPPAYPEALELAERAKQQASTSPPNYTPPQLAEILARLEEANGVRKCKNLKHLTLIPDTAEIFAKNWQQIAKPNHIPSRLDVLAALTDDDSVKFVFYVANNLDFKTFSPNNYPILVLILLLCKKNTHAVVFCFDMAAHDLAPQDNLEYPPAHLAEKLFKQICNDDSFETVLIVHIASHSEDHEKISQQFPSRICHPWDDSTLTHKEDARHHICDHVRLDNNPQKDEIKVYEACPYDIDRVKEVAEKIIKDIFLTNTEQNQEQAELFNRVSSSGPTNNHSILETLLLAK  0.250712246
+ 4    69    -654.91   -654.91  0.51  0.00   -1200.40    91.71
+ 5    69    -654.88   -654.88  0.51  0.00   -1200.39    91.72
+designing with this many rotamers  40071
+Instantiating PDInteractionGraph
+monte carlo id for design run 0
+rotamers_exist flag 0
+score vs  best_score -644.234131 -654.878967
+seq 0NVSEVVVLIMGPGNSGANTLVRAFIIIFSNAFQEQKCKKYRAYVVADWVAATLQVLEAMRQLNIPPAYPEALELAERAKQQASTSPPNYTPPQLAEILARLEEANGVRKCKNLKHLTLIPDTAEIFAKNWQQIAKPNHIPSRLDVLAALTDDDSVKFVFYVANNLDFKTFSPNNYPILVLILLLCKKNTHAVVFCFDMAAHDLAPQDNLEYPPAHLAEKLFKQICNDDSFETVLIVHIASHSEDHEKISQQFPSRICHPWDDSTLTHKEDARHHICDHVRLDNNPQKDEIKVYEACPYDIDRVKEVAEKIIKDIFLTNTEQNQEQAELFNRVSSSGPTNNHSILETLLLAK  0.250712246
+ 6    69    -654.88   -654.88  0.51  0.00   -1200.39    91.72
+ 7    69    -654.88   -654.88  0.51  0.00   -1200.39    91.72
+designing with this many rotamers  40162
+Instantiating PDInteractionGraph
+monte carlo id for design run 3
+rotamers_exist flag 1
+score vs  best_score -657.264526 -657.264526
+seq 0NMSEVHVLIVGPGNSGANTLVRAFIIIFSNAFQEQKCKKYRAYVVADWVAATLQVLEAMRQLNIPPSIWKALELAERAKQQASTSPPNYTPPQLAEILAKLEDSNGVRKCKNLRHLTLIPDTAEIFAKNWQQIAKPNHIPSRLDVLAALTDDDSVKFVKYVANNLKFHTFSPNNYPILALILKLCKKNTHAVVHCVSLSAHDLAPQDNLEYPPMRLAEKLFKQICNDDSFETVLIVLLLSNAQQHEQESQQFPSQICHPNDNSSLSHDDDAQHHRCDFERLDNNPQKDEIKVYFTCPYDIDRVKEVAEKIIKDIFLANNEQNEEQMRLFNKVSSSGPTNNHSIDETLKLAQ  0.262108266
+ 8    70    -657.26   -657.26  0.51  0.00   -1203.36    98.59
+ 9    70    -657.39   -657.39  0.51  0.00   -1203.36    98.46
+FINAL:
+jk nlowacc   score    low_sc st_rms   low_rms    atr    rep
+-1    70    -703.26   -703.26  0.51  0.00   -1203.38    98.47
+seq 0NMSEVHVLIVGPGNSGANTLVRAFIIIFSNAFQEQKCKKYRAYVVADWVAATLQVLEAMRQLNIPPSIWKALELAERAKQQASTSPPNYTPPQLAEILAKLEDSNGVRKCKNLRHLTLIPDTAEIFAKNWQQIAKPNHIPSRLDVLAALTDDDSVKFVKYVANNLKFHTFSPNNYPILALILKLCKKNTHAVVHCVSLSAHDLAPQDNLEYPPMRLAEKLFKQICNDDSFETVLIVLLLSNAQQHEQESQQFPSQICHPNDNSSLSHDDDAQHHRCDFERLDNNPQKDEIKVYFTCPYDIDRVKEVAEKIIKDIFLANNEQNEEQMRLFNKVSSSGPTNNHSIDETLKLAQ  0.262108266
+wobblemin    trials:     75 accepts:     75 %: 100.00 e/trial: -12.61721
+shearmin     trials:     75 accepts:     75 %: 100.00 e/trial: -12.82696
+smallmin     trials:     75 accepts:     75 %: 100.00 e/trial: -11.20637
+unknown      trials:     12 accepts:      7 %:  58.33 e/trial: -252.31267
+writing pdb file: ./aag000_0003.m_0001.pdb
+WARNING: ###calc_docking_frac_native_contact###
+No native exists or no contacts in the native structure
+fraction of native contacts will not be evaluated!!!
+WARNING: ###calc_docking_interf_rmsd###
+No native exists !!!
+docking_interf_rmsd will not be evaluated!!!
+reading starting structure: ./aag000_0004.m.pdb
+Filling missing atoms
+optimizing missing atoms
+Instantiating PDInteractionGraph
+optimizing hydrogen positions
+Instantiating PDInteractionGraph
+secondary structure defined, not reading dssp file
+Docking partners detected: Residues
+ 1- 320
+ 321- 351
+----------------------------------------------
+
+Docking partners: Residues
+1-320
+321-351
+
+Centroids:
+(    19.594,     6.052,    17.291)
+(    16.307,     8.256,    29.637)
+
+Centroid bond:
+(     3.287,    -2.203,   -12.345)
+
+Docking basis vectors:
+(     0.254,    -0.170,    -0.952)
+(     0.967,     0.045,     0.250)
+(     0.000,    -0.984,     0.176)
+Contact point:
+(    17.950,     7.154,    23.464)
+
+----------------------------------------------
+loading docking site constraints from ./g000.cst
+loading 0 docking site constraints
+
+Docking constraints:
+
+site constraint filter set to 9999
+
+File: ./g000.dst not found
+Running without dist constraints
+[T/F  OPT]Default FALSE value for [-output_input_pdb]
+NEXT STRUCTURE: ./aag000_0004.m_0001.pdb
+
+Start of design structure
+
+initializing full atom coordinates
+total_domains 2
+setting up the tail
+ 342 to  351
+starting centroid relax...
+ 1     2       0.95      0.95  0.07  0.00   -1294.07   313.11
+ 2     2       0.96      0.95  0.06  0.00   -1294.92   314.18
+ 3     3       0.95      0.95  0.15  0.00   -1289.38   415.16
+ 4     3       0.95      0.95  0.36  0.00   -1285.01   310.67
+ 5     5       0.96      0.95  0.22  0.00   -1289.95   333.96
+ 6     8       0.95      0.95  0.34  0.00   -1287.40   367.31
+ 7    11       0.95      0.95  0.32  0.00   -1288.06   382.35
+ 8    14       0.95      0.95  0.22  0.00   -1288.25   459.41
+ 9    17       0.95      0.95  0.20  0.00   -1289.16   493.45
+10    20       0.95      0.95  0.36  0.00   -1287.15   311.34
+11    23       0.95      0.95  0.55  0.00   -1285.55   298.30
+12    26       0.95      0.95  0.24  0.00   -1287.26   285.53
+13    29       0.95      0.95  0.27  0.00   -1286.36   354.71
+14    32       0.95      0.95  0.42  0.00   -1284.35   262.76
+15    35       0.95      0.95  0.47  0.00   -1284.43   250.02
+16    37       0.97      0.95  0.57  0.00   -1283.73   283.22
+17    37       1.01      0.95  0.55  0.00   -1283.52   264.29
+18    37       1.53      0.95  0.77  0.00   -1282.73   313.44
+19    37       1.54      0.95  0.78  0.00   -1284.79   313.11
+20    37       1.54      0.95  0.76  0.00   -1284.43   320.67
+21    37       1.55      0.95  0.82  0.00   -1285.97   324.99
+22    37       2.18      0.95  0.94  0.00   -1285.19   266.38
+23    37       1.99      0.95  0.93  0.00   -1283.59   212.34
+24    37       3.88      0.95  1.10  0.00   -1282.33   606.73
+25    37       3.96      0.95  1.08  0.00   -1281.23   706.69
+jk nlowacc   score    low_sc st_rms   low_rms    atr    rep
+-2    37     -15.67    -15.67  0.52  0.00   -1284.90   272.98
+ Protein Complex defined as Residues  1- 320 and  321- 351
+jk nlowacc   score    low_sc st_rms   low_rms    atr    rep
+-1    37     -15.67    -15.67  0.52  0.00   -1284.90   272.98
+designing with this many rotamers  40632
+Instantiating PDInteractionGraph
+monte carlo id for design run 3
+rotamers_exist flag 0
+score vs  best_score -586.276001 -586.276001
+seq 0NMSKVVVLIMGPGNSGADILVRAFKIIFSSAFSEQECKKFQAFAYADAILALLQVLRAMQILNIPPSLWKALELMQRLQQQAATSLPNTMPPQLAEIMKRLAESNGVRQCINEKHKTRIPDVAEEFLKELDEMAQPNHIPTMRHVLLTLTDDDSVKFIKYVANNLKFFTYSPNNYPILKDILDKCKKNTHAVIFCMSLSAHDLAPEDNLEYPPMRLALKLLKQICNSPSFKTVVIVIILSDAEDHRRLIERFPNQICNPNDNSTLTHDNAAQQLRCEAESLDNNPQDLVLFVYFACPTDIDRVKEVAEKIIKAIFLANNEQNSEEADLFNKVSSSGPQEVHSADDRDKLAW  0.273504287
+ 2    38    -586.28   -586.28  0.52  0.00   -1159.42   124.72
+total atompair constraints: 80960
+ 3    38    -722.09   -722.09  0.57  0.00   -1201.28    72.46
+designing with this many rotamers  40664
+Instantiating PDInteractionGraph
+monte carlo id for design run 3
+rotamers_exist flag 1
+score vs  best_score -723.84314 -723.84314
+seq 0NMSEVVVLIMGPGNSGADIMVRAFKIIFSSSFSEEECKKFQAFAYADAILALLQIIKAMQILNIPPSLWKALELMQRLQQQAATSLPNYMPPQLAEIMKRLAESNGVRQCRDEKHKTLIPNVAEEFLRKLDEMAQPYYIPTQETVLLTLTDDDSVKFIFYVANNLDFKTFSPNNYPISKDILDNCKDNTHAVIFCMSLSSHDLEPLPWLEYPPMRLALKLLKQICNSPSFETVLIVIILSNKENHRELIERFPNQICDPNDNSSLTHDNSAQDLRCLAESLDNNPQQLVLKVYFACPTDINRVKEVAEKIIKAIFLANNEQNSEEADLFNKVSSSGPTNVHSADLALKLFW  0.290598303
+ 4    39    -723.84   -723.84  0.57  0.00   -1208.06    77.78
+ 5    39    -732.97   -732.97  0.57  0.00   -1209.48    73.67
+designing with this many rotamers  40372
+Instantiating PDInteractionGraph
+monte carlo id for design run 0
+rotamers_exist flag 0
+score vs  best_score -693.627991 -732.96936
+seq 0NMSEVVVLIMGPGNSGADIMVRAFKIIFSSSFSEEECKKFQAFAYADAILALLQIIKAMQILNIPPSLWKALELMQRLQQQAATSLPNYMPPQLAEIMKRLAESNGVRQCRDEKHKTLIPNVAEEFLRKLDEMAQPYYIPTQETVLLTLTDDDSVKFIFYVANNLDFKTFSPNNYPISKDILDNCKDNTHAVIFCMSLSSHDLEPLPWLEYPPMRLALKLLKQICNSPSFETVLIVIILSNKENHRELIERFPNQICDPNDNSSLTHDNSAQDLRCLAESLDNNPQQLVLKVYFACPTDINRVKEVAEKIIKAIFLANNEQNSEEADLFNKVSSSGPTNVHSADLALKLFW  0.290598303
+ 6    39    -732.97   -732.97  0.57  0.00   -1209.48    73.67
+ 7    39    -732.97   -732.97  0.57  0.00   -1209.46    73.65
+designing with this many rotamers  40611
+Instantiating PDInteractionGraph
+monte carlo id for design run 0
+rotamers_exist flag 1
+score vs  best_score -726.103394 -732.972229
+seq 0NMSEVVVLIMGPGNSGADIMVRAFKIIFSSSFSEEECKKFQAFAYADAILALLQIIKAMQILNIPPSLWKALELMQRLQQQAATSLPNYMPPQLAEIMKRLAESNGVRQCRDEKHKTLIPNVAEEFLRKLDEMAQPYYIPTQETVLLTLTDDDSVKFIFYVANNLDFKTFSPNNYPISKDILDNCKDNTHAVIFCMSLSSHDLEPLPWLEYPPMRLALKLLKQICNSPSFETVLIVIILSNKENHRELIERFPNQICDPNDNSSLTHDNSAQDLRCLAESLDNNPQQLVLKVYFACPTDINRVKEVAEKIIKAIFLANNEQNSEEADLFNKVSSSGPTNVHSADLALKLFW  0.290598303
+ 8    39    -732.97   -732.97  0.57  0.00   -1209.46    73.65
+ 9    39    -732.98   -732.98  0.57  0.00   -1209.43    73.63
+FINAL:
+jk nlowacc   score    low_sc st_rms   low_rms    atr    rep
+-1    39    -778.83   -778.83  0.57  0.00   -1209.43    73.63
+seq 0NMSEVVVLIMGPGNSGADIMVRAFKIIFSSSFSEEECKKFQAFAYADAILALLQIIKAMQILNIPPSLWKALELMQRLQQQAATSLPNYMPPQLAEIMKRLAESNGVRQCRDEKHKTLIPNVAEEFLRKLDEMAQPYYIPTQETVLLTLTDDDSVKFIFYVANNLDFKTFSPNNYPISKDILDNCKDNTHAVIFCMSLSSHDLEPLPWLEYPPMRLALKLLKQICNSPSFETVLIVIILSNKENHRELIERFPNQICDPNDNSSLTHDNSAQDLRCLAESLDNNPQQLVLKVYFACPTDINRVKEVAEKIIKAIFLANNEQNSEEADLFNKVSSSGPTNVHSADLALKLFW  0.290598303
+wobblemin    trials:    100 accepts:    100 %: 100.00 e/trial:  -9.79480
+shearmin     trials:    100 accepts:    100 %: 100.00 e/trial:  -9.95411
+smallmin     trials:    100 accepts:    100 %: 100.00 e/trial:  -8.71903
+unknown      trials:     16 accepts:      9 %:  56.25 e/trial: -225.00696
+writing pdb file: ./aag000_0004.m_0001.pdb
+WARNING: ###calc_docking_frac_native_contact###
+No native exists or no contacts in the native structure
+fraction of native contacts will not be evaluated!!!
+WARNING: ###calc_docking_interf_rmsd###
+No native exists !!!
+docking_interf_rmsd will not be evaluated!!!
+reading starting structure: ./aag000_0005.m.pdb
+Filling missing atoms
+optimizing missing atoms
+Instantiating PDInteractionGraph
+optimizing hydrogen positions
+Instantiating PDInteractionGraph
+secondary structure defined, not reading dssp file
+Docking partners detected: Residues
+ 1- 320
+ 321- 351
+----------------------------------------------
+
+Docking partners: Residues
+1-320
+321-351
+
+Centroids:
+(    19.594,     6.052,    17.291)
+(    16.471,     8.009,    29.571)
+
+Centroid bond:
+(     3.123,    -1.957,   -12.280)
+
+Docking basis vectors:
+(     0.244,    -0.153,    -0.958)
+(     0.970,     0.038,     0.241)
+(     0.000,    -0.988,     0.157)
+Contact point:
+(    18.032,     7.031,    23.431)
+
+----------------------------------------------
+loading docking site constraints from ./g000.cst
+loading 0 docking site constraints
+
+Docking constraints:
+
+site constraint filter set to 9999
+
+File: ./g000.dst not found
+Running without dist constraints
+[T/F  OPT]Default FALSE value for [-output_input_pdb]
+NEXT STRUCTURE: ./aag000_0005.m_0001.pdb
+
+Start of design structure
+
+initializing full atom coordinates
+total_domains 2
+setting up the tail
+ 342 to  351
+starting centroid relax...
+ 1     2      25.05      0.95  0.32  0.00   -1293.93  3174.75
+ 2     2      11.24      0.95  0.41  0.00   -1292.97  2831.73
+ 3     2      36.99      0.95  0.44  0.00   -1294.51  4500.97
+ 4     2      59.70      0.95  0.54  0.00   -1290.59  3158.44
+ 5     2      91.52      0.95  0.59  0.00   -1295.44  5037.46
+ 6     2      37.17      0.95  0.66  0.00   -1286.59  1917.66
+ 7     2      52.23      0.95  0.66  0.00   -1289.68  3217.69
+ 8     2      52.92      0.95  0.88  0.00   -1289.54  2623.13
+ 9     2     100.34      0.95  0.82  0.00   -1293.07  6353.07
+10     2     102.91      0.95  0.89  0.00   -1291.63  6253.37
+11     2       8.63      0.95  1.14  0.00   -1282.06   952.84
+12     2       0.95      0.95  1.39  0.00   -1276.05   215.22
+13     2       1.01      0.95  1.34  0.00   -1275.28   212.22
+14     2       1.24      0.95  1.35  0.00   -1275.54   257.09
+15     4       0.95      0.95  1.46  0.00   -1274.73   221.75
+16     7       0.95      0.95  1.45  0.00   -1272.24   239.30
+17    10       0.95      0.95  1.48  0.00   -1272.46   245.40
+18    10       1.19      0.95  1.56  0.00   -1273.27   272.17
+19    10       1.31      0.95  1.61  0.00   -1273.58   274.88
+20    10       1.35      0.95  1.57  0.00   -1273.63   336.54
+21    10       0.96      0.95  1.74  0.00   -1272.84   255.29
+22    10       1.00      0.95  1.87  0.00   -1273.10   256.51
+23    10       0.98      0.95  1.77  0.00   -1272.95   255.45
+24    13       0.95      0.95  1.71  0.00   -1272.82   245.04
+25    16       0.95      0.95  1.56  0.00   -1272.59   235.61
+jk nlowacc   score    low_sc st_rms   low_rms    atr    rep
+-2    16     -45.06    -45.06  1.56  0.00   -1272.57   235.60
+ Protein Complex defined as Residues  1- 320 and  321- 351
+jk nlowacc   score    low_sc st_rms   low_rms    atr    rep
+-1    16     -45.06    -45.06  1.56  0.00   -1272.57   235.60
+designing with this many rotamers  40711
+Instantiating PDInteractionGraph
+monte carlo id for design run 3
+rotamers_exist flag 0
+score vs  best_score -576.95752 -576.95752
+seq 0NMSEVVVLIVGPGNSGANTLVRAFKILYSSAFSEQECKKFQAMAYADLVNAQKQIAEAMQKLNIPPSKPQALELIQRLEQQANTSLPNTMPPQLAKIIELLEESNGARQCRDERHKTRVPNVAEFFLKRIQEHAQPNHIPSTLDVLATLTNDDSIKFIKYVANNKDFKTFSTNNYPILKEILDKCKKNTHAVIACTSASAHDLAPEDNLEYPPMHLAEKFFKEMCNQPDFETVLIVFLLSNSQNHEQISQRFPSQICHPWDNSSLSHDDDADHHKCDFKRLDNNPQKDEIKIYETCPYDLRRVYEVSKKIIQDIEETNTENNSKIADLHNKLSSSGPQNNHDTVFYSNPTF  0.253561258
+ 2    17    -576.96   -576.96  1.56  0.00   -1160.89   117.32
+total atompair constraints: 79696
+ 3    17    -640.92   -640.92  1.53  0.00   -1179.95    90.75
+designing with this many rotamers  40540
+Instantiating PDInteractionGraph
+monte carlo id for design run 3
+rotamers_exist flag 1
+score vs  best_score -644.649658 -644.649658
+seq 0NMSKVVVLIVGPGNSGANTLVRAFKILYSSAFSEEECKKFQAMAYADLVNAAKQIAEAMQKLNIPPSIDQALELIQRLEQQANTSPPNYMPPQLAEIIERLERSNGVRQCRDERHKTRVPNVARFFLERIQIHAQPYHIPSTLDVLAALTDDDSVKFIKYVSNNRIFETYSPNNYPILLEILLKCLKNTHAVIHCVELSAADFAPEDNLQYPPMRLAMFHFKQMCNQPNLETVLIILILSSYQDFAELIQRFPPQICFPEDNSSTLPKDAAQAIRCKFESLDNNPQKDEIKVYFACPYDLDRVLEVSAKADDDIDNTNTERNSEIALIFNLLSSSGPQNNHNMIFYYNPTF  0.262108266
+ 4    18    -644.65   -644.65  1.53  0.00   -1176.58    92.91
+ 5    18    -655.60   -655.60  1.56  0.00   -1180.45    90.94
+designing with this many rotamers  40390
+Instantiating PDInteractionGraph
+monte carlo id for design run 0
+rotamers_exist flag 0
+score vs  best_score -638.065125 -655.603516
+seq 0NMSKVVVLIVGPGNSGANTLVRAFKILYSSAFSEEECKKFQAMAYADLVNAAKQIAEAMQKLNIPPSIDQALELIQRLEQQANTSPPNYMPPQLAEIIERLERSNGVRQCRDERHKTRVPNVARFFLERIQIHAQPYHIPSTLDVLAALTDDDSVKFIKYVSNNRIFETYSPNNYPILLEILLKCLKNTHAVIHCVELSAADFAPEDNLQYPPMRLAMFHFKQMCNQPNLETVLIILILSSYQDFAELIQRFPPQICFPEDNSSTLPKDAAQAIRCKFESLDNNPQKDEIKVYFACPYDLDRVLEVSAKADDDIDNTNTERNSEIALIFNLLSSSGPQNNHNMIFYYNPTF  0.262108266
+ 6    18    -655.60   -655.60  1.56  0.00   -1180.45    90.94
+ 7    18    -655.59   -655.59  1.56  0.00   -1180.48    90.98
+designing with this many rotamers  40522
+Instantiating PDInteractionGraph
+monte carlo id for design run 3
+rotamers_exist flag 1
+score vs  best_score -658.353821 -658.353821
+seq 0NDSTVVVLIVGPGNSGANILVRAFKILYSSAFSEEECKKFQAMAYADLSNALKQILEDMQKLNIPPSIDQALQLAQRHEIWANTSPPNYMPPELAEIEERLERSNGVRQCREERHKSRVPNVARFFLERIQIFAQPYHIPSTLDVLAALTDDDSTKFIFFVAQNLDFKVFSTNNYPALLEILLKCKKNTHAVIHCVSLSAHDFEPQDNMQYPPMHLAEFHFKEMCNDDSFKTVLIVLILSNAEEHEEIIQRFPPRICHPWDDSTTTHDNAADHHRCDFMRLDNNPQDDEIKVYFACPRDLDRVLEVSFKIILDIIETNTEQNSERADKHNFLSSSGPQNNHNMIFYYNPTF  0.259259254
+ 8    19    -658.35   -658.35  1.56  0.00   -1221.88    94.08
+ 9    19    -663.92   -663.92  1.56  0.00   -1222.77    90.40
+FINAL:
+jk nlowacc   score    low_sc st_rms   low_rms    atr    rep
+-1    19    -709.77   -709.77  1.56  0.00   -1222.77    90.40
+seq 0NDSTVVVLIVGPGNSGANILVRAFKILYSSAFSEEECKKFQAMAYADLSNALKQILEDMQKLNIPPSIDQALQLAQRHEIWANTSPPNYMPPELAEIEERLERSNGVRQCREERHKSRVPNVARFFLERIQIFAQPYHIPSTLDVLAALTDDDSTKFIFFVAQNLDFKVFSTNNYPALLEILLKCKKNTHAVIHCVSLSAHDFEPQDNMQYPPMHLAEFHFKEMCNDDSFKTVLIVLILSNAEEHEEIIQRFPPRICHPWDDSTTTHDNAADHHRCDFMRLDNNPQDDEIKVYFACPRDLDRVLEVSFKIILDIIETNTEQNSERADKHNFLSSSGPQNNHNMIFYYNPTF  0.259259254
+wobblemin    trials:    125 accepts:    125 %: 100.00 e/trial: -12.18037
+shearmin     trials:    125 accepts:    125 %: 100.00 e/trial: -12.78469
+smallmin     trials:    125 accepts:    125 %: 100.00 e/trial: -11.25090
+unknown      trials:     20 accepts:     12 %:  60.00 e/trial: -206.92514
+writing pdb file: ./aag000_0005.m_0001.pdb
+WARNING: ###calc_docking_frac_native_contact###
+No native exists or no contacts in the native structure
+fraction of native contacts will not be evaluated!!!
+WARNING: ###calc_docking_interf_rmsd###
+No native exists !!!
+docking_interf_rmsd will not be evaluated!!!
+reading starting structure: ./aag000_0006.m.pdb
+Filling missing atoms
+optimizing missing atoms
+Instantiating PDInteractionGraph
+optimizing hydrogen positions
+Instantiating PDInteractionGraph
+secondary structure defined, not reading dssp file
+Docking partners detected: Residues
+ 1- 320
+ 321- 351
+----------------------------------------------
+
+Docking partners: Residues
+1-320
+321-351
+
+Centroids:
+(    19.594,     6.052,    17.291)
+(    16.221,     7.932,    29.500)
+
+Centroid bond:
+(     3.373,    -1.879,   -12.209)
+
+Docking basis vectors:
+(     0.263,    -0.147,    -0.953)
+(     0.965,     0.040,     0.260)
+(     0.000,    -0.988,     0.152)
+Contact point:
+(    17.907,     6.992,    23.396)
+
+----------------------------------------------
+loading docking site constraints from ./g000.cst
+loading 0 docking site constraints
+
+Docking constraints:
+
+site constraint filter set to 9999
+
+File: ./g000.dst not found
+Running without dist constraints
+[T/F  OPT]Default FALSE value for [-output_input_pdb]
+NEXT STRUCTURE: ./aag000_0006.m_0001.pdb
+
+Start of design structure
+
+initializing full atom coordinates
+total_domains 2
+setting up the tail
+ 342 to  351
+starting centroid relax...
+ 1     2       0.95      0.95  0.15  0.00   -1292.72  1028.81
+ 2     2       5.56      0.95  0.25  0.00   -1295.55  2417.37
+ 3     2      10.29      0.95  0.24  0.00   -1296.35  3390.00
+ 4     2      19.58      0.95  0.31  0.00   -1296.83  3086.92
+ 5     2      13.53      0.95  0.34  0.00   -1295.10  2497.58
+ 6     2       3.55      0.95  0.33  0.00   -1288.13  1398.42
+ 7     2       0.99      0.95  0.36  0.00   -1291.20  1676.46
+ 8     4       2.43      0.95  0.57  0.00   -1288.24   829.75
+ 9     4       1.12      0.95  0.87  0.00   -1286.97   346.03
+10     4       2.80      0.95  0.72  0.00   -1290.01   527.03
+11     4       4.94      0.95  0.70  0.00   -1287.65   596.15
+12     5       7.56      0.95  0.70  0.00   -1285.86   884.11
+13     5      53.18      0.95  0.64  0.00   -1295.32  3841.09
+14     5      10.10      0.95  0.43  0.00   -1296.33  2215.02
+15     5       4.56      0.95  0.46  0.00   -1295.91  2008.14
+16     5      14.66      0.95  0.48  0.00   -1298.76  3038.08
+17     5      60.13      0.95  0.57  0.00   -1303.94  5557.49
+18     5      81.52      0.95  0.55  0.00   -1303.21  7243.63
+19     5      83.77      0.95  0.70  0.00   -1302.82  5888.76
+20     5      82.45      0.95  0.80  0.00   -1305.40  6201.31
+21     5      95.36      0.95  0.73  0.00   -1309.10  8828.85
+22     5      70.07      0.95  0.71  0.00   -1308.72  7763.18
+23     5      56.97      0.95  0.66  0.00   -1305.75  7221.56
+24     5      30.55      0.95  0.63  0.00   -1302.33  5398.36
+25     5      32.82      0.95  0.62  0.00   -1298.49  4954.74
+jk nlowacc   score    low_sc st_rms   low_rms    atr    rep
+-2     5     283.45    283.45  0.64  0.00   -1285.95   574.16
+ Protein Complex defined as Residues  1- 320 and  321- 351
+jk nlowacc   score    low_sc st_rms   low_rms    atr    rep
+-1     5     283.45    283.45  0.64  0.00   -1285.95   574.16
+designing with this many rotamers  40384
+Instantiating PDInteractionGraph
+monte carlo id for design run 3
+rotamers_exist flag 0
+score vs  best_score -573.101196 -573.101196
+seq 0NMSYVFVLILGPGNSGANTLVRAFIIIFSNAFQEQKCKNFQAMAYADMLAALEQILRAMEILNIPPSLWKALELAQRHREAAATSLPNTIPPKLAEIAKRLEQSNGVQQCRNERHKTLVPDTAEDFLKELDEMAQPNHIPTRRHVLDTLTDDDSTKRVFYVANNLIFITLSPNNYPEPKYAWLQCDKNTQAIMFCTDAAAHDLAPQKFLQYPPMRLAEFLFKLICNDDSTETVLIIFLLTHSEEHEKIIQRFPPQICHPHDNSTTLHYYAAEHHKCEFKSLDNNPQKDEIKIYESCPYDIRRVKEDAEKAIKDIFLTNTEQNSRQALMRNLVSSSGPTNNHSIQNTEDMAG  0.259259254
+ 2     6    -573.10   -573.10  0.64  0.00   -1192.79   125.43
+total atompair constraints: 81664
+ 3     6    -710.25   -710.25  0.71  0.00   -1236.41    69.64
+designing with this many rotamers  40252
+Instantiating PDInteractionGraph
+monte carlo id for design run 3
+rotamers_exist flag 1
+score vs  best_score -713.659119 -713.659119
+seq 0NMSYVFVLILGPGDSGANTLVRAFIIIFSDAFQEQRCKKFQAMAYADMLAALEAILRAMEILNIPPSLWKALELAQRHRVFAATSLPNYIPPELAEVAKRLEESNGVRQCRDEREKTLIPDVAEFFLKKLDEMAQPYYIPTRETVLETLTDDDSTKRVFYVANNLIFITLSPNNYPEDKLLWLLCDFNTDAIIFCTKAAAHDFQPQKFLQYPPMRLAEFLFKLICNDDSHETVLIIFILSHSEEHEKEIQRFPPQICHPHDNSSTTHDNSSEHHKCEFKRLDNNPQKDEIKIYESCPYDIDRVKEDAEKAIKDIFLANNEENSRQALMRNLVSSSGPTKVHSIQRTEDMAG  0.264957279
+ 4     7    -713.66   -713.66  0.71  0.00   -1254.50    76.89
+ 5     7    -715.77   -715.77  0.71  0.00   -1254.69    75.66
+designing with this many rotamers  40024
+Instantiating PDInteractionGraph
+monte carlo id for design run 0
+rotamers_exist flag 0
+score vs  best_score -674.890564 -715.768372
+seq 0NMSYVFVLILGPGDSGANTLVRAFIIIFSDAFQEQRCKKFQAMAYADMLAALEAILRAMEILNIPPSLWKALELAQRHRVFAATSLPNYIPPELAEVAKRLEESNGVRQCRDEREKTLIPDVAEFFLKKLDEMAQPYYIPTRETVLETLTDDDSTKRVFYVANNLIFITLSPNNYPEDKLLWLLCDFNTDAIIFCTKAAAHDFQPQKFLQYPPMRLAEFLFKLICNDDSHETVLIIFILSHSEEHEKEIQRFPPQICHPHDNSSTTHDNSSEHHKCEFKRLDNNPQKDEIKIYESCPYDIDRVKEDAEKAIKDIFLANNEENSRQALMRNLVSSSGPTKVHSIQRTEDMAG  0.264957279
+ 6     7    -715.77   -715.77  0.71  0.00   -1254.69    75.66
+ 7     7    -715.98   -715.98  0.71  0.00   -1254.88    75.62
+designing with this many rotamers  40185
+Instantiating PDInteractionGraph
+monte carlo id for design run 0
+rotamers_exist flag 1
+score vs  best_score -699.779602 -715.983032
+seq 0NMSYVFVLILGPGDSGANTLVRAFIIIFSDAFQEQRCKKFQAMAYADMLAALEAILRAMEILNIPPSLWKALELAQRHRVFAATSLPNYIPPELAEVAKRLEESNGVRQCRDEREKTLIPDVAEFFLKKLDEMAQPYYIPTRETVLETLTDDDSTKRVFYVANNLIFITLSPNNYPEDKLLWLLCDFNTDAIIFCTKAAAHDFQPQKFLQYPPMRLAEFLFKLICNDDSHETVLIIFILSHSEEHEKEIQRFPPQICHPHDNSSTTHDNSSEHHKCEFKRLDNNPQKDEIKIYESCPYDIDRVKEDAEKAIKDIFLANNEENSRQALMRNLVSSSGPTKVHSIQRTEDMAG  0.264957279
+ 8     7    -715.98   -715.98  0.71  0.00   -1254.88    75.62
+ 9     7    -715.96   -715.96  0.71  0.00   -1254.90    75.62
+FINAL:
+jk nlowacc   score    low_sc st_rms   low_rms    atr    rep
+-1     7    -770.99   -770.99  0.71  0.00   -1254.90    75.62
+seq 0NMSYVFVLILGPGDSGANTLVRAFIIIFSDAFQEQRCKKFQAMAYADMLAALEAILRAMEILNIPPSLWKALELAQRHRVFAATSLPNYIPPELAEVAKRLEESNGVRQCRDEREKTLIPDVAEFFLKKLDEMAQPYYIPTRETVLETLTDDDSTKRVFYVANNLIFITLSPNNYPEDKLLWLLCDFNTDAIIFCTKAAAHDFQPQKFLQYPPMRLAEFLFKLICNDDSHETVLIIFILSHSEEHEKEIQRFPPQICHPHDNSSTTHDNSSEHHKCEFKRLDNNPQKDEIKIYESCPYDIDRVKEDAEKAIKDIFLANNEENSRQALMRNLVSSSGPTKVHSIQRTEDMAG  0.264957279
+wobblemin    trials:    150 accepts:    150 %: 100.00 e/trial: -14.75024
+shearmin     trials:    150 accepts:    150 %: 100.00 e/trial: -15.04643
+smallmin     trials:    150 accepts:    150 %: 100.00 e/trial: -13.75465
+unknown      trials:     24 accepts:     14 %:  58.33 e/trial: -208.26915
+writing pdb file: ./aag000_0006.m_0001.pdb
+WARNING: ###calc_docking_frac_native_contact###
+No native exists or no contacts in the native structure
+fraction of native contacts will not be evaluated!!!
+WARNING: ###calc_docking_interf_rmsd###
+No native exists !!!
+docking_interf_rmsd will not be evaluated!!!
+reading starting structure: ./aag000_0007.m.pdb
+Filling missing atoms
+optimizing missing atoms
+Instantiating PDInteractionGraph
+optimizing hydrogen positions
+Instantiating PDInteractionGraph
+secondary structure defined, not reading dssp file
+Docking partners detected: Residues
+ 1- 320
+ 321- 351
+----------------------------------------------
+
+Docking partners: Residues
+1-320
+321-351
+
+Centroids:
+(    19.594,     6.052,    17.291)
+(    16.190,     7.126,    29.514)
+
+Centroid bond:
+(     3.404,    -1.074,   -12.223)
+
+Docking basis vectors:
+(     0.267,    -0.084,    -0.960)
+(     0.964,     0.023,     0.266)
+(     0.000,    -0.996,     0.088)
+Contact point:
+(    17.892,     6.589,    23.403)
+
+----------------------------------------------
+loading docking site constraints from ./g000.cst
+loading 0 docking site constraints
+
+Docking constraints:
+
+site constraint filter set to 9999
+
+File: ./g000.dst not found
+Running without dist constraints
+[T/F  OPT]Default FALSE value for [-output_input_pdb]
+NEXT STRUCTURE: ./aag000_0007.m_0001.pdb
+
+Start of design structure
+
+initializing full atom coordinates
+total_domains 2
+setting up the tail
+ 342 to  351
+starting centroid relax...
+ 1     0      69.71      3.03  0.63  0.00   -1308.74  9866.08
+ 2     0      36.79      3.03  0.29  0.00   -1298.47  7595.15
+ 3     0      52.93      3.03  0.32  0.00   -1299.48  7946.77
+ 4     0      40.60      3.03  0.31  0.00   -1300.03  6362.43
+ 5     0      49.15      3.03  0.40  0.00   -1295.93  7131.06
+ 6     0      42.38      3.03  0.67  0.00   -1299.98  8423.76
+ 7     0      81.54      3.03  0.81  0.00   -1301.16  9325.77
+ 8     0     112.61      3.03  0.94  0.00   -1299.37  8662.18
+ 9     0     117.01      3.03  1.04  0.00   -1306.84  9848.61
+10     0     235.07      3.03  1.17  0.00   -1309.32  18542.94
+11     0     285.06      3.03  1.32  0.00   -1309.64  19673.10
+12     0     150.72      3.03  1.21  0.00   -1303.88  11923.59
+13     0     143.96      3.03  1.29  0.00   -1304.14  10946.31
+14     0      83.54      3.03  1.25  0.00   -1299.62  6996.17
+15     0      39.66      3.03  1.20  0.00   -1294.15  4266.73
+16     0      70.63      3.03  1.13  0.00   -1297.07  5419.10
+17     0       7.01      3.03  1.18  0.00   -1291.08  1842.74
+18     0       5.39      3.03  1.11  0.00   -1290.99  1825.50
+19     0       4.75      3.03  1.07  0.00   -1290.64  1616.88
+20     0       6.55      3.03  1.10  0.00   -1289.21  2123.01
+21     0      13.74      3.03  1.10  0.00   -1292.00  2654.62
+22     0      23.86      3.03  1.14  0.00   -1294.09  3314.99
+23     0      12.99      3.03  1.13  0.00   -1292.59  2566.85
+24     0      36.59      3.03  1.14  0.00   -1294.84  3991.82
+25     0      66.29      3.03  1.28  0.00   -1296.52  5249.43
+jk nlowacc   score    low_sc st_rms   low_rms    atr    rep
+-2     0    1993.24   1993.24  0.00  0.00   -1294.11  2283.20
+ Protein Complex defined as Residues  1- 320 and  321- 351
+jk nlowacc   score    low_sc st_rms   low_rms    atr    rep
+-1     0    1993.24   1993.24  0.00  0.00   -1294.11  2283.20
+designing with this many rotamers  40143
+Instantiating PDInteractionGraph
+monte carlo id for design run 3
+rotamers_exist flag 0
+score vs  best_score -543.331665 -543.331665
+seq 0NMSYVVVLIMGPGNSGANILVRAFIIIFSNAFQEQECKKFRAAALSDMLNAAAQIAESMGKLNIPPSLWKALQFMQWLAQAASTSLPNVIPPKLAKIVKVLAQSNGVLQCANEKEKSRVPDSAEEFLKELDEMAQPNHIPTRRHVLLTNTDDDSVKRVFYVAQNLIFRTFSTNNYPIIFILLELCKKNTHAVIFCHSDSSHDLQPEDNLEYPPDRLAEKLFKEICNDDSFKTVLIVHLSSNKEDHYKLSIRFPNRICHPQDDSSLLPDNDANHDNCDHKRLDNNPQDDEIKIYETCPTDIDRVKEVAEKIIKDIIEANNEANKQRADLHNKVSSSGPQRNHSPNTTLFFPT  0.259259254
+ 2     1    -543.33   -543.33  0.00  0.00   -1173.23   139.36
+total atompair constraints: 82144
+ 3     1    -569.08   -569.08  0.09  0.00   -1174.44   121.80
+designing with this many rotamers  40110
+Instantiating PDInteractionGraph
+monte carlo id for design run 3
+rotamers_exist flag 1
+score vs  best_score -575.315796 -575.315796
+seq 0NMSEVHVLIVGPGNSGAMELVRAFIIIFSNAFQEQKCKNFRATALADAINALAAILEAMGKLNIPPARPEALQLAQRHQQEAATSLPNFIPPTLAEIMKRLEEENGVRQCRNEEEKTLIPNVARYFLELLDIVAQPNHIPSVLDVLATLTDIDSIKFVKYVAQNLKFFTYSTIRYPILLYILLQCKKNTHAVIACVNLSAHALQPQDNLQEPPMRLAIKFFQQMCNDDSFRTVLIVLILSSAEEHRRKSITKPNQICFPNDNSTLLHYYDAQHIRCEFESQDNNPQEDEIKVYFACPQDLRRVKEIAEMIIKDIIETNTEQNSEQADLHNKLSSSGPTDVHSPRTTAKFPT  0.270655274
+ 4     2    -575.32   -575.32  0.10  0.00   -1164.79   119.67
+======================================================
+======================================================
+DANGER!!!! DANGER!!!! DANGER!!!! DANGER!!!! DANGER!!!!
+======================================================
+======================================================
+pose_minimize:: Big score_delta when turning off the nblist: 3.38306
+This probably means the structure moved too far during
+minimization. If you are minimizing rigid-body translations you
+may need to damp the repulsive initially or change the step-size
+======================================================
+======================================================
+DANGER!!!! DANGER!!!! DANGER!!!! DANGER!!!! DANGER!!!!
+======================================================
+======================================================
+ 5     2    -578.72   -578.72  0.11  0.00   -1165.99   118.27
+designing with this many rotamers  40108
+Instantiating PDInteractionGraph
+monte carlo id for design run 0
+rotamers_exist flag 0
+score vs  best_score -576.291138 -578.718567
+seq 0NMSEVHVLIVGPGNSGAMELVRAFIIIFSNAFQEQKCKNFRATALADAINALAAILEAMGKLNIPPARPEALQLAQRHQQEAATSLPNFIPPTLAEIMKRLEEENGVRQCRNEEEKTLIPNVARYFLELLDIVAQPNHIPSVLDVLATLTDIDSIKFVKYVAQNLKFFTYSTIRYPILLYILLQCKKNTHAVIACVNLSAHALQPQDNLQEPPMRLAIKFFQQMCNDDSFRTVLIVLILSSAEEHRRKSITKPNQICFPNDNSTLLHYYDAQHIRCEFESQDNNPQEDEIKVYFACPQDLRRVKEIAEMIIKDIIETNTEQNSEQADLHNKLSSSGPTDVHSPRTTAKFPT  0.270655274
+ 6     2    -578.72   -578.72  0.11  0.00   -1165.99   118.27
+ 7     2    -581.88   -581.88  0.12  0.00   -1164.36   114.65
+designing with this many rotamers  40154
+Instantiating PDInteractionGraph
+monte carlo id for design run 3
+rotamers_exist flag 1
+score vs  best_score -588.14917 -588.14917
+seq 0NMSEVVVLIMGPGNSGADILVRAFIIIFSDAFKEQKCKNFRATTLADAILALAQILKDMGELNIPFSQPDHQELAQRHQQQAATSLPNFIPPQLALIMKLLEQSNGVEQCRREEHKSLVPNVARRFLEKLDEIAQPNHIPSVEDVLHTLTDNDSVKFVLYVAQNLIFKTFSPNNYPILLEILLKCKKNTHAVIFCTSASSSDLEPQKFLQYPPMRLAMFLFKEICNDDSFETVLIVFILSNMEEFFRKIQQHPPRICDPSDDSSTLPKDAADKLKCLFKSLDNNPQKDEIKIYPACPEDLDRVKEVAEKIIKDIIEANNEQNSEQALKFNLVSSSGPTDVHSPRTTAEYPK  0.273504287
+ 8     3    -588.15   -588.15  0.12  0.00   -1165.57   122.51
+ 9     3    -588.35   -588.35  0.12  0.00   -1165.56   122.40
+FINAL:
+jk nlowacc   score    low_sc st_rms   low_rms    atr    rep
+-1     3    -643.36   -643.36  0.12  0.00   -1165.56   122.40
+seq 0NMSEVVVLIMGPGNSGADILVRAFIIIFSDAFKEQKCKNFRATTLADAILALAQILKDMGELNIPFSQPDHQELAQRHQQQAATSLPNFIPPQLALIMKLLEQSNGVEQCRREEHKSLVPNVARRFLEKLDEIAQPNHIPSVEDVLHTLTDNDSVKFVLYVAQNLIFKTFSPNNYPILLEILLKCKKNTHAVIFCTSASSSDLEPQKFLQYPPMRLAMFLFKEICNDDSFETVLIVFILSNMEEFFRKIQQHPPRICDPSDDSSTLPKDAADKLKCLFKSLDNNPQKDEIKIYPACPEDLDRVKEVAEKIIKDIIEANNEQNSEQALKFNLVSSSGPTDVHSPRTTAEYPK  0.273504287
+wobblemin    trials:    175 accepts:    175 %: 100.00 e/trial: -21.73369
+shearmin     trials:    175 accepts:    175 %: 100.00 e/trial: -22.45070
+smallmin     trials:    175 accepts:    174 %:  99.43 e/trial: -20.63847
+unknown      trials:     28 accepts:     17 %:  60.71 e/trial: -269.55521
+writing pdb file: ./aag000_0007.m_0001.pdb
+WARNING: ###calc_docking_frac_native_contact###
+No native exists or no contacts in the native structure
+fraction of native contacts will not be evaluated!!!
+WARNING: ###calc_docking_interf_rmsd###
+No native exists !!!
+docking_interf_rmsd will not be evaluated!!!
+reading starting structure: ./aag000_0008.m.pdb
+Filling missing atoms
+optimizing missing atoms
+Instantiating PDInteractionGraph
+optimizing hydrogen positions
+Instantiating PDInteractionGraph
+secondary structure defined, not reading dssp file
+Docking partners detected: Residues
+ 1- 320
+ 321- 351
+----------------------------------------------
+
+Docking partners: Residues
+1-320
+321-351
+
+Centroids:
+(    19.594,     6.052,    17.291)
+(    16.579,     8.229,    29.623)
+
+Centroid bond:
+(     3.015,    -2.177,   -12.332)
+
+Docking basis vectors:
+(     0.234,    -0.169,    -0.957)
+(     0.972,     0.041,     0.231)
+(     0.000,    -0.985,     0.174)
+Contact point:
+(    18.086,     7.141,    23.457)
+
+----------------------------------------------
+loading docking site constraints from ./g000.cst
+loading 0 docking site constraints
+
+Docking constraints:
+
+site constraint filter set to 9999
+
+File: ./g000.dst not found
+Running without dist constraints
+[T/F  OPT]Default FALSE value for [-output_input_pdb]
+NEXT STRUCTURE: ./aag000_0008.m_0001.pdb
+
+Start of design structure
+
+initializing full atom coordinates
+total_domains 2
+setting up the tail
+ 342 to  351
+starting centroid relax...
+ 1     1       1.85      1.18  0.03  0.00   -1292.46   396.07
+ 2     1      43.76      1.18  0.17  0.00   -1293.26  2173.27
+ 3     1      10.61      1.18  0.24  0.00   -1288.65   633.10
+ 4     2       0.95      0.95  0.53  0.00   -1280.89   259.00
+ 5     4       1.83      0.95  0.37  0.00   -1284.04   288.39
+ 6     5       1.69      0.95  0.52  0.00   -1282.72   469.36
+ 7     6       0.95      0.95  0.50  0.00   -1282.11   260.21
+ 8     9       0.95      0.95  0.49  0.00   -1281.13   260.55
+ 9    12       0.95      0.95  0.49  0.00   -1286.71   288.51
+10    15       0.95      0.95  0.47  0.00   -1281.61   226.03
+11    16       0.96      0.95  0.22  0.00   -1288.17   664.15
+12    16       6.91      0.95  0.25  0.00   -1285.40   564.66
+13    17       1.36      0.95  0.33  0.00   -1284.80   758.03
+14    17      11.92      0.95  0.30  0.00   -1285.26   776.66
+15    17      11.65      0.95  0.34  0.00   -1289.31  1476.00
+16    17       1.33      0.95  0.35  0.00   -1287.86   915.20
+17    18       0.95      0.95  0.40  0.00   -1286.21   423.22
+18    20       1.05      0.95  0.29  0.00   -1287.46   848.76
+19    22       0.98      0.95  0.39  0.00   -1281.87   517.12
+20    23       0.95      0.95  0.37  0.00   -1283.11   511.76
+21    24       0.99      0.95  0.69  0.00   -1280.97   613.34
+22    25       2.03      0.95  0.67  0.00   -1279.40   745.84
+23    26       0.95      0.95  1.09  0.00   -1276.78   489.03
+24    29       0.95      0.95  1.08  0.00   -1274.58   451.89
+25    32       0.95      0.95  1.11  0.00   -1275.05   299.38
+jk nlowacc   score    low_sc st_rms   low_rms    atr    rep
+-2    32      18.03     18.03  1.11  0.00   -1275.05   299.38
+ Protein Complex defined as Residues  1- 320 and  321- 351
+jk nlowacc   score    low_sc st_rms   low_rms    atr    rep
+-1    32      18.03     18.03  1.11  0.00   -1275.05   299.38
+designing with this many rotamers  40778
+Instantiating PDInteractionGraph
+monte carlo id for design run 3
+rotamers_exist flag 0
+score vs  best_score -581.312927 -581.312927
+seq 0NMSKVVVLIMGPGNSGADELVREFKVIFSSAFSKQDCENFQAVAYADAVNALKQLAEAMEKLNIPPSQPQAEDLKDRLKEQANKSLPRFMPPQLAEIMKRLEQSNGMQKCRDLEHLTRVPNVAREFLEELDEMAQPNHVPTVRHVIDTLTDNDSVKFIKYVAQNLKFFTYSTNNYPALREIIEKCQKNTHAVIFCMSLSAHDLYIEDNLQYPPMRLALFLAKLICNDDNFETVTIVILLSDAEEHQRKSQQFPSQICHPNDNSTLLPKEDMRHHRCDTMRLDNNPQKLVLFVYFTCPQDTDRVKEVAEKIIKAIIQNNNENNSDIAKMINLVSSSGPTKNHSTKPPNNEDN  0.24501425
+ 2    33    -581.31   -581.31  1.11  0.00   -1155.21   121.08
+total atompair constraints: 79952
+ 3    33    -702.54   -702.54  1.12  0.00   -1195.70    75.55
+designing with this many rotamers  40715
+Instantiating PDInteractionGraph
+monte carlo id for design run 3
+rotamers_exist flag 1
+score vs  best_score -703.486328 -703.486328
+seq 0NMSEVVVLILGPGNSGADTLVRAFKIIFSSAFSEEECKRFQAVAYADAVNALKQLAEAMEKLNIPPSKPEAEELKDRLKQQADTSLPRYMPPQLAEIMKRLERSNGMRQCREEEHKTRVPNVARIFLEKLDEMAKPYYIPTIETVLATLTDNDSVKFIFYVANNLIFKTFSVNNYPALFEILEKCKDNTHAVIFCMSLSAHDFKPEDNLQYPPMRLALFLLKLICNLWKFRTVVIVIILSNAQEHQQKSKYFPSQICHPDDNSSLLPLNDMLHHRCDAERLDNNPQELVLFVYFACPFDLDRVKEIAEKIIKAIFLANNEQNFEIAKMINLVSSSGPTKVHSTSPPQEEDN  0.256410271
+ 4    34    -703.49   -703.49  1.12  0.00   -1197.79    84.25
+ 5    34    -706.64   -706.64  1.12  0.00   -1200.34    82.44
+designing with this many rotamers  40416
+Instantiating PDInteractionGraph
+monte carlo id for design run 0
+rotamers_exist flag 0
+score vs  best_score -674.084229 -706.643188
+seq 0NMSEVVVLILGPGNSGADTLVRAFKIIFSSAFSEEECKRFQAVAYADAVNALKQLAEAMEKLNIPPSKPEAEELKDRLKQQADTSLPRYMPPQLAEIMKRLERSNGMRQCREEEHKTRVPNVARIFLEKLDEMAKPYYIPTIETVLATLTDNDSVKFIFYVANNLIFKTFSVNNYPALFEILEKCKDNTHAVIFCMSLSAHDFKPEDNLQYPPMRLALFLLKLICNLWKFRTVVIVIILSNAQEHQQKSKYFPSQICHPDDNSSLLPLNDMLHHRCDAERLDNNPQELVLFVYFACPFDLDRVKEIAEKIIKAIFLANNEQNFEIAKMINLVSSSGPTKVHSTSPPQEEDN  0.256410271
+ 6    34    -706.64   -706.64  1.12  0.00   -1200.34    82.44
+ 7    34    -706.69   -706.69  1.12  0.00   -1200.27    82.50
+designing with this many rotamers  40607
+Instantiating PDInteractionGraph
+monte carlo id for design run 0
+rotamers_exist flag 1
+score vs  best_score -705.704712 -706.686035
+seq 0NMSEVVVLILGPGNSGADTLVRAFKIIFSSAFSEEECKRFQAVAYADAVNALKQLAEAMEKLNIPPSKPEAEELKDRLKQQADTSLPRYMPPQLAEIMKRLERSNGMRQCREEEHKTRVPNVARIFLEKLDEMAKPYYIPTIETVLATLTDNDSVKFIFYVANNLIFKTFSVNNYPALFEILEKCKDNTHAVIFCMSLSAHDFKPEDNLQYPPMRLALFLLKLICNLWKFRTVVIVIILSNAQEHQQKSKYFPSQICHPDDNSSLLPLNDMLHHRCDAERLDNNPQELVLFVYFACPFDLDRVKEIAEKIIKAIFLANNEQNFEIAKMINLVSSSGPTKVHSTSPPQEEDN  0.256410271
+ 8    34    -706.69   -706.69  1.12  0.00   -1200.27    82.50
+======================================================
+======================================================
+DANGER!!!! DANGER!!!! DANGER!!!! DANGER!!!! DANGER!!!!
+======================================================
+======================================================
+pose_minimize:: Big score_delta when turning on thenblist: 1.44281
+======================================================
+======================================================
+DANGER!!!! DANGER!!!! DANGER!!!! DANGER!!!! DANGER!!!!
+======================================================
+======================================================
+ 9    34    -706.74   -706.74  1.12  0.00   -1199.24    81.94
+FINAL:
+jk nlowacc   score    low_sc st_rms   low_rms    atr    rep
+-1    34    -752.59   -752.59  1.12  0.00   -1199.25    81.95
+seq 0NMSEVVVLILGPGNSGADTLVRAFKIIFSSAFSEEECKRFQAVAYADAVNALKQLAEAMEKLNIPPSKPEAEELKDRLKQQADTSLPRYMPPQLAEIMKRLERSNGMRQCREEEHKTRVPNVARIFLEKLDEMAKPYYIPTIETVLATLTDNDSVKFIFYVANNLIFKTFSVNNYPALFEILEKCKDNTHAVIFCMSLSAHDFKPEDNLQYPPMRLALFLLKLICNLWKFRTVVIVIILSNAQEHQQKSKYFPSQICHPDDNSSLLPLNDMLHHRCDAERLDNNPQELVLFVYFACPFDLDRVKEIAEKIIKAIFLANNEQNFEIAKMINLVSSSGPTKVHSTSPPQEEDN  0.256410271
+wobblemin    trials:    200 accepts:    200 %: 100.00 e/trial: -19.58084
+shearmin     trials:    200 accepts:    200 %: 100.00 e/trial: -20.31524
+smallmin     trials:    200 accepts:    199 %:  99.50 e/trial: -18.55208
+unknown      trials:     32 accepts:     19 %:  59.38 e/trial: -254.61990
+writing pdb file: ./aag000_0008.m_0001.pdb
+WARNING: ###calc_docking_frac_native_contact###
+No native exists or no contacts in the native structure
+fraction of native contacts will not be evaluated!!!
+WARNING: ###calc_docking_interf_rmsd###
+No native exists !!!
+docking_interf_rmsd will not be evaluated!!!
+reading starting structure: ./aag000_0009.m.pdb
+Filling missing atoms
+optimizing missing atoms
+Instantiating PDInteractionGraph
+optimizing hydrogen positions
+Instantiating PDInteractionGraph
+secondary structure defined, not reading dssp file
+Docking partners detected: Residues
+ 1- 320
+ 321- 351
+----------------------------------------------
+
+Docking partners: Residues
+1-320
+321-351
+
+Centroids:
+(    19.594,     6.052,    17.291)
+(    16.501,     8.163,    29.685)
+
+Centroid bond:
+(     3.093,    -2.111,   -12.394)
+
+Docking basis vectors:
+(     0.239,    -0.163,    -0.957)
+(     0.971,     0.040,     0.235)
+(     0.000,    -0.986,     0.168)
+Contact point:
+(    18.047,     7.108,    23.488)
+
+----------------------------------------------
+loading docking site constraints from ./g000.cst
+loading 0 docking site constraints
+
+Docking constraints:
+
+site constraint filter set to 9999
+
+File: ./g000.dst not found
+Running without dist constraints
+[T/F  OPT]Default FALSE value for [-output_input_pdb]
+NEXT STRUCTURE: ./aag000_0009.m_0001.pdb
+
+Start of design structure
+
+initializing full atom coordinates
+total_domains 2
+setting up the tail
+ 342 to  351
+starting centroid relax...
+ 1     0       5.27      1.13  0.11  0.00   -1293.68   548.28
+ 2     2       8.06      0.95  0.14  0.00   -1290.45   616.12
+ 3     2       3.50      0.95  0.18  0.00   -1288.92   397.55
+ 4     2      15.64      0.95  0.16  0.00   -1289.35   800.66
+ 5     2       2.19      0.95  0.18  0.00   -1288.24   332.38
+ 6     5       0.95      0.95  0.28  0.00   -1284.81   278.03
+ 7     8       0.95      0.95  0.40  0.00   -1282.26   247.46
+ 8    11       0.95      0.95  0.30  0.00   -1283.21   249.09
+ 9    12       0.95      0.95  0.42  0.00   -1282.46   248.60
+10    12       0.95      0.95  0.31  0.00   -1285.65   320.46
+11    13      15.43      0.95  0.31  0.00   -1287.56  1343.12
+12    14      11.45      0.95  0.21  0.00   -1287.64  1270.27
+13    17       0.95      0.95  0.27  0.00   -1284.46   842.53
+14    18       0.95      0.95  0.29  0.00   -1283.68   685.17
+15    21       0.95      0.95  0.42  0.00   -1280.34   414.95
+16    24       0.95      0.95  0.40  0.00   -1283.81   727.05
+17    26       7.78      0.95  0.39  0.00   -1283.83  1021.60
+18    26      13.70      0.95  0.41  0.00   -1283.08  1261.63
+19    27       0.95      0.95  0.56  0.00   -1283.20   811.96
+20    30       0.95      0.95  0.63  0.00   -1282.79   831.92
+21    33       0.95      0.95  0.62  0.00   -1281.69   497.20
+22    36       0.95      0.95  0.55  0.00   -1285.18   511.35
+23    39       0.95      0.95  0.61  0.00   -1285.61   581.21
+24    42       0.95      0.95  0.64  0.00   -1285.34   562.32
+25    45       0.95      0.95  0.70  0.00   -1286.92   513.99
+jk nlowacc   score    low_sc st_rms   low_rms    atr    rep
+-2    45     221.69    221.69  0.70  0.00   -1286.91   513.99
+ Protein Complex defined as Residues  1- 320 and  321- 351
+jk nlowacc   score    low_sc st_rms   low_rms    atr    rep
+-1    45     221.69    221.69  0.70  0.00   -1286.91   513.99
+designing with this many rotamers  40519
+Instantiating PDInteractionGraph
+monte carlo id for design run 3
+rotamers_exist flag 0
+score vs  best_score -586.026611 -586.026611
+seq 0NMSKVVVLLVGPGNSGILDLVLAFIIIFSNAFQEQECKKFQAVAYADAAAALEQILQAMQQLNIPPSLWKALELAQRHQQQASTSLPRFMPPQLAEIMKRLAESNGVRQCQNERHKTLLDDHASDFLNKLDEMAQPNHIPSREDVLHTTTDVDSVLFVKYVANNKKFFTYAAINYPIPKEQLDKCKKNTHAVIHCVDLAAADLAPQDNLQYPPMELAKFHFKLMCNDDSFETVLIVLILSRYEEFARLIQRFPLRICHPWDDSTLLPYYAALHLECEFRSLDNNPQKDEIKVYFACPDDIDRVKEVAEKIIKDIEETNTEQNSEQAKQFNLLSSSGPTNNYSIDALLDQNN  0.270655274
+ 2    46    -586.03   -586.03  0.70  0.00   -1177.72   122.66
+total atompair constraints: 81248
+ 3    46    -588.74   -588.74  0.70  0.00   -1177.24   121.17
+designing with this many rotamers  40511
+Instantiating PDInteractionGraph
+monte carlo id for design run 0
+rotamers_exist flag 1
+score vs  best_score -586.626038 -588.738647
+seq 0NMSKVVVLLVGPGNSGILDLVLAFIIIFSNAFQEQECKKFQAVAYADAAAALEQILQAMQQLNIPPSLWKALELAQRHQQQASTSLPRFMPPQLAEIMKRLAESNGVRQCQNERHKTLLDDHASDFLNKLDEMAQPNHIPSREDVLHTTTDVDSVLFVKYVANNKKFFTYAAINYPIPKEQLDKCKKNTHAVIHCVDLAAADLAPQDNLQYPPMELAKFHFKLMCNDDSFETVLIVLILSRYEEFARLIQRFPLRICHPWDDSTLLPYYAALHLECEFRSLDNNPQKDEIKVYFACPDDIDRVKEVAEKIIKDIEETNTEQNSEQAKQFNLLSSSGPTNNYSIDALLDQNN  0.270655274
+ 4    46    -588.74   -588.74  0.70  0.00   -1177.24   121.17
+ 5    46    -588.74   -588.74  0.70  0.00   -1177.23   121.17
+designing with this many rotamers  40498
+Instantiating PDInteractionGraph
+monte carlo id for design run 3
+rotamers_exist flag 0
+score vs  best_score -589.168457 -589.168457
+seq 0NMSYVFVLIMGPGNSGADILVRAFIIIFSDAFKEEECKKFQAVAYADAVAALLQIMQAMEQLNIPPSLWKHEELRQRLQQAAATSLPNVMPPKLADIMKELARSNGARKCEDLHHLTLIPDSARYFLRRLDQHAQPNHIPSMDDVLMTLTDNDSIKRVFYVANNLIFITLSTNNYPILFEILEKCKKNTQAVIFCMSLSAHDLYIQDNLEYPPMRLALKLAKEICNDDSFKTVLIVIILSDAEEHARHSIYHPSQICHPNDNSSLLPDDDMQHHRCDTERLDNNPQDLELKVYFACPTDIRRVKEVAEKIIKDIFLTNTEQNKERALLHNLVSSSGPTNNHSINDLLNMMQ  0.262108266
+ 6    47    -589.17   -589.17  0.70  0.00   -1176.20   119.35
+ 7    47    -597.01   -597.01  0.70  0.00   -1178.29   114.20
+designing with this many rotamers  40535
+Instantiating PDInteractionGraph
+monte carlo id for design run 0
+rotamers_exist flag 1
+score vs  best_score -594.858276 -597.005615
+seq 0NMSYVFVLIMGPGNSGADILVRAFIIIFSDAFKEEECKKFQAVAYADAVAALLQIMQAMEQLNIPPSLWKHEELRQRLQQAAATSLPNVMPPKLADIMKELARSNGARKCEDLHHLTLIPDSARYFLRRLDQHAQPNHIPSMDDVLMTLTDNDSIKRVFYVANNLIFITLSTNNYPILFEILEKCKKNTQAVIFCMSLSAHDLYIQDNLEYPPMRLALKLAKEICNDDSFKTVLIVIILSDAEEHARHSIYHPSQICHPNDNSSLLPDDDMQHHRCDTERLDNNPQDLELKVYFACPTDIRRVKEVAEKIIKDIFLTNTEQNKERALLHNLVSSSGPTNNHSINDLLNMMQ  0.262108266
+ 8    47    -597.01   -597.01  0.70  0.00   -1178.29   114.20
+ 9    47    -597.19   -597.19  0.70  0.00   -1178.47   114.34
+FINAL:
+jk nlowacc   score    low_sc st_rms   low_rms    atr    rep
+-1    47    -643.04   -643.04  0.70  0.00   -1178.48   114.35
+seq 0NMSYVFVLIMGPGNSGADILVRAFIIIFSDAFKEEECKKFQAVAYADAVAALLQIMQAMEQLNIPPSLWKHEELRQRLQQAAATSLPNVMPPKLADIMKELARSNGARKCEDLHHLTLIPDSARYFLRRLDQHAQPNHIPSMDDVLMTLTDNDSIKRVFYVANNLIFITLSTNNYPILFEILEKCKKNTQAVIFCMSLSAHDLYIQDNLEYPPMRLALKLAKEICNDDSFKTVLIVIILSDAEEHARHSIYHPSQICHPNDNSSLLPDDDMQHHRCDTERLDNNPQDLELKVYFACPTDIRRVKEVAEKIIKDIFLTNTEQNKERALLHNLVSSSGPTNNHSINDLLNMMQ  0.262108266
+wobblemin    trials:    225 accepts:    225 %: 100.00 e/trial: -17.76630
+shearmin     trials:    225 accepts:    225 %: 100.00 e/trial: -18.44004
+smallmin     trials:    225 accepts:    224 %:  99.56 e/trial: -16.91486
+unknown      trials:     36 accepts:     21 %:  58.33 e/trial: -248.77734
+writing pdb file: ./aag000_0009.m_0001.pdb
+WARNING: ###calc_docking_frac_native_contact###
+No native exists or no contacts in the native structure
+fraction of native contacts will not be evaluated!!!
+WARNING: ###calc_docking_interf_rmsd###
+No native exists !!!
+docking_interf_rmsd will not be evaluated!!!
+reading starting structure: ./aag000_0010.m.pdb
+Filling missing atoms
+optimizing missing atoms
+Instantiating PDInteractionGraph
+optimizing hydrogen positions
+Instantiating PDInteractionGraph
+secondary structure defined, not reading dssp file
+Docking partners detected: Residues
+ 1- 320
+ 321- 351
+----------------------------------------------
+
+Docking partners: Residues
+1-320
+321-351
+
+Centroids:
+(    19.594,     6.052,    17.291)
+(    16.265,     8.261,    29.554)
+
+Centroid bond:
+(     3.329,    -2.209,   -12.263)
+
+Docking basis vectors:
+(     0.258,    -0.171,    -0.951)
+(     0.966,     0.046,     0.254)
+(     0.000,    -0.984,     0.177)
+Contact point:
+(    17.930,     7.157,    23.423)
+
+----------------------------------------------
+loading docking site constraints from ./g000.cst
+loading 0 docking site constraints
+
+Docking constraints:
+
+site constraint filter set to 9999
+
+File: ./g000.dst not found
+Running without dist constraints
+PACKNG: deleting curent protein_sasa oject
+[T/F  OPT]Default FALSE value for [-packing_heavy_atoms_only]
+WARNING: ###calc_docking_frac_native_contact###
+No native exists or no contacts in the native structure
+fraction of native contacts will not be evaluated!!!
+WARNING: ###calc_docking_interf_rmsd###
+No native exists !!!
+docking_interf_rmsd will not be evaluated!!!
+[T/F  OPT]Default FALSE value for [-output_input_pdb]
+NEXT STRUCTURE: ./aag000_0010.m_0001.pdb
+
+Start of design structure
+
+initializing full atom coordinates
+total_domains 2
+setting up the tail
+ 342 to  351
+starting centroid relax...
+ 1     2       1.00      0.95  0.04  0.00   -1295.60   394.44
+ 2     3       0.95      0.95  0.07  0.00   -1294.91   795.87
+ 3     6       0.95      0.95  0.14  0.00   -1291.48   298.67
+ 4     9       0.95      0.95  0.17  0.00   -1289.93   290.98
+ 5    11       1.04      0.95  0.28  0.00   -1288.97   868.81
+ 6    12       0.95      0.95  0.31  0.00   -1286.78   383.88
+ 7    15       0.95      0.95  0.30  0.00   -1286.73   370.79
+ 8    18       0.95      0.95  0.29  0.00   -1286.18   294.14
+ 9    21       0.95      0.95  0.32  0.00   -1285.99   301.49
+10    24       0.95      0.95  0.35  0.00   -1286.74   293.53
+11    27       0.95      0.95  0.39  0.00   -1286.18   300.66
+12    30       0.95      0.95  0.39  0.00   -1286.88   308.73
+13    33       0.95      0.95  0.32  0.00   -1288.46   239.74
+14    36       0.95      0.95  0.32  0.00   -1287.74   245.12
+15    38       3.31      0.95  0.36  0.00   -1286.78   275.49
+16    39       0.95      0.95  0.16  0.00   -1291.45   250.66
+17    42       0.95      0.95  0.17  0.00   -1290.35   249.62
+18    45       0.95      0.95  0.16  0.00   -1290.84   252.23
+19    48       0.95      0.95  0.17  0.00   -1291.31   251.37
+20    50       0.96      0.95  0.17  0.00   -1291.59   263.79
+21    50       0.98      0.95  0.22  0.00   -1288.03   312.69
+22    53       0.95      0.95  0.56  0.00   -1284.49   288.38
+23    56       0.95      0.95  0.65  0.00   -1283.20   286.98
+24    59       0.95      0.95  0.69  0.00   -1282.41   272.48
+25    62       0.95      0.95  0.57  0.00   -1284.22   267.70
+jk nlowacc   score    low_sc st_rms   low_rms    atr    rep
+-2    62     -21.31    -21.31  0.57  0.00   -1284.21   267.69
+ Protein Complex defined as Residues  1- 320 and  321- 351
+jk nlowacc   score    low_sc st_rms   low_rms    atr    rep
+-1    62     -21.31    -21.31  0.57  0.00   -1284.21   267.69
+designing with this many rotamers  40553
+Instantiating PDInteractionGraph
+monte carlo id for design run 3
+rotamers_exist flag 0
+score vs  best_score -587.564575 -587.564575
+seq 0NMSYVFVLIMGPGNSGAAALVRAFEMIFSDAFKEQKCKNFRAYTLADAILALLQILQAMQQLNIPPSLWKALELMQRLQQQASTSLPNVIPPQLAEIMKRLEESNGVRQCRDEREKTLVPDVAEKFLKKLDEIAQPNHIPSEEDVLLTLTDIDSILRIFYVAQNLIFITLSTIRYPILKDILDKCKKNTQAIIFCVSLSAHDLQPQDNLEYPPMRLAIKLAKEICNDDSTKTVLIVILLSDAEEFYKEIQRFPLQICFPQDNSSLLPDDAAQFIKCEFESEDNNPQDLELKVYFTCPHDKDRVKEVAEKIIKDIIETNTEQNSERALLHNLVSSSGPQNNHAANEMIQLSK  0.273504287
+ 2    63    -587.56   -587.56  0.57  0.00   -1159.51   127.64
+total atompair constraints: 80928
+ 3    63    -649.44   -649.44  0.60  0.00   -1179.40    98.29
+designing with this many rotamers  40371
+Instantiating PDInteractionGraph
+monte carlo id for design run 3
+rotamers_exist flag 1
+score vs  best_score -655.844788 -655.844788
+seq 0NMSYVFVLIVGPGNSGANRLVRAFEIIFSDAFKEEKCKKFRAFVLADAILALLQIIEAMQQLNIPPSLWKALELMDRLKQQASTSPPNYIPPQLAEIMKRLEESNGVRQCRDEREKTWVPDVAEEFLRELDEHAKPNHIPSTKHVLLALTDDDSIKFILYVANNLIFITLSTNNYPILLEIKLKCDKNTQAVIHCVSLSAHDFQPSDDSEKPPMKEAEKHFKQECNDDSHETVLIVLILSNAEEHERESQRFPSQICHPWDNSSLSHDDDADHHRCEFMSLDNNPQKDEIKVYFACPRDIDRVKEVAEKIIKDIFLTNTEQNSEQADEHNKLSSSGPTNNHAKDEMKQRSQ  0.253561258
+ 4    64    -655.84   -655.84  0.60  0.00   -1210.84    89.91
+ 5    64    -656.15   -656.15  0.59  0.00   -1211.57    90.00
+designing with this many rotamers  40225
+Instantiating PDInteractionGraph
+monte carlo id for design run 0
+rotamers_exist flag 0
+score vs  best_score -636.176636 -656.148682
+seq 0NMSYVFVLIVGPGNSGANRLVRAFEIIFSDAFKEEKCKKFRAFVLADAILALLQIIEAMQQLNIPPSLWKALELMDRLKQQASTSPPNYIPPQLAEIMKRLEESNGVRQCRDEREKTWVPDVAEEFLRELDEHAKPNHIPSTKHVLLALTDDDSIKFILYVANNLIFITLSTNNYPILLEIKLKCDKNTQAVIHCVSLSAHDFQPSDDSEKPPMKEAEKHFKQECNDDSHETVLIVLILSNAEEHERESQRFPSQICHPWDNSSLSHDDDADHHRCEFMSLDNNPQKDEIKVYFACPRDIDRVKEVAEKIIKDIFLTNTEQNSEQADEHNKLSSSGPTNNHAKDEMKQRSQ  0.253561258
+ 6    64    -656.15   -656.15  0.59  0.00   -1211.57    90.00
+ 7    64    -659.03   -659.03  0.59  0.00   -1212.84    88.93
+designing with this many rotamers  40298
+Instantiating PDInteractionGraph
+monte carlo id for design run 0
+rotamers_exist flag 1
+score vs  best_score -648.283081 -659.02832
+seq 0NMSYVFVLIVGPGNSGANRLVRAFEIIFSDAFKEEKCKKFRAFVLADAILALLQIIEAMQQLNIPPSLWKALELMDRLKQQASTSPPNYIPPQLAEIMKRLEESNGVRQCRDEREKTWVPDVAEEFLRELDEHAKPNHIPSTKHVLLALTDDDSIKFILYVANNLIFITLSTNNYPILLEIKLKCDKNTQAVIHCVSLSAHDFQPSDDSEKPPMKEAEKHFKQECNDDSHETVLIVLILSNAEEHERESQRFPSQICHPWDNSSLSHDDDADHHRCEFMSLDNNPQKDEIKVYFACPRDIDRVKEVAEKIIKDIFLTNTEQNSEQADEHNKLSSSGPTNNHAKDEMKQRSQ  0.253561258
+ 8    64    -659.03   -659.03  0.59  0.00   -1212.84    88.93
+ 9    64    -659.03   -659.03  0.59  0.00   -1212.83    88.93
+FINAL:
+jk nlowacc   score    low_sc st_rms   low_rms    atr    rep
+-1    64    -704.88   -704.88  0.59  0.00   -1212.82    88.92
+seq 0NMSYVFVLIVGPGNSGANRLVRAFEIIFSDAFKEEKCKKFRAFVLADAILALLQIIEAMQQLNIPPSLWKALELMDRLKQQASTSPPNYIPPQLAEIMKRLEESNGVRQCRDEREKTWVPDVAEEFLRELDEHAKPNHIPSTKHVLLALTDDDSIKFILYVANNLIFITLSTNNYPILLEIKLKCDKNTQAVIHCVSLSAHDFQPSDDSEKPPMKEAEKHFKQECNDDSHETVLIVLILSNAEEHERESQRFPSQICHPWDNSSLSHDDDADHHRCEFMSLDNNPQKDEIKVYFACPRDIDRVKEVAEKIIKDIFLTNTEQNSEQADEHNKLSSSGPTNNHAKDEMKQRSQ  0.253561258
+wobblemin    trials:    250 accepts:    250 %: 100.00 e/trial: -16.08815
+shearmin     trials:    250 accepts:    250 %: 100.00 e/trial: -16.70093
+smallmin     trials:    250 accepts:    249 %:  99.60 e/trial: -15.32863
+unknown      trials:     40 accepts:     23 %:  57.50 e/trial: -238.21599
+writing pdb file: ./aag000_0010.m_0001.pdb
+WARNING: ###calc_docking_frac_native_contact###
+No native exists or no contacts in the native structure
+fraction of native contacts will not be evaluated!!!
+WARNING: ###calc_docking_interf_rmsd###
+No native exists !!!
+docking_interf_rmsd will not be evaluated!!!
+reading starting structure: ./aag000_0011.m.pdb
+Filling missing atoms
+optimizing missing atoms
+Instantiating PDInteractionGraph
+optimizing hydrogen positions
+Instantiating PDInteractionGraph
+secondary structure defined, not reading dssp file
+Docking partners detected: Residues
+ 1- 320
+ 321- 351
+----------------------------------------------
+
+Docking partners: Residues
+1-320
+321-351
+
+Centroids:
+(    19.594,     6.052,    17.291)
+(    16.193,     7.721,    29.959)
+
+Centroid bond:
+(     3.400,    -1.669,   -12.668)
+
+Docking basis vectors:
+(     0.257,    -0.126,    -0.958)
+(     0.966,     0.034,     0.255)
+(     0.000,    -0.991,     0.131)
+Contact point:
+(    17.894,     6.887,    23.625)
+
+----------------------------------------------
+loading docking site constraints from ./g000.cst
+loading 0 docking site constraints
+
+Docking constraints:
+
+site constraint filter set to 9999
+
+File: ./g000.dst not found
+Running without dist constraints
+PACKNG: deleting curent protein_sasa oject
+[T/F  OPT]Default FALSE value for [-packing_heavy_atoms_only]
+WARNING: ###calc_docking_frac_native_contact###
+No native exists or no contacts in the native structure
+fraction of native contacts will not be evaluated!!!
+WARNING: ###calc_docking_interf_rmsd###
+No native exists !!!
+docking_interf_rmsd will not be evaluated!!!
+[T/F  OPT]Default FALSE value for [-output_input_pdb]
+NEXT STRUCTURE: ./aag000_0011.m_0001.pdb
+
+Start of design structure
+
+initializing full atom coordinates
+total_domains 2
+setting up the tail
+ 342 to  351
+starting centroid relax...
+ 1     1       0.98      0.97  0.47  0.00   -1282.51   648.75
+ 2     4       0.95      0.95  0.57  0.00   -1279.42   611.58
+ 3     7       0.95      0.95  0.58  0.00   -1279.76   577.04
+ 4    10       0.95      0.95  0.60  0.00   -1279.53   422.31
+ 5    12      16.61      0.95  0.49  0.00   -1280.35  1143.19
+ 6    12       1.52      0.95  0.46  0.00   -1282.01   822.29
+ 7    12       7.41      0.95  0.48  0.00   -1284.20  2171.92
+ 8    12      20.82      0.95  0.62  0.00   -1290.37  2639.95
+ 9    12      12.21      0.95  0.68  0.00   -1289.37  2827.10
+10    12       1.80      0.95  0.60  0.00   -1289.46  1029.14
+11    12       0.99      0.95  0.52  0.00   -1288.59  1129.86
+12    12       5.69      0.95  0.76  0.00   -1290.46  1532.19
+13    12       4.24      0.95  0.90  0.00   -1288.66  1369.26
+14    12      24.64      0.95  1.03  0.00   -1291.16  3152.93
+15    12      15.76      0.95  0.92  0.00   -1288.18  2659.71
+16    12      21.26      0.95  0.77  0.00   -1290.80  4320.22
+17    12      40.46      0.95  0.76  0.00   -1296.67  9574.40
+18    12      44.74      0.95  0.92  0.00   -1300.09  10446.84
+19    12      63.09      0.95  0.95  0.00   -1303.63  10067.53
+20    12     115.54      0.95  1.07  0.00   -1308.54  9851.12
+21    12      89.40      0.95  1.07  0.00   -1306.53  8510.21
+22    12     127.49      0.95  1.17  0.00   -1310.49  8865.86
+23    12     147.03      0.95  1.34  0.00   -1309.75  8041.80
+24    12      82.56      0.95  1.16  0.00   -1307.94  6414.07
+25    12      86.05      0.95  1.20  0.00   -1312.12  8554.04
+jk nlowacc   score    low_sc st_rms   low_rms    atr    rep
+-2    12     238.54    238.54  0.71  0.00   -1278.16   523.39
+ Protein Complex defined as Residues  1- 320 and  321- 351
+jk nlowacc   score    low_sc st_rms   low_rms    atr    rep
+-1    12     238.54    238.54  0.71  0.00   -1278.16   523.39
+designing with this many rotamers  40666
+Instantiating PDInteractionGraph
+monte carlo id for design run 3
+rotamers_exist flag 0
+score vs  best_score -579.544312 -579.544312
+seq 0NMSEVVVLIMGPGNSGADRLVRAFIIIFSNAFQEQKCKNFQAVAYADAMDALEQVLKSMEILNIPPSLPQALELAQRHRQQASTSVRNTMPPQLAKIMKLLAESNGVRQCINEREKSLVPDTAEYFLKRLDEHAQPNHIPSRDDVLATLTDDDSIKFVKYVANNLDFKTFSTNNYPILWFILQQCKKNTHAVIFCMSLSAADLQPQDNLQYPPMRLALFLLKLICNDDNFETVVIVILLSDYEEFAKEIITHPPQICFPNDNSTTLPKNAAEFIRCEAMSLDNNPQKLVLFVYFTCPSDIDRVKEVAEKIIKAIFLANNEQNQEIAKQHNLTSSSGPTNNHRPESSDSSDS  0.259259254
+ 2    13    -579.54   -579.54  0.71  0.00   -1139.61   120.23
+total atompair constraints: 80496
+ 3    13    -696.05   -696.05  0.77  0.00   -1177.24    75.78
+designing with this many rotamers  40773
+Instantiating PDInteractionGraph
+monte carlo id for design run 3
+rotamers_exist flag 1
+score vs  best_score -696.729126 -696.729126
+seq 0NMSEVVVLIMGPGNSGADRLVRAFIAIFSNAFQEQKCKNFRAIDYADAIDALEQILDAMEILNIPPARPEALELAQRHRQQASTSLPNYMPPQLAEIMKRLFEENGVLQCINEKEKTLVPDTAEYYLKRLDIHAQPYHIPSRLDVLSALRDDDSIQFVFYVANNLIFRTFSTNNYPITLLILLLCKDNTHAVIFCMSLSAADLQPMDNLQYPPMRLALFLLKLICNDDNFETVLIVILLSDYEEFAKEIITHPPQICFPNDNSSTLPQNAADFIRCMAISLDNNPQKLVLKVYFVCPSDLDRVKEVAEKIIKAIFLTNTEQNSRIAWMHNQVSSSGPTNVHRPESSDSSSS  0.259259254
+ 4    14    -696.73   -696.73  0.77  0.00   -1194.25    79.49
+ 5    14    -697.81   -697.81  0.77  0.00   -1193.43    78.49
+designing with this many rotamers  40541
+Instantiating PDInteractionGraph
+monte carlo id for design run 0
+rotamers_exist flag 0
+score vs  best_score -677.006104 -697.809753
+seq 0NMSEVVVLIMGPGNSGADRLVRAFIAIFSNAFQEQKCKNFRAIDYADAIDALEQILDAMEILNIPPARPEALELAQRHRQQASTSLPNYMPPQLAEIMKRLFEENGVLQCINEKEKTLVPDTAEYYLKRLDIHAQPYHIPSRLDVLSALRDDDSIQFVFYVANNLIFRTFSTNNYPITLLILLLCKDNTHAVIFCMSLSAADLQPMDNLQYPPMRLALFLLKLICNDDNFETVLIVILLSDYEEFAKEIITHPPQICFPNDNSSTLPQNAADFIRCMAISLDNNPQKLVLKVYFVCPSDLDRVKEVAEKIIKAIFLTNTEQNSRIAWMHNQVSSSGPTNVHRPESSDSSSS  0.259259254
+ 6    14    -697.81   -697.81  0.77  0.00   -1193.43    78.49
+ 7    14    -697.84   -697.84  0.77  0.00   -1193.40    78.48
+designing with this many rotamers  40707
+Instantiating PDInteractionGraph
+monte carlo id for design run 3
+rotamers_exist flag 1
+score vs  best_score -699.216675 -699.216675
+seq 0NMSEVVVLIMGPGNSGADRLVRAFIIIFSNAFQEQECKKFRAFDYADAIDALEQILQAMEQLNIPPARPEALELAQRHRQQASTSLPNYMPPQLAEIMKRLYEENGVLQCIKEHEKTLVPDTALYYLARLDIHAQPYHIPSRSDVLSALTDDDSIKFVFFVANNLIFRVFSTNNYPITLEILLKCKDNTHAVIFCMSLSAADFQPMDNLQYPPMRLALFLLKAICNDDNFKTVLIVILLTDYQQFANEIITHPPQICFPNDNSSTLPQNAADFIRCMAISLDNNPQDLVLKVYFACPSDIDRVKEIAIKIIIAIFLTNTEQNSRIALLHNLVSSSGPTNVHRKESSNSSSN  0.262108266
+ 8    15    -699.22   -699.22  0.77  0.00   -1198.03    80.28
+ 9    15    -699.24   -699.24  0.77  0.00   -1198.03    80.28
+FINAL:
+jk nlowacc   score    low_sc st_rms   low_rms    atr    rep
+-1    15    -745.09   -745.09  0.77  0.00   -1198.03    80.28
+seq 0NMSEVVVLIMGPGNSGADRLVRAFIIIFSNAFQEQECKKFRAFDYADAIDALEQILQAMEQLNIPPARPEALELAQRHRQQASTSLPNYMPPQLAEIMKRLYEENGVLQCIKEHEKTLVPDTALYYLARLDIHAQPYHIPSRSDVLSALTDDDSIKFVFFVANNLIFRVFSTNNYPITLEILLKCKDNTHAVIFCMSLSAADFQPMDNLQYPPMRLALFLLKAICNDDNFKTVLIVILLTDYQQFANEIITHPPQICFPNDNSSTLPQNAADFIRCMAISLDNNPQDLVLKVYFACPSDIDRVKEIAIKIIIAIFLTNTEQNSRIALLHNLVSSSGPTNVHRKESSNSSSN  0.262108266
+wobblemin    trials:    275 accepts:    275 %: 100.00 e/trial: -17.42802
+shearmin     trials:    275 accepts:    275 %: 100.00 e/trial: -18.13765
+smallmin     trials:    275 accepts:    273 %:  99.27 e/trial: -16.72408
+unknown      trials:     44 accepts:     26 %:  59.09 e/trial: -235.19946
+writing pdb file: ./aag000_0011.m_0001.pdb
+WARNING: ###calc_docking_frac_native_contact###
+No native exists or no contacts in the native structure
+fraction of native contacts will not be evaluated!!!
+WARNING: ###calc_docking_interf_rmsd###
+No native exists !!!
+docking_interf_rmsd will not be evaluated!!!
+reading starting structure: ./aag000_0012.m.pdb
+Filling missing atoms
+optimizing missing atoms
+Instantiating PDInteractionGraph
+optimizing hydrogen positions
+Instantiating PDInteractionGraph
+secondary structure defined, not reading dssp file
+Docking partners detected: Residues
+ 1- 320
+ 321- 351
+----------------------------------------------
+
+Docking partners: Residues
+1-320
+321-351
+
+Centroids:
+(    19.594,     6.052,    17.291)
+(    15.988,     7.074,    29.520)
+
+Centroid bond:
+(     3.606,    -1.022,   -12.229)
+
+Docking basis vectors:
+(     0.282,    -0.080,    -0.956)
+(     0.959,     0.023,     0.281)
+(     0.000,    -0.997,     0.083)
+Contact point:
+(    17.791,     6.563,    23.406)
+
+----------------------------------------------
+loading docking site constraints from ./g000.cst
+loading 0 docking site constraints
+
+Docking constraints:
+
+site constraint filter set to 9999
+
+File: ./g000.dst not found
+Running without dist constraints
+PACKNG: deleting curent protein_sasa oject
+[T/F  OPT]Default FALSE value for [-packing_heavy_atoms_only]
+WARNING: ###calc_docking_frac_native_contact###
+No native exists or no contacts in the native structure
+fraction of native contacts will not be evaluated!!!
+WARNING: ###calc_docking_interf_rmsd###
+No native exists !!!
+docking_interf_rmsd will not be evaluated!!!
+[T/F  OPT]Default FALSE value for [-output_input_pdb]
+NEXT STRUCTURE: ./aag000_0012.m_0001.pdb
+
+Start of design structure
+
+initializing full atom coordinates
+total_domains 2
+setting up the tail
+ 342 to  351
+starting centroid relax...
+ 1     2       3.03      2.59  0.12  0.00   -1299.92  4165.83
+ 2     2      11.46      2.59  0.25  0.00   -1307.05  8468.16
+ 3     2      19.23      2.59  0.37  0.00   -1302.39  7310.86
+ 4     2      24.65      2.59  0.50  0.00   -1302.76  7490.64
+ 5     2      27.21      2.59  0.42  0.00   -1304.00  9766.20
+ 6     2      28.75      2.59  0.41  0.00   -1311.12  11391.50
+ 7     2      82.51      2.59  0.43  0.00   -1317.33  11864.56
+ 8     2     239.17      2.59  0.71  0.00   -1333.18  21200.65
+ 9     2     296.08      2.59  0.83  0.00   -1334.23  23747.62
+10     2     241.58      2.59  0.84  0.00   -1334.72  20326.35
+11     2     246.55      2.59  0.92  0.00   -1334.85  20622.12
+12     2     242.50      2.59  0.95  0.00   -1335.91  20590.15
+13     2     237.72      2.59  1.05  0.00   -1334.43  19806.34
+14     2     243.00      2.59  1.10  0.00   -1333.74  20138.91
+15     2     272.41      2.59  1.09  0.00   -1334.62  19789.16
+16     2     289.89      2.59  1.17  0.00   -1338.45  22512.21
+17     2     294.01      2.59  1.25  0.00   -1338.41  23531.03
+18     2     282.04      2.59  1.20  0.00   -1338.65  22165.51
+19     2     313.93      2.59  1.04  0.00   -1339.05  20942.58
+20     2     265.02      2.59  0.96  0.00   -1329.98  19466.07
+21     2     282.63      2.59  1.09  0.00   -1331.80  21932.39
+22     2     329.90      2.59  1.36  0.00   -1339.29  24986.53
+23     2     322.94      2.59  1.37  0.00   -1341.47  24655.55
+24     2     240.55      2.59  1.42  0.00   -1338.18  21364.75
+25     2     220.48      2.59  1.18  0.00   -1331.84  19336.54
+jk nlowacc   score    low_sc st_rms   low_rms    atr    rep
+-2     2    5258.36   5258.36  0.05  0.00   -1300.61  5551.22
+ Protein Complex defined as Residues  1- 320 and  321- 351
+jk nlowacc   score    low_sc st_rms   low_rms    atr    rep
+-1     2    5258.36   5258.36  0.05  0.00   -1300.61  5551.22
+designing with this many rotamers  40209
+Instantiating PDInteractionGraph
+monte carlo id for design run 3
+rotamers_exist flag 0
+score vs  best_score -564.456482 -564.456482
+seq 0NMSVVVILIVGPGNSGAEDMVRAYKIIYSSAFQEQECKKFQAYAYLDAMAALAQIILAMIILNIPPSRPEALELMQRHGQQAATSLPNFMPPQLAEIMKRLEQSNGVQQCRNEKEKTLLDDSAEDFLKELDEMAQPNHIPTRRHVLDTRTDNDSIKRIFYVSNNLIHMTFSTNNYPILKDILDKCKKNTHAVQHCVSLSAHDLQPQDNLEYPPMRLALRHFKYMCNDDNFETVLIVLLLSDAEDHEKLSQRFPSRICDPSDDSSLSHDDDAQQLRCDAERLDNNPQKDEIKVYFTCPKDIDRVKEVSEKIDKDIIEANNEQNSEIALMHNLLSSSGPTNNHSRGEDNAKNA  0.284900278
+ 2     3    -564.46   -564.46  0.05  0.00   -1183.88   121.08
+total atompair constraints: 82336
+ 3     3    -679.81   -679.81  0.27  0.00   -1212.42    75.27
+designing with this many rotamers  40150
+Instantiating PDInteractionGraph
+monte carlo id for design run 0
+rotamers_exist flag 1
+score vs  best_score -677.664673 -679.806641
+seq 0NMSVVVILIVGPGNSGAEDMVRAYKIIYSSAFQEQECKKFQAYAYLDAMAALAQIILAMIILNIPPSRPEALELMQRHGQQAATSLPNFMPPQLAEIMKRLEQSNGVQQCRNEKEKTLLDDSAEDFLKELDEMAQPNHIPTRRHVLDTRTDNDSIKRIFYVSNNLIHMTFSTNNYPILKDILDKCKKNTHAVQHCVSLSAHDLQPQDNLEYPPMRLALRHFKYMCNDDNFETVLIVLLLSDAEDHEKLSQRFPSRICDPSDDSSLSHDDDAQQLRCDAERLDNNPQKDEIKVYFTCPKDIDRVKEVSEKIDKDIIEANNEQNSEIALMHNLLSSSGPTNNHSRGEDNAKNA  0.284900278
+ 4     3    -679.81   -679.81  0.27  0.00   -1212.42    75.27
+ 5     3    -679.87   -679.87  0.27  0.00   -1212.79    75.40
+designing with this many rotamers  39972
+Instantiating PDInteractionGraph
+monte carlo id for design run 0
+rotamers_exist flag 0
+score vs  best_score -661.077148 -679.869934
+seq 0NMSVVVILIVGPGNSGAEDMVRAYKIIYSSAFQEQECKKFQAYAYLDAMAALAQIILAMIILNIPPSRPEALELMQRHGQQAATSLPNFMPPQLAEIMKRLEQSNGVQQCRNEKEKTLLDDSAEDFLKELDEMAQPNHIPTRRHVLDTRTDNDSIKRIFYVSNNLIHMTFSTNNYPILKDILDKCKKNTHAVQHCVSLSAHDLQPQDNLEYPPMRLALRHFKYMCNDDNFETVLIVLLLSDAEDHEKLSQRFPSRICDPSDDSSLSHDDDAQQLRCDAERLDNNPQKDEIKVYFTCPKDIDRVKEVSEKIDKDIIEANNEQNSEIALMHNLLSSSGPTNNHSRGEDNAKNA  0.284900278
+ 6     3    -679.87   -679.87  0.27  0.00   -1212.79    75.40
+ 7     3    -679.84   -679.84  0.26  0.00   -1212.76    75.42
+designing with this many rotamers  40161
+Instantiating PDInteractionGraph
+monte carlo id for design run 0
+rotamers_exist flag 1
+score vs  best_score -675.566772 -679.836548
+seq 0NMSVVVILIVGPGNSGAEDMVRAYKIIYSSAFQEQECKKFQAYAYLDAMAALAQIILAMIILNIPPSRPEALELMQRHGQQAATSLPNFMPPQLAEIMKRLEQSNGVQQCRNEKEKTLLDDSAEDFLKELDEMAQPNHIPTRRHVLDTRTDNDSIKRIFYVSNNLIHMTFSTNNYPILKDILDKCKKNTHAVQHCVSLSAHDLQPQDNLEYPPMRLALRHFKYMCNDDNFETVLIVLLLSDAEDHEKLSQRFPSRICDPSDDSSLSHDDDAQQLRCDAERLDNNPQKDEIKVYFTCPKDIDRVKEVSEKIDKDIIEANNEQNSEIALMHNLLSSSGPTNNHSRGEDNAKNA  0.284900278
+ 8     3    -679.84   -679.84  0.26  0.00   -1212.76    75.42
+ 9     3    -679.90   -679.90  0.27  0.00   -1212.71    75.33
+FINAL:
+jk nlowacc   score    low_sc st_rms   low_rms    atr    rep
+-1     3    -744.10   -744.10  0.27  0.00   -1212.70    75.32
+seq 0NMSVVVILIVGPGNSGAEDMVRAYKIIYSSAFQEQECKKFQAYAYLDAMAALAQIILAMIILNIPPSRPEALELMQRHGQQAATSLPNFMPPQLAEIMKRLEQSNGVQQCRNEKEKTLLDDSAEDFLKELDEMAQPNHIPTRRHVLDTRTDNDSIKRIFYVSNNLIHMTFSTNNYPILKDILDKCKKNTHAVQHCVSLSAHDLQPQDNLEYPPMRLALRHFKYMCNDDNFETVLIVLLLSDAEDHEKLSQRFPSRICDPSDDSSLSHDDDAQQLRCDAERLDNNPQKDEIKVYFTCPKDIDRVKEVSEKIDKDIIEANNEQNSEIALMHNLLSSSGPTNNHSRGEDNAKNA  0.284900278
+wobblemin    trials:    300 accepts:    300 %: 100.00 e/trial: -31.21431
+shearmin     trials:    300 accepts:    300 %: 100.00 e/trial: -31.67151
+smallmin     trials:    300 accepts:    298 %:  99.33 e/trial: -29.84000
+unknown      trials:     48 accepts:     27 %:  56.25 e/trial: -336.90820
+writing pdb file: ./aag000_0012.m_0001.pdb
+WARNING: ###calc_docking_frac_native_contact###
+No native exists or no contacts in the native structure
+fraction of native contacts will not be evaluated!!!
+WARNING: ###calc_docking_interf_rmsd###
+No native exists !!!
+docking_interf_rmsd will not be evaluated!!!
+reading starting structure: ./aag000_0013.m.pdb
+Filling missing atoms
+optimizing missing atoms
+Instantiating PDInteractionGraph
+optimizing hydrogen positions
+Instantiating PDInteractionGraph
+secondary structure defined, not reading dssp file
+Docking partners detected: Residues
+ 1- 320
+ 321- 351
+----------------------------------------------
+
+Docking partners: Residues
+1-320
+321-351
+
+Centroids:
+(    19.594,     6.052,    17.291)
+(    16.778,     7.871,    29.854)
+
+Centroid bond:
+(     2.816,    -1.819,   -12.563)
+
+Docking basis vectors:
+(     0.217,    -0.140,    -0.966)
+(     0.976,     0.031,     0.214)
+(     0.000,    -0.990,     0.143)
+Contact point:
+(    18.186,     6.962,    23.573)
+
+----------------------------------------------
+loading docking site constraints from ./g000.cst
+loading 0 docking site constraints
+
+Docking constraints:
+
+site constraint filter set to 9999
+
+File: ./g000.dst not found
+Running without dist constraints
+PACKNG: deleting curent protein_sasa oject
+[T/F  OPT]Default FALSE value for [-packing_heavy_atoms_only]
+WARNING: ###calc_docking_frac_native_contact###
+No native exists or no contacts in the native structure
+fraction of native contacts will not be evaluated!!!
+WARNING: ###calc_docking_interf_rmsd###
+No native exists !!!
+docking_interf_rmsd will not be evaluated!!!
+[T/F  OPT]Default FALSE value for [-output_input_pdb]
+NEXT STRUCTURE: ./aag000_0013.m_0001.pdb
+
+Start of design structure
+
+initializing full atom coordinates
+total_domains 2
+setting up the tail
+ 342 to  351
+starting centroid relax...
+ 1     2       1.96      1.15  0.16  0.00   -1290.52   904.94
+ 2     2       3.36      1.15  0.17  0.00   -1291.14  1094.27
+ 3     2      36.48      1.15  0.27  0.00   -1295.82  2695.82
+ 4     2      47.09      1.15  0.35  0.00   -1303.75  4980.96
+ 5     2      81.96      1.15  0.39  0.00   -1304.80  6354.35
+ 6     2     103.18      1.15  0.59  0.00   -1297.71  7596.43
+ 7     2      97.68      1.15  0.62  0.00   -1295.07  6787.66
+ 8     2     105.46      1.15  0.82  0.00   -1296.35  7201.14
+ 9     2      72.67      1.15  0.92  0.00   -1290.57  4668.32
+10     2      40.02      1.15  1.03  0.00   -1293.12  3576.74
+11     2      50.87      1.15  1.02  0.00   -1292.05  4060.54
+12     2      64.59      1.15  0.87  0.00   -1288.72  4888.02
+13     2      64.02      1.15  0.85  0.00   -1291.37  5030.63
+14     2       9.76      1.15  0.90  0.00   -1285.40  2327.03
+15     2       4.98      1.15  0.85  0.00   -1285.76  2172.21
+16     2       4.64      1.15  0.86  0.00   -1284.66  2063.56
+17     2       1.67      1.15  0.71  0.00   -1283.68  1217.58
+18     3       1.12      1.12  0.58  0.00   -1284.95   941.34
+19     3      12.80      1.12  0.51  0.00   -1288.74  1149.90
+20     3      11.24      1.12  0.41  0.00   -1287.55   952.67
+21     3      29.36      1.12  0.39  0.00   -1287.56  1562.74
+22     3       4.39      1.12  0.22  0.00   -1291.36   648.05
+23     3       6.19      1.12  0.33  0.00   -1287.43   688.83
+24     4       1.10      1.10  0.43  0.00   -1282.97   469.69
+25     4      22.29      1.10  0.40  0.00   -1286.41  1443.66
+jk nlowacc   score    low_sc st_rms   low_rms    atr    rep
+-2     4     179.83    179.83  0.43  0.00   -1282.96   469.69
+ Protein Complex defined as Residues  1- 320 and  321- 351
+jk nlowacc   score    low_sc st_rms   low_rms    atr    rep
+-1     4     179.83    179.83  0.43  0.00   -1282.96   469.69
+designing with this many rotamers  40571
+Instantiating PDInteractionGraph
+monte carlo id for design run 3
+rotamers_exist flag 0
+score vs  best_score -575.703735 -575.703735
+seq 0NMSEVVILIVGPGDSGADELVRAFKIIYSEAFKEEECKKFQATAYADAMAALTQIIRAMQILNIPPSRPEALELMQRHDQQSSTSLPNTMPPQLAEIMKRLEQSNGVQQCRNEKHKTLLSDTAEYMLKLLDIMAQPNHIPSMQDVLAARTDDDSVKFIKYVSNNRDHKTFSPNNYPILLLILLLCRKNTHAIIHCVSLSAHDLAPQDNLEYPPMRLAEKHFKQECNSPSTKTVAIFLSLSNAEDHEKLSQRFPSQICHPNDNSTLLHYYDALHHKCDFVRLDNNPQDDVIYVYFTCPQDIDRVKEVSEKQDKDIFLTNTEQNSEEADLFNKLSSSGSTNNQSSLTSNHQRS  0.282051295
+ 2     5    -575.70   -575.70  0.43  0.00   -1166.33   121.61
+total atompair constraints: 81136
+ 3     5    -592.30   -592.30  0.44  0.00   -1168.52   110.95
+designing with this many rotamers  40537
+Instantiating PDInteractionGraph
+monte carlo id for design run 3
+rotamers_exist flag 1
+score vs  best_score -595.112305 -595.112305
+seq 0NMSQVHVLSVGPGNSGSDRMVRAFKIIKSSAFQEQECKKFQATAYADAMAALEQILRAMQILNIPPSLWKALELAQRHDQQSSTSLPNVMPPQLADIMKKLEESNGVRQCRNERHKTRVPNSARSFLERLDEMAKPDHIPSRQDVLDTQTDDDSVKFIRYVANNLIFETYSPSNYPIPLEQLLKCKKNTHAVQHCVSLSSHDNAPDDNLEYPDMRLAIKLFKEICNDDSFKTVLIVLLLSNAREFYEEIIYFPLQICFPTTNLLLLPFYAAEFIRCEFMSEDNNPQDDEIKVYFTCPSDLDRVKEVAEKIFKDIIETNTEQNSERADLFNKVSSSGPQNNHSSLTSNHQQY  0.273504287
+ 4     6    -595.11   -595.11  0.44  0.00   -1184.22   115.85
+ 5     6    -596.67   -596.67  0.44  0.00   -1185.15   114.84
+designing with this many rotamers  40535
+Instantiating PDInteractionGraph
+monte carlo id for design run 0
+rotamers_exist flag 0
+score vs  best_score -587.491882 -596.665833
+seq 0NMSQVHVLSVGPGNSGSDRMVRAFKIIKSSAFQEQECKKFQATAYADAMAALEQILRAMQILNIPPSLWKALELAQRHDQQSSTSLPNVMPPQLADIMKKLEESNGVRQCRNERHKTRVPNSARSFLERLDEMAKPDHIPSRQDVLDTQTDDDSVKFIRYVANNLIFETYSPSNYPIPLEQLLKCKKNTHAVQHCVSLSSHDNAPDDNLEYPDMRLAIKLFKEICNDDSFKTVLIVLLLSNAREFYEEIIYFPLQICFPTTNLLLLPFYAAEFIRCEFMSEDNNPQDDEIKVYFTCPSDLDRVKEVAEKIFKDIIETNTEQNSERADLFNKVSSSGPQNNHSSLTSNHQQY  0.273504287
+ 6     6    -596.67   -596.67  0.44  0.00   -1185.15   114.84
+ 7     6    -596.67   -596.67  0.44  0.00   -1185.16   114.85
+designing with this many rotamers  40563
+Instantiating PDInteractionGraph
+monte carlo id for design run 3
+rotamers_exist flag 1
+score vs  best_score -601.020996 -601.020996
+seq 0NMSEVHVLSVGPGNSGSNRLVRAFIIIKSNAFQEQKCKNFQATAYADAMAALKQIIDAMQILNIPPARPEALELMDRHKQLSSTSLPNVMPPQLADVMKKLAEENGVRKCENLHHLTLIPDHARDFLRKLDEMAQPNHIPSREDVLHTSTDDDSIKFVKYVANNLKFHTYSTNNYPILLEILLKCRKNTHAVVHCVSLSAHDFAPQDNLEYPPMHLAEKHFKEECNDDSHETVLIVLILSNAQEHENESITHPSRICHPWDDSTLLHFYDAEHHRCDFMRLDNNPQKDEIKVYFSCPSDLRRVKEDAEKIFKDIFLTNTEQNSKQADLHNKLSSSGPTNNHSSLTSNHQQY  0.253561258
+ 8     7    -601.02   -601.02  0.44  0.00   -1195.04   109.71
+ 9     7    -602.41   -602.41  0.43  0.00   -1194.76   109.09
+FINAL:
+jk nlowacc   score    low_sc st_rms   low_rms    atr    rep
+-1     7    -648.26   -648.26  0.43  0.00   -1194.76   109.09
+seq 0NMSEVHVLSVGPGNSGSNRLVRAFIIIKSNAFQEQKCKNFQATAYADAMAALKQIIDAMQILNIPPARPEALELMDRHKQLSSTSLPNVMPPQLADVMKKLAEENGVRKCENLHHLTLIPDHARDFLRKLDEMAQPNHIPSREDVLHTSTDDDSIKFVKYVANNLKFHTYSTNNYPILLEILLKCRKNTHAVVHCVSLSAHDFAPQDNLEYPPMHLAEKHFKEECNDDSHETVLIVLILSNAQEHENESITHPSRICHPWDDSTLLHFYDAEHHRCDFMRLDNNPQKDEIKVYFSCPSDLRRVKEDAEKIFKDIFLTNTEQNSKQADLHNKLSSSGPTNNHSSLTSNHQQY  0.253561258
+wobblemin    trials:    325 accepts:    325 %: 100.00 e/trial: -30.95252
+shearmin     trials:    325 accepts:    325 %: 100.00 e/trial: -31.31552
+smallmin     trials:    325 accepts:    323 %:  99.38 e/trial: -29.99579
+unknown      trials:     52 accepts:     30 %:  57.69 e/trial: -325.65967
+writing pdb file: ./aag000_0013.m_0001.pdb
+WARNING: ###calc_docking_frac_native_contact###
+No native exists or no contacts in the native structure
+fraction of native contacts will not be evaluated!!!
+WARNING: ###calc_docking_interf_rmsd###
+No native exists !!!
+docking_interf_rmsd will not be evaluated!!!
+reading starting structure: ./aag000_0014.m.pdb
+Filling missing atoms
+optimizing missing atoms
+Instantiating PDInteractionGraph
+optimizing hydrogen positions
+Instantiating PDInteractionGraph
+secondary structure defined, not reading dssp file
+Docking partners detected: Residues
+ 1- 320
+ 321- 351
+----------------------------------------------
+
+Docking partners: Residues
+1-320
+321-351
+
+Centroids:
+(    19.594,     6.052,    17.291)
+(    16.437,     7.666,    30.088)
+
+Centroid bond:
+(     3.157,    -1.614,   -12.797)
+
+Docking basis vectors:
+(     0.238,    -0.122,    -0.964)
+(     0.971,     0.030,     0.236)
+(     0.000,    -0.992,     0.125)
+Contact point:
+(    18.016,     6.859,    23.690)
+
+----------------------------------------------
+loading docking site constraints from ./g000.cst
+loading 0 docking site constraints
+
+Docking constraints:
+
+site constraint filter set to 9999
+
+File: ./g000.dst not found
+Running without dist constraints
+PACKNG: deleting curent protein_sasa oject
+[T/F  OPT]Default FALSE value for [-packing_heavy_atoms_only]
+WARNING: ###calc_docking_frac_native_contact###
+No native exists or no contacts in the native structure
+fraction of native contacts will not be evaluated!!!
+WARNING: ###calc_docking_interf_rmsd###
+No native exists !!!
+docking_interf_rmsd will not be evaluated!!!
+[T/F  OPT]Default FALSE value for [-output_input_pdb]
+NEXT STRUCTURE: ./aag000_0014.m_0001.pdb
+
+Start of design structure
+
+initializing full atom coordinates
+total_domains 2
+setting up the tail
+ 342 to  351
+starting centroid relax...
+ 1     0      12.04      1.14  0.13  0.00   -1291.33   874.09
+ 2     0      99.35      1.14  0.40  0.00   -1303.50  6513.76
+ 3     0      62.04      1.14  0.43  0.00   -1296.27  4181.12
+ 4     0      74.73      1.14  0.41  0.00   -1294.96  4693.94
+ 5     0      47.61      1.14  0.40  0.00   -1290.96  1919.53
+ 6     0      45.02      1.14  0.44  0.00   -1288.67  1914.83
+ 7     1       0.99      0.99  0.54  0.00   -1282.01   272.45
+ 8     4       0.95      0.95  0.45  0.00   -1280.77   194.88
+ 9     7       0.95      0.95  0.49  0.00   -1279.66   193.64
+10    10       0.95      0.95  0.49  0.00   -1279.94   206.95
+11    13       0.95      0.95  0.45  0.00   -1280.79   564.25
+12    16       0.95      0.95  0.62  0.00   -1280.61   188.49
+13    19       0.95      0.95  0.66  0.00   -1280.47   743.97
+14    22       0.95      0.95  0.62  0.00   -1278.99   650.73
+15    25       0.95      0.95  0.63  0.00   -1278.31   650.67
+16    28       0.95      0.95  0.54  0.00   -1278.43   592.17
+17    30       1.24      0.95  0.68  0.00   -1281.45   753.10
+18    30      12.50      0.95  0.59  0.00   -1283.15  1300.50
+19    30       7.99      0.95  0.67  0.00   -1282.21  1222.92
+20    30      12.67      0.95  0.95  0.00   -1282.64  2118.30
+21    30      10.71      0.95  0.79  0.00   -1282.65  1426.30
+22    30       0.95      0.95  1.08  0.00   -1282.56  1222.34
+23    30       1.19      0.95  1.13  0.00   -1281.78   807.29
+24    30       1.33      0.95  1.09  0.00   -1283.09   803.63
+25    30       3.97      0.95  1.13  0.00   -1285.54   721.07
+jk nlowacc   score    low_sc st_rms   low_rms    atr    rep
+-2    30     442.09    442.09  0.74  0.00   -1278.40   729.34
+ Protein Complex defined as Residues  1- 320 and  321- 351
+jk nlowacc   score    low_sc st_rms   low_rms    atr    rep
+-1    30     442.09    442.09  0.74  0.00   -1278.40   729.34
+designing with this many rotamers  40575
+Instantiating PDInteractionGraph
+monte carlo id for design run 3
+rotamers_exist flag 0
+score vs  best_score -584.674805 -584.674805
+seq 0NMSYVFVLIMGPGNSGADEMVRAYIMIFSNAFQEQKCKNFQAMDYADTARAMKQIIEAMQQLNIPPSLWKAQQLQQRHEQALNTSLPNTMPPELAEIIKRLEESNGARKCRDLEHLTLIPNSARDHLEELDEHAQPNHIPTRRHVLDAQTDDDSIKFVLYVANNLIFITLSTNNYPILVYILLQCKKNTQAVQFCVSLSAHDLAPQDNLEYPPMRLAQKLAKEICNDDSFKTVLIVILLSNKEEHERKIQQFPPRICDPSDDSSTNHDDAADKLRCEFMSLDNNPQDLELKVYFTCPQDKDRVKEVAEKIIKDIFLTNTEQNQERADLHNKVSSSGPTNNHDSDFTDDLTL  0.267806262
+ 2    31    -584.67   -584.67  0.74  0.00   -1173.06   118.21
+total atompair constraints: 80336
+ 3    31    -710.88   -710.88  0.78  0.00   -1211.40    69.36
+designing with this many rotamers  40667
+Instantiating PDInteractionGraph
+monte carlo id for design run 3
+rotamers_exist flag 1
+score vs  best_score -716.808411 -716.808411
+seq 0NMSYVFVLIMGPGNSGADEMVRAYIMIFSNAFQEQKCKKFQAMDYADTMRAAKQIIEAMQQLNIPPSRPDVLELMQRHEYFARISLPNYMPPELAEVIKRIERSNGVRKCRELEHLTWIPNSARDHLRELDEHAQPYHIPTRRHVADALTDDDSIKFVQYVANNLIFLTYSTNRYPILLLILLLCKFNTKAVQFCVSLSAHDFAPADNLEYPPMRLAKKLFKEICNEPNFETVLIVLLLSNKEEHERKIQTHPPRICDPSDDSSTSHKDSALHIKCDFRRLDNNPQQLELKVYFVCPQDKDRVKEVAEKIIKDIFLTNTEQNSERADLHNKVSSSGPQNNHDMDFTDDKTL  0.270655274
+ 4    32    -716.81   -716.81  0.78  0.00   -1236.94    79.61
+ 5    32    -720.97   -720.97  0.78  0.00   -1236.10    75.57
+designing with this many rotamers  40410
+Instantiating PDInteractionGraph
+monte carlo id for design run 0
+rotamers_exist flag 0
+score vs  best_score -677.988159 -720.971497
+seq 0NMSYVFVLIMGPGNSGADEMVRAYIMIFSNAFQEQKCKKFQAMDYADTMRAAKQIIEAMQQLNIPPSRPDVLELMQRHEYFARISLPNYMPPELAEVIKRIERSNGVRKCRELEHLTWIPNSARDHLRELDEHAQPYHIPTRRHVADALTDDDSIKFVQYVANNLIFLTYSTNRYPILLLILLLCKFNTKAVQFCVSLSAHDFAPADNLEYPPMRLAKKLFKEICNEPNFETVLIVLLLSNKEEHERKIQTHPPRICDPSDDSSTSHKDSALHIKCDFRRLDNNPQQLELKVYFVCPQDKDRVKEVAEKIIKDIFLTNTEQNSERADLHNKVSSSGPQNNHDMDFTDDKTL  0.270655274
+ 6    32    -720.97   -720.97  0.78  0.00   -1236.10    75.57
+ 7    32    -724.63   -724.63  0.78  0.00   -1237.12    73.97
+designing with this many rotamers  40643
+Instantiating PDInteractionGraph
+monte carlo id for design run 0
+rotamers_exist flag 1
+score vs  best_score -719.517212 -724.630127
+seq 0NMSYVFVLIMGPGNSGADEMVRAYIMIFSNAFQEQKCKKFQAMDYADTMRAAKQIIEAMQQLNIPPSRPDVLELMQRHEYFARISLPNYMPPELAEVIKRIERSNGVRKCRELEHLTWIPNSARDHLRELDEHAQPYHIPTRRHVADALTDDDSIKFVQYVANNLIFLTYSTNRYPILLLILLLCKFNTKAVQFCVSLSAHDFAPADNLEYPPMRLAKKLFKEICNEPNFETVLIVLLLSNKEEHERKIQTHPPRICDPSDDSSTSHKDSALHIKCDFRRLDNNPQQLELKVYFVCPQDKDRVKEVAEKIIKDIFLTNTEQNSERADLHNKVSSSGPQNNHDMDFTDDKTL  0.270655274
+ 8    32    -724.63   -724.63  0.78  0.00   -1237.12    73.97
+ 9    32    -724.63   -724.63  0.78  0.00   -1237.13    73.98
+FINAL:
+jk nlowacc   score    low_sc st_rms   low_rms    atr    rep
+-1    32    -770.48   -770.48  0.78  0.00   -1237.13    73.98
+seq 0NMSYVFVLIMGPGNSGADEMVRAYIMIFSNAFQEQKCKKFQAMDYADTMRAAKQIIEAMQQLNIPPSRPDVLELMQRHEYFARISLPNYMPPELAEVIKRIERSNGVRKCRELEHLTWIPNSARDHLRELDEHAQPYHIPTRRHVADALTDDDSIKFVQYVANNLIFLTYSTNRYPILLLILLLCKFNTKAVQFCVSLSAHDFAPADNLEYPPMRLAKKLFKEICNEPNFETVLIVLLLSNKEEHERKIQTHPPRICDPSDDSSTSHKDSALHIKCDFRRLDNNPQQLELKVYFVCPQDKDRVKEVAEKIIKDIFLTNTEQNSERADLHNKVSSSGPQNNHDMDFTDDKTL  0.270655274
+shearmin     trials:    350 accepts:    350 %: 100.00 e/trial: -30.12215
+wobblemin    trials:    350 accepts:    349 %:  99.71 e/trial: -29.71658
+smallmin     trials:    350 accepts:    348 %:  99.43 e/trial: -28.90197
+unknown      trials:     56 accepts:     32 %:  57.14 e/trial: -320.83926
+writing pdb file: ./aag000_0014.m_0001.pdb
+WARNING: ###calc_docking_frac_native_contact###
+No native exists or no contacts in the native structure
+fraction of native contacts will not be evaluated!!!
+WARNING: ###calc_docking_interf_rmsd###
+No native exists !!!
+docking_interf_rmsd will not be evaluated!!!
+reading starting structure: ./aag000_0015.m.pdb
+Filling missing atoms
+optimizing missing atoms
+Instantiating PDInteractionGraph
+optimizing hydrogen positions
+Instantiating PDInteractionGraph
+secondary structure defined, not reading dssp file
+Docking partners detected: Residues
+ 1- 320
+ 321- 351
+----------------------------------------------
+
+Docking partners: Residues
+1-320
+321-351
+
+Centroids:
+(    19.594,     6.052,    17.291)
+(    16.296,     7.602,    29.896)
+
+Centroid bond:
+(     3.297,    -1.550,   -12.605)
+
+Docking basis vectors:
+(     0.251,    -0.118,    -0.961)
+(     0.968,     0.031,     0.249)
+(     0.000,    -0.993,     0.122)
+Contact point:
+(    17.945,     6.827,    23.594)
+
+----------------------------------------------
+loading docking site constraints from ./g000.cst
+loading 0 docking site constraints
+
+Docking constraints:
+
+site constraint filter set to 9999
+
+File: ./g000.dst not found
+Running without dist constraints
+PACKNG: deleting curent protein_sasa oject
+[T/F  OPT]Default FALSE value for [-packing_heavy_atoms_only]
+WARNING: ###calc_docking_frac_native_contact###
+No native exists or no contacts in the native structure
+fraction of native contacts will not be evaluated!!!
+WARNING: ###calc_docking_interf_rmsd###
+No native exists !!!
+docking_interf_rmsd will not be evaluated!!!
+[T/F  OPT]Default FALSE value for [-output_input_pdb]
+NEXT STRUCTURE: ./aag000_0015.m_0001.pdb
+
+Start of design structure
+
+initializing full atom coordinates
+total_domains 2
+setting up the tail
+ 342 to  351
+starting centroid relax...
+ 1     2       1.15      0.95  0.34  0.00   -1280.17   839.05
+ 2     2       1.09      0.95  0.54  0.00   -1279.19   734.72
+ 3     2       2.12      0.95  0.68  0.00   -1278.13   892.31
+ 4     2       1.06      0.95  0.54  0.00   -1278.00   788.10
+ 5     2       1.24      0.95  0.62  0.00   -1277.45   825.05
+ 6     2       1.36      0.95  0.74  0.00   -1277.80   929.59
+ 7     2       1.74      0.95  0.95  0.00   -1277.35   933.60
+ 8     2       1.21      0.95  0.89  0.00   -1277.14   719.61
+ 9     2       1.15      0.95  0.67  0.00   -1277.30   627.95
+10     2       1.01      0.95  0.55  0.00   -1279.23   530.24
+11     3       0.95      0.95  0.54  0.00   -1280.25   367.07
+12     5       1.02      0.95  0.74  0.00   -1275.68   514.09
+13     5       0.99      0.95  0.59  0.00   -1279.23   630.80
+14     8       0.95      0.95  0.58  0.00   -1277.83   562.21
+15     9       0.95      0.95  0.38  0.00   -1283.83  2372.59
+16    11       0.95      0.95  0.45  0.00   -1281.53  1492.84
+17    11       1.10      0.95  0.57  0.00   -1276.67   864.51
+18    11       1.02      0.95  0.66  0.00   -1275.27   599.62
+19    14       0.95      0.95  0.89  0.00   -1273.59   505.61
+20    17       0.95      0.95  0.99  0.00   -1273.40   428.54
+21    20       0.95      0.95  0.90  0.00   -1279.57   426.63
+22    20       4.48      0.95  0.89  0.00   -1282.52  4558.47
+23    20       3.85      0.95  1.01  0.00   -1285.52  4814.45
+24    20       6.58      0.95  1.22  0.00   -1290.77  3638.55
+25    20       7.08      0.95  1.38  0.00   -1290.22  1363.21
+jk nlowacc   score    low_sc st_rms   low_rms    atr    rep
+-2    20     146.22    146.22  0.90  0.00   -1279.56   426.63
+ Protein Complex defined as Residues  1- 320 and  321- 351
+jk nlowacc   score    low_sc st_rms   low_rms    atr    rep
+-1    20     146.22    146.22  0.90  0.00   -1279.56   426.63
+designing with this many rotamers  40641
+Instantiating PDInteractionGraph
+monte carlo id for design run 3
+rotamers_exist flag 0
+score vs  best_score -575.456421 -575.456421
+seq 0NMSEVVVLIVGPGNSGAQRLVRAFIIIYSNAFQEQKCKNFQAFAYADLANAVLQVLKAMQELNIPPSLWKALELAQRAQQAINTSLPNTMPPKLAEILERLVQSNGALQCMNEKEKTLIPSSAEDFEKNITIMAQPNHIPSRLDVLLTQTDDDSTKFVKYVANNLDFKTFSPNNYPEKKELLDKCKKNTHAVIHCVSLSAHDLQPQDNLEKPPMKLAEKLFKQICNDDSFRTVLIVLALTNAQEFAQEAITHPLRICHPWDDSTLTTYENARHLRCEFMSLDNNPQEDEIKVYFMCPSDIDRVKEVSEKIIKDIFLTNTENNSDQAKLFNLVSSSGPTNNHSSNSNVQTNT  0.259259254
+ 2    21    -575.46   -575.46  0.90  0.00   -1152.56   116.50
+total atompair constraints: 80720
+ 3    21    -675.53   -675.53  0.93  0.00   -1182.86    75.77
+designing with this many rotamers  40708
+Instantiating PDInteractionGraph
+monte carlo id for design run 3
+rotamers_exist flag 1
+score vs  best_score -675.591064 -675.591064
+seq 0NMSKVVVLIVGPGNSGAQRLVRAFIIIYSEAFQEERCKKYQAFAYADLANAVLQVLKAMQELNIPPSRPEELQFAQWAQQQINTSLPNYMPPQLAEILKRLVESNGALQCMNEKEKTLIPSSAEEFERNIDDMAQPYYIPSRRTVLLALTDDDSIKFVKYVANNLDFHTYSPNRYPMPPEQLDKCKDNTHAVIHCVSLSSHDLQPLPNLEKPPFWLAMKLFKEICNDDSFETVLIVLSLSNKEEAERDHQRHPSQICDPSDTSSLSADDDKQQFECIARSLDNNPQKDEIKVYFTCPRDIDRVKEVSEKIIKDIFLTNTEQNQEQALLFNLVSSSGPTNNHARTTNVQTNQ  0.253561258
+ 4    22    -675.59   -675.59  0.94  0.00   -1190.81    81.54
+ 5    22    -692.02   -692.02  0.93  0.00   -1196.05    76.14
+designing with this many rotamers  40548
+Instantiating PDInteractionGraph
+monte carlo id for design run 0
+rotamers_exist flag 0
+score vs  best_score -656.057068 -692.022827
+seq 0NMSKVVVLIVGPGNSGAQRLVRAFIIIYSEAFQEERCKKYQAFAYADLANAVLQVLKAMQELNIPPSRPEELQFAQWAQQQINTSLPNYMPPQLAEILKRLVESNGALQCMNEKEKTLIPSSAEEFERNIDDMAQPYYIPSRRTVLLALTDDDSIKFVKYVANNLDFHTYSPNRYPMPPEQLDKCKDNTHAVIHCVSLSSHDLQPLPNLEKPPFWLAMKLFKEICNDDSFETVLIVLSLSNKEEAERDHQRHPSQICDPSDTSSLSADDDKQQFECIARSLDNNPQKDEIKVYFTCPRDIDRVKEVSEKIIKDIFLTNTEQNQEQALLFNLVSSSGPTNNHARTTNVQTNQ  0.253561258
+ 6    22    -692.02   -692.02  0.93  0.00   -1196.05    76.14
+ 7    22    -692.02   -692.02  0.93  0.00   -1196.06    76.14
+designing with this many rotamers  40730
+Instantiating PDInteractionGraph
+monte carlo id for design run 0
+rotamers_exist flag 1
+score vs  best_score -687.754456 -692.0224
+seq 0NMSKVVVLIVGPGNSGAQRLVRAFIIIYSEAFQEERCKKYQAFAYADLANAVLQVLKAMQELNIPPSRPEELQFAQWAQQQINTSLPNYMPPQLAEILKRLVESNGALQCMNEKEKTLIPSSAEEFERNIDDMAQPYYIPSRRTVLLALTDDDSIKFVKYVANNLDFHTYSPNRYPMPPEQLDKCKDNTHAVIHCVSLSSHDLQPLPNLEKPPFWLAMKLFKEICNDDSFETVLIVLSLSNKEEAERDHQRHPSQICDPSDTSSLSADDDKQQFECIARSLDNNPQKDEIKVYFTCPRDIDRVKEVSEKIIKDIFLTNTEQNQEQALLFNLVSSSGPTNNHARTTNVQTNQ  0.253561258
+ 8    22    -692.02   -692.02  0.93  0.00   -1196.06    76.14
+ 9    22    -692.02   -692.02  0.93  0.00   -1196.06    76.14
+FINAL:
+jk nlowacc   score    low_sc st_rms   low_rms    atr    rep
+-1    22    -737.87   -737.87  0.93  0.00   -1196.06    76.14
+seq 0NMSKVVVLIVGPGNSGAQRLVRAFIIIYSEAFQEERCKKYQAFAYADLANAVLQVLKAMQELNIPPSRPEELQFAQWAQQQINTSLPNYMPPQLAEILKRLVESNGALQCMNEKEKTLIPSSAEEFERNIDDMAQPYYIPSRRTVLLALTDDDSIKFVKYVANNLDFHTYSPNRYPMPPEQLDKCKDNTHAVIHCVSLSSHDLQPLPNLEKPPFWLAMKLFKEICNDDSFETVLIVLSLSNKEEAERDHQRHPSQICDPSDTSSLSADDDKQQFECIARSLDNNPQKDEIKVYFTCPRDIDRVKEVSEKIIKDIFLTNTEQNQEQALLFNLVSSSGPTNNHARTTNVQTNQ  0.253561258
+shearmin     trials:    375 accepts:    375 %: 100.00 e/trial: -28.29657
+wobblemin    trials:    375 accepts:    374 %:  99.73 e/trial: -27.91443
+smallmin     trials:    375 accepts:    373 %:  99.47 e/trial: -27.07619
+unknown      trials:     60 accepts:     34 %:  56.67 e/trial: -311.47906
+writing pdb file: ./aag000_0015.m_0001.pdb
+WARNING: ###calc_docking_frac_native_contact###
+No native exists or no contacts in the native structure
+fraction of native contacts will not be evaluated!!!
+WARNING: ###calc_docking_interf_rmsd###
+No native exists !!!
+docking_interf_rmsd will not be evaluated!!!
+reading starting structure: ./aag000_0016.m.pdb
+Filling missing atoms
+optimizing missing atoms
+Instantiating PDInteractionGraph
+optimizing hydrogen positions
+Instantiating PDInteractionGraph
+secondary structure defined, not reading dssp file
+Docking partners detected: Residues
+ 1- 320
+ 321- 351
+----------------------------------------------
+
+Docking partners: Residues
+1-320
+321-351
+
+Centroids:
+(    19.594,     6.052,    17.291)
+(    16.302,     7.326,    30.050)
+
+Centroid bond:
+(     3.292,    -1.274,   -12.759)
+
+Docking basis vectors:
+(     0.249,    -0.096,    -0.964)
+(     0.969,     0.025,     0.247)
+(     0.000,    -0.995,     0.099)
+Contact point:
+(    17.948,     6.689,    23.671)
+
+----------------------------------------------
+loading docking site constraints from ./g000.cst
+loading 0 docking site constraints
+
+Docking constraints:
+
+site constraint filter set to 9999
+
+File: ./g000.dst not found
+Running without dist constraints
+PACKNG: deleting curent protein_sasa oject
+[T/F  OPT]Default FALSE value for [-packing_heavy_atoms_only]
+WARNING: ###calc_docking_frac_native_contact###
+No native exists or no contacts in the native structure
+fraction of native contacts will not be evaluated!!!
+WARNING: ###calc_docking_interf_rmsd###
+No native exists !!!
+docking_interf_rmsd will not be evaluated!!!
+[T/F  OPT]Default FALSE value for [-output_input_pdb]
+NEXT STRUCTURE: ./aag000_0016.m_0001.pdb
+
+Start of design structure
+
+initializing full atom coordinates
+total_domains 2
+setting up the tail
+ 342 to  351
+starting centroid relax...
+ 1     0      20.19      1.19  0.40  0.00   -1293.11  2678.71
+ 2     0      31.21      1.19  0.39  0.00   -1295.87  4039.11
+ 3     0     101.79      1.19  0.55  0.00   -1306.53  9233.21
+ 4     0      52.87      1.19  0.56  0.00   -1296.93  6045.42
+ 5     0     128.56      1.19  0.51  0.00   -1305.09  11952.99
+ 6     0      68.48      1.19  0.55  0.00   -1304.21  6941.22
+ 7     0      23.71      1.19  0.39  0.00   -1298.22  3886.92
+ 8     0      30.45      1.19  0.49  0.00   -1300.38  5404.94
+ 9     0      14.86      1.19  0.65  0.00   -1294.25  3499.48
+10     0       2.57      1.19  0.60  0.00   -1291.30  1331.83
+11     0       1.76      1.19  0.74  0.00   -1287.78   846.74
+12     1       0.98      0.95  0.82  0.00   -1286.55   707.28
+13     4       0.95      0.95  0.95  0.00   -1282.55   204.97
+14     6       0.96      0.95  1.03  0.00   -1283.48   216.96
+15     6      13.40      0.95  0.85  0.00   -1289.04  1575.64
+16     6      23.01      0.95  0.95  0.00   -1289.67  2825.78
+17     6       8.92      0.95  0.87  0.00   -1286.82  2298.41
+18     6      20.75      0.95  0.84  0.00   -1286.60  2182.37
+19     6       3.70      0.95  0.62  0.00   -1288.11   855.17
+20     6       1.13      0.95  0.81  0.00   -1281.97   194.80
+21     6       1.27      0.95  0.72  0.00   -1281.85   195.58
+22     6      32.65      0.95  0.72  0.00   -1291.13  4880.54
+23     6      55.08      0.95  0.87  0.00   -1292.10  4108.74
+24     6      58.82      0.95  0.88  0.00   -1292.36  4004.76
+25     6      71.79      0.95  0.92  0.00   -1299.44  7422.27
+jk nlowacc   score    low_sc st_rms   low_rms    atr    rep
+-2     6     -88.78    -88.78  0.95  0.00   -1282.26   200.34
+ Protein Complex defined as Residues  1- 320 and  321- 351
+jk nlowacc   score    low_sc st_rms   low_rms    atr    rep
+-1     6     -88.78    -88.78  0.95  0.00   -1282.26   200.34
+designing with this many rotamers  40637
+Instantiating PDInteractionGraph
+monte carlo id for design run 3
+rotamers_exist flag 0
+score vs  best_score -577.144409 -577.144409
+seq 0NMSEVVVLIMGPGNSGANRLVRAFIIIFSLAFYEQRCKNFRAMTLADMLNAAWQIIKAMQELNIPPSKPQALELMQRHQVFANTSLPNVIPPELALVVKLLEESNGVRKCRDLRHLTLVPDTAEDFLKNLDQIAQPNHIPSMLDVLLTLTDDDSVKFVKYVAQNLDFKTFSPNNYPILREILEKCKKNTHAVIFCVSLSSSDLAPQKFLQYPPMRLAEFLAKQICNDDSFRTVLIVIALTDAQQFAQLAIYFDSRICHPHDTSSNSTKDNAQHLRCEFESLDNNPQELELKVYFMCPSDIRRVKEVAEKIIKDIIETNTEKNEEQAELFNRVSSSGPTANHDLSAQEKDRN  0.284900278
+ 2     7    -577.14   -577.14  0.95  0.00   -1160.66   116.82
+total atompair constraints: 80528
+ 3     7    -642.18   -642.18  0.96  0.00   -1185.69    90.88
+designing with this many rotamers  40501
+Instantiating PDInteractionGraph
+monte carlo id for design run 3
+rotamers_exist flag 1
+score vs  best_score -646.183472 -646.183472
+seq 0NMSEVIILIMGPGNSGANRLVRAFIIIYSEAFYEQRCKKFRAMLLADMLNALWQIIKAMQELNIPPSIDQALELMQRAQVFANTSPPNYIPPELAEVVKRLERSNGVRKCRDLRHLTWVPDTAEDFLKNLDQIAKPNHIPSMLDVLLTLTDDDSVKFVKYVANNLDFKTFSPNNYPILKEILDKCKKNTHAVIFCVSLSAHDFAPADNLQYPPMRLAEELAREICNDDSFKTVVIVIILSDAQQHAQESIYFPLRICHPHDDSTLLPYYDMLHLACEFASLDNNPQDLVLFIYFACPSDIDRVKEVSEKIIKAIFLANNESNEERMRKFNRVSSSGPTANHDLSKDEKDRN  0.259259254
+ 4     8    -646.18   -646.18  0.96  0.00   -1209.18    97.49
+ 5     8    -646.71   -646.71  0.96  0.00   -1209.39    96.92
+designing with this many rotamers  40345
+Instantiating PDInteractionGraph
+monte carlo id for design run 0
+rotamers_exist flag 0
+score vs  best_score -629.623718 -646.708618
+seq 0NMSEVIILIMGPGNSGANRLVRAFIIIYSEAFYEQRCKKFRAMLLADMLNALWQIIKAMQELNIPPSIDQALELMQRAQVFANTSPPNYIPPELAEVVKRLERSNGVRKCRDLRHLTWVPDTAEDFLKNLDQIAKPNHIPSMLDVLLTLTDDDSVKFVKYVANNLDFKTFSPNNYPILKEILDKCKKNTHAVIFCVSLSAHDFAPADNLQYPPMRLAEELAREICNDDSFKTVVIVIILSDAQQHAQESIYFPLRICHPHDDSTLLPYYDMLHLACEFASLDNNPQDLVLFIYFACPSDIDRVKEVSEKIIKAIFLANNESNEERMRKFNRVSSSGPTANHDLSKDEKDRN  0.259259254
+ 6     8    -646.71   -646.71  0.96  0.00   -1209.39    96.92
+ 7     8    -646.71   -646.71  0.96  0.00   -1209.39    96.92
+designing with this many rotamers  40453
+Instantiating PDInteractionGraph
+monte carlo id for design run 0
+rotamers_exist flag 1
+score vs  best_score -642.356628 -646.706665
+seq 0NMSEVIILIMGPGNSGANRLVRAFIIIYSEAFYEQRCKKFRAMLLADMLNALWQIIKAMQELNIPPSIDQALELMQRAQVFANTSPPNYIPPELAEVVKRLERSNGVRKCRDLRHLTWVPDTAEDFLKNLDQIAKPNHIPSMLDVLLTLTDDDSVKFVKYVANNLDFKTFSPNNYPILKEILDKCKKNTHAVIFCVSLSAHDFAPADNLQYPPMRLAEELAREICNDDSFKTVVIVIILSDAQQHAQESIYFPLRICHPHDDSTLLPYYDMLHLACEFASLDNNPQDLVLFIYFACPSDIDRVKEVSEKIIKAIFLANNESNEERMRKFNRVSSSGPTANHDLSKDEKDRN  0.259259254
+ 8     8    -646.71   -646.71  0.96  0.00   -1209.39    96.92
+ 9     8    -653.05   -653.05  0.97  0.00   -1210.26    94.02
+FINAL:
+jk nlowacc   score    low_sc st_rms   low_rms    atr    rep
+-1     8    -698.90   -698.90  0.97  0.00   -1210.26    94.02
+seq 0NMSEVIILIMGPGNSGANRLVRAFIIIYSEAFYEQRCKKFRAMLLADMLNALWQIIKAMQELNIPPSIDQALELMQRAQVFANTSPPNYIPPELAEVVKRLERSNGVRKCRDLRHLTWVPDTAEDFLKNLDQIAKPNHIPSMLDVLLTLTDDDSVKFVKYVANNLDFKTFSPNNYPILKEILDKCKKNTHAVIFCVSLSAHDFAPADNLQYPPMRLAEELAREICNDDSFKTVVIVIILSDAQQHAQESIYFPLRICHPHDDSTLLPYYDMLHLACEFASLDNNPQDLVLFIYFACPSDIDRVKEVSEKIIKAIFLANNESNEERMRKFNRVSSSGPTANHDLSKDEKDRN  0.259259254
+shearmin     trials:    400 accepts:    400 %: 100.00 e/trial: -28.27190
+wobblemin    trials:    400 accepts:    399 %:  99.75 e/trial: -27.97317
+smallmin     trials:    400 accepts:    398 %:  99.50 e/trial: -26.96707
+unknown      trials:     64 accepts:     36 %:  56.25 e/trial: -299.70493
+writing pdb file: ./aag000_0016.m_0001.pdb
+WARNING: ###calc_docking_frac_native_contact###
+No native exists or no contacts in the native structure
+fraction of native contacts will not be evaluated!!!
+WARNING: ###calc_docking_interf_rmsd###
+No native exists !!!
+docking_interf_rmsd will not be evaluated!!!
+reading starting structure: ./aag000_0017.m.pdb
+Filling missing atoms
+optimizing missing atoms
+Instantiating PDInteractionGraph
+optimizing hydrogen positions
+Instantiating PDInteractionGraph
+secondary structure defined, not reading dssp file
+Docking partners detected: Residues
+ 1- 320
+ 321- 351
+----------------------------------------------
+
+Docking partners: Residues
+1-320
+321-351
+
+Centroids:
+(    19.594,     6.052,    17.291)
+(    16.579,     8.091,    29.692)
+
+Centroid bond:
+(     3.014,    -2.039,   -12.401)
+
+Docking basis vectors:
+(     0.233,    -0.158,    -0.960)
+(     0.972,     0.038,     0.230)
+(     0.000,    -0.987,     0.162)
+Contact point:
+(    18.087,     7.072,    23.492)
+
+----------------------------------------------
+loading docking site constraints from ./g000.cst
+loading 0 docking site constraints
+
+Docking constraints:
+
+site constraint filter set to 9999
+
+File: ./g000.dst not found
+Running without dist constraints
+PACKNG: deleting curent protein_sasa oject
+[T/F  OPT]Default FALSE value for [-packing_heavy_atoms_only]
+WARNING: ###calc_docking_frac_native_contact###
+No native exists or no contacts in the native structure
+fraction of native contacts will not be evaluated!!!
+WARNING: ###calc_docking_interf_rmsd###
+No native exists !!!
+docking_interf_rmsd will not be evaluated!!!
+[T/F  OPT]Default FALSE value for [-output_input_pdb]
+NEXT STRUCTURE: ./aag000_0017.m_0001.pdb
+
+Start of design structure
+
+initializing full atom coordinates
+total_domains 2
+setting up the tail
+ 342 to  351
+starting centroid relax...
+ 1     2       1.25      0.97  0.08  0.00   -1291.89   466.77
+ 2     2      22.20      0.97  0.31  0.00   -1292.96  1535.35
+ 3     2       8.69      0.97  0.46  0.00   -1295.56   642.85
+ 4     2      28.66      0.97  0.62  0.00   -1299.84  4347.08
+ 5     2       1.37      0.97  0.58  0.00   -1291.85   277.41
+ 6     3       0.95      0.95  0.64  0.00   -1290.22   350.86
+ 7     6       0.95      0.95  0.66  0.00   -1291.13   452.87
+ 8     9       0.95      0.95  0.60  0.00   -1291.98   236.20
+ 9    12       0.95      0.95  0.61  0.00   -1294.15   908.84
+10    15       0.95      0.95  0.65  0.00   -1291.45  1144.43
+11    18       0.95      0.95  0.60  0.00   -1292.19   301.02
+12    21       0.95      0.95  0.61  0.00   -1291.54   293.59
+13    24       0.95      0.95  0.61  0.00   -1290.78   315.07
+14    26       0.95      0.95  0.60  0.00   -1291.38   438.98
+15    29       0.95      0.95  0.62  0.00   -1293.93   582.39
+16    32       0.95      0.95  0.64  0.00   -1291.09   418.17
+17    35       0.95      0.95  0.61  0.00   -1291.89   445.16
+18    38       0.95      0.95  0.60  0.00   -1290.47   302.79
+19    40       0.96      0.95  0.58  0.00   -1290.90   419.78
+20    40       1.89      0.95  0.59  0.00   -1291.82   862.11
+21    40       1.54      0.95  0.65  0.00   -1291.43  1836.86
+22    41       0.95      0.95  0.61  0.00   -1290.54  1008.60
+23    42       0.95      0.95  0.68  0.00   -1289.85   593.66
+24    45       0.95      0.95  0.68  0.00   -1288.54   250.60
+25    48       0.95      0.95  0.62  0.00   -1288.04   378.94
+jk nlowacc   score    low_sc st_rms   low_rms    atr    rep
+-2    48      85.63     85.63  0.62  0.00   -1288.04   378.94
+ Protein Complex defined as Residues  1- 320 and  321- 351
+jk nlowacc   score    low_sc st_rms   low_rms    atr    rep
+-1    48      85.63     85.63  0.62  0.00   -1288.04   378.94
+designing with this many rotamers  40456
+Instantiating PDInteractionGraph
+monte carlo id for design run 3
+rotamers_exist flag 0
+score vs  best_score -580.989441 -580.989441
+seq 0NMSYVFELIVGPGNSGADTLVRAHKIIFSSAFSEDDCKNFQAYLYADAVAALLQILRAMQILNIPPSEPKALELMQRLQQAAKTSLPNTMPPKLAEIMKRLEESNGVRQCRDEKEKTLIPDTAEDFLKELDEAAQPNHIPTMRHVLDTLTDDDSIKRIFYVSNNKIFITLSTNNYPILLEILLKCKKNTQAVHHCVSLSAHDLQPQDNLQYPPMRLAEFHFKEMCNDDSFETVLIVLHLSNKEDHEELSRRFPSQICHPHDNSTLLHYYDELHHECEFRSLDNNPQKDEIKVYSTCPYDIDRVKEVEEKDDKDIEETNTEQNSERAEKHNRLSSSGPTNNHAAQQTYQDDE  0.262108266
+ 2    49    -580.99   -580.99  0.62  0.00   -1204.14   123.81
+total atompair constraints: 81488
+ 3    49    -650.78   -650.78  0.65  0.00   -1225.13    89.28
+designing with this many rotamers  40229
+Instantiating PDInteractionGraph
+monte carlo id for design run 1
+rotamers_exist flag 1
+score vs  best_score -649.899963 -649.899963
+seq 0NVSRVILLAVGPGNSGEDTLVRAAKEIFSSAFSEDDCKNFQAATYADAVAALLQILRAMQILNIPPSLDQALELAQRLQQQAATSPPNYMPPQLAEIMKRLEDSNGVRKCRDLRHLTLIPDTAEDFLRNLEQEAQPYYIPSELTVLLTLTDNDSVKRIEYVANNKDFRLYSPNNYPILVEILLKCKKNTHAVIHCVSLSAHDLAPQDNLEYPPMRLAMKHFKQMCNDDSFETVLIVLILSNKEQAERIHQQFPSRICDPSDDSSLTHDNDADKFRCLFMSLDNNPQKDEIKVYFACPHDKDRVKEVMEKIFKDIEETNTEQNQEQADLFNKLSSSGPTNNHAIQEMLLDAL  0.273504287
+ 4    49    -649.90   -650.78  0.65  0.00   -1198.46    94.82
+======================================================
+======================================================
+DANGER!!!! DANGER!!!! DANGER!!!! DANGER!!!! DANGER!!!!
+======================================================
+======================================================
+pose_minimize:: Big score_delta when turning off the nblist: 1.15015
+This probably means the structure moved too far during
+minimization. If you are minimizing rigid-body translations you
+may need to damp the repulsive initially or change the step-size
+======================================================
+======================================================
+DANGER!!!! DANGER!!!! DANGER!!!! DANGER!!!! DANGER!!!!
+======================================================
+======================================================
+ 5    49    -669.61   -669.61  0.65  0.00   -1208.22    90.76
+designing with this many rotamers  39961
+Instantiating PDInteractionGraph
+monte carlo id for design run 0
+rotamers_exist flag 0
+score vs  best_score -654.703857 -669.606812
+seq 0NVSRVILLAVGPGNSGEDTLVRAAKEIFSSAFSEDDCKNFQAATYADAVAALLQILRAMQILNIPPSLDQALELAQRLQQQAATSPPNYMPPQLAEIMKRLEDSNGVRKCRDLRHLTLIPDTAEDFLRNLEQEAQPYYIPSELTVLLTLTDNDSVKRIEYVANNKDFRLYSPNNYPILVEILLKCKKNTHAVIHCVSLSAHDLAPQDNLEYPPMRLAMKHFKQMCNDDSFETVLIVLILSNKEQAERIHQQFPSRICDPSDDSSLTHDNDADKFRCLFMSLDNNPQKDEIKVYFACPHDKDRVKEVMEKIFKDIEETNTEQNQEQADLFNKLSSSGPTNNHAIQEMLLDAL  0.273504287
+ 6    49    -669.61   -669.61  0.65  0.00   -1208.22    90.76
+ 7    49    -669.60   -669.60  0.65  0.00   -1208.23    90.80
+designing with this many rotamers  40084
+Instantiating PDInteractionGraph
+monte carlo id for design run 1
+rotamers_exist flag 1
+score vs  best_score -668.696655 -668.696655
+seq 0NVSKVVLLAVGPGNSGEDRLVRAAKIIFSSAFSEEDCKKFQAAAYADAIAALLQILRAMQILNIPPSTPQALELAQRLQQQAATSPPNYMPPQLAEIMKRLERSNGVRKCRDLKHLTRIPDTAEDFLRNLEQMAQPYYIPSQLTVLLALTDNDSTKFIKYVANNLDFELYSTNNYPILLEILLKCKKNTHAVLHCVSLSAADFAPSDNLEYPEMRLAEKLFKEICNEPNFETVLIVLLLSDKEDFRELIQQFPPRICKPQDDSNTKAEEAAQDLRCDFESLDNNPQKDEIKVYFTCPSDIRRVKEVMEKIFKDIIETNTERNSERADLHNKVSSSGPTNNHAILEMLLDAL  0.296296299
+ 8    49    -668.70   -669.60  0.65  0.00   -1196.04    92.86
+ 9    49    -673.53   -673.53  0.65  0.00   -1198.44    91.62
+FINAL:
+jk nlowacc   score    low_sc st_rms   low_rms    atr    rep
+-1    49    -719.38   -719.38  0.65  0.00   -1198.44    91.62
+seq 0NVSKVVLLAVGPGNSGEDRLVRAAKIIFSSAFSEEDCKKFQAAAYADAIAALLQILRAMQILNIPPSTPQALELAQRLQQQAATSPPNYMPPQLAEIMKRLERSNGVRKCRDLKHLTRIPDTAEDFLRNLEQMAQPYYIPSQLTVLLALTDNDSTKFIKYVANNLDFELYSTNNYPILLEILLKCKKNTHAVLHCVSLSAADFAPSDNLEYPEMRLAEKLFKEICNEPNFETVLIVLLLSDKEDFRELIQQFPPRICKPQDDSNTKAEEAAQDLRCDFESLDNNPQKDEIKVYFTCPSDIRRVKEVMEKIFKDIIETNTERNSERADLHNKVSSSGPTNNHAILEMLLDAL  0.296296299
+shearmin     trials:    425 accepts:    425 %: 100.00 e/trial: -26.87401
+wobblemin    trials:    425 accepts:    424 %:  99.76 e/trial: -26.62252
+smallmin     trials:    425 accepts:    423 %:  99.53 e/trial: -25.55783
+unknown      trials:     68 accepts:     39 %:  57.35 e/trial: -291.85229
+writing pdb file: ./aag000_0017.m_0001.pdb
+WARNING: ###calc_docking_frac_native_contact###
+No native exists or no contacts in the native structure
+fraction of native contacts will not be evaluated!!!
+WARNING: ###calc_docking_interf_rmsd###
+No native exists !!!
+docking_interf_rmsd will not be evaluated!!!
+reading starting structure: ./aag000_0018.m.pdb
+Filling missing atoms
+optimizing missing atoms
+Instantiating PDInteractionGraph
+optimizing hydrogen positions
+Instantiating PDInteractionGraph
+secondary structure defined, not reading dssp file
+Docking partners detected: Residues
+ 1- 320
+ 321- 351
+----------------------------------------------
+
+Docking partners: Residues
+1-320
+321-351
+
+Centroids:
+(    19.594,     6.052,    17.291)
+(    15.984,     7.515,    29.323)
+
+Centroid bond:
+(     3.610,    -1.463,   -12.031)
+
+Docking basis vectors:
+(     0.285,    -0.116,    -0.951)
+(     0.958,     0.034,     0.283)
+(     0.000,    -0.993,     0.121)
+Contact point:
+(    17.789,     6.784,    23.307)
+
+----------------------------------------------
+loading docking site constraints from ./g000.cst
+loading 0 docking site constraints
+
+Docking constraints:
+
+site constraint filter set to 9999
+
+File: ./g000.dst not found
+Running without dist constraints
+PACKNG: deleting curent protein_sasa oject
+[T/F  OPT]Default FALSE value for [-packing_heavy_atoms_only]
+WARNING: ###calc_docking_frac_native_contact###
+No native exists or no contacts in the native structure
+fraction of native contacts will not be evaluated!!!
+WARNING: ###calc_docking_interf_rmsd###
+No native exists !!!
+docking_interf_rmsd will not be evaluated!!!
+[T/F  OPT]Default FALSE value for [-output_input_pdb]
+NEXT STRUCTURE: ./aag000_0018.m_0001.pdb
+
+Start of design structure
+
+initializing full atom coordinates
+total_domains 2
+setting up the tail
+ 342 to  351
+starting centroid relax...
+ 1     1      10.45      1.56  0.20  0.00   -1290.30  6418.45
+ 2     1       5.42      1.56  0.15  0.00   -1293.99  4702.57
+ 3     1      42.81      1.56  0.26  0.00   -1296.48  8092.58
+ 4     1       7.26      1.56  0.13  0.00   -1299.09  4580.31
+ 5     1      85.40      1.56  0.37  0.00   -1303.30  10360.04
+ 6     1      95.13      1.56  0.42  0.00   -1305.67  13336.97
+ 7     1     125.20      1.56  0.51  0.00   -1309.35  13488.89
+ 8     1     125.44      1.56  0.45  0.00   -1310.85  14599.14
+ 9     1     101.62      1.56  0.39  0.00   -1308.48  12576.14
+10     1     143.30      1.56  0.52  0.00   -1312.22  15937.65
+11     1     214.49      1.56  0.69  0.00   -1316.49  15278.77
+12     1     107.35      1.56  0.70  0.00   -1313.39  9662.44
+13     1     210.11      1.56  0.70  0.00   -1315.66  14561.51
+14     1     120.62      1.56  0.60  0.00   -1313.20  10904.39
+15     1     153.82      1.56  0.60  0.00   -1314.19  12842.34
+16     1     121.06      1.56  0.64  0.00   -1312.06  10207.43
+17     1      74.33      1.56  0.61  0.00   -1304.04  8326.46
+18     1      19.33      1.56  0.54  0.00   -1299.58  5565.17
+19     1      18.58      1.56  0.65  0.00   -1295.59  3345.36
+20     1      10.48      1.56  0.74  0.00   -1285.19  1298.56
+21     1      43.90      1.56  0.67  0.00   -1293.85  7513.93
+22     1      59.93      1.56  0.75  0.00   -1296.34  7574.32
+23     1      16.80      1.56  0.75  0.00   -1293.00  5174.31
+24     1       5.47      1.56  0.81  0.00   -1289.81  1716.84
+25     1      69.26      1.56  1.12  0.00   -1287.83  4031.42
+jk nlowacc   score    low_sc st_rms   low_rms    atr    rep
+-2     1    4499.88   4499.88  0.04  0.00   -1296.44  4786.40
+ Protein Complex defined as Residues  1- 320 and  321- 351
+jk nlowacc   score    low_sc st_rms   low_rms    atr    rep
+-1     1    4499.88   4499.88  0.04  0.00   -1296.44  4786.40
+designing with this many rotamers  39793
+Instantiating PDInteractionGraph
+monte carlo id for design run 3
+rotamers_exist flag 0
+score vs  best_score -542.80542 -542.80542
+seq 0NMSKVVVLIMGPGNSGADILVRAFKIIFSEAFKEEECKKFQAVAYADAAAALAQILKAMQELNIPFSRPEAQELAQRLAQQASTSLPNTMPPQLAEIMKRLAESNGVRKCRDLRHLTRVPDVAEEFLEELDEMAQPNHIPTMRHVLLTLTDNDSIKFIKYVAQNKKFFTYSTNNYPILKDILDKCKKNTHAVIFCMSLSSSDLYIEDNLEYPPMRLALKLFKEICNDDSFRTVLIVAIFSNAREFARLAIYFPNRICFPTDDSSLTTKDNAQKIRCEAESLDNNPQEDEIKAYFSCPTDIDRVKEDAEKIIKDIEETNTEQNSERADLHNKVSSSGPTNNHSISDNIDQGG  0.279202282
+ 2     2    -542.81   -542.81  0.04  0.00   -1155.40   139.40
+total atompair constraints: 82160
+ 3     2    -685.43   -685.43  0.29  0.00   -1189.17    70.12
+designing with this many rotamers  40049
+Instantiating PDInteractionGraph
+monte carlo id for design run 3
+rotamers_exist flag 1
+score vs  best_score -694.354065 -694.354065
+seq 0NMSKVVVLIMGPGNSGADILVRAFKIIFSDSFKEQECKNYQAMVYADALAALAQIIRAMEELNIPPAVPQALQLMQRLAQQASTSLPNYMPNTLAEIMERLAEANGVRQCHEERHKTRVPNVAEEFLRELEEEKQPYHIPTTRHVLLALTDNDSIKFIQYVANNKKFFTFSVNNYPIDKDILDKCKDNTHAVIFCMSLSDSDRLLLPWLEYPPMRLALKLFKEICNEPKFRTVLIVLILSNAREFARESIYFPSRICFPEDDSSLTTKDDALKIRCEAESLDNNPQELEIKVYFACPTDINRVKEVAEKIIKDIDNTNTEQNSERADLFNKVSSSGPTNNHSISDNTDQEG  0.282051295
+ 4     3    -694.35   -694.35  0.29  0.00   -1214.30    88.82
+ 5     3    -717.41   -717.41  0.34  0.00   -1214.95    73.00
+designing with this many rotamers  39947
+Instantiating PDInteractionGraph
+monte carlo id for design run 0
+rotamers_exist flag 0
+score vs  best_score -681.380554 -717.409668
+seq 0NMSKVVVLIMGPGNSGADILVRAFKIIFSDSFKEQECKNYQAMVYADALAALAQIIRAMEELNIPPAVPQALQLMQRLAQQASTSLPNYMPNTLAEIMERLAEANGVRQCHEERHKTRVPNVAEEFLRELEEEKQPYHIPTTRHVLLALTDNDSIKFIQYVANNKKFFTFSVNNYPIDKDILDKCKDNTHAVIFCMSLSDSDRLLLPWLEYPPMRLALKLFKEICNEPKFRTVLIVLILSNAREFARESIYFPSRICFPEDDSSLTTKDDALKIRCEAESLDNNPQELEIKVYFACPTDINRVKEVAEKIIKDIDNTNTEQNSERADLFNKVSSSGPTNNHSISDNTDQEG  0.282051295
+ 6     3    -717.41   -717.41  0.34  0.00   -1214.95    73.00
+ 7     3    -717.56   -717.56  0.34  0.00   -1215.36    73.10
+designing with this many rotamers  40173
+Instantiating PDInteractionGraph
+monte carlo id for design run 0
+rotamers_exist flag 1
+score vs  best_score -715.966919 -717.559509
+seq 0NMSKVVVLIMGPGNSGADILVRAFKIIFSDSFKEQECKNYQAMVYADALAALAQIIRAMEELNIPPAVPQALQLMQRLAQQASTSLPNYMPNTLAEIMERLAEANGVRQCHEERHKTRVPNVAEEFLRELEEEKQPYHIPTTRHVLLALTDNDSIKFIQYVANNKKFFTFSVNNYPIDKDILDKCKDNTHAVIFCMSLSDSDRLLLPWLEYPPMRLALKLFKEICNEPKFRTVLIVLILSNAREFARESIYFPSRICFPEDDSSLTTKDDALKIRCEAESLDNNPQELEIKVYFACPTDINRVKEVAEKIIKDIDNTNTEQNSERADLFNKVSSSGPTNNHSISDNTDQEG  0.282051295
+ 8     3    -717.56   -717.56  0.34  0.00   -1215.36    73.10
+ 9     3    -717.58   -717.58  0.34  0.00   -1215.32    73.06
+FINAL:
+jk nlowacc   score    low_sc st_rms   low_rms    atr    rep
+-1     3    -772.60   -772.60  0.34  0.00   -1215.31    73.06
+seq 0NMSKVVVLIMGPGNSGADILVRAFKIIFSDSFKEQECKNYQAMVYADALAALAQIIRAMEELNIPPAVPQALQLMQRLAQQASTSLPNYMPNTLAEIMERLAEANGVRQCHEERHKTRVPNVAEEFLRELEEEKQPYHIPTTRHVLLALTDNDSIKFIQYVANNKKFFTFSVNNYPIDKDILDKCKDNTHAVIFCMSLSDSDRLLLPWLEYPPMRLALKLFKEICNEPKFRTVLIVLILSNAREFARESIYFPSRICFPEDDSSLTTKDDALKIRCEAESLDNNPQELEIKVYFACPTDINRVKEVAEKIIKDIDNTNTEQNSERADLFNKVSSSGPTNNHSISDNTDQEG  0.282051295
+shearmin     trials:    450 accepts:    450 %: 100.00 e/trial: -29.32105
+wobblemin    trials:    450 accepts:    449 %:  99.78 e/trial: -29.26862
+smallmin     trials:    450 accepts:    447 %:  99.33 e/trial: -27.98529
+unknown      trials:     72 accepts:     41 %:  56.94 e/trial: -345.79962
+writing pdb file: ./aag000_0018.m_0001.pdb
+WARNING: ###calc_docking_frac_native_contact###
+No native exists or no contacts in the native structure
+fraction of native contacts will not be evaluated!!!
+WARNING: ###calc_docking_interf_rmsd###
+No native exists !!!
+docking_interf_rmsd will not be evaluated!!!
+reading starting structure: ./aag000_0019.m.pdb
+Filling missing atoms
+optimizing missing atoms
+Instantiating PDInteractionGraph
+optimizing hydrogen positions
+Instantiating PDInteractionGraph
+secondary structure defined, not reading dssp file
+Docking partners detected: Residues
+ 1- 320
+ 321- 351
+----------------------------------------------
+
+Docking partners: Residues
+1-320
+321-351
+
+Centroids:
+(    19.594,     6.052,    17.291)
+(    16.516,     7.151,    29.629)
+
+Centroid bond:
+(     3.078,    -1.098,   -12.338)
+
+Docking basis vectors:
+(     0.241,    -0.086,    -0.967)
+(     0.970,     0.021,     0.240)
+(     0.000,    -0.996,     0.089)
+Contact point:
+(    18.055,     6.602,    23.460)
+
+----------------------------------------------
+loading docking site constraints from ./g000.cst
+loading 0 docking site constraints
+
+Docking constraints:
+
+site constraint filter set to 9999
+
+File: ./g000.dst not found
+Running without dist constraints
+PACKNG: deleting curent protein_sasa oject
+[T/F  OPT]Default FALSE value for [-packing_heavy_atoms_only]
+WARNING: ###calc_docking_frac_native_contact###
+No native exists or no contacts in the native structure
+fraction of native contacts will not be evaluated!!!
+WARNING: ###calc_docking_interf_rmsd###
+No native exists !!!
+docking_interf_rmsd will not be evaluated!!!
+[T/F  OPT]Default FALSE value for [-output_input_pdb]
+NEXT STRUCTURE: ./aag000_0019.m_0001.pdb
+
+Start of design structure
+
+initializing full atom coordinates
+total_domains 2
+setting up the tail
+ 342 to  351
+starting centroid relax...
+ 1     0     124.33      3.15  0.39  0.00   -1305.62  11393.45
+ 2     0      67.51      3.15  0.32  0.00   -1302.06  10634.20
+ 3     0     118.87      3.15  0.46  0.00   -1306.65  11263.90
+ 4     0      82.97      3.15  0.52  0.00   -1307.13  8054.32
+ 5     0      84.81      3.15  0.54  0.00   -1309.97  8362.52
+ 6     0      33.10      3.15  0.36  0.00   -1301.80  6315.25
+ 7     0      92.25      3.15  0.55  0.00   -1311.45  10626.41
+ 8     0     187.21      3.15  0.82  0.00   -1317.13  13869.68
+ 9     0     222.15      3.15  0.98  0.00   -1320.45  13720.60
+10     0     189.81      3.15  1.05  0.00   -1318.94  14342.09
+11     0     219.56      3.15  1.09  0.00   -1319.35  15604.69
+12     0     199.08      3.15  1.12  0.00   -1321.60  15277.90
+13     0     155.81      3.15  1.02  0.00   -1321.59  14477.70
+14     0     181.03      3.15  1.00  0.00   -1321.53  14695.78
+15     0     227.59      3.15  1.04  0.00   -1319.64  16817.15
+16     0     270.02      3.15  1.10  0.00   -1319.28  17473.59
+17     0     219.42      3.15  1.11  0.00   -1317.79  16228.51
+18     0     139.82      3.15  1.25  0.00   -1315.27  11706.90
+19     0     135.80      3.15  1.31  0.00   -1313.96  12150.21
+20     0     243.38      3.15  1.30  0.00   -1314.03  17439.89
+21     0     230.53      3.15  1.30  0.00   -1313.62  16147.64
+22     0     178.19      3.15  1.41  0.00   -1312.71  13655.57
+23     0     150.96      3.15  1.43  0.00   -1318.61  13013.70
+24     0     173.25      3.15  1.37  0.00   -1320.93  13686.92
+25     0     158.22      3.15  1.26  0.00   -1317.06  14251.04
+jk nlowacc   score    low_sc st_rms   low_rms    atr    rep
+-2     0    6939.68   6939.68  0.00  0.00   -1296.31  7234.65
+ Protein Complex defined as Residues  1- 320 and  321- 351
+jk nlowacc   score    low_sc st_rms   low_rms    atr    rep
+-1     0    6939.68   6939.68  0.00  0.00   -1296.31  7234.65
+designing with this many rotamers  39919
+Instantiating PDInteractionGraph
+monte carlo id for design run 3
+rotamers_exist flag 0
+score vs  best_score -399.701416 -399.701416
+seq 0NMSKVVVLIVGPGNSGAQTLVRAFIILYSNAFQEQECKKFQAYAYHDMSDAAAQVARAMEILNIPPSLWKAEELRQRAGQLASTSLPNVLPPQAAEVAKRFAQSNGALQCMNERHKTLLDDSAEQFLRNLDKMAQPNHIPSMQDVLDTQTDDDSIKFVKYVANNLKFFTYSTNNYPILKLILDLCKKNTHAVIACTSASAHDLAPQKFLEYPPMHLAEKFFKQMCNDDSFETVLIVFILSNSEEHERESITHPSRICHPWDDSTLTHKEDTRHHICDFVRLDNNPQKDVIVVRVSCPYDLDRVYDDSKEIIQEIFLTNTENNSQQAQLHNELSSSGPTNNHSSHTSTAESP  0.253561258
+ 2     1    -399.70   -399.70  0.00  0.00   -1166.98   279.23
+total atompair constraints: 82512
+ 3     1    -662.07   -662.07  0.25  0.00   -1192.44    73.21
+designing with this many rotamers  40014
+Instantiating PDInteractionGraph
+monte carlo id for design run 3
+rotamers_exist flag 1
+score vs  best_score -676.094116 -676.094116
+seq 0NVSEVVVLIVGPGNSGADTLVRAFIILYSSAFSEEECKKFQAYAYHDMSDAMAQIILAMQILNIPPSQPQALELMKKASQLSSTSLPNYLPPEAAEVAKRLFWSNGALQCRDERHKTLLDDSAEDFLRNLEQMAKPDYIPSMETVLKTQTDNDSIKFVFYVANNLDFKTFSTNNYPILLLILLLCKDNTHAVIHCTSASSHDLEPMKFLEYPPMHLAEKFFKQMCNDDSFETVLIVFILSNAEEHERESITHPSRLCHPWDTSSLTHYEDTRHHICDFVRLLNNPQKLEIKVFVACPYDLNRVYEVSKKIIQAIYETNTEQNSQQAQLHNELSSSGPTNNHSEHTSTSPSP  0.262108266
+ 4     2    -676.09   -676.09  0.25  0.00   -1212.79    81.84
+ 5     2    -676.66   -676.66  0.25  0.00   -1212.19    80.92
+designing with this many rotamers  39816
+Instantiating PDInteractionGraph
+monte carlo id for design run 0
+rotamers_exist flag 0
+score vs  best_score -654.412903 -676.661194
+seq 0NVSEVVVLIVGPGNSGADTLVRAFIILYSSAFSEEECKKFQAYAYHDMSDAMAQIILAMQILNIPPSQPQALELMKKASQLSSTSLPNYLPPEAAEVAKRLFWSNGALQCRDERHKTLLDDSAEDFLRNLEQMAKPDYIPSMETVLKTQTDNDSIKFVFYVANNLDFKTFSTNNYPILLLILLLCKDNTHAVIHCTSASSHDLEPMKFLEYPPMHLAEKFFKQMCNDDSFETVLIVFILSNAEEHERESITHPSRLCHPWDTSSLTHYEDTRHHICDFVRLLNNPQKLEIKVFVACPYDLNRVYEVSKKIIQAIYETNTEQNSQQAQLHNELSSSGPTNNHSEHTSTSPSP  0.262108266
+ 6     2    -676.66   -676.66  0.25  0.00   -1212.19    80.92
+ 7     2    -676.71   -676.71  0.25  0.00   -1212.14    80.84
+designing with this many rotamers  39969
+Instantiating PDInteractionGraph
+monte carlo id for design run 0
+rotamers_exist flag 1
+score vs  best_score -673.336304 -676.706543
+seq 0NVSEVVVLIVGPGNSGADTLVRAFIILYSSAFSEEECKKFQAYAYHDMSDAMAQIILAMQILNIPPSQPQALELMKKASQLSSTSLPNYLPPEAAEVAKRLFWSNGALQCRDERHKTLLDDSAEDFLRNLEQMAKPDYIPSMETVLKTQTDNDSIKFVFYVANNLDFKTFSTNNYPILLLILLLCKDNTHAVIHCTSASSHDLEPMKFLEYPPMHLAEKFFKQMCNDDSFETVLIVFILSNAEEHERESITHPSRLCHPWDTSSLTHYEDTRHHICDFVRLLNNPQKLEIKVFVACPYDLNRVYEVSKKIIQAIYETNTEQNSQQAQLHNELSSSGPTNNHSEHTSTSPSP  0.262108266
+ 8     2    -676.71   -676.71  0.25  0.00   -1212.14    80.84
+ 9     2    -676.76   -676.76  0.25  0.00   -1212.08    80.75
+FINAL:
+jk nlowacc   score    low_sc st_rms   low_rms    atr    rep
+-1     2    -722.60   -722.60  0.25  0.00   -1212.08    80.77
+seq 0NVSEVVVLIVGPGNSGADTLVRAFIILYSSAFSEEECKKFQAYAYHDMSDAMAQIILAMQILNIPPSQPQALELMKKASQLSSTSLPNYLPPEAAEVAKRLFWSNGALQCRDERHKTLLDDSAEDFLRNLEQMAKPDYIPSMETVLKTQTDNDSIKFVFYVANNLDFKTFSTNNYPILLLILLLCKDNTHAVIHCTSASSHDLEPMKFLEYPPMHLAEKFFKQMCNDDSFETVLIVFILSNAEEHERESITHPSRLCHPWDTSSLTHYEDTRHHICDFVRLLNNPQKLEIKVFVACPYDLNRVYEVSKKIIQAIYETNTEQNSQQAQLHNELSSSGPTNNHSEHTSTSPSP  0.262108266
+shearmin     trials:    475 accepts:    475 %: 100.00 e/trial: -35.39072
+wobblemin    trials:    475 accepts:    474 %:  99.79 e/trial: -35.26532
+smallmin     trials:    475 accepts:    472 %:  99.37 e/trial: -33.97264
+unknown      trials:     76 accepts:     43 %:  56.58 e/trial: -424.35504
+writing pdb file: ./aag000_0019.m_0001.pdb
+WARNING: ###calc_docking_frac_native_contact###
+No native exists or no contacts in the native structure
+fraction of native contacts will not be evaluated!!!
+WARNING: ###calc_docking_interf_rmsd###
+No native exists !!!
+docking_interf_rmsd will not be evaluated!!!
+reading starting structure: ./aag000_0020.m.pdb
+Filling missing atoms
+optimizing missing atoms
+Instantiating PDInteractionGraph
+optimizing hydrogen positions
+Instantiating PDInteractionGraph
+secondary structure defined, not reading dssp file
+Docking partners detected: Residues
+ 1- 320
+ 321- 351
+----------------------------------------------
+
+Docking partners: Residues
+1-320
+321-351
+
+Centroids:
+(    19.594,     6.052,    17.291)
+(    16.069,     7.404,    29.792)
+
+Centroid bond:
+(     3.525,    -1.351,   -12.501)
+
+Docking basis vectors:
+(     0.270,    -0.103,    -0.957)
+(     0.963,     0.029,     0.268)
+(     0.000,    -0.994,     0.107)
+Contact point:
+(    17.832,     6.728,    23.542)
+
+----------------------------------------------
+loading docking site constraints from ./g000.cst
+loading 0 docking site constraints
+
+Docking constraints:
+
+site constraint filter set to 9999
+
+File: ./g000.dst not found
+Running without dist constraints
+PACKNG: deleting curent protein_sasa oject
+[T/F  OPT]Default FALSE value for [-packing_heavy_atoms_only]
+WARNING: ###calc_docking_frac_native_contact###
+No native exists or no contacts in the native structure
+fraction of native contacts will not be evaluated!!!
+WARNING: ###calc_docking_interf_rmsd###
+No native exists !!!
+docking_interf_rmsd will not be evaluated!!!
+[T/F  OPT]Default FALSE value for [-output_input_pdb]
+NEXT STRUCTURE: ./aag000_0020.m_0001.pdb
+
+Start of design structure
+
+initializing full atom coordinates
+total_domains 2
+setting up the tail
+ 342 to  351
+starting centroid relax...
+ 1     0       5.80      1.23  0.25  0.00   -1284.69  1568.70
+ 2     0       9.63      1.23  0.21  0.00   -1284.59  1811.97
+ 3     0       9.07      1.23  0.25  0.00   -1284.48  1182.51
+ 4     0       3.76      1.23  0.28  0.00   -1282.61   958.78
+ 5     0       8.94      1.23  0.31  0.00   -1288.30  2305.11
+ 6     1       1.49      0.95  0.68  0.00   -1287.19  2919.23
+ 7     1       2.75      0.95  0.92  0.00   -1289.11  2179.11
+ 8     1      29.24      0.95  1.00  0.00   -1296.53  5852.41
+ 9     1      52.45      0.95  1.26  0.00   -1303.87  7141.30
+10     1      62.74      0.95  1.21  0.00   -1305.72  7236.48
+11     1      47.45      0.95  1.39  0.00   -1297.54  4709.85
+12     1     109.92      0.95  1.59  0.00   -1304.73  9138.81
+13     1     103.97      0.95  1.42  0.00   -1307.74  6822.29
+14     1     189.28      0.95  1.36  0.00   -1321.05  14780.30
+15     1     237.93      0.95  1.33  0.00   -1320.30  15750.37
+16     1     278.29      0.95  1.37  0.00   -1319.43  17262.29
+17     1     152.48      0.95  1.47  0.00   -1311.06  13665.89
+18     1     152.65      0.95  1.51  0.00   -1315.57  15775.32
+19     1     249.84      0.95  1.33  0.00   -1315.61  15226.65
+20     1     151.60      0.95  0.99  0.00   -1308.95  11891.42
+21     1     216.75      0.95  1.02  0.00   -1310.98  15493.33
+22     1     125.05      0.95  1.08  0.00   -1304.11  11108.97
+23     1     155.85      0.95  1.32  0.00   -1309.77  12446.25
+24     1     172.11      0.95  1.22  0.00   -1309.33  12434.88
+25     1     168.99      0.95  1.26  0.00   -1308.67  14123.28
+jk nlowacc   score    low_sc st_rms   low_rms    atr    rep
+-2     1    1517.17   1517.17  0.44  0.00   -1288.25  1801.65
+ Protein Complex defined as Residues  1- 320 and  321- 351
+jk nlowacc   score    low_sc st_rms   low_rms    atr    rep
+-1     1    1517.17   1517.17  0.44  0.00   -1288.25  1801.65
+designing with this many rotamers  40345
+Instantiating PDInteractionGraph
+monte carlo id for design run 3
+rotamers_exist flag 0
+score vs  best_score -582.701294 -582.701294
+seq 0NMSYVVVLSMGPGNSGSMIMVRAYKIIFSSAFSEQECKKFQAVAYADAMAALAQILIAMQILNIPPSRPEALELAQRHAQQAWTSLPNTMPPQLAEIMKRLAEENGVRKCRDLRHLTRLDDSAEEFLRELDEMAQPNHIPTMRHVLLTQTDIDSIKRIFYVAQNLIFRTFSTIRYPILLLILLLCKKNTHAVQFCVSLSSHDNAPDDNLEYPDMHLAAKLAKQICNDDSFETVLIVILLSNAEEHEREIIYFPPQICHPWDNSTTTHDNAANHHECHFRRLDNNPQKLELKVYFTCPTDIRRVKEVAEKIIKDIIETNTEQNSEQADLHNKVSSSGPQNNHSTTSPAAPYQ  0.296296299
+ 2     2    -582.70   -582.70  0.44  0.00   -1171.10   120.73
+total atompair constraints: 81376
+======================================================
+======================================================
+DANGER!!!! DANGER!!!! DANGER!!!! DANGER!!!! DANGER!!!!
+======================================================
+======================================================
+pose_minimize:: Big score_delta when turning off the nblist: 1.39209
+This probably means the structure moved too far during
+minimization. If you are minimizing rigid-body translations you
+may need to damp the repulsive initially or change the step-size
+======================================================
+======================================================
+DANGER!!!! DANGER!!!! DANGER!!!! DANGER!!!! DANGER!!!!
+======================================================
+======================================================
+ 3     2    -681.53   -681.53  0.50  0.00   -1200.72    78.15
+designing with this many rotamers  40421
+Instantiating PDInteractionGraph
+monte carlo id for design run 1
+rotamers_exist flag 1
+score vs  best_score -680.815308 -680.815308
+seq 0NMSRVVVLVMGPGNSGAMIMVRAYKIIFSSAFSEEECKKFQAMAYADAIAALAQILIAMQILNIPPARPEALELAQRHAQQAWTSLPNVMPPQLAEIMKRLAEENGVRKCRDLRHLTRIPDSAEEFLRNLEQMAKPDYIPSMLTVLLTLTDIDSVKFILFVAQNLFFIVLSSIRYPILLEILLRCKANTHAVQFCVSLSSHDNAPDDNLEYPDMHLAMKLAKQICNDDSFETVLIVILLSNAEEHEREIIYFPPQLCHPWDNSSTTHDNAANHHECEFRRLDNNPQKLELKVYFVCPTDIRRVKEVAEKIIKDIIETNTEQNEEQMKLHNKVSSSGPDNNHSRTSPAAPYV  0.28774929
+ 4     2    -680.82   -681.53  0.50  0.00   -1197.64    85.06
+ 5     2    -682.49   -682.49  0.50  0.00   -1197.02    82.97
+designing with this many rotamers  40192
+Instantiating PDInteractionGraph
+monte carlo id for design run 0
+rotamers_exist flag 0
+score vs  best_score -653.296936 -682.485352
+seq 0NMSRVVVLVMGPGNSGAMIMVRAYKIIFSSAFSEEECKKFQAMAYADAIAALAQILIAMQILNIPPARPEALELAQRHAQQAWTSLPNVMPPQLAEIMKRLAEENGVRKCRDLRHLTRIPDSAEEFLRNLEQMAKPDYIPSMLTVLLTLTDIDSVKFILFVAQNLFFIVLSSIRYPILLEILLRCKANTHAVQFCVSLSSHDNAPDDNLEYPDMHLAMKLAKQICNDDSFETVLIVILLSNAEEHEREIIYFPPQLCHPWDNSSTTHDNAANHHECEFRRLDNNPQKLELKVYFVCPTDIRRVKEVAEKIIKDIIETNTEQNEEQMKLHNKVSSSGPDNNHSRTSPAAPYV  0.28774929
+ 6     2    -682.49   -682.49  0.50  0.00   -1197.02    82.97
+ 7     2    -683.00   -683.00  0.50  0.00   -1197.00    82.70
+designing with this many rotamers  40356
+Instantiating PDInteractionGraph
+monte carlo id for design run 1
+rotamers_exist flag 1
+score vs  best_score -681.823914 -681.823914
+seq 0NMSEVVVLVMGPGNSGAMVMVRAYKIIFSSAFSEEECKKFQAVAYADAIAALSQILIAMQILNIPFAEPEAQELAQRHDQQAWTSLPNVMPPQLAKIMKELARRNGVRKCRDLRHLTRIPDSAEEFLRRLEEMAKPDYIPSMKTVLETLTDIDSVKRIFFVANNLDFKVFSPIRYPILFLILQLCKDNTHAVQFCVSLSSHDFAPLDNLEYPPMHLAAKLFKQICNQENFKTVLIVLLLSNAEEHEREIIYFPPQLCHPWDNSSTTHDDAANHHECHFRRLDNNPQDLEIKVYFVCPFDIDRVKEVAEKIIKDIFLTNTEQNQEQALLFNLVSSSGPDNNHSTTSPDAPQS  0.293447286
+ 8     2    -681.82   -683.00  0.50  0.00   -1216.28    87.17
+ 9     2    -718.41   -718.41  0.53  0.00   -1230.72    75.78
+FINAL:
+jk nlowacc   score    low_sc st_rms   low_rms    atr    rep
+-1     2    -764.26   -764.26  0.53  0.00   -1230.71    75.78
+seq 0NMSEVVVLVMGPGNSGAMVMVRAYKIIFSSAFSEEECKKFQAVAYADAIAALSQILIAMQILNIPFAEPEAQELAQRHDQQAWTSLPNVMPPQLAKIMKELARRNGVRKCRDLRHLTRIPDSAEEFLRRLEEMAKPDYIPSMKTVLETLTDIDSVKRIFFVANNLDFKVFSPIRYPILFLILQLCKDNTHAVQFCVSLSSHDFAPLDNLEYPPMHLAAKLFKQICNQENFKTVLIVLLLSNAEEHEREIIYFPPQLCHPWDNSSTTHDDAANHHECHFRRLDNNPQDLEIKVYFVCPFDIDRVKEVAEKIIKDIFLTNTEQNQEQALLFNLVSSSGPDNNHSTTSPDAPQS  0.293447286
+shearmin     trials:    500 accepts:    500 %: 100.00 e/trial: -38.33739
+wobblemin    trials:    500 accepts:    499 %:  99.80 e/trial: -38.19473
+smallmin     trials:    500 accepts:    497 %:  99.40 e/trial: -36.83858
+unknown      trials:     80 accepts:     46 %:  57.50 e/trial: -429.36200
+writing pdb file: ./aag000_0020.m_0001.pdb
+WARNING: ###calc_docking_frac_native_contact###
+No native exists or no contacts in the native structure
+fraction of native contacts will not be evaluated!!!
+WARNING: ###calc_docking_interf_rmsd###
+No native exists !!!
+docking_interf_rmsd will not be evaluated!!!
+======================================================
+DONE ::    21 starting structures built         1 (nstruct) times
+This process generated     20 decoys from      20 attempts
+                            0 starting pdbs were skipped
+======================================================

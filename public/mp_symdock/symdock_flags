@@ -1,0 +1,9 @@
+-in:file:s example_symmetry_inputs/1bl8_refined_INPUT.pdb
+-in:file:native example_inputs/1bl8_tr.pdb
+-mp:setup:spanfiles example_inputs/1bl8_trA.span
+-mp:scoring:hbond
+-nstruct 1
+-symmetry:symmetry_definition example_symmetry_inputs/1bl8.c4.symm
+-symmetry:initialize_rigid_body_dofs        
+-packing:pack_missing_sidechains 0 
+-docking:dock_lowres_filter 5.0 10.0

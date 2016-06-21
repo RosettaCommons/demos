@@ -1,0 +1,7 @@
+-database ~/minirosetta_database
+-s 3a67.ppk.pdb
+-ex1
+-ex2aro
+-parser:protocol loop_remodel.xml
+-ignore_unrecognized_res
+-run:constant_seed

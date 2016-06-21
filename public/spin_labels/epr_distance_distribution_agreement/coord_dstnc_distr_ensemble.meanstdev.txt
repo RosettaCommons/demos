@@ -1,0 +1,1 @@
+Mutant A 059 B 159	mean 41.8767	stddev 2.93331
