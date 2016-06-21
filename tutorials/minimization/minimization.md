@@ -16,7 +16,7 @@ In Rosetta, one of the simplest ways in which to move a structure to its nearest
 > **In general, minimization is determinisitic, unlike methods that depend on Monte Carlo searches.  There is generally little advantage to repeating a minimization trajectory many times; there should be no diversity to the ensemble produced.**  This being said, minimization *is* sensitive to small numeric precision differences from platform to platform, or even from compiler to compiler.
 
 ## Goals
-In this tutorial, you will learn to use one of the many minimization algorithms in three different ways, first by allowing all residues in the structure to move during the minimation and then by using two methods that allow only a subset of the degrees of freedom (DOFs) to be sampled. Specifically, we will:
+In this tutorial, you will learn to use one of the many minimization algorithms in three different ways, first by allowing all residues in the structure to move during the minimation and then by using two methods that allow only a subset of the degrees of freedom (DOFs) to change. Specifically, we will:
 * Learn to run the `score` and `minimize` executables via the command line.
 * Create and utilize a **constraints file** to prevent the movement of CA atoms from ocurring in part of the structure.
 * Create and utilize a **move map** to control the degrees of freedom allowed to move during the minimization.
@@ -179,7 +179,7 @@ Opening the `3hon_minwithcsts_0001.pdb` file and comparing it to the crystal str
 
 we immediately see little to no movement in the position of the nine C-terminal CA atoms.
 
-In some cases, the user may want to prevent the internal geometry of certain residues from moving during minimization, rather than the XYZ coordinates of the atoms. To disallow movements in backbone phi/psi angles and/or sidechain chi angles, we can supply the minimizer with a MoveMap that specifies which of these degrees of freedom are allowed to be sampled.
+In some cases, the user may want to prevent the internal geometry of certain residues from moving during minimization, rather than the XYZ coordinates of the atoms. To disallow movements in backbone phi/psi angles and/or sidechain chi angles, we can supply the minimizer with a MoveMap that specifies which of these degrees of freedom are allowed to change.
 
 ## How-To: Minimization with a MoveMap
 
