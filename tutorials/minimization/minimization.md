@@ -23,7 +23,7 @@ Many Rosetta modules invoke the minimizer, but one of the simplest ways to do so
 In this tutorial, you will learn to use one of the many minimization algorithms in three different ways, first by allowing all residues in the structure to move during the minimation and then by using two methods that allow only a subset of the degrees of freedom (DOFs) to change. Specifically, we will:
 * Learn to run the `score` and `minimize` executables via the command line.
 * Create and utilize a **constraints file** to prevent the movement of CA atoms from ocurring in part of the structure.
-* Create and utilize a **move map** to control the degrees of freedom allowed to move during the minimization.
+* Create and utilize a **movemap** to control the degrees of freedom allowed to move during the minimization.
 * Compare and analyze the output files and structures from each type of minimization.
 
 ## How-To: Minimize
@@ -189,11 +189,11 @@ In some cases, the user may want to prevent the internal geometry of certain res
 
 #### The MoveMap
 
-The [movemap](https://www.rosettacommons.org/docs/latest/rosetta_basics/structural_concepts/Rosetta-overview#scoring_movemap) is an important concept in Rosetta minimization.  It allows users to control what degrees of freedom can change during minimization, and what degrees of freedom are fixed. For example, one may not want to move highly-conserved sidechains in modeling applications, or one may want to preserve certain interactions in design applications.  Certain protocols that call the Rosetta minimizer accept a user-defined move map file.
+The [movemap](https://www.rosettacommons.org/docs/latest/rosetta_basics/structural_concepts/Rosetta-overview#scoring_movemap) is an important concept in Rosetta minimization.  It allows users to control what degrees of freedom can change during minimization, and what degrees of freedom are fixed. For example, one may not want to move highly-conserved sidechains in modeling applications, or one may want to preserve certain interactions in design applications.  Certain protocols that call the Rosetta minimizer accept a user-defined movemap file.
 
-In the context of the minimizer, a move map allows the user to specify whether the backbone (BB) torsions angles (phi and psi, in the case of α-amino acid residues) and/or the sidechain torsions angles (CHI) are allowed to be moved during the minimization of the energy function. In addition, if the input structure has more than one chain (separated by one or more *JUMPS*, or rigid-body transformations), the move map can also specify whether rigid-body movements between the different chains are allowed.
+In the context of the minimizer, a movemap allows the user to specify whether the backbone (BB) torsions angles (phi and psi, in the case of α-amino acid residues) and/or the sidechain torsions angles (CHI) are allowed to be moved during the minimization of the energy function. In addition, if the input structure has more than one chain (separated by one or more *JUMPS*, or rigid-body transformations), the movemap can also specify whether rigid-body movements between the different chains are allowed.
 
-> **Caveat: Even if a residue's backbone and sidechain torsion movements are turned off in a move map, its relative position with respect to other residues may still change depending on the motion of residues upstream in the foldtree.**
+> **Caveat: Even if a residue's backbone and sidechain torsion movements are turned off in a movemap, its relative position with respect to other residues may still change depending on the motion of residues upstream in the foldtree.**
 
 #### A note about the FoldTree
 
@@ -201,8 +201,8 @@ The [foldtree](https://www.rosettacommons.org/docs/latest/rosetta_basics/structu
 
 As mentioned in the caveat above, a user invoking the minimizer, particularly with a MoveMap, should be mindful of the foldtree.  The default foldtree has residue 1 of chain A as the root, with residue 2 as a child of 1, residue 3 as a child of 2, *etc.*, and with jumps to the first residue of any additional chain or chains.  Any moveable degree of freedom affects every residue downstream of it in the foldtree, even if that residue's degrees of freedom are fixed by the MoveMap.  As a concrete example, let's consider the case of a 20-residue pose with a default foldtree, with a MoveMap that prevents movement of backbone DoFs for residues 8 through 20.  Energy-minimization would change backbone degrees of freedom for residues 1 through 7, swinging residues 8 through 20 through space in the process (though residues 8 through 20 could not move *relative to one another*, in this case).
 
-#### Description of the move map file format
-Each line in the move map file identifies a jump, residue, or residue range, followed by the allowed degrees of freedom. These entities may be specified as follows:
+#### Description of the movemap file format
+Each line in the movemap file identifies a jump, residue, or residue range, followed by the allowed degrees of freedom. These entities may be specified as follows:
 ```
 RESIDUE <#> <BB/CHI/BBCHI/NO>         # a single residue <#> followed by a single option (pick one of the four)
 RESIDUE <#1> <#2> <BB/CHI/BBCHI/NO>   # a range of residues from <#1> to <#2> followed by a single option (again, pick one)
@@ -221,18 +221,18 @@ RESIDUE *  CHI    # allows sidechain movements at all residues
 JUMP * YES        # allows rigid body movements between all structures separated by jumps
 ```
 
-If a residue appears more than once, the last appearance in the file determines the movement (i.e. move map lines are NOT additive). For example, the movemap speficied here
+If a residue appears more than once, the last appearance in the file determines the movement (i.e. movemap lines are NOT commutative, unlike the TaskOperations used to control the packer). For example, the movemap speficied here
 ```
 RESIDUE * CHI
 RESIDUE * BB
 ```
 will only allow backbone (BB) movements for all residues and will disallow sidechain (CHI) movements for all residues, which is probably not what the user meant.
 
-##### Note: If a residue or jump is not specified in the move map, it will revert to the default behavior, which is protocol-specific.
+> **Note: If a residue or jump is not specified in the movemap, it will revert to the default behavior, which is protocol-specific.**
 
 ### Setting up the flagsfile and movemap file
 
-For the next minimization walkthrough, we will need to add one option to our flags file to tell Rosetta to read the move map file. The contents of the new flags file, `minwithmm_flags`, should look like this:
+For the next minimization walkthrough, we will need to add one option to our flags file to tell Rosetta to read the movemap file. The contents of the new flags file, `minwithmm_flags`, should look like this:
 
 ```
 -s 3hon.pdb
@@ -244,7 +244,7 @@ For the next minimization walkthrough, we will need to add one option to our fla
 
 The flag `movemap` specifies the movemap file to apply to the pose.
 
-Our move map file `movemapfile` (expanded below) tells the minimizer to first set all backbone (BB) and sidechain (CHI) torsion angles to movable. Then, it reverts residues 47 through 55 (in pose numbering) to be fixed.
+Our movemap file `movemapfile` (expanded below) tells the minimizer to first set all backbone (BB) and sidechain (CHI) torsion angles to movable. Then, it reverts residues 47 through 55 (in pose numbering) to be fixed.
 ```
 RESIDUE * BBCHI
 RESIDUE 47 55 NO
