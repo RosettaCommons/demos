@@ -92,7 +92,7 @@ Most of the score terms have gone down in value (which is good!). But how has th
 
 ![3hon minimized](https://github.com/RosettaCommons/demos/blob/XRW2016_kmb/tutorials/3hon_min_on_xtal.png)
 
-The minimized structure has moved out of alignment with the native structure, so first let's align the two structures. If you are using PyMOL, type `align 3hon_0001, 3hon` and hit `Enter`.
+The minimized structure (in green) has moved out of alignment with the native structure (in cyan), so first let's align the two structures. If you are using PyMOL, type `align 3hon_0001, 3hon` and hit `Enter`.
 
 ![3hon minimized_aligned](https://github.com/RosettaCommons/demos/blob/XRW2016_kmb/tutorials/3hon_minaligned_on_xtal.png)
 
