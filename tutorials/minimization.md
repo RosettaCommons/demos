@@ -171,9 +171,9 @@ Opening the `3hon_minwithcsts_0001.pdb` file and comparing it to the crystal str
 
 ![3hon mincsts](https://github.com/RosettaCommons/demos/blob/XRW2016_kmb/tutorials/3hon_minwithcsts_onxtal.png)
 
-we immediately see little to no movement in the nine C-terminal residues.
+we immediately see little to no movement in the position of the nine C-terminal CA atoms.
 
-(Insert nice segue here: There is another way to prevent motion in all or a subset of residues of the protein structure and this is by using a MoveMap.)
+In some cases, the user may want to prevent the internal geometry of certain residues from moving during minimization, rather than the XYZ coordinates of the atoms. To disallow movements in backbone phi/psi angles and/or sidechain chi angles, we can supply the minimizer with a MoveMap that specifies which of these degrees of freedom can be sampled.
 
 ## How-To: Minimization with a MoveMap
 
