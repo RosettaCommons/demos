@@ -32,7 +32,7 @@ We have provided a serotonin_withH.sdf file for you in the inputs directory if y
 #### Generating the Params File
 Now we are at the stage of generating the params file. use cd ../ to get out of the inputs directory and run this command:
 ```
-$> ../../../main/source/scripts/python/public/molfile_to_params.py -n SRO -p SRO inputs/serotonin_withH.sdf
+$> ../../../main/source/scripts/python/public/molfile_to_params.py -n SRO -p SRO --conformers-in-one-file inputs/serotonin_withH.sdf
 ```
 -n is a _flag_ that says what is the three letter name you want to give to the ligand and -p defines the name given to the params file. After you are done with this command you should have a file named SRO.params like the one provided in the outputs directory. Also, 27 PDB files (or any number you saw during download) are generated based on each conformer found from PDB.
 
@@ -43,10 +43,6 @@ Note1. To learn better what the molfile_to_params.py works and what are the othe
 Note2. If you have multiple files that you want to generate the params file for, you can run a batch molfile_to_params command as follows:
 ```
 > <path-to-Rosetta>/Rosetta/main/source/scripts/python/public/batch_molfile_to_params.py --script_path=<path-to-molfile_to_params.py> list_of_molfiles.txt
-```
-We should now concatenate all these PDBs into one file. This single PDB file is used by Rosetta to explore the conformational space that the ligand can be in. This is the command for concatenation:
-```
-> cat SRO_00*.pdb > SRO_conformers.pdb
 ```
 Now let's take a look at the generated params file:
 ```
