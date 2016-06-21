@@ -141,8 +141,8 @@ core.conformation.Conformation: [ WARNING ] missing heavyatom:  CG2 on residue I
 core.conformation.Conformation: [ WARNING ] missing heavyatom:  CD1 on residue ILE 2
 ...
 ```
+
 Finally, Rosetta builds the missing sidechains.
->Since there is no information about the conformation of the sidechains in the centroid representation, different runs produce slightly different sidechain conformations.
 
 ```html
 ...
@@ -150,6 +150,9 @@ core.pack.pack_missing_sidechains: packing residue number 1 because of missing a
 core.pack.pack_missing_sidechains: packing residue number 2 because of missing atom number 6 atom name  CG
 ...
 ```
+
+>Since there is no information about the conformation of the sidechains in the centroid representation, different runs produce slightly different sidechain conformations.
+
 ###Full atom input when protocol expects centroid
 ####Demo
 The following demo runs the [scoring protocol](https://www.rosettacommons.org/demos/latest/tutorials/scoring/README) with an option to score the structure assuming it to be in centroid, but the input PDB supplied is full atom.
