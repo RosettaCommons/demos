@@ -74,7 +74,7 @@ To see how confident you can be about the correctness of a prediction, you can p
 
  ![folding_funnels.png](folding_funnels.png)  
 The left plot shows that the lowest energy models also have the lowest rmsd - the simulation converged. On the right hand side, however, there is no convergence. Many very different models have low energies. A prediction would be highly questionable.  
-> The plot you will get, should converge towards an rmsd of approx. 5 Angstrom. You can see what a larger run will look like by running the same steps using the score.sc file provided in the example_outputs directory.
+> The plot you will get, should converge towards an rmsd of approx. 5 Angstrom. You can see what a larger run will look like by plotting score_rmsd.dat provided in example_outputs directpry which is generated using the same steps described above..
 
 ####3.2. Extract the best (by score) of the generated models.
 5 Angstrom does not quite sound like Rosetta really solved the problem. The only way to find out is by looking at the best structure(s)
