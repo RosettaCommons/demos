@@ -59,7 +59,7 @@ The third flag, `run:min_tolerance`, specifies the convergence tolerance for the
 In your terminal window, run the minimization executable by typing,
 
 ```bash
-$> <path/to/Rosetta/bin/>minimize.default.linuxgccrelease @minimization_flags
+$> <path/to/Rosetta/bin/>minimize.default.linuxgccrelease @minimizer_flags
 ```
 If this executable runs with no errors and the terminal output ends with something like this,
 
