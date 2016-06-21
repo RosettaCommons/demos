@@ -1,7 +1,11 @@
 # Minimization
 
+Tutorial by Kristen Blacklock (kristin.blacklock@rutgers.edu).
+Edited by Vikram K. Mulligan (vmullig@uw.edu).
+Created 20 June 2016.
+
 ## Introduction
-Proteins are not static structures, but rather they undergo fluctuations in their conformations and exist as an ensemble of states. 
+Proteins are not static structures, but rather they undergo fluctuations in their conformations and exist as an ensemble of states.
 
 Each snapshot of a protein in its repertoire of conformations can be associated with an energy, where some conformations will have high energies and some will have low energies. In molecular modeling, it is usually desirable to find the global minimum (representing the lowest-energy conformation) of this energy function. This, however, is a very difficult task given the vast energy landscape that needs to be searched, so we'll settle for the next best thing: **a local minimum**.
 
@@ -104,7 +108,7 @@ Sometimes it may be undesirable to allow such large movements in the starting co
 
 ## How-To: Minimization with Constraints
 
-For this section of the tutorial, we will use the same crystal structure as before, `3hon.pdb`, but this time we will apply harmonic coordinate constraints (csts) on the backbone heavy atoms of the nine C-terminal tail residues.
+For this section of the tutorial, we will use the same crystal structure as before, `3hon.pdb`, but this time we will apply harmonic coordinate constraints (csts) on the backbone heavy atoms of the nine C-terminal tail residues.  You can think of these constraints as "elastics" or "rubber bands" that lightly pull each backbone heavy atom back towards its original positoin during the minimization trajectory.
 
 ### Setting up the flags file and constraints file
 
