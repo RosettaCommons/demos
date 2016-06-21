@@ -221,12 +221,12 @@ RESIDUE *  CHI    # allows sidechain movements at all residues
 JUMP * YES        # allows rigid body movements between all structures separated by jumps
 ```
 
-If a residue appears more than once, the last appearance in the file determines the movement (i.e. movemap lines are NOT commutative, unlike the TaskOperations used to control the packer). For example, the movemap speficied here
+If a residue appears more than once, the last appearance in the file determines the movement (i.e. movemap lines are NOT commutative, unlike the TaskOperations used to control the packer -- see the [tutorial on packing](../Optimizing_Sidechains_The_Packer/Optimizing_Sidechains_The_Packer.md)). For example, the movemap speficied here...
 ```
 RESIDUE * CHI
 RESIDUE * BB
 ```
-will only allow backbone (BB) movements for all residues and will disallow sidechain (CHI) movements for all residues, which is probably not what the user meant.
+...will only allow backbone (BB) movements for all residues and will disallow sidechain (CHI) movements for all residues, which is probably not what the user meant.
 
 > **Note: If a residue or jump is not specified in the movemap, it will revert to the default behavior, which is protocol-specific.**
 
