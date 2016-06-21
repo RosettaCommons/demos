@@ -5,6 +5,7 @@ chain that is kept is chain A. The script is executed by
 ```bash
 $> python $ROSETTA_TOOLS/zinc_site_redesign/cleanPDBfile.py -f 1A4L.pdb 
 ```
+The expected output from the above is shown in expected_output_1A4L_clean_A.pdb.
 
 To keep chain B for example:
 
