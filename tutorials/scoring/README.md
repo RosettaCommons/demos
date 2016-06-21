@@ -7,9 +7,10 @@ Created 20 June 2016
 
 Summary
 -------
-Rosetta calculates the energy of a biomolecule using energy functions, some of which are general, while others have been optimized for a particular task or biomolecule. By the end of this tutorial, you should understand:
+Rosetta calculates the energy of a biomolecule using energy functions based on physical and statistical terms. By the end of this tutorial, you should understand:
 
 * What it means to calculate the energy of a biomolecule in Rosetta
+* How much a particular type of interaction contributes to the energy score
 * How to interpret and compare the energy scores calculated by Rosetta
 * How to score a biomolecule
 * How to change the energy function to other preset functions
