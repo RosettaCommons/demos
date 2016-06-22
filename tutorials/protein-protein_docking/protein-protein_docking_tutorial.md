@@ -171,13 +171,15 @@ This tutorial presents a cross-docking benchmark experiment. Antibody CR6261 bin
 
     The native structure used in this step (**3gbm_native.pdb**) has been cleaned as above. A complete structure is necessary for comparison to models. Missing density has been repaired through loop modeling or grafting of segments from 3gbn.pdb.
     
-    **If your docking run is not finished yet, you can try out this step with pre-generated results. Make a new directory and copy the file docking.silent from the  output_files/ directory into this new directory.**
+    **If your docking run is not finished yet, you can try out this step with pre-generated results. Make a new directory and copy the file docking.silent from the  output_files/ directory into this new directory.** You can also simply copy a smaller set of extracted files using:
+    
+            $> cp output_files/*full*pdb output_files/*minimize*pdb .
 
     1.  Characterize your models using the InterfaceAnalyzer mover in RosettaScripts and calculate the RMSD to the native crystal structure with the RMSD filter.
 
-            $>  cp input_files/docking_analysis.xml .
+            $> cp input_files/docking_analysis.xml .
             $> cp input_files/docking_analysis.options . 
-            $> cp ../input_files/3gbm_native.pdb .
+            $> cp input_files/3gbm_native.pdb .
             $> <path-to-Rosetta>/main/source/bin/rosetta_scripts.default.linuxgccrelease \
             @docking_analysis.options -in:file:s *full*pdb *minimize*pdb >& docking_analysis.log &
 
@@ -191,7 +193,7 @@ This tutorial presents a cross-docking benchmark experiment. Antibody CR6261 bin
 
         1. Or use the provided R script to make score vs rmsd plots
 
-                cp ../input_files/sc_vs_rmsd.R .
+                cp input_files/sc_vs_rmsd.R .
                 Rscript ./sc_vs_rmsd.R docking_analysis.csv total_score 
                 Rscript ./sc_vs_rmsd.R docking_analysis.csv dG_separated 
                 Rscript ./sc_vs_rmsd.R docking_analysis.csv dG_separated.dSASAx100 

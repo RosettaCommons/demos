@@ -1,3 +1,5 @@
+KEYWORDS: MEMBRANES UTILITIES ANALYSIS
+
 Visualizing Membranes in PyMOL
 ==============================
 
@@ -61,7 +63,7 @@ also be found in example_inputs/. Here, 1c3w is used as an example:
    capture in Rosetta/demos/protocol_captures/2014. An example commandline using 
    1c3w is also provided here: 
 
-        Rosetta/main/source/bin/spanfile_from_pdb.linuxgccrelease -database /path/to/db -in:file:s example_inputs/1c3w_tr.pdb
+        $> spanfile_from_pdb.default.linuxgccrelease -in:file:s example_inputs/1c3w_tr.pdb
 
    For this example, this command will produce 1 output files: 
      = 1c3w_tr.span: Spanfile containing predicted trans-membrane spans
@@ -88,7 +90,7 @@ use the PDB 1c3w:
     1. Open a new session of PyMOL
     2. Run the PyMOLPyrosettaServer.py script using the following command line in the pymol window:  
 
-            run /path/to/Rosetta/main/source/src/python/bindings/PyMOLPyRosettaServer.py
+            run $ROSETTA3/src/python/bindings/PyMOLPyRosettaServer.py
 
     Once run, a message should appear in the PyMOL terminal window indicating the server was 
     initialized successfully. 
@@ -98,7 +100,7 @@ use the PDB 1c3w:
     From the regular terminal, run the standalone application or other membrane framework apps
     from the command line: 
 
-        Rosetta/main/source/bin/view_membrane_protein.linuxgccrelease -database /path/to/db @pymol_flags
+        $> view_membrane_protein.default.linuxgccrelease @pymol_flags
 
     Within ~10-20 seconds, 2 parallel planes (PyMOL object entitled membrane_planes) will appear 
     in the PyMOL session. 

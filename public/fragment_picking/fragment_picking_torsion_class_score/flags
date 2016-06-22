@@ -1,0 +1,23 @@
+# Input databases
+#-in::file::vall              	../vall-database/vall.apr24.2008.extended.gz
+
+# Query-related input files
+-in::file::checkpoint		fragment_picking_torsion_class_score/input_files/2jsvX.checkpoint
+-in::file::s                    fragment_picking_torsion_class_score/input_files/2jsvX.pdb
+-frags::ss_pred			fragment_picking_torsion_class_score/input_files/2jsvX.psipred.ss2 predA
+-in::file::torsion_bin_probs    fragment_picking_torsion_class_score/input_files/2jsvX.abego
+
+# Weights file
+-frags::scoring::config		fragment_picking_torsion_class_score/input_files/best-frags.wghts
+
+# What should we do?
+-frags::bounded_protocol	
+
+# three-mers only, please
+-frags::frag_sizes 		3 9
+-frags::n_candidates		200
+-frags::n_frags			200
+
+# Output 
+-out::file::frag_prefix		fragment_picking_torsion_class_score/output_files/frags
+-frags::describe_fragments 	fragment_picking_torsion_class_score/output_files/frags.fsc

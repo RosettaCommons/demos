@@ -2,6 +2,8 @@
 
 #Protein Folding
 
+KEYWORDS: STRUCTURE_PREDICTION GENERAL
+
 **Bold text means that these files and/or this information is provided.**
 
 *Italicized text means that this material will NOT be conducted during the workshop.*
@@ -14,18 +16,16 @@ If you want to try making files that already exist (e.g., input files), write th
 
 This tutorial presents a protein folding benchmark experiment. Bacteriophage T4 lysozyme is a soluble protein that hydrolyzes peptidoglycan and releases the virus from its bacterial host. The protein was crystallized at a resolution of 1.7 angstroms and the resulting structure was submitted to the Protein Data Bank (PDB) under accession number 2LZM. In this tutorial, you will reconstruct the structure of bacteriophage T4 lysozyme using *ab initio* protein folding. At the end of the tutorial, the results from this benchmark experiment will be compared to the native structure available from the PDB.
 
-1. Prepare your working directory. You will work in this directory for the rest of the tutorial.
+1. Navigate to this tutorial directory. You will work in this directory for the rest of the tutorial.
 
-    Create a directory in the protein_folding directory called my_files and switch to that directory. 
             
-        mkdir my_files
-        cd my_files
+        > cd <path-to-Rosetta>/demos/tutorials/advanced_denovo_structure_prediction
 
 1. Prepare your input files.
     1. Save your protein sequence to a file using FASTA format.
 
         **The 2LZMA.fasta file is provided for you in the**  
-        **~/rosetta_workshop/tutorials/protein_folding/input_files/ directory.**
+        **input_files/ directory.**
         
         1. Get the sequence in FASTA format from NCBI.
             1. Go to [http://www.ncbi.nlm.nih.gov/protein/](http://www.ncbi.nlm.nih.gov/protein/).

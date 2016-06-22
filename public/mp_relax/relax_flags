@@ -6,5 +6,5 @@
 -relax:fast
 -relax:jump_move true
 -out:pdb
--out:file:scorefile relax_scores_3pxo.sc
+-out:file:scorefile relax_scores_1afo.sc
 -packing:pack_missing_sidechains 0
