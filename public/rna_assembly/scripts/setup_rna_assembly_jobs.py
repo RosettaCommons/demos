@@ -387,6 +387,7 @@ def make_tag_with_dashes( int_vector ):
     return tag
 
 # Output motif jobs
+short_commands = []
 readme_motifs_file = 'README_MOTIFS'
 fid_README_MOTIFS = open( readme_motifs_file,'w')
 for i in range( motif_count ):
@@ -515,12 +516,25 @@ for i in range( motif_count ):
     command += ' -in:file:silent_struct_type rna -in:file:silent '
     for n in which_stems: command += ' stem%d_%s.out' % (n+1, fasta_file.replace('.fasta',''))
 
+
     command += ' -input_res '
     command += ' '+make_tag_with_dashes( stem_chunk_res )
+    
+    short_command = command.replace('-nstruct 100', '-nstruct 1')
+    short_command = short_command.replace('-cycles 5000', '-cycles 1')
+    short_commands.append(short_command)
 
     fid_README_MOTIFS.write( command+'\n' )
+	
 
 fid_README_MOTIFS.close()
+
+
+with open("README_MOTIFS.short", 'w') as shortfile:
+	for short in short_commands:
+		shortfile.write(short+'\n')
+
+
 print 'Created: ', readme_motifs_file
 print ' This has the command lines that you need to make interhelical motifs, like hairpin loops and internal junctions.'
 print
@@ -575,6 +589,8 @@ for i in range( stem_count ):
                      stem_res[-1][1] + 1 ) )
 
 fid.close()
+
+
 print 'Created: ', params_file
 
 ########
@@ -584,7 +600,7 @@ if cst_exists:
 fid = open( assemble_cst_file,'w')
 fid.write('[ atompairs ]\n')
 for cutpoint in cutpoints:
-    fid.write( 'O3*  %d  P     %d  HARMONIC  1.619  2.0\n' % \
+    fid.write( "O3'  %d  P     %d  HARMONIC  1.619  2.0\n" % \
                    ( cutpoint+1, cutpoint+2 ) )
 if cst_exists:
     for cst in cst_info:
@@ -630,8 +646,14 @@ if data_exists:
 
 fid.write( command+'\n')
 fid.close()
+
+with open('README_ASSEMBLE.short','w') as assemble_shortfile:
+	command = command.replace('-cycles 10000', '-cycles 1')
+	command = command.replace('-nstruct 200', '-nstruct 1')
+	assemble_shortfile.write( command )
+
 print 'Created: ', readme_assemble_file
 print ' This has the command lines that you need to make full-length structures after making the individual stems and interhelical motifs'
 print
 
-
+os.system('chmod a+x README_*')
