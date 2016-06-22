@@ -14,8 +14,8 @@ This tutorial will introduce you the main steps required for predicting how two 
 
 2. Then, you have to combine the protein structures into a single file. 
 
-        $ cp COL_D.pdb combined.pdb
-        $ cat IMM_D.pdb >> combined.pdb
+        $> cp COL_D.pdb combined.pdb
+        $> cat IMM_D.pdb >> combined.pdb
       
  You can open the new pdb file in Pymol to see, whether both proteins are present.
 
