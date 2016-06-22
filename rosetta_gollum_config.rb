@@ -38,16 +38,39 @@ class Gollum::Macro::LinkDemos < Gollum::Macro
     abs_demos_glob = File.join(abs_demos_dir, '*/')
 
     html = "<ul>\n"
+    ( Dir[ File.join(abs_demos_dir, '**', '*.md') ].reject { |p| File.directory? p } ).sort.each do |abs_demo_file|
+        demo_file = Pathname.new(abs_demo_file).relative_path_from(Pathname.new(abs_demos_dir))
+        demo_hierarchy = demo_file.to_s().split(File::SEPARATOR)
+        if demo_hierarchy[-1] == "README.md" then
+            demo_hierarchy.delete_at(-1)
+	else
+            demo_hierarchy[-1] = demo_hierarchy[-1][0..-4] #Chop off the .md; -4 is inclusive
+	end
+        demo_name = demo_hierarchy[-1]
 
-    Dir[abs_demos_glob].sort.each do |abs_demo_dir|
-        demo_name = File.basename(abs_demo_dir)
-        demo_readme = File.join(demos_dir, demo_name, 'README')
-        abs_readme_glob = File.join(abs_demo_dir, '[Rr][Ee][Aa][Dd][Mm][Ee]*')
-        readme_exists = Dir[abs_readme_glob].select{|x|
-            Gollum::Page.parse_filename(x) != []
-        }.any?
+        #Parse the md file and extract the title and keywords
+	demo_title = nil
+	keywords = []
+	File.open(abs_demo_file,'r') do |f|
+            f.each_line do |line|
+    		if demo_title == nil and line.strip != "" and line.strip[0] != "\\" then
+		    demo_title = line.tr("#","").strip
+                    next
+		end
+                if line.start_with?("KEYWORDS:") then
+                    keywords = line.split[1..-1]
+		    break
+		end
+            end
+        end
+        #demo_readme = File.join(demos_dir, demo_name, 'README')
+        #abs_readme_glob = File.join(abs_demo_dir, '[Rr][Ee][Aa][Dd][Mm][Ee]*')
+        #readme_exists = Dir[abs_readme_glob].select{|x|
+        #    Gollum::Page.parse_filename(x) != []
+        #}.any?
 
-        html += %{<li><a class="internal #{readme_exists ? 'present' : 'absent'}" href="#{demo_readme}">#{demo_name}</a></li>\n}
+        #html += %{<li><a class="internal #{readme_exists ? 'present' : 'absent'}" href="#{demo_readme}">#{demo_name}</a></li>\n}
+	html += %{<li>#{demo_name} - #{demo_title} - #{keywords}</li>\n}
     end
 
     html += "</ul>"
