@@ -1,25 +1,31 @@
-# Minimization
+# Finding Local Energy Minima Using the *Minimizer*
 
 Tutorial by Kristen Blacklock (kristin.blacklock@rutgers.edu).
 Edited by Vikram K. Mulligan (vmullig@uw.edu).
 Created 20 June 2016.
+
+[[_TOC_]]
 
 ## Introduction
 Proteins are not static structures, but rather they undergo fluctuations in their conformations and exist as an ensemble of states.
 
 Each snapshot of a protein in its repertoire of conformations can be associated with an energy, where some conformations will have high energies and some will have low energies. In molecular modeling, it is usually desirable to find the global minimum (representing the lowest-energy conformation) of this energy function. This, however, is a very difficult task given the vast energy landscape that needs to be searched, so we'll settle for the next best thing: **a local minimum**.
 
-> **Minimization is a sampling technique for the purpose of finding the nearest local minimum in the energy function given a starting structure's conformation and energy.**
+> **Minimization is a technique for the purpose of finding the nearest local minimum in the energy function given a starting structure's conformation and energy.**
 
-In Rosetta, one of the simplest ways in which to move a structure to its nearest local energy minimum is to use the `minimize` executable.  This carries out a _gradient-based minimization_ to find the nearest local minimum in the energy function. There are many different flavours to the [minimization algorithm](https://www.rosettacommons.org/docs/latest/rosetta_basics/structural_concepts/minimization-overview#flavors-of-minimization-in-rosetta) that the `minimize` application can use, but essentially all minimization flavours choose a vector as the descent direction, march along that vector until the energy ceases to decrease (a "line search"), then choose a new direction and repeat. In this tutorial, we will use the `lbfgs_armijo_nonmonotone` algorithm, which is a multi-step algorithm that needs to only be called once to reach the local mimimum of a function (rather than invoking repeated iterations to reach convergence).
+Rosetta has a core algorithm, called the *minimizer*, which solves the problem of moving a structure to its nearest local energy minimum.  This carries out one of several variations on _gradient-descent minimization_ to find the nearest local minimum in the energy function. There are many different flavours to the [minimization algorithm](https://www.rosettacommons.org/docs/latest/rosetta_basics/structural_concepts/minimization-overview#flavors-of-minimization-in-rosetta) that the minimizer can use, but essentially, all minimization flavours choose a vector as the descent direction, march along that vector until the energy ceases to decrease (a "line search"), then choose a new direction and repeat. In this tutorial, we will use the `lbfgs_armijo_nonmonotone` flavour, which is a multi-step algorithm that needs to only be called once to reach the local mimimum of a function (rather than invoking repeated iterations to reach convergence).
 
-> **In general, minimization is determinisitic, unlike methods that depend on Monte Carlo searches.  There is generally little advantage to repeating a minimization trajectory many times; there should be no diversity to the ensemble produced.**  This being said, minimization *is* sensitive to small numeric precision differences from platform to platform, or even from compiler to compiler.
+> **In general, minimization is determinisitic, unlike methods that depend on Monte Carlo searches.  There is generally little advantage to repeating a minimization trajectory many times; there should be no diversity to the ensemble produced.**
+
+This being said, minimization *is* sensitive to small numeric precision differences from platform to platform, or even from compiler to compiler.
+
+Many Rosetta modules invoke the minimizer, but one of the simplest ways to do so is to use the `minimize` executable.
 
 ## Goals
 In this tutorial, you will learn to use one of the many minimization algorithms in three different ways, first by allowing all residues in the structure to move during the minimation and then by using two methods that allow only a subset of the degrees of freedom (DOFs) to change. Specifically, we will:
 * Learn to run the `score` and `minimize` executables via the command line.
 * Create and utilize a **constraints file** to prevent the movement of CA atoms from ocurring in part of the structure.
-* Create and utilize a **move map** to control the degrees of freedom allowed to move during the minimization.
+* Create and utilize a **movemap** to control the degrees of freedom allowed to move during the minimization.
 * Compare and analyze the output files and structures from each type of minimization.
 
 ## How-To: Minimize
@@ -31,12 +37,12 @@ Take a look at the crystal structure file `3hon.pdb` in your favorite PDB Viewer
 Let's get an initial score for this conformation. In your command line, type:
 
 ```bash
-$> <path/to/Rosetta/bin/>score.default.linuxgccrelease -s 3hon.pdb
+$> <path_to_Rosetta>/main/source/bin/score.default.linuxgccrelease -s 3hon.pdb
 ```
 
 This command will output a `default.sc` file, which contains the Rosetta score for this conformation. Inside this file, we see:
 
-![default scorefile](default_score.png)
+![default scorefile](images/default_score.png)
 
 The first line of this file is the header line that tells us which columns correspond to which score terms.
 
@@ -65,11 +71,11 @@ The third flag, `run:min_tolerance`, specifies the convergence tolerance for the
 In your terminal window, run the minimization executable by typing,
 
 ```bash
-$> <path/to/Rosetta/bin/>minimize.default.linuxgccrelease @minimizer_flags
+$> <path_to_Rosetta>/main/source/bin/minimize.default.linuxgccrelease @minimizer_flags
 ```
 If this executable runs with no errors and the terminal output ends with something like this,
 
-![min log](https://github.com/RosettaCommons/demos/blob/XRW2016_kmb/tutorials/min.png)
+![min log](images/min.png)
 
 then you have successfully minimized the input structure. Check to make sure a `score.sc` file and a `3hon_0001.pdb` output structure have also been generated. Now let's analyze the output scores and structure.
 
@@ -96,15 +102,15 @@ The `score.sc` file contains the new scores for the minimized structure. Open th
 
 Note that the exact values that you obtain might be slightly different (+/- 0.5 energy units) from what's listed above: tiny numerical precision differences from platform to platform can accumulate over the trajectory to produce noticeable (but still small) differences in the final output.  What's important is that most of the score terms have gone down in value (which is good!). But how has the minimization affected the structure? Open the `3hon_0001.pdb` to see what has changed.
 
-![3hon minimized](3hon_min_on_xtal.png)
+![3hon minimized](images/3hon_min_on_xtal.png)
 
 The minimized structure (in green) has moved out of alignment with the native structure (in cyan), so first let's align the two structures. If you are using PyMOL, type `align 3hon_0001, 3hon` and hit `Enter`.
 
-![3hon minimized_aligned](3hon_minaligned_on_xtal.png)
+![3hon minimized_aligned](images/3hon_minaligned_on_xtal.png)
 
 Now that the structures are aligned, notice that the last nine residues of the loop region have moved quite significantly from their original conformation. Furthermore, most of the minimized rotamers are no longer in their native conformations.
 
-![3hon minimized_aligned sticks](3hon_minaligned_on_xtal_sticks.png)
+![3hon minimized_aligned sticks](images/3hon_minaligned_on_xtal_sticks.png)
 
 Sometimes it may be undesirable to allow such large movements in the starting conformation. To this end, we can use minimization with constraints to minimize our input structure in which movements of certain atoms will be penalized by the score function.
 
@@ -136,12 +142,12 @@ The flag `out:suffix` will prevent us from overwriting our previous output by ap
 Run the minimization executable in the same way as before, but now with the new flags file:
 
 ```bash
-$> <path/to/Rosetta/bin/>minimize.cc @minwithcsts_flags
+$> <path_to_Rosetta>/main/source/bin/minimize.default.linuxgccrelease @minwithcsts_flags
 ```
 
 This time, look for a few lines coming from the `core.scoring.constraints` tracers in the log output. They should look similar to this (though again, numeric differences are possible from platform to platform):
 
-![mincsts log](minwithcsts.png)
+![mincsts log](images/minwithcsts.png)
 
 These lines indicate that our constraints were read and applied to the pose. If the executable ended without errors and generated a `3hon_minwithcsts_0001.pdb` file as well as a `score_minwithcsts.sc` file, then you have succesfully run minimization with coordinate constraints.
 
@@ -175,7 +181,7 @@ Now let's take a look at the minimized-with-csts structure to see how it compare
 
 Opening the `3hon_minwithcsts_0001.pdb` file and comparing it to the crystal structure,
 
-![3hon mincsts](3hon_minwithcsts_onxtal.png)
+![3hon mincsts](images/3hon_minwithcsts_onxtal.png)
 
 we immediately see little to no movement in the position of the nine C-terminal CA atoms.
 
@@ -183,14 +189,22 @@ In some cases, the user may want to prevent the internal geometry of certain res
 
 ## How-To: Minimization with a MoveMap
 
-The [movemap](https://www.rosettacommons.org/docs/latest/rosetta_basics/structural_concepts/Rosetta-overview#scoring_movemap) is an important concept in Rosetta minimization.  It allows users to control what degrees of freedom can change during minimization, and what degrees of freedom are fixed. For example, one may not want to move highly-conserved sidechains in modeling applications, or one may want to preserve certain interactions in design applications.  Certain protocols that call the Rosetta minimizer accept a user-defined move map file.
+#### The MoveMap
 
-In the context of the minimizer, a move map allows the user to specify if the backbone (BB) torsions angles (phi, psi) or the sidechain torsions angles (CHI) are allowed to be moved during the minimization of the energy function. In addition, if the input structure has more than one chain (separated by one or more JUMPS), the move map can also specify if rigid-body movements between the different chains are allowed.
+The [movemap](https://www.rosettacommons.org/docs/latest/rosetta_basics/structural_concepts/Rosetta-overview#scoring_movemap) is an important concept in Rosetta minimization.  It allows users to control what degrees of freedom can change during minimization, and what degrees of freedom are fixed. For example, one may not want to move highly-conserved sidechains in modeling applications, or one may want to preserve certain interactions in design applications.  Certain protocols that call the Rosetta minimizer accept a user-defined movemap file.
 
-##### Caveat: Even if a residue's backbone and sidechain torsion movements are turned off in a move map, its relative position with respect to other residues may still change depending on the motion of residues upstream in the FoldTree.
+In the context of the minimizer, a movemap allows the user to specify whether the backbone (BB) torsions angles (phi and psi, in the case of α-amino acid residues) and/or the sidechain torsions angles (CHI) are allowed to be moved during the minimization of the energy function. In addition, if the input structure has more than one chain (separated by one or more *JUMPS*, or rigid-body transformations), the movemap can also specify whether rigid-body movements between the different chains are allowed.
 
-#### Description of the move map file format
-Each line in the move map file identifies a jump, residue, or residue range, followed by the allowed degrees of freedom. These entities may be specified as follows:
+> **Caveat: Even if a residue's backbone and sidechain torsion movements are turned off in a movemap, its relative position with respect to other residues may still change depending on the motion of residues upstream in the foldtree.**
+
+#### A note about the FoldTree
+
+The [foldtree](https://www.rosettacommons.org/docs/latest/rosetta_basics/structural_concepts/foldtree-overview) is another important concept relevant to minimization.  Although manipulation of the foldtree will be covered in greater detail in another tutorial, we will give a brief overview of the concept here.  When minimizing, degrees of freedom change, and that can have ambiguous consequences for the structure.  For example, if I were to change the phi torsion of residue 5 from -60 to -50, one of two things could happen: residues 1 through 4 could stay fixed and all resides from 5 onwards could move, or residues 1 through 4 could move and 5 onwards could stay fixed.  The foldtree establishes a hierarchical relationship between residues in a pose so that the effects of changing degrees of freedom are well-defined.  Each residue has one unique parent (with the exception of a single root residue), and each residue can have one or more children.  (Cyclic dependencies are prohibited -- for example, residue 4 cannot be the parent of residue 3 if residue 3 is the parent of residue 4.)  Changes in a residue's degrees of freedom propagate to all of the children of a residue, but to not affect parents.  While most residues in a typical pose are related by through-bond connections, two residues can instead be related by a through-space rigid body transform, called a *jump*.  If two separate chains exist (with no bonds linking them), it is necessary to have at least one jump relating residues in the first with residues in the second.
+
+As mentioned in the caveat above, a user invoking the minimizer, particularly with a MoveMap, should be mindful of the foldtree.  The default foldtree has residue 1 of chain A as the root, with residue 2 as a child of 1, residue 3 as a child of 2, *etc.*, and with jumps to the first residue of any additional chain or chains.  Any moveable degree of freedom affects every residue downstream of it in the foldtree, even if that residue's degrees of freedom are fixed by the MoveMap.  As a concrete example, let's consider the case of a 20-residue pose with a default foldtree, with a MoveMap that prevents movement of backbone DoFs for residues 8 through 20.  Energy-minimization would change backbone degrees of freedom for residues 1 through 7, swinging residues 8 through 20 through space in the process (though residues 8 through 20 could not move *relative to one another*, in this case).
+
+#### Description of the movemap file format
+Each line in the movemap file identifies a jump, residue, or residue range, followed by the allowed degrees of freedom. These entities may be specified as follows:
 ```
 RESIDUE <#> <BB/CHI/BBCHI/NO>         # a single residue <#> followed by a single option (pick one of the four)
 RESIDUE <#1> <#2> <BB/CHI/BBCHI/NO>   # a range of residues from <#1> to <#2> followed by a single option (again, pick one)
@@ -209,18 +223,18 @@ RESIDUE *  CHI    # allows sidechain movements at all residues
 JUMP * YES        # allows rigid body movements between all structures separated by jumps
 ```
 
-If a residue appears more than once, the last appearance in the file determines the movement (i.e. move map lines are NOT additive). For example, the movemap speficied here
+If a residue appears more than once, the last appearance in the file determines the movement (i.e. movemap lines are NOT commutative, unlike the TaskOperations used to control the packer -- see the [tutorial on packing](../Optimizing_Sidechains_The_Packer/Optimizing_Sidechains_The_Packer.md)). For example, the movemap speficied here...
 ```
 RESIDUE * CHI
 RESIDUE * BB
 ```
-will only allow backbone (BB) movements for all residues and will disallow sidechain (CHI) movements for all residues, which is probably not what the user meant.
+...will only allow backbone (BB) movements for all residues and will disallow sidechain (CHI) movements for all residues, which is probably not what the user meant.
 
-##### Note: If a residue or jump is not specified in the move map, it will revert to the default behavior, which is protocol-specific.
+> **Note: If a residue or jump is not specified in the movemap, it will revert to the default behavior, which is protocol-specific.**  In many but not all cases, the default behaviour is for all torsional degrees of freedom (bb, chi) and all rigid-body degrees of freedom (jumps) to be movable.  When in doubt, it's better to be explicit about the user-requested behaviour.
 
 ### Setting up the flagsfile and movemap file
 
-For the next minimization walkthrough, we will need to add one option to our flags file to tell Rosetta to read the move map file. The contents of the new flags file, `minwithmm_flags`, should look like this:
+For the next minimization walkthrough, we will need to add one option to our flags file to tell Rosetta to read the movemap file. The contents of the new flags file, `minwithmm_flags`, should look like this:
 
 ```
 -s 3hon.pdb
@@ -232,7 +246,7 @@ For the next minimization walkthrough, we will need to add one option to our fla
 
 The flag `movemap` specifies the movemap file to apply to the pose.
 
-Our move map file `movemapfile` (expanded below) tells the minimizer to first set all backbone (BB) and sidechain (CHI) torsion angles to movable. Then, it reverts residues 47 through 55 (in pose numbering) to be fixed.
+Our movemap file `movemapfile` (expanded below) tells the minimizer to first set all backbone (BB) and sidechain (CHI) torsion angles to movable. Then, it reverts residues 47 through 55 (in pose numbering) to be fixed.
 ```
 RESIDUE * BBCHI
 RESIDUE 47 55 NO
@@ -243,7 +257,7 @@ RESIDUE 47 55 NO
 Run the minimization executable in the same way as before, but now with the new flags file:
 
 ```bash
-$> minimize.cc @minwithmm_flags
+$> <path_to_Rosetta>/main/source/bin/minimize.default.linuxgccrelease @minwithmm_flags
 ```
 
 The log output should be similar to the first minimization protocol except for a difference in score. You should also have a `3hon_minwithmm_0001.pdb` file and a `score_minwithmm.sc` file after running this command.
@@ -274,14 +288,22 @@ The total score of the minimized-with-movemap structure is lower still than the 
 
 Let's open the minimized-with-movemap structure and compare it visually to the crystal structure.
 
-![3hon minmm](3hon_minwithmm_xtal.png)
+![3hon minmm](images/3hon_minwithmm_xtal.png)
 
 
 After aligning the minimized-with-movemap structure to the crystal structure as a whole, it appears that the nine C-terminal residues have moved. However, when we align only the nine C-terminal residues against each other, it becomes clear that the minimizer has not changed the backbone or sidechain angles:
 
-![3hon minmm](3hon_minwithmm_9resicterm.png)
+![3hon minmm](images/3hon_minwithmm_9resicterm.png)
 
 #### This is an important point to reiterate: The movemap can prevent internal geometries from changing, but not necessarily the global position of the residues.
+
+## More detailed algorithm overview (for advanced users)
+
+This sub-section of this tutorial may be skipped by novice and casual users; it is included to give advanced users greater insight into the way in which the tools work, in the hopes that this will help them to use their tools more effectively.  As mentioned earlier, the minimizer works by variants on gradient-descent minimization.  All energy terms in Rosetta define not only a way to calculate the energy value given the current values of system degrees of freedom, but also a way to calculate derivatives with respect to spatial degrees of freedom given values of those degrees of freedom.  The minimizer uses these derivative functions to calculate an overall gradient vector, ∇E.  This is a vector of partial derivatives: ∇E = dE/dx<sub>1</sub>, dE/dx<sub>2</sub>, ..., dE/dx<sub>N</sub>, where x<sub>1</sub> ... x<sub>N</sub> are the movable degrees of freedom, evaluated for the current values of the degrees of freedom.  This vector points in the "uphill" direction in conformation space, and its negative points in the "downhill" direction.  The minimizer then "marches" in the "downhill" direction (meaning that it adds -ε∇E to the current vector of degrees of freedom, where ε is some arbitrarily small scalar value), stopping this "line search" only when the energy stops decreasing and starts to increase.  At this point, it recalculates ∇E (which will now point in a slightly different direction) and repeats the search.  This continues until the gradient is sufficiently flat (*i.e.* of sufficiently small magnitude) as defined by the minimization threshhold.
+
+There is one slight complication to this.  The method described above is what occurs when the "linmin_iterated" flavour is used.  Unfortunately, this is relatively inefficient: minimization can converge much more quickly if both first and *second* derivative information is used to select the line search direction.  Doing this correctly and exactly (the Newton method) would mean calculating, and inverting, the Hessian matrix, which is an NxN matrix of partial second derivatives given N movable degrees of freedom.  Since calculating, inverting, and updating this large matrix would slow the minimizer down immensely, the compromise is to estimate the inverse of the Hessian matrix using the last several values of the gradient, ∇E, that were calculated.  Many *quasi-Newton* methods for doing this have been put forth, including the Davidon-Fletcher-Powell (DFP) method and the Broyden-Fletcher-Goldfarb-Shanno (BFGS) method.  Rosetta features two flavours of the latter: the standard BFGS method (inaccurately named "dfpmin") and a low-memory, better-performing variant (called "lbfgs").  Variations on each of these also exist, which use different stopping conditions and which carry out their line searches in subtly different ways.  The current default in Rosetta is the "lbfgs_armijo_nonmonotone" flavour, which benchmarks have shown to produce the best performance for large proteins.
+
+Very small systems (*e.g.* small peptides) might show better behaviour with "dfpmin_armijo_nonmonotone".  Certain rare artifacts of the inverse Hessian approximations used might also be avoided with the slower, but more accurate, "linmin_iterated" flavour (which is a good thing to try when debugging an oddly-behaving protocol).
 
 ## Summary
 

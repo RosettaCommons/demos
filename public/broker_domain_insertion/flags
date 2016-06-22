@@ -1,0 +1,10 @@
+-parser:protocol domain_insertion.xml
+-in:file:fasta 1uufA.fasta
+-in:file:native 1uufA.pdb
+-out:path:pdb out_pdbs
+-nstruct 100
+-out:levels core.util.switchresiduetypeset:error
+
+@denovo_flags
+
+-evaluation:rmsd 1uufA_chain_filled.pdb _notail noloop.rigid

@@ -31,22 +31,24 @@ This tutorial presents a cross-docking benchmark experiment. Antibody CR6261 bin
 
         1. We want the hemagglutinin (chains A and B) from 3GBM
 
-                python2.7 ~/rosetta_workshop/rosetta/tools/protein_tools/scripts/clean_pdb.py 3GBM AB
+                > <path-to-Rosetta>/tools/protein_tools/scripts/clean_pdb.py 3GBM AB
 
-                python2.7 ~/rosetta_workshop/rosetta/tools/protein_tools/scripts/pdb_renumber.py \
+                > <path-to-Rosetta>/tools/protein_tools/scripts/pdb_renumber.py \
                 --norestart 3GBM_AB.pdb 3gbm_HA.pdb
 
         1. We want the antibody (chains H and L) from 3GBN. (Note that chains A and B are not the antibody "Ab"). We only need the variable domain which is actually involved with binding HA. The crystal structure also contains a partially resolved portion of the constant domain. You should manually edit the PDB file with a text editor to remove the unnecessary portions. You should be able to see them in a structure viewer. It should be residues 121-160 of the heavy chain (chain H) and residues 268-311 of the light chain (chain L) in the cleaned structure.
 
-                python2.7 ~/rosetta_workshop/rosetta/tools/protein_tools/scripts/clean_pdb.py 3GBN HL
+                > <path-to-Rosetta>/tools/protein_tools/scripts/clean_pdb.py 3GBN HL
 
                 cp 3GBN_HL.pdb 3GBN_trim.pdb
                 pymol 3GBN_trim.pdb
                 gedit 3GBN_trim.pdb
 
-                python2.7 ~/rosetta_workshop/rosetta/tools/protein_tools/scripts/pdb_renumber.py \
+                > <path-to-Rosetta>/rosetta/tools/protein_tools/scripts/pdb_renumber.py \
                 --norestart 3GBN_trim.pdb 3gbn_Ab.pdb
 
+   -> Note: you may not have gedit in your computer. Try using other text editors.
+    
     1. Close the chain break between Ser-127 and Val-128 in chain L of the antibody. 
         
         Chain breaks can cause unexpected behavior during docking. Because this chain break is small and away from the expected interface, it can be quickly and easily fixed. The goal is simply to close the chain break within the secondary structure element and not to rigorously build this loop. Build ten models (a minimal computational effort) and pick one with a good score and a good representative structure.
@@ -59,7 +61,7 @@ This tutorial presents a cross-docking benchmark experiment. Antibody CR6261 bin
             
             type '`show lines, resi 125-130`'
 
-        1. Prepare a loops file for closing the chain break. Use a text editor such as gedit. Several amino acids must be mobile for the loop to close successfully. Select several residues on each side of the chain break.
+        1. Prepare a loops file for closing the chain break. Use a text editor such as gedit. Several amino acids must be mobile for the loop to close successfully. Select several residues on each side of the chain break. (Note that you may not have gedit on your computer in which case you need to use a different text editor).
 
                     gedit chainbreak_fix.loops
             

@@ -1,0 +1,5 @@
+-in:file:l input_files/pdblist
+
+-score:weights docking
+
+-out:file:scorefile output_files/score_docking.sc

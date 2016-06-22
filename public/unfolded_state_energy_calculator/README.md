@@ -1,6 +1,6 @@
 # Instructions for Calculating Explicit Unfolded State Energies for Noncanonical Amino Acids
 
-This README was written by P. Douglas Renfrew (renfrew@nyu.edu).
+This README was written by P. Douglas Renfrew (renfrew@nyu.edu). The file was updated by Parisa Hosseinzadeh (parisah@uw.edu).
 
 This demo illustrates the UnfoldedStateEnergyCalculator protocol. It was originally written as the 3rd (of 4) parts of a "protocol capture" accompanying the paper "Using Noncanonical Amino Acids in Computational Protein-Peptide Interface Design" by P. Douglas Renfrew, Eun Jung Choi, Brian Kuhlman (2011) PLoS One, from the RosettaCon2010 special PLoS ONE special issue. The four separate protocol captures that describe the four different ways Rosetta was used in the publication: creating Rosetta ResidueType parameter files for NCAAs, creating backbone dependent rotamer libraries for NCAAs, calculating explicit unfolded state reference energies for NCAAs, and the running of the DougsDockDesignMinimizeInterface protocol using NCAAs. The protocol captures for creating ResidueType parameter files, rotamer libraries and explicit unfolded state energies describe the process used in the publication but are written from the standpoint of a researcher looking to add an additional NCAA to Rosetta. 
 
@@ -21,7 +21,6 @@ Since the UnfoldedStateEnergyCalculator protocol uses fragments from protein str
 $ cd inputs
 $ ../scripts/get_pdbs.bash cullpdb_pc20_res1.6_R0.25_d110520_chains1859
 ```
-
 There should be 1801 gzipped pdb files and a text file containing a list of them called cullpdb_pc20_res1.6_R0.25_d110520_chains1859_list_pruned in the inputs directory. Rosetta will sometimes fail to correctly read in particular pdbs files. The cullpdb_pc20_res1.6_R0.25_d110520_chains1859_list_pruned file is a list of the pdbs which have been screened to be read successfully by Rosetta. 
 
 \*\*Citation: G. Wang and R. L. Dunbrack, Jr. PISCES: a protein sequence culling server. Bioinformatics, 19:1589-1591, 2003. 
@@ -47,10 +46,11 @@ Continuing the ornithine example we have used in the two previous protocol captu
 
 ```
 $ cd outputs
-$ PATH/TO/bin/UnfoldedStateEnergyCalculator.macosgccrelease -database PATH/TO/rosetta_database -ignore_unrecognized_res -ex1 -ex2 -extrachi_cutoff 0 -l ../inputs/cullpdb_pc20_res1.6_R0.25_d110520_chains1859_list_pruned -residue_name C40 -mute all -unmute devel.UnfoldedStateEnergyCalculator -unmute protocols.jd2.PDBJobInputer -no_optH true -detect_disulf false >& ufsec_log_c40 &
+$ PATH/TO/bin/UnfoldedStateEnergyCalculator.linuxgccrelease -ignore_unrecognized_res -ex1 -ex2 -extrachi_cutoff 0 -l ../inputs/cullpdb_pc20_res1.6_R0.25_d110520_chains1859_list_pruned -residue_name C40 -mute all -unmute devel.UnfoldedStateEnergyCalculator -unmute protocols.jd2.PDBJobInputer -no_optH true -detect_disulf false >& ufsec_log_c40 &
 ```
 
 **Note:** The extension on your executable my be different.
+**Note:** if you don't have the C40 .params and .rotlib from previous steps, this code will fail. You can either test it with your ncAA files or use NVL instead of C40 in the code.
 
 The run will take between 30-60 seconds per pdb file.
 
@@ -73,3 +73,22 @@ $ echo "C40 -2.462 1.545 1.166 1.933 -1.997 2.733 0.009 -0.006 0.000 -0.001  0.0
 ```
 
 The ResidueType can now be used in almost any Rosetta protocol that is compatible with the MM_STD scoring function.
+
+# Shorter runs
+
+If you want to test how things work, you can test a shorter version of the codes mentioned.
+
+go to the short run files:
+```
+$> cd short_run_files
+```
+Then obtain the PDBs running:
+```
+$> ../scripts/get_pdbs.bash small_list
+```
+Next step is to run the calculator using this command:
+
+```
+$> <path-to-Rosetta>/main/source/bin/UnfoldedStateEnergyCalculator.default.linuxgccrelease -ignore_unrecognized_res -ex1 -ex2 -extrachi_cutoff 0 -l small_list_pruned -residue_name NVL -mute all -unmute devel.UnfoldedStateEnergyCalculator -unmute protocols.jd2.PDBJobInputer -no_optH true -detect_disulf false >& ufsec_log_NVL_short &
+```
+The expected outputs are stored in the output_short directory inside the short_run_files.
