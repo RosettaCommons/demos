@@ -1,8 +1,11 @@
 # Symmetry Examples
 ## Authors
 Frank Dimaio and Ingemar André
-
 dimaio@u.washington.edu and ingemar.andre@biochemistry.lu.se
+
+Update: 2016-22-06 
+Sebastian Rämisch
+raemisch@scripps.edu
 
 ## Brief Description
 Examples of how to run symmetry-enabled rosetta protocols.
@@ -17,9 +20,37 @@ Rosetta can be downloaded at www.rosettacommons.org/software
 
 ## Documentation
 
-The applications that are exemplified are fully documented in the regular Rosetta documentation. For a general description see http://www.rosettacommons.org/manuals/archive/rosetta3.2_user_guide/.
+The applications that are exemplified are fully documented in the regular Rosetta documentation. For a general description see:  
+[Symmetry User Guide](https://www.rosettacommons.org/docs/wiki/rosetta_basics/structural_concepts/symmetry)
 
-Documentation for symmetric docking: http://www.rosettacommons.org/manuals/archive/rosetta3.2_user_guide/symmetric_docking.html
-Documentation for fold-and-dock: http://www.rosettacommons.org/manuals/archive/rosetta3.2_user_guide/fold_and_dock.html
-Documentation for fixed backbone design: http://www.rosettacommons.org/manuals/archive/rosetta3.2_user_guide/fixed_backbone.html
-Documentation for comparative modeling: http://www.rosettacommons.org/manuals/archive/rosetta3.2_user_guide/comparative_modeling.html
+[Documentation for symmetric docking](https://www.rosettacommons.org/docs/wiki/application_documentation/docking/sym-dock)
+[Documentation for fold-and-dock](https://www.rosettacommons.org/docs/wiki/application_documentation/structure_prediction/fold-and-dock)
+[Documentation for fixed backbone design](https://www.rosettacommons.org/docs/wiki/application_documentation/design/fixbb)
+[Documentation for comparative modeling](https://www.rosettacommons.org/docs/wiki/application_documentation/structure_prediction/RosettaCM)
+[Documentation for symmetry definitions](https://www.rosettacommons.org/docs/wiki/application_documentation/utilities/make-symmdef-file-denovo)
+
+## Examples
+
+There is a more detailed tutorial in `demos/public`, called **symmetric_docking_insulin_trimer_of_dimers**  
+Defininately, take a look at that to understand how to do symmeric modeling in Rosetta. 
+###1. Comparative modeling
+
+```
+    $> $Rosetta3/main/source/bin/minirosetta.macosclangrelease @input_files/comparative_modeling-flags
+```
+
+###2. Fixed Backbone Design
+
+```
+$> $ROSETTA3/main/source/bin/fixbb.default.linuxgccrelease @fixbb/input_files/fixbb-symmetry-flags
+```
+
+###3. Fold-and-Dock
+```
+$> $ROSETTA3/main/source/bin/minirosetta.default.linuxgccrelease @fold-and-dock/input_files/fold-and-dock-flags
+```
+
+###4. Symmetric Docking
+```
+$> $ROSETTA3/main/source/bin/SymDock.linuxgccrelease  @symmetric_docking/input_files/symmetric-docking-flags
+```

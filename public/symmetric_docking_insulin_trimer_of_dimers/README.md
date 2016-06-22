@@ -92,13 +92,15 @@ If you had taken a peek at the file 1ZEH.pdb beforehand you might have noticed t
 Now we are going to run this again but first removing chains C and D from the 1ZEH.pdb file.
 
 ```
-	> perl -wane 'print if m/^ATOM/ and ($F[4] eq "A" or $F[4] eq "B")'  1ZEH.pdb  > 1ZEH_monomer_d3.pdb (can re removed after the next step)
+	$> perl -wane 'print if m/^ATOM/ and ($F[4] eq "A" or $F[4] eq "B")'  1ZEH.pdb  > 1ZEH_monomer_d3.pdb 
 ```
+
+>1ZEH_monomer_d3.pdb can be removed after the next step!  
 
 And re-chain it to a single pseudo chain.
 
 ```
-	> ./scripts/addChain.pl /tmp/1ZEH_monomer_d3.pdb A > rosetta_inputs/1ZEH_monomer_d3.pdb
+	$> ./scripts/addChain.pl 1ZEH_monomer_d3.pdb A > rosetta_inputs/1ZEH_monomer_d3.pdb
 ```
 
 ### Generating the Symmetry File
@@ -106,7 +108,7 @@ And re-chain it to a single pseudo chain.
 Then we will use d3 symmetry for docking.  As you know, d3 symmetry is c3 symmetry with a mirror plane. In other words this has a total of 6 subunits.
 
 ```
-	> src/apps/public/symmetry/make_symmdef_file_denovo.py -symm_type dn -nsub 6  > rosetta_inputs/1ZEH.d3.symm
+	$> $ROSETTA3/main/source/src/apps/public/symmetry/make_symmdef_file_denovo.py -symm_type dn -nsub 6  > rosetta_inputs/1ZEH.d3.symm
 ```
 
 **Note:** the number of subunits in d3 symmetry is 6.
@@ -140,7 +142,7 @@ set_dof JUMP3 z(50) angle_z(0:60.0)
 ### Run Rosetta
 
 ```
-	$> $ROSETTA3/main/source/bin/SymDock.macosclangrelease @flags.c3
+	$> $ROSETTA3/main/source/bin/SymDock.macosclangrelease @flags.d3
 ```
 
 The result is again a pdbfile 1ZEH_haptomer_00001.pdb which has 6 monomers in d3 symmetry.   Note, again, the monomer in this second example had half as many atoms as the first example but since we used 6 of these instead of 3 the final structure has the same number of total atoms.  The score is appended into score.fasc
