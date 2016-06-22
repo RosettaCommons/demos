@@ -440,7 +440,7 @@ So let's create two TaskOperations.  The first will tell the packer to use only 
 ...
 ```
 
-Down below, in the MOVERS section, let's tell the PackRotamersMover that we created earlier to use these TaskOperations.
+Down below, in the MOVERS section, let's tell the PackRotamersMover that we created earlier to use these TaskOperations.  Note that we can apply these in any order -- TaskOperations are commutative, which makes them different from MoveMaps.  We'll return to this point later, when we're designing with TaskOperations and ResidueSelectors.
 
 ```xml
 ...
@@ -450,12 +450,30 @@ Down below, in the MOVERS section, let's tell the PackRotamersMover that we crea
 ...
 ```
 
-Now let's run this script (or the inputs/repack_only.xml file):
+Now let's run this script (or the inputs/repack_only.xml file).  This should generate 6134 rotamers, and take on the order of 10 seconds to run:
 
 ```bash
 $> cp inputs/repack_only.xml .
 $> <path_to_Rosetta_directory>/main/source/bin/rosetta_scripts.linuxgccrelease -s 1ubq.pdb -parser:protocol repack_only.xml -out:prefix repack_only_
 ```
+
+If you look at the output, you'll see that the side-chains have been repacked, though in many cases, Rosetta found an optimal rotamer very close to that in the input structure.
+
+#### Advanced packing: Using ResidueSelectors with TaskOperations to redesign the protein core
+
+* *Redesign (*i.e.* find a new sequence for) the ubiquitin core.*
+* *Use ResidueSelectors in conjuction with TaskOperations and the PackRotamersMover.*
+* *Understand TaskOperation commutativity.*
+
+Let's consider a more complicated (and more realistic) usage case -- one that demonstrates how we can single out subsets of residues in a structure and do different things to different parts of a pose.  Let's find a new sequence for the buried core residues in ubiquitin, while permitting boundary and surface residues to repack (but not allowing these layers to change their sequence).  To do this, we need a way of selecting the protein core.  Some of the general TaskOperations are able to select certain residues, but a more flexible choice for selecting certain residues is [ResidueSelectors](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/TaskOperations/taskoperations_pages/ResidueSelectors). ResidueSelectors, like their name suggests, are able to specify (select) a particular subset of residues, which can then be used with TaskOperations or other RosettaScripts objects. Unlike TaskOperations, which are strictly one way (you can turn off design, but you can't turn it back on), ResidueSelectors can be combined in various ways to select the particular residue you want.
+
+|---|---|---|
+| |TaskOperations | ResidueSelectors |
+|---|---|---|
+| Intended purpose | Setting packer behaviours. (*e.g.* Disabling design, limiting allowed residue idenities at certain sequence positions, enabling extra rotamers, telling the packer to include the input rotamer, *etc.*). |  Selecting subsets of residues in a pose based on rules, then passing the subsets as inputs to other Rosetta modules.  |
+|---|---|---|
+
+
 
 # Filters
 ---------
@@ -581,22 +599,6 @@ If you wish to do a more thorough scan, either of more positions or of more resi
 ## ResidueSelectors and TaskOperations
 -----------------------------------
 
-
-### TaskOperations
-
-TaskOperations are how Rosetta controls the packer - they specify which residue to repack and/or design, and how to do it. TaskOperations are defined in the TASKOPERATIONS section of the XML, and like the movers, the available types are listed on [the corresponding documentation page](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/TaskOperations/TaskOperations-RosettaScripts).
-
-To fully exploit the power of TaskOperations, it's important to understand how the Rosetta packer works, and the properties of the PackerTask. (For example, that a PackerTask starts off with all positions set to design, and then possibilities can only be removed from the packer.)
-
-For our protocol, we decide that we want to turn off design (that is, limit the packer to repacking only). Looking through the available task operations, the easiest way of doing this appears to be the [RestrictToRepacking](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/TaskOperations/taskoperations_pages/RestrictToRepackingOperation). Like movers, the TaskOperations have example tags on their documentation page. These tags can be placed into the TASKOPERATIONS section of the XML. For RestrictToRepacking, there are no options aside from the mandatory "name" field.
-
-
-```
-    <TASKOPERATIONS>
-        <RestrictToRepacking name="repackonly" />
-        <ExtraRotamersGeneric name="extrachi" ex1="1" ex2="1" ex1_sample_level="1" ex2_sample_level="1" />
-    </TASKOPERATIONS>
-```
 
 ### ResidueSelectors
 
