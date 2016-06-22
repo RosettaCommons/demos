@@ -4,7 +4,7 @@ Demos, Tutorials, and Protocol Captures
 Obtaining tutorial materials
 ----------------------------
 
-The demos, tutorials, protocol captures, and all example inputs are provided with the full Rosetta distribution, under the demos/ directory. Rosetta is availible for license (free of charge to academic users) at <https://www.rosettacommons.org/software>.
+The demos, tutorials, protocol captures, and all example inputs are provided with the full Rosetta distribution, under the demos/ directory. Rosetta is available for license (free of charge to academic users) at <https://www.rosettacommons.org/software>.
 
 <!--- BEGIN_INTERNAL -->
 For RosettaCommons users, the demos repository should be automatically downloaded by the get_rosetta.sh download script. Alternatively, RosettaCommons users can download the demos repository from GitHub. e.g.
@@ -26,13 +26,6 @@ Demos
 -----
 
 These demos are designed to guide users through sample procedures in computational modeling from the point of view of solving a specific problem. 
-
-Each one should include:
-
-1. An introduction to the task at hand.
-2. Detailed step-by-step instructions on how to run the demo.
-3. All the input data needed to run the demo.
-4. Scripts containing the exact commands needed to run the demo.
 
 Full input files for the demos are located in the `demos/public/` directory of the Rosetta distribution.
 
@@ -70,8 +63,8 @@ The majority of protocols will have their demos here.
 These demos may be updated by the community as new ways to solve these problems are developed.
 
 * `demos/protocol_capture`:  
-  For demos that are associated with published papers and that demostrate the specific algorithm described in that paper.
-These demos are static, may only work with previous old of rosetta, and meant to serve more as a historical records.
+  For demos that are associated with published papers and that demonstrate the specific algorithm described in that paper.
+These demos are static, may only work with previous old of Rosetta, and meant to serve more as a historical records.
 NOTE: If you add a protocol capture to the protocol_capture directory, you should add a copy to the public/ directory,
 to serve as a version which can be updated to reflect best practices as Rosetta changes. 
 
