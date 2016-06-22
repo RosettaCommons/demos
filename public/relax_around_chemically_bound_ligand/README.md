@@ -139,10 +139,13 @@ Angle CB 50 SG 50 C8 147 HARMONIC 1.94080613 0.034906585
 
 where for the first constraint, 1.93207948 represents the ideal angle (x0) of 110.7 degrees, given in radians, and 0.034906585 represents a standard deviation of 2 degrees, given in radians.
 
-** From Google: 110.7 \* pi / 180 = 1.93207948**<br/>
-** From Google:   2.0 \* pi / 180 = 0.034906585**<br/>
+```
+From Google:
+110.7 * pi / 180 = 1.93207948
+2.0 * pi / 180 = 0.034906585
+```
 
-For more information about the constraints, you can check: tutorials/constraint_tutprial
+For more information about the constraints, you can check: tutorials/constraint_tutorial
 
 # Running the relax protocol
 
