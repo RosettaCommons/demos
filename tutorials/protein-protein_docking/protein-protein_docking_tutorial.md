@@ -47,6 +47,8 @@ This tutorial presents a cross-docking benchmark experiment. Antibody CR6261 bin
                 > <path-to-Rosetta>/rosetta/tools/protein_tools/scripts/pdb_renumber.py \
                 --norestart 3GBN_trim.pdb 3gbn_Ab.pdb
 
+   -> Note: you may not have gedit in your computer. Try using other text editors.
+    
     1. Close the chain break between Ser-127 and Val-128 in chain L of the antibody. 
         
         Chain breaks can cause unexpected behavior during docking. Because this chain break is small and away from the expected interface, it can be quickly and easily fixed. The goal is simply to close the chain break within the secondary structure element and not to rigorously build this loop. Build ten models (a minimal computational effort) and pick one with a good score and a good representative structure.
