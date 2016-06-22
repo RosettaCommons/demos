@@ -10,10 +10,11 @@ It has been published in the paper "Automated selection of stabilizing mutations
 
 The source code is found at:  `(rosetta_source)/src/apps/public/vip.cc`
 
-The app can be run as follows:
+To generate the output in the example output directory, the app can be run as follows:
 
 ```bash```
-$> <path_to_Rosetta_directory>/main/source/bin/vip.default.linuxgccrelease -s input.pdb -cp:ncycles 3 -cp:cutoff 6.0 -sasa_calculator_probe_radius 1.0 -out:file:silent out.silent
+$> cp rosetta_inputs/* .
+$> <path_to_Rosetta_directory>/main/source/bin/vip.default.linuxgccrelease @flags >out.log & 
 ```
 
 In the above, ".default.linuxgccrelease" may need to be replaced with your build, operating system, and compiler.  For example, for a static, debug-mode build on the Macintosh operating system with the clang compiler, you would use, ".static.macosclangdebug".
