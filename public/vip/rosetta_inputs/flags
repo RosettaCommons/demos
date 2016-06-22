@@ -1,9 +1,8 @@
--database ../../../../rosetta_database/
 -ignore_unrecognized_res
 -s Start_Lambda_Model.pdb
 -cp:cutoff 6.0
 -sasa_calculator_probe_radius 1.0
--run:silent
+-out:file:silent out.silent
 -cp:print_intermediate_pdbs
 -cp:local_relax
 -cp:relax_mover "relax"
