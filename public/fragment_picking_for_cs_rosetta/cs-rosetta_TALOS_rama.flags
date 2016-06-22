@@ -1,5 +1,5 @@
 # Input databases
--in::file::vall <path to vall database>
+#-in::file::vall <path to vall database>
 
 # Query-related input files
 -in::file::checkpoint 		input_files_TALOS_rama/2jsvX.checkpoint
