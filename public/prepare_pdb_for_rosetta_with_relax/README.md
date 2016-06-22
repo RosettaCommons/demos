@@ -1,5 +1,5 @@
 #Relax with all-heavy-atom constraints
-
+KEYWORDS: UTILITIES GENERAL
 ##Introduction
 
 We looked for a way to simultaneously minimize rosetta energy and keep all heavy atoms in a crystal structure as close as possible to their starting positions. As hard-won experience has shown, simply running relax on a structure will often move the backbone a few Angstroms. The best way we have found to perform the simultaneous optimization is to run relax with constraints always turned on (typically constraints ramp down in the late cycles of a relax run) and to constrain not just backbone but also sidechain atoms. This protocol has been tested on a benchmark set of 51 proteins and found to increase sequence recovery in enzyme design by 5% as compared with design in raw pdb structures. It accomplishes this with only .077 Angstrom RMSD over the set of proteins (C-alpha RMSD) from raw pdb to relaxed-with-csts pdb. A more complete description of the data leading to this protocol is below.

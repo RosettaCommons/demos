@@ -1,5 +1,5 @@
 # Optimize Ligand Hydroxyl Hydrogens
-
+KEYWORDS: LIGANDS UTILITIES
 This tutorial assumes a unix-style command line (or cygwin on windows).
 
 ## Build your ligand
