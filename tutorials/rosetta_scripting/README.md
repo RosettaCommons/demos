@@ -1,6 +1,8 @@
 Creating protocols with RosettaScripts
 ======================================
 
+Tutorial by Rocco Moretti (rmorettiase@gmail.com).  Edited by Vikram K. Mulligan (vmullig@uw.edu).  Created on 21 June 2016 as part of the 2016 Documentation XRW.
+
 What is RosettaScripts?
 -----------------------
 
@@ -11,7 +13,12 @@ users' needs, then they may have put in options which allowed users to change th
 
 However, these applications are typically limited in the extent to which they allow users
 to modify the protocol. To allow for greater flexibility, RosettaScripts was created.
-RosettaScripts allows users to create and modify protocols using an XML based syntax.
+RosettaScripts allows users to create and modify protocols using an XML based syntax.  Broadly,
+RosettaScripts is based around the paradigm of having a single structure (the *pose*) that
+enters the protocol, a series of steps performed, each modifying the pose in some way (*movers*)
+or evaluating some property of the pose (*filters*), and a single structure written out.  The
+protocol can then be run repeatedly to generate large ensembles of output structures, or to
+process large ensembles of input structures.
 
 This tutorial is intended to take you through the process of creating a new protocol 
 with RosettaScripts. It should also give you a good grounding in how you can modify 
@@ -24,7 +31,17 @@ Your first RosettaScript
 
 * *Run the simplest possible RosettaScripts*
 
-The simplest RosettaScript XML is one which does nothing. Go to [the RosettaScripts documentation page](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/RosettaScripts) and find the skeleton XML file there. Copy and paste into a new file (`nothing.xml`). 
+The simplest RosettaScript XML is one which does nothing.  You can obtain a skeleton XML file, which does nothing, in one of two ways.  You go to [the RosettaScripts documentation page](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/RosettaScripts) and find the skeleton XML file there, then copy and paste it into a new file (`nothing.xml`).  You can also generate a skeleton XML file using the rosetta_scripts application:
+
+```bash
+$> <path_to_Rosetta_directory>/main/source/bin/rosetta_scripts.default.linuxgccrelease -print_template_script >output.log.
+```
+
+In the above, the ".default.linuxgccrelease" may need to be changed for your build, operating system, and compiler (*e.g.* ".static.macosclangrelease" for the static build using the clang compiler on the Macintosh operating system).  If you run the above, it will produce the following output:
+
+```
+
+```
 
 We can also edit it slightly to add comments 
 
