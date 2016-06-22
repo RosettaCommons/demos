@@ -51,6 +51,7 @@ As you noticed, the command you ran had a "mode" option and that you mentioned "
     
     - extras=static builds static binaries. This can be useful for copying and running the apps on other systems.
     - extras=graphics mode enables OpenGL graphics for those apps that support it.
+    - extras=opencl enables GPU usage
     - extras=mpi compiles rosetta in mpi [**M**assage **P**assing **I**nterface](https://computing.llnl.gov/tutorials/mpi/#What) format (for those executables that allow mpi run). for example the code below compiles only the rosetta_scripts in mpi format and release mode using 5 processors:
 
 ```
