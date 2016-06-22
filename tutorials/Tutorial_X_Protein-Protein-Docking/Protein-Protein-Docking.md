@@ -38,14 +38,11 @@ This tutorial will introduce you the main steps required for predicting how two 
 Here is a minimal commandline to start a docking simulation (here we include also the known complex structure, 1V74, as a reference):
 
      $> ../../../main/source/bin/docking_protocol.linuxgccrelease \
-     -s combined_ppk.pdb
-     -ex1
-     -ex2
-     -nstruct 2
+     -s combined_ppk.pdb -ex1 -ex2 -nstruct 2
      
 1. Run the docking protocol  
      
- Rosetta will internally connect the centers of the two chains with a so-called jump (see [Fold Tree]()). Along this jump the chains are being pulled together (slide into contact). The Monte Carlo moves, which are selected randomly, are:   
+ Rosetta will internally connect the centers of the two chains with a so-called jump (see [Fold Tree]()). Along this jump the chains are being pulled together (slide into contact). The [Monte Carlo]() moves, which are selected randomly, are:   
  
  * Translations (in x,y or z direction)
  * Rotations (around x,y, z axis)  
