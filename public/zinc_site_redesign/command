@@ -36,6 +36,26 @@ cd 4_CstOpt_optional
 test "${PIPESTATUS[0]}" != '0' && exit 1 || true  # Check if the first executable in pipe line return error and exit with error code if so
 cd ..
 
+#Step 5
+cd 5_Match/
+[ -x %(bin)s/match.%(binext)s ] || exit 1
+%(bin)s/match.%(binext)s %(additional_flags)s @general_matching.flags @scaf.flags @subs.flags -linmem_ig 10 -in:file::s 1A4L_clean_A_r.pdb -database %(database)s -run:constant_seed -nodelay  2>&1 \
+    | egrep -vf ../../ignore_list \
+    > log
+test "${PIPESTATUS[0]}" != '0' && exit 1 || true  # Check if the first executable in pipe line return error and exit with error code if so
+cd .. 
+
+#Step 6
+cd 6_Design
+[ -x %(bin)s/enzyme_design.%(binext)s ] || exit 1
+%(bin)s/enzyme_design.%(binext)s %(additional_flags)s @enzdes.flags -correct -linmem_ig 10 -in:file:s UM_1_H15H17H214D295Q58_1A4L_clean_A_r_1A4L_clean_A_1.pdb -database %(database)s -run:constant_seed -nodelay  2>&1 \
+    | egrep -vf ../../ignore_list \
+    > log
+test "${PIPESTATUS[0]}" != '0' && exit 1 || true  # Check if the first executable in pipe line return error and exit with error code if so
+cd..
+
+
+
 
 %(bin)s/fixbb.%(binext)s %(additional_flags)s -in:file:s 1l2y.pdb -in:file:fullatom -resfile resfile.txt -nstruct 1 -database %(database)s -run:constant_seed -nodelay  2>&1 \
     | egrep -vf ../../ignore_list \
@@ -58,16 +78,6 @@ test "${PIPESTATUS[0]}" != '0' && exit 1 || true  # Check if the first executabl
 test "${PIPESTATUS[0]}" != '0' && exit 1 || true  # Check if the first executable in pipe line return error and exit with error code if so
 
 
-1_Analyze_ZincSite/README.md:$> python $ROSETTA_TOOLS/zinc_site_redesign/analyze_zinc_site.py -f 1A4L.pdb
-2_CleanPDB/README.md:$> python $ROSETTA_TOOLS/zinc_site_redesign/cleanPDBfile.py -f 1A4L.pdb 
-2_CleanPDB/README.md:$> python $ROSETTA_TOOLS/zinc_site_redesign/cleanPDBfile.py -f 1A4L.pdb -c B
-2_CleanPDB/README.md:$> python $ROSETTA_TOOLS/zinc_site_redesign/cleanPDBfile.py -f PDBFILE -m METAL -n NR
-3_AlignTS/README.md:$> python $ROSETTA_TOOLS/zinc_site_redesign/align.py -f 1A4L_clean_A.pdb -l LG_0001.pdb
-3_AlignTS/README.md:$> python $ROSETTA_TOOLS/zinc_site_redesign/generate_metal_cstfile.py -f 1A4L_clean_A.pdb -m ZN -a aligned_ligand.pdb 
-Binary file 4_CstOpt_optional/con_rotamers.pdb.gz matches
-4_CstOpt_optional/README.md:$> <path_to_Rosetta_directory>/main/source/bin/enzyme_design.default.linuxgccrelease @optcst.flags -linmem_ig 10 -in:file::s rosetta_cst.pdb
-5_Match/README.md:$> <path_to_Rosetta_directory>/main/source/bin/match.default.linuxgccrelease @general_matching.flags @scaf.flags @subs.flags -linmem_ig 10 -in:file::s 1A4L_clean_A_r.pdb
-Binary file 6_Design/chi.conf.pdb.gz matches
 6_Design/README.md:$> <path_to_Rosetta_directory>/main/source/bin/enzyme_design.default.linuxgccrelease @enzdes.flags -correct -linmem_ig 10 -in:file:s UM_1_H15H17H214D295Q58_1A4L_clean_A_r_1A4L_clean_A_1.pdb
 7_SemiAutomated_Refine/README.md:$> python $ROSETTA_TOOLS/zinc_site_redesign/generate_residuefile.py UM_1_H15H17H214D295Q58_1A4L_clean_A_r_1A4L_clean_A_1__DE_1.pdb
 8_Docking/README.md:$> <path_to_Rosetta_directory>/main/source/bin/ligand_dock.default.linuxgccrelease @flags
