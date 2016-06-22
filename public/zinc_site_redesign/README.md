@@ -3,6 +3,9 @@
 This is a demo for the mononuclear zinc metalloenzyme redesign procedure described in Khare, Kipnis, Greisen et al. Nature Chemical Biology (2012).
 
 Authors: Sagar Khare (khares@uw.edu), Per Jr Greisen (pgreisen@gmail.com)
+Edited by Vikram K. Mulligan (vmullig@uw.edu) during the 2016 Documentation XRW.
+
+KEYWORDS: DESIGN METALS INTERFACES ENZYMES
 
 ## Requirements
 
