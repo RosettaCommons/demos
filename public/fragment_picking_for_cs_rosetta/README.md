@@ -8,16 +8,27 @@ Brief description: The protocol substitutes CS-Rosetta application
 Source code location
 --------------------
 
-* Check out the mini SVN: https://svn.rosettacommons.org/source/trunk/mini/
-* Fragment picker is located in: https://svn.rosettacommons.org/source/trunk/mini/src/core/fragment/picking
-* Applications are in: https://svn.rosettacommons.org/source/trunk/mini/src/apps/pilot/dgront/fragmentpicker
+* Fragment picker is located in Rosetta/main/source/src/core/fragment/picking
+* The source lives in Rosetta/main/source/src/apps/public/fragmentpicker.cc
 
-Running the protocol capture
+Running the protocol 
 ----------------------------
 
-1. Set up the path to minirosetta database
-2. Set up the path to vall database
-3. Run the picker:
+### 1. Standart CS Rosetta
+
+The required inout files are in `./input_files`.
+
+1. In the cs-rosetta.flags, change the path to your vall database
+2. Run the picker:
+
    ```
-   picker.linuxgccrelease @cs-rosetta.flags
-   ```
+   $> <path-to-Rosetta>/main/source/bin/fragment_picker.default.linuxgccrelease @cs-rosetta.flags -in::file::vall 
+    $ROSETTA3/main/database/sampling/small.vall.gz
+```
+
+### 2. CS Rosetta with TALOS L1 rama
+```
+   $> <path-to-Rosetta>/main/source/bin/fragment_picker.default.linuxgccrelease @cs-rosetta_TALOS_rama.flags -in::file::vall
+    $ROSETTA3/main/database/sampling/small.vall.gz
+```
+

@@ -1,1 +1,0 @@
-python cleanPDBfile.py -f 1A4L.pdb

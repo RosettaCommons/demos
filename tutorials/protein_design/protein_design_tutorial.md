@@ -2,6 +2,9 @@
 
 # Protein Design
 
+![top7_plan](tutorial_figures/top7_plan.png)
+
+
 **Bold text means that these files and/or this information is provided.**
 
 *Italicized text means that this material will NOT be conducted during the workshop*
@@ -12,7 +15,9 @@ If you want to try making files that already exist (e.g., input files), write th
 (NOTE: For many of the commands you will be using for this tutorial, remove \'s before hitting enter. Otherwise you will get an error.)
 
 ##Introduction
-**Objective:** In this exercise, we will examine the Rosetta design features by mutating user-specified residues. The membrane protein we will be using is a homo-dimer, so we will employ RosettaMembrane and RosettaSymmetry to model the dimer during design. RosettaScripts will be used to combine the two applications. 
+![top7](tutorial_figures/top7.png)
+
+**Objective:** In this exercise, we will examine the Rosetta design features by mutating user-specified residues. To make it even more interesting, we will use a membrane protein which is a homodimer, so we will employ RosettaMembrane and RosettaSymmetry to model the dimer during design. RosettaScripts will be used to combine the two applications. Note that 
 
 **Rosetta Applications:** RosettaDesign, RosettaMembrane, RosettaSymmetry, RosettaScripts
 
@@ -22,7 +27,7 @@ If you want to try making files that already exist (e.g., input files), write th
 ##Tutorial
 Preparation: Locate the necessary input PDB file. 
     
-        cd ~/rosetta_workshop/tutorials/protein_design
+        cd path/to/demos/tutorials/protein_design
 
    Included in this folder is a PDB file downloaded from the Protein Data Bank (www.rcsb.org ID:3UKM). Open this in pymol to familiarize yourself with the structure:
 
@@ -34,18 +39,21 @@ You should notice that this file shows two homo-dimers. We will focus on the dim
 
     1. Rosetta Symmetry. In this step, we will create the proper symmetry definition file for this particular protein structure. We will need the input structure from the preparation step. 
 
-            cd Step1_symm
+            $> cd Step1_symm
 
-            cp ../3UKM.pdb .
+            $> cp ../3UKM.pdb .
         (this copies the pdb file to the Step1 directory)
 
         Next, we will use a perl script in Rosetta to generate a symmetry file from the input crystal structure. First, if you'd like to display the available options for this script, simply enter:
 
-            ~/rosetta_workshop/rosetta/main/source/src/apps/public/symmetry/make_symmdef_file.pl
-        Next, we will use non-crystallographic mode (NCS), Chain A as the reference, Chain B as an interacting chain, and include the input structure. The output will be redirected, using the greater than sign, into a new file called 3UKM.symm.
+            $> $ROSETTA3/src/apps/public/symmetry/make_symmdef_file.pl
 
-            ~/rosetta_workshop/rosetta/main/source/src/apps/public/symmetry/make_symmdef_file.pl \
-            -m NCS -a A -i B -p 3UKM.pdb > 3UKM.symm
+            $> $ROSETTA3/src/apps/public/symmetry/make_symmdef_file.pl -m NCS -a A -i B -p 3UKM.pdb > 3UKM.symm
+
+        Here we are using symmetry to model an already-symmetric starting protein.  This is called non-crystallographic (NCS) mode. 
+        We pass the mode (-m NCS), the chain we want to keep (-a A), the chain we want to base the symmetry off of (-i B), and the input PDB (-p 3UKM.pdb).
+
+        WThe output will be redirected, using the greater than sign, into a new file called 3UKM.symm.
 
         The perl script will generate a couple of outputs:
 
@@ -55,19 +63,19 @@ You should notice that this file shows two homo-dimers. We will focus on the dim
         * 3UKM_symm.pdb = model generated to show the full point group symmetry
         * 3UKM.symm = symmetry definition file that you just created
 
-        Examine symmetry file equation. `gedit 3UKM.symm`
+        Examine symmetry file equation, '3UKM.symm' in your favorite editor.  Here is an overview of the file:
+        ![symm_file1](tutorial_figures/rosetta_symm_file1.png) 
+        ![symm_file2](tutorial_figures/rosetta_symm_file2.png)
 
-         Does this make sense? Refer to the slide in the Tutorial Overview section entitled Rosetta Symmetry Definition File. This will explain the sections that make up the symm file. 
-
-    2. Next, we will use clean_pdb.py to prepare the input protomer for setting up symmetry. 
+    2. Next, we will use clean_pdb.py to prepare the input protomer for setting up symmetry, grabbing only chain A. 
     
-            ~/rosetta_workshop/rosetta/tools/protein_tools/scripts/clean_pdb.py 3UKM A
+            $> $ROSETTA_TOOLS/protein_tools/scripts/clean_pdb.py 3UKM A
 
-        clean_pdb.py strips PDB code that Rosetta can not parse such as comments, anisotropic atom positions, unnatural amino acid types, and waters. The first argument in the script is the 4-letter PDB code and the second argument is a string containing the chains to return, in this case, only chain A. 
+        clean_pdb.py strips PDB code that Rosetta can not parse such as comments, anisotropic atom positions, unnatural amino acid types, and waters and renumbers from 1 to match Rosetta numbering. The first argument in the script is the 4-letter PDB code and the second argument is a string containing the chains to return, in this case, only chain A. 
         
     3. Now, we will use the clean input structure to test the symmetry definition file. We will accomplish this through a very basic use of RosettaScripts. While still in the same directory:
 
-            gedit setup_symm.xml
+            open setup_symm.xml
 
         And look at the contents of the file, which should look like this:
     
@@ -88,24 +96,23 @@ You should notice that this file shows two homo-dimers. We will focus on the dim
                 </PROTOCOLS>
             </ROSETTASCRIPTS>
 
-        Next, run this protocol using RosettaScripts. We applied the setup`_`symm protocol to the input structure, 3UKM_A.pdb.
+        Next, run this protocol using RosettaScripts. We will apply the setup for the protocol to the input structure, 3UKM_A.pdb.
 
-            ~/rosetta_workshop/rosetta/main/source/bin/rosetta_scripts.default.linuxgccrelease \
-            -parser:protocol setup_symm.xml -s 3UKM_A.pdb -out:prefix setupsymm_ 
+            $> rosetta_scripts.default.linuxgccrelease -parser:protocol setup_symm.xml -s 3UKM_A.pdb -out:prefix setupsymm_ 
 
         When Rosetta is finished, examine the output structure using pymol:
 
-            pymol setupsymm_3UKM_A_0001.pdb
+            open setupsymm_3UKM_A_0001.pdb
 
         Does the resulting structure look as you would expect? Sometimes you have to make manual adjustments to the symmetry definition file by paying careful attention to the jumps. In this case, it looks great. Before we move forward, examine the score file generated from setting up symmetry:
 
-            gedit setupsymm_score.sc
+            open setupsymm_score.sc
 
         The total energy score of the protein is the first number. For this protein, you will probably see a number in the positive 5000s. We know that this is not a good score for a protein. Before moving on to an application such as design, it is recommended to energetically minimize the structure in some way to get rid of imperfections in the crystal structure. 
 
         Additionally, this score is based on the default Rosetta scoring function. We will need to create a span file and add the membrane high resolution scoring function into our XML script.
 
-    4. We need to create a span file which will tell Rosetta where the membrane-spanning region is on our protein. Step 1.2 outputs a fasta file. `cat 3UKM_A.fasta`
+    4. Now, we will need to create a span file which will tell Rosetta where the membrane-spanning region is on our protein. Step 1.2 outputs a fasta file. __This file is provided__ `cat 3UKM_A.fasta`
 
         In a web browser, go to octopus.cbr.su.se and paste the fasta sequence into the form. Then click "Submit OCTOPUS" (There is also an option to use SPOCTOPUS which considers signal peptide sequences).
         
@@ -113,33 +120,28 @@ You should notice that this file shows two homo-dimers. We will focus on the dim
 
         Select all of the text and copy.
         
-        `gedit 3UKM.topo` paste the text into this file and save.
+        `open 3UKM.topo` [delete any current content] and paste the text into this file and save.
         
+        If you just want to copy it:
+
+
         A script in Rosetta will take this topo file named 3UKM.topo and create a span file named 3UKM.span:
         
-            ~/rosetta_workshop/rosetta/main/source/src/apps/public/membrane_abinitio/octopus2span.pl \
-            3UKM.topo > 3UKM.span
+            $> $ROSETTA3/src/apps/public/membrane_abinitio/octopus2span.pl provided_inputs/3UKM.topo > 3UKM.span
 
 
-2. *Energy minimization of the starting structure (See Appendix).* 
+2. Prepare files for protein design at user-specified residues. 
 
-    *Relax is a common protocol used in Rosetta to minimize protein structures. Unfortunately, we will not have enough time today to generate several relaxed structures. More information on how a relax step may be set up can be found in the appendix for this protocol. Typically, 100 relax models is sufficient to find a low-energy structure.*
+    1. With an energy minimized input structure (relaxed version of the 3UKM_A pdb), we are almost ready to design our protein! In this step, we will first combine SetupForSymmetry and SymPackRotamers movers in another RosettaScripts protocol.
 
-    *I have provided output for this step in the Step2_relax directory. I have also described the methods to use for analysis of relaxed structures.*
-
-3. Prepare files for protein design at user-specified residues. 
-
-    1. With an energy minimized input structure, we are almost ready to design our protein! In this step, we will first combine SetupForSymmetry and SymPackRotamers movers in another RosettaScripts protocol.
-
-            cd ../Step3_design
+            $> cd ../Step2_design
             ls
 
         You should see several input files ready for you to use. Here you will find the symmetry definition file, an energy minimized input structure named `Best_rlx_3UKM_A.pdb`, and an XML file. 
 
-            gedit symm_design.xml
+            open symm_design.xml
 
-        Here I have provided the required XML file to complete this task:
-
+            The file should look like this:
 
             <ROSETTASCRIPTS>
                 <SCOREFXNS>
@@ -164,18 +166,15 @@ You should notice that this file shows two homo-dimers. We will focus on the dim
 
         Notice under SCOREFXN, the membrane high-resolution weights are specified. Read the XML and see if you understand the different sections. Reference the lecture slides if you need to. Exit out of the file when you are done. Then run full design. This step should take about 30 minutes. 
 
-            ~/rosetta_workshop/rosetta/main/source/bin/rosetta_scripts.default.linuxgccrelease \
-            -parser:protocol symm_design.xml -s Best_rlx_3UKM_A.pdb -in:file:spanfile 3UKM.span \
-            -membrane:no_interpolate_Mpair -membrane:Membed_init -membrane:Menv_penalties \
-            -score:weights membrane_highres_Menv_smooth.wts -out:prefix full_design_ -nstruct 1
+            $> rosetta_scripts.default.linuxgccrelease @flags
         
-        In the interest of time, we will only do one full design of the protein. In the output folder, I have included 20 output structures. 
+        In the interest of time, we will only do one full design of the protein. In the output folder, 20 output structures are provided. 
         
     2. Now we will run design again, but this time guide design with a resfile. A resfile is a file that is read by RosettaScripts during design. The file specifies a residue number, chain ID, and a command associated with the particular residue. This command alerts the packer with how to deal with the residue. (see slides on resfile for more examples) 
 
         Design is done on a fixed backbone. Today we will use a hypothetical situation where a number of residues will be simply re-packed (minimized side-chains) by the command NATAA. A small number of residues will have a specific group of amino acids to chose from during design, and two residues will consider all amino acid rotamers during design. 
 
-            gedit 3UKM.resfile
+            open 3UKM.resfile
 
         The resfile should resemble this:
     
@@ -219,7 +218,7 @@ You should notice that this file shows two homo-dimers. We will focus on the dim
         Now, we will create an XML file that will read in the resfile. First, copy the current XML file and rename it symm_res_design.xml, then open the file
         
             cp symm_design.xml symm_res_design.xml
-            gedit symm_res_design.xml
+            open symm_res_design.xml
 
         Next, find the section labeled TASKOPERATIONS. Insert this task operation underneath the `<TASKOPERATION>` line and before the `</TASKOPERATIONS>` line so that it is in line with the <InitializeFromCommandline>: 
             
@@ -232,38 +231,31 @@ You should notice that this file shows two homo-dimers. We will focus on the dim
 
     1. Design the protein at user-specified residues. We have a relaxed input structure, a symmetry definition file, a resfile to direct design, and an XML protocol to setup symmetry, and design according to a resfile. We are now ready to move forward with design! Run this command:
 
-            ~/rosetta_workshop/rosetta/main/source/bin/rosetta_scripts.default.linuxgccrelease \
-            -parser:protocol symm_res_design.xml -s Best_rlx_3UKM_A.pdb -in:file:spanfile 3UKM.span \
-            -membrane:no_interpolate_Mpair -membrane:Membed_init \
-            -membrane:Menv_penalties -score:weights membrane_highres_Menv_smooth.wts \
-            -out:prefix design_ -nstruct 2
+            $> rosetta_scripts.default.linuxgccrelease @flags2
 
         Again, many, many more structures than just 2 should be made for production runs. In the interest of time, we will just run 2 for today. This should take about 2 minutes. This step will simply ensure that you can successfully run Rosetta Symmetry and Design. Use the output structures provided in the Step3_design/output folder for the analysis step. Note that this folder contains only 20 models. In your own experiments, you will likely want to make more than just 20 models.
 
-    3. Analysis of Designs. Now that we have a few design structures, we want to examine one of the regions we designed. First, we must sort the top five structures by score. You should still be in the Step3_design folder.
+    3. Analysis of Designs. Now that we have a few design structures, we want to examine one of the regions we designed. First, we must sort the top five structures by score. There are many ways to do this.  Here we will use command-line programs such as grep and awk. You should still be in the Step3_design folder.  
 
-            cd ./output/resfile_design
+            $> cd output/resfile_design
             ls
 
             grep pose resfile_design*.pdb | sort -nk 23 | head
  
         This shows you the top 10 structures by best score. We can use awk to store the list of the top 10. 
 
-            grep pose resfile_design*.pdb | sort -nk 23 | head | \
-            awk '{print(substr($1,1,length($1)-5))}' > best.list
+            $> grep pose resfile_design*.pdb | sort -nk 23 | head | awk '{print(substr($1,1,length($1)-5))}' > best.list
 
 
-        Next, we will use awk to automate generating fastas for each of our top models. (NOTE: Make this all one line and remove \\'s before hitting enter for this command!)
+        Next, we will use awk to automate generating fastas for each of our top models. In order to run this command, the PDB tools must be installed.  Go to $ROSETTA_TOOLS/protein_tools and follow the instructions to install the python module.
 
-            cat best.list | awk '{system( \
-            "python2.7 ~/rosetta_workshop/rosetta/tools/protein_tools/scripts/get_fasta_from_pdb.py \
-            "$1" A "substr($1,1,length($1)-3)"fasta")}' 
+            $> cat best.list | awk '{system( "$ROSETTA_TOOLS/protein_tools/scripts/get_fasta_from_pdb.py "$1" A "substr($1,1,length($1)-3)"fasta")}' 
 
         Now we can cat all of the fastas and use WebLogo to generate a figure to show our designed residues.
 
-            cat *.fasta > all_fasta.txt 
+            $> cat *.fasta > all_fasta.txt 
 
-            cat all_fasta.txt
+            $> cat all_fasta.txt
 
         (If you are running out of time, you can cd into ../Step4_analysis where the fastas of the top 10 models for each design experiment are included) 
         
@@ -281,7 +273,11 @@ You should notice that this file shows two homo-dimers. We will focus on the dim
 
 ## APPENDIX ##
 
-1a. This is the explanation for Step 2 (which we skipped in the tutorial session to reduce run-time). Please make sure you are in the Step2_relax folder. You can create relaxed structures in a similar way that we set up symmetry, using RosettaScripts. View this by opening symm_relax.xml:
+1a. This is the explanation for the minimization of our starting structure (which we skipped in the tutorial session to reduce run-time). Please make sure you are in the Step0_relax folder. You can create relaxed structures, that are embedded into a membrane, in a similar way that we set up symmetry, using RosettaScripts. CD into the directory
+    
+    $> cd ../Step0_relax
+
+View this by opening symm_relax.xml:
 
      <ROSETTASCRIPTS>
      <SCOREFXNS>
@@ -307,23 +303,24 @@ You should notice that this file shows two homo-dimers. We will focus on the dim
     
 Then, run using the command-line:
 
-            ~/rosetta_workshop/rosetta/main/source/bin/rosetta_scripts.default.linuxgccrelease \
-            -parser:protocol symm_relax.xml -s 3UKM_A.pdb \
-            -in:file:spanfile 3UKM.span -membrane:no_interpolate_Mpair \
-            -membrane:Membed_init -membrane:Menv_penalties \
-            -score:weights membrane_highres_Menv_smooth.wts
+            rosetta_scripts.default.linuxgccrelease @flags
+  
 
 1b. Analyze the output. There are a few ways of going about this. Some may look at just the best scoring models. Others calculate the RMSD of the relaxed models to the input structure and plot the Score vs. RMSD to find the best (lowest) scoring model that is most similar to the input structure.
         
   ![A normal looking energy funnel](tutorial_figures/funnel.png)
     
-   Ideally, the lowest scoring model would also have the lowest RMSD. This model should be used in all subsequent steps in redesign. Generally in design, we use an ensemble of structures accounting for the lowest cluster of RMSD's and scores.
+   Ideally, the lowest scoring model would also have the lowest RMSD. This model should be used in all subsequent steps in redesign. Generally in design, we use an ensemble of structures accounting for the lowest cluster of RMSD's and scores. (And in 2016, most of us use the Pareto-optimal method of relax in Nivon et al. for starting structures.  This was covered in the relax tutorial.)
 
-Last, a note for Protein Design Analysis. In future versions of Rosetta, a script named `Deep_Analysis` will be available as an alternative to the WebLogo server. It will be in `rosetta/tools/protein_tools/scripts/deep_analysis`. There are many options such as using fastas or pdbs as your input. You can also pass a resfile to specify which regions you want to appear on the logo (instead of a single range). 
+Last, a note for Protein Design Analysis. A script named `Deep_Analysis`, written by Jordan Willis is available as an alternative to the WebLogo server. It is in `$ROSETTA_TOOS/protein_tools/scripts/deep_analysis`. There are many options such as using fastas or pdbs as your input. You can also pass a resfile to specify which regions you want to appear on the logo (instead of a single range). 
+
+Check it out with:
+
+    $ROSETTA_TOOS/protein_tools/scripts/deep_analysis --help
 
 
 
-2a. Rosetta Design using the Rosetta Membrane Framework. The steps to setup Rosetta to use the Membrane Framework are slightly different than Membrane Mode. To properly use span information throughout the protocol, one must use the movers <AddMembraneMover> and <MembranePositionFromTopologyMover> before setting up <PackRotamersMover>. For simplicity, we will treat the protein as monomeric. In the future, symmetry and the membrane framework will be more compatible.
+2a. Rosetta Design using the Rosetta Membrane Framework. The steps to setup Rosetta to use the Membrane Framework are slightly different than Membrane Mode. To properly use span information throughout the protocol, one must use the movers <AddMembraneMover> and <MembranePositionFromTopologyMover> before setting up <PackRotamersMover>. For simplicity, we will treat the protein as monomeric, which will make this protocol run a bit longer than the previous one.  Expect about 20 minutes per output decoy. In the future, symmetry and the membrane framework will be more compatible.  
 
 From the protein_design directory change directories into mpframework_design
 
@@ -354,10 +351,6 @@ Then open the file mpf_design.xml
 
 To run, use the following command-line:
 
-        ~/rosetta_workshop/rosetta/main/source/bin/rosetta_scripts.default.linuxgccrelease \
-        -parser:protocol mpf_design.xml -s 3UKM_A.pdb \
-        -mp:setup:spanfiles 3UKM.span -mp:scoring:hbond -nstruct 1 \
-        -in:ignore_unrecognized_res -packing:pack_missing_sidechains false \
-        -score:weights mpframework_smooth_fa_2012.wts
+        $> rosetta_scripts.default.linuxgccrelease @flags
 
 2b. The ./output/ directory will have 25 design structures. You can do a similar analysis as we did above on these to look at the sequence variability. 

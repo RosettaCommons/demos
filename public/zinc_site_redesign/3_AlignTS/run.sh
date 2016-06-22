@@ -1,1 +1,0 @@
-python generate_metal_cstfile.py -f 1A4L_clean_A.pdb -m ZN -a aligned_ligand.pdb

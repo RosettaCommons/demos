@@ -40,6 +40,8 @@ HETATM 1479  O   HOH A 107      10.027  -4.206  14.093  1.00  0.00           O
 ```
 In the example above, Rosetta recognizes that the `ATOM` record represents one of the H<sub>δ</sub> atoms of Leucine-94 in the A chain with coordinates (10.910, -5.038, 7.227), which has an occupancy of 1 and a temperature factor of 0. Rosetta ignores the atom numbering (`1477`) in the second column and the element symbol in the last column (`H`). The `TER` record indicates a chain break. Similarly the `HETATM` record represents the oxygen atom of a water molecule associated with the A chain with coordinates (10.027, -4.206, 14.093) an occupancy 1 and a temperature factor of 0. Rosetta ignores the atom numbering and the element symbol in this record too. Rosetta stores the temperature factors, but **assumes all non-zero occupancies to be 1.**
 
+>Rosetta only loads in the first conformation if a residue has multiple conformations.
+
 To pass in a single PDB use the `in:file:s` option. For example, the following can be used to [calculate the energy](https://www.rosettacommons.org/demos/latest/tutorials/scoring/README) of a refined PDB 1QYS. The input PDB is present in the `input_files` folder.
 
     $> <path_to_Rosetta_directory>/main/source/bin/score_jd2.linuxgccrelease -in:file:s input_files/1qys.pdb
@@ -121,15 +123,75 @@ Now the PDB will be scored and the score will be displayed in a file `score.sc`.
 >**Skipping this section till the default status of HOH is clarified. Presently, they are loaded in and scored, but -ignore_unrcognized_res takes them out and changes score.**
 
 ####Zero Occupancy
+Occupancy denotes the fraction of cases where a particular conformation is observed. While most atoms will have an occupancy of 1, if a residue was observed in multiple conformations, the occupancy will be lower than 1. An occupancy of 0 indicates that the atom was never observed in the crystal (but is estimated to be present at that location). Rosetta ignores these atom records. If it is a non-backbone heavy atom, it might build the sidechain for you. If it is a backbone heavy atom like N or CA, it will delete the entire residue.
+
+We have modified the occupancies of 1QYS to get the file `<path_to_Rosetta_directory>/demos/tutorials/input_and_output/input_files/1qys_zero_occ.pdb`. It has zero occupancies for the first few atoms
+```html
+ATOM      1  N   ASP A   3      -4.524  18.589  17.199  0.00  0.00           N  
+ATOM      2  CA  ASP A   3      -3.055  18.336  17.160  0.00  0.00           C
+...
+```
+On running,
+
+    $>  <path_to_Rosetta_directory>/main/source/bin/score_jd2.linuxgccrelease -in:file:s input_files/1qys_zero_occ.pdb
+    
+You get the following warnings in your log file:
+
+```html
+...
+core.io.pose_from_sfr.PoseFromSFRBuilder: PDB reader is ignoring atom  N   in residue 3 A.  Pass flag -ignore_zero_occupancy false to change this behavior
+core.io.pose_from_sfr.PoseFromSFRBuilder: PDB reader is ignoring atom  CA  in residue 3 A.  Pass flag -ignore_zero_occupancy false to change this behavior
+...
+core.io.pose_from_sfr.PoseFromSFRBuilder: [ WARNING ] skipping pdb residue b/c it's missing too many mainchain atoms:    3 A ASP ASP:NtermProteinFull
+
+...
+```
+
+Also note that the score in `score.sc` is higher from the previous runs. This is because it deletes residue 3 and hence loses the ~-3 REU score of the residue. _To proceed on to the next step, remove `score.sc` by typing `rm score.sc`. Else, all energy scores of the structures scored here onwards will be appended to this file._
 
 
+There are several Rosetta applications, which require constant sequence length between things they are comapring, like the _docking_protocol_, which may even crash without an informative error message if zero occupancy atoms are present.
 
+To fix this, we need to use an option class `-ignore_zero_occupancy` that is set to true by default. Adding the option `-ignore_zero_occupancy false` will force Rosetta to read in atoms with occupancy 0 as follows:
+
+    $>  <path_to_Rosetta_directory>/main/source/bin/score_jd2.linuxgccrelease -in:file:s input_files/1qys_zero_occ.pdb -ignore_zero_occupancy false
+    
+The score file, `score.sc` produced by this run should match the one with the first example in this chapter.
 
 ###Preparing a Structure by Refinement
+The recommended way to prepare input structures for most Rosetta protocols is to run the refinement protocol, _relax_ on your structure prior to running the Rosetta application you want. A detailed tutorial on _relax_ can be found [here](https://www.rosettacommons.org/demos/latest/tutorials/Tutorial_4_Relax/Tutorial_4_Relax.md).
+
+While we want to relieve clashes in the input structure and ensure meeting all of Rosetta's specifications, we do not want our backbone to move much. A set of general options have been specified in `<path_to_Rosetta_directory>/demos/tutorials/input_and_output/flag_input_relax`. 
+
+```html
+-nstruct 2
+
+-relax:constrain_relax_to_start_coords
+-relax:ramp_constraints false
+
+-ex1
+-ex2
+
+-use_input_sc
+-flip_HNQ
+-no_optH false
+```
+Setting a higher `nstruct`, say `nstruct 10`, will increase the number of refinement runs and may produce better results, but may also consume a lot of time.
+
+We will use this flags file to refine the PDB 1QYS take directly from the Protein Data Bank. This may take a few minutes to run:
+
+    $>  <path_to_Rosetta_directory>/main/source/bin/relax.linuxgccrelease -in:file:s input_files/from_rcsb/1qys.pdb @flag_input_relax
+    
+This will produce three files: `1qys_0001.pdb`, `1qys_0002.pdb` and `score.sc`. Use the PDB with the lower `total_score` in the score file as the input PDB for your protocol.
+
+>These options can also be supplemented by `ignore_unrecognized_res` and `ignore_zero_occupany false` if required.
+
+>Ensure that all residues you want to model are present in the refined PDB. Using a flag like `ignore_unrecognized_res` may remove ligands and waters you want to consider.
+
 ###Input Search Paths
 ###Informing a Protocol about the Input Representation - Centroid or Full Atom
 ###Input a Known Structure For Comparison
-###Other Specific Flags
+###Other Specific Options
 
 
 
@@ -138,7 +200,7 @@ Controlling Output
 ###Common Stucture Input Files
 ####Gzipped Files
 
-###Adding Prefixes and Suffixes
+###Adding Prefixes and Suffixes to the Output PDBs
 ###Setting Output Paths
 ####Output Structure
 ####Score File

@@ -90,7 +90,19 @@ Demo
 ###Preparing PDBs for Scoring
 To score a biomoleule in Rosetta, we use the `score_jd2` executable. This application, along with most in Rosetta, expect the input PDB to be formatted in a certain manner. A PDB downloaded directly from the Protein Data Bank may or may not work with Rosetta in general, and `score_jd2` in particular. Here's an example where we try to score the PDB 3TDM. When in the right demo directory, run:
 
+<<<<<<< HEAD
     $> <path_to_Rosetta_directory>/main/source/bin/score_jd2.linuxgccrelease -in:file:s input_files/from_rcsb/3tdm.pdb
+=======
+<<<<<<< HEAD
+###Basic Scoring
+In this tutorial, we are going to score the PDB 1QYS (a refined version is provided in `<path_to_Rosetta_directory>/demos/tutorials/scoring/input_files`). First, we will use the default score function, i.e. talaris2014. 
+
+If you are not in the tutorial directory, cd into it:
+
+    cd <path_to_Rosetta_directory>/demos/tutorials/scoring
+    
+    $><path_to_Rosetta_directory>/main/source/bin/score_jd2.linuxgccrelease -in:file:s input_files/from_rcsb/3tdm.pdb
+>>>>>>> e271b84dbe3522e081dbb3d39be57f4699470dbf
    
 The application will exit with the following error:
 
@@ -136,11 +148,15 @@ In this section, we are going to score the PDB 1QYS (a refined version is provid
     
     -out:file:scorefile output_files/score.sc
     
+<<<<<<< HEAD
+Running this should produce a file called `score.sc` in the directory `output_files`. Compare this to the file `output_files/expected_output/score.sc`. They should be the same.
+=======
 To score this structure, run:
 
     $> <path_to_Rosetta_directory>/main/source/bin/score_jd2.linuxgccrelease @flag
     
 Running this should produce a file called `score.sc` in the directory `output_files`. Compare this to the file `<path_to_Rosetta_directory>/demos/tutorials/scoring/output_files/expected_output/score.sc`. They should be the same (expect for the `time` column which depends on your CPU speed).
+>>>>>>> XRW2016
 
 ####Analysis of the Score File
 The `score.sc` file should look like:
@@ -179,9 +195,15 @@ The flags file we will use now is:
 
 On running the command
 
+<<<<<<< HEAD
+    $> score_jd2.linuxgccrelease @flag_score12
+
+we should get a score file `score_score12.sc` in the directory `output_files`. Compare this to `output_files/expected_output/score_score12.sc`). They should be the same.
+=======
     $> <path_to_Rosetta_directory>/main/source/bin/score_jd2.linuxgccrelease @flag_docking
 
 we should get a score file `score_docking.sc` in the directory `output_files`. Compare this to `<path_to_Rosetta_directory>/demos/tutorials/scoring/output_files/expected_output/score_docking.sc`). They should be the same (expect for the `time` column which depends on your CPU speed).
+>>>>>>> XRW2016
 
 ```html
 SEQUENCE: 
@@ -239,9 +261,15 @@ We then set the `fa_atr` weight to `1.0` (originally `0.338` in _docking_) from 
 
 Now on running
 
+<<<<<<< HEAD
+    $> score_jd2.linuxgccrelease @flag_score12_patch
+
+we should get a score file `score_score12_patch.sc` in the directory `output_files`. Compare this to `output_files/expected_output/score_score12_patch.sc`). They should be the same.
+=======
     $> <path_to_Rosetta_directory>/main/source/bin/score_jd2.linuxgccrelease @flag_docking_patch
 
 we should get a score file `score_docking_patch.sc` in the directory `output_files`. Compare this to `<path_to_Rosetta_directory>/demos/tutorials/scoring/output_files/expected_output/score_docking_patch.sc`). They should be the same (expect for the `time` column which depends on your CPU speed).
+>>>>>>> XRW2016
 
 ```html
 SEQUENCE: 
@@ -252,7 +280,9 @@ SCORE:    -332.020    -332.020       0.000       0.000       0.000       0.000  
 Note that we have set the weight of `fa_pair` to zero in the patch file. This eliminates the any contribution from that term, and the score file is missing the `fa_pair` column. Also, the weighted scores of `fa_atr`, `fa_dun` and others have changed as defined by the patch file. The decrease in weighted score of `fa_atr` is a result of the increased weight we fed in through the command line via the flag file. (This, incidentally, is the same weight as the _talaris2014_ score function, and hence `fa_atr` has the same weighted score as in the basic scoring example.)
 
 ####Advanced Options
-Several other optons that you could add to the flag file are given [here](https://www.rosettacommons.org/docs/latest/application_documentation/analysis/score-commands).
+Several other optons that you could add to the flags file are given [here](https://www.rosettacommons.org/docs/latest/application_documentation/analysis/score-commands).
+
+For example, the option ```-scorefile_format json``` will write the output score file as a JSON file (which can be very useful for reading the file into any programming language easily)
 
 ###Getting Individual Residue Scores
 The `total_score` is essentially a sum of the individual residue scores in Rosetta. Sometimes, it might be more useful to get a detailed analysis of how well each residue is scoring. This is especially useful in understanding which residues have clashes in them.

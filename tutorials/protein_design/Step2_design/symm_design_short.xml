@@ -1,0 +1,25 @@
+<ROSETTASCRIPTS>
+	<SCOREFXNS>
+          <mem_highres weights="membrane_highres_Menv_smooth.wts" symmetric="1" />
+	</SCOREFXNS>
+	<RESIDUE_SELECTORS>
+			<Not name="not_random_20">
+   				<RandomResidue num_residues="40"/>
+			</Not>
+	</RESIDUE_SELECTORS>
+	<TASKOPERATIONS>
+	  		<InitializeFromCommandline name="ifcl"/>
+			<OperateOnResidueSubset name="subset" selector="not_random_20">
+				<PreventRepackingRLT/>
+			</OperateOnResidueSubset>
+	</TASKOPERATIONS>
+
+	<MOVERS>
+          <SetupForSymmetry name="setup_symm" definition="3UKM.symm" />
+          <SymPackRotamersMover name="sym_pack" scorefxn="mem_highres" task_operations="ifcl,subset"/>
+	</MOVERS>
+	<PROTOCOLS>
+          <Add mover_name="setup_symm" />
+          <Add mover_name="sym_pack" />
+	</PROTOCOLS>
+</ROSETTASCRIPTS>

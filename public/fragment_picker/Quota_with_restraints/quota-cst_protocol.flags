@@ -1,6 +1,6 @@
 # Input databases
--in::path::database		../database
--in::file::vall              	../vall-database/vall.apr24.2008.extended.gz
+
+#-in::file::vall <Path to vall database>
 
 # Weights file
 -frags::scoring::config		input_files/quota-cst_protocol.wghts
