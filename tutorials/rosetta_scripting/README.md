@@ -1,9 +1,23 @@
-Creating protocols with RosettaScripts
+# Creating protocols with RosettaScripts
 ======================================
 
 Tutorial by Rocco Moretti (rmorettiase@gmail.com).  Edited by Vikram K. Mulligan (vmullig@uw.edu).  Created on 21 June 2016 as part of the 2016 Documentation XRW.
 
-What is RosettaScripts?
+## Goals
+--------
+At the end of this tutorial, you will understand:
+- The RosettaScripts paradigm
+- RosettaScripts syntax
+- How to control final file output from RosettaScripts
+- How to manipulate poses in RosettaScripts using *movers*
+- How to evaluate pose properties and control protocol flow in RosettaScripts using *filters*
+- How to control packer behaviour within movers using *task operations*
+- How to select residues in RosettaScripts using *residue selectors*
+- How to nest movers and how to script common loops (*e.g.* Monte Carlo trajectories)
+- How to assemble more complicated protocols from simpler building-blocks
+- How to control large-scale sampling
+
+## What is RosettaScripts?
 -----------------------
 
 Originally, the interface for Rosetta3 functionality was individual applications,
@@ -18,7 +32,8 @@ RosettaScripts is based around the paradigm of having a single structure (the *p
 enters the protocol, a series of steps performed, each modifying the pose in some way (*movers*)
 or evaluating some property of the pose (*filters*), and a single structure written out.  The
 protocol can then be run repeatedly to generate large ensembles of output structures, or to
-process large ensembles of input structures.
+process large ensembles of input structures.  Even more broadly, RosettaScripts lets a user link
+individual Rosetta modules together in a linear sequence.
 
 This tutorial is intended to take you through the process of creating a new protocol 
 with RosettaScripts. It should also give you a good grounding in how you can modify 
@@ -26,7 +41,7 @@ existing RosettaScripts protocols. Note that you can certainly run RosettaScript
 modifying the XML - the most common use case of RosettaScripts is probably re-using 
 an XML produced by someone else. 
 
-Your first RosettaScript
+## Your first RosettaScript
 ------------------------
 
 * *Run the simplest possible RosettaScripts*
@@ -116,7 +131,7 @@ $> cp inputs/nothing.xml .
 As you haven't further defined any protocol, this XML does nothing to the structure. As a test, let's just run a structure through RosettaScripts with this XML. RosettaScripts takes the standard input and output flags. In addition, the `-parser:protocol` option specifies which XML file to use.
 
 ```bash
-$> rosetta_scripts.linuxgccrelease -s 1ubq.pdb -parser:protocol nothing.xml
+$> <path_to_Rosetta_directory>/main/source/bin/rosetta_scripts.linuxgccrelease -s 1ubq.pdb -parser:protocol nothing.xml
 ```
 
 In the tracer output, Rosetta should print its interpretation of the XML input. 
@@ -152,7 +167,7 @@ Looking at the output PDB, the output structure (1ubq_0001.pdb) should be nearly
 
 Additionally, you should see the standard Rosetta score table at the end of the PDB. By default, the structure will be rescored with the default Rosetta score function (talaris2014, as of this writing). This can be controlled by the ```-score:weights``` command line option. 
 
-Custom Scoring
+## Controlling RosettaScripts File Output: Custom Scoring
 --------------
 
 * *Score the output with a custom scorefunction*
@@ -195,7 +210,7 @@ The t13 scorefunction is never used in this script, but the t14_cart score funct
 
 If you open the scoring_1ubq_0001.pdb output file, you should see that the score table includes columns for the cart_bonded term, and no pro_close term.
 
-Movers - altering the pose
+## Movers - altering the pose
 --------------------------
 
 * *Minimize the pose before outputting*
@@ -239,7 +254,7 @@ Declaring the movers in the MOVERS section only defines the movers and their opt
 
 Within the tracer output you should see indications that your movers are being used (e.g. "BEGIN MOVER MinMover - min_cart"). Also, if you look at the total scores from the output PDB, you should get much better scores for the minimized 1ubq than the one just rescored with t14_cart. (about -155 versus +460). 
 
-ResidueSelectors and TaskOperations
+## ResidueSelectors and TaskOperations
 -----------------------------------
 
 * *Repack (don't design) the entire protein except for residue F45 and Y59*
@@ -343,7 +358,7 @@ In the tracer output you should now see that both the PackRotamersMover and MinM
 
 If you look at the scores of the packing run in comparison to the minimize run, you should see that the extra packing step allows us to sample a lower energy structure (about -190 REU versus -155 REU). Looking at the structures, you'll notice that they're mostly the same - especially in the core of the protein - but some of the surface sidechains have moved much more than they have from minimization only. 
 
-Filters
+# Filters
 -------
 
 * *Filter runs based on a productive conformation (e.g. a salt-bridge)*
