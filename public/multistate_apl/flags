@@ -1,0 +1,7 @@
+-entity_resfile input_files/entity.resfile
+-fitness_file input_files/fitness.daf
+-ms::pop_size 100
+-ms::generations 210
+-ms::numresults 1
+-ms::fraction_by_recombination 0.02
+

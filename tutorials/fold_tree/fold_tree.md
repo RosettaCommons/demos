@@ -9,7 +9,7 @@ In the internal coordinate world, you move objects by changing the bond, angle, 
 
 If you go to
 ```
-<path-to-Rosetta>/Rosetta/main/database/chemical/residue_type_sets/fa_standard/residue_types/l-caa
+<path-to-Rosetta>/main/database/chemical/residue_type_sets/fa_standard/residue_types/l-caa
 ```
 you can find several [params](https://www.rosettacommons.org/docs/latest/rosetta_basics/file_types/Residue-Params-file) files for all 20 amino acids. Open one and look at it. The lines started with ICOOR_INTERNAL show the internal coordinates of the atoms in that residue (see [here](https://www.rosettacommons.org/docs/latest/rosetta_basics/file_types/Residue-Params-file) for details of what each column in ICOOR_INERNAL line means.
 
@@ -33,7 +33,7 @@ In this part we see how to use *fold tree* to control movements of the parts in 
 In this example, you will be using the structure of the N-terminal part of nucleocapsi from coronaviruse. Navigate to the fold-tree directory in tutorials using this command:
 
 ```
-> cd <path-to-Rosetta>/Rosetta/demos/tutorials/fold_tree
+> cd <path-to-Rosetta>/demos/tutorials/fold_tree
 ```
 Open the capsid.pdb file provided for you in the inputs directory. You can see that it has a long, unstructured N-terminal and the rest of the structure is mostly beta sheets. We know that the N-terminal region is disordered, so before working with the PDB, we want to relax just that part.
 The cps_relax1.xml is a [Rosetta script] provided to you that relaxes residues 1-20 of the structure using a [MoveMap].   

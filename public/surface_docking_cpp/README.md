@@ -1,7 +1,9 @@
 # C++ RosettaSurface
 
 ## Authors
-written by Michael Pacella (Graylab), mpacella88@gmail.com
+Written by Michael Pacella (Graylab), mpacella88@gmail.com.  Edited by Vikram K. Mulligan (vmullig@uw.edu) as part of the 2016 Documentation XRW.
+
+KEYWORDS: SURFACES DOCKING
 
 ## General Description
 This demo will describe how to run the C++ version of the RosettaSurface 
@@ -13,9 +15,12 @@ Simultaneous optimization of protein rigid-body orientation, backbone and
 side chain conformations on a solid surface.  
 
 ## Commands
+
+```bash
+$> <path_to_Rosetta_directory>/main/source/bin/surface_docking.default.linuxgccrelease @rosetta_inputs/flags
 ```
-surface_docking<.exe> -database <path/to/database> @input/flags
-```
+
+In the above, ".default.linuxgccrelease" may need to be updated for your build, operating system, and compiler.
 
 ## Input Files
 - lk_alpha_calcite.pdb = input pdb with LK alpha positioned above calcite 104
@@ -33,7 +38,6 @@ the input file and belonging to a separate chain
 the rosetta database
 
 ## Post-processing
-(in the directory with output decoys)
 
 1. GetTop.sh Ads 4
 2. cd TOP4.Ads

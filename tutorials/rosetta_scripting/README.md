@@ -1,7 +1,23 @@
-Creating protocols with RosettaScripts
+# Creating protocols with RosettaScripts
 ======================================
 
-What is RosettaScripts?
+Tutorial by Rocco Moretti (rmorettiase@gmail.com) and Vikram K. Mulligan (vmullig@uw.edu).  Created on 21 June 2016 as part of the 2016 Documentation XRW.
+
+## Goals
+--------
+At the end of this tutorial, you will understand:
+- The RosettaScripts paradigm
+- RosettaScripts syntax
+- How to control final file output from RosettaScripts
+- How to manipulate poses in RosettaScripts using *movers*
+- How to evaluate pose properties and control protocol flow in RosettaScripts using *filters*
+- How to control packer behaviour within movers using *task operations*
+- How to select residues in RosettaScripts using *residue selectors*
+- How to nest movers and how to script common loops (*e.g.* Monte Carlo trajectories)
+- How to assemble more complicated protocols from simpler building-blocks
+- How to control large-scale sampling
+
+## What is RosettaScripts?
 -----------------------
 
 Originally, the interface for Rosetta3 functionality was individual applications,
@@ -11,7 +27,13 @@ users' needs, then they may have put in options which allowed users to change th
 
 However, these applications are typically limited in the extent to which they allow users
 to modify the protocol. To allow for greater flexibility, RosettaScripts was created.
-RosettaScripts allows users to create and modify protocols using an XML based syntax.
+RosettaScripts allows users to create and modify protocols using an XML based syntax.  Broadly,
+RosettaScripts is based around the paradigm of having a single structure (the *pose*) that
+enters the protocol, a series of steps performed, each modifying the pose in some way (*movers*)
+or evaluating some property of the pose (*filters*), and a single structure written out.  The
+protocol can then be run repeatedly to generate large ensembles of output structures, or to
+process large ensembles of input structures.  Even more broadly, RosettaScripts lets a user link
+individual Rosetta modules together in a linear sequence.
 
 This tutorial is intended to take you through the process of creating a new protocol 
 with RosettaScripts. It should also give you a good grounding in how you can modify 
@@ -19,16 +41,59 @@ existing RosettaScripts protocols. Note that you can certainly run RosettaScript
 modifying the XML - the most common use case of RosettaScripts is probably re-using 
 an XML produced by someone else. 
 
-Your first RosettaScript
+## Your first RosettaScript
 ------------------------
 
-* *Run the simplest possible RosettaScripts*
+* *Run the simplest possible RosettaScript*
 
-The simplest RosettaScript XML is one which does nothing. Go to [the RosettaScripts documentation page](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/RosettaScripts) and find the skeleton XML file there. Copy and paste into a new file (`nothing.xml`). 
+The simplest RosettaScript XML is one which does nothing.  You can obtain a skeleton XML file, which does nothing, in one of two ways.  You go to [the RosettaScripts documentation page](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/RosettaScripts) and find the skeleton XML file there, then copy and paste it into a new file (`nothing.xml`).  You can also generate a skeleton XML file using the rosetta_scripts application:
 
-We can also edit it slightly to add comments 
+```bash
+$> <path_to_Rosetta_directory>/main/source/bin/rosetta_scripts.default.linuxgccrelease -print_template_script >nothing.xml
+```
+
+In the above, the ".default.linuxgccrelease" may need to be changed for your build, operating system, and compiler (*e.g.* ".static.macosclangrelease" for the static build using the clang compiler on the Macintosh operating system).  If you run the above, it will produce the following output:
 
 ```
+core.init: Rosetta version unknown:979495e360c4960e2a6f41fe9e8bfd5b217e31eb 2016-06-16 21:33:49 -0700 from git@github.com:RosettaCommons/main.git
+core.init: command: /home/vikram/rosetta_git/Rosetta/main/source/bin/rosetta_scripts.default.linuxclangrelease -print_template_script
+core.init: 'RNG device' seed mode, using '/dev/urandom', seed=34564556 seed_offset=0 real_seed=34564556
+core.init.random: RandomGenerator:init: Normal mode, seed=34564556 RG_type=mt19937
+core.init: Resolved executable path: /home/vikram/rosetta_git/Rosetta/main/source/build/src/release/linux/3.13/64/x86/clang/3.4-1ubuntu3/default/rosetta_scripts.default.linuxclangrelease
+core.init: Looking for database based on location of executable: /home/vikram/rosetta_git/Rosetta/main/database/
+apps.public.rosetta_scripts.rosetta_scripts: The -"parser:print_template_script" option was specified.  The app will print a template script and then exit.
+apps.public.rosetta_scripts.rosetta_scripts: RosettaScripts script template:
+
+<ROSETTASCRIPTS>
+	<SCOREFXNS>
+	</SCOREFXNS>
+	<RESIDUE_SELECTORS>
+	</RESIDUE_SELECTORS>
+	<TASKOPERATIONS>
+	</TASKOPERATIONS>
+	<FILTERS>
+	</FILTERS>
+	<MOVERS>
+	</MOVERS>
+	<APPLY_TO_POSE>
+	</APPLY_TO_POSE>
+	<PROTOCOLS>
+	</PROTOCOLS>
+	<OUTPUT />
+</ROSETTASCRIPTS>
+
+At any point in a script, you can include text from another file using <xi:include href="filename.xml" />.
+apps.public.rosetta_scripts.rosetta_scripts: Variable substituion is possible from the commandline using the -"parser:script_vars varname=value" flag.  Any string of the pattern "%%varname%%" will be replaced with "value" in the script.
+apps.public.rosetta_scripts.rosetta_scripts: 
+apps.public.rosetta_scripts.rosetta_scripts: The rosetta_scripts application will now exit.
+
+```
+
+This will be written to output.log.  You can delete all lines preceding ```<ROSETTASCRIPTS>``` and following ```</ROSETTASCRIPTS>``` to obtain a minimal template.
+
+Before running this script, let's edit it slightly to add comments:
+
+```xml
 <ROSETTASCRIPTS>
     <SCOREFXNS>
     </SCOREFXNS>
@@ -57,19 +122,19 @@ This is a comment
 *(Angle brackets are the greater than/less than signs)
 ```
 
-*You can also get the template XML from the rosetta_scripts executable with the following command*
+The nothing.xml file is also provided in the inputs directory:
 
-        rosetta_scripts.linuxgccrelease -print_template_script 
+```bash
+$> cp inputs/nothing.xml .
+```
 
-*nothing.xml is also provided in the inputs directory:*
+As you haven't further defined any protocol, this XML does nothing to the structure. As a test, let's just run a structure through RosettaScripts with this XML. RosettaScripts takes the standard input and output flags. In addition, the `-parser:protocol` option specifies which XML file to use.
 
-	$> cp inputs/nothing.xml .
+```bash
+$> <path_to_Rosetta_directory>/main/source/bin/rosetta_scripts.linuxgccrelease -s 1ubq.pdb -parser:protocol nothing.xml
+```
 
-As you haven't further defined any protocol, this XML does nothing to the structure. As a test, lets just run a structure through RosettaScripts with this XML. RosettaScripts takes the standard input and output flags. In addition, the `-parser:protocol` option specifies which XML file to use.
-
-	$> rosetta_scripts.linuxgccrelease -s 1ubq.pdb -parser:protocol nothing.xml
-
-In the tracer output, Rosetta should print how it interprets the XML input. 
+In the tracer output, Rosetta should print its interpretation of the XML input. 
 
 ```
 <ROSETTASCRIPTS>
@@ -86,18 +151,68 @@ In the tracer output, Rosetta should print how it interprets the XML input.
 
 The first thing to notice is that the comments added to the XML (everything outside the angle brackets) is ignored.
 
-Secondly, this demonstrates different ways of writing XML tags. XML tags are surrounded by angle brackets (greater/less than signs). A tag must be closed by a slash. Tags can be nested in other tags (like SCOREFXNS is nested within ROSETTASCRIPTS), in which case the tag is closed by something like `</ROSETTASCRIPTS>`. If the tags are not nested, they can be closed by putting the slash at the end of the tag, like `<SCOREFXNS/>`.
+Secondly, this demonstrates different ways of writing XML tags. XML tags are surrounded by angle brackets (greater/less than signs). A tag must be closed by a slash. Tags can be nested in other tags (like SCOREFXNS is nested within ROSETTASCRIPTS), in which case the outer tag must be closed by something like `</ROSETTASCRIPTS>`. If the tags are not nested, they can be closed by putting the slash at the end of the tag, like `<SCOREFXNS/>`.  The following two statements are perfectly equivalent:
+
+```xml
+<SCOREFXNS>
+</SCOREFXNS>
+```
+```xml
+<SCOREFXNS/>
+```
+
+In the above, the latter is more concise, though, at the expense of preventing anything from being enclosed within the SCOREFXNS block.
+
+Additionally, whitespace is largely ignored in RosettaScripts.  The following three statements are perfectly synonymous:
+```xml
+<SCOREFXNS></SCOREFXNS>
+```
+```xml
+<SCOREFXNS>      </SCOREFXNS>
+```
+```xml
+<SCOREFXNS>
+</SCOREFXNS>
+```
+
+Conventionally, tags are indented in proportion to their level of nesting, but this is for human readability, not for machine parsing; the rosetta_scripts application disregards tabs entirely.  The one case in which whitespace matters is when setting options within a tag.  When a tag contains an option that accepts a comma-separated list, these must *not* have whitespace within them:
+
+```xml
+<PackRotamers name=pack1 task_operations=task1,task2,task3 /> #This is allowed
+<PackRotamers name=pack2 task_operations=task2, task2, task3 /> #This will be misinterpreted
+```
+
+This brings up another RosettaScripts syntax convention: generally, we have blocks that define *types* of objects, and within these blocks, we define individual *instances* of objects of the type, giving each one a unique name.  For example, the ```<MOVERS> ... </MOVERS>``` block is the place to define movers.  Within this, we define specific instances of specific types of movers, and we set options for these movers, including a unique name by which each mover will be addressed at later points in the script.  For example:
+
+```xml
+	<MOVERS>  #In this section, movers are defined.
+		  #The following is a particular mover of the "PackRotamers" type, which we give the
+		  #unique name "pack1".  It takes, as an option, a list of previously-defined
+		  #TaskOperation objects (a type of object that will be introduced later in this
+		  #tutorial).  We assume that task1, task2, and task3 were defined and given these
+		  #unique names prior to this point in the script.
+		<PackRotamers name=pack1 task_operations=task1,task2,task3 />
+		  #From now on, we can refer to the mover defined above using the unique name "pack1".
+	</MOVERS>
+```
 
 Looking at the output PDB, the output structure (1ubq_0001.pdb) should be nearly identical to the input structure. The major difference should be the presence of hydrogens which were not in the input structure. This is *not* something that is specific to RosettaScripts - in general Rosetta will add missing hydrogens and repack sidechain atoms missing in the input PDB.
 
-Additionally, you should see the standard Rosetta score table at the end of the PDB. By default, the structure will be rescored with the default Rosetta score function (talaris2014, as of writing). This can be controlled by the `-score:weights` command line option. 
+Additionally, you should see the standard Rosetta score table at the end of the PDB. By default, the structure will be rescored with the default Rosetta score function (talaris2014, as of this writing). This can be controlled by the ```-score:weights``` command line option. 
 
-Custom Scoring
+## Controlling RosettaScripts File Output
 --------------
 
 * *Score the output with a custom scorefunction*
+* *Control output file format*
 
-Sometimes you want to use different energy functions during different scoring. For example, if you want to change constraint weights, or use a lower resolution energy function. The SCOREFXNS section of the XML allows you to define multiple different scorefunctions, including custom scorefunctions.
+Before we explore the full power of RosettaScripts, let's make sure that we understand how to control the rosetta_scripts application's output.  There are two ways to do this.  The first is modifying the ```<OUTPUT/>``` tag typically found at the end of a script, and the second is by setting flags.
+
+Let's look at a typical usage case for the ```<OUTPUT/>``` tag, first.  Sometimes you may want to use different energy functions during different scoring. For example, you may want to change constraint weights, or to use a lower resolution energy function.  In order to do this, we:
+
+1. Add a named custom scoring function in the ```SCOREFXNS``` section of the XML.
+
+2. Add this to the ```<OUTPUT/>``` tag.
 
 Each custom scorefunction is defined by different sub-tags in the SCOREFXNS section. The format is detailed in the [SCOREFXNS documentation](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/RosettaScripts#scorefunctions).
 
@@ -126,17 +241,29 @@ Each custom scorefunction is defined by different sub-tags in the SCOREFXNS sect
 </ROSETTASCRIPTS>
 ``` 
 
-The script scorefxn.xml gives and example of defining different scorefunctions. It defines two scorefunctions, one (t13) is simply the talaris2013 weights used as-is, and the second is the talaris2014 weights modified in certain score terms. (One can also use patch files, or locally-specified weights file).
+The script scorefxn.xml gives and example of defining different scorefunctions. It defines two scorefunctions.  The first one (t13) is simply the talaris2013 weights used as-is, and the second is the talaris2014 weights modified by changing the weights (coefficients) for certain score terms. (One can also use patch files, or locally-specified weights file; additionally, other scorefunction options can be set, such as soft Lennard-Jones potentials or whatnot.  See the documentation on the ```Set``` tag in the [RosettaScripts documentation](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/RosettaScripts) for more on this.)
 
-The t13 scorefunction is never used in this script, but the t14_cart score function is used in the OUTPUT tag. This tells RosettaScripts to rescore the output structures with the custom t14_cart score function, rather than with the default (command line) scorefunction. Run 1ubq.pdb through the script: 
+The t13 scorefunction is never used in this script, which is not a problem -- RosettaScripts does not object to objects that are defined but never used (though the unnecessary allocation of these objects in memory is probably best avoided if one can help it).  The t14_cart score function *is* used, however, in the OUTPUT tag. This tells RosettaScripts to rescore the output structures with the custom t14_cart score function, rather than with the default (command line) scorefunction. Run 1ubq.pdb through the script: 
 
-	$> cp inputs/scoring.xml .
-	$> rosetta_scripts.linuxgccrelease -s 1ubq.pdb -parser:protocol scoring.xml -out:prefix scoring_
+```bash
+$> cp inputs/scoring.xml .
+$> <path_to_Rosetta_directory>/main/source/bin/rosetta_scripts.linuxgccrelease -s 1ubq.pdb -parser:protocol scoring.xml -out:prefix scoring_
+```
 
 If you open the scoring_1ubq_0001.pdb output file, you should see that the score table includes columns for the cart_bonded term, and no pro_close term.
 
-Movers - altering the pose
---------------------------
+The above could also be accomplished by passing a custom .wts file to RosettaScripts using the ```-score:weights``` flag at the commandline.
+
+Now let's look at another example of output control at the commandline: we may not want to use PDB output if we're planning to generate very large numbers of structures.  The binary silent file is a proprietary Rosetta format that tis much more compact than a PDB file, and which can store arbitrarily large numbers of structures, avoiding disk space and file count limitations on many file systems.  To produce a silent files for output, let's re-run the command that we just ran, but with an additional flag:
+
+```xml
+$> <path_to_Rosetta_directory>/main/source/bin/rosetta_scripts.linuxgccrelease -s 1ubq.pdb -parser:protocol scoring.xml -out:file:silent scoring.silent
+```
+
+		This time, the output will be a binary silent file.  PDB files can be extracted from binary silent files using the extract_pdbs application.
+
+## Altering the Pose: Movers
+----------------------------
 
 * *Minimize the pose before outputting*
 
@@ -179,7 +306,7 @@ Declaring the movers in the MOVERS section only defines the movers and their opt
 
 Within the tracer output you should see indications that your movers are being used (e.g. "BEGIN MOVER MinMover - min_cart"). Also, if you look at the total scores from the output PDB, you should get much better scores for the minimized 1ubq than the one just rescored with t14_cart. (about -155 versus +460). 
 
-ResidueSelectors and TaskOperations
+## ResidueSelectors and TaskOperations
 -----------------------------------
 
 * *Repack (don't design) the entire protein except for residue F45 and Y59*
@@ -283,7 +410,7 @@ In the tracer output you should now see that both the PackRotamersMover and MinM
 
 If you look at the scores of the packing run in comparison to the minimize run, you should see that the extra packing step allows us to sample a lower energy structure (about -190 REU versus -155 REU). Looking at the structures, you'll notice that they're mostly the same - especially in the core of the protein - but some of the surface sidechains have moved much more than they have from minimization only. 
 
-Filters
+# Filters
 -------
 
 * *Filter runs based on a productive conformation (e.g. a salt-bridge)*
