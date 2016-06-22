@@ -79,27 +79,32 @@ This tutorial presents a cross-docking benchmark experiment. Antibody CR6261 bin
 
                 pymol 3gbn_Ab*pdb &
                 > sort -nk 2 chainbreak_fix.fasc
-        1. Copy the best scoring model (3gbn_Ab_0010.pdb in the example output_files directory) to 3gbn_Ab_fixed.pdb.
+        1. Copy the best scoring model (3gbn_Ab_0010.pdb in the example output_files directory) to 3gbn_Ab_fixed.pdb. Alternatively you can copy the provided structure into your directory:
 
-                cp 3gbn_Ab_0010.pdb 3gbn_Ab_fixed.pdb
+                > cp 3gbn_Ab_0010.pdb 3gbn_Ab_fixed.pdb
+                    or
+                $> cp input_files/3gbn_Ab_fixed.pdb .
 
     1. Repack or relax the template structures.
 
         Repacking is often necessary to remove small clashes identified by the score function as present in the crystal structure. Certain amino acids within the HA interface are strictly conserved and their conformation has been shown to be critical for success in docking. RosettaScripts allows for fine control of these details using TaskOperations.
         
-        1. Copy the XML scripts and options file for repacking from the input_files directory.
+        1. Copy the XML [scripts]() and options file for repacking from the input_files directory.
         
-                cp ../input_files/repack.xml .
-                cp ../input_files/repack_HA.xml . 
-                cp ../input_files/repack.options .
-
+                $> cp input_files/repack.xml .
+                $> cp input_files/repack_HA.xml . 
+                $> cp input_files/repack.options .
+            1. make sure you have all the necessary files. If not, copy them from the input directory:
+            ```
+            $> cp input_files/3gbm_HA.pdb .
+            ```
         1. Familiarize yourself with repack.xml and repack_HA.xml. Notice that repack_HA.xml is a modified version of repack.xml, representative of the versatility of RosettaScripts.
         1. Run the XML script with the rosetta_scripts application.
         
-                ~/rosetta_workshop/rosetta/main/source/bin/rosetta_scripts.default.linuxgccrelease \
+                $> <path-to-Rosetta>/main/source/bin/rosetta_scripts.default.linuxgccrelease \
                 @repack.options -s 3gbm_HA.pdb -parser:protocol repack_HA.xml >& repack_HA.log &
                 
-                ~/rosetta_workshop/rosetta/main/source/bin/rosetta_scripts.default.linuxgccrelease \
+                $> <path-to-Rosetta>/main/source/bin/rosetta_scripts.default.linuxgccrelease \
                 @repack.options -s 3gbn_Ab_fixed.pdb -parser:protocol repack.xml >& repack_Ab.log &
 
         1. When the repacking runs are done (in about 3-4 minutes), copy the best scoring HA model to 3gbm_HA_repack.pdb and the best scoring antibody model to 3gbn_Ab_repack.pdb. (For brevity, we only generated a single structure. For actual production runs, we recommend generating a number of output structures, by adding something like "-nstruct 25" to the commandline. -- For the example outputs in the output_files/ directory, the lowest energy structures are 3gbm_HA_0011.pdb and 3gbn_Ab_fixed_0005.pdb.)
