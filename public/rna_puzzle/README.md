@@ -18,18 +18,35 @@ https://www.rosettacommons.org/docs/latest/rna-denovo-setup.html
 
 # Example Rosetta Command Lines
 
+## Before continuing, make sure you have the correct environment variables set up by 
+
+```bash
+   export ROSETTA_TOOLS=<path/to/Rosetta/tools>
+>$ source $ROSETTA_TOOLS/rna_tools/INSTALL
+```
+
 ## Make helices
 
-Example in step1_helix/
+Example cd into step1_helix/
+
+```bash
+$> cd step1_helix/
+```
+
+and run
 
 ```
-rna_helix.py  -o H2.pdb -seq cc gg -resnum 14-15 39-40
-replace_chain_inplace.py  H2.pdb 
+$> rna_helix.py  -o H2.pdb -seq cc gg -resnum 14-15 39-40
+>$ replace_chain_inplace.py  H2.pdb 
 ```
 
 ## Use threading to build sub-pieces
 
-Example in step2_thread/
+Change to the step2_thread/ directory,
+
+```bash
+$> cd ../step2_thread
+```
 
 In the problem above, there is a piece which is a well-recognized motif, 
 the UUCG apical loop. Let's model it by threading from an exemplar
@@ -40,17 +57,17 @@ http://pdb.org/pdb/explore/explore.do?structureId=1f7y
 
 Slice out the motif of interest:
 ```
-pdbslice.py  1f7y.pdb  -subset B:31-38 uucg_
+>$ pdbslice.py  1f7y.pdb  -subset B:31-38 uucg_
 ```
 
 Thread it into our actual sequence:
 ```
-rna_thread -s uucg_1f7y.pdb  -seq ccuucggg -o uucg_1f7y_thread.pdb
+>$ rna_thread -s uucg_1f7y.pdb  -seq ccuucggg -o uucg_1f7y_thread.pdb
 ```
 
 Let's get the numbering to match our actual test case:
 ```
-renumber_pdb_in_place.py uucg_1f7y_thread.pdb 24-31
+>$ renumber_pdb_in_place.py uucg_1f7y_thread.pdb 24-31
 ```
 
 Done!
@@ -58,6 +75,11 @@ Done!
 ## Build models of a sub-piece denovo
 
 In step3_farfar/, we will see how to setup the Rosetta job for motifs between H2 and H4, using our starting H2 and H4 helices as fixed boundary conditions. 
+
+Change into the `step3_farfar/rosetta_inputs/` directory
+```bash
+$> cd ../step3_farfar/rosetta_inputs/
+```
 
 There is currently a wrapper script that sets up the job for the rna_denovo executable, which actually runs fragment assembly of RNA with full atom refinement (FARFAR) is not yet equipped to map numbers from our full modeling problem into the subproblem. We have to create it a little sub-problem and map all the residue numberings into the local problem.
 
@@ -79,13 +101,13 @@ to compute RMSDs as a reference.
 You can run the command by typing:
 
 ```
- source README_SETUP
+ $> source README_SETUP
 ```
 
 Then try this:
 
 ```
- source README_FARFAR
+$> source README_FARFAR
 ```
 
 Example output after a couple of structures is in example_output/.
@@ -100,7 +122,8 @@ https://www.rosettacommons.org/docs/latest/RNA-tools.html
 Extract 10 lowest energy models:
 
 ```
-extract_lowenergy_decoys.py H2H3H4_run1b_openH3_SOLUTION1.out 10
+$> cd ../example_output
+$> extract_lowenergy_decoys.py H2H3H4_run1b_openH3_SOLUTION1.out 10
 ```
 
 Inspect in pymol.
@@ -108,12 +131,15 @@ Inspect in pymol.
 
 ## Graft together models for the full-length RNA
 
-Example in step4_graft/:
+Change into the `step4_graft/` directory:
+```bash
+$> cd ../../step4_graft
+```
 
 These were threading and FARFAR solutions that we liked for each submotif -- now we can graft:
 
 ```
-rna_graft -s H2H3H4_run1b_openH3_SOLUTION1.pdb  uucg_1f7y_thread.pdb  H1H2_run2_SOLUTION1.pdb -o full_graft.pdb
+$> <path/to/Rosetta/>main/source/bin/rna_graft.default.linuxgccrelease -s H2H3H4_run1b_openH3_SOLUTION1.pdb  uucg_1f7y_thread.pdb  H1H2_run2_SOLUTION1.pdb -o full_graft.pdb
 ```
 
 Done! 
