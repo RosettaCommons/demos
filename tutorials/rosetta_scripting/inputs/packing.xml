@@ -1,0 +1,39 @@
+<ROSETTASCRIPTS>
+    <SCOREFXNS>
+        <t13 weights="talaris2013" />
+        <t14_cart weights="talaris2014" >
+            <Reweight scoretype="pro_close" weight="0.0" />
+            <Reweight scoretype="cart_bonded" weight="0.625" />
+        </t14_cart>
+    </SCOREFXNS>
+    <RESIDUE_SELECTORS>
+        <And name="F45_Y59" >
+            <Index resnums="45A,59A" />
+            <ResidueName residue_name3="PHE,TYR" />
+        </And>
+    </RESIDUE_SELECTORS>
+    <TASKOPERATIONS>
+	<RestrictToRepacking name="repackonly" />
+	<ExtraRotamersGeneric name="extrachi" ex1="1" ex2="1" ex1_sample_level="1" ex2_sample_level="1" />
+        <OperateOnResidueSubset name="nopack_F45_Y59" selector="F45_Y59" >
+            <PreventRepackingRLT/>
+        </OperateOnResidueSubset>
+    </TASKOPERATIONS>
+    <FILTERS>
+    </FILTERS>
+    <MOVERS>
+        <MinMover name="min_torsion" scorefxn="t13" chi="true" bb="1" cartesian="F" >
+        </MinMover>
+        <MinMover name="min_cart" scorefxn="t14_cart" chi="true" bb="1" cartesian="T" >
+        </MinMover>
+	<PackRotamersMover name="pack" scorefxn="t13" task_operations="repackonly,extrachi,nopack_F45_Y59"/>
+    </MOVERS>
+    <APPLY_TO_POSE>
+    </APPLY_TO_POSE>
+    <PROTOCOLS>
+	<Add mover="pack" />
+	<Add mover="min_cart" />
+    </PROTOCOLS>
+    <OUTPUT scorefxn="t14_cart" />
+</ROSETTASCRIPTS>
+
