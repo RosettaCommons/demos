@@ -23,7 +23,7 @@ else:
 EXE_DIR = abspath( EXE_DIR )
 
 # for pdbslice.py
-if os.environ.has_key("ROSETTA_TOOLS"):
+if os.environ.has_key("ROSETTA_TOOLS"): 
 	tools_scripts_path = os.environ.get("ROSETTA_TOOLS")+"/rna_tools/bin"
 else:
 	tools_scripts_path = abspath( dirname( abspath( argv[0] ) ) + '/../../../../tools/rna_tools/bin' )
@@ -357,7 +357,7 @@ for i in range( stem_count ):
 
     outfile = 'stem%d_%s.out' % (i+1, fasta_file.replace('.fasta',''))
     stem_out_files.append( outfile )
-    command = '%s/rna_helix%s  -database  %s/../../rosetta_database/ -fasta %s -out:file:silent %s' % (EXE_DIR, EXE_extension, EXE_DIR, tag, outfile)
+    command = '%s/rna_helix%s  -fasta %s -out:file:silent %s' % (EXE_DIR, EXE_extension, tag, outfile)
     fid_README_STEMS.write(command+'\n')
 
 #print
@@ -504,8 +504,8 @@ for i in range( motif_count ):
     motif_out_file = motif_params_file.replace( '.params','.out')
     motif_out_files.append( motif_out_file )
     NSTRUCT = 100
-    command = '%s/rna_denovo%s -database  %s/../../rosetta_database %s -fasta %s -params_file %s -nstruct %d -out:file:silent %s -cycles 5000 -mute all -close_loops -close_loops_after_each_move -minimize_rna' % \
-        ( EXE_DIR, EXE_extension, EXE_DIR, native_tag, motif_fasta_file, motif_params_file, NSTRUCT, motif_out_file )
+    command = '%s/rna_denovo%s %s -fasta %s -params_file %s -nstruct %d -out:file:silent %s -cycles 5000 -mute all -close_loops -close_loops_after_each_move -minimize_rna' % \
+        ( EXE_DIR, EXE_extension, native_tag, motif_fasta_file, motif_params_file, NSTRUCT, motif_out_file )
 
     if data_exists: command += ' -data_file %s ' % motif_data_file
     if cst_exists and cst_found: command += ' -cst_file %s ' % motif_cst_file
@@ -602,8 +602,8 @@ native_tag = ''
 if native_exists: native_tag = '-native '+native_pdb_file
 
 outfile = params_file.replace( '.params','.out' )
-command = '%s/rna_denovo%s -database  %s/../../rosetta_database %s -fasta %s -in:file:silent_struct_type binary_rna  -cycles 10000 -nstruct 200 -out:file:silent %s -params_file %s -cst_file %s -close_loops  -in:file:silent ' % \
-( EXE_DIR, EXE_extension, EXE_DIR, native_tag, fasta_file, outfile, params_file, assemble_cst_file )
+command = '%s/rna_denovo%s %s -fasta %s -in:file:silent_struct_type binary_rna  -cycles 10000 -nstruct 200 -out:file:silent %s -params_file %s -cst_file %s -close_loops  -in:file:silent ' % \
+( EXE_DIR, EXE_extension, native_tag, fasta_file, outfile, params_file, assemble_cst_file )
 
 for stem_out_file in stem_out_files:
     command += ' '+stem_out_file
