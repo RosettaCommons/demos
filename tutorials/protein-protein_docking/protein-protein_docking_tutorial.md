@@ -193,7 +193,7 @@ This tutorial presents a cross-docking benchmark experiment. Antibody CR6261 bin
 
         1. Or use the provided R script to make score vs rmsd plots
 
-                cp ../input_files/sc_vs_rmsd.R .
+                cp input_files/sc_vs_rmsd.R .
                 Rscript ./sc_vs_rmsd.R docking_analysis.csv total_score 
                 Rscript ./sc_vs_rmsd.R docking_analysis.csv dG_separated 
                 Rscript ./sc_vs_rmsd.R docking_analysis.csv dG_separated.dSASAx100 
