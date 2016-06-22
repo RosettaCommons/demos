@@ -1,7 +1,6 @@
 # Relax Around Chemically Bound Ligand
 
-# Metadata
- The document was originally written by Andrew Leaver-Fay, and completed, expanded and modified for Doxygen by Ron Jacak. It was later modified during documentation XRW 2016 by Parisa Hosseinzadeh to enable automatic testing and to ensure compatibility. 
+This document was originally written by Andrew Leaver-Fay, and completed, expanded and modified for Doxygen by Ron Jacak. It was later modified during documentation XRW 2016 by Parisa Hosseinzadeh and Vikram K. Mulligan (vmullig@uw.edu) to enable automatic testing and to ensure compatibility. 
 
 # Quick Guide
 1. Create parameter files for the ligand, and modified residue (if one doesn't already exist)
@@ -22,7 +21,7 @@ The "LOV2" domain binds a flavin and, when exposed to blue light, forms a thiol 
 
 # Creating a Ligand Parameter File
 
-We downloaded the .sdf file for the flavin attached to LOV2 from the PDB (http://www.pdb.org/pdb/explore/explore.do?structureId=2V0W), Ligands_noHydrogens_withMissing_1_Instances.sdf (an awful name for this file). Also, the file doesn't contain hydrogens, which we do want. So, first, we need to add hydrogens to this file.  The program REDUCE (which can be obtained from the Richardson lab website) can be used to add hydrogens.  To run REDUCE, you have to put a copy (or symlink) of the reduce_het_dict.txt file in the /usr/local directory. You can also use other programs. For more information please refer to tutorials/prepare_ligand.
+We downloaded the .sdf file for the flavin attached to LOV2 from the PDB (http://www.pdb.org/pdb/explore/explore.do?structureId=2V0W), Ligands_noHydrogens_withMissing_1_Instances.sdf (an awful name for this file). Also, the file doesn't contain hydrogens, which we do want. So, first, we need to add hydrogens to this file.  The program REDUCE (which can be obtained from the [Richardson lab website](http://kinemage.biochem.duke.edu/software/reduce.php)) can be used to add hydrogens.  To run REDUCE, you have to put a copy (or symlink) of the reduce_het_dict.txt file in the /usr/local directory. You can also use other programs. For more information please refer to tutorials/prepare_ligand.
 
 ```
 $ cd /usr/local
@@ -55,7 +54,7 @@ $ pymol FMN_w_h.pdb
 
 produces FMN_w_h.mol
 
-We can convert the MOL file to a .params file with a script named molfile_to_params.py (located in ~/rosetta_source/src/python/apps/public/). This script can be run with the "-h" flag to list all the flags that are applicable. If you don't have it, we have it provided for you. copy it to your directory:
+We can convert the MOL file to a .params file with a script named molfile_to_params.py (located in <path_to_Rosetta_directory>/main/source/scripts/python/public/). This script can be run with the "-h" flag to list all the flags that are applicable.
 ```
 $> cp rosetta_inputs/FMN_w_h.mol .
 $> <path-to-Rosetta>/Rosetta/main/source/scripts/python/public/molfile_to_params.py -n FMN -p FMN FMN_w_h.mol
@@ -122,7 +121,7 @@ The atom names given on the ATOM lines are column formatted, so don't add extra 
 
 It is also necessary to change the CYS which is forming the chemical bond with the flavin in the 2V0W pdb file to a modified CYS conformation. The version of CYS in Rosetta which forms a chemical bond to something else is named CYX. So rename residue 450 to CYX from CYS. This residue-type is defined in database/chemical/residue_type_sets/fa_standard/residue_types/sidechain_conjugation/CYX.params. It is not automatically read in when Rosetta loads: its entry in the rosetta_database/chemical/residue_type_sets/fa_standard/residue_types.txt file is commented out, so we also have to uncomment this line. ALTERNATIVELY: we can explicitly add this file to the list of files that Rosetta loads by including it on the command line as we did above. The flag for this would be:
 ```
--extra_res_fa <path-to-database>/chemical/residue_type_sets/fa_standard/residue_types/sidechain_conjugation/CYX.params
+-extra_res_fa sidechain_conjugation/CYX.params
 ```
 
 # Making a constraints file
@@ -140,10 +139,13 @@ Angle CB 50 SG 50 C8 147 HARMONIC 1.94080613 0.034906585
 
 where for the first constraint, 1.93207948 represents the ideal angle (x0) of 110.7 degrees, given in radians, and 0.034906585 represents a standard deviation of 2 degrees, given in radians.
 
-** From google: 110.7 * pi / 180 = 1.93207948<br>
-** From google:   2.0 * pi / 180 = 0.034906585<br>
+```
+From Google:
+110.7 * pi / 180 = 1.93207948
+2.0 * pi / 180 = 0.034906585
+```
 
-For more information about the constraints, you can check: tutorials/constraint_tutprial
+For more information about the constraints, you can check the [constraints tutorial](../../tutorials/Tutorial_8_Constraints/Tutorial_8_Constraints.md).
 
 # Running the relax protocol
 
@@ -152,14 +154,12 @@ You can copy the necessary files that are pre-generated from rosetta_inputs dire
 ```
 $> cp rosetta_inputs/2V0W.pdb .
 $> cp rosetta_inputs/FMN_modded.params .
-$> cp
-$> cp <path-to-Rosetta>/Rosetta/main/database/chemical/residue_type_sets/fa_standard/residue_types/sidechain_conjugation/CYX.params .
 ```
 
 A complete command line for the protocol would be as follows:
 
 ```
-$> <palinuxgccrelease -s 2V0W.pdb -in:file:fullatom -extra_res_fa FMN_modded.params -extra_res_fa CYX.params -overwrite -cst_fa_file chemical_bond.cst -score:weights talaris2013+constraints.wts -mute basic core.init core.scoring
+$> <path_to_Rosetta_directory>/main/source/bin/relax.default.linuxgccrelease -s 2V0W.pdb -in:file:fullatom -extra_res_fa FMN_modded.params -extra_res_fa sidechain_conjugation/CYX.params -overwrite -cst_fa_file chemical_bond.cst -score:weights talaris2014_cst.wts -mute basic core.init core.scoring
 ```
 
 Truncated output from the command:
