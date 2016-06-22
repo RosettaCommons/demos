@@ -467,11 +467,9 @@ If you look at the output, you'll see that the side-chains have been repacked, t
 
 Let's consider a more complicated (and more realistic) usage case -- one that demonstrates how we can single out subsets of residues in a structure and do different things to different parts of a pose.  Let's find a new sequence for the buried core residues in ubiquitin, while permitting boundary and surface residues to repack (but not allowing these layers to change their sequence).  To do this, we need a way of selecting the protein core.  Some of the general TaskOperations are able to select certain residues, but a more flexible choice for selecting certain residues is [ResidueSelectors](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/TaskOperations/taskoperations_pages/ResidueSelectors). ResidueSelectors, like their name suggests, are able to specify (select) a particular subset of residues, which can then be used with TaskOperations or other RosettaScripts objects. Unlike TaskOperations, which are strictly one way (you can turn off design, but you can't turn it back on), ResidueSelectors can be combined in various ways to select the particular residue you want.
 
-|---|---|---|
 | |TaskOperations | ResidueSelectors |
 |---|---|---|
 | Intended purpose | Setting packer behaviours. (*e.g.* Disabling design, limiting allowed residue idenities at certain sequence positions, enabling extra rotamers, telling the packer to include the input rotamer, *etc.*). |  Selecting subsets of residues in a pose based on rules, then passing the subsets as inputs to other Rosetta modules.  |
-|---|---|---|
 
 
 
