@@ -182,14 +182,15 @@ Conventionally, tags are indented in proportion to their level of nesting, but t
 <PackRotamers name=pack2 task_operations=task2, task2, task3 /> #This will be misinterpreted
 ```
 
-This brings up another RosettaScripts syntax convention: generally, we have blocks that define *types* of objects, and within these blocks, we define individual *instances* of objects of the type, giving each one a unique name.  For example, the ```<MOVERS> ... </MOVERS>``` block is the place to define movers, and the ```<FILTERS> ... </FILTERS>``` block is the place to define filters.  Within these blocks, we define specific objects of the given types, and we set options for these objects, including, in most cases, a unique name by which that object will be addressed at later points in the script.  For example:
+This brings up another RosettaScripts syntax convention: generally, we have blocks that define *types* of objects, and within these blocks, we define individual *instances* of objects of the type, giving each one a unique name.  For example, the ```<MOVERS> ... </MOVERS>``` block is the place to define movers.  Within this, we define specific instances of specific types of movers, and we set options for these movers, including a unique name by which each mover will be addressed at later points in the script.  For example:
 
 ```xml
 	<MOVERS>  #In this section, movers are defined.
 		  #The following is a particular mover of the "PackRotamers" type, which we give the
 		  #unique name "pack1".  It takes, as an option, a list of previously-defined
-		  #TaskOperations.  We assume that task1, task2, and task3 were defined and given these
-		  #unique names previously in the script.
+		  #TaskOperation objects (a type of object that will be introduced later in this
+		  #tutorial).  We assume that task1, task2, and task3 were defined and given these
+		  #unique names prior to this point in the script.
 		<PackRotamers name=pack1 task_operations=task1,task2,task3 />
 		  #From now on, we can refer to the mover defined above using the unique name "pack1".
 	</MOVERS>
