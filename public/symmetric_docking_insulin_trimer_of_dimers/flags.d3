@@ -1,4 +1,3 @@
--database /Users/sebastian/minirosetta_database
 -in:file:s 1ZEH_haptomer.pdb
 -symmetry:symmetry_definition 1ZEH.d3.symm
 -packing:ex1

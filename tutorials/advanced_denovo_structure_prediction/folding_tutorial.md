@@ -2,6 +2,8 @@
 
 #Protein Folding
 
+KEYWORDS: STRUCTURE_PREDICTION GENERAL
+
 **Bold text means that these files and/or this information is provided.**
 
 *Italicized text means that this material will NOT be conducted during the workshop.*
@@ -14,18 +16,16 @@ If you want to try making files that already exist (e.g., input files), write th
 
 This tutorial presents a protein folding benchmark experiment. Bacteriophage T4 lysozyme is a soluble protein that hydrolyzes peptidoglycan and releases the virus from its bacterial host. The protein was crystallized at a resolution of 1.7 angstroms and the resulting structure was submitted to the Protein Data Bank (PDB) under accession number 2LZM. In this tutorial, you will reconstruct the structure of bacteriophage T4 lysozyme using *ab initio* protein folding. At the end of the tutorial, the results from this benchmark experiment will be compared to the native structure available from the PDB.
 
-1. Prepare your working directory. You will work in this directory for the rest of the tutorial.
+1. Navigate to this tutorial directory. You will work in this directory for the rest of the tutorial.
 
-    Create a directory in the protein_folding directory called my_files and switch to that directory. 
             
-        mkdir my_files
-        cd my_files
+        > cd <path-to-Rosetta>/demos/tutorials/advanced_denovo_structure_prediction
 
 1. Prepare your input files.
     1. Save your protein sequence to a file using FASTA format.
 
         **The 2LZMA.fasta file is provided for you in the**  
-        **~/rosetta_workshop/tutorials/protein_folding/input_files/ directory.**
+        **input_files/ directory.**
         
         1. Get the sequence in FASTA format from NCBI.
             1. Go to [http://www.ncbi.nlm.nih.gov/protein/](http://www.ncbi.nlm.nih.gov/protein/).
@@ -33,12 +33,14 @@ This tutorial presents a protein folding benchmark experiment. Bacteriophage T4 
             1. Click on the "FASTA" link.
             1. Open a text editor, such as gedit. Copy all the sequence information, including the line beginning with ">", into a new file.
             1. Remove the first 57 residues of the sequence so that it begins with the sequence ITKDE.
-            1. Save the file as 2LZMA.fasta to the my_files directory.
+            1. Save the file as 2LZMA.fasta to your directory. Alternatively you can copy the file provided for you:
+            
+                 $> cp input_files/2LZMA.fasta .
 
     1. Prepare a PDB of native structure.
     
         **The clean and renumbered 2LZMA.pdb file is provided for you in the**  
-        **~/rosetta_workshop/tutorials/protein_folding/input_files/ directory.**
+        **input_files/ directory.**
 
         1. Get the native PDB structure. 
             1. Go to [http://www.pdb.org/](http://www.pdb.org/).
@@ -47,26 +49,29 @@ This tutorial presents a protein folding benchmark experiment. Bacteriophage T4 
             1. Save the PDB file as 2LZM.pdb.
             1. The file may end up downloading to your Downloads directory. If so, move it to your working directory using this command:
         
-                    mv ~/Downloads/2LZM.pdb .
+                 >   mv ~/Downloads/2LZM.pdb .
 
         1. Clean 2LZM.pdb so that only ATOM records remain:
             
-                python2.7 ~/rosetta_workshop/rosetta/tools/protein_tools/scripts/clean_pdb.py 2LZM A
+                > <path-to-Rosetta>/tools/protein_tools/scripts/clean_pdb.py 2LZM A
 
             - NOTE: This outputs 2 files, 2LZM_A.fasta and 2LZM_A.pdb.
 
         1. In a text editor, remove the first 57 residues from 2LZM_A.pdb that it begins with the sequence ITKDE.
         1. Renumber 2LZM_A.pdb:
         
-                python2.7 ~/rosetta_workshop/rosetta/tools/protein_tools/scripts/pdb_renumber.py \
+                > <path-to-Rosetta>/tools/protein_tools/scripts/pdb_renumber.py \
                 2LZM_A.pdb 2LZMA.pdb
+        1. Alternatively you can copy the provided clean pdb into your directory:
+
+                 $> cp input_files/2LZMA.pdb .
 
     1. Prepare 3mer and 9mer fragment libraries.
     
         **The 2LZM fragment libraries (aa2LZMA03_05.200_v1_3 and aa2LZMA09_05.200_v1_3),**  
         **secondary structure prediction (2LZMA.psipred_ss2 and 2LZMA.jufo_ss2),**  
         **and checkpoint (2LZMA.checkpoint) files are provided for you in the**     
-        **~/rosetta_workshop/tutorials/protein_folding/input_files/ directory.**
+        **protein_folding/input_files/ directory.**
         
         1. Make fragment libraries using Robetta (for the purposes of this workshop).
             1. If you are an academic or non-profit user of Rosetta, make sure you're registered at [http://robetta.bakerlab.org/](http://robetta.bakerlab.org/).
@@ -80,26 +85,33 @@ This tutorial presents a protein folding benchmark experiment. Bacteriophage T4 
             1. Your fragment files should be called aa2LZM_03_05.200_v1_3 and aa2LZM_09_05.200_v1_3.  However, it is wise to keep all of the files, especially the checkpoint, psidpred_ss2, and jufo_ss2 files.  Right click on the files, and save the files to your working directory.
 
         1. *Or, make fragment libraries using make_fragments.pl (not covered by this tutorial; see Appendix).*
+        1. Or copy the fragments already provided:
+        
+                $> cp input_files/aa2LZMA03_05.200_v1_3 .
+                $> cp input_files/aa2LZMA09_05.200_v1_3 .
+                $> cp input_files/2LZMA.checkpoint .
 
     1. Prepare the topology broker setup file.
         
         **The topology_broker.tpb setup file is provided for you in the**       
         **~/rosetta_workshop/tutorials/protein_folding/input_files/ directory.**
         
-        1. Save the following text as topology_broker.tpb in your working directory:
+        1. Save the following text as topology_broker.tpb in your working directory, or you can directly copy the file from input_files directry to your working directory
 
                 CLAIMER SequenceClaimer
                 FILE ./2LZMA.fasta
                 END_CLAIMER
+                $> cp input_files/topology_broker.tpb .
                 
     1. Prepare the topology broker options file.
 
         **The 2LZM_broker.options file is already provided for you in the**  
-        **~/rosetta_workshop/tutorials/protein_folding/input_files/ directory.**
+        **input_files/ directory.**
         
         1. Rosetta ignores lines beginning with # (these are treated as comments). 
         1. Avoid mixing tabs and spaces.  Be consistent in your formatting (tab-delimited or colon-separated).
-        1. Save the file in your working directory.
+        1. Save the file in your working directory. Or you can copy it from the input_files:
+            $> cp input_files/2LZM_broker.options .
 
     1. Prepare the core residue specification file.
 
@@ -108,7 +120,7 @@ This tutorial presents a protein folding benchmark experiment. Bacteriophage T4 
 
         1. The 2LZMA_core.txt file tells Rosetta over which residues to compute CA-RMSD, easing the analysis burden. Copy it from the input_files directory to the current directory.
 
-                cp ../input_files/2LZMA_core.txt .
+                $> cp input_files/2LZMA_core.txt .
 
 1. Run the Rosetta topology broker using the Minirosetta application.
     
@@ -116,8 +128,7 @@ This tutorial presents a protein folding benchmark experiment. Bacteriophage T4 
     1. Make sure you are in your working directory.
     1. Type the following command line:
     
-            ~/rosetta_workshop/rosetta/main/source/bin/minirosetta.default.linuxgccrelease \
-            @2LZM_broker.options -database ~/rosetta_workshop/rosetta/main/database/
+            $> <path-to-Rosetta>/main/source/bin/minirosetta.default.linuxgccrelease m@2LZM_broker.options 
         
         - NOTE: This will take 10-20 minutes per structure.
     

@@ -11,9 +11,21 @@ It uses -bps_moves, knowledge-based fragments that include two base pairs separa
 
 Make sure you have rna_tools set up (https://www.rosettacommons.org/docs/latest/application_documentation/rna/rna-tools), since
 this uses rna_denovo_setup.py.
+```bash
+export ROSETTA_TOOLS=<path/to/Rosetta/tools>
+$> source $ROSETTA_TOOLS/rna_tools/INSTALL
+```
 
-Go into input_files/ and run
+Go into input_files/ 
 
- source README_SETUP
- source README_FARFAR
+```
+$> cd input_files/
+```
+
+and run
+
+```
+ $> source README_SETUP
+ $> source README_FARFAR
+```
 

@@ -22,7 +22,7 @@ should have a header with the string "VFORMAT"
 
 * Run the picker like this:
 
- `$> <path-to-Rosetta>/main/source/bin/fragment_picker.linuxgccrelease @BestFragmentsProtocol/best-frags.flags -in::file::vall $ROSETTA3/main/database/sampling/small.vall.gz ` 
+ `$> <path-to-Rosetta>/main/source/bin/fragment_picker.linuxgccrelease @BestFragmentsProtocol/flags -in::file::vall $ROSETTA3/main/database/sampling/small.vall.gz ` 
 
   Output:  
   
