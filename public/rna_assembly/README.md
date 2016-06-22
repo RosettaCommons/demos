@@ -22,7 +22,7 @@ The example input files are in rosetta_input; you may wish to copy them locally 
 Before running the command to set up the rna assembly job, make sure you have the correct paths to the rna_tool/bin directory in your environment variables. This can be done by running,
 ```bash
    export ROSETTA_TOOLS=<path/to/Rosetta/tools>
-$> bash $ROSETTA_TOOLS/rna_tools/INSTALL
+$> source $ROSETTA_TOOLS/rna_tools/INSTALL
 ```
 
 Everything needed to run the job is created by the command:
