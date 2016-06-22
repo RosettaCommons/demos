@@ -43,7 +43,7 @@ This tutorial presents a cross-docking benchmark experiment. Antibody CR6261 bin
                 pymol 3GBN_trim.pdb
                 gedit 3GBN_trim.pdb
 
-                > <path-to-Rosetta>/rosetta/tools/protein_tools/scripts/pdb_renumber.py \
+                > <path-to-Rosetta>/tools/protein_tools/scripts/pdb_renumber.py \
                 --norestart 3GBN_trim.pdb 3gbn_Ab.pdb
 
    -> Note: you may not have gedit in your computer. Try using other text editors.
