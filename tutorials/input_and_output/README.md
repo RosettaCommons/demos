@@ -347,8 +347,90 @@ When you run Rosetta, the log displays quite a lot of information. Sometimes you
 | 400            | Debug   |
 | 500            | Trace   |
 
+By default Rosetta uses the level 300. In this tutorial, we will increase the detail level to include information useful for debugging `score_jd2`.
 
-###Getting the Same Output despite Monte Carlo
+    $> <path_to_Rosetta_directory>/main/source/bin/score_jd2.linuxgccrelease -in:file:s input_files/1qys.pdb -out:level 400
+
+Here's a snippet of the log file that you should see:
+
+```
+...
+core.chemical: New atom type: aroC C
+...
+core.chemical.ElementSet: New element: Pt
+...
+core.chemical: Reading patch file: /home/ssrb/Rosetta/main/database/chemical/residue_type_sets/fa_standard/patches/CtermProteinFull.txt
+...
+core.pose.util: new fold tree FOLD_TREE  EDGE 1 92 -1  EDGE 1 93 1  EDGE 1 94 2  EDGE 1 95 3  EDGE 1 96 4  EDGE 1 97 5  EDGE 1 98 6  EDGE 1 99 7 
+...
+```
+
+Now you see a bunch of information that previously did not appear. In the snippet above, we see, the residue types and element types that Rosetta recognizes (C associated with aromatic rings and Platinum), all the patches it can apply (patch to make a residue the C-terminal) and the revised [fold tree](../minimization/minimization.md#a-note-about-the-foldtree).
+
+###Replicating Output in Rosetta Protocols
+Most protocols in Rosetta use [Monte Carlo sampling](../Optimizing_Sidechains_The_Packer/Optimizing_Sidechains_The_Packer.md#how-the-packer-algorithm-works-under-the-hood-for-advanced-users). While this stochastic method of sampling speeds up the search for an energy minimum, it produces different trajectories in every run. Rosetta uses a random number _seed_ supplied by the `/dev/urandom` device of your system to generate the pseudo-random numbers it uses for an application. This seed can be any non-negative integer that a C++ _int_ datatype can hold, and the suggested range is 10<sup>6</sup> - 10<sup>9</sup>. It is displayed in the log at the start of every run as follows:
+
+```
+...
+core.init: 'RNG device' seed mode, using '/dev/urandom', seed=340573764 seed_offset=0 real_seed=340573764
+...
+```
+The seed in this snippet is 340573764.
+
+>All other things being equal, every run of a Rosetta protocol running on the same system with the same seed should have the same trajectory. If you want to replicate a run later, you should store the seed from your run and use it later.
+
+In this example, we will produce the same output using the `relax` application suggested above by specifying a constant seed. To do this, we need the flag `-run:constant_seed` which makes sure that the seed is constant. The default constant seed is 1111111, which we will change to 12345678 using the `-run:jran` option. Every run of the following command should produce the same set of structures and score files when run from the same system.
+
+    $> <path_to_Rosetta_directory>/main/source/bin/relax.linuxgccrelease -in:file:s input_files/1qys.pdb -run:constant_seed -run:jran 12345678 @flag_input_relax
+
+The log file will indicate that you are running using a constant seed.
+
+```
+...
+core.init: Constant seed mode, seed=12345678 seed_offset=0 real_seed=12345678
+...
+```
 ###Near-realtime Visualization in PyMOL
+It is often useful to visualize how Rosetta is modifying the biomolecule as the simulation goes on. You can do so in the molecular visualization package, [PyMOL](https://www.pymol.org/). To attach a PyMOL Observer to your run, you need to first create a link between Rosetta and PyMOL. Open PyMOL and in the command line in PyMOL run:
+
+    run <path_to_Rosetta_directory>/main/source/src/python/bindings/PyMOLPyRosettaServer.py
+    
+You will see the log file in PyMOL display:
+```
+PyMOL <---> PyRosetta link started!
+```
+To show the biomolecule, we will pass `run:-show_simulation_in_pymol <time_in_seconds>`. The Observer, by default, captures the state every 5 seconds, which we can change depending on the requirement. To keep a history of the states visited during the run, we will pass the option `-keep_pymol_simulation_history`. This can be especially useful for making movies of the run. This does slightly slow down the run.
+
+In this example, we will capture the `relax` run of the native PDB 1QYS using PyMOL, and record the history of the relax by capturing a snapshot every 4.5 seconds.
+
+Assuming you have established the link between PyMOL and Rosetta, run the following command, and observe PyMOL:
+
+    $> <path_to_Rosetta_directory>/main/source/bin/relax.linuxgccrelease -in:file:s input_files/from_rcsb/1qys.pdb -show_simulation_in_pymol 4.5 -keep_pymol_simulation_history @flag_input_relax
+    
+You will observe different parts of the structure undergoing small motions. This is what `relax` (with constraints) does to the structure till it arrives at a satisfactory structure.
+
+>The states displayed in PyMOL represent the states tried by the protocol every _n_ seconds. They may or may not have been accepted during the simulation.
+
+There are other, specific option like changing the state in PyMOL only if the energy score of the structure has changed, or changing the state only if the conformation has changed. For those, you can pass the flags, `-update_pymol_on_energy_changes_only` and `-update_pymol_on_conformation_changes_only`, respectively.
+
 ###Overwriting Previously Generated Output
+If you have structure files in the same directory named similarly to the output structure files that your simulation will generate, you will see the error:
+```
+...
+protocols.jd2.JobDistributor: no jobs were attempted, did you forget to pass -overwrite?
+...
+```
+This happens most often when you run the same protocol again without taking care of the output files produced during the first run. If you want to overwrite the files, pass the option `-overwrite`, else save the output files in a separate location before running again.
+
+Now say you completed the `relax` simulation in the previous section and then rerun the same command. You will see the error above. Now we will run essentially the same protocol, but with the `-overwrite` option:
+
+    $> <path_to_Rosetta_directory>/main/source/bin/relax.linuxgccrelease -in:file:s input_files/from_rcsb/1qys.pdb -overwrite @flag_input_relax
+    
+You will see the you still have two output structure files, `1qys_0001.pdb` and `1qys_0002.pdb`, but they will be more recently written, which you can check using `ls -l 1qys_000*.pdb`.
+
+>The `-overwrite` option does overwrite the score file. Entries will still be appended to the exsiting score file. Score files must be manually moved or deleted before every run.
+
+###List of Other Options
+A full list of other, specific options is given [here](https://www.rosettacommons.org/docs/latest/full-options-list#out).
+
 
