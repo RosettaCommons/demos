@@ -44,7 +44,7 @@ an XML produced by someone else.
 ## Your first RosettaScript
 ------------------------
 
-* *Run the simplest possible RosettaScripts*
+* *Run the simplest possible RosettaScript*
 
 The simplest RosettaScript XML is one which does nothing.  You can obtain a skeleton XML file, which does nothing, in one of two ways.  You go to [the RosettaScripts documentation page](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/RosettaScripts) and find the skeleton XML file there, then copy and paste it into a new file (`nothing.xml`).  You can also generate a skeleton XML file using the rosetta_scripts application:
 
@@ -157,22 +157,59 @@ Secondly, this demonstrates different ways of writing XML tags. XML tags are sur
 <SCOREFXNS>
 </SCOREFXNS>
 ```
-```
+```xml
 <SCOREFXNS/>
 ```
 
 In the above, the latter is more concise, though, at the expense of preventing anything from being enclosed within the SCOREFXNS block.
 
+Additionally, whitespace is largely ignored in RosettaScripts.  The following three statements are perfectly synonymous:
+```xml
+<SCOREFXNS></SCOREFXNS>
+```
+```xml
+<SCOREFXNS>      </SCOREFXNS>
+```
+```xml
+<SCOREFXNS>
+</SCOREFXNS>
+```
+
+Conventionally, tags are indented in proportion to their level of nesting, but this is for human readability, not for machine parsing; the rosetta_scripts application disregards tabs entirely.  The one case in which whitespace matters is when setting options within a tag.  When a tag contains an option that accepts a comma-separated list of strings, these must *not* have whitespace within them:
+
+```xml
+<PackRotamers name=pack1 task_operations=task1,task2,task3 /> #This is allowed
+<PackRotamers name=pack2 task_operations=task2, task2, task3 /> #This will be misinterpreted
+```
+
+This brings up another RosettaScripts syntax convention: generally, we have blocks that define *types* of objects.  For example, the ```<MOVERS> ... </MOVERS>``` block is the place to define movers, and the ```<FILTERS> ... </FILTERS>``` block is the place to define filters.  Within these blocks, we define specific objects of the given types, and we set options for these objects, including, in most cases, a unique name by which that object will be addressed at later points in the script.  For example:
+
+```xml
+	<MOVERS>  #In this section, movers are defined.
+		  #The following is a particular mover of the "PackRotamers" type, which we give the
+		  #unique name "pack1".  It takes, as an option, a list of previously-defined
+		  #TaskOperations.  We assume that task1, task2, and task3 were defined and given these
+		  #unique names previously in the script.
+		<PackRotamers name=pack1 task_operations=task1,task2,task3 />
+		  #From now on, we can refer to the mover defined above using the unique name "pack1".
+	</MOVERS>
+```
+
 Looking at the output PDB, the output structure (1ubq_0001.pdb) should be nearly identical to the input structure. The major difference should be the presence of hydrogens which were not in the input structure. This is *not* something that is specific to RosettaScripts - in general Rosetta will add missing hydrogens and repack sidechain atoms missing in the input PDB.
 
 Additionally, you should see the standard Rosetta score table at the end of the PDB. By default, the structure will be rescored with the default Rosetta score function (talaris2014, as of this writing). This can be controlled by the ```-score:weights``` command line option. 
 
-## Controlling RosettaScripts File Output: Custom Scoring
+## Controlling RosettaScripts File Output
 --------------
 
 * *Score the output with a custom scorefunction*
+* *Control output file format*
 
-Sometimes you want to use different energy functions during different scoring. For example, if you want to change constraint weights, or use a lower resolution energy function. The SCOREFXNS section of the XML allows you to define multiple different scorefunctions, including custom scorefunctions.
+Before we explore the full power of RosettaScripts, let's make sure that we understand how to control the rosetta_scripts application's output.  There are two ways to do this.  The first is modifying the ```<OUTPUT />``` tag typically found at the end of a script, and the second is by setting flags.
+
+Let's look at a typical usage case for the ```<OUTPUT />``` tag, first.  Sometimes you may want to use different energy functions during different scoring. For example, you may want to change constraint weights, or to use a lower resolution energy function.  In order to do this, we:
+1. Add a named custom scoring function in the ```SCOREFXNS``` section of the XML.
+2. Add this to the ```<OUTPUT />``` tag.
 
 Each custom scorefunction is defined by different sub-tags in the SCOREFXNS section. The format is detailed in the [SCOREFXNS documentation](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/RosettaScripts#scorefunctions).
 
