@@ -1,6 +1,6 @@
 # RNA 3D Modeling Protocol
 Tutorial by Fang-Chieh Chou, Dec. 2015.
-Adapted by Kristin Blacklock, Jun. 2016.
+Adapted and edited by Kristin Blacklock, Jun 22 2016.
 
 ## Setup
 
@@ -8,20 +8,22 @@ Adapted by Kristin Blacklock, Jun. 2016.
 
 ### Set up the Rosetta environment 
 
-Set up the necessary environment variables. Edit your ~/.bash_profile and add the following lines:
+First, we need to set up the necessary environment variables. Edit your ~/.bash_profile and add the following lines:
 
 ```
 #Rosetta Paths
--export ROSETTA=$HOME/Rosetta
+export ROSETTA=$HOME/Rosetta
 export ROSETTA3_DB=$ROSETTA/main/database
--export ROSETTA_TOOLS=$ROSETTA/tools
--export PATH=$PATH:$ROSETTA/main/source/bin
-export RNA_TOOLS=$ROSETTA_TOOLS/rna_tools/
-export PATH=$PATH:$RNA_TOOLS/bin/
-export PYTHONPATH=$RNA_TOOLS/bin/
+export ROSETTA_TOOLS=$ROSETTA/tools
+export PATH=$PATH:$ROSETTA/main/source/bin
+$> export RNA_TOOLS=$ROSETTA_TOOLS/rna_tools/
+$> export PATH=$PATH:$RNA_TOOLS/bin/
+$> export PYTHONPATH=$PYTHOPATH:$RNA_TOOLS/bin/
+$> python $RNA_TOOLS/sym_link.py
 ```
+##### Do not include the "$>" part of the last four lines.
 
-Here export `ROSETTA=$HOME/Rosetta/" points to your Rosetta root path. If you installed Rosetta elsewhere (other than `~/Rosetta`) you need to modify it.
+Here, export `ROSETTA=$HOME/Rosetta/` points to your Rosetta root path. If you installed Rosetta elsewhere (other than `~/Rosetta`) you need to modify it.
 
 Restart your shell window. As a quick test, try running
 ```bash
@@ -29,40 +31,44 @@ rna_helix.py -h
 ```
 It should print a help message for the `rna_helix.py` application.
 
-### Create a fasta file containing the sequence
+### Creating the input files necessary for Threading
+
+#### Create a fasta file containing the sequence
 
 Example:
 ```bash
 > SAM I-IV riboswitch, RNA puzzle 8
 ggaucacgagggggagaccccggcaaccugggacggacacccaaggugcucacaccggagacgguggauccggcccgagagggcaacgaaguccgu
 ```
-###### Note: Must have **lowercase** letters.
-Here we name this file as "fasta". 
+###### Letters must be **lowercase**.
 
-### Create a secondary structure file
+This file has been provided for you in this directory, named `fasta`. 
 
-This file contains the sequence and and the parenthesis notation for secondary structure. You can use '[]' and '{}' in addition to represent pseudoknots.
+#### Create a secondary structure file
+
+This file contains the sequence and the parenthesis notation of the secondary structure. You can use '[]' and '{}' in addition to represent pseudoknots.
 
 Example:
 ```bash
 (((((....((((....))))(((..((((((.[[[[[.))).))).)))..(((((....)))))))))).((((....))))......]]]]].
 GGAUCACGAGGGGGAGACCCCGGCAACCUGGGACGGACACCCAAGGUGCUCACACCGGAGACGGUGGAUCCGGCCCGAGAGGGCAACGAAGUCCGU
 ```
-Here we name this file as "secstruct"
+This file has been provided for you in this directory, named `secstruct`.
 
 ## Threading
 
-1. Open the PDB `2gis.pdb` file in PyMOL. This will be our input PDB.
+1. Open the PDB `2gis.pdb` file in PyMOL. This will be the input PDB whose sequence will be mutated according to the fasta file.
 
-2. Cut out the useful region from the input PDB in PyMOL and copy that structure to the working folder (an example has already been done for you - see the `2gis_cut.pdb` file).
+2. Cut out the useful region from the input PDB in PyMOL and copy that structure to the working folder (an example has already been provided for you - see the `2gis_cut.pdb` file).
 
-3. Convert it to proper Rosetta format
+Then, convert the cut PDB to proper Rosetta format:
 ```bash
 $> make_rna_rosetta_ready.py 2gis_cut.pdb
 ```
 
-4. Align the sequence for threading in a fasta file  
-Copy the fasta file of the target RNA to the working folder. Convert the uppercase letters to lowercase (should make this automatic in the future). Generate the sequence of the template by running
+3. Align the sequence for threading in a fasta file  
+
+Copy the fasta file of the target RNA to the working folder. Convert the uppercase letters to lowercase. Generate the sequence of the template by running:
 ```bash
 $> pdb2fasta.py 2gis_cut_RNA.pdb >> fasta
 ```
@@ -77,17 +83,17 @@ ggaucacgagggggagaccccggcaaccugggacggacacccaaggugcucacaccggagacgguggauccggcccgaga
 >2gis_cut_RNA.pdb  A:1-8
 ----caga----------------------aaug--------------------------------------------------------------
 ```
-This file is provided for you, called `fasta.aligned`.
+This file has been provided for you, and is called `fasta.aligned`.
 
-5. Run the `rna_rethread` application
+4. Run the `rna_rethread` application
 
 Command line example:
 ```bash
 $> rna_thread.default.linuxgccrelease -fasta fasta.aligned -s 2gis_cut_RNA.pdb -o core.pdb
 ```
-This script mutates the nucleotides in 2gis_cut_RNA.pdb to the SAM I-IV riboswitch identities that they match to in the fasta.aligned file. The output of this command should be new threaded model named `core.pdb`.
+This application mutates the nucleotides in `2gis_cut_RNA.pdb` to the SAM I-IV riboswitch identities that they align to in the fasta.aligned file. The output of this command should be new threaded model named `core.pdb`.
 
-Open the output pdb file in PyMOL and make sure it looks correct.
+Open the output pdb file in PyMOL and make sure it looks correct. The new sequence should be `CACGGGAC`.
 
 ## RNA Helix
 
@@ -98,7 +104,7 @@ Example command:
 $> rna_helix.py -seq ggac gucc -resnum 1-4 45-48
 ```
 
-This command build an ideal RNA duplex named `helix.pdb` with sequence and residue number as:
+This command builds an ideal RNA duplex named `helix.pdb` with sequence and residue number as:
 ```
 1  G G A C 4
 48 C C U G 45
