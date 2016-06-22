@@ -1,7 +1,7 @@
 # Creating protocols with RosettaScripts
 ======================================
 
-Tutorial by Rocco Moretti (rmorettiase@gmail.com).  Edited by Vikram K. Mulligan (vmullig@uw.edu).  Created on 21 June 2016 as part of the 2016 Documentation XRW.
+Tutorial by Rocco Moretti (rmorettiase@gmail.com) and Vikram K. Mulligan (vmullig@uw.edu).  Created on 21 June 2016 as part of the 2016 Documentation XRW.
 
 ## Goals
 --------
