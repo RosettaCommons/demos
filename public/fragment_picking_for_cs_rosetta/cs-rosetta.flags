@@ -1,5 +1,6 @@
 # Input databases
--in::file::vall          <Path to vall database>
+
+#-in::file::vall          <Path to vall database>
 
 # Query-related input files
 -in::file::checkpoint 		input_files/2jsvX.checkpoint
