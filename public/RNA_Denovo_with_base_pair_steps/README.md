@@ -16,14 +16,20 @@ $> source $ROSETTA_TOOLS/rna_tools/INSTALL
 
 Go into input_files/ 
 
-```
+```bash
 $> cd input_files/
 ```
 
 and run
 
-```
- $> source README_SETUP
- $> source README_FARFAR
+```bash
+source README_SETUP
+source README_FARFAR
 ```
 
+To run an extremely fast version (for testing purposes), run
+
+```bash
+$> source README_SETUP.short
+$> source README_FARFAR
+```
