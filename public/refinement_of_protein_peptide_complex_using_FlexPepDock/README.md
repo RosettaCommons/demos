@@ -15,7 +15,7 @@ Running the FlexPepDock refinement protocol:
 
 Run the prepack as follows:
 ```
-$> <path-to-Rosetta>/Rosetta/main/source/bin/FlexPepDocking.default.linuxgccrelease @prepack_flags >output/ppk.log
+$> <path-to-Rosetta>/main/source/bin/FlexPepDocking.default.linuxgccrelease @prepack_flags >output/ppk.log
 $> mv input/1AWR.ex_0001.pdb input/1AWR.ex.ppk.pdb
 ```
 
@@ -26,7 +26,7 @@ The output will be a prepacked structure, 1AWR.ex.ppk.pdb located in the input d
 Run the refine using the following commands:
 
 ```
-$> <path-to-Rosetta>/Rosetta/main/source/bin/FlexPepDocking.default.linuxgccrelease $ROSETTA_DB @refine_flags >output/refine.log
+$> <path-to-Rosetta>/main/source/bin/FlexPepDocking.default.linuxgccrelease $ROSETTA_DB @refine_flags >output/refine.log
 echo "FlexPepDock refinement done!"
 ```
 

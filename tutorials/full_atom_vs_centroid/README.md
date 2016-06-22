@@ -1,6 +1,6 @@
 Full Atom Representation vs Centroid Representation
 ===================================================
-Tutorial by Shourya S. Roy Burman   
+Tutorial by Shourya S. Roy Burman (ssrb@jhu.edu) 
 Created 20 June 2016
 
 The demos are available at `<path_to_Rosetta_directory>/demos/tutorials/full_atom_vs_centroid`. All demo commands listed in this tutorial should be executed when in this directory. All the demos here use the `linuxgccrelease` binary. You may be required to change it to whatever is appropriate given your operating system and compiler.
@@ -46,11 +46,8 @@ After large-scale sampling in centroid mode, poses are generally converted back 
 
 Example
 -------
-![PDB 1QYS in the full atom representation](images/1qys.png)
-The PDB 1QYS in the full atom representation.
-
-![PDB 1QYS in the centroid representation](images/1qys_centroid.png)
-The PDB 1QYS in the centroid representation.
+![PDB 1QYS in the full atom representation vs centroid representation](images/1qys_combined.png)
+The PDB 1QYS in the (L) full atom representation, and (R) the centroid representation
 
 PDB files generated in the centroid format have the sidechain atoms  (C<sub>γ</sub> onwards) replaced by one `CEN` pseudo-atom. For example, the first two residues of the PDB 1QYS in full atom look like:
 ```html
