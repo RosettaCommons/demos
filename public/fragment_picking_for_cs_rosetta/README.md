@@ -20,5 +20,5 @@ The required inout files are in `./input_files`.
 2. Run the picker:
 
    ```
-   $> <pth-to-Rosetta>/main/source/bin/fragmentpicker.default.linuxgccrelease @cs-rosetta.flags
+   $> <pth-to-Rosetta>/main/source/bin/fragment_picker.default.linuxgccrelease @cs-rosetta.flags
    ```
