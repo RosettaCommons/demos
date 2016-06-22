@@ -63,7 +63,7 @@ This tutorial presents a protein folding benchmark experiment. Bacteriophage T4 
                 > <path-to-Rosetta>/tools/protein_tools/scripts/pdb_renumber.py \
                 2LZM_A.pdb 2LZMA.pdb
         1. Alternatively you can copy the provided clean pdb into your directory:
-            $> cp input_files/2LZMA.pdb
+            $> cp input_files/2LZMA.pdb .
     1. Prepare 3mer and 9mer fragment libraries.
     
         **The 2LZM fragment libraries (aa2LZMA03_05.200_v1_3 and aa2LZMA09_05.200_v1_3),**  
