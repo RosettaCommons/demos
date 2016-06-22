@@ -171,7 +171,7 @@ This tutorial presents a cross-docking benchmark experiment. Antibody CR6261 bin
 
     The native structure used in this step (**3gbm_native.pdb**) has been cleaned as above. A complete structure is necessary for comparison to models. Missing density has been repaired through loop modeling or grafting of segments from 3gbn.pdb.
     
-    **If your docking run is not finished yet, you can try out this step with pre-generated results. Make a new directory and copy the file docking.silent from the  output_files/ directory into this new directory.** You can also simply copy the extracted files using:
+    **If your docking run is not finished yet, you can try out this step with pre-generated results. Make a new directory and copy the file docking.silent from the  output_files/ directory into this new directory.** You can also simply copy a smaller set of extracted files using:
     
             $> cp output_files/*full*pdb output_files/*minimize*pdb .
 
