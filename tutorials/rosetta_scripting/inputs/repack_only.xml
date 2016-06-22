@@ -6,11 +6,12 @@
 	</RESIDUE_SELECTORS>
 	<TASKOPERATIONS>
 		<RestrictToRepacking name="no_design" />
+		<ExtraRotamersGeneric name="extrachi" ex1="1" ex2="1" ex1_sample_level="1" ex2_sample_level="1" />
 	</TASKOPERATIONS>
 	<FILTERS>
 	</FILTERS>
 	<MOVERS>
-		<PackRotamersMover name="pack1" scorefxn="t14" task_operations="no_design" />
+		<PackRotamersMover name="pack1" scorefxn="t14" task_operations="no_design,extrachi" />
 	</MOVERS>
 	<APPLY_TO_POSE>
 	</APPLY_TO_POSE>

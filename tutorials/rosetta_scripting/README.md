@@ -407,7 +407,7 @@ Let's create a new skeleton XML, and define the talaris2014 scorefunction in it:
 </ROSETTASCRIPTS>
 ```
 
-In the movers section, let's create a PackRotamersMover.  You can cut-and-paste from the [help page) for the mover](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/Movers/movers_pages/PackRotamersMover).  Don't forget to add it to the protocols section, as well.  Your MOVERS and PROTOCOLS sections should look something like this:
+In the movers section, let's create a PackRotamersMover.  You can cut-and-paste from the [help page for the mover](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/Movers/movers_pages/PackRotamersMover).  Don't forget to add it to the protocols section, as well.  Your MOVERS and PROTOCOLS sections should look something like this:
 
 ```xml
 ...
@@ -423,24 +423,29 @@ In the movers section, let's create a PackRotamersMover.  You can cut-and-paste 
 
 Note that, for now, we've left the ```task_operations``` field blank.  Were we to omit this and run the script, the PackRotamersMover would call the packer, and the packer would use all rotamers for all 20 canonical amino acids at every position -- that is, it would try to design the entire protein, which is not what we want.
 
-> **The packer's default behaviour is to design with all canonical amino acids at every position.  Preventing design with TaskOperations is essential for *almost all* usage cases.**
+> **The packer's default behaviour is to design with all canonical amino acids at every position.  Preventing design with TaskOperations, or otherwise limiting the behaviour of the packer at some subset of residue positions, is essential for *almost all* usage cases.**
 
-So let's create a TaskOperation that tells the packer to use only the current amino acid type at each position, and consider only alternative rotamers for that type.  In the TASKOPERATIONS section of your script, add a [RestrictToRepacking](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/TaskOperations/taskoperations_pages/RestrictToRepackingOperation) TaskOperation, and give it a name:
+TaskOperations are the means by which the user controls the packer.  They specify which residue to repack and/or design, and how to do it. TaskOperations are defined in the TASKOPERATIONS section of the XML, and as with the movers, the available types are listed on [the corresponding documentation page](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/TaskOperations/TaskOperations-RosettaScripts).
+
+In addition to controlling which positions are designed or repacked, TaskOperations also control details about how sidechains are sampled. The default is strictly for on-rotamer sampling, but it's frequently useful to add additional sub-rotameric samples. For example, adding plus or minus one standard deviation around the center of each rotamer bin can help the packer to find better side-chain combinations. The [ExtraRotamersGeneric](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/TaskOperations/taskoperations_pages/ExtraRotamersGenericOperation) TaskOperation allows you to control the rotamer sampling levels. Generally, adding some additional rotamers to chi1 and chi2 is useful, though the cost is a more complex packing problem and longer convergence time. (There are other ways to control this. For example, the [InitializeFromCommandline](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/TaskOperations/taskoperations_pages/InitializeFromCommandlineOperation) task operation allows you to use the -ex1 -ex2 options on the commandline to control rotamer sampling.)
+
+So let's create two TaskOperations.  The first will tell the packer to use only the current amino acid type at each position, and consider only alternative rotamers for that type.  (Technically, this is *disabling* design -- a minor point that will be important later.)  The second will enable some extra rotamers.  In the TASKOPERATIONS section of your script, add a [RestrictToRepacking](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/TaskOperations/taskoperations_pages/RestrictToRepackingOperation) TaskOperation and an [ExtraRotamersGeneric](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/TaskOperations/taskoperations_pages/ExtraRotamersGenericOperation) TaskOperation, giving each a name:
 
 ```xml
 ...
 	<TASKOPERATIONS>
-		<RestrictToRepacking name="no_design" /> #Note that there are no options except name to set
+		<RestrictToRepacking name="no_design" /> #Note that there are no options except name to set.
+		<ExtraRotamersGeneric name="extrachi" ex1="1" ex2="1" ex1_sample_level="1" ex2_sample_level="1" /> #This one allows you to set several options, however.
 	</TASKOPERATIONS>
 ...
 ```
 
-Down below, in the MOVERS section, let's tell the PackRotamersMover that we created earlier to use this TaskOperation.
+Down below, in the MOVERS section, let's tell the PackRotamersMover that we created earlier to use these TaskOperations.
 
 ```xml
 ...
 	<MOVERS>
-		<PackRotamersMover name="pack1" scorefxn="t14" task_operations="no_design" />
+		<PackRotamersMover name="pack1" scorefxn="t14" task_operations="no_design,extrachi" />
 	</MOVERS>
 ...
 ```
@@ -576,13 +581,6 @@ If you wish to do a more thorough scan, either of more positions or of more resi
 ## ResidueSelectors and TaskOperations
 -----------------------------------
 
-* *Repack (don't design) the entire protein except for residue F45 and Y59*
-
-### Packing
-
-One of the common protocols in RosettaScripts is sidechain optimization (packing). This might be done with a dedicated packing mover (e.g. the [PackRotamersMover](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/Movers/movers_pages/PackRotamersMover)), or with a more complex mover that implements a multistep protocol that includes packing.
-
-Let's add packing to our protocol. As before, make a copy of the minimize.xml script named packing.xml, and paste the example tag from PackRotamersMover into the Movers section. In addition to the name, the PackRotamersMover has only a few options: a scorefunction (let's use "t13") and "task_operations".
 
 ### TaskOperations
 
@@ -592,7 +590,6 @@ To fully exploit the power of TaskOperations, it's important to understand how t
 
 For our protocol, we decide that we want to turn off design (that is, limit the packer to repacking only). Looking through the available task operations, the easiest way of doing this appears to be the [RestrictToRepacking](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/TaskOperations/taskoperations_pages/RestrictToRepackingOperation). Like movers, the TaskOperations have example tags on their documentation page. These tags can be placed into the TASKOPERATIONS section of the XML. For RestrictToRepacking, there are no options aside from the mandatory "name" field.
 
-In addition to controlling which positions are designed or repacked, TaskOperations also control details about how sidechains are sampled. The default is strictly for on-rotamer sampling, but it's frequently useful to add additional sub-rotameric samples. (That is, add plus or minus a standard deviation around the center of the rotamer bin. The [ExtraRotamersGeneric](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/TaskOperations/taskoperations_pages/ExtraRotamersGenericOperation) TaskOperation allows you to control the rotamer sampling levels. Generally, adding a mild amount of sampling to chi1 and chi2 is useful. (There are other ways to control this. For example, the [InitializeFromCommandline](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/TaskOperations/taskoperations_pages/InitializeFromCommandlineOperation) task operation allows you to use the -ex1 -ex2 options on the commandline to control rotamer sampling.)
 
 ```
     <TASKOPERATIONS>
