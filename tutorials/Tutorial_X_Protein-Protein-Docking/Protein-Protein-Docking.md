@@ -24,9 +24,7 @@ This tutorial will introduce you the main steps required for predicting how two 
  To minimize the noise from docking-independent changes in energy, you should allways perform a side-chain optimization step (**packing**).
 
         $> ../../../main/source/bin/docking_prepack_protocol.default.linuxgccrelease \
-        -s combined.pdb \
-        -ex1
-        -ex2
+        -s combined.pdb -ex1  -ex2
         
   You will see several output files. The prepacked combined pdb is combined_0001.pdb. Change that name:
   
