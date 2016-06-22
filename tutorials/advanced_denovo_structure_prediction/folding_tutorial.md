@@ -128,7 +128,7 @@ This tutorial presents a protein folding benchmark experiment. Bacteriophage T4 
     1. Make sure you are in your working directory.
     1. Type the following command line:
     
-            $> <path-to-Rosetta>/main/source/bin/minirosetta.default.linuxgccrelease m@2LZM_broker.options 
+            $> <path-to-Rosetta>/main/source/bin/minirosetta.default.linuxgccrelease @2LZM_broker.options 
         
         - NOTE: This will take 10-20 minutes per structure.
     
@@ -147,7 +147,7 @@ This tutorial presents a protein folding benchmark experiment. Bacteriophage T4 
     1. Identify the best scoring models.
         1.  If you ran more than one job, you will need to combine the silent files into one file.
             
-                $> <path-to-Rosetta>/main/source/bin/combine_silent.default.linuxgccrelease \
+                <path-to-Rosetta>/main/source/bin/combine_silent.default.linuxgccrelease \
                 -in:file:silent 2LZM_0*.out -in:file:silent_struct_type binary \
                 -out:file:silent 2LZM_all_models_silent.out -out:file:silent_struct_type binary
                  
