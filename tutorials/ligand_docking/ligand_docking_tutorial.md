@@ -34,7 +34,7 @@ For this exercise, we'll be doing our pre-docking preparations in the protein\_p
 
 1.Navigate to the ligand docking directory where you will find the ligand_prep, protein_prep, docking, and answers folders 
 ```
-cd  <path-to-Rosetta>/Rosetta/demos/tutorials/ligand_docking 
+cd  <path-to-Rosetta>/demos/tutorials/ligand_docking 
 ```
 2.Prepare a human dopamine 3 receptor structure. We will do this by obtaining the crystal structure (3PBL) and removing the excess information. 
 2.1. Change into the protein_prep directory with the cd command:
@@ -43,7 +43,7 @@ cd  <path-to-Rosetta>/Rosetta/demos/tutorials/ligand_docking
 ```
 2.2. Download 3BLP (pdb format) from http://www.rcsb.org/pdb/home/home.do into the protein\_prep directory. The clean_pdb.py script will allow you to strip the PDB of information other than the desired protein coordinates. The 'A' option tells the script to obtain chain A only.  The full crystal structure consists of two monomers as a crystallization artifact. 
 ```
->   <path-to-Rosetta>/Rosetta/tools/protein_tools/scripts/clean_pdb.py 3PBL.pdb A
+>   <path-to-Rosetta>/tools/protein_tools/scripts/clean_pdb.py 3PBL.pdb A
 ```
 2.3. There are two output files from clean\_pdb.py: 3PBL\_A.pdb contains a single chain of the protein structure and 3PBL\_A.fasta contains the corresponding sequence. 3PBL\_A.pdb is the receptor structure we will be using for docking, copy this into the docking directory. 
 ```
@@ -74,13 +74,13 @@ This particular conformational library was generated using the Meiler lab's BioC
 
 Type:
 ```
-> <path-to-Rosetta>/Rosettap/main/source/scripts/python/public/molfile_to_params.py -h
+> <path-to-Rosetta>/main/source/scripts/python/public/molfile_to_params.py -h
 ```        
 to learn more about the script for generating the params file.
 
 Type:
 ```
-> <path-to-Rosetta>/Rosettap/main/source/scripts/python/public/molfile_to_params.py -n ETQ -p ETQ --conformers-in-one-file eticlopride_conformers.sdf  
+> <path-to-Rosetta>/main/source/scripts/python/public/molfile_to_params.py -n ETQ -p ETQ --conformers-in-one-file eticlopride_conformers.sdf  
 ```
 Note: You may encounter a warning about the number of atoms in the residue. This is okay as Rosetta is merely telling you that the ligand has more atoms than an amino acid.      
 
@@ -141,7 +141,7 @@ $> cp docking/crystal_complex.pdb .
 6.Run the docking study (This should take a few minutes at most, as we're using a reduced number of output structures):   
 
 ```
-$> <path-to-Rosetta>/Rosetta_workshop/rosetta/main/source/bin/rosetta_scripts.linuxgccrelease \
+$> <path-to-Rosetta>/main/source/bin/rosetta_scripts.linuxgccrelease \
         @options
 
 ```
@@ -159,7 +159,7 @@ $> <path-to-Rosetta>/Rosetta_workshop/rosetta/main/source/bin/rosetta_scripts.li
 
 11.The visualize_ligand.py script in the scripts directory is a useful shortcut to doing quick visualizations of protein-ligand interfaces. It takes in a PDB and generates a .pse Pymol session by applying common visualization settings. The example below shows the command lines for using this script on the 0001 model but you are free to try it on any one (or more!) of your models:
 ```
->  <path-to-Rosetta>/Rosetta/demos/tutorials/ligand_docking/scripts/visualize_ligand.py 3PBL_A_ETQ_0001.pdb
+>  <path-to-Rosetta>/demos/tutorials/ligand_docking/scripts/visualize_ligand.py 3PBL_A_ETQ_0001.pdb
 > pymol 3PBL_A_ETQ_0001.pse
 ```
 This only works if you have correct environment settings for your pymol.
@@ -180,7 +180,7 @@ Since we generated such a small number of structures, it is unlikely to capture 
 	    
 This file was tabulated using the extract_scores.bash script and the score.sc file as input. This is a very specific script made for extracting useful information in ligand docking experiments. However, the script can be easily customized for extracting other information from Rosetta score files. If you have any in-depth questions about how it works or how to modify it, feel free to ask. To see how it in action, run:
 ```
->    <path-to-Rosetta>/Rosetta/demos/tutorials/ligand_docking/scripts/extract_scores.bash score.sc
+>    <path-to-Rosetta>/demos/tutorials/ligand_docking/scripts/extract_scores.bash score.sc
 ``` 
 
 2.3. rmsds\_to\_best\_model.data: a space separated file containing RMSD comparisons with the best scoring model (not crystal structure!) for all PDB files. A more detailed discussion of this file will come further down in the tutorial. This file has the filename in the first column, an all heavy-atom RMSD in the second column, a ligand only RMSD without superimposition in the third column, a ligand only RMSD with superimposition in the fourth column, and heavy atom RMSDs of side-chains around the ligand in the fifth column. 
@@ -188,7 +188,7 @@ This file was tabulated using the extract_scores.bash script and the score.sc fi
 This file is generated using the calculate\_ligand\_rmsd.py script. It uses pymol to compare PDB structures containing the same residues and ligand atoms. It's a quick way of calculate ligand RMSDs of Rosetta models. To see how this works, let's try it on the five models we generated in the previous steps:
 ```
 > cd ../
->  <path-to-Rosetta>/Rosetta/demos/tutorials/ligand_docking/scripts/calculate_ligand_rmsd.py -n 3PBL_ETQ_0003.pdb -c X -a 7 -o rmsds_to_best_model.data *_000*.pdb
+>  <path-to-Rosetta>/demos/tutorials/ligand_docking/scripts/calculate_ligand_rmsd.py -n 3PBL_ETQ_0003.pdb -c X -a 7 -o rmsds_to_best_model.data *_000*.pdb
 ```
 This command compares all five of your models to the one after the -n option. Your best scoring model may not be the one labelled 0003 so feel free to customize that option. The -c tells the script that the ligand is denoted as chain X. The -a tells the script to use 7 angstroms as the cutoff sphere for side-chain RMSDs. The -o option is the output file name. Lastly, we provided a list of PDBs using the wildcard selection. 
 
