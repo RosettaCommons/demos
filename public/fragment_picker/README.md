@@ -1,4 +1,8 @@
-Do the best picker option for the starter demo: BestFragmentsProtocol 
+### Standart fragment picking
+
+Do the best picker option for the starter demo: 
+
+`./BestFragmentsProtocol/` 
 
 Submit the following sequence (in the FASTA format) to 
 [[psipred|http://bioinf.cs.ucl.ac.uk/psipred]]:
@@ -12,22 +16,23 @@ should have a header with the string "VFORMAT"
 
 * Put this vall in the flags:
 
-        [path]/rosetta/rosetta_database/sampling/filtered.vall.dat.2006-05-05.gz
+ `$ <path-to-Rosetta>/main/database/sampling/filtered.vall.dat.2006-05-05.gz`
 
   Update the flags with your correct database location
 
 * Run the picker like this:
 
-        [path]/rosetta/rosetta_source/bin/fragment_picker.linuxgccrelease @best-frags.flags 
+ `$> <path-to-Rosetta>/main/source/bin/fragment_picker.linuxgccrelease @BestFragmentsProtocol/best-frags.flags -in::file::vall $ROSETTA3/main/database/sampling/small.vall.gz ` 
 
-  Output:
+  Output:  
+  
   * `frags.200.3mers`: for use with `-in:file:frag3`
   * `frags.200.9mers`: for use with `-in:file:frag9`
   * fsc files for fragment information.
 
-* Now get the quality of these fragments:
+* Now get the quality of these 3-mer fragments:
 
-        [path]/rosetta/rosetta_source/bin/r_frag_quality.linuxgccrelease -database [path]/rosetta/rosetta_database -in:file:native input_files/2jsvX.pdb -f output_files/frags.200.9mers
+        $> <path-to-Rosetta>/main/source/bin/r_frag_quality.linuxgccrelease -in:file:native BestFragmentsProtocol/input_files/2jsvX.pdb -f BestFragmentsProtocol/output_files/frags.200.3mers
 
   Output:
   * frag_qual.dat
@@ -40,5 +45,15 @@ should have a header with the string "VFORMAT"
   column 4 on the y-axis. 
 
 More detailed information in:  
-http://www.rosettacommons.org/manuals/archive/rosetta3.4_user_guide/dc/d10/app_fragment_picker.html
+[Rosetta Documentation](https://www.rosettacommons.org/docs/wiki/application_documentation/utilities/app-fragment-picker)
 
+### Tweak the fragment picker
+For other options as described in the [Rosetta Documentation](https://www.rosettacommons.org/docs/wiki/application_documentation/utilities/app-fragment-picker) have a look at the sub-directories of this demo.
+
+```
+./NullFragments  
+./QuotaProtocol          
+./Quota_with_restraints  
+```
+
+` 

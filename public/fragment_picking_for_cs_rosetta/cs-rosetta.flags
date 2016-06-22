@@ -1,6 +1,5 @@
 # Input databases
--in::path::database		../../DATA/database
--in::file::vall              	../../DATA/vall.dat.apr24.combo.v2.mar10.bfactor.v2.gz
+-in::file::vall          <Path to vall database>
 
 # Query-related input files
 -in::file::checkpoint 		input_files/2jsvX.checkpoint
