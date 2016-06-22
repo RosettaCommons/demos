@@ -18,3 +18,5 @@ Output:
 
 - UM_1_H15H17H214D295Q58_1A4L_clean_A_r_1A4L_clean_A_1__DE_1.pdb
 - enz_score.out
+
+> **Note: of all steps, this is the longest-running.  It can take roughly half an hour to complete.**
