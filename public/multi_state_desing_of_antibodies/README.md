@@ -7,7 +7,7 @@ It can either be run on a single processor using the
    using the provided input, you can test this:
 
 ```
-   <path-to-Rosetta>/main/source/bin/mpi_msd.linuxgccrelease @flags.txt
+   $> <path-to-Rosetta>/main/source/bin/mpi_msd.linuxgccrelease @flags.txt
 ```
 
 or by distributing those states over multiple processors using the
