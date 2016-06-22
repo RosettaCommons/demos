@@ -72,7 +72,7 @@ Each of the following commands is intended to be run from the relevant subdirect
 5. To introduce additional catalytic residues, run a round of RosettaMatch.
 
 	```bash
-	$> <path_to_Rosetta_directory>/main/source/bin/match.default.linuxgccrelease @general_matching.flags @scaf.flags @subs.flags  -linmem_ig 10 -in:file::s 1A4LA_clean_r.pdb
+	$> <path_to_Rosetta_directory>/main/source/bin/match.default.linuxgccrelease @general_matching.flags @scaf.flags @subs.flags  -linmem_ig 10 -in:file::s 1A4L_clean_A_r.pdb
 	```
 
 6. Design the rest of the pocket for maximizing TS affinity.
