@@ -1,9 +1,0 @@
-#!/bin/bash
-
-ROSETTA_BIN="rosetta/main/source/bin"
-ROSETTA_DB="rosetta/main/database/"
-
-$ROSETTA_BIN/FlexPepDocking.mpi.linuxgccrelease -database $ROSETTA_DB @prepack_flags >output/ppk.log
-
-mv input/1AWR.ex_0001.pdb input/1AWR.ex.ppk.pdb
-echo "FlexPepDock prepack done!"

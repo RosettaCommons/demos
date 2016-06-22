@@ -1,8 +1,0 @@
-#!/bin/bash
-
-ROSETTA_BIN="rosetta/main/source/bin"
-ROSETTA_DB="rosetta/main/database/"
-
-$ROSETTA_BIN/FlexPepDocking.mpi.linuxgccrelease -database $ROSETTA_DB @refine_flags >output/refine.log
-
-echo "FlexPepDock refinement done!"
