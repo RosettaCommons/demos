@@ -86,7 +86,10 @@ resfiles.
 #### Example Rosetta Command Line:
 
 For useful options, look at the `./flags` file provided in this directory
-    $> <path-to-Rosetta>/main/source/bin/mpi_msd.default.linuxgccrelease @flags
+
+```
+ $> <path-to-Rosetta>/main/source/bin/mpi_msd.default.linuxgccrelease @flags
+```
 
 #### Example Overall Command Line (if overall protocol is run via a script or other program):
 
