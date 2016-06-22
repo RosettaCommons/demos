@@ -139,19 +139,15 @@ This tutorial presents a protein folding benchmark experiment. Bacteriophage T4 
     **directory.**
     
     1. For practice, we will be analyzing data that has already been generated.
-        1. Create a directory for analysis of your data and switch into that directory.
-
-                mkdir data_analysis
-                cd data_analysis
 
         1. Copy the files from the output_files/example_data/ directory.
 
-                cp ~/rosetta_workshop/tutorials/protein_folding/output_files/example_data/* .
+                cp output_files/example_data/* .
 
     1. Identify the best scoring models.
         1.  If you ran more than one job, you will need to combine the silent files into one file.
             
-                ~/rosetta_workshop/rosetta/main/source/bin/combine_silent.default.linuxgccrelease \
+                $> <path-to-Rosetta>/main/source/bin/combine_silent.default.linuxgccrelease \
                 -in:file:silent 2LZM_0*.out -in:file:silent_struct_type binary \
                 -out:file:silent 2LZM_all_models_silent.out -out:file:silent_struct_type binary
                  
@@ -300,29 +296,25 @@ This tutorial presents a protein folding benchmark experiment. Bacteriophage T4 
     **directory.**
     
     1. For practice, we will be analyzing data that has already been generated.
-        1. Create a directory for analysis of your data and switch into that directory.
-
-                mkdir data_analysis_cst
-                cd data_analysis_cst
-
+        
         1. Copy the files from the example_data directory.
 
-                cp ~/rosetta_workshop/tutorials/protein_folding/output_files_cst/example_data/* .
+                cp  output_files_cst/example_outputssc/* .
 
     1. Identify the best scoring models.
         1.  If you ran more than one job, you will need to combine the silent files into one file.
             
-                ~/rosetta_workshop/rosetta/main/source/bin/combine_silent.default.linuxgccrelease \
+                <path-to-Rosetta>/combine_silent.default.linuxgccrelease \
                 -in:file:silent 2LZM_broker_cst_0*.out -in:file:silent_struct_type binary \
                 -out:file:silent 2LZM_broker_cst_all.out -out:file:silent_struct_type binary
 
         1.  Format the score and RMS data for graphing using the score_scatter_plot.py script.
 
-                python2.7 ~/rosetta_workshop/rosetta/tools/protein_tools/scripts/score_scatter_plot.py \
+                <path-to-Rosetta>/tools/protein_tools/scripts/score_scatter_plot.py \
                 --x_axis rms_core --y_axis score --silent 2LZM_broker_cst_all.out 2LZM_cst_models.table
             
             - **The 2LZM_cst_models.table file is provided for you in the**   
-                **~/rosetta_workshop/tutorials/protein_folding/output_files_cst/example_analysis/**  
+                **/output_files_cst/example_analysis/**  
                 **directory.**
         
         1. Sort the 2LZM_cst_models.table by the score column from lowest to highest.
@@ -335,7 +327,7 @@ This tutorial presents a protein folding benchmark experiment. Bacteriophage T4 
 
     1. Extract the top scoring models from the binary silent file.
 
-            ~/rosetta_workshop/rosetta/main/source/bin/score_jd2.default.linuxgccrelease \
+            <path-to-Rosetta>/main/source/bin/score_jd2.default.linuxgccrelease \
             -in:file:silent 2LZM_broker_cst_all.out -in:file:silent_struct_type binary \
             -in:file:fullatom -out:pdb -out:file:fullatom \
             -in:file:tags S_0331_1 S_0260_1 S_0035 S_0387_1 S_0478 S_0272 S_0035_1 \
@@ -346,7 +338,7 @@ This tutorial presents a protein folding benchmark experiment. Bacteriophage T4 
 
         1. Score your models using these scoring weights.
 
-                ~/rosetta_workshop/rosetta/main/source/bin/score_jd2.default.linuxgccrelease \
+                <path-to-Rosetta>/main/source/bin/score_jd2.default.linuxgccrelease \
                 -in:file:silent 2LZM_broker_cst_all.out -in:file:silent_struct_type binary \
                 -in:file:fullatom -out:file:silent 2LZM_broker_cst_all_rescore.out \
                 -out:file:silent_struct_type binary -out:file:fullatom \
@@ -375,7 +367,7 @@ This tutorial presents a protein folding benchmark experiment. Bacteriophage T4 
             1. In a bash shell, execute:
             
                     for pdb in `ls *.pdb`; do
-                        ~/rosetta_workshop/tutorials/protein_folding/scripts/calc_exp_viol_spline.pl \
+                        ../scripts/calc_exp_viol_spline.pl \
                         ${pdb} 2LZM_dist_w1.cst 25 > ${pdb}_cst_viol.txt
                     done
 
@@ -396,27 +388,27 @@ This tutorial presents a protein folding benchmark experiment. Bacteriophage T4 
 
 1. Using make_fragments.pl - (NOTE: The workshop machines are not configured for making fragments.)
     1. For more information on the fragment picker, please go to [https://www.rosettacommons.org/docs/latest/app-fragment-picker.html](https://www.rosettacommons.org/docs/latest/app-fragment-picker.html) and see Gront, et al., PLoS ONE, 2011.
-    1. The make_fragments.pl script is in ~/rosetta_workshop/rosetta/tools/fragment_tools/
+    1. The make_fragments.pl script is in <path-to-Rosetta>/tools/fragment_tools/
     1. Please read the fragments.README file in the above directory for more information concerning using the script
     1. In order to use make_fragments.pl, you will first need to install PSI-BLAST ([ftp://ftp.ncbi.nih.gov/blast/executables/release/2.2.17/](ftp://ftp.ncbi.nih.gov/blast/executables/release/2.2.17/); Requires non-blast+ NCBI version), the non-redundant (NR) database ([ftp://ftp.ncbi.nih.gov/blast/db/](ftp://ftp.ncbi.nih.gov/blast/db/)), and perhaps PSI-PRED ([http://bioinf.cs.ucl.ac.uk/psipred/](http://bioinf.cs.ucl.ac.uk/psipred/)).
     1. You will also need a Vall database, which is in the above directory (vall.jul19.2011.gz)
     1. You will need to modify make_fragments.pl in order to reflect the paths specific to your case (we will not do this during the workshop). The comments in the scripts should tell you how to modify paths.*
     1. For a usage statement, run the script without arguments:
         
-            ~/rosetta_workshop/rosetta/tools/fragment_tools/make_fragments.pl
+            <path-to-Rosetta>/tools/fragment_tools/make_fragments.pl
 
     1. To run in the directory where your fasta file is located:
     
-            ~/rosetta_workshop/rosetta/tools/fragment_tools/make_fragments.pl 2LZMA.fasta >& make_fragments.log &
+            <path-to-Rosetta>/tools/fragment_tools/make_fragments.pl 2LZMA.fasta >& make_fragments.log &
 
     1. OPTIONAL: You can use any other secondary structure prediction method, such as JUFO ([http://www.meilerlab.org/index.php/servers/show?s_id=5](http://www.meilerlab.org/index.php/servers/show?s_id=5)) or Porter ([http://distill.ucd.ie/porter/](http://distill.ucd.ie/porter/)), but it must be in PSI-PRED ss2 vertical format.  This can be done by running:
     
-            python2.7 ~/rosetta_workshop/rosetta/tools/fragment_tools/ss_pred_converter.py \
+            <path-to-Rosetta>/tools/fragment_tools/ss_pred_converter.py \
             -j 2LZMA.jufo_ss > 2LZMA.jufo_ss2
         
         or
         
-            python2.7 ~/rosetta_workshop/rosetta/tools/fragment_tools/ss_pred_converter.py \
+            <path-to-Rosetta>/rosetta/tools/fragment_tools/ss_pred_converter.py \
             -p 2LZMA.porter_ss > 2LZMA.porter_ss2
 
 1. Using R ([http://www.r-project.org](http://www.r-project.org)) to generate score vs. rmsd plots. 
