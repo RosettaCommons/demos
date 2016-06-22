@@ -1,6 +1,6 @@
 Model a Missing Loop
 ====================
-
+KEYWORDS: STRUCTURE_PREDICTION LOOPS
 Authors: Roland Pache, Michal Sperber, Steven Combs, George Rosenberger  
 Last updated: August 2011 (RosettaCon9)
 

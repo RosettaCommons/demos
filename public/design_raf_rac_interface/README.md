@@ -1,6 +1,6 @@
 Design the Rac/Raf interface
 ============================
-
+KEYWORDS: DESIGN INTERFACES
 This demo will walk through the steps of designing a protein-protein interface.
 The goal of this protocol is to predict mutations on Raf that will enable it to 
 bind Rac.

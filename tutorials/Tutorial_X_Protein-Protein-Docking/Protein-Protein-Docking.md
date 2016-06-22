@@ -1,5 +1,5 @@
 #Protein-Protein-Docking
-
+KEYWORDS: DOCKING GENERAL STRUCTURE_PREDICTION 
 This tutorial will introduce you the main steps required for predicting how two proteins interact.
 
 ######Input files

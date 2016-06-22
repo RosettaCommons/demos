@@ -1,6 +1,6 @@
 Membrane Symmetric Protein-Protein Docking
 ==========================================
-
+KEYWORDS: MEMBRANES DOCKING
 Author: Rebecca F. Alford (rfalford12@gmail.com)  
 Corresponding PI: Jeffrey J. Gray (jgray@jhu.edu)  
 Last Updated: January 2015  
