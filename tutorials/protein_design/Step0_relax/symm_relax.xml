@@ -1,0 +1,21 @@
+<ROSETTASCRIPTS>
+        <SCOREFXNS>
+          <mem_highres weights="membrane_highres_Menv_smooth.wts" symmetric=1 />
+	</SCOREFXNS>
+	<TASKOPERATIONS>
+	  <InitializeFromCommandline name=ifcl/>
+	  <RestrictToRepacking name=rtr />
+	</TASKOPERATIONS>
+        <FILTERS>
+	</FILTERS>
+        <MOVERS>
+          <SetupForSymmetry name=setup_symm definition=3UKM.symm />
+          <FastRelax name=fast_rlx scorefxn=mem_highres repeats=8 task_operations=ifcl,rtr />
+        </MOVERS>
+        <APPLY_TO_POSE>
+        </APPLY_TO_POSE>
+        <PROTOCOLS>
+          <Add mover_name=setup_symm />
+          <Add mover_name=fast_rlx />
+        </PROTOCOLS>
+</ROSETTASCRIPTS>
