@@ -75,7 +75,7 @@ This tutorial presents a cross-docking benchmark experiment. Antibody CR6261 bin
         1. Run the Rosetta loopmodel application to close the loop.
 
                 > <path-to-Rosetta>/main/source/bin/loopmodel.default.linuxgccrelease \
-                @chainbreak_fix.options -nstruct 10 >& chainbreak_fix.log &
+                @chainbreak_fix.options >& chainbreak_fix.log &
 
                 pymol 3gbn_Ab*pdb &
                 > sort -nk 2 chainbreak_fix.fasc
