@@ -145,7 +145,7 @@ From Google:
 2.0 * pi / 180 = 0.034906585
 ```
 
-For more information about the constraints, you can check: tutorials/constraint_tutorial
+For more information about the constraints, you can check the [constraints tutorial](../../tutorials/Tutorial_8_Constraints/Tutorial_8_Constraints.md).
 
 # Running the relax protocol
 
