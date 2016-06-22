@@ -1,10 +1,7 @@
-#########################################
-CROSS-LINK GUIDED PROTEIN-PROTEIN DOCKING
-#########################################
+#Crosslink Guided Protein-Protein Docking
 
--------
-Content
--------
+## Contents
+-----------
 - Introduction
 - Demo Run
 - System Requirements
@@ -17,9 +14,8 @@ Content
     - Superimpose
     - AvgInterface
 
-------------
-Introduction
-------------
+## Introduction
+---------------
 Distance restraints from chemical cross-linking experiments combined with mass-spectrometry can
 guide protein-protein docking calculations and significantly improve the accuracy of the
 simulations. This protocol uses cross-link information for the prediction of protein complexes using
