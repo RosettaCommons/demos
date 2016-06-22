@@ -6,7 +6,7 @@
 
 *Italicized text means that this material will NOT be conducted during the workshop*
 
-    fixed width text means you should type the command into your terminal
+    fixed width text means you should type the command into your terminal (after > sign)
 
 If you want to try making files that already exist (e.g., input files), write them to a different directory! (mkdir my_dir)
 
@@ -60,14 +60,14 @@ cd  <path-to-Rosetta>/Rosetta/demos/tutorials/ligand_docking
 3.2.In the directory, you will find a pair of already prepared files: eticlopride.sdf and eticlopride_conformers.sdf
 
 3.2.1. eticlopride.sdf: This contains the eticlopride structure found in the 3PBL protein complex. 
-	    
-	    	Note: You can also find the ligand file from this particular PDB structure by going to the [3PBL page](http://www.rcsb.org/pdb/explore/explore.do?structureId=3PBL) and scrolling down to the "Ligand Chemical Component" section. From there, you can click "Download" under the ETQ identifier. 
+	   
+Note: You can also find the ligand file from this particular PDB structure by going to the [3PBL page](http://www.rcsb.org/pdb/explore/explore.do?structureId=3PBL) and scrolling down to the "Ligand Chemical Component" section. From there, you can click "Download" under the ETQ identifier. 
 	    
 3.2.2. eticlopride_conformers.sdf: This is a library of conformations for eticlopride generated outside of Rosetta. The downloaded ligand .sdf file only contains conformations found in the PDB so we must expand the library to properly sample the conformational space. We also need to add hydrogens since they are not resolved in the crystal structure. Feel free to open the file in Pymol and use the arrow keys to scroll through the different conformations:
 ```
 	pymol eticlopride_conformers.sdf
 ```
-	This particular conformational library was generated using the Meiler lab's BioChemicalLibrary (BCL). The BCL is a suite of tools for protein modeling, small molecule calculations, and machine learning. If you're interested in licensing the BCL, please visit [http://www.meilerlab.org/bclcommons](http://www.meilerlab.org/bclcommons) or ask one of the instructors.  Other methods of ligand conformer generation include OpenEye's MOE software, CSD Mercury software and web-servers such as [Frog 2.1](http://bioserv.rpbs.jussieu.fr/cgi-bin/Frog2) or [DG-AMMOS](http://mobyle.rpbs.univ-paris-diderot.fr/cgi-bin/portal.py#forms::DG-AMMOS). The generated libraries will differ depending on the chosen method. 
+This particular conformational library was generated using the Meiler lab's BioChemicalLibrary (BCL). The BCL is a suite of tools for protein modeling, small molecule calculations, and machine learning. If you're interested in licensing the BCL, please visit [http://www.meilerlab.org/bclcommons](http://www.meilerlab.org/bclcommons) or ask one of the instructors.  Other methods of ligand conformer generation include OpenEye's MOE software, CSD Mercury software and web-servers such as [Frog 2.1](http://bioserv.rpbs.jussieu.fr/cgi-bin/Frog2) or [DG-AMMOS](http://mobyle.rpbs.univ-paris-diderot.fr/cgi-bin/portal.py#forms::DG-AMMOS). The generated libraries will differ depending on the chosen method. 
   
 
 3.2.3. Generate a .params file and associated PDB conformations with Rosetta atom types for eticlopride. A params file is necessary for ligand docking because Rosetta does not have records for custom small molecules in its database. 
@@ -82,9 +82,9 @@ Type:
 ```
 > <path-to-Rosetta>/Rosettap/main/source/scripts/python/public/molfile_to_params.py -n ETQ -p ETQ --conformers-in-one-file eticlopride_conformers.sdf  
 ```
-	Note: You may encounter a warning about the number of atoms in the residue. This is okay as Rosetta is merely telling you that the ligand has more atoms than an amino acid.      
+Note: You may encounter a warning about the number of atoms in the residue. This is okay as Rosetta is merely telling you that the ligand has more atoms than an amino acid.      
 
-	ETQ.params contains the necessary information for Rosetta to process the ligand, ETQ.pdb contains the first conformation, and ETQ_conformers.pdb contains the rest of the conformational library.
+ETQ.params contains the necessary information for Rosetta to process the ligand, ETQ.pdb contains the first conformation, and ETQ_conformers.pdb contains the rest of the conformational library.
 
 			
 3.2.4. If you use the tail command on ETQ.params, you will notice the PDB_ROTAMERS property line that tells Rosetta where to find the conformational library. Make sure this line has ETQ\_conformers.pdb as the property. 
@@ -119,7 +119,7 @@ $> cp answers/docking/3PBL_ETQ.pdb .
 ```
 4.3. Tip: 'All->Action->preset->ligand sites->cartoon' will help you visualize the protein/ligand interface. The All button is denoted by a single letter "A" in Pymol 
     
-	Since this is a rudimentary exercise, we will start with the ligand in the protein binding site. In practical application, we may need to define a starting point with the [StartFrom mover](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/Movers/movers_pages/StartFromMover) or to manually place the ligand into an approximate region using Pymol. 
+Since this is a rudimentary exercise, we will start with the ligand in the protein binding site. In practical application, we may need to define a starting point with the [StartFrom mover](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/Movers/movers_pages/StartFromMover) or to manually place the ligand into an approximate region using Pymol. 
     
 4.4. Once you close Pymol, make sure Rosetta has these four necessary input structure/parameter files in the ligand_docking tutorial directory. If you are missing any of these, copy them from ../answers/docking/
 4.4.1. 3PBL_A.pdb: a single chain of the protein receptor structure 
@@ -159,7 +159,7 @@ $> <path-to-Rosetta>/Rosetta_workshop/rosetta/main/source/bin/rosetta_scripts.li
 
 11.The visualize_ligand.py script in the scripts directory is a useful shortcut to doing quick visualizations of protein-ligand interfaces. It takes in a PDB and generates a .pse Pymol session by applying common visualization settings. The example below shows the command lines for using this script on the 0001 model but you are free to try it on any one (or more!) of your models:
 ```
- >  <path-to-Rosetta>/Rosetta/demos/tutorials/ligand_docking/scripts/visualize_ligand.py 3PBL_A_ETQ_0001.pdb
+>  <path-to-Rosetta>/Rosetta/demos/tutorials/ligand_docking/scripts/visualize_ligand.py 3PBL_A_ETQ_0001.pdb
 > pymol 3PBL_A_ETQ_0001.pse
 ```
 This only works if you have correct environment settings for your pymol.
@@ -178,7 +178,7 @@ Since we generated such a small number of structures, it is unlikely to capture 
 
 2.2.  score\_vs\_rmsd.csv: a comma separated file with the filename in the first column, total_score for the complex in the second column, the interface score in the third column, and ligand RMSD to the native structure in the fourth column.
 	    
-        This file was tabulated using the extract_scores.bash script and the score.sc file as input. This is a very specific script made for extracting useful information in ligand docking experiments. However, the script can be easily customized for extracting other information from Rosetta score files. If you have any in-depth questions about how it works or how to modify it, feel free to ask. To see how it in action, run:
+This file was tabulated using the extract_scores.bash script and the score.sc file as input. This is a very specific script made for extracting useful information in ligand docking experiments. However, the script can be easily customized for extracting other information from Rosetta score files. If you have any in-depth questions about how it works or how to modify it, feel free to ask. To see how it in action, run:
 ```
 >    <path-to-Rosetta>/Rosetta/demos/tutorials/ligand_docking/scripts/extract_scores.bash score.sc
 ``` 
@@ -190,7 +190,7 @@ This file is generated using the calculate\_ligand\_rmsd.py script. It uses pymo
 > cd ../
 >  <path-to-Rosetta>/Rosetta/demos/tutorials/ligand_docking/scripts/calculate_ligand_rmsd.py -n 3PBL_ETQ_0003.pdb -c X -a 7 -o rmsds_to_best_model.data *_000*.pdb
 ```
- This command compares all five of your models to the one after the -n option. Your best scoring model may not be the one labelled 0003 so feel free to customize that option. The -c tells the script that the ligand is denoted as chain X. The -a tells the script to use 7 angstroms as the cutoff sphere for side-chain RMSDs. The -o option is the output file name. Lastly, we provided a list of PDBs using the wildcard selection. 
+This command compares all five of your models to the one after the -n option. Your best scoring model may not be the one labelled 0003 so feel free to customize that option. The -c tells the script that the ligand is denoted as chain X. The -a tells the script to use 7 angstroms as the cutoff sphere for side-chain RMSDs. The -o option is the output file name. Lastly, we provided a list of PDBs using the wildcard selection. 
 
 The script produces the rmsd\_to\_best\_model.data file that you can open in any text editor. Feel free to ask questions if you like to discuss more of how to customize this script for your own applications. Now let's go back to the pre-generated model directory:
 ```
