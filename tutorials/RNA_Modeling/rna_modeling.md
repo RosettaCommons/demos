@@ -61,16 +61,11 @@ This file has been provided for you in this directory, named `secstruct`.
 
 2. Cut out the useful region from the input PDB in PyMOL and copy that structure to the working folder (an example has already been provided for you - see the `2gis_cut.pdb` file).
 
-Then, convert the cut PDB to proper Rosetta format:
-```bash
-$> make_rna_rosetta_ready.py 2gis_cut.pdb
-```
-
 3. Align the sequence for threading in a fasta file  
 
 Copy the fasta file of the target RNA to the working folder. Convert the uppercase letters to lowercase. Generate the sequence of the template by running:
 ```bash
-$> pdb2fasta.py 2gis_cut_RNA.pdb >> fasta
+$> pdb2fasta.py 2gis_cut.pdb >> fasta
 ```
 
 Edit the `fasta` file to adjust the alignment. Use '-' to fill missing residues.
@@ -89,9 +84,9 @@ This file has been provided for you, and is called `fasta.aligned`.
 
 Command line example:
 ```bash
-$> rna_thread.default.linuxgccrelease -fasta fasta.aligned -s 2gis_cut_RNA.pdb -o core.pdb
+$> rna_thread.default.linuxgccrelease -fasta fasta.aligned -s 2gis_cut.pdb -o core.pdb
 ```
-This application mutates the nucleotides in `2gis_cut_RNA.pdb` to the SAM I-IV riboswitch identities that they align to in the fasta.aligned file. The output of this command should be new threaded model named `core.pdb`.
+This application mutates the nucleotides in `2gis_cut.pdb` to the SAM I-IV riboswitch identities that they align to in the fasta.aligned file. The output of this command should be new threaded model named `core.pdb`.
 
 Open the output pdb file in PyMOL and make sure it looks correct. The new sequence should be `CACGGGAC`.
 
