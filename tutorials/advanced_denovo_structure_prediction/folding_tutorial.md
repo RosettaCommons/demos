@@ -35,7 +35,7 @@ This tutorial presents a protein folding benchmark experiment. Bacteriophage T4 
             1. Remove the first 57 residues of the sequence so that it begins with the sequence ITKDE.
             1. Save the file as 2LZMA.fasta to your directory. Alternatively you can copy the file provided for you:
             
-            $> cp input_files/2LZMA.fasta .
+                 $> cp input_files/2LZMA.fasta .
 
     1. Prepare a PDB of native structure.
     
@@ -63,7 +63,9 @@ This tutorial presents a protein folding benchmark experiment. Bacteriophage T4 
                 > <path-to-Rosetta>/tools/protein_tools/scripts/pdb_renumber.py \
                 2LZM_A.pdb 2LZMA.pdb
         1. Alternatively you can copy the provided clean pdb into your directory:
-            $> cp input_files/2LZMA.pdb .
+
+                 $> cp input_files/2LZMA.pdb .
+
     1. Prepare 3mer and 9mer fragment libraries.
     
         **The 2LZM fragment libraries (aa2LZMA03_05.200_v1_3 and aa2LZMA09_05.200_v1_3),**  
@@ -84,9 +86,10 @@ This tutorial presents a protein folding benchmark experiment. Bacteriophage T4 
 
         1. *Or, make fragment libraries using make_fragments.pl (not covered by this tutorial; see Appendix).*
         1. Or copy the fragments already provided:
-            $> cp input_files/aa2LZMA03_05.200_v1_3 .
-            $> cp input_files/aa2LZMA09_05.200_v1_3 .
-            $> cp input_files/2LZMA.checkpoint .
+        
+                $> cp input_files/aa2LZMA03_05.200_v1_3 .
+                $> cp input_files/aa2LZMA09_05.200_v1_3 .
+                $> cp input_files/2LZMA.checkpoint .
 
     1. Prepare the topology broker setup file.
         
