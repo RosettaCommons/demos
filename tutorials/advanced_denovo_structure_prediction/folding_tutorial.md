@@ -221,11 +221,8 @@ This tutorial presents a protein folding benchmark experiment. Bacteriophage T4 
 ##Tutorial 2: Protein Folding with Restraints
 
 1. Prepare your working directory. You will work in this directory for the rest of the tutorial.
-    1. Create a directory in the protein_folding directory called my_files_cst and switch to that directory. 
-            
-            cd ~/rosetta_workshop/tutorials/protein_folding/
-            mkdir my_files_cst
-            cd my_files_cst
+    
+            cd <path-to-Rosetta>/demos/tutorials/advanced_denovo_structure_prediction
 
 1. Prepare your input files.
     1. Generate the constraints (cst) file.
@@ -236,9 +233,9 @@ This tutorial presents a protein folding benchmark experiment. Bacteriophage T4 
 
         1. Copy the cst file to your working directory.
 
-                cp ../input_files/2LZM_dist_w1.cst .
+                cp input_files/2LZM_dist_w1.cst .
 
-        1. Review the cst file by opening it in a text editor.
+        1. Review the cst file by opening it in a text editor. For more information, check the [constraint tutorial](Tutorial_8_Constraints).
 
         1. The cst file has the basic format: 
 
@@ -261,22 +258,24 @@ This tutorial presents a protein folding benchmark experiment. Bacteriophage T4 
     1. Generate the options file. This file provides the options needed to fold soluble proteins, and also contains the Rosetta options needed specifically for folding proteins with restraints (EPR distance restraints in this case).
 
         **The 2LZM_broker_cst.options file is provided for you in the**   
-        **~/rosetta_workshop/tutorials/protein_folding/input_files/**  
+        **input_files/**  
         **directory.**
 
         1. Try generating this options file on your own. Rosetta ignores lines beginning with # (these are treated as comments). 
         1. Avoid mixing tabs and spaces.  Be consistent in your formatting (tab-delimited or colon-separated).
-        1. Save the file in your working directory.
+        1. Save the file in your working directory or copy from the input_files:
+        
+                $> cp input_files/2LZM_broker_cst.options .
 
     1. Copy the remaining files needed for protein folding from the input_files directory.
 
-            cp ../input_files/2LZMA.pdb .
-            cp ../input_files/2LZMA.fasta .
-            cp ../input_files/aa2LZMA03_05.200_v1_3 .
-            cp ../input_files/aa2LZMA09_05.200_v1_3 .
-            cp ../input_files/2LZMA.psipred_ss2 .
-            cp ../input_files/topology_broker_cst.tpb .
-            cp ../input_files/2LZMA_core.txt .
+            cp input_files/2LZMA.pdb .
+            cp input_files/2LZMA.fasta .
+            cp input_files/aa2LZMA03_05.200_v1_3 .
+            cp input_files/aa2LZMA09_05.200_v1_3 .
+            cp input_files/2LZMA.psipred_ss2 .
+            cp input_files/topology_broker_cst.tpb .
+            cp input_files/2LZMA_core.txt .
 
 1. Run the topology broker to *de novo* fold the input protein guided by experimental restraints.
 
@@ -284,7 +283,7 @@ This tutorial presents a protein folding benchmark experiment. Bacteriophage T4 
     1. Make sure you are in your working directory for the constraints run.
     1. Type the following command line:
     
-            ~/rosetta_workshop/rosetta/main/source/bin/minirosetta.default.linuxgccrelease \
+            $> <path-to-Rosetta>/main/source/bin/minirosetta.default.linuxgccrelease \
             @2LZM_broker_cst.options > 2LZM_broker_cst.log &
         
         - NOTE: This will take 15-20 minutes per structure.
@@ -367,7 +366,7 @@ This tutorial presents a protein folding benchmark experiment. Bacteriophage T4 
             1. In a bash shell, execute:
             
                     for pdb in `ls *.pdb`; do
-                        ../scripts/calc_exp_viol_spline.pl \
+                        scripts/calc_exp_viol_spline.pl \
                         ${pdb} 2LZM_dist_w1.cst 25 > ${pdb}_cst_viol.txt
                     done
 
