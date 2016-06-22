@@ -94,7 +94,7 @@ The left plot shows that the lowest energy models also have the lowest rmsd - th
   
  * Extract those models from the silent file:
  
-        $  ../../../main/source/bin/extract_pdbs.default.clangrelease \  
+        $  ../../../main/source/bin/extract_pdbs.default.linuxclangrelease \  
         -in:file:silent_struct_type binary \  
         -in:file:silent AbRelax.out \  
         -in:file:tags <e.g. S_0013 S_0780_1 ...>

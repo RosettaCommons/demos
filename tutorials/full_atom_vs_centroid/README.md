@@ -119,7 +119,7 @@ Using the wrong representation
 ###Centroid input when protocol expects full atom
 The following demo runs the [scoring protocol](https://www.rosettacommons.org/demos/latest/tutorials/scoring/README) (which expects to a full atom input) with an centroid PDB as input.
 
-    $> <path_to_Rosetta_directory>/main/source/bin/score_jd2.linuxgccrelease @flag_cen_for_fa
+    $> ../../../main/source/bin/score_jd2.linuxgccrelease @flag_cen_for_fa
 
 If we provide a centroid PDB input to a protocol that expects a full atom input, typically, the program does not crash. Instead, Rosetta first discards the centroid psedu-atoms and displays the following warnings:
 
@@ -212,9 +212,9 @@ To convert a full atom PDB to centroid, we need to interface with Rosetta at a l
 ```
 This can be found at `<path_to_Rosetta_directory>/demos/tutorials/full_atom_vs_centroid\fa_to_cen.xml`. To run this script from the terminal, we will use the `rosetta_scripts` executable:
 
-    $> <path_to_Rosetta_directory>/main/source/bin/rosetta_scripts.linuxgccrelease @flag_from_fa_to_cen
+    $> ../../../main/source/bin/rosetta_scripts.linuxgccrelease @flag_from_fa_to_cen
 
 
-This should produce a centroid file  `<path_to_Rosetta_directory>/demos/tutorials/full_atom_vs_centroid/output_files/1qys_0001.pdb`
+This should produce a centroid file  `../../../demos/tutorials/full_atom_vs_centroid/output_files/1qys_0001.pdb`
 
-Compare this to the PDB `<path_to_Rosetta_directory>/demos/tutorials/full_atom_vs_centroid/output_files/expected_output/1qys_0001.pdb`. The files should be exactly the same.
+Compare this to the PDB `../../..//demos/tutorials/full_atom_vs_centroid/output_files/expected_output/1qys_0001.pdb`. The files should be exactly the same.

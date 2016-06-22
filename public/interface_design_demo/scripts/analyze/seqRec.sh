@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-rosetta_path=/nas02/home/k/h/khouli/rosetta
+rosetta_path=/home/frank/rosetta
 seq_bin=${rosetta_path}/rosetta_source/bin/sequence_recovery.linuxgccrelease
 rosetta_database=${rosetta_path}/rosetta_database
 

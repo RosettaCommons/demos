@@ -34,7 +34,7 @@ For this exercise, we'll be doing our pre-docking preparations in the protein\_p
 
 1. Navigate to the ligand docking directory where you will find the ligand_prep, protein_prep, docking, and answers folders 
 
-		cd ~/rosetta_workshop/tutorials/ligand_docking 
+		cd ../../../rosetta_workshop/tutorials/ligand_docking 
 
 2. Prepare a human dopamine 3 receptor structure. We will do this by obtaining the crystal structure (3PBL) and removing the excess information. 
     1. Change into the protein_prep directory with the cd command
