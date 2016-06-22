@@ -1,6 +1,6 @@
 Scoring Tutorial
 ================
-Tutorial by Shourya S. Roy Burman   
+Tutorial by Shourya S. Roy Burman (ssrb@jhu.edu) 
 Created 20 June 2016
 
 [[_TOC_]]
@@ -90,7 +90,7 @@ Demo
 ###Preparing PDBs for Scoring
 To score a biomoleule in Rosetta, we use the `score_jd2` executable. This application, along with most in Rosetta, expect the input PDB to be formatted in a certain manner. A PDB downloaded directly from the Protein Data Bank may or may not work with Rosetta in general, and `score_jd2` in particular. Here's an example where we try to score the PDB 3TDM. When in the right demo directory, run:
 
-    $><path_to_Rosetta_directory>/main/source/bin/score_jd2.linuxgccrelease -in:file:s input_files/from_rcsb/3tdm.pdb
+    $> <path_to_Rosetta_directory>/main/source/bin/score_jd2.linuxgccrelease -in:file:s input_files/from_rcsb/3tdm.pdb
    
 The application will exit with the following error:
 
@@ -98,13 +98,13 @@ The application will exit with the following error:
     
 This PDB contains a phosphate ion that Rosetta is unable to process without additional options. To score this PDB, we will add an option `-ignore_unrecognized_res`, which simply ignores the phosphates in the PDB.
 
-    $><path_to_Rosetta_directory>/main/source/bin/score_jd2.linuxgccrelease -in:file:s input_files/from_rcsb/3tdm.pdb -ignore_unrecognized_res
+    $> <path_to_Rosetta_directory>/main/source/bin/score_jd2.linuxgccrelease -in:file:s input_files/from_rcsb/3tdm.pdb -ignore_unrecognized_res
 
-Now the PDB will be scored and the score will be dsplayed in a file `score.sc`(henceforth called the _score file_) in your current working directory. We will learn how to analyze and interpret this file in the next section.
+Now the PDB will be scored and the score will be displayed in a file `score.sc`(henceforth called the _score file_) in your current working directory. We will learn how to analyze and interpret this file in the next section. *To proceed on to the next step, remove `score.sc` by typing `rm score.sc`. Else, all energy scores of the structures scored here onwards will be appended to this file.*
 
 If an input PDB does not meet the exact specifications that Rosetta requires, eg. it has missing heavy atoms or unusual residues that Rosetta recognizes by default (unlike phosphates), Rosetta adds or changes atoms to satisfy the specifications. You can ask it to output the structure it actually scores by including the option `out:pdb`. In this example, we will score the PDB 1QYS taken directly from the Protein Data Bank:
 
-    $><path_to_Rosetta_directory>/main/source/bin/score_jd2.linuxgccrelease -in:file:s input_files/from_rcsb/1qys.pdb -out:pdb
+    $> <path_to_Rosetta_directory>/main/source/bin/score_jd2.linuxgccrelease -in:file:s input_files/from_rcsb/1qys.pdb -out:pdb
     
 In the log, you will see the following lines:
 ```html
@@ -125,6 +125,7 @@ SEQUENCE:
 SCORE: total_score dslf_fa13    fa_atr    fa_dun   fa_elec fa_intra_rep       fa_rep       fa_sol hbond_bb_sc hbond_lr_bb    hbond_sc hbond_sr_bb linear_chainbreak             omega overlap_chainbreak            p_aa_pp pro_close      rama       ref yhh_planarity description 
 SCORE:     267.496     0.000  -422.275   290.201   -25.824        1.313      238.436      248.433      -1.045     -23.835      -2.245     -22.744             0.000             1.234              0.000             -4.258     0.000     2.749   -12.643         0.000 1qys_0001
 ```
+*To proceed on to the next step, remove `score.sc` by typing `rm score.sc`. Else, all energy scores of the structures scored here onwards will be appended to this file.*
 
 To avoid these issues, it is recommended that you always refine the PDB with the [relax]() protocol with the same _score function_ that you intend to eventually score with. This relieves clashes and prepares the structure for scoring in Rosetta. More details on how to do this in later tutorials. Let us switch our focus to scoring refined PDBs.
 
@@ -270,7 +271,7 @@ We will run this on the refined 1QYS PDB using
 This should produce a file called `per_res.sc` in `output_files` directory. Compare this to `<path_to_Rosetta_directory>/demos/tutorials/scoring/output_files/expected_output/per_res.sc`). They should be the same. The file will look like:
 
 ```html
-SCORE:     pose_id     pdb_id     fa_atr     fa_rep     fa_sol    fa_intra_rep    fa_elec    pro_close    hbond_sr_bb    hbond_lr_bb    hbond_bb_sc    hbond_sc    dslf_fa13       rama      omega     fa_dun    p_aa_pp    yhh_planarity        ref      score description
+SCORE:     pose_id               pdb_id     fa_atr     fa_rep     fa_sol    fa_intra_rep    fa_elec    pro_close    hbond_sr_bb    hbond_lr_bb    hbond_bb_sc    hbond_sc    dslf_fa13       rama      omega     fa_dun    p_aa_pp    yhh_planarity        ref      score description
 SCORE:  input_files/1qys.pdb         3A     -2.666      0.270      2.416           0.025     -0.269        0.000          0.000          0.000          0.000      -0.324        0.000      0.000      0.010      1.894      0.000            0.000     -1.630     -0.273   residue_1
 SCORE:  input_files/1qys.pdb         4A     -5.618      0.237      2.802           0.026     -0.123        0.000          0.000         -0.564          0.000       0.000        0.000     -0.262      0.007      0.814     -0.348            0.000      1.081     -1.949   residue_2
 ...
@@ -294,7 +295,7 @@ We will run this on the refined 1QYS PDB using
 This should produce a file called `energy_breakdown.sc` in `output_files` directory. Compare this to `<path_to_Rosetta_directory>/demos/tutorials/scoring/output_files/expected_output/energy_breakdown.sc`). They should be the same. The file will look like:
 
 ```html
-SCORE:     pose_id      resi1     pdbid1    restype1      resi2     pdbid2    restype2     fa_atr     fa_rep     fa_sol    fa_intra_rep    fa_elec    pro_close    hbond_sr_bb    hbond_lr_bb    hbond_bb_sc    hbond_sc    dslf_fa13       rama      omega     fa_dun    p_aa_pp    yhh_planarity        ref      total                    description
+SCORE:     pose_id                resi1     pdbid1    restype1      resi2     pdbid2    restype2     fa_atr     fa_rep     fa_sol    fa_intra_rep    fa_elec    pro_close    hbond_sr_bb    hbond_lr_bb    hbond_bb_sc    hbond_sc    dslf_fa13       rama      omega     fa_dun    p_aa_pp    yhh_planarity        ref      total                    description
 SCORE:  input_files/1qys.pdb          1         3A         ASP         --         --     onebody      0.000      0.000      0.000           0.025      0.000        0.000          0.000          0.000          0.000       0.000        0.000      0.000
 ...
 SCORE:  input_files/1qys.pdb          1         3A         ASP          2         4A         ILE     -1.518      0.072      1.027           0.000      0.721        0.000          0.000          0.000          0.000       0.000        0.000      0.000      0.000      0.000      0.000            0.000      0.000      0.301 input_files/1qys.pdb_1_2
