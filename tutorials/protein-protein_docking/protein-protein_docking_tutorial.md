@@ -173,7 +173,7 @@ This tutorial presents a cross-docking benchmark experiment. Antibody CR6261 bin
     
     **If your docking run is not finished yet, you can try out this step with pre-generated results. Make a new directory and copy the file docking.silent from the  output_files/ directory into this new directory.** You can also simply copy the extracted files using:
     
-            $> cp output_diles/*full*pdb *minimize*pdb .
+            $> cp output_files/*full*pdb output_files/*minimize*pdb .
 
     1.  Characterize your models using the InterfaceAnalyzer mover in RosettaScripts and calculate the RMSD to the native crystal structure with the RMSD filter.
 
