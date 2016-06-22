@@ -121,7 +121,7 @@ The atom names given on the ATOM lines are column formatted, so don't add extra 
 
 It is also necessary to change the CYS which is forming the chemical bond with the flavin in the 2V0W pdb file to a modified CYS conformation. The version of CYS in Rosetta which forms a chemical bond to something else is named CYX. So rename residue 450 to CYX from CYS. This residue-type is defined in database/chemical/residue_type_sets/fa_standard/residue_types/sidechain_conjugation/CYX.params. It is not automatically read in when Rosetta loads: its entry in the rosetta_database/chemical/residue_type_sets/fa_standard/residue_types.txt file is commented out, so we also have to uncomment this line. ALTERNATIVELY: we can explicitly add this file to the list of files that Rosetta loads by including it on the command line as we did above. The flag for this would be:
 ```
--extra_res_fa <path-to-database>/chemical/residue_type_sets/fa_standard/residue_types/sidechain_conjugation/CYX.params
+-extra_res_fa sidechain_conjugation/CYX.params
 ```
 
 # Making a constraints file
@@ -139,8 +139,8 @@ Angle CB 50 SG 50 C8 147 HARMONIC 1.94080613 0.034906585
 
 where for the first constraint, 1.93207948 represents the ideal angle (x0) of 110.7 degrees, given in radians, and 0.034906585 represents a standard deviation of 2 degrees, given in radians.
 
-** From google: 110.7 * pi / 180 = 1.93207948<br>
-** From google:   2.0 * pi / 180 = 0.034906585<br>
+** From Google: 110.7 * pi / 180 = 1.93207948**<br/>
+** From Google:   2.0 * pi / 180 = 0.034906585**<br/>
 
 For more information about the constraints, you can check: tutorials/constraint_tutprial
 
