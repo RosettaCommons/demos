@@ -3,7 +3,7 @@ As one of the test to evaluate the design we dock the TS structure into the prot
 To run the docking application, use the following commandline:
 
 ```bash
-$> <path_to_Rosetta_directory>/main/source/bin/ligand_dock.default.linuxgccrelease -database ~/rosetta/rosetta_database/ -s $1 @flags
+$> <path_to_Rosetta_directory>/main/source/bin/ligand_dock.default.linuxgccrelease -in:file:s dock_design.pdb @flags
 ```
 
 You may need to change ".default.linuxgccrelease" in the above to match your build, operating system, and compiler.  For example, if you were using the Intel icc compiler and a static debug-mode build, it would become ".static.linuxiccdebug".
