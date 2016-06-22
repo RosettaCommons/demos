@@ -136,7 +136,7 @@ $> <path_to_Rosetta_directory>/main/source/bin/rosetta_scripts.linuxgccrelease -
 
 In the tracer output, Rosetta should print its interpretation of the XML input. 
 
-```
+```xml
 <ROSETTASCRIPTS>
 	<SCOREFXNS/>
 	<RESIDUE_SELECTORS/>
@@ -260,30 +260,30 @@ Now let's look at another example of output control at the commandline: we may n
 $> <path_to_Rosetta_directory>/main/source/bin/rosetta_scripts.linuxgccrelease -s 1ubq.pdb -parser:protocol scoring.xml -out:file:silent scoring.silent
 ```
 
-		This time, the output will be a binary silent file.  PDB files can be extracted from binary silent files using the extract_pdbs application.
+This time, the output will be a binary silent file.  PDB files can be extracted from binary silent files using the extract_pdbs application.
 
 ## Altering the Pose: Movers
 ----------------------------
 
 * *Minimize the pose before outputting*
 
-The core of a RosettaScript XML is the movers. Movers are what will change the structure. Technically, movers are anything that changes the *pose*. While this includes the atomic coordinates, it also includes other information about the structure, such as the FoldTree and constraints. There are certain movers which will change just this auxiliary information, and not the coordinates.
+The core of a RosettaScript XML is the movers. Movers are what will change the structure. Technically, movers are anything that changes the *pose*. While this includes changes to the atomic coordinates, it also includes changes to other features of the pose, including the FoldTree, constraints, sequence, or covalent connectivity. There are certain movers which will change just this auxiliary information, without altering atomic coordinates at all.
 
-For our protocol, we're going to start by adding a mover to do gradient minimization on the pose. The available movers are listed on the [Rosetta documentation page](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/Movers/Movers-RosettaScripts). You can glance through the table of contents for the appropriate section (e.g. "Packing/Minimization") and then look for an appropriate mover (e.g. [MinMover](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/Movers/movers_pages/MinMover): Minimizes sidechains and/or backbone).
+As an initial demonstration, we're going to start by writing a script that uses a mover to do gradient-descent energy minimization of the pose. The available movers are listed on the [Rosetta documentation page](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/Movers/Movers-RosettaScripts). You can glance through the table of contents for the appropriate section (e.g. "Packing/Minimization") and then look for an appropriate mover (e.g. [MinMover](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/Movers/movers_pages/MinMover): Minimizes sidechains and/or backbone).
 
-In each mover documentation page there should be an example tag. Make a copy of scoring.xml called minimization.xml, and then copy that example tag between the `<MOVERS>` begin and end tags. Note that indentation doesn't matter to Rosetta, although it's easier for *you* to read if things are properly indented.
+In each mover documentation page there should be an example tag. Make a copy of scoring.xml called minimization.xml, and then copy that example tag to a place between the ```<MOVERS>``` and ```</MOVERS>``` tags. Again, indentation doesn't matter to Rosetta, although it's easier for *you* to read if things are properly indented.
 
 Depending on the mover, the Mover tags in Rosetta scripts can be configured in one of two ways. They can either take subtags, or they can can have options specified within the tag itself. The MinMover can be configured in both ways. It can take a MoveMap specification as subtags, and other parameters are specified as options (attributes) in the tag itself. What each of the available options means should be described on the mover documentation page.
 
-One option that should be in the tag for each mover is the "name" option. This will be what the mover is referred to in the PROTOCOLS section (more on that below). The value given should be unique to each mover tag; you can have multiple MinMovers as long as their names are different.
+As mentioned previously, one option that should be in the tag for each mover is the "name" option, with which the user creates a unique handle for referring to that particular instance of the mover (in the PROTOCOLS section, covered below, for example). The value given should be unique to each instance of a mover.  You can have multiple MinMovers as long as their names are different.
 
-The other options in the tag control how the mover behaves. Most of the options in a tag will have default values associated with it. These are the values which will be used if the option is not provided with the tag. The default values are frequently (though not always) the recommended values for the option, so if you are unsure as to what the option value should be, omitting the option and having it be the default is a good choice. This is what we'll do with the type, tolerance, and max_iter options. We'll also do this with the MoveMap subtag, leaving it be the default (all atoms move). Other options do not have a default option listed, and if you omit them you will get an error like `Option 'bb' not found in Tag named 'MinMover'`.
+The other options in the tag control the mover's behaviour. Most of the options in a tag will have default values associated with them. These are the values which will be used if the option is not provided with the tag. The default values are frequently (though not always) the recommended values for the option, so if you are unsure as to what the option value should be, omitting the option and having it revert to the default value is a good choice. This is what we'll do with the type, tolerance, and max_iter options in this case. We'll also do this with the MoveMap subtag, leaving it be the default (all atoms move), for now. Other options do not have a default option listed, and if you omit them you will get an error like `Option 'bb' not found in Tag named 'MinMover'`.
 
 Note: Boolean options in the XML can take the same representations of true and false which can be used on the commandline: 1/0, T/F, Y/N, true/false, on/off, etc.
 
 For our example script, we'll make two MinMovers. One we'll call "min_torsion", which will have the cartesian option set to false (so it will use the default torsional minimization) and will use the t13 scorefunction. The other we'll call "min_cart", and it will have the cartesian option set to true and use the t14_cart scorefunction. Both will have bb and chi set to true.
 
-Declaring the movers in the MOVERS section only defines the movers and their options - it doesn't tell Rosetta to apply them to the pose. To do that, you need to add the mover to the PROTOCOLS section. When RosettaScripts runs on a structure, it will run sequentially through all the entries in the PROTOCOLS section, executing each in order, the output of the previous mover becoming the input to the next. In our protocols section we'll add the "min_cart" mover. Since this is the only mover in the PROTOCOLS section, this is the only mover which will be run. The min_torsions mover will be defined, but will not be applied to the pose. (The mover can be specified with either the "mover" or "mover_name" option.) 
+Declaring the movers in the MOVERS section only tells Rosetta that the movers exist and configures their options; however, it doesn't tell Rosetta that they should be applied to the pose (or in what order, or the number of times). The PROTOCOLS section is used to define the sequence of steps that the rosetta_scripts application will carry out. When RosettaScripts runs on a structure, it will run sequentially through all the entries in the PROTOCOLS section, executing each in order, the output of the previous mover (or filter, as we will see later) becoming the input to the next. In our protocols section we'll add the "min_cart" mover. Since this is the only mover in the PROTOCOLS section, this is the only mover which will be run. The min_torsions mover will be defined, but will not be applied to the pose. (The mover can be specified with either the "mover" or "mover_name" option.) 
 
 ```
 ...
@@ -301,10 +301,31 @@ Declaring the movers in the MOVERS section only defines the movers and their opt
 ...
 ```
 
-	$> cp inputs/minimize.xml .
-	$> rosetta_scripts.linuxgccrelease -s 1ubq.pdb -parser:protocol minimize.xml -out:prefix minimize_
+```bash
+$> cp inputs/minimize.xml .
+$> <path_to_Rosetta_directory>/main/source/bin/rosetta_scripts.linuxgccrelease -s 1ubq.pdb -parser:protocol minimize.xml -out:prefix minimize_
+```
 
-Within the tracer output you should see indications that your movers are being used (e.g. "BEGIN MOVER MinMover - min_cart"). Also, if you look at the total scores from the output PDB, you should get much better scores for the minimized 1ubq than the one just rescored with t14_cart. (about -155 versus +460). 
+Within the tracer output you should see indications that your movers are being used (e.g. "BEGIN MOVER MinMover - min_cart"). Also, if you look at the total scores from the output PDB, you should get much better scores for the minimized 1ubq than the one just rescored with t14_cart. (about -155 versus +460).
+
+Now let's add the other minimization mover, to demonstrate how movers can be placed in series.  Add the marked line shown below to your script (or use the inputs/minimize2.xml file):
+
+```
+...
+    <PROTOCOLS>
+        <Add mover="min_torsion" /> #Add this line
+        <Add mover="min_cart" />
+    </PROTOCOLS>
+...
+```
+
+```bash
+$> cp inputs/minimize2.xml .
+$> <path_to_Rosetta_directory>/main/source/bin/rosetta_scripts.linuxgccrelease -s 1ubq.pdb -parser:protocol minimize2.xml -out:prefix minimize2_
+```
+
+This time, when you run the application, you'll find that the torsion-space minimization is carried out first (using the talaris_2013 scorefunction), and the Cartesian-space minimization is carried out on the output structure from the torsion-space minimization (using the talaris_2014 scorefunction, modified with the cart_bonded term turned on and the pro_close term turned off).  Note that Rosetta does not write out any structures until the end of the protocol.
+
 
 ## ResidueSelectors and TaskOperations
 -----------------------------------
