@@ -182,7 +182,7 @@ Conventionally, tags are indented in proportion to their level of nesting, but t
 <PackRotamers name=pack2 task_operations=task2, task2, task3 /> #This will be misinterpreted
 ```
 
-This brings up another RosettaScripts syntax convention: generally, we have blocks that define *types* of objects.  For example, the ```<MOVERS> ... </MOVERS>``` block is the place to define movers, and the ```<FILTERS> ... </FILTERS>``` block is the place to define filters.  Within these blocks, we define specific objects of the given types, and we set options for these objects, including, in most cases, a unique name by which that object will be addressed at later points in the script.  For example:
+This brings up another RosettaScripts syntax convention: generally, we have blocks that define *types* of objects, and within these blocks, we define individual *instances* of objects of the type, giving each one a unique name.  For example, the ```<MOVERS> ... </MOVERS>``` block is the place to define movers, and the ```<FILTERS> ... </FILTERS>``` block is the place to define filters.  Within these blocks, we define specific objects of the given types, and we set options for these objects, including, in most cases, a unique name by which that object will be addressed at later points in the script.  For example:
 
 ```xml
 	<MOVERS>  #In this section, movers are defined.
