@@ -1,6 +1,4 @@
-#####################################################################
-Fragment assembly of RNA (FARNA) with base pair steps (-bps_moves).
-#####################################################################
+# Fragment assembly of RNA (FARNA) with base pair steps (-bps_moves).
 
 README written in Nov. 2015 by Rhiju Das.
 
