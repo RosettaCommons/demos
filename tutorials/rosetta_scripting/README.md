@@ -470,7 +470,7 @@ Let's consider a more complicated (and more realistic) usage case -- one that de
 | |TaskOperations | ResidueSelectors |
 |---|---|---|
 | Intended purpose | Setting packer behaviours. (*e.g.* Disabling design, limiting allowed residue idenities at certain sequence positions, enabling extra rotamers, telling the packer to include the input rotamer, *etc.*). |  Selecting subsets of residues in a pose based on rules, then passing the subsets as inputs to other Rosetta modules.  |
-
+| Rule for combining | Commutativity: applying TaskOperation A, B, and C produces the same effect regardless their order. | Boolean operations: ResidueSelectors produce selections that can be combined to produce the union (OR) or intersection (AND) of the set, or which can be inverted (NOT).  Nested Boolean operations allow very complicated combination rules. |
 
 
 # Filters
