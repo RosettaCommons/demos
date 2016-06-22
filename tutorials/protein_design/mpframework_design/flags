@@ -1,0 +1,8 @@
+-parser:protocol mpf_design.xml
+-s 3UKM_A.pdb
+-mp:setup:spanfiles 3UKM.span
+-mp:scoring:hbond
+-nstruct 1
+-in:ignore_unrecognized_res
+-packing:pack_missing_sidechains false
+-score:weights mpframework_smooth_fa_2012.wts
