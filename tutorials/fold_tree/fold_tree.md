@@ -1,5 +1,5 @@
 # Fold tree
-
+KEYWORDS: CORE_CONCEPTS GENERAL
 In this tutorial you will learn about the concept of fold tree, internal coordinates, and how to use them wisely to obtain meaningfull outputs.
 
 #### Internal Coordinates

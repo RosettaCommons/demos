@@ -1,4 +1,5 @@
 # Working With Rosetta
+KEYWORDS: CORE_CONCEPTS GENERAL
 Written by Frank Teets
 Last Modified Jun 21 2016
 ##Required Software
