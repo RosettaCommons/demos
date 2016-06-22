@@ -52,7 +52,12 @@ Span file:
 
 Adjust the paths in the command.sh script provided in this folder and run it:
 
-    $ ./command.sh
+    $> cd MP_Dock_prepacking
+    $> docking_prepack_protocol.linuxgccrelease  @flags
+
+If you want to see the run in pymol, instead do:
+
+    $ docking_prepack_protocol.linuxgccrelease  @flags -show_simulation_in_pymol 0
 
 For the paper, we used 10 output models and selected the lowest scoring model by
 total Rosetta score. More models might be better, even though probably not totally
@@ -139,8 +144,13 @@ Example inputs are found in the input folder.
 #### Running the Application
 
 Adjust the paths in the command.sh script provided in this folder and run it:
+  
+    $> cd ../MP_Dock
+    $> mpdocking.linuxgccrelease @flags
 
-    $ ./command.sh
+If you want to see the run in pymol, instead do:
+
+    $ mpdocking.linuxgccrelease @flags -show_simulation_in_pymol 0
 
 For production runs, build at least 1000 models. 
 
