@@ -6,4 +6,4 @@
 -mute core.io.database
 -analytic_etable_evaluation false
 -score:rna_torsion_potential rd2008
--restore_pre_talaris_2013_behavior
+#-restore_pre_talaris_2013_behavior
