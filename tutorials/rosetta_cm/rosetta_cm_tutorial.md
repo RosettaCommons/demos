@@ -2,7 +2,10 @@
 
 # Comparative Modeling: Multi-template modeling with RosettaCM#
 
+KEYWORDS: STRUCTURE_PREDICTION HOMOLOGY_MODELING
+
 This tutorial will guide you through modeling the rhodopsin, a class A GPCR using comparative modeling with multiple templates. This protocol also includes additional relax to incorporate a disulfide bond. Multi-template comparative modeling will be performed with the RosettaCM protocol and three class A GPCR templates (beta-2 adrenergic receptor, PDB: 2RH1; Adenosine A2A receptor, PDB: 3EML; and CXCR4, PDB: 3ODU). Final results can be compared to the actual crystal structure of rhodopsin (PDB: 1U19) for accuracy.
+
 
 
 ## 1. Setup ##
