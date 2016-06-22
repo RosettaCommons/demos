@@ -107,7 +107,7 @@
   	   < BluePrintBDR name=bdr1 scorefxn=SFXN1 use_abego_bias=1 blueprint="./input1.bbskel" />
 
            ## Repeat the backbone building util satisfying the compound filter.
-           < LoopOver     name=lover1 mover_name=bdr1 filter_name=cm1 iterations=1000 drift=0 ms_whenfail=FAIL_DO_NOT_RETRY/>
+           < LoopOver     name=lover1 mover_name=bdr1 filter_name=cm1 iterations=10 drift=0 ms_whenfail=FAIL_DO_NOT_RETRY/>
 
            ## ====== For step 2 ======= ##
 
@@ -118,12 +118,12 @@
   	   < BluePrintBDR name=bdr2 scorefxn=SFXN2 use_abego_bias=1 blueprint="./input2.bbskel" />
 
            ## Repeat the backbone building utill satisfying the filter
-           < LoopOver     name=lover2 mover_name=bdr2 filter_name=cm2 iterations=1000 drift=0 ms_whenfail=FAIL_DO_NOT_RETRY/>
+           < LoopOver     name=lover2 mover_name=bdr2 filter_name=cm2 iterations=10 drift=0 ms_whenfail=FAIL_DO_NOT_RETRY/>
 
            ## ====== For step 3 ======= ##
              
            ## Iterate the sidechain design and the relaxation of entire structure
-           < FlxbbDesign name=flxbb1 ncycles=3 constraints_sheet=10.0 sfxn_design=SFXN3 sfxn_relax=SFXN3 clear_all_residues=1 task_operations=limitchi2,layer_all blueprint="./input2.bbskel" resfile="./input.resfile" />
+           < FlxbbDesign name=flxbb1 ncycles=1 constraints_sheet=10.0 sfxn_design=SFXN3 sfxn_relax=SFXN3 clear_all_residues=1 task_operations=limitchi2,layer_all blueprint="./input2.bbskel" resfile="./input.resfile" />
 
            ## ====== For step 4 ======= ##
 
@@ -131,7 +131,7 @@
            < Dssp name=dssp />
 
            ## Iterate the sidechain design and the relaxation of entire structure.
-           < FlxbbDesign name=flxbb2 ncycles=5 constraints_sheet=10.0 sfxn_design=SFXN3 sfxn_relax=SFXN3 clear_all_residues=1 task_operations=limitchi2,layer_all blueprint="./input2.bbskel" resfile="./input.resfile" />
+           < FlxbbDesign name=flxbb2 ncycles=1 constraints_sheet=10.0 sfxn_design=SFXN3 sfxn_relax=SFXN3 clear_all_residues=1 task_operations=limitchi2,layer_all blueprint="./input2.bbskel" resfile="./input.resfile" />
 
 	</MOVERS>
 	<APPLY_TO_POSE>

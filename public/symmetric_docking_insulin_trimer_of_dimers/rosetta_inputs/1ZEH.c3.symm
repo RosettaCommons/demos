@@ -3,7 +3,7 @@ subunits 3
 recenter
 number_of_interfaces  1
 E = 3*VRT0001 + 3*(VRT0001:VRT0002)
-anchor_residue COM
+anchor_residue 17
 virtual_transforms_start
 start -1,0,0 0,1,0 0,0,0
 rot Rz 3

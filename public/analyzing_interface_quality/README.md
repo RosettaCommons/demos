@@ -1,6 +1,6 @@
 Analyzing Interface Quality
 ===========================
-
+KEYWORDS: ANALYSIS INTERFACES STRUCTURE_PREDICTION
 Outline
 -------
 You have been provided with two PDBs to use for demonstration: 1U6E, a simple homodimer, and 3R2X, Sarel's hemaglutinin/designed protein structure.  In the latter case, we will calculate the interface between the designed protein and the HA - the interface between HA chains is unimportant.

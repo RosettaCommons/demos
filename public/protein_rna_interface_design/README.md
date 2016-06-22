@@ -1,3 +1,6 @@
+#Protein-RNA Interface Design
+KEYWORDS: NUCLEIC_ACIDS INTERFACES RNA
+
 This tutorial explains how to use rosetta scripts to redesign amino acids in a protein-RNA interface.
 
 This demo was last modified by Parisa Hosseinzadeh in 2016.

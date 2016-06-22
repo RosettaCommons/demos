@@ -5,8 +5,8 @@
 -loops:frag_sizes 9 3 1
 -loops:frag_files aat000_09_05.200_v1_3 aat000_03_05.200_v1_3 none
 -loops:remodel quick_ccd
--loops:ccd_closure
 -loops:random_loop
+-ccd:max_cycles 5
 -out:prefix 3k2m_
 -mut core.io.database
--nstruct 5
+-nstruct 1

@@ -1,0 +1,31 @@
+<ROSETTASCRIPTS>
+    <SCOREFXNS>
+        <t13 weights="talaris2013" />
+        <t14_cart weights="talaris2014" >
+            <Reweight scoretype="pro_close" weight="0.0" />
+            <Reweight scoretype="cart_bonded" weight="0.625" />
+        </t14_cart>
+    </SCOREFXNS>
+    <RESIDUE_SELECTORS>
+    </RESIDUE_SELECTORS>
+    <TASKOPERATIONS>
+    </TASKOPERATIONS>
+    <FILTERS>
+    </FILTERS>
+    <MOVERS>
+        <MinMover name="min_torsion" scorefxn="t13" chi="true" bb="1" cartesian="F" >
+        	<MoveMap name="min_torsion_mm">
+        		<Span begin="1" end="999" chi="false" bb="false" />
+        		<Span begin="1" end="50" chi="true" bb="true" />
+        		<Span begin="5" end="10" chi="true" bb="false" />
+        	</MoveMap>
+        </MinMover>
+    </MOVERS>
+    <APPLY_TO_POSE>
+    </APPLY_TO_POSE>
+    <PROTOCOLS>
+	<Add mover="min_torsion" />
+    </PROTOCOLS>
+    <OUTPUT scorefxn="t14_cart" />
+</ROSETTASCRIPTS>
+

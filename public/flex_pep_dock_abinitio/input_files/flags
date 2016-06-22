@@ -1,16 +1,12 @@
 #io flags:
--s start.ppk.pdb
--native native.pdb
--out:pdb_gz
--out:file:silent_struct_type binary
--out:file:silent decoys.silent
--scorefile score.sc
+-s input_files/2b1z.start.pdb
+-native input_files/2b1z.native.pdb
 #If using multiple processes and no silent file:
 #-multiple_processes_writing_to_one_directory
 
 #number of structures to produce
 #for demo:
--nstruct 5
+-nstruct 1
 #for production run:
 #-nstruct 50000
 
@@ -20,15 +16,11 @@
 -flexPepDocking:flexpep_score_only
 
 #packing flags
--ex1
--ex2aro
--use_input_sc
--unboundrot native.pdb
 
 #fragment picker flags:
--frag3 frags/frags.3mers.offset
--frag9 frags/frags.9mers.offset
--flexPepDocking:frag5 frags/frags.5mers.offset
+-frag3 input_files/frags/frags.3mers.offset
+-frag9 input_files/frags/frags.9mers.offset
+-flexPepDocking:frag5 input_files/frags/frags.5mers.offset
 -flexPepDocking:frag5_weight 0.25
 -flexPepDocking:frag9_weight 0.1
 

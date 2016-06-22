@@ -13,9 +13,9 @@
 #general kinematic closure loop modeling flags:
 -in:file:fullatom
 -loops:remodel perturb_kic
--loops:refine refine_kic
+#-loops:refine refine_kic
 #-run:test_cycles  
--loops:outer_cycles 5	
+#-loops:outer_cycles 5	
 -kic_bump_overlap_factor 0.36
 -legacy_kic false
 #-kic_min_after_repack
@@ -30,7 +30,5 @@
 -loops:ramp_rama
 
 #packing flags
--ex1
--ex2
 -extrachi_cutoff 0
 

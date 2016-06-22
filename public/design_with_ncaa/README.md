@@ -1,6 +1,6 @@
 Design with non-canonical amino acids (NCAA)
 ============================================
-
+KEYWORDS: DESIGN NONCANONICALS 
 In the first part of this tutorial we show how to make a point mutation in a 
 PDB file (1l2y) including two non-canonical amino acids (NVL and HLU). 
 In the second part of this tutorial we show how to incorporate novel 

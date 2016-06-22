@@ -1,5 +1,3 @@
-#-database <your database path>
-
 -in:file:s rosetta_inputs/1ZEH_monomer_d3.pdb
 -symmetry:symmetry_definition rosetta_inputs/1ZEH.d3.symm
 -packing:ex1

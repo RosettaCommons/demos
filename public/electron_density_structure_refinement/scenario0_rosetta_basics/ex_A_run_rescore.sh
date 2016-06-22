@@ -1,6 +1,6 @@
 #!/bin/bash
 
-~/rosetta_workshop/rosetta/main/source/bin/score_jd2.linuxgccrelease \
+~/Rosetta/main/source/bin/score_jd2.linuxgccrelease \
  -database ~/rosetta_workshop/rosetta/main/database/ \
  -in::file::s 1isrA.pdb 1issA.pdb \
  -ignore_unrecognized_res \

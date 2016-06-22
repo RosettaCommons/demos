@@ -1,5 +1,5 @@
 # Relax Around Chemically Bound Ligand
-
+KEYWORDS: LIGANDS INTERFACES STRUCTURE_PREDICTION
 This document was originally written by Andrew Leaver-Fay, and completed, expanded and modified for Doxygen by Ron Jacak. It was later modified during documentation XRW 2016 by Parisa Hosseinzadeh and Vikram K. Mulligan (vmullig@uw.edu) to enable automatic testing and to ensure compatibility. 
 
 # Quick Guide
