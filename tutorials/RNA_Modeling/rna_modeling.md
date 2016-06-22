@@ -34,8 +34,9 @@ It should print a help message for the `rna_helix.py` application.
 Example:
 ```bash
 > SAM I-IV riboswitch, RNA puzzle 8
-GGAUCACGAGGGGGAGACCCCGGCAACCUGGGACGGACACCCAAGGUGCUCACACCGGAGACGGUGGAUCCGGCCCGAGAGGGCAACGAAGUCCGU
+ggaucacgagggggagaccccggcaaccugggacggacacccaaggugcucacaccggagacgguggauccggcccgagagggcaacgaaguccgu
 ```
+###### Note: Must have **lowercase** letters.
 Here we name this file as "fasta". 
 
 ### Create a secondary structure file
@@ -64,4 +65,15 @@ make_rna_rosetta_ready.py 2gis_cut.pdb
 Copy the fasta file of the target RNA to the working folder. Convert the uppercase letters to lowercase (should make this automatic in the future). Generate the sequence of the template by running
 ```bash
 pdb2fasta.py 2gis_cut_RNA.pdb >> fasta
+```
+
+Edit the `fasta` file to adjust the alignment. Use '-' to fill missing residues.
+
+Example:
+```bash
+> SAM I-IV riboswitch, RNA puzzle 8
+ggaucacgagggggagaccccggcaaccugggacggacacccaaggugcucacaccggagacgguggauccggcccgagagggcaacgaaguccgu
+
+> 2gis_cut_RNA.pdb
+--aucaagag----------cggcaacca--------------uggugcc----------------gau---------------------------
 ```
