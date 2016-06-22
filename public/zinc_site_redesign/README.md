@@ -5,6 +5,8 @@ This is a demo for the mononuclear zinc metalloenzyme redesign procedure describ
 Authors: Sagar Khare (khares@uw.edu), Per Jr Greisen (pgreisen@gmail.com)
 Edited by Vikram K. Mulligan (vmullig@uw.edu) during the 2016 Documentation XRW.
 
+KEYWORDS: DESIGN METALS INTERFACES ENZYMES
+
 ## Requirements
 
 The scripts in this demo require that [SciPy](https://www.scipy.org/) is installed on the user's system.

@@ -51,11 +51,14 @@ As you noticed, the command you ran had a "mode" option and that you mentioned "
     
     - extras=static builds static binaries. This can be useful for copying and running the apps on other systems.
     - extras=graphics mode enables OpenGL graphics for those apps that support it.
+    - extras=opencl enables GPU usage
     - extras=mpi compiles rosetta in mpi [**M**assage **P**assing **I**nterface](https://computing.llnl.gov/tutorials/mpi/#What) format (for those executables that allow mpi run). for example the code below compiles only the rosetta_scripts in mpi format and release mode using 5 processors:
 
 ```
 > ./scons.py -j 5 mode=release bin/rosetta_scripts.mpi.linuxgccrelease extras=mpi
 ```
+**NOTE** when you build with different extras, the extension will change. For example if you use extras=mpi, you use script.mpi.linuxgccrelease instead of script.default.linuxgccrelease
+
 - Compiler specification
     - by default scons build rosetta using GCC compiler. However you can specify what compiler you want to use and what version using "__cxx__". For example the command below builds Rosetta completely in release mode using clang compiler version 4.5 using 10 processors:
 

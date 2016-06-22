@@ -1,0 +1,8 @@
+-protein input/4ERF_0001.pdb 
+-ligand input/4ERF_XTL_0001.pdb 
+-extra_res_fa input/4ERF_XTL.params 
+-ray_file input/ray_4ERF_0001_61.txt 
+-espGrid_file input/DARC_4ERF.agd
+-num_particles 10
+-num_runs 10
+

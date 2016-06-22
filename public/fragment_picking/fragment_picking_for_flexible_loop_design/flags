@@ -1,0 +1,25 @@
+# Input structure to design
+-s fragment_picking_for_flexible_loop_design/input_files/flexloop_pdb.pdb 
+
+# Input databases
+#-in::file::vall      ../minirosetta_database/filtered.vall.dat.2006-05-05.gz
+
+# Weights file
+-frags::scoring::config	fragment_picking_for_flexible_loop_design/input_files/flexloop_protocol.wghts
+
+# Residue file for which residue will be designed
+-resfile	    fragment_picking_for_flexible_loop_design/input_files/flexloop_resfile.txt
+
+# Loop defintion file
+-loops::loop_file	fragment_picking_for_flexible_loop_design/input_files/flexloop_loopdef.txt 
+
+# Constant seed for protocol demo
+-run::constant_seed
+
+# the name root for the output fragment files
+-out::file::frag_prefix		fragment_picking_for_flexible_loop_design/output_files/frags
+
+# Show score components for each selected fragment
+-frags::describe_fragments 	fragment_picking_for_flexible_loop_design/output_files/frags.fsc
+
+

@@ -1,0 +1,8 @@
+-protein input/4ERF_0001.pdb 
+-ligand input/000_conformers.pdb 
+-extra_res_fa input/000.params 
+-ray_file input/ray_4ERF_0001_61.txt 
+-espGrid_file 
+-darc_shape_only
+-num_particles 10
+-num_runs 10
