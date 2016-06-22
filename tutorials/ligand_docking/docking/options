@@ -5,7 +5,7 @@
 
 -in
 	-file
-		-s '3PBL_A.pdb ETQ.pdb'
+		-s 3PBL_ETQ.pdb
 		-extra_res_fa ETQ.params
 
 #the packing options allow Rosetta to sample additional rotamers for
@@ -35,5 +35,5 @@
 #This flag restores certain parameters to previously published values
 
 -mistakes
-	-restore_pre_talaris_2013_behavior true 
-
+	-restore_pre_talaris_2013_behavior true
+-nstruct 5 
