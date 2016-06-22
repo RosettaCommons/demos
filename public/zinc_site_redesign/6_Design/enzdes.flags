@@ -3,7 +3,6 @@
 -out::overwrite
 -out::file::o enz_score.out
 -out::file::output_virtual
--database /work/khare/rosetta/rosetta_database/
 -packing
   -use_input_sc
   -ex1:level 4
