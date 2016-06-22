@@ -23,8 +23,8 @@ else:
 EXE_DIR = abspath( EXE_DIR )
 
 # for pdbslice.py
-if os.environ.has_key("TOOLS"):
-	tools_scripts_path = os.environ.get("TOOLS")+"/rna_tools/bin"
+if os.environ.has_key("ROSETTA_TOOLS"):
+	tools_scripts_path = os.environ.get("ROSETTA_TOOLS")+"/rna_tools/bin"
 else:
 	tools_scripts_path = abspath( dirname( abspath( argv[0] ) ) + '/../../../../tools/rna_tools/bin' )
 
@@ -39,22 +39,23 @@ native_exists = 0
 data_exists = 0
 cst_exists = 0
 torsions_exists = 0
-EXE_extension = ''
-for i in range( 3, len( argv ) ):
-    if argv[i][-4:] == '.pdb':
-        native_pdb_file = argv[i]
-        native_exists = 1
-    if argv[i][-5:] == '.data':
-        data_file = argv[i]
-        data_exists = 1
-    if argv[i][-4:] == '.cst':
-        cst_file = argv[i]
-        cst_exists = 1
-    if argv[i][-9:] == '.torsions':
-        torsions_file = argv[i]
-        torsions_exists = 1
+EXE_extension = ""
+for i in range( 3, len( argv )):
+	if argv[i][-4:] == '.pdb':
+		native_pdb_file = argv[i]
+		native_exists = 1
+	if argv[i][-5] == '.data':
+		data_file = argv[i]
+		data_exists = 1
+	if argv[i][-4:] == '.cst':
+		cst_file = argv[i]
+		cst_exists = 1
+	if argv[i][-9:] == '.torsions':
+		torsions_file = argv[i]
+		torsions_exists = 1
 	if argv[i][:14] == 'exe_extension=':
-		EXE_extension = argv[i][15:]
+		EXE_extension = argv[i][14:]
+		rna_helix_exe = EXE_DIR + '/rna_helix'+EXE_extension
 
 if EXE_extension == '':
 	EXE_extension = '.linuxgccrelease'
