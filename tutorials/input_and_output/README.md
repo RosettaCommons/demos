@@ -26,7 +26,8 @@ The demos are available at `<path_to_Rosetta_directory>/demos/tutorials/input_an
 
 Controlling Input
 -----------------
-###Common Stucture Input Files
+
+###<a name="input_format"></a>Common Stucture Input Files
 You can supply Rosetta with a variety of input files which hold the coordinates of your biomolecular structure.
 ####PDB File
 The most common input file format is the PDB format. A detailed description of the PDB format can be found on the [WorldWide Protein Data Bank website](http://www.wwpdb.org/documentation/file-format-content/format33/v3.3.html). Primarily the lines which concern Rosetta start with `ATOM`, `HETATM` and `TER`.
@@ -76,6 +77,7 @@ You should again produce a file called `score.sc` in your current working direct
 
 _The option `in:file:silent` can also be used to pass a list of silent files._
 
+<!---
 ####mmCIF File
 Rosetta also supports a more recent file format called mmCIF whose details can be found [here](http://mmcif.wwpdb.org/docs/tutorials/content/atomic-description.html). You can use the `in:file:s` option to input mmCIF files as well, and Rosetta automatically wether the file is format is mmCIF or PDB.
 
@@ -84,9 +86,10 @@ Try running:
     $> <path_to_Rosetta_directory>/main/source/bin/score_jd2.linuxgccrelease -in:file:s input_files/1qys.cif -ignore_unrecognized_res -ignore_zero_occupancy false
     
 >**TO BE FINISHED WHEN MMCIF JOB INPUTTER IS MERGED INTO MASTER**
+-->
 
 
-###Dealing with Odd Residues/Waters
+###Dealing with Odd Residues and Water Molecules
 Most Rosetta protocols expect the structure they are working on to have a certain set of properties, eg. all heavy atoms should be present, all residue names should be recognizable etc. Sometimes Rosetta can guess which atoms to add. In this example, we will score the PDB 1QYS taken directly from the Protein Data Bank:
 
     $> <path_to_Rosetta_directory>/main/source/bin/score_jd2.linuxgccrelease -in:file:s input_files/from_rcsb/1qys.pdb
@@ -118,9 +121,14 @@ Now the PDB will be scored and the score will be displayed in a file `score.sc`.
 
 >`ignore_unrecognized_res` option also ignores the water molecules in the structure. This may change the energy scores of your structure.
 
+<!---
 ####Waters
+Rosetta uses an implicit solvation model, which means that water is considered a continuous medium, and not individual atoms. However, certain _structured water molecules_ can mediate a variety of interactions in biomolecules. Often, the PDBs contain these individual water molecules, which were present in the crystal.
+
+To remove water molecules, we use the option `-ignore_waters`
 
 >**Skipping this section till the default status of HOH is clarified. Presently, they are loaded in and scored, but -ignore_unrcognized_res takes them out and changes score.**
+-->
 
 ####Zero Occupancy
 Occupancy denotes the fraction of cases where a particular conformation is observed. While most atoms will have an occupancy of 1, if a residue was observed in multiple conformations, the occupancy will be lower than 1. An occupancy of 0 indicates that the atom was never observed in the crystal (but is estimated to be present at that location). Rosetta ignores these atom records. If it is a non-backbone heavy atom, it might build the sidechain for you. If it is a backbone heavy atom like N or CA, it will delete the entire residue.
@@ -186,18 +194,52 @@ This will produce three files: `1qys_0001.pdb`, `1qys_0002.pdb` and `score.sc`. 
 
 >These options can also be supplemented by `ignore_unrecognized_res` and `ignore_zero_occupany false` if required.
 
->Ensure that all residues you want to model are present in the refined PDB. Using a flag like `ignore_unrecognized_res` may remove ligands and waters you want to consider.
+Using a flag like `ignore_unrecognized_res` may remove ligands and waters you want to consider.
 
-###Input Search Paths
-###Informing a Protocol about the Input Representation - Centroid or Full Atom
+>Ensure that all residues you want to model are present in the refined PDB. 
+
+###Setting the Input Search Path
+If we have multiple input files, having one path location from where to search for inputs may be helpful. For example, while running the `relax` protocol on the homodimer PDB 4EQ1, we might want to constrain the protein-protein interface distances and prevent them from moving. (A detailed tutorial on constraints can be found [here](https://www.rosettacommons.org/demos/latest/tutorials/Tutorial_8_Constraints/Tutorial_8_Constraints.md).) To do this we need a constraint file `constrained_atompairs.cst` which too is located in the directory `input_files`. Running with the `in:path` with the input_directory specified helps when we have multiple such files as shown here:
+
+    $>  <path_to_Rosetta_directory>/main/source/bin/relax.linuxgccrelease -in:path input_files -in:file:s 4eq1.pdb -constraints:cst_fa_file constrained_atompairs.cst -ignore_unrecognized_res @flag_input_relax
+    
+This will take 15+ minutes to run and produce the files `4eq1_0001.pdb`, `4eq1_0002.pdb` and `score.sc`.
+
+###Changing Input Representation - Centroid or Full Atom
+Rosetta uses two structure representations - a finer _full atom_ representation and a coarser _centroid_ representation. A detailed tutorial on the differences and uses of the two can be found [here](https://www.rosettacommons.org/demos/latest/tutorials/full_atom_vs_centroid/README). To ensure that Rosetta understands which representation your input file is in, we use the `in:file:centroid` or the `in:file:fullatom` options. Example runs can be found in the tutorial linked above.
+
 ###Input a Known Structure For Comparison
-###Other Specific Options
+Often, it is useful to compare how close Rosetta gets to a known, _native_ structure. This is especially useful for benchmarking. It can also be used to check how far Rosetta moved an input PDB. To do this, we use the `-in:file:native` option.
 
+>The native PDB must contain the same number of residues, the same residue ordering and the same chain ordering as the structures that Rosetta will output after the protocol. Rosetta will give an error if the number of residues is different between the two, or calculate incorrect metrics if the residue numbering does not match.
+
+In the following example, we will run an older scoring application, _score_ to check how different the refined 1QYS is from the original PDB QYS.  
+
+    $>  <path_to_Rosetta_directory>/main/source/bin/score.linuxgccrelease -in:file:s input_files/1qys.pdb -in:file:native input_files/from_rcsb/1qys.pdb -ignore_waters
+    
+This produces a score file `default.sc` that should look like:
+    
+```html
+SCORE:     score     fa_atr     fa_rep     fa_sol    fa_intra_rep    fa_elec    pro_close    hbond_sr_bb    hbond_lr_bb    hbond_bb_sc    hbond_sc    dslf_fa13       rama      omega     fa_dun    p_aa_pp    yhh_planarity        ref    allatom_rms    gdtmm    gdtmm1_1    gdtmm2_2    gdtmm3_3    gdtmm4_3    gdtmm7_4    irms    maxsub    maxsub2.0    rms description
+SCORE:  -167.539   -414.834     48.380    225.004           1.040    -45.212        0.000        -25.491        -26.998         -2.986      -9.394        0.000     -4.905      4.211    109.662    -13.603            0.230    -12.643          1.050    1.000       1.000       1.000       1.000       1.000       1.000   0.000    92.000       92.000  0.135   1qys_0001
+
+```
+In this score file, the column `allatom_rms` represents the all-atom RMSD to the native and it is `1.050`. This is because Rosetta packed the sidechains to relieve clashes and optimize interactions while refining. The `rms` column, which represents the C<sub>α</sub> RMSD to native is much lower at `0.135` showing that Rosetta did not move the backbone much. There are other global distance metrics given as well.
+
+>Rosetta rebuilds the sidechains of residues in the native structure too if it finds too many heavy atoms missing, so the metrics might be slightly different for every run.
+
+###List of Other Options
+A full list of other, specific options is given [here](https://www.rosettacommons.org/docs/latest/full-options-list#in).
 
 
 Controlling Output
 ------------------
-###Common Stucture Input Files
+###Common Stucture Output Files
+Rosetta primarily uses two formats to output structures - PDB files and Silent Files. Both these files have been described in [section above](#input_format).
+####PDB File
+This is the default output format of Rosetta. For applications that do not output a structure by default, like the scoring application, the option `out:pdb` forces Rosetta to output the PDB. This is demonstrated in the [scoring tutorial]( https://www.rosettacommons.org/demos/latest/tutorials/scoring/README.md#output_struc)
+####Silent File
+
 ####Gzipped Files
 
 ###Adding Prefixes and Suffixes to the Output PDBs

@@ -90,19 +90,7 @@ Demo
 ###Preparing PDBs for Scoring
 To score a biomoleule in Rosetta, we use the `score_jd2` executable. This application, along with most in Rosetta, expect the input PDB to be formatted in a certain manner. A PDB downloaded directly from the Protein Data Bank may or may not work with Rosetta in general, and `score_jd2` in particular. Here's an example where we try to score the PDB 3TDM. When in the right demo directory, run:
 
-<<<<<<< HEAD
     $> <path_to_Rosetta_directory>/main/source/bin/score_jd2.linuxgccrelease -in:file:s input_files/from_rcsb/3tdm.pdb
-=======
-<<<<<<< HEAD
-###Basic Scoring
-In this tutorial, we are going to score the PDB 1QYS (a refined version is provided in `<path_to_Rosetta_directory>/demos/tutorials/scoring/input_files`). First, we will use the default score function, i.e. talaris2014. 
-
-If you are not in the tutorial directory, cd into it:
-
-    cd <path_to_Rosetta_directory>/demos/tutorials/scoring
-    
-    $><path_to_Rosetta_directory>/main/source/bin/score_jd2.linuxgccrelease -in:file:s input_files/from_rcsb/3tdm.pdb
->>>>>>> e271b84dbe3522e081dbb3d39be57f4699470dbf
    
 The application will exit with the following error:
 
@@ -114,7 +102,7 @@ This PDB contains a phosphate ion that Rosetta is unable to process without addi
 
 Now the PDB will be scored and the score will be displayed in a file `score.sc`(henceforth called the _score file_) in your current working directory. We will learn how to analyze and interpret this file in the next section. *To proceed on to the next step, remove `score.sc` by typing `rm score.sc`. Else, all energy scores of the structures scored here onwards will be appended to this file.*
 
-If an input PDB does not meet the exact specifications that Rosetta requires, eg. it has missing heavy atoms or unusual residues that Rosetta recognizes by default (unlike phosphates), Rosetta adds or changes atoms to satisfy the specifications. You can ask it to output the structure it actually scores by including the option `out:pdb`. In this example, we will score the PDB 1QYS taken directly from the Protein Data Bank:
+<a name="output_struc"></a>If an input PDB does not meet the exact specifications that Rosetta requires, eg. it has missing heavy atoms or unusual residues that Rosetta recognizes by default (unlike phosphates), Rosetta adds or changes atoms to satisfy the specifications. You can ask it to output the structure it actually scores by including the option `out:pdb`. In this example, we will score the PDB 1QYS taken directly from the Protein Data Bank:
 
     $> <path_to_Rosetta_directory>/main/source/bin/score_jd2.linuxgccrelease -in:file:s input_files/from_rcsb/1qys.pdb -out:pdb
     
@@ -148,15 +136,11 @@ In this section, we are going to score the PDB 1QYS (a refined version is provid
     
     -out:file:scorefile output_files/score.sc
     
-<<<<<<< HEAD
-Running this should produce a file called `score.sc` in the directory `output_files`. Compare this to the file `output_files/expected_output/score.sc`. They should be the same.
-=======
 To score this structure, run:
 
     $> <path_to_Rosetta_directory>/main/source/bin/score_jd2.linuxgccrelease @flag
     
 Running this should produce a file called `score.sc` in the directory `output_files`. Compare this to the file `<path_to_Rosetta_directory>/demos/tutorials/scoring/output_files/expected_output/score.sc`. They should be the same (expect for the `time` column which depends on your CPU speed).
->>>>>>> XRW2016
 
 ####Analysis of the Score File
 The `score.sc` file should look like:
@@ -195,15 +179,9 @@ The flags file we will use now is:
 
 On running the command
 
-<<<<<<< HEAD
-    $> score_jd2.linuxgccrelease @flag_score12
-
-we should get a score file `score_score12.sc` in the directory `output_files`. Compare this to `output_files/expected_output/score_score12.sc`). They should be the same.
-=======
     $> <path_to_Rosetta_directory>/main/source/bin/score_jd2.linuxgccrelease @flag_docking
 
 we should get a score file `score_docking.sc` in the directory `output_files`. Compare this to `<path_to_Rosetta_directory>/demos/tutorials/scoring/output_files/expected_output/score_docking.sc`). They should be the same (expect for the `time` column which depends on your CPU speed).
->>>>>>> XRW2016
 
 ```html
 SEQUENCE: 
@@ -261,15 +239,9 @@ We then set the `fa_atr` weight to `1.0` (originally `0.338` in _docking_) from 
 
 Now on running
 
-<<<<<<< HEAD
-    $> score_jd2.linuxgccrelease @flag_score12_patch
-
-we should get a score file `score_score12_patch.sc` in the directory `output_files`. Compare this to `output_files/expected_output/score_score12_patch.sc`). They should be the same.
-=======
     $> <path_to_Rosetta_directory>/main/source/bin/score_jd2.linuxgccrelease @flag_docking_patch
 
 we should get a score file `score_docking_patch.sc` in the directory `output_files`. Compare this to `<path_to_Rosetta_directory>/demos/tutorials/scoring/output_files/expected_output/score_docking_patch.sc`). They should be the same (expect for the `time` column which depends on your CPU speed).
->>>>>>> XRW2016
 
 ```html
 SEQUENCE: 
