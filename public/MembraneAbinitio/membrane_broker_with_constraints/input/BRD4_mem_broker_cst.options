@@ -1,0 +1,31 @@
+-in:file:native 1PY6A.pdb
+-in:file:fasta $RD4A.fasta
+-in:file:frag3 aaBRD4A03_05.200_v1_3
+-in:file:frag9 aaBRD4A09_05.200_v1_3
+-in:file:spanfile BRD4A.span # newly created spanfile
+-in:file:lipofile BRD4A.lips4 # newly created lipo file
+-residues:patch_selectors CENTROID_HA #fold in centroid mode but also can have HAs in pose
+-abinitio:membrane # specify membrane abinitio protocol
+-abinitio:stage2_patch score_membrane_s2.wts_patch # weights for scores
+-abinitio:stage3a_patch/score_membrane_s3a.wts_patch # weights for scores
+-abinitio:stage3b_patch/score_membrane_s3b.wts_patch # weights for scores
+-abinitio:stage4_patch score_membrane_s4.wts_patch # weights for scores
+-abinitio:rg_reweight 0.01 # radius of gyration weight not so important for MPs
+-membrane:no_interpolate_Mpair # membrane scoring specification
+-membrane:Menv_penalties # turn on membrane penalty scores
+-score:find_neighbors_3dgrid
+-run:reinitialize_mover_for_each_job
+-evaluation:gdtmm # output global distance test info
+-evaluation:rmsd NATIVE _TM BRD4A_TM_rms.txt
+-out:output
+-out:nstruct 1
+-out:file:scorefile BRD4A_mem_broker_cst.fsc
+-out:file:silent BRD4A_mem_broker_cst.out
+-out:file:silent_struct_type binary
+-overwrite
+-fold_cst:force_minimize	# minimize the structure after making a move, even if no restraints given
+-constraints:cst_file BRD4_example.cst	# full path to your restraints file
+-constraints:cst_weight 10	# The factor by which the cst score is multiplied.  A weight of 4 is suggested for protein_folding T4-lysozyme
+-constraints:epr_distance
+-run:protocol broker
+-broker:setup BRD4_topology_broker_cst.tpb

@@ -1,5 +1,4 @@
-AbInitio Demo
-=============
+#AbInitio 
 
 Run on linux
 ------------

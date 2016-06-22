@@ -1,0 +1,4 @@
+-nstruct 2
+-default_repeats 5
+-out:path:pdb ./tutorial_output
+-out:path:score ./expected_output

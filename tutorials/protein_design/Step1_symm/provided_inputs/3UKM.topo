@@ -1,0 +1,22 @@
+##############################################################################
+OCTOPUS result file
+Generated from http://octopus.cbr.su.se/ at 2016-06-09 04:23:29
+Total request time: 27.77 seconds.
+##############################################################################
+
+
+Sequence name: 3UKM_A
+Sequence length: 252 aa.
+Sequence:
+NSATMFGFLVLGYLLYLVFGAVVFSSVELPYEDLLRQELRKLKRRFLEEHECLSEQQLEQ
+FLGRVLEASNYGVSVLWNWDFTSALFFASTVLSTTGYGHTVPLSDGGKAFCIIYSVIGIP
+FTLLFLTAVVQRITVHVTRRPVLYFSKQVVAIVHAVLLGFVTVSCFFFIPAAVFSVLEDD
+WNFLESFYFCFISLSTIGLGDYVPGEGYNQKFRELYKIGITCYLLLGLIAMLVVLETFCE
+LHELKKFRKMFY
+
+OCTOPUS predicted topology:
+oooMMMMMMMMMMMMMMMMMMMMMiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii
+iiiiiiiiiiiiiiiiiiiMMMMMMMMMMMMMMMMMMMMMooooooMMMMMMMMMMMMMM
+MMMMMMMiiiiiiiiiiiiiiiiiiiiiiiiiiMMMMMMMMMMMMMMMMMMMMMoooooo
+ooMMMMMMMMMMMMMMMMMMMMMiiiiiiiiiiiiiMMMMMMMMMMMMMMMMMMMMMooo
+oooooooooooo

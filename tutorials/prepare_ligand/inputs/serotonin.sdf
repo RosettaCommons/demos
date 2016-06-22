@@ -1,0 +1,2835 @@
+2QEH_SRO_A_145
+  RCSB PDB01151507513D
+Coordinates from PDB:2QEH:A:145 Model:1 without hydrogens
+ 13 14  0  0  0  0            999 V2000
+   16.5170  -13.4770   -4.0240   O 0  0  0  0  0  0  0  0  0  0  0  0
+   17.3840  -12.4770   -4.3380   C 0  0  0  0  0  0  0  0  0  0  0  0
+   16.9740  -11.1720   -4.0640   C 0  0  0  0  0  0  0  0  0  0  0  0
+   17.8170  -10.1210   -4.3620   C 0  0  0  0  0  0  0  0  0  0  0  0
+   19.0430  -10.4360   -4.9170   C 0  0  0  0  0  0  0  0  0  0  0  0
+   20.0770   -9.6880   -5.3470   N 0  0  0  0  0  0  0  0  0  0  0  0
+   21.0370  -10.5080   -5.8360   C 0  0  0  0  0  0  0  0  0  0  0  0
+   20.6210  -11.8280   -5.7250   C 0  0  0  0  0  0  0  0  0  0  0  0
+   19.3500  -11.7660   -5.1560   C 0  0  0  0  0  0  0  0  0  0  0  0
+   18.5470  -12.7390   -4.8650   C 0  0  0  0  0  0  0  0  0  0  0  0
+   21.4420  -13.0290   -6.1670   C 0  0  0  0  0  0  0  0  0  0  0  0
+   22.9370  -12.6660   -6.1150   C 0  0  0  0  0  0  0  0  0  0  0  0
+   23.7690  -13.8280   -6.4090   N 0  0  0  0  0  0  0  0  0  0  0  0
+  1  2  1  0  0  0  0
+  2 10  2  0  0  0  0
+  2  3  1  0  0  0  0
+  3  4  2  0  0  0  0
+  4  5  1  0  0  0  0
+  5  6  1  0  0  0  0
+  5  9  2  0  0  0  0
+  6  7  1  0  0  0  0
+  7  8  2  0  0  0  0
+  8 11  1  0  0  0  0
+  8  9  1  0  0  0  0
+  9 10  1  0  0  0  0
+ 11 12  1  0  0  0  0
+ 12 13  1  0  0  0  0
+M  END
+>  <InstanceId>
+2QEH_SRO_A_145
+
+>  <ChemCompId>
+SRO
+
+>  <PdbId>
+2QEH
+
+>  <ChainId>
+A
+
+>  <ResidueNumber>
+145
+
+>  <InsertionCode>
+
+
+>  <Model>
+1
+
+>  <AltIds>
+
+
+>  <MissingHeavyAtoms>
+0
+
+>  <ObservedFormula>
+C10 N2 O
+
+>  <Name>
+SEROTONIN
+
+>  <SystematicName>
+3-(2-aminoethyl)-1H-indol-5-ol
+
+>  <Synonyms>
+3-(2-AMINOETHYL)-1H-INDOL-5-OL
+
+>  <Type>
+NON-POLYMER
+
+>  <Formula>
+C10 H12 N2 O
+
+>  <MolecularWeight>
+176.215
+
+>  <ModifiedDate>
+2011-06-04
+
+>  <Parent>
+
+
+>  <OneLetterCode>
+
+
+>  <SubcomponentList>
+
+
+>  <AmbiguousFlag>
+
+
+>  <InChI>
+InChI=1S/C10H12N2O/c11-4-3-7-6-12-10-2-1-8(13)5-9(7)10/h1-2,5-6,12-13H,3-4,11H2
+
+>  <InChIKey>
+QZAYGJVTTNCVMB-UHFFFAOYSA-N
+
+>  <SMILES>
+c1cc2c(cc1O)c(c[nH]2)CCN
+
+$$$$
+2YMD_SRO_A_1213
+  RCSB PDB01151511593D
+Coordinates from PDB:2YMD:A:1213 Model:1 without hydrogens
+ 13 14  0  0  0  0            999 V2000
+   13.3780   10.1350   11.2250   O 0  0  0  0  0  0  0  0  0  0  0  0
+   13.4310    9.8820    9.8610   C 0  0  0  0  0  0  0  0  0  0  0  0
+   14.4460   10.4260    9.0570   C 0  0  0  0  0  0  0  0  0  0  0  0
+   14.4950   10.1570    7.6890   C 0  0  0  0  0  0  0  0  0  0  0  0
+   13.5050    9.3390    7.0960   C 0  0  0  0  0  0  0  0  0  0  0  0
+   13.3170    8.9130    5.7900   N 0  0  0  0  0  0  0  0  0  0  0  0
+   12.2180    8.1310    5.7330   C 0  0  0  0  0  0  0  0  0  0  0  0
+   11.6900    8.0390    7.0200   C 0  0  0  0  0  0  0  0  0  0  0  0
+   12.5130    8.8020    7.8810   C 0  0  0  0  0  0  0  0  0  0  0  0
+   12.4670    9.0660    9.2710   C 0  0  0  0  0  0  0  0  0  0  0  0
+   10.4800    7.2870    7.4570   C 0  0  0  0  0  0  0  0  0  0  0  0
+   10.4300    5.8300    7.1780   C 0  0  0  0  0  0  0  0  0  0  0  0
+   11.4690    5.0270    7.7460   N 0  0  0  0  0  0  0  0  0  0  0  0
+  1  2  1  0  0  0  0
+  2 10  2  0  0  0  0
+  2  3  1  0  0  0  0
+  3  4  2  0  0  0  0
+  4  5  1  0  0  0  0
+  5  6  1  0  0  0  0
+  5  9  2  0  0  0  0
+  6  7  1  0  0  0  0
+  7  8  2  0  0  0  0
+  8 11  1  0  0  0  0
+  8  9  1  0  0  0  0
+  9 10  1  0  0  0  0
+ 11 12  1  0  0  0  0
+ 12 13  1  0  0  0  0
+M  END
+>  <InstanceId>
+2YMD_SRO_A_1213
+
+>  <ChemCompId>
+SRO
+
+>  <PdbId>
+2YMD
+
+>  <ChainId>
+A
+
+>  <ResidueNumber>
+1213
+
+>  <InsertionCode>
+
+
+>  <Model>
+1
+
+>  <AltIds>
+
+
+>  <MissingHeavyAtoms>
+0
+
+>  <ObservedFormula>
+C10 N2 O
+
+>  <Name>
+SEROTONIN
+
+>  <SystematicName>
+3-(2-aminoethyl)-1H-indol-5-ol
+
+>  <Synonyms>
+3-(2-AMINOETHYL)-1H-INDOL-5-OL
+
+>  <Type>
+NON-POLYMER
+
+>  <Formula>
+C10 H12 N2 O
+
+>  <MolecularWeight>
+176.215
+
+>  <ModifiedDate>
+2011-06-04
+
+>  <Parent>
+
+
+>  <OneLetterCode>
+
+
+>  <SubcomponentList>
+
+
+>  <AmbiguousFlag>
+
+
+>  <InChI>
+InChI=1S/C10H12N2O/c11-4-3-7-6-12-10-2-1-8(13)5-9(7)10/h1-2,5-6,12-13H,3-4,11H2
+
+>  <InChIKey>
+QZAYGJVTTNCVMB-UHFFFAOYSA-N
+
+>  <SMILES>
+c1cc2c(cc1O)c(c[nH]2)CCN
+
+$$$$
+2YMD_SRO_B_1212
+  RCSB PDB01151511593D
+Coordinates from PDB:2YMD:B:1212 Model:1 without hydrogens
+ 13 14  0  0  0  0            999 V2000
+    5.8490   21.0390   33.5290   O 0  0  0  0  0  0  0  0  0  0  0  0
+    5.0380   21.9510   32.8710   C 0  0  0  0  0  0  0  0  0  0  0  0
+    5.5220   23.2160   32.5020   C 0  0  0  0  0  0  0  0  0  0  0  0
+    4.7030   24.1190   31.8200   C 0  0  0  0  0  0  0  0  0  0  0  0
+    3.3580   23.7600   31.5120   C 0  0  0  0  0  0  0  0  0  0  0  0
+    2.3430   24.4490   30.8700   N 0  0  0  0  0  0  0  0  0  0  0  0
+    1.2340   23.6770   30.8200   C 0  0  0  0  0  0  0  0  0  0  0  0
+    1.5330   22.4630   31.4430   C 0  0  0  0  0  0  0  0  0  0  0  0
+    2.8830   22.5220   31.8790   C 0  0  0  0  0  0  0  0  0  0  0  0
+    3.7270   21.6030   32.5530   C 0  0  0  0  0  0  0  0  0  0  0  0
+    0.6180   21.2970   31.6330   C 0  0  0  0  0  0  0  0  0  0  0  0
+   -0.0780   20.7760   30.4260   C 0  0  0  0  0  0  0  0  0  0  0  0
+    0.7620   20.3850   29.3270   N 0  0  0  0  0  0  0  0  0  0  0  0
+  1  2  1  0  0  0  0
+  2 10  2  0  0  0  0
+  2  3  1  0  0  0  0
+  3  4  2  0  0  0  0
+  4  5  1  0  0  0  0
+  5  6  1  0  0  0  0
+  5  9  2  0  0  0  0
+  6  7  1  0  0  0  0
+  7  8  2  0  0  0  0
+  8 11  1  0  0  0  0
+  8  9  1  0  0  0  0
+  9 10  1  0  0  0  0
+ 11 12  1  0  0  0  0
+ 12 13  1  0  0  0  0
+M  END
+>  <InstanceId>
+2YMD_SRO_B_1212
+
+>  <ChemCompId>
+SRO
+
+>  <PdbId>
+2YMD
+
+>  <ChainId>
+B
+
+>  <ResidueNumber>
+1212
+
+>  <InsertionCode>
+
+
+>  <Model>
+1
+
+>  <AltIds>
+
+
+>  <MissingHeavyAtoms>
+0
+
+>  <ObservedFormula>
+C10 N2 O
+
+>  <Name>
+SEROTONIN
+
+>  <SystematicName>
+3-(2-aminoethyl)-1H-indol-5-ol
+
+>  <Synonyms>
+3-(2-AMINOETHYL)-1H-INDOL-5-OL
+
+>  <Type>
+NON-POLYMER
+
+>  <Formula>
+C10 H12 N2 O
+
+>  <MolecularWeight>
+176.215
+
+>  <ModifiedDate>
+2011-06-04
+
+>  <Parent>
+
+
+>  <OneLetterCode>
+
+
+>  <SubcomponentList>
+
+
+>  <AmbiguousFlag>
+
+
+>  <InChI>
+InChI=1S/C10H12N2O/c11-4-3-7-6-12-10-2-1-8(13)5-9(7)10/h1-2,5-6,12-13H,3-4,11H2
+
+>  <InChIKey>
+QZAYGJVTTNCVMB-UHFFFAOYSA-N
+
+>  <SMILES>
+c1cc2c(cc1O)c(c[nH]2)CCN
+
+$$$$
+2YMD_SRO_C_1213
+  RCSB PDB01151511593D
+Coordinates from PDB:2YMD:C:1213 Model:1 without hydrogens
+ 13 14  0  0  0  0            999 V2000
+   15.7040    6.9200   52.6730   O 0  0  0  0  0  0  0  0  0  0  0  0
+   15.0080    7.6250   53.6350   C 0  0  0  0  0  0  0  0  0  0  0  0
+   15.5740    8.7440   54.2540   C 0  0  0  0  0  0  0  0  0  0  0  0
+   14.8610    9.4500   55.2180   C 0  0  0  0  0  0  0  0  0  0  0  0
+   13.5540    9.0230   55.5900   C 0  0  0  0  0  0  0  0  0  0  0  0
+   12.6420    9.5260   56.5010   N 0  0  0  0  0  0  0  0  0  0  0  0
+   11.5230    8.7640   56.4910   C 0  0  0  0  0  0  0  0  0  0  0  0
+   11.7100    7.7470   55.5560   C 0  0  0  0  0  0  0  0  0  0  0  0
+   12.9990    7.9190   54.9840   C 0  0  0  0  0  0  0  0  0  0  0  0
+   13.7290    7.2160   53.9970   C 0  0  0  0  0  0  0  0  0  0  0  0
+   10.7480    6.6610   55.2000   C 0  0  0  0  0  0  0  0  0  0  0  0
+    9.3690    7.0700   54.8320   C 0  0  0  0  0  0  0  0  0  0  0  0
+    9.2380    8.1330   53.8750   N 0  0  0  0  0  0  0  0  0  0  0  0
+  1  2  1  0  0  0  0
+  2 10  2  0  0  0  0
+  2  3  1  0  0  0  0
+  3  4  2  0  0  0  0
+  4  5  1  0  0  0  0
+  5  6  1  0  0  0  0
+  5  9  2  0  0  0  0
+  6  7  1  0  0  0  0
+  7  8  2  0  0  0  0
+  8 11  1  0  0  0  0
+  8  9  1  0  0  0  0
+  9 10  1  0  0  0  0
+ 11 12  1  0  0  0  0
+ 12 13  1  0  0  0  0
+M  END
+>  <InstanceId>
+2YMD_SRO_C_1213
+
+>  <ChemCompId>
+SRO
+
+>  <PdbId>
+2YMD
+
+>  <ChainId>
+C
+
+>  <ResidueNumber>
+1213
+
+>  <InsertionCode>
+
+
+>  <Model>
+1
+
+>  <AltIds>
+
+
+>  <MissingHeavyAtoms>
+0
+
+>  <ObservedFormula>
+C10 N2 O
+
+>  <Name>
+SEROTONIN
+
+>  <SystematicName>
+3-(2-aminoethyl)-1H-indol-5-ol
+
+>  <Synonyms>
+3-(2-AMINOETHYL)-1H-INDOL-5-OL
+
+>  <Type>
+NON-POLYMER
+
+>  <Formula>
+C10 H12 N2 O
+
+>  <MolecularWeight>
+176.215
+
+>  <ModifiedDate>
+2011-06-04
+
+>  <Parent>
+
+
+>  <OneLetterCode>
+
+
+>  <SubcomponentList>
+
+
+>  <AmbiguousFlag>
+
+
+>  <InChI>
+InChI=1S/C10H12N2O/c11-4-3-7-6-12-10-2-1-8(13)5-9(7)10/h1-2,5-6,12-13H,3-4,11H2
+
+>  <InChIKey>
+QZAYGJVTTNCVMB-UHFFFAOYSA-N
+
+>  <SMILES>
+c1cc2c(cc1O)c(c[nH]2)CCN
+
+$$$$
+2YMD_SRO_D_1214
+  RCSB PDB01151511593D
+Coordinates from PDB:2YMD:D:1214 Model:1 without hydrogens
+ 13 14  0  0  0  0            999 V2000
+   29.3180  -12.5440   42.6280   O 0  0  0  0  0  0  0  0  0  0  0  0
+   29.4990  -13.1040   43.8840   C 0  0  0  0  0  0  0  0  0  0  0  0
+   30.5900  -12.7310   44.6800   C 0  0  0  0  0  0  0  0  0  0  0  0
+   30.7740  -13.2740   45.9500   C 0  0  0  0  0  0  0  0  0  0  0  0
+   29.8370  -14.2250   46.4380   C 0  0  0  0  0  0  0  0  0  0  0  0
+   29.7740  -14.9140   47.6370   N 0  0  0  0  0  0  0  0  0  0  0  0
+   28.6900  -15.7160   47.6320   C 0  0  0  0  0  0  0  0  0  0  0  0
+   28.0360  -15.5460   46.4170   C 0  0  0  0  0  0  0  0  0  0  0  0
+   28.7670  -14.5970   45.6570   C 0  0  0  0  0  0  0  0  0  0  0  0
+   28.5860  -14.0390   44.3640   C 0  0  0  0  0  0  0  0  0  0  0  0
+   26.7920  -16.2360   45.9790   C 0  0  0  0  0  0  0  0  0  0  0  0
+   25.6310  -16.1160   46.9010   C 0  0  0  0  0  0  0  0  0  0  0  0
+   25.2310  -14.7910   47.2890   N 0  0  0  0  0  0  0  0  0  0  0  0
+  1  2  1  0  0  0  0
+  2 10  2  0  0  0  0
+  2  3  1  0  0  0  0
+  3  4  2  0  0  0  0
+  4  5  1  0  0  0  0
+  5  6  1  0  0  0  0
+  5  9  2  0  0  0  0
+  6  7  1  0  0  0  0
+  7  8  2  0  0  0  0
+  8 11  1  0  0  0  0
+  8  9  1  0  0  0  0
+  9 10  1  0  0  0  0
+ 11 12  1  0  0  0  0
+ 12 13  1  0  0  0  0
+M  END
+>  <InstanceId>
+2YMD_SRO_D_1214
+
+>  <ChemCompId>
+SRO
+
+>  <PdbId>
+2YMD
+
+>  <ChainId>
+D
+
+>  <ResidueNumber>
+1214
+
+>  <InsertionCode>
+
+
+>  <Model>
+1
+
+>  <AltIds>
+
+
+>  <MissingHeavyAtoms>
+0
+
+>  <ObservedFormula>
+C10 N2 O
+
+>  <Name>
+SEROTONIN
+
+>  <SystematicName>
+3-(2-aminoethyl)-1H-indol-5-ol
+
+>  <Synonyms>
+3-(2-AMINOETHYL)-1H-INDOL-5-OL
+
+>  <Type>
+NON-POLYMER
+
+>  <Formula>
+C10 H12 N2 O
+
+>  <MolecularWeight>
+176.215
+
+>  <ModifiedDate>
+2011-06-04
+
+>  <Parent>
+
+
+>  <OneLetterCode>
+
+
+>  <SubcomponentList>
+
+
+>  <AmbiguousFlag>
+
+
+>  <InChI>
+InChI=1S/C10H12N2O/c11-4-3-7-6-12-10-2-1-8(13)5-9(7)10/h1-2,5-6,12-13H,3-4,11H2
+
+>  <InChIKey>
+QZAYGJVTTNCVMB-UHFFFAOYSA-N
+
+>  <SMILES>
+c1cc2c(cc1O)c(c[nH]2)CCN
+
+$$$$
+2YMD_SRO_E_1213
+  RCSB PDB01151511593D
+Coordinates from PDB:2YMD:E:1213 Model:1 without hydrogens
+ 13 14  0  0  0  0            999 V2000
+   27.7840  -10.5350   17.0420   O 0  0  0  0  0  0  0  0  0  0  0  0
+   28.4300  -11.7340   16.7900   C 0  0  0  0  0  0  0  0  0  0  0  0
+   29.8180  -11.7580   16.6020   C 0  0  0  0  0  0  0  0  0  0  0  0
+   30.4740  -12.9660   16.3690   C 0  0  0  0  0  0  0  0  0  0  0  0
+   29.7320  -14.1780   16.3090   C 0  0  0  0  0  0  0  0  0  0  0  0
+   30.1360  -15.4820   16.0910   N 0  0  0  0  0  0  0  0  0  0  0  0
+   29.0610  -16.2920   16.1270   C 0  0  0  0  0  0  0  0  0  0  0  0
+   27.9340  -15.5080   16.3640   C 0  0  0  0  0  0  0  0  0  0  0  0
+   28.3670  -14.1570   16.4850   C 0  0  0  0  0  0  0  0  0  0  0  0
+   27.7090  -12.9270   16.7380   C 0  0  0  0  0  0  0  0  0  0  0  0
+   26.5360  -16.0160   16.4850   C 0  0  0  0  0  0  0  0  0  0  0  0
+   26.2010  -16.6190   17.8030   C 0  0  0  0  0  0  0  0  0  0  0  0
+   27.0250  -17.7090   18.2430   N 0  0  0  0  0  0  0  0  0  0  0  0
+  1  2  1  0  0  0  0
+  2 10  2  0  0  0  0
+  2  3  1  0  0  0  0
+  3  4  2  0  0  0  0
+  4  5  1  0  0  0  0
+  5  6  1  0  0  0  0
+  5  9  2  0  0  0  0
+  6  7  1  0  0  0  0
+  7  8  2  0  0  0  0
+  8 11  1  0  0  0  0
+  8  9  1  0  0  0  0
+  9 10  1  0  0  0  0
+ 11 12  1  0  0  0  0
+ 12 13  1  0  0  0  0
+M  END
+>  <InstanceId>
+2YMD_SRO_E_1213
+
+>  <ChemCompId>
+SRO
+
+>  <PdbId>
+2YMD
+
+>  <ChainId>
+E
+
+>  <ResidueNumber>
+1213
+
+>  <InsertionCode>
+
+
+>  <Model>
+1
+
+>  <AltIds>
+
+
+>  <MissingHeavyAtoms>
+0
+
+>  <ObservedFormula>
+C10 N2 O
+
+>  <Name>
+SEROTONIN
+
+>  <SystematicName>
+3-(2-aminoethyl)-1H-indol-5-ol
+
+>  <Synonyms>
+3-(2-AMINOETHYL)-1H-INDOL-5-OL
+
+>  <Type>
+NON-POLYMER
+
+>  <Formula>
+C10 H12 N2 O
+
+>  <MolecularWeight>
+176.215
+
+>  <ModifiedDate>
+2011-06-04
+
+>  <Parent>
+
+
+>  <OneLetterCode>
+
+
+>  <SubcomponentList>
+
+
+>  <AmbiguousFlag>
+
+
+>  <InChI>
+InChI=1S/C10H12N2O/c11-4-3-7-6-12-10-2-1-8(13)5-9(7)10/h1-2,5-6,12-13H,3-4,11H2
+
+>  <InChIKey>
+QZAYGJVTTNCVMB-UHFFFAOYSA-N
+
+>  <SMILES>
+c1cc2c(cc1O)c(c[nH]2)CCN
+
+$$$$
+2YMD_SRO_F_1214
+  RCSB PDB01151511593D
+Coordinates from PDB:2YMD:F:1214 Model:1 without hydrogens
+ 13 14  0  0  0  0            999 V2000
+  -31.8210  -51.3730   46.4150   O 0  0  0  0  0  0  0  0  0  0  0  0
+  -30.9160  -52.3990   46.6210   C 0  0  0  0  0  0  0  0  0  0  0  0
+  -31.3700  -53.7170   46.7370   C 0  0  0  0  0  0  0  0  0  0  0  0
+  -30.4660  -54.7570   46.9270   C 0  0  0  0  0  0  0  0  0  0  0  0
+  -29.0740  -54.4840   47.0180   C 0  0  0  0  0  0  0  0  0  0  0  0
+  -27.9920  -55.3230   47.2080   N 0  0  0  0  0  0  0  0  0  0  0  0
+  -26.8580  -54.5920   47.2250   C 0  0  0  0  0  0  0  0  0  0  0  0
+  -27.2050  -53.2550   47.0500   C 0  0  0  0  0  0  0  0  0  0  0  0
+  -28.6210  -53.1890   46.9110   C 0  0  0  0  0  0  0  0  0  0  0  0
+  -29.5480  -52.1340   46.7080   C 0  0  0  0  0  0  0  0  0  0  0  0
+  -26.2470  -52.1160   46.9940   C 0  0  0  0  0  0  0  0  0  0  0  0
+  -25.1290  -52.3190   46.0320   C 0  0  0  0  0  0  0  0  0  0  0  0
+  -25.4830  -52.4690   44.6480   N 0  0  0  0  0  0  0  0  0  0  0  0
+  1  2  1  0  0  0  0
+  2 10  2  0  0  0  0
+  2  3  1  0  0  0  0
+  3  4  2  0  0  0  0
+  4  5  1  0  0  0  0
+  5  6  1  0  0  0  0
+  5  9  2  0  0  0  0
+  6  7  1  0  0  0  0
+  7  8  2  0  0  0  0
+  8 11  1  0  0  0  0
+  8  9  1  0  0  0  0
+  9 10  1  0  0  0  0
+ 11 12  1  0  0  0  0
+ 12 13  1  0  0  0  0
+M  END
+>  <InstanceId>
+2YMD_SRO_F_1214
+
+>  <ChemCompId>
+SRO
+
+>  <PdbId>
+2YMD
+
+>  <ChainId>
+F
+
+>  <ResidueNumber>
+1214
+
+>  <InsertionCode>
+
+
+>  <Model>
+1
+
+>  <AltIds>
+
+
+>  <MissingHeavyAtoms>
+0
+
+>  <ObservedFormula>
+C10 N2 O
+
+>  <Name>
+SEROTONIN
+
+>  <SystematicName>
+3-(2-aminoethyl)-1H-indol-5-ol
+
+>  <Synonyms>
+3-(2-AMINOETHYL)-1H-INDOL-5-OL
+
+>  <Type>
+NON-POLYMER
+
+>  <Formula>
+C10 H12 N2 O
+
+>  <MolecularWeight>
+176.215
+
+>  <ModifiedDate>
+2011-06-04
+
+>  <Parent>
+
+
+>  <OneLetterCode>
+
+
+>  <SubcomponentList>
+
+
+>  <AmbiguousFlag>
+
+
+>  <InChI>
+InChI=1S/C10H12N2O/c11-4-3-7-6-12-10-2-1-8(13)5-9(7)10/h1-2,5-6,12-13H,3-4,11H2
+
+>  <InChIKey>
+QZAYGJVTTNCVMB-UHFFFAOYSA-N
+
+>  <SMILES>
+c1cc2c(cc1O)c(c[nH]2)CCN
+
+$$$$
+2YMD_SRO_G_1213
+  RCSB PDB01151511593D
+Coordinates from PDB:2YMD:G:1213 Model:1 without hydrogens
+ 13 14  0  0  0  0            999 V2000
+  -46.2240  -30.6220   51.3640   O 0  0  0  0  0  0  0  0  0  0  0  0
+  -45.9980  -30.7240   52.7230   C 0  0  0  0  0  0  0  0  0  0  0  0
+  -46.8340  -31.4910   53.5530   C 0  0  0  0  0  0  0  0  0  0  0  0
+  -46.5750  -31.5820   54.9240   C 0  0  0  0  0  0  0  0  0  0  0  0
+  -45.4660  -30.8890   55.4830   C 0  0  0  0  0  0  0  0  0  0  0  0
+  -44.9800  -30.8030   56.7800   N 0  0  0  0  0  0  0  0  0  0  0  0
+  -43.8870  -30.0080   56.7970   C 0  0  0  0  0  0  0  0  0  0  0  0
+  -43.6560  -29.5700   55.4960   C 0  0  0  0  0  0  0  0  0  0  0  0
+  -44.6540  -30.1360   54.6650   C 0  0  0  0  0  0  0  0  0  0  0  0
+  -44.9130  -30.0500   53.2770   C 0  0  0  0  0  0  0  0  0  0  0  0
+  -42.5600  -28.6790   55.0280   C 0  0  0  0  0  0  0  0  0  0  0  0
+  -41.1880  -29.1850   55.2600   C 0  0  0  0  0  0  0  0  0  0  0  0
+  -41.0050  -30.5670   54.9400   N 0  0  0  0  0  0  0  0  0  0  0  0
+  1  2  1  0  0  0  0
+  2 10  2  0  0  0  0
+  2  3  1  0  0  0  0
+  3  4  2  0  0  0  0
+  4  5  1  0  0  0  0
+  5  6  1  0  0  0  0
+  5  9  2  0  0  0  0
+  6  7  1  0  0  0  0
+  7  8  2  0  0  0  0
+  8 11  1  0  0  0  0
+  8  9  1  0  0  0  0
+  9 10  1  0  0  0  0
+ 11 12  1  0  0  0  0
+ 12 13  1  0  0  0  0
+M  END
+>  <InstanceId>
+2YMD_SRO_G_1213
+
+>  <ChemCompId>
+SRO
+
+>  <PdbId>
+2YMD
+
+>  <ChainId>
+G
+
+>  <ResidueNumber>
+1213
+
+>  <InsertionCode>
+
+
+>  <Model>
+1
+
+>  <AltIds>
+
+
+>  <MissingHeavyAtoms>
+0
+
+>  <ObservedFormula>
+C10 N2 O
+
+>  <Name>
+SEROTONIN
+
+>  <SystematicName>
+3-(2-aminoethyl)-1H-indol-5-ol
+
+>  <Synonyms>
+3-(2-AMINOETHYL)-1H-INDOL-5-OL
+
+>  <Type>
+NON-POLYMER
+
+>  <Formula>
+C10 H12 N2 O
+
+>  <MolecularWeight>
+176.215
+
+>  <ModifiedDate>
+2011-06-04
+
+>  <Parent>
+
+
+>  <OneLetterCode>
+
+
+>  <SubcomponentList>
+
+
+>  <AmbiguousFlag>
+
+
+>  <InChI>
+InChI=1S/C10H12N2O/c11-4-3-7-6-12-10-2-1-8(13)5-9(7)10/h1-2,5-6,12-13H,3-4,11H2
+
+>  <InChIKey>
+QZAYGJVTTNCVMB-UHFFFAOYSA-N
+
+>  <SMILES>
+c1cc2c(cc1O)c(c[nH]2)CCN
+
+$$$$
+2YMD_SRO_H_1206
+  RCSB PDB01151511593D
+Coordinates from PDB:2YMD:H:1206 Model:1 without hydrogens
+ 13 14  0  0  0  0            999 V2000
+  -53.4500  -20.3490   28.8180   O 0  0  0  0  0  0  0  0  0  0  0  0
+  -54.0360  -19.2450   29.4230   C 0  0  0  0  0  0  0  0  0  0  0  0
+  -55.3840  -19.2700   29.8060   C 0  0  0  0  0  0  0  0  0  0  0  0
+  -55.9670  -18.1730   30.4400   C 0  0  0  0  0  0  0  0  0  0  0  0
+  -55.1930  -17.0030   30.6820   C 0  0  0  0  0  0  0  0  0  0  0  0
+  -55.5170  -15.7910   31.2720   N 0  0  0  0  0  0  0  0  0  0  0  0
+  -54.4250  -14.9920   31.2690   C 0  0  0  0  0  0  0  0  0  0  0  0
+  -53.3740  -15.6910   30.6710   C 0  0  0  0  0  0  0  0  0  0  0  0
+  -53.8700  -16.9680   30.2940   C 0  0  0  0  0  0  0  0  0  0  0  0
+  -53.2810  -18.0960   29.6650   C 0  0  0  0  0  0  0  0  0  0  0  0
+  -51.9740  -15.2070   30.4380   C 0  0  0  0  0  0  0  0  0  0  0  0
+  -51.1770  -14.7810   31.6220   C 0  0  0  0  0  0  0  0  0  0  0  0
+  -51.3110  -15.5710   32.8140   N 0  0  0  0  0  0  0  0  0  0  0  0
+  1  2  1  0  0  0  0
+  2 10  2  0  0  0  0
+  2  3  1  0  0  0  0
+  3  4  2  0  0  0  0
+  4  5  1  0  0  0  0
+  5  6  1  0  0  0  0
+  5  9  2  0  0  0  0
+  6  7  1  0  0  0  0
+  7  8  2  0  0  0  0
+  8 11  1  0  0  0  0
+  8  9  1  0  0  0  0
+  9 10  1  0  0  0  0
+ 11 12  1  0  0  0  0
+ 12 13  1  0  0  0  0
+M  END
+>  <InstanceId>
+2YMD_SRO_H_1206
+
+>  <ChemCompId>
+SRO
+
+>  <PdbId>
+2YMD
+
+>  <ChainId>
+H
+
+>  <ResidueNumber>
+1206
+
+>  <InsertionCode>
+
+
+>  <Model>
+1
+
+>  <AltIds>
+
+
+>  <MissingHeavyAtoms>
+0
+
+>  <ObservedFormula>
+C10 N2 O
+
+>  <Name>
+SEROTONIN
+
+>  <SystematicName>
+3-(2-aminoethyl)-1H-indol-5-ol
+
+>  <Synonyms>
+3-(2-AMINOETHYL)-1H-INDOL-5-OL
+
+>  <Type>
+NON-POLYMER
+
+>  <Formula>
+C10 H12 N2 O
+
+>  <MolecularWeight>
+176.215
+
+>  <ModifiedDate>
+2011-06-04
+
+>  <Parent>
+
+
+>  <OneLetterCode>
+
+
+>  <SubcomponentList>
+
+
+>  <AmbiguousFlag>
+
+
+>  <InChI>
+InChI=1S/C10H12N2O/c11-4-3-7-6-12-10-2-1-8(13)5-9(7)10/h1-2,5-6,12-13H,3-4,11H2
+
+>  <InChIKey>
+QZAYGJVTTNCVMB-UHFFFAOYSA-N
+
+>  <SMILES>
+c1cc2c(cc1O)c(c[nH]2)CCN
+
+$$$$
+2YMD_SRO_I_1213
+  RCSB PDB01151511593D
+Coordinates from PDB:2YMD:I:1213 Model:1 without hydrogens
+ 13 14  0  0  0  0            999 V2000
+  -43.4230  -34.6370   10.0130   O 0  0  0  0  0  0  0  0  0  0  0  0
+  -43.8430  -33.7840    9.0070   C 0  0  0  0  0  0  0  0  0  0  0  0
+  -45.0660  -33.9860    8.3580   C 0  0  0  0  0  0  0  0  0  0  0  0
+  -45.4720  -33.1050    7.3520   C 0  0  0  0  0  0  0  0  0  0  0  0
+  -44.6450  -32.0130    6.9690   C 0  0  0  0  0  0  0  0  0  0  0  0
+  -44.8110  -31.0210    6.0210   N 0  0  0  0  0  0  0  0  0  0  0  0
+  -43.7340  -30.2030    6.0370   C 0  0  0  0  0  0  0  0  0  0  0  0
+  -42.8570  -30.6690    7.0100   C 0  0  0  0  0  0  0  0  0  0  0  0
+  -43.4430  -31.8170    7.6030   C 0  0  0  0  0  0  0  0  0  0  0  0
+  -43.0450  -32.7040    8.6340   C 0  0  0  0  0  0  0  0  0  0  0  0
+  -41.5420  -30.0680    7.3740   C 0  0  0  0  0  0  0  0  0  0  0  0
+  -41.5330  -28.5900    7.5480   C 0  0  0  0  0  0  0  0  0  0  0  0
+  -42.2470  -28.0760    8.6840   N 0  0  0  0  0  0  0  0  0  0  0  0
+  1  2  1  0  0  0  0
+  2 10  2  0  0  0  0
+  2  3  1  0  0  0  0
+  3  4  2  0  0  0  0
+  4  5  1  0  0  0  0
+  5  6  1  0  0  0  0
+  5  9  2  0  0  0  0
+  6  7  1  0  0  0  0
+  7  8  2  0  0  0  0
+  8 11  1  0  0  0  0
+  8  9  1  0  0  0  0
+  9 10  1  0  0  0  0
+ 11 12  1  0  0  0  0
+ 12 13  1  0  0  0  0
+M  END
+>  <InstanceId>
+2YMD_SRO_I_1213
+
+>  <ChemCompId>
+SRO
+
+>  <PdbId>
+2YMD
+
+>  <ChainId>
+I
+
+>  <ResidueNumber>
+1213
+
+>  <InsertionCode>
+
+
+>  <Model>
+1
+
+>  <AltIds>
+
+
+>  <MissingHeavyAtoms>
+0
+
+>  <ObservedFormula>
+C10 N2 O
+
+>  <Name>
+SEROTONIN
+
+>  <SystematicName>
+3-(2-aminoethyl)-1H-indol-5-ol
+
+>  <Synonyms>
+3-(2-AMINOETHYL)-1H-INDOL-5-OL
+
+>  <Type>
+NON-POLYMER
+
+>  <Formula>
+C10 H12 N2 O
+
+>  <MolecularWeight>
+176.215
+
+>  <ModifiedDate>
+2011-06-04
+
+>  <Parent>
+
+
+>  <OneLetterCode>
+
+
+>  <SubcomponentList>
+
+
+>  <AmbiguousFlag>
+
+
+>  <InChI>
+InChI=1S/C10H12N2O/c11-4-3-7-6-12-10-2-1-8(13)5-9(7)10/h1-2,5-6,12-13H,3-4,11H2
+
+>  <InChIKey>
+QZAYGJVTTNCVMB-UHFFFAOYSA-N
+
+>  <SMILES>
+c1cc2c(cc1O)c(c[nH]2)CCN
+
+$$$$
+2YMD_SRO_J_1213
+  RCSB PDB01151511593D
+Coordinates from PDB:2YMD:J:1213 Model:1 without hydrogens
+ 13 14  0  0  0  0            999 V2000
+  -30.0680  -53.9780   20.6240   O 0  0  0  0  0  0  0  0  0  0  0  0
+  -29.5610  -54.3820   19.4040   C 0  0  0  0  0  0  0  0  0  0  0  0
+  -30.2380  -55.3310   18.6170   C 0  0  0  0  0  0  0  0  0  0  0  0
+  -29.7210  -55.7150   17.3780   C 0  0  0  0  0  0  0  0  0  0  0  0
+  -28.4940  -55.1490   16.9220   C 0  0  0  0  0  0  0  0  0  0  0  0
+  -27.7640  -55.3490   15.7630   N 0  0  0  0  0  0  0  0  0  0  0  0
+  -26.6570  -54.5720   15.7910   C 0  0  0  0  0  0  0  0  0  0  0  0
+  -26.6610  -53.8530   16.9800   C 0  0  0  0  0  0  0  0  0  0  0  0
+  -27.8330  -54.2210   17.6970   C 0  0  0  0  0  0  0  0  0  0  0  0
+  -28.3720  -53.8300   18.9480   C 0  0  0  0  0  0  0  0  0  0  0  0
+  -25.6270  -52.8720   17.4340   C 0  0  0  0  0  0  0  0  0  0  0  0
+  -25.3110  -51.7580   16.5070   C 0  0  0  0  0  0  0  0  0  0  0  0
+  -26.4310  -51.0560   15.9480   N 0  0  0  0  0  0  0  0  0  0  0  0
+  1  2  1  0  0  0  0
+  2 10  2  0  0  0  0
+  2  3  1  0  0  0  0
+  3  4  2  0  0  0  0
+  4  5  1  0  0  0  0
+  5  6  1  0  0  0  0
+  5  9  2  0  0  0  0
+  6  7  1  0  0  0  0
+  7  8  2  0  0  0  0
+  8 11  1  0  0  0  0
+  8  9  1  0  0  0  0
+  9 10  1  0  0  0  0
+ 11 12  1  0  0  0  0
+ 12 13  1  0  0  0  0
+M  END
+>  <InstanceId>
+2YMD_SRO_J_1213
+
+>  <ChemCompId>
+SRO
+
+>  <PdbId>
+2YMD
+
+>  <ChainId>
+J
+
+>  <ResidueNumber>
+1213
+
+>  <InsertionCode>
+
+
+>  <Model>
+1
+
+>  <AltIds>
+
+
+>  <MissingHeavyAtoms>
+0
+
+>  <ObservedFormula>
+C10 N2 O
+
+>  <Name>
+SEROTONIN
+
+>  <SystematicName>
+3-(2-aminoethyl)-1H-indol-5-ol
+
+>  <Synonyms>
+3-(2-AMINOETHYL)-1H-INDOL-5-OL
+
+>  <Type>
+NON-POLYMER
+
+>  <Formula>
+C10 H12 N2 O
+
+>  <MolecularWeight>
+176.215
+
+>  <ModifiedDate>
+2011-06-04
+
+>  <Parent>
+
+
+>  <OneLetterCode>
+
+
+>  <SubcomponentList>
+
+
+>  <AmbiguousFlag>
+
+
+>  <InChI>
+InChI=1S/C10H12N2O/c11-4-3-7-6-12-10-2-1-8(13)5-9(7)10/h1-2,5-6,12-13H,3-4,11H2
+
+>  <InChIKey>
+QZAYGJVTTNCVMB-UHFFFAOYSA-N
+
+>  <SMILES>
+c1cc2c(cc1O)c(c[nH]2)CCN
+
+$$$$
+3ADV_SRO_A_1
+  RCSB PDB01151513013D
+Coordinates from PDB:3ADV:A:1 Model:1 without hydrogens
+ 13 14  0  0  0  0            999 V2000
+   18.6310   64.8870    9.9730   O 0  0  0  0  0  0  0  0  0  0  0  0
+   17.8260   64.5690   11.0190   C 0  0  0  0  0  0  0  0  0  0  0  0
+   16.4170   64.5310   10.8410   C 0  0  0  0  0  0  0  0  0  0  0  0
+   15.5710   64.2040   11.9160   C 0  0  0  0  0  0  0  0  0  0  0  0
+   16.1210   63.9090   13.1920   C 0  0  0  0  0  0  0  0  0  0  0  0
+   15.5690   63.5640   14.4060   N 0  0  0  0  0  0  0  0  0  0  0  0
+   16.5610   63.3840   15.3350   C 0  0  0  0  0  0  0  0  0  0  0  0
+   17.7760   63.5980   14.7850   C 0  0  0  0  0  0  0  0  0  0  0  0
+   17.5440   63.9470   13.3750   C 0  0  0  0  0  0  0  0  0  0  0  0
+   18.3930   64.2800   12.2760   C 0  0  0  0  0  0  0  0  0  0  0  0
+   19.1240   63.4960   15.4810   C 0  0  0  0  0  0  0  0  0  0  0  0
+   19.2270   64.5110   16.6320   C 0  0  0  0  0  0  0  0  0  0  0  0
+   18.9910   63.8330   17.9140   N 0  0  0  0  0  0  0  0  0  0  0  0
+  1  2  1  0  0  0  0
+  2 10  2  0  0  0  0
+  2  3  1  0  0  0  0
+  3  4  2  0  0  0  0
+  4  5  1  0  0  0  0
+  5  6  1  0  0  0  0
+  5  9  2  0  0  0  0
+  6  7  1  0  0  0  0
+  7  8  2  0  0  0  0
+  8 11  1  0  0  0  0
+  8  9  1  0  0  0  0
+  9 10  1  0  0  0  0
+ 11 12  1  0  0  0  0
+ 12 13  1  0  0  0  0
+M  END
+>  <InstanceId>
+3ADV_SRO_A_1
+
+>  <ChemCompId>
+SRO
+
+>  <PdbId>
+3ADV
+
+>  <ChainId>
+A
+
+>  <ResidueNumber>
+1
+
+>  <InsertionCode>
+
+
+>  <Model>
+1
+
+>  <AltIds>
+
+
+>  <MissingHeavyAtoms>
+0
+
+>  <ObservedFormula>
+C10 N2 O
+
+>  <Name>
+SEROTONIN
+
+>  <SystematicName>
+3-(2-aminoethyl)-1H-indol-5-ol
+
+>  <Synonyms>
+3-(2-AMINOETHYL)-1H-INDOL-5-OL
+
+>  <Type>
+NON-POLYMER
+
+>  <Formula>
+C10 H12 N2 O
+
+>  <MolecularWeight>
+176.215
+
+>  <ModifiedDate>
+2011-06-04
+
+>  <Parent>
+
+
+>  <OneLetterCode>
+
+
+>  <SubcomponentList>
+
+
+>  <AmbiguousFlag>
+
+
+>  <InChI>
+InChI=1S/C10H12N2O/c11-4-3-7-6-12-10-2-1-8(13)5-9(7)10/h1-2,5-6,12-13H,3-4,11H2
+
+>  <InChIKey>
+QZAYGJVTTNCVMB-UHFFFAOYSA-N
+
+>  <SMILES>
+c1cc2c(cc1O)c(c[nH]2)CCN
+
+$$$$
+3ADV_SRO_A_3
+  RCSB PDB01151513013D
+Coordinates from PDB:3ADV:A:3 Model:1 without hydrogens
+ 13 14  0  0  0  0            999 V2000
+   10.2920   65.1090    9.4820   O 0  0  0  0  0  0  0  0  0  0  0  0
+    9.2710   64.5560   10.1960   C 0  0  0  0  0  0  0  0  0  0  0  0
+    8.0230   65.2350   10.3010   C 0  0  0  0  0  0  0  0  0  0  0  0
+    6.9600   64.6730   11.0350   C 0  0  0  0  0  0  0  0  0  0  0  0
+    7.1260   63.4170   11.6810   C 0  0  0  0  0  0  0  0  0  0  0  0
+    6.2970   62.6260   12.4500   N 0  0  0  0  0  0  0  0  0  0  0  0
+    6.9590   61.4890   12.8340   C 0  0  0  0  0  0  0  0  0  0  0  0
+    8.2240   61.4840   12.3410   C 0  0  0  0  0  0  0  0  0  0  0  0
+    8.3810   62.7300   11.5760   C 0  0  0  0  0  0  0  0  0  0  0  0
+    9.4520   63.3120   10.8300   C 0  0  0  0  0  0  0  0  0  0  0  0
+    9.2930   60.4100   12.5290   C 0  0  0  0  0  0  0  0  0  0  0  0
+    8.6740   59.0120   12.7020   C 0  0  0  0  0  0  0  0  0  0  0  0
+    8.4580   58.3810   11.3940   N 0  0  0  0  0  0  0  0  0  0  0  0
+  1  2  1  0  0  0  0
+  2 10  2  0  0  0  0
+  2  3  1  0  0  0  0
+  3  4  2  0  0  0  0
+  4  5  1  0  0  0  0
+  5  6  1  0  0  0  0
+  5  9  2  0  0  0  0
+  6  7  1  0  0  0  0
+  7  8  2  0  0  0  0
+  8 11  1  0  0  0  0
+  8  9  1  0  0  0  0
+  9 10  1  0  0  0  0
+ 11 12  1  0  0  0  0
+ 12 13  1  0  0  0  0
+M  END
+>  <InstanceId>
+3ADV_SRO_A_3
+
+>  <ChemCompId>
+SRO
+
+>  <PdbId>
+3ADV
+
+>  <ChainId>
+A
+
+>  <ResidueNumber>
+3
+
+>  <InsertionCode>
+
+
+>  <Model>
+1
+
+>  <AltIds>
+
+
+>  <MissingHeavyAtoms>
+0
+
+>  <ObservedFormula>
+C10 N2 O
+
+>  <Name>
+SEROTONIN
+
+>  <SystematicName>
+3-(2-aminoethyl)-1H-indol-5-ol
+
+>  <Synonyms>
+3-(2-AMINOETHYL)-1H-INDOL-5-OL
+
+>  <Type>
+NON-POLYMER
+
+>  <Formula>
+C10 H12 N2 O
+
+>  <MolecularWeight>
+176.215
+
+>  <ModifiedDate>
+2011-06-04
+
+>  <Parent>
+
+
+>  <OneLetterCode>
+
+
+>  <SubcomponentList>
+
+
+>  <AmbiguousFlag>
+
+
+>  <InChI>
+InChI=1S/C10H12N2O/c11-4-3-7-6-12-10-2-1-8(13)5-9(7)10/h1-2,5-6,12-13H,3-4,11H2
+
+>  <InChIKey>
+QZAYGJVTTNCVMB-UHFFFAOYSA-N
+
+>  <SMILES>
+c1cc2c(cc1O)c(c[nH]2)CCN
+
+$$$$
+3ADV_SRO_B_4
+  RCSB PDB01151513013D
+Coordinates from PDB:3ADV:B:4 Model:1 without hydrogens
+ 13 14  0  0  0  0            999 V2000
+   40.4470   34.9260   43.4210   O 0  0  0  0  0  0  0  0  0  0  0  0
+   39.8160   36.1150   43.2380   C 0  0  0  0  0  0  0  0  0  0  0  0
+   40.3580   37.3010   43.8070   C 0  0  0  0  0  0  0  0  0  0  0  0
+   39.7150   38.5370   43.6270   C 0  0  0  0  0  0  0  0  0  0  0  0
+   38.5140   38.6100   42.8700   C 0  0  0  0  0  0  0  0  0  0  0  0
+   37.6710   39.6450   42.5240   N 0  0  0  0  0  0  0  0  0  0  0  0
+   36.6290   39.1700   41.7680   C 0  0  0  0  0  0  0  0  0  0  0  0
+   36.7440   37.8390   41.5910   C 0  0  0  0  0  0  0  0  0  0  0  0
+   37.9660   37.4180   42.2950   C 0  0  0  0  0  0  0  0  0  0  0  0
+   38.6270   36.1670   42.4850   C 0  0  0  0  0  0  0  0  0  0  0  0
+   35.7940   36.9530   40.8150   C 0  0  0  0  0  0  0  0  0  0  0  0
+   34.8890   36.1750   41.7780   C 0  0  0  0  0  0  0  0  0  0  0  0
+   35.3800   34.7940   41.9070   N 0  0  0  0  0  0  0  0  0  0  0  0
+  1  2  1  0  0  0  0
+  2 10  2  0  0  0  0
+  2  3  1  0  0  0  0
+  3  4  2  0  0  0  0
+  4  5  1  0  0  0  0
+  5  6  1  0  0  0  0
+  5  9  2  0  0  0  0
+  6  7  1  0  0  0  0
+  7  8  2  0  0  0  0
+  8 11  1  0  0  0  0
+  8  9  1  0  0  0  0
+  9 10  1  0  0  0  0
+ 11 12  1  0  0  0  0
+ 12 13  1  0  0  0  0
+M  END
+>  <InstanceId>
+3ADV_SRO_B_4
+
+>  <ChemCompId>
+SRO
+
+>  <PdbId>
+3ADV
+
+>  <ChainId>
+B
+
+>  <ResidueNumber>
+4
+
+>  <InsertionCode>
+
+
+>  <Model>
+1
+
+>  <AltIds>
+
+
+>  <MissingHeavyAtoms>
+0
+
+>  <ObservedFormula>
+C10 N2 O
+
+>  <Name>
+SEROTONIN
+
+>  <SystematicName>
+3-(2-aminoethyl)-1H-indol-5-ol
+
+>  <Synonyms>
+3-(2-AMINOETHYL)-1H-INDOL-5-OL
+
+>  <Type>
+NON-POLYMER
+
+>  <Formula>
+C10 H12 N2 O
+
+>  <MolecularWeight>
+176.215
+
+>  <ModifiedDate>
+2011-06-04
+
+>  <Parent>
+
+
+>  <OneLetterCode>
+
+
+>  <SubcomponentList>
+
+
+>  <AmbiguousFlag>
+
+
+>  <InChI>
+InChI=1S/C10H12N2O/c11-4-3-7-6-12-10-2-1-8(13)5-9(7)10/h1-2,5-6,12-13H,3-4,11H2
+
+>  <InChIKey>
+QZAYGJVTTNCVMB-UHFFFAOYSA-N
+
+>  <SMILES>
+c1cc2c(cc1O)c(c[nH]2)CCN
+
+$$$$
+3BRN_SRO_A_158
+  RCSB PDB01151514043D
+Coordinates from PDB:3BRN:A:158 Model:1 without hydrogens
+ 13 14  0  0  0  0            999 V2000
+   -8.1260   31.7850  -10.8480   O 0  0  0  0  0  0  0  0  0  0  0  0
+   -8.0610   33.1320  -10.5860   C 0  0  0  0  0  0  0  0  0  0  0  0
+   -7.0470   33.5720   -9.7390   C 0  0  0  0  0  0  0  0  0  0  0  0
+   -6.8510   34.9390   -9.5270   C 0  0  0  0  0  0  0  0  0  0  0  0
+   -7.7470   35.8060  -10.1340   C 0  0  0  0  0  0  0  0  0  0  0  0
+   -7.9200   37.1520  -10.1210   N 0  0  0  0  0  0  0  0  0  0  0  0
+   -8.9580   37.4780  -10.9270   C 0  0  0  0  0  0  0  0  0  0  0  0
+   -9.4980   36.3040  -11.4540   C 0  0  0  0  0  0  0  0  0  0  0  0
+   -8.7390   35.2600  -10.9310   C 0  0  0  0  0  0  0  0  0  0  0  0
+   -8.8800   33.9750  -11.1400   C 0  0  0  0  0  0  0  0  0  0  0  0
+  -10.6950   36.2090  -12.3680   C 0  0  0  0  0  0  0  0  0  0  0  0
+  -11.8650   35.5100  -11.6480   C 0  0  0  0  0  0  0  0  0  0  0  0
+  -12.9430   35.2870  -12.6170   N 0  0  0  0  0  0  0  0  0  0  0  0
+  1  2  1  0  0  0  0
+  2 10  2  0  0  0  0
+  2  3  1  0  0  0  0
+  3  4  2  0  0  0  0
+  4  5  1  0  0  0  0
+  5  6  1  0  0  0  0
+  5  9  2  0  0  0  0
+  6  7  1  0  0  0  0
+  7  8  2  0  0  0  0
+  8 11  1  0  0  0  0
+  8  9  1  0  0  0  0
+  9 10  1  0  0  0  0
+ 11 12  1  0  0  0  0
+ 12 13  1  0  0  0  0
+M  END
+>  <InstanceId>
+3BRN_SRO_A_158
+
+>  <ChemCompId>
+SRO
+
+>  <PdbId>
+3BRN
+
+>  <ChainId>
+A
+
+>  <ResidueNumber>
+158
+
+>  <InsertionCode>
+
+
+>  <Model>
+1
+
+>  <AltIds>
+
+
+>  <MissingHeavyAtoms>
+0
+
+>  <ObservedFormula>
+C10 N2 O
+
+>  <Name>
+SEROTONIN
+
+>  <SystematicName>
+3-(2-aminoethyl)-1H-indol-5-ol
+
+>  <Synonyms>
+3-(2-AMINOETHYL)-1H-INDOL-5-OL
+
+>  <Type>
+NON-POLYMER
+
+>  <Formula>
+C10 H12 N2 O
+
+>  <MolecularWeight>
+176.215
+
+>  <ModifiedDate>
+2011-06-04
+
+>  <Parent>
+
+
+>  <OneLetterCode>
+
+
+>  <SubcomponentList>
+
+
+>  <AmbiguousFlag>
+
+
+>  <InChI>
+InChI=1S/C10H12N2O/c11-4-3-7-6-12-10-2-1-8(13)5-9(7)10/h1-2,5-6,12-13H,3-4,11H2
+
+>  <InChIKey>
+QZAYGJVTTNCVMB-UHFFFAOYSA-N
+
+>  <SMILES>
+c1cc2c(cc1O)c(c[nH]2)CCN
+
+$$$$
+3BRN_SRO_B_158
+  RCSB PDB01151514043D
+Coordinates from PDB:3BRN:B:158 Model:1 without hydrogens
+ 13 14  0  0  0  0            999 V2000
+    8.4180   21.1240    6.6450   O 0  0  0  0  0  0  0  0  0  0  0  0
+    8.1190   19.8000    6.7640   C 0  0  0  0  0  0  0  0  0  0  0  0
+    6.9500   19.4290    7.4270   C 0  0  0  0  0  0  0  0  0  0  0  0
+    6.6140   18.0790    7.5400   C 0  0  0  0  0  0  0  0  0  0  0  0
+    7.5210   17.1630    7.0200   C 0  0  0  0  0  0  0  0  0  0  0  0
+    7.5630   15.8090    6.9550   N 0  0  0  0  0  0  0  0  0  0  0  0
+    8.7210   15.4310    6.3600   C 0  0  0  0  0  0  0  0  0  0  0  0
+    9.4430   16.5600    5.9930   C 0  0  0  0  0  0  0  0  0  0  0  0
+    8.6910   17.6430    6.4520   C 0  0  0  0  0  0  0  0  0  0  0  0
+    8.9400   18.9040    6.2980   C 0  0  0  0  0  0  0  0  0  0  0  0
+   10.7050   16.5740    5.1580   C 0  0  0  0  0  0  0  0  0  0  0  0
+   11.8930   17.0490    5.9710   C 0  0  0  0  0  0  0  0  0  0  0  0
+   13.0150   17.1720    5.0670   N 0  0  0  0  0  0  0  0  0  0  0  0
+  1  2  1  0  0  0  0
+  2 10  2  0  0  0  0
+  2  3  1  0  0  0  0
+  3  4  2  0  0  0  0
+  4  5  1  0  0  0  0
+  5  6  1  0  0  0  0
+  5  9  2  0  0  0  0
+  6  7  1  0  0  0  0
+  7  8  2  0  0  0  0
+  8 11  1  0  0  0  0
+  8  9  1  0  0  0  0
+  9 10  1  0  0  0  0
+ 11 12  1  0  0  0  0
+ 12 13  1  0  0  0  0
+M  END
+>  <InstanceId>
+3BRN_SRO_B_158
+
+>  <ChemCompId>
+SRO
+
+>  <PdbId>
+3BRN
+
+>  <ChainId>
+B
+
+>  <ResidueNumber>
+158
+
+>  <InsertionCode>
+
+
+>  <Model>
+1
+
+>  <AltIds>
+
+
+>  <MissingHeavyAtoms>
+0
+
+>  <ObservedFormula>
+C10 N2 O
+
+>  <Name>
+SEROTONIN
+
+>  <SystematicName>
+3-(2-aminoethyl)-1H-indol-5-ol
+
+>  <Synonyms>
+3-(2-AMINOETHYL)-1H-INDOL-5-OL
+
+>  <Type>
+NON-POLYMER
+
+>  <Formula>
+C10 H12 N2 O
+
+>  <MolecularWeight>
+176.215
+
+>  <ModifiedDate>
+2011-06-04
+
+>  <Parent>
+
+
+>  <OneLetterCode>
+
+
+>  <SubcomponentList>
+
+
+>  <AmbiguousFlag>
+
+
+>  <InChI>
+InChI=1S/C10H12N2O/c11-4-3-7-6-12-10-2-1-8(13)5-9(7)10/h1-2,5-6,12-13H,3-4,11H2
+
+>  <InChIKey>
+QZAYGJVTTNCVMB-UHFFFAOYSA-N
+
+>  <SMILES>
+c1cc2c(cc1O)c(c[nH]2)CCN
+
+$$$$
+3NK1_SRO_X_433
+  RCSB PDB01151523433D
+Coordinates from PDB:3NK1:X:433 Model:1 without hydrogens
+ 13 14  0  0  0  0            999 V2000
+  124.7440   19.0820   67.0050   O 0  0  0  0  0  0  0  0  0  0  0  0
+  123.6390   18.3000   66.9560   C 0  0  0  0  0  0  0  0  0  0  0  0
+  123.7720   16.9330   66.7460   C 0  0  0  0  0  0  0  0  0  0  0  0
+  122.6740   16.0820   66.6740   C 0  0  0  0  0  0  0  0  0  0  0  0
+  121.4060   16.6000   66.8200   C 0  0  0  0  0  0  0  0  0  0  0  0
+  120.1660   16.0740   66.8170   N 0  0  0  0  0  0  0  0  0  0  0  0
+  119.1970   17.0090   67.0180   C 0  0  0  0  0  0  0  0  0  0  0  0
+  119.8350   18.2140   67.1590   C 0  0  0  0  0  0  0  0  0  0  0  0
+  121.2880   18.0420   67.0460   C 0  0  0  0  0  0  0  0  0  0  0  0
+  122.3870   18.8720   67.1100   C 0  0  0  0  0  0  0  0  0  0  0  0
+  119.1230   19.4920   67.3810   C 0  0  0  0  0  0  0  0  0  0  0  0
+  118.5390   20.1160   66.3650   C 0  0  0  0  0  0  0  0  0  0  0  0
+  117.8950   21.2550   66.5470   N 0  0  0  0  0  0  0  0  0  0  0  0
+  1  2  1  0  0  0  0
+  2 10  2  0  0  0  0
+  2  3  1  0  0  0  0
+  3  4  2  0  0  0  0
+  4  5  1  0  0  0  0
+  5  6  1  0  0  0  0
+  5  9  2  0  0  0  0
+  6  7  1  0  0  0  0
+  7  8  2  0  0  0  0
+  8 11  1  0  0  0  0
+  8  9  1  0  0  0  0
+  9 10  1  0  0  0  0
+ 11 12  1  0  0  0  0
+ 12 13  1  0  0  0  0
+M  END
+>  <InstanceId>
+3NK1_SRO_X_433
+
+>  <ChemCompId>
+SRO
+
+>  <PdbId>
+3NK1
+
+>  <ChainId>
+X
+
+>  <ResidueNumber>
+433
+
+>  <InsertionCode>
+
+
+>  <Model>
+1
+
+>  <AltIds>
+
+
+>  <MissingHeavyAtoms>
+0
+
+>  <ObservedFormula>
+C10 N2 O
+
+>  <Name>
+SEROTONIN
+
+>  <SystematicName>
+3-(2-aminoethyl)-1H-indol-5-ol
+
+>  <Synonyms>
+3-(2-AMINOETHYL)-1H-INDOL-5-OL
+
+>  <Type>
+NON-POLYMER
+
+>  <Formula>
+C10 H12 N2 O
+
+>  <MolecularWeight>
+176.215
+
+>  <ModifiedDate>
+2011-06-04
+
+>  <Parent>
+
+
+>  <OneLetterCode>
+
+
+>  <SubcomponentList>
+
+
+>  <AmbiguousFlag>
+
+
+>  <InChI>
+InChI=1S/C10H12N2O/c11-4-3-7-6-12-10-2-1-8(13)5-9(7)10/h1-2,5-6,12-13H,3-4,11H2
+
+>  <InChIKey>
+QZAYGJVTTNCVMB-UHFFFAOYSA-N
+
+>  <SMILES>
+c1cc2c(cc1O)c(c[nH]2)CCN
+
+$$$$
+3Q6K_SRO_A_383
+  RCSB PDB01161501483D
+Coordinates from PDB:3Q6K:A:383 Model:1 without hydrogens
+ 13 14  0  0  0  0            999 V2000
+   38.6400   12.6350  -27.9670   O 0  0  0  0  0  0  0  0  0  0  0  0
+   38.1740   13.3240  -26.8940   C 0  0  0  0  0  0  0  0  0  0  0  0
+   37.0700   14.1810  -27.0860   C 0  0  0  0  0  0  0  0  0  0  0  0
+   36.5820   14.9050  -25.9910   C 0  0  0  0  0  0  0  0  0  0  0  0
+   37.2280   14.7180  -24.7550   C 0  0  0  0  0  0  0  0  0  0  0  0
+   37.0460   15.2160  -23.4990   N 0  0  0  0  0  0  0  0  0  0  0  0
+   37.9730   14.6990  -22.6410   C 0  0  0  0  0  0  0  0  0  0  0  0
+   38.7860   13.8310  -23.3540   C 0  0  0  0  0  0  0  0  0  0  0  0
+   38.3160   13.8390  -24.6830   C 0  0  0  0  0  0  0  0  0  0  0  0
+   38.7520   13.1750  -25.7280   C 0  0  0  0  0  0  0  0  0  0  0  0
+   39.9250   13.0510  -22.7470   C 0  0  0  0  0  0  0  0  0  0  0  0
+   41.2510   13.5550  -23.2970   C 0  0  0  0  0  0  0  0  0  0  0  0
+   42.0970   12.4390  -23.6520   N 0  0  0  0  0  0  0  0  0  0  0  0
+  1  2  1  0  0  0  0
+  2 10  2  0  0  0  0
+  2  3  1  0  0  0  0
+  3  4  2  0  0  0  0
+  4  5  1  0  0  0  0
+  5  6  1  0  0  0  0
+  5  9  2  0  0  0  0
+  6  7  1  0  0  0  0
+  7  8  2  0  0  0  0
+  8 11  1  0  0  0  0
+  8  9  1  0  0  0  0
+  9 10  1  0  0  0  0
+ 11 12  1  0  0  0  0
+ 12 13  1  0  0  0  0
+M  END
+>  <InstanceId>
+3Q6K_SRO_A_383
+
+>  <ChemCompId>
+SRO
+
+>  <PdbId>
+3Q6K
+
+>  <ChainId>
+A
+
+>  <ResidueNumber>
+383
+
+>  <InsertionCode>
+
+
+>  <Model>
+1
+
+>  <AltIds>
+
+
+>  <MissingHeavyAtoms>
+0
+
+>  <ObservedFormula>
+C10 N2 O
+
+>  <Name>
+SEROTONIN
+
+>  <SystematicName>
+3-(2-aminoethyl)-1H-indol-5-ol
+
+>  <Synonyms>
+3-(2-AMINOETHYL)-1H-INDOL-5-OL
+
+>  <Type>
+NON-POLYMER
+
+>  <Formula>
+C10 H12 N2 O
+
+>  <MolecularWeight>
+176.215
+
+>  <ModifiedDate>
+2011-06-04
+
+>  <Parent>
+
+
+>  <OneLetterCode>
+
+
+>  <SubcomponentList>
+
+
+>  <AmbiguousFlag>
+
+
+>  <InChI>
+InChI=1S/C10H12N2O/c11-4-3-7-6-12-10-2-1-8(13)5-9(7)10/h1-2,5-6,12-13H,3-4,11H2
+
+>  <InChIKey>
+QZAYGJVTTNCVMB-UHFFFAOYSA-N
+
+>  <SMILES>
+c1cc2c(cc1O)c(c[nH]2)CCN
+
+$$$$
+3Q6K_SRO_B_383
+  RCSB PDB01161501483D
+Coordinates from PDB:3Q6K:B:383 Model:1 without hydrogens
+ 13 14  0  0  0  0            999 V2000
+   38.0450  -27.2860  -11.3390   O 0  0  0  0  0  0  0  0  0  0  0  0
+   37.5130  -26.1880  -11.9580   C 0  0  0  0  0  0  0  0  0  0  0  0
+   36.3490  -26.3240  -12.7420   C 0  0  0  0  0  0  0  0  0  0  0  0
+   35.8190  -25.1970  -13.3790   C 0  0  0  0  0  0  0  0  0  0  0  0
+   36.4790  -23.9710  -13.1980   C 0  0  0  0  0  0  0  0  0  0  0  0
+   36.2760  -22.6910  -13.6260   N 0  0  0  0  0  0  0  0  0  0  0  0
+   37.2550  -21.8780  -13.1270   C 0  0  0  0  0  0  0  0  0  0  0  0
+   38.1180  -22.6370  -12.3550   C 0  0  0  0  0  0  0  0  0  0  0  0
+   37.6250  -23.9520  -12.4010   C 0  0  0  0  0  0  0  0  0  0  0  0
+   38.0970  -25.0280  -11.8160   C 0  0  0  0  0  0  0  0  0  0  0  0
+   39.3250  -22.1030  -11.6200   C 0  0  0  0  0  0  0  0  0  0  0  0
+   40.5640  -22.9510  -11.9020   C 0  0  0  0  0  0  0  0  0  0  0  0
+   41.3030  -23.2140  -10.6900   N 0  0  0  0  0  0  0  0  0  0  0  0
+  1  2  1  0  0  0  0
+  2 10  2  0  0  0  0
+  2  3  1  0  0  0  0
+  3  4  2  0  0  0  0
+  4  5  1  0  0  0  0
+  5  6  1  0  0  0  0
+  5  9  2  0  0  0  0
+  6  7  1  0  0  0  0
+  7  8  2  0  0  0  0
+  8 11  1  0  0  0  0
+  8  9  1  0  0  0  0
+  9 10  1  0  0  0  0
+ 11 12  1  0  0  0  0
+ 12 13  1  0  0  0  0
+M  END
+>  <InstanceId>
+3Q6K_SRO_B_383
+
+>  <ChemCompId>
+SRO
+
+>  <PdbId>
+3Q6K
+
+>  <ChainId>
+B
+
+>  <ResidueNumber>
+383
+
+>  <InsertionCode>
+
+
+>  <Model>
+1
+
+>  <AltIds>
+
+
+>  <MissingHeavyAtoms>
+0
+
+>  <ObservedFormula>
+C10 N2 O
+
+>  <Name>
+SEROTONIN
+
+>  <SystematicName>
+3-(2-aminoethyl)-1H-indol-5-ol
+
+>  <Synonyms>
+3-(2-AMINOETHYL)-1H-INDOL-5-OL
+
+>  <Type>
+NON-POLYMER
+
+>  <Formula>
+C10 H12 N2 O
+
+>  <MolecularWeight>
+176.215
+
+>  <ModifiedDate>
+2011-06-04
+
+>  <Parent>
+
+
+>  <OneLetterCode>
+
+
+>  <SubcomponentList>
+
+
+>  <AmbiguousFlag>
+
+
+>  <InChI>
+InChI=1S/C10H12N2O/c11-4-3-7-6-12-10-2-1-8(13)5-9(7)10/h1-2,5-6,12-13H,3-4,11H2
+
+>  <InChIKey>
+QZAYGJVTTNCVMB-UHFFFAOYSA-N
+
+>  <SMILES>
+c1cc2c(cc1O)c(c[nH]2)CCN
+
+$$$$
+4DTW_SRO_B_502
+  RCSB PDB01161510303D
+Coordinates from PDB:4DTW:B:502 Model:1 without hydrogens
+ 13 14  0  0  0  0            999 V2000
+   20.2280    5.8760   17.8450   O 0  0  0  0  0  0  0  0  0  0  0  0
+   19.6100    4.6950   18.1830   C 0  0  0  0  0  0  0  0  0  0  0  0
+   18.5510    4.6390   19.1550   C 0  0  0  0  0  0  0  0  0  0  0  0
+   17.9190    3.4220   19.4900   C 0  0  0  0  0  0  0  0  0  0  0  0
+   18.3760    2.2560   18.8660   C 0  0  0  0  0  0  0  0  0  0  0  0
+   18.0330    0.9580   18.9380   N 0  0  0  0  0  0  0  0  0  0  0  0
+   18.8100    0.1780   18.0860   C 0  0  0  0  0  0  0  0  0  0  0  0
+   19.7540    0.9250   17.3780   C 0  0  0  0  0  0  0  0  0  0  0  0
+   19.5090    2.3150   17.8650   C 0  0  0  0  0  0  0  0  0  0  0  0
+   20.0910    3.5470   17.5550   C 0  0  0  0  0  0  0  0  0  0  0  0
+   20.7650    0.3580   16.3620   C 0  0  0  0  0  0  0  0  0  0  0  0
+   20.4440    0.9800   15.0130   C 0  0  0  0  0  0  0  0  0  0  0  0
+   20.9750    0.6880   13.6970   N 0  0  0  0  0  0  0  0  0  0  0  0
+  1  2  1  0  0  0  0
+  2 10  2  0  0  0  0
+  2  3  1  0  0  0  0
+  3  4  2  0  0  0  0
+  4  5  1  0  0  0  0
+  5  6  1  0  0  0  0
+  5  9  2  0  0  0  0
+  6  7  1  0  0  0  0
+  7  8  2  0  0  0  0
+  8 11  1  0  0  0  0
+  8  9  1  0  0  0  0
+  9 10  1  0  0  0  0
+ 11 12  1  0  0  0  0
+ 12 13  1  0  0  0  0
+M  END
+>  <InstanceId>
+4DTW_SRO_B_502
+
+>  <ChemCompId>
+SRO
+
+>  <PdbId>
+4DTW
+
+>  <ChainId>
+B
+
+>  <ResidueNumber>
+502
+
+>  <InsertionCode>
+
+
+>  <Model>
+1
+
+>  <AltIds>
+
+
+>  <MissingHeavyAtoms>
+0
+
+>  <ObservedFormula>
+C10 N2 O
+
+>  <Name>
+SEROTONIN
+
+>  <SystematicName>
+3-(2-aminoethyl)-1H-indol-5-ol
+
+>  <Synonyms>
+3-(2-AMINOETHYL)-1H-INDOL-5-OL
+
+>  <Type>
+NON-POLYMER
+
+>  <Formula>
+C10 H12 N2 O
+
+>  <MolecularWeight>
+176.215
+
+>  <ModifiedDate>
+2011-06-04
+
+>  <Parent>
+
+
+>  <OneLetterCode>
+
+
+>  <SubcomponentList>
+
+
+>  <AmbiguousFlag>
+
+
+>  <InChI>
+InChI=1S/C10H12N2O/c11-4-3-7-6-12-10-2-1-8(13)5-9(7)10/h1-2,5-6,12-13H,3-4,11H2
+
+>  <InChIKey>
+QZAYGJVTTNCVMB-UHFFFAOYSA-N
+
+>  <SMILES>
+c1cc2c(cc1O)c(c[nH]2)CCN
+
+$$$$
+4DTW_SRO_A_501
+  RCSB PDB01161510303D
+Coordinates from PDB:4DTW:A:501 Model:1 without hydrogens
+ 13 14  0  0  0  0            999 V2000
+    0.8730  -54.9590   19.7350   O 0  0  0  0  0  0  0  0  0  0  0  0
+    1.4320  -53.7110   19.9760   C 0  0  0  0  0  0  0  0  0  0  0  0
+    2.5040  -53.5590   20.8990   C 0  0  0  0  0  0  0  0  0  0  0  0
+    3.1110  -52.3070   21.1700   C 0  0  0  0  0  0  0  0  0  0  0  0
+    2.6100  -51.1780   20.5090   C 0  0  0  0  0  0  0  0  0  0  0  0
+    2.9270  -49.8670   20.5050   N 0  0  0  0  0  0  0  0  0  0  0  0
+    2.1070  -49.1950   19.6230   C 0  0  0  0  0  0  0  0  0  0  0  0
+    1.1870  -50.0040   18.9310   C 0  0  0  0  0  0  0  0  0  0  0  0
+    1.4730  -51.3510   19.5110   C 0  0  0  0  0  0  0  0  0  0  0  0
+    0.9160  -52.6080   19.3030   C 0  0  0  0  0  0  0  0  0  0  0  0
+    0.1450  -49.4840   17.9220   C 0  0  0  0  0  0  0  0  0  0  0  0
+   -0.3470  -50.3660   16.7600   C 0  0  0  0  0  0  0  0  0  0  0  0
+   -0.1370  -49.9860   15.3450   N 0  0  0  0  0  0  0  0  0  0  0  0
+  1  2  1  0  0  0  0
+  2 10  2  0  0  0  0
+  2  3  1  0  0  0  0
+  3  4  2  0  0  0  0
+  4  5  1  0  0  0  0
+  5  6  1  0  0  0  0
+  5  9  2  0  0  0  0
+  6  7  1  0  0  0  0
+  7  8  2  0  0  0  0
+  8 11  1  0  0  0  0
+  8  9  1  0  0  0  0
+  9 10  1  0  0  0  0
+ 11 12  1  0  0  0  0
+ 12 13  1  0  0  0  0
+M  END
+>  <InstanceId>
+4DTW_SRO_A_501
+
+>  <ChemCompId>
+SRO
+
+>  <PdbId>
+4DTW
+
+>  <ChainId>
+A
+
+>  <ResidueNumber>
+501
+
+>  <InsertionCode>
+
+
+>  <Model>
+1
+
+>  <AltIds>
+
+
+>  <MissingHeavyAtoms>
+0
+
+>  <ObservedFormula>
+C10 N2 O
+
+>  <Name>
+SEROTONIN
+
+>  <SystematicName>
+3-(2-aminoethyl)-1H-indol-5-ol
+
+>  <Synonyms>
+3-(2-AMINOETHYL)-1H-INDOL-5-OL
+
+>  <Type>
+NON-POLYMER
+
+>  <Formula>
+C10 H12 N2 O
+
+>  <MolecularWeight>
+176.215
+
+>  <ModifiedDate>
+2011-06-04
+
+>  <Parent>
+
+
+>  <OneLetterCode>
+
+
+>  <SubcomponentList>
+
+
+>  <AmbiguousFlag>
+
+
+>  <InChI>
+InChI=1S/C10H12N2O/c11-4-3-7-6-12-10-2-1-8(13)5-9(7)10/h1-2,5-6,12-13H,3-4,11H2
+
+>  <InChIKey>
+QZAYGJVTTNCVMB-UHFFFAOYSA-N
+
+>  <SMILES>
+c1cc2c(cc1O)c(c[nH]2)CCN
+
+$$$$
+4DUE_SRO_A_501
+  RCSB PDB01161510303D
+Coordinates from PDB:4DUE:A:501 Model:1 without hydrogens
+ 13 14  0  0  0  0            999 V2000
+   -3.9610    0.9170    8.7660   O 0  0  0  0  0  0  0  0  0  0  0  0
+   -3.9670   -0.2260    9.5140   C 0  0  0  0  0  0  0  0  0  0  0  0
+   -3.5220   -1.4030    8.8850   C 0  0  0  0  0  0  0  0  0  0  0  0
+   -3.5190   -2.6130    9.6410   C 0  0  0  0  0  0  0  0  0  0  0  0
+   -3.9150   -2.6080   10.9920   C 0  0  0  0  0  0  0  0  0  0  0  0
+   -3.9980   -3.5370   11.9720   N 0  0  0  0  0  0  0  0  0  0  0  0
+   -4.4100   -3.0070   13.1260   C 0  0  0  0  0  0  0  0  0  0  0  0
+   -4.6730   -1.6430   13.0240   C 0  0  0  0  0  0  0  0  0  0  0  0
+   -4.3220   -1.3480   11.6110   C 0  0  0  0  0  0  0  0  0  0  0  0
+   -4.3540   -0.1370   10.8770   C 0  0  0  0  0  0  0  0  0  0  0  0
+   -5.1960   -0.5720   13.9990   C 0  0  0  0  0  0  0  0  0  0  0  0
+   -5.4410   -1.1510   15.4050   C 0  0  0  0  0  0  0  0  0  0  0  0
+   -4.1880   -0.9810   16.1790   N 0  0  0  0  0  0  0  0  0  0  0  0
+  1  2  1  0  0  0  0
+  2 10  2  0  0  0  0
+  2  3  1  0  0  0  0
+  3  4  2  0  0  0  0
+  4  5  1  0  0  0  0
+  5  6  1  0  0  0  0
+  5  9  2  0  0  0  0
+  6  7  1  0  0  0  0
+  7  8  2  0  0  0  0
+  8 11  1  0  0  0  0
+  8  9  1  0  0  0  0
+  9 10  1  0  0  0  0
+ 11 12  1  0  0  0  0
+ 12 13  1  0  0  0  0
+M  END
+>  <InstanceId>
+4DUE_SRO_A_501
+
+>  <ChemCompId>
+SRO
+
+>  <PdbId>
+4DUE
+
+>  <ChainId>
+A
+
+>  <ResidueNumber>
+501
+
+>  <InsertionCode>
+
+
+>  <Model>
+1
+
+>  <AltIds>
+
+
+>  <MissingHeavyAtoms>
+0
+
+>  <ObservedFormula>
+C10 N2 O
+
+>  <Name>
+SEROTONIN
+
+>  <SystematicName>
+3-(2-aminoethyl)-1H-indol-5-ol
+
+>  <Synonyms>
+3-(2-AMINOETHYL)-1H-INDOL-5-OL
+
+>  <Type>
+NON-POLYMER
+
+>  <Formula>
+C10 H12 N2 O
+
+>  <MolecularWeight>
+176.215
+
+>  <ModifiedDate>
+2011-06-04
+
+>  <Parent>
+
+
+>  <OneLetterCode>
+
+
+>  <SubcomponentList>
+
+
+>  <AmbiguousFlag>
+
+
+>  <InChI>
+InChI=1S/C10H12N2O/c11-4-3-7-6-12-10-2-1-8(13)5-9(7)10/h1-2,5-6,12-13H,3-4,11H2
+
+>  <InChIKey>
+QZAYGJVTTNCVMB-UHFFFAOYSA-N
+
+>  <SMILES>
+c1cc2c(cc1O)c(c[nH]2)CCN
+
+$$$$
+4DUE_SRO_B_501
+  RCSB PDB01161510303D
+Coordinates from PDB:4DUE:B:501 Model:1 without hydrogens
+ 13 14  0  0  0  0            999 V2000
+  -25.4050   47.7150   10.4840   O 0  0  0  0  0  0  0  0  0  0  0  0
+  -25.4150   48.8270   11.2410   C 0  0  0  0  0  0  0  0  0  0  0  0
+  -25.7540   50.0170   10.5910   C 0  0  0  0  0  0  0  0  0  0  0  0
+  -25.7660   51.2160   11.3020   C 0  0  0  0  0  0  0  0  0  0  0  0
+  -25.4760   51.2520   12.6570   C 0  0  0  0  0  0  0  0  0  0  0  0
+  -25.3740   52.2360   13.5700   N 0  0  0  0  0  0  0  0  0  0  0  0
+  -25.0470   51.7480   14.8150   C 0  0  0  0  0  0  0  0  0  0  0  0
+  -24.8430   50.3640   14.7170   C 0  0  0  0  0  0  0  0  0  0  0  0
+  -25.1390   50.0090   13.3160   C 0  0  0  0  0  0  0  0  0  0  0  0
+  -25.0790   48.7580   12.6080   C 0  0  0  0  0  0  0  0  0  0  0  0
+  -24.4200   49.2890   15.6760   C 0  0  0  0  0  0  0  0  0  0  0  0
+  -24.0020   49.6640   17.0850   C 0  0  0  0  0  0  0  0  0  0  0  0
+  -25.1680   49.3280   17.8920   N 0  0  0  0  0  0  0  0  0  0  0  0
+  1  2  1  0  0  0  0
+  2 10  2  0  0  0  0
+  2  3  1  0  0  0  0
+  3  4  2  0  0  0  0
+  4  5  1  0  0  0  0
+  5  6  1  0  0  0  0
+  5  9  2  0  0  0  0
+  6  7  1  0  0  0  0
+  7  8  2  0  0  0  0
+  8 11  1  0  0  0  0
+  8  9  1  0  0  0  0
+  9 10  1  0  0  0  0
+ 11 12  1  0  0  0  0
+ 12 13  1  0  0  0  0
+M  END
+>  <InstanceId>
+4DUE_SRO_B_501
+
+>  <ChemCompId>
+SRO
+
+>  <PdbId>
+4DUE
+
+>  <ChainId>
+B
+
+>  <ResidueNumber>
+501
+
+>  <InsertionCode>
+
+
+>  <Model>
+1
+
+>  <AltIds>
+
+
+>  <MissingHeavyAtoms>
+0
+
+>  <ObservedFormula>
+C10 N2 O
+
+>  <Name>
+SEROTONIN
+
+>  <SystematicName>
+3-(2-aminoethyl)-1H-indol-5-ol
+
+>  <Synonyms>
+3-(2-AMINOETHYL)-1H-INDOL-5-OL
+
+>  <Type>
+NON-POLYMER
+
+>  <Formula>
+C10 H12 N2 O
+
+>  <MolecularWeight>
+176.215
+
+>  <ModifiedDate>
+2011-06-04
+
+>  <Parent>
+
+
+>  <OneLetterCode>
+
+
+>  <SubcomponentList>
+
+
+>  <AmbiguousFlag>
+
+
+>  <InChI>
+InChI=1S/C10H12N2O/c11-4-3-7-6-12-10-2-1-8(13)5-9(7)10/h1-2,5-6,12-13H,3-4,11H2
+
+>  <InChIKey>
+QZAYGJVTTNCVMB-UHFFFAOYSA-N
+
+>  <SMILES>
+c1cc2c(cc1O)c(c[nH]2)CCN
+
+$$$$
+4DUF_SRO_A_501
+  RCSB PDB01161510303D
+Coordinates from PDB:4DUF:A:501 Model:1 without hydrogens
+ 13 14  0  0  0  0            999 V2000
+   27.7380   -1.0320   41.1470   O 0  0  0  0  0  0  0  0  0  0  0  0
+   27.4560   -0.0160   40.2720   C 0  0  0  0  0  0  0  0  0  0  0  0
+   28.2060    1.1980   40.2130   C 0  0  0  0  0  0  0  0  0  0  0  0
+   27.8710    2.2640   39.3360   C 0  0  0  0  0  0  0  0  0  0  0  0
+   26.7580    2.1210   38.4550   C 0  0  0  0  0  0  0  0  0  0  0  0
+   26.1140    2.8380   37.5110   N 0  0  0  0  0  0  0  0  0  0  0  0
+   25.0310    2.2490   36.9850   C 0  0  0  0  0  0  0  0  0  0  0  0
+   24.9230    1.0190   37.6110   C 0  0  0  0  0  0  0  0  0  0  0  0
+   26.0150    0.8610   38.5780   C 0  0  0  0  0  0  0  0  0  0  0  0
+   26.3660   -0.2010   39.4250   C 0  0  0  0  0  0  0  0  0  0  0  0
+   23.9190    0.0020   37.3710   C 0  0  0  0  0  0  0  0  0  0  0  0
+   23.5120    0.7890   36.1170   C 0  0  0  0  0  0  0  0  0  0  0  0
+   23.8690   -0.0080   34.9330   N 0  0  0  0  0  0  0  0  0  0  0  0
+  1  2  1  0  0  0  0
+  2 10  2  0  0  0  0
+  2  3  1  0  0  0  0
+  3  4  2  0  0  0  0
+  4  5  1  0  0  0  0
+  5  6  1  0  0  0  0
+  5  9  2  0  0  0  0
+  6  7  1  0  0  0  0
+  7  8  2  0  0  0  0
+  8 11  1  0  0  0  0
+  8  9  1  0  0  0  0
+  9 10  1  0  0  0  0
+ 11 12  1  0  0  0  0
+ 12 13  1  0  0  0  0
+M  END
+>  <InstanceId>
+4DUF_SRO_A_501
+
+>  <ChemCompId>
+SRO
+
+>  <PdbId>
+4DUF
+
+>  <ChainId>
+A
+
+>  <ResidueNumber>
+501
+
+>  <InsertionCode>
+
+
+>  <Model>
+1
+
+>  <AltIds>
+
+
+>  <MissingHeavyAtoms>
+0
+
+>  <ObservedFormula>
+C10 N2 O
+
+>  <Name>
+SEROTONIN
+
+>  <SystematicName>
+3-(2-aminoethyl)-1H-indol-5-ol
+
+>  <Synonyms>
+3-(2-AMINOETHYL)-1H-INDOL-5-OL
+
+>  <Type>
+NON-POLYMER
+
+>  <Formula>
+C10 H12 N2 O
+
+>  <MolecularWeight>
+176.215
+
+>  <ModifiedDate>
+2011-06-04
+
+>  <Parent>
+
+
+>  <OneLetterCode>
+
+
+>  <SubcomponentList>
+
+
+>  <AmbiguousFlag>
+
+
+>  <InChI>
+InChI=1S/C10H12N2O/c11-4-3-7-6-12-10-2-1-8(13)5-9(7)10/h1-2,5-6,12-13H,3-4,11H2
+
+>  <InChIKey>
+QZAYGJVTTNCVMB-UHFFFAOYSA-N
+
+>  <SMILES>
+c1cc2c(cc1O)c(c[nH]2)CCN
+
+$$$$
+4DUF_SRO_B_501
+  RCSB PDB01161510303D
+Coordinates from PDB:4DUF:B:501 Model:1 without hydrogens
+ 13 14  0  0  0  0            999 V2000
+  -12.6120   -1.4240   82.6120   O 0  0  0  0  0  0  0  0  0  0  0  0
+  -12.9770   -0.4080   81.7890   C 0  0  0  0  0  0  0  0  0  0  0  0
+  -12.1420    0.7110   81.6720   C 0  0  0  0  0  0  0  0  0  0  0  0
+  -12.4790    1.8300   80.8960   C 0  0  0  0  0  0  0  0  0  0  0  0
+  -13.6570    1.8450   80.1530   C 0  0  0  0  0  0  0  0  0  0  0  0
+  -14.2830    2.6710   79.2640   N 0  0  0  0  0  0  0  0  0  0  0  0
+  -15.4820    2.2630   78.8560   C 0  0  0  0  0  0  0  0  0  0  0  0
+  -15.6370    1.0250   79.4840   C 0  0  0  0  0  0  0  0  0  0  0  0
+  -14.4890    0.6450   80.3010   C 0  0  0  0  0  0  0  0  0  0  0  0
+  -14.1710   -0.4770   81.0810   C 0  0  0  0  0  0  0  0  0  0  0  0
+  -16.7240    0.1930   79.2550   C 0  0  0  0  0  0  0  0  0  0  0  0
+  -16.9430    1.0250   78.0000   C 0  0  0  0  0  0  0  0  0  0  0  0
+  -16.7750    0.2020   76.7750   N 0  0  0  0  0  0  0  0  0  0  0  0
+  1  2  1  0  0  0  0
+  2 10  2  0  0  0  0
+  2  3  1  0  0  0  0
+  3  4  2  0  0  0  0
+  4  5  1  0  0  0  0
+  5  6  1  0  0  0  0
+  5  9  2  0  0  0  0
+  6  7  1  0  0  0  0
+  7  8  2  0  0  0  0
+  8 11  1  0  0  0  0
+  8  9  1  0  0  0  0
+  9 10  1  0  0  0  0
+ 11 12  1  0  0  0  0
+ 12 13  1  0  0  0  0
+M  END
+>  <InstanceId>
+4DUF_SRO_B_501
+
+>  <ChemCompId>
+SRO
+
+>  <PdbId>
+4DUF
+
+>  <ChainId>
+B
+
+>  <ResidueNumber>
+501
+
+>  <InsertionCode>
+
+
+>  <Model>
+1
+
+>  <AltIds>
+
+
+>  <MissingHeavyAtoms>
+0
+
+>  <ObservedFormula>
+C10 N2 O
+
+>  <Name>
+SEROTONIN
+
+>  <SystematicName>
+3-(2-aminoethyl)-1H-indol-5-ol
+
+>  <Synonyms>
+3-(2-AMINOETHYL)-1H-INDOL-5-OL
+
+>  <Type>
+NON-POLYMER
+
+>  <Formula>
+C10 H12 N2 O
+
+>  <MolecularWeight>
+176.215
+
+>  <ModifiedDate>
+2011-06-04
+
+>  <Parent>
+
+
+>  <OneLetterCode>
+
+
+>  <SubcomponentList>
+
+
+>  <AmbiguousFlag>
+
+
+>  <InChI>
+InChI=1S/C10H12N2O/c11-4-3-7-6-12-10-2-1-8(13)5-9(7)10/h1-2,5-6,12-13H,3-4,11H2
+
+>  <InChIKey>
+QZAYGJVTTNCVMB-UHFFFAOYSA-N
+
+>  <SMILES>
+c1cc2c(cc1O)c(c[nH]2)CCN
+
+$$$$
+4DUF_SRO_C_501
+  RCSB PDB01161510303D
+Coordinates from PDB:4DUF:C:501 Model:1 without hydrogens
+ 13 14  0  0  0  0            999 V2000
+   21.7120   29.3600   74.1550   O 0  0  0  0  0  0  0  0  0  0  0  0
+   22.2280   28.1170   74.4370   C 0  0  0  0  0  0  0  0  0  0  0  0
+   22.0890   27.0370   73.5400   C 0  0  0  0  0  0  0  0  0  0  0  0
+   22.6160   25.7630   73.8390   C 0  0  0  0  0  0  0  0  0  0  0  0
+   23.2990   25.5090   75.0460   C 0  0  0  0  0  0  0  0  0  0  0  0
+   23.9150   24.4650   75.6700   N 0  0  0  0  0  0  0  0  0  0  0  0
+   24.4100   24.8640   76.8960   C 0  0  0  0  0  0  0  0  0  0  0  0
+   24.1240   26.2000   77.1300   C 0  0  0  0  0  0  0  0  0  0  0  0
+   23.4140   26.6690   75.9520   C 0  0  0  0  0  0  0  0  0  0  0  0
+   22.8940   27.9340   75.6560   C 0  0  0  0  0  0  0  0  0  0  0  0
+   24.3520   27.1610   78.2680   C 0  0  0  0  0  0  0  0  0  0  0  0
+   25.3280   26.5430   79.1870   C 0  0  0  0  0  0  0  0  0  0  0  0
+   26.6820   26.4260   78.6400   N 0  0  0  0  0  0  0  0  0  0  0  0
+  1  2  1  0  0  0  0
+  2 10  2  0  0  0  0
+  2  3  1  0  0  0  0
+  3  4  2  0  0  0  0
+  4  5  1  0  0  0  0
+  5  6  1  0  0  0  0
+  5  9  2  0  0  0  0
+  6  7  1  0  0  0  0
+  7  8  2  0  0  0  0
+  8 11  1  0  0  0  0
+  8  9  1  0  0  0  0
+  9 10  1  0  0  0  0
+ 11 12  1  0  0  0  0
+ 12 13  1  0  0  0  0
+M  END
+>  <InstanceId>
+4DUF_SRO_C_501
+
+>  <ChemCompId>
+SRO
+
+>  <PdbId>
+4DUF
+
+>  <ChainId>
+C
+
+>  <ResidueNumber>
+501
+
+>  <InsertionCode>
+
+
+>  <Model>
+1
+
+>  <AltIds>
+
+
+>  <MissingHeavyAtoms>
+0
+
+>  <ObservedFormula>
+C10 N2 O
+
+>  <Name>
+SEROTONIN
+
+>  <SystematicName>
+3-(2-aminoethyl)-1H-indol-5-ol
+
+>  <Synonyms>
+3-(2-AMINOETHYL)-1H-INDOL-5-OL
+
+>  <Type>
+NON-POLYMER
+
+>  <Formula>
+C10 H12 N2 O
+
+>  <MolecularWeight>
+176.215
+
+>  <ModifiedDate>
+2011-06-04
+
+>  <Parent>
+
+
+>  <OneLetterCode>
+
+
+>  <SubcomponentList>
+
+
+>  <AmbiguousFlag>
+
+
+>  <InChI>
+InChI=1S/C10H12N2O/c11-4-3-7-6-12-10-2-1-8(13)5-9(7)10/h1-2,5-6,12-13H,3-4,11H2
+
+>  <InChIKey>
+QZAYGJVTTNCVMB-UHFFFAOYSA-N
+
+>  <SMILES>
+c1cc2c(cc1O)c(c[nH]2)CCN
+
+$$$$
+4DUF_SRO_D_501
+  RCSB PDB01161510303D
+Coordinates from PDB:4DUF:D:501 Model:1 without hydrogens
+ 13 14  0  0  0  0            999 V2000
+  -18.1870   28.4600  116.3810   O 0  0  0  0  0  0  0  0  0  0  0  0
+  -17.6350   27.2170  116.5680   C 0  0  0  0  0  0  0  0  0  0  0  0
+  -17.6170   26.2410  115.5600   C 0  0  0  0  0  0  0  0  0  0  0  0
+  -17.1100   24.9300  115.7090   C 0  0  0  0  0  0  0  0  0  0  0  0
+  -16.5620   24.5560  116.9450   C 0  0  0  0  0  0  0  0  0  0  0  0
+  -15.9480   23.4550  117.5130   N 0  0  0  0  0  0  0  0  0  0  0  0
+  -15.6400   23.6840  118.8180   C 0  0  0  0  0  0  0  0  0  0  0  0
+  -16.0320   25.0000  119.1450   C 0  0  0  0  0  0  0  0  0  0  0  0
+  -16.6070   25.6180  117.9770   C 0  0  0  0  0  0  0  0  0  0  0  0
+  -17.1170   26.9090  117.8240   C 0  0  0  0  0  0  0  0  0  0  0  0
+  -15.9770   25.8210  120.3510   C 0  0  0  0  0  0  0  0  0  0  0  0
+  -14.9540   24.9970  121.1110   C 0  0  0  0  0  0  0  0  0  0  0  0
+  -13.5280   25.4120  120.8310   N 0  0  0  0  0  0  0  0  0  0  0  0
+  1  2  1  0  0  0  0
+  2 10  2  0  0  0  0
+  2  3  1  0  0  0  0
+  3  4  2  0  0  0  0
+  4  5  1  0  0  0  0
+  5  6  1  0  0  0  0
+  5  9  2  0  0  0  0
+  6  7  1  0  0  0  0
+  7  8  2  0  0  0  0
+  8 11  1  0  0  0  0
+  8  9  1  0  0  0  0
+  9 10  1  0  0  0  0
+ 11 12  1  0  0  0  0
+ 12 13  1  0  0  0  0
+M  END
+>  <InstanceId>
+4DUF_SRO_D_501
+
+>  <ChemCompId>
+SRO
+
+>  <PdbId>
+4DUF
+
+>  <ChainId>
+D
+
+>  <ResidueNumber>
+501
+
+>  <InsertionCode>
+
+
+>  <Model>
+1
+
+>  <AltIds>
+
+
+>  <MissingHeavyAtoms>
+0
+
+>  <ObservedFormula>
+C10 N2 O
+
+>  <Name>
+SEROTONIN
+
+>  <SystematicName>
+3-(2-aminoethyl)-1H-indol-5-ol
+
+>  <Synonyms>
+3-(2-AMINOETHYL)-1H-INDOL-5-OL
+
+>  <Type>
+NON-POLYMER
+
+>  <Formula>
+C10 H12 N2 O
+
+>  <MolecularWeight>
+176.215
+
+>  <ModifiedDate>
+2011-06-04
+
+>  <Parent>
+
+
+>  <OneLetterCode>
+
+
+>  <SubcomponentList>
+
+
+>  <AmbiguousFlag>
+
+
+>  <InChI>
+InChI=1S/C10H12N2O/c11-4-3-7-6-12-10-2-1-8(13)5-9(7)10/h1-2,5-6,12-13H,3-4,11H2
+
+>  <InChIKey>
+QZAYGJVTTNCVMB-UHFFFAOYSA-N
+
+>  <SMILES>
+c1cc2c(cc1O)c(c[nH]2)CCN
+
+$$$$

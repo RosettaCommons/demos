@@ -1,0 +1,20 @@
+# stage1 weights for hybridization: membrane score weights added
+Menv 2.019
+Mpair 1.0
+Mcbeta 2.5
+cenpack 1.0
+hs_pair 1.0
+ss_pair 1.0
+rsigma  1.0
+sheet   1.0
+vdw     3.0
+rg      .1
+rama    0.15
+linear_chainbreak    2.0
+atom_pair_constraint 1.0
+Menv_non_helix 2.019
+Menv_termini 2.019
+Menv_tm_proj 2.019
+Mlipo 1.0
+
+STRAND_STRAND_WEIGHTS 0 6
