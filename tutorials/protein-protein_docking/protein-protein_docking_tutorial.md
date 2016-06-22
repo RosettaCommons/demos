@@ -61,7 +61,7 @@ This tutorial presents a cross-docking benchmark experiment. Antibody CR6261 bin
             
             type '`show lines, resi 125-130`'
 
-        1. Prepare a loops file for closing the chain break. Use a text editor such as gedit. Several amino acids must be mobile for the loop to close successfully. Select several residues on each side of the chain break.
+        1. Prepare a loops file for closing the chain break. Use a text editor such as gedit. Several amino acids must be mobile for the loop to close successfully. Select several residues on each side of the chain break. (Note that you may not have gedit on your computer in which case you need to use a different text editor).
 
                     gedit chainbreak_fix.loops
             
