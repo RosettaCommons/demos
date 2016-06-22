@@ -118,7 +118,7 @@ This tutorial presents a cross-docking benchmark experiment. Antibody CR6261 bin
     
         Use available information on the participating interface residues to decrease the global conformational search space. This improves the efficiency of the docking process and the quality of the final model. In this benchmark case we will use the ideal starting conformation.
         
-        1. Align the structures with pymol.
+        1. Align the structures with pymol. (Note that you need to have your environment parameters set correctly in order to access pymol from terminal. You may need to open pymol manuall)
         
                 cp ../input_files/3gbm_native.pdb .
                 pymol 3gbm_native.pdb 3gbm_HA_repacked.pdb 3gbn_Ab_repacked.pdb
@@ -127,42 +127,40 @@ This tutorial presents a cross-docking benchmark experiment. Antibody CR6261 bin
             1.  Type 'save 3gbm_HA_3gbn_Ab.pdb, 3gbm_HA_repacked + 3gbn_Ab_repacked'
         1. Renumber the pdb from 1 to the end without restarting.
         
-                python2.7 ~/rosetta_workshop/rosetta/tools/protein_tools/scripts/pdb_renumber.py \
+                > <path-to-Rosetta>/tools/protein_tools/scripts/pdb_renumber.py \
                 --norestart 3gbm_HA_3gbn_Ab.pdb 3gbm_HA_3gbn_Ab.pdb
 
 1. Perform docking utilizing the RosettaScripts application.
     1. Prepare a RosettaScripts XML file for docking. This file outlines a protocol that performs docking. It then further minimizes the interface. Familiarize yourself with the contents of the script.
         1. Copy docking_full.xml from the input_files directory. Go through the xml script to understand the protocol.
-                
-                cp ../input_files/docking_full.xml .
+
+                $> cp input_files/docking_full.xml .
                 cat docking_full.xml
 
         1. Prepare an options file for docking.
             1. Copy the options file (docking.options) from the input_files directory. Familiarize yourself with the options in the file.
 
-                    cp ../input_files/docking.options . 
+                    $> cp input_files/docking.options . 
                     cat docking.options
 
         1. Generate fifty models using the full docking algorithm. (This will likely take a while - move on to the next steps while this is running.)
 
-                ~/rosetta_workshop/rosetta/main/source/bin/rosetta_scripts.default.linuxgccrelease \
-                @docking.options -database ~/rosetta_workshop/rosetta/main/database/ \
-                -parser:protocol docking_full.xml -out:suffix _full -nstruct 50 >& docking_full.log &
+                $> <path-to-Rosetta>/main/source/bin/rosetta_scripts.default.linuxgccrelease \
+                @docking_full.options >& docking_full.log &
 
         1. To have a good comparison for the native structure, we want to minimize the experimental structure into the Rosetta energy function. To do this, we run a similar protocol, but skipping the coarse and fine resolution search stages, keeping only the minimization stage. This provides us with a like-to-like comparison of the native structure.
 
             1. Copy docking_minimize.xml from the input_files directory.
 
                 The docking_minimize.xml file differs from docking_full.xml only in the PROTOCOL section. The movers dock_low, srsc, and dock_high have been turned off by deleting the angle bracket at the beginning of these lines.
-                
-                    cp ../input_files/docking_minimize.xml . 
-                    cat docking_minimize.xml
+
+                    $> cp input_files/docking_minimize.xml . 
+                    > cat docking_minimize.xml
 
             1. Generate ten models using only the minimization refinement stage of docking.
-            
-                    ~/rosetta_workshop/rosetta/main/source/bin/rosetta_scripts.default.linuxgccrelease \
-                    @docking.options -parser:protocol docking_minimize.xml -out:suffix _minimize 
-                    -nstruct 10 >& docking_minimize.log &
+
+                    $> <path-to-Rosetta>/main/source/bin/rosetta_scripts.default.linuxgccrelease \
+                    @docking_minimze.options >& docking_minimize.log &
 
 1. Characterize the models and analyze the data for docking funnels.
 
@@ -174,11 +172,10 @@ This tutorial presents a cross-docking benchmark experiment. Antibody CR6261 bin
 
     1.  Characterize your models using the InterfaceAnalyzer mover in RosettaScripts and calculate the RMSD to the native crystal structure with the RMSD filter.
 
-            cp ../input_files/docking_analysis.xml .
-            cp ../input_files/docking_analysis.options . 
-            cp ../input_files/3gbm_native.pdb .
-
-            ~/rosetta_workshop/rosetta/main/source/bin/rosetta_scripts.default.linuxgccrelease \
+            $>  cp input_files/docking_analysis.xml .
+            $> cp input_files/docking_analysis.options . 
+            $> cp ../input_files/3gbm_native.pdb .
+            $> <path-to-Rosetta>/main/source/bin/rosetta_scripts.default.linuxgccrelease \
             @docking_analysis.options -in:file:s *full*pdb *minimize*pdb >& docking_analysis.log &
 
             sort -nk 7 docking_analysis.csv
