@@ -83,4 +83,12 @@ Each of the following commands is intended to be run from the relevant subdirect
 
 7. For a semi-automated refinement step, generate a so-called resfile, so that the wildtype and any other user-specified residue can be introduced at any given position. Use this resfile with similar commandline as Step 6.
 
+```bash
+$> python $ROSETTA_TOOLS/zinc_site_redesign/generate_residuefile.py UM_1_H15H17H214D295Q58_1A4L_clean_A_r_1A4L_clean_A_1__DE_1.pdb
+```
+
 8. To validate the design, perform docking of the ligand in the designed pocket to check if there are any alternative binding modes with similar energies.
+
+```bash
+$> <path_to_Rosetta_directory>/main/source/bin/ligand_dock.default.linuxgccrelease @flags
+```
