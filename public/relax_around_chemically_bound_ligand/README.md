@@ -54,7 +54,7 @@ $ pymol FMN_w_h.pdb
 
 produces FMN_w_h.mol
 
-We can convert the MOL file to a .params file with a script named molfile_to_params.py (located in ~/rosetta_source/src/python/apps/public/). This script can be run with the "-h" flag to list all the flags that are applicable. If you don't have it, we have it provided for you. copy it to your directory:
+We can convert the MOL file to a .params file with a script named molfile_to_params.py (located in <path_to_Rosetta_directory>/main/source/scripts/python/public/). This script can be run with the "-h" flag to list all the flags that are applicable.
 ```
 $> cp rosetta_inputs/FMN_w_h.mol .
 $> <path-to-Rosetta>/Rosetta/main/source/scripts/python/public/molfile_to_params.py -n FMN -p FMN FMN_w_h.mol
