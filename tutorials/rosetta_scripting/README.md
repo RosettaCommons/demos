@@ -10,8 +10,9 @@ At the end of this tutorial, you will understand:
 - RosettaScripts syntax
 - How to control final file output from RosettaScripts
 - How to manipulate poses in RosettaScripts using *movers*
+	- How to control movers that invoke the minimizer using *MoveMaps*
+	- How to control movers that invoke the packer using *TaskOperations*
 - How to evaluate pose properties and control protocol flow in RosettaScripts using *filters*
-- How to control packer behaviour within movers using *task operations*
 - How to select residues in RosettaScripts using *residue selectors*
 - How to nest movers and how to script common loops (*e.g.* Monte Carlo trajectories)
 - How to assemble more complicated protocols from simpler building-blocks
@@ -344,26 +345,112 @@ Let's modify the current script to demonstrate how a MoveMap can be set up and u
 ...
     <MOVERS>
         <MinMover name="min_torsion" scorefxn="t13" chi="true" bb="1" cartesian="F" >
-        	<MoveMap name="min_torsion_mm">                          # Add this
-        		<Span begin="1" end="999" chi="false" bb="false" /> # And this
-        		<Span begin="1" end="50" chi="true" bb="true" />    # And this
-        		<Span begin="5" end="10" chi="true" bb="false" />   # And this
-        	</MoveMap>                                               # And this
+            <MoveMap name="min_torsion_mm">                         # Add this
+                <Span begin="1" end="999" chi="false" bb="false" /> # And this
+                <Span begin="1" end="50" chi="true" bb="true" />    # And this
+                <Span begin="5" end="10" chi="true" bb="false" />   # And this
+            </MoveMap>                                              # And this
         </MinMover>
     </MOVERS>
     <APPLY_TO_POSE>
     </APPLY_TO_POSE>
     <PROTOCOLS>
-	<Add mover="min_torsion" />
+        <Add mover="min_torsion" />
     </PROTOCOLS>
 ...
 ```
+
+We're telling the MinMover to make use of a MoveMap that *first* disables side-chain ("chi") and main-chain ("bb") degrees of freedom for all residues, *then* re-enables side-chain and main-chain degrees of freedom for residues 1 through 50, and *then* disables main-chain degrees of freedom for residues 5 through 10.  Note that MoveMaps are not perturbed by poses shorter than the residue ranges in their ```<Span>``` tags, so setting values for residues 1 through 999 is perfectly permissible despite the fact that we're working with a 76-residue structure.  Note also that MoveMaps obey the order of operations given in the tag.  In this example, the final effect is to enable all degrees of freedom for residues 1 through 4, only side-chain degrees of freedom fro residues 5 through 10, all degrees of freedom for residues 11 through 50, and no degrees of freedom for residues 51 through 76.
+
+> **Order of operations matters for MoveMaps.**
+
+We can run this with the following:
 
 ```bash
 $> cp inputs/minimize3.xml .
 $> <path_to_Rosetta_directory>/main/source/bin/rosetta_scripts.linuxgccrelease -s 1ubq.pdb -parser:protocol minimize3.xml -out:prefix minimize3_
 ```
 
+Practially, it's important to know how to set up MoveMaps because there are many situations in which one may wish to prevent the minimizer from moving parts of a pose.  One example is when designing a binder to a target of known structure: typically, there is little to no advantage to letting the minimizer move the backbone of the target, or side-chains that are far from the binding interface.  Indeed, doing so can result in deceptively low-energy structures with little resemblance to anything physically meaningful.  See the [FastRelax mover's documentation page](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/Movers/movers_pages/FastRelaxMover) for full documentation on the MoveMap syntax.
+
+### Packing
+
+#### Repacking side-chains
+
+* *Configure the packer with TaskOperations.*
+* *Optimize side-chain conformations using the packer.*
+
+The PackRotamersMover is another commonly-used Rosetta mover.  Because it calls the *packer*, another core Rosetta algorithm (see the [packing tutorial](../Optimizing_Sidechains_The_Packer/Optimizing_Sidechains_The_Packer.md)), the PackRotamersMover is a good mover to use to demonstrate the RosettaScripts interface for controlling the packer.  We do this by defining *TaskOperations*.
+
+> **Just as MoveMaps control the minimizer, TaskOperations control the packer, and movers that invoke the packer will typically accept lists of TaskOperations as inputs.**
+
+Let's create a new skeleton XML, and define the talaris2014 scorefunction in it:
+
+```xml
+<ROSETTASCRIPTS>
+	<SCOREFXNS>
+		<t14 weights="talaris2014" />
+	</SCOREFXNS>
+	<RESIDUE_SELECTORS>
+	</RESIDUE_SELECTORS>
+	<TASKOPERATIONS>
+	</TASKOPERATIONS>
+	<FILTERS>
+	</FILTERS>
+	<MOVERS>
+	</MOVERS>
+	<APPLY_TO_POSE>
+	</APPLY_TO_POSE>
+	<PROTOCOLS>
+	</PROTOCOLS>
+	<OUTPUT scorefxn="t14" />
+</ROSETTASCRIPTS>
+```
+
+In the movers section, let's create a PackRotamersMover.  You can cut-and-paste from the [help page) for the mover](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/Movers/movers_pages/PackRotamersMover).  Don't forget to add it to the protocols section, as well.  Your MOVERS and PROTOCOLS sections should look something like this:
+
+```xml
+...
+	<MOVERS>
+		<PackRotamersMover name="pack1" scorefxn=t14 task_operations= />
+	</MOVERS>
+..
+	<PROTOCOLS>
+		<Add mover="pack1" />
+	</PROTOCOLS>
+...
+```
+
+Note that, for now, we've left the ```task_operations``` field blank.  Were we to omit this and run the script, the PackRotamersMover would call the packer, and the packer would use all rotamers for all 20 canonical amino acids at every position -- that is, it would try to design the entire protein, which is not what we want.
+
+> **The packer's default behaviour is to design with all canonical amino acids at every position.  Preventing design with TaskOperations is essential for *almost all* usage cases.**
+
+So let's create a TaskOperation that tells the packer to use only the current amino acid type at each position, and consider only alternative rotamers for that type.  In the TASKOPERATIONS section of your script, add a [RestrictToRepacking](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/TaskOperations/taskoperations_pages/RestrictToRepackingOperation) TaskOperation, and give it a name:
+
+```xml
+...
+	<TASKOPERATIONS>
+		<RestrictToRepacking name="no_design" /> #Note that there are no options except name to set
+	</TASKOPERATIONS>
+...
+```
+
+Down below, in the MOVERS section, let's tell the PackRotamersMover that we created earlier to use this TaskOperation.
+
+```xml
+...
+	<MOVERS>
+		<PackRotamersMover name="pack1" scorefxn="t14" task_operations="no_design" />
+	</MOVERS>
+...
+```
+
+Now let's run this script (or the inputs/repack_only.xml file):
+
+```bash
+$> cp inputs/repack_only.xml .
+$> <path_to_Rosetta_directory>/main/source/bin/rosetta_scripts.linuxgccrelease -s 1ubq.pdb -parser:protocol repack_only.xml -out:prefix repack_only_
+```
 
 # Filters
 ---------
