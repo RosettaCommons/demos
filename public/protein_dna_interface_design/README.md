@@ -30,6 +30,7 @@ This routine designs low energy amino acid identities and sidechains in the vici
 ```
   $> <path-to-Rosetta>/main/source/bin/rosetta_scripts.default.linuxgccrelease @design.options > design.log
 ```
+Example of output structures and scores are found in output directory.
 
 *Step 3* Multi-state Design
 
@@ -37,5 +38,6 @@ This routine optimizes a starting population of different single-state designs f
 ```
   $> <path-to-Rosetta>/main/source/bin/rosetta_scripts.default.linuxgccrelease @multistate.options > multistate.log
 ```
+Example of output structures and scores are found in output directory.
 
 Typically, this multi-state genetic algorithm routine should be run with a population >= 1000 protein sequences, for >= 50 generations.
