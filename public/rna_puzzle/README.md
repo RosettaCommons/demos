@@ -42,18 +42,17 @@ $> rna_helix.py  -o H2.pdb -seq cc gg -resnum 14-15 39-40
 
 ## Use threading to build sub-pieces
 
-Change to the step2_thread/ directory,
+Change to the step2_thread/rosetta_inputs/ directory,
 
 ```bash
-$> cd ../step2_thread
+$> cd ../step2_thread/rosetta_inputs/
 ```
 
 In the problem above, there is a piece which is a well-recognized motif, 
 the UUCG apical loop. Let's model it by threading from an exemplar
-of the motif from the crystallographic database. There is one here:
+of the motif from the crystallographic database. In this directory you will find [1f7y.pdb](http://pdb.org/pdb/explore/explore.do?structureId=1f7y
+), which has been downloaded from the RCSB PDB website.
 
-Download 1f7y.pdb from 
-http://pdb.org/pdb/explore/explore.do?structureId=1f7y
 
 Slice out the motif of interest:
 ```
@@ -78,7 +77,7 @@ In step3_farfar/, we will see how to setup the Rosetta job for motifs between H2
 
 Change into the `step3_farfar/rosetta_inputs/` directory
 ```bash
-$> cd ../step3_farfar/rosetta_inputs/
+$> cd ../../step3_farfar/rosetta_inputs/
 ```
 
 There is currently a wrapper script that sets up the job for the rna_denovo executable, which actually runs fragment assembly of RNA with full atom refinement (FARFAR) is not yet equipped to map numbers from our full modeling problem into the subproblem. We have to create it a little sub-problem and map all the residue numberings into the local problem.
