@@ -34,18 +34,51 @@ Your first RosettaScript
 The simplest RosettaScript XML is one which does nothing.  You can obtain a skeleton XML file, which does nothing, in one of two ways.  You go to [the RosettaScripts documentation page](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/RosettaScripts) and find the skeleton XML file there, then copy and paste it into a new file (`nothing.xml`).  You can also generate a skeleton XML file using the rosetta_scripts application:
 
 ```bash
-$> <path_to_Rosetta_directory>/main/source/bin/rosetta_scripts.default.linuxgccrelease -print_template_script >output.log.
+$> <path_to_Rosetta_directory>/main/source/bin/rosetta_scripts.default.linuxgccrelease -print_template_script >nothing.xml
 ```
 
 In the above, the ".default.linuxgccrelease" may need to be changed for your build, operating system, and compiler (*e.g.* ".static.macosclangrelease" for the static build using the clang compiler on the Macintosh operating system).  If you run the above, it will produce the following output:
 
 ```
+core.init: Rosetta version unknown:979495e360c4960e2a6f41fe9e8bfd5b217e31eb 2016-06-16 21:33:49 -0700 from git@github.com:RosettaCommons/main.git
+core.init: command: /home/vikram/rosetta_git/Rosetta/main/source/bin/rosetta_scripts.default.linuxclangrelease -print_template_script
+core.init: 'RNG device' seed mode, using '/dev/urandom', seed=34564556 seed_offset=0 real_seed=34564556
+core.init.random: RandomGenerator:init: Normal mode, seed=34564556 RG_type=mt19937
+core.init: Resolved executable path: /home/vikram/rosetta_git/Rosetta/main/source/build/src/release/linux/3.13/64/x86/clang/3.4-1ubuntu3/default/rosetta_scripts.default.linuxclangrelease
+core.init: Looking for database based on location of executable: /home/vikram/rosetta_git/Rosetta/main/database/
+apps.public.rosetta_scripts.rosetta_scripts: The -"parser:print_template_script" option was specified.  The app will print a template script and then exit.
+apps.public.rosetta_scripts.rosetta_scripts: RosettaScripts script template:
+
+<ROSETTASCRIPTS>
+	<SCOREFXNS>
+	</SCOREFXNS>
+	<RESIDUE_SELECTORS>
+	</RESIDUE_SELECTORS>
+	<TASKOPERATIONS>
+	</TASKOPERATIONS>
+	<FILTERS>
+	</FILTERS>
+	<MOVERS>
+	</MOVERS>
+	<APPLY_TO_POSE>
+	</APPLY_TO_POSE>
+	<PROTOCOLS>
+	</PROTOCOLS>
+	<OUTPUT />
+</ROSETTASCRIPTS>
+
+At any point in a script, you can include text from another file using <xi:include href="filename.xml" />.
+apps.public.rosetta_scripts.rosetta_scripts: Variable substituion is possible from the commandline using the -"parser:script_vars varname=value" flag.  Any string of the pattern "%%varname%%" will be replaced with "value" in the script.
+apps.public.rosetta_scripts.rosetta_scripts: 
+apps.public.rosetta_scripts.rosetta_scripts: The rosetta_scripts application will now exit.
 
 ```
 
-We can also edit it slightly to add comments 
+This will be written to output.log.  You can delete all lines preceding ```<ROSETTASCRIPTS>``` and following ```</ROSETTASCRIPTS>``` to obtain a minimal template.
 
-```
+Before running this script, let's edit it slightly to add comments:
+
+```xml
 <ROSETTASCRIPTS>
     <SCOREFXNS>
     </SCOREFXNS>
@@ -74,19 +107,19 @@ This is a comment
 *(Angle brackets are the greater than/less than signs)
 ```
 
-*You can also get the template XML from the rosetta_scripts executable with the following command*
+The nothing.xml file is also provided in the inputs directory:
 
-        rosetta_scripts.linuxgccrelease -print_template_script 
+```bash
+$> cp inputs/nothing.xml .
+```
 
-*nothing.xml is also provided in the inputs directory:*
+As you haven't further defined any protocol, this XML does nothing to the structure. As a test, let's just run a structure through RosettaScripts with this XML. RosettaScripts takes the standard input and output flags. In addition, the `-parser:protocol` option specifies which XML file to use.
 
-	$> cp inputs/nothing.xml .
+```bash
+$> rosetta_scripts.linuxgccrelease -s 1ubq.pdb -parser:protocol nothing.xml
+```
 
-As you haven't further defined any protocol, this XML does nothing to the structure. As a test, lets just run a structure through RosettaScripts with this XML. RosettaScripts takes the standard input and output flags. In addition, the `-parser:protocol` option specifies which XML file to use.
-
-	$> rosetta_scripts.linuxgccrelease -s 1ubq.pdb -parser:protocol nothing.xml
-
-In the tracer output, Rosetta should print how it interprets the XML input. 
+In the tracer output, Rosetta should print its interpretation of the XML input. 
 
 ```
 <ROSETTASCRIPTS>
@@ -103,11 +136,21 @@ In the tracer output, Rosetta should print how it interprets the XML input.
 
 The first thing to notice is that the comments added to the XML (everything outside the angle brackets) is ignored.
 
-Secondly, this demonstrates different ways of writing XML tags. XML tags are surrounded by angle brackets (greater/less than signs). A tag must be closed by a slash. Tags can be nested in other tags (like SCOREFXNS is nested within ROSETTASCRIPTS), in which case the tag is closed by something like `</ROSETTASCRIPTS>`. If the tags are not nested, they can be closed by putting the slash at the end of the tag, like `<SCOREFXNS/>`.
+Secondly, this demonstrates different ways of writing XML tags. XML tags are surrounded by angle brackets (greater/less than signs). A tag must be closed by a slash. Tags can be nested in other tags (like SCOREFXNS is nested within ROSETTASCRIPTS), in which case the outer tag must be closed by something like `</ROSETTASCRIPTS>`. If the tags are not nested, they can be closed by putting the slash at the end of the tag, like `<SCOREFXNS/>`.  The following two statements are perfectly equivalent:
+
+```xml
+<SCOREFXNS>
+</SCOREFXNS>
+```
+```
+<SCOREFXNS/>
+```
+
+In the above, the latter is more concise, though, at the expense of preventing anything from being enclosed within the SCOREFXNS block.
 
 Looking at the output PDB, the output structure (1ubq_0001.pdb) should be nearly identical to the input structure. The major difference should be the presence of hydrogens which were not in the input structure. This is *not* something that is specific to RosettaScripts - in general Rosetta will add missing hydrogens and repack sidechain atoms missing in the input PDB.
 
-Additionally, you should see the standard Rosetta score table at the end of the PDB. By default, the structure will be rescored with the default Rosetta score function (talaris2014, as of writing). This can be controlled by the `-score:weights` command line option. 
+Additionally, you should see the standard Rosetta score table at the end of the PDB. By default, the structure will be rescored with the default Rosetta score function (talaris2014, as of this writing). This can be controlled by the ```-score:weights``` command line option. 
 
 Custom Scoring
 --------------
