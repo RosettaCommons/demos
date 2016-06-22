@@ -1,3 +1,4 @@
+-parser:protocol docking_full.xml			# which rosetta scripts to use
 -docking						# the docking option group
 	-partners AB_HL					# set rigid body docking partners
 	-dock_pert 3 8					# set coarse perturbation parameters (degrees and angstroms)
@@ -11,3 +12,6 @@
 -out							# out option group
 	-file						# out:file option group
 		-scorefile docking.fasc			# the name of the model score file
+-out
+	-suffix _full    				#Adds a suffix "_full" to the end of outputs
+-nstruct 50						#how many structures to output
