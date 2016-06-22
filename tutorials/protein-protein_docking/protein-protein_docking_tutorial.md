@@ -175,9 +175,9 @@ This tutorial presents a cross-docking benchmark experiment. Antibody CR6261 bin
 
     1.  Characterize your models using the InterfaceAnalyzer mover in RosettaScripts and calculate the RMSD to the native crystal structure with the RMSD filter.
 
-            $>  cp input_files/docking_analysis.xml .
+            $> cp input_files/docking_analysis.xml .
             $> cp input_files/docking_analysis.options . 
-            $> cp ../input_files/3gbm_native.pdb .
+            $> cp input_files/3gbm_native.pdb .
             $> <path-to-Rosetta>/main/source/bin/rosetta_scripts.default.linuxgccrelease \
             @docking_analysis.options -in:file:s *full*pdb *minimize*pdb >& docking_analysis.log &
 
