@@ -14,11 +14,21 @@ Source code location
 Running the protocol 
 ----------------------------
 
+### 1. Standart CS Rosetta
+
 The required inout files are in `./input_files`.
 
 1. In the cs-rosetta.flags, change the path to your vall database
 2. Run the picker:
 
    ```
-   $> <pth-to-Rosetta>/main/source/bin/fragmentpicker.default.linuxgccrelease @cs-rosetta.flags
-   ```
+   $> <path-to-Rosetta>/main/source/bin/fragment_picker.default.linuxgccrelease @cs-rosetta.flags -in::file::vall 
+    $ROSETTA3/main/database/sampling/small.vall.gz
+```
+
+### 2. CS Rosetta with TALOS L1 rama
+```
+   $> <path-to-Rosetta>/main/source/bin/fragment_picker.default.linuxgccrelease @cs-rosetta_TALOS_rama.flags -in::file::vall
+    $ROSETTA3/main/database/sampling/small.vall.gz
+```
+
