@@ -209,7 +209,9 @@ Additionally, you should see the standard Rosetta score table at the end of the 
 Before we explore the full power of RosettaScripts, let's make sure that we understand how to control the rosetta_scripts application's output.  There are two ways to do this.  The first is modifying the ```<OUTPUT/>``` tag typically found at the end of a script, and the second is by setting flags.
 
 Let's look at a typical usage case for the ```<OUTPUT/>``` tag, first.  Sometimes you may want to use different energy functions during different scoring. For example, you may want to change constraint weights, or to use a lower resolution energy function.  In order to do this, we:
+
 1. Add a named custom scoring function in the ```SCOREFXNS``` section of the XML.
+
 2. Add this to the ```<OUTPUT/>``` tag.
 
 Each custom scorefunction is defined by different sub-tags in the SCOREFXNS section. The format is detailed in the [SCOREFXNS documentation](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/RosettaScripts#scorefunctions).
