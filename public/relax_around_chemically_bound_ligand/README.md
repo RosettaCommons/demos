@@ -154,14 +154,12 @@ You can copy the necessary files that are pre-generated from rosetta_inputs dire
 ```
 $> cp rosetta_inputs/2V0W.pdb .
 $> cp rosetta_inputs/FMN_modded.params .
-$> cp
-$> cp <path-to-Rosetta>/Rosetta/main/database/chemical/residue_type_sets/fa_standard/residue_types/sidechain_conjugation/CYX.params .
 ```
 
 A complete command line for the protocol would be as follows:
 
 ```
-$> <palinuxgccrelease -s 2V0W.pdb -in:file:fullatom -extra_res_fa FMN_modded.params -extra_res_fa CYX.params -overwrite -cst_fa_file chemical_bond.cst -score:weights talaris2013+constraints.wts -mute basic core.init core.scoring
+$> <path_to_Rosetta_directory>/main/source/bin/relax.default.linuxgccrelease -s 2V0W.pdb -in:file:fullatom -extra_res_fa FMN_modded.params -extra_res_fa sidechain_conjugation/CYX.params -overwrite -cst_fa_file chemical_bond.cst -score:weights talaris2014_cst.wts -mute basic core.init core.scoring
 ```
 
 Truncated output from the command:
