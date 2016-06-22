@@ -15,6 +15,7 @@
 	<APPLY_TO_POSE>
 	</APPLY_TO_POSE>
 	<PROTOCOLS>
+		<Add mover="pack1" />
 	</PROTOCOLS>
 	<OUTPUT scorefxn="t14" />
 </ROSETTASCRIPTS>
