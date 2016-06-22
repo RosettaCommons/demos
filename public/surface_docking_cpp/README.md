@@ -13,9 +13,12 @@ Simultaneous optimization of protein rigid-body orientation, backbone and
 side chain conformations on a solid surface.  
 
 ## Commands
+
+```bash
+<path_to_Rosetta_directory>/main/source/bin/surface_docking.default.linuxgccrelease @rosetta_inputs/flags
 ```
-surface_docking<.exe> -database <path/to/database> @input/flags
-```
+
+In the above, ".default.linuxgccrelease" may need to be updated for your build, operating system, and compiler.
 
 ## Input Files
 - lk_alpha_calcite.pdb = input pdb with LK alpha positioned above calcite 104
@@ -33,7 +36,6 @@ the input file and belonging to a separate chain
 the rosetta database
 
 ## Post-processing
-(in the directory with output decoys)
 
 1. GetTop.sh Ads 4
 2. cd TOP4.Ads
