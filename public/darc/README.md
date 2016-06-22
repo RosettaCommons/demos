@@ -114,7 +114,7 @@ Generating input files
   interface pocket grid. This step can be carried out while generating the ray 
   file.
 ```
-      $> <apth_to_Rosetta>/main/source/bin/make_ray_files.linuxgccrelease -database Rosetta/main/database/ -pocket_static_grid -protein 4ERF_0001.pdb -central_relax_pdb_num 61,54 -set_origin 5 -origin_res_num 85:A -multiple_origin -bound_ligand 4ERF_XTL_0001.pdb -extra_res_fa 4ERF_XTL.params -lig_grid -espGrid_file 4ERF.agd
+      $> <path_to_Rosetta>/main/source/bin/make_ray_files.linuxgccrelease -database Rosetta/main/database/ -pocket_static_grid -protein 4ERF_0001.pdb -central_relax_pdb_num 61,54 -set_origin 5 -origin_res_num 85:A -multiple_origin -bound_ligand 4ERF_XTL_0001.pdb -extra_res_fa 4ERF_XTL.params -lig_grid -espGrid_file 4ERF.agd
 ```
   The output from this command will be a ray-file named 
   `ray_4ERF_0001_61,54.txt` and an electrostatic potential grid file named 
