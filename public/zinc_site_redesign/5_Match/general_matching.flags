@@ -5,7 +5,6 @@
  -ex1aro
  -extrachi_cutoff 0
  -use_input_sc
--database /work/khare/minirosetta_database/
 -match:filter_colliding_upstream_residues
 -match:filter_upstream_downstream_collisions
 -match:updown_collision_tolerance 0.3  
