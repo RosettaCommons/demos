@@ -14,10 +14,9 @@ If you want to try making files that already exist (e.g., input files), write th
 
 This tutorial presents a cross-docking benchmark experiment. Antibody CR6261 binds to multiple sub- types of influenza antigen hemagglutinin (HA). It has been crystallized with H1 and H5 HA sub-types. Antibody from one crystal structure will be docked to the antigen from the other crystal structure. This type of experiment is useful for protocol optimization and development.
 
-1. Create a directory in the protein-protein_docking directory called my_files and switch to that directory. We will work from this directory for the rest of the tutorial.
+1. Navigate to protein-protein_docking tutorial:
             
-        mkdir my_files
-        cd my_files
+        > cd <path-to-Rosetta>/demos/tutorials/proptein-protein_docking
 
 1. Prepare the input template for docking
     1. Download the PDB files. **The 3GBN.pdb and 3GBM.pdb files are provided in the input_files directory.**
@@ -68,16 +67,18 @@ This tutorial presents a cross-docking benchmark experiment. Antibody CR6261 bin
             1. Type '`LOOP 125 130 0 0 1`', save the file, and close gedit.
             1. Copy the prepared options file from the input_files directory 
             
-                    cp ../input_files/chainbreak_fix.options .
-
+                    $> cp input_files/chainbreak_fix.options .
+            1. If you don't have the prepared files, you can copy them into the directory
+            ```
+                    $> cp input_files/3gbn_Ab.pdb input_files/chainbreak_fix.loops .
+            ```
         1. Run the Rosetta loopmodel application to close the loop.
 
-                ~/rosetta_workshop/rosetta/main/source/bin/loopmodel.default.linuxgccrelease \
+                > <path-to-Rosetta>/main/source/bin/loopmodel.default.linuxgccrelease \
                 @chainbreak_fix.options -nstruct 10 >& chainbreak_fix.log &
 
                 pymol 3gbn_Ab*pdb &
-                sort -nk 2 chainbreak_fix.fasc
-
+                > sort -nk 2 chainbreak_fix.fasc
         1. Copy the best scoring model (3gbn_Ab_0010.pdb in the example output_files directory) to 3gbn_Ab_fixed.pdb.
 
                 cp 3gbn_Ab_0010.pdb 3gbn_Ab_fixed.pdb
