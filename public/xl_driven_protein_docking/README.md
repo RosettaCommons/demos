@@ -1,10 +1,11 @@
-#########################################
-CROSS-LINK GUIDED PROTEIN-PROTEIN DOCKING
-#########################################
+#Crosslink Guided Protein-Protein Docking
 
--------
-Content
--------
+Author unknown.  This file was updated on 22 June 2016 by Vikram K. Mulligan, Ph.D. (vmullig@uw.edu), as part of the 2016 Documentation eXtreme Rosetta Workshop (XRW).
+
+KEYWORDS: DOCKING EXPERIMENTAL_DATA STRUCTURE_PREDICTION
+
+## Contents
+-----------
 - Introduction
 - Demo Run
 - System Requirements
@@ -17,9 +18,8 @@ Content
     - Superimpose
     - AvgInterface
 
-------------
-Introduction
-------------
+## Introduction
+---------------
 Distance restraints from chemical cross-linking experiments combined with mass-spectrometry can
 guide protein-protein docking calculations and significantly improve the accuracy of the
 simulations. This protocol uses cross-link information for the prediction of protein complexes using
@@ -30,43 +30,38 @@ the structural coordinates of two proteins and distance restraints from chemical
 experiments and predicts the structure of binary protein complexes and their binding interface.
 
 The cross-link guided protein docking workflow consists of following steps:
-    1.) Relax the receptor and ligand PDB structures (using ROSETTA's relax protocol) or prepack
-        their side chains (using ROSETTA's docking_prepack_protocol)
-    2.) Perform global docking in low resolution centroid mode producing ~100,000 models
-        (using ROSETTA's docking_protocol), while applying the cross-link data as distance
-        restraints in the scoring function.
-    3.) Post-dock filter all predicted models (using Xwalk) in order to determine which models
-        satisfy most cross-links.
-    4.) Select the 500 models with the lowest ROSETTA energy scores and compute binding interface
-        sizes (using the NACCESS software) to select only for those models that have a sufficiently
-        large binding interface.
-    5.) Perform a Quality-Threshold (QT) clustering (using the Superimpose application) on all
-        models having passed the interface size filter and choose the lowest scoring model from the
-        largest three clusters.
-    6.) Perform a local refinement docking calculation on each of the three cluster representative
-        ~3 x 5000 models (using ROSETTA's docking_protocol), while applying the cross-link data as
-        distance constraints in the scoring function.
-    7.) Repeat step 3.
-    8.) Repeat step 4.
-    9.) Perform an all vs all RMSD calculation combined with hierarchical clustering to select the
-        lowest scoring model from the three largest clusters as the best prediction from the entire
-        docking run.
-    10.) Calculate the contact frequency for each amino acid with all local refined models that
-         satisfy to most cross-links and have a sufficiently large interface size in order to
-         predict the interface between the receptor and ligand structure.
 
---------
-Demo Run
+1. Relax the receptor and ligand PDB structures (using ROSETTA's relax protocol) or prepack their side chains (using ROSETTA's docking_prepack_protocol).
+
+2. Perform global docking in low resolution centroid mode producing ~100,000 models (using ROSETTA's docking_protocol), while applying the cross-link data as distance restraints in the scoring function.
+
+3. Post-dock filter all predicted models (using Xwalk) in order to determine which models satisfy most cross-links.
+
+4. Select the 500 models with the lowest ROSETTA energy scores and compute binding interface sizes (using the NACCESS software) to select only for those models that have a sufficiently large binding interface.
+
+5. Perform a Quality-Threshold (QT) clustering (using the Superimpose application) on all models having passed the interface size filter and choose the lowest scoring model from the largest three clusters.
+
+6. Perform a local refinement docking calculation on each of the three cluster representative ~3 x 5000 models (using ROSETTA's docking_protocol), while applying the cross-link data as distance constraints in the scoring function.
+
+7. Repeat step 3.
+
+8. Repeat step 4.
+
+9. Perform an all vs all RMSD calculation combined with hierarchical clustering to select the lowest scoring model from the three largest clusters as the best prediction from the entire docking run.
+
+10. Calculate the contact frequency for each amino acid with all local refined models that satisfy to most cross-links and have a sufficiently large interface size in order to predict the interface between the receptor and ligand structure.
+
+## Demo Run
 --------
 This directory has following file structure:
-   example_output -> A sample of a finished cross-link guided docking workflow run.
-   inputs         -> Input files required for performing the cross-link guided docking workflow.
-   output         -> The directory in which a new cross-link guided docking workflow will be
-                    executed.
-   README.txt     -> This read me file.
-   run_demo.sh    -> A master-SHELL-script executing automatically each of the scripts in the
-                     scripts directory. Please type ./run_demo.sh for more help.
-   scripts        -> A set of SHELL and PERL scripts performing each of the steps above.
+-   example_output -> A sample of a finished cross-link guided docking workflow run.
+-   inputs         -> Input files required for performing the cross-link guided docking workflow.
+-   output         -> The directory in which a new cross-link guided docking workflow will be
+                      executed.
+-   README.txt     -> This read me file.
+-   run_demo.sh    -> A master-SHELL-script executing automatically each of the scripts in the
+                      scripts directory. Please type ./run_demo.sh for more help.
+-   scripts        -> A set of SHELL and PERL scripts performing each of the steps above.
 
 The set of scripts performing each of the cross-link guided docking steps above are provided in the
 scripts directory and can be sequentially executed with the ./run_demo.sh master script. To run the
@@ -93,17 +88,15 @@ be loaded into PyMOL and colored e.g. with following commands:
    - absolute contact frequency: cmd.spectrum("q","green_white_red","predicted_interface",-1,1,0,0)
    - relative contact frequency: cmd.spectrum("b","green_white_red","predicted_interface",-1,1,0,0)
 
--------------------
-System Requirements
--------------------
+## System Requirements
+----------------------
 - Unix like operating system, recommended and tested are Mac OS X 10.8.2 and Linux CentOS 6.
 - bash or csh shell
 - JAVA version 1.6
 - PERL version 5
 
------------------
-Required Software
------------------
+## Required Software
+--------------------
 Name           |   Description                                                          |   Version   |   URL
 ------------------------------------------------------------------------------------------------------------------------------------------
 ROSETTA        |   Molecular modeling suite. Protocols for structure relax, side-chain  |   3.4       |   http://www.rosettacommons.org
@@ -136,20 +129,17 @@ R              |   Software environment for statistical computing and graphics. 
 PyMOL          |   Molecular visualization software.                                    |   1.5       |   http://www.pymol.org
 
 
-
-
------------
-Input Files
------------
+## Input Files
+-------------
 The cross-link guided docking protocol requires only four different text files with a specific file
 format as input files:
-    1.) receptor.pdb: 3D coordinates of the first protein in Protein Data Bank (PDB) format. The
+1. receptor.pdb: 3D coordinates of the first protein in Protein Data Bank (PDB) format. The
         PDB file format and in particular the ATOM record describing atomic coordinates of
         proteins can be found at http://www.wwpdb.org/documentation/format33/sect9.html#ATOM. The
         first protein is usually the larger protein and referred to as receptor.
-    2.) ligand.pdb: 3D coordinates of the second protein in PDB format. The second protein is
+2. ligand.pdb: 3D coordinates of the second protein in PDB format. The second protein is
         usually the smaller protein and referred to as ligand.
-    3.) inter-protein-cross-link.cst: Experimental inter-protein cross-link information in ROSETTA
+3. inter-protein-cross-link.cst: Experimental inter-protein cross-link information in ROSETTA
         constraint file format (See also http://www.rosettacommons.org/manuals/archive/rosetta3.4_user_guide/de/d50/constraint_file.html).
         The constraint file is a space delimited text file and should have following structure for
         this protocol:
@@ -163,7 +153,7 @@ format as input files:
     if dist - x0 ≤ tolerance and otherwise the square of
     ((dist - x0 - tolerance)/ standard deviation).
 
-    4.) cross-link.dist: Experimental intra-protein and inter-protein cross-link and mono-link
+4. cross-link.dist: Experimental intra-protein and inter-protein cross-link and mono-link
         information in Xwalk distance file format
         (see also http://www.xwalk.org/cgi-bin/help.cgi#vXLtable), which is a tab delimited text
         file with following information. 
@@ -175,12 +165,11 @@ format as input files:
              residue name – residue number – chain ID – atom name.
     Mono-links are described with the first three columns only.
 
--------------------------------------
-Commandline options for the excutable
--------------------------------------
+## Commandline options for the excutable
+----------------------------------------
 
-docking_protocol
-----------------
+###docking_protocol
+
 -database {rosetta-database}
     - Path to the ROSETTA database.
 -in:file:s relaxed-receptor-ligand.pdb
@@ -200,8 +189,8 @@ docking_protocol
 -out:nstruct {N}
     - Number of PDB output files to be generated.
 
-Xwalk
------
+###Xwalk
+
 -infile global-docking_models.pdb
     - Input file corresponding to a ROSETTA docking_protocol output file. 
 -dist cross-link.dist
@@ -219,13 +208,13 @@ Xwalk
       7th column hold the sequence distance, Euclidean distance and SAS distance between the
       cross-linked amino acids.
 
-NACCESS
--------
+###NACCESS
+
 - 1st parameter of the application is the input file, which corresponds to a ROSETTA
   docking_protocol output file.
 
-Superimpose
------------
+###Superimpose
+
 - colt.jar: JAVA library, which holds data structures and algorithms for scientific computing
   (e.g. linear algebra and multi-dimensional arrays). It can be downloaded from
    http://acs.lbl.gov/software/colt/colt-download/releases/colt-1.2.0.zip, and is located in the
@@ -252,7 +241,7 @@ Superimpose
     - Outputs only the RMSD value.
 
 AvgInterface
-------------
+
 - 1st parameter is a TAR-GNU-ZIP archive file holding the best models from the ROSETTA
   docking_protocol.
 - 2nd parameter is a selected PDB file. Ideally THE best model from the ROSETTA docking_protocol.
