@@ -15,7 +15,7 @@ Input files:
 Usage:
 
 ```bash
-$> <path_to_Rosetta_directory>/main/source/bin/enzyme_design.default.linuxgccrelease @optcst.flags -linmem_ig 10 -in:file::s rosetta_cst.pdb
+<path_to_Rosetta_directory>/main/source/bin/enzyme_design.default.linuxgccrelease @optcst.flags -linmem_ig 10 -in:file::s rosetta_cst.pdb
 ``` 
 
 Note that ".default.linuxgccrelease", in the above, may need to be replaced with whatever is appropriate for your build, operating system, and compiler.

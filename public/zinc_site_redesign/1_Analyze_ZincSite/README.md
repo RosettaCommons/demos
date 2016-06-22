@@ -7,7 +7,7 @@ been tested with Zinc ions.
 Example with 1A4L. 
 
 ````bash
-$> python $ROSETTA_TOOLS/zinc_site_redesign/analyze_zinc_site.py -f 1A4L.pdb
+python $ROSETTA_TOOLS/zinc_site_redesign/analyze_zinc_site.py -f 1A4L.pdb
 ```
 
 Output from analysis

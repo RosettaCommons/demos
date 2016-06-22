@@ -11,7 +11,7 @@ Inputs:
 Usage:
 
 ```bash
-$> <path_to_Rosetta_directory>/main/source/bin/enzyme_design.default.linuxgccrelease @enzdes.flags -correct -linmem_ig 10 -in:file:s UM_1_H15H17H214D295Q58_1A4L_clean_A_r_1A4L_clean_A_1.pdb
+<path_to_Rosetta_directory>/main/source/bin/enzyme_design.default.linuxgccrelease @enzdes.flags -correct -linmem_ig 10 -in:file:s UM_1_H15H17H214D295Q58_1A4L_clean_A_r_1A4L_clean_A_1.pdb
 ```
 
 Output:

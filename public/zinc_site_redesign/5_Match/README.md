@@ -13,7 +13,7 @@ The following files are needed
 Usage:
 
 ```bash
-$> <path_to_Rosetta_directory>/main/source/bin/match.default.linuxgccrelease @general_matching.flags @scaf.flags @subs.flags -linmem_ig 10 -in:file::s 1A4L_clean_A_r.pdb
+<path_to_Rosetta_directory>/main/source/bin/match.default.linuxgccrelease @general_matching.flags @scaf.flags @subs.flags -linmem_ig 10 -in:file::s 1A4L_clean_A_r.pdb
 ```
 
 In the above, ".default.linuxgccrelease" may need to be updated for your build, operating system, and compiler.
