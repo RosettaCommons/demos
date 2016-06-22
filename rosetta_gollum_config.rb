@@ -24,12 +24,66 @@ Precious::App.set(:wiki_options, WIKI_OPTIONS)
 
 # Define a few useful macros.
 
-class Gollum::Macro::LinkDemos < Gollum::Macro
-  def recapitalize(tag)
-      if tag == nil then return "Other" end
-      return tag.tr("_"," ").gsub(/\w+/) {|word| word.capitalize}
-  end
+def load_keywords(page_dir)
+    keyword_order = []
+    File.open(File.join(page_dir,"keywords.txt"),'r') do |f|
+        f.each_line do |line|
+	    if line.strip != "" and line.strip[0] != "#" then
+                keyword_order.push(line.strip)
+            end
+        end
+    end
+    return keyword_order
+end
 
+def title_and_keywords(filename)
+    #Parse the md file and extract the title and keywords
+    demo_title = nil
+    keywords = []
+    File.open(filename,'r') do |f|
+        f.each_line do |line|
+    	if demo_title == nil and line.strip != "" and line.strip[0] != "\\" then
+    	    demo_title = line.tr("#","").strip
+                next
+    	end
+            if line.start_with?("KEYWORDS:") then
+                keywords = line.split[1..-1]
+    	    break
+    	end
+        end
+    end
+    return [ demo_title, keywords ]
+end
+
+# Returns list of [keywords, demo_file, demo_name, demo_title ] array
+def make_demos_list(abs_demos_dir, abs_page_dir)
+    demos_list = []
+    ( Dir[ File.join(abs_demos_dir, '**', '*.md') ].reject { |p| File.directory? p } ).sort.each do |abs_demo_file|
+        demo_file = Pathname.new(abs_demo_file).relative_path_from(Pathname.new(abs_page_dir)).to_s()
+        demo_hierarchy = demo_file.split(File::SEPARATOR)
+        if demo_hierarchy[-1] == "README.md" then
+            demo_hierarchy.delete_at(-1)
+	else
+            demo_hierarchy[-1] = demo_hierarchy[-1][0..-4] #Chop off the .md; -4 is inclusive
+	end
+        demo_name = demo_hierarchy[-1]
+
+        #Parse the md file and extract the title and keywords
+	demo_title, keywords = *title_and_keywords(abs_demo_file)
+
+	if demo_name != "" and demo_name != nil and ! demo_name.start_with?("_") then
+            demos_list.push( [keywords, demo_file, demo_name, demo_title ] )
+        end
+    end
+    return demos_list
+end
+
+def recapitalize(tag)
+    if tag == nil then return "Other" end
+    return tag.tr("_"," ").gsub(/\w+/) {|word| word.capitalize}
+end
+
+class Gollum::Macro::LinkDemos < Gollum::Macro
   # Index for an order based on a keywords list
   def order_number(x, name, keyword_order) 
       k1 = keyword_order.index(x[0]) #First keyword
@@ -48,48 +102,11 @@ class Gollum::Macro::LinkDemos < Gollum::Macro
     abs_page_dir = File.join(@wiki.path, page_dir)
     abs_demos_dir = File.join(abs_page_dir, demos_root)
 
-    keyword_order = []
-    File.open(File.join(page_dir,"keywords.txt"),'r') do |f|
-        f.each_line do |line|
-	    if line.strip != "" and line.strip[0] != "#" then
-                keyword_order.push(line.strip)
-            end
-        end
-    end
-    
+    keyword_order = load_keywords(page_dir)
 
     # Build a list of demos
-    demos_list = []
-    ( Dir[ File.join(abs_demos_dir, '**', '*.md') ].reject { |p| File.directory? p } ).sort.each do |abs_demo_file|
-        demo_file = Pathname.new(abs_demo_file).relative_path_from(Pathname.new(abs_page_dir)).to_s()
-        demo_hierarchy = demo_file.split(File::SEPARATOR)
-        if demo_hierarchy[-1] == "README.md" then
-            demo_hierarchy.delete_at(-1)
-	else
-            demo_hierarchy[-1] = demo_hierarchy[-1][0..-4] #Chop off the .md; -4 is inclusive
-	end
-        demo_name = demo_hierarchy[-1]
-
-        #Parse the md file and extract the title and keywords
-	demo_title = nil
-	keywords = []
-	File.open(abs_demo_file,'r') do |f|
-            f.each_line do |line|
-    		if demo_title == nil and line.strip != "" and line.strip[0] != "\\" then
-		    demo_title = line.tr("#","").strip
-                    next
-		end
-                if line.start_with?("KEYWORDS:") then
-                    keywords = line.split[1..-1]
-		    break
-		end
-            end
-        end
-
-	if demo_name != "" and demo_name != nil and ! demo_name.start_with?("_") then
-            demos_list.push( [keywords, demo_file, demo_name, demo_title ] )
-        end
-    end
+    demos_list = make_demos_list(abs_demos_dir, abs_page_dir)
+    # Returns list of [keywords, demo_file, demo_name, demo_title ] array
 
     # Sort by keywords
     demos_list.sort_by! { |x| order_number(x[0], x[2], keyword_order) }
@@ -130,5 +147,63 @@ class Gollum::Macro::LinkDemos < Gollum::Macro
     if list_open then html += "</ul>\n" end
            
     return html
+  end
+end
+
+class Gollum::Macro::GroupByKeywords < Gollum::Macro
+
+  def render()
+    # Gollum's search for link targets is O(n^2)
+    # We can avoid this by directly outputting the HTML
+
+    page_dir = File.dirname(@page.path)
+    abs_page_dir = File.join(@wiki.path, page_dir)
+
+    keyword_order = load_keywords(page_dir)
+
+    # Build a list of demos
+    demos_list = make_demos_list(abs_page_dir, abs_page_dir)
+    # Returns list of [keywords, demo_file, demo_name, demo_title ] array
+
+    # Sort by demo name
+    demos_list.sort_by! { |x| x[2] }
+
+    html = ""
+    in_list = false
+    last_keyword = nil
+    keyword_order.each do |keyword|
+        demos_list.each do |demo|
+            keywords, abs_demo_file, demo_name, demo_title = *demo
+            if keywords.include?(keyword) then
+                if keyword != last_keyword then
+                    if in_list then
+                        html += "</ul>\n"
+                        in_list = false
+                    end
+                    html += "<h3>" + recapitalize(keyword) + "</h3>\n"
+                end
+                if ! in_list then
+                    html += "<ul>\n"
+                    in_list = true
+                end
+                trimmed_url = abs_demo_file[0..-4] # Chop off the MD
+                html += %{<li><a class="internal present" href="#{trimmed_url}">#{demo_name}</a>: #{demo_title}</li>\n}
+                last_keyword = keyword
+            end
+        end
+    end
+
+    if in_list then
+        html += "</ul>\n"
+        in_list = false
+    end
+    return html
+  end
+end
+
+class Gollum::Macro::TagSearchResults < Gollum::Macro
+
+  def render()
+     # How do I get the GET results of a form submission through Gollum?
   end
 end

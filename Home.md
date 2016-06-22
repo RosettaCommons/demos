@@ -3,6 +3,8 @@ Demos, Tutorials, and Protocol Captures
 
 [[_TOC_]]
 
+##### [[Demos listed by keyword|tag-search]]
+
 Obtaining tutorial materials
 ----------------------------
 
