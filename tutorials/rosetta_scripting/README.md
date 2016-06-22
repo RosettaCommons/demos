@@ -175,7 +175,7 @@ Additionally, whitespace is largely ignored in RosettaScripts.  The following th
 </SCOREFXNS>
 ```
 
-Conventionally, tags are indented in proportion to their level of nesting, but this is for human readability, not for machine parsing; the rosetta_scripts application disregards tabs entirely.  The one case in which whitespace matters is when setting options within a tag.  When a tag contains an option that accepts a comma-separated list of strings, these must *not* have whitespace within them:
+Conventionally, tags are indented in proportion to their level of nesting, but this is for human readability, not for machine parsing; the rosetta_scripts application disregards tabs entirely.  The one case in which whitespace matters is when setting options within a tag.  When a tag contains an option that accepts a comma-separated list, these must *not* have whitespace within them:
 
 ```xml
 <PackRotamers name=pack1 task_operations=task1,task2,task3 /> #This is allowed
@@ -206,11 +206,11 @@ Additionally, you should see the standard Rosetta score table at the end of the 
 * *Score the output with a custom scorefunction*
 * *Control output file format*
 
-Before we explore the full power of RosettaScripts, let's make sure that we understand how to control the rosetta_scripts application's output.  There are two ways to do this.  The first is modifying the ```<OUTPUT />``` tag typically found at the end of a script, and the second is by setting flags.
+Before we explore the full power of RosettaScripts, let's make sure that we understand how to control the rosetta_scripts application's output.  There are two ways to do this.  The first is modifying the ```<OUTPUT/>``` tag typically found at the end of a script, and the second is by setting flags.
 
-Let's look at a typical usage case for the ```<OUTPUT />``` tag, first.  Sometimes you may want to use different energy functions during different scoring. For example, you may want to change constraint weights, or to use a lower resolution energy function.  In order to do this, we:
+Let's look at a typical usage case for the ```<OUTPUT/>``` tag, first.  Sometimes you may want to use different energy functions during different scoring. For example, you may want to change constraint weights, or to use a lower resolution energy function.  In order to do this, we:
 1. Add a named custom scoring function in the ```SCOREFXNS``` section of the XML.
-2. Add this to the ```<OUTPUT />``` tag.
+2. Add this to the ```<OUTPUT/>``` tag.
 
 Each custom scorefunction is defined by different sub-tags in the SCOREFXNS section. The format is detailed in the [SCOREFXNS documentation](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/RosettaScripts#scorefunctions).
 
@@ -239,17 +239,29 @@ Each custom scorefunction is defined by different sub-tags in the SCOREFXNS sect
 </ROSETTASCRIPTS>
 ``` 
 
-The script scorefxn.xml gives and example of defining different scorefunctions. It defines two scorefunctions, one (t13) is simply the talaris2013 weights used as-is, and the second is the talaris2014 weights modified in certain score terms. (One can also use patch files, or locally-specified weights file).
+The script scorefxn.xml gives and example of defining different scorefunctions. It defines two scorefunctions.  The first one (t13) is simply the talaris2013 weights used as-is, and the second is the talaris2014 weights modified by changing the weights (coefficients) for certain score terms. (One can also use patch files, or locally-specified weights file; additionally, other scorefunction options can be set, such as soft Lennard-Jones potentials or whatnot.  See the documentation on the ```Set``` tag in the [RosettaScripts documentation](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/RosettaScripts) for more on this.)
 
-The t13 scorefunction is never used in this script, but the t14_cart score function is used in the OUTPUT tag. This tells RosettaScripts to rescore the output structures with the custom t14_cart score function, rather than with the default (command line) scorefunction. Run 1ubq.pdb through the script: 
+The t13 scorefunction is never used in this script, which is not a problem -- RosettaScripts does not object to objects that are defined but never used (though the unnecessary allocation of these objects in memory is probably best avoided if one can help it).  The t14_cart score function *is* used, however, in the OUTPUT tag. This tells RosettaScripts to rescore the output structures with the custom t14_cart score function, rather than with the default (command line) scorefunction. Run 1ubq.pdb through the script: 
 
-	$> cp inputs/scoring.xml .
-	$> rosetta_scripts.linuxgccrelease -s 1ubq.pdb -parser:protocol scoring.xml -out:prefix scoring_
+```bash
+$> cp inputs/scoring.xml .
+$> <path_to_Rosetta_directory>/main/source/bin/rosetta_scripts.linuxgccrelease -s 1ubq.pdb -parser:protocol scoring.xml -out:prefix scoring_
+```
 
 If you open the scoring_1ubq_0001.pdb output file, you should see that the score table includes columns for the cart_bonded term, and no pro_close term.
 
-## Movers - altering the pose
---------------------------
+The above could also be accomplished by passing a custom .wts file to RosettaScripts using the ```-score:weights``` flag at the commandline.
+
+Now let's look at another example of output control at the commandline: we may not want to use PDB output if we're planning to generate very large numbers of structures.  The binary silent file is a proprietary Rosetta format that tis much more compact than a PDB file, and which can store arbitrarily large numbers of structures, avoiding disk space and file count limitations on many file systems.  To produce a silent files for output, let's re-run the command that we just ran, but with an additional flag:
+
+```xml
+$> <path_to_Rosetta_directory>/main/source/bin/rosetta_scripts.linuxgccrelease -s 1ubq.pdb -parser:protocol scoring.xml -out:file:silent scoring.silent
+```
+
+		This time, the output will be a binary silent file.  PDB files can be extracted from binary silent files using the extract_pdbs application.
+
+## Altering the Pose: Movers
+----------------------------
 
 * *Minimize the pose before outputting*
 
