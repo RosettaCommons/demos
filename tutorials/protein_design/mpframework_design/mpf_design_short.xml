@@ -1,0 +1,26 @@
+<ROSETTASCRIPTS>
+	<SCOREFXNS>
+		<memb_hires weights=mpframework_smooth_fa_2012.wts />
+	</SCOREFXNS>
+	<RESIDUE_SELECTORS>
+			<Not name="not_random_20">
+   				<RandomResidue num_residues="40"/>
+			</Not>
+	</RESIDUE_SELECTORS>
+	<TASKOPERATIONS>
+	  		<InitializeFromCommandline name="ifcl"/>
+			<OperateOnResidueSubset name="subset" selector="not_random_20">
+				<PreventRepackingRLT/>
+			</OperateOnResidueSubset>
+	</TASKOPERATIONS>
+	<MOVERS>
+		<AddMembraneMover name=add_memb />
+		<MembranePositionFromTopologyMover name=init_pose />
+		<PackRotamersMover name=pack scorefxn=memb_hires task_operations="ifcl,subset" />
+	</MOVERS>
+	<PROTOCOLS>
+		<Add mover=add_memb />
+		<Add mover=init_pose />
+		<Add mover=pack />
+	</PROTOCOLS>
+</ROSETTASCRIPTS>

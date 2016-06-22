@@ -21,7 +21,7 @@ the set of states are used to define a fitness for a sequence; the function that
 the state energies to a fitness is definable in an input file and may be arbitrarily complex.
 This protocol has been applied toward the design of bispecific antibodies by redesigning the Fc
 interface; the protocol sought sequences favoring the AB heterodimer while disfavoring the AA
-and BB homodimers. 
+and BB homodimers.
 
 Running the protocol
 --------------------
@@ -51,7 +51,7 @@ function definition for:
 
 in the file
 
-    /mini/src/devel/pack_daemon/DynamicAggregateFunction.cc
+		Rosetta/main/source/src/protocols/pack_daemon/DynamicAggregateFunction.cc
 
 #### Important Flags
 
@@ -67,7 +67,7 @@ I have found that, using ms::generations <15\*N>, the population size of 100 is 
 
     -ms::fraction_by_recombination <float>
 
-The fraction of crossover events; the fraction mutated by 
+The fraction of crossover events; the fraction mutated by
 point mutations is 1 - this number.  I have found that high point mutation rates are preferable, and
 typically set the fraction by recombination to 5% or lower.
 
@@ -85,7 +85,11 @@ resfiles.
 
 #### Example Rosetta Command Line:
 
-    path/to/mini/bin/mpi_msd.linuxgccrelease -entity_resfile input_files/entity.resfile -fitness_file input_files/fitness.daf  -ms::pop_size 100 -ms::generations 210  -ms::numresults 1 -no_his_his_pairE -ms::fraction_by_recombination 0.02 -database /path/to/minirosetta_database
+For useful options, look at the `./flags` file provided in this directory
+
+```
+ $> <path-to-Rosetta>/main/source/bin/mpi_msd.default.linuxgccrelease @flags
+```
 
 #### Example Overall Command Line (if overall protocol is run via a script or other program):
 
@@ -105,7 +109,6 @@ with the flags
     -database /path/to/minirosetta_database
     -nstruct 20
     -docking:docking_local_refine 1
-    -no_his_his_pairE
 
 
 and
@@ -115,14 +118,12 @@ and
 with the flags
 
     -s <pdbname>
-    -database /path/to/minirosetta_database
     -jd2::no_output
     -jumpnum 1
     -overwrite
     -is_compute_hbond_unsat true
     -is_compute_packstat true
     -mute protocols.toolbox
-    -no_his_his_pairE
 
 to measure the interface energy, the buried surface area (dSASA), the "binding energy density" (interface energy / dSASA),
 and the number of buried unsatisfied hydrogen bonds.
@@ -140,11 +141,11 @@ Every state which contributed in some way to the fitness for a particular entity
 at the conclusion of the MSD run. The state is output with the rotamer assignment computed
 when the entity's fitness was first evaluated (states are not repacked prior to being output,
 so if you think there is something fishy in a rotamer packing, you can look at the rotamer
-assignment). For example, if you used the "vmin" function to select the state 
-from a state vector with the lowest energy, then only the state with the lowest 
+assignment). For example, if you used the "vmin" function to select the state
+from a state vector with the lowest energy, then only the state with the lowest
 energy is output.
 
-Output pdbs are named with "msd\_output\_", the rank of the source entity 
-(1..numresults), the name for the state variable or the state-vector variable 
+Output pdbs are named with "msd\_output\_", the rank of the source entity
+(1..numresults), the name for the state variable or the state-vector variable
 (this name comes from the fitness file) and a ".pdb".
 

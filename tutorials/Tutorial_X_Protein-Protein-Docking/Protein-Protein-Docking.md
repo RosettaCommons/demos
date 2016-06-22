@@ -14,8 +14,8 @@ This tutorial will introduce you the main steps required for predicting how two 
 
 2. Then, you have to combine the protein structures into a single file. 
 
-        $ cp COL_D.pdb combined.pdb
-        $ cat IMM_D.pdb >> combined.pdb
+        $> cp COL_D.pdb combined.pdb
+        $> cat IMM_D.pdb >> combined.pdb
       
  You can open the new pdb file in Pymol to see, whether both proteins are present.
 
@@ -23,10 +23,8 @@ This tutorial will introduce you the main steps required for predicting how two 
 
  To minimize the noise from docking-independent changes in energy, you should allways perform a side-chain optimization step (**packing**).
 
-        $> ../../../main/source/bin/docking_prepack_protocol.linuxgccrelease \
-        -s combined.pdb \
-        -ex1
-        -ex2
+        $> ../../../main/source/bin/docking_prepack_protocol.default.linuxgccrelease \
+        -s combined.pdb -ex1  -ex2
         
   You will see several output files. The prepacked combined pdb is combined_0001.pdb. Change that name:
   
@@ -40,14 +38,11 @@ This tutorial will introduce you the main steps required for predicting how two 
 Here is a minimal commandline to start a docking simulation (here we include also the known complex structure, 1V74, as a reference):
 
      $> ../../../main/source/bin/docking_protocol.linuxgccrelease \
-     -s combined_ppk.pdb
-     -ex1
-     -ex2
-     -nstruct 2
+     -s combined_ppk.pdb -ex1 -ex2 -nstruct 2
      
 1. Run the docking protocol  
      
- Rosetta will internally connect the centers of the two chains with a so-called jump (see [Fold Tree]()). Along this jump the chains are being pulled together (slide into contact). The Monte Carlo moves, which are selected randomly, are:   
+ Rosetta will internally connect the centers of the two chains with a so-called jump (see [Fold Tree]()). Along this jump the chains are being pulled together (slide into contact). The [Monte Carlo]() moves, which are selected randomly, are:   
  
  * Translations (in x,y or z direction)
  * Rotations (around x,y, z axis)  

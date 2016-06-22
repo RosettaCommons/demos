@@ -1,0 +1,36 @@
+-in
+  -file:extra_res_fa LG.params
+-out::overwrite
+-out::file::o enz_score.out
+-out::file::output_virtual
+-packing
+  -use_input_sc
+  #-ex1:level 4
+  #-ex2:level 4
+  #-ex1aro:level 4 
+  #-ex2aro:level 4 
+  -soft_rep_design
+  #-resfile resfile 
+-enzdes
+  -cstfile constraint.cst
+  -cst_opt
+  -cst_design
+  -cst_min
+  -detect_design_interface
+  -cut1 6.0
+  -cut2 8.0
+  -cut3 10.0
+  -cut4 12.0
+  -lig_packer_weight 1.8
+  -no_unconstrained_repack
+  -design_min_cycles 2
+  -chi_min
+  -minimize_ligand_torsions 8.0
+  -loop_bb_min_allowed_dev 0.1
+  -bb_min
+  -bb_min_allowed_dev 0.1
+  -favor_native_res 1.25
+  -fix_catalytic_aa
+-score
+   -weights enzdes.wts
+-nstruct 1
