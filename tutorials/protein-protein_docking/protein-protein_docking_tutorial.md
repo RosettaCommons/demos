@@ -38,13 +38,13 @@ This tutorial presents a cross-docking benchmark experiment. Antibody CR6261 bin
 
         1. We want the antibody (chains H and L) from 3GBN. (Note that chains A and B are not the antibody "Ab"). We only need the variable domain which is actually involved with binding HA. The crystal structure also contains a partially resolved portion of the constant domain. You should manually edit the PDB file with a text editor to remove the unnecessary portions. You should be able to see them in a structure viewer. It should be residues 121-160 of the heavy chain (chain H) and residues 268-311 of the light chain (chain L) in the cleaned structure.
 
-                python2.7 ~/rosetta_workshop/rosetta/tools/protein_tools/scripts/clean_pdb.py 3GBN HL
+                > <path-to-Rosetta>/tools/protein_tools/scripts/clean_pdb.py 3GBN HL
 
                 cp 3GBN_HL.pdb 3GBN_trim.pdb
                 pymol 3GBN_trim.pdb
                 gedit 3GBN_trim.pdb
 
-                python2.7 ~/rosetta_workshop/rosetta/tools/protein_tools/scripts/pdb_renumber.py \
+                > <path-to-Rosetta>/rosetta/tools/protein_tools/scripts/pdb_renumber.py \
                 --norestart 3GBN_trim.pdb 3gbn_Ab.pdb
 
     1. Close the chain break between Ser-127 and Val-128 in chain L of the antibody. 
