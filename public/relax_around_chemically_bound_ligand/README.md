@@ -1,7 +1,7 @@
 # Relax Around Chemically Bound Ligand
 
 # Metadata
-This document was last edited on January 4, 2012 by Ron Jacak.  The document was originally written by Andrew Leaver-Fay, and completed, expanded and modified for Doxygen by Ron Jacak.
+It was then modified during documentation XRW 2016 by Parisa Hosseinzadeh to enable automatic testing. The document was originally written by Andrew Leaver-Fay, and completed, expanded and modified for Doxygen by Ron Jacak.It was then modified during documentation XRW 2016 by Parisa Hosseinzadeh to enable automatic testing. 
 
 # Quick Guide
 1. Create parameter files for the ligand, and modified residue (if one doesn't already exist)
@@ -14,12 +14,11 @@ This document was last edited on January 4, 2012 by Ron Jacak.  The document was
 
 # Introduction
 
-The purpose of this demo is to relax a protein with a chemically attached small molecule. Currently, one example on the LOV2 domain is provided. In time, this README will be expanded to include a second example on a glycosylated protein.
+The purpose of this demo is to relax a protein with a chemically attached small molecule. Currently, one example on the LOV2 domain is provided. 
 
-Rosetta requires a "params" file for each of the residue types that are used in a trajectory. These are already available for all of the amino acids, nucleic acids, and most of the metals.  These parameter files live in minirosetta_database/chemical/residue_type_sets/fa_standard/residue_types/. Before relax can be run on a liganded structure, a parameter file for that ligand needs to be created.
+Rosetta requires a "params" file for each of the residue types that are used in a trajectory. These are already available for all of the amino acids, nucleic acids, and most of the metals.  These parameter files live in Rosetta/main/database/chemical/residue_type_sets/fa_standard/residue_types/. Before relax can be run on a liganded structure, a parameter file for that ligand needs to be created.
 
-The "LOV2" domain binds a flavin and, when exposed to blue light, forms a thiol bond at CYS 450 to this flavin.  One question that would be nice to answer is what effect this chemical bond has on the stability of the LOV2 domain, since it is known that after this bond forms, the C-terminal
-"J-alpha" helix unfolds.  To address this with Rosetta, we would like to run relax on the starting structure while preserving this chemical bond.  The crystal structure 2V0W was made by crystalizing the LOV2 domain in the dark, and then exposing the crystals to light.  The thiol bond between CYS 450 and the flavin is visible in the structure. 
+The "LOV2" domain binds a flavin and, when exposed to blue light, forms a thiol bond at CYS 450 to this flavin.  One question that would be nice to answer is what effect this chemical bond has on the stability of the LOV2 domain, since it is known that after this bond forms, the C-terminal "J-alpha" helix unfolds.  To address this with Rosetta, we would like to run relax on the starting structure while preserving this chemical bond.  The crystal structure 2V0W was made by crystalizing the LOV2 domain in the dark, and then exposing the crystals to light.  The thiol bond between CYS 450 and the flavin is visible in the structure. 
 
 # Creating a Ligand Parameter File
 
