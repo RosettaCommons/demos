@@ -34,9 +34,9 @@ This tutorial presents a protein folding benchmark experiment. Bacteriophage T4 
             1. Open a text editor, such as gedit. Copy all the sequence information, including the line beginning with ">", into a new file.
             1. Remove the first 57 residues of the sequence so that it begins with the sequence ITKDE.
             1. Save the file as 2LZMA.fasta to your directory. Alternatively you can copy the file provided for you:
-            
+            ```
                  $> cp input_files/2LZMA.fasta .
-
+            ```
     1. Prepare a PDB of native structure.
     
         **The clean and renumbered 2LZMA.pdb file is provided for you in the**  
