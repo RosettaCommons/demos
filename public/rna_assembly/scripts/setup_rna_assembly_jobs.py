@@ -5,6 +5,7 @@
 
 import string
 from sys import argv,exit
+import os
 from os import system, getcwd
 from os.path import exists, expanduser, abspath, dirname
 
@@ -14,23 +15,21 @@ if len( argv ) < 2:
 
 #EXE_DIR =  expanduser('~')+'/src/rosetta_TRUNK/rosetta_source/bin/'
 scripts_path = dirname( abspath( argv[0] ) ) + '/'
-EXE_DIR =  scripts_path +'/../../../../rosetta_source/bin/'
+
+if os.environ.has_key("ROSETTA3"):
+	EXE_DIR = os.environ.get("ROSETTA3")+"/bin/"
+else:
+	EXE_DIR =  scripts_path +'/../../../../rosetta_source/bin/'
 EXE_DIR = abspath( EXE_DIR )
 
 # for pdbslice.py
-tools_scripts_path = abspath( dirname( abspath( argv[0] ) ) + '/../../../../rosetta_tools/rna/' )
+if os.environ.has_key("TOOLS"):
+	tools_scripts_path = os.environ.get("TOOLS")+"/rna_tools/bin"
+else:
+	tools_scripts_path = abspath( dirname( abspath( argv[0] ) ) + '/../../../../tools/rna_tools/bin' )
 
 if not exists( EXE_DIR ):
     print 'Need to set EXE_DIR in '+argv[0]+' to match an existing directory'
-    exit( 0 )
-
-EXE_extension = '.linuxgccrelease'
-rna_helix_exe = EXE_DIR + '/rna_helix'+EXE_extension
-if not exists( rna_helix_exe ):
-    EXE_extension = '.macosgccrelease'
-    rna_helix_exe = EXE_DIR + '/rna_helix'+EXE_extension
-if not exists( rna_helix_exe ):
-    print 'Cannot find '+rna_helix_exe+'.  Different extension than .linuxgccrelease?'
     exit( 0 )
 
 fasta_file = argv[1]
@@ -40,6 +39,7 @@ native_exists = 0
 data_exists = 0
 cst_exists = 0
 torsions_exists = 0
+EXE_extension = ''
 for i in range( 3, len( argv ) ):
     if argv[i][-4:] == '.pdb':
         native_pdb_file = argv[i]
@@ -53,6 +53,19 @@ for i in range( 3, len( argv ) ):
     if argv[i][-9:] == '.torsions':
         torsions_file = argv[i]
         torsions_exists = 1
+	if argv[i][:14] == 'exe_extension=':
+		EXE_extension = argv[i][15:]
+
+if EXE_extension == '':
+	EXE_extension = '.linuxgccrelease'
+	rna_helix_exe = EXE_DIR + '/rna_helix'+EXE_extension
+	if not exists( rna_helix_exe ):
+		EXE_extension = '.macosgccrelease'
+		rna_helix_exe = EXE_DIR + '/rna_helix'+EXE_extension
+
+if not exists( rna_helix_exe ):
+	print 'Cannot find '+rna_helix_exe+'.  Different extension than .linuxgccrelease or macosgccrelease?'
+	exit( 0 )
 
 # Read in files
 lines = open( fasta_file ).readlines()
