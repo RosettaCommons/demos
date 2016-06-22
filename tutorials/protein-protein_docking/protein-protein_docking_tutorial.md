@@ -109,8 +109,8 @@ This tutorial presents a cross-docking benchmark experiment. Antibody CR6261 bin
 
         1. When the repacking runs are done (in about 3-4 minutes), copy the best scoring HA model to 3gbm_HA_repack.pdb and the best scoring antibody model to 3gbn_Ab_repack.pdb. (For brevity, we only generated a single structure. For actual production runs, we recommend generating a number of output structures, by adding something like "-nstruct 25" to the commandline. -- For the example outputs in the output_files/ directory, the lowest energy structures are 3gbm_HA_0011.pdb and 3gbn_Ab_fixed_0005.pdb.)
         
-                 cp output_files/3gbm_HA_0023.pdb 3gbm_HA_repacked.pdb
-                 cp output_files/3gbn_Ab_fixed_0021.pdb 3gbn_Ab_repacked.pdb
+                 cp input_files/3gbm_HA_repacked.pdb .
+                 cp input_files/3gbn_Ab_repacked.pdb .
     
         It can also be useful to pre-generate backbone conformational diversity prior to docking particularly when the partners are crystallized separately. The Rosetta FastRelax algorithm can be accessed through RosettaScripts. XML scripts, input files, options files and a command are available in the input_files directory. Backbone conformational diversity will not be explored in this tutorial due to time constraints.
         
@@ -125,10 +125,12 @@ This tutorial presents a cross-docking benchmark experiment. Antibody CR6261 bin
 
             1. Type 'align 3gbn_Ab_repacked, 3gbm_native'
             1.  Type 'save 3gbm_HA_3gbn_Ab.pdb, 3gbm_HA_repacked + 3gbn_Ab_repacked'
-        1. Renumber the pdb from 1 to the end without restarting.
+        1. Renumber the pdb from 1 to the end without restarting. You can also copy a renumbered_version that is pre-generated for you:
         
                 > <path-to-Rosetta>/tools/protein_tools/scripts/pdb_renumber.py \
                 --norestart 3gbm_HA_3gbn_Ab.pdb 3gbm_HA_3gbn_Ab.pdb
+                or
+                $> cp input_files/3gbm_HA_3gbn_Ab.pdb
 
 1. Perform docking utilizing the RosettaScripts application.
     1. Prepare a RosettaScripts XML file for docking. This file outlines a protocol that performs docking. It then further minimizes the interface. Familiarize yourself with the contents of the script.
@@ -141,7 +143,7 @@ This tutorial presents a cross-docking benchmark experiment. Antibody CR6261 bin
             1. Copy the options file (docking.options) from the input_files directory. Familiarize yourself with the options in the file.
 
                     $> cp input_files/docking_full.options . 
-                    $> cp input_files/docking_full.options .
+                    $> cp input_files/docking_minimize.options .
                     cat docking.options
 
         1. Generate fifty models using the full docking algorithm. (This will likely take a while - move on to the next steps while this is running.)
