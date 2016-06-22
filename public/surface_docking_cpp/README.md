@@ -15,7 +15,7 @@ side chain conformations on a solid surface.
 ## Commands
 
 ```bash
-<path_to_Rosetta_directory>/main/source/bin/surface_docking.default.linuxgccrelease @rosetta_inputs/flags
+$> <path_to_Rosetta_directory>/main/source/bin/surface_docking.default.linuxgccrelease @rosetta_inputs/flags
 ```
 
 In the above, ".default.linuxgccrelease" may need to be updated for your build, operating system, and compiler.
