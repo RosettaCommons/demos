@@ -1,67 +1,83 @@
-Demos
-=====
+Demos, Tutorials, and Protocol Captures
+=======================================
 
-These demos are designed to guide users through sample procedures in computational modeling from the point of view of solving a specific problem.
-Each one includes:
+Obtaining tutorial materials
+----------------------------
+
+The demos, tutorials, protocol captures, and all example inputs are provided with the full Rosetta distribution, under the demos/ directory. Rosetta is availible for license (free of charge to academic users) at <https://www.rosettacommons.org/software>.
+
+<!--- BEGIN_INTERNAL -->
+For RosettaCommons users, the demos repository should be automatically downloaded by the get_rosetta.sh download script. Alternatively, RosettaCommons users can download the demos repository from GitHub. e.g.
+
+    git clone git@github.com:RosettaCommons/demos.git 
+
+<!--- END_INTERNAL -->
+
+Tutorials
+---------
+
+These are introductory tutorials intended as a gentle introduction to Rosetta concepts, and using common functionality of Rosetta. For additional examples and information on using Rosetta, see the demos (below) or the [Rosetta documentation](https://www.rosettacommons.org/docs/latest/)
+
+Full input files for the tutorials are located in the `demos/tutorials/` directory of the Rosetta distribution. 
+
+<<LinkDemos(tutorials)>>
+
+Demos
+-----
+
+These demos are designed to guide users through sample procedures in computational modeling from the point of view of solving a specific problem. 
+
+Each one should include:
 
 1. An introduction to the task at hand.
 2. Detailed step-by-step instructions on how to run the demo.
 3. All the input data needed to run the demo.
 4. Scripts containing the exact commands needed to run the demo.
 
-Downloading the demos
-=====================
-
-All the demos documented here are included in the `demos` directory at the root of the weekly releases of Rosetta.
-Weekly releases are available to academic users free of charge.
-If you are a [[Rosetta Developer]] (i.e. you have signed the RosettaCommons developer's agreement and have access to the Rosetta source code repositories on GitHub), you can download all the demos by checking out the `demos.git` repository:
-
-    git clone git@github.com:RosettaCommons/demos.git
-
-Demos
-=====
-
-How-Tos
--------
-
-How-to demos demonstrate the best way to solve a particular problem using the Rosetta framework.
-Each demo defines a particular problem, and as new and improved ways to solve those problems are developed, the demos are updated by members of the Rosetta community.
-These demos are located in the `demos/public` directory.
+Full input files for the demos are located in the `demos/public/` directory of the Rosetta distribution.
 
 <<LinkDemos(public)>>
 
 Protocol Captures
 -----------------
 
-Protocol captures are demos from published papers. 
-They aren't meant to show the best way to solve problems in the current version of Rosetta, they are meant to show published solutions to problems that were addressed by members of the Rosetta community.
-The purpose of these protocol captures is both to serve as a historical record and to assist those trying to reproduce past results.
-These demos are located in the `demos/protocol_capture` directory.
+Many papers using Rosetta are accompanied by a protocol capture - an example of how to use the protocol discussed in the paper. The protocol captures below aren't meant to show the best way to solve problems in the current version of Rosetta, instead they are meant to show published solutions to problems that were addressed by members of the Rosetta community. The purpose of these protocol captures is both to serve as a historical record and to assist those trying to reproduce past results. See the demos (above) for updated versions of most protocol captures.
+
+Full input files for the protocol captures are located in the demos/protocol_capture/ directory of the Rosetta distribution.
 
 <<LinkDemos(protocol_capture)>>
 
 <!--- BEGIN_INTERNAL --->
 
 Adding new demos
-================
+----------------
 
 To add new demos, the first thing you need to do is become a [[Rosetta developer]].
 Then you will be able to check out the `demos.git` repository:
 
     git clone git@github.com:RosettaCommons/demos.git
 
-The demos are organized into three directories:
+The demos are organized into four directories:
+
+* `demos/tutorials`:
+  Tutorials are intended to be general introductions to Rosetta that discuss basic Rosetta concepts or widely used protocols.
+The material discussed in tutorials should be of interest to a majority of Rosetta users. 
+(The expectation is that the naive Rosetta user would work through all the material in the Rosetta tutorials directory.)
 
 * `demos/public`:  
-  For demos that are meant to show the best way to solve a particular problem.
+  For demos that are meant to show the best way to solve a particular problem. 
+The majority of protocols will have their demos here.
 These demos may be updated by the community as new ways to solve these problems are developed.
 
 * `demos/protocol_capture`:  
-  For demos that are associated with published papers and tht demostrate the specific algorithm described in that paper.
+  For demos that are associated with published papers and that demostrate the specific algorithm described in that paper.
 These demos are static, may only work with previous old of rosetta, and meant to serve more as a historical records.
+NOTE: If you add a protocol capture to the protocol_capture directory, you should add a copy to the public/ directory,
+to serve as a version which can be updated to reflect best practices as Rosetta changes. 
 
 * `demos/pilot`:  
-  For demos that aren't meant to be included in the weekly releases yet.  I can't think of any good reasons for putting new demos here.
+  For demos that aren't meant to be included in the weekly releases yet.
+(Generally, though, use of git branches instead of pilot is recommended.)
 
 Each demo should go in its own directory within one of these three directories.
 So to add a new demo, the first step is to create a descriptively named directory for it in the proper location.
