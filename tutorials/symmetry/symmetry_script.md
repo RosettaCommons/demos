@@ -23,7 +23,7 @@ You can see that on top in the `<SCOREFXNS>` part, we have added a new line:
     <sfx_symm weights="talaris2014" symmetric=1 />
 </SCOREFXNS>
 ```
-This is required to tell Rosetta that you need to use symmetry score.
+This will turn on the symmetric scoring and is required to tell Rosetta that you need to use symmetry score.
 
 Now, let's go to the `<MOVERS>`. In the first line we added:
 
