@@ -166,7 +166,7 @@ class Gollum::Macro::GroupByKeywords < Gollum::Macro
     # Returns list of [keywords, demo_file, demo_name, demo_title ] array
 
     # Sort by demo name
-    demos_list.sort_by! { |x| x[2] }
+    demos_list.sort_by! { |x| x[2].downcase }
 
     html = ""
     in_list = false
