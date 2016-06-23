@@ -1,5 +1,7 @@
 -nstruct 1
 
+-default_repeats 1
+
 -relax:constrain_relax_to_start_coords
 -relax:ramp_constraints false
 
