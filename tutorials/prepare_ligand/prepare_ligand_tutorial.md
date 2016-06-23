@@ -1,4 +1,4 @@
-# Prepapring Ligands
+# Preparing Ligands
 
 KEYWORDS: LIGANDS UTILITIES
 
