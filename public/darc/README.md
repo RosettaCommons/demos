@@ -17,9 +17,12 @@ Generating input files
   files on the fly defore it uses them, we need to prepare the protein to 
   generate the electrostatic potential grid. This is one way to dump the 
   protein after building missing atom and added hydrogens. You can use the PDB provided in the input file to continue:
+  
+  **NOTE** (`$ROSETTA3`= path-to-Rosetta/main/source)
+  
 ```
       $> cp input/4ERF.pdb .
-      $> <path-to-Rosetta>/main/source/bin/score.default.linuxgccrelease -in:file:s 4ERF.pdb -out:output -no_optH false
+      $> $ROSETTA3/bin/score.default.linuxgccrelease -in:file:s 4ERF.pdb -out:output -no_optH false
 ```
   which gives the output protein 4ERF_0001.pdb
 
@@ -52,7 +55,7 @@ Generating input files
 
       $ echo zinc_13989607_conformers.mol2 > molfile_list.txt
 
-      $ <path-to-Rosetta>/main/source/scripts/python/public/batch_molfile_to_params.py --script_path=<path-to-Rosetta>/main/source/scripts/python/public/molfile_to_params.py molfile_list.txt
+      $ ROSETTA3/scripts/python/public/batch_molfile_to_params.py --script_path=<path-to-Rosetta>/main/source/scripts/python/public/molfile_to_params.py molfile_list.txt
 
   The expected output files are:
 
@@ -73,26 +76,26 @@ Generating input files
   interface. The command to run DARC is based on shape only is as follows:
   **NOTE** For your special purposes, you will need to change the residue numbers and also provide params file for your ligands.
 
-      $> <path-to-Rosetta>/main/source/bin/make_ray_files.default.linuxgccrelease -pocket_static_grid -protein 4ERF_0001.pdb -central_relax_pdb_num 61 -darc_shape_only 
+      $> $ROSETTA3/bin/make_ray_files.default.linuxgccrelease -pocket_static_grid -protein 4ERF_0001.pdb -central_relax_pdb_num 61 -darc_shape_only 
 
   Expected output from this command will be a ray-file named 
   `ray_4ERF_0001_61.txt`.
 
   To use a center of mass of any residue as origin points for casting rays:
 ```
-      $> <path-to-Rosetta>/main/source/bin/make_ray_files.default.linuxgccrelease -pocket_static_grid -protein 4ERF_0001.pdb -central_relax_pdb_num 61 -darc_shape_only -set_origin 5 -origin_res_num 85:A
+      $> $ROSETTA3/bin/make_ray_files.default.linuxgccrelease -pocket_static_grid -protein 4ERF_0001.pdb -central_relax_pdb_num 61 -darc_shape_only -set_origin 5 -origin_res_num 85:A
 ```
   Expected output: `ray_4ERF_0001_61.txt`
 
   To use multiple origin points for casting rays:
 ```
-      $> <path-to-Rosetta>/main/source/bin/make_ray_files.default.linuxgccrelease -pocket_static_grid -protein 4ERF_0001.pdb -central_relax_pdb_num 61,54 -darc_shape_only -set_origin 5 -origin_res_num 85:A -multiple_origin
+      $> $ROSETTA3/bin/make_ray_files.default.linuxgccrelease -pocket_static_grid -protein 4ERF_0001.pdb -central_relax_pdb_num 61,54 -darc_shape_only -set_origin 5 -origin_res_num 85:A -multiple_origin
 ```
   Expected output: `ray_4ERF_0001_61,54.txt`
 
   To use a bound ligand to center the grid:
 ```
-      $> <path-to-Rosetta>/main/source/bin/make_ray_files.default.linuxgccrelease -pocket_static_grid -protein 4ERF_0001.pdb -central_relax_pdb_num 61 -darc_shape_only -set_origin 5 -origin_res_num 85:A -bound_ligand 4ERF_XTL_0001.pdb -extra_res_fa 4ERF_XTL.params -lig_grid
+      $> $ROSETTA3/bin/make_ray_files.default.linuxgccrelease -pocket_static_grid -protein 4ERF_0001.pdb -central_relax_pdb_num 61 -darc_shape_only -set_origin 5 -origin_res_num 85:A -bound_ligand 4ERF_XTL_0001.pdb -extra_res_fa 4ERF_XTL.params -lig_grid
 ```
   Expected output: `ray_4ERF_0001_61.txt`
 
@@ -115,7 +118,7 @@ Generating input files
   interface pocket grid. This step can be carried out while generating the ray 
   file.
 ```
-      $> <path_to_Rosetta>/main/source/bin/make_ray_files.linuxgccrelease -database Rosetta/main/database/ -pocket_static_grid -protein 4ERF_0001.pdb -central_relax_pdb_num 61,54 -set_origin 5 -origin_res_num 85:A -multiple_origin -bound_ligand 4ERF_XTL_0001.pdb -extra_res_fa 4ERF_XTL.params -lig_grid -espGrid_file 4ERF.agd
+      $> $ROSETTA3/bin/make_ray_files.linuxgccrelease -database Rosetta/main/database/ -pocket_static_grid -protein 4ERF_0001.pdb -central_relax_pdb_num 61,54 -set_origin 5 -origin_res_num 85:A -multiple_origin -bound_ligand 4ERF_XTL_0001.pdb -extra_res_fa 4ERF_XTL.params -lig_grid -espGrid_file 4ERF.agd
 ```
   The output from this command will be a ray-file named 
   `ray_4ERF_0001_61,54.txt` and an electrostatic potential grid file named 
@@ -137,25 +140,25 @@ Here we give theinput ligands for screening against the ray-file, as follows. No
 
 Docking single ligand conformer:
 ```
-    $>  <path-to-Rosetta>/main/source/bin/DARC.default.linuxgccrelease @darc_single.options  
+    $>  $ROSETTA3/bin/DARC.default.linuxgccrelease @darc_single.options  
 ```
 Expected output: `DARC_4ERF_0001_LG1.pdb`
 
 Docking multiple ligand conformers:
 ```
-    $>  Rosetta/main/source/bin/DARC.linuxgccrelease @darc_conformers.options 
+    $>  $ROSETTA3/bin/DARC.linuxgccrelease @darc_conformers.options 
 ```
 Expected output: `DARC_4ERF_0001_000.pdb`
 
 To run DARC with shape only (without including electrostatics score):
 
-    $>  Rosetta/main/source/bin/DARC.linuxgccrelease @darc_shape.options
+    $>  $ROSETTA3/bin/DARC.linuxgccrelease @darc_shape.options
 
 Expected output: `DARC_4ERF_0001_000.pdb`
 
 To search conformers on-the-fly:
 
-    $  Rosetta/main/source/bin/DARC.linuxgccrelease @darc_fly.options -protein 4ERF_0001.pdb -ligand 000_conformers.pdb -extra_res_fa 000.params -ray_file ray_4ERF_0001_61.txt -espGrid_file DARC_4ERF.agd -search_conformers true
+    $>  $ROSETTA3/bin/DARC.linuxgccrelease @darc_fly.options -protein 4ERF_0001.pdb -ligand 000_conformers.pdb -extra_res_fa 000.params -ray_file ray_4ERF_0001_61.txt -espGrid_file DARC_4ERF.agd -search_conformers true
 
 Expected output: `DARC_4ERF_0001_000.pdb`
 
@@ -165,7 +168,7 @@ fullatom minimization of the DARC models separately in Rosetta or as an
 additional option while running DARC itself. To minimize the DARC models 
 immediately after docking we add the flag `-minimize_output_complex`:
 
-    $>  Rosetta/main/source/bin/DARC.linuxgccrelease @darc_shape.options -minimize_output_complex
+    $>  $ROSETTA3/bin/DARC.linuxgccrelease @darc_shape.options -minimize_output_complex
 
 Expected output files are:
 

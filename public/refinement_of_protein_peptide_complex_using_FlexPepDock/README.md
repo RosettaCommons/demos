@@ -16,9 +16,9 @@ Running the FlexPepDock refinement protocol:
 
 2. Prepack the input model: This step involves the packing of the side-chains in each monomer to remove internal clashes that are not related to inter-molecular interactions. The prepacking guarantees a uniform conformational background in non-interface regions, prior to refinement. The prepack_flags file contains the flags for running the prepacking job. The run_prepack script will run prepacking of the input structure 1AWR.ex.pdb located in the input directory.
 
-Run the prepack as follows:
+Run the prepack as follows: (`$ROSETTA3`= path-to-Rosetta/main/source)
 ```
-$> <path-to-Rosetta>/main/source/bin/FlexPepDocking.default.linuxgccrelease @prepack_flags >output/ppk.log
+$> $ROSETTA3/bin/FlexPepDocking.default.linuxgccrelease @prepack_flags >output/ppk.log
 $> mv input/1AWR.ex_0001.pdb input/1AWR.ex.ppk.pdb
 ```
 
@@ -29,7 +29,7 @@ The output will be a prepacked structure, 1AWR.ex.ppk.pdb located in the input d
 Run the refine using the following commands:
 
 ```
-$> <path-to-Rosetta>/main/source/bin/FlexPepDocking.default.linuxgccrelease $ROSETTA_DB @refine_flags >output/refine.log
+$> $ROSETTA3/bin/FlexPepDocking.default.linuxgccrelease $ROSETTA_DB @refine_flags >output/refine.log
 echo "FlexPepDock refinement done!"
 ```
 
