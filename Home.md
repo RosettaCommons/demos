@@ -44,9 +44,8 @@ Demos are designed to guide users through sample procedures in computational mod
 
 Full input files for the demos are located in the `demos/public/` directory of the Rosetta distribution.
 
-[[Demos listed by category|demos-by-category#demos]]
-
-[[Demos listed by keyword|tag-search]]
+* [[Demos listed by category|demos-by-category#demos]]
+* [[Demos listed by keyword|tag-search]]
 
 Protocol Captures
 =================
@@ -55,7 +54,7 @@ Many papers using Rosetta are accompanied by a protocol capture - an example of 
 
 Full input files for the protocol captures are located in the demos/protocol_capture/ directory of the Rosetta distribution.
 
-[[Protocol captures listed by category|demos-by-category#protocol_captures]]
+* [[Protocol captures listed by category|demos-by-category#protocol_captures]]
 
 <!--- BEGIN_INTERNAL --->
 
@@ -127,6 +126,6 @@ Under Development
 
 If you want to prevent a demo from being published to the static wiki until you've finished developing it or written a paper on it or something, put it in `demos/pilot`.
 
-[[Devel demos listed by category|demos-by-category#under_development]]
+* [[Devel demos listed by category|demos-by-category#under_development]]
 
 <!--- END_INTERNAL --->
