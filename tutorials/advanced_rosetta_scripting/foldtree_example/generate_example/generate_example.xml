@@ -1,0 +1,42 @@
+<ROSETTASCRIPTS>
+	<SCOREFXNS>
+		<tala weights="talaris2014.wts" />
+	</SCOREFXNS>
+	<RESIDUE_SELECTORS>
+		<Layer name=core select_core=1 select_boundary=0 select_surface=0 core_cutoff=4 />
+		<Not name=not_core selector=core />
+	</RESIDUE_SELECTORS>
+	<TASKOPERATIONS>
+		<ReadResfile name=core_resfile filename="core_resfile.txt" selector=core />
+		<ReadResfile name=not_core_resfile filename="not_core_resfile.txt" selector=not_core />
+	</TASKOPERATIONS>
+	<FILTERS>
+	</FILTERS>
+	<MOVERS>
+		<MakeBundle name=bundle1 r0=5 use_degrees=true >
+			<Helix helix_length=40 />
+			<Helix helix_length=40 delta_omega0=180 />
+		</MakeBundle>
+		
+		<DeclareBond name=termini res1=1 res2=2 atom1=C atom2=N add_termini=true />
+		
+		<FastDesign name=fdes1 repeats=3 scorefxn=tala task_operations=core_resfile,not_core_resfile >
+			<MoveMap name=fdes1_mm>
+				<Span begin=1 end=999 bb=0 chi=1 />
+				<Jump number=1 setting=0 />
+				<Jump number=2 setting=0 />
+				<Jump number=3 setting=0 />
+				<Jump number=4 setting=0 />
+			</MoveMap>
+		</FastDesign>
+		
+	</MOVERS>
+	<APPLY_TO_POSE>
+	</APPLY_TO_POSE>
+	<PROTOCOLS>
+		<Add mover=bundle1 />
+		<Add mover=termini />
+		<Add mover=fdes1 />
+	</PROTOCOLS>
+	<OUTPUT />
+</ROSETTASCRIPTS>
