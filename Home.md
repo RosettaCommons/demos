@@ -1,7 +1,9 @@
 Rosetta Tutorials, Demos, and Protocol Captures
 ===============================================
 
-<!-- Manual TOC, as the auto one is too bulky -->
+[[_TOC_]]
+
+<!-- Manual TOC, as the auto one is too bulky 
 <p></p><div class="toc"><div class="toc-title">Table of Contents</div>
 <ul><ul><li><a href="#obtaining-tutorial-materials">Obtaining tutorial materials</a></li>
 <li><a href="#tutorials">Tutorials</a></li>
@@ -13,11 +15,10 @@ Rosetta Tutorials, Demos, and Protocol Captures
 <!--- END_INTERNAL -->
 </ul></ul></div>
 <br/>
-
-### [[Demos listed by keyword|tag-search]]
+-->
 
 Obtaining tutorial materials
-============================
+----------------------------
 
 The demos, tutorials, protocol captures, and all example inputs are provided with the full Rosetta distribution, under the demos/ directory. Rosetta is available for license (free of charge to academic users) at <https://www.rosettacommons.org/software>.
 
@@ -29,7 +30,7 @@ For RosettaCommons users, the demos repository should be automatically downloade
 <!--- END_INTERNAL -->
 
 Tutorials
-=========
+---------
 
 These are introductory tutorials intended as a gentle introduction to Rosetta concepts, and using common functionality of Rosetta. For additional examples and information on using Rosetta, see the demos (below) or the [Rosetta documentation](https://www.rosettacommons.org/docs/latest/)
 
@@ -68,7 +69,7 @@ Full input files for the tutorials are located in the `demos/tutorials/` directo
 * [[Protein-Ligand Docking|ligand_docking_tutorial]]
 
 Demos
-=====
+-----
 
 Demos are designed to guide users through sample procedures in computational modeling from the point of view of solving a specific problem. 
 
@@ -78,7 +79,7 @@ Full input files for the demos are located in the `demos/public/` directory of t
 * [[Demos listed by keyword|tag-search]]
 
 Protocol Captures
-=================
+-----------------
 
 Many papers using Rosetta are accompanied by a protocol capture - an example of how to use the protocol discussed in the paper. The protocol captures below aren't meant to show the best way to solve problems in the current version of Rosetta, instead they are meant to show published solutions to problems that were addressed by members of the Rosetta community. The purpose of these protocol captures is both to serve as a historical record and to assist those trying to reproduce past results. See the demos (above) for updated versions of most protocol captures.
 
@@ -89,13 +90,13 @@ Full input files for the protocol captures are located in the demos/protocol_cap
 <!--- BEGIN_INTERNAL --->
 
 Adding new demos
-================
+----------------
 
 See the [[How To Write Demos and Tutorials|How_To_Write_Demos_and_Tutorials]] page for details about
 writing new demos.
 
-Under Development
-=================
+Demos Under Development
+-----------------------
 
 If you want to prevent a demo from being published to the static wiki until you've finished developing it or written a paper on it or something, put it in `demos/pilot`.
 
