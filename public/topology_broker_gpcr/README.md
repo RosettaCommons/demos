@@ -1,5 +1,7 @@
 # Protocol Name:Loop Building for Membrane Proteins with Toplogy Broker
 
+KEYWORDS: LOOPS MEMBRANES
+
 ## Author
 Elizabeth Dong
 
@@ -28,10 +30,10 @@ The Topology Broker application in Rosetta can be used to build loops and flexib
 -frag9 ./input_files/aa2Z73A09_05.200_v1_3 #fragment files for folding of protein
 #Patches to the scoring function ensure that membrane potentials are used in the folding protocol
 #make sure to have these either in the local directory or your database directory under scoring/weights
--stage2_patch score_membrane_s2.wts_patch
--stage3a_patch score_membrane_s3a.wts_patch
--stage3b_patch score_membrane_s3b.wts_patch
--stage4_patch score_membrane_s4.wts_patch
+-stage2_patch ./input_files/score_membrane_s2.wts_patch
+-stage3a_patch ./input_files/score_membrane_s3a.wts_patch
+-stage3b_patch ./input_files/score_membrane_s3b.wts_patch
+-stage4_patch ./input_files/score_membrane_s4.wts_patch
 #allows setup of membrane options
 -abinitio
 	-membrane
@@ -63,7 +65,7 @@ The Topology Broker application in Rosetta can be used to build loops and flexib
 
 ### Example Rosetta Command Line
 ```
-r_broker.linuxgccrelease -database ~/minirosetta_database -out:file:residue_type_set centroid -out:file:silent rbroker_run1.out -nstruct 1 @flags.txt
+$> <path-to-Rosetta>/main/source/bin/r_broker.default.linuxgccrelease -out:file:residue_type_set centroid -out:file:silent rbroker_run1.out -nstruct 1 @flags.txt
 ```
 
 
@@ -88,5 +90,5 @@ run_lips.pl 2Z73A.fasta 2Z73A.span /sb/meiler/Linux2/x86/blast/blast-2.2.18/bin/
 
 Topology Broker only runs in centroid mode as of now. To extract pdb from *.out, use:
 ```
-~/extract_pdbs.linuxgccrelease -database ~/minirosetta_database/ -in:file:silent rrbroker_run1.out -in:file:residue_type_set centroid -out:file:residue_type_set centroid -out:output
+$> <path-to-Rosetta>/main/source/bin/extract_pdbs.linuxgccrelease -in:file:silent rrbroker_run1.out -in:file:residue_type_set centroid -out:file:residue_type_set centroid -out:output
 ```
