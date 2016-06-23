@@ -652,7 +652,7 @@ Before we move on to filters, it's worth mentioning that there exist movers that
 
 ## Filters
 
-* *Filter runs based on a productive conformation (*e.g.* a salt-bridge)*
+* *Filter runs based on a productive conformation (in this case, a salt-bridge)*
 
 Because Rosetta runs are typically stochastic, early stages will often sample conformations which will not be productive. That is, the randomness introduced by initial movers will result in conformations which will never lead to useful final models. To speed up the protocol, it is sometimes helpful to abandon some samples before the final stages of sampling when early stages result in conformations which are known to be unproductive. To facilitate this, RosettaScripts provides Filters, which can stop a job based on measured properties of the protein structure, allowing the rosetta\_scripts application to continue to the next job (*i.e.* the next replicate of the protocol with the current input or the next input structure).
 
