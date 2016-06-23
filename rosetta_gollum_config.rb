@@ -124,16 +124,16 @@ class Gollum::Macro::LinkDemos < Gollum::Macro
                     html += "</ul>\n"
                     list_open = false
                 end 
-                html += "<h3>" + recapitalize(first_two[0]) + "</h3>\n"
+                html += "<h2>" + recapitalize(first_two[0]) + "</h2>\n"
                 if recapitalize(first_two[0]) != "Other" and recapitalize(first_two[1]) != "Other" then
-                    html += "<h4>" + recapitalize(first_two[1]) + "</h4>\n"
+                    html += "<h3>" + recapitalize(first_two[1]) + "</h3>\n"
                 end
             elsif first_two[1] != last_keywords[1] then
                 if list_open then 
                     html += "</ul>\n"
                     list_open = false 
                 end
-                html += "<h4>" + recapitalize(first_two[1]) + "</h4>\n"
+                html += "<h3>" + recapitalize(first_two[1]) + "</h3>\n"
             end
 	    last_keywords = first_two
         end
@@ -180,7 +180,7 @@ class Gollum::Macro::GroupByKeywords < Gollum::Macro
                         html += "</ul>\n"
                         in_list = false
                     end
-                    html += "<h3>" + recapitalize(keyword) + "</h3>\n"
+                    html += "<h2>" + recapitalize(keyword) + "</h2>\n"
                 end
                 if ! in_list then
                     html += "<ul>\n"
