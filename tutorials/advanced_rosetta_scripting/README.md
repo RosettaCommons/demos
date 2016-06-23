@@ -1,8 +1,8 @@
-# RosettaScripts for Advanced Users
+# More Advanced RosettaScripts Concepts
 ======================================
 KEYWORDS: SCRIPTING_INTERFACES CORE_CONCEPTS
 
-Tutorial by Vikram K. Mulligan (vmullig@uw.edu).  Created on 23 June 2016 as part of the 2016 Documentation XRW.
+Tutorial by Vikram K. Mulligan (vmullig@uw.edu), Rocco Moretti (rmorettiase@gmail.com), Parisa Hosseinzadeh (parisah@uw.edu), and Kristen Blacklock (kristin.blacklock@rutgers.edu).  Created on 23 June 2016 as part of the 2016 Documentation XRW.
 
 ## Goals
 
@@ -14,7 +14,9 @@ At the end of this tutorial, you will understand:
 - How to use debugging movers to observe scripted trajectories
 - How to assemble more complicated protocols from simpler building-blocks
 - How to use variable substitution and file inclusion in a script
-- How to control large-scale sampling
+- How specialized grid sampling movers interact with RosettaScripts
+
+We recommend completing the [introductory RosettaScripting tutorial](../rosetta_scripting/README.md) to familiarize yourself with general RosettaScripts concepts before moving on to this tutorial.
 
 ## Controlling the FoldTree within RosettaScripts
 
@@ -55,7 +57,7 @@ $> cp foldtree_example/foldtree_example.pdb .
 $> $ROSETTA3/bin/rosetta_scripts.default.linuxgccrelease -in:file:s foldtree_example.pdb -parser:protocol minimize1.xml -out:prefix min1_
 ```
 
-You may need to change ".default.linuxgccrelease" for your build, operating system, and compiler (*e.g.* ".static.macosclangdebug", *etc.*).
+In the above, $ROSETTA3 is your Rosetta/main/source directory. You may need to change ".default.linuxgccrelease" for your build, operating system, and compiler (*e.g.* ".static.macosclangdebug", *etc.*).
 
 Running the script above, we find that something has gone wrong.  Comparing to the original pose (in grey), the minimized pose (in colours) has the second helix rotated by nearly 180 degrees.  The overall structure has exploded:
 
@@ -107,6 +109,120 @@ $> $ROSETTA3/bin/rosetta_scripts.default.linuxgccrelease -in:file:s foldtree_exa
 This time, the minimzation has worked as expected: the chains move apart a bit, but don't rotate much.  (The original position is shown in grey in the image below):
 
 ![Proper minimization after properly setting up the fold tree.](foldtree_example_3.png)
+
+## Symmetry within RosettaScripts
+
+* *Make a structure symmetric within RosettaScripts.*
+* *Carry out some common pose manipulation of the symmetric structure, preserving symmetry.*
+
+For more information about symmetry, refer to the [symmetry user's guide](https://www.rosettacommons.org/docs/latest/rosetta_basics/structural_concepts/symmetry#How-to-adopt-your-protocol-to-use-symmetry).
+
+Many proteins have symmetric structures.  That is, they are replicates of one primary *asymmetric* unit. Rosetta can handle symmetry using the symmetry code, and has many protocols that are adopted to symmetry.  Not all movers and filters support symmetry, however.  (For developers, there is [information here](https://www.rosettacommons.org/docs/latest/rosetta_basics/structural_concepts/symmetry#How-to-adopt-your-protocol-to-use-symmetry) about what is needed for a mover, filter, or protocol to support symmetry.)
+
+Ordinarily, one follows these steps in order to symmetrize a pose and then work with it:
+
+1.  Generate a symmetry definition file defining the relevant symmetry transforms for the type of symmetry (*e.g.* cyclic symmetry, dihedral symmetry, crystal symmetry, *etc.*).  In this case, this is provided for you in the symmetry\_example/inputs directory. Please refer to the [symmetry tutorial](../symmetry/symmetry.md) for a detailed description of symmetry files and how to work with them.  In this case, the C3.symm file provided in the symmetry\_example/inputs/ directory allows Rosetta to set up a pose with C3 symmetry (3-fold rotational symmetry about an axis).
+
+2.  Set up the script for symmetry. We have provided a script for you in the scripts directory, named symmetry.xml. Let's take a look at the script.
+
+You can see that on top in the ```<SCOREFXNS>``` part, we have added a new line:
+
+```xml
+...
+	<SCOREFXNS>
+	    <sfx_symm weights="talaris2014" symmetric="true" />
+	</SCOREFXNS>
+...
+```
+
+This is required to tell Rosetta that the scorefunction should be symmetry-aware.  The scoring machinery can score a symmetric pose very efficiently since the intra-subunit energies are the same for each asymmetric unit, and the inter-subunit energies are also the same.  The scoring machinery need therefore only evaluate the energy of a small part of the system and multiply.
+
+Now, let's go to the ```<MOVERS>``` section. Here we added a SetupForSymmetry mover:
+
+
+```xml
+...
+		<SetupForSymmetry name=add_symm definition="C3.symm" />
+...
+```
+
+This is probably the most important line! Here, you are telling Rosetta that it should take an asymmetric pose and make it symmetric, applying the symmetry rules listed in the C3.symm file. It will replicate the asymmetric unit to generate the symmetric structure based on the given rules. It will also generate an appropriate fold tree based on the corresponding symmetry definition.  Rosetta retains an awareness of symmetry in the pose object that this mover produces, and this allows the program to make sure that movements and scoring are handled correctly. You can use the [ExtractAsymmetricUnit mover](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/Movers/movers_pages/ExtractAsymmetricUnitMover) to do the reverse and extract the asymmetric subunit from a symmetric pose.  Note that there exist other symmetry setup movers, too, such as the [DetectSymmetry mover](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/Movers/movers_pages/DetectSymmetryMover), which sets up internal symmetry rules from an already-symmetric input pose based on the geometry.
+
+> **Symmetry information is retained in the pose, and used to ensure that future pose manipulations respect and preserve the symmetry.**
+
+In the next two lines in the MOVERS section, we have:
+
+```xml
+...
+		<SymPackRotamersMover name="symm_pack" scorefxn="sfx_symm" task_operations="nodesign" />
+		<SymMinMover name="symm_min" scorefxn="sfx_symm" bb="false" chi="true" jump="ALL" />
+...
+```
+
+These are symmetry-aware versions of PackRotamersMover and MinMover. In this case, the "jump" option is set to "ALL" in order to allow asymmetric units to move relative to one another. 
+
+There are other symmetry-aware movers that can also be used. You can find them in the [Rosetta Documentation](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/RosettaScripts).  These include [FastRelax](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/Movers/movers_pages/FastRelaxMover) and [FastDesign](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/Movers/movers_pages/FastDesignMover), which are frequently used with symmetric poses.
+
+Finally, in the ```<PROTOCOLS>``` section, we lay out the sequence of movers.  First, we'll set up symmetry, then repack, then minimize:
+
+```xml
+...
+	<PROTOCOLS>
+		<Add mover="add_symm" />
+		<Add mover="symm_pack" />
+		<Add mover="symm_min" />
+	</PROTOCOLS>
+...
+```
+
+Now let's run the scripts. In this tutorial you are going to generate, repack, and minimize a C3 symmetric structure made out of ubiquitin subunits. You are going to use inputs/symm_test.pdb file as an example. This is just ubiquitin structure that has been cleaned and prepared.
+
+You can run the script using this command:
+
+```bash
+$> cp symmetry_example/scripts/symmetry_c3.xml .
+$> cp symmetry_example/inputs/C3.symm .
+$> cp symmetry_example/inputs/symm_test.pdb .
+$> $ROSETTA3/bin/rosetta_scripts.default.linuxgccrelease -parser:protocol symmetry_c3.xml -in:file:s symm_test.pdb -out:prefix c3_
+```
+
+In your output, you can see that these lines are printed in the log file: (you can also find the whole tracer in outputs/symm_c3.log)
+
+```
+core.conformation.symmetry.util: =================== SYM FOLD TREE, jump notation: =symfixed= *indep* #symdof# jump[=follows] ========================
+S1(229)
+|----#j1#------>4:Sub1A(1-76)
+|----=j4=---->S2(230)----j2=1----->80:Sub2A(77-152)
+\----=j5=---->S3(231)----j3=1---->156:Sub3A(153-228)
+```
+
+This is were the symmetry is being defined and the jumps between subunits are set based on the symmetry definition file you provided.
+
+The structure should look like something like this:
+
+![The ubiquitin structure after applying C3 symmetry, packing, and minimization.](symmetry_example/figures/C3.png)
+
+Now, based on the things you learnt from the [symmetry tutorial](../symmetry/symmetry.md), try to see whether you can get other types of symmetric structures. An example of a C7 symmetric ubiquitin is provided for you in outputs/symm_test_c7.pdb. The C7.symm file is also in the input directory for you to use, as well as a slightly different input PDB file (with the ubiquitin translated away from the axis a bit), called symm_test_translated.pdb. The result should look like this:
+
+![The ubiquitin structure after applying C7 symmetry, packing, and minimization.](symmetry_example/figures/C7.png)
+
+The commands to use the preset files are:
+
+```bash
+$> cp symmetry_example/scripts/symmetry_c7.xml .
+$> cp symmetry_example/inputs/C7.symm .
+$> cp symmetry_example/inputs/symm_test_translated.pdb .
+$> $ROSETTA3/bin/rosetta_scripts.default.linuxgccrelease -parser:protocol symmetry_c7.xml -in:file:s symm_test_translated.pdb -out:prefix c7_
+```
+
+This tutorial has not begun to explore the full complexity of the Rosetta symmetry machinery.  There are many far more interesting things that one would likely try to script, such as the design of symmetric interfaces or whatnot.  We leave as an exercise to the reader the task of putting together the pieces covered earlier (invoking the packer and minimizer from movers, controlling behaviour with task operations and residue selectors, etc.) to think about how symmetric interface design could be accomplished within RosettaScripts.  The main points to take home, here, are:
+
+* Symmetric poses must be set up in Rosetta using an appropriate mover.  This is true even if the input geometry is symmetric: Rosetta needs to use a mover to gain an awareness of the symmetry of the input pose ([DetectSymmetry mover](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/Movers/movers_pages/DetectSymmetryMover)), or to make an asymmetric input pose symmetric ([SetupForSymmetry mover](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/Movers/movers_pages/SetupForSymmetryMover)).
+* Once set up, a symmetric pose *remains* symmetric unless de-symmetrized with an appropriate mover.
+* Symmetric poses can be manipulated by movers that alter the geometry but preserve the symmetry.  Many, but not all, movers in Rosetta are either symmetry-compatible, or have symmetry-compatible versions.
+* Symmetric poses are handled much like asymmetric poses, in that series of movers and filters can be applied to them.  They just require an initial setup step.
+
+As a final point, it's worth mentioning that the most convenient way in which to set up a fold tree for a symmetric pose is by setting up the fold tree for the asymmetric unit (as described in the previous section), *then* making the pose symmetric with the SetupForSymmetry mover.
 
 ## Nesting movers and looping
 
@@ -191,7 +307,7 @@ The final script can be viewed in loop\_example/pack\_opt.xml.  Let's try it out
 ```bash
 $> cp loop_example/pack_opt.xml .
 $> cp loop_example/1ubq.pdb .
-$> <path_to_Rosetta_directory>/main/source/bin/rosetta_scripts.default.linuxgccrelease -s 1ubq.pdb -parser:protocol pack_opt.xml -out:prefix packopt_
+$> $ROSETTA3/bin/rosetta_scripts.default.linuxgccrelease -s 1ubq.pdb -parser:protocol pack_opt.xml -out:prefix packopt_
 ```
 
 This script will take a bit longer to run (about three or four minutes).  If you look at the tracer output, you should be able to see the application of the IteratedConvergence, and how the RotamerTrialsMinMover is repeated multiple times.
@@ -205,6 +321,8 @@ Let's look at a more realistic example, now, and a more powerful, and commonly-u
 TODO -- CONTINUE HERE.
 
 ## Variable substition: adding variables to scripts
+
+TODO -- EDIT THIS.
 
 Sometimes in a RosettaScripts protocol, you want to vary the options given to the tags. For example, if you wish to do a series of runs, with changes at different residues. The naive way of doing this is to make separate XMLs, one for each variant of the option. If you have a large number of variants, this may be less than ideal.
 
@@ -232,6 +350,9 @@ These commands should produce a tryptophan scan of a selection of residues in th
 
 If you wish to do a more thorough scan, either of more positions or of more residue identities, you can easily automate running of the scan by using shell scripting.
 
+## RosettaScripts jobs and grid sampling movers
+
+TODO -- CONTINUE HERE.
 
 ## Conclusion
 

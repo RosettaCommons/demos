@@ -8,8 +8,10 @@ The necessary files to run this demo is provided for you in the inputs directory
 
 To run the test:
 
+(`$ROSETTA3`= path-to-Rosetta/main/source)
+
 ```
-$> <path-to-Rosetta>/main/source/bin/rosetta_scripts.default.linuxgccrelease @enzflags -parser:protocol scripts/enzdes.xml -s inputs/enzdes_test.pdb
+$> $ROSETTA3/bin/rosetta_scripts.default.linuxgccrelease @enzflags -parser:protocol scripts/enzdes.xml -s inputs/enzdes_test.pdb
 ```
 
 An example out put is provided for you in the example_output directory.
