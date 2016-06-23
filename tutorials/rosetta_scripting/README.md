@@ -5,8 +5,9 @@ KEYWORDS: SCRIPTING_INTERFACES CORE_CONCEPTS
 Tutorial by Rocco Moretti (rmorettiase@gmail.com) and Vikram K. Mulligan (vmullig@uw.edu).  Created on 21 June 2016 as part of the 2016 Documentation XRW.
 
 ## Goals
---------
+
 At the end of this tutorial, you will understand:
+
 - The RosettaScripts paradigm
 - RosettaScripts syntax
 - How to control final file output from RosettaScripts
@@ -17,7 +18,6 @@ At the end of this tutorial, you will understand:
 - How to evaluate pose properties and control protocol flow in RosettaScripts using *filters*
 
 ## What is RosettaScripts?
------------------------
 
 Originally, the interface for Rosetta3 functionality was individual applications,
 each made specifically for a particular use. One drawback of this approach was that
@@ -41,7 +41,6 @@ modifying the XML - the most common use case of RosettaScripts is probably re-us
 an XML produced by someone else. 
 
 ## Your first RosettaScript
-------------------------
 
 * *Run the simplest possible RosettaScript*
 
@@ -203,7 +202,6 @@ Looking at the output PDB, the output structure (1ubq\_0001.pdb) should be nearl
 Additionally, you should see the standard Rosetta score table at the end of the PDB. By default, the structure will be rescored with the default Rosetta score function (talaris2014, as of this writing). This can be controlled by the ```-score:weights``` command line option. 
 
 ## Controlling RosettaScripts File Output
---------------
 
 * *Score the output with a custom scorefunction*
 * *Control output file format*
@@ -265,7 +263,6 @@ $> <path_to_Rosetta_directory>/main/source/bin/rosetta_scripts.default.linuxgccr
 This time, the output will be a binary silent file.  PDB files can be extracted from binary silent files using the extract\_pdbs application.
 
 ## Altering the Pose: Movers
-----------------------------
 
 ### Minimization
 
@@ -361,7 +358,7 @@ Let's modify the current script to demonstrate how a MoveMap can be set up and u
 ...
 ```
 
-We're telling the MinMover to make use of a MoveMap that *first* disables side-chain ("chi") and main-chain ("bb") degrees of freedom for all residues, *then* re-enables side-chain and main-chain degrees of freedom for residues 1 through 50, and *then* disables main-chain degrees of freedom for residues 5 through 10.  Note that MoveMaps are not perturbed by poses shorter than the residue ranges in their ```<Span>``` tags, so setting values for residues 1 through 999 is perfectly permissible despite the fact that we're working with a 76-residue structure.  Note also that MoveMaps obey the order of operations given in the tag.  In this example, the final effect is to enable all degrees of freedom for residues 1 through 4, only side-chain degrees of freedom fro residues 5 through 10, all degrees of freedom for residues 11 through 50, and no degrees of freedom for residues 51 through 76.
+We're telling the MinMover to make use of a MoveMap that *first* disables sidechain ("chi") and mainchain ("bb") degrees of freedom for all residues, *then* re-enables sidechain and mainchain degrees of freedom for residues 1 through 50, and *then* disables mainchain degrees of freedom for residues 5 through 10.  Note that MoveMaps are not perturbed by poses shorter than the residue ranges in their ```<Span>``` tags, so setting values for residues 1 through 999 is perfectly permissible despite the fact that we're working with a 76-residue structure.  Note also that MoveMaps obey the order of operations given in the tag.  In this example, the final effect is to enable all degrees of freedom for residues 1 through 4, only sidechain degrees of freedom fro residues 5 through 10, all degrees of freedom for residues 11 through 50, and no degrees of freedom for residues 51 through 76.
 
 > **Order of operations matters for MoveMaps.**
 
@@ -372,14 +369,14 @@ $> cp inputs/minimize3.xml .
 $> <path_to_Rosetta_directory>/main/source/bin/rosetta_scripts.default.linuxgccrelease -s 1ubq.pdb -parser:protocol minimize3.xml -out:prefix minimize3_
 ```
 
-Practially, it's important to know how to set up MoveMaps because there are many situations in which one may wish to prevent the minimizer from moving parts of a pose.  One example is when designing a binder to a target of known structure: typically, there is little to no advantage to letting the minimizer move the backbone of the target, or side-chains that are far from the binding interface.  Indeed, doing so can result in deceptively low-energy structures with little resemblance to anything physically meaningful.  See the [FastRelax mover's documentation page](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/Movers/movers_pages/FastRelaxMover) for full documentation on the MoveMap syntax.
+Practially, it's important to know how to set up MoveMaps because there are many situations in which one may wish to prevent the minimizer from moving parts of a pose.  One example is when designing a binder to a target of known structure: typically, there is little to no advantage to letting the minimizer move the backbone of the target, or sidechains that are far from the binding interface.  Indeed, doing so can result in deceptively low-energy structures with little resemblance to anything physically meaningful.  See the [FastRelax mover's documentation page](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/Movers/movers_pages/FastRelaxMover) for full documentation on the MoveMap syntax.
 
 ### Packing
 
-#### Repacking side-chains
+#### Repacking sidechains
 
 * *Configure the packer with TaskOperations.*
-* *Optimize side-chain conformations using the packer.*
+* *Optimize sidechain conformations using the packer.*
 
 The PackRotamersMover is another commonly-used Rosetta mover.  Because it calls the *packer*, another core Rosetta algorithm (see the [packing tutorial](../Optimizing_Sidechains_The_Packer/Optimizing_Sidechains_The_Packer.md)), the PackRotamersMover is a good mover to use to demonstrate the RosettaScripts interface for controlling the packer.  We do this by defining *TaskOperations*.
 
@@ -428,7 +425,7 @@ Note that, for now, we've left the ```task_operations``` field blank.  Were we t
 
 TaskOperations are the means by which the user controls the packer.  They specify which residue to repack and/or design, and how to do it. TaskOperations are defined in the TASKOPERATIONS section of the XML, and as with the movers, the available types are listed on [the corresponding documentation page](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/TaskOperations/TaskOperations-RosettaScripts).
 
-In addition to controlling which positions are designed or repacked, TaskOperations also control details about how sidechains are sampled. The default is strictly for on-rotamer sampling, but it's frequently useful to add additional sub-rotameric samples. For example, adding plus or minus one standard deviation around the center of each rotamer bin can help the packer to find better side-chain combinations. The [ExtraRotamersGeneric](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/TaskOperations/taskoperations_pages/ExtraRotamersGenericOperation) TaskOperation allows you to control the rotamer sampling levels. Generally, adding some additional rotamers to chi1 and chi2 is useful, though the cost is a more complex packing problem and longer convergence time. (There are other ways to control this. For example, the [InitializeFromCommandline](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/TaskOperations/taskoperations_pages/InitializeFromCommandlineOperation) task operation allows you to use the -ex1 -ex2 options on the commandline to control rotamer sampling.)
+In addition to controlling which positions are designed or repacked, TaskOperations also control details about how sidechains are sampled. The default is strictly for on-rotamer sampling, but it's frequently useful to add additional sub-rotameric samples. For example, adding plus or minus one standard deviation around the center of each rotamer bin can help the packer to find better sidechain combinations. The [ExtraRotamersGeneric](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/TaskOperations/taskoperations_pages/ExtraRotamersGenericOperation) TaskOperation allows you to control the rotamer sampling levels. Generally, adding some additional rotamers to chi1 and chi2 is useful, though the cost is a more complex packing problem and longer convergence time. (There are other ways to control this. For example, the [InitializeFromCommandline](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/TaskOperations/taskoperations_pages/InitializeFromCommandlineOperation) task operation allows you to use the -ex1 -ex2 options on the commandline to control rotamer sampling.)
 
 So let's create two TaskOperations.  The first will tell the packer to use only the current amino acid type at each position, and consider only alternative rotamers for that type.  (Technically, this is *disabling* design -- a minor point that will be important later.)  The second will enable some extra rotamers.  In the TASKOPERATIONS section of your script, add a [RestrictToRepacking](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/TaskOperations/taskoperations_pages/RestrictToRepackingOperation) TaskOperation and an [ExtraRotamersGeneric](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/TaskOperations/taskoperations_pages/ExtraRotamersGenericOperation) TaskOperation, giving each a name:
 
@@ -458,7 +455,7 @@ $> cp inputs/repack_only.xml .
 $> <path_to_Rosetta_directory>/main/source/bin/rosetta_scripts.default.linuxgccrelease -s 1ubq.pdb -parser:protocol repack_only.xml -out:prefix repack_only_
 ```
 
-If you look at the output, you'll see that the side-chains have been repacked, though in many cases, Rosetta found an optimal rotamer very close to that in the input structure.
+If you look at the output, you'll see that the sidechains have been repacked, though in many cases, Rosetta found an optimal rotamer very close to that in the input structure.
 
 #### Advanced packing: Using ResidueSelectors with TaskOperations to redesign the protein core
 
@@ -644,7 +641,6 @@ $> <path_to_Rosetta_directory>/main/source/bin/rosetta_scripts.default.linuxgccr
 If you compare the output to the input structure, you'll find that the core has now been redesigned, preserving the buried polar residues' identities and conformations.
 
 ## Filters
----------
 
 * *Filter runs based on a productive conformation (e.g. a salt-bridge)*
 
@@ -664,7 +660,7 @@ Let's consider the case, now, of repacking just the *surface* (*i.e.* solvent-ex
 		<ExtraRotamersGeneric name="extrachi" ex1="1" ex2="1" ex1_sample_level="1" ex2_sample_level="1" />
 	</TASKOPERATIONS>
 	<FILTERS>
-		<AtomicDistance name="salt_bridge" residue1="54A" atomtype1="Narg" residue2="58A" atomtype2="OOC" distance="3.0" />
+		<AtomicDistance name="salt_bridge" residue1="11A" atomtype1="Nlys" residue2="34A" atomtype2="OOC" distance="3.0" />
 	</FILTERS>
 	<MOVERS>
 		<MinMover name="min" scorefxn="t14" chi="true" bb="true" cartesian="false" />
@@ -685,17 +681,13 @@ Let's consider the case, now, of repacking just the *surface* (*i.e.* solvent-ex
 
 In this case, we're passing TaskOperations for preventing design and for enabling extra rotamers to a PackRotamersMover.  We also define a MinMover to do minimization.  In the protocols section, we call the PackRotamersMover first, then the MinMover.
 
-Sometimes get a salt bridge between R54 and D58, but frequently we don't. It's the case that if we start with sidechain configurations which are too far apart, minimizing will never pull R54 and D58 back together to re-form the salt bridge.  So if we definitely want the salt bridge in our output structures, the time spent on minimizing the non-salt bridged packing output is effectively wasted.  While this may be seconds in a single run, if we're doing large-scale sampling (say, tens of thousands of trajectories), this could add up to quite a lot of wasted CPU-time.  In many cases, later steps might take minutes or hours, so avoiding unnecessary computation is definitely worthwhile.  In this case, we will use a filter to abandon those jobs that fail to form the salt bridge before we minimize.
+In the original structure, there is a salt bridge between K11 and E34, and we probably want to preserve that.  The packer may or may not keep that, though -- sometimes in a packer run, we may not get that. It's the case that if we start with sidechain configurations which are too far apart, minimizing will never pull K11 and E34 back together to re-form the salt bridge.  So if we definitely want the salt bridge in our output structures, the time spent on minimizing the non-salt bridged packing output is effectively wasted.  While this may be seconds in a single run, if we're doing large-scale sampling (say, tens of thousands of trajectories), this could add up to quite a lot of wasted CPU-time.  In many cases, later steps might take minutes or hours, so avoiding unnecessary computation is definitely worthwhile.  Additionally, given that one often manually looks at output structures as a final step, it is good to have a way to reduce the amount of output to a managable number of structures.  In this case, we will use a filter to abandon those jobs that fail to form the salt bridge before we minimize.
 
 > **Filters are important to allow users to abandon non-productive trajectories and to move on to other jobs, to avoid unnecessary computation.**
 
-(Note that in a real run we might be better off using constraints to guide the packer to form the salt bridge, rather than filtering afterwards. In general, it's normally more efficient to bias sampling and scoring during structure generation, rather than attempt to filter out structures with bad geometries later. However, it's often difficult to come up with simple sampling or scoring biases to use for the desired properties, so filtering is the most straightforward way to do it.)
-
-> **Filtering abandons non-productive trajectories, but it is more efficient still to work to increase the fraction of trajectories that yield productive results.**
-
 To enforce the salt bridge in this case, we will filter based off the distance between the two atoms: if they're close enough, we can continue. If they're too far apart, we'll throw out the structure. Skim the [Filters documentation page](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/Filters/Filters-RosettaScripts) and look for a filter which might have the appropriate functionality. [AtomicDistance](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/Filters/filter_pages/AtomicDistanceFilter) ("Filter based on the distance between two atoms.") looks to be what we want.
 
-As before, copy and paste the example tag from the documentation into the FILTERS section of the XML. As mentioned in the documentation for the filter, you can specify either the specific atom name, or you can specify a Rosetta atom type. If an atom type is specified, then the closest distance for any atom of the relevant type is used. This latter behavior is what we want; we don't care which of the carboxylate oxygens are paired with which of the guanidinium nitrogens. Therefore we can specify the atom types: the "OOC" oxygens from D58 pairing with the "Narg" nitrogens from R54.
+As before, copy and paste the example tag from the documentation into the FILTERS section of the XML. As mentioned in the documentation for the filter, you can specify either the specific atom name, or you can specify a Rosetta atom type. If an atom type is specified, then the closest distance for any atom of the relevant type is used. This latter behavior is what we want; we don't care which of the carboxylate oxygens are paired with the lysine side-chain nitrogen. Therefore we can specify the atom types: the "OOC" oxygens from E34 pairing with the "Nlys" nitrogen from K11.
 
 Most filters work by computing some structural metric, and then comparing it to a threshold value to determine if the filter passes or fails. The AtomicDistance filter uses the "distance" options to set the threshold: distances below this pass, distances above fail. 
 
@@ -704,7 +696,7 @@ We want to set the distance threshold large enough such that it will pass all th
 ```xml
 ...
     <FILTERS>
-        <AtomicDistance name="salt_bridge" residue1="54A" atomtype1="Narg" residue2="58A" atomtype2="OOC" distance="3.0" />
+		<AtomicDistance name="salt_bridge" residue1="11A" atomtype1="Nlys" residue2="34A" atomtype2="OOC" distance="3.0" />
     </FILTERS>
 ...
 ```
@@ -723,43 +715,55 @@ Again, this only defines the filter. To actually apply it, we have to add it to 
 
 Within the PROTOCOLS section, movers and filters are listed in the order in which they are to be evaluated. That is, the structure will first be packed, then the filter will be applied, and then, if and only if the filter passes, it will be minimized.  If the filter fails, a message is printed to the output log, and the rosetta\_scripts application will continue to the next job.
 
-Let's try this out.  This time, we'll tell the rosetta\_scripts application to repeat the job 25 times with the ```-nstruct 25``` option at the commandline.  We expect that some of the jobs will succeed and some will fail to form the salt bridge and will be abandoned:
+Let's try this out.  This time, we'll tell the rosetta\_scripts application to repeat the job 100 times with the ```-nstruct 100``` option at the commandline.  We expect that some small fraction of the jobs will succeed and that most will fail to form the salt bridge and will be abandoned:
 
 ```bash
 $> cp inputs/filter.xml .
-$> <path_to_Rosetta_directory>/main/source/bin/rosetta_scripts.default.linuxgccrelease -s 1ubq.pdb -parser:protocol filter.xml -out:prefix filter_ -nstruct 25
+$> <path_to_Rosetta_directory>/main/source/bin/rosetta_scripts.default.linuxgccrelease -s 1ubq.pdb -parser:protocol filter.xml -out:prefix filter_ -nstruct 100
 ```
+
+Running the above, you'll probably find that about 90% of jobs returned a structure, and 10% failed to pass the filter.  A filter could have any pass rate, though.  This illustrates an important point about filtering: imagine that we had five features that we wanted to filter for, and that each filter passed only 1% of the time.  We would have to do, on average, ten billion samples to obtain one structure.  A better approach is to come up with ways to guide Rosetta to better solutions, increasing the hit rate instead of relying on more sampling and more filtering.  In this case, for example, we could use constraints to guide the packer to form the salt bridge, rather than filtering afterwards.  It's often difficult to come up with simple sampling or scoring biases to use for the desired properties, though, so filtering continues to be a major part of the Rosetta workflow, despite its inefficiency.
+
+> **Filtering abandons non-productive trajectories, but it is more efficient to work to increase the fraction of trajectories that yield productive results than simply to throw away non-productive trajectories.**
+
+Given that job failure is stochastic, this leaves you with fewer output files than you set with -nstruct. You can tell Rosetta to automatically re-run failed jobs by using the `-jd2:ntrials` option. This option sets the number of times each nstruct is retried, if it fails. (It moves on to the next output structure immediately if it was successful.)
 
 ### Filters as metric evaluators
 
-In addition to stopping the run, filters can also be used as metric evaluators. For example, we can make filters to compute the heavy atom RMSD of the sidechains for specific residues (e.g. F45 and Y59). From the documentation, it looks like we can use the [SidechainRmsd](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/Filters/filter_pages/SidechainRmsdFilter) filter. (We'll use the input structure as the reference pose.) The key to using Filters as metric evaluators instead of filters is the "confidence" option for all filters. This tells the filter what random fraction of the time it should act as a filter, and for which it should be just a metric evaluator. The default of "1.0" means always act as a filter. If you set this to "0.0" the filter will never filter, instead it will just act like a metric evaluator.
+In addition to stopping the run, filters can also be used as metric evaluators. For example, we can make filters to compute the heavy atom RMSD of the sidechains for specific residues.  Let's say, for example, that we're interested in the aromatic residues F45 and Y59. From the documentation, it looks like we can use the [SidechainRmsd](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/Filters/filter_pages/SidechainRmsdFilter) filter. (We'll use the input structure as the reference pose.) The key to using Filters as metric evaluators instead of as trajectory-stoppers is the "confidence" option for all filters. This tells the filter what random fraction of the time it should act as a filter, and for which it should be just a metric evaluator. The default of "1.0" means always act as a filter. If you set this to "0.0" the filter will never filter, instead it will just act like a metric evaluator, meaning that it reports the value of whatever it calculates, but doesn't ever stop a trajectory based on that value.
 
-```
-    <FILTERS>
-        <SidechainRmsd name="F45_rmsd" res1_pdb_num="45A" res2_pdb_num="45A" include_backbone="1" confidence="0.0" />
-        <SidechainRmsd name="Y59_rmsd" res1_pdb_num="59A" res2_pdb_num="59A" include_backbone="1" confidence="0.0" />
-    </FILTERS>
+Let's add some metric-evaluating filters to the script that we just ran:
+
+```xml
+...
+	<FILTERS>
+		<AtomicDistance name="salt_bridge" residue1="11A" atomtype1="Nlys" residue2="34A" atomtype2="OOC" distance="3.0" />
+		<SidechainRmsd name="F45_rmsd" res1_pdb_num="45A" res2_pdb_num="45A" include_backbone="1" confidence="0.0" />
+		<SidechainRmsd name="Y59_rmsd" res1_pdb_num="59A" res2_pdb_num="59A" include_backbone="1" confidence="0.0" />
+	</FILTERS>
+...
+	<PROTOCOLS>
+		<Add mover="pack" />
+		<Add filter="salt_bridge" />
+		<Add mover="min" />
+		<Add filter="F45_rmsd" />
+		<Add filter="Y59_rmsd" />
+	</PROTOCOLS>
+...
 ```
 
 Filters used as metric evaluators also need to be added to the PROTOCOLS section. NOTE: While the *filtering* ability of filters take place at their place in PROTOCOLS, the *metric evalution* ability is only applied at the very end of the PROTOCOLS section, to the final, output model.
 
-	$> cp inputs/filter.xml .
-	$> rosetta_scripts.default.linuxgccrelease -s 1ubq.pdb -parser:protocol filter.xml -out:prefix filter_ -nstruct 5
+```bash
+$> cp inputs/filter2.xml .
+$> rosetta_scripts.default.linuxgccrelease -s 1ubq.pdb -parser:protocol filter2.xml -out:prefix filter2_ -nstruct 100
+```
 
-This should result in a fair number of "failed" jobs. (e.g. "ERROR: Exception caught by rosetta_scripts application:3 jobs failed; check output for error messages") This is because the filter will recognize that a large number of generated structures don't match the desired parameters, and will cancel the job.
-
-Given that job failure is stochastic, this will leave you with fewer output files than you set with -nstruct. You can tell Rosetta to automatically re-run failed jobs by using the `-jd2:ntrials` option. This option sets the number of times each nstruct is retried, if it fails. (It moves on to the next output structure immediately if it was successful.)
-
-	$> rosetta_scripts.default.linuxgccrelease -s 1ubq.pdb -parser:protocol filter.xml -out:prefix filter2_ -nstruct 5 -jd2:ntrials 10
-
-This should give you five output structures, even if some tries through failed (for example, you'll get messages in the tracer like "filter2_1ubq_0001 reported failure and will retry" and "5 jobs considered, 7 jobs attempted".
-
-In addition to printing the results of the metric evaluation to the tracer, the results of the filter will be placed in a column of the scorefile. The name of the column is the same as the name of the filter. Additionally, the values for the filters will be output to the end of the PDB, after the score table.
+In addition to printing the results of the metric evaluation to the tracer (output log), the results of the filter will be placed in a column of the scorefile. The name of the column is the same as the name of the filter. Additionally, the values for the filters will be written at the end of the PDB file, after the score table.
 
 ## Conclusion
-----------
 
-This tutorial was intended to give you a brief introduction in creating an XML protocol. The process we went through is similar to how most RosettaScripts developers write an XML file from scratch: Build up a protocol iteratively, starting with a simple protocol and progressively adding different and more complex stages. For each stage, have an idea about the effect you wish to accomplish, and then scan the documentation for existing movers/filters/task operations/etc. which will accomplish it. This may involve multiple RosettaScripts objects, due to movers which need as parameters other movers which need filters which need task operations (which need ...)
+This tutorial was intended to give you a brief introduction to creating an XML protocol. The process we went through is similar to that used by most RosettaScripts developers when writing an XML file from scratch: protocols are built iteratively, starting with a simple protocol and progressively adding different and more complex stages. For each stage, it's important to have an idea about the effect you wish to accomplish, and then to skim the documentation for existing movers/filters/task operations/*etc.* which will accomplish it. This may involve multiple RosettaScripts objects, Rosetta modules that require other Rosetta modules as inputs (*e.g.* movers that require task operations that require residue selectors).
 
 There are, of course, many more RosettaScripts objects than we have discussed, most of which should be covered in the RosettaScripts documentation. There are also additional sections of the XML, which are used for more specialized applications. (For example, ligand docking.) 
 
@@ -768,6 +772,5 @@ A final note - even if you can create an XML from scratch, it may be easier not 
 The hard part is not necessarily in putting together the XML, but in determining the optimal protocol (the logical steps) you should use to accomplish your modeling goals, and then in benchmarking that protocol to make sure it does what you hoped.
 
 ## Troubleshooting
-------------------
 
 RosettaScripts is sensitive to mis-matched tags. If you forget to close a tag, or omit the ending slash on what is supposed to be a standalone tag, RosettaScripts will exit with a (possibly uninformative) error message. If you get something like "Error: Tag::read - parse error", this means there is a syntax error in your XML. The recommended way of debugging it is to make a copy of the script, and progressively comment out or remove portions of the XML file until you get a script that works. (Or at least is able to be parsed.) It is then likely that the source of the error is in the portion of the XML which you commented out or deleted.

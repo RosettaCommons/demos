@@ -5,7 +5,6 @@ KEYWORDS: SCRIPTING_INTERFACES CORE_CONCEPTS
 Tutorial by Vikram K. Mulligan (vmullig@uw.edu).  Created on 23 June 2016 as part of the 2016 Documentation XRW.
 
 ## Goals
---------
 At the end of this tutorial, you will understand:
 - How to set up a FoldTree within RosettaScripts
 - How to set up symmetry within RosettaScripts
@@ -16,7 +15,6 @@ At the end of this tutorial, you will understand:
 - How to control large-scale sampling
 
 ## Nesting movers
---------------
 
 * *Loop over sidechain optimization until the score doesn't improve.*
 
@@ -46,7 +44,6 @@ Note that when you nest movers/filters/etc. the definition of the sub-mover/filt
 Looking at the tracer output, you should be able to see the application of the IteratedConvergence, and how the RotamerTrialsMinMover is repeated multiple times.
 
 ## Variable substition: adding variables to scripts
-------------------------------------------------
 
 Sometimes in a RosettaScripts protocol, you want to vary the options given to the tags. For example, if you wish to do a series of runs, with changes at different residues. The naive way of doing this is to make separate XMLs, one for each variant of the option. If you have a large number of variants, this may be less than ideal.
 
@@ -76,7 +73,6 @@ If you wish to do a more thorough scan, either of more positions or of more resi
 
 
 ## Conclusion
-----------
 
 This tutorial was intended to give you a brief introduction in creating an XML protocol. The process we went through is similar to how most RosettaScripts developers write an XML file from scratch: Build up a protocol iteratively, starting with a simple protocol and progressively adding different and more complex stages. For each stage, have an idea about the effect you wish to accomplish, and then scan the documentation for existing movers/filters/task operations/etc. which will accomplish it. This may involve multiple RosettaScripts objects, due to movers which need as parameters other movers which need filters which need task operations (which need ...)
 
@@ -85,8 +81,3 @@ There are, of course, many more RosettaScripts objects than we have discussed, m
 A final note - even if you can create an XML from scratch, it may be easier not to. If you already have an example XML that does something close to what you want to do, it's probably easier to start with that XML, and alter it to add in the functionality you want.
 
 The hard part is not necessarily in putting together the XML, but in determining the optimal protocol (the logical steps) you should use to accomplish your modeling goals, and then in benchmarking that protocol to make sure it does what you hoped.
-
-## Troubleshooting
-------------------
-
-RosettaScripts is sensitive to mis-matched tags. If you forget to close a tag, or omit the ending slash on what is supposed to be a standalone tag, RosettaScripts will exit with a (possibly uninformative) error message. If you get something like "Error: Tag::read - parse error", this means there is a syntax error in your XML. The recommended way of debugging it is to make a copy of the script, and progressively comment out or remove portions of the XML file until you get a script that works. (Or at least is able to be parsed.) It is then likely that the source of the error is in the portion of the XML which you commented out or deleted.
