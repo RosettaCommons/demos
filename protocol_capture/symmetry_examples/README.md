@@ -1,6 +1,6 @@
 # Symmetry Examples
 
-KEYWORDS: STRUCTURE_PREDICTON SYMMETRY
+KEYWORDS: STRUCTURE_PREDICTION SYMMETRY
 
 ## Authors
 Frank Dimaio and Ingemar André

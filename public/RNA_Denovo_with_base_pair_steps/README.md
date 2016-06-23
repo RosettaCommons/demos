@@ -1,5 +1,5 @@
 # Fragment assembly of RNA (FARNA) with base pair steps (-bps_moves).
-
+KEYWORDS: NUCLEIC_ACIDS RNA
 README written in Nov. 2015 by Rhiju Das.
 
 This demo recovers the sarcin-ricin loop 1Q9A, leaving out first base pair, which is opened up in xtal structure.

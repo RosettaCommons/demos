@@ -1,6 +1,6 @@
 # Using NCAAs in Protein-Peptide Interface Design
 
-KEYWORDS: NONCANONICALS DOCKING PEPTIDE INTERFACES
+KEYWORDS: NONCANONICALS DOCKING PEPTIDES INTERFACES
 
 ## Author(s)
 - P. Douglas Renfrew (renfrew@nyu.edu)

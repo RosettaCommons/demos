@@ -1,6 +1,6 @@
 #Core Rosetta Concepts
 KEYWORDS: CORE_CONCEPTS GENERAL
-Author: Frank Teets(teetsf@gmail.com)
+Authors: Frank Teets(teetsf@gmail.com) and Parisah
 Jun 23 2016
 ##Rosetta Numbering
 Rosetta numbering of residues in a protein structure, sometimes called Pose numbering,  is distinct from the PDB numbering of the same; Rosetta numbering always begins at 1 and increases confluently according to the Fold Tree; functionally it behaves as though it were a PDB with a single chain beginning at residue 1. This has some implications for residue identification; inexplicable references to residues that do not exist in the PDB suggest that somewhere a residue is identified in the wrong mode.

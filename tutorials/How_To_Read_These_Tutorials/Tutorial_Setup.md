@@ -9,10 +9,12 @@ These tutorials were written such that a completely new user should be able to c
 
 ##Before Running Any of the Other Tutorials
 
-Complete [Tutorial 1](https://github.com/RosettaCommons/demos/blob/XRW2016/tutorials/install_build.md) to install and compile rosetta; verify that the `<path_to_Rosetta_directory>/main/bin` directory contains executables appropriate to your installation. Also, run
+Complete [Tutorial 1](https://github.com/RosettaCommons/demos/blob/XRW2016/tutorials/install_build.md) to install and compile rosetta; verify that the `<path_to_Rosetta_directory>/main/bin` directory contains executables appropriate to your installation.
 
-> env $ROSSETTA3=the path to your Rosetta/source directory
+Lines in the tutorial beginning with a > are intended for you to run, as are lines beginning with a $>. We have used local environment variables to make these run more smoothly on different platforms; therefore, to run these tutorials, you must set these variables as well so that your shell "knows" how to deal with "$ROSETTA3" and so forth. On bash, do that as follows:
 
+> env $ROSSETA3=the path to your Rosetta/source directory
+> env $ROSETTA3_DB=
 ##Do The Following for Each Tutorial
 
 In order for the hands-on portions of these tutorials to function correctly, you must make your current working directory that of the tutorial you want to run; i.e. for this tutorial, your current working directory must be (i.e. "you must be in") `<path_to_Rosetta_directory>/demos/tutorials/tutorial_0`.

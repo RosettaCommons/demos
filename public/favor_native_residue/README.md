@@ -1,6 +1,6 @@
 #Favor Native Residue
 
-KEYWORDS: DESIGN UTLITIES
+KEYWORDS: DESIGN UTILITIES
 
 This document briefly demos how to use favor_native_residue for Rosetta 3.4 in 
 a fixed backbone context.  favor_native_residue is a mode (which debuted in 

@@ -1,6 +1,6 @@
 Loop Modeling
 =============
-KEYWORDS: LOOPS HOMOLOGY_MODELING GENERAL   
+KEYWORDS: LOOPS COMPARATIVE_MODELING GENERAL   
 Tutorial by Shourya S. Roy Burman (ssrb@jhu.edu)    
 Created 23 June 2016
 

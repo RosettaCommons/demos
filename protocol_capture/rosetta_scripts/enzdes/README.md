@@ -1,3 +1,4 @@
+KEYWORDS: SCRIPTING_INTERFACES DESIGN
 To run:
 
 1. Change executable and database paths in commandline

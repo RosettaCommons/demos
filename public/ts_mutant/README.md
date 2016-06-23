@@ -1,6 +1,6 @@
 # Temperature-Sensitive Mutation Prediciton
 
-KEYWORDS: DESIGN STABILITY ANALYSIS
+KEYWORDS: DESIGN STABILITY_IMPROVEMENT ANALYSIS
 
 ## Author
 Chris Poultney

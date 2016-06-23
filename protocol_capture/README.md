@@ -1,6 +1,6 @@
 Protocol Captures
 =================
-
+KEYWORDS: GENERAL GENERAL
 This directory serves as an archive of protocol captures for a selection of Rosetta papers.
 
 The version of the protocol capture that are in this directory correspond to the version which was published. 

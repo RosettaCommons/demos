@@ -1,7 +1,7 @@
 Chemically Conjugated Docking
 =============================
 
-KEYWORDS: LIGAND DOCKING
+KEYWORDS: LIGANDS DOCKING
 
 Included are demos for three applications:
 

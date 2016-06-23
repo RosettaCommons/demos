@@ -1,6 +1,6 @@
 Peptide Backbone and Sequence Design
 ====================================
-
+KEYWORDS: DESIGN GENERAL
 Author: Deanne Sammond
 
 RosettaCon Talk:
