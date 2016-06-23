@@ -132,7 +132,7 @@ $> cp inputs/nothing.xml .
 As you haven't further defined any protocol, this XML does nothing to the structure. As a test, let's just run a structure through RosettaScripts with this XML. RosettaScripts takes the standard input and output flags. In addition, the `-parser:protocol` option specifies which XML file to use.
 
 ```bash
-$> <path_to_Rosetta_directory>/main/source/bin/rosetta_scripts.linuxgccrelease -s 1ubq.pdb -parser:protocol nothing.xml
+$> <path_to_Rosetta_directory>/main/source/bin/rosetta_scripts.default.linuxgccrelease -s 1ubq.pdb -parser:protocol nothing.xml
 ```
 
 In the tracer output, Rosetta should print its interpretation of the XML input. 
@@ -248,7 +248,7 @@ The t13 scorefunction is never used in this script, which is not a problem -- Ro
 
 ```bash
 $> cp inputs/scoring.xml .
-$> <path_to_Rosetta_directory>/main/source/bin/rosetta_scripts.linuxgccrelease -s 1ubq.pdb -parser:protocol scoring.xml -out:prefix scoring_
+$> <path_to_Rosetta_directory>/main/source/bin/rosetta_scripts.default.linuxgccrelease -s 1ubq.pdb -parser:protocol scoring.xml -out:prefix scoring_
 ```
 
 If you open the scoring_1ubq_0001.pdb output file, you should see that the score table includes columns for the cart\_bonded term, and no pro\_close term.
@@ -258,7 +258,7 @@ The above could also be accomplished by passing a custom .wts file to RosettaScr
 Now let's look at another example of output control at the commandline: we may not want to use PDB output if we're planning to generate very large numbers of structures.  The binary silent file is a proprietary Rosetta format that tis much more compact than a PDB file, and which can store arbitrarily large numbers of structures, avoiding disk space and file count limitations on many file systems.  To produce a silent files for output, let's re-run the command that we just ran, but with an additional flag:
 
 ```xml
-$> <path_to_Rosetta_directory>/main/source/bin/rosetta_scripts.linuxgccrelease -s 1ubq.pdb -parser:protocol scoring.xml -out:file:silent scoring.silent
+$> <path_to_Rosetta_directory>/main/source/bin/rosetta_scripts.default.linuxgccrelease -s 1ubq.pdb -parser:protocol scoring.xml -out:file:silent scoring.silent
 ```
 
 This time, the output will be a binary silent file.  PDB files can be extracted from binary silent files using the extract\_pdbs application.
@@ -270,9 +270,9 @@ This time, the output will be a binary silent file.  PDB files can be extracted 
 
 #### Simple Minimization
 
-* *Minimize the pose before outputting*
-
 The core of a RosettaScript XML is the movers. Movers are what will change the structure. Technically, movers are anything that changes the *pose*. While this includes changes to the atomic coordinates, it also includes changes to other features of the pose, including the FoldTree, constraints, sequence, or covalent connectivity. There are certain movers which will change just this auxiliary information, without altering atomic coordinates at all.
+
+* *Minimize the pose before outputting*
 
 As an initial demonstration, we're going to start by writing a script that uses a mover to do gradient-descent energy minimization of the pose. The available movers are listed on the [Rosetta documentation page](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/Movers/Movers-RosettaScripts). You can glance through the table of contents for the appropriate section (e.g. "Packing/Minimization") and then look for an appropriate mover (e.g. [MinMover](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/Movers/movers_pages/MinMover): Minimizes sidechains and/or backbone).
 
@@ -308,7 +308,7 @@ Declaring the movers in the MOVERS section only tells Rosetta that the movers ex
 
 ```bash
 $> cp inputs/minimize.xml .
-$> <path_to_Rosetta_directory>/main/source/bin/rosetta_scripts.linuxgccrelease -s 1ubq.pdb -parser:protocol minimize.xml -out:prefix minimize_
+$> <path_to_Rosetta_directory>/main/source/bin/rosetta_scripts.default.linuxgccrelease -s 1ubq.pdb -parser:protocol minimize.xml -out:prefix minimize_
 ```
 
 Within the tracer output you should see indications that your movers are being used (e.g. "BEGIN MOVER MinMover - min_cart"). Also, if you look at the total scores from the output PDB, you should get much better scores for the minimized 1ubq than the one just rescored with t14_cart. (about -155 versus +460).
@@ -326,7 +326,7 @@ Now let's add the other minimization mover, to demonstrate how movers can be pla
 
 ```bash
 $> cp inputs/minimize2.xml .
-$> <path_to_Rosetta_directory>/main/source/bin/rosetta_scripts.linuxgccrelease -s 1ubq.pdb -parser:protocol minimize2.xml -out:prefix minimize2_
+$> <path_to_Rosetta_directory>/main/source/bin/rosetta_scripts.default.linuxgccrelease -s 1ubq.pdb -parser:protocol minimize2.xml -out:prefix minimize2_
 ```
 
 This time, when you run the application, you'll find that the torsion-space minimization is carried out first (using the talaris\_2013 scorefunction), and the Cartesian-space minimization is carried out on the output structure from the torsion-space minimization (using the talaris\_2014 scorefunction, modified with the cart\_bonded term turned on and the pro\_close term turned off).  Note that Rosetta does not write out any structures until the end of the protocol.
@@ -368,7 +368,7 @@ We can run this with the following:
 
 ```bash
 $> cp inputs/minimize3.xml .
-$> <path_to_Rosetta_directory>/main/source/bin/rosetta_scripts.linuxgccrelease -s 1ubq.pdb -parser:protocol minimize3.xml -out:prefix minimize3_
+$> <path_to_Rosetta_directory>/main/source/bin/rosetta_scripts.default.linuxgccrelease -s 1ubq.pdb -parser:protocol minimize3.xml -out:prefix minimize3_
 ```
 
 Practially, it's important to know how to set up MoveMaps because there are many situations in which one may wish to prevent the minimizer from moving parts of a pose.  One example is when designing a binder to a target of known structure: typically, there is little to no advantage to letting the minimizer move the backbone of the target, or side-chains that are far from the binding interface.  Indeed, doing so can result in deceptively low-energy structures with little resemblance to anything physically meaningful.  See the [FastRelax mover's documentation page](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/Movers/movers_pages/FastRelaxMover) for full documentation on the MoveMap syntax.
@@ -454,7 +454,7 @@ Now let's run this script (or the inputs/repack_only.xml file).  This should gen
 
 ```bash
 $> cp inputs/repack_only.xml .
-$> <path_to_Rosetta_directory>/main/source/bin/rosetta_scripts.linuxgccrelease -s 1ubq.pdb -parser:protocol repack_only.xml -out:prefix repack_only_
+$> <path_to_Rosetta_directory>/main/source/bin/rosetta_scripts.default.linuxgccrelease -s 1ubq.pdb -parser:protocol repack_only.xml -out:prefix repack_only_
 ```
 
 If you look at the output, you'll see that the side-chains have been repacked, though in many cases, Rosetta found an optimal rotamer very close to that in the input structure.
@@ -465,13 +465,134 @@ If you look at the output, you'll see that the side-chains have been repacked, t
 * *Use ResidueSelectors in conjuction with TaskOperations and the PackRotamersMover.*
 * *Understand TaskOperation commutativity.*
 
-Let's consider a more complicated (and more realistic) usage case -- one that demonstrates how we can single out subsets of residues in a structure and do different things to different parts of a pose.  Let's find a new sequence for the buried core residues in ubiquitin, while permitting boundary and surface residues to repack (but not allowing these layers to change their sequence).  To do this, we need a way of selecting the protein core.  Some of the general TaskOperations are able to select certain residues, but a more flexible choice for selecting certain residues is [ResidueSelectors](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/TaskOperations/taskoperations_pages/ResidueSelectors). ResidueSelectors, like their name suggests, are able to specify (select) a particular subset of residues, which can then be used with TaskOperations or other RosettaScripts objects. Unlike TaskOperations, which are strictly one way (you can turn off design, but you can't turn it back on), ResidueSelectors can be combined in various ways to select the particular residue you want.
+Let's consider a more complicated (and more realistic) usage case -- one that demonstrates how we can single out subsets of residues in a structure and do different things to different parts of a pose.  Let's find a new sequence for the buried core residues in ubiquitin, while permitting boundary (semi-buried) residues to repack and prohibiting surface residues from moving at all.  We'll also restrict the core to hydrophobic amino acid types.  To do this, we need a way of selecting these layers.  Some of the general TaskOperations are able to select certain residues, but a more flexible choice for selecting certain residues is [ResidueSelectors](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/TaskOperations/taskoperations_pages/ResidueSelectors). ResidueSelectors, like their name suggests, are able to specify (select) a particular subset of residues, which can then be used with TaskOperations or other RosettaScripts objects. Unlike TaskOperations, which are strictly one way (you can turn off design, but you can't turn it back on), ResidueSelectors can be combined in various ways to select the particular residue you want.  It's worth taking a moment to comment on the differences between TaskOperations and ResidueSelectors:
 
 | |TaskOperations | ResidueSelectors |
 |---|---|---|
-| Intended purpose | Setting packer behaviours. (*e.g.* Disabling design, limiting allowed residue idenities at certain sequence positions, enabling extra rotamers, telling the packer to include the input rotamer, *etc.*). |  Selecting subsets of residues in a pose based on rules, then passing the subsets as inputs to other Rosetta modules.  |
-| Rule for combining | Commutativity: applying TaskOperation A, B, and C produces the same effect regardless their order. | Boolean operations: ResidueSelectors produce selections that can be combined to produce the union (OR) or intersection (AND) of the set, or which can be inverted (NOT).  Nested Boolean operations allow very complicated combination rules. |
+| **Intended purpose** | Setting packer behaviours. (*e.g.* Disabling design, limiting allowed residue idenities at certain sequence positions, enabling extra rotamers, telling the packer to include the input rotamer, *etc.*).  Note that, because TaskOperations predate ResidueSelectors, there are some older Rosetta modules that use TaskOperations as a means of selecting residues, though this is being phased out. |  Selecting subsets of residues in a pose based on rules, then passing the subsets as inputs to other Rosetta modules.  |
+| **Rule for combining** | Commutativity: applying TaskOperation A, B, and C produces the same effect regardless their order. | Boolean operations: ResidueSelectors produce selections that can be combined to produce the union (OR) or intersection (AND) of the set, or which can be inverted (NOT).  Nested Boolean operations allow very complicated combination rules. |
+| **Can be passed to** | Movers that invoke the packer | Many movers, filters, and TaskOperations, and even to other ResidueSelectors. |
 
+Let's start by defining three ResidueSelectors to select residues based on burial, in core, boundary, and surface layers.  Of the [available ResidueSelectors](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/TaskOperations/taskoperations_pages/ResidueSelectors), the [LayerSelector](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/TaskOperations/taskoperations_pages/ResidueSelectors#residueselectors_conformation-dependent-residue-selectors_layerselector) is the one that will allow us to select residues based on burial (with details of the algorithm available from the [help documentation](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/TaskOperations/taskoperations_pages/ResidueSelectors#residueselectors_conformation-dependent-residue-selectors_layerselector)).  Start a new RosettaScript, define a basic scorefunction, and then define three LayerSelectors in the RESIDUE_SELECTORS section as follows:
+
+```xml
+<ROSETTASCRIPTS>
+	<SCOREFXNS>
+		<t14 weights="talaris2014" />
+	</SCOREFXNS>
+	<RESIDUE_SELECTORS>
+		<Layer name="corelayer" select_core="true" select_boundary="false" select_surface="false" core_cutoff="4.0" />
+		<Layer name="boundarylayer" select_core="false" select_boundary="true" select_surface="false" core_cutoff="4.0" />
+		<Layer name="surfacelayer" select_core="false" select_boundary="false" select_surface="true" core_cutoff="4.0" />
+	</RESIDUE_SELECTORS>
+	<TASKOPERATIONS>
+	</TASKOPERATIONS>
+	<FILTERS>
+	</FILTERS>
+	<MOVERS>
+	</MOVERS>
+	<APPLY_TO_POSE>
+	</APPLY_TO_POSE>
+	<PROTOCOLS>
+	</PROTOCOLS>
+	<OUTPUT scorefxn="t14" />
+</ROSETTASCRIPTS>
+```
+
+OK, now let's use these to set up some TaskOperations for each layer.  For the core, we want to restrict design to hydrophobic amino acid residue types.  We'll use a [resfile](https://www.rosettacommons.org/docs/latest/rosetta_basics/file_types/resfiles) to specify allowed types, and the [ReadResFile TaskOperation](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/TaskOperations/taskoperations_pages/ReadResfileOperation) to apply this restriction to core residues only, using the "corelayer" ResidueSelector to restrict this TaskOperation's action to the core.  Create a new text file (we'll call it core_resfile.txt) and add the following to it:
+
+```
+PIKAA FAMILYVW #Pick amino acids PHE, ALA, MET, ILE, LEU, TYR, VAL, or TRP to design with; prohibit all others.
+start
+```
+
+This is our resfile, indicating that only hydrophobic residues (and alanine) will be allowed.  Note that it only contains a global options line; we're not specifying any per-residue behaviour in this resfile (though that is an option).  Now let's add the ReadResfile TaskOperation.
+
+```xml
+...
+	<TASKOPERATIONS>
+		<ReadResfile name="core_resfile" filename="core_resfile.txt" selector="corelayer" />
+	</TASKOPERATIONS>
+...
+```
+
+Passing "corelayer" with the "selector=" option indicates that, rather than being applied to the whole pose, the effects of the resfile will only be applied to the selected residues.  If this were our only TaskOperation passed to the packer, the overall effect would be to design with all 20 amino acids everywhere *except* in the core, where we would design only with hydrophobic residues.  So now, we need to set the behaviour for boundary and surface layers.  Note, though, that the [RestrictToRepacking TaskOperation](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/TaskOperations/taskoperations_pages/RestrictToRepackingOperation) that we used earlier takes no options, so there's no direct way to use a ResidueSelector to apply its effect to a subset of residues.  For this reason, we'll use the [OperateOnResidueSubset TaskOperation](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/TaskOperations/taskoperations_pages/OperateOnResidueSubsetOperation), and two [Residue-Level TaskOperations](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/TaskOperations/taskoperations_pages/Residue-Level-TaskOperations): the [RestrictToRepackingRLT](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/TaskOperations/taskoperations_pages/Residue-Level-TaskOperations) and the [PreventRepackingRLT](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/TaskOperations/taskoperations_pages/Residue-Level-TaskOperations).  As before, we should also define a TaskOperation to allow extra rotamers to be used.
+
+```xml
+	<TASKOPERATIONS>
+		<ReadResfile name="core_resfile" filename="core_resfile.txt" selector="corelayer" />
+		<OperateOnResidueSubset name="restrict_boundary_to_repack" selector="boundarylayer" >
+			<RestrictToRepackingRLT />
+		</OpearateOnResidueSubset>
+		<OperateOnResidueSubset name="prevent_surface_from_repackin" selector="surfacelayer" >
+			<PreventRepackingRLT />
+		</OpearateOnResidueSubset>
+		<ExtraRotamersGeneric name="extrachi" ex1="1" ex2="1" ex1_sample_level="1" ex2_sample_level="1" />
+	</TASKOPERATIONS>
+```
+
+The rest is as before: set up a PackRotamersMover, passing the four TaskOperations defined above to it:
+
+```xml
+...
+	<MOVERS>
+		<PackRotamersMover name="pack1" scorefxn="t14" task_operations="core_resfile,prevent_surface_from_repacking,restrict_boundary_to_repack,extrachi" />
+	</MOVERS>
+...
+	<PROTOCOLS>
+		<Add mover="pack1" />
+	</PROTOCOLS>
+...
+```
+
+The final file is provided as inputs/design_core.xml.  You can run this with:
+
+```bash
+$> cp inputs/design_core.xml .
+$> cp core_resfile.txt .
+$> <path_to_Rosetta_directory>/main/source/bin/rosetta_scripts.default.linuxgccrelease -s 1ubq.pdb -parser:protocol design_core.xml -out:prefix design_core_
+```
+
+Open the output.  You might notice that relatively few core residues have changed: Rosetta finds an optimal sequence very similar to the input, as we might expect.  It's also worth noting this line in the output log:
+
+```
+core.pack.pack_rotamers: built 4281 rotamers at 50 positions.
+```
+
+In comparison, the repacking job that we ran earlier, with no design, generated over 6000 rotamers.  This illustrates an important point: although design is normally a more computationally expensive task than simple repacking without design, clever use of TaskOperations can reduce the complexity of the problem considerably.  Indeed, a design job that's set up cleverly can involve less computational complexity than even a naïve repacking job without design.
+
+> **Pay careful attention to packer setup.  A poorly-conceived packer job can be prohibitively computationally expensive, while a well-designed one can be very quick to execute.**
+
+#### Understanding commutativity of TaskOperations
+
+Let's do one more thing to illustrate one final point about TaskOperations: let's add one more ReadResfile TaskOperation.  In this second ReadResfile, let's use the PIKAA command to choose a different, but overlapping, set of allowed residue types -- say, PHE, TYR, ASP, GLU, LYS, and ARG.  The resfile (call it core_resfile2.txt) would look like this:
+
+```
+start
+1 - 76 A PIKAA FWDERK
+```
+
+The new ReadResfile TaskOperation, in the TASKOPERATIONS section, would look like this:
+
+```xml
+		<ReadResfile name="core_resfile2" filename="core_resfile2.txt" />
+```
+
+It should be appended to the list of TaskOperations passed to the PackRotamersMover, like so:
+
+```xml
+		<PackRotamersMover name="pack1" scorefxn="t14" task_operations="core_resfile,prevent_surface_from_repacking,restrict_boundary_to_repack,extrachi,core_resfile2" />
+```
+
+Run the modified script (or use inputs/design_core2.xml):
+
+```bash
+$> cp inputs/design_core2.xml .
+$> cp core_resfile2.txt .
+$> <path_to_Rosetta_directory>/main/source/bin/rosetta_scripts.default.linuxgccrelease -s 1ubq.pdb -parser:protocol design_core2.xml -out:prefix design_core2_
+```
+
+This time, 
 
 # Filters
 ---------
@@ -523,13 +644,13 @@ In addition to stopping the run, filters can also be used as metric evaluators. 
 Filters used as metric evaluators also need to be added to the PROTOCOLS section. NOTE: While the *filtering* ability of filters take place at their place in PROTOCOLS, the *metric evalution* ability is only applied at the very end of the PROTOCOLS section, to the final, output model.
 
 	$> cp inputs/filter.xml .
-	$> rosetta_scripts.linuxgccrelease -s 1ubq.pdb -parser:protocol filter.xml -out:prefix filter_ -nstruct 5
+	$> rosetta_scripts.default.linuxgccrelease -s 1ubq.pdb -parser:protocol filter.xml -out:prefix filter_ -nstruct 5
 
 This should result in a fair number of "failed" jobs. (e.g. "ERROR: Exception caught by rosetta_scripts application:3 jobs failed; check output for error messages") This is because the filter will recognize that a large number of generated structures don't match the desired parameters, and will cancel the job.
 
 Given that job failure is stochastic, this will leave you with fewer output files than you set with -nstruct. You can tell Rosetta to automatically re-run failed jobs by using the `-jd2:ntrials` option. This option sets the number of times each nstruct is retried, if it fails. (It moves on to the next output structure immediately if it was successful.)
 
-	$> rosetta_scripts.linuxgccrelease -s 1ubq.pdb -parser:protocol filter.xml -out:prefix filter2_ -nstruct 5 -jd2:ntrials 10
+	$> rosetta_scripts.default.linuxgccrelease -s 1ubq.pdb -parser:protocol filter.xml -out:prefix filter2_ -nstruct 5 -jd2:ntrials 10
 
 This should give you five output structures, even if some tries through failed (for example, you'll get messages in the tracer like "filter2_1ubq_0001 reported failure and will retry" and "5 jobs considered, 7 jobs attempted".
 
@@ -561,7 +682,7 @@ For the filter, we'll use the [ScoreType](https://www.rosettacommons.org/docs/la
 Note that when you nest movers/filters/etc. the definition of the sub-mover/filter/etc. must come before the point of use. (Otherwise the order of definition shouldn't matter.) This might involve you making multiple MOVERS/FILTERS/etc. section.
 
 	$> cp inputs/pack_opt.xml .
-	$> rosetta_scripts.linuxgccrelease -s 1ubq.pdb -parser:protocol pack_opt.xml -out:prefix packopt_ -nstruct 2 -jd2:ntrials 10
+	$> rosetta_scripts.default.linuxgccrelease -s 1ubq.pdb -parser:protocol pack_opt.xml -out:prefix packopt_ -nstruct 2 -jd2:ntrials 10
 
 Looking at the tracer output, you should be able to see the application of the IteratedConvergence, and how the RotamerTrialsMinMover is repeated multiple times.
 
@@ -585,10 +706,10 @@ For our sample protocol, let's run a mutational scan. There are several movers w
 To run, we need to then pass something like "-parser:script_vars position=14A new_res=ALA" on the commandline.
 
 	$> cp inputs/mut_scan.xml .
-	$> rosetta_scripts.linuxgccrelease -s 1ubq.pdb -parser:protocol mut_scan.xml -out:prefix V5W_ -nstruct 1 -parser:script_vars position=5A res=TRP -jd2:ntrials 10
-	$> rosetta_scripts.linuxgccrelease -s 1ubq.pdb -parser:protocol mut_scan.xml -out:prefix L43W_ -nstruct 1 -parser:script_vars position=43A res=TRP -jd2:ntrials 10
-	$> rosetta_scripts.linuxgccrelease -s 1ubq.pdb -parser:protocol mut_scan.xml -out:prefix L56W_ -nstruct 1 -parser:script_vars position=56A res=TRP -jd2:ntrials 10
-	$> rosetta_scripts.linuxgccrelease -s 1ubq.pdb -parser:protocol mut_scan.xml -out:prefix L67W_ -nstruct 1 -parser:script_vars position=67A res=TRP -jd2:ntrials 10
+	$> rosetta_scripts.default.linuxgccrelease -s 1ubq.pdb -parser:protocol mut_scan.xml -out:prefix V5W_ -nstruct 1 -parser:script_vars position=5A res=TRP -jd2:ntrials 10
+	$> rosetta_scripts.default.linuxgccrelease -s 1ubq.pdb -parser:protocol mut_scan.xml -out:prefix L43W_ -nstruct 1 -parser:script_vars position=43A res=TRP -jd2:ntrials 10
+	$> rosetta_scripts.default.linuxgccrelease -s 1ubq.pdb -parser:protocol mut_scan.xml -out:prefix L56W_ -nstruct 1 -parser:script_vars position=56A res=TRP -jd2:ntrials 10
+	$> rosetta_scripts.default.linuxgccrelease -s 1ubq.pdb -parser:protocol mut_scan.xml -out:prefix L67W_ -nstruct 1 -parser:script_vars position=67A res=TRP -jd2:ntrials 10
 
 These commands should produce a tryptophan scan of a selection of residues in the core of the protein. (Open up the structures in PyMol or the equivalent and compare.
 
@@ -599,8 +720,6 @@ If you wish to do a more thorough scan, either of more positions or of more resi
 
 
 ### ResidueSelectors
-
-In addition to turning off design to all the protein, we also decide that we want to turn off repacking to a few selected residues, those being F45 and Y59. Some of the general TaskOperations are able to select certain residues, but a more flexible choice for selecting certain residues is [ResidueSelectors](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/TaskOperations/taskoperations_pages/ResidueSelectors). ResidueSelectors, like their name suggests, are able to specify (select) a particular subset of residues, which can then be used with TaskOperations or other RosettaScripts objects. Unlike TaskOperations, which are strictly one way (you can turn off design, but you can't turn it back on), ResidueSelectors can be combined in various ways to select the particular residue you want.
 
 Looking at available ResidueSelectors, the [ResidueIndexSelector](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/TaskOperations/taskoperations_pages/ResidueSelectors#residueselectors_conformation-independent-residue-selectors_residueindexselector) looks to be the one we want, when we want to select particular residues. We can specify which residues to use with a comma separated list. Note that we can either use *Pose numbering* (numbers without a chain letter) or *PDB numbering* (with a chain letter). If the PDB hasn't been renumbered to match Pose numbering, these will be different. 
 
@@ -668,7 +787,7 @@ As before, putting the tag in the MOVERS section only defines the mover - in ord
 ```
 
 	$> cp inputs/packing.xml .
-	$> rosetta_scripts.linuxgccrelease -s 1ubq.pdb -parser:protocol packing.xml -out:prefix packing_ -nstruct 5
+	$> rosetta_scripts.default.linuxgccrelease -s 1ubq.pdb -parser:protocol packing.xml -out:prefix packing_ -nstruct 5
 
 In the tracer output you should now see that both the PackRotamersMover and MinMover are running. We added the -nstruct 5 to produce five output structures. The Rosetta packer is stochastic, so different runs through the protocol should result in slightly different results. However, for repacking only (as opposed to design) the packer is rather convergent, so most structures should find about the same final conformation.
 
