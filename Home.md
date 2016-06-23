@@ -3,20 +3,6 @@ Rosetta Tutorials, Demos, and Protocol Captures
 
 [[_TOC_]]
 
-<!-- Manual TOC, as the auto one is too bulky 
-<p></p><div class="toc"><div class="toc-title">Table of Contents</div>
-<ul><ul><li><a href="#obtaining-tutorial-materials">Obtaining tutorial materials</a></li>
-<li><a href="#tutorials">Tutorials</a></li>
-<li><a href="#demos">Demos</a></li>
-<li><a href="#protocol-captures">Protocol Captures</a></li>
-<!--- BEGIN_INTERNAL -->
-<li><a href="#adding-new-demos">Adding new demos</a></li>
-<li><a href="#under-development">Under Development</a></li>
-<!--- END_INTERNAL -->
-</ul></ul></div>
-<br/>
--->
-
 Obtaining tutorial materials
 ----------------------------
 
