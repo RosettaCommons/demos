@@ -1,4 +1,4 @@
--s 2wpt.ppk.pdb 
+-s inputs/2wpt.ppk.pdb 
 -correct 
 -ex1 
 -ex2 
@@ -7,5 +7,5 @@
 -run:constant_seed
 -nstruct 1
 -jd2:ntrials 10
--parser:protocol flexbb-interfacedesign.xml 
+-parser:protocol scripts/flexbb-interfacedesign.xml 
 -docking:no_filters 
