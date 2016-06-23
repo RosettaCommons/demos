@@ -29,26 +29,26 @@ Now let's look at the same example, but with a small difference:
 
 ![figure for bigger protein changes](https://github.com/RosettaCommons/demos/blob/hssnzdh2/parisa_XRW/tutorials/figures/big_moves.png)
 
-You can see that a small change in one torsion angle at the N-terminal of the protein can cause huge movements in the rest of the protein. This is called **the lever arm effect**.
+You can see that a small change in one torsion angle at the N-terminus of the protein can cause huge movements in the rest of the protein. This is called **the lever arm effect**.
 How can we avoid this? 
 
 #### Using the Fold Tree
-In this part we see how to use *fold tree* to control movements of the parts in a protein with respects to each other. The **fold tree** is a way to tell Rosetta the connectivity between residues in a given structure. It defines what residues are _UPSTREAM_ or _children_ and what residues are _DOWNSTREAM_ or _parents_. Let's go through some examples to make things clear.
+In this part we see how to use the *fold tree* to control movements of the parts in a protein with respects to each other. The fold tree is a way to tell Rosetta the connectivity between residues in a given structure. It defines what residues are _UPSTREAM_ or _children_ and what residues are _DOWNSTREAM_ or _parents_. Let's go through some examples to make things clear.
 
 In this example, you will be using the structure of the N-terminal part of nucleocapsi from coronaviruse. Navigate to the fold-tree directory in tutorials using this command:
 
-```
-> cd <path-to-Rosetta>/demos/tutorials/fold_tree
+```bash
+> cd <path_to_Rosetta_directory>/demos/tutorials/fold_tree
 ```
 Open the capsid.pdb file provided for you in the inputs directory. You can see that it has a long, unstructured N-terminal and the rest of the structure is mostly beta sheets. We know that the N-terminal region is disordered, so before working with the PDB, we want to relax just that part.
 The cps_relax1.xml is a [Rosetta script] provided to you that relaxes residues 1-20 of the structure using a [MoveMap].   
 
-```
-[...]
+```xml
+...
         <MoveMap name="part">
             <Span begin=1 end=20 bb=1 chi=1/>
         </MoveMap>
-[...]
+...
 ```
 
 It also uses the default Rosetta fold tree, which is shown in caps_tree1.ft file in the input directory: 
@@ -56,14 +56,16 @@ It also uses the default Rosetta fold tree, which is shown in caps_tree1.ft file
 ```
 FOLD_TREE EDGE 1 133 -1
 ```
--> This reads as: "Edge from **1** to **133**, which is a *protein* edge (**-1**)"
+-> This reads as: "Edge from **1** to **133**, which is a *polymeric* edge (**-1**)"
 
-You start from residue 1 in chain A and go all the way to the last residue (133 in this example) of the chain. So any movements in the downstream residues (residues that are close to N-terminal) will cause movements in residues upstream (closer to C-terminal). This chain is a non-disrupted continuous cluster of residues that are connected by covalent bonds in a linear way. We call this cluster an **EDGE**. **-1** means that the residues in the EDGE are connected through covalent bonds. 
+You start from residue 1 in chain A and go all the way to the last residue (133 in this example) of the chain. So any movements in the downstream residues (residues that are close to N-terminus) will cause movements in residues upstream (closer to C-terminal). This chain is a non-disrupted continuous cluster of residues that are connected by covalent bonds in a linear way. We call this cluster an **EDGE**. **-1** means that the residues in the EDGE are connected through covalent bonds. 
 
 In your fold_tree folder, run the script using the command below to relax residues 1-20 without changing the backbone in the remainder of the structure:
+
+```bash
+$> <path_to_Rosetta_directory>/main/source/bin/rosetta_scripts.default.linuxgccrelease -in:file:s inputs/capsid.pdb -parser:protocol inputs/caps_relax1.xml -out:prefix test1_
 ```
-$> ../../../main/source/bin/rosetta_scripts.default.linuxgccrelease -in:file:s inputs/capsid.pdb -parser:protocol inputs/caps_relax1.xml -out:prefix test1_
-```
+
 NOTE: you may need to change your executable from what is provided here depending on your compilation. Check [here].
 
 After 1-10 minutes, you can see that the output (test1_capsid_0001.pdb) is generated. 
