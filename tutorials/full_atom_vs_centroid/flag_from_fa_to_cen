@@ -4,5 +4,5 @@
 -nstruct 1			#number of output structures
 -parser:protocol fa_to_cen.xml
 
--out:path:pdb output_files
+-out:path:all output_files
 -out:file:scorefile /dev/null	#to prevent output of the score file

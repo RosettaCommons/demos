@@ -216,7 +216,7 @@ Almost the same script can do the reverse operation:
 	</PROTOCOLS>
 </ROSETTASCRIPTS>
 ```
-This can be found at `<path_to_Rosetta_directory>/demos/tutorials/full_atom_vs_centroid\fa_to_cen.xml`.  
+This can be found at `<path_to_Rosetta_directory>/demos/tutorials/full_atom_vs_centroid/fa_to_cen.xml`.  
 
 Run in the terminal:
 
