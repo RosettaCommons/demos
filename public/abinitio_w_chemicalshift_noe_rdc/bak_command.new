@@ -1,0 +1,31 @@
+# This is a test script of the demo, created by parsing testable commands given in the demo's README.md file.
+# Commands that need to be tested should start with '$<'  to indicate that the line will be written to this file and tested.
+# - Documentation XRW 2016 Team - 
+
+cd %(workdir)s
+
+[ -x %(bin)s/fragment_picker.%(binext)s ] || exit 1
+[ -x %(bin)s/minirosetta.%(binext)s ] || exit 1
+
+# abinitio_w_chemicalshift_noe_rdc
+
+
+ scripts/upl2mini.csh starting_inputs/NOE_data.upl > rosetta_inputs/NOE.cst 2>&1 | egrep -vf /Users/raemisch/Rosetta/main/tests/integration/ignore_list > log1
+test "${PIPESTATUS[0]}" != '0' && exit 1 || true  # Check if the first executable in pipe line return error and exit with error code if so
+
+ scripts/cst_map_toCB.py rosetta_inputs/NOE.cst > rosetta_inputs/NOE.centroid.cst 2>&1 | egrep -vf /Users/raemisch/Rosetta/main/tests/integration/ignore_list > log2
+test "${PIPESTATUS[0]}" != '0' && exit 1 || true  # Check if the first executable in pipe line return error and exit with error code if so
+
+ scripts/bmrb2talos.com starting_inputs/raw.cs.bmrb > rosetta_inputs/cs.talos 2>&1 | egrep -vf /Users/raemisch/Rosetta/main/tests/integration/ignore_list > log3
+test "${PIPESTATUS[0]}" != '0' && exit 1 || true  # Check if the first executable in pipe line return error and exit with error code if so
+
+ awk '{print $4,$7,$11,$14,$16}' starting_inputs/nh_xplor.rdc > rosetta_inputs/nh.rdc 2>&1 | egrep -vf /Users/raemisch/Rosetta/main/tests/integration/ignore_list > log4
+test "${PIPESTATUS[0]}" != '0' && exit 1 || true  # Check if the first executable in pipe line return error and exit with error code if so
+
+ %(bin)s/fragment_picker.%(binext)s -in::file::vall %(database)s/sampling/small.vall.gz -frags::n_frags 200 -frags::frag_sizes 3 9 -frags::sigmoid_cs_A 2 -frags::sigmoid_cs_B 4 -out::file::frag_prefix rosetta_inputs/pick_cs_fragments/frags.score -frags::describe_fragments rosetta_inputs/pick_cs_fragments/frags.fsc.score -frags::scoring::config scripts/scores.score.cfg -in:file:fasta starting_inputs/t000_.fasta -in:file:checkpoint rosetta_inputs/t000_.checkpoint -in:file:talos_cs rosetta_inputs/cs.talos -frags::ss_pred rosetta_inputs/talos_output/predSS.tab talos -in::file::talos_phi_psi rosetta_inputs/talos_output/pred.tab  -database %(database)s -run:constant_seed -nodelay  2>&1 | egrep -vf /Users/raemisch/Rosetta/main/tests/integration/ignore_list > log5
+test "${PIPESTATUS[0]}" != '0' && exit 1 || true  # Check if the first executable in pipe line return error and exit with error code if so
+
+ %(bin)s/minirosetta.%(binext)s -in:file:rdc rosetta_inputs/nh.rdc -cst_fa_file rosetta_inputs/NOE.cst -cst_file rosetta_inputs/NOE.centroid.cst -abinitio:stage1_patch scripts/patch_atom_pair_constraint_rdc -abinitio:stage2_patch scripts/patch_atom_pair_constraint_rdc -abinitio:stage3a_patch scripts/patch_atom_pair_constraint_rdc -abinitio:stage3b_patch scripts/patch_atom_pair_constraint_rdc -abinitio:stage4_patch scripts/patch_atom_pair_constraint_rdc -score:patch scripts/patch_atom_pair_constraint_rdc -in:file:fasta starting_inputs/t000_.fasta -file:frag3 rosetta_inputs/pick_cs_fragments/frags.score.200.3mers -file:frag9 rosetta_inputs/pick_cs_fragments/frags.score.200.9mers -nstruct 1 -out:file:silent csrosetta_noe_rdc.out -run:protocol abrelax -abinitio::relax -overwrite  -database %(database)s -run:constant_seed -nodelay  2>&1 | egrep -vf /Users/raemisch/Rosetta/main/tests/integration/ignore_list > log6
+test "${PIPESTATUS[0]}" != '0' && exit 1 || true  # Check if the first executable in pipe line return error and exit with error code if so
+
+
