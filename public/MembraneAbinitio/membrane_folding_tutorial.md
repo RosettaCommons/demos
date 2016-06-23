@@ -1,6 +1,6 @@
 #Membrane Protein Folding
 
-KEYWORDS: MEMBRANES STRUCTURE-PREDICTION
+KEYWORDS: MEMBRANES STRUCTURE_PREDICTION
 
 **Bold text means that these files and/or this information is provided.**
 
