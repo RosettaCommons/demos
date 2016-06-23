@@ -18,9 +18,91 @@ At the end of this tutorial, you will understand:
 
 ## Controlling the FoldTree within RosettaScripts
 
-In the [FoldTree tutorial](../fold_tree/fold_tree.md), we learnt how the fold tree controls what parts of a structure move when degrees of freedom change by establishing a clear hierarchy of residues.  It is often necessary to modify the FoldTree manually in order to optimize a protocol.  How do we do this in RosettaScripts?
+In the [FoldTree tutorial](../fold_tree/fold_tree.md), we learnt how the fold tree controls what parts of a structure move when degrees of freedom change by establishing a clear hierarchy of residues.  It is often necessary to modify the FoldTree manually in order to optimize a protocol.  We're about to see how we do this in RosettaScripts.  Let's use the following example, which has two helices, which are not connected to one another, that are a bit too close together:
 
-As mentioned in the [introductory RosettaScripting tutorial](../rosetta_scripting/README.md), movers are modules that alter a structure (*pose*) in some way that need not involve changing atomic coordinates.  Indeed, there are special movers available to RosettaScripts that serve only to change the FoldTree.
+![These two helices are too close together.  This calls for minimization.](foldtree_example_1.png)
+
+We'd like to minimize the structure, allowing *jumps* (rigid-body transforms between chains) to move.  Let's try this naïvely, first.  The following script simply creates and calls a MinMover for the task:
+
+```xml
+<ROSETTASCRIPTS>
+	<SCOREFXNS>
+		<tala weights="talaris2014.wts" />
+	</SCOREFXNS>
+	<RESIDUE_SELECTORS>
+	</RESIDUE_SELECTORS>
+	<TASKOPERATIONS>
+	</TASKOPERATIONS>
+	<FILTERS>
+	</FILTERS>
+	<MOVERS>
+		<MinMover name="minimize1" bb="false" chi="true" jump="ALL" tolerance="0.0000001" type="dfpmin" />
+	</MOVERS>
+	<APPLY_TO_POSE>
+	</APPLY_TO_POSE>
+	<PROTOCOLS>
+		<Add mover="minimize1" />
+	</PROTOCOLS>
+	<OUTPUT scorefxn="tala" />
+</ROSETTASCRIPTS>
+```
+
+This script is provided as foldtree\_example/minimize1.xml, and the structure shown above is foldtree\_example/foldtree\_example.pdb.  Let's run this and see what happens:
+
+```bash
+$> cp foldtree_example/minimize1.xml .
+$> cp foldtree_example/foldtree_example.pdb .
+$> <path_to_Rosetta_directory>/main/source/bin/rosetta_scripts.default.linuxgccrelease -in:file:s foldtree_example.pdb -parser:protocol minimize1.xml -out:prefix min1_
+```
+
+You may need to change ".default.linuxgccrelease" for your build, operating system, and compiler (*e.g.* ".static.macosclangdebug", *etc.*).
+
+Running the script above, we find that something has gone wrong.  The second helix has swung nearly 180 degrees, and the overall structure has exploded:
+
+![Naïvely minimizing the structure results in an explosion.](foldtree_example_2.png)
+
+This is an extreme case of the lever-arm effect, caused by an unsuitable fold tree.  Since the default fold tree has residue 1 as the anchor, with all of helix 1 downstream of residue 1, and a jump to the first residue of the second helix, the repulsion between the two helices causes the second one to rotate and swing away instead of moving linearly.  This is clearly not what we want.
+
+So let's set up a proper fold tree for this problem.  We'll create a new fold tree file (or use foldtree_example/foldtree.txt):
+
+```
+FOLD_TREE EDGE 20 1 -1 EDGE 20 40 -1 EDGE 20 60 1 EDGE 60 41 -1 EDGE 60 80 -1
+```
+
+This puts the root of the foldtree near the centre of mass of the 40-residue first helix: residue 20.  Child chains run from residue 20 back to residue 1 and forward to residue 40.  There is then a jump (rigid-body transform) from residue 40 to residue 60, which is in the middle of the second helix (which is residues 41 through 80).  Child chains then run from residue 60 back to residue 41 and forward to residue 80.
+
+> **It is often advantageous for fold trees to have chain roots near the centre of mass of a chain (though there are exceptions to this).**
+
+We now need to modify our script to apply this modified fold tree before calling the minimizer.  As mentioned in the [introductory RosettaScripting tutorial](../rosetta_scripting/README.md), movers are modules that alter a structure (*pose*) in some way that need not involve changing atomic coordinates.  There are special movers available to RosettaScripts that serve only to change the FoldTree.  The [AtomTree](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/Movers/movers_pages/AtomTreeMover) mover serves this purpose.
+
+In the script that we just ran, create a new AtomTree mover, give it a name, and set the "fold\_tree\_file" option to load foldtree_example/foldtree.txt.  Don't forget to add the new mover to the protocols section as well, so that it is actually applied to the pose.
+
+```xml
+...
+	<MOVERS>
+		<AtomTree name="set_foldtree" fold_tree_file="foldtree.txt" />
+		<MinMover name="minimize1" bb="false" chi="true" jump="ALL" tolerance="0.0000001" type="dfpmin" />
+	</MOVERS>
+...
+	<PROTOCOLS>
+		<Add mover="set_foldtree" />
+		<Add mover="minimize1" />
+	</PROTOCOLS>
+...
+```
+
+Now let's run the new script (provided as foldtree_example/minimize2.xml, if you didn't modify the original script):
+
+```bash
+$> cp foldtree_example/minimize2.xml .
+$> cp foldtree_example/foldtree.txt .
+$> cp foldtree_example/foldtree_example.pdb .
+$> <path_to_Rosetta_directory>/main/source/bin/rosetta_scripts.default.linuxgccrelease -in:file:s foldtree_example.pdb -parser:protocol minimize2.xml -out:prefix min2_
+```
+
+This time, the minimzation has worked as expected: the chains move apart a bit, but don't rotate much.  (The original position is shown in grey in the image below):
+
+![Proper minimization after properly setting up the fold tree.](foldtree_example_3.png)
 
 ## Nesting movers
 
