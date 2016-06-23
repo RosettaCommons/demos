@@ -6,6 +6,14 @@ import os
 import sys
 import shutil
 demos = []
+approved_keywords = []
+approved_keywords.append("KEYWORDS:")
+keywords = open(sys.argv[2], 'r')
+for line in keywords:
+	if not(line.startswith("#")):
+		tokens = line.split()
+		if(len(tokens) > 0):
+			approved_keywords.append(tokens[0])
 for root, directories, filenames in os.walk(sys.argv[1]):
 	for filename in filenames:
 		if filename.endswith(".md") and not(filename.endswith("Home.md")):
@@ -18,6 +26,10 @@ for demoname in demos:
 			tokens = line.split()
 			if(len(tokens)>2):
 				has_keywords = True
+				for keyword in tokens:
+					if keyword not in approved_keywords:
+						print str(demoname) + " has unapproved keyword "+ keyword
+						os._exit(1)
 	if not(has_keywords):
 		print str(demoname)  +" has no keywords!"
 		os._exit(1)
