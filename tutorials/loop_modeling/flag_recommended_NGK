@@ -8,3 +8,4 @@
 -loops:outer_cycles 5
 -ex1
 -ex2
+-nstruc 500 #can be more
