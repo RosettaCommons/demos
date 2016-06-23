@@ -61,11 +61,11 @@ As mentioned above, constraints are a way to make Rosetta's scores reflect some 
 
 To demonstrate this, run
 
-	$>../../../main/source/bin/relax.default.linuxclangrelease -s 4eq1.pdb -out:suffix _unconstrained @general_relax_flags
+	$>../../../main/source/bin/relax.default.linuxclangrelease -s 4eq1.pdb -out:suffix _unconstrained -ignore_unrecognized_res @general_relax_flags
 
 and 
 
-	$>../../../main/source/bin/relax.default.linuxclangrelease -s 4eq1.pdb -out:suffix _constrained @general_relax_flags @constraint_flags
+	$>../../../main/source/bin/relax.default.linuxclangrelease -s 4eq1.pdb -out:suffix _constrained -ignore_unrecognized_res @general_relax_flags @constraint_flags
 
 You should see that, while the rest of each subunit moves, the N-terminus of each subunit moves very little relative to residue 423, as per the constraints we entered. (You may verify this more rigorously by measuring the distance from residue 356 to residue 423 on the other subunit.) As mentioned previously in the Relax tutorial, if we wished to prevent any of the amino acids from moving particularly far from their starting position, we could use the option
 	

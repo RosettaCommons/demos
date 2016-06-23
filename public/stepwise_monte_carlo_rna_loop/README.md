@@ -23,10 +23,10 @@ $> <path-to-Rosetta>/main/source/bin/stepwise.default.linuxgccrelease -in:file:f
 ```
 Currently, we are mainly using a scorefunction with a more stringent torsional and repulsive potential, enabled by flags `-score:rna_torsion_potential RNA11_based_new -chemical::enlarge_H_lj`. 
 
-To get out models (here from a test case)
+To get out models (here from a test case). You can see one example of structure in 1zih_RNA.pdb in the rosetta_inputs directory.
 
 ```
-$> <path-to-Rosetta>/main/source/bin/extract_pdbs.default.linuxgccrelease -silent rosetta_inputs/swm_rebuild_small.out 
+$> <path-to-Rosetta>/main/source/bin/extract_pdbs.default.linuxgccrelease -silent rosetta_inputs/swm_rebuild.out 
 ```
 
 (Or use extract_lowscore_decoys.py which can be installed via tools/rna_tools/.)
