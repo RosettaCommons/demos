@@ -1,6 +1,5 @@
 #Core Rosetta Concepts
 KEYWORDS: CORE_CONCEPTS GENERAL
-
 Author: Frank Teets(teetsf@gmail.com), Parisa Hosseinzadeh (parisah@uw.edu)
 
 Jun 23 2016

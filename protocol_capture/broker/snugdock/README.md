@@ -1,6 +1,6 @@
 SnugDock Protocol Capture
 =========================
-
+KEYWORDS: DESIGN DOCKING
 This protocol runs our snugdock-inspired antibody docking protocol. It uses 
 fragment insertion instead of normal loop modeling, but is otherwise very 
 similar to the orginal.

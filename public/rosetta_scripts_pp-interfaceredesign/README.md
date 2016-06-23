@@ -1,13 +1,15 @@
 Protein protein interface design using rosetta scripts
 ======================================================
 
-KEYWORDS: SCRIPTING_INTERFACES INTERFACES DESGIN
+KEYWORDS: SCRIPTING_INTERFACES INTERFACES DESIGN
 
 This demo has example script to show how a simple protien protein interface design works. The script is placed in the scripts directory and the input odb is in the inputs directory. Example output files are provided in the example_outputs directory.
 
 To run the script, use:
+
+(`$ROSETTA3`= path-to-Rosetta/main/source)
 ```
-$> <path-to-Rosetta>/main/source/bin/rosetta_scripts.default.linuxgccrelease @flags
+$> $ROSETTA3/bin/rosetta_scripts.default.linuxgccrelease @flags
 ```
 
 Please note that in your system, depending on the compilation mode, you may need to change the extensions in the executable.

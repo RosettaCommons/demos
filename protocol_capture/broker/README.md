@@ -1,6 +1,6 @@
 Broker Protocol Captures
 ========================
-
+KEYWORDS: DESIGN DOCKING
 This directory contains 3 protocol captures:
 
 * [[domain_insertion|/protocol_capture/broker/domain_insertion/README]]

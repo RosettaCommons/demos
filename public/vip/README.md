@@ -1,6 +1,6 @@
 # Rosetta VIP: Void Indentification and Packing
 
-KEYWORDS: DESIGN STABILITY
+KEYWORDS: DESIGN STABILITY_IMPROVEMENT
 
 This README was written in Feb. 2012, by Jim Havranek (havranek@genetics.wustl.edu).
 
