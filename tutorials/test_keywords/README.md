@@ -11,4 +11,5 @@ The approved keywords can be found in keywords.txt in the demo root directory.  
 
 The following command will test every directory in this type, via integration.py on the test server.
 
-$> python $ROSETTA_DEMOS/check_demos_for_keywords.py ../ $ROSETTA_DEMOS/keywords.txt
+	$> python $ROSETTA_DEMOS/check_demos_for_keywords.py ../ $ROSETTA_DEMOS/keywords.txt
+

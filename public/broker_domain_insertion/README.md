@@ -1,4 +1,4 @@
-Domain Insertion Protocol Capture
+Toplogy Broker - Domain Insertion Protocol Capture
 =================================
 
 KEYWORDS: DESIGN GENERAL
@@ -24,8 +24,8 @@ a very long runtime.
 
 Assuming Rosetta is in your home directory, you run as follows:
     
-    $> tar -xvf frags.tar.gz
+    $ tar -xvf frags.tar.gz
 
-    $> rosetta_scripts.default.linuxgccrelease @flags
+    $ rosetta_scripts.default.linuxgccrelease @flags
 
 where platform and compiler is replaced with your platform and compiler

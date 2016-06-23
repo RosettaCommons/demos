@@ -8,13 +8,13 @@
     <FragmentJumpCM name="jumps" topol_file="1ubqA.top" />
     <RigidChunkCM name="chunk" region_selector="helix" selector="helix"
                   template="1ubqA.pdb" apply_to_template="centroid"  />
-    <AbscriptLoopCloserCM name="closer" fragments="frags/1d3z.frags3.dat.gz" />
+    <AbscriptLoopCloserCM name="closer" fragments="frags/frag3.txt" />
 
     <!-- Define the abinitio mover that will do torsion and beta-straind pairing insertions -->
     <AbscriptMover name="abinitio" cycles=2 >
       <!-- Abscript mover has special macros for defining the usual ab initio fragment movers, since there's three -->
       <!-- and they're very stereotyped. You could use the <Stage> tag syntax to do it, but it's a pain. -->
-      <Fragments large_frags="frags/1d3z.frags9.dat.gz" small_frags="frags/1d3z.frags3.dat.gz" />
+      <Fragments large_frags="frags/frag9.txt" small_frags="frags/frag3.txt" />
       <!-- Add the mover "jumps" (fragment jumps) to stages I through IVb (i.e. all of them) -->
       <Stage ids="I-IVb" >
         <Mover name="jumps" />

@@ -2,8 +2,8 @@
 
 KEYWORDS: UTILITIES GENERAL
 
-Authors: Frank David Teets(teetsf@gmail.com), Jared Adolf-Bryfogle, Kale Kundert 
-
+Authors:  Kale Kundert
+Edited by: Frank David Teets(teetsf@gmail.com), Jared Adolf-Bryfogle
 Adding new demos
 ================
 
@@ -74,7 +74,7 @@ At this point, you can now edit your readme using the online Gollum interface av
 However, only your readme can be maintained in this way.
 You have to use git if you want to make any changes to your demo scripts or input data.
 
-A few days after you push you demo to the `demos` repository, your demo will 
+A few days after you push your demo to the `demos` repository, your demo will 
 become available from this website.  A link to it will automatically be added 
 to the home page under the section indicated by your keywords.
  To make your demo easier to find, spend a few minutes browsing the 

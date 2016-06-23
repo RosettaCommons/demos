@@ -30,9 +30,9 @@ Rosetta is not a single program; it is instead built with a large number of exec
 The executables that comprise Rosetta can be run directly by calling them through the terminal directly. These commands are constructed by first indicating the path to the executable you want to run, followed by the flags, options, and input files that dictate how you want the program to execute. 
 As an example, consider the command 
 
-	$> <path_to_Rosetta_directory>/main/source/bin/fixbb.default.linuxgccrelease -s 1ubq.pdb -out:suffix _my_first_rosetta_output @general_fixbb_flags
+	$> $ROSETTA3/bin/fixbb.default.linuxgccrelease -s 1ubq.pdb -out:suffix _my_first_rosetta_output @general_fixbb_flags
 
-The first part of this command is the path to and name of the executable we want to run; here, we want to run the executable `fixbb`, located in `<path_to_Rosetta_directory>/main/source/bin`, which will attempt to design residues onto a peptide backbone provided to it. On your platform, the executable may not be named `fixbb.linuxgccrelease`; to find the version of the executable that will run, navigate to `<path_to_Rosetta_directory>/main/source/bin`, type `ls fixbb`, and then hit _Tab_ to display the versions of `fixbb` that have been compiled on your system. This works for any other executable as well.
+The first part of this command is the path to and name of the executable we want to run; here, we want to run the executable `fixbb`, located in `$ROSETTA3/bin`, which will attempt to design residues onto a peptide backbone provided to it. On your platform, the executable may not be named `fixbb.linuxgccrelease`; to find the version of the executable that will run, navigate to `$ROSETTA3/bin`, type `ls fixbb`, and then hit _Tab_ to display the versions of `fixbb` that have been compiled on your system. This works for any other executable as well.
 
 The second part, `-s 1ubq.pdb`, is an option, or _flag_, that modifies the execution of the program. In this case, the `-s` option indicates that we want to run `fixbb` on a single structure; the following `1ubq.pdb` is simply the filename of that structure. An alternative to the `-s` option is `-l`, which takes as its argument a newline-delimited list of input files and is broadly conceptually equivalent to running multiple `-s` commands in sequence. Other common options include:
 
@@ -49,14 +49,14 @@ In order to demonstrate how Rosetta exectuables may be run and their execution c
 
 Now run 
 
-	$> <path_to_Rosetta_directory>/main/source/bin/fixbb.default.linuxgccrelease -s 1ubq.pdb -out:suffix _my_second_rosetta_output @general_fixbb_flags
+	$> $ROSETTA3/bin/fixbb.default.linuxgccrelease -s 1ubq.pdb -out:suffix _my_second_rosetta_output @general_fixbb_flags
 
 from within the tutorials directory you just created and observe that the program generates an output pdb file(`1ubq_0001.pdb`), a score file (`score.sc`) and a log file (`output`).
 Try running the following commands:
 
-	$> <path_to_Rosetta_directory>/main/source/bin/fixbb.default.linuxgccrelease -s 1ubq.pdb -nstruct 10 -out:suffix _my_third_rosetta_output @general_fixbb_flags
+	$> $ROSETTA3/bin/fixbb.default.linuxgccrelease -s 1ubq.pdb -nstruct 10 -out:suffix _my_third_rosetta_output @general_fixbb_flags
 	
-	$> <path_to_Rosetta_directory>/main/source/bin/fixbb.default.linuxgccrelease -s 1ubq.pdb -out:suffix _my_fourth_rosetta_output -ignore_unrecognized_residue @general_fixbb_flags
+	$> $ROSETTA3/bin/fixbb.default.linuxgccrelease -s 1ubq.pdb -out:suffix _my_fourth_rosetta_output -ignore_unrecognized_residue @general_fixbb_flags
 
 The first command should produce ten output files; the second should run similarly, albeit not identically, to the command provided at the start of this tutorial.
 Also, try making a list of PDBs named `pdblist` including 1ubq and 1qys in the following format:
@@ -66,7 +66,7 @@ Also, try making a list of PDBs named `pdblist` including 1ubq and 1qys in the f
 	
 and running
 
-	$> <path_to_Rosetta_directory>/main/source/bin/fixbb.default.linuxgccrelease -l pdblist
+	$> $ROSETTA3/bin/fixbb.default.linuxgccrelease -l pdblist
 
 ##Running Rosetta via RosettaScripts
 
@@ -78,7 +78,7 @@ Running RosettaScripts is similar to running an executable directly from the com
 
 saving it, and running it with 
 
-	$> <path_to_Rosetta_directory>/main/source/bin/rosetta_scripts.default.linuxgccrelease -parser:protocol fixbb_script.xml. You should see output similar to the command run at the start of this tutorial.
+	$> $ROSETTA3/bin/rosetta_scripts.default.linuxgccrelease -parser:protocol fixbb_script.xml. You should see output similar to the command run at the start of this tutorial.
 
 ##Running Rosetta via PyRosetta
 
@@ -146,10 +146,10 @@ Because Rosetta is stochastic software, it is often necessary to perform statist
 # Where to Find Things In Rosetta
 
 ###Binaries
-The Rosetta executables are all symlinked into `<path_to_Rosetta_directory>/main/source/bin` and may be run from there; the actual executables are compiled into `<path_to_Rosetta_directory>/main/source/build`, but should be run from `source/bin` to ensure robustness to updates.
+The Rosetta executables are all symlinked into `$ROSETTA3/bin` and may be run from there; the actual executables are compiled into `$ROSETTA3/build`, but should be run from `source/bin` to ensure robustness to updates.
 
 ###Source Code
-The Rosetta source code exists in `<path_to_Rosetta_directory>/main/source/src`, but does not contain content required for non-developer users of Rosetta.
+The Rosetta source code exists in `$ROSETTA3/src`, but does not contain content required for non-developer users of Rosetta.
 
 ###Weights files
 Rosetta weights files (.wts files), used to parameterize the scorefunction weights, are in `<path_to_Rosetta_directory>//main/database/scoring/weights` .
@@ -162,4 +162,4 @@ Parameter files are in the corresponding subdirectories of `<path_to_Rosetta_dir
 The tools directory, `<path_to_Rosetta_directory>/tools`, contains a number of useful tools for manipulating Rosetta inputs and outputs.
 
 ###Scripts
-RosettaScripts and useful python scripts may be found in `<path_to_Rosetta_directory>/main/source/scripts`.
+RosettaScripts and useful python scripts may be found in `$ROSETTA3/scripts`.
