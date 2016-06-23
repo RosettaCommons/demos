@@ -202,7 +202,7 @@ The structure should look like something like this:
 
 Now, based on the things you learnt from the [symmetry tutorial](../symmetry/symmetry.md), try to see whether you can get other types of symmetric structures. An example of a C7 symmetric ubiquitin is provided for you in outputs/symm_test_c7.pdb. The C7.symm file is also in the input directory for you to use, as well as a slightly different input PDB file (with the ubiquitin translated away from the axis a bit), called symm_test_translated.pdb. The result should look like this:
 
-![figure of C7](https://github.com/RosettaCommons/demos/blob/hssnzdh2/parisa_XRW/tutorials/symmetry/figures/C7.png)
+![figure of C7](symmetry_example/figures/C7.png)
 
 The commands to use the preset files are:
 
