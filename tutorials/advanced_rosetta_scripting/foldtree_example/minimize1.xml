@@ -1,0 +1,20 @@
+<ROSETTASCRIPTS>
+	<SCOREFXNS>
+		<tala weights="talaris2014.wts" />
+	</SCOREFXNS>
+	<RESIDUE_SELECTORS>
+	</RESIDUE_SELECTORS>
+	<TASKOPERATIONS>
+	</TASKOPERATIONS>
+	<FILTERS>
+	</FILTERS>
+	<MOVERS>
+		<MinMover name="minimize1" bb="true" chi="true" jump="ALL" />
+	</MOVERS>
+	<APPLY_TO_POSE>
+	</APPLY_TO_POSE>
+	<PROTOCOLS>
+		<Add mover="minimize1" />
+	</PROTOCOLS>
+	<OUTPUT scorefxn="tala" />
+</ROSETTASCRIPTS>
