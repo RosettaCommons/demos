@@ -1,4 +1,4 @@
-# RNA Design
+# Fixed backbone design of RNA
 
 KEYWORDS: NUCLEIC_ACIDS DESIGN RNA 
 

@@ -1,4 +1,4 @@
-# Oop Design
+# Oop Design: Design with oligooxopiperazine helix mimetics
 
 KEYWORDS: PEPTIDES DESIGN
 

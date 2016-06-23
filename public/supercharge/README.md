@@ -1,4 +1,4 @@
-# Supercharge
+# Supercharge: Reengineer proteins for high net surface charge
 
 KEYWORDS: DESIGN GENERAL
 

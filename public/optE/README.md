@@ -1,6 +1,6 @@
-# optE
+# optE: Refit Rosetta reference energies
 
-KEYWORDS: STRUCTURE_PREDICTION UTILITIES
+KEYWORDS: UTILITIES GENERAL
 
 This demo contains the input files and command lines
 necessary to refit the reference energies for the

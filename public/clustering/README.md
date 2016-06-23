@@ -1,5 +1,5 @@
-Clustering Demo
-===============
+Clustering: Group similar decoys with the Rosetta cluster application.
+======================================================================
 
 KEYWORDS: ANALYSIS GENERAL
 

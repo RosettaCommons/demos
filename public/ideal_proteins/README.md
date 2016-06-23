@@ -1,5 +1,5 @@
-Idealize Demo
-=============
+Design of Proteins with Ideal Topologies
+========================================
 
 KEYWORDS: DESIGN GENERAL
 

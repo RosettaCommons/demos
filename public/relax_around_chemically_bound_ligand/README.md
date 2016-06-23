@@ -1,4 +1,4 @@
-# Relax Around Chemically Bound Ligand
+# Relax Around A Chemically Bound Ligand
 
 KEYWORDS: LIGANDS INTERFACES STRUCTURE_PREDICTION
 

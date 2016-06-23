@@ -1,4 +1,4 @@
-# Predict eglinC DDGs
+# Predict DDGs for the eglinC protein
 
 KEYWORDS: DOCKING ANALYSIS
 
