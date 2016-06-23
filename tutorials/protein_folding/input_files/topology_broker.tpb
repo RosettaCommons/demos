@@ -1,3 +1,0 @@
-CLAIMER SequenceClaimer
-FILE ./2LZMA.fasta
-END_CLAIMER
