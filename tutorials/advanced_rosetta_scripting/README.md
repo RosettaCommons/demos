@@ -2,7 +2,7 @@
 ======================================
 KEYWORDS: SCRIPTING_INTERFACES CORE_CONCEPTS
 
-Tutorial by Vikram K. Mulligan (vmullig@uw.edu).  Created on 23 June 2016 as part of the 2016 Documentation XRW.
+Tutorial by Vikram K. Mulligan (vmullig@uw.edu), Rocco Moretti (rmorettiase@gmail.com), Parisa Hosseinzadeh (parisah@uw.edu), and Kristen Blacklock (kristin.blacklock@rutgers.edu).  Created on 23 June 2016 as part of the 2016 Documentation XRW.
 
 ## Goals
 
@@ -144,7 +144,7 @@ Now, let's go to the ```<MOVERS>``` section. Here we added a SetupForSymmetry mo
 ...
 ```
 
-This is probably the most important line! Here, you are telling Rosetta that it should take an asymmetric pose and make it symmetric, applying the symmetry rules listed in the C3.symm file. It will replicate the asymmetric unit to generate the symmetric structure based on the given rules. It will also generate an appropriate fold tree based on the corresponding symmetry definition.  Rosetta retains an awareness of symmetry in the pose object that this mover produces, and this allows the program to make sure that movements and scoring are handled correctly. You can use the [ExtractAsymmetricUnit mover](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/Movers/movers_pages/ExtractAsymmetricUnitMover) to do the reverse and extract the asymmetric subunit from a symmetric pose.
+This is probably the most important line! Here, you are telling Rosetta that it should take an asymmetric pose and make it symmetric, applying the symmetry rules listed in the C3.symm file. It will replicate the asymmetric unit to generate the symmetric structure based on the given rules. It will also generate an appropriate fold tree based on the corresponding symmetry definition.  Rosetta retains an awareness of symmetry in the pose object that this mover produces, and this allows the program to make sure that movements and scoring are handled correctly. You can use the [ExtractAsymmetricUnit mover](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/Movers/movers_pages/ExtractAsymmetricUnitMover) to do the reverse and extract the asymmetric subunit from a symmetric pose.  Note that there exist other symmetry setup movers, too, such as the [DetectSymmetry mover](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/Movers/movers_pages/DetectSymmetryMover), which sets up internal symmetry rules from an already-symmetric input pose based on the geometry.
 
 > **Symmetry information is retained in the pose, and used to ensure that future pose manipulations respect and preserve the symmetry.**
 
@@ -212,6 +212,15 @@ $> cp symmetry_example/inputs/C7.symm .
 $> cp symmetry_example/inputs/symm_test_translated.pdb .
 $> $ROSETTA3/bin/rosetta_scripts.default.linuxgccrelease -parser:protocol symmetry_c7.xml -in:file:s symm_test_translated.pdb -out:prefix c7_
 ```
+
+This tutorial has not begun to explore the full complexity of the Rosetta symmetry machinery.  The main points to take home, here, are:
+
+* Symmetric poses must be set up in Rosetta using an appropriate mover.  This is true even if the input geometry is symmetric: Rosetta needs to use a mover to gain an awareness of the symmetry of the input pose ([DetectSymmetry mover](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/Movers/movers_pages/DetectSymmetryMover)), or to make an asymmetric input pose symmetric ([SetupForSymmetry mover](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/Movers/movers_pages/SetupForSymmetryMover)).
+* Once set up, a symmetric pose *remains* symmetric unless de-symmetrized with an appropriate mover.
+* Symmetric poses can be manipulated by movers that alter the geometry but preserve the symmetry.  Many, but not all, movers in Rosetta are either symmetry-compatible, or have symmetry-compatible versions.
+* Symmetric poses are handled much like asymmetric poses, in that series of movers and filters can be applied to them.  They just require an initial setup step.
+
+As a final point, it's worth mentioning that the most convenient way in which to set up a fold tree for a symmetric pose is by setting up the fold tree for the asymmetric unit (as described in the previous section), *then* making the pose symmetric with the SetupForSymmetry mover.
 
 ## Nesting movers and looping
 
