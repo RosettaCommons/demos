@@ -470,7 +470,7 @@ Let's consider a more complicated (and more realistic) usage case -- one that de
 |---|---|---|
 | **Intended purpose** | Setting packer behaviours. (*e.g.* Disabling design, limiting allowed residue idenities at certain sequence positions, enabling extra rotamers, telling the packer to include the input rotamer, *etc.*).  Note that, because TaskOperations predate ResidueSelectors, there are some older Rosetta modules that use TaskOperations as a means of selecting residues, though this is being phased out. |  Selecting subsets of residues in a pose based on rules, then passing the subsets as inputs to other Rosetta modules.  |
 | **Rule for combining** | Commutativity: applying TaskOperation A, B, and C produces the same effect regardless their order. | Boolean operations: ResidueSelectors produce selections that can be combined to produce the union (OR) or intersection (AND) of the set, or which can be inverted (NOT).  Nested Boolean operations allow very complicated combination rules. |
-| **Can be passed to** | Movers that invoke the packer | Many movers, filters, and TaskOperations, and even to other ResidueSelectors. |
+| **Can be passed to** | Movers that invoke the packer.  (Certain other, older Rosetta modules also accept TaskOperations as a means of selecting residues.  This functionality pre-dates ResidueSelectors, and will at some point be deprecated completely.) | Many movers, filters, and TaskOperations, and even to other ResidueSelectors. |
 
 Let's start by defining three ResidueSelectors to select residues based on burial, in core, boundary, and surface layers.  Of the [available ResidueSelectors](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/TaskOperations/taskoperations_pages/ResidueSelectors), the [LayerSelector](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/TaskOperations/taskoperations_pages/ResidueSelectors#residueselectors_conformation-dependent-residue-selectors_layerselector) is the one that will allow us to select residues based on burial (with details of the algorithm available from the [help documentation](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/TaskOperations/taskoperations_pages/ResidueSelectors#residueselectors_conformation-dependent-residue-selectors_layerselector)).  Start a new RosettaScript, define a basic scorefunction, and then define three LayerSelectors in the RESIDUE_SELECTORS section as follows:
 
@@ -594,7 +594,9 @@ $> <path_to_Rosetta_directory>/main/source/bin/rosetta_scripts.default.linuxgccr
 ```
 
 This time, if you examine the output, there are several things to note:
+
 1.  The core is now entirely phenylalanine and tryptophan.  This is because canonical residue types can only be turned *off*; once off, they can't be turned back *on*.  This is the AND-commutativity of TaskOperations at work: the packer only designs with a residue type if TaskOperation A *and* TaskOperation B permit it.  Since the core\_resfile TaskOperation prohibits ASP, GLU, LYS, and ARG, and the core\_resfile2 TaskOperation prohibits ALA, MET, ILE, LEU, TYR, and VAL, the only amino acids permitted are TRP and PHE.
+
 2.  Only the core has been designed.  The behaviours of restricting to repacking and preventing repacking override the allowed amino acid types for design, and obey OR-commutativity: if TaskOperation A *or* TaskOperation B indicates that a position should be restricted to repacking or prevented from repacking, then the combination of TaskOperations also results in that residue being restricted to/prevented from repacking.
 
 > **The commutativity of TaskOperations is very important.  Applying A, B, and C is the same as applying C, B, and A.  One must always think carefully about what one is prohibiting or enabling when using combinations of TaskOperations.**
@@ -643,7 +645,7 @@ If you compare the output to the input structure, you'll find that the core has 
 
 ## Filters
 
-* *Filter runs based on a productive conformation (e.g. a salt-bridge)*
+* *Filter runs based on a productive conformation (*e.g.* a salt-bridge)*
 
 Because Rosetta runs are typically stochastic, early stages will often sample conformations which will not be productive. That is, the randomness introduced by initial movers will result in conformations which will never lead to useful final models. To speed up the protocol, it is sometimes helpful to abandon some samples before the final stages of sampling when early stages result in conformations which are known to be unproductive. To facilitate this, RosettaScripts provides Filters, which can stop a job based on measured properties of the protein structure, allowing the rosetta\_scripts application to continue to the next job (*i.e.* the next replicate of the protocol with the current input or the next input structure).
 
