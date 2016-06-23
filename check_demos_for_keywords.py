@@ -40,7 +40,7 @@ for demoname in demos:
 				for keyword in tokens:
 					if keyword not in approved_keywords:
 						print str(demoname) + " has unapproved keyword "+ keyword
-						os._exit(1)
+#						os._exit(1)
 	if not(has_keywords):
 		print str(demoname)  +" has no keywords!"
-		os._exit(1)
+#		os._exit(1)

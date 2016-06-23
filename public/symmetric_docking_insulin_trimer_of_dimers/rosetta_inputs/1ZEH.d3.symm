@@ -3,7 +3,7 @@ subunits 6
 recenter
 number_of_interfaces  4
 E = 6*VRT0001 + 6*(VRT0001:VRT0002) + 3*(VRT0001:VRT0004) + 3*(VRT0001:VRT0005) + 3*(VRT0001:VRT0006)
-anchor_residue COM
+anchor_residue 17
 virtual_transforms_start
 start -1,0,0 0,1,0 0,0,0
 rot Rz_angle 120.0

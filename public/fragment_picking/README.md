@@ -22,7 +22,9 @@ should have a header with the string "VFORMAT"
 
 * Run the picker like this:
 
- `$> <path-to-Rosetta>/main/source/bin/fragment_picker.linuxgccrelease @BestFragmentsProtocol/flags -in::file::vall $ROSETTA3/main/database/sampling/small.vall.gz ` 
+```
+$> $ROSETTA3/bin/fragment_picker.linuxgccrelease @BestFragmentsProtocol/flags -in::file::vall $ROSETTA3_DB/sampling/small.vall.gz
+```
 
   Output:  
   
@@ -32,7 +34,7 @@ should have a header with the string "VFORMAT"
 
 * Now get the quality of these 3-mer fragments:
 
-        $> <path-to-Rosetta>/main/source/bin/r_frag_quality.linuxgccrelease -in:file:native BestFragmentsProtocol/input_files/2jsvX.pdb -f BestFragmentsProtocol/output_files/frags.200.3mers
+        $> $ROSETTA3/bin/r_frag_quality.linuxgccrelease -in:file:native BestFragmentsProtocol/input_files/2jsvX.pdb -f BestFragmentsProtocol/output_files/frags.200.3mers
 
   Output:
   * frag_qual.dat
@@ -66,12 +68,12 @@ The various subdirectories of this demo serve as repository for examples:
 You can test them:
 
 ```
-$> <path-to-Rosetta>/main/source/bin/fragment_picker.linuxgccrelease @NullFragments/flags -in::file::vall $ROSETTA3/main/database/sampling/small.vall.gz
-$ <path-to-Rosetta>/main/source/bin/fragment_picker.linuxgccrelease @fragment_picking_for_flexible_loop_design/flags -in::file::vall $ROSETTA3/main/database/sampling/small.vall.gz
-$> <path-to-Rosetta>/main/source/bin/fragment_picker.linuxgccrelease @fragment_picking_torsion_class_score/flags -in::file::vall $ROSETTA3/main/database/sampling/small.vall.gz
-$> <path-to-Rosetta>/main/source/bin/fragment_picker.linuxgccrelease @fragment_picking_with_psi_jufo_sam_L1_quota/flags -in::file::vall $ROSETTA3/main/database/sampling/small.vall.gz
-$> <path-to-Rosetta>/main/source/bin/fragment_picker.linuxgccrelease @fragment_picking_with_quota/flags -in::file::vall $ROSETTA3/main/database/sampling/small.vall.gz
-$> <path-to-Rosetta>/main/source/bin/fragment_picker.linuxgccrelease @fragment_picking_with_quota_and_restraints/flags -in::file::vall $ROSETTA3/main/database/sampling/small.vall.gz
+$> $ROSETTA3/bin/fragment_picker.linuxgccrelease @NullFragments/flags -in::file::vall $ROSETTA3_DB/sampling/small.vall.gz
+$ $ROSETTA3/bin/fragment_picker.linuxgccrelease @fragment_picking_for_flexible_loop_design/flags -in::file::vall $ROSETTA3_DB/sampling/small.vall.gz
+$> $ROSETTA3/bin/fragment_picker.linuxgccrelease @fragment_picking_torsion_class_score/flags -in::file::vall $ROSETTA3_DB/sampling/small.vall.gz
+$> $ROSETTA3/bin/fragment_picker.linuxgccrelease @fragment_picking_with_psi_jufo_sam_L1_quota/flags -in::file::vall $ROSETTA3_DB/sampling/small.vall.gz
+$> $ROSETTA3/bin/fragment_picker.linuxgccrelease @fragment_picking_with_quota/flags -in::file::vall $ROSETTA3_DB/sampling/small.vall.gz
+$> $ROSETTA3/bin/fragment_picker.linuxgccrelease @fragment_picking_with_quota_and_restraints/flags -in::file::vall $ROSETTA3_DB/sampling/small.vall.gz
 ```` 
 
 The fragment files can be found in <whatever version you ran>/output_files. There are example outputs already. The newly generated ones will contains ".200". So, you can check whether it worked.
