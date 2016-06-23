@@ -5,19 +5,27 @@
 import os
 import sys
 import shutil
+import argparse
+
+parser = argparse.ArgumentParser(description='check demos for keywords')
+parser.add_argument('working_directory', type = str, help = "root directory of the file system to be checked for keywords")
+parser.add_argument('approved_keyword_list', type = str, help ="list of approved keywords")
+args = parser.parse_args()
 demos = []
 approved_keywords = []
 approved_keywords.append("KEYWORDS:")
-keywords = open(sys.argv[2], 'r')
+keywords = open(args.approved_keyword_list, 'r')
 for line in keywords:
 	if not(line.startswith("#")):
 		tokens = line.split()
 		if(len(tokens) > 0):
 			approved_keywords.append(tokens[0])
-for root, directories, filenames in os.walk(sys.argv[1]):
+
+for root, directories, filenames in os.walk(args.working_directory):
 	for filename in filenames:
-		if filename.endswith(".md") and not(filename.endswith("Home.md")):
+		if filename.endswith(".md") and not (root == args.working_directory):
 			demos.append(os.path.join(root, filename))
+
 for demoname in demos:
 	has_keywords = False
 	current_demo = open(demoname, 'r')
