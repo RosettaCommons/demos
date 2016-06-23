@@ -23,15 +23,15 @@ Rosetta is a powerful tool that has been shown to be successful in many applicat
 
 ##### Scoring and scoring-dependent biases
 
-The current Rosetta score, talaris 2014, has its own limitations, some of which are listed below:
+The current Rosetta score, talaris 2014, has its own limitations (see the list below). while these are not major, they can occasionaly result in certain behaviors that can affect the quality of the final ouput. 
 
 - preference to aromatics (over aliphatic or sulfur-containing (=MET))
 - preference to hbonding over other electrostatic interactions
-- related to above, electrostatic repulsion not strong enough 
-- solvation is not penalizing enough on burried polars 
-- context dependence of electrostatic interaction not described well 
+- weak electrostatic repulsion term related to above emntioned terms 
+- weak penalty on solvation of burried polars 
+- poor descrption of context dependence of electrostatic interaction
 - preference to helice (can be observed from structure prediction)
-- description of pre-Pro / cis-Pro preferences
+- poor description of pre-Pro / cis-Pro preferences
 - wrong rotameric preferences in certain AAs (this is somewhat app dependent, but can be poor for MET, ASP, ASN,TRP)
 
 In many of the examples in the tutorials, we sort our results based on the final score. These scores are general, and a naive sort by score alone may return structures that are not optimal due to the above mentioned limitations in the score funtion. One classic example of this is the "all ALA" helix designs. Another example is the design of structures with many aromatic rings or with highly charged surfaces. This is because Rosetta tries to maximize the final score by adding this favorable interactions which are not possible in real world, or are not desirable for later experimental analysis (highly charged surfaces make crystallography hard, Ala residues cannot provide any special interactions despite being highly favored for helical regions).
