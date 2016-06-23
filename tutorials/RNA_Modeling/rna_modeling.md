@@ -1,5 +1,6 @@
 # RNA 3D Modeling Protocol
 Tutorial by Fang-Chieh Chou, Dec. 2015.
+
 Adapted and edited by Kristin Blacklock, Jun 22 2016.
 
 ## Setup
@@ -31,9 +32,13 @@ rna_helix.py -h
 ```
 It should print a help message for the `rna_helix.py` application.
 
+## Threading
+
 ### Creating the input files necessary for Threading
 
-#### Create a fasta file containing the sequence
+#### FASTA file
+
+
 
 Example:
 ```bash
@@ -86,7 +91,7 @@ Command line example:
 ```bash
 $> rna_thread.default.linuxgccrelease -fasta fasta.aligned -s 2gis_cut.pdb -o core.pdb
 ```
-This application mutates the sequence in `2gis_cut.pdb` to the SAM I-IV riboswitch identities that they align to in the fasta.aligned file. The output of this command should be new threaded model named `core.pdb`.
+This application mutates the nucleotides in `2gis_cut.pdb` to the SAM I-IV riboswitch identities that they align to in the fasta.aligned file. The output of this command should be new threaded model named `core.pdb`.
 
 Open the output pdb file in PyMOL and make sure it looks correct. The new sequence should be `CACGGGAC`.
 
