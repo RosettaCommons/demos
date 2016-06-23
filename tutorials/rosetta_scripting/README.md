@@ -451,7 +451,7 @@ Down below, in the MOVERS section, let's tell the PackRotamersMover that we crea
 ...
 ```
 
-Now let's run this script (or the inputs/repack_only.xml file).  This should generate 6134 rotamers, and take on the order of 10 seconds to run:
+Now let's run this script (or the inputs/repack_only.xml file).  This should generate 2305 rotamers, and take on the order of a second or two to run:
 
 ```bash
 $> cp inputs/repack_only.xml .
@@ -550,19 +550,21 @@ The final file is provided as inputs/design_core.xml.  You can run this with:
 
 ```bash
 $> cp inputs/design_core.xml .
-$> cp core_resfile.txt .
+$> cp inputs/core_resfile.txt .
 $> <path_to_Rosetta_directory>/main/source/bin/rosetta_scripts.default.linuxgccrelease -s 1ubq.pdb -parser:protocol design_core.xml -out:prefix design_core_
 ```
 
 Open the output.  You might notice that relatively few core residues have changed: Rosetta finds an optimal sequence very similar to the input, as we might expect.  It's also worth noting this line in the output log:
 
 ```
-core.pack.pack_rotamers: built 8928 rotamers at 50 positions.
+core.pack.pack_rotamers: built 4605 rotamers at 29 positions.
 ```
 
-In comparison, the repacking job that we ran earlier, with no design, generated over 6000 rotamers.  This illustrates an important point: although design is normally a far more computationally expensive task than simple repacking without design, clever use of TaskOperations can reduce the complexity of the problem considerably.  A design job that's set up cleverly can involve comparable computational complexity to a naïve repacking job without design.
+In comparison, the repacking job that we ran earlier, with no design, generated over 2000 rotamers.  This illustrates an important point: although design is normally a far more computationally expensive task than simple repacking without design, clever use of TaskOperations can reduce the complexity of the problem considerably.  A design job that's set up cleverly can involve comparable computational complexity to a naïve repacking job without design.
 
 > **Pay careful attention to packer setup.  A poorly-conceived packer job can be prohibitively computationally expensive, while a well-designed one can be very quick to execute.**
+
+The task of writing and running a naïve design script, that designs with all 20 amino acid residue types at all positions, to compare rotamers generated and running time, is left as an exercise for the reader.  (If you try this, you'll find that the naïve design run is much, much slower than the one controlled carefully with ResidueSelectors and TaskOperations!)
 
 #### Understanding commutativity of TaskOperations
 
@@ -589,7 +591,7 @@ Run the modified script (or use inputs/design_core2.xml):
 
 ```bash
 $> cp inputs/design_core2.xml .
-$> cp core_resfile2.txt .
+$> cp inputs/core_resfile2.txt .
 $> <path_to_Rosetta_directory>/main/source/bin/rosetta_scripts.default.linuxgccrelease -s 1ubq.pdb -parser:protocol design_core2.xml -out:prefix design_core2_
 ```
 
