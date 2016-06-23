@@ -108,7 +108,9 @@ This time, the minimzation has worked as expected: the chains move apart a bit, 
 
 ![Proper minimization after properly setting up the fold tree.](foldtree_example_3.png)
 
-## Nesting movers
+## Nesting movers and looping
+
+### Scripting a simple loop
 
 * *Loop over sidechain optimization until the score doesn't improve.*
 
@@ -193,6 +195,14 @@ $> <path_to_Rosetta_directory>/main/source/bin/rosetta_scripts.default.linuxgccr
 ```
 
 This script will take a bit longer to run (about three or four minutes).  If you look at the tracer output, you should be able to see the application of the IteratedConvergence, and how the RotamerTrialsMinMover is repeated multiple times.
+
+This is a relatively trivial example, since we're applying it to an input structure that nature has already heavily optimized; if you look at the output, you'll see that Rosetta finds few new mutations, mainly finding only rotamer substitutions of the same amino acid.  However, it illustrates how a loop can be scripted using a dedicated mover.
+
+Let's look at a more realistic example, now, and a more powerful, and commonly-used, type of loop: a Monte Carlo search.
+
+### Scripting a Monte Carlo search of conformation and sequence space
+
+TODO -- CONTINUE HERE.
 
 ## Variable substition: adding variables to scripts
 
