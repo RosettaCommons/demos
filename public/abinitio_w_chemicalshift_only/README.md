@@ -1,5 +1,6 @@
 AbInitio Structure Prediction Using Chemical-Shift Generated Fragments
 ======================================================================
+KEYWORDS: STRUCTURE_PREDICTION EXPERIMENTAL_DATA 
 
 Written by Lei Shi.
 Ray Wang drafted the previous version.
@@ -43,9 +44,9 @@ Download chemical shift data from http://www.bmrb.wisc.edu/data_library/summary/
     ```
 
 3. Format data for Rosetta use:  
-Formmatting chemical shift data for TALOS:
+Formmatting chemical shift data for TALOS. The required bmrb2talos script is part of the Rosetta toolbox, downloadable from [The CS Rosetta](http://csrosetta.chemistry.ucsc.edu/downloads/toolbox) web site. The output file is provided here.
     ```
-    $> scripts/bmrb2talos.com starting_inputs/raw.cs.bmrb > rosetta_inputs/cs.talos
+    $ bmrb2talos starting_inputs/raw.cs.bmrb > rosetta_inputs/cs.talos
     ```
 
 4. Generating talos predictions using http://spin.niddk.nih.gov/bax/nmrserver/talosn/ using `rosetta_inputs/cs.talos`.
@@ -56,12 +57,15 @@ Save/copy `t000_.checkpoint` to `rosetta_inputs/`
 
 6. Pick fragments using secondary structure profile and chemical shift data:
     ```
-    $i> ROSETTA3/bin/fragment_picker -in::file::vall $ROSETTA3/main/database/sampling/small.vall.gz -frags::n_frags 200 -frags::frag_sizes 3 9 -frags::sigmoid_cs_A 2 -frags::sigmoid_cs_B 4 -out::file::frag_prefix rosetta_inputs/pick_cs_fragments/frags.score -frags::describe_fragments rosetta_inputs/pick_cs_fragments/frags.fsc.score -frags::scoring::config scripts/scores.score.cfg -in:file:fasta starting_inputs/t000_.fasta -in:file:checkpoint rosetta_inputs/t000_.checkpoint -in:file:talos_cs rosetta_inputs/cs.talos -frags::ss_pred rosetta_inputs/talos_output/predSS.tab talos -in::file::talos_phi_psi rosetta_inputs/talos_output/pred.tab
+    $> ROSETTA3/bin/fragment_picker.default.linuxgccrelease -in::file::vall $ROSETTA3_DB/sampling/small.vall.gz -frags::n_frags 200 -frags::frag_sizes 3 9 -frags::sigmoid_cs_A 2 -frags::sigmoid_cs_B 4 -out::file::frag_prefix rosetta_inputs/pick_cs_fragments/frags.score -frags::describe_fragments rosetta_inputs/pick_cs_fragments/frags.fsc.score -frags::scoring::config scripts/scores.score.cfg -in:file:fasta starting_inputs/t000_.fasta -in:file:checkpoint rosetta_inputs/t000_.checkpoint -in:file:talos_cs rosetta_inputs/cs.talos -frags::ss_pred rosetta_inputs/talos_output/predSS.tab talos -in::file::talos_phi_psi rosetta_inputs/talos_output/pred.tab
     ```
+**IMPORTANT**  
+The *small.vall.gz* used here for fragment picking is only used to speed up the demo. You have to change this to the vall database on your system!  
+
 
 7. Run Rosetta with the fragments chemical shift fragments:
     ```
-    $> $ROSETTA3/bin/AbinitioRelax -in:file:fasta starting_inputs/t000_.fasta -file:frag3 rosetta_inputs/pick_cs_fragments/frags.score.200.3mers -file:frag9 rosetta_inputs/pick_cs_fragments/frags.score.200.9mers -nstruct 1 -abinitio::increase_cycles 0.5 -abinitio::relax -score::weights score13_env_hb -abinitio::rg_reweight 0.5 -abinitio::rsd_wt_helix 0.5 -abinitio::rsd_wt_loop 0.5 -disable_co_filter true -out:file:silent csrosetta.out
+    $> $ROSETTA3/bin/AbinitioRelax.default.linuxgccrelease -in:file:fasta starting_inputs/t000_.fasta -file:frag3 rosetta_inputs/pick_cs_fragments/frags.score.200.3mers -file:frag9 rosetta_inputs/pick_cs_fragments/frags.score.200.9mers -nstruct 1 -abinitio::increase_cycles 0.5 -abinitio::relax -score::weights score13_env_hb -abinitio::rg_reweight 0.5 -abinitio::rsd_wt_helix 0.5 -abinitio::rsd_wt_loop 0.5 -disable_co_filter true -out:file:silent csrosetta.out
     ```
 
 **IMPORTANT**  
