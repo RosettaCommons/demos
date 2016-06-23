@@ -7,10 +7,13 @@ import sys
 import shutil
 import argparse
 
-parser = argparse.ArgumentParser(description='check demos for keywords')
+parser = argparse.ArgumentParser(description='Check all demos of a particular working directory for both having a required keyword \
+	line and that those keywords being part of an approved list')
 parser.add_argument('working_directory', type = str, help = "root directory of the file system to be checked for keywords")
 parser.add_argument('approved_keyword_list', type = str, help ="list of approved keywords")
 args = parser.parse_args()
+
+
 demos = []
 approved_keywords = []
 approved_keywords.append("KEYWORDS:")
