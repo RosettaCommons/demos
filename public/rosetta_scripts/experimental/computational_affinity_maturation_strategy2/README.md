@@ -1,1 +1,2 @@
+KEYWORDS: CORE_CONCEPTS GENERAL
 this is a new (and not very well tested) strategy for doing multicriterion Monte Carlo. The idea is to optimize more than one criterion, e.g., the total score and the binding energy. You select positions in which to introduce random mutations and then you accept these mutations subject to MC on both criteria. Simple and effective. It's a good idea to be as restrictive with the designable positions (and their identities) as possible since sampling can never be complete.

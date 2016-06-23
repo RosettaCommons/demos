@@ -1,7 +1,7 @@
 \pagenumbering{gobble}
 
 #Protein Folding
-
+KEYWORDS: CORE_CONCEPTS STRUCTURE_SIMULATION
 **Bold text means that these files and/or this information is provided.**
 
 *Italicized text means that this material will NOT be conducted during the workshop.*

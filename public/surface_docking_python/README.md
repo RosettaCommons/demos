@@ -1,5 +1,5 @@
 # PyRosetta RosettaSurface
-
+KEYWORDS: CORE_CONCEPTS GENERAL
 ## Authors
 Written by Emily Koo and Michael Pacella (Graylab), mpacella88@gmail.com
 

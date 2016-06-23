@@ -1,7 +1,7 @@
 \pagenumbering{gobble}
 
 # Comparative Modeling: Single template modeling and loop building
-
+KEYWORDS: STRUCTURE_PREDICTIION LOOPS
 This tutorial will guide you through modeling XP_005597007, a predicted cyclic GMP-AMP synthase in *Equus caballus* (horse). XP_005597007 is homologous to the human protein PDB: 4o68. The crystal structure for 4O68 will be used as the template to guide comparative modeling. Specific regions of low sequence identity will then be remodeled using Rosetta's CCD and KIC loop building protocols.
 
 ## 1. Setup ##

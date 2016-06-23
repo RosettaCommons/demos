@@ -1,5 +1,5 @@
 To run:
-
+KEYWORDS: ANALYSIS GENERAL
 1. Change executable and database paths in commandline
 
 2. ./commandline enzdes_test.pdb enzdes.xml

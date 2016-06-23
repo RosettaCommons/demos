@@ -1,3 +1,4 @@
+KEYWORDS: STRUCTURE_PREDICTION NUCLEIC_ACIDS RNA
 The goal of this tutorial is to do de novo structure prediction for an
 small RNA. The target structure is the SARCIN/RICIN LOOP FROM RAT 28S
 R-RNA (PDB 430D). The PDB and it's fasta file are included in the

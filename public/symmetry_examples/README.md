@@ -1,4 +1,5 @@
 # Symmetry Examples
+KEYWORDS: CORE_CONCEPTS SYMMETRY
 ## Authors
 Frank Dimaio and Ingemar André
 

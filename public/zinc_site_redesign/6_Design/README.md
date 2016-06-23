@@ -1,5 +1,5 @@
 Next step is to optimize the interaction between TS model and protein design process.  Here, Rosetta will design a new sequence for the protein. 
-
+KEYWORDS: METALS DESIGN
 Inputs:
 
 1. A file from the matching step

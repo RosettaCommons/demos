@@ -1,5 +1,5 @@
 Step 3.1:
-
+KEYWORDS: METALS UTILITIES
 Align the transition state model on to the zinc site in the "clean" protein PDB file. 
 
 Input:

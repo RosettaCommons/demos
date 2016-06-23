@@ -1,5 +1,5 @@
 # Template Demo Directory
-
+KEYWORDS: GENERAL GENERAL
 The entire workflow for this demo should be described in a file named README.md, formatted in gollum markdown.  
 It should describe an entire work flow, with command lines, tested if possible.
 

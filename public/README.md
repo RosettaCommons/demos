@@ -1,6 +1,6 @@
 Demos
 =====
-
+KEYWORDS: CORE_CONCEPTS GENERAL
 This directory contains a number of demos which illustrate some of the functionality of Rosetta.
 
 See also the tutorial/ directory, for introductory tutorials to Rosetta concepts and core functionality.

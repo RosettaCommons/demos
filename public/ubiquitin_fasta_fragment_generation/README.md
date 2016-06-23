@@ -1,5 +1,5 @@
 # Ubiquitin Fasta Fragment Generation
-
+KEYWORDS: STRUCTURE_PREDICTION UTILITIES
 The entire workflow for this demo should be described in a file named README.md.
 It should describe an entire work flow, with command lines, tested if possible.
 

@@ -1,5 +1,6 @@
 Scoring Tutorial
 ================
+KEYWORDS: CORE_CONCEPTS ANALYSIS
 Tutorial by Shourya S. Roy Burman (ssrb@jhu.edu) 
 Created 20 June 2016
 
