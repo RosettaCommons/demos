@@ -198,7 +198,7 @@ This is were the symmetry is being defined and the jumps between subunits are se
 
 The structure should look like something like this:
 
-![figure of C3](https://github.com/RosettaCommons/demos/blob/hssnzdh2/parisa_XRW/tutorials/symmetry/figures/C3.png)
+![figure of C3](symmetry_example/figures/C3.png)
 
 Now, based on the things you learnt from the [symmetry tutorial](../symmetry/symmetry.md), try to see if you can get other types of symmetric structures. An example of a C7 symmetric ubiquitin is provided for you in outputs/symm_test_c7.pdb. The C7.symm file is also in the input directory if you want to use. The result should look like this:
 

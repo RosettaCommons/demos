@@ -1,29 +1,17 @@
-symmetry_name C7
+symmetry_name c7
 subunits 7
-number_of_interfaces 6
-E = 2*S1  + 1*(S1:S2) + 1*(S1:S3) + 1*(S1:S4) + 1*(S1:S5) + 1*(S1:S6) + 1*(S1:S7)
-anchor_residue 1
-virtual_coordinates_start
-xyz S1 1,0,0 0,+0.0000000,+1.0000000 0,0,0
-xyz S2 1,0,0 0,+0.7818315,+0.6234898 0,0,0
-xyz S3 1,0,0 0,+0.9749279,-0.2225209 0,0,0
-xyz S4 1,0,0 0,+0.4338837,-0.9009689 0,0,0
-xyz S5 1,0,0 0,-0.4338837,-0.9009689 0,0,0
-xyz S6 1,0,0 0,-0.9749279,-0.2225209 0,0,0
-xyz S7 1,0,0 0,-0.7818315,+0.6234898 0,0,0
-virtual_coordinates_stop
-connect_virtual J2 S1 S2
-connect_virtual J3 S1 S3
-connect_virtual J4 S1 S4
-connect_virtual J5 S1 S5
-connect_virtual J6 S1 S6
-connect_virtual J7 S1 S7
-connect_virtual JS1 S1 SUBUNIT
-connect_virtual JS2 S2 SUBUNIT
-connect_virtual JS3 S3 SUBUNIT
-connect_virtual JS4 S4 SUBUNIT
-connect_virtual JS5 S5 SUBUNIT
-connect_virtual JS6 S6 SUBUNIT
-connect_virtual JS7 S7 SUBUNIT
-set_dof JS1 y z angle_x angle_y angle_z
-set_jump_group GJS JS1 JS2 JS3 JS4 JS5 JS6 JS7
+#recenter
+number_of_interfaces  3
+E = 7*VRT0001 + 7*(VRT0001:VRT0002) + 7*(VRT0001:VRT0003) + 7*(VRT0001:VRT0004)
+anchor_residue COM
+virtual_transforms_start
+start -1,0,0 0,1,0 0,0,0
+rot Rz 7
+virtual_transforms_stop
+connect_virtual JUMP1 VRT0001 VRT0002
+connect_virtual JUMP2 VRT0002 VRT0003
+connect_virtual JUMP3 VRT0003 VRT0004
+connect_virtual JUMP4 VRT0004 VRT0005
+connect_virtual JUMP5 VRT0005 VRT0006
+connect_virtual JUMP6 VRT0006 VRT0007
+set_dof BASEJUMP x(50) angle_x(0:360) angle_y(0:360) angle_z(0:360)
