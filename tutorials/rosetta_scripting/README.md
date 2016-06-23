@@ -556,10 +556,10 @@ $> <path_to_Rosetta_directory>/main/source/bin/rosetta_scripts.default.linuxgccr
 Open the output.  You might notice that relatively few core residues have changed: Rosetta finds an optimal sequence very similar to the input, as we might expect.  It's also worth noting this line in the output log:
 
 ```
-core.pack.pack_rotamers: built 4281 rotamers at 50 positions.
+core.pack.pack_rotamers: built 8928 rotamers at 50 positions.
 ```
 
-In comparison, the repacking job that we ran earlier, with no design, generated over 6000 rotamers.  This illustrates an important point: although design is normally a more computationally expensive task than simple repacking without design, clever use of TaskOperations can reduce the complexity of the problem considerably.  Indeed, a design job that's set up cleverly can involve less computational complexity than even a naïve repacking job without design.
+In comparison, the repacking job that we ran earlier, with no design, generated over 6000 rotamers.  This illustrates an important point: although design is normally a far more computationally expensive task than simple repacking without design, clever use of TaskOperations can reduce the complexity of the problem considerably.  A design job that's set up cleverly can involve comparable computational complexity to a naïve repacking job without design.
 
 > **Pay careful attention to packer setup.  A poorly-conceived packer job can be prohibitively computationally expensive, while a well-designed one can be very quick to execute.**
 
@@ -592,7 +592,13 @@ $> cp core_resfile2.txt .
 $> <path_to_Rosetta_directory>/main/source/bin/rosetta_scripts.default.linuxgccrelease -s 1ubq.pdb -parser:protocol design_core2.xml -out:prefix design_core2_
 ```
 
-This time, 
+This time, if you examine the output, there are several things to note:
+1.  The core is now entirely phenylalanine and tryptophan.  This is because canonical residue types can only be turned *off*; once off, they can't be turned back *on*.  This is the AND-commutativity of TaskOperations at work: the packer only designs with a residue type if TaskOperation A *and* TaskOperation B permit it.  Since the core\_resfile TaskOperation prohibits ASP, GLU, LYS, and ARG, and the core\_resfile2 TaskOperation prohibits ALA, MET, ILE, LEU, TYR, and VAL, the only amino acids permitted are TRP and PHE.
+2.  Only the core has been designed.  The behaviours of restricting to repacking and preventing repacking override the allowed amino acid types for design, and obey OR-commutativity: if TaskOperation A *or* TaskOperation B indicates that a position should be restricted to repacking or prevented from repacking, then the combination of TaskOperations also results in that residue being restricted to/prevented from repacking.
+
+> **The commutativity of TaskOperations is very important.  Applying A, B, and C is the same as applying C, B, and A.  One must always think carefully about what one is prohibiting or enabling when using combinations of TaskOperations.**
+
+CONTINUE HERE
 
 # Filters
 ---------
