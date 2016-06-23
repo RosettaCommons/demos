@@ -10,9 +10,9 @@
 	<FILTERS>
 	</FILTERS>
 	<MOVERS>
-		<SetupForSymmetry name="add_symm" definition="inputs/C3.symm" />
+		<SetupForSymmetry name="add_symm" definition="C3.symm" />
 		<SymPackRotamersMover name="symm_pack" scorefxn="sfx_symm" task_operations="nodesign" />
-		<SymMinMover name="symm_min" scorefxn="sfx_symm" bb="false" chi="true" jump="ALL" />
+		<SymMinMover name="symm_min" scorefxn="sfx_symm" bb="false" chi="true" jump="ALL" tolerance="0.0000001" />
 	</MOVERS>
 	<APPLY_TO_POSE>
 	</APPLY_TO_POSE>

@@ -178,8 +178,10 @@ Now let's run the scripts. In this tutorial you are going to generate, repack, a
 You can run the script using this command:
 
 ```bash
-cp 
-$> $ROSETTA3/bin/rosettascripts.linuxgccrelease -parser:protocol symmetry.xml -in:file:s symm_test.pdb -prefix symm_
+$> cp symmetry_example/scripts/symmetry_c3.xml .
+$> cp symmetry_example/inputs/C3.symm .
+$> cp symmetry_example/inputs/symm_test.pdb .
+$> $ROSETTA3/bin/rosetta_scripts.default.linuxgccrelease -parser:protocol symmetry_c3.xml -in:file:s symm_test.pdb -out:prefix c3_
 ```
 
 In your output, you can see that these lines are printed in the log file: (you can also find the whole tracer in outputs/symm_c3.log)
@@ -286,7 +288,7 @@ The final script can be viewed in loop\_example/pack\_opt.xml.  Let's try it out
 ```bash
 $> cp loop_example/pack_opt.xml .
 $> cp loop_example/1ubq.pdb .
-$> <path_to_Rosetta_directory>/main/source/bin/rosetta_scripts.default.linuxgccrelease -s 1ubq.pdb -parser:protocol pack_opt.xml -out:prefix packopt_
+$> $ROSETTA3/bin/rosetta_scripts.default.linuxgccrelease -s 1ubq.pdb -parser:protocol pack_opt.xml -out:prefix packopt_
 ```
 
 This script will take a bit longer to run (about three or four minutes).  If you look at the tracer output, you should be able to see the application of the IteratedConvergence, and how the RotamerTrialsMinMover is repeated multiple times.
