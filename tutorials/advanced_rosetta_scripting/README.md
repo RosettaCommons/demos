@@ -57,11 +57,11 @@ $> <path_to_Rosetta_directory>/main/source/bin/rosetta_scripts.default.linuxgccr
 
 You may need to change ".default.linuxgccrelease" for your build, operating system, and compiler (*e.g.* ".static.macosclangdebug", *etc.*).
 
-Running the script above, we find that something has gone wrong.  The second helix has swung nearly 180 degrees, and the overall structure has exploded:
+Running the script above, we find that something has gone wrong.  Comparing to the original pose (in grey), the minimized pose (in colours) has the second helix rotated by nearly 180 degrees.  The overall structure has exploded:
 
 ![Naïvely minimizing the structure results in an explosion.](foldtree_example_2.png)
 
-This is an extreme case of the lever-arm effect, caused by an unsuitable fold tree.  Since the default fold tree has residue 1 as the anchor, with all of helix 1 downstream of residue 1, and a jump to the first residue of the second helix, the repulsion between the two helices causes the second one to rotate and swing away instead of moving linearly.  This is clearly not what we want.
+This is an extreme case of the lever-arm effect, caused by an unsuitable fold tree.  Since the default fold tree has residue 1 as the anchor, with all of helix 1 downstream of residue 1, and a jump to the first residue of the second helix, with all of helix 2 downstream of that first residue, the repulsion between the two helices causes the second one to rotate and swing away instead of moving linearly.  This is clearly not what we want.
 
 So let's set up a proper fold tree for this problem.  We'll create a new fold tree file (or use foldtree_example/foldtree.txt):
 
@@ -90,6 +90,8 @@ In the script that we just ran, create a new AtomTree mover, give it a name, and
 	</PROTOCOLS>
 ...
 ```
+
+> **At any given time, each pose has a single fold tree associated with it.  A mover that alters the fold tree and returns a pose with a modified fold tree has permanently changed the pose, despite the fact that the atom coordinates have not changed.  All future movers will act on the pose with the modified fold tree, until the fold tree is changed again by another mover.**
 
 Now let's run the new script (provided as foldtree_example/minimize2.xml, if you didn't modify the original script):
 
