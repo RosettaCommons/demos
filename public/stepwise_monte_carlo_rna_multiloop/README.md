@@ -33,7 +33,7 @@ If you have starting coordinates for the two helix endpoints, you can start with
 ```
 $> <path-to-Rosetta>/main/source/bin/stepwise.default.linuxgccrelease @known_ends.options 
 ```
-These scripts will take about 10 min to run. If you want to test how things work, you can use the options.short version. 
+For the purpose of demo, we have lowered the number of generated structures and the cycles, but usually you want to at least run 1000 cycles and generate more structures.
 
 To get out models (in this case from the pre-generated file in the rosetta_inputs directory):
 
