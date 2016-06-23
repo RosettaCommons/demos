@@ -13,7 +13,7 @@ Demos, Tutorials, and Protocol Captures
 <!--- END_INTERNAL -->
 </ul></div>
 
-<div style="font-size:large;> [[Demos listed by keyword|tag-search]] </div>
+<div style="font-size:large;"> [[Demos listed by keyword|tag-search]] </div>
 
 Obtaining tutorial materials
 ============================
