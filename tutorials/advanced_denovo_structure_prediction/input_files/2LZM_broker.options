@@ -1,4 +1,4 @@
-# Make sure all variable names have been replaced with absolute path and that no line begins with a $ or ~s
+#make sure all variable names have been replaced with absolute path and that no line begins with a $ or ~s
 -in
 	-file
 		-native 2LZMA.pdb 	# native PDB file (optional)
@@ -28,3 +28,4 @@
 		-silent_struct_type binary	# we want binary silent files
 		-scorefile 2LZM_broker.out
 -overwrite	# overwrite any existing output with the same name you may have generated
+

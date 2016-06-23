@@ -1,5 +1,6 @@
 Controlling Input and Output in Rosetta
 =======================================
+KEYWORDS: CORE_CONCEPTS GENERAL UTILITIES   
 Tutorial by Shourya S. Roy Burman (ssrb@jhu.edu)  
 Created 21 June 2016
 
@@ -32,7 +33,7 @@ You can supply Rosetta with a variety of input files which hold the coordinates 
 ####PDB File
 The most common input file format is the PDB format. A detailed description of the PDB format can be found on the [WorldWide Protein Data Bank website](http://www.wwpdb.org/documentation/file-format-content/format33/v3.3.html). Primarily the lines which concern Rosetta start with `ATOM`, `HETATM` and `TER`.
 
-```html
+```
 ...
 ATOM   1477 3HD2 LEU A  94      10.910  -5.038   7.227  1.00  0.00           H  
 TER                                                                             
@@ -95,7 +96,7 @@ Most Rosetta protocols expect the structure they are working on to have a certai
     $> <path_to_Rosetta_directory>/main/source/bin/score_jd2.linuxgccrelease -in:file:s input_files/from_rcsb/1qys.pdb
     
 In the log, you will see the following lines:
-```html
+```
 ...
 core.io.pose_from_sfr.PoseFromSFRBuilder: Reading MSE as MET!
 ...
@@ -134,7 +135,7 @@ To remove water molecules, we use the option `-ignore_waters`
 Occupancy denotes the fraction of cases where a particular conformation is observed. While most atoms will have an occupancy of 1, if a residue was observed in multiple conformations, the occupancy will be lower than 1. An occupancy of 0 indicates that the atom was never observed in the crystal (but is estimated to be present at that location). Rosetta ignores these atom records. If it is a non-backbone heavy atom, it might build the sidechain for you. If it is a backbone heavy atom like N or CA, it will delete the entire residue.
 
 We have modified the occupancies of 1QYS to get the file `<path_to_Rosetta_directory>/demos/tutorials/input_and_output/input_files/1qys_zero_occ.pdb`. It has zero occupancies for the first few atoms
-```html
+```
 ATOM      1  N   ASP A   3      -4.524  18.589  17.199  0.00  0.00           N  
 ATOM      2  CA  ASP A   3      -3.055  18.336  17.160  0.00  0.00           C
 ...
@@ -145,7 +146,7 @@ On running,
     
 You get the following warnings in your log file:
 
-```html
+```
 ...
 core.io.pose_from_sfr.PoseFromSFRBuilder: PDB reader is ignoring atom  N   in residue 3 A.  Pass flag -ignore_zero_occupancy false to change this behavior
 core.io.pose_from_sfr.PoseFromSFRBuilder: PDB reader is ignoring atom  CA  in residue 3 A.  Pass flag -ignore_zero_occupancy false to change this behavior
@@ -171,7 +172,7 @@ The recommended way to prepare input structures for most Rosetta protocols is to
 
 While we want to relieve clashes in the input structure and ensure meeting all of Rosetta's specifications, we do not want our backbone to move much. A set of general options have been specified in `<path_to_Rosetta_directory>/demos/tutorials/input_and_output/flag_input_relax`. 
 
-```html
+```
 -nstruct 2
 
 -relax:constrain_relax_to_start_coords
@@ -186,7 +187,7 @@ While we want to relieve clashes in the input structure and ensure meeting all o
 ```
 Setting a higher `nstruct`, say `nstruct 10`, will increase the number of refinement runs and may produce better results, but may also consume a lot of time.
 
-We will use this flags file to refine the PDB 1QYS take directly from the Protein Data Bank. This may take a few minutes to run:
+<a name="prep_struc"></a>We will use this flags file to refine the PDB 1QYS take directly from the Protein Data Bank. This may take a few minutes to run:
 
     $>  <path_to_Rosetta_directory>/main/source/bin/relax.linuxgccrelease -in:file:s input_files/from_rcsb/1qys.pdb @flag_input_relax
     
@@ -219,7 +220,7 @@ In the following example, we will run an older scoring application, _score_ to c
     
 This produces a score file `default.sc` that should look like:
     
-```html
+```
 SCORE:     score     fa_atr     fa_rep     fa_sol    fa_intra_rep    fa_elec    pro_close    hbond_sr_bb    hbond_lr_bb    hbond_bb_sc    hbond_sc    dslf_fa13       rama      omega     fa_dun    p_aa_pp    yhh_planarity        ref    allatom_rms    gdtmm    gdtmm1_1    gdtmm2_2    gdtmm3_3    gdtmm4_3    gdtmm7_4    irms    maxsub    maxsub2.0    rms description
 SCORE:  -167.539   -414.834     48.380    225.004           1.040    -45.212        0.000        -25.491        -26.998         -2.986      -9.394        0.000     -4.905      4.211    109.662    -13.603            0.230    -12.643          1.050    1.000       1.000       1.000       1.000       1.000       1.000   0.000    92.000       92.000  0.135   1qys_0001
 
@@ -236,20 +237,201 @@ Controlling Output
 ------------------
 ###Common Stucture Output Files
 Rosetta primarily uses two formats to output structures - PDB files and Silent Files. Both these files have been described in [section above](#input_format).
-####PDB File
-This is the default output format of Rosetta. For applications that do not output a structure by default, like the scoring application, the option `out:pdb` forces Rosetta to output the PDB. This is demonstrated in the [scoring tutorial]( https://www.rosettacommons.org/demos/latest/tutorials/scoring/README.md#output_struc)
+####<a name="out_pdb"></a>PDB File
+This is the default output format of Rosetta. For applications that do not output a structure by default, like the scoring application, the option `-out:pdb` forces Rosetta to output the PDB. This is demonstrated in the [scoring tutorial]( https://www.rosettacommons.org/demos/latest/tutorials/scoring/README.md#output_struc).
+
 ####Silent File
+To change output file format to silent file, we will use the flag `out:file:silent <filename>`. As silent files are capable of storing multiple structures in one file, there will be only one output structure file whose name we need to specify. We will run the [structure preparation example above](#prep_struc) to produce a _binary silent struct file_.
 
-####Gzipped Files
+    $>  <path_to_Rosetta_directory>/main/source/bin/relax.linuxgccrelease -in:file:s input_files/from_rcsb/1qys.pdb -out:file:silent output_files/1qys.o @flag_input_relax 
 
-###Adding Prefixes and Suffixes to the Output PDBs
+This will take a few minutes to run and produce a silent file `1qys.o` in the directory `output_files`.
+
+####Extracting PDBs from Silent Files
+To visualize and analyze, you may want to extract some of the structures from the silent file format as PDBs. For example, the silent file provided as `<path_to_Rosetta_directory>/demos/tutorials/input_and_output/input_files/1qys.o` contains 10 structures. Say, we want to extract the top 3 structures as PDBs.
+
+To select the top 3, we will first store the scores in a separate file using 
+
+    $> grep '^SCORE' input_files/1qys_10.o > output_files/1qys_silent_scores.sc
+
+This should a produce a file which looks similar to `<path_to_Rosetta_directory>/demos/tutorials/input_and_output/output_files/expected_output/1qys_silent_scores.sc`:
+
+```
+SCORE:     score     fa_atr     fa_rep     fa_sol    fa_intra_rep    fa_elec    pro_close    hbond_sr_bb    hbond_lr_bb    hbond_bb_sc    hbond_sc    dslf_fa13    coordinate_constraint       rama      omega     fa_dun    p_aa_pp    yhh_planarity        ref       time description
+SCORE:  -145.658   -416.906     48.038    235.048           1.023    -47.764        0.000        -25.252        -27.431         -4.739     -10.754        0.000                   19.154     -4.561      4.169    110.657    -13.935            0.237    -12.643    121.000   1qys_0001
+...
+SCORE:  -146.560   -421.948     49.483    239.471           1.031    -49.106        0.000        -25.940        -27.309         -4.230     -13.052        0.000                   20.385     -5.436      4.646    110.952    -13.316            0.453    -12.643    115.000   1qys_0010
+```
+The last column `description` holds the tag which we will use to extract the files. Sorting this file based on `score` using:
+
+    $> sort -k1,1 -k2n output_files/1qys_silent_scores.sc
+    
+gives us
+
+```
+SCORE:  -148.368   -417.523     46.620    235.293           1.049    -47.662        0.000        -25.448        -26.996         -3.816     -12.297        0.000                   20.283     -4.757      5.036    107.503    -13.480            0.470    -12.643    111.000   1qys_0007
+SCORE:  -148.283   -423.099     47.967    241.560           1.046    -48.530        0.000        -25.397        -26.949         -4.226     -13.621        0.000                   19.796     -4.907      5.043    108.665    -13.450            0.461    -12.643    110.000   1qys_0005
+SCORE:  -147.763   -416.130     46.386    235.877           1.023    -47.914        0.000        -25.787        -27.212         -3.864     -12.092        0.000                   20.623     -4.800      4.678    107.706    -13.821            0.205    -12.643    118.000   1qys_0009
+...
+```
+
+We see that `1qys_0007`, `1qys_0005` and `1qys_0009` are the 3 lowest scoring structures, which we want to extract. You are free to sort through any metric you desire. To do this we will prepare a list of these tags as follows:
+
+```
+1qys_0007
+1qys_0005
+1qys_0009
+```
+We will feed this tags file in using the option `in:file:tagfile` into the executable `extract_pdbs` to generate the desired result.
+
+    $> <path_to_Rosetta_directory>/main/source/bin/extract_pdbs.linuxgccrelease -in:file:silent input_files/1qys_10.o -in:file:tagfile input_files/1qys_top3.tag
+    
+Now, you should get 3 PDBs `1qys_0007.pdb`, `1qys_0005.pdb` and `1qys_0009.pdb` in the current working directory.
+
+
+####Compressed Files
+To conserve space for runs that produce a large number of structures, Rosetta can automatically gzip output files. Add the option `-out:pdb_gz` **instead of** `-out:pdb` to produce compressed PDBs. Suffix `<filename>` with `.gz` in `out:file:silent <filename>` to produce compressed silent files.
+
+###Score File Formats
+Rosetta supports two formats for the score file: text (the default) and json. Throughout these tutorials we will use the text format. To switch to the json format, we can use the option `-out:file:scorefile_format json`
+
+    $> <path_to_Rosetta_directory>/main/source/bin/score_jd2.linuxgccrelease -in:file:s input_files/1qys.pdb -out:file:scorefile_format json
+    
+This will output the score file, `score.sc` in json format like this:
+```
+{"decoy":"1qys_0001","dslf_fa13":0.0,"fa_atr":-423.6380475930665,"fa_dun":109.6621482859311,"fa_elec":-46.14556889816026,"fa_intra_rep":1.039804508830972,"fa_rep":49.11676788120327,"fa_sol":241.3087947011393,"hbond_bb_sc":-3.934076636117379,"hbond_lr_bb":-26.99785324074625,"hbond_sc":-11.23440113070099,"hbond_sr_bb":-25.49074432555559,"linear_chainbreak":0.0,"omega":4.210525847130253,"overlap_chainbreak":0.0,"p_aa_pp":-13.60293063430587,"pro_close":0.0,"rama":-4.90454720392658,"ref":-12.642703,"score":-163.0225982666016,"time":1.0,"total_score":-163.0225937016587,"yhh_planarity":0.2302377366858926}
+```
+
+###Adding Prefixes and Suffixes to the Output Files
+By default, Rosetta uses the file name of the input structure to generate the output structure by appending numerical suffixes like \_0001 and \_0002 to it. If you would like to add a prefix or a suffix to the output structures, use the `-out:prefix <string>` or the `-out:suffix <string>`. In this example, we will add the string _pre\__ as prefix and the string _\_suf_ as suffix to the output. Running
+
+    $> <path_to_Rosetta_directory>/main/source/bin/score_jd2.linuxgccrelease -in:file:s input_files/1qys.pdb -out:pdb -out:prefix pre_ -out:suffix _suf
+
+Will produce the files `pre_1qys_suf_0001.pdb` and `pre_score_suf.sc`in your current working directory.
+
 ###Setting Output Paths
-####Output Structure
-####Score File
-###Forcing and Supressing Output of Structures
+Throughout this tutorial, we have been outputting the score files and the output structures in the current working directory. To change this behaviour we use `-out:path:all` option. Let us once again run scoring while saving the PDB and the score file in the folder `output_files`.
+
+    $> <path_to_Rosetta_directory>/main/source/bin/score_jd2.linuxgccrelease -in:file:s input_files/1qys.pdb -out:pdb -out:path output_files
+    
+You should find `1qys_0001.pdb` and `score.sc` in the directory `output_files`.
+
+To save the score file and the pdb in separate locations use the `-out:path:score` and the `-out:path:pdb` options.
+
+###Forcing and Supressing Output of Files
+We have already seen how `score_jd2` can be forced to output the PDB file it is actually scoring using the flag `-out:pdb` in the section on [outputting PDB files](#out_pdb).
+
+If you want to suppress the output files we can use the flag `-out:nooutput`. This is especially if you just want to look at the log, but do not want to check the output. Another potential use of this flag is in certain protocols which directly write non-structure, non-score files.
+
+If you specifically want to suppress a particular kind of file, say the score file, you can direct it to a UNIX device called `/dev/null`. In the following example, we force `score_jd2` to output a PDB file, but no score file is output.
+
+    $> <path_to_Rosetta_directory>/main/source/bin/score_jd2.linuxgccrelease -in:file:s input_files/1qys.pdb -out:pdb -out:path:score /dev/null
+    
+Your current working directory should only contain `1qys_0001.pdb`, but no `score.sc` file.
+
 ####Only Output a Score File
+If you only want to output a score file, you should use the option `-out:file:score_only <score_file_name>`. In the following example, we will run 
+
+    $> <path_to_Rosetta_directory>/main/source/bin/relax.linuxgccrelease -in:file:s input_files/1qys.pdb -out:file:score_only output_files/score.sc @flag_input_relax
+    
+This only generates the score file `score.sc` in the directory `output_files`. No output structures are generated.
+
 ###Adjusting Detail Level in Logs
-###Getting the Same Output despite Monte Carlo
+When you run Rosetta, the log displays quite a lot of information. Sometimes you might want to know more about the process, for example, when you encounter an error or an unexpected result. At times you may want to reduce the details in the log. Rosetta allows you to adjust the detail levels in the log through the option `-out:level <integer>`. The following are the list of values `<integer>` accepts:
+
+| Integer	 | Level | 
+| ----------| ------: |
+| 0              | Fatal   |
+| 100            | Error   |
+| 200            | Warning |
+| 300            | Info    |
+| 400            | Debug   |
+| 500            | Trace   |
+
+By default Rosetta uses the level 300. In this tutorial, we will increase the detail level to include information useful for debugging `score_jd2`.
+
+    $> <path_to_Rosetta_directory>/main/source/bin/score_jd2.linuxgccrelease -in:file:s input_files/1qys.pdb -out:level 400
+
+Here's a snippet of the log file that you should see:
+
+```
+...
+core.chemical: New atom type: aroC C
+...
+core.chemical.ElementSet: New element: Pt
+...
+core.chemical: Reading patch file: /home/ssrb/Rosetta/main/database/chemical/residue_type_sets/fa_standard/patches/CtermProteinFull.txt
+...
+core.pose.util: new fold tree FOLD_TREE  EDGE 1 92 -1  EDGE 1 93 1  EDGE 1 94 2  EDGE 1 95 3  EDGE 1 96 4  EDGE 1 97 5  EDGE 1 98 6  EDGE 1 99 7 
+...
+```
+
+Now you see a bunch of information that previously did not appear. In the snippet above, we see, the residue types and element types that Rosetta recognizes (C associated with aromatic rings and Platinum), all the patches it can apply (patch to make a residue the C-terminal) and the revised [fold tree](../minimization/minimization.md#a-note-about-the-foldtree).
+
+###Replicating Output in Rosetta Protocols
+Most protocols in Rosetta use [Monte Carlo sampling](../Optimizing_Sidechains_The_Packer/Optimizing_Sidechains_The_Packer.md#how-the-packer-algorithm-works-under-the-hood-for-advanced-users). While this stochastic method of sampling speeds up the search for an energy minimum, it produces different trajectories in every run. Rosetta uses a random number _seed_ supplied by the `/dev/urandom` device of your system to generate the pseudo-random numbers it uses for an application. This seed can be any non-negative integer that a C++ _int_ datatype can hold, and the suggested range is 10<sup>6</sup> - 10<sup>9</sup>. It is displayed in the log at the start of every run as follows:
+
+```
+...
+core.init: 'RNG device' seed mode, using '/dev/urandom', seed=340573764 seed_offset=0 real_seed=340573764
+...
+```
+The seed in this snippet is 340573764.
+
+>All other things being equal, every run of a Rosetta protocol running on the same system with the same seed should have the same trajectory. If you want to replicate a run later, you should store the seed from your run and use it later.
+
+In this example, we will produce the same output using the `relax` application suggested above by specifying a constant seed. To do this, we need the flag `-run:constant_seed` which makes sure that the seed is constant. The default constant seed is 1111111, which we will change to 12345678 using the `-run:jran` option. Every run of the following command should produce the same set of structures and score files when run from the same system.
+
+    $> <path_to_Rosetta_directory>/main/source/bin/relax.linuxgccrelease -in:file:s input_files/1qys.pdb -run:constant_seed -run:jran 12345678 @flag_input_relax
+
+The log file will indicate that you are running using a constant seed.
+
+```
+...
+core.init: Constant seed mode, seed=12345678 seed_offset=0 real_seed=12345678
+...
+```
 ###Near-realtime Visualization in PyMOL
+It is often useful to visualize how Rosetta is modifying the biomolecule as the simulation goes on. You can do so in the molecular visualization package, [PyMOL](https://www.pymol.org/). To attach a PyMOL Observer to your run, you need to first create a link between Rosetta and PyMOL. Open PyMOL and in the command line in PyMOL run:
+
+    run <path_to_Rosetta_directory>/main/source/src/python/bindings/PyMOLPyRosettaServer.py
+    
+You will see the log file in PyMOL display:
+```
+PyMOL <---> PyRosetta link started!
+```
+To show the biomolecule, we will pass `run:-show_simulation_in_pymol <time_in_seconds>`. The Observer, by default, captures the state every 5 seconds, which we can change depending on the requirement. To keep a history of the states visited during the run, we will pass the option `-keep_pymol_simulation_history`. This can be especially useful for making movies of the run. This does slightly slow down the run.
+
+In this example, we will capture the `relax` run of the native PDB 1QYS using PyMOL, and record the history of the relax by capturing a snapshot every 4.5 seconds.
+
+Assuming you have established the link between PyMOL and Rosetta, run the following command, and observe PyMOL:
+
+    $> <path_to_Rosetta_directory>/main/source/bin/relax.linuxgccrelease -in:file:s input_files/from_rcsb/1qys.pdb -show_simulation_in_pymol 4.5 -keep_pymol_simulation_history @flag_input_relax
+    
+You will observe different parts of the structure undergoing small motions. This is what `relax` (with constraints) does to the structure till it arrives at a satisfactory structure.
+
+>The states displayed in PyMOL represent the states tried by the protocol every _n_ seconds. They may or may not have been accepted during the simulation.
+
+There are other, specific option like changing the state in PyMOL only if the energy score of the structure has changed, or changing the state only if the conformation has changed. For those, you can pass the flags, `-update_pymol_on_energy_changes_only` and `-update_pymol_on_conformation_changes_only`, respectively.
+
 ###Overwriting Previously Generated Output
+If you have structure files in the same directory named similarly to the output structure files that your simulation will generate, you will see the error:
+```
+...
+protocols.jd2.JobDistributor: no jobs were attempted, did you forget to pass -overwrite?
+...
+```
+This happens most often when you run the same protocol again without taking care of the output files produced during the first run. If you want to overwrite the files, pass the option `-overwrite`, else save the output files in a separate location before running again.
+
+Now say you completed the `relax` simulation in the previous section and then rerun the same command. You will see the error above. Now we will run essentially the same protocol, but with the `-overwrite` option:
+
+    $> <path_to_Rosetta_directory>/main/source/bin/relax.linuxgccrelease -in:file:s input_files/from_rcsb/1qys.pdb -overwrite @flag_input_relax
+    
+You will see the you still have two output structure files, `1qys_0001.pdb` and `1qys_0002.pdb`, but they will be more recently written, which you can check using `ls -l 1qys_000*.pdb`.
+
+>The `-overwrite` option does overwrite the score file. Entries will still be appended to the exsiting score file. Score files must be manually moved or deleted before every run.
+
+###List of Other Options
+A full list of other, specific options is given [here](https://www.rosettacommons.org/docs/latest/full-options-list#out).
+
 

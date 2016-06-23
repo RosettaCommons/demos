@@ -1,7 +1,11 @@
 # Stepwise Monte Carlo RNA Multiloop
 
+KEYWORDS: LOOPS NUCLEIC_ACIDS RNA STRUCTURE_PREDICTION
+
 ## Authors
 Rhiju Das, rhiju@stanford.edu
+
+Updated in 2016 by Parisa Hosseinzadeh (parisah@uw.edu) to enable automatic testing of demos.
 
 ## StepWise Monte Carlo (examples for RNA)
 
@@ -21,19 +25,20 @@ Following is for an internal loop ('two-way junction') drawn from the most conse
 If you do not know the rigid body orientations of two helices (typical use case), run:
 
 ```
-stepwise -in:file:fasta rosetta_inputs/1lnt.fasta -s rosetta_inputs/gu_gc_helix.pdb  rosetta_inputs/uc_ga_helix.pdb -out:file:silent swm_rebuild.out -extra_min_res 2 15 7 10 -terminal_res 1 8 9 16 -nstruct 20  -cycles 1000  -score:rna_torsion_potential RNA11_based_new  -native rosetta_inputs/native_1lnt_RNA.pdb
+$> <path-to-Rosetta>/main/source/bin/stepwise.default.linuxgccrelease @uk_orientation.options
 ```
 
 If you have starting coordinates for the two helix endpoints, you can start with that single PDB ('start_native_1lnt_RNA.pdb') instead:
 
 ```
-stepwise -in:file:fasta rosetta_inputs/1lnt.fasta -s rosetta_inputs/start_native_1lnt_RNA.pdb -out:file:silent swm_rebuild.out -extra_min_res 2 15 7 10 -terminal_res 1 8 9 16 -nstruct 20  -cycles 1000  -score:rna_torsion_potential RNA11_based_new  -native rosetta_inputs/native_1lnt_RNA.pdb
+$> <path-to-Rosetta>/main/source/bin/stepwise.default.linuxgccrelease @known_ends.options 
 ```
+For the purpose of demo, we have lowered the number of generated structures and the cycles, but usually you want to at least run 1000 cycles and generate more structures.
 
-To get out models:
+To get out models (in this case from the pre-generated file in the rosetta_inputs directory):
 
 ```
-extract_pdbs -silent swm_rebuild.out 
+$> <path-to-Rosetta>/main/source/bin/extract_pdbs.default.linuxgccrelease -silent rosetta_inputs/swm_rebuild.out 
 ```
 
 (Or use extract_lowscore_decoys.py which can be installed via tools/rna_tools/.)
