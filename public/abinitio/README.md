@@ -4,9 +4,9 @@ KEYWORDS: STRUCTURE_PREDICTION GENERAL
 
 Run on linux 
 ------------
-(where `$ROSETTA3=path-to-Rosetta/main/source)
+(where `$ROSETTA3`=path-to-Rosetta/main/source)
 
-    $> $ROSETTA3/bin/AbinitioRelax.linuxgccrelease @flags
+    $> $ROSETTA3/bin/AbinitioRelax.default.linuxgccrelease @flags
 
 Run on macs
 -----------
