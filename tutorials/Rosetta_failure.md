@@ -33,7 +33,7 @@ For issues like this, you need to find other approaches to the problem.
 
 One thing to remember is that "you get what you ask for". At the end, Rosetta performs what you ask it to do. You don't want to bias your results by a series of assumptions and restrcitions. For example if you run a [MonteCarlo](link to Monte Carlo) algorithm that is set to optimize harshly on interface energy, you may end up getting designs with very good interface energy but with unreasonable number of hydrophobics, or unreasonable orientations. 
 
-*what the user can do**
+*what the user can do*
 
 Try to avoid oversampling. Never bias your search by assumptions you have about the problem. Run the task with different settings. Check the outputs and look carefully.
 
