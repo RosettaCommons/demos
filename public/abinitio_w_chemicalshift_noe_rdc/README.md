@@ -1,6 +1,6 @@
 AbInitio Structure Prediction Using Chemical-Shift Generated Fragments, NOE Distance Restraints and RDC Restraints
 ==================================================================================================================
-
+KEYWORDS: STRUCTURE_PREDICTION EXPERIMENTAL_DATA
 Written by Lei Shi.
 Nikolas Sgourakis drafted the previous version
 

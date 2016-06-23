@@ -1,4 +1,5 @@
 # Symmetry Examples
+KEYWORDS: STRUCTURE_PREDICTON SYMMETRY
 ## Authors
 Frank Dimaio and Ingemar André
 

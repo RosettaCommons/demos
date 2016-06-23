@@ -1,3 +1,4 @@
+KEYWORDS: DELETE DELETE
 These are the scripts/design/*/ directories cp'd after a successsful design
 run. The <name-of-protocol>.sh scripts were lightly modified before the runs
 to meet the whims of the one particular LSF system and so they may not run for

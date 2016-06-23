@@ -1,6 +1,6 @@
 Rosetta Tutorials
 =================
-
+KEYWORDS: CORE_CONCEPTS GENERAL
 This directory contains the introductory tutorials for Rosetta.
 
 These tutorials introduce basic concepts and key functionality used in Rosetta.

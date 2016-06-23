@@ -1,3 +1,4 @@
+KEYWORDS: NONCANONICALS GENERAL
 This demo contains the starting structures for the original use of the UBQ_Gp series of executables, and is a copy of their integration tests.  To run the demos (in the inputs subfolder):
 
     UBQ_Gp_CYD-CYD.linuxgccrelease @options

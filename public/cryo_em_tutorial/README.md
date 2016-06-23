@@ -1,3 +1,4 @@
+KEYWORDS: EXPERIMENTAL_DATA STRUCTURE_PREDICTION
 This folder contains material from a tutorial given at Baylor in January 2010,
 on the use of Rosetta for structure modeling using low to medium resolution
 cryoEM data.  This folder also contains a PDF distributed during the tutorial.

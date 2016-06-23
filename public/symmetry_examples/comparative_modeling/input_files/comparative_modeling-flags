@@ -10,7 +10,7 @@
 -in:file:fullatom
 -in:file:psipred_ss2 comparative_modeling/input_files/t000_.psipred_ss2
 -loops:frag_sizes 9 3 1
--loops:frag_files comparative_modeling/input_files/frags.200.3mers input_files/frags.200.3mers none
+-loops:frag_files comparative_modeling/input_files/frags.200.9mers comparative_modeling/input_files/frags.200.3mers none
 -loops:random_order
 -loops:random_grow_loops_by 4
 -loops:remodel quick_ccd

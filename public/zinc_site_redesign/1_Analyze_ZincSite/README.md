@@ -1,6 +1,6 @@
 The script will analyze the zinc site in the PDB file and print type
 of metal site. 
-
+KEYWORDS: METALS DESIGN
 Input parameter are PDB file and type of metal ion - it has mainly
 been tested with Zinc ions. 
 

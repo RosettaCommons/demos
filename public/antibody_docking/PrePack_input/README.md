@@ -1,3 +1,4 @@
+KEYWORDS: STRUCTURE_PREDICTION GENERAL
 1. *.ppk files are the resutls of prepacking
 2. after prepack, the "pdblist1" and "pdblist2" files will be modified
 

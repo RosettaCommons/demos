@@ -2,7 +2,7 @@ Rosetta-3.2 is a stable release of Rosetta
 rosetta-41240 is a revision under development.
 #Run this example by typing:
 $ROSETTA_BIN/rosetta_scripts.linuxgccrelease @flags -database $ROSETTA_DATABASE -parser:protocol <rosetta_xml_file>
-
+KEYWORDS: LIGANDS DOCKING
 # Replace ROSETTA_BIN and ROSETTA_DATABASE with your rosetta directories.
 # Replace linuxgccrelease with the extension you are using.
 # Replace <rosetta_xml_file> with either "rosetta-3.2.xml" or "rosetta-41240.xml"

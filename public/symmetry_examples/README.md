@@ -1,4 +1,5 @@
 # Symmetry Examples
+KEYWORDS: CORE_CONCEPTS SYMMETRY STRUCTURE_PREDICTION DESIGN DOCKING HOMOLOGY_MODELING  
 ## Authors
 Frank Dimaio and Ingemar André
 dimaio@u.washington.edu and ingemar.andre@biochemistry.lu.se
@@ -36,7 +37,7 @@ Defininately, take a look at that to understand how to do symmeric modeling in R
 ###1. Comparative modeling
 
 ```
-    $> $Rosetta3/main/source/bin/minirosetta.macosclangrelease @input_files/comparative_modeling-flags
+    $> $Rosetta3/main/source/bin/minirosetta.default.linuxgccrelease @comparative_modeling/input_files/comparative_modeling-flags
 ```
 
 ###2. Fixed Backbone Design
@@ -52,5 +53,5 @@ $> $ROSETTA3/main/source/bin/minirosetta.default.linuxgccrelease @fold-and-dock/
 
 ###4. Symmetric Docking
 ```
-$> $ROSETTA3/main/source/bin/SymDock.linuxgccrelease  @symmetric_docking/input_files/symmetric-docking-flags
+$> $ROSETTA3/main/source/bin/SymDock.default.linuxgccrelease  @symmetric_docking/input_files/symmetric-docking-flags
 ```
