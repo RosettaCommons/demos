@@ -1,5 +1,5 @@
 #Constraints
-KEYWORDS: DESIGN GENERAL
+KEYWORDS: DESIGN GENERAL   
 Tutorial by Frank David Teets (frankdt@email.unc.edu). Edited by Sebastian Rämisch (raemisch@scripps.edu) and Kristin Blacklock (kristin.blacklock@rutgers.edu).  File created 21 June 2016 as part of the 2016 Documentation eXtreme Rosetta Workshop (XRW).
 
 Many of the biological problems users wish to solve with Rosetta involve some biological or functional considerations that may not be reflected within a PDB file or evaluated by normal score functions. Constraints are a general way of scoring how well a structure adheres to these additional considerations; for example, one might wish to relax a structure with constraints in place to ensure that suspected disulfides are maintained.
@@ -26,6 +26,9 @@ To demonstrate this, begin by relaxing ubiquitin via the following command:
 as in Tutorial 4 and compare the output to that of 
 
 	$> ../../../main/source/bin/relax.default.linuxclangrelease -s 1ubq.pdb @general_relax_flags -out:suffix _unreasonably_constrained @unreasonable_constraint_flags
+	
+![Unreasonable Constraints](images/1ubq_cst.png)
+The native PDB 1UBQ (cyan), unconstrained refined version (green) and unreasonably constrained refined version (salmon)
 
 In the `unreasonable_constraint_flags` file, try changing the weight of the constraint using the `-constraint:cst_fa_weight` flag and analyzing how this changes the final structure. High (>1000) weights should produce demonstrably aphysical structures, unless you set the constraint ideal to something close to its native value. It is important to select a weight in proportion to the expected score value and how much you want your results to fit the constraint; a preparatory Relax run should give you an idea of the expected score range. It is also important that the constraint function chosen reflect any uncertainty about the biological system, for which reason there exist "flat" versions of several constraint functions (LINEAR_PENALTY and HARMONIC among them) which allow for any value within a range to count equivalently.
 
@@ -58,11 +61,11 @@ As mentioned above, constraints are a way to make Rosetta's scores reflect some 
 
 To demonstrate this, run
 
-	$>../../../main/source/bin/relax.default.linuxclangrelease -s 4eq1.pdb -out:suffix _unconstrained @general_relax_flags
+	$>../../../main/source/bin/relax.default.linuxclangrelease -s 4eq1.pdb -out:suffix _unconstrained -ignore_unrecognized_res @general_relax_flags
 
 and 
 
-	$>../../../main/source/bin/relax.default.linuxclangrelease -s 4eq1.pdb -out:suffix _constrained @general_relax_flags @constraint_flags
+	$>../../../main/source/bin/relax.default.linuxclangrelease -s 4eq1.pdb -out:suffix _constrained -ignore_unrecognized_res @general_relax_flags @constraint_flags
 
 You should see that, while the rest of each subunit moves, the N-terminus of each subunit moves very little relative to residue 423, as per the constraints we entered. (You may verify this more rigorously by measuring the distance from residue 356 to residue 423 on the other subunit.) As mentioned previously in the Relax tutorial, if we wished to prevent any of the amino acids from moving particularly far from their starting position, we could use the option
 	

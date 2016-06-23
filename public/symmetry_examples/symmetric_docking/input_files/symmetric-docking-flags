@@ -1,8 +1,8 @@
--in:file:s input_files/2akf_INPUT.pdb
--in:file:native input_files/2akf.pdb
+-in:file:s symmetric_docking/input_files/2akf_INPUT.pdb
+-in:file:native symmetric_docking/input_files/2akf.pdb
 -ignore_unrecognized_res
 # symmetry options
--symmetry:symmetry_definition input_files/symm_def_trimer.dat  # This is the location of the symmetry definition file
+-symmetry:symmetry_definition symmetric_docking/input_files/symm_def_trimer.dat  # This is the location of the symmetry definition file
 -symmetry:initialize_rigid_body_dofs # Initialize the rigid body positions of the subunits according to the symmetry definition file
 -symmetry:symmetric_rmsd # Calculate a symmmetric rmsd. # Necessary because we have 3 chains.
 # packing optinos
