@@ -1,5 +1,5 @@
 -in:ignore_unrecognized_res
--file:s msoleft.pdb
+-file:s inputs/msoleft.pdb
 -score:weights dna
 -use_input_sc
 -run:output_hbond_info
@@ -12,6 +12,6 @@
 -unmute protocols.dna protocols.multistate_design protocols.genetic_algorithm apps protocols.loops core.io.pdb
 -mute core.io.database
 -jd2:dd_parser
--parser:protocol design.script
+-parser:protocol scripts/design.script
 -overwrite
 -out:prefix design_

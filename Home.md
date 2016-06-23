@@ -1,6 +1,10 @@
 Demos, Tutorials, and Protocol Captures
 =======================================
-KEYWORDS: CORE_CONCEPTS GENERAL
+
+[[_TOC_]]
+
+##### [[Demos listed by keyword|tag-search]]
+
 Obtaining tutorial materials
 ----------------------------
 
