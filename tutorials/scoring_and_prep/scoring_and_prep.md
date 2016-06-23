@@ -1,7 +1,7 @@
 \pagenumbering{gobble}
 
 #PDB scoring and preparation with Rosetta
-
+KEYWORDS: ANALYSIS UTILITIES
 **Bold text means that these files and/or this information is provided.**
 
 *Italicized text means that this material will NOT be conducted during the workshop.*

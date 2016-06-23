@@ -1,6 +1,6 @@
 # Protein DNA Interface Design
 ==============================
-KEYWORDS: DESIGN NUCLEIC_ACIDS DNA INTERFACE
+KEYWORDS: NUCLEIC_ACIDS INTERFACES DNA
 
 This docuemnt is last updated in 2016 by Parisa Hosseinzadeh.
 

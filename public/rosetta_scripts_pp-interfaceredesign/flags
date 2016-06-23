@@ -1,0 +1,11 @@
+-s inputs/2wpt.ppk.pdb 
+-correct 
+-ex1 
+-ex2 
+-extrachi_cutoff 5 
+-ignore_unrecognized_res
+-run:constant_seed
+-nstruct 1
+-jd2:ntrials 10
+-parser:protocol scripts/flexbb-interfacedesign.xml 
+-docking:no_filters 

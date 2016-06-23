@@ -1,5 +1,5 @@
--in:file:s 1ZEH_haptomer.pdb
--symmetry:symmetry_definition 1ZEH.d3.symm
+-in:file:s rosetta_inputs/1ZEH_monomer_d3.pdb
+-symmetry:symmetry_definition rosetta_inputs/1ZEH.d3.symm
 -packing:ex1
 -packing:ex2aro
 -out:nstruct 1

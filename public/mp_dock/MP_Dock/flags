@@ -1,0 +1,21 @@
+-in:file:s input/1AFO_AB_noMEM.pdb
+
+#native for comparison for RMSD calculation
+-in:file:native input/native.pdb
+
+#input spanfile				
+-mp:setup:spanfiles input/1AFO_AB.span
+
+#name of the output scorefile
+-out:file:scorefile score_mpdock_1AFO.sc		
+
+#number of models to build, at least 1000 for production run
+-nstruct 1 
+
+#chains of the partners to dock
+-docking:partners A_B
+
+#docking perturbation: 3A translation, 8degrees rotatin 
+-dock_pert 3 8 		
+						
+#-show_simulation_in_pymol 0 					

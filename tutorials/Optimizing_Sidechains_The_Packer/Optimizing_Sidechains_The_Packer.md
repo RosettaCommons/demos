@@ -1,5 +1,6 @@
 #Optimizing Side-Chains: Introduction to the *Packer*
-Tutorial by Vikram K. Mulligan, Ph.D.
+KEYWORDS: CORE_CONCEPTS GENERAL STRUCTURE_PREDICTION DESIGN   
+Tutorial by Vikram K. Mulligan, Ph.D.   
 Created 20 June 2016.
 
 [[_TOC_]]

@@ -1,10 +1,11 @@
 # Analysis
+KEYWORDS: ANALYSIS GENERAL
 This tutorial will go through some examples of what to do with the output that Rosetta produces. In general the output is one or several of the following files:
 
-* pdb file
-* silent file
-* score file
-* log file
+* pdb file - protein structural information in the Protein DataBank format
+* silent file - protein structural information in Rosetta's own format
+* score file - tab-delimited sets of scores
+* log file - a record of all the output to terminal by a given run
 
 **IMPORTANT**  Rosetta will always give you a result!
 
@@ -20,7 +21,7 @@ The models that Rosetta produces are in pdb file format. If you open the file, y
 
 * Score the provided pdb file and open the scored structure in your favourite text editor.
 
-        $> ../../../main/source/bin/score.jd2.linuxclangrelease -s 1ubq.pdb -out:output -out:file:scorefile score.sc
+        $> ../../../main/source/bin/score_jd2.default.linuxclangrelease -s 1ubq.pdb -out:output -out:file:scorefile score.sc
     
 * Now, search for the word "pose". This will bring you to the end of the coordinate section. It should look similar to this:
 
@@ -42,7 +43,7 @@ The models that Rosetta produces are in pdb file format. If you open the file, y
  | THR:NtermP[...] | scores for residue #1 (N-terminus, threonine)   |
  | VAL_2 | scores for residue #2 (here a Valine)
  
-* Extract the total score for each individual residue:  
+* Extract the total score for each individual residue using [egrep](http://www.cs.columbia.edu/~tal/3261/fall07/handout/egrep_mini-tutorial.htm):  
 
         $ egrep '[^A-Z]*_[0-9]+\s' 1ubq_0001.pdb | cut -d'_' -f2 | awk '{print $1 "\t" $NF}' > total_score_per_res.dat   
  This selects all lines that contains the pattern "Letters_[some-number] ", then gets rid of everything before the underscore and finally prints out the first field (the number after _), a tab, and the very last field (here: the total_score)
@@ -86,11 +87,12 @@ Rosetta provides multiple ways to extract structures from those files.
 **1. Scoring** - The scoreing application can use silent files as input and generates pdb files.  
 *Try the following:*
 
-        $> ../../../main/source/bin/score.linuxgccrelease \
+        $> ../../../main/source/bin/score_jd2.default.linuxgccrelease \
         -in:file:silent_struct_type binary \
         -in:file:silent example.out \
         -out:output \
-        -out:file:scorefile extracted_scorefile.sc
+        -out:file:scorefile extracted_scorefile.sc\
+	@general_flags
         
    this will give you a new scorefile and the extracted pdb file (here there is only one structure in the silent file)
    
@@ -104,7 +106,7 @@ This can take multiple tags (S\_00000170\_1 S\_00000170\_2 S\_00000168\_1)
  
  First, remove the extracted pdb file:
    
-      $> rm S_00000170_1.pdb
+      $ rm S_00000170_1.pdb 
  
  *Then try this:*
  

@@ -1,5 +1,5 @@
 # turn on oop patches
--include_patches patches/oop_pre.txt patches/oop_post.txt 
+#-include_patches patches/oop_pre.txt patches/oop_post.txt 
 
 # first chain is target, second chain is oop
 -s ./inputs/mdm2_oopAAAA.pdb
@@ -15,5 +15,5 @@
 #-pert_num 100
 
 # number of pertubation + design cycles
--design_loop_num 10
+-design_loop_num 1
 

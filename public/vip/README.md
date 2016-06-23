@@ -2,7 +2,7 @@
 
 This README was written in Feb. 2012, by Jim Havranek (havranek@genetics.wustl.edu).
 
-KEYWORDS: DESIGN STABILITY_IMPROVEMENT
+KEYWORDS: DESIGN STABILITY
 
 This demo illustrates a protocol to identify candidate mutations for stabilizing proteins that have sub-optimally packed cores.
 

@@ -1,4 +1,5 @@
 # Predict eglinC DDGs
+KEYWORDS: DOCKING ANALYSIS
 The entire workflow for this demo should be described in a file
 named README.dox.  It should describe an entire work flow, with
 command lines, tested if possible.
@@ -114,7 +115,7 @@ he minimization protocol only takes in lists of files, so you need to do the fol
 
 6. run the ddg prediction application as follows: 
     ```
-    ~/rosetta_release_3/rosetta-3.3/rosetta_source/bin/ddg_monomer.default.macosgccrelease -in:file:s minimize_with_cst.1CSEi.ren_0001.pdb -ddg::weight_file soft_rep -ddg::iterations 5 -ddg::dump_pdbs true -ddg::mut_file mutations.multiples.txt -database ~/minirosetta_database/ -ddg::local_opt_only false -ddg::min_cst false -ddg::mean true -ddg::min -ignore_unrecognized_res 
+    $>~/../../../main/source/bin/ddg_monomer.default.linuxclangrelease -in:file:s minimize_with_cst.1CSEi.ren_0001.pdb -ddg::weight_file soft_rep -ddg::iterations 1 -ddg::dump_pdbs true -ddg::mut_file mutations.multiples.txt -ddg::local_opt_only false -ddg::min_cst false -ddg::mean true -ddg::min -ignore_unrecognized_res 
     ```
     This repacks the wild-type and the mutant structures 5 times, and in order to compute the ddG (which is Emutant - Ewt ) it averages the scores of the mutant and wild-type ensembles of structures.  It uses the soft_rep_design scoring function and it is a fixed backbone protocol. Normally I would run this protocol for 20 iterations , but for the demo purposes I'm only testing with 5 iterations.
     The full explanation of all options is here:

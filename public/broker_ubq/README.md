@@ -1,6 +1,6 @@
 AbInitio Protocol Capture
 =========================
-
+KEYWORDS: STRUCTURE_PREDICTION GENERAL
 This protocol runs abinitio with a given beta strand topology and a helix fixed 
 at atomic resolution.
 

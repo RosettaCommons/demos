@@ -1,7 +1,7 @@
 -run:protocol broker
--broker:setup input_files/setup_init.tpb
+-broker:setup fold-and-dock/input_files/setup_init.tpb
 # symmetry options
--symmetry:symmetry_definition ./input_files/symm_def_trimer.dat # This is the location of the symmetry definition file
+-symmetry:symmetry_definition ./fold-and-dock/input_files/symm_def_trimer.dat # This is the location of the symmetry definition file
 -symmetry:initialize_rigid_body_dofs # Initialize the rigid body positions of the subunits according to the symmetry definition file
 # fold-and-dock options
 -fold_and_dock:rigid_body_cycles 1
@@ -19,10 +19,10 @@
 -packing:ex2:level 1
 -packing:extrachi_cutoff 0
 # input data
--in:file:fasta ./input_files/2akf_.fasta
--in:file:frag9 ./input_files/aa2akf_09_05.200_v1_3
--in:file:frag3 ./input_files/aa2akf_03_05.200_v1_3
--evaluation:rmsd_target input_files/2akf.pdb
+-in:file:fasta ./fold-and-dock/input_files/2akf_.fasta
+-in:file:frag9 ./fold-and-dock/input_files/frags.200.9mers
+-in:file:frag3 ./fold-and-dock/input_files/frags.200.3mers
+-evaluation:rmsd_target fold-and-dock/input_files/2akf.pdb
 -evaluation:rmsd_column _
 -evaluation:symmetric_rmsd # Necessary because we have 3 chains. Note we use evaluators to calculate rmsd. -symmetry:symmetric_rmsd will notwork in this case.
 -nstruct 1

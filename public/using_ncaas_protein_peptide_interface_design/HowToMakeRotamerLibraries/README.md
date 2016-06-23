@@ -1,7 +1,7 @@
 ------------------------------------------------------------------------
    INSTRUCTIONS FOR CREATING NONCANONICAL AMINO ACID ROTAMER LIBRARIES
 ------------------------------------------------------------------------
-
+KEYWORDS: NONCANONICALS UTILITIES
 Creating a Noncanonical Amino Acid (NCAA) rotamer library is the second of two steps toward being able to use a NCAA in Rosetta. To add a new NCAA or to better understand how the NCAAs in the related publication were added one should have already completed or understand the steps in HowToMakeResidueTypeParamFiles.  
 
 Rotamer libraries are sets of common side chain conformations that generally correspond to local minima on the side chain conformational energy landscape. Side chain conformations are usually represented as a set of mean angles and a standard deviation to indicate variability. Rotamer libraries are used in for two main purposes in Rosetta: to provide starting points for side chain optimization routines, and the relative frequency is used as a pseudo-energy. Traditionally rotamer libraries are created by collecting statistics from protein structures. Rosetta uses the backbone dependent Drunbrack rotamer libraries. Since there are not enough structures containing NCAAs they must be generated.

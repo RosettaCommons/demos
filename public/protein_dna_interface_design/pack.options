@@ -1,0 +1,10 @@
+-in:ignore_unrecognized_res 
+-file:s starting_files/2h7h.pdb 
+-score:weights dna 
+-run:output_hbond_info 
+-score:output_residue_energies 
+-jd2:dd_parser 
+-parser:protocol pack.script 
+-overwrite 
+-out:prefix pack_ 
+-ex1

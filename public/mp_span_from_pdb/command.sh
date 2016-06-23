@@ -1,3 +1,2 @@
-/Users/julialeman/Documents/julia/git_final/Rosetta/main/source/bin/spanfile_from_pdb.macosclangrelease \
--database /Users/julialeman/Documents/julia/git_final/Rosetta/main/database \
+~/Rosetta/main/source/bin/spanfile_from_pdb.linuxclangrelease \
 -in:file:s input/1AFO_AB.pdb \

@@ -1,3 +1,4 @@
+KEYWORDS: UTILITIES GENERAL
 src/python/apps/curated/
 	A directory with published protocols and curated applications.
 	Must contain tutorial on the use of the protocol.

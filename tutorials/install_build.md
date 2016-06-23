@@ -1,4 +1,5 @@
 # Downloading Rosetta
+KEYWORDS: CORE_CONCEPTS GENERAL
 
 For any academic or commercial use, you need to [request a license](https://els.comotion.uw.edu/express_license_technologies/rosetta). Obtaining a license is free for academic users. After you obtained the license, you can [download Rosetta](https://www.rosettacommons.org/software/license-and-download). Make sure you download the version correspinding to the license you have. When you click, you can see the latest release as well as several weekly releases. The weekly release contains all the latest changes and but may lack documentations for certain new features. When you click on a version you can see that there are a number of options to download. The "__source__" is what you want to download. If you use any noncanonical amino acids, download the library of NCAAs as well.
 

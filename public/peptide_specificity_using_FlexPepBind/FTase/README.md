@@ -1,5 +1,5 @@
 This file contains information specific for FTase FlexPepBind. For general information about FlexPepBind, see README file in the upper level directory.
-
+KEYWORDS: PEPTIDES DOCKING INTERFACES
 Input files needed to run the FlexPepBind protocol on FTase:
 ------------------------------------------------------------
 

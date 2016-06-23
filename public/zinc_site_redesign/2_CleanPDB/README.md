@@ -1,7 +1,7 @@
 Here other chains are removed  and residues like MSE are changed to
 MET, remove structural metal sites, and change KCX to LYS. The default
 chain that is kept is chain A. The script is executed by 
-
+KEYWORDS: METALS UTILITIES
 ```bash
 python $ROSETTA_TOOLS/zinc_site_redesign/cleanPDBfile.py -f 1A4L.pdb 
 ```

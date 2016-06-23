@@ -1,9 +1,8 @@
 \pagenumbering{gobble}
 
 # Protein Design
-
+KEYWORDS: DESIGN GENERAL SYMMETRY MEMBRANES
 ![top7_plan](tutorial_figures/top7_plan.png)
-
 
 **Bold text means that these files and/or this information is provided.**
 

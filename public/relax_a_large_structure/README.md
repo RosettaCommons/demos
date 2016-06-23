@@ -1,5 +1,5 @@
 # Relax a Large Structure
-
+KEYWORDS: STRUCTURE_PREDICTION GENERAL
 The FastRelax protocol minimizes the input structure according to Rosetta's force field.
 The attached XML file (demo.xml) is an example rosetta script that specifies how to relax a part of a large protein.
 The script defines one mover (FastRelax) with a MoveMap, which specified the residues to relax.

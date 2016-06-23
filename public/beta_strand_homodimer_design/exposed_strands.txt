@@ -1,6 +1,7 @@
+protocols.evaluation.ChiWellRmsdEvaluatorCreator: Evaluation Creator active ... 
 apps.public.beta_strand_homodimer_design.exposed_strand_finder: Working on: 2a7b_mpm
 ExposedStrand: FILE:         2a7b_mpm   CHAIN:    A   START:   806   END:   812   H_BONDS:   0
-protocols.jd2.JobDistributor: 2a7b_mpm_0001 reported success in 15 seconds
+protocols.jd2.JobDistributor: 2a7b_mpm_0001 reported success in 1 seconds
 protocols.jd2.JobDistributor: no more batches to process... 
-protocols.jd2.JobDistributor: 1 jobs considered, 1 jobs attempted in 15 seconds
+protocols.jd2.JobDistributor: 1 jobs considered, 1 jobs attempted in 1 seconds
 Done! -------------------------------

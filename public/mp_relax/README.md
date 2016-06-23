@@ -1,5 +1,7 @@
+
 Membrane Relax
 ==============
+KEYWORDS: MEMBRANES STRUCTURE_PREDICTION
 
 Author: Rebecca F. Alford (rfalford12@gmail.com)  
 Corresponding PI: Jeffrey J. Gray (jgray@jhu.edu)  
@@ -31,7 +33,7 @@ called membrane_relax.xml is included in the main directory of this protocol cap
 
 It can be run with the following executable: 
 
-    Rosetta/main/source/bin/rosetta_scripts.linuxgccrelease
+    Rosetta/main/source/bin/rosetta_scripts.default.linuxgccrelease
 
 ## Generating Inputs ##
 Two inputs are required for the membrane relax application: 
@@ -55,7 +57,7 @@ used as an example:
    capture in Rosetta/demos/protocol_captures/2014. An example commandline using 
    3pxo is also provided here: 
 
-        Rosetta/main/source/bin/spanfile_from_pdb.linuxgccrelease -database /path/to/db -in:file:s example_inputs/3pxo_tr.pdb
+        $> spanfile_from_pdb.default.linuxgccrelease -in:file:s example_inputs/3pxo_tr.pdb
 
    For this example, this command will produce 1 output file: 
    * 3pxo_tr.span: Spanfile containing predicted trans-membrane spans
@@ -89,7 +91,7 @@ use the PDB 3pxo:
 
     To run this application, use the following command line: 
 
-        Rosetta/main/source/bin/rosetta_scripts.linuxgccrelease -database /path/to/db @relax_flags
+        $> rosetta_scripts.default.linuxgccrelease @relax_flags
 
 Note on timing: Refinement in Rosetta is a time consuming application. Depending on avaialble
 computing power and size of the protein, refinement of an individual decoy can take between 10-15min

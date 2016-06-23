@@ -1,7 +1,7 @@
 ------------------------------------------------------------------------------------------------
    CREATING ROSETTA RESIDUETYPE PARAMETER FILES FOR NONCANONICAL AMINO ACIDS
 ------------------------------------------------------------------------------------------------
-
+KEYWORDS: NONCANONICALS UTILITIES
 Creating a Residue Type Parameter file is the first of three steps to being able to use a noncanonical amino acid (NCAA) in Rosetta. To add a new NCAA or to better understand the how the NCAAs in the accompanying publication were added one should follow the steps in this folder followed by the steps in HowToMakeNCAARotamerLibraries.  
 
 ResidueType Parameter files are the basic input file for the creation the core::chemical::ResidueType in Rosetta. ResidueTypes are used for storing information about the atoms, bonds, and chemical connectivity of both polymer (DNA/RNA, peptide) and ligand residues in Rosetta. Including an idealized conformation in an internal coordinate format. They also contain parameters used by some of the energy methods, and rotamer libraries.
