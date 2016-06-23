@@ -1,5 +1,5 @@
--s pdb2gb1.ent
+-s inputs/pdb2gb1.ent
 #-ex1
 #-ex2aro
--parser:protocol flxbb.xml
+-parser:protocol scripts/flxbb.xml
 -run:constant_seed
