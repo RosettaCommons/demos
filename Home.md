@@ -14,7 +14,7 @@ Demos, Tutorials, and Protocol Captures
 </ul></ul></div>
 <br/>
 
-<div style="font-size:xx-large;"> [[Demos listed by keyword|tag-search]] </div>
+#### [[Demos listed by keyword|tag-search]]
 
 Obtaining tutorial materials
 ============================
