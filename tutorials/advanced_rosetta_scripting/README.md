@@ -108,6 +108,85 @@ This time, the minimzation has worked as expected: the chains move apart a bit, 
 
 ![Proper minimization after properly setting up the fold tree.](foldtree_example_3.png)
 
+## Symmetry within RosettaScripts
+
+* *Make a structure symmetric, and then carry out some common pose manipulation of the symmetric structure.*
+
+For more information about symmetry, refer to the [symmetry user's guide](https://www.rosettacommons.org/docs/latest/rosetta_basics/structural_concepts/symmetry#How-to-adopt-your-protocol-to-use-symmetry).
+
+Many proteins have symmetric structures.  That is, they are replicates of one primary *asymmetric* unit. Rosetta can handle symmetry using the symmetry code, and has many protocols that are adopted to symmetry.  Not all movers and filters support symmetry, however.  (For developers, there is [information here](https://www.rosettacommons.org/docs/latest/rosetta_basics/structural_concepts/symmetry#How-to-adopt-your-protocol-to-use-symmetry) about what is needed for a mover, filter, or protocol to support symmetry.)
+
+Ordinarily, one follows these steps in order to symmetrize a pose and then work with it:
+
+1.  Generate a symmetry definition file defining the relevant symmetry transforms for the type of symmetry (*e.g.* cyclic symmetry, dihedral symmetry, crystal symmetry, *etc.*).  In this case, this is provided for you in the symmetry\_example/inputs directory. Please refer to the [symmetry tutorial](../symmetry/symmetry.md) for a detailed description of symmetry files and how to work with them.  In this case, the C3.symm file provided in the symmetry\_example/inputs/ directory allows Rosetta to set up a pose with C3 symmetry (3-fold rotational symmetry about an axis).
+
+2.  Set up the script for symmetry. We have provided a script for you in the scripts directory, named symmetry.xml. Let's take a look at the script.
+
+You can see that on top in the ```<SCOREFXNS>``` part, we have added a new line:
+
+```xml
+<SCOREFXNS>
+    <sfx_symm weights="talaris2014" symmetric=1 />
+</SCOREFXNS>
+```
+
+This is required to tell Rosetta that the scorefunction should be symmetry-aware.  The scoring machinery can score a symmetric pose very efficiently since the intra-subunit energies are the same for each asymmetric unit, and the inter-subunit energies are also the same.  The scoring machinery need therefore only evaluate the energy of a small part of the system and multiply.
+
+Now, let's go to the `<MOVERS>`. In the first line we added:
+
+```
+<SetupForSymmetry name=add_symm definition="C3.symm" />
+```
+This is probably the most important line! Here, you are telling Rosetta that it is going to be run in the C3 mode. It will replicate the assymetric unit to generate the symmetric structure based on the given symmetry file. It will also generate an appropriate fold tree based on the corresponding symmetry definition and will make sure that the movements and scoring are handled correctly. You can use `ExtractAsymmetricUnit` to do the reverse and extract the assymetric subunit from a symmetric pose.
+
+In the next two lines we have:
+
+```
+<SymPackRotamersMover name="symm_pack" scorefxn=sfx_symm/>
+<SymMinMover name="symm_min" scorefxn=sfx_symm bb=0 chi=1 jump=ALL  />
+```
+These are symmetry-adopted versions of PackRotamersMover and MinMover. `jump` should be set to `ALL` in order to refine the symmetric degrees of freedom. 
+
+
+There are other symmetric-aware movers that can also be used. You can find them in the [Rosetta Documentation](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/RosettaScripts). 
+
+
+**Running and Outputs**
+
+Now let's run the scripts. In this tutorial you are going to generate, design, and minimize a C3 symmetric structure made out of ubiquitin subunits. You are going to use inputs/symm_test.pdb file as an example. This is just ubiquitin structure that has been cleaned and prepared. Based on the `PROTOCOLS` section, here is the order of running:
+
+```
+<Add mover=add_symm/>
+<Add mover=symm_pack/>
+<Add mover=symm_min/>
+```
+You can run the script using this command: (`$ROSETTA3` is the path to your Rosetta/main/source)
+
+```
+$> $ROSETTA3/bin/rosettascripts.linuxgccrelease @symm.options
+```
+
+In your output, you can see that these lines are printed in the log file: (you can also find the whole tracer in outputs/symm_c3.log)
+
+```
+core.conformation.symmetry.util: =================== SYM FOLD TREE, jump notation: =symfixed= *indep* #symdof# jump[=follows] ========================
+S1(229)
+|----#j1#------>4:Sub1A(1-76)
+|----=j4=---->S2(230)----j2=1----->80:Sub2A(77-152)
+\----=j5=---->S3(231)----j3=1---->156:Sub3A(153-228)
+```
+
+This is were the symmetry is being defined and the jumps between subunits are set based on the symmetry definition file you provided.
+
+The structure should look like something like this:
+
+![figure of C3](https://github.com/RosettaCommons/demos/blob/hssnzdh2/parisa_XRW/tutorials/symmetry/figures/C3.png)
+
+Now, based on the things you learnt from the [symmetry tutorial](../symmetry/symmetry.md), try to see if you can get other types of symmetric structures. An example of a C7 symmetric ubiquitin is provided for you in outputs/symm_test_c7.pdb. The C7.symm file is also in the input directory if you want to use. The result should look like this:
+
+![figure of C7](https://github.com/RosettaCommons/demos/blob/hssnzdh2/parisa_XRW/tutorials/symmetry/figures/C7.png)
+
+
 ## Nesting movers and looping
 
 ### Scripting a simple loop
