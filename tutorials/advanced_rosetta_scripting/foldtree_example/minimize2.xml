@@ -9,11 +9,13 @@
 	<FILTERS>
 	</FILTERS>
 	<MOVERS>
+		<AtomTree name="set_foldtree" fold_tree_file="foldtree.txt" />
 		<MinMover name="minimize1" bb="false" chi="true" jump="ALL" tolerance="0.0000001" type="dfpmin" />
 	</MOVERS>
 	<APPLY_TO_POSE>
 	</APPLY_TO_POSE>
 	<PROTOCOLS>
+		<Add mover="set_foldtree" />
 		<Add mover="minimize1" />
 	</PROTOCOLS>
 	<OUTPUT scorefxn="tala" />
