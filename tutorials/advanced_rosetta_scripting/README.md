@@ -189,10 +189,10 @@ The final script can be viewed in loop\_example/pack\_opt.xml.  Let's try it out
 ```bash
 $> cp loop_example/pack_opt.xml .
 $> cp loop_example/1ubq.pdb .
-$> <path_to_Rosetta_directory>/main/source/bin/rosetta_scripts.default.linuxgccrelease -s 1ubq.pdb -parser:protocol pack_opt.xml -out:prefix packopt_ >packopt.log &
+$> <path_to_Rosetta_directory>/main/source/bin/rosetta_scripts.default.linuxgccrelease -s 1ubq.pdb -parser:protocol pack_opt.xml -out:prefix packopt_
 ```
 
-In this case, we're piping the output log to a file, packopt.log.  If you look at the tracer output in this logfile, you should be able to see the application of the IteratedConvergence, and how the RotamerTrialsMinMover is repeated multiple times.
+This script will take a bit longer to run (about three or four minutes).  If you look at the tracer output, you should be able to see the application of the IteratedConvergence, and how the RotamerTrialsMinMover is repeated multiple times.
 
 ## Variable substition: adding variables to scripts
 
