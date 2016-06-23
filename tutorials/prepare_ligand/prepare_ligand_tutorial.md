@@ -1,6 +1,8 @@
 # Preparing Ligands
 
-KEYWORDS: LIGANDS UTILITIES
+KEYWORDS: CORE_CONCEPTS LIGANDS
+
+Tutorial by Parisa Hosseinzadeh (parisah@uw.edu), prepared in June 2016.
 
 During a simulation in Rosetta, the atoms within certain chemical entities like amino acid side chains, are kept together. For that to work, bond lengths, bond angles, the order of atoms etc. must be known. 
 

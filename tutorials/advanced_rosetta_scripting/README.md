@@ -5,7 +5,9 @@ KEYWORDS: SCRIPTING_INTERFACES CORE_CONCEPTS
 Tutorial by Vikram K. Mulligan (vmullig@uw.edu).  Created on 23 June 2016 as part of the 2016 Documentation XRW.
 
 ## Goals
+
 At the end of this tutorial, you will understand:
+
 - How to set up a FoldTree within RosettaScripts
 - How to set up symmetry within RosettaScripts
 - How to nest movers and how to script common loops (*e.g.* Monte Carlo trajectories)
@@ -13,6 +15,12 @@ At the end of this tutorial, you will understand:
 - How to assemble more complicated protocols from simpler building-blocks
 - How to use variable substitution and file inclusion in a script
 - How to control large-scale sampling
+
+## Controlling the FoldTree within RosettaScripts
+
+In the [FoldTree tutorial](../fold_tree/fold_tree.md), we learnt how the fold tree controls what parts of a structure move when degrees of freedom change by establishing a clear hierarchy of residues.  It is often necessary to modify the FoldTree manually in order to optimize a protocol.  How do we do this in RosettaScripts?
+
+As mentioned in the [introductory RosettaScripting tutorial](../rosetta_scripting/README.md), movers are modules that alter a structure (*pose*) in some way that need not involve changing atomic coordinates.  Indeed, there are special movers available to RosettaScripts that serve only to change the FoldTree.
 
 ## Nesting movers
 

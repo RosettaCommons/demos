@@ -643,9 +643,17 @@ $> <path_to_Rosetta_directory>/main/source/bin/rosetta_scripts.default.linuxgccr
 
 If you compare the output to the input structure, you'll find that the core has now been redesigned, preserving the buried polar residues' identities and conformations.
 
+#### Summary: Movers
+
+In this sub-section, we have learnt how to set up movers.  In particular, we learnt about movers that call the *minimizer* and which accept *move maps* as inputs, and about movers that call the *packer* and which accept *task operations* as inputs.  Finally, we explored the use of *residue selectors* for defining sets of residues as inputs into other Rosetta modules.
+
+Before we move on to filters, it's worth mentioning that there exist movers that call both the packer and the minimizer over the course of their operation.  These generally accept both move maps and task operations, with the former controlling the minimization steps, and the latter controlling packing steps.  The [FastDesign](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/Movers/movers_pages/FastDesignMover) and [FastRelax](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/Movers/movers_pages/FastRelaxMover) movers are good examples of this: they both carry out alternating rounds of packing and minimization, gradually ramping the *fa_rep* (Lennard-Jones repulsive) term in the scorefunction from a low value to normal as rounds progress.  It's important to note the division of protocol control between move maps and task operations: if a user wishes to keep a residue completely fixed, he or she must disable movement *both* during packing steps (by preventing repacking with a suitable task operation) *and* during minimization steps (by disabling that residue's degrees of freedom in the move map).
+
+> **Packing and minimization steps in more complicated protocols are controlled by different user interfaces (task operations and move maps, respectively).  Packing and minimization steps must be independently configured for movers and protocols that do both.**
+
 ## Filters
 
-* *Filter runs based on a productive conformation (*e.g.* a salt-bridge)*
+* *Filter runs based on a productive conformation (in this case, a salt-bridge)*
 
 Because Rosetta runs are typically stochastic, early stages will often sample conformations which will not be productive. That is, the randomness introduced by initial movers will result in conformations which will never lead to useful final models. To speed up the protocol, it is sometimes helpful to abandon some samples before the final stages of sampling when early stages result in conformations which are known to be unproductive. To facilitate this, RosettaScripts provides Filters, which can stop a job based on measured properties of the protein structure, allowing the rosetta\_scripts application to continue to the next job (*i.e.* the next replicate of the protocol with the current input or the next input structure).
 
