@@ -78,12 +78,12 @@ The *small.vall.gz* used here for fragment picking is only used to speed up the 
 
 7. Run Rosetta with the fragments made above and use NOEs to guide search
 ```
-$> ROSETTA3/bin/minirosetta.default.linuxgccrelease -cst_fa_file rosetta_inputs/NOE.cst -cst_file rosetta_inputs/NOE.centroid.cst -abinitio:stage1_patch scripts/patch_atom_pair_constraint -abinitio:stage2_patch scripts/patch_atom_pair_constraint -abinitio:stage3a_patch scripts/patch_atom_pair_constraint -abinitio:stage3b_patch scripts/patch_atom_pair_constraint -abinitio:stage4_patch scripts/patch_atom_pair_constraint -score:patch scripts/patch_atom_pair_constraint -in:file:fasta starting_inputs/t000_.fasta -file:frag3 rosetta_inputs/pick_cs_fragments/frags.score.200.3mers -file:frag9 rosetta_inputs/pick_cs_fragments/frags.score.200.9mers -nstruct 1 -out:file:silent csrosetta_noe.out -run:protocol abrelax -abinitio::increase_cycles 0.5 -overwrite
+$> ROSETTA3/bin/minirosetta.default.linuxgccrelease -cst_fa_file rosetta_inputs/NOE.cst -cst_file rosetta_inputs/NOE.centroid.cst -abinitio:stage1_patch scripts/patch_atom_pair_constraint -abinitio:stage2_patch scripts/patch_atom_pair_constraint -abinitio:stage3a_patch scripts/patch_atom_pair_constraint -abinitio:stage3b_patch scripts/patch_atom_pair_constraint -abinitio:stage4_patch scripts/patch_atom_pair_constraint -score:patch scripts/patch_atom_pair_constraint -in:file:fasta starting_inputs/t000_.fasta -file:frag3 rosetta_inputs/pick_cs_fragments/frags.score.200.3mers -file:frag9 rosetta_inputs/pick_cs_fragments/frags.score.200.9mers -nstruct 1 -out:file:silent csrosetta_noe.out -run:protocol abrelax -abinitio::increase_cycles 0.1 -overwrite
  -abinitio::relax
 ```
 **IMPORTANT**  
-* Change nstruct to generate desired number of models. Larger is better depending on your available computer time, etc.
-* change -abinitio::increase_cycles 0.5 to 10! (0.5 is chosen for tesing purposes only)
+* Change nstruct to generate the desired number of models. Larger is better depending on your available computer time, etc.
+* Change -abinitio::increase_cycles 0.1 to 10! (0.5 is chosen for tesing purposes only)
 
 
 You can/should adjust the weights of NOE constraints in `scripts/patch_atom_pair_constraint`.
