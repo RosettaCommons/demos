@@ -126,14 +126,14 @@ class Gollum::Macro::LinkDemos < Gollum::Macro
                 end 
                 html += "<h2>" + recapitalize(first_two[0]) + "</h2>\n"
                 if recapitalize(first_two[0]) != "Other" and recapitalize(first_two[1]) != "Other" then
-                    html += "<h3>" + recapitalize(first_two[1]) + "</h3>\n"
+                    html += "<h4>" + recapitalize(first_two[1]) + "</h4>\n"
                 end
             elsif first_two[1] != last_keywords[1] then
                 if list_open then 
                     html += "</ul>\n"
                     list_open = false 
                 end
-                html += "<h3>" + recapitalize(first_two[1]) + "</h3>\n"
+                html += "<h4>" + recapitalize(first_two[1]) + "</h4>\n"
             end
 	    last_keywords = first_two
         end
