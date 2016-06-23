@@ -6,7 +6,7 @@ Rosetta Tutorials, Demos, and Protocol Captures
 Obtaining tutorial materials
 ----------------------------
 
-The demos, tutorials, protocol captures, and all example inputs are provided with the full Rosetta distribution, under the demos/ directory. Rosetta is available for license (free of charge to academic users) at <https://www.rosettacommons.org/software>.
+The demos, tutorials, protocol captures, and all example inputs are provided with the full Rosetta distribution, under the demos/ directory. Rosetta is available for license (which is free of charge to academic users) at <https://www.rosettacommons.org/software>.
 
 <!--- BEGIN_INTERNAL -->
 For RosettaCommons users, the demos repository should be automatically downloaded by the get_rosetta.sh download script. Alternatively, RosettaCommons users can download the demos repository from GitHub. e.g.
@@ -51,7 +51,7 @@ Full input files for the tutorials are located in the `demos/tutorials/` directo
 * [[Loop Modeling and Rebuilding|loop_modeling]]
 * [[Protein Design|protein_design_tutorial]]
 * [[Protein-Protein Docking|Protein-Protein-Docking]]
-    * [[Advanced Protein-Protein Docking|protein-protein_docking_tutorial]]
+    * [[Advanced Protein-Protein Docking|advanced_protein-protein_docking_tutorial]]
 * [[Protein-Ligand Docking|ligand_docking_tutorial]]
 
 Demos

@@ -1,7 +1,7 @@
 Enzyme Design Demo
 ==================
 
-KEYWORDS: DESIGN GENERAL
+KEYWORDS: DESIGN ENZYMES
 
 Tutorial for a complete *de novo* enzyme design run, using the TIM reaction as an 
 example, as published in 
