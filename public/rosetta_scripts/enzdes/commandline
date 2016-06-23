@@ -1,1 +1,0 @@
-./rosetta_scripts.linuxgccrelease -nstruct 1 -jd2:ntrials 1 -parser:protocol $2 @enzflags -database /work/khare/minirosetta_database -out::overwrite -s $1

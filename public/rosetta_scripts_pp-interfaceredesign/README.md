@@ -1,5 +1,5 @@
-# Protein protein interface design using rosetta scripts
----------------------------------------------------------
+Protein protein interface design using rosetta scripts
+======================================================
 
 KEYWORDS: SCRIPTING_INTERFACES INTERFACES DESGIN
 

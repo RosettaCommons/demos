@@ -1,6 +1,8 @@
 Refinement of peptide-protein complexes using FlexPepDock refinement
 --------------------------------------------------------------------
+
 KEYWORDS: STRUCTURE_PREDICTION PEPTIDES INTERFACES DOCKING
+
 This demo illustrates how to run FlexPepDock refinement of a peptide-protein complex. The FlexPepDock Refinement protocol is designed to create high-resolution models of complexes between a flexible peptide and a globular protein, with side chains of binding motifs modeled at nearly atomic accuracy. It is intended for cases where an approximate, coarse model of the interaction is available.
 
 Protocol Overview

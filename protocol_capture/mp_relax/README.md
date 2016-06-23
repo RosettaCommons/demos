@@ -1,6 +1,8 @@
 Membrane Relax
 ==============
+
 KEYWORDS: MEMBRANES STRUCTURE_PREDICTION
+
 Author: Rebecca F. Alford (rfalford12@gmail.com)  
 Corresponding PI: Jeffrey J. Gray (jgray@jhu.edu)  
 Last Updated: January 2015  

@@ -1,6 +1,8 @@
 Next Generation KIC
 ===================
+
 KEYWORDS: DESIGN LOOPS
+
 Setting up the demo
 -------------------
 

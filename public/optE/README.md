@@ -1,5 +1,7 @@
-# optE
-KEYWORDS: STRUCTURE_PREDICTION UTILITIES
+# optE: Refit Rosetta reference energies
+
+KEYWORDS: UTILITIES GENERAL
+
 This demo contains the input files and command lines
 necessary to refit the reference energies for the
 Talaris2013 score function using optE's sequence-

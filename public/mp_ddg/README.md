@@ -1,8 +1,7 @@
-KEYWORDS: MEMBRANES DESIGN STABILITY_IMPROVEMENT
-
-
 Membrane ΔΔG
 ============
+
+KEYWORDS: MEMBRANES DESIGN STABILITY_IMPROVEMENT
 
 Author: Rebecca F. Alford (rfalford12@gmail.com)  
 Author: Julia Koehler Leman (julia.koehler1982@gmail.com)  
@@ -14,7 +13,7 @@ Last Updated: March 2015
 Measuring free energy changes upon mutation can inform our understanding of membrane protein stability and variation and is a step toward design. In this application, we predict ddGs by measuring the difference in Rosetta energy for the native and mutated conformation. This application uses a modified version of the all atom energy function for membrane proteins, which includes the fa_elec term and pH energy (see below). The Membrane ddG application is part of the RosettaMP Framework.
 
 Documentation Link:  
-* https://www.rosettacommons.org/docs/wiki/Membrane-ddG
+* https://www.rosettacommons.org/docs/latest/application_documentation/membrane_proteins/RosettaMP-App-MPddG
 
 Publication describing the method:  
 * Alford RF, Koehler Leman J, Weitzner BD, Gray JJ (2015) An integrated 
@@ -83,7 +82,7 @@ assemble a simple PyRosetta script using the membrane framework for ddG predicti
 
    Here, we provide an example application-specific ddG calculation script for computing ddGs of mutation in OmpLA for comparison with experimental values in Moon & Fleming, 2011. The script can be run with no arguments by the following command: 
 
-        ./predict_OmpLA_ddG.py 
+        ./predict_ompLA_ddG.py 
 
    Step-by-step instructions on how to setup this script are provided in the predict_OmpLA_ddG.py script (in this protocol capture). 
 

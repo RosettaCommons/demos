@@ -1,9 +1,10 @@
 # C++ RosettaSurface
 
+KEYWORDS: SURFACES DOCKING
+
 ## Authors
 Written by Michael Pacella (Graylab), mpacella88@gmail.com.  Edited by Vikram K. Mulligan (vmullig@uw.edu) as part of the 2016 Documentation XRW.
 
-KEYWORDS: SURFACES DOCKING
 
 ## General Description
 This demo will describe how to run the C++ version of the RosettaSurface 

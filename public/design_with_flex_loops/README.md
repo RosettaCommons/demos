@@ -1,10 +1,12 @@
 Design with flexible loops
 ==========================
+
 KEYWORDS: DESIGN LOOPS 
+
 Method 1: RosettaRemodel
 ------------------------
 
-Documentation: https://wiki.rosettacommons.org/index.php/Remodel
+Documentation: <https://www.rosettacommons.org/docs/latest/application_documentation/design/rosettaremodel>
 
 Requirement:
 

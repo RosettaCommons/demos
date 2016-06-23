@@ -1,6 +1,8 @@
 Membrane ab initio modeling
 ===========================
+
 KEYWORDS: MEMBRANES STRUCTURE_PREDICTION
+
 This document was created on August 5, 2011 by:
 
 * Vladimir Yarov-Yarovoy (yarovoy@ucdavis.edu)

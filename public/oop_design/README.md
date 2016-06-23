@@ -1,5 +1,7 @@
-# Oop Design
+# Oop Design: Design with oligooxopiperazine helix mimetics
+
 KEYWORDS: PEPTIDES DESIGN
+
 ## Author
 written by Kevin Drew (Bonneau Lab), kdrew@nyu.edu
 

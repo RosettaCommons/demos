@@ -1,7 +1,7 @@
-KEYWORDS: MEMBRANES UTILITIES ANALYSIS
-
 Visualizing Membranes in PyMOL
 ==============================
+
+KEYWORDS: MEMBRANES UTILITIES ANALYSIS
 
 Author: Rebecca F. Alford (rfalford12@gmail.com)  
 Corresponding PI: Jeffrey J. Gray (jgray@jhu.edu)  
