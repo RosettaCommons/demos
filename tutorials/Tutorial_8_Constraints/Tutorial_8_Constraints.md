@@ -26,6 +26,9 @@ To demonstrate this, begin by relaxing ubiquitin via the following command:
 as in Tutorial 4 and compare the output to that of 
 
 	$> ../../../main/source/bin/relax.default.linuxclangrelease -s 1ubq.pdb @general_relax_flags -out:suffix _unreasonably_constrained @unreasonable_constraint_flags
+	
+![Unreasonable Constraints](images/1ubq_cst.png)
+The native PDB 1UBQ (cyan), unconstrained refined version (green) and unreasonably constrained refined version (salmon)
 
 In the `unreasonable_constraint_flags` file, try changing the weight of the constraint using the `-constraint:cst_fa_weight` flag and analyzing how this changes the final structure. High (>1000) weights should produce demonstrably aphysical structures, unless you set the constraint ideal to something close to its native value. It is important to select a weight in proportion to the expected score value and how much you want your results to fit the constraint; a preparatory Relax run should give you an idea of the expected score range. It is also important that the constraint function chosen reflect any uncertainty about the biological system, for which reason there exist "flat" versions of several constraint functions (LINEAR_PENALTY and HARMONIC among them) which allow for any value within a range to count equivalently.
 
