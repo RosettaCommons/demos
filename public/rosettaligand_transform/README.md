@@ -107,9 +107,9 @@ After following the procedure above to prepare your ligands, you are ready to do
 
 RosettaLigand protocols are built in the RosettaScripts framework, a modular architecture for creating RosettaLigand protocols. The rosetta_inputs/xml directory contains all of the rosetta protocols were tested in the manuscript, and any of these xml files can be used with the docking commands described below.  See the comments in the XML files for details.
 
-The Rosetta ligand docking command should be run as follows:
+The Rosetta ligand docking command should be run as follows: (where `$ROSETTA3`=path-to-rosetta/main/source
 
-    rosetta_scripts.default.linuxgccrelease @rosetta_inputs/flags.txt -in:file:screening_job_file rosetta_inputs/job_01.js -parser:protocol rosetta_inputs/tr_repack.xml -out:file:silent results.out
+    $> $ROSETTA3/bin/rosetta_scripts.default.linuxgccrelease @rosetta_inputs/flags.txt -in:file:screening_job_file rosetta_inputs/job_01.js -parser:protocol rosetta_inputs/tr_repack.xml -out:file:silent results.out
 
 rosetta_inputs/flags.txt contains flags that are always the same regardless of the input file.
 
