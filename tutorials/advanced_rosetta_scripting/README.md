@@ -391,7 +391,7 @@ Next, let's tell the mover what it will be sampling over.  This is done with som
 
 ```xml
 		<BundleGridSampler name="bgs" scorefxn="tala" nstruct_mode="true" use_degrees="true" helix_length="25" >
-			<Helix r0_min="4.5" r0_max="7.0" r0_samples="6" omega0_min="-3.0" omega0_max="3.0" omega0_samples="6" delta_omega0="0.0" />
+			<Helix r0_min="4.0" r0_max="7.0" r0_samples="6" omega0_min="-3.0" omega0_max="3.0" omega0_samples="6" delta_omega0="0.0" />
 			<Helix r0_copies_helix="1" pitch_from_helix="1" delta_omega0="180.0" />
 		</BundleGridSampler>
 ```
