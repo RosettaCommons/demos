@@ -7,8 +7,10 @@ This is a short demo showing how you can design your protein with flexible backb
 
 To run the demo simple type:
 
+(`$ROSETTA3`= path-to-Rosetta/main/source)
+
 ```
-$> <path-to-Rosetta>/main/source/bin/linuxgccrelease @flags
+$> $ROSETTA3/bin/linuxgccrelease @flags
 ```
 
 Blueprint format:
