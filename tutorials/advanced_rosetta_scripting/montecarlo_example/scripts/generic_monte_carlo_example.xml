@@ -7,11 +7,7 @@
 
 		<Chain name=pdz chains=A />
 		<Chain name=peptide chains=B />
-
 		<Neighborhood name=interface selector=peptide distance=6/>
-		
-		And name=pdz_interface_residues selectors=pdz,interface/>
-
 		<Not name=not_interface selector=interface/>
 
     </RESIDUE_SELECTORS>
@@ -26,8 +22,6 @@
 		<OperateOnResidueSubset name=fix_notinterface selector=not_interface >
 			<PreventRepackingRLT />
 		</OperateOnResidueSubset>
-
-
 		
     </TASKOPERATIONS>
     
@@ -45,7 +39,7 @@
         <ParsedProtocol name=small_repack mode=sequence >
             <Add mover_name=small_mover />
             <Add mover_name=repack_mover />
-			<Add mover_name=pdb_traj_recorder />
+	    <Add mover_name=pdb_traj_recorder />
         </ParsedProtocol>
         
         <GenericMonteCarlo name=gmc_mover mover_name=small_repack scorefxn_name=myscore sample_type=low temperature=0.8 trials=10 drift=1 preapply=false recover_low=1 />
