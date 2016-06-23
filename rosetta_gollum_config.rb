@@ -58,7 +58,7 @@ end
 # Returns list of [keywords, demo_file, demo_name, demo_title ] array
 def make_demos_list(abs_demos_dir, abs_page_dir)
     demos_list = []
-    ( Dir[ File.join(abs_demos_dir, '*.md') ].sort.each do |abs_demo_file|
+    Dir[ File.join(abs_demos_dir, '*.md') ].sort.each do |abs_demo_file|
         demo_file = Pathname.new(abs_demo_file).relative_path_from(Pathname.new(abs_page_dir)).to_s()
         demo_hierarchy = demo_file.split(File::SEPARATOR)
         if demo_hierarchy[-1] == "README.md" then
