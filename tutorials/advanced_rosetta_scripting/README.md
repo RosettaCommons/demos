@@ -213,7 +213,7 @@ $> cp symmetry_example/inputs/symm_test_translated.pdb .
 $> $ROSETTA3/bin/rosetta_scripts.default.linuxgccrelease -parser:protocol symmetry_c7.xml -in:file:s symm_test_translated.pdb -out:prefix c7_
 ```
 
-This tutorial has not begun to explore the full complexity of the Rosetta symmetry machinery.  The main points to take home, here, are:
+This tutorial has not begun to explore the full complexity of the Rosetta symmetry machinery.  There are many far more interesting things that one would likely try to script, such as the design of symmetric interfaces or whatnot.  We leave as an exercise to the reader the task of putting together the pieces covered earlier (invoking the packer and minimizer from movers, controlling behaviour with task operations and residue selectors, etc.) to think about how symmetric interface design could be accomplished within RosettaScripts.  The main points to take home, here, are:
 
 * Symmetric poses must be set up in Rosetta using an appropriate mover.  This is true even if the input geometry is symmetric: Rosetta needs to use a mover to gain an awareness of the symmetry of the input pose ([DetectSymmetry mover](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/Movers/movers_pages/DetectSymmetryMover)), or to make an asymmetric input pose symmetric ([SetupForSymmetry mover](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/Movers/movers_pages/SetupForSymmetryMover)).
 * Once set up, a symmetric pose *remains* symmetric unless de-symmetrized with an appropriate mover.
