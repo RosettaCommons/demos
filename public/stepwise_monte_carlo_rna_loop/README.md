@@ -1,4 +1,4 @@
-# StepWise Monte Carlo (examples for RNA)
+# StepWise Monte Carlo of an RNA loop
 
 KEYWORDS: LOOPS NUCLEIC_ACIDS RNA DESIGN 
 

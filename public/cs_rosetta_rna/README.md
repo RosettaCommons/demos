@@ -1,5 +1,5 @@
-CS-Rosetta RNA Demo
-===================
+CS-Rosetta RNA: Using chemical shifts with RNA structure refinement
+===================================================================
 
 KEYWORDS: STRUCTURE_PREDICTION NUCLEIC_ACIDS RNA
 

@@ -1,4 +1,4 @@
-# RNA mutation
+# RNA mutation: Change RNA sequence
 
 KEYWORDS: NUCLEIC_ACIDS UTILITIES RNA
 

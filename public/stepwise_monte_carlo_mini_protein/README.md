@@ -1,6 +1,6 @@
-# StepWise Monte Carlo (examples for RNA)
+# StepWise Monte Carlo to build a small protein
 
-KEYWORDS: NUCLEIC_ACIDS GENERAL RNA
+KEYWORDS: STRUCTURE_PREDICTION DENOVO
 
 ## Author
 Rhiju Das, rhiju@stanford.edu

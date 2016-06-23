@@ -1,4 +1,4 @@
-#Protein Foldingv using the Broker
+#Protein Folding using the Broker
 
 KEYWORDS: STRUCTURE_PREDICTION GENERAL
 
