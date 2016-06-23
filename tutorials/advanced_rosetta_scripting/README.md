@@ -396,7 +396,12 @@ Next, let's tell the mover what it will be sampling over.  This is done with som
 		</BundleGridSampler>
 ```
 
+Let's run the script at the present stage.  (We provide it as grid\_sampling\_example/grid_sampling.xml.)  Note that all movers require some sort of pose as an input -- without this, RosettaScripts will throw an error and abort.  We're going to use the 1ubq (ubiquitin) strucutre as our input, but note that the BundleGridSampler will discard the ubiquitin geometry and substitute parametrically-generated geometry.  Since some conformations that we're sampling have clashing geometry, we're also using the "-write\_all\_connect\_info" flag so that explicit bonds are written in the PDB file.  Without this, PyMOL draws aberrant bonds in the clashing regions when the PDB file is opened in that program.  Also, since 36 samples will be performed and will be distributed over different jobs, we need to attempt 36 jobs, so we pass the "-nstruct 36" option.
 
+```bash
+$> cp grid_sampling_example/1ubq.pdb grid_sampling_example/grid_sampling.xml .
+$> $ROSETTA3/bin/rosetta_scripts.default.linuxgccrelease -write_all_connect_info -in:file:s 1ubq.pdb -parser:protocol grid_sampling.xml -out:prefix grid1_ -nstruct 36
+```
 
 
 
