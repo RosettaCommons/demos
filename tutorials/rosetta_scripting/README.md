@@ -565,7 +565,7 @@ In comparison, the repacking job that we ran earlier, with no design, generated 
 
 #### Understanding commutativity of TaskOperations
 
-Let's do one more thing to illustrate one final point about TaskOperations: let's add one more ReadResfile TaskOperation.  In this second ReadResfile, let's use the PIKAA command to choose a different, but overlapping, set of allowed residue types -- say, PHE, TYR, ASP, GLU, LYS, and ARG.  The resfile (call it core_resfile2.txt) would look like this:
+Let's do an additional thing with the script that we have to illustrate one final point about TaskOperations: let's add one more ReadResfile TaskOperation.  In this second ReadResfile, let's use the PIKAA command to choose a different, but overlapping, set of allowed residue types -- say, PHE, TYR, ASP, GLU, LYS, and ARG.  The resfile (call it core_resfile2.txt) would look like this:
 
 ```
 start
@@ -598,7 +598,47 @@ This time, if you examine the output, there are several things to note:
 
 > **The commutativity of TaskOperations is very important.  Applying A, B, and C is the same as applying C, B, and A.  One must always think carefully about what one is prohibiting or enabling when using combinations of TaskOperations.**
 
-CONTINUE HERE
+#### Combining ResidueSelectors
+
+As mentioned earlier, ResidueSelectors can be combined with Boolean operations.  This is accomplished with three special ResidueSelectors, called the [AndResidueSelector](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/TaskOperations/taskoperations_pages/ResidueSelectors#residueselectors_logical-residueselectors_andresidueselector), the [OrResidueSelector](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/TaskOperations/taskoperations_pages/ResidueSelectors#residueselectors_logical-residueselectors_orresidueselector), and the [NotResidueSelector](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/TaskOperations/taskoperations_pages/ResidueSelectors#residueselectors_logical-residueselectors_notresidueselector).  The AndResidueSelector and the OrResidueSelector each take as inputs two or more other, previously-defined ResidueSelectors; the selection that they return is the intersection and union of the sets of residues selected by the input ResidueSelectors, respectively (*i.e.* the AndResidueSelector selects a residue if it is selected by input ResidueSelector A *and* input ResidueSelector B, while the OrResidueSelector selects a residue if it is selected by input ResidueSelector A *or* input ResidueSelector B).  The NotResidueSelector inverts a selection, selecting all residues not selected by a single input ResidueSelector.
+
+These Boolean operations allow us to do some very powerful things.  As an example, let's imagine that we were going to modify our first core design script, above, so that now it redesigns the core, but does *not* design or repack existing polar amino acid residues in the core -- we want to preserve those.  To achieve this, we could modify the selector that we pass to the "prevent\_surface\_from\_repacking" TaskOperation, so that it also prevents polar amino acid residues in the core from repacking.
+
+First, we need a ResidueSelector that will select polar amino acid residues.  The ResidueNameSelector will serve nicely for this.  Modify the design_core.xml file (the first script that designed the core, before we did the experiment of adding a second ReadResfile TaskOperation) and add the following to the RESIDUE\_SELECTORS section:
+
+```xml
+		<ResidueName name="select_polar" residue_name3="ASP,GLU,LYS,ARG,HIS,SER,THR,ASN,GLN" />
+```
+
+Next, let's use an AND selector to select residues that are polar *and* in the core.  We can use the "corelayer" selector that we defined earlier:
+
+```xml
+		<And name="polar_and_core" selectors="select_polar,corelayer" />
+```
+
+Finally, let's use an OR selector to select residues that are (polar *and* in the core) *or* in the surface layer.  All of these will be restricted to repacking.
+
+```xml
+		<Or name="surface_or_buried_polar" selectors="polar_and_core,surfacelayer" />
+```
+
+Now, we can pass this selector to the "prevent\_surface\_from\_repacking" TaskOperation, and it will prevent both the surface and the buried polar residues from repacking.  So the definition of the "prevent\_surface\_from\_repacking" TaskOperation changes to:
+
+```xml
+		<OperateOnResidueSubset name="prevent_surface_from_repacking" selector="surface_or_buried_polar" >
+			<PreventRepackingRLT />
+		</OpearateOnResidueSubset>		
+```
+
+The full script is design_core3.xml.  Run it as follows:
+
+```bash
+$> cp inputs/core_resfile.txt .
+$> cp inputs/design_core3.xml .
+$> <path_to_Rosetta_directory>/main/source/bin/rosetta_scripts.default.linuxgccrelease -s 1ubq.pdb -parser:protocol design_core3.xml -out:prefix design_core3_
+```
+
+If you compare the output to the input structure, you'll find that the core has now been redesigned, preserving the buried polar residues' identities and conformations.
 
 # Filters
 ---------
