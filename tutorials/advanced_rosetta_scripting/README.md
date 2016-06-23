@@ -1,20 +1,17 @@
-# Creating protocols with RosettaScripts
+# RosettaScripts for Advanced Users
 ======================================
 KEYWORDS: SCRIPTING_INTERFACES CORE_CONCEPTS
 
-Tutorial by Rocco Moretti (rmorettiase@gmail.com) and Vikram K. Mulligan (vmullig@uw.edu).  Created on 21 June 2016 as part of the 2016 Documentation XRW.
+Tutorial by Vikram K. Mulligan (vmullig@uw.edu).  Created on 23 June 2016 as part of the 2016 Documentation XRW.
 
 ## Goals
 --------
 At the end of this tutorial, you will understand:
-- The RosettaScripts paradigm
-- RosettaScripts syntax
-- How to control final file output from RosettaScripts
-- How to manipulate poses in RosettaScripts using *movers*
-	- How to control movers that invoke the minimizer using *MoveMaps*
-	- How to control movers that invoke the packer using *TaskOperations*
-- How to select residues in RosettaScripts using *residue selectors*
-- How to evaluate pose properties and control protocol flow in RosettaScripts using *filters*
+- How to nest movers and how to script common loops (*e.g.* Monte Carlo trajectories)
+- How to use debugging movers to observe scripted trajectories
+- How to assemble more complicated protocols from simpler building-blocks
+- How to use variable substitution and file inclusion in a script
+- How to control large-scale sampling
 
 ## What is RosettaScripts?
 -----------------------
@@ -422,7 +419,7 @@ In the movers section, let's create a PackRotamersMover.  You can cut-and-paste 
 ...
 ```
 
-Note that, for now, we've left the ```task_operations``` field blank.  Were we to omit this completely (the rosetta\_scripts appliction will throw an error if an option is left blank) and run the script, the PackRotamersMover would call the packer, and the packer would use all rotamers for all 20 canonical amino acids at every position -- that is, it would try to design the entire protein, which is not what we want.
+Note that, for now, we've left the ```task_operations``` field blank.  Were we to omit this and run the script, the PackRotamersMover would call the packer, and the packer would use all rotamers for all 20 canonical amino acids at every position -- that is, it would try to design the entire protein, which is not what we want.
 
 > **The packer's default behaviour is to design with all canonical amino acids at every position.  Preventing design with TaskOperations, or otherwise limiting the behaviour of the packer at some subset of residue positions, is essential for *almost all* usage cases.**
 
