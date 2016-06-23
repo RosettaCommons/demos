@@ -1,6 +1,8 @@
 HBS Design Demo
 ===============
+
 KEYWORDS: LIGANDS DOCKING
+
 Written by Kevin Drew (Bonneau Lab), kdrew at nyu dot edu
 
 This demo shows how to run the hbs_design application.  A hydrogen bond 

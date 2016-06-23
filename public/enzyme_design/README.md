@@ -1,6 +1,8 @@
 Enzyme Design Demo
 ==================
+
 KEYWORDS: DESIGN GENERAL
+
 Tutorial for a complete *de novo* enzyme design run, using the TIM reaction as an 
 example, as published in 
 
@@ -94,7 +96,7 @@ Step 1: Defining a theozyme in Rosetta format
     from our .cst file so that we can visually check that it defines our 
     theozyme correctly. The command:
 
-        $> <path/to/Rosetta>/main/source/bin/CstfileToTheozymePDB.<extension> extra_res_fa rosetta_inputs/1n1.params -match:geometric_constraint_file rosetta_inputs/mocktim_first_2interactions_example.cst
+        $> <path/to/Rosetta>/main/source/bin/CstfileToTheozymePDB.<extension> -extra_res_fa rosetta_inputs/1n1.params -match:geometric_constraint_file rosetta_inputs/mocktim_first_2interactions_example.cst
 
     produces a file called 
     `PDB_Model_mocktim_first_2interactions_example.cst.pdb` in the working 

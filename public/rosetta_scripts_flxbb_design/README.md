@@ -1,5 +1,5 @@
-# Flxbb design with RosettaScripts
------------------------------------
+Flexible backbone design with RosettaScripts
+============================================
 
 KEYWORDS: SCRIPTING_INTERFACES DESIGN
 

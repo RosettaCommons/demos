@@ -1,6 +1,4 @@
-\pagenumbering{gobble}
-
-#Protein Folding
+#Protein Folding using the Broker
 
 KEYWORDS: STRUCTURE_PREDICTION GENERAL
 

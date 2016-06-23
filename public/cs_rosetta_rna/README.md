@@ -1,6 +1,8 @@
-CS-Rosetta RNA Demo
-===================
+CS-Rosetta RNA: Using chemical shifts with RNA structure refinement
+===================================================================
+
 KEYWORDS: STRUCTURE_PREDICTION NUCLEIC_ACIDS RNA
+
 The cs_rosetta_rna application refines (minimizes) and scores a RNA structure under the hybrid CS-ROSETTA-RNA all-atom energy function:
 
     E(hybrid) = E(Rosetta) + E(shift)

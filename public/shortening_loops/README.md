@@ -1,6 +1,8 @@
 Shortening loops in Rosetta
 ===========================
+
 KEYWORDS: LOOPS DESIGN
+
 To shorten loops in Rosetta, you will edit the PDB of the original loop to 
 delete the undesired residues, build a loop and fragment file for the newly 
 short protein, and run the loop through loop modeling with build_initial 

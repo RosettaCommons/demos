@@ -1,5 +1,7 @@
 # Tutorial for using modified residue types in centroid-level applications.
+
 KEYWORDS: CORE_CONCEPTS NONCANONICALS
+
 In this tutorial, you will describe how to wrangle modified residue types through combined centroid/fullatom protocols in Rosetta.
 
 ##  Background

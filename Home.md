@@ -40,11 +40,12 @@ Full input files for the tutorials are located in the `demos/tutorials/` directo
 Demos
 =====
 
-These demos are designed to guide users through sample procedures in computational modeling from the point of view of solving a specific problem. 
+Demos are designed to guide users through sample procedures in computational modeling from the point of view of solving a specific problem. 
 
 Full input files for the demos are located in the `demos/public/` directory of the Rosetta distribution.
 
-<<LinkDemos(public)>>
+* [[Demos listed by category|demos-by-category#demos]]
+* [[Demos listed by keyword|tag-search]]
 
 Protocol Captures
 =================
@@ -53,7 +54,7 @@ Many papers using Rosetta are accompanied by a protocol capture - an example of 
 
 Full input files for the protocol captures are located in the demos/protocol_capture/ directory of the Rosetta distribution.
 
-<<LinkDemos(protocol_capture)>>
+* [[Protocol captures listed by category|demos-by-category#protocol_captures]]
 
 <!--- BEGIN_INTERNAL --->
 
@@ -113,7 +114,7 @@ A few days after you push you demo to the `demos` repository, your demo will
 become available from this website.  A link to it will automatically be added 
 to this page.  However, it will be hard to find (especially for new users) with 
 just that.  To make your demo easier to find, spend a few minutes browsing the 
-[[documentation wiki|https://www.rosettacommons.org/docs/wiki]] and adding 
+[[documentation wiki|https://www.rosettacommons.org/docs/latest]] and adding 
 links to any relevant pages you find.  The application section in particular 
 would benefit from having lots of links to demos.  Note that (for technical 
 reasons — Gollum gets really slow when there are too many pages in the wiki) 
@@ -124,8 +125,7 @@ Under Development
 =================
 
 If you want to prevent a demo from being published to the static wiki until you've finished developing it or written a paper on it or something, put it in `demos/pilot`.
-It will be visible here, but not on the public site.
 
-<<LinkDemos(pilot)>>
+* [[Devel demos listed by category|demos-by-category#under_development]]
 
 <!--- END_INTERNAL --->

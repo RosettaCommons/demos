@@ -1,0 +1,43 @@
+<ROSETTASCRIPTS>
+ 
+ <TASKOPERATIONS> You can control which parts you want to change from here
+     
+    ProteinInterfaceDesign name=pido repack_chain1=1 repack_chain2=1 design_chain1=0 design_chain2=1 interface_distance_cutoff=10/> task operation that designates which residues are designable and repackable at the interface
+ </TASKOPERATIONS>
+
+ <FILTERS> This part enables to output useful values for post-processing
+    <Ddg name=ddG scorefxn=talaris2014 threshold=-15 repeats=2/> binding energy calculation; an average of two repeats is computed for better numerical accuracy
+    <Sasa name=sasa threshold=800/> Buried surface area upon complex formation
+    <Rmsd name=rmsd confidence=0/> confidence=0 means that the filter will be evaluated but not used as an acceptance criterion
+    <CompoundStatement name=ddg_sasa> combine filters into a single logical statement
+      <AND filter_name=ddG/>
+      <AND filter_name=sasa/>
+    </CompoundStatement>
+ </FILTERS>
+
+ <MOVERS>
+    <Docking name=docking score_high=soft_rep fullatom=1 local_refine=1/> Invokes RosettaDock local-refinement (in full-atom) with a soft potential
+    <BackrubDD name=backrub partner1=0 partner2=1 interface_distance_cutoff=8.0 moves=100 sc_move_probability=0.25 scorefxn=talaris2014 small_move_probability=0.15 bbg_move_probability=0.25/> perturb the backbone of chain2. Change moves to 1000 for real application
+    <RepackMinimize name=des1 scorefxn_repack=soft_rep scorefxn_minimize=soft_rep minimize_bb=0 minimize_rb=1/>
+    <RepackMinimize name=des2 scorefxn_repack=talaris2014 scorefxn_minimize=talaris2014 minimize_bb=0 minimize_rb=1/> Design and minimization at the interface
+    <RepackMinimize name=des3 minimize_bb=1/>
+  
+     <ParsedProtocol name=design>
+      <Add mover_name=des1/>
+      <Add mover_name=des2/>
+      <Add mover_name=des3/>
+      <Add mover_name=backrub/>
+      <Add mover_name=des3 filter_name=ddg_sasa/>
+    </ParsedProtocol>
+    <GenericMonteCarlo name=iterate scorefxn_name=talaris2014 mover_name=design trials=1/> Iterate through design to find best solution. change trial numbers to higher for real application.
+ </MOVERS>
+  
+ <PROTOCOLS>
+    <Add mover=docking/>
+    <Add mover=iterate/>
+    <Add filter=ddG/>
+    <Add filter=sasa/>
+    <Add filter=rmsd/>
+  </PROTOCOLS>
+</ROSETTASCRIPTS>
+

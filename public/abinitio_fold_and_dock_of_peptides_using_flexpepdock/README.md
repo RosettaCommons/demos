@@ -1,6 +1,8 @@
 #AbInitio fold-and-dock of peptides using FlexPepDock
 ----------------------------------------------------
+
 KEYWORDS: PEPTIDES DOCKING
+
 This demo illustrates how to run FlexPepDock ab-initio folding and docking of a peptide onto its receptor. The FlexPepDock ab-initio protocol is designed to generate high-resolution models of complexes between flexible peptides and globular proteins, given the approximate location of the peptide binding site. The ab-initio procol samples both rigid-body orientation and torsional space of the peptide extensively. No prior knowledge about the peptide backbone is necessary, as the protocol uses fragments to sample peptide backbone conformational space rigorously.
 
 Protocol overview

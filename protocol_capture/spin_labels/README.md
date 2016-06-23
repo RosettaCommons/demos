@@ -1,5 +1,7 @@
 # Spin Labels
-KEYWORDS: EXPEIMENTAL_DATA GENERAL
+
+KEYWORDS: EXPERIMENTAL_DATA GENERAL
+
 The associated page for this protocol capture can be found at :
 https://structbio.vanderbilt.edu:8443/display/MeilerLab/ProtocolCapture
 

@@ -1,5 +1,6 @@
-# Rosetta scripts: Rosetta-DNA Demo
+Rosetta scripts: Rosetta-DNA Demo
 ===============================
+
 KEYWORDS: SCRIPTING_INTERFACES NUCLEIC_ACIDS INTERFACES DESIGN DNA
 
 Authors
@@ -25,17 +26,16 @@ How to run
 -------------------------------------------------
 Three modes are provided: automated basepair-specific design, resfile-directed design, and basepair specificity prediction. The codes to run in each mode is shown below. For more details of the scripts and input files, please check below.
 
-(NOTE:`ROSETTA3=<path-to-Rosetta>/main/source`)
 
 *Automated basepair-specific design*: 
 
 ```
-$> ROSETTA3/bin/rosettaDNA.default.linuxgccrelease @design.flags 
+$> <path-to-Rosetta>/main/source/bin/rosettaDNA.default.linuxgccrelease @design.flags 
 ```
 *resfile-directed design*:
 
 ```
-$> ROSETTA3/bin/rosettaDNA.default.linuxgccrelease @resfile.flags 
+$> <path-to-Rosetta>/main/source/bin/rosettaDNA.default.linuxgccrelease @resfile.flags 
 ```
 
 *basepair specificity prediction*:

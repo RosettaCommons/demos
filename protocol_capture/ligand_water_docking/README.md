@@ -1,6 +1,8 @@
 Ligand-centric Water Docking
 ============================
+
 KEYWORDS: LIGANDS DOCKING
+
 Author: Gordon Lemmon  
 Citation:
 * Gordon Lemmon, Jens Meiler (2012). Toward ligand docking including explicit 

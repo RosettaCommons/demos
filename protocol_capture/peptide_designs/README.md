@@ -2,6 +2,7 @@ Peptide Backbone and Sequence Design
 ====================================
 
 Author: Deanne Sammond
+
 RosettaCon Talk:
 * Computational design of a new protein-protein interface between Gi1 and a 
   redesigned RGS14 GoLoco, Deanne Sammond, Dustin Bosch, Glenn Butterfoss, 
