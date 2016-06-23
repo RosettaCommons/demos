@@ -82,7 +82,7 @@ assemble a simple PyRosetta script using the membrane framework for ddG predicti
 
    Here, we provide an example application-specific ddG calculation script for computing ddGs of mutation in OmpLA for comparison with experimental values in Moon & Fleming, 2011. The script can be run with no arguments by the following command: 
 
-        ./predict_OmpLA_ddG.py 
+        ./predict_ompLA_ddG.py 
 
    Step-by-step instructions on how to setup this script are provided in the predict_OmpLA_ddG.py script (in this protocol capture). 
 
