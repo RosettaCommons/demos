@@ -1,4 +1,5 @@
 # Finding Local Energy Minima Using the *Minimizer*
+
 KEYWORDS: CORE_CONCEPTS GENERAL
 
 Tutorial by Kristen Blacklock (kristin.blacklock@rutgers.edu).

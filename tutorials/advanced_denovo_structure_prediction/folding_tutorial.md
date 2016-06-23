@@ -1,5 +1,3 @@
-\pagenumbering{gobble}
-
 #Protein Folding
 
 KEYWORDS: STRUCTURE_PREDICTION GENERAL

@@ -1,6 +1,7 @@
-# Prepapring Ligands
+# Preparing Ligands
+
 KEYWORDS: CORE_CONCEPTS LIGANDS
-#
+
 #### What is a Params File
 
 A *__params__* file is where the pre-computed information about the geometry and chemical features of residues and ligands are stored. In order for Rosetta to udnerstand how to treat the residue during any run, there should be a params file associated with that residue. You can find examples of params file for many types of molecules such as 20 canonical amino acids, some non-canonical amino acids, water, metal ions, nucleic acids, ... in Rosetta/main/database/chemical/residue_type_sets/fa_standard/residue_types. more detailed information about what each line means can be found [here](https://www.rosettacommons.org/docs/latest/rosetta_basics/file_types/Residue-Params-file). In this tutorial, we go over how to prepare a ligand a generate a params file for it.

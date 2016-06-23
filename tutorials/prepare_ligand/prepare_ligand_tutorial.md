@@ -1,5 +1,7 @@
 # Prepapring Ligands
+
 KEYWORDS: LIGANDS UTILITIES
+
 During a simulation in Rosetta, the atoms within certain chemical entities like amino acid side chains, are kept together. For that to work, bond lengths, bond angles, the order of atoms etc. must be known. 
 
 This is also true for any ligand, where atoms are connected in a certain way with a certain geometry. The place, where all this information is stored are **params files**. In order to add a new ligand, you will need to generate a new params file.

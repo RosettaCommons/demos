@@ -1,3 +1,6 @@
+Keyword Testing (Internal detail)
+=================================
+
 This directory is our test to make sure that every tutorial/demo has a keyword list and that the keyword is in the approved list.
 Each tutorial and demo should have keyword list as follows:
 
