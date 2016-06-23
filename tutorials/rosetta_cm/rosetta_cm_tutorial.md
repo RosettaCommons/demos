@@ -1,5 +1,3 @@
-\pagenumbering{gobble}
-
 # Comparative Modeling: Multi-template modeling with RosettaCM#
 
 KEYWORDS: STRUCTURE_PREDICTION HOMOLOGY_MODELING

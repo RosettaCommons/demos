@@ -1,5 +1,7 @@
-# Supercharge
+# Supercharge: Reengineer proteins for high net surface charge
+
 KEYWORDS: DESIGN GENERAL
+
 If you want to run supercharge now, the application is called 'supercharge' in `src/apps/public/supercharge.cc`.
 
 Here are four examples:

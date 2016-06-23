@@ -1,6 +1,8 @@
 Scoring Tutorial
 ================
+
 KEYWORD: CORE_CONCEPTS ANALYSIS UTILITIES GENERAL  
+
 Tutorial by Shourya S. Roy Burman (ssrb@jhu.edu) 
 Created 20 June 2016
 

@@ -1,6 +1,8 @@
-MOHCA-Seq Modeling Demo
-=======================
+MOHCA-Seq: Modeling RNA with fragmentation data
+===============================================
+
 KEYWORDS: NUCLEIC_ACIDS STRUCTURE_PREDICTION
+
 Author: Clarence Cheng (cyucheng at stanford dot edu)
 
 ---

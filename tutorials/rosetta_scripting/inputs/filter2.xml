@@ -1,0 +1,31 @@
+<ROSETTASCRIPTS>
+	<SCOREFXNS>
+		<t14 weights="talaris2014" />
+	</SCOREFXNS>
+	<RESIDUE_SELECTORS>
+	</RESIDUE_SELECTORS>
+	<TASKOPERATIONS>
+		<RestrictToRepacking name="repackonly" />
+		<ExtraRotamersGeneric name="extrachi" ex1="1" ex2="1" ex1_sample_level="1" ex2_sample_level="1" />
+	</TASKOPERATIONS>
+	<FILTERS>
+		<AtomicDistance name="salt_bridge" residue1="11A" atomtype1="Nlys" residue2="34A" atomtype2="OOC" distance="3.0" />
+		<SidechainRmsd name="F45_rmsd" res1_pdb_num="45A" res2_pdb_num="45A" include_backbone="1" confidence="0.0" />
+		<SidechainRmsd name="Y59_rmsd" res1_pdb_num="59A" res2_pdb_num="59A" include_backbone="1" confidence="0.0" />
+	</FILTERS>
+	<MOVERS>
+		<MinMover name="min" scorefxn="t14" chi="true" bb="true" cartesian="false" />
+		<PackRotamersMover name="pack" scorefxn="t14" task_operations="repackonly,extrachi"/>
+	</MOVERS>
+	<APPLY_TO_POSE>
+	</APPLY_TO_POSE>
+	<PROTOCOLS>
+		<Add mover="pack" />
+		<Add filter="salt_bridge" />
+		<Add mover="min" />
+		<Add filter="F45_rmsd" />
+		<Add filter="Y59_rmsd" />
+	</PROTOCOLS>
+	<OUTPUT scorefxn="t14" />
+</ROSETTASCRIPTS>
+
