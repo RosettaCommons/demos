@@ -13,7 +13,7 @@
 	<FILTERS>
 	</FILTERS>
 	<MOVERS>
-		<MakeBundle name=bundle1 r0=5 use_degrees=true >
+		<MakeBundle name=bundle1 r0=4.5 use_degrees=true >
 			<Helix helix_length=40 />
 			<Helix helix_length=40 delta_omega0=180 />
 		</MakeBundle>
