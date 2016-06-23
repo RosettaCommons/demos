@@ -45,8 +45,8 @@ Full input files for the tutorials are located in the `demos/tutorials/` directo
 
 ### Commonly Used Rosetta Protocols
 
-* [[*de novo* (*ab initio*) Structure Prediction|Denovo_structure_prediction]]
-    * [[Advanced *de novo* Structure Prediction|folding_tutorial]]
+* [*de novo* (*ab initio*) Structure Prediction](Denovo_structure_prediction)
+    * [Advanced *de novo* Structure Prediction](folding_tutorial)
 * [[Comparative Modeling (Homology Modeling)|rosetta_cm_tutorial]]
 * [[Loop Modeling and Rebuilding|loop_modeling]]
 * [[Protein Design|protein_design_tutorial]]
