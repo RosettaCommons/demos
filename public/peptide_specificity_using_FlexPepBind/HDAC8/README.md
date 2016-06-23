@@ -1,5 +1,5 @@
 This file contains information specific for HDAC8 FlexPepBind. For general information about FlexPepBind, see README file in the upper level directory.
-
+KEYWORDS: PEPTIDES DOCKING INTERFACES
 Input files needed to run the FlexPepBind protocol on HDAC8:
 ------------------------------------------------------------
 template.pdb  : The template structure created from 2v5w

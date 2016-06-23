@@ -1,6 +1,6 @@
 FlexPepDock AbInitio Protocol Capture
 =====================================
-
+KEYWORDS: DOCKING PEPTIDES
 Written by: Barak Raveh, Nir London, Lior Zimmerman, Ora Schueler-Furman  
 
 ---

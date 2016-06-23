@@ -1,6 +1,6 @@
 GPCR Model Dock Protocol Capture
 ================================
-
+KEYWORDS: DOCKING STRUCTURE_PREDICTION
 Written in Jan 2013 by Elizabeth Nguyen (e dot dong dot nguyen at vanderbilt dot edu)
 
 ---

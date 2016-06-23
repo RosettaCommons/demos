@@ -1,7 +1,7 @@
 \pagenumbering{gobble}
 
 #Rosetta tools for structure determination in density
-
+KEYWORDS: STRUCTURE_PREDICTION EXPERIMENTAL_DATA
 *Originally written by Ray Y.-R. Wang and Frank DiMaio, University of Washington*
 *Modified by Amandeep Sangha, Meiler Lab, Vanderbilt University*
 

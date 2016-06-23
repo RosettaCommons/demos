@@ -1,7 +1,7 @@
 Here we search for additional catalytic residues to stabilize the TS using RosettaMatch. 
 In this example, we are looking for a Q to make Hbond to the attacking nucleophile hydroxyl.
 Match-style constraint block corresponding to this interaction is appended to the constraints file obtained in the previous step. 
-
+KEYWORDS: METALS DESIGN
 The following files are needed
 
 1. A protein scaffold file (1A4LA_clean_r.pdb) which includes a description of the pre-existing metal-protein interactions in the REMARK field. The protein co-ordinates could be the minimized ones from the previous CstOpt step or the starting scaffold co-ordinates without minimization (as in this example).

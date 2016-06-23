@@ -1,5 +1,5 @@
 ### Standard fragment picking
-
+KEYWORDS: STRUCTURE_PREDICTION UTILITIES
 Do the best picker option for the starter demo: 
 
 `./BestFragmentsProtocol/` 

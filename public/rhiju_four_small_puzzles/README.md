@@ -1,5 +1,5 @@
 # Four Small Puzzles
-
+KEYWORDS: CORE_CONCEPTS GENERAL
 ## Author
 Rhiju Das, rhiju@stanford.edu
 

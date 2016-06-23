@@ -1,5 +1,6 @@
 # Creating protocols with RosettaScripts
 ======================================
+KEYWORDS: SCRIPTING_INTERFACES CORE_CONCEPTS
 
 Tutorial by Rocco Moretti (rmorettiase@gmail.com) and Vikram K. Mulligan (vmullig@uw.edu).  Created on 21 June 2016 as part of the 2016 Documentation XRW.
 
@@ -12,10 +13,11 @@ At the end of this tutorial, you will understand:
 - How to manipulate poses in RosettaScripts using *movers*
 	- How to control movers that invoke the minimizer using *MoveMaps*
 	- How to control movers that invoke the packer using *TaskOperations*
-- How to evaluate pose properties and control protocol flow in RosettaScripts using *filters*
 - How to select residues in RosettaScripts using *residue selectors*
+- How to evaluate pose properties and control protocol flow in RosettaScripts using *filters*
 - How to nest movers and how to script common loops (*e.g.* Monte Carlo trajectories)
 - How to assemble more complicated protocols from simpler building-blocks
+- How to use variable substitution and file inclusion in a script
 - How to control large-scale sampling
 
 ## What is RosettaScripts?
@@ -96,28 +98,31 @@ Before running this script, let's edit it slightly to add comments:
 
 ```xml
 <ROSETTASCRIPTS>
-    <SCOREFXNS>
-    </SCOREFXNS>
+	<SCOREFXNS>
+	</SCOREFXNS>
 
-This is a comment
+	This is a comment
 
-    <RESIDUE_SELECTORS>
-    </RESIDUE_SELECTORS>
-    <TASKOPERATIONS>
-                          So is this
-    </TASKOPERATIONS>
-    <FILTERS>
-    </FILTERS>
-    <MOVERS>
+	<RESIDUE_SELECTORS>
+	</RESIDUE_SELECTORS>
+	<TASKOPERATIONS>
+		           So is this
+	</TASKOPERATIONS>
+	<FILTERS>
+	</FILTERS>
+	<MOVERS>
 
-  Anything not in angle brackets is a comment.
+	  Anything not in angle brackets is a comment.
+	  This makes it easy to temporarily disable things by deleting just the first angle bracket.
 
-    </MOVERS>
-    <APPLY_TO_POSE>
-    </APPLY_TO_POSE>
-    <PROTOCOLS>
-    </PROTOCOLS>
-    <OUTPUT />
+	  MyMover name=mover1 option1="false" option2="23" /> Here is a mover that is commented out and ignored by RosettaScripts.  If I add back an angle bracket before "MyMover", it will be parsed.
+
+	</MOVERS>
+	<APPLY_TO_POSE>
+	</APPLY_TO_POSE>
+	<PROTOCOLS>
+	</PROTOCOLS>
+<OUTPUT />
 </ROSETTASCRIPTS>
 
 *(Angle brackets are the greater than/less than signs)
@@ -565,7 +570,7 @@ In comparison, the repacking job that we ran earlier, with no design, generated 
 
 #### Understanding commutativity of TaskOperations
 
-Let's do one more thing to illustrate one final point about TaskOperations: let's add one more ReadResfile TaskOperation.  In this second ReadResfile, let's use the PIKAA command to choose a different, but overlapping, set of allowed residue types -- say, PHE, TYR, ASP, GLU, LYS, and ARG.  The resfile (call it core_resfile2.txt) would look like this:
+Let's do an additional thing with the script that we have to illustrate one final point about TaskOperations: let's add one more ReadResfile TaskOperation.  In this second ReadResfile, let's use the PIKAA command to choose a different, but overlapping, set of allowed residue types -- say, PHE, TYR, ASP, GLU, LYS, and ARG.  The resfile (call it core_resfile2.txt) would look like this:
 
 ```
 start
@@ -598,9 +603,49 @@ This time, if you examine the output, there are several things to note:
 
 > **The commutativity of TaskOperations is very important.  Applying A, B, and C is the same as applying C, B, and A.  One must always think carefully about what one is prohibiting or enabling when using combinations of TaskOperations.**
 
-CONTINUE HERE
+#### Combining ResidueSelectors
 
-# Filters
+As mentioned earlier, ResidueSelectors can be combined with Boolean operations.  This is accomplished with three special ResidueSelectors, called the [AndResidueSelector](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/TaskOperations/taskoperations_pages/ResidueSelectors#residueselectors_logical-residueselectors_andresidueselector), the [OrResidueSelector](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/TaskOperations/taskoperations_pages/ResidueSelectors#residueselectors_logical-residueselectors_orresidueselector), and the [NotResidueSelector](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/TaskOperations/taskoperations_pages/ResidueSelectors#residueselectors_logical-residueselectors_notresidueselector).  The AndResidueSelector and the OrResidueSelector each take as inputs two or more other, previously-defined ResidueSelectors; the selection that they return is the intersection and union of the sets of residues selected by the input ResidueSelectors, respectively (*i.e.* the AndResidueSelector selects a residue if it is selected by input ResidueSelector A *and* input ResidueSelector B, while the OrResidueSelector selects a residue if it is selected by input ResidueSelector A *or* input ResidueSelector B).  The NotResidueSelector inverts a selection, selecting all residues not selected by a single input ResidueSelector.
+
+These Boolean operations allow us to do some very powerful things.  As an example, let's imagine that we were going to modify our first core design script, above, so that now it redesigns the core, but does *not* design or repack existing polar amino acid residues in the core -- we want to preserve those.  To achieve this, we could modify the selector that we pass to the "prevent\_surface\_from\_repacking" TaskOperation, so that it also prevents polar amino acid residues in the core from repacking.
+
+First, we need a ResidueSelector that will select polar amino acid residues.  The ResidueNameSelector will serve nicely for this.  Modify the design_core.xml file (the first script that designed the core, before we did the experiment of adding a second ReadResfile TaskOperation) and add the following to the RESIDUE\_SELECTORS section:
+
+```xml
+		<ResidueName name="select_polar" residue_name3="ASP,GLU,LYS,ARG,HIS,SER,THR,ASN,GLN" />
+```
+
+Next, let's use an AND selector to select residues that are polar *and* in the core.  We can use the "corelayer" selector that we defined earlier:
+
+```xml
+		<And name="polar_and_core" selectors="select_polar,corelayer" />
+```
+
+Finally, let's use an OR selector to select residues that are (polar *and* in the core) *or* in the surface layer.  All of these will be restricted to repacking.
+
+```xml
+		<Or name="surface_or_buried_polar" selectors="polar_and_core,surfacelayer" />
+```
+
+Now, we can pass this selector to the "prevent\_surface\_from\_repacking" TaskOperation, and it will prevent both the surface and the buried polar residues from repacking.  So the definition of the "prevent\_surface\_from\_repacking" TaskOperation changes to:
+
+```xml
+		<OperateOnResidueSubset name="prevent_surface_from_repacking" selector="surface_or_buried_polar" >
+			<PreventRepackingRLT />
+		</OpearateOnResidueSubset>		
+```
+
+The full script is design_core3.xml.  Run it as follows:
+
+```bash
+$> cp inputs/core_resfile.txt .
+$> cp inputs/design_core3.xml .
+$> <path_to_Rosetta_directory>/main/source/bin/rosetta_scripts.default.linuxgccrelease -s 1ubq.pdb -parser:protocol design_core3.xml -out:prefix design_core3_
+```
+
+If you compare the output to the input structure, you'll find that the core has now been redesigned, preserving the buried polar residues' identities and conformations.
+
+## Filters
 ---------
 
 * *Filter runs based on a productive conformation (e.g. a salt-bridge)*
@@ -662,7 +707,7 @@ This should give you five output structures, even if some tries through failed (
 
 In addition to printing the results of the metric evaluation to the tracer, the results of the filter will be placed in a column of the scorefile. The name of the column is the same as the name of the filter. Additionally, the values for the filters will be output to the end of the PDB, after the score table.
 
-Nesting movers
+## Nesting movers
 --------------
 
 * *Loop over sidechain optimization until the score doesn't improve.*
@@ -692,7 +737,7 @@ Note that when you nest movers/filters/etc. the definition of the sub-mover/filt
 
 Looking at the tracer output, you should be able to see the application of the IteratedConvergence, and how the RotamerTrialsMinMover is repeated multiple times.
 
-Variable substition: adding variables to scripts
+## Variable substition: adding variables to scripts
 ------------------------------------------------
 
 Sometimes in a RosettaScripts protocol, you want to vary the options given to the tags. For example, if you wish to do a series of runs, with changes at different residues. The naive way of doing this is to make separate XMLs, one for each variant of the option. If you have a large number of variants, this may be less than ideal.
@@ -720,56 +765,6 @@ To run, we need to then pass something like "-parser:script_vars position=14A ne
 These commands should produce a tryptophan scan of a selection of residues in the core of the protein. (Open up the structures in PyMol or the equivalent and compare.
 
 If you wish to do a more thorough scan, either of more positions or of more residue identities, you can easily automate running of the scan by using shell scripting.
-
-## ResidueSelectors and TaskOperations
------------------------------------
-
-
-### ResidueSelectors
-
-Looking at available ResidueSelectors, the [ResidueIndexSelector](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/TaskOperations/taskoperations_pages/ResidueSelectors#residueselectors_conformation-independent-residue-selectors_residueindexselector) looks to be the one we want, when we want to select particular residues. We can specify which residues to use with a comma separated list. Note that we can either use *Pose numbering* (numbers without a chain letter) or *PDB numbering* (with a chain letter). If the PDB hasn't been renumbered to match Pose numbering, these will be different. 
-
-```
-    <RESIDUE_SELECTORS>
-        <Index name="key_residues" resnums="45A,59A"/>
-    </RESIDUE_SELECTORS>
-```
-
-We're also only interested in keeping these residues from repacking if they stay as phenylalanine or tyrosine. Let's add a ResidueSelector which selects only phenylalanine or tyrosine residues. Scanning through the documentation, the [ResidueNameSelector](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/TaskOperations/taskoperations_pages/ResidueSelectors#residueselectors_conformation-independent-residue-selectors_residuenameselector) is a good candidate. We can specify selecting residues with the appropriate three letter codes. 
-
-Note that ResidueSelectors select based on the properties of the structure at the time which they are applied, not the input pose. This means that positions which start as phenylalanine but mutate to a different amino acid will be selected by a PHE ResidueNameSelector used before mutation, but won't be selected if the ResidueSelector is used after the mutation. 
-
-```
-    <RESIDUE_SELECTORS>
-        <Index name="key_residues" resnums="45A,59A"/>
-	<ResidueName name="phe_tyr" residue_name3="PHE,TYR" />
-    </RESIDUE_SELECTORS>
-```
-
-We want to combine these two selectors. We want selectors which are both PHE or TYR *and* are at position 45A or 59A. To combine ResidueSelectors, we can use one of the "logical" ResidueSelectors. Specifically, we want the [AndResidueSelector](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/TaskOperations/taskoperations_pages/ResidueSelectors#residueselectors_logical-residueselectors_andresidueselector), which will select only those residues which are in all of the sub-residue selectors. (Both key_residues *and* phe_tyr.) Residues selected by one *or* the other (but not both) won't be selected by the combined selector. (For example, F4 is selected by phe_tyr, but not by key_residues, so it won't be selected by the joint ResidueSelector.
-
-There's two ways to specify which residue selectors to combine: we can either give a previously defined ResidueSelector by name in the tag, or define new ones as subtags. If we go the subtag route, we don't need to give the ResidueSelectors names. (This is why the "name" option is not listed in the ResidueSelector tag example in the documentation page.)
-
-```
-    <RESIDUE_SELECTORS>
-	<And name="F45_Y59" >
-            <Index resnums="45A,59A" />
-	    <ResidueName residue_name3="PHE,TYR" />
-        </And>
-    </RESIDUE_SELECTORS>
-```   
-
-### ResidueSelectors and TaskOperations
-
-The previous section only defined the residue selector - it didn't specify how it was to be used. In our case, we want to use the ResidueSelector to turn off packing to the given residues. Controlling packing is done with TaskOperations, so we need a TaskOperation which can use ResidueSelectors. Looking at the [TaskOperation documentation](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/TaskOperations/TaskOperations-RosettaScripts), it looks like the [OperateOnResidueSubset](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/TaskOperations/taskoperations_pages/OperateOnResidueSubsetOperation) TaskOperation is what we want. This takes a ResidueSelector to define which residues it operates over, and a [ResidueLevelTaskOperation](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/TaskOperations/taskoperations_pages/Residue-Level-TaskOperations) to specify what to do with those residues. In our case, we want to use the previously named ResidueSelector, and prevent repacking (so the PreventRepackingRLT ResidueLevelTask).
-
-```
-    <TASKOPERATIONS>
-        <OperateOnResidueSubset name="nopack_F45_Y59" selector="F45_Y59" >
-	    <PreventRepackingRLT/>
-        </OperateOnResidueSubset>
-    </TASKOPERATIONS>
-```  
 
 ### TaskOperations and Movers
 
@@ -800,7 +795,7 @@ In the tracer output you should now see that both the PackRotamersMover and MinM
 If you look at the scores of the packing run in comparison to the minimize run, you should see that the extra packing step allows us to sample a lower energy structure (about -190 REU versus -155 REU). Looking at the structures, you'll notice that they're mostly the same - especially in the core of the protein - but some of the surface sidechains have moved much more than they have from minimization only. 
 
 
-Conclusion
+## Conclusion
 ----------
 
 This tutorial was intended to give you a brief introduction in creating an XML protocol. The process we went through is similar to how most RosettaScripts developers write an XML file from scratch: Build up a protocol iteratively, starting with a simple protocol and progressively adding different and more complex stages. For each stage, have an idea about the effect you wish to accomplish, and then scan the documentation for existing movers/filters/task operations/etc. which will accomplish it. This may involve multiple RosettaScripts objects, due to movers which need as parameters other movers which need filters which need task operations (which need ...)
@@ -811,7 +806,7 @@ A final note - even if you can create an XML from scratch, it may be easier not 
 
 The hard part is not necessarily in putting together the XML, but in determining the optimal protocol (the logical steps) you should use to accomplish your modeling goals, and then in benchmarking that protocol to make sure it does what you hoped.
 
-Troubleshooting
----------------
+## Troubleshooting
+------------------
 
-RosettaScripts is sensitive to mis-matched tags. If you forget to close a tag, or omit the ending slash on what is supposed to be a standalone tag, RosettaScripts will exit with a (possibly uninformative) error message. If you get something like Error: Tag::read - parse error", this means there is a syntax error in your XML. The recommended way of debugging it is to make a copy of the script, and progressively portions of the XML file until you get a script that works. (Or at least is able to be parsed.) It is then likely that the source of the error is in the portion of the XML which you deleted.
+RosettaScripts is sensitive to mis-matched tags. If you forget to close a tag, or omit the ending slash on what is supposed to be a standalone tag, RosettaScripts will exit with a (possibly uninformative) error message. If you get something like "Error: Tag::read - parse error", this means there is a syntax error in your XML. The recommended way of debugging it is to make a copy of the script, and progressively comment out or remove portions of the XML file until you get a script that works. (Or at least is able to be parsed.) It is then likely that the source of the error is in the portion of the XML which you commented out or deleted.

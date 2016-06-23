@@ -1,7 +1,5 @@
 # Protocol Name:Loop Building for Membrane Proteins with Toplogy Broker
-
 KEYWORDS: LOOPS MEMBRANES
-
 ## Author
 Elizabeth Dong
 
@@ -90,5 +88,6 @@ run_lips.pl 2Z73A.fasta 2Z73A.span /sb/meiler/Linux2/x86/blast/blast-2.2.18/bin/
 
 Topology Broker only runs in centroid mode as of now. To extract pdb from *.out, use:
 ```
-$> <path-to-Rosetta>/main/source/bin/extract_pdbs.linuxgccrelease -in:file:silent rrbroker_run1.out -in:file:residue_type_set centroid -out:file:residue_type_set centroid -out:output
+$> <path-to-Rosetta>/main/source/bin/extract_pdbs.linuxgccrelease -in:file:silent output_files/rbroker_run1.out -in:file:residue_type_set centroid -out:file:residue_type_set centroid -out:output
 ```
+One example output (sample_output.pdb) is also provided in the output_files folder. Please note that your file may not exactly look the same. That is the reason that in real world applications we generate many structures and find the best.

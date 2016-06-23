@@ -1,7 +1,7 @@
 -------------------------------------------------------------------------------------------------
    INSTRUCTIONS FOR CALCULATING EXPLICIT UNFOLDED STATE ENERGIES FOR NONCANONICAL AMINO ACIDS
 -------------------------------------------------------------------------------------------------
-
+KEYWORDS: NONCANONICALS ANALYSIS
 Calculating the explicit unfolded state energies is the third of three steps toward being able to use a noncanonical amino acid (NCAA) in Rosetta. To add a new NCAA or to better understand how the NCAAs in the related publication were added one should have already completed or understand the steps in HowToMakeResidueTypeParamFiles and HowToMakeRotamerLibraries. 
 
 The explicit unfolded state energies of an amino acid represent the energy of an amino acid in the unfolded state of a protein and is used to replace the reference energies in Rosetta. The UnfoldedStateEnergyCalculator uses a fragment based method to calculate the average unfolded state energies for each ResidueType. The protocols works on a large set of protein structures that are split in to randomly generated fragments. The central residue of each fragment is mutated to the residue of interest. The fragment is repacked. The unweighted energy for each energy method in the scoring function is recorded for the central residue. After the energies for all fragment central residues are collected, a boltzmann-weighted-average average energy is calculated for each term. 
@@ -17,8 +17,8 @@ Calculation explicit unfolded state energies for a NCAA requires three steps:
 
 Since the UnfoldedStateEnergyCalculator protocol uses fragments from protein structures, we need a set of high quality structures to work with. Through their PISCES server, the Dunbrack laboratory maintains lists of structures in the Protein Data Bank organized based on xray resolution, precent sequence similarity, and r-factors**. These lists are a convenient way to get a set of high quality structures. In this example we will use a list culled on May 20, 2011. It contains 1801 pdb files that have an an xray resolution of at least 1.6 angstroms, less than 20% sequence identity, and r-factors of less than 0.25. To get the pdbs simply use a supplied script to download the pdbs from the Protein Data Bank ftp servers. 
 
-$ cd inputs
-$ ../scripts/get_pdbs.bash cullpdb_pc20_res1.6_R0.25_d110520_chains1859
+$> cd inputs
+$> ../scripts/get_pdbs.bash cullpdb_pc20_res1.6_R0.25_d110520_chains1859
 
 There should be 1801 gzipped pdb files and a text file containing a list of them called cullpdb_pc20_res1.6_R0.25_d110520_chains1859_list_pruned in the inputs directory. Rosetta will sometimes fail to correctly read in particular pdbs files. The cullpdb_pc20_res1.6_R0.25_d110520_chains1859_list_pruned file is a list of the pdbs which have been screened to be read successfully by Rosetta. 
 
@@ -45,8 +45,8 @@ detect_disulf false: turns off disulfide detection
 
 Continuing the ornithine example we have used in the two previous protocol captures, to calculate the unfolded state energies one would run the following command.
 
-$ cd outputs
-$ PATH/TO/bin/UnfoldedStateEnergyCalculator.macosgccrelease -database PATH/TO/rosetta_database -ignore_unrecognized_res -ex1 -ex2 -extrachi_cutoff 0 -l ../inputs/cullpdb_pc20_res1.6_R0.25_d110520_chains1859_list_pruned -residue_name C40 -mute all -unmute devel.UnfoldedStateEnergyCalculator -unmute protocols.jd2.PDBJobInputer -no_optH true -detect_disulf false >& ufsec_log_c40 &
+$> cd outputs
+$> $ROSETTA3/UnfoldedStateEnergyCalculator.linuxclangrelease -ignore_unrecognized_res -extrachi_cutoff 0 -l ../inputs/cullpdb_pc20_res1.6_R0.25_d110520_chains1859_list_pruned -residue_name C40 -mute all -unmute devel.UnfoldedStateEnergyCalculator -unmute protocols.jd2.PDBJobInputer -no_optH true -detect_disulf false >& ufsec_log_c40 &
 
 NOTE: The extension on your executable my be different.
 

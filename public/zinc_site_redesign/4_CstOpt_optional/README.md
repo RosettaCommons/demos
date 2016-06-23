@@ -1,5 +1,5 @@
 This is an optional step in the protocol where we optimize the protein-metal interaction in a polyAla context (i.e. everything in the pocket except the TS model and metal-chelating residues are trimmed back to Ala, and the constraints energy is optimized by minimization. See enzdes documentation for more details.)
-
+KEYWORDS: METALS DESIGN
 Input files:
 
 1. rosetta_cst.pdb: contains remark lines to specify catalytic residues, co-ordinates of the TS model

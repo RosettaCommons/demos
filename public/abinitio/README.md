@@ -1,5 +1,5 @@
 #AbInitio 
-
+KEYWORDS: STRUCTURE_PREDICTION GENERAL
 Run on linux
 ------------
     Rosetta/main/source/bin/AbinitioRelax.linuxgccrelease @flags

@@ -1,6 +1,6 @@
 Molecular Replacement Demo
 ==========================
-
+KEYWORDS: EXPERIMENTAL_DATA STRUCTURE_PREDICTION
 Written October 26, 2010  
 Modified August 27, 2013
 

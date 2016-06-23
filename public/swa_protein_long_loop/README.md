@@ -1,5 +1,5 @@
 # SWA Protein Loop Long
-
+KEYWORDS: LOOPS GENERAL
 ## Author
 Rhiju Das, rhiju@stanford.edu
 
