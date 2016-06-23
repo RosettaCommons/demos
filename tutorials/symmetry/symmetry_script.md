@@ -1,6 +1,6 @@
 ## Symmetry within RosettaScripts
 
-* * How to set up the scripts to handle and score symmetric structures*
+* _How to set up the scripts to handle and score symmetric structures_
 
 Also refere to [symmetry user's guide](https://www.rosettacommons.org/docs/latest/rosetta_basics/structural_concepts/symmetry#How-to-adopt-your-protocol-to-use-symmetry).
 
@@ -30,7 +30,7 @@ Now, let's go to the `<MOVERS>`. In the first line we added:
 ```
 <SetupForSymmetry name=add_symm definition="C3.symm" />
 ```
-This is probably the most important line! Here, you are telling Rosetta that it is going to be ran in the C3 mode. It will generate the fold tree so that the provided subunit will be replicated based on the corresponding symmetry definition. You can use `ExtractAsymmetricUnit` to do the reverse and extract the assymetric subunit from a symmetric pose.
+This is probably the most important line! Here, you are telling Rosetta that it is going to be run in the C3 mode. It will replicate the assymetric unit to generate the symmetric structure based on the given symmetry file. It will also generate an appropriate fold tree based on the corresponding symmetry definition and will make sure that the movements and scoring are handled correctly. You can use `ExtractAsymmetricUnit` to do the reverse and extract the assymetric subunit from a symmetric pose.
 
 In the next two lines we have:
 
@@ -38,22 +38,22 @@ In the next two lines we have:
 <SymPackRotamersMover name="symm_pack" scorefxn=sfx_symm/>
 <SymMinMover name="symm_min" scorefxn=sfx_symm bb=0 chi=1 jump=ALL  />
 ```
-These are symmetry-adopted versions of PackRotamersMover and MinMover. jump should be set to all to refine the symmetric degrees of freedom. 
+These are symmetry-adopted versions of PackRotamersMover and MinMover. `jump` should be set to `ALL` in order to refine the symmetric degrees of freedom. 
 
 
-There are other symmetric-aware movers that can also be used. You can find them in the [Rosetta Documentation](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/RosettaScripts). The C7.symm file is also in the input directory if you want to use.
+There are other symmetric-aware movers that can also be used. You can find them in the [Rosetta Documentation](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/RosettaScripts). 
 
 
 **Running and Outputs**
 
-Now let's run the scripts. You are going to use inputs/symm_test.pdb file as an example. This is just ubiquitin structure that has been cleaned and prepared. Based on the `PROTOCOLS` section, here is the order of running:
+Now let's run the scripts. In this tutorial you are going to generate, design, and minimize a C3 symmetric structure made out of ubiquitin subunits. You are going to use inputs/symm_test.pdb file as an example. This is just ubiquitin structure that has been cleaned and prepared. Based on the `PROTOCOLS` section, here is the order of running:
 
 ```
 <Add mover=add_symm/>
 <Add mover=symm_pack/>
 <Add mover=symm_min/>
 ```
-You can run the script using this command: ($ROSETTA3 is the path to your Rosetta/main/source)
+You can run the script using this command: (`$ROSETTA3` is the path to your Rosetta/main/source)
 
 ```
 $> $ROSETTA3/bin/rosettascripts.linuxgccrelease @symm.options
@@ -73,8 +73,11 @@ This is were the symmetry is being defined and the jumps between subunits are se
 
 The structure should look like something like this:
 
+![figure of C3](https://github.com/RosettaCommons/demos/blob/hssnzdh2/parisa_XRW/tutorials/symmetry/figures/C3.png)
 
-Now, based on the things you learnt from the [symmetry tutorial](../symmetry/symmetry.md), try to see if you can get other types of symmetric structures. An example of a C7 symmetric ubiquitin is provided for you in outputs/symm_test_c7.pdb:
+Now, based on the things you learnt from the [symmetry tutorial](../symmetry/symmetry.md), try to see if you can get other types of symmetric structures. An example of a C7 symmetric ubiquitin is provided for you in outputs/symm_test_c7.pdb. The C7.symm file is also in the input directory if you want to use. The result should look like this:
+
+![figure of C7](https://github.com/RosettaCommons/demos/blob/hssnzdh2/parisa_XRW/tutorials/symmetry/figures/C7.png)
 
 
 
