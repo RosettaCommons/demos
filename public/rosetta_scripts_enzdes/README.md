@@ -1,7 +1,7 @@
 # Rosetta scripts: enzdes 
 ---------------------------------
 
-KEYWRODS: SCRIPTING_INTERFACES DESIGN
+KEYWRODS: SCRIPTING_INTERFACES DESIGN ENZYMES
 
 
 The necessary files to run this demo is provided for you in the inputs directory. You need to make sure you change the files to your case.
