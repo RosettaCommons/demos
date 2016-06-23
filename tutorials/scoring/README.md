@@ -1,5 +1,6 @@
 Scoring Tutorial
 ================
+KEYWORD: ANALYSIS UTILITIES   
 Tutorial by Shourya S. Roy Burman (ssrb@jhu.edu) 
 Created 20 June 2016
 
