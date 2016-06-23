@@ -5,7 +5,9 @@ KEYWORDS: SCRIPTING_INTERFACES CORE_CONCEPTS
 Tutorial by Vikram K. Mulligan (vmullig@uw.edu).  Created on 23 June 2016 as part of the 2016 Documentation XRW.
 
 ## Goals
+
 At the end of this tutorial, you will understand:
+
 - How to set up a FoldTree within RosettaScripts
 - How to set up symmetry within RosettaScripts
 - How to nest movers and how to script common loops (*e.g.* Monte Carlo trajectories)
