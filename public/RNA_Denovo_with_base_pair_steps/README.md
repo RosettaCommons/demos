@@ -1,6 +1,4 @@
-#####################################################################
-Fragment assembly of RNA (FARNA) with base pair steps (-bps_moves).
-#####################################################################
+# Fragment assembly of RNA (FARNA) with base pair steps (-bps_moves).
 
 README written in Nov. 2015 by Rhiju Das.
 
@@ -18,14 +16,20 @@ $> source $ROSETTA_TOOLS/rna_tools/INSTALL
 
 Go into input_files/ 
 
-```
+```bash
 $> cd input_files/
 ```
 
 and run
 
-```
- $> source README_SETUP
- $> source README_FARFAR
+```bash
+source README_SETUP
+source README_FARFAR
 ```
 
+To run an extremely fast version (for testing purposes), run
+
+```bash
+$> source README_SETUP.short
+$> source README_FARFAR
+```

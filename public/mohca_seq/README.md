@@ -37,8 +37,14 @@ Running the demo
 ----------------
 
 Documentation for setting up Rosetta and RNA tools:
-* https://www.rosettacommons.org/docs/latest/Build-Documentation.html
-* https://www.rosettacommons.org/docs/latest/RNA-tools.html 
+* https://www.rosettacommons.org/docs/latest/build_documentation/Build-Documentation
+* https://www.rosettacommons.org/docs/latest/application_documentation/rna/RNA-tools
+
+Before attempting the demo, make sure to set your environment variables:
+```bash
+   export ROSETTA_TOOLS=<path/to/Rosetta/tools>
+$> source $ROSETTA_TOOLS/rna_tools/INSTALL
+```
 
 Step-by-step instructions for running the demo:
 
@@ -48,14 +54,28 @@ Step-by-step instructions for running the demo:
         ggauaugaggagagauuucauuuuaaugaaacaccgaagaaguaaaucuuucagguaaaaaggacucauauuggacgaaccucuggagagcuuaucuaagagauaacaccgaaggagcaaagcuaauuuuagccuaaacucucagguaaaaggacggag
 
     The RNA sequence must be lowercase.
+    
+    Copy this file, located in 1_helix_preassembly/1_generate_commands/rosetta_inputs/ to this directory:
+    ```bash
+    $> cp 1_helix_preassembly/1_generate_commands/rosetta_inputs/fasta .
+    ```
 
 2.  Example secondary structure file:
 
         .((((((((......((((((....)))))).(((...((((.....))))..)))........))))))))........(((((......((((((...)))))).(((...((((....((((....)))).....))))..))).......)))))
+        
+        Copy this file, located in 1_helix_preassembly/1_generate_commands/rosetta_inputs/ to this directory:
+        ```bash
+        $> cp 1_helix_preassembly/1_generate_commands/rosetta_inputs/secstruct .
+        ```
 
 3.  Generate command lines for helix pre-assembly:
 
         helix_preassemble_setup.py -secstruct [secondary structure file] -fasta [FASTA file]
+        
+        ```bash
+        $> helix_preassemble_setup.py -secstruct 1_helix_preassembly/1_generate_commands/rosetta_inputs/secstruct -fasta 1_helix_preassembly/1_generate_commands/rosetta_inputs/fasta
+        ```
 
 4.  Example command line for helix pre-assembly:
 
@@ -64,11 +84,20 @@ Step-by-step instructions for running the demo:
 5.  Run command lines for helix pre-assembly (local):
 
         source CMDLINES
+        
+        Short version:
+        ```bash
+        source CMDLINES.short ## had to make by hand.
+        ```
 
 6.  Prepare native/reference structure for Rosetta, if available:
 
         make_rna_rosetta_ready.py 3P49.pdb
-
+        
+        ```bash
+        $> make_rna_rosetta_ready.py 2_prepare_reference_model/1_slice_pdb/rosetta_inputs/3P40.pdb
+        ```
+        
     Outputs reformatted native model as `3p49_RNA.pdb`, to be input to 
     README_SETUP. In the glycine riboswitch example presented here, the 3P49 
     crystal structure includes a protein-binding loop that is not part of the 
@@ -79,6 +108,10 @@ Step-by-step instructions for running the demo:
 7.  Cut out a segment of a model:
 
         pdbslice.py [3p49_RNA.pdb] -subset [1-21 36-169] [slice_]
+        
+        ```bash
+        $> pdbslice.py 3p49_RNA.pdb -subset 1-21 36-169 slice_
+        ```
 
     The first input is the model from which you want to excise regions of 
     interest. The second input is the range of nucleotides that you want to 
@@ -89,6 +122,10 @@ Step-by-step instructions for running the demo:
 8.  Renumber a PDB:
 
         renumber_pdb_in_place.py [slice_3p49_RNA.pdb] [1-21 26-159]
+        
+        ```bash
+        $> renumber_pdb_in_place.py slice_3p49_RNA.pdb 1-21 26-159
+        ```
 
     The first input is the PDB file to be renumbered and the second input is 
     the desired final ranges of sequence positions. Gaps may be intentionally 
@@ -121,10 +158,17 @@ Step-by-step instructions for running the demo:
     orientations of the residues in the separate files may change. In this 
     example, the full-atom refinement algorithm will be applied in the same run 
     as fragment assembly.
+    
+    ```bash
+    $> source 2_prepare_reference_model/2_run/rosetta_inputs/README_SETUP
+    ```
 
 10. Generate command line for FARFAR modeling:
 
         source README_SETUP
+        
+        ```bash
+        source 
 
 11. Example README_FARFAR:
 
