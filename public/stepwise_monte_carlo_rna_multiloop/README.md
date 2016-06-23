@@ -38,7 +38,7 @@ These scripts will take about 10 min to run. If you want to test how things work
 To get out models (in this case from the pre-generated file in the rosetta_inputs directory):
 
 ```
-$> <path-to-Rosetta>/main/source/bin/extract_pdbs.default.linuxgccrelease -silent rosetta_inputs/swm_rebuild_uk.out 
+$> <path-to-Rosetta>/main/source/bin/extract_pdbs.default.linuxgccrelease -silent rosetta_inputs/swm_rebuild.out 
 ```
 
 (Or use extract_lowscore_decoys.py which can be installed via tools/rna_tools/.)
