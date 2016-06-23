@@ -48,7 +48,7 @@ an XML produced by someone else.
 The simplest RosettaScript XML is one which does nothing.  You can obtain a skeleton XML file, which does nothing, in one of two ways.  You go to [the RosettaScripts documentation page](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/RosettaScripts) and find the skeleton XML file there, then copy and paste it into a new file (`nothing.xml`).  You can also generate a skeleton XML file using the rosetta_scripts application:
 
 ```bash
-$> <path_to_Rosetta_directory>/main/source/bin/rosetta_scripts.default.linuxgccrelease -print_template_script >nothing.xml
+$> $ROSETTA3/bin/rosetta_scripts.default.linuxgccrelease -print_template_script >nothing.xml
 ```
 
 In the above, the ".default.linuxgccrelease" may need to be changed for your build, operating system, and compiler (*e.g.* ".static.macosclangrelease" for the static build using the clang compiler on the Macintosh operating system).  If you run the above, it will produce the following output:
@@ -133,7 +133,7 @@ $> cp inputs/nothing.xml .
 As you haven't further defined any protocol, this XML does nothing to the structure. As a test, let's just run a structure through RosettaScripts with this XML. RosettaScripts takes the standard input and output flags. In addition, the `-parser:protocol` option specifies which XML file to use.
 
 ```bash
-$> <path_to_Rosetta_directory>/main/source/bin/rosetta_scripts.default.linuxgccrelease -s 1ubq.pdb -parser:protocol nothing.xml
+$> $ROSETTA3/bin/rosetta_scripts.default.linuxgccrelease -s 1ubq.pdb -parser:protocol nothing.xml
 ```
 
 In the tracer output, Rosetta should print its interpretation of the XML input. 
@@ -248,7 +248,7 @@ The t13 scorefunction is never used in this script, which is not a problem -- Ro
 
 ```bash
 $> cp inputs/scoring.xml .
-$> <path_to_Rosetta_directory>/main/source/bin/rosetta_scripts.default.linuxgccrelease -s 1ubq.pdb -parser:protocol scoring.xml -out:prefix scoring_
+$> $ROSETTA3/bin/rosetta_scripts.default.linuxgccrelease -s 1ubq.pdb -parser:protocol scoring.xml -out:prefix scoring_
 ```
 
 If you open the scoring_1ubq_0001.pdb output file, you should see that the score table includes columns for the cart\_bonded term, and no pro\_close term.
@@ -258,7 +258,7 @@ The above could also be accomplished by passing a custom .wts file to RosettaScr
 Now let's look at another example of output control at the commandline: we may not want to use PDB output if we're planning to generate very large numbers of structures.  The binary silent file is a proprietary Rosetta format that tis much more compact than a PDB file, and which can store arbitrarily large numbers of structures, avoiding disk space and file count limitations on many file systems.  To produce a silent files for output, let's re-run the command that we just ran, but with an additional flag:
 
 ```xml
-$> <path_to_Rosetta_directory>/main/source/bin/rosetta_scripts.default.linuxgccrelease -s 1ubq.pdb -parser:protocol scoring.xml -out:file:silent scoring.silent
+$> $ROSETTA3/bin/rosetta_scripts.default.linuxgccrelease -s 1ubq.pdb -parser:protocol scoring.xml -out:file:silent scoring.silent
 ```
 
 This time, the output will be a binary silent file.  PDB files can be extracted from binary silent files using the extract\_pdbs application.
@@ -307,7 +307,7 @@ Declaring the movers in the MOVERS section only tells Rosetta that the movers ex
 
 ```bash
 $> cp inputs/minimize.xml .
-$> <path_to_Rosetta_directory>/main/source/bin/rosetta_scripts.default.linuxgccrelease -s 1ubq.pdb -parser:protocol minimize.xml -out:prefix minimize_
+$> $ROSETTA3/bin/rosetta_scripts.default.linuxgccrelease -s 1ubq.pdb -parser:protocol minimize.xml -out:prefix minimize_
 ```
 
 Within the tracer output you should see indications that your movers are being used (e.g. "BEGIN MOVER MinMover - min_cart"). Also, if you look at the total scores from the output PDB, you should get much better scores for the minimized 1ubq than the one just rescored with t14_cart. (about -155 versus +460).
@@ -325,7 +325,7 @@ Now let's add the other minimization mover, to demonstrate how movers can be pla
 
 ```bash
 $> cp inputs/minimize2.xml .
-$> <path_to_Rosetta_directory>/main/source/bin/rosetta_scripts.default.linuxgccrelease -s 1ubq.pdb -parser:protocol minimize2.xml -out:prefix minimize2_
+$> $ROSETTA3/bin/rosetta_scripts.default.linuxgccrelease -s 1ubq.pdb -parser:protocol minimize2.xml -out:prefix minimize2_
 ```
 
 This time, when you run the application, you'll find that the torsion-space minimization is carried out first (using the talaris\_2013 scorefunction), and the Cartesian-space minimization is carried out on the output structure from the torsion-space minimization (using the talaris\_2014 scorefunction, modified with the cart\_bonded term turned on and the pro\_close term turned off).  Note that Rosetta does not write out any structures until the end of the protocol.
@@ -367,7 +367,7 @@ We can run this with the following:
 
 ```bash
 $> cp inputs/minimize3.xml .
-$> <path_to_Rosetta_directory>/main/source/bin/rosetta_scripts.default.linuxgccrelease -s 1ubq.pdb -parser:protocol minimize3.xml -out:prefix minimize3_
+$> $ROSETTA3/bin/rosetta_scripts.default.linuxgccrelease -s 1ubq.pdb -parser:protocol minimize3.xml -out:prefix minimize3_
 ```
 
 Practially, it's important to know how to set up MoveMaps because there are many situations in which one may wish to prevent the minimizer from moving parts of a pose.  One example is when designing a binder to a target of known structure: typically, there is little to no advantage to letting the minimizer move the backbone of the target, or sidechains that are far from the binding interface.  Indeed, doing so can result in deceptively low-energy structures with little resemblance to anything physically meaningful.  See the [FastRelax mover's documentation page](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/Movers/movers_pages/FastRelaxMover) for full documentation on the MoveMap syntax.
@@ -453,7 +453,7 @@ Now let's run this script (or the inputs/repack_only.xml file).  This should gen
 
 ```bash
 $> cp inputs/repack_only.xml .
-$> <path_to_Rosetta_directory>/main/source/bin/rosetta_scripts.default.linuxgccrelease -s 1ubq.pdb -parser:protocol repack_only.xml -out:prefix repack_only_
+$> $ROSETTA3/bin/rosetta_scripts.default.linuxgccrelease -s 1ubq.pdb -parser:protocol repack_only.xml -out:prefix repack_only_
 ```
 
 If you look at the output, you'll see that the sidechains have been repacked, though in many cases, Rosetta found an optimal rotamer very close to that in the input structure.
@@ -549,7 +549,7 @@ The final file is provided as inputs/design_core.xml.  You can run this with:
 ```bash
 $> cp inputs/design_core.xml .
 $> cp inputs/core_resfile.txt .
-$> <path_to_Rosetta_directory>/main/source/bin/rosetta_scripts.default.linuxgccrelease -s 1ubq.pdb -parser:protocol design_core.xml -out:prefix design_core_
+$> $ROSETTA3/bin/rosetta_scripts.default.linuxgccrelease -s 1ubq.pdb -parser:protocol design_core.xml -out:prefix design_core_
 ```
 
 Open the output.  You might notice that relatively few core residues have changed: Rosetta finds an optimal sequence very similar to the input, as we might expect.  It's also worth noting this line in the output log:
@@ -590,7 +590,7 @@ Run the modified script (or use inputs/design_core2.xml):
 ```bash
 $> cp inputs/design_core2.xml .
 $> cp inputs/core_resfile2.txt .
-$> <path_to_Rosetta_directory>/main/source/bin/rosetta_scripts.default.linuxgccrelease -s 1ubq.pdb -parser:protocol design_core2.xml -out:prefix design_core2_
+$> $ROSETTA3/bin/rosetta_scripts.default.linuxgccrelease -s 1ubq.pdb -parser:protocol design_core2.xml -out:prefix design_core2_
 ```
 
 This time, if you examine the output, there are several things to note:
@@ -638,7 +638,7 @@ The full script is design_core3.xml.  Run it as follows:
 ```bash
 $> cp inputs/core_resfile.txt .
 $> cp inputs/design_core3.xml .
-$> <path_to_Rosetta_directory>/main/source/bin/rosetta_scripts.default.linuxgccrelease -s 1ubq.pdb -parser:protocol design_core3.xml -out:prefix design_core3_
+$> $ROSETTA3/bin/rosetta_scripts.default.linuxgccrelease -s 1ubq.pdb -parser:protocol design_core3.xml -out:prefix design_core3_
 ```
 
 If you compare the output to the input structure, you'll find that the core has now been redesigned, preserving the buried polar residues' identities and conformations.
@@ -730,7 +730,7 @@ Let's try this out.  This time, we'll tell the rosetta\_scripts application to r
 
 ```bash
 $> cp inputs/filter.xml .
-$> <path_to_Rosetta_directory>/main/source/bin/rosetta_scripts.default.linuxgccrelease -s 1ubq.pdb -parser:protocol filter.xml -out:prefix filter_ -nstruct 100
+$> $ROSETTA3/bin/rosetta_scripts.default.linuxgccrelease -s 1ubq.pdb -parser:protocol filter.xml -out:prefix filter_ -nstruct 100
 ```
 
 Running the above, you'll probably find that about 90% of jobs returned a structure, and 10% failed to pass the filter.  A filter could have any pass rate, though.  This illustrates an important point about filtering: imagine that we had five features that we wanted to filter for, and that each filter passed only 1% of the time.  We would have to do, on average, ten billion samples to obtain one structure.  A better approach is to come up with ways to guide Rosetta to better solutions, increasing the hit rate instead of relying on more sampling and more filtering.  In this case, for example, we could use constraints to guide the packer to form the salt bridge, rather than filtering afterwards.  It's often difficult to come up with simple sampling or scoring biases to use for the desired properties, though, so filtering continues to be a major part of the Rosetta workflow, despite its inefficiency.

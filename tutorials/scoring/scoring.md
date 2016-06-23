@@ -93,7 +93,7 @@ Demo
 ###Preparing PDBs for Scoring
 To score a biomoleule in Rosetta, we use the `score_jd2` executable. This application, along with most in Rosetta, expect the input PDB to be formatted in a certain manner. A PDB downloaded directly from the Protein Data Bank may or may not work with Rosetta in general, and `score_jd2` in particular. Here's an example where we try to score the PDB 3TDM. When in the right demo directory, run:
 
-    $> <path_to_Rosetta_directory>/main/source/bin/score_jd2.linuxgccrelease -in:file:s input_files/from_rcsb/3tdm.pdb
+    $> $ROSETTA3/bin/score_jd2.linuxgccrelease -in:file:s input_files/from_rcsb/3tdm.pdb
    
 The application will exit with the following error:
 
@@ -101,13 +101,13 @@ The application will exit with the following error:
     
 This PDB contains a phosphate ion that Rosetta is unable to process without additional options. To score this PDB, we will add an option `-ignore_unrecognized_res`, which simply ignores the phosphates in the PDB.
 
-    $> <path_to_Rosetta_directory>/main/source/bin/score_jd2.linuxgccrelease -in:file:s input_files/from_rcsb/3tdm.pdb -ignore_unrecognized_res
+    $> $ROSETTA3/bin/score_jd2.linuxgccrelease -in:file:s input_files/from_rcsb/3tdm.pdb -ignore_unrecognized_res
 
 Now the PDB will be scored and the score will be displayed in a file `score.sc`(henceforth called the _score file_) in your current working directory. We will learn how to analyze and interpret this file in the next section. *To proceed on to the next step, remove `score.sc` by typing `rm score.sc`. Else, all energy scores of the structures scored here onwards will be appended to this file.*
 
 <a name="output_struc"></a>If an input PDB does not meet the exact specifications that Rosetta requires, eg. it has missing heavy atoms or unusual residues that Rosetta recognizes by default (unlike phosphates), Rosetta adds or changes atoms to satisfy the specifications. You can ask it to output the structure it actually scores by including the option `out:pdb`. In this example, we will score the PDB 1QYS taken directly from the Protein Data Bank:
 
-    $> <path_to_Rosetta_directory>/main/source/bin/score_jd2.linuxgccrelease -in:file:s input_files/from_rcsb/1qys.pdb -out:pdb
+    $> $ROSETTA3/bin/score_jd2.linuxgccrelease -in:file:s input_files/from_rcsb/1qys.pdb -out:pdb
     
 In the log, you will see the following lines:
 ```html
@@ -141,7 +141,7 @@ In this section, we are going to score the PDB 1QYS (a refined version is provid
     
 To score this structure, run:
 
-    $> <path_to_Rosetta_directory>/main/source/bin/score_jd2.linuxgccrelease @flag
+    $> $ROSETTA3/bin/score_jd2.linuxgccrelease @flag
     
 Running this should produce a file called `score.sc` in the directory `output_files`. Compare this to the file `<path_to_Rosetta_directory>/demos/tutorials/scoring/output_files/expected_output/score.sc`. They should be the same (expect for the `time` column which depends on your CPU speed).
 
@@ -182,7 +182,7 @@ The flags file we will use now is:
 
 On running the command
 
-    $> <path_to_Rosetta_directory>/main/source/bin/score_jd2.linuxgccrelease @flag_docking
+    $> $ROSETTA3/bin/score_jd2.linuxgccrelease @flag_docking
 
 we should get a score file `score_docking.sc` in the directory `output_files`. Compare this to `<path_to_Rosetta_directory>/demos/tutorials/scoring/output_files/expected_output/score_docking.sc`). They should be the same (expect for the `time` column which depends on your CPU speed).
 
@@ -242,7 +242,7 @@ We then set the `fa_atr` weight to `1.0` (originally `0.338` in _docking_) from 
 
 Now on running
 
-    $> <path_to_Rosetta_directory>/main/source/bin/score_jd2.linuxgccrelease @flag_docking_patch
+    $> $ROSETTA3/bin/score_jd2.linuxgccrelease @flag_docking_patch
 
 we should get a score file `score_docking_patch.sc` in the directory `output_files`. Compare this to `<path_to_Rosetta_directory>/demos/tutorials/scoring/output_files/expected_output/score_docking_patch.sc`). They should be the same (expect for the `time` column which depends on your CPU speed).
 
@@ -271,7 +271,7 @@ In this section, we will use the executable `per_residue_energies` with a specia
 ```
 We will run this on the refined 1QYS PDB using
 
-    $> <path_to_Rosetta_directory>/main/source/bin/per_residue_energies.linuxgccrelease @flag_per_residue
+    $> $ROSETTA3/bin/per_residue_energies.linuxgccrelease @flag_per_residue
 
 This should produce a file called `per_res.sc` in `output_files` directory. Compare this to `<path_to_Rosetta_directory>/demos/tutorials/scoring/output_files/expected_output/per_res.sc`). They should be the same. The file will look like:
 
@@ -295,7 +295,7 @@ If we want to further decompose these scores into inherant residue energies (one
 
 We will run this on the refined 1QYS PDB using
 
-    $> <path_to_Rosetta_directory>/main/source/bin/residue_energy_breakdown.linuxgccrelease @flag_residue_energy_breakdown
+    $> $ROSETTA3/bin/residue_energy_breakdown.linuxgccrelease @flag_residue_energy_breakdown
 
 This should produce a file called `energy_breakdown.sc` in `output_files` directory. Compare this to `<path_to_Rosetta_directory>/demos/tutorials/scoring/output_files/expected_output/energy_breakdown.sc`). They should be the same. The file will look like:
 

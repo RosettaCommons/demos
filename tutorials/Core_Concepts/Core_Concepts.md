@@ -17,7 +17,7 @@ Rotameric isomers, or rotamers, indicate the position of a given amino acid side
 
 ## Limitations of Rosetta and things that can go wrong
 
-Rosetta is a powerful tool that has been shown to be successful in many applications including many described either in tutorials and demos or the published paper. However, as with any other software, it has its neither omnipotent nore infallible. This part of the tutorial is meant to give you an idea of what some of Rosetta's limitations are and how to minimize their impact. One should always bear in mind the programming maxim "garbage in, garbage out"; that is to say, Rosetta's output can only ever be as relevant as the provided assumptions. Moreover, computational design is a tool for reducing the search space of a problem, not providing a single unequivocally "right" solution.  
+Rosetta is a powerful tool that has been shown to be successful in many applications including many described either in tutorials and demos or the published paper. However, as with any other software, it has its neither omnipotent nor infallible. This part of the tutorial is meant to give you an idea of what some of Rosetta's limitations are and how to minimize their impact. One should always bear in mind the programming maxim "garbage in, garbage out"; that is to say, Rosetta's output can only ever be as relevant as the provided assumptions. Moreover, computational design is a tool for reducing the search space of a problem, not providing a single unequivocally "right" solution.  
 
 ##### Scoring and scoring-dependent biases
 
