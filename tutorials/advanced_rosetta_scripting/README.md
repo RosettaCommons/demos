@@ -108,34 +108,101 @@ This time, the minimzation has worked as expected: the chains move apart a bit, 
 
 ![Proper minimization after properly setting up the fold tree.](foldtree_example_3.png)
 
-## Nesting movers
+## Nesting movers and looping
+
+### Scripting a simple loop
 
 * *Loop over sidechain optimization until the score doesn't improve.*
 
-One of the more powerful parts of RosettaScripts is the ability to combine individual components in flexible ways. You saw some of this above, where we used ResidueSelectors and TaskOperations as parameters to the PackRotamers mover. There are also certain movers which can take other movers as parameters. This can be used to implement looping.
+One of the more powerful parts of RosettaScripts is the ability to combine individual components in flexible ways. You saw some of this in the [introductory RosettaScripts tutorial](../rosetta_scripting/README.md), where we used ResidueSelectors and TaskOperations as inputs for the PackRotamers mover. There are also certain movers which can take other movers as inputs. As one example, this can be used to implement looping.  Let's start a new, basic script to take a look at this.
 
-For our example protocol, we'll add the [RotamerTrialsMinMover](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/Movers/movers_pages/RotamerTrialsMinMover), which loops through each residue position, exhaustively testing each position to see if a rotamer substitution will improve things. However, as the ideal sidechain conformation depends on the other sidechains, so the results of a RotamerTrialsMinMover depends on the (random) order in which the sidechains are tested. To make sure we get the best score we possibly can, we're going to repeat the RotamerTrialsMinMover until the score function doesn't improve. 
+```xml
+<ROSETTASCRIPTS>
+	<SCOREFXNS>
+		<t14 weights="talaris2014" />
+	</SCOREFXNS>
+	<RESIDUE_SELECTORS>
+	</RESIDUE_SELECTORS>
+	<TASKOPERATIONS>
+	</TASKOPERATIONS>
+	<FILTERS>
+	</FILTERS>
+	<MOVERS>
+	</MOVERS>
+	<APPLY_TO_POSE>
+	</APPLY_TO_POSE>
+	<PROTOCOLS>
+	</PROTOCOLS>
+	<OUTPUT scorefxn="t14" />
+</ROSETTASCRIPTS>
 
-To do this, we'll use the [IteratedConvergence](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/Movers/movers_pages/IteratedConvergenceMover) mover. This mover is a "meta mover" in the sense that it doesn't change the pose itself, but takes as a parameter a Mover which does. It also takes a filter, which is used as a metric evaluator. The IteratedConvergence mover repeatedly applies the given mover, and after each application will call the metric evaluation property of the filter. If the mover keeps improving the score, the IteratedConvergence mover will keep calling the mover. If not, it will stop and return the updated pose.
+```
 
-For the filter, we'll use the [ScoreType](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/Filters/filter_pages/ScoreTypeFilter) filter to get the total score of the pose. Since the IteratedConvergence mover only uses this as a metric evaluator, we don't need to worry too much about the threshold or the confidence setting.
+For our example protocol, we'll add the [RotamerTrialsMinMover](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/Movers/movers_pages/RotamerTrialsMinMover), which iterates through each residue position, exhaustively testing each position to see whether a rotamer substitution will improve things. However, because the ideal sidechain conformation depends on the other sidechains, the results of a RotamerTrialsMinMover depends on the (random) order in which the sidechains are tested.  Let's add a RotamerTrialsMinMover to the MOVERS section of our script, but for now, let's leave it out of the PROTOCOLS section:
+
+```xml
+...
+	<MOVERS>
+		<RotamerTrialsMinMover name="rtmm" scorefxn="t14" task_operations="repackonly,extrachi" />
+	</MOVERS>
+...
+```
+
+To make sure we get the best score we possibly can, we're going to repeat the RotamerTrialsMinMover until the score function doesn't improve.  To do this, we'll use the [IteratedConvergence](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/Movers/movers_pages/IteratedConvergenceMover) mover. This mover is a "meta mover" in the sense that it doesn't change the pose itself, but takes as a parameter a Mover which does. It also takes a filter, which is used as a metric evaluator (and *not* as a trajectory stopper). The IteratedConvergence mover repeatedly applies the given mover, and after each application will call the metric evaluation property of the filter. If the mover keeps improving the score, the IteratedConvergence mover will keep calling the mover. If not, it will stop and return the updated pose.  Let's add the IteratedConvergence mover now, and pass the RotamerTrialsMinMover that we set up above to it as an input:
+
+```xml
+...
+	<MOVERS>
+		<RotamerTrialsMinMover name="rtmm" scorefxn="t14" task_operations="repackonly,extrachi" />
+		<IteratedConvergence name="rotopt" mover="rtmm" delta="0.1" cycles="1" />
+	</MOVERS>
+...
+```
+
+For the filter that the IteratedConvergence mover takes, we'll use the [ScoreType](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/Filters/filter_pages/ScoreTypeFilter) filter to get the total score of the pose. Since the IteratedConvergence mover only uses this as a metric evaluator, we don't need to worry too much about the threshold or the confidence setting.
  
+```xml
+...
+	<FILTERS>
+		<ScoreType name="total_score" scorefxn="t14" score_type="total_score" threshold="0" />
+	</FILTERS>
+...
+	<MOVERS>
+		...
+		<IteratedConvergence name="rotopt" mover="rtmm" filter="total_score" delta="0.1" cycles="1" /> #Added the filter="total_score" option.
+	</MOVERS>
+...
 ```
-    <FILTERS>
-        <ScoreType name="total_score" scorefxn="t14_cart" score_type="total_score" threshold="0"/>
-    </FILTERS>
-    <MOVERS>
-        <RotamerTrialsMinMover name="rtmm" scorefxn="t14_cart" task_operations="repackonly,extrachi,nopack_F45_Y59" />
-        <IteratedConvergence name="rotopt" mover="rtmm" filter="total_score" delta="0.1" cycles="1" />
-    </MOVERS>
+
+Note that when you nest movers or filters or whatnot, the definition of the sub-mover, sub-filter, *etc.* must come before the point of use. (Otherwise the order of definition shouldn't matter.) This might involve you making multiple MOVERS/FILTERS/*etc.* sections.
+
+As a final step, we need to write our PROTOCOLS section.  Note that the *only* thing that we want to put there, now, is the IteratedConvergence mover, "rotopt", since it will invoke the RotmaerTrialsMinMover, "rtmm".
+
+```xml
+...
+	<PROTOCOLS>
+		<Add mover="rotopt" />
+	</PROTOCOLS>
+...
 ```
 
-Note that when you nest movers/filters/etc. the definition of the sub-mover/filter/etc. must come before the point of use. (Otherwise the order of definition shouldn't matter.) This might involve you making multiple MOVERS/FILTERS/etc. section.
+The final script can be viewed in loop\_example/pack\_opt.xml.  Let's try it out on the ubiquitin structure:
 
-	$> cp inputs/pack_opt.xml .
-	$> $ROSETTA3/bin/rosetta_scripts.default.linuxgccrelease -s 1ubq.pdb -parser:protocol pack_opt.xml -out:prefix packopt_ -nstruct 2 -jd2:ntrials 10
+```bash
+$> cp loop_example/pack_opt.xml .
+$> cp loop_example/1ubq.pdb .
+$> <path_to_Rosetta_directory>/main/source/bin/rosetta_scripts.default.linuxgccrelease -s 1ubq.pdb -parser:protocol pack_opt.xml -out:prefix packopt_
+```
 
-Looking at the tracer output, you should be able to see the application of the IteratedConvergence, and how the RotamerTrialsMinMover is repeated multiple times.
+This script will take a bit longer to run (about three or four minutes).  If you look at the tracer output, you should be able to see the application of the IteratedConvergence, and how the RotamerTrialsMinMover is repeated multiple times.
+
+This is a relatively trivial example, since we're applying it to an input structure that nature has already heavily optimized; if you look at the output, you'll see that Rosetta finds few new mutations, mainly finding only rotamer substitutions of the same amino acid.  However, it illustrates how a loop can be scripted using a dedicated mover.
+
+Let's look at a more realistic example, now, and a more powerful, and commonly-used, type of loop: a Monte Carlo search.
+
+### Scripting a Monte Carlo search of conformation and sequence space
+
+TODO -- CONTINUE HERE.
 
 ## Variable substition: adding variables to scripts
 
