@@ -22,7 +22,7 @@ We recommend completing the [introductory RosettaScripting tutorial](../rosetta_
 
 In the [FoldTree tutorial](../fold_tree/fold_tree.md), we learnt how the fold tree controls what parts of a structure move when degrees of freedom change by establishing a clear hierarchy of residues.  It is often necessary to modify the FoldTree manually in order to optimize a protocol.  We're about to see how we do this in RosettaScripts.  Let's use the following example, which has two helices, which are not connected to one another, that are a bit too close together:
 
-![These two helices are too close together.  This calls for minimization.](foldtree_example_1.png)
+![These two helices are too close together.  This calls for minimization.](foldtree_example/foldtree_example_1.png)
 
 We'd like to minimize the structure, allowing *jumps* (rigid-body transforms between chains) to move.  Let's try this naïvely, first.  The following script simply creates and calls a MinMover for the task:
 
@@ -61,7 +61,7 @@ In the above, $ROSETTA3 is your Rosetta/main/source directory. You may need to c
 
 Running the script above, we find that something has gone wrong.  Comparing to the original pose (in grey), the minimized pose (in colours) has the second helix rotated by nearly 180 degrees.  The overall structure has exploded:
 
-![Naïvely minimizing the structure results in an explosion.](foldtree_example_2.png)
+![Naïvely minimizing the structure results in an explosion.](foldtree_example/foldtree_example_2.png)
 
 This is an extreme case of the lever-arm effect, caused by an unsuitable fold tree.  Since the default fold tree has residue 1 as the anchor, with all of helix 1 downstream of residue 1, and a jump to the first residue of the second helix, with all of helix 2 downstream of that first residue, the repulsion between the two helices causes the second one to rotate and swing away instead of moving linearly.  This is clearly not what we want.
 
@@ -108,7 +108,7 @@ $> $ROSETTA3/bin/rosetta_scripts.default.linuxgccrelease -in:file:s foldtree_exa
 
 This time, the minimzation has worked as expected: the chains move apart a bit, but don't rotate much.  (The original position is shown in grey in the image below):
 
-![Proper minimization after properly setting up the fold tree.](foldtree_example_3.png)
+![Proper minimization after properly setting up the fold tree.](foldtree_example/foldtree_example_3.png)
 
 ## Symmetry within RosettaScripts
 
