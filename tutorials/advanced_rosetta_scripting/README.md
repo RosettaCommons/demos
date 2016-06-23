@@ -1,4 +1,4 @@
-# RosettaScripts for Advanced Users
+# More Advanced RosettaScripts Concepts
 ======================================
 KEYWORDS: SCRIPTING_INTERFACES CORE_CONCEPTS
 
@@ -14,7 +14,9 @@ At the end of this tutorial, you will understand:
 - How to use debugging movers to observe scripted trajectories
 - How to assemble more complicated protocols from simpler building-blocks
 - How to use variable substitution and file inclusion in a script
-- How to control large-scale sampling
+- How specialized grid sampling movers interact with RosettaScripts
+
+We recommend completing the [introductory RosettaScripting tutorial](../rosetta_scripting/README.md) to familiarize yourself with general RosettaScripts concepts before moving on to this tutorial.
 
 ## Controlling the FoldTree within RosettaScripts
 
@@ -198,11 +200,11 @@ This is were the symmetry is being defined and the jumps between subunits are se
 
 The structure should look like something like this:
 
-![figure of C3](symmetry_example/figures/C3.png)
+![The ubiquitin structure after applying C3 symmetry, packing, and minimization.](symmetry_example/figures/C3.png)
 
 Now, based on the things you learnt from the [symmetry tutorial](../symmetry/symmetry.md), try to see whether you can get other types of symmetric structures. An example of a C7 symmetric ubiquitin is provided for you in outputs/symm_test_c7.pdb. The C7.symm file is also in the input directory for you to use, as well as a slightly different input PDB file (with the ubiquitin translated away from the axis a bit), called symm_test_translated.pdb. The result should look like this:
 
-![figure of C7](symmetry_example/figures/C7.png)
+![The ubiquitin structure after applying C7 symmetry, packing, and minimization.](symmetry_example/figures/C7.png)
 
 The commands to use the preset files are:
 
@@ -320,6 +322,8 @@ TODO -- CONTINUE HERE.
 
 ## Variable substition: adding variables to scripts
 
+TODO -- EDIT THIS.
+
 Sometimes in a RosettaScripts protocol, you want to vary the options given to the tags. For example, if you wish to do a series of runs, with changes at different residues. The naive way of doing this is to make separate XMLs, one for each variant of the option. If you have a large number of variants, this may be less than ideal.
 
 To accomodate this sort of protocol, RosettaScripts has [variable substition](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/RosettaScripts#options-available-in-the-xml-protocol-file_variable-substitution). Within the script you add "%%var_name%%" instead of the option value, and then use the "-parser:script_vars" command line option to set it from the command line.
@@ -346,6 +350,9 @@ These commands should produce a tryptophan scan of a selection of residues in th
 
 If you wish to do a more thorough scan, either of more positions or of more residue identities, you can easily automate running of the scan by using shell scripting.
 
+## RosettaScripts jobs and grid sampling movers
+
+TODO -- CONTINUE HERE.
 
 ## Conclusion
 
