@@ -33,15 +33,18 @@ Loop Modeling Methods
 
 Closing Breaks in Protein Chains
 --------------------------------
-Sometimes you have chain breaks in your protein, perhaps when threading from a homolog. In this case, there are no missing residues, just that the backbone itself is not closed. An example input PDB is provided at `<path_to_Rosetta_directory>/demos/tutorials/loop_modeling/input_files/1qys_chain_break.pdb` where the connection between residue numbers 14 and 15 is severed. To fix this, we will use the kinematic closure protocol. First, we need to write a short _loop file_, detailing which residues as to be modeled as loops and where the cutpoint is.
+Sometimes you have chain breaks in your protein, perhaps when threading from a homolog. In this case, there are no missing residues, just that the backbone itself is not closed. An example input PDB is provided at `<path_to_Rosetta_directory>/demos/tutorials/loop_modeling/input_files/3gbn_Ab.pdb` where the connection between residue numbers 127 and 128 is severed. To fix this, we will use the kinematic closure protocol. First, we need to write a short _loop file_, detailing which residues as to be modeled as loops and where the cutpoint is.
 
-    LOOP 10 14 12 0 0
+    LOOP 125 130 0 0 1
     
-This 2<sup>nd</sup> and the 3<sup>rd</sup> column in this file correspond the the loop start and end residues. The 4<sup>th</sup> column indicates the cut point where the chain is broken. It must be between (including) the start and end residues. Note that the break is between residues 14 and 15, but we right that the cut point is 12. This is because **the residue numbering in the loop file is not based on PDB numbering but on Rosetta internal numbering.**. Since this PDB starts at residue 3, Rosetta internal numbering will be 2 less than PDB residue numbering.
+This 2<sup>nd</sup> and the 3<sup>rd</sup> columns in this file correspond the the loop start and end residues. The 4<sup>th</sup> column indicates the cut point where the chain is broken. It must be between (including) the start and end residues. 0 is the default option which allows Rosetta to pick a cut point. Note that **the residue numbering in the loop file is not based on PDB numbering but on Rosetta internal numbering.**. The 4th column represents the skip rate, which we have set to 0. Setting the last column to 1 makes Rosetta start building from an extended structure.
 
-    $> <path_to_Rosetta_directory>/main/source/bin/loopmodel.linuxgccrelease @flag_basic_KIC
+To close the loop, run:
+
+    $> <path_to_Rosetta_directory>/main/source/bin/loopmodel.linuxgccrelease @flag_basic_KIC 
+
     
-This should take about 5 minutes to run.
+This should take about 2 minutes at the end of which you will produce 
 
 Modeling Missing Loops
 ----------------------
