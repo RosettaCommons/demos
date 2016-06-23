@@ -1,5 +1,6 @@
-# Rosetta scripts: Rosetta-DNA Demo
+Rosetta scripts: Rosetta-DNA Demo
 ===============================
+
 KEYWORDS: SCRIPTING_INTERFACES NUCLEIC_ACIDS INTERFACES DESIGN DNA
 
 Authors

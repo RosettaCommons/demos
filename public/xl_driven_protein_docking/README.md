@@ -1,8 +1,8 @@
 #Crosslink Guided Protein-Protein Docking
 
-Author unknown.  This file was updated on 22 June 2016 by Vikram K. Mulligan, Ph.D. (vmullig@uw.edu), as part of the 2016 Documentation eXtreme Rosetta Workshop (XRW).
-
 KEYWORDS: DOCKING EXPERIMENTAL_DATA STRUCTURE_PREDICTION
+
+Original author Abdullah Kahraman (abdullah.kahraman@gmail.com).  This file was updated on 22 June 2016 by Vikram K. Mulligan, Ph.D. (vmullig@uw.edu), as part of the 2016 Documentation eXtreme Rosetta Workshop (XRW).
 
 ## Contents
 -----------

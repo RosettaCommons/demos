@@ -1,6 +1,8 @@
 Clustering Demo
 ===============
+
 KEYWORDS: ANALYSIS GENERAL
+
 Clustering is used to group output decoys.  The Rosetta clustering app is only typically good for a total decoy set of 400 or less, as it uses the first 400 structures to create the center of the clusters.   It also cannot handle thousands of decoys efficiently.
 
 The app will eventually be deprecated.  If you have a large number of decoys or wish to use a [better] clustering app, please use the calibur application.

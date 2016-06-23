@@ -1,10 +1,9 @@
 # Temperature-Sensitive Mutation Prediciton
 
-## Author
-Chris Poultney
-
 KEYWORDS: DESIGN STABILITY ANALYSIS
 
+## Author
+Chris Poultney
 
 ## Brief Description
 Uses Rosetta relax and score protocols, in combination with software listed

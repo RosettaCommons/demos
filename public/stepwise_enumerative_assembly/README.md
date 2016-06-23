@@ -1,7 +1,9 @@
 # Stepwise Enumerative Assembly
+
+KEYWORDS: STRUCTURE_PREDICTION GENERAL
+
 ## Author
 Rhiju Das, rhiju@stanford.edu
-KEYWORDS: STRUCTURE_PREDICTION GENERAL
 ## Protocol Name
 Was called: "StepWiseAssembly", but that was too generic. 
 We need a catchier name. SEA? Enumerosetta?

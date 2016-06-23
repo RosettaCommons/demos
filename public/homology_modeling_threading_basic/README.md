@@ -1,6 +1,8 @@
 Basic Homology Modeling Demo
 ============================
-KEYWORDS: STRUCTURE_PREDICTION GENERAL`
+
+KEYWORDS: STRUCTURE_PREDICTION GENERAL
+
 Conceptual steps
 ----------------
 

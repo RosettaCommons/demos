@@ -1,8 +1,7 @@
-KEYWORDS: MEMBRANES DESIGN STABILITY_IMPROVEMENT
-
-
 Membrane ΔΔG
 ============
+
+KEYWORDS: MEMBRANES DESIGN STABILITY_IMPROVEMENT
 
 Author: Rebecca F. Alford (rfalford12@gmail.com)  
 Author: Julia Koehler Leman (julia.koehler1982@gmail.com)  

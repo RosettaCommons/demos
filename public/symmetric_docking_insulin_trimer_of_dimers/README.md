@@ -1,5 +1,8 @@
 # Symmetric Docking of Insulin Trimer of Dimers - Demo
+
 KEYWORDS: DOCKING SYMMETRY
+
+## Needed input files
 
 Input files:
 

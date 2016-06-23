@@ -1,5 +1,7 @@
 # Demo for the fixbb application
+
 KEYWORDS: STRUCTURE_PREDICTION GENERAL
+
 This demo shows how to use the fixbb application to invoke the Rosetta packer to optimize the side-chain
 conformations of an input structure.  Although the packer can also be used to design new amino acid
 sequences, in this case, we hold the sequence fixed, and only vary side-chain conformations.
