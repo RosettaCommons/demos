@@ -1,6 +1,6 @@
 Chemically Conjugated Docking
 =============================
-
+KEYWORDS: LIGAND DOCKING
 Included are demos for three applications:
 
 * [[UBQ_E2_thioester|public/chemically_conjugated_docking/UBQ_E2_thioester/readme]]

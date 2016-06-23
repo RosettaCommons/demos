@@ -1,4 +1,5 @@
 # Demo for the fixbb application with design
+KEYWORDS: DESIGN GENERAL
 Demo last modified by Vikram K. Mulligan, Ph.D. (vmullig@uw.edu) during the 2016 Documentation eXtreme Rosetta Workshop (XRW).
 
 This is a demo of a very simple design protocol run on a fixed backbone. If you

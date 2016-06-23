@@ -1,5 +1,6 @@
 Analyzing Structure Quality
 ===========================
+KEYWORDS: ANALYSIS STRUCTURE_PREDICTION
 One of the simplest initial steps to evaluate structural quality is to score the structure using the Rosetta score function and to evaluate the results.
 
 Scoring structures

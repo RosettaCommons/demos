@@ -1,3 +1,5 @@
+#Favor Native Residue
+KEYWORDS: DESIGN UTLITIES
 This document briefly demos how to use favor_native_residue for Rosetta 3.4 in 
 a fixed backbone context.  favor_native_residue is a mode (which debuted in 
 Rosetta 2) that pushes the packer to prefer NOT making a mutation when the 

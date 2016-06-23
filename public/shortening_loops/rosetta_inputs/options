@@ -2,7 +2,7 @@
 -in:file:fullatom
 
 #path to input pdb
--loops:input_pdb rosetta_inputs/1FNA_del.pdb
+-s rosetta_inputs/1FNA_del.pdb
 
 #path to loops file
 -loops:loop_file rosetta_inputs/loop_file

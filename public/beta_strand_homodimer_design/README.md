@@ -1,6 +1,6 @@
 β-Strand Homodimer Design
 =========================
-
+KEYWORDS: DESIGN INTERFACES STRUCTURE_PREDICTION
 This outlines how to use the applications involved in finding exposed beta-strands and then designing a protein with an exposed beta strand to be a homodimer. 
 Written by Ben Stranges (stranges at unc dot edu)
 

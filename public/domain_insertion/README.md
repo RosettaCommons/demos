@@ -1,6 +1,6 @@
 Domain Insertion Demo
 =====================
-
+KEYWORDS: DESIGN GENERAL
 In this tutorial, we will demonstrate how to perform domain insertion with 
 Rosetta.  Domain insertion is when you have two well-folded domains, and you 
 insert one (B) into a flexible loop of the other (A), such that domain A is 
