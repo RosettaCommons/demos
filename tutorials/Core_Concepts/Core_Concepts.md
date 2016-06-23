@@ -1,6 +1,5 @@
 #Core Rosetta Concepts
 KEYWORDS: CORE_CONCEPTS GENERAL
-
 Author: Frank Teets(teetsf@gmail.com), Parisa Hosseinzadeh (parisah@uw.edu)
 
 Jun 23 2016
@@ -17,15 +16,24 @@ Rosetta is stochastic software; given the huge search space available, we walk t
 ##Rotamers
 Rotameric isomers, or rotamers, indicate the position of a given amino acid side chain; they consist of an amino acid identity and the chi angles of the side chain heavy atoms. Rosetta does not draw a fundamental distinction between sampling within and between amino acid rotamer populations; that is to say, it both packs and designs side chains by choosing rotamers from a library, with the difference between packing and design determined by which amino acids are used to populate the library.
 
-## Limitations of Rosetta and things that can go wrong
+##Limitations of Rosetta and things that can go wrong
 
 Rosetta is a powerful tool that has been shown to be successful in many applications including many described either in tutorials and demos or the published paper. However, as with any other software, it has its neither omnipotent nore infallible. This part of the tutorial is meant to give you an idea of what some of Rosetta's limitations are and how to minimize their impact. One should always bear in mind the programming maxim "garbage in, garbage out"; that is to say, Rosetta's output can only ever be as relevant as the provided assumptions. Moreover, computational design is a tool for reducing the search space of a problem, not providing a single unequivocally "right" solution.  
 
 ##### Scoring and scoring-dependent biases
 
-The current Rosetta score, talaris 2014, has its own flaws particularly when it comes to electrostatic interactions. //Asked Hahnboem to give me a paragraph on this.
+The current Rosetta score, talaris 2014, has its own limitations (see the list below). while these are not major, they can occasionaly result in certain behaviors that can affect the quality of the final ouput. 
 
-In many of the examples in the tutorials, we sort our results based on the final score. These scores are general, and a naive sort by score alone may return structures that are not optimal. One classic example of this is the "all ALA" helix designs. Another example is the design of structures with many aromatic rings or with highly charged surfaces. This is because Rosetta tries to maximize the final score by adding this favorable interactions which are not possible in real world, or are not desirable for later experimental analysis (highly charged surfaces make crystallography hard, Ala residues cannot provide any special interactions despite being highly favored for helical regions).
+- preference to aromatics (over aliphatic or sulfur-containing (=MET))
+- preference to hbonding over other electrostatic interactions
+- weak electrostatic repulsion term related to above emntioned terms 
+- weak penalty on solvation of burried polars 
+- poor descrption of context dependence of electrostatic interaction
+- preference to helice (can be observed from structure prediction)
+- poor description of pre-Pro / cis-Pro preferences
+- wrong rotameric preferences in certain AAs (this is somewhat app dependent, but can be poor for MET, ASP, ASN,TRP)
+
+In many of the examples in the tutorials, we sort our results based on the final score. These scores are general, and a naive sort by score alone may return structures that are not optimal due to the above mentioned limitations in the score funtion. One classic example of this is the "all ALA" helix designs. Another example is the design of structures with many aromatic rings or with highly charged surfaces. This is because Rosetta tries to maximize the final score by adding this favorable interactions which are not possible in real world, or are not desirable for later experimental analysis (highly charged surfaces make crystallography hard, Ala residues cannot provide any special interactions despite being highly favored for helical regions).
 
 *What You Can Do:*
 

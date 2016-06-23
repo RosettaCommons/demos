@@ -1,7 +1,7 @@
 -------------------------------------------------------------------
    INSTRUCTIONS FOR RUNNING THE DOUGSDOCKDESIGNMINIMIZE PROTOCOL
 -------------------------------------------------------------------
-KEYWORDS: DOCKING INTERFACES STRUCTURAL_PREDICTION
+KEYWORDS: DOCKING INTERFACES STRUCTURE_PREDICTION
 The DougsDockDesignMinimize (DDDM) protocol was used in the accompanying manuscript to redesign the protein/peptide interface of Calpain and a fragment of its inhibitory peptide calpastatin. The protocol was written for this specific protein/peptide interaction and modifications to the code will be necessary to run the protocol on a different system. A modified form was used as the example protocol in the advanced section of the Rosetta 3.0 release manual.
 
 Minor modifications to the protocol have been made from the version used to produce the designs in the accompanying publication. The interfaces of the Rosetta libraries have changed since the initial implementation of the protocol and these modifications were necessary to allow the protocol to work with the current release. 

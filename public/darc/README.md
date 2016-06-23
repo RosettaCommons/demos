@@ -1,7 +1,7 @@
 DARC Demo
 =========
 
-KEYWORDS: DOCKING LIGANDS RUN_WITH_GPU
+KEYWORDS: DOCKING LIGANDS 
 
 Docking Approach using Ray Casting (DARC) is structure-based computational method for carrying out virtual screening by docking small-molecules into protein surface pockets.
 In this demo, DARC is used to dock a small molecule in a pocket centered around residue 61 of the protein, E3 ubiquitin-protein ligase Mdm2 (PDB: 4ERF).
