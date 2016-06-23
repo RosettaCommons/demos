@@ -9,7 +9,9 @@ These tutorials were written such that a completely new user should be able to c
 
 ##Before Running Any of the Other Tutorials
 
-Complete [Tutorial 1](https://github.com/RosettaCommons/demos/blob/XRW2016/tutorials/install_build.md) to install and compile rosetta; verify that the `<path_to_Rosetta_directory>/main/bin` directory contains executables appropriate to your installation.
+Complete [Tutorial 1](https://github.com/RosettaCommons/demos/blob/XRW2016/tutorials/install_build.md) to install and compile rosetta; verify that the `<path_to_Rosetta_directory>/main/bin` directory contains executables appropriate to your installation. Also, run
+
+> env $ROSSETTA3=the path to your Rosetta/source directory
 
 ##Do The Following for Each Tutorial
 

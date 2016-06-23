@@ -134,7 +134,7 @@ The following demo runs the [scoring protocol](https://www.rosettacommons.org/de
 Run:   
 
 ```   
-$> <path_to_Rosetta_directory>/main/source/bin/score_jd2.linuxgccrelease @flag_fa_for_cen
+$> $ROSETTA3/bin/score_jd2.linuxgccrelease @flag_fa_for_cen
 ```
 
 
@@ -189,7 +189,7 @@ To convert a full atom PDB to centroid, we need to interface with Rosetta at a l
 The Rosetta Scripts application is then invoked like:
 
 ```
- $> <path_to_Rosetta_directory>/main/source/bin/rosetta_scripts.linuxgccrelease @flag_from_cen_to_fa
+ $> $ROSETTA3/bin/rosetta_scripts.linuxgccrelease @flag_from_cen_to_fa
 ```
 
 >NOTE: The file in `output_files/` has the word *centroid* in it because the input file did, not because it is in centroid mode!

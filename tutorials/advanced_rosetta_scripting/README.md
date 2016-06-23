@@ -52,7 +52,7 @@ This script is provided as foldtree\_example/minimize1.xml, and the structure sh
 ```bash
 $> cp foldtree_example/minimize1.xml .
 $> cp foldtree_example/foldtree_example.pdb .
-$> <path_to_Rosetta_directory>/main/source/bin/rosetta_scripts.default.linuxgccrelease -in:file:s foldtree_example.pdb -parser:protocol minimize1.xml -out:prefix min1_
+$> $ROSETTA3/bin/rosetta_scripts.default.linuxgccrelease -in:file:s foldtree_example.pdb -parser:protocol minimize1.xml -out:prefix min1_
 ```
 
 You may need to change ".default.linuxgccrelease" for your build, operating system, and compiler (*e.g.* ".static.macosclangdebug", *etc.*).
@@ -101,7 +101,7 @@ Now let's run the new script (provided as foldtree_example/minimize2.xml, if you
 $> cp foldtree_example/minimize2.xml .
 $> cp foldtree_example/foldtree.txt .
 $> cp foldtree_example/foldtree_example.pdb .
-$> <path_to_Rosetta_directory>/main/source/bin/rosetta_scripts.default.linuxgccrelease -in:file:s foldtree_example.pdb -parser:protocol minimize2.xml -out:prefix min2_
+$> $ROSETTA3/bin/rosetta_scripts.default.linuxgccrelease -in:file:s foldtree_example.pdb -parser:protocol minimize2.xml -out:prefix min2_
 ```
 
 This time, the minimzation has worked as expected: the chains move apart a bit, but don't rotate much.  (The original position is shown in grey in the image below):
@@ -133,7 +133,7 @@ For the filter, we'll use the [ScoreType](https://www.rosettacommons.org/docs/la
 Note that when you nest movers/filters/etc. the definition of the sub-mover/filter/etc. must come before the point of use. (Otherwise the order of definition shouldn't matter.) This might involve you making multiple MOVERS/FILTERS/etc. section.
 
 	$> cp inputs/pack_opt.xml .
-	$> rosetta_scripts.default.linuxgccrelease -s 1ubq.pdb -parser:protocol pack_opt.xml -out:prefix packopt_ -nstruct 2 -jd2:ntrials 10
+	$> $ROSETTA3/bin/rosetta_scripts.default.linuxgccrelease -s 1ubq.pdb -parser:protocol pack_opt.xml -out:prefix packopt_ -nstruct 2 -jd2:ntrials 10
 
 Looking at the tracer output, you should be able to see the application of the IteratedConvergence, and how the RotamerTrialsMinMover is repeated multiple times.
 
