@@ -1,4 +1,7 @@
 # Stepwise Enumerative Assembly
+
+KEYWORDS: STRUCTURE_PREDICTION GENERAL
+
 ## Author
 Rhiju Das, rhiju@stanford.edu
 

@@ -1,6 +1,7 @@
-ERRASER Demo
-============
+ERRASER: Enumerative Real-Space Refinement ASsitted by Electron density under Rosetta
+=====================================================================================
 
+KEYWORDS: NUCLEIC_ACIDS EXPERIMENTAL_DATA RNA
 
 This demo illustrates the ERRASER (Enumerative Real-Space Refinement ASsitted 
 by Electron density under Rosetta) protocol, which improves an RNA 

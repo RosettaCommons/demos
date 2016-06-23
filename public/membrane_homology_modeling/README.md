@@ -1,6 +1,8 @@
 Membrane Homology Modeling
 ==========================
+
 KEYWORDS: MEMBRANES STRUCTURE_PREDICTION
+
 This demo shows how to generate a homology model of a membrane protein.  It 
 only works for helical membrane proteins.  In the example, a dopamine receptor 
 structure is used as the template for a homologous dopamine receptor.  This is 

@@ -1,5 +1,8 @@
 # Symmetric Docking of Insulin Trimer of Dimers - Demo
+
 KEYWORDS: DOCKING SYMMETRY
+
+## Needed input files
 
 Input files:
 
@@ -31,10 +34,10 @@ To generate a de novo symmetry file use script: `make_symmdef_file_denovo.py` th
 The minimal inputs of this script are (1) the symmetry: cn (circular symmetry) or dn (dihedral symmetry) and (2) the number of "monomers" (i.e. subunits).
 
 ```
-	$> python $ROSETTA3/main/source/src/apps/public/symmetry/make_symmdef_file_denovo.py -symm_type cn -nsub 3  > rosetta_inputs/1ZEH.c3.symm
+	$ python $ROSETTA3/src/apps/public/symmetry/make_symmdef_file_denovo.py -symm_type cn -nsub 3  > rosetta_inputs/1ZEH.c3.symm
 ```
 
-where "cn" is cyclic symmetry and "3" is the number of "monomers" (that gives a 3 fold single axis rotational symmetry). This produces the symmetry definition file for Rosetta.
+where "cn" is cyclic symmetry and "3" is the number of "monomers" (that gives a 3 fold single axis rotational symmetry). This produces the symmetry definition file for Rosetta. The anchor point in the symmetry def is set to center of mass (COM). This can cause problems. If it SymDock fails, this can normally be replaced by a residue numer.
 
 **Note:** Pay no attention to the fact that 1ZEH has it's own internal symmetries. It is just considered a monomer subunit.
 
@@ -59,7 +62,7 @@ The output file 1ZEH.c3.symm contains the following:
 ### Run Rosetta
 
 ```
-	$> $ROSETTA3/main/source/bin/SymDock.default.macosclangrelease @flags.c3
+	$> $ROSETTA3/bin/SymDock.default.macosclangrelease @flags.c3
 ```
 
 where the provided flags file (flags.c3) looks like this:
@@ -108,7 +111,7 @@ And re-chain it to a single pseudo chain.
 Then we will use d3 symmetry for docking.  As you know, d3 symmetry is c3 symmetry with a mirror plane. In other words this has a total of 6 subunits.
 
 ```
-	$> $ROSETTA3/main/source/src/apps/public/symmetry/make_symmdef_file_denovo.py -symm_type dn -nsub 6  > rosetta_inputs/1ZEH.d3.symm
+	$> $ROSETTA3/src/apps/public/symmetry/make_symmdef_file_denovo.py -symm_type dn -nsub 6  > rosetta_inputs/1ZEH.d3.symm
 ```
 
 **Note:** the number of subunits in d3 symmetry is 6.
@@ -142,7 +145,7 @@ set_dof JUMP3 z(50) angle_z(0:60.0)
 ### Run Rosetta
 
 ```
-	$> $ROSETTA3/main/source/bin/SymDock.macosclangrelease @flags.d3
+	$> $ROSETTA3/bin/SymDock.macosclangrelease @flags.d3
 ```
 
 The result is again a pdbfile 1ZEH_haptomer_00001.pdb which has 6 monomers in d3 symmetry.   Note, again, the monomer in this second example had half as many atoms as the first example but since we used 6 of these instead of 3 the final structure has the same number of total atoms.  The score is appended into score.fasc
@@ -156,10 +159,10 @@ There are other flags associated with both "docking" and "symmetry" available be
 
 ## Links
 
-- https://www.rosettacommons.org/docs/wiki/rosetta_basics/structural_concepts/symmetry
-- https://www.rosettacommons.org/docs/wiki/application_documentation/utilities/make-symmdef-file
-- https://www.rosettacommons.org/docs/wiki/application_documentation/docking/sym-dock
-- https://www.rosettacommons.org/docs/wiki/scripting_documentation/RosettaScripts/Movers/movers_pages/SymDofMover
+- https://www.rosettacommons.org/docs/latest/rosetta_basics/structural_concepts/symmetry
+- https://www.rosettacommons.org/docs/latest/application_documentation/utilities/make-symmdef-file
+- https://www.rosettacommons.org/docs/latest/application_documentation/docking/sym-dock
+- https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/Movers/movers_pages/SymDofMover
 
 # Appendix
 

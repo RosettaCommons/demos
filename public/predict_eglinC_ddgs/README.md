@@ -1,4 +1,7 @@
-# Predict eglinC DDGs
+# Predict DDGs for the eglinC protein
+
+KEYWORDS: DOCKING ANALYSIS
+
 The entire workflow for this demo should be described in a file
 named README.dox.  It should describe an entire work flow, with
 command lines, tested if possible.

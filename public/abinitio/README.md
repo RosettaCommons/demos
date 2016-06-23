@@ -1,4 +1,6 @@
-#AbInitio 
+#AbInitio: Predict structure from sequence 
+
+KEYWORDS: STRUCTURE_PREDICTION GENERAL
 
 Run on linux
 ------------

@@ -1,5 +1,7 @@
 # PyRosetta RosettaSurface
 
+KEYWORDS: SURFACES GENERAL
+
 ## Authors
 Written by Emily Koo and Michael Pacella (Graylab), mpacella88@gmail.com
 

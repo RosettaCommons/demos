@@ -1,5 +1,7 @@
 # StepWise Monte Carlo (example for protein loop)
 
+KEYWORDS: STRUCTURE_PREDICTION LOOPS
+
 ## Author
 Rhiju Das, rhiju@stanford.edu
 
@@ -17,7 +19,7 @@ Ab initio and comparative modeling of biopolymers (RNA, protein, protein/RNA) of
 ### Example Rosetta Command Line
 
 ```
-stepwise -s rosetta_inputs/noloop_mini_1alc_H.pdb -fasta rosetta_inputs/mini_1alc.fasta -native rosetta_inputs/mini_1alc.pdb -score:weights stepwise/protein/protein_res_level_energy.wts -silent swm_rebuild.out -from_scratch_frequency 0.0 -allow_split_off false -cycles 200 -nstruct 20
+$> $ROSETTA3/stepwise.linuxgccrelease -s rosetta_inputs/noloop_mini_1alc_H.pdb -fasta rosetta_inputs/mini_1alc.fasta -native rosetta_inputs/mini_1alc.pdb -score:weights stepwise/protein/protein_res_level_energy.wts -silent swm_rebuild.out -from_scratch_frequency 0.0 -allow_split_off false -cycles 2 -nstruct 2
 ```
 
 Most of the simulation may be spent flickering bits of secondary structure -- in the future, we will probably setup some precomputation of these bits so that computation can be focused on build up of the complete mini-protein structure.

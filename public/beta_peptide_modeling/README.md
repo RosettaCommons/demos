@@ -1,6 +1,8 @@
 Beta-3-peptide design
 =====================
 
+KEYWORDS: PEPTIDES DESIGN
+
 This demo illustrates a protocol to redesign and model beta-3-peptides in Rosetta.
 It was written in July 2012 by Fang-Chieh Chou (fcchou at stanford dot edu).
 Detailed application of the method is described in the following paper:

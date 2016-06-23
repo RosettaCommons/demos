@@ -1,6 +1,8 @@
 Making non-canonical amino acid rotamer libraries
 =================================================
+
 KEYWORDS: NONCANONICALS UTILITIES
+
 This demo was written by P. Douglas Renfrew (renfrew at nyu dot edu).
 
 This demo illustrates the make_rot_lib protocol. It was originally written as 

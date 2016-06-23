@@ -1,6 +1,8 @@
 Domain Insertion Protocol Capture
 =================================
+
 KEYWORDS: DESIGN GENERAL
+
 This protocol runs ab inito for a domain insertion protein per the Broker 
 paper. Because the loop closure for this protocol is particularly difficult,
 and because the loop closure algorithm in this example relies on fragments

@@ -1,6 +1,8 @@
 Membrane ΔΔG
 ============
 
+KEYWORDS: MEMBRANE DOCKING
+
 Author: Rebecca F. Alford (rfalford12@gmail.com)  
 Author: Julia Koehler Leman (julia.koehler1982@gmail.com)  
 Corresponding PI: Jeffrey J. Gray (jgray@jhu.edu)  

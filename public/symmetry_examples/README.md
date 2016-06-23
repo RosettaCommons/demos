@@ -1,5 +1,6 @@
 # Symmetry Examples
-KEYWORDS: SYMMETRY STRUCTURE_PREDICTION DESIGN DOCKING HOMOLOGY_MODELING  
+
+KEYWORDS: CORE_CONCEPTS SYMMETRY STRUCTURE_PREDICTION DESIGN DOCKING HOMOLOGY_MODELING  
 
 ## Authors
 Frank Dimaio and Ingemar André
@@ -18,18 +19,18 @@ Symmetric protein assemblies play important roles in many biochemical processes.
 
 ## Software
 
-Rosetta can be downloaded at www.rosettacommons.org/software
+Rosetta can be downloaded at <http://www.rosettacommons.org/software>
 
 ## Documentation
 
 The applications that are exemplified are fully documented in the regular Rosetta documentation. For a general description see:  
-[Symmetry User Guide](https://www.rosettacommons.org/docs/wiki/rosetta_basics/structural_concepts/symmetry)
+[Symmetry User Guide](https://www.rosettacommons.org/docs/latest/rosetta_basics/structural_concepts/symmetry)
 
-[Documentation for symmetric docking](https://www.rosettacommons.org/docs/wiki/application_documentation/docking/sym-dock)
-[Documentation for fold-and-dock](https://www.rosettacommons.org/docs/wiki/application_documentation/structure_prediction/fold-and-dock)
-[Documentation for fixed backbone design](https://www.rosettacommons.org/docs/wiki/application_documentation/design/fixbb)
-[Documentation for comparative modeling](https://www.rosettacommons.org/docs/wiki/application_documentation/structure_prediction/RosettaCM)
-[Documentation for symmetry definitions](https://www.rosettacommons.org/docs/wiki/application_documentation/utilities/make-symmdef-file-denovo)
+[Documentation for symmetric docking](https://www.rosettacommons.org/docs/latest/application_documentation/docking/sym-dock)
+[Documentation for fold-and-dock](https://www.rosettacommons.org/docs/latest/application_documentation/structure_prediction/fold-and-dock)
+[Documentation for fixed backbone design](https://www.rosettacommons.org/docs/latest/application_documentation/design/fixbb)
+[Documentation for comparative modeling](https://www.rosettacommons.org/docs/latest/application_documentation/structure_prediction/RosettaCM)
+[Documentation for symmetry definitions](https://www.rosettacommons.org/docs/latest/application_documentation/utilities/make-symmdef-file-denovo)
 
 ## Examples
 

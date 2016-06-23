@@ -1,5 +1,8 @@
 Prediction of peptide binding using FlexPepBind
------------------------------------------------
+----------------------------------------------
+
+KEYWORDS: PEPTIDES DOCKING INTERFACES
+
 Predicting the structure of a peptide-protein interaction (and an interaction in general) does not guarantee that the peptide indeed binds to the receptor.
 However, an accurate model of a peptide-protein interaction can be used to evaluate the binding ability of a given peptide sequence to a given receptor, e.g. relative to other peptides. We have found that this works particularly well when the characteristic binding features of an interactions are defined and reinforced during modeling: sequences for which low-energy models can be generated that fullfill these constraints are assumed to be binders.
 

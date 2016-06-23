@@ -1,5 +1,9 @@
 # Tips for using Rosetta
+
+KEYWORDS: CORE_CONCEPTS GENERAL
+
 ## Molecule size
+
 This size of a macromolecule constitutes a major restriction on what you can and can not do with Rosetta (or any other simulation software). There are two aspects where the number of residues in a structure matter:  
 
 1. The **time** for calculating energies increases with size, and make a protocol take (much) longer.  

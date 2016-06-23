@@ -1,6 +1,8 @@
 Backrub Sequence Tolerance
 ==========================
 
+KEYWORDS: STRUCTURAL_PREDICTION GENERAL
+
 Author: Colin A. Smith  
 Protocol backrub_seqtol
 

@@ -1,8 +1,9 @@
-# Rosetta VIP
+# Rosetta VIP: Void Indentification and Packing
+
+KEYWORDS: DESIGN STABILITY
 
 This README was written in Feb. 2012, by Jim Havranek (havranek@genetics.wustl.edu).
 
-KEYWORDS: DESIGN STABILITY
 
 This demo illustrates a protocol to identify candidate mutations for stabilizing proteins that have sub-optimally packed cores.
 

@@ -23,8 +23,8 @@ else:
 EXE_DIR = abspath( EXE_DIR )
 
 # for pdbslice.py
-if os.environ.has_key("TOOLS"):
-	tools_scripts_path = os.environ.get("TOOLS")+"/rna_tools/bin"
+if os.environ.has_key("ROSETTA_TOOLS"): 
+	tools_scripts_path = os.environ.get("ROSETTA_TOOLS")+"/rna_tools/bin"
 else:
 	tools_scripts_path = abspath( dirname( abspath( argv[0] ) ) + '/../../../../tools/rna_tools/bin' )
 
@@ -39,22 +39,23 @@ native_exists = 0
 data_exists = 0
 cst_exists = 0
 torsions_exists = 0
-EXE_extension = ''
-for i in range( 3, len( argv ) ):
-    if argv[i][-4:] == '.pdb':
-        native_pdb_file = argv[i]
-        native_exists = 1
-    if argv[i][-5:] == '.data':
-        data_file = argv[i]
-        data_exists = 1
-    if argv[i][-4:] == '.cst':
-        cst_file = argv[i]
-        cst_exists = 1
-    if argv[i][-9:] == '.torsions':
-        torsions_file = argv[i]
-        torsions_exists = 1
+EXE_extension = ""
+for i in range( 3, len( argv )):
+	if argv[i][-4:] == '.pdb':
+		native_pdb_file = argv[i]
+		native_exists = 1
+	if argv[i][-5] == '.data':
+		data_file = argv[i]
+		data_exists = 1
+	if argv[i][-4:] == '.cst':
+		cst_file = argv[i]
+		cst_exists = 1
+	if argv[i][-9:] == '.torsions':
+		torsions_file = argv[i]
+		torsions_exists = 1
 	if argv[i][:14] == 'exe_extension=':
-		EXE_extension = argv[i][15:]
+		EXE_extension = argv[i][14:]
+		rna_helix_exe = EXE_DIR + '/rna_helix'+EXE_extension
 
 if EXE_extension == '':
 	EXE_extension = '.linuxgccrelease'
@@ -356,7 +357,7 @@ for i in range( stem_count ):
 
     outfile = 'stem%d_%s.out' % (i+1, fasta_file.replace('.fasta',''))
     stem_out_files.append( outfile )
-    command = '%s/rna_helix%s  -database  %s/../../rosetta_database/ -fasta %s -out:file:silent %s' % (EXE_DIR, EXE_extension, EXE_DIR, tag, outfile)
+    command = '%s/rna_helix%s  -fasta %s -out:file:silent %s' % (EXE_DIR, EXE_extension, tag, outfile)
     fid_README_STEMS.write(command+'\n')
 
 #print
@@ -386,6 +387,7 @@ def make_tag_with_dashes( int_vector ):
     return tag
 
 # Output motif jobs
+short_commands = []
 readme_motifs_file = 'README_MOTIFS'
 fid_README_MOTIFS = open( readme_motifs_file,'w')
 for i in range( motif_count ):
@@ -503,8 +505,8 @@ for i in range( motif_count ):
     motif_out_file = motif_params_file.replace( '.params','.out')
     motif_out_files.append( motif_out_file )
     NSTRUCT = 100
-    command = '%s/rna_denovo%s -database  %s/../../rosetta_database %s -fasta %s -params_file %s -nstruct %d -out:file:silent %s -cycles 5000 -mute all -close_loops -close_loops_after_each_move -minimize_rna' % \
-        ( EXE_DIR, EXE_extension, EXE_DIR, native_tag, motif_fasta_file, motif_params_file, NSTRUCT, motif_out_file )
+    command = '%s/rna_denovo%s %s -fasta %s -params_file %s -nstruct %d -out:file:silent %s -cycles 5000 -mute all -close_loops -close_loops_after_each_move -minimize_rna' % \
+        ( EXE_DIR, EXE_extension, native_tag, motif_fasta_file, motif_params_file, NSTRUCT, motif_out_file )
 
     if data_exists: command += ' -data_file %s ' % motif_data_file
     if cst_exists and cst_found: command += ' -cst_file %s ' % motif_cst_file
@@ -514,12 +516,25 @@ for i in range( motif_count ):
     command += ' -in:file:silent_struct_type rna -in:file:silent '
     for n in which_stems: command += ' stem%d_%s.out' % (n+1, fasta_file.replace('.fasta',''))
 
+
     command += ' -input_res '
     command += ' '+make_tag_with_dashes( stem_chunk_res )
+    
+    short_command = command.replace('-nstruct 100', '-nstruct 1')
+    short_command = short_command.replace('-cycles 5000', '-cycles 1')
+    short_commands.append(short_command)
 
     fid_README_MOTIFS.write( command+'\n' )
+	
 
 fid_README_MOTIFS.close()
+
+
+with open("README_MOTIFS.short", 'w') as shortfile:
+	for short in short_commands:
+		shortfile.write(short+'\n')
+
+
 print 'Created: ', readme_motifs_file
 print ' This has the command lines that you need to make interhelical motifs, like hairpin loops and internal junctions.'
 print
@@ -574,6 +589,8 @@ for i in range( stem_count ):
                      stem_res[-1][1] + 1 ) )
 
 fid.close()
+
+
 print 'Created: ', params_file
 
 ########
@@ -583,7 +600,7 @@ if cst_exists:
 fid = open( assemble_cst_file,'w')
 fid.write('[ atompairs ]\n')
 for cutpoint in cutpoints:
-    fid.write( 'O3*  %d  P     %d  HARMONIC  1.619  2.0\n' % \
+    fid.write( "O3'  %d  P     %d  HARMONIC  1.619  2.0\n" % \
                    ( cutpoint+1, cutpoint+2 ) )
 if cst_exists:
     for cst in cst_info:
@@ -601,8 +618,8 @@ native_tag = ''
 if native_exists: native_tag = '-native '+native_pdb_file
 
 outfile = params_file.replace( '.params','.out' )
-command = '%s/rna_denovo%s -database  %s/../../rosetta_database %s -fasta %s -in:file:silent_struct_type binary_rna  -cycles 10000 -nstruct 200 -out:file:silent %s -params_file %s -cst_file %s -close_loops  -in:file:silent ' % \
-( EXE_DIR, EXE_extension, EXE_DIR, native_tag, fasta_file, outfile, params_file, assemble_cst_file )
+command = '%s/rna_denovo%s %s -fasta %s -in:file:silent_struct_type binary_rna  -cycles 10000 -nstruct 200 -out:file:silent %s -params_file %s -cst_file %s -close_loops  -in:file:silent ' % \
+( EXE_DIR, EXE_extension, native_tag, fasta_file, outfile, params_file, assemble_cst_file )
 
 for stem_out_file in stem_out_files:
     command += ' '+stem_out_file
@@ -629,8 +646,14 @@ if data_exists:
 
 fid.write( command+'\n')
 fid.close()
+
+with open('README_ASSEMBLE.short','w') as assemble_shortfile:
+	command = command.replace('-cycles 10000', '-cycles 1')
+	command = command.replace('-nstruct 200', '-nstruct 1')
+	assemble_shortfile.write( command )
+
 print 'Created: ', readme_assemble_file
 print ' This has the command lines that you need to make full-length structures after making the individual stems and interhelical motifs'
 print
 
-
+os.system('chmod a+x README_*')

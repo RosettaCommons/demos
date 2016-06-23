@@ -1,4 +1,7 @@
-# Spin Labels
+#Spin Labels
+
+KEYWORDS: EXPERIMENTAL_DATA STRUCTURE_PREDICTION
+
 The associated page for this protocol capture can be found at :
 https://structbio.vanderbilt.edu:8443/display/MeilerLab/ProtocolCapture
 
