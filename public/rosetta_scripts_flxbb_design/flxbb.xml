@@ -1,6 +1,6 @@
 <dock_design>
 	<SCOREFXNS>
-               <SFXN1 weights=score12_w_corrections>
+               <SFXN1 weights=talaris2014>
                    <Reweight scoretype=atom_pair_constraint weight=1.0/>
                </SFXN1>
 	</SCOREFXNS>
