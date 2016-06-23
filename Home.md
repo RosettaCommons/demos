@@ -28,7 +28,7 @@ Full input files for the tutorials are located in the `demos/tutorials/` directo
 * [[Installing and Building Rosetta|install_build]]
 * [[Working With Rosetta|working_with_rosetta]]
 * [[Input and Output|input_and_output]]
-* Core Rosetta Concepts
+* [[Core Rosetta Concepts|Core_Concepts]]
 * [[Working with Non-protein Residues|prepare_ligand_tutorial]] 
 * [[Scoring|scoring]]
 * [[Full-Atom vs. Centroid Representations|fullatom_centroid]]
@@ -38,15 +38,15 @@ Full input files for the tutorials are located in the `demos/tutorials/` directo
 * [[Constraints]]
 * [[Analyzing Rosetta Output|Analysis]]
 * [[The Fold Tree|fold_tree]] 
-* Scripting with RosettaScripts
-    * Advanced Scripting with RosettaScripts
+* [[Scripting with RosettaScripts|scripting_with_rosettascripts]]
+    * [[Advanced Scripting with RosettaScripts|advanced_scripting_with_rosettascripts]]
 * [[Commonly Used Options|commonly_used_options]]
 * [[Tips]]
 
 ### Commonly Used Rosetta Protocols
 
-* [[*de novo* (*ab initio*) Structure Prediction|Denovo_structure_prediction]]
-    * [[Advanced *de novo* Structure Prediction|folding_tutorial]]
+* [*de novo* (*ab initio*) Structure Prediction](Denovo_structure_prediction)
+    * [Advanced *de novo* Structure Prediction](folding_tutorial)
 * [[Comparative Modeling (Homology Modeling)|rosetta_cm_tutorial]]
 * [[Loop Modeling and Rebuilding|loop_modeling]]
 * [[Protein Design|protein_design_tutorial]]
