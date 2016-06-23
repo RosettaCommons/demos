@@ -91,7 +91,9 @@ In the script that we just ran, create a new AtomTree mover, give it a name, and
 ...
 ```
 
-> **At any given time, each pose has a single fold tree associated with it.  A mover that alters the fold tree and returns a pose with a modified fold tree has permanently changed the pose, despite the fact that the atom coordinates have not changed.  All future movers will act on the pose with the modified fold tree, until the fold tree is changed again by another mover.**
+A mover that alters the fold tree and returns a pose with a modified fold tree has permanently changed the pose, despite the fact that the atom coordinates have not changed.  All future movers will act on the pose with the modified fold tree, until the fold tree is changed again by another mover.
+
+> **At any given time, each pose has a single fold tree associated with it; this can be altered (permanently) by certain movers.**
 
 Now let's run the new script (provided as foldtree_example/minimize2.xml, if you didn't modify the original script):
 
