@@ -1,5 +1,5 @@
-Demos, Tutorials, and Protocol Captures
-=======================================
+Rosetta Tutorials, Demos, and Protocol Captures
+===============================================
 
 <!-- Manual TOC, as the auto one is too bulky -->
 <p></p><div class="toc"><div class="toc-title">Table of Contents</div>
@@ -35,37 +35,37 @@ These are introductory tutorials intended as a gentle introduction to Rosetta co
 
 Full input files for the tutorials are located in the `demos/tutorials/` directory of the Rosetta distribution. 
 
-## Introduction to Rosetta
+### Introduction to Rosetta
 
-### * [[How To Read These Tutorials|Tutorial_Setup]]
-### * [[Installing and Building Rosetta|install_build]]
-### * [[Working With Rosetta|working_with_rosetta]]
-### * [[Input and Output|input_and_output]]
-### * Core Rosetta Concepts
-### * [[Working with Non-protein Residues|prepare_ligand_tutorial]] 
-### * [[Scoring|scoring]]
-### * [[Full-Atom vs. Centroid Representations|fullatom_centroid]]
-### * [[Optimizing Sidechains: The Packer|Optimizing_Sidechains_The_Packer]]
-### * [[Minimization]]
-### * [[Relax: Optimizing structures|Relax]]
-### * [[Constraints]]
-### * [[Analyzing Rosetta Output|Analysis]]
-### * [[The Fold Tree|fold_tree]] 
-### * Scripting with RosettaScripts
-#### * Advanced Scripting with RosettaScripts
-### * [[Commonly Used Options|commonly_used_options]]
-### * [[Tips]]
+* [[How To Read These Tutorials|Tutorial_Setup]]
+* [[Installing and Building Rosetta|install_build]]
+* [[Working With Rosetta|working_with_rosetta]]
+* [[Input and Output|input_and_output]]
+* Core Rosetta Concepts
+* [[Working with Non-protein Residues|prepare_ligand_tutorial]] 
+* [[Scoring|scoring]]
+* [[Full-Atom vs. Centroid Representations|fullatom_centroid]]
+* [[Optimizing Sidechains: The Packer|Optimizing_Sidechains_The_Packer]]
+* [[Minimization]]
+* [[Relax: Optimizing structures|Relax]]
+* [[Constraints]]
+* [[Analyzing Rosetta Output|Analysis]]
+* [[The Fold Tree|fold_tree]] 
+* Scripting with RosettaScripts
+    * Advanced Scripting with RosettaScripts
+* [[Commonly Used Options|commonly_used_options]]
+* [[Tips]]
 
-## Commonly Used Rosetta Protocols
+### Commonly Used Rosetta Protocols
 
-### * [[*de novo* (*ab initio*) Structure Prediction|Denovo_structure_prediction]]
-#### * [[Advanced *de novo* Structure Prediction|folding_tutorial]]
-### * [[Comparative Modeling (Homology Modeling)|rosetta_cm_tutorial]]
-### * [[Loop Modeling and Rebuilding|loop_modeling]]
-### * [[Protein Design|protein_design_tutorial]]
-### * [[Protein-Protein Docking|Protein-Protein-Docking]]
-#### * [[Advanced Protein-Protein Docking|protein-protein_docking_tutorial]]
-### * [[Protein-Ligand Docking|ligand_docking_tutorial]]
+* [[*de novo* (*ab initio*) Structure Prediction|Denovo_structure_prediction]]
+    * [[Advanced *de novo* Structure Prediction|folding_tutorial]]
+* [[Comparative Modeling (Homology Modeling)|rosetta_cm_tutorial]]
+* [[Loop Modeling and Rebuilding|loop_modeling]]
+* [[Protein Design|protein_design_tutorial]]
+* [[Protein-Protein Docking|Protein-Protein-Docking]]
+    * [[Advanced Protein-Protein Docking|protein-protein_docking_tutorial]]
+* [[Protein-Ligand Docking|ligand_docking_tutorial]]
 
 Demos
 =====
