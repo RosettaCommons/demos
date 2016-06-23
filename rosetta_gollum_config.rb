@@ -58,7 +58,7 @@ end
 # Returns list of [keywords, demo_file, demo_name, demo_title ] array
 def make_demos_list(abs_demos_dir, abs_page_dir)
     demos_list = []
-    ( Dir[ File.join(abs_demos_dir, '**', '*.md') ].reject { |p| File.directory? p } ).sort.each do |abs_demo_file|
+    Dir[ File.join(abs_demos_dir, '*', '*.md') ].sort.each do |abs_demo_file|
         demo_file = Pathname.new(abs_demo_file).relative_path_from(Pathname.new(abs_page_dir)).to_s()
         demo_hierarchy = demo_file.split(File::SEPARATOR)
         if demo_hierarchy[-1] == "README.md" then
@@ -124,7 +124,7 @@ class Gollum::Macro::LinkDemos < Gollum::Macro
                     html += "</ul>\n"
                     list_open = false
                 end 
-                html += "<h3>" + recapitalize(first_two[0]) + "</h3>\n"
+                html += "<h2>" + recapitalize(first_two[0]) + "</h2>\n"
                 if recapitalize(first_two[0]) != "Other" and recapitalize(first_two[1]) != "Other" then
                     html += "<h4>" + recapitalize(first_two[1]) + "</h4>\n"
                 end
@@ -162,11 +162,11 @@ class Gollum::Macro::GroupByKeywords < Gollum::Macro
     keyword_order = load_keywords(page_dir)
 
     # Build a list of demos
-    demos_list = make_demos_list(abs_page_dir, abs_page_dir)
+    demos_list = make_demos_list(File.join(abs_page_dir, '*'), abs_page_dir)
     # Returns list of [keywords, demo_file, demo_name, demo_title ] array
 
     # Sort by demo name
-    demos_list.sort_by! { |x| x[2] }
+    demos_list.sort_by! { |x| x[2].downcase }
 
     html = ""
     in_list = false
@@ -180,7 +180,7 @@ class Gollum::Macro::GroupByKeywords < Gollum::Macro
                         html += "</ul>\n"
                         in_list = false
                     end
-                    html += "<h3>" + recapitalize(keyword) + "</h3>\n"
+                    html += "<h2>" + recapitalize(keyword) + "</h2>\n"
                 end
                 if ! in_list then
                     html += "<ul>\n"
