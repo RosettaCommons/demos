@@ -15,6 +15,7 @@ At the end of this tutorial, you will understand:
 - How to assemble more complicated protocols from simpler building-blocks
 - How to use variable substitution and file inclusion in a script
 - How specialized grid sampling movers interact with RosettaScripts
+- How RosettaScripts distributes its jobs over many processors in MPI mode
 
 We recommend completing the [introductory RosettaScripting tutorial](../rosetta_scripting/README.md) to familiarize yourself with general RosettaScripts concepts before moving on to this tutorial.
 
@@ -350,16 +351,57 @@ These commands should produce a tryptophan scan of a selection of residues in th
 
 If you wish to do a more thorough scan, either of more positions or of more residue identities, you can easily automate running of the scan by using shell scripting.
 
-## RosettaScripts jobs and grid sampling movers
+## RosettaScripts jobs, grid sampling movers, and parallel sampling
+
+We have already seen that the number of jobs that RosettaScripts attempts can be controlled with the "-nstruct" (number of structures to generate per input) and "-jd2:ntrials" (number of attempts to make for each structure before giving up on that structure), and with the number of input structures.  There are certain special "grid-sampling" movers in Rosetta that can interface with the RosettaScripts job distribution system in a special way: given some sort of parameter space that one might want to sample, a grid sampler can assign each of a regular grid of points to sample in that space to a series of RosettaScripts jobs.  This is a departure from the usual Rosetta paradigm, which is to carry out a large number of stochastic trajectories.  Here, we are performing a large number of regular, *deterministic* samples.
+
+A concrete example is the [BundleGridSampler mover](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/Movers/movers_pages/BundleGridSamplerMover).  This is a parametric design tool that generates helical bundle geometry based on a series of parameter values -- for example, bundle radius, bundle twist, helix offset along the bundle axis, helix rotation about the bundle axis, *etc.*  (Like any mover, it takes a single pose as input and generates a single pose as ouput; unlike most movers, though, it throws away its input pose and generates new geometry for output.)  While the details of the parameters used to generate geometry are unimportant here, the point is that there is a large, multi-variable parameter space that one might want to explore.  Let's say, for example, that one wanted to sample three parameters, considering 10 regularly-spaced values for each.  This is 1000 combinations of parameter values.  The default behaviour of the BundleGridSampler is to perform all 1000 samples, then to choose the lowest-energy one and to return that as the input for the next mover in the script.  However, there's another option: by setting the option "nstruct_mode" to "true", the BundleGridSampler will consider only *one* of those thousand combinations of parameter values per job, moving to the the next combination on the next job.  Whatever movers and filters are applied subsequently can therefore be applied to *every* sample.
+
+This is particularly advantageous when using the MPI (*M*essage *P*assing *I*nterface) compilation of the rosetta\_scripts application (see the [building tutorial](../install_build/install_build.md) for details on compiling the MPI version), many parallel rosetta\_scripts processes can distribute jobs amongst themselves over many parallel processors, automatically balancing their workload.  This is a very efficent way in which to sample a grid of parameter values in parallel, particularly on large, high-performance computing (HPC) clusters.
+
+Let's set up a small sample BundleGridSampler run in nstruct mode to illustrate how grid samplers interface with RosettaScripts.  First, let's create a basic RosettaScript and add a BundleGridSampler mover:
+
+```xml
+<ROSETTASCRIPTS>
+	<SCOREFXNS>
+		<tala weights="talaris2014.wts" />
+	</SCOREFXNS>
+	<RESIDUE_SELECTORS>
+	</RESIDUE_SELECTORS>
+	<TASKOPERATIONS>
+	</TASKOPERATIONS>
+	<FILTERS>
+	</FILTERS>
+	<MOVERS>
+		<BundleGridSampler name="bgs" scorefxn="tala" nstruct_mode="true" use_degrees="true" helix_length="25" >
+		</BundleGridSampler>
+	</MOVERS>
+	<APPLY_TO_POSE>
+	</APPLY_TO_POSE>
+	<PROTOCOLS>
+		<Add mover="bgs" />
+	</PROTOCOLS>
+	<OUTPUT scorefxn="tala" />
+</ROSETTASCRIPTS>
+```
+
+You'll note that we've already set "nstruct\_mode" to "true", indicating that the mover should sample subsequent grid-points in subsequent jobs.  (We've also set a few other mover-specific options that are not important for this tutorial.)
+
+Next, let's tell the mover what it will be sampling over.  This is done with some mover-specific syntax that is detailed on the [help page for the mover](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/Movers/movers_pages/BundleGridSamplerMover).  The details aren't important for our purposes here; suffice it to say that we're telling the mover to generate a two-helix bundle, and to do 6 samples for a radius parameter, r0, and 6 samples for a twist parameter, omega0, for a total of 36 samples.
+
+```xml
+		<BundleGridSampler name="bgs" scorefxn="tala" nstruct_mode="true" use_degrees="true" helix_length="25" >
+			<Helix r0_min="4.5" r0_max="7.0" r0_samples="6" omega0_min="-3.0" omega0_max="3.0" omega0_samples="6" delta_omega0="0.0" />
+			<Helix r0_copies_helix="1" pitch_from_helix="1" delta_omega0="180.0" />
+		</BundleGridSampler>
+```
+
+
+
+
 
 TODO -- CONTINUE HERE.
 
 ## Conclusion
 
-This tutorial was intended to give you a brief introduction in creating an XML protocol. The process we went through is similar to how most RosettaScripts developers write an XML file from scratch: Build up a protocol iteratively, starting with a simple protocol and progressively adding different and more complex stages. For each stage, have an idea about the effect you wish to accomplish, and then scan the documentation for existing movers/filters/task operations/etc. which will accomplish it. This may involve multiple RosettaScripts objects, due to movers which need as parameters other movers which need filters which need task operations (which need ...)
-
-There are, of course, many more RosettaScripts objects than we have discussed, most of which should be covered in the RosettaScripts documentation. There are also additional sections of the XML, which are used for more specialized applications. (For example, ligand docking.) 
-
-A final note - even if you can create an XML from scratch, it may be easier not to. If you already have an example XML that does something close to what you want to do, it's probably easier to start with that XML, and alter it to add in the functionality you want.
-
-The hard part is not necessarily in putting together the XML, but in determining the optimal protocol (the logical steps) you should use to accomplish your modeling goals, and then in benchmarking that protocol to make sure it does what you hoped.
+TODO -- WRITE THIS
