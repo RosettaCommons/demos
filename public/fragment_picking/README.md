@@ -49,12 +49,12 @@ $> $ROSETTA3/bin/fragment_picker.linuxgccrelease @BestFragmentsProtocol/flags -i
   column 4 on the y-axis. 
 
 More detailed information in:  
-[Rosetta Documentation](https://www.rosettacommons.org/docs/wiki/application_documentation/utilities/app-fragment-picker)
+[Rosetta Documentation](https://www.rosettacommons.org/docs/latest/application_documentation/utilities/app-fragment-picker)
 
 ### Tweak the fragment picker
 
 There many ways to influence how fragments are being picked.
-Many options are described in the [Rosetta Documentation](https://www.rosettacommons.org/docs/wiki/application_documentation/utilities/app-fragment-picker).
+Many options are described in the [Rosetta Documentation](https://www.rosettacommons.org/docs/latest/application_documentation/utilities/app-fragment-picker).
 
 The various subdirectories of this demo serve as repository for examples:
 

@@ -159,10 +159,10 @@ There are other flags associated with both "docking" and "symmetry" available be
 
 ## Links
 
-- https://www.rosettacommons.org/docs/wiki/rosetta_basics/structural_concepts/symmetry
-- https://www.rosettacommons.org/docs/wiki/application_documentation/utilities/make-symmdef-file
-- https://www.rosettacommons.org/docs/wiki/application_documentation/docking/sym-dock
-- https://www.rosettacommons.org/docs/wiki/scripting_documentation/RosettaScripts/Movers/movers_pages/SymDofMover
+- https://www.rosettacommons.org/docs/latest/rosetta_basics/structural_concepts/symmetry
+- https://www.rosettacommons.org/docs/latest/application_documentation/utilities/make-symmdef-file
+- https://www.rosettacommons.org/docs/latest/application_documentation/docking/sym-dock
+- https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/Movers/movers_pages/SymDofMover
 
 # Appendix
 

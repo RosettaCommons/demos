@@ -1,5 +1,7 @@
 #How To Write Demos and Tutorials
+
 KEYWORDS: UTILITIES GENERAL
+
 Authors: Frank David Teets(teetsf@gmail.com), Jared Adolf-Bryfogle, Kale Kundert 
 
 Adding new demos
@@ -76,7 +78,7 @@ A few days after you push you demo to the `demos` repository, your demo will
 become available from this website.  A link to it will automatically be added 
 to the home page under the section indicated by your keywords.
  To make your demo easier to find, spend a few minutes browsing the 
-[[documentation wiki|https://www.rosettacommons.org/docs/wiki]] and adding 
+[[documentation wiki|https://www.rosettacommons.org/docs/latest]] and adding 
 links to any relevant pages you find.  The application section in particular 
 would benefit from having lots of links to demos.  Note that (for technical 
 reasons — Gollum gets really slow when there are too many pages in the wiki) 

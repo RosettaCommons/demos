@@ -106,5 +106,5 @@ if the constraints must be absolutely maintained.
 
 ##FastRelax
 
-There exists an updated version of relax called FastRelax that is capable of operating via script. The construction of these scripts is covered [here](https://www.rosettacommons.org/docs/wiki/application_documentation/structure_prediction/relax)
+There exists an updated version of relax called FastRelax that is capable of operating via script. The construction of these scripts is covered [here](https://www.rosettacommons.org/docs/latest/application_documentation/structure_prediction/relax)
 
