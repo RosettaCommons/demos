@@ -9,11 +9,22 @@ Here are four examples:
 (where `ROSETTA3`=path-to-Rosetta/main/source)
 
 ```
-$> $ROSETTA3/bin/supercharge.default.macosgccrelease @rosetta_inputs/options1           // Rosetta-mode, positive-charge, fixed surface cutoff and input ref energies
-$> $ROSETTA3/bin/supercharge.default.macosgccrelease @rosetta_inputs/options2 	  // Rosetta-mode, negative-charge, fixed surface cutoff and target net charge
-$> $ROSETTA3/bin/supercharge.default.macosgccrelease @rosetta_inputs/options3 		  // AvNAPSA-mode, negative-charge, target net charge
-$> $ROSETTA3/bin/supercharge.default.macosgccrelease @rosetta_inputs/options4 		  // AvNAPSA-mode, positive-charge, fixed surface cutoff
+$> $ROSETTA3/bin/supercharge.default.macosgccrelease @rosetta_inputs/options1 
 ```
+// Rosetta-mode, positive-charge, fixed surface cutoff and input ref energies
+```
+$> $ROSETTA3/bin/supercharge.default.macosgccrelease @rosetta_inputs/options2
+```
+// Rosetta-mode, negative-charge, fixed surface cutoff and target net charge
+```
+$> $ROSETTA3/bin/supercharge.default.macosgccrelease @rosetta_inputs/options3 
+```
+// AvNAPSA-mode, negative-charge, target net charge
+```
+$> $ROSETTA3/bin/supercharge.default.macosgccrelease @rosetta_inputs/options4 
+```
+// AvNAPSA-mode, positive-charge, fixed surface cutoff
+
 
 
 Rosetta-mode and AvNAPSA-mode are explained below...
