@@ -488,33 +488,43 @@ Notice the changes in the peptide sequence from gray (input) to magenta, and als
 
 This sub-section has demonstrated how we can script Monte Carlo searches in Rosetta, using arbitrarily complex moves.  It has also hopefully given you some idea of what to consider when setting up a Monte Carlo run, and has presented you with tools that you can use to watch your run trajectories when debugging.
 
-## Variable substition: adding variables to scripts
+## Variable substition and XML inclusion
 
-TODO -- EDIT THIS.
+### Adding variables to scripts
 
-Sometimes in a RosettaScripts protocol, you want to vary the options given to the tags. For example, if you wish to do a series of runs, with changes at different residues. The naive way of doing this is to make separate XMLs, one for each variant of the option. If you have a large number of variants, this may be less than ideal.
+* *Create a RosettaScript that uses variable values set at the command line.*
+
+Sometimes in a RosettaScripts protocol, you want to vary the options given to the tags. For example, you may wish to do a series of runs, with changes at different residues from run to run. The naïve way to do this is to make separate XMLs, one for each variant of the option. If you have a large number of variants, this may be less than ideal.
 
 To accomodate this sort of protocol, RosettaScripts has [variable substition](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/RosettaScripts#options-available-in-the-xml-protocol-file_variable-substitution). Within the script you add "%%var_name%%" instead of the option value, and then use the "-parser:script_vars" command line option to set it from the command line.
 
 (NOTE: The variable substitution is only intended for substituting individual options in a tag. Don't try to use it to substitute entire sub-tags.)
 
-For our sample protocol, let's run a mutational scan. There are several movers which can do mutational scanning, but for the purposes of introducing the script_vars functionality, let's use [MutateResidue](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/Movers/movers_pages/MutateResidueMover). Also, to keep the runtime short, let's disable the rotamer optimization.
+For our sample protocol, let's run a mutational scan. There are several movers which can do mutational scanning, but for the purposes of introducing the script\_vars functionality, let's use [MutateResidue](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/Movers/movers_pages/MutateResidueMover). Also, to keep the runtime short, let's disable the rotamer optimization.  Create a basic RosettaScript and add a MutateResidue mover:
 
+```xml
+...
+	<MOVERS>
+		<MutateResidue name="mutate" target="%%position%%" new_res="%%res%%" />  
+	</MOVERS>
+...
+	<PROTOCOLS>
+		<Add mover="mutate" />
+	</PROTOCOLS>
+...
 ```
-    <MOVERS>
-        <MutateResidue name="mutate" target="%%position%%" new_res="%%res%% />  
-    </MOVERS>
+
+To run, we need to then pass something like "-parser:script\_vars position=14A res=ALA" on the commandline.
+
+```bash
+$> cp var_subs/var_subs.xml var_subs/1ubq.pdb .
+$> $ROSETTA3/bin/rosetta_scripts.default.linuxgccrelease -s 1ubq.pdb -parser:protocol var_subs.xml -out:prefix V5W_  -nstruct 1 -parser:script_vars position=5A  res=TRP
+$> $ROSETTA3/bin/rosetta_scripts.default.linuxgccrelease -s 1ubq.pdb -parser:protocol var_subs.xml -out:prefix L43W_ -nstruct 1 -parser:script_vars position=43A res=TRP
+$> $ROSETTA3/bin/rosetta_scripts.default.linuxgccrelease -s 1ubq.pdb -parser:protocol var_subs.xml -out:prefix L56W_ -nstruct 1 -parser:script_vars position=56A res=TRP
+$> $ROSETTA3/bin/rosetta_scripts.default.linuxgccrelease -s 1ubq.pdb -parser:protocol var_subs.xml -out:prefix L67W_ -nstruct 1 -parser:script_vars position=67A res=TRP
 ```
 
-To run, we need to then pass something like "-parser:script_vars position=14A new_res=ALA" on the commandline.
-
-	$> cp inputs/mut_scan.xml .
-	$> rosetta_scripts.default.linuxgccrelease -s 1ubq.pdb -parser:protocol mut_scan.xml -out:prefix V5W_ -nstruct 1 -parser:script_vars position=5A res=TRP -jd2:ntrials 10
-	$> rosetta_scripts.default.linuxgccrelease -s 1ubq.pdb -parser:protocol mut_scan.xml -out:prefix L43W_ -nstruct 1 -parser:script_vars position=43A res=TRP -jd2:ntrials 10
-	$> rosetta_scripts.default.linuxgccrelease -s 1ubq.pdb -parser:protocol mut_scan.xml -out:prefix L56W_ -nstruct 1 -parser:script_vars position=56A res=TRP -jd2:ntrials 10
-	$> rosetta_scripts.default.linuxgccrelease -s 1ubq.pdb -parser:protocol mut_scan.xml -out:prefix L67W_ -nstruct 1 -parser:script_vars position=67A res=TRP -jd2:ntrials 10
-
-These commands should produce a tryptophan scan of a selection of residues in the core of the protein. (Open up the structures in PyMol or the equivalent and compare.
+These commands should produce a tryptophan scan of a selection of residues in the core of the protein. (Open up the structures in PyMol or the equivalent and compare).  Of course, in practice we would most likely want to include additional movers to repack and minimize the mutated residue and its environment.
 
 If you wish to do a more thorough scan, either of more positions or of more residue identities, you can easily automate running of the scan by using shell scripting.
 
