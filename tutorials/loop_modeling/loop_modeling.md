@@ -52,7 +52,7 @@ This 2<sup>nd</sup> and the 3<sup>rd</sup> columns in this file correspond the t
 
 To close the loop, run:
 
-    $> <path_to_Rosetta_directory>/main/source/bin/loopmodel.linuxgccrelease @flag_basic_KIC 
+    $> $ROSETTA3/bin/loopmodel.linuxgccrelease @flag_basic_KIC 
 
     
 This should take about 2 minutes at the end of which you will produce one PDB and one score file in `output_files`. This PDB will now have a closed loop. In production runs, you should increase `-nstruct 1` to `-nstruct 500` and `-loops:max_kic_build_attempts 200` to `-loops:max_kic_build_attempts 250` in the option file.
@@ -65,7 +65,7 @@ Modeling missing loops is a difficult problem. We will use cyclic coordinate des
 
 In the folder `input_files` you will find the file `3gbn_missing_loops.pdb` which had residues 13-15 of chain H missing. To model this loop, we first need to generate and modify a _blueprint_ file. To generate the file use:
 
-    $> <path_to_Rosetta_directory>/tools/remodel/getBluePrintFromCoords.pl -pdbfile input_files/3gbn_missing_loops.pdb -chain H > input_files/3gbn_missing_loops.remodel
+    $> $ROSETTA3_TOOLS/remodel/getBluePrintFromCoords.pl -pdbfile input_files/3gbn_missing_loops.pdb -chain H > input_files/3gbn_missing_loops.remodel
     
 You should see a file `3gbn_missing_loops.remodel` in `input_files` which looks like:
     
@@ -98,8 +98,9 @@ Now, we add the missing three residues (KPG) in this manner shown below, assigni
 ```
 
 Now with this modified blueprint file, run:
+    $> $ROSETTA3/bin/remodel.linuxgccrelease @flax_missing_loops
 
-    $> <path_to_Rosetta_directory>/main/source/bin/remodel.linuxgccrelease @flag_missing_loops
+
     
 You should see something similar appearing in the log file:
     

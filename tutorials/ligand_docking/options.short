@@ -5,8 +5,8 @@
 
 -in
 	-file
-		-s 3PBL_ETQ.pdb
-		-extra_res_fa ETQ.params
+		-s ./answers/docking/3PBL_ETQ.pdb
+		-extra_res_fa ./answers/docking/ETQ.params
 
 #the packing options allow Rosetta to sample additional rotamers for
 #protein sidechain angles chi 1 (ex1) and chi 2 (ex2) 
@@ -15,8 +15,6 @@
 #ignore_ligand_chi prevents Roseta from adding additional ligand rotamer
 
 -packing
-	-ex1
-	-ex2
 	-no_optH false
 	-flip_HNQ true
 	-ignore_ligand_chi true
@@ -25,7 +23,7 @@
 #parser:protocol locates the XML file for RosettaScripts
 
 -parser
-	-protocol dock.xml
+	-protocol ./answers/docking/dock.xml
 
 #overwrite allows Rosetta to write over previous structures and scores
 

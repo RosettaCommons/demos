@@ -44,27 +44,11 @@ Membrane normal and membrane center search options:
     -membrane:normal_mag 15
     -membrane:center_mag 2
 
-Example Rosetta Command Line:
+Example Rosetta Command Line: 
 
-    ./bin/relax.linuxiccrelease \
-        -relax:fast \
-        -relax:constrain_relax_to_start_coords \
-        -relax:default_repeats 2 \
-        -in:file:fullatom \
-        -in:file:native input/BRD4.pdb \
-        -in:file:spanfile input/BRD4.span \
-        -s input/BRD4.pdb \
-        -score:weights membrane_highres_Menv_smooth.wts \
-        -membrane:normal_cycles 40 \
-        -membrane:normal_mag 15 \
-        -membrane:center_mag 2 \
-        -nstruct 1 \
-        -out:file:silent_struct_type binary \
-        -out:file:silent Menv_smooth-BRD4_frlx.out \
-        -mute core.util.prof \
-        -mute core.io.database \
-        -run:no_prof_info_in_silentout \
-        -out:file:scorefile Menv_smooth_score.sc \
+(where `$ROSETTA3`=path-to-Rosetta/main/source)
+
+    $> $ROSETTA3/bin/relax.linuxiccrelease @options 
 
 Version
 -------

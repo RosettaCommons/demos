@@ -67,7 +67,7 @@ As you noticed, the command you ran had a "mode" option and that you mentioned "
     - "extras=static": builds static binaries. This can be useful for copying and running the apps on other systems.
     - "extras=graphics": mode enables OpenGL graphics for those apps that support it.
     - "extras=opencl": enables GPU usage for those apps that support it
-    - "extras=mpi" compiles Rosetta in MPI [**M**assage **P**assing **I**nterface](https://computing.llnl.gov/tutorials/mpi/#What) format (for those executables that support MPI runs).
+    - "extras=mpi" compiles Rosetta in MPI [**M**assage **P**assing **I**nterface](https://computing.llnl.gov/tutorials/mpi/#What) format (for those executables that support MPI runs). Running Rosetta in MPI mode requires (potentially non-trivial) edits to the site.settings files.
 
 For example the code below compiles only the rosetta_scripts application in MPI format and release mode using 5 processors:
 

@@ -11,5 +11,5 @@
 -scorefile refine.score.sc    # name of the scorefile
 -peptide_anchor 166           # manually choose the anchor by which the peptide and receptor are connected; this is optional; by default the peptide residue closest to it's center
                               # of mass will be assigned the anchor
--out:path:pdb output          # location of the refined structure
--out:path:score output        # location of the scorefile
+#-out:path:pdb output          # location of the refined structure
+#-out:path:score output        # location of the scorefile
