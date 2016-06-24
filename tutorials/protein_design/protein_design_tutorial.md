@@ -236,7 +236,7 @@ You should notice that this file shows two homo-dimers. We will focus on the dim
 
     3. Analysis of Designs. Now that we have a few design structures, we want to examine one of the regions we designed. First, we must sort the top five structures by score. There are many ways to do this.  Here we will use command-line programs such as grep and awk. You should still be in the Step3_design folder.  
 
-            $> cd output/resfile_design
+            $> cd Step2_design/output/resfile_design
             ls
 
             grep pose resfile_design*.pdb | sort -nk 23 | head

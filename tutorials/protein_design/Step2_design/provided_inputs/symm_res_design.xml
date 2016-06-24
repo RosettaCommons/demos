@@ -3,13 +3,13 @@
           <mem_highres weights="membrane_highres_Menv_smooth.wts" symmetric="1" />
 	</SCOREFXNS>
 	<TASKOPERATIONS>
-        <ReadResfile name="rrf" filename= "3UKM.resfile" />
+        <ReadResfile name="rrf" filename= "Step2_design/3UKM.resfile" />
 	      <InitializeFromCommandline name="ifcl"/>
 	</TASKOPERATIONS>
         <FILTERS>
 	</FILTERS>
         <MOVERS>
-          <SetupForSymmetry name="setup_symm" definition="3UKM.symm" />
+          <SetupForSymmetry name="setup_symm" definition="Step2_design/3UKM.symm" />
           <SymPackRotamersMover name="sym_pack" scorefxn="mem_highres" task_operations="ifcl,rrf"/>
 	</MOVERS>
   <PROTOCOLS>
