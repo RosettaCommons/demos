@@ -58,7 +58,12 @@ $> ./README_ASSEMBLE.short
 
 You can see examples of these files and their output in example_output/. Please note that for these files I changed the 'nstruct' commands to create 100 models per motif. In reality you will want to make 2000-4000 MOTIF models, and then several thousand ASSEMBLE models. [You can just use one STEM model per helix, as that is supposed to be an ideal helix.] For some scripts to generate lots of models on a computer cluster, see note below.
 
-The final 'outfile' is  add_assemble.out. We can extract models from it using:(where `$ROSETTA3`=path-to-Rosetta/main/source)
+The final 'outfile' is  add_assemble.out. If you don't have the file ready, you can copy:
+```
+$> cp example_output/add_assemble.out
+```
+
+We can extract models from it using:(where `$ROSETTA3`=path-to-Rosetta/main/source)
 
 ```
     $> $ROSETTA3/bin/extract_pdbs.default.linuxgccrelease -in:file:silent add_assemble.out -tags S_000001
