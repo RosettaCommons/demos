@@ -13,7 +13,6 @@ has its own README.txt with specific information about that step. Each step is
 entirely self contained, but you might enjoy working through them in the order
 given below. 
 
-*NOTE* R1A.params is provided but it is now part of the database, so you don't need to pass it.
 
 Step1: create_mtssl_mutant
 
@@ -23,7 +22,7 @@ specifies that only the non-cannonical residue type R1A is allowed at
 positions 59 and 159. The command below will generate the 59/159 double mtssl
 mutant of the t4-lysozyme protein given in the input directory.
 ```
-$> $ROSETTA3/bin/fixbb.default.linuxgccrelease -in:file:s create_mtssl_mutant/input/lysozyme_pseudo_wildtype.pdb -out:file:fullatom -resfile create_mtssl_mutant/config/resfile.pack -out:prefix mtssl_mutant_ >& make_mutant.log 
+$> $ROSETTA3/bin/fixbb.default.linuxgccrelease -in:file:s create_mtssl_mutant/input/lysozyme_pseudo_wildtype.pdb -extra_res_fa input/R1A.params -out:file:fullatom -resfile create_mtssl_mutant/config/resfile.pack -out:prefix mtssl_mutant_ >& make_mutant.log 
 ```
 where (`$ROSETTA3`=path-to-Rosetta/main/source)
 
