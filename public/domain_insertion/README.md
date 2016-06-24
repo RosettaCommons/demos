@@ -82,7 +82,7 @@ To run AnchoredPDBCreator, use its executeable (of the same name):
 
     export $ROSETTA3=<path/to/Rosetta/source>
     $> cd rosetta_inputs/AnchoredPDBCreator
-    $> <path/to/ROSETTA3/>bin/AnchoredPDBCreator.macosclangrelease @options
+    $> <path/to/ROSETTA3/>bin/AnchoredPDBCreator.<yoursystemsettings> @options
 
 Replace `macosclangrelease` with your system settings.
 
@@ -149,7 +149,7 @@ To run AnchoredDesign, use its executable (of the same name):
 or if you are still in the AnchoredPDBCreator directory,
 
     $> cd ../AnchoredDesign
-    $> $ROSETTA3/bin/AnchoredDesign.macosclangrelease @options
+    $> <path/to/ROSETTA3>/bin/AnchoredDesign.macosclangrelease @options
     
 Again, replace `macosclangrelease` with your system settings.
 
