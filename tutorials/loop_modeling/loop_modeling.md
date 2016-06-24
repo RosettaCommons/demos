@@ -117,6 +117,8 @@ This loop will likely not match the loop of the native `3gbn_Ab.pdb` in just one
 
 `remodel` can a multitude of applications, including design, which you can read about [here](https://www.rosettacommons.org/docs/latest/application_documentation/design/rosettaremodel#algorithm_basic-remodelling-tasks_extension).
 
+>No loop modeling method gives consistent results on loops longer than 12 residues.
+
 Refining Peptide Segments
 -------------------------
 Say you are not happy with the conformation of a peptide segment in your protein and you want to find a low-energy conformation for that protein. Such a case may arise if a loop has been added incorrectly. To refine the loop (residues 13-15) we inserted in the [Modeling Missing Loops](#missing_loop) section, we will use KIC with flags similar to those in [Closing Breaks in Protein Chains](#chainbreak_close). We will use the following loops file:
@@ -193,3 +195,6 @@ As this protocol is typically used for advanced use cases, it often requires a c
 >**Generalized KIC is not available as an executable; it needs to be used through RosettaScripts.**
 
 A tutorial on RosettaScripts can here found [here](rosetta_scripting) and detailed documentation can be found [here](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/RosettaScripts) which lists all the protocols and filters that can be used.
+
+Tips
+----
