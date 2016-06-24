@@ -1,0 +1,13 @@
+-in:file:native ./rosetta_inputs/BRD4.pdb
+-in:file:centroid_input
+-in:file:silent BRD4_silent.out
+-in:file:silent_struct_type binary
+-in:file:spanfile ./rosetta_inputs/BRD4.span
+-in:file:lipofile ./rosetta_inputs/BRD4.lips4
+-membrane:no_interpolate_Mpair
+-membrane:Menv_penalties
+-score:find_neighbors_3dgrid
+-score:weights score_membrane.wts
+-out:nstruct 1
+-out:output
+-nstruct 1
