@@ -6,11 +6,13 @@ If you want to run supercharge now, the application is called 'supercharge' in `
 
 Here are four examples:
 
+(where `ROSETTA3`=path-to-Rosetta/main/source)
+
 ```
-./supercharge.default.macosgccrelease @rosetta_inputs/options1 -database <path>           // Rosetta-mode, positive-charge, fixed surface cutoff and input ref energies
-./supercharge.default.macosgccrelease @rosetta_inputs/options2 -database <path>		  // Rosetta-mode, negative-charge, fixed surface cutoff and target net charge
-./supercharge.default.macosgccrelease @rosetta_inputs/options3 -database <path>		  // AvNAPSA-mode, negative-charge, target net charge
-./supercharge.default.macosgccrelease @rosetta_inputs/options4 -database <path>		  // AvNAPSA-mode, positive-charge, fixed surface cutoff
+$> $ROSETTA3/bin/supercharge.default.macosgccrelease @rosetta_inputs/options1           // Rosetta-mode, positive-charge, fixed surface cutoff and input ref energies
+$> $ROSETTA3/bin/supercharge.default.macosgccrelease @rosetta_inputs/options2 	  // Rosetta-mode, negative-charge, fixed surface cutoff and target net charge
+$> $ROSETTA3/bin/supercharge.default.macosgccrelease @rosetta_inputs/options3 		  // AvNAPSA-mode, negative-charge, target net charge
+$> $ROSETTA3/bin/supercharge.default.macosgccrelease @rosetta_inputs/options4 		  // AvNAPSA-mode, positive-charge, fixed surface cutoff
 ```
 
 
