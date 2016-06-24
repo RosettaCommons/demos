@@ -726,7 +726,7 @@ Again, this only defines the filter. To actually apply it, we have to add it to 
 
 Within the PROTOCOLS section, movers and filters are listed in the order in which they are to be evaluated. That is, the structure will first be packed, then the filter will be applied, and then, if and only if the filter passes, it will be minimized.  If the filter fails, a message is printed to the output log, and the rosetta\_scripts application will continue to the next job.
 
-Let's try this out.  This time, we'll tell the rosetta\_scripts application to repeat the job 100 times with the ```-nstruct 100``` option at the commandline.  We expect that some small fraction of the jobs will succeed and that most will fail to form the salt bridge and will be abandoned:
+Let's try this out.  This time, we'll tell the rosetta\_scripts application to repeat the job 100 times with the ```-nstruct 100``` option at the commandline.  We expect that some small fraction of the jobs will succeed and that most will fail to form the salt bridge and will be abandoned.  Note that, by default, Rosetta applications exit with error status if any jobs fail to pass filters.  Since this is not always desireable, there's a way to disable this: the ```-jd2:failed\_job\_exception false``` flag.  (Note that this is essential in MPI mode, since any job failure brings down all processes that are still carrying out jobs.)
 
 ```bash
 $> cp inputs/filter.xml .

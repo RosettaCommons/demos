@@ -14,9 +14,9 @@ should take you through the process, if it is not already installed. Please veri
 
 The tutorials and demos provided with Rosetta are written to assume that the following environment variables are set:
 
-
 > env $ROSSETA3=the path to your Rosetta/source directory
 > env $ROSETTA3_DB=
+
 ##Do The Following for Each Tutorial
 
 In order for the hands-on portions of these tutorials to function correctly, you must make your current working directory that of the tutorial you want to run; i.e. for this tutorial, your current working directory must be (i.e. "you must be in") `${ROSETTA3}/demos/tutorials/How_To_Read_These_Tutorials`. Therefore, `cd` into the directory for the tutorial you want to run; see the [[Working with Rosetta|working_with_rosetta]] tutorial for a brief description of how to use `cd`.

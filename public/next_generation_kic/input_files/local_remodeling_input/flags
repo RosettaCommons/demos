@@ -1,9 +1,9 @@
 # Important Flags, other flags that can be used, required flag, brief description of each flag or option:
 #io flags:
--s 1a8d_MinPacked.pdb
--loops:loop_file 1a8d.loop
+-s input_files/local_remodeling_input/1a8d_MinPacked.pdb
+-loops:loop_file input_files/local_remodeling_input/1a8d.loop
 -out:pdb_gz
--in:file:native 1a8d_MinPacked.pdb
+-in:file:native input_files/local_remodeling_input/1a8d_MinPacked.pdb
 
 #number of structures to produce                        
 #for demo:
