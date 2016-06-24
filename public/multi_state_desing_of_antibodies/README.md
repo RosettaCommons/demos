@@ -8,9 +8,11 @@ It can either be run on a single processor using the
    mpi_msd.default.linuxgccrelease (or, more generally the mpi_msd.default.{os}{compiler}{release/debug} executable)
 ```
    using the provided input, you can test this:
+   
+   (where `$ROSETTA3`=path-to-Rosetta/main/source
 
 ```
-   $> <path-to-Rosetta>/main/source/bin/mpi_msd.linuxgccrelease @flags.txt
+   $> $ROSETTA3/bin/mpi_msd.linuxgccrelease @flags.txt
 ```
 
 or by distributing those states over multiple processors using the
