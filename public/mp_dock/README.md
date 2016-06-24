@@ -55,7 +55,9 @@ Span file:
 Adjust the paths in the command.sh script provided in this folder and run it:
 
     $> cd MP_Dock_prepacking
-    $> docking_prepack_protocol.linuxgccrelease  @flags
+    $> $ROSETTA3/bin/docking_prepack_protocol.default.linuxgccrelease  @flags
+    
+(where `$ROSETTA3`=path-to-Rosetta/main/source)
 
 If you want to see the run in pymol, instead do:
 
@@ -148,7 +150,7 @@ Example inputs are found in the input folder.
 Adjust the paths in the command.sh script provided in this folder and run it:
   
     $> cd ../MP_Dock
-    $> mpdocking.linuxgccrelease @flags
+    $> $ROSETTA3/bin/mpdocking.default.linuxgccrelease @flags
 
 If you want to see the run in pymol, instead do:
 

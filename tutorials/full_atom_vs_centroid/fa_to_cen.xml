@@ -4,11 +4,11 @@
 	<FILTERS>
 	</FILTERS>
 	<MOVERS>
-		<SwitchResidueTypeSetMover name=sw set=centroid />
+		<SwitchResidueTypeSetMover name="sw" set="centroid" />
 	</MOVERS>
 	<APPLY_TO_POSE>
 	</APPLY_TO_POSE>
 	<PROTOCOLS>
-		<Add mover=sw />
+		<Add mover="sw" />
 	</PROTOCOLS>
 </ROSETTASCRIPTS>

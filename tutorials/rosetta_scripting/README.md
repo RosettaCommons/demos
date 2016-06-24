@@ -767,7 +767,7 @@ Filters used as metric evaluators also need to be added to the PROTOCOLS section
 
 ```bash
 $> cp inputs/filter2.xml .
-$> rosetta_scripts.default.linuxgccrelease -s 1ubq.pdb -parser:protocol filter2.xml -out:prefix filter2_ -nstruct 100
+$> rosetta_scripts.default.linuxgccrelease -s 1ubq.pdb -parser:protocol filter2.xml -out:prefix filter2_ -nstruct 100 -jd2:failed_job_exception false
 ```
 
 In addition to printing the results of the metric evaluation to the tracer (output log), the results of the filter will be placed in a column of the scorefile. The name of the column is the same as the name of the filter. Additionally, the values for the filters will be written at the end of the PDB file, after the score table.

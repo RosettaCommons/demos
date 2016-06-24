@@ -27,17 +27,17 @@ Full input files for the tutorials are located in the `demos/tutorials/` directo
 * [[How To Read These Tutorials|Tutorial_Setup]]
 * [[Installing and Building Rosetta|install_build]]
 * [[Working With Rosetta|working_with_rosetta]]
-* [[Input and Output|input_and_output]]
+* [[Controlling Input and Output|input_and_output]]
 * [[Core Rosetta Concepts|Core_Concepts]]
 * [[Working with Non-protein Residues|prepare_ligand_tutorial]] 
-* [[Scoring|scoring]]
+* [[Scoring|scoring]]: Calculating the Energy of a Structure
 * [[Full-Atom vs. Centroid Representations|fullatom_centroid]]
-* [[Optimizing Sidechains: The Packer|Optimizing_Sidechains_The_Packer]]
-* [[Minimization]]
-* [[Relax: Optimizing structures|Relax]]
-* [[Constraints]]
+* [[The Packer|Optimizing_Sidechains_The_Packer]]: Optimizing Sidechains
+* [[Minimization]]: Finding Deeper Energy Wells
+* [[Relax|Relax]]: Refining Structures
+* [[Constraints]]: Biasing Towards a Structure
 * [[Analyzing Rosetta Output|Analysis]]
-* [[The Fold Tree|fold_tree]] 
+* [[The Fold Tree|fold_tree]]: Propagating Changes in the Structure
 * [[Scripting with RosettaScripts|scripting_with_rosettascripts]]
     * [[Advanced Scripting with RosettaScripts|advanced_scripting_with_rosettascripts]]
 * [[Commonly Used Options|commonly_used_options]]
@@ -47,12 +47,12 @@ Full input files for the tutorials are located in the `demos/tutorials/` directo
 
 * [*de novo* (*ab initio*) Structure Prediction](Denovo_structure_prediction)
     * [Advanced *de novo* Structure Prediction](folding_tutorial)
-* [[Comparative Modeling (Homology Modeling)|rosetta_cm_tutorial]]
-* [[Loop Modeling and Rebuilding|loop_modeling]]
+* [[Comparative Modeling|rosetta_cm_tutorial]]: Modeling based on Homologs
+* [[Loop Modeling and Rebuilding|loop_modeling]]: Modeling Short Fragments
 * [[Protein Design|protein_design_tutorial]]
-* [[Protein-Protein Docking|Protein-Protein-Docking]]
+* [[Protein-Protein Docking|Protein-Protein-Docking]]: Modeling Protein-Protein Binding
     * [[Advanced Protein-Protein Docking|advanced_protein-protein_docking_tutorial]]
-* [[Protein-Ligand Docking|ligand_docking_tutorial]]
+* [[Protein-Ligand Docking|ligand_docking_tutorial]]: Modeling Protein-Ligand Binding
 
 Demos
 -----

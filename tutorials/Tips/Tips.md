@@ -25,8 +25,7 @@ Sampling means changing DOFs. The more DOFs need to be sampled, the more runs yo
 1. **-nstruct \< n \>** This option lets you to increase how many runs are performed by an individual CPU.
 2. **Run on multiple CPUs** By starting the same simulation ( a.k.a. job ) on multiple CPUs, you can get more models in shorter time. Often, you will want to have a large nstruct *and* use multiple CPUs.  
 
->
-**Note:** *You need to provide -out:prefix or -out:suffix options. Otherwise Rosetta would try to overwrite files produced by a parallel job -- in which case it will not do anything!*  
+> **Note: You need to provide -out:prefix or -out:suffix options. Otherwise Rosetta would try to overwrite files produced by a parallel job -- in which case it will not do anything!**
 
 
 ### Parallel runs using MPI 

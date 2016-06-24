@@ -1,0 +1,25 @@
+<ROSETTASCRIPTS>
+    <SCOREFXNS>
+        <t14_cart weights="talaris2014" symmetric="true" >
+            <Reweight scoretype="pro_close" weight="0.0" />
+            <Reweight scoretype="cart_bonded" weight="0.625" />
+        </t14_cart>
+    </SCOREFXNS>
+    <TASKOPERATIONS>
+		<InitializeFromCommandline name="init" />
+		<RestrictToRepacking name="repackonly" />
+		<ExtraRotamersGeneric name="extrachi" ex1="1" ex2="1" ex1_sample_level="1" ex2_sample_level="1" />
+    </TASKOPERATIONS>
+    <MOVERS>
+		<SetupForSymmetry name="setup_symm" definition="C10_denovo.sym" />
+		<SymPackRotamersMover name="repack" scorefxn="t14_cart" task_operations=init,repackonly,extrachi/>
+		<SymMinMover name="min_cart" scorefxn="t14_cart" chi="true" bb="1"  type=lbfgs_armijo_nonmonotone tolerance=0.0001 bb=1 chi=1 cartesian="1" jump=ALL/>
+    </MOVERS>
+    <PROTOCOLS>
+		<Add mover="setup_symm"/>
+		<Add mover="repack" />
+		<Add mover="min_cart" />
+    </PROTOCOLS>
+    <OUTPUT scorefxn="t14_cart" />
+</ROSETTASCRIPTS>
+

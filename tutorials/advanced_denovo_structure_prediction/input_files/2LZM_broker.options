@@ -6,7 +6,7 @@
 		-frag3 aa2LZMA03_05.200_v1_3 	# protein 3-residue fragments file
 		-frag9 aa2LZMA09_05.200_v1_3	# protein 9-residue fragments file
 -abinitio
-	-increase_cycles 10	# Increase the number of cycles at each stage in AbinitioRelax by this factor
+	-increase_cycles 1	# Increase the number of cycles at each stage in AbinitioRelax by this factor
 	-rg_reweight 0.5	# Reweight contribution of radius of gyration to total score by this scale factor
 	-rsd_wt_helix 0.5	# Reweight env, pair, and cb scores for helix residues by this factor
 	-rsd_wt_loop 0.5	# Reweight env, pair, and cb scores for loop residues by this factor

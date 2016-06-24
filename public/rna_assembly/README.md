@@ -18,7 +18,7 @@ It is being published in a (primarily experimental) paper "A two-dimensional mut
 The example input files are in rosetta_input; you may wish to copy them locally with the command:
 
 ```
-   $> cp rosetta_inputs/* .
+$> cp rosetta_inputs/* .
 ```
 
 Before running the command to set up the rna assembly job, make sure you have the correct paths to the rna_tool/bin directory in your environment variables. This can be done by running,
@@ -30,7 +30,7 @@ $> source $ROSETTA_TOOLS/rna_tools/INSTALL
 Everything needed to run the job is created by the command:
 
 ```
-    $> ./scripts/setup_rna_assembly_jobs.py  add.fasta add_secstruct.txt 1y26_RNA.pdb add_mutate_map_threetertiarycontacts.cst exe_extension=.default.linuxgccrelease
+    $> ./scripts/setup_rna_assembly_jobs.py  add.fasta add_secstruct.txt 1y26_RNA.pdb add_mutate_map_threetertiarycontacts.cst exe_extension=".default.linuxgccrelease"
 ```
 
 The first two arguments are required -- the sequence_file and the secondary structure file [either in dot/bracket notation, or specifying Watson/Crick base pairs as pairs of numbers]. 
@@ -60,13 +60,13 @@ You can see examples of these files and their output in example_output/. Please 
 
 The final 'outfile' is  add_assemble.out. If you don't have the file ready, you can copy:
 ```
-$> cp example_output/add_assemble.out
+$> cp ./example_output/add_assemble.out .
 ```
 
 We can extract models from it using:(where `$ROSETTA3`=path-to-Rosetta/main/source)
 
 ```
-    $> $ROSETTA3/bin/extract_pdbs.default.linuxgccrelease -in:file:silent add_assemble.out -tags S_000001
+$> $ROSETTA3/bin/extract_pdbs.default.linuxgccrelease -in:file:silent add_assemble.out -tags S_000001
 ```
 
 or using scripts like my `extract_lowscore_decoys.py`.

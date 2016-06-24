@@ -5,7 +5,7 @@ KEYWORDS: MEMBRANES UTILITIES ANALYSIS
 
 Author: Rebecca F. Alford (rfalford12@gmail.com)  
 Corresponding PI: Jeffrey J. Gray (jgray@jhu.edu)  
-Last Updated: January 2015  
+Last Updated: June 2016 by (parisah@uw.edu) to enable automated demo testing. 
 Rosetta Revision #58069 
 PyMOL Version: 1.7.4  
 
@@ -61,9 +61,11 @@ also be found in example_inputs/. Here, 1c3w is used as an example:
 2. Span File: Generate a spanfile from the PDB structure using
    the spanfile_from_pdb application described in the MP_spanfile-from-pdb protocol
    capture in Rosetta/demos/protocol_captures/2014. An example commandline using 
-   1c3w is also provided here: 
+   1c3w is also provided here:
 
-        $> spanfile_from_pdb.default.linuxgccrelease -in:file:s example_inputs/1c3w_tr.pdb
+(where `$ROSETTA3`=path-to-Rosetta/main/source)
+
+        $> $ROSETTA3/bin/spanfile_from_pdb.default.linuxgccrelease -in:file:s example_inputs/1c3w_tr.pdb
 
    For this example, this command will produce 1 output files: 
      = 1c3w_tr.span: Spanfile containing predicted trans-membrane spans
@@ -100,7 +102,7 @@ use the PDB 1c3w:
     From the regular terminal, run the standalone application or other membrane framework apps
     from the command line: 
 
-        $> view_membrane_protein.default.linuxgccrelease @pymol_flags
+        $> $ROSETTA3/bin/view_membrane_protein.default.linuxgccrelease @pymol_flags
 
     Within ~10-20 seconds, 2 parallel planes (PyMOL object entitled membrane_planes) will appear 
     in the PyMOL session. 
