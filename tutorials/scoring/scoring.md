@@ -24,7 +24,7 @@ Rosetta calculates the energy of a biomolecule using energy functions based on p
 Scoring in Rosetta
 ------------------
 
-In Rosetta, the energy of a biomolecule is calculated by _scoring_ it. Rosetta has an optimized energy function or _score function_ called _talaris2014_ for calculating the energy of all atomic interactions in a globular protein made of L-amino acids. There are also several all-atom score functions for specialized applications on other biomolecules, as well as score functions for the reduced [_centroid representation_](../full_atom_vs_centroid/fullatom_centroid.md). Additionally, you can create a custom score function to suit your requirements.
+In Rosetta, the energy of a biomolecule is calculated by _scoring_ it. Rosetta has an optimized energy function or _score function_ called _talaris2014_ for calculating the energy of all atomic interactions in a globular protein made of L-amino acids. There are also several all-atom score functions for specialized applications on other biomolecules, as well as score functions for the reduced [[_centroid representation_../full_atom_vs_centroid/fullatom_centroid.md]]. Additionally, you can create a custom score function to suit your requirements.
 
 Score Function
 --------------
@@ -98,7 +98,7 @@ Demo
 
 To score a biomolecule in Rosetta, we use the `score_jd2` executable. This application, along with most in Rosetta, expects the input PDB to be formatted in a certain manner. A PDB downloaded directly from the Protein Data Bank may or may not work with Rosetta in general, and `score_jd2` in particular. Here's an example where we try to score the PDB 3TDM. When in the right demo directory, run:
 
-    $> $ROSETTA3/bin/score_jd2.linuxgccrelease -in:file:s input_files/from_rcsb/3tdm.pdb
+    > $ROSETTA3/bin/score_jd2.linuxgccrelease -in:file:s input_files/from_rcsb/3tdm.pdb
    
 The application will exit with the following error:
 
@@ -138,7 +138,7 @@ SCORE:     267.496     0.000  -422.275   290.201   -25.824        1.313      238
 
 *To proceed on to the next step, remove `score.sc` by typing `rm score.sc`. Otherwise, all energy scores of the structures scored here onwards will be appended to this file.*
 
-To avoid these issues, it is recommended that you always refine the PDB with the [relax](Relax) protocol with the same _score function_ that you intend to eventually score with. This relieves clashes and prepares the structure for scoring in Rosetta. More details on how to do this in later tutorials. Let us switch our focus to scoring refined PDBs.
+To avoid these issues, it is recommended that you always refine the PDB with the [[relaxi|Relax]] protocol with the same _score function_ that you intend to eventually score with. This relieves clashes and prepares the structure for scoring in Rosetta. More details on how to do this in later tutorials. Let us switch our focus to scoring refined PDBs.
 
 ###Basic Scoring
 
