@@ -59,7 +59,7 @@ Documentation: <https://www.rosettacommons.org/docs/latest/application_documenta
 
 4.  Running the remodel application (you should replace input_files/* with your files)
 
-        $> $ROSETTA3/bin/remodel.default.linuxgccrelease -s input_files/3k2m_bc_relax.pdb -remodel:blueprint input_files/test.blueprint -extrachi_cutoff 1 -ex1 -ex2 -use_input_sc -num_trajectory 3 -save_top 1 -use_clusters false -find_neighbors
+        > $ROSETTA3/bin/remodel.default.linuxgccrelease -s input_files/3k2m_bc_relax.pdb -remodel:blueprint input_files/test.blueprint -extrachi_cutoff 1 -ex1 -ex2 -use_input_sc -num_trajectory 3 -save_top 1 -use_clusters false -find_neighbors
 
 
 Method 2: Loopmodel and Fixbb
@@ -75,7 +75,7 @@ the monobody part of interface.
 2.  Creating fragment libraries
 
     Take the fasta file of 3k2m_bc_relax.pdb. Create  fragment libraries of 
-    sizes 9 and 3 locally or through Robetta Server.
+    sizes 9 and 3 locally or through [Robetta Server](robetta.bakerlab.org).
 
 3.  Other input files
 
@@ -96,9 +96,9 @@ the monobody part of interface.
         column5  "float":    Skip rate. default - never skip
         column6  "boolean":  Extend loop. Default false.
 
-4.  Running the loopmodel application:
+4.  Running the loopmodel application. For this run, you need to have your fragments ready in the input directory).
 
-        $> $ROSETTA3/bin/loopmodel.default.linuxgccrelease  @input_files/flags
+        > $ROSETTA3/bin/loopmodel.default.linuxgccrelease  @input_files/flags
 
     where the flags file consist of following options (edit path to database!):
 
