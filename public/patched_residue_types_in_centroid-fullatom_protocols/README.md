@@ -58,7 +58,7 @@ patches/ser_phosphorylated.txt
  Now run the docking_protocol application like this:
  (where `$ROSETTA3`=path-to-Rosetta/main/source)
 ```
-$> $ROSETTA3/bin/docking_protocol.linuxgccrelease -s rosetta_inputs/2lax_edited.pdb
+$> $ROSETTA3/bin/docking_protocol.default.linuxgccrelease -s rosetta_inputs/2lax_edited.pdb
 ```
 
 This application should now work correctly, converting the input pdb coordinates to a centroid model, performing rigid-body docking, then converting back into a full-atom model ( which should now *correctly convert the phosphorylated residue types* ) before performing a final docking rotamer packing optimization (see the docking_protocol documentation for more information). 
