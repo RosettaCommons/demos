@@ -98,7 +98,7 @@ the monobody part of interface.
 
 4.  Running the loopmodel application:
 
-        $> $ROSETTA3/bin/loopmodel.default.linuxgccrelease  @flags
+        $> $ROSETTA3/bin/loopmodel.default.linuxgccrelease  @input_files/flags
 
     where the flags file consist of following options (edit path to database!):
 
