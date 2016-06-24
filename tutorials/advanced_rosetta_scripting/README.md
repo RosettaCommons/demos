@@ -447,9 +447,11 @@ Don't forget to add the AtomTree and GenericMonteCarlo movers to the `<PROTOCOLS
 ...
 ```
 
-To visualize the trajectory that the input pose hase taken during the hundred steps that the GenericMonteCarlo mover carries out, we can also add the [PBDTrajectoryRecorder](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/Movers/movers_pages/PDBTrajectoryRecorderMover) mover to the ParsedProtocols block.  This is a special mover that does *not* modify the pose, but instead writes a copy of the current pose to a PDB file, then returns the pose as-is.  We will set up two such movers, one at the start of the ParsedProtocol that lists the steps in our moves, and one at the end.  Note that this is a *debugging* mover, and is not intended for production runs.  On HPC clusters, there is a cost to writing to disk, and large numbers of parallel processes all making frequent 
+To visualize the trajectory that the input pose hase taken during the hundred steps that the GenericMonteCarlo mover carries out, we can also add the [PBDTrajectoryRecorder](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/Movers/movers_pages/PDBTrajectoryRecorderMover) mover to the ParsedProtocols block.  This is a special mover that does *not* modify the pose, but instead writes a copy of the current pose to a PDB file, then returns the pose as-is.  We will set up two such movers, one at the start of the ParsedProtocol that lists the steps in our moves, and one at the end.  Note that this is a *debugging* mover, and is not intended for production runs.  On HPC clusters, there is a cost to writing to disk, and large numbers of parallel processes all making frequent writes to disk.  For this reason, it is best to comment out or delete PDBTrajectoryRecorder movers or other debugging movers when it's time to set up a production run.
 
-The one at the start will always print out the structure resulting from the last move that was accepted, while the one at the end will always dump out the results of the current move, whether or not this move is accepted.  Let's create these movers and add them to the ParsedProtocols block:
+> **Debugging movers are useful for examining trajectories when writing a script, but should be turned off for production runs.**
+
+The PDBTrajectoryRecorder that we're adding at the start of the ParsedProtocol will always print out the structure resulting from the last move that was accepted, while the one at the end will always dump out the results of the current move, whether or not this move is accepted.  Let's create these movers and add them to the ParsedProtocols block:
 
 ```xml
 ...
@@ -476,14 +478,15 @@ $> $ROSETTA3/bin/rosetta_scripts.default.linuxgccrelease -s 2drk.pdb -parser:pro
 
 Take a look at the output trajectory.  The traj.pdb file will contain the structures that result from every move (at left, below), while the traj_accepted.pdb file will contain the results of only those moves that were accepted by the GenericMonteCarlo mover (at right, below).  If all moves are being accepted or all moves are being rejected, it's probably a sign that something is wrong.
 
-![2drk_post](montecarlo_example/figures/MonteCarloTraj.gif)
+![Monte Carlo trajectories, with all moves at left and accepted moves at right.](montecarlo_example/figures/MonteCarloTraj.gif)
 
 The final output structure should be similar to this (though it won't be identical, due to the inherently stochastic nature of a Monte Carlo search):
 
-![2drk_post](montecarlo_example/figures/2drk_post.png)
+![The resulting structure.](montecarlo_example/figures/2drk_post.png)
 
 Notice the changes in the peptide sequence from gray (input) to magenta, and also the small backbone and rotamer changes to the protein domain.  (Understandably, Rosetta doesn't drastically redesign the peptide, since this was a native structre of an SH3 domain binding the peptide that it recognizes.)
 
+This sub-section has demonstrated how we can script Monte Carlo searches in Rosetta, using arbitrarily complex moves.  It has also hopefully given you some idea of what to consider when setting up a Monte Carlo run, and has presented you with tools that you can use to watch your run trajectories when debugging.
 
 ## Variable substition: adding variables to scripts
 
