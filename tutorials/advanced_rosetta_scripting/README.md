@@ -319,7 +319,174 @@ Let's look at a more realistic example, now, and a more powerful, and commonly-u
 
 ### Scripting a Monte Carlo search of conformation and sequence space
 
-TODO -- CONTINUE HERE.
+* *Perform backbone and sidechain moves in the context of a Monte Carlo search, scripted in RosettaScripts.*
+* *Record the trajectory of a protocol in a multimodel PDB file.*
+
+For this protocol, we will be using the [GenericMonteCarlo](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/Movers/movers_pages/GenericMonteCarloMover) 
+mover, which is another type of "meta mover" that performs iterative trials of a given Mover and evaluates whether that move should be *accepted* or *rejected* based on a user-defined metric, or based on the Metropolis criterion and the Rosetta energy.  See the [tutorial on packing](../Optimizing_Sidechains_The_Packer/Optimizing_Sidechains_The_Packer.md) for more information on Monte Carlo searches.
+
+Let's consider the example of re-designing and refining a peptide that is bound to a protein structure in order to find a peptide with possibly higher binding affinity. In the figure below, the peptide is depicted in magenta sticks, whereas the protein domain is in rainbow cartoon with green sidechain sticks.
+
+![2drk](https://github.com/RosettaCommons/demos/blob/XRW2016_kmb/tutorials/advanced_rosetta_scripting/montecarlo_example/figures/2drk.png)
+
+We will allow the Packer to choose different identities and rotamers for the current peptide in its bound state, while also perturbing the peptide backbone by small amounts over many iterations of the Monte Carlo search.  We'll keep the protein backbone fixed. 
+
+Before we can use the GenericMonteCarloMover for this task, we need to create a Mover that we can use as an input for the GenericMonteCarloMover.  There are a few things to consider, here:
+
+* The "moves" that we want to make in our Monte Carlo search are not moves that any single mover can make.  We'll need a way of chaining several movers together.
+* In any Monte Carlo search, the moves should be stochastic.  Ideally, they should satisfy the [detailed balance equations](https://en.wikipedia.org/wiki/Detailed_balance), which are beyond the scope of this tutorial.  In practice many of the moves that we make in Rosetta Monte Carlo searches do not satisfy the detailed balance requirement, but do approximate it closely enough for the Monte Carlo search to be useful.  However, just making a strictly deterministic move (like minimization) or even a largely deterministic move (like packing a small system, which has a high probility of converging) without any stochastic component to the move is a bad idea.
+
+> **Monte Carlo moves should have a stochastic component (and ideally, the overall move should satisfy the detailed balance equations).**
+
+To address the first point, let's create a [ParsedProtocol](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/Movers/movers_pages/ParsedProtocolMover) Mover, which is another meta-mover that simply accepts several other movers and packages them together as a single large mover.  We will encapsulate several movers within the ParsedProtocol mover, to carry out the following steps:
+
+| Step | Mover | Task | Deterministic/Stochastic? |
+|------|-------|------|---------------------------|
+| **1** | [RigidBodyPerturbNoCenter](https://www.rosettacommons.org/docs/latest/create/scripting_documentation/RosettaScripts/Movers/movers_pages/RigidBodyPerturbNoCenter) | Randomly shift the position of the peptide by a tiny amount | Stochastic |
+| **2** | [Small](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/Movers/movers_pages/SmallMover) | Randomly perturb peptide mainchain torsions by a tiny amount.  We will use a residue selector to apply this only to the peptide. | Stochastic |
+| **3** | [PackRotamersMover](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/Movers/movers_pages/PackRotamersMover) | Design the peptide and repack the side-chains of the protein near the peptide.  We will use residue selectors and task operations to prevent design outside of the peptide, and to prevent repacking outside of the interface. | Stochastic but convergent; should consistently find the global optimum, or something close to it, for a system this small |
+| **4** | [MinMover](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/Movers/movers_pages/MinMover) | Energy-minimize the side-chains.  Note that we will prohibit jump and backbone minimization when setting up this mover. | Deterministic |
+
+Have we addressed the second point?  Probably well enough, for our purposes: the moves have a significant random component, though they also have largely or fully deterministic steps as well (packing the small system and minimizing).  It's worth being aware that we're probably not rigourously obeying detailed balance, but for our purposes, it doesn't matter.  Let's start a basic RosettaScript and set up our movers:
+
+```xml
+<ROSETTASCRIPTS>
+	<SCOREFXNS>
+		<myscore weights=talaris2014 />
+	</SCOREFXNS>
+	<RESIDUE_SELECTORS>
+	</RESIDUE_SELECTORS>
+	<TASKOPERATIONS>
+	</TASKOPERATIONS>
+	<FILTERS>
+	</FILTERS>
+	<MOVERS>
+		<RigidBodyPerturbNoCenter name=shift_peptide_a_tiny_bit rot_mag=0 trans_mag=0.2 />
+		<Small name=small_mover scorefxn=myscore temperature=0.5 nmoves=500 angle_max=10.0 preserve_detailed_balance=0 />
+		<PackRotamersMover name=repack_mover scorefxn=myscore />
+		<MinMover name=sidechain_min scorefxn=myscore tolerance=0.01 bb=false chi=true jump=0 />		
+		
+		<ParsedProtocol name=monte_carlo_move mode=sequence >
+			<Add mover_name=pdb_traj_recorder_accepted />
+			<Add mover=shift_peptide_a_tiny_bit />
+			<Add mover_name=small_mover />
+			<Add mover_name=repack_mover />
+			<Add mover_name=sidechain_min />
+			<Add mover_name=pdb_traj_recorder />
+		</ParsedProtocol>
+	</MOVERS>
+	<PROTOCOLS>
+	</PROTOCOLS>	
+</ROSETTASCRIPTS>
+```
+
+Now let's add the appropriate residue selectors and task operations to set up the Small mover and the PackRotamers mover, as described in the table above.  Details of residue selectors and task operations are covered in the [introductory RosettaScripting tutorial](../rosetta_scripting/README.md).
+
+```xml
+...
+	<RESIDUE_SELECTORS>
+		<Chain name=pdz chains=A />
+		<Chain name=peptide chains=B />
+		<Neighborhood name=interface selector=peptide distance=6 /> #Note that this selects the peptide AS WELL AS the surrounding residues
+		<Not name=not_interface selector=interface /> #Note that this selects only the parts of the protein far from the interface.
+	</RESIDUE_SELECTORS>
+	<TASKOPERATIONS>
+		<OperateOnResidueSubset name=repackonly_pdz selector=pdz >
+			<RestrictToRepackingRLT />
+		</OperateOnResidueSubset>
+		<OperateOnResidueSubset name=fix_notinterface selector=not_interface >
+			<PreventRepackingRLT />
+		</OperateOnResidueSubset>
+	</TASKOPERATIONS>
+...
+	<MOVERS>
+		<Small name=small_mover scorefxn=myscore temperature=0.5 nmoves=500 angle_max=10.0 preserve_detailed_balance=0 residue_selector=peptide />
+		<PackRotamersMover name=repack_mover scorefxn=myscore task_operations=repackonly_pdz,fix_notinterface />
+...
+	</MOVERS>
+...
+```
+
+> **Notice that the SmallMover accepts ResidueSelectors, and the PackRotamersMover accepts TaskOperations.**
+
+Let's also take a moment to set up a suitable fold tree for this problem, as described in the first part of this tutorial.  We want to make the protein, which remains fixed, the root of the chain, have a jump to the middle of the peptide, and have the head and tail of the peptide downstream of the middle of the peptide.  In a foldtree file (mc\_foldtree.txt):
+
+```
+FOLD_TREE EDGE 52 1 -1 EDGE 52 59 -1 EDGE 52 65 1 EDGE 65 60 -1 EDGE 65 69 -1
+```
+
+And in the script:
+
+```xml
+...
+	<MOVERS>
+		<AtomTree name=set_up_foldtree fold_tree_file="mc_foldtree.txt" />
+...
+	</MOVERS>
+...
+```
+
+Now we are ready to build the [GenericMonteCarlo mover](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/Movers/movers_pages/GenericMonteCarloMover). To the ```<MOVERS>``` section, we will add:
+
+```xml
+...
+		<GenericMonteCarlo name=gmc_mover mover_name=monte_carlo_move scorefxn_name=myscore sample_type=low temperature=0.8 trials=100 drift=1 preapply=false recover_low=1 />
+...
+```
+
+When the GenericMonteCarlo mover is applied to the pose, it will apply the series of movers in the ParseProtocol mover to the input pose, evalutate the change in energy of the pose, and apply the Metropolis criterion to determine whether to accept or reject this move with a Boltzmann temperature factor of 0.8 (`temperature=0.8`).  (To refresh yourself on Monte Carlo searches and the Metropolis criterion, see the [tutorial on packing](../Optimizing_Sidechains_The_Packer/Optimizing_Sidechains_The_Packer.md)). If this move is accepted, the move is kept, and this new structure becomes the starting structure for the next GenericMonteCarlo trial (`drift=1`). This will continue until the total number of trials have completed (`trials=100`). At the end of the GenericMonteCarlo Mover, we can take the last structure as the output structure or the lowest-energy structure as the output structure. Here, we have specified to output the lowest-energy structure (`recover_low=1`). 
+
+Don't forget to add the AtomTree and GenericMonteCarlo movers to the `<PROTOCOLS>` section of the script so that they are both applied to the pose:
+
+```xml
+...
+	<PROTOCOLS>
+		<Add mover=set_up_foldtree />
+		<Add mover=gmc_mover />
+	</PROTOCOLS>
+...
+```
+
+To visualize the trajectory that the input pose hase taken during the hundred steps that the GenericMonteCarlo mover carries out, we can also add the [PBDTrajectoryRecorder](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/Movers/movers_pages/PDBTrajectoryRecorderMover) mover to the ParsedProtocols block.  This is a special mover that does *not* modify the pose, but instead writes a copy of the current pose to a PDB file, then returns the pose as-is.  We will set up two such movers, one at the start of the ParsedProtocol that lists the steps in our moves, and one at the end.  Note that this is a *debugging* mover, and is not intended for production runs.  On HPC clusters, there is a cost to writing to disk, and large numbers of parallel processes all making frequent writes to disk.  For this reason, it is best to comment out or delete PDBTrajectoryRecorder movers or other debugging movers when it's time to set up a production run.
+
+> **Debugging movers are useful for examining trajectories when writing a script, but should be turned off for production runs.**
+
+The PDBTrajectoryRecorder that we're adding at the start of the ParsedProtocol will always print out the structure resulting from the last move that was accepted, while the one at the end will always dump out the results of the current move, whether or not this move is accepted.  Let's create these movers and add them to the ParsedProtocols block:
+
+```xml
+...
+	<MOVERS>
+...
+		<PDBTrajectoryRecorder name=pdb_traj_recorder stride=1 filename=traj.pdb cumulate_jobs=0 cumulate_replicas=0 />
+		<PDBTrajectoryRecorder name=pdb_traj_recorder_accepted stride=1 filename=traj_accepted.pdb cumulate_jobs=0 cumulate_replicas=0 />		
+		<ParsedProtocol name=monte_carlo_move mode=sequence >
+			<Add mover_name=pdb_traj_recorder_accepted />
+			... all the other movers in the move ...
+			<Add mover_name=pdb_traj_recorder />
+		</ParsedProtocol>
+...
+	</MOVERS>
+...
+```
+
+Now we're ready to run this.  This should take four or five minutes to run, since each of 100 steps must call the packer and the minimizer.
+
+```bash
+$> cp montecarlo_example/scripts/generic_monte_carlo_example.xml montecarlo_example/inputs/2drk.pdb montecarlo_example/inputs/mc_foldtree.txt .
+$> $ROSETTA3/bin/rosetta_scripts.default.linuxgccrelease -s 2drk.pdb -parser:protocol generic_monte_carlo_example.xml -out:prefix montecarlo_
+```
+
+Take a look at the output trajectory.  The traj.pdb file will contain the structures that result from every move (at left, below), while the traj_accepted.pdb file will contain the results of only those moves that were accepted by the GenericMonteCarlo mover (at right, below).  If all moves are being accepted or all moves are being rejected, it's probably a sign that something is wrong.
+
+![Monte Carlo trajectories, with all moves at left and accepted moves at right.](montecarlo_example/figures/MonteCarloTraj.gif)
+
+The final output structure should be similar to this (though it won't be identical, due to the inherently stochastic nature of a Monte Carlo search):
+
+![The resulting structure.](montecarlo_example/figures/2drk_post.png)
+
+Notice the changes in the peptide sequence from gray (input) to magenta, and also the small backbone and rotamer changes to the protein domain.  (Understandably, Rosetta doesn't drastically redesign the peptide, since this was a native structre of an SH3 domain binding the peptide that it recognizes.)
+
+This sub-section has demonstrated how we can script Monte Carlo searches in Rosetta, using arbitrarily complex moves.  It has also hopefully given you some idea of what to consider when setting up a Monte Carlo run, and has presented you with tools that you can use to watch your run trajectories when debugging.
 
 ## Variable substition: adding variables to scripts
 
