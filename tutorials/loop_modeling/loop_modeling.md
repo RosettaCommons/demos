@@ -198,7 +198,7 @@ A tutorial on RosettaScripts can here found [here](rosetta_scripting) and detail
 
 Tips
 ----
-* There is an application called _Floppy Tail_ in Rosetta. It is **not** meant to be used for loop or termini modeling. It has only been tested on truly disordered termini.
+* There is an application called _Floppy Tail_ in Rosetta. It is **not** meant to be used for general purpose loop or termini modeling. It has only been tested on truly disordered termini.
 * Make sure that the blueprint file does not have a blank line at the end.
 * Make sure that the flanking residues in the blue print file are set to be designable.
 * Neither CCD nor KIC performs well on peptide segments longer than 12 resdiues.
