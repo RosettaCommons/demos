@@ -23,7 +23,7 @@ Various loop modeling protocols can be used in Rosetta for various purposes. By 
 
 Loop Modeling Methods
 ---------------------
->Loop Modeling in not restricted to segments with a blank DSSP secondary structure assignment. They are more generally applicable to any short peptide fragment joining larger protein segments.
+>Loop Modeling in not restricted to segments with a blank DSSP secondary structure assignment. It is more generally applicable to any fragment joining larger segments.
 
 There are several loop modeling methods present in Rosetta and more which are being actively developed. The goal of all loop modeling methods is to sample conformational space of the peptide segment in such a manner that the fixed _anchor_ points at the peptide termini are connected. Here, we will present examples from the following protocols:
 
