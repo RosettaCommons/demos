@@ -11,3 +11,4 @@ See the [documentation for RNA 3D structure modeling](https://www.rosettacommons
 ```
 $> $ROSETTA3/bin/rna_denovo.default.linuxgccrelease @flags
 ```
+where `$ROSETTA3`=path-to-Rosetta/main/source
