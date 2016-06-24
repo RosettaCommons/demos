@@ -1,52 +1,53 @@
 <ROSETTASCRIPTS>
-    <SCOREFXNS>
-        <myscore weights=talaris2014/>
-    </SCOREFXNS>
 
-    <RESIDUE_SELECTORS>
+	<SCOREFXNS>
+		<myscore weights=talaris2014 />
+	</SCOREFXNS>
 
+	<RESIDUE_SELECTORS>
 		<Chain name=pdz chains=A />
 		<Chain name=peptide chains=B />
-		<Neighborhood name=interface selector=peptide distance=6/>
-		<Not name=not_interface selector=interface/>
+		<Neighborhood name=interface selector=peptide distance=6 /> #Note that this selects the peptide AS WELL AS the surrounding residues
+		<Not name=not_interface selector=interface />
+	</RESIDUE_SELECTORS>
 
-    </RESIDUE_SELECTORS>
-
-    <TASKOPERATIONS>
-        <InitializeFromCommandline name=init/>
-
+	<TASKOPERATIONS>
+		<InitializeFromCommandline name=init />
 		<OperateOnResidueSubset name=repackonly_pdz selector=pdz >
-			<RestrictToRepackingRLT/>
+			<RestrictToRepackingRLT />
 		</OperateOnResidueSubset>
-
 		<OperateOnResidueSubset name=fix_notinterface selector=not_interface >
 			<PreventRepackingRLT />
 		</OperateOnResidueSubset>
+	</TASKOPERATIONS>
+
+	<FILTERS>
+	</FILTERS>
+
+	<MOVERS>
+		<AtomTree name=set_up_foldtree fold_tree_file="mc_foldtree.txt" />
 		
-    </TASKOPERATIONS>
-    
-    <FILTERS>
-    </FILTERS>
-
-    <MOVERS>
-
-		<Small name=small_mover scorefxn=myscore temperature=0.5 nmoves=1 angle_max=10.0 preserve_detailed_balance=0 residue_selector=interface />
-
+		<RigidBodyPerturbNoCenter name="shift_peptide_a_tiny_bit" rot_mag=0 trans_mag=0.1 />
+		<Small name=small_mover scorefxn=myscore temperature=0.5 nmoves=500 angle_max=5.0 preserve_detailed_balance=0 residue_selector=peptide />
 		<PackRotamersMover name=repack_mover scorefxn=myscore task_operations=init,repackonly_pdz,fix_notinterface />
-
+		<MinMover name=sidechain_min scorefxn=myscore tolerance=0.001 bb=false chi=true jump=0 />
 		<PDBTrajectoryRecorder name=pdb_traj_recorder stride=1 filename=traj.pdb cumulate_jobs=0 cumulate_replicas=0 />
+		<PDBTrajectoryRecorder name=pdb_traj_recorder_accepted stride=1 filename=traj_accepted.pdb cumulate_jobs=0 cumulate_replicas=0 />
+		<ParsedProtocol name=small_repack mode=sequence >
+			<Add mover_name=pdb_traj_recorder_accepted />
+			<Add mover=shift_peptide_a_tiny_bit />
+			<Add mover_name=small_mover />
+			<Add mover_name=repack_mover />
+			<Add mover_name=sidechain_min />
+			<Add mover_name=pdb_traj_recorder />
+		</ParsedProtocol>
+		
+		<GenericMonteCarlo name=gmc_mover mover_name=small_repack scorefxn_name=myscore sample_type=low temperature=0.8 trials=100 drift=1 preapply=false recover_low=1 />
+	</MOVERS>
 
-        <ParsedProtocol name=small_repack mode=sequence >
-            <Add mover_name=small_mover />
-            <Add mover_name=repack_mover />
-	    <Add mover_name=pdb_traj_recorder />
-        </ParsedProtocol>
-        
-        <GenericMonteCarlo name=gmc_mover mover_name=small_repack scorefxn_name=myscore sample_type=low temperature=0.8 trials=10 drift=1 preapply=false recover_low=1 />
-
-    </MOVERS>
-
-    <PROTOCOLS>
+	<PROTOCOLS>
+		<Add mover=set_up_foldtree />
 		<Add mover=gmc_mover />
-    </PROTOCOLS>
+	</PROTOCOLS>
+	
 </ROSETTASCRIPTS>
