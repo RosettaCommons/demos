@@ -23,11 +23,11 @@ A bit more on the sixth field: This and the remaining fields (8 to 11) dictate h
 
 To demonstrate this, begin by relaxing ubiquitin via the following command:
 
-	$> ../../../main/source/bin/relax.default.linuxclangrelease -s 1ubq.pdb -out:suffix _unconstrained @general_relax_flags
+	$> $ROSETTA3/bin/relax.default.linuxclangrelease -s 1ubq.pdb -out:suffix _unconstrained @general_relax_flags
 
 as in Tutorial 4 and compare the output to that of 
 
-	$> ../../../main/source/bin/relax.default.linuxclangrelease -s 1ubq.pdb @general_relax_flags -out:suffix _unreasonably_constrained @unreasonable_constraint_flags
+	$> $ROSETTA3/bin/relax.default.linuxclangrelease -s 1ubq.pdb @general_relax_flags -out:suffix _unreasonably_constrained @unreasonable_constraint_flags
 	
 ![Unreasonable Constraints](images/1ubq_cst.png)
 The native PDB 1UBQ (cyan), unconstrained refined version (green) and unreasonably constrained refined version (salmon)

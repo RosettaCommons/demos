@@ -53,7 +53,7 @@ This 2<sup>nd</sup> and the 3<sup>rd</sup> columns in this file correspond the t
 
 To close the loop, run:
 
-    $> <path_to_Rosetta_directory>/main/source/bin/loopmodel.linuxgccrelease @flag_basic_KIC 
+    $> $ROSETTA3/bin/loopmodel.linuxgccrelease @flag_basic_KIC 
 
     
 This should take about 2 minutes at the end of which you will produce one PDB and one score file in `output_files`. This PDB will now have a closed loop. In production runs, you should increase `-nstruct 1` to `-nstruct 500` and `-loops:max_kic_build_attempts 200` to `-loops:max_kic_build_attempts 250` in the option file.
@@ -64,7 +64,7 @@ Modeling Missing Loops
 ----------------------
 Modeling missing loops is a difficult problem. Rosetta has a variety of algorithms for this purpose. We will use cyclic coordinate descent (CCD) explained [here](https://www.rosettacommons.org/docs/wiki/application_documentation/structure_prediction/loop_modeling/loopmodel-ccd#algorithm). While we can use the `loopmodel` executable to do this, it requires us to place the missing atoms manually in the input PDB file and provide a fragment library. We will instead use `remodel` executable to use CCD
 
-    $> <path_to_Rosetta_directory>/tools/remodel/getBluePrintFromCoords.pl -pdbfile input_files/3gbn_missing_loops.pdb -chain H > input_files/3gbn_missing_loops.remodel
+    $> $ROSETTA3_TOOLS/remodel/getBluePrintFromCoords.pl -pdbfile input_files/3gbn_missing_loops.pdb -chain H > input_files/3gbn_missing_loops.remodel
     
 ```
 ...
@@ -89,7 +89,7 @@ Make this
 ...
 ```
 
-    $> <path_to_Rosetta_directory>/main/source/bin/remodel.linuxgccrelease @flax_missing_loops
+    $> $ROSETTA3/bin/remodel.linuxgccrelease @flax_missing_loops
     
 ```
 core.fragment.picking_old.vall.vall_io: Reading Vall library from <path_to_Rosetta_directory>/main/database//sampling/filtered.vall.dat.2006-05-05 ... 

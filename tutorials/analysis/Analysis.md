@@ -89,12 +89,7 @@ Rosetta provides multiple ways to extract structures from those files.
 **1. Scoring** - The scoreing application can use silent files as input and generates pdb files.  
 *Try the following:*
 
-        $> ../../../main/source/bin/score_jd2.default.linuxgccrelease \
-        -in:file:silent_struct_type binary \
-        -in:file:silent example.out \
-        -out:output \
-        -out:file:scorefile extracted_scorefile.sc\
-	@general_flags
+        $> ../../../main/source/bin/score_jd2.default.linuxgccrelease -in:file:silent_struct_type binary -in:file:silent example.out -out:output -out:file:scorefile extracted_scorefile.sc @general_flags
         
    this will give you a new scorefile and the extracted pdb file (here there is only one structure in the silent file)
    
@@ -112,9 +107,7 @@ This can take multiple tags (S\_00000170\_1 S\_00000170\_2 S\_00000168\_1)
  
  *Then try this:*
  
-         $> ../../../main/source/bin/extract_pdbs.linuxgccrelease \
-        -in:file:silent_struct_type binary \
-        -in:file:silent example.out
+         $> ../../../main/source/bin/extract_pdbs.linuxgccrelease -in:file:silent_struct_type binary -in:file:silent example.out
  
  You should now have the pdb extracted. The *-in:file:tags* option works here, too.
  
