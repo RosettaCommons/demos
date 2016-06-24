@@ -1,5 +1,6 @@
 Scoring Tutorial
 ================
+
 KEYWORDS: CORE_CONCEPTS ANALYSIS UTILITIES GENERAL  
 
 Tutorial by Shourya S. Roy Burman (ssrb@jhu.edu) 
@@ -12,22 +13,23 @@ Summary
 Rosetta calculates the energy of a biomolecule using energy functions based on physical and statistical terms. By the end of this tutorial, you should understand:
 
 * What it means to calculate the energy of a biomolecule in Rosetta
-* How much a particular type of interaction contributes to the energy score
+* How much a particular type of interaction contributes to the energy/score
 * How to interpret and compare the energy scores calculated by Rosetta
 * How to prepare a biomolecular structure for scoring
 * How to score a biomolecule
 * How to change the energy function to other preset functions
 * How to customize the terms in an energy function for your purpose
-* How to get every resdiue's contribution to the energy score
+* How to get every residue's contribution to the energy score
 
 Scoring in Rosetta
 ------------------
 
-In Rosetta, the energy of a biomolecule is calculated by _scoring_ it. Rosetta has an optimized energy function or _score function_ called _talaris2014_ for calculating the energy of all atomic interactions in a globular protein made of L-amino acids. There are also several all-atom score functions for specialized applications on other biomolecules as well as score functions for the reduced [_centroid representation_](https://www.rosettacommons.org/demos/latest/tutorials/full_atom_vs_centroid/README). Additionally, you can create a custom score function to suit your requirements.
+In Rosetta, the energy of a biomolecule is calculated by _scoring_ it. Rosetta has an optimized energy function or _score function_ called _talaris2014_ for calculating the energy of all atomic interactions in a globular protein made of L-amino acids. There are also several all-atom score functions for specialized applications on other biomolecules, as well as score functions for the reduced [_centroid representation_](fullatom_centroid). Additionally, you can create a custom score function to suit your requirements.
 
 Score Function
 --------------
-Score functions in Rosetta are weighted sums of energy terms, some of which represent physical forces like electrostatics and van der Waals', while others represent statisticial terms like the probability of finding the torsion angles in Ramamchandran space. Below is a list of the energy terms used in the _talaris2014_ score function:
+
+Score functions in Rosetta are weighted sums of energy terms, some of which represent physical forces like electrostatics and van der Waals' interactions, while others represent statistical terms like the probability of finding the torsion angles in Ramachandran space. Below is a list of the energy terms used in the _talaris2014_ score function:
 
     fa_atr                 Lennard-Jones attractive between atoms in different residues
     fa_rep                 Lennard-Jones repulsive between atoms in different residues
@@ -77,6 +79,7 @@ The algorithm that Rosetta uses to score a structure can be found [here](https:/
 
 Comparing Rosetta Scores to Real-Life Energies
 ----------------------------------------------
+
 While much of the energy function in Rosetta is physics-based, it also has certain statistical terms to favor structures that look like known protein structures (as nature often conserves protein folds).
 
 >While a lower scoring structure is more likely to be closer to the native structure, the scores do not have a direct convertion to physical energy units like kcal/mol. Instead we represent them in _Rosetta Energy Units (REU)_.
@@ -85,12 +88,15 @@ Also, as the scores depend on the score function used, it is usually not meaning
 
 Navigating to the Demos
 -----------------------
+
 The demos are available at `<path_to_Rosetta_directory>/demos/tutorials/scoring`. All demo commands listed in this tutorial should be executed when in this directory. All the demos here use the `linuxgccrelease` binary. You may be required to change it to whatever is appropriate given your operating system and compiler.
 
 Demo
 ----
+
 ###Preparing PDBs for Scoring
-To score a biomoleule in Rosetta, we use the `score_jd2` executable. This application, along with most in Rosetta, expect the input PDB to be formatted in a certain manner. A PDB downloaded directly from the Protein Data Bank may or may not work with Rosetta in general, and `score_jd2` in particular. Here's an example where we try to score the PDB 3TDM. When in the right demo directory, run:
+
+To score a biomolecule in Rosetta, we use the `score_jd2` executable. This application, along with most in Rosetta, expects the input PDB to be formatted in a certain manner. A PDB downloaded directly from the Protein Data Bank may or may not work with Rosetta in general, and `score_jd2` in particular. Here's an example where we try to score the PDB 3TDM. When in the right demo directory, run:
 
     $> $ROSETTA3/bin/score_jd2.linuxgccrelease -in:file:s input_files/from_rcsb/3tdm.pdb
    
@@ -102,31 +108,34 @@ This PDB contains a phosphate ion that Rosetta is unable to process without addi
 
     $> $ROSETTA3/bin/score_jd2.linuxgccrelease -in:file:s input_files/from_rcsb/3tdm.pdb -ignore_unrecognized_res
 
-Now the PDB will be scored and the score will be displayed in a file `score.sc`(henceforth called the _score file_) in your current working directory. We will learn how to analyze and interpret this file in the next section. *To proceed on to the next step, remove `score.sc` by typing `rm score.sc`. Else, all energy scores of the structures scored here onwards will be appended to this file.*
+Now the PDB will be scored and the score will be displayed in a file `score.sc` (henceforth called the _score file_) in your current working directory. We will learn how to analyze and interpret this file in the next section. *To proceed on to the next step, remove `score.sc` by typing `rm score.sc`. Otherwise, all energy scores of the structures scored here onwards will be appended to this file.*
 
-<a name="output_struc"></a>If an input PDB does not meet the exact specifications that Rosetta requires, eg. it has missing heavy atoms or unusual residues that Rosetta recognizes by default (unlike phosphates), Rosetta adds or changes atoms to satisfy the specifications. You can ask it to output the structure it actually scores by including the option `out:pdb`. In this example, we will score the PDB 1QYS taken directly from the Protein Data Bank:
+<a name="output_struc"></a>If an input PDB does not meet the exact specifications that Rosetta requires, e.g. it has missing heavy atoms or unusual residues that Rosetta recognizes by default (unlike phosphates), Rosetta adds or changes atoms to satisfy the specifications. You can ask it to output the structure it actually scores by including the option `-out:pdb`. In this example, we will score the PDB 1QYS taken directly from the Protein Data Bank:
 
     $> $ROSETTA3/bin/score_jd2.linuxgccrelease -in:file:s input_files/from_rcsb/1qys.pdb -out:pdb
     
 In the log, you will see the following lines:
-```html
+
+```
 ...
 core.io.pose_from_sfr.PoseFromSFRBuilder: Reading MSE as MET!
 ...
 core.pack.pack_missing_sidechains: packing residue number 13 because of missing atom number 6 atom name  CG
 ...
 ```
+
 The first line indicates that it converts the residue _MSE_, i.e. selenomethionine to _MET_, i.e. regular methionine. The second line tells you that Rosetta found that the C<sub>γ</sub> atom was missing in residue number 13, and built the sidechain for residue number 13. You should see that `score.sc` has been overwritten and a new file `1qys_0001.pdb` is present in your current working directory.
 
 >Since Rosetta does not build the sidechain deterministically, every run of this example will produce a different result, both in terms of the PDB structure and the score file.
 
 The PDB file now contains the missing atoms and MET in place of MSE. This is the structure that was actually scored. Also, the score file will show a large positive `total_score` indicating an unfavorable structure. **This does not mean that the structure is unstable, it simply means that Rosetta believes that some minor steric clashes may exist in this PDB.** It will have a similar format to the following:
 
-```html
+```
 SEQUENCE: 
 SCORE: total_score dslf_fa13    fa_atr    fa_dun   fa_elec fa_intra_rep       fa_rep       fa_sol hbond_bb_sc hbond_lr_bb    hbond_sc hbond_sr_bb linear_chainbreak             omega overlap_chainbreak            p_aa_pp pro_close      rama       ref yhh_planarity description 
 SCORE:     267.496     0.000  -422.275   290.201   -25.824        1.313      238.436      248.433      -1.045     -23.835      -2.245     -22.744             0.000             1.234              0.000             -4.258     0.000     2.749   -12.643         0.000 1qys_0001
 ```
+
 *To proceed on to the next step, remove `score.sc` by typing `rm score.sc`. Else, all energy scores of the structures scored here onwards will be appended to this file.*
 
 To avoid these issues, it is recommended that you always refine the PDB with the [relax]() protocol with the same _score function_ that you intend to eventually score with. This relieves clashes and prepares the structure for scoring in Rosetta. More details on how to do this in later tutorials. Let us switch our focus to scoring refined PDBs.
