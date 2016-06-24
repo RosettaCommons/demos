@@ -1,0 +1,47 @@
+# This is a test script of the demo, created by parsing testable commands given in the demo's README.md file.
+# Commands that need to be tested should start with '$<'  to indicate that the line will be written to this file and tested.
+# - Documentation XRW 2016 Team - 
+
+cd %(workdir)s
+
+[ -x %(bin)s/SymDock.%(binext)s ] || exit 1
+[ -x %(bin)s/rosetta_scripts.%(binext)s ] || exit 1
+[ -x %(bin)s/score.%(binext)s ] || exit 1
+
+# Symmetry
+
+
+ %(minidir)s/src/apps/public/symmetry/make_symmdef_file_denovo.py -symm_type cn -nsub 10 > C10_denovo.sym 2>&1 | egrep -vf /Users/raemisch/Rosetta/main/tests/integration/ignore_list > log1
+test "${PIPESTATUS[0]}" != '0' && exit 1 || true  # Check if the first executable in pipe line return error and exit with error code if so
+
+ %(bin)s/SymDock.%(binext)s @input_files/options -symmetry:symmetry_definition C10_denovo.sym  -database %(database)s -run:constant_seed -nodelay  2>&1 | egrep -vf /Users/raemisch/Rosetta/main/tests/integration/ignore_list > log2
+test "${PIPESTATUS[0]}" != '0' && exit 1 || true  # Check if the first executable in pipe line return error and exit with error code if so
+
+ %(bin)s/score.%(binext)s @input_files/options -symmetry:symmetry_definition input_files/C3_good.symdef -output -out:suffix _good  -database %(database)s -run:constant_seed -nodelay  2>&1 | egrep -vf /Users/raemisch/Rosetta/main/tests/integration/ignore_list > log3
+test "${PIPESTATUS[0]}" != '0' && exit 1 || true  # Check if the first executable in pipe line return error and exit with error code if so
+
+ %(bin)s/score.%(binext)s @input_files/options -symmetry:symmetry_definition input_files/C3_bad.symdef -output -out:suffix _bad  -database %(database)s -run:constant_seed -nodelay  2>&1 | egrep -vf /Users/raemisch/Rosetta/main/tests/integration/ignore_list > log4
+test "${PIPESTATUS[0]}" != '0' && exit 1 || true  # Check if the first executable in pipe line return error and exit with error code if so
+
+ cp input_files/C3_good.symdef C3_simple.symdef 2>&1 | egrep -vf /Users/raemisch/Rosetta/main/tests/integration/ignore_list > log5
+test "${PIPESTATUS[0]}" != '0' && exit 1 || true  # Check if the first executable in pipe line return error and exit with error code if so
+
+ %(bin)s/score.%(binext)s @input_files/options -symmetry:symmetry_definition C3_simple.symdef -output -out:suffix _simple  -database %(database)s -run:constant_seed -nodelay  2>&1 | egrep -vf /Users/raemisch/Rosetta/main/tests/integration/ignore_list > log6
+test "${PIPESTATUS[0]}" != '0' && exit 1 || true  # Check if the first executable in pipe line return error and exit with error code if so
+
+ %(bin)s/score.%(binext)s @input_files/options -symmetry:symmetry_definition input_files/C3_bad.symdef -output -out:suffix _worse  -database %(database)s -run:constant_seed -nodelay  2>&1 | egrep -vf /Users/raemisch/Rosetta/main/tests/integration/ignore_list > log7
+test "${PIPESTATUS[0]}" != '0' && exit 1 || true  # Check if the first executable in pipe line return error and exit with error code if so
+
+ %(bin)s/score.%(binext)s @input_files/options -symmetry:symmetry_definition input_files/C3_bad.symdef -output -out:suffix _worse_rot  -database %(database)s -run:constant_seed -nodelay  2>&1 | egrep -vf /Users/raemisch/Rosetta/main/tests/integration/ignore_list > log8
+test "${PIPESTATUS[0]}" != '0' && exit 1 || true  # Check if the first executable in pipe line return error and exit with error code if so
+
+ %(bin)s/rosetta_scripts.%(binext)s -parser:protocol input_files/packing.xml -s input_files/2akf_INPUT.pdb -overwrite  -database %(database)s -run:constant_seed -nodelay  2>&1 | egrep -vf /Users/raemisch/Rosetta/main/tests/integration/ignore_list > log9
+test "${PIPESTATUS[0]}" != '0' && exit 1 || true  # Check if the first executable in pipe line return error and exit with error code if so
+
+ %(bin)s/rosetta_scripts.%(binext)s -parser:protocol input_files/packing_sym.xml -s input_files/2akf_INPUT.pdb -overwrite  -database %(database)s -run:constant_seed -nodelay  2>&1 | egrep -vf /Users/raemisch/Rosetta/main/tests/integration/ignore_list > log10
+test "${PIPESTATUS[0]}" != '0' && exit 1 || true  # Check if the first executable in pipe line return error and exit with error code if so
+
+ %(bin)s/rosetta_scripts.%(binext)s -parser:protocol input_files/packing.xml -s input_files/2akf_INPUT.pdb -overwrite  -database %(database)s -run:constant_seed -nodelay  2>&1 | egrep -vf /Users/raemisch/Rosetta/main/tests/integration/ignore_list > log11
+test "${PIPESTATUS[0]}" != '0' && exit 1 || true  # Check if the first executable in pipe line return error and exit with error code if so
+
+

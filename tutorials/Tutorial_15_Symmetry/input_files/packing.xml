@@ -1,0 +1,22 @@
+<ROSETTASCRIPTS>
+    <SCOREFXNS>
+        <t14_cart weights="talaris2014" >
+            <Reweight scoretype="pro_close" weight="0.0" />
+            <Reweight scoretype="cart_bonded" weight="0.625" />
+        </t14_cart>
+    </SCOREFXNS>
+    <TASKOPERATIONS>
+		<RestrictToRepacking name="repackonly" />
+		<ExtraRotamersGeneric name="extrachi" ex1="1" ex2="1" ex1_sample_level="1" ex2_sample_level="1" />
+    </TASKOPERATIONS>
+    <MOVERS>
+        <MinMover name="min_cart" scorefxn="t14_cart" chi="true" bb="1" cartesian="T" />
+		<PackRotamersMover name="pack" scorefxn="t14_cart" task_operations="repackonly,extrachi"/> 
+	</MOVERS>
+    <PROTOCOLS>
+		<Add mover="pack" />
+		<Add mover="min_cart" />
+    </PROTOCOLS>
+    <OUTPUT scorefxn="t14_cart" />
+</ROSETTASCRIPTS>
+
