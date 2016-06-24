@@ -5,7 +5,7 @@ KEYWORDS: MEMBRANES STRUCTURE_PREDICTION
 
 Author: Rebecca F. Alford (rfalford12@gmail.com)  
 Corresponding PI: Jeffrey J. Gray (jgray@jhu.edu)  
-Last Updated: January 2015  
+Last Updated: June 2016 by (parisah@uw.edu) to enable automated demo testing. 
 Rosetta Revision #58069 
 
 ---
@@ -57,7 +57,7 @@ used as an example:
    capture in Rosetta/demos/protocol_captures/2014. An example commandline using 
    3pxo is also provided here: 
 
-        $> spanfile_from_pdb.default.linuxgccrelease -in:file:s example_inputs/3pxo_tr.pdb
+        $> $ROSETTA3/bin/spanfile_from_pdb.default.linuxgccrelease -in:file:s example_inputs/3pxo_tr.pdb
 
    For this example, this command will produce 1 output file: 
    * 3pxo_tr.span: Spanfile containing predicted trans-membrane spans
@@ -90,8 +90,10 @@ use the PDB 3pxo:
 3. Command line: 
 
     To run this application, use the following command line: 
+    
+    (where `$ROSETTA3`=path-to-Rosetta/main/source)
 
-        $> rosetta_scripts.default.linuxgccrelease @relax_flags
+        $> $ROSETTA3/bin/rosetta_scripts.default.linuxgccrelease @relax_flags
 
 Note on timing: Refinement in Rosetta is a time consuming application. Depending on avaialble
 computing power and size of the protein, refinement of an individual decoy can take between 10-15min
