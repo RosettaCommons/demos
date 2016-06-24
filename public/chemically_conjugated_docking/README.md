@@ -12,7 +12,7 @@ Step 1. UBQ_E2_thioester:
 This demo contains the starting structures for the original published use of UBQ_E2_thioester, and is a copy of UBQ_E2_thioester's integration test. To run the demo (in the inputs subfolder):
 
 ```
-$> cp chemically_conjugated_docking/inputs .
+$> cd UBQ_E2_thioester/inputs 
 $> $ROSETTA3/bin/UBQ_E2_thioester.default.linuxgccrelease @options
 ```
 
@@ -28,7 +28,7 @@ Step 2. UBQ_Gp_CYD-CYD:
 
 This demo contains the starting structures for the original use of the UBQ_Gp series of executables, and is a copy of their integration tests. To run the demos (in the inputs subfolder):
 ```
-$> cp ../../UBQ_Gp_series/inputs
+$> cd ../../UBQ_Gp_series/inputs
 $> $ROSETTA3/bin/UBQ_Gp_CYD-CYD.default.linuxgccrelease @options
 ```
  Step 3: UBQ_Gp_LYX-Cterm
