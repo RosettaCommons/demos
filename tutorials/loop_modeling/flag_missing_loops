@@ -1,0 +1,9 @@
+-in:file:s input_files/3gbn_missing_loops.pdb
+-remodel:blueprint input_files/3gbn_missing_loops.remodel
+
+-run:chain H
+-remodel:num_trajectory 1 
+-remodel:quick_and_dirty
+
+-out:path:all output_files
+-out:file:scorefile 3gbn_missing_loops.sc

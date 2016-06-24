@@ -13,9 +13,11 @@ The source code is found at:  `(rosetta_source)/src/apps/public/vip.cc`
 
 To generate the output in the example output directory, the app can be run as follows:
 
+(where `ROSETTA3`=path-to-Rosetta/main/source)
+
 ```bash```
 $> cp rosetta_inputs/* .
-$> <path_to_Rosetta_directory>/main/source/bin/vip.default.linuxgccrelease @flags >out.log & 
+$> $ROSETTA3/bin/vip.default.linuxgccrelease @flags >out.log & 
 ```
 
 In the above, ".default.linuxgccrelease" may need to be replaced with your build, operating system, and compiler.  For example, for a static, debug-mode build on the Macintosh operating system with the clang compiler, you would use, ".static.macosclangdebug".

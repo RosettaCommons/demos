@@ -126,7 +126,7 @@ This tutorial presents a protein folding benchmark experiment. Bacteriophage T4 
     1. Make sure you are in your working directory.
     1. Type the following command line:
     
-            $> <path-to-Rosetta>/main/source/bin/minirosetta.default.linuxgccrelease @2LZM_broker.options 
+            $> $ROSETTA3/bin/minirosetta.default.linuxgccrelease @2LZM_broker.options 
         
         - NOTE: This will take 10-20 minutes per structure.
     

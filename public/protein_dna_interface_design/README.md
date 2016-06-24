@@ -16,12 +16,14 @@ Alternative conformations will be ignored by Rosetta. In this demo, you will be 
 ```
 
 In order to obtain the initial score, run the command below:
+
+(where `$ROSETTA3`=path-to-Rosetta/main/source)
 ```
-  $> <path-to-Rosetta>/main/source/bin/rosetta_scripts.default.linuxgccrelease @score.options > score.log
+  $> <$ROSETTA3/bin/rosetta_scripts.default.linuxgccrelease @score.options > score.log
 ```
 Now, pack the structure by running the script below. This packing routine finds optimal sidechain configurations for the wildtype amino acids in the vicinity of the target nucleotide base pair(s) (which are specified in the pack.script file as "dna_defs"):
 ```
-  $> <path-to-Rosetta>/main/source/bin/rosetta_scripts.default.linuxgccrelease @pack.options > pack.log
+  $> $ROSETTA3/bin/rosetta_scripts.default.linuxgccrelease @pack.options > pack.log
 ```
 Note the changes between the scores before and after packing. Compare the pack_2h7h and score_2h7h structures. If you do not have the files, we have provided them for you in the output directory. Please note that these are only simple short examples and for real designs, you need more sampling. You also need to change the residue numbers based on your specific application.
 
@@ -29,7 +31,7 @@ Note the changes between the scores before and after packing. Compare the pack_2
 
 This routine designs low energy amino acid identities and sidechains in the vicinity of the target nucleotides. Run the script below:
 ```
-  $> <path-to-Rosetta>/main/source/bin/rosetta_scripts.default.linuxgccrelease @design.options > design.log
+  $> $ROSETTA3/bin/rosetta_scripts.default.linuxgccrelease @design.options > design.log
 ```
 Example of output structures and scores are found in output directory.
 
@@ -37,7 +39,7 @@ Example of output structures and scores are found in output directory.
 
 This routine optimizes a starting population of different single-state designs for specificity toward the target DNA sequence vs. its competitors, using a genetic algorithm that involves mutation and recombination of the most sequence-specific solutions over multiple generations. Run this script as an example:
 ```
-  $> <path-to-Rosetta>/main/source/bin/rosetta_scripts.default.linuxgccrelease @multistate.options > multistate.log
+  $> $ROSETTA3/bin/rosetta_scripts.default.linuxgccrelease @multistate.options > multistate.log
 ```
 Example of output structures and scores are found in output directory.
 

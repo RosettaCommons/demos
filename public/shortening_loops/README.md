@@ -45,9 +45,9 @@ Rebuilding the loop with Rosetta
 The only executable we'll need here is loop modeling. Briefly, we will run 
 loop modeling with the build_initial mode active. This option triggers Rosetta 
 to rebuild the loop in a closed state. To do the bulk of the loop remodeling, 
-we will choose KIC remodeling.  CCD would work as well.
+we will choose KIC remodeling.  CCD would work as well. (where `$ROSETTA3`=path-to-Rosetta/main/source)
 
-    path/to/loopmodel.[platform][compiler][mode] @rosetta_inputs/options -database path/to/rosetta_database
+    $> $ROSETTA3/bin/loopmodel.default.linuxgccrelease @rosetta_inputs/options 
 
 An options file has been provided (rosetta_inputs/options), annotated with a 
 description of what each flag is doing.
