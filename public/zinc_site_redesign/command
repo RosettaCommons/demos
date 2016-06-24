@@ -15,7 +15,7 @@ python %(rosetta_tools)s/zinc_site_redesign/cleanPDBfile.py -f 1A4L.pdb >out1.lo
 test "${PIPESTATUS[0]}" != '0' && exit 1 || true  # Check if the first executable in pipe line return error and exit with error code if so
 python %(rosetta_tools)s/zinc_site_redesign/cleanPDBfile.py -f 1A4L.pdb -c B >out2.log
 test "${PIPESTATUS[0]}" != '0' && exit 1 || true  # Check if the first executable in pipe line return error and exit with error code if so
-python %(rosetta_tools)s/zinc_site_redesign/cleanPDBfile.py -f PDBFILE -m METAL -n NR >out3.log
+python %(rosetta_tools)s/zinc_site_redesign/cleanPDBfile.py -f 1A4L.pdb -m METAL -n NR >out3.log
 test "${PIPESTATUS[0]}" != '0' && exit 1 || true  # Check if the first executable in pipe line return error and exit with error code if so
 cd ..
 
