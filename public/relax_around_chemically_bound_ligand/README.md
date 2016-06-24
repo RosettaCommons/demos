@@ -163,7 +163,7 @@ $> cp rosetta_inputs/FMN_modded.params .
 A complete command line for the protocol would be as follows:
 
 ```
-$> $ROSETTA3/bin/relax.default.linuxgccrelease -s 2V0W.pdb -in:file:fullatom -extra_res_fa FMN_modded.params -extra_res_fa sidechain_conjugation/CYX.params -overwrite -cst_fa_file chemical_bond.cst -score:weights talaris2014_cst.wts -mute basic core.init core.scoring
+$> $ROSETTA3/bin/relax.default.linuxgccrelease -s 2V0W.pdb -in:file:fullatom -extra_res_fa rosetta_inputs/FMN_modded.params -extra_res_fa sidechain_conjugation/CYX.params -overwrite -cst_fa_file chemical_bond.cst -score:weights talaris2014_cst.wts -mute basic core.init core.scoring
 ```
 
 Truncated output from the command:
