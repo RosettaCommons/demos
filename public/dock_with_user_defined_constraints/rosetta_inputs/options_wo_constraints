@@ -27,4 +27,4 @@
 # Output Options:
 -out:file:fullatom                                     # Boolean flag to indicate full atom 
 -out:file:o demo_output                                # Name of the resulting docked complex
-
+-out:suffix _options_wo_constraints
