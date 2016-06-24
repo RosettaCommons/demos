@@ -30,7 +30,7 @@ Full input files for the tutorials are located in the `demos/tutorials/` directo
 * [[Controlling Input and Output|input_and_output]]
 * [[Core Rosetta Concepts|Core_Concepts]]
 * [[Working with Non-protein Residues|prepare_ligand_tutorial]] 
-* [[Scoring|scoring]]: Calculating Energy of a Structure
+* [[Scoring|scoring]]: Calculating the Energy of a Structure
 * [[Full-Atom vs. Centroid Representations|fullatom_centroid]]
 * [[The Packer|Optimizing_Sidechains_The_Packer]]: Optimizing Sidechains
 * [[Minimization]]: Finding Deeper Energy Wells
