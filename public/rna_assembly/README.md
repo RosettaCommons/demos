@@ -30,7 +30,7 @@ $> source $ROSETTA_TOOLS/rna_tools/INSTALL
 Everything needed to run the job is created by the command:
 
 ```
-    $> ./scripts/setup_rna_assembly_jobs.py  add.fasta add_secstruct.txt 1y26_RNA.pdb add_mutate_map_threetertiarycontacts.cst executable_extension=.default.linuxgccrelease
+    $> ./scripts/setup_rna_assembly_jobs.py  add.fasta add_secstruct.txt 1y26_RNA.pdb add_mutate_map_threetertiarycontacts.cst exe_extension=".default.linuxgccrelease"
 ```
 
 The first two arguments are required -- the sequence_file and the secondary structure file [either in dot/bracket notation, or specifying Watson/Crick base pairs as pairs of numbers]. 
