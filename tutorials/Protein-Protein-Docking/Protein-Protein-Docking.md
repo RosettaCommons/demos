@@ -81,7 +81,7 @@ This will move the chains only by a few degrees and Angstroms. An example case w
 2. **Symmetric docking**  
 Homomeric protein complexes are often symmetric. Rosetta provides the opportunity to use symmetry information during docking (and many other applications). Find the symmetry documentation and demos for mor information.
 
-> **NOTE:** Take a closer look at the [docking documention](https://www.rosettacommons.org/docs/latest/application_documentation/docking/docking-protocol). There is a lot more information to be found, on how to manipulate the behaviour of this protocol.
+> **NOTE: Take a closer look at the [docking documention](https://www.rosettacommons.org/docs/latest/application_documentation/docking/docking-protocol). There is a lot more information to be found, on how to manipulate the behaviour of this protocol.**
 
 ##3.Analysis
 You can repeat the run with e.g. *-nstruct 20000* and outputting silent files. Then you could extract the best model and create a score vs. rmsd plot.

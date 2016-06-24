@@ -19,11 +19,11 @@ Various loop modeling protocols can be used in Rosetta for various purposes. By 
 * How to remove peptide segments from a protein (and still get a closed conformation)
 * How to combine loop modeling with other protocols
 
->This tutorial will not cover the algorithmic details of the loop modeling methods. You will be directed to the documentation explaining the algorithms.
+>**This tutorial will not cover the algorithmic details of the loop modeling methods. You will be directed to the documentation explaining the algorithms.**
 
 Loop Modeling Methods
 ---------------------
->Loop Modeling in not restricted to segments with a blank DSSP secondary structure assignment. It is more generally applicable to any fragment joining larger segments.
+>**Loop Modeling in not restricted to segments with a blank DSSP secondary structure assignment. It is more generally applicable to any fragment joining larger segments.**
 
 There are several loop modeling methods present in Rosetta and more are being actively developed. The goal of all loop modeling methods is to sample conformational space of the peptide segment in such a manner that the endpoints of the peptide termini are connected. Here, we will present examples from the following protocols:
 
@@ -81,7 +81,7 @@ The file will contain a file of all residues in the H chain with the correspondi
 
 Now, we add the missing three residues (KPG) in the manner shown below, assigning them residue number 0, identity X and the preferred secondary structure (H: Helix, L: Loops, E: Extended). Next, we ask it to pick the amino acid (PIKAA) K to fill in the first spot, and so on. 
 
->You must also specify the preferred secondary structure of the flanking residues and the identity of the residue to replace them with (i.e. themselves). This is crucial to provide backbone flexibility in these residues to close the loop.
+>**You must also specify the preferred secondary structure of the flanking residues and the identity of the residue to replace them with (i.e. themselves). This is crucial to provide backbone flexibility in these residues to close the loop.**
 
 **Make sure that there is no empty line at the end of the bluprint file as it often causes `remodel` to crash with an uninformative error.**
 
@@ -97,7 +97,7 @@ Now, we add the missing three residues (KPG) in the manner shown below, assignin
 ...
 ```
 
->You can build multiple loops in the same simulation by altering the _blueprint file_ to indicate where these loops are.
+>**You can build multiple loops in the same simulation by altering the _blueprint file_ to indicate where these loops are.**
 
 Now with this modified blueprint file, run:
 
@@ -190,6 +190,6 @@ Using the KIC algorithm through the `loopmodel` and `remodel` applications limit
 
 As this protocol is typically used for advanced use cases, it often requires a combination with other Rosetta protocols. We will not cover examples of using Generalized KIC in this tutorial. A detailed list of usage cases and examples are provided in the documentation linked above. 
 
->Generalized KIC is not available as an executable; it needs to be used through RosettaScripts.
+>**Generalized KIC is not available as an executable; it needs to be used through RosettaScripts.**
 
 A tutorial on RosettaScripts can here found [here](rosetta_scripting) and detailed documentation can be found [here](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/RosettaScripts) which lists all the protocols and filters that can be used.

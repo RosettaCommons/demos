@@ -25,9 +25,9 @@ Here, a fasta file is provided for you.
         input_files/aa2LZMA03_05.200_v1_3 (3mer fragments)
         input_files/aa2LZMA09_05.200_v1_3 (9mer fragments)
         
-> There are multiple ways to obtain those fragment files. You can generate them on your local machine. For that to work you need additional software installed. How to do that is explained in a separate [tutorial for fragment picking](tutorial for fragment picking).  
-> Alternatively, you can submit your fasta file to the Robetta server:  
-> [http://robetta.bakerlab.org/](http://robetta.bakerlab.org)
+> **There are multiple ways to obtain those fragment files. You can generate them on your local machine. For that to work you need additional software installed. How to do that is explained in a separate [tutorial for fragment picking](tutorial for fragment picking).**
+> **Alternatively, you can submit your fasta file to the Robetta server:**  
+> **[http://robetta.bakerlab.org/](http://robetta.bakerlab.org)**
 
 (3.) Copy the reference structure (if there is one) into your input file directory. Here, the native structure file is provided, so you can compare the generated models to the known native structure.
          
@@ -43,14 +43,14 @@ Here, a fasta file is provided for you.
     $ nohup ../../../main/source/bin/ AbinitioRelax.default.linuxclangrelease @input_files/options > log &
      
         
->NOTE: This will take 10-20 minutes per structure.
+> **NOTE: This will take 10-20 minutes per structure.**
 
 #### Expected output:
 - S_00000001.pdb (the generated model)
 - score.sc (shows the total score and individual terms)
 
 > * **For an actual production run, 50,000 to 100,000 models need to be generated.**
-> * **You pobably want to use the** [silent file options](demos/tutorials/Tips.md)  
+> * **You probably want to use the** [silent file options](demos/tutorials/Tips.md)  
 
 ##3. Analyze your results
 Details of how to analyze data and how to select which of the 50,000 models would be your prediction are explained in the [Analysis](demos/tutorials/analysis/Analysis.md) tutorial.
@@ -75,12 +75,14 @@ To see how confident you can be about the correctness of a prediction, you can p
 
  ![folding_funnels.png](folding_funnels.png)  
 The left plot shows that the lowest energy models also have the lowest rmsd - the simulation converged. On the right hand side, however, there is no convergence. Many very different models have low energies. A prediction would be highly questionable.  
-> The plot you will get, should converge towards an rmsd of approx. 5 Angstrom. You can see what a larger run will look like by plotting score_rmsd.dat provided in example_outputs directpry which is generated using the same steps described above..
+
+> **The plot you will get, should converge towards an rmsd of approx. 5 Angstrom. You can see what a larger run will look like by plotting score_rmsd.dat provided in example_outputs directpry which is generated using the same steps described above..**
 
 ####3.2. Extract the best (by score) of the generated models.
+
 5 Angstrom does not quite sound like Rosetta really solved the problem. The only way to find out is by looking at the best structure(s)
 
-> More instructions and helpful scripts are part of the Analysis tutorial ([../analysis](demos/tutorials/analysis/)).  
+> **More instructions and helpful scripts are part of the Analysis tutorial ([../analysis](demos/tutorials/analysis/)).**
 
  * In the example_outputs directory, you will find a binary silent file from a full AbinitioRelax run (AbRelax.out) and score file (score.sc).  
  Run:

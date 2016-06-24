@@ -132,7 +132,7 @@ core.pack.pack_missing_sidechains: packing residue number 2 because of missing a
 ...
 ```
 
->Since there is no information about the conformation of the sidechains in the centroid representation, different runs produce slightly different sidechain conformations.
+>**Since there is no information about the conformation of the sidechains in the centroid representation, different runs produce slightly different sidechain conformations.**
 
 ###Full atom input when protocol expects centroid
 
@@ -174,7 +174,7 @@ Converting from one representation to the other
 
 There is not a dedicated executable to switch one representation to the other. Instead, the conversion is normally a function of Rosetta's structure input mechanism. In this section, we will exploit the automatic residue building functionality of the scoring protocol to convert from centroid to full atom. To convert full atom to centroid, we will write a short XML script using [RosettaScripts](https://www.rosettacommons.org/demos/latest/tutorials/rosetta_scripting/README).
 
->Converting from full atom to centroid and back will not give you back the same structure, as sidechain building in Rosetta is not deterministic. However, centroid->fullatom->centroid should return the original structure.
+>**Converting from full atom to centroid and back will not give you back the same structure, as sidechain building in Rosetta is not deterministic. However, centroid->fullatom->centroid should return the original structure.**
 
 There are at least two ways to convert the representation. One is shown above: by using scoring application. To obtain a pdb file, you need to add the output option `-out:output`
 
@@ -207,7 +207,7 @@ The Rosetta Scripts application is then invoked like:
  $> $ROSETTA3/bin/rosetta_scripts.linuxgccrelease @flag_from_cen_to_fa
 ```
 
->NOTE: The file in `output_files/` has the word *centroid* in it because the input file did, not because it is in centroid mode!
+>**NOTE: The file in `output_files/` has the word *centroid* in it because the input file did, not because it is in centroid mode!**
 
 Compare this to the PDB `<path_to_Rosetta_directory>/demos/tutorials/full_atom_vs_centroid/output_files/expected_output/1qys_centroid_0001.pdb`. You will notice that the files have different sidechain orientations, but the same backbone atom positions.
 

@@ -111,7 +111,7 @@ This can take multiple tags (S\_00000170\_1 S\_00000170\_2 S\_00000168\_1)
  
  You should now have the pdb extracted. The *-in:file:tags* option works here, too.
  
-> You can get the best energy models by sorting the score file and  then extracting them using their tags.
+> **You can get the best energy models by sorting the score file and  then extracting them using their tags.**
 
 ### Clustering
 
