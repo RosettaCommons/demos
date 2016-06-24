@@ -82,15 +82,20 @@ If you want to test how things work, you can test a shorter version of the codes
 
 go to the short run files:
 ```
-$> cd short_run_files
+$ cd short_run_files
 ```
 Then obtain the PDBs running:
 ```
-$> ../scripts/get_pdbs.bash small_list
+$ ../scripts/get_pdbs.bash small_list
 ```
-Next step is to run the calculator using this command:
+Alternatively, you can copy this file to your directory:
+```
+$> cp short_run_files/small_list_pruned .
+```
+
+Next step is to run the calculator using this command:(`$ROSETTA3`=path-to-Rosetta/main/source)
 
 ```
-$> <path-to-Rosetta>/main/source/bin/UnfoldedStateEnergyCalculator.default.linuxgccrelease -ignore_unrecognized_res -ex1 -ex2 -extrachi_cutoff 0 -l small_list_pruned -residue_name NVL -mute all -unmute devel.UnfoldedStateEnergyCalculator -unmute protocols.jd2.PDBJobInputer -no_optH true -detect_disulf false >& ufsec_log_NVL_short &
+$> $ROSETTA3/bin/UnfoldedStateEnergyCalculator.default.linuxgccrelease -ignore_unrecognized_res -ex1 -ex2 -extrachi_cutoff 0 -l small_list_pruned -residue_name NVL -mute all -unmute devel.UnfoldedStateEnergyCalculator -unmute protocols.jd2.PDBJobInputer -no_optH true -detect_disulf false >& ufsec_log_NVL_short &
 ```
 The expected outputs are stored in the output_short directory inside the short_run_files.

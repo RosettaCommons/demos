@@ -25,15 +25,15 @@ The Topology Broker application in Rosetta can be used to build loops and flexib
 ### Flags 
 ```
 -run:protocol broker  #initiate call to broker
--broker:setup ./input_files/setup_broker.tpb #defines constraints on folding protocol
--frag3 ./input_files/aa2Z73A03_05.200_v1_3 #fragment files for folding of protein
--frag9 ./input_files/aa2Z73A09_05.200_v1_3 #fragment files for folding of protein
+-broker:setup input_files/setup_broker.tpb #defines constraints on folding protocol
+-frag3 input_files/aa2Z73A03_05.200_v1_3 #fragment files for folding of protein
+-frag9 /input_files/aa2Z73A09_05.200_v1_3 #fragment files for folding of protein
 #Patches to the scoring function ensure that membrane potentials are used in the folding protocol
 #make sure to have these either in the local directory or your database directory under scoring/weights
--stage2_patch ./input_files/score_membrane_s2.wts_patch
--stage3a_patch ./input_files/score_membrane_s3a.wts_patch
--stage3b_patch ./input_files/score_membrane_s3b.wts_patch
--stage4_patch ./input_files/score_membrane_s4.wts_patch
+-stage2_patch input_files/score_membrane_s2.wts_patch
+-stage3a_patch input_files/score_membrane_s3a.wts_patch
+-stage3b_patch input_files/score_membrane_s3b.wts_patch
+-stage4_patch input_files/score_membrane_s4.wts_patch
 #allows setup of membrane options
 -abinitio
 	-membrane
@@ -51,9 +51,9 @@ The Topology Broker application in Rosetta can be used to build loops and flexib
 #input files these options should actually be supplied in the command line
 -in
 	-file
-		-fasta ./input_files/2Z73A.fasta
-		-spanfile ./input_files/2Z73A.span #generate from Octopus prediction (http://octopus.cbr.su.se/) using /TopologyBroker_GPCR/scripts/octopus2span.pl
-		-lipofile ./input_files/2Z73A.lips4 #generate using /TopologyBroker_GPCR/scripts/run_lips.pl
+		-fasta input_files/2Z73A.fasta
+		-spanfile input_files/2Z73A.span #generate from Octopus prediction (http://octopus.cbr.su.se/) using /TopologyBroker_GPCR/scripts/octopus2span.pl
+		-lipofile input_files/2Z73A.lips4 #generate using /TopologyBroker_GPCR/scripts/run_lips.pl
 #-out
 #	-file
 		#output options the results.silent_binary_out should be supplied on command line
@@ -63,9 +63,11 @@ The Topology Broker application in Rosetta can be used to build loops and flexib
 #-nstruct 1
 ```
 
-### Example Rosetta Command Line (`$ROSETTA3`= path-to-Rosetta/main/source)
+### Example Rosetta Command Line 
+
+(`$ROSETTA3`= path-to-Rosetta/main/source)
 ```
-$> $ROSETTA3/bin/r_broker.default.linuxgccrelease -out:file:residue_type_set centroid -out:file:silent rbroker_run1.out -nstruct 1 @flags.txt
+$> $ROSETTA3/bin/r_broker.default.linuxgccrelease -out:file:residue_type_set centroid -out:file:silent rbroker_run1.out -nstruct 1 @input_files/flags.txt
 ```
 
 
@@ -90,6 +92,6 @@ run_lips.pl 2Z73A.fasta 2Z73A.span /sb/meiler/Linux2/x86/blast/blast-2.2.18/bin/
 
 Topology Broker only runs in centroid mode as of now. To extract pdb from *.out, use:
 ```
-$> <path-to-Rosetta>/main/source/bin/extract_pdbs.linuxgccrelease -in:file:silent output_files/rbroker_run1.out -in:file:residue_type_set centroid -out:file:residue_type_set centroid -out:output
+$> $ROSETTA3/bin/extract_pdbs.default.linuxgccrelease -in:file:silent output_files/rbroker_run1.out -in:file:residue_type_set centroid -out:file:residue_type_set centroid -out:output
 ```
 One example output (sample_output.pdb) is also provided in the output_files folder. Please note that your file may not exactly look the same. That is the reason that in real world applications we generate many structures and find the best.

@@ -10,7 +10,7 @@ To run the demo simple type:
 (`$ROSETTA3`= path-to-Rosetta/main/source)
 
 ```
-$> $ROSETTA3/bin/linuxgccrelease @flags
+$> $ROSETTA3/bin/rosetta_Scripts.default.linuxgccrelease @flags
 ```
 
 Blueprint format:

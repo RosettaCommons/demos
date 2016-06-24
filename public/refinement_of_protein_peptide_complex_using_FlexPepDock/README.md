@@ -29,7 +29,7 @@ The output will be a prepacked structure, 1AWR.ex.ppk.pdb located in the input d
 Run the refine using the following commands:
 
 ```
-$> $ROSETTA3/bin/FlexPepDocking.default.linuxgccrelease $ROSETTA_DB @refine_flags >output/refine.log
+$> $ROSETTA3/bin/FlexPepDocking.default.linuxgccrelease  @refine_flags >refine.log
 echo "FlexPepDock refinement done!"
 ```
 
