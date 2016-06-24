@@ -43,7 +43,7 @@ Navigating to the Demos
 -----------------------
 The demos are available at `<path_to_Rosetta_directory>/demos/tutorials/loop_modeling`. All demo commands listed in this tutorial should be executed when in this directory. All the demos here use the `linuxgccrelease` binary. You may be required to change it to whatever is appropriate given your operating system and compiler.
 
-Closing Breaks in Protein Chains
+<a name="chainbreak_close"></a>Closing Breaks in Protein Chains
 --------------------------------
 Sometimes you have chain breaks in your protein, perhaps when threading from a homolog. In this case, there are no missing residues, just that the backbone itself is not closed. An example input PDB is provided at `<path_to_Rosetta_directory>/demos/tutorials/loop_modeling/input_files/3gbn_Ab.pdb` where the connection between residue numbers 127 and 128 is severed. To fix this, we will use the kinematic closure protocol (KIC) explained [here](https://www.rosettacommons.org/docs/latest/application_documentation/structure_prediction/loop_modeling/loopmodel-kinematic#purpose). First, we need to write a short _loop file_, detailing which residues as to be modeled as loops and where the cutpoint is.
 
@@ -60,7 +60,7 @@ This should take about 2 minutes at the end of which you will produce one PDB an
 
 A list of further options and documentation can be found [here](https://www.rosettacommons.org/docs/latest/application_documentation/structure_prediction/loop_modeling/loopmodel-kinematic).
 
-Modeling Missing Loops
+<a name="missing_loop"></a>Modeling Missing Loops
 ----------------------
 Modeling missing loops is a difficult problem. We will use cyclic coordinate descent (CCD), which is explained [here](https://www.rosettacommons.org/docs/latest/application_documentation/structure_prediction/loop_modeling/loopmodel-ccd#algorithm). While we can use the `loopmodel` executable to do this, it requires us to place the missing atoms manually in the input PDB file and provide a fragment library. We will instead use the [`remodel`](https://www.rosettacommons.org/docs/latest/application_documentation/design/rosettaremodel) executable to model the missing loop.
 
@@ -84,7 +84,7 @@ Now, we add the missing three residues (KPG) in this manner shown below, assigni
 
 >You must also specify the preferred secondary structure of the flanking residues and the identity of the residue to replace them with (i.e. themselves). This is crucial to provide backbone flexibility in these residues to close the loop.
 
-Mak sure that there is no empty line at the end of the bluprint file as the often causes `remodel` to crash with an uninformative error.
+**Make sure that there is no empty line at the end of the bluprint file as it often causes `remodel` to crash with an uninformative error.**
 
 ```
 ...
@@ -108,9 +108,10 @@ You should see something similar appearing in the log file:
 core.fragment.picking_old.vall.vall_io: Reading Vall library from <path_to_Rosetta_directory>/main/database//sampling/filtered.vall.dat.2006-05-05 ... 
 ```
 
-This indicates that it is reading in a database of pre-generated fragments from the database to bound the loops. The simulation should take ~1 minute to run and produce a score file and a PDB with a loop of the missing residues in the directory `output_files`. (It will also produce a file called `1.pdb` in the current working directory with the same structure as the output structure, but with different meta information.) 
+This indicates that it is reading in a database of pre-generated fragments from the database to bound the loops. The simulation should take ~1 minute to run and produce a score file and a PDB with a loop of the missing residues in the directory `output_files`. (It will also produce a file called `1.pdb` in the current working directory with the same structure as the output structure, but with different meta information.) Your output PDB will have chains renumbered _A, B_ etc.
 
 This loop will likely not match the loop of the native `3gbn_Ab.pdb` in just one simulation. You need to run this multiple times by changing the `nstruc` flag to `500` or more.
+
 
 `remodel` can a multitude of applications, including design, which you can read about [here](https://www.rosettacommons.org/docs/latest/application_documentation/design/rosettaremodel#algorithm_basic-remodelling-tasks_extension).
 
@@ -159,7 +160,7 @@ and simply delete the lines for residues 101-108 to get:
 ...
 
 ```
-The residues flanking the deletions on both sides (residue numbers 99,100,109,110) must be made mobile so that the backbone can rearrange and close the gap. For your case, you may need to change the Now run
+The residues flanking the deletions on both sides (residue numbers 99,100,109,110) must be made mobile so that the backbone can rearrange and close the gap. For your case, you may need to change the number of flanking residues whose backbone is mobile. Now run
 
     $> <path_to_Rosetta_directory>/main/source/bin/remodel.linuxgccrelease @flag_deletion
 
@@ -170,7 +171,17 @@ You need to run this multiple times by changing the `nstruc` flag to `500` or mo
 
 Refining Peptide Segments
 -------------------------
-Say you want to find a low-energy conformation of a given 
+Say you are not happy with the conformation of a peptide segment in your protein and you want to find a low-energy conformation for that protein. Such a case may arise if a loop has been added incorrectly. To refine the loop (residues 13-15) we inserted in the [Modeling Missing Loops](#missing_loop) section, we will use KIC with flags similar to those in [Closing Breaks in Protein Chains](#chainbreak_close). We will use the following loops file:
+
+
+    LOOP 11 17 0 0 1
+
+Now run:
+
+    $> <path_to_Rosetta_directory>/main/source/bin/loopmodel.linuxgccrelease @flag_refine_loop
+    
+This outputs an output PDB and a score file. The output PDB should be closer to the native `3gbn_Ab.pdb` as demostrated in the PDB `output_files/expected_results/3gbn_refine_loop_0001.pdb` in the `` directory.
+
 
 Combining Loop Modeling with other Protocols
 --------------------------------------------
