@@ -1,4 +1,4 @@
-/Users/vyarovyarovoy/mini/bin/membrane_abinitio2.macosgccrelease \
+$ROSETTA3/bin/abinitio2.macosgccrelease \
 -abinitio:membrane \
 -in:file:native ../rosetta_inputs/BRD4.pdb \
 -in:file:frag3 ../rosetta_inputs/aaBRD4_03_05.200_v1_3 \
@@ -14,4 +14,3 @@
 -run:no_prof_info_in_silentout \
 -mute core.io.database \
 -mute core.scoring.MembranePotential \
--database /Users/vyarovyarovoy/minirosetta_database
