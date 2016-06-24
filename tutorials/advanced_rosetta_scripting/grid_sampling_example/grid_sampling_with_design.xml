@@ -11,7 +11,7 @@
 		<OperateOnResidueSubset name="only_design_core" selector="select_not_core" >
 			<PreventRepackingRLT />
 		</OperateOnResidueSubset>
-		<ExtraRotamersGeneric name="extrachi" ex1="1" ex2="1" ex1_sample_level="1" ex2_sample_level="1" extrachi_cutoff="2" />
+		<ExtraRotamersGeneric name="extrachi" ex1="1" ex2="1" ex1_sample_level="1" ex2_sample_level="1" extrachi_cutoff="5" />
 	</TASKOPERATIONS>
 	<FILTERS>
 		<ScoreType name="filter_clashes" scorefxn="tala" score_type="fa_rep" threshold="15.0" />

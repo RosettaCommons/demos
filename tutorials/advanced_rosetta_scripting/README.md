@@ -463,15 +463,15 @@ We'll pass these to a couple of task operations -- one to load a resfile for the
 		<OperateOnResidueSubset name="only_design_core" selector="select_not_core" >
 			<PreventRepackingRLT />
 		</OperateOnResidueSubset>
-		<ExtraRotamersGeneric name="extrachi" ex1="1" ex2="1" ex1_sample_level="1" ex2_sample_level="1" extrachi_cutoff="2" />
+		<ExtraRotamersGeneric name="extrachi" ex1="1" ex2="1" ex1_sample_level="1" ex2_sample_level="1" extrachi_cutoff="5" />
 	</TASKOPERATIONS>
 ...
 ```
 
-The resfile specifies design only with hydrophobic amino acid residues:
+The resfile specifies design only with hydrophobic amino acid residues.  (We omit methionine for this example to reduce the number of rotamers that we're considering):
 
 ```
-PIKAA FMILYVW
+PIKAA FILYVW
 ```
 
 Now we set up a [FastDesign mover](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/Movers/movers_pages/FastDesignMover), passing all of the above task operations to control packing steps, and a move map that disables backbone and rigid-body motions (but allows side-chains to minimize) to control minimizations steps:
@@ -494,7 +494,7 @@ Now we set up a [FastDesign mover](https://www.rosettacommons.org/docs/latest/sc
 ...
 ```
 
-And that's it!  Let's try running this.  The complete script is provided as grid\_sampling\_example/grid\_sampling\_with\_design.xml.  As in the [introductory RosettaScripting tutorial](../rosetta_scripting/README.md), we use the "-jd2:failed_job_exception false" option to prevent Rosetta from exiting with error status at the end due to the jobs that we expect will fail filters.
+And that's it!  Let's try running this.  The complete script is provided as grid\_sampling\_example/grid\_sampling\_with\_design.xml.  This time, the jobs that carry out design will take a bit longer -- perhaps two minutes or so to run through all jobs.  (It's for this reason that we added the filters!)  As in the [introductory RosettaScripting tutorial](../rosetta_scripting/README.md), we use the "-jd2:failed_job_exception false" option to prevent Rosetta from exiting with error status at the end due to the jobs that we expect will fail filters.
 
 ```bash
 $> cp grid_sampling_example/1ubq.pdb grid_sampling_example/grid_sampling_with_design.xml grid_sampling_example/core_resfile.txt .
