@@ -1,8 +1,8 @@
 
--in:file:s input/1AFO_AB.pdb
+-in:file:s MP_Dock_prepacking/input/1AFO_AB.pdb
 
 #input spanfile
--mp:setup:spanfiles input/1AFO_AB.span	
+-mp:setup:spanfiles MP_Dock_prepacking/input/1AFO_AB.span	
 
 #name of the output scorefile	
 -out:file:scorefile score_ppk_1AFO.sc
