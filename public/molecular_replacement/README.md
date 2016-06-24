@@ -68,12 +68,21 @@ _starting at 0_.  The sixth line is '--'.
 The results for this demo appear in the folder 'templates'.  For each 
 alignement in the starting .hhr file, 3 files are produced.
 
+You can run the file either by running the provided .sh file or:
+
+```
+$> $ROSETTA3/src/apps/public/electron_density/prepare_template_for_MR.pl inputs/1crb.hhr
+```
+where `$ROSETTA3`=path-to-Rosetta/main/source
+
 Steps 2 & 3: run_phaser.sh and make_maps.sh
 -------------------------------------------
 
 This command line shows the use of Phaser to generate initial molecular 
 replacement solutions.  For each template we run phaser to find potential 
-placements of each template in the unit cell.
+placements of each template in the unit cell. 
+
+*NOTES* these steps require havin [PHENIX](https://www.phenix-online.org/) installed.
 
 The example scripts here only generate a single model from a single template, 
 but for a real-world case, one will often want to use many different templates 
@@ -153,6 +162,13 @@ produce all the necessary models.  To manage the output, either each process
 can be run from a separate directory, or '-out:prefix <prefix>' can be used to 
 keep jobs from overwriting each other's structures.  Rosetta workloads may also 
 be split using MPI; see the rosetta documentation for more details.
+
+For a short test of these, you can run these commands for steps 4 and 5, respectively, using provided inputs:
+```
+$> $ROSETTA/bin/mr_protocols.default.linuxclangrelease -in::file::fasta inputs/1crb.fasta -in::file::alignment templates/2qo4.ali -in::file::template_pdb phaser/2qo4_mr.PHASER.1.pdb -loops::frag_files inputs/xx1crb_09_05.200_v1_3.gz inputs/xx1crb_03_05.200_v1_3.gz none -edensity:mapreso 3.0 -edensity:grid_spacing 1.5 -edensity:mapfile phaser/2qo4_mr.PHASER.1_2mFo-DFc.ccp4 -MR::max_gaplength_to_model 8 -MR::fast -nstruct 1 -ignore_unrecognized_res -overwrite
+
+$> $ROSETTA/bin/mr_protocols.default.linuxclangrelease -in::file::fasta inputs/1crb.fasta -in::file::alignment templates/2qo4.ali -in::file::template_pdb phaser/2qo4_mr.PHASER.1.pdb -edensity:mapreso 3.0 -edensity:grid_spacing 1.5 -edensity:mapfile phaser/2qo4_mr.PHASER.1_2mFo-DFc.ccp4 -MR::max_gaplength_to_model 8 -MR::fast -nstruct 1 -ignore_unrecognized_res -overwrite
+```
 
 Alternatively, there is a compact output format, 'silent files' that can be used to dump structures to.  Simply add the flags '-out:file:silent <silent_filename> -out:file:silent_struct_type binary' and all structures from one process will be written to this compact file.  Then the rosetta program 'extract_pdb' can be used to extract:
 
