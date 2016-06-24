@@ -32,7 +32,7 @@ If not explicitly specified, the following parameter values are used for FastRel
 Command line arguments to run this script: (where `$ROSETTA3`=path-to-Rosetta/main/source)
 
 ```
-	$> $ROSETTA3/bin//rosetta_scripts.default.linuxgccrelease -s starting_files/3E0C.pdb -parser:protocol demo.xml -ignore_unrecognized_res
+	$> $ROSETTA3/bin/rosetta_scripts.default.linuxgccrelease -s starting_files/3E0C.pdb -parser:protocol demo.xml -ignore_unrecognized_res
 ```
 
 The flag ignore_unrecognized_res asks Rosetta to ignore any residue types it doesn't recognize (HOH in this example).
