@@ -163,7 +163,7 @@ Input Files
         -membrane:normal_delta_angle (default= 10 degrees) - magnitude of angle deviation during membrane normal search (degrees).
         -membrane:normal_max_angle (default= 40 degrees) - magnitude of maximum angle deviation during membrane normal search (degrees).
 
-    To run the example script, type
+    To run the example script, set your ROSETTA3 environment variable to your <path/to/Rosetta/main/source> directory and type,
     ```bash
     $> $ROSETTA3/bin/membrane_abinitio2.default.linuxgccrelease @scripts/flags
     ```
@@ -188,6 +188,11 @@ Input Files
         -database /Users/vyarovyarovoy/minirosetta_database \
         -out:output \
         -nstruct 1
+
+    To run this example, type
+    ```bash
+    $> $ROSETTA3/bin/score_jd2.macosclangrelease @scripts/score_flags
+    ```
 
     Membrane ab initio application specific score outputs in the output score file are:
 

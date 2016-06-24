@@ -76,7 +76,7 @@
            < SecondaryStructure name=ss blueprint="./input2.bbskel" />
 
            ## Select structures according to energy
-           < ScoreType name=sc scorefxn=score12 score_type=total_score threshold=-170/>
+           < ScoreType name=sc scorefxn=talaris2014 score_type=total_score threshold=-170/>
 
            ## Select structures according to Packing; threshold should be more than 0.6 and less than 0.7.
            < PackStat name=pstat threshold=0.6 />

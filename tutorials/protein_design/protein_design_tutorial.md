@@ -241,15 +241,16 @@ You should notice that this file shows two homo-dimers. We will focus on the dim
             $> grep pose Step2_design/resfile_design*.pdb | sort -nk 23 | head | awk '{print(substr($1,1,length($1)-5))}' > best.list
 
 
+
         Next, we will use awk to automate generating fastas for each of our top models. In order to run this command, the PDB tools must be installed.  Go to $ROSETTA_TOOLS/protein_tools and follow the instructions to install the python module.
 
-            $> cat best.list | awk '{system( "$ROSETTA_TOOLS/protein_tools/scripts/get_fasta_from_pdb.py "$1" A "substr($1,1,length($1)-3)"fasta")}' 
+            > cat best.list | awk '{system( "$ROSETTA_TOOLS/protein_tools/scripts/get_fasta_from_pdb.py "$1" A "substr($1,1,length($1)-3)"fasta")}' 
 
         Now we can cat all of the fastas and use WebLogo to generate a figure to show our designed residues.
 
-            $> cat *.fasta > all_fasta.txt 
+            > cat *.fasta > all_fasta.txt 
 
-            $> cat all_fasta.txt
+           > cat all_fasta.txt
 
         (If you are running out of time, you can cd into ../Step4_analysis where the fastas of the top 10 models for each design experiment are included) 
         
@@ -297,6 +298,7 @@ View this by opening Step0_relax/symm_relax.xml:
 Then, run using the command-line:
 
     $> rosetta_scripts.default.linuxgccrelease @Step0_relax/flags
+
   
 
 1b. Analyze the output. There are a few ways of going about this. Some may look at just the best scoring models. Others calculate the RMSD of the relaxed models to the input structure and plot the Score vs. RMSD to find the best (lowest) scoring model that is most similar to the input structure.
@@ -343,5 +345,6 @@ Then open the file mpframework_design/mpf_design.xml
 To run, use the following command-line:
 
         $> rosetta_scripts.default.linuxgccrelease @mpframework_design/flags
+
 
 2b. The ./output/ directory will have 25 design structures. You can do a similar analysis as we did above on these to look at the sequence variability. 

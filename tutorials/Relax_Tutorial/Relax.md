@@ -9,7 +9,7 @@ KEYWORDS: STRUCTURE_PREDICTION GENERAL
 
 ##The Relax protocol
 
-Relax is the main protocol for relaxing a structure in Rosetta; that is, it samples conformations of a given structure close to it in 3D space to find the lowest-scoring variant, running both the [packer](Optimizing_Sidechains_The_Packer) and the [minimizer](minimization). This is usually done to enable an apples-to-apples comparison between disparate structures, including crystal structures and the output of Rosetta's sampling protocols, by first minimizing them in local space according to the same score function. It is therefore advisable to run relax on any structures you intend to compare to each other.
+Relax is the main protocol for relaxing a structure in Rosetta; that is, it samples conformations of a given structure close to it in 3D space to find the lowest-scoring variant, running both the [[packer|Optimizing_Sidechains_The_Packer]] and the [[minimizer|minimization]] alternately. This is usually done to enable an apples-to-apples comparison between disparate structures, including crystal structures and the output of Rosetta's sampling protocols, by first minimizing them in local space according to the same score function. It is therefore advisable to run relax on any structures you intend to compare to each other.
 
 ##Navigating to the Demos
 The demos are available at `<path_to_Rosetta_directory>/demos/tutorials/Relax_Tutorial`. All demo commands listed in this tutorial should be executed when in this directory. All the demos here use the `linuxclangrelease` binary. You may be required to change it to whatever is appropriate given your operating system and compiler.
@@ -67,7 +67,7 @@ To explore how a movemap influences the `relax` application, run
 
 	$>../../../main/source/bin/relax.default.linuxclangrelease -s 1ubq.pdb @general_relax_flags -out:suffix _lever_arm -in:file:movemap lever_arm_movemap
 
-and observe that everything C-terminal to the region allowed to move has also moved. This is endemic to [movemaps](minimization) using [internal coordinates](Core_Concepts), and is called the [lever-arm effect](Core_Concepts); while some protocols in Rosetta are written with this in mind, Relax allows lever-arm effects if not specifically prohibited from doing so within its MoveMap.
+and observe that everything C-terminal to the region allowed to move has also moved. This is endemic to [[movemaps|minimization]] using [[internal coordinates|Core_Concepts]], and is called the [[lever-arm effect|Core_Concepts]]; while some protocols in Rosetta are written with this in mind, Relax allows lever-arm effects if not specifically prohibited from doing so within its MoveMap.
 
 To demonstrate how the `-relax:chi_move`, `-relax:bb_move`, and `-relax:jump_move` flags affect the final structure, run
 
@@ -104,7 +104,7 @@ This option is particularly useful when using `-relax:constrain_relax_to_start_c
 
 ###Restricting the sequence it can sample
 
-By default, Relax will not change the input sequence. It can be allowed to do so in a controlled way via [resfiles](Optimizing_Sidechains_The_Packer) and the options
+By default, Relax will not change the input sequence. It can be allowed to do so in a controlled way via [[resfiles|Optimizing_Sidechains_The_Packer]] and the options
 
 	-relax:respect_resfile -packing:resfile *resfile*
 
@@ -115,6 +115,8 @@ To demonstrate this, run
 	$> ../../../main/source/bin/relax.default.linuxclangrelease -s 1ubq.pdb -out:suffix _relaxed_with_resfile -relax:respect_resfile -packing:resfile 1ubq.resfile @general_relax_flags
 
 and compare to 1ubq.pdb. Note that the two structures are different; these differences arise during the minimization step.
+
+Relax may also be allowed to change the sequence globally through the use of the -disable_design false option. 
 
 ## More information
 

@@ -50,10 +50,10 @@ Here, a fasta file is provided for you.
 - score.sc (shows the total score and individual terms)
 
 > * **For an actual production run, 50,000 to 100,000 models need to be generated.**
-> * **You probably want to use the** [silent file options](demos/tutorials/Tips.md)  
+> * **You probably want to use the** [[silent file options|demos/tutorials/Tips.md]]  
 
 ##3. Analyze your results
-Details of how to analyze data and how to select which of the 50,000 models would be your prediction are explained in the [Analysis](demos/tutorials/analysis/Analysis.md) tutorial.
+Details of how to analyze data and how to select which of the 50,000 models would be your prediction are explained in the [[Analysis|demos/tutorials/analysis/Analysis.md]] tutorial.
 
 ######Short walk through of initial steps
 
@@ -110,6 +110,6 @@ The left plot shows that the lowest energy models also have the lowest rmsd - th
 
 
 ####3.3. Clustering analysis  
-This sorts the structures by similarity. (See [Analysis](demos/tutorials/analysis/Analysis.md))
+This sorts the structures by similarity. (See [[Analysis|analysis]]
 
 

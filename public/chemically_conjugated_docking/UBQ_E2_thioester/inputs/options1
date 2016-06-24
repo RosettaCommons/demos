@@ -63,4 +63,4 @@
 -cst_fa_weight 50
 
 #activate only for the publication case
--publication true
+#-publication true

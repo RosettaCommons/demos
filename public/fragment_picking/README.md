@@ -28,6 +28,9 @@ should have a header with the string "VFORMAT"
 $> $ROSETTA3/bin/fragment_picker.linuxgccrelease @BestFragmentsProtocol/flags -in::file::vall $ROSETTA3_DB/sampling/small.vall.gz
 ```
 
+**IMPORTANT**
+The *small.vall.gz* used here for fragment picking is only used to speed up the demo. You have to change this to the vall database on your system!
+
   Output:  
   
   * `frags.200.3mers`: for use with `-in:file:frag3`
@@ -62,7 +65,6 @@ The various subdirectories of this demo serve as repository for examples:
 ./NullFragments  
 ./fragment_picking_for_flexible_loop_design
 ./fragment_picking_torsion_class_score
-./fragment_picking_with_psi_jufo_sam_L1_quota
 ./fragment_picking_with_quota
 ./fragment_picking_with_quota_and_restraints  
 ```
@@ -73,10 +75,12 @@ You can test them:
 $> $ROSETTA3/bin/fragment_picker.linuxgccrelease @NullFragments/flags -in::file::vall $ROSETTA3_DB/sampling/small.vall.gz
 $ $ROSETTA3/bin/fragment_picker.linuxgccrelease @fragment_picking_for_flexible_loop_design/flags -in::file::vall $ROSETTA3_DB/sampling/small.vall.gz
 $> $ROSETTA3/bin/fragment_picker.linuxgccrelease @fragment_picking_torsion_class_score/flags -in::file::vall $ROSETTA3_DB/sampling/small.vall.gz
-$> $ROSETTA3/bin/fragment_picker.linuxgccrelease @fragment_picking_with_psi_jufo_sam_L1_quota/flags -in::file::vall $ROSETTA3_DB/sampling/small.vall.gz
 $> $ROSETTA3/bin/fragment_picker.linuxgccrelease @fragment_picking_with_quota/flags -in::file::vall $ROSETTA3_DB/sampling/small.vall.gz
 $> $ROSETTA3/bin/fragment_picker.linuxgccrelease @fragment_picking_with_quota_and_restraints/flags -in::file::vall $ROSETTA3_DB/sampling/small.vall.gz
 ```` 
 
 The fragment files can be found in <whatever version you ran>/output_files. There are example outputs already. The newly generated ones will contains ".200". So, you can check whether it worked.
+
+**IMPORTANT**
+The *small.vall.gz* used here for fragment picking is only used to speed up the demo. You have to change this to the vall database on your system!
 

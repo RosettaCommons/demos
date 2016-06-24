@@ -11,12 +11,10 @@
 -in:file:fullatom 
 -out:nstruct 1 # number of structures you want to build.  Should build at least 1000, but 10,000 would be better
 -in:file:template_pdb ./starting_files/2astB_66-105_renumbered.pdb # path to template pdb
--database ./rosetta-3.3/rosetta_database/ # path to rosetta database
 -loops:extended # Force extended on loops, independent of loop input file
 -loops:build_initial # Precede loop-modeling with an initial round of just removing the missing densities and building simple loops
 -loops:remodel quick_ccd # closing loops by quick_ccd
 -loops:refine refine_ccd # small movements to remodel loop
--silent_decoytime # Add time since the last structure was written to score line
 -random_grow_loops_by 4 # randomly grow loops by up to this number of residues on either side.
 -select_best_loop_from 1 # Keep building loops until N and choose best (by score)
 -out:file:fullatom # output in fullatom mode
@@ -27,3 +25,4 @@
 -run:constant_seed # Use a constant seed (1111111 unless specified)
 -run:jran 1111111 # this is good for testing since you should always get the same result
 -overwrite # overwrite any already-existing results having the same name
+-database </path/to/your/Rosetta/main/database>
