@@ -75,8 +75,8 @@ Sequence tolerance flags:
 
 Example Rosetta command-line:
 
-    rosetta-3.2/rosetta_source/bin/backrub.linuxgccrelease -database rosetta-3.2/rosetta_database -s input_files/2I0L_A_C_V2006/2I0L_A_C_V2006.pdb -ex1 -ex2 -extrachi_cutoff 0 -mute core.io.pdb.file_data -backrub:ntrials 10000 -score:weights input_files/standard_NO_HB_ENV_DEP.wts -score:patch score12
-    rosetta-3.2/rosetta_source/bin/sequence_tolerance.linuxgccrelease -database rosetta-3.2/rosetta_database -s 2I0L_A_C_V2006_0001_low.pdb -ex1 -ex2 -extrachi_cutoff 0 -score:ref_offsets HIS 1.2 -seq_tol:fitness_master_weights 1 1 1 2 -ms:generations 5 -ms:pop_size 2000 -ms:pop_from_ss 1 -ms:checkpoint:prefix 2I0L_A_C_V2006_0001 -ms:checkpoint:interval 200 -ms:checkpoint:gz -score:weights input_files/standard_NO_HB_ENV_DEP.wts -out:prefix 2I0L_A_C_V2006_0001 -score:patch score12 -resfile input_files/2I0L_A_C_V2006/2I0L_A_C_V2006_seqtol.resfile
+   $> $ROSETTA3/bin/backrub.linuxgccrelease -s input_files/2I0L_A_C_V2006/2I0L_A_C_V2006.pdb -ex1 -ex2 -extrachi_cutoff 0 -mute core.io.pdb.file_data -backrub:ntrials 10 -score:weights input_files/standard_NO_HB_ENV_DEP.wts -score:patch score12
+   $> $ROSETTA3/bin/sequence_tolerance.linuxgccrelease -s 2I0L_A_C_V2006_0001_low.pdb -ex1 -ex2 -extrachi_cutoff 0 -score:ref_offsets HIS 1.2 -seq_tol:fitness_master_weights 1 1 1 2 -ms:generations 5 -ms:pop_size 2000 -ms:pop_from_ss 1 -ms:checkpoint:prefix 2I0L_A_C_V2006_0001 -ms:checkpoint:interval 200 -ms:checkpoint:gz -score:weights input_files/standard_NO_HB_ENV_DEP.wts -out:prefix 2I0L_A_C_V2006_0001 -score:patch score12 -resfile input_files/2I0L_A_C_V2006/2I0L_A_C_V2006_seqtol.resfile
 
 Using the seqtol_resfile.py python script
 -----------------------------------------
@@ -91,7 +91,7 @@ colon.
 
 Example seqtol_resfile.py command-line:
 
-    scripts/seqtol_resfile.py input_files/2I0L_A_C_V2006/2I0L_A_C_V2006.pdb "PIKAA ADEFGHIKLMNPQRSTVWY" B:2002 B:2003 B:2004 B:2005 B:2006
+ $> /scripts/seqtol_resfile.py input_files/2I0L_A_C_V2006/2I0L_A_C_V2006.pdb "PIKAA ADEFGHIKLMNPQRSTVWY" B:2002 B:2003 B:2004 B:2005 B:2006
 
 Using the backrub_seqtol.py python script
 -----------------------------------------
@@ -126,7 +126,7 @@ Optional input files:
 
 Example overall command-line:
 
-    scripts/backrub_seqtol.py input_files/2I0L_A_C_V2006/2I0L_A_C_V2006.pdb 1
+    $> scripts/backrub_seqtol.py input_files/2I0L_A_C_V2006/2I0L_A_C_V2006.pdb 1
 
 Post-processing with R:
 
@@ -141,6 +141,43 @@ Generating Smith & Kortemme PLoS One 2011 figures:
     $ R
     > rosetta_analysis_dir <- "rosetta-3.2/rosetta_source/analysis"
     > source("../scripts/figures.R")
+
+#Running the demo automatically
+
+## Making sequence_tolerance resfiles
+## GB1 Fold Stability Tolerance
+$> scripts/seqtol_resfile.py input_files/2QMT/2QMT.pdb "ALLAA" A:5 A:7 A:16 A:18 A:18 A:30 A:33
+## PDZ Domain Interface Tolerance
+$> scripts/seqtol_resfile.py input_files/2I0L_A_C_V2006/2I0L_A_C_V2006.pdb "PIKAA ADEFGHIKLMNPQRSTVWY" B:2002 B:2003 B:2004 B:2005 B:2006
+$> scripts/seqtol_resfile.py input_files/2IWP_B_A_V1927/2IWP_B_A_V1927.pdb "PIKAA ADEFGHIKLMNPQRSTVWY" B:1923 B:1924 B:1925 B:1926 B:1927
+$> scripts/seqtol_resfile.py input_files/2FNE_A_C_V2048/2FNE_A_C_V2048.pdb "PIKAA ADEFGHIKLMNPQRSTVWY" B:2044 B:2045 B:2046 B:2047 B:2048
+$> scripts/seqtol_resfile.py input_files/1N7T/1N7T_01.pdb "PIKAA ADEFGHIKLMNPQRSTVWY" B:303 B:304 B:305 B:306 B:307
+$> mv input_files/1N7T/1N7T_01_seqtol.resfile input_files/1N7T/1N7T_seqtol.resfile
+$> cp input_files/1N7T/1N7T_seqtol.resfile input_files/1N7T_V83K/1N7T_V83K_seqtol.resfile 
+## hGH/hGHR Interface Tolerance
+$> scripts/seqtol_resfile.py input_files/1A22_1/1A22_1.pdb "PIKAA ADEFGHIKLMNPQRSTVWY" A:14 A:28 A:47 A:61 A:171 A:179
+$> scripts/seqtol_resfile.py input_files/1A22_2/1A22_2.pdb "PIKAA ADEFGHIKLMNPQRSTVWY" A:18 A:42 A:62 A:65 A:164 A:175
+$> scripts/seqtol_resfile.py input_files/1A22_3/1A22_3.pdb "PIKAA ADEFGHIKLMNPQRSTVWY" A:21 A:29 A:45 A:60 A:67 A:178
+$> scripts/seqtol_resfile.py input_files/1A22_4/1A22_4.pdb "PIKAA ADEFGHIKLMNPQRSTVWY" A:22 A:43 A:66 A:167 A:176 A:183
+$> scripts/seqtol_resfile.py input_files/1A22_5/1A22_5.pdb "PIKAA ADEFGHIKLMNPQRSTVWY" A:26 A:44 A:48 A:64 A:168 A:174
+$> scripts/seqtol_resfile.py input_files/1A22_6/1A22_6.pdb "PIKAA ADEFGHIKLMNPQRSTVWY" A:25 A:41 A:46 A:63 A:172
+
+## Python command lines
+## GB1 Fold Stability Tolerance
+$> scripts/backrub_seqtol_2QMT.py input_files/2QMT/2QMT.pdb 1
+$> scripts/backrub_seqtol_2QMT.py input_files/2QMT/2QMT.pdb 2
+## ...
+## PDZ Domain Interface Tolerance
+$> scripts/backrub_seqtol.py input_files/2I0L_A_C_V2006/2I0L_A_C_V2006.pdb 1
+$> scripts/backrub_seqtol.py input_files/2I0L_A_C_V2006/2I0L_A_C_V2006.pdb 2
+## ...
+$> scripts/backrub_seqtol.py input_files/1N7T/1N7T_%02i.pdb 1 input_files/1N7T_V83K/1N7T_V83K
+$> scripts/backrub_seqtol.py input_files/1N7T/1N7T_%02i.pdb 2 input_files/1N7T_V83K/1N7T_V83K
+## ...
+## hGH/hGHR Interface Tolerance
+$> scripts/backrub_seqtol_1A22.py input_files/1A22_1/1A22_1.pdb 1
+$> scripts/backrub_seqtol_1A22.py input_files/1A22_1/1A22_1.pdb 2
+
 
 Versions
 --------
