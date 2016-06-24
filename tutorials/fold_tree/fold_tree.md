@@ -18,7 +18,7 @@ If you go to
 <path-to-Rosetta>/main/database/chemical/residue_type_sets/fa_standard/residue_types/l-caa
 ```
 
-you can find several [params](https://www.rosettacommons.org/docs/latest/rosetta_basics/file_types/Residue-Params-file) files for all 20 amino acids. Open one and look at it. The lines started with ICOOR_INTERNAL show the internal coordinates of the atoms in that residue (see [here](https://www.rosettacommons.org/docs/latest/rosetta_basics/file_types/Residue-Params-file) for details of what each column in ICOOR_INTERNAL line means.
+you can find several [params](https://www.rosettacommons.org/docs/latest/rosetta_basics/file_types/Residue-Params-file) files for all 20 amino acids. Open one and look at it. The lines started with ICOOR_INTERNAL show the internal coordinates of the atoms in that residue (see [here](https://www.rosettacommons.org/docs/latest/rosetta_basics/file_types/Residue-Params-file) for details of what each column in ICOOR_INTERNAL line means.)
 
 #### The Lever Arm Effect
 
@@ -50,7 +50,7 @@ Open the capsid.pdb file provided for you in the inputs directory. You can see t
 
 The cps_relax1.xml is a [[Rosetta script|scripting_with_rosettascripts]] provided to you that relaxes residues 1-20 of the structure using a [[MoveMap|minimization]].   
 
-```
+```xml
 ...
         <MoveMap name="part">
             <Span begin=1 end=20 bb=1 chi=1/>
