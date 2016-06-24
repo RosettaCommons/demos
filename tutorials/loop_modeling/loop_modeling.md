@@ -1,8 +1,7 @@
 Loop Modeling
 =============
 
-KEYWORDS: LOOPS COMPARATIVE_MODELING GENERAL   
-
+KEYWORDS: LOOPS HOMOLOGY_MODELING GENERAL   
 Tutorial by Shourya S. Roy Burman (ssrb@jhu.edu)    
 Created 23 June 2016
 
@@ -15,7 +14,8 @@ Various loop modeling protocols can be used in Rosetta for various purposes. By 
 * The variety of loop modeling methods in Rosetta
 * How to join a break in the protein chain (without missing residues)
 * How to model missing segments in proteins
-* How to extend or delete peptide segments at the termini
+* How to extend the termini
+* How to remove peptide segments from a protein (and still get a closed conformation)
 * How to refine segments in proteins
 * How to combine loop modeling with other protocols
 * How to use loop modeling on non-canoncials
@@ -62,9 +62,13 @@ A list of further options and documentation can be found [here](https://www.rose
 
 Modeling Missing Loops
 ----------------------
-Modeling missing loops is a difficult problem. Rosetta has a variety of algorithms for this purpose. We will use cyclic coordinate descent (CCD) explained [here](https://www.rosettacommons.org/docs/wiki/application_documentation/structure_prediction/loop_modeling/loopmodel-ccd#algorithm). While we can use the `loopmodel` executable to do this, it requires us to place the missing atoms manually in the input PDB file and provide a fragment library. We will instead use `remodel` executable to use CCD
+Modeling missing loops is a difficult problem. We will use cyclic coordinate descent (CCD), which is explained [here](https://www.rosettacommons.org/docs/latest/application_documentation/structure_prediction/loop_modeling/loopmodel-ccd#algorithm). While we can use the `loopmodel` executable to do this, it requires us to place the missing atoms manually in the input PDB file and provide a fragment library. We will instead use the [`remodel`](https://www.rosettacommons.org/docs/latest/application_documentation/design/rosettaremodel) executable to model the missing loop.
+
+In the folder `input_files` you will find the file `3gbn_missing_loops.pdb` which had residues 13-15 of chain H missing. To model this loop, we first need to generate and modify a _blueprint_ file. To generate the file use:
 
     $> $ROSETTA3_TOOLS/remodel/getBluePrintFromCoords.pl -pdbfile input_files/3gbn_missing_loops.pdb -chain H > input_files/3gbn_missing_loops.remodel
+    
+You should see a file `3gbn_missing_loops.remodel` in `input_files` which looks like:
     
 ```
 ...
@@ -74,8 +78,13 @@ Modeling missing loops is a difficult problem. Rosetta has a variety of algorith
 14 S .
 ...
 ```
+The file will contain a file of all residues in the H chain with the corresponding Rosetta internal residue number, which is continuous unlike the PDB numbering. The `.` at the end of each line means do nothing to this residue.
 
-Make this 
+Now, we add the missing three residues (KPG) in this manner shown below, assigning them residue number 0, identity X and the preferred secondary structure (H: Helix, L: Loops, E: Extended). Next, we ask it to pick the amino acid (PIKAA) K to fill in the first spot, and so on. 
+
+>You must also specify the preferred secondary structure of the flanking residues and the identity of the residue to replace them with (i.e. themselves). This is crucial to provide backbone flexibility in these residues to close the loop.
+
+Mak sure that there is no empty line at the end of the bluprint file as the often causes `remodel` to crash with an uninformative error.
 
 ```
 ...
@@ -89,18 +98,80 @@ Make this
 ...
 ```
 
+Now with this modified blueprint file, run:
     $> $ROSETTA3/bin/remodel.linuxgccrelease @flax_missing_loops
+
+
+    
+You should see something similar appearing in the log file:
     
 ```
 core.fragment.picking_old.vall.vall_io: Reading Vall library from <path_to_Rosetta_directory>/main/database//sampling/filtered.vall.dat.2006-05-05 ... 
 ```
-This should take ~1 minute to run and produce a score file and a PDB with a loop of the missing residues.
 
-Extending and Deleting the Termini
-----------------------------------
+This indicates that it is reading in a database of pre-generated fragments from the database to bound the loops. The simulation should take ~1 minute to run and produce a score file and a PDB with a loop of the missing residues in the directory `output_files`. (It will also produce a file called `1.pdb` in the current working directory with the same structure as the output structure, but with different meta information.) 
+
+This loop will likely not match the loop of the native `3gbn_Ab.pdb` in just one simulation. You need to run this multiple times by changing the `nstruc` flag to `500` or more.
+
+`remodel` can a multitude of applications, including design, which you can read about [here](https://www.rosettacommons.org/docs/latest/application_documentation/design/rosettaremodel#algorithm_basic-remodelling-tasks_extension).
+
+Extending the Termini
+---------------------
+Once again we will use CCD using `remodel` to model the missing C-terminus strand in the H chain of 3GBN. The residues 115-120 of chain H are missing in `input_files/3gbn_missing_cterm.pdb`. In a fashion similar to the example above, we will generate a _blueprint_ file using:
+
+    $> <path_to_Rosetta_directory>/tools/remodel/getBluePrintFromCoords.pl -pdbfile input_files/3gbn_missing_cterm.pdb -chain H > input_files/3gbn_missing_cterm.remodel
+
+and the modify the bottom of the file to get:
+
+```
+...
+113 K .
+114 G L PIKAA G
+0 X E PIKAA T
+0 X E PIKAA T
+0 X E PIKAA V
+0 X E PIKAA T
+0 X E PIKAA V
+0 X L PIKAA S
+```
+Since we know from prior knowledge that the expected secondary structure is a strand for residues 115-119, we will specify them with E. We also need to make the flanking residue (114) backbone mobile as shown above.
+
+Now with this modified blueprint file, run:
+
+    $> <path_to_Rosetta_directory>/main/source/bin/remodel.linuxgccrelease @flag_missing_cterm
+
+The simulation should take ~1 minute to run and produce a score file and a PDB with a C-terminus in the directory `output_files`. _This file may be missing the L-chain (a bug in the code for multiple chains), so you may have to manually go an enter it._
+
+This segment will likely not match the C-terminus of the native `3gbn_Ab.pdb` in just one simulation. You need to run this multiple times by changing the `nstruc` flag to `500` or more.
+
+Removing a Loop from the Protein
+--------------------------------
+Removing an existing loop from a protein is a rather tricky thing. Depending on how far the end points of the segment to be deleted were in 3-D space, you may have to make a large portion of the flanking section just to make the gap close. This may distort the fold in some cases. In this example, we will delete residues 101-108 of chain H of the native `3gbn_Ab.pdb` and close the gap. These residues were specifically chosen as the termini of this segment are close in space, thus increasing the chance of gap closure. To use CCD using `remodel`, we will generate the blueprint file using:
+
+    $> <path_to_Rosetta_directory>/tools/remodel/getBluePrintFromCoords.pl -pdbfile input_files/3gbn_Ab.pdb -chain H > input_files/3gbn_Ab_deletion.remodel
+    
+and simply delete the lines for residues 101-108 to get:
+```
+...
+99 H L PIKAA H
+100 M L PIKAA M
+109 D L PIKAA D
+110 V L PIKAA V
+...
+
+```
+The residues flanking the deletions on both sides (residue numbers 99,100,109,110) must be made mobile so that the backbone can rearrange and close the gap. For your case, you may need to change the Now run
+
+    $> <path_to_Rosetta_directory>/main/source/bin/remodel.linuxgccrelease @flag_deletion
+
+The simulation should take ~1 minute to run and produce a score file and a PDB with the loop deleted in the directory `output_files`. 
+
+You need to run this multiple times by changing the `nstruc` flag to `500` or more to get the best gap closure.
+
 
 Refining Peptide Segments
 -------------------------
+Say you want to find a low-energy conformation of a given 
 
 Combining Loop Modeling with other Protocols
 --------------------------------------------

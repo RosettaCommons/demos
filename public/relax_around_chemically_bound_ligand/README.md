@@ -59,8 +59,10 @@ produces FMN_w_h.mol
 We can convert the MOL file to a .params file with a script named molfile_to_params.py (located in <path_to_Rosetta_directory>/main/source/scripts/python/public/). This script can be run with the "-h" flag to list all the flags that are applicable.
 ```
 $> cp rosetta_inputs/FMN_w_h.mol .
-$> <path-to-Rosetta>/Rosetta/main/source/scripts/python/public/molfile_to_params.py -n FMN -p FMN FMN_w_h.mol
+$> $ROSETTA3/scripts/python/public/molfile_to_params.py -n FMN -p FMN FMN_w_h.mol
 ```
+
+(where `$ROSETTA3`=path-to-Rosetta/main/source)
 
 The -n flag specifies what 3-letter name will used to identify this ligand in PDB files. The -p flags specifies a name for the .params file. We chose "FMN" which stands for flavin mononucleotide.  The python script has the possibility of mis-assigning atom types, so we opened up the FNM.params file to look and see that we got the chemistry right.
 
@@ -161,7 +163,7 @@ $> cp rosetta_inputs/FMN_modded.params .
 A complete command line for the protocol would be as follows:
 
 ```
-$> <path_to_Rosetta_directory>/main/source/bin/relax.default.linuxgccrelease -s 2V0W.pdb -in:file:fullatom -extra_res_fa FMN_modded.params -extra_res_fa sidechain_conjugation/CYX.params -overwrite -cst_fa_file chemical_bond.cst -score:weights talaris2014_cst.wts -mute basic core.init core.scoring
+$> $ROSETTA3/bin/relax.default.linuxgccrelease -s 2V0W.pdb -in:file:fullatom -extra_res_fa FMN_modded.params -extra_res_fa sidechain_conjugation/CYX.params -overwrite -cst_fa_file chemical_bond.cst -score:weights talaris2014_cst.wts -mute basic core.init core.scoring
 ```
 
 Truncated output from the command:
