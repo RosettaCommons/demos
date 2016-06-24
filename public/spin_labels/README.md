@@ -13,6 +13,8 @@ has its own README.txt with specific information about that step. Each step is
 entirely self contained, but you might enjoy working through them in the order
 given below. 
 
+*NOTE* R1A.params is provided but it is now part of the database, so you don't need to pass it.
+
 Step1: create_mtssl_mutant
 
 The standard fixed backbone design protocol can be used. The mtssl parameter
@@ -21,7 +23,7 @@ specifies that only the non-cannonical residue type R1A is allowed at
 positions 59 and 159. The command below will generate the 59/159 double mtssl
 mutant of the t4-lysozyme protein given in the input directory.
 ```
-$> $ROSETTA3/bin/fixbb.default.linuxgccrelease -in:file:s create_mtssl_mutant/input/lysozyme_pseudo_wildtype.pdb -out:file:fullatom -extra_res_fa input/R1A.params  -resfile create_mtssl_mutant/config/resfile.pack -out:prefix mtssl_mutant_ >& make_mutant.log 
+$> $ROSETTA3/bin/fixbb.default.linuxgccrelease -in:file:s create_mtssl_mutant/input/lysozyme_pseudo_wildtype.pdb -out:file:fullatom -resfile create_mtssl_mutant/config/resfile.pack -out:prefix mtssl_mutant_ >& make_mutant.log 
 ```
 where (`$ROSETTA3`=path-to-Rosetta/main/source)
 
@@ -29,14 +31,14 @@ Step 2: relax_mtssl_mutant
 
 The standard relax protocols can be used. The mtssl parameter file must be provided. The command line below will relax the t4-lysozyme double mutant provided in the input directory.
 ```
-$> $ROSETTA3/bin/relax.default.linuxgccrelease -in:file:s relax_mtssl_mutant/input/lysozyme_start_mtssl_mutant.pdb -out:file:fullatom -extra_res_fa input/R1A.params -out:prefix relax_ -nstruct 1 >& relax.log 
+$> $ROSETTA3/bin/relax.default.linuxgccrelease -in:file:s relax_mtssl_mutant/input/lysozyme_start_mtssl_mutant.pdb -out:file:fullatom  -out:prefix relax_ -nstruct 1 >& relax.log 
 ```
 
 Step3: relax_mtssl_mutant_membrane
 
 The standard relaxation protocols with membrane flags can be used. The mtssl parameter file needs to be provided. The command line below will relax the double mutant MSBA structure provided in the inputs directory.
 ```
-$> $ROSETTA3/bin/relax.default.linuxgccrelease -in:file:s relax_mtssl_mutant_membrane/input/msba_mtssl_mutant_start_structure.pdb -out:file:fullatom -extra_res_fa input/R1A.params -out:prefix mem_relax_  -nstruct 1 -relax:membrane -membrane:normal_cycles 100 -membrane:normal_mag 15 -membrane:center_mag 2 -file:spanfile relax_mtssl_mutant_membrane/input/msba.span > & mem_relax.log 
+$> $ROSETTA3/bin/relax.default.linuxgccrelease -in:file:s relax_mtssl_mutant_membrane/input/msba_mtssl_mutant_start_structure.pdb -out:file:fullatom -out:prefix mem_relax_  -nstruct 1 -relax:membrane -membrane:normal_cycles 100 -membrane:normal_mag 15 -membrane:center_mag 2 -file:spanfile relax_mtssl_mutant_membrane/input/msba.span > & mem_relax.log 
 ```
 Step 4: rotamer_conformation_recovery
 
