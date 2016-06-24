@@ -12,8 +12,8 @@ Preparing the inputs
 We usually score the input pdbs to make sure they are able to be read by Rosetta and to replace any missing sidechain atoms.
 From the main demo directory run the following command to score 
 
-    cd rosetta_inputs
-    /path/to/rosetta/bin/score_jd2.default.macosgccrelease -s ../starting_files/*.pdb.gz -no_optH false -database /path//to/rosetta_database/ -ignore_unrecognized_res -out:pdb
+    $> cd rosetta_inputs
+    $> $ROSETTA3/bin/score_jd2.default.macosgccrelease -s ../starting_files/*.pdb.gz -no_optH false -ignore_unrecognized_res -out:pdb
 
 There are a few options here that need to be described:
 * `-no_optH false`: This will make rosetta consider Q,N,H ring flips (this helps remove some buried unsatisfied polar atoms).
@@ -23,25 +23,26 @@ There are a few options here that need to be described:
 This will also output file called score.sc which is the scored input structures.
 Now we'll rename these PDBs to make this a bit easier to keep track of:
 
-    mv 1u6e_0001.pdb 1u6e_scored.pdb; mv 3r2x_0001.pdb 3r2x_scored.pdb
+   $>  mv 1u6e_0001.pdb 1u6e_scored.pdb
+   $>  mv 3r2x_0001.pdb 3r2x_scored.pdb
 
 Running InterfaceAnalyzer
 -------------------------
 Now we have all of our inputs set to go to run InterfaceAnalyzer.
 If you are interested you should read the full documentation for this application located in `/path/to/rosetta/doc/apps/public/analysis/interface_analyzer.dox`:
 
-    cd example_output
+    $> cd example_output
 
 First we are going to look at the 1U6E homodimer interface.  It only has two chains so the default way of defining an interface will work. 
 You will need to modify the options files to contain the path to your rosetta database.
 To analyze this interface run the following commands:
 This one will use only the input sidechains from the input structure and not repack them.  This probably only a good idea if you have already designed/minimized this structure, but is provided as an example here anyway
 
-    /path/to/rosetta/mini/bin/InterfaceAnalyzer.default.macosgccrelease -s ../rosetta_inputs/1u6e_scored.pdb @../rosetta_inputs/no_pack_input_options.txt
+	$> $ROSETTA3/bin/InterfaceAnalyzer.default.macosgccrelease -s ../rosetta_inputs/1u6e_scored.pdb @../rosetta_inputs/no_pack_input_options.txt
 
 This one will repack the input sidechains from the input structure before analyzing anything about the interface. This is a better idea in this case because we are using a raw pdb as input.
 
-    /path/to/rosetta/mini/bin/InterfaceAnalyzer.default.macosgccrelease -s ../rosetta_inputs/1u6e_scored.pdb @../rosetta_inputs/pack_input_options.txt
+    	$> $ROSETTA3/bin/InterfaceAnalyzer.default.macosgccrelease -s ../rosetta_inputs/1u6e_scored.pdb @../rosetta_inputs/pack_input_options.txt
 
 You can look in the options files for a full description of each of the command line flags.
 
@@ -51,8 +52,8 @@ Now to analyze the 3R2X interface between the designed protein (Chain C) and Hem
 
 We will add this to the command lines given above; so now run these:
 
-    /path/to/rosetta/mini/bin/InterfaceAnalyzer.default.macosgccrelease -s ../rosetta_inputs/3r2x_scored.pdb -fixedchains A B @../rosetta_inputs/no_pack_input_options.txt
-    /path/to/rosetta/mini/bin/InterfaceAnalyzer.default.macosgccrelease -s ../rosetta_inputs/3r2x_scored.pdb -fixedchains A B @../rosetta_inputs/pack_input_options.txt
+    $> $ROSETTA3/bin/InterfaceAnalyzer.default.macosgccrelease -s ../rosetta_inputs/3r2x_scored.pdb -fixedchains A B @../rosetta_inputs/no_pack_input_options.txt
+    $> $ROSETTA3/bin/InterfaceAnalyzer.default.macosgccrelease -s ../rosetta_inputs/3r2x_scored.pdb -fixedchains A B @../rosetta_inputs/pack_input_options.txt
 
 Now in the current directory (`example_output`) we have two different score files, one for when we repacked the interface (`pack_input_score.sc`), and one for when we kept the input rotamers fixed (`no_pack_input_score.sc`)
 From here we can get some important info.  We will only concentrate on a few here. For a full description of what everything means see the documentiation page for this application: `/path/to/rosetta/doc/apps/public/analysis/interface_analyzer.dox`
