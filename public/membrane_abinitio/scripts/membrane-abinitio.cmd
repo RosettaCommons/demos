@@ -1,4 +1,4 @@
-$ROSETTA3/bin/abinitio2.macosgccrelease \
+/Users/vyarovyarovoy/mini/bin/membrane_abinitio2.macosgccrelease \
 -abinitio:membrane \
 -in:file:native ../rosetta_inputs/BRD4.pdb \
 -in:file:frag3 ../rosetta_inputs/aaBRD4_03_05.200_v1_3 \
