@@ -4,11 +4,11 @@
     <FILTERS>
     </FILTERS>
     <MOVERS>
-        <SwitchResidueTypeSetMover name=switch_repr set=fa_standard />
+        <SwitchResidueTypeSetMover name="switch_repr" set="fa_standard" />
     </MOVERS>
     <APPLY_TO_POSE>
     </APPLY_TO_POSE>
     <PROTOCOLS>
-        <Add mover=switch_repr />
+        <Add mover="switch_repr" />
     </PROTOCOLS>
 </ROSETTASCRIPTS>
