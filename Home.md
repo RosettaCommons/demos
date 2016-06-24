@@ -30,7 +30,7 @@ Full input files for the tutorials are located in the `demos/tutorials/` directo
 * [[Controlling Input and Output|input_and_output]]
 * [[Core Rosetta Concepts|Core_Concepts]]
 * [[Working with Non-protein Residues|prepare_ligand_tutorial]] 
-* [[Scoring|scoring]]: Calculating Energy
+* [[Scoring|scoring]]: Calculating Energy of a Structure
 * [[Full-Atom vs. Centroid Representations|fullatom_centroid]]
 * [[The Packer|Optimizing_Sidechains_The_Packer]]: Optimizing Sidechains
 * [[Minimization]]: Finding Deeper Energy Wells
@@ -48,11 +48,11 @@ Full input files for the tutorials are located in the `demos/tutorials/` directo
 * [*de novo* (*ab initio*) Structure Prediction](Denovo_structure_prediction)
     * [Advanced *de novo* Structure Prediction](folding_tutorial)
 * [[Comparative Modeling (Homology Modeling)|rosetta_cm_tutorial]]
-* [[Loop Modeling and Rebuilding|loop_modeling]]
+* [[Loop Modeling and Rebuilding|loop_modeling]]: Modeling Short Fragments
 * [[Protein Design|protein_design_tutorial]]
-* [[Protein-Protein Docking|Protein-Protein-Docking]]
+* [[Protein-Protein Docking|Protein-Protein-Docking]]: Modeling Protein-Protein Binding
     * [[Advanced Protein-Protein Docking|advanced_protein-protein_docking_tutorial]]
-* [[Protein-Ligand Docking|ligand_docking_tutorial]]
+* [[Protein-Ligand Docking|ligand_docking_tutorial]]: Modeling Protein-Ligand Binding
 
 Demos
 -----
