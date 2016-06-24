@@ -5,8 +5,7 @@ KEYWORDS: MEMBRANES DOCKING
 
 Author: Julia Koehler Leman (julia dot koehler1982 at gmail dot com)  
 Corresponding PI: Jeffrey J. Gray (jgray at jhu dot edu)  
-Last Updated: January 2015  
-Rosetta Revision #58069
+Last Updated: June 2016 
 
 ---
 
