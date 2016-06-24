@@ -1,6 +1,8 @@
 Canonical Sampling for Protein-Protein Docking Refinement
 =========================================================
 
+KEYWORDS: DOCKING INTERFACES
+
 Author: Zhe Zhang (zhezhang1986 at gmail dot com)  
 Corresponding PI: Martin Zacharias (martin.zacharias at ph dot tum dot de)  
 Last Updated: 06/01/2015  

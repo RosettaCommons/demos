@@ -1,0 +1,31 @@
+# Input databases
+
+#-in::file::vall <Path to vall database>
+
+# Weights file
+-frags::scoring::config		fragment_picking_with_quota_and_restraints/input_files/quota-cst_protocol.wghts
+
+# Query-related input files
+-in::file::checkpoint		fragment_picking_with_quota_and_restraints/input_files/2jsvX.checkpoint
+-in::file::s 			fragment_picking_with_quota_and_restraints/input_files/2jsvX.pdb
+-frags::ss_pred			fragment_picking_with_quota_and_restraints/input_files/2jsvX.psipred.ss2 psipred fragment_picking_with_quota_and_restraints/input_files/2jsvX.sam.ss2 sam fragment_picking_with_quota_and_restraints/input_files/2jsvX.jufo.ss2 jufo
+
+-constraints::cst_file 		fragment_picking_with_quota_and_restraints/input_files/gb1_tedor.cst
+
+# Get rid of homologues fragments
+-frags::denied_pdb 		fragment_picking_with_quota_and_restraints/input_files/2jsvX.homolog_vall
+
+# Quota.def file defines the shares between difefrent quota pools. The total should be 1.0
+-frags::picking::quota_config_file 	fragment_picking_with_quota_and_restraints/input_files/quota.def
+
+# we need nine-mers and three-mers
+-frags::frag_sizes 		9 3
+
+# Select 200 fragments from 1000 candidates. We need more candidates
+#  than fragments for the selector to work properly
+-frags::n_candidates		1000
+-frags::n_frags			200
+
+# Output 
+-out::file::frag_prefix		fragment_picking_with_quota_and_restraints/output_files/frags
+-frags::describe_fragments 	fragment_picking_with_quota_and_restraints/output_files/frags.fsc

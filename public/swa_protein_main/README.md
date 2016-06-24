@@ -1,5 +1,7 @@
 # SWA Protein Main
 
+KEYWORDS: STRUCTURE_PREDICTION LOOPS
+
 ## Author
 Rhiju Das, rhiju@stanford.edu
 

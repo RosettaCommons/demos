@@ -1,5 +1,7 @@
 # C++ RosettaSurface
 
+KEYWORDS: SURFACES GENERAL
+
 ## Authors
 written by Michael Pacella (Graylab), mpacella88@gmail.com
 

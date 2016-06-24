@@ -1,0 +1,37 @@
+-run:protocol broker  #initiate call to broker
+-broker:setup input_files/setup_broker.tpb #defines constraints on folding protocol
+-frag3 input_files/aa2Z73A03_05.200_v1_3 #fragment files for folding of protein
+-frag9 input_files/aa2Z73A09_05.200_v1_3 #fragment files for folding of protein
+#Patches to the scoring function ensure that membrane potentials are used in the folding protocol
+#make sure to have these either in the local directory or your database directory under scoring/weights
+-stage2_patch input_files/score_membrane_s2.wts_patch
+-stage3a_patch input_files/score_membrane_s3a.wts_patch
+-stage3b_patch input_files/score_membrane_s3b.wts_patch
+-stage4_patch input_files/score_membrane_s4.wts_patch
+#allows setup of membrane options
+-abinitio
+	-membrane
+#options for membrane scoring functions
+-membrane
+	-no_interpolate_Mpair
+	-Menv_penalties
+#tells folding protocol to close loops
+-close_loops
+-non_ideal_loop_closing
+#not sure what this does but Yeifan included it.
+-score
+	-find_neighbors_3dgrid
+-no_prof_info_in_silentout #no time-columns appears in score/silent - files
+#input files these options should actually be supplied in the command line
+-in
+	-file
+		-fasta input_files/2Z73A.fasta
+		-spanfile input_files/2Z73A.span #generate from Octopus prediction (http://octopus.cbr.su.se/) using /TopologyBroker_GPCR/scripts/octopus2span.pl
+		-lipofile input_files/2Z73A.lips4 #generate using /TopologyBroker_GPCR/scripts/run_lips.pl
+#-out
+#	-file
+		#output options the results.silent_binary_out should be supplied on command line
+		#-silent results.silent_binary_out
+		#-silent_struct_type binary
+#number of structures to generate supply on command line
+#-nstruct 1

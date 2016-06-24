@@ -1,6 +1,8 @@
 Basic Homology Modeling Demo
 ============================
 
+KEYWORDS: STRUCTURE_PREDICTION GENERAL
+
 Conceptual steps
 ----------------
 
@@ -146,5 +148,3 @@ Detailed steps
     * [[homology_modeling_with_end_extension|public/homology_modeling_with_end_extension/readme]]
     * [[relax_a_large_structure|public/relax_a_large_structure/readme]]
 
-For more information, go to:  
-https://wiki.rosettacommons.org/index.php/RosettaCon2011_Documentation_Event

@@ -1,6 +1,8 @@
 Docking with constraints
 ========================
 
+KEYWORDS: DOCKING INTERFACES
+
 In this demo, a peptide (chain B) is docked onto a protein (chain A) with 
 user-defined constraints. The purpose of this demo is to illustrate the use of 
 constraint files and as many different types of constraints as possible. The 

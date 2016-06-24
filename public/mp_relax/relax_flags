@@ -1,0 +1,10 @@
+-parser:protocol membrane_relax.xml
+-in:file:s example_inputs/3pxo_tr.pdb
+-mp:scoring:hbond 
+-mp:setup:spanfiles example_inputs/3pxo_tr.span
+-nstruct 1
+-relax:fast
+-relax:jump_move true
+-out:pdb
+-out:file:scorefile relax_scores_1afo.sc
+-packing:pack_missing_sidechains 0

@@ -1,6 +1,9 @@
-# Rosetta VIP
+# Rosetta VIP: Void Indentification and Packing
+
+KEYWORDS: DESIGN STABILITY_IMPROVEMENT
 
 This README was written in Feb. 2012, by Jim Havranek (havranek@genetics.wustl.edu).
+
 
 This demo illustrates a protocol to identify candidate mutations for stabilizing proteins that have sub-optimally packed cores.
 
@@ -8,11 +11,16 @@ It has been published in the paper "Automated selection of stabilizing mutations
 
 The source code is found at:  `(rosetta_source)/src/apps/public/vip.cc`
 
-The app can be run as follows:
+To generate the output in the example output directory, the app can be run as follows:
 
+(where `ROSETTA3`=path-to-Rosetta/main/source)
+
+```bash```
+$> cp rosetta_inputs/* .
+$> $ROSETTA3/bin/vip.default.linuxgccrelease @flags >out.log & 
 ```
-./(executables_path)/vip.(arch)(mode) -database (database_path) -s input.pdb -cp:ncycles 3 -cp:cutoff 6.0 -sasa_calculator_probe_radius 1.0 -run:silent
-```
+
+In the above, ".default.linuxgccrelease" may need to be replaced with your build, operating system, and compiler.  For example, for a static, debug-mode build on the Macintosh operating system with the clang compiler, you would use, ".static.macosclangdebug".
 
 options are:
 
@@ -63,6 +71,4 @@ a couple of other notes:
 - Extra rotamers are automatically included in the point mutant trials, so if you use -ex1 -ex2 etc flags, these will be applied in the relax step which slows things down quite a bit.
 
 - Cavity finding is done via RosettaHoles1, which is stochastic, so:  1) if it finds no cavities, run it again and it probably will and 2) separate runs can result in a different sequence of mutations.
-
-
 

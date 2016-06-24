@@ -1,5 +1,7 @@
-Idealize Demo
-=============
+Design of Proteins with Ideal Topologies
+========================================
+
+KEYWORDS: DESIGN GENERAL
 
 Compatible with the Rosetta SVN code repository after the Revision 51602
 

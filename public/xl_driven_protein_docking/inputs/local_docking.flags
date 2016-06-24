@@ -1,0 +1,21 @@
+ # Show all options set by user
+-options
+
+-out:file:fullatom
+-out:overwrite
+
+ # Do small translational and rotational perturbations with 2nd binding partner: -dock_pert ANGSTROMS DEGREES.
+-docking:dock_pert 3 8
+
+ # Do rotamer trials with minimization, RTMIN (false)
+-docking:dock_rtmin
+-docking:sc_min
+
+ # Note that once the starting rotamers are replaced by any mechanism, they are no longer included in the rotamer set (rotamers included by coordinates)" );
+-packing:use_input_sc
+
+ # Use extra chi1 sub-rotamers for all residues that pass the extrachi_cutoff
+-packing:ex1
+
+ # Use extra chi1 sub-rotamers for aromatic residues that pass the extrachi_cutoff
+-packing:ex2aro

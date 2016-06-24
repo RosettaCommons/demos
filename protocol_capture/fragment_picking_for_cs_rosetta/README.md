@@ -1,6 +1,8 @@
 Fragment Picking for CS-Rosetta
 ===============================
 
+KEYWORDS: STRUCTURE_PREDICTION UTILITIES
+
 Presenting author: Dominik Gront (dgront at chem dot uw dot edu dot pl)  
 Protocol name: fragment picker : CS-Rosetta style  
 Brief description: The protocol substitutes CS-Rosetta application

@@ -1,0 +1,2 @@
+-constraints:cst_fa_file constrained_atompairs.cst
+-constraints:cst_fa_weight 10

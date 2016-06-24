@@ -1,0 +1,4 @@
+# make symmetry definition
+make_symmdef_file_denovo.py -symm_type cn -nsub 3 >  input_files/symm_def_trimer.dat
+# Rosetta run
+minirosetta.linuxgccrelease @input_files/fold-and-dock-flags -database my_location/minirosetta_database

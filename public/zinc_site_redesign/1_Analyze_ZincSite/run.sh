@@ -1,1 +1,0 @@
-python analyze_zinc_site.py -f 1A4L.pdb

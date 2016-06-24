@@ -1,2 +1,3 @@
+KEYWORDS: GENERAL GENERAL
 The scripts and input files that accompany this demo can be found in the 
-`demos/` directory of the Rosetta weekly releases.
+`demos/public` directory of the Rosetta weekly releases.

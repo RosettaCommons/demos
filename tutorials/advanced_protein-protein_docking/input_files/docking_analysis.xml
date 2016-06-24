@@ -1,0 +1,33 @@
+<ROSETTASCRIPTS>
+	<SCOREFXNS>
+	</SCOREFXNS>
+	<TASKOPERATIONS>
+		<RestrictToInterfaceVector name=rtiv chain1_num=1,2 chain2_num=3,4 CB_dist_cutoff=10.0 nearby_atom_cutoff=5.5 vector_angle_cutoff=75 vector_dist_cutoff=9.0 />
+	</TASKOPERATIONS>
+	<MOVERS>
+		<InterfaceAnalyzerMover name=iface_analyzer scorefxn=talaris2013 packstat=0 pack_input=0 pack_separated=1 fixedchains=A,B tracer=0 />
+	</MOVERS>
+	<FILTERS>
+		<AverageDegree name=avg_degree threshold=0 distance_threshold=10 task_operations=rtiv />
+		<Rmsd name=rmsd superimpose=1 threshold=2500 >
+			<span begin_res_num=11 end_res_num=13   />
+			<span begin_res_num=30 end_res_num=37   />
+			<span begin_res_num=289 end_res_num=294 />
+			<span begin_res_num=314 end_res_num=320 />
+			<span begin_res_num=341 end_res_num=346 />
+			<span begin_res_num=359 end_res_num=381 />
+			<span begin_res_num=527 end_res_num=534 />
+			<span begin_res_num=553 end_res_num=560 />
+			<span begin_res_num=573 end_res_num=581 />
+			<span begin_res_num=600 end_res_num=606 />
+		</Rmsd>
+	</FILTERS>
+	<APPLY_TO_POSE>
+	</APPLY_TO_POSE>
+	<PROTOCOLS>
+		<Add mover=iface_analyzer />
+		<Add filter=avg_degree />
+		<Add filter=rmsd />
+	</PROTOCOLS>
+	<OUTPUT scorefxn=talaris2013 />
+</ROSETTASCRIPTS>

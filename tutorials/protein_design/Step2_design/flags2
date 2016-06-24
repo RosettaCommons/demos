@@ -1,0 +1,9 @@
+-parser:protocol Step2_design/provided_inputs/symm_res_design.xml
+-s Step2_design/Best_rlx_3UKM_A.pdb
+-in:file:spanfile Step2_design/3UKM.span 
+-membrane:no_interpolate_Mpair
+-membrane:Membed_init
+-membrane:Menv_penalties 
+-score:weights membrane_highres_Menv_smooth.wts
+-out:prefix design_
+-nstruct 2

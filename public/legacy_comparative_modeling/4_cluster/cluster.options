@@ -1,0 +1,5 @@
+-in:file:fullatom #Read as fullatom input structure
+-out:file:silent cluster.out
+-run:shuffle #Use shuffle mode 
+-cluster:radius -1 #Cluster radius in A for RMS clustering or in inverse GDT_TS for Global Distance Test score clustering. Use "-1" to trigger automatic radius detection 
+-cluster:input_score_filter 0 #Ignore structures above certain energy

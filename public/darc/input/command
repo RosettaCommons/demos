@@ -1,0 +1,72 @@
+#
+# This is a command file.
+#
+# To make a new test, all you have to do is:
+#   1.  Make a new directory under tests/
+#   2.  Put a file like this (named "command") into that directory.
+#
+# The contents of this file will be passed to the shell (Bash or SSH),
+# so any legal shell commands can go in this file.
+# Or comments like this one, for that matter.
+#
+# Variable substiution is done using Python's printf format,
+# meaning you need a percent sign, the variable name in parentheses,
+# and the letter 's' (for 'string').
+#
+# Available variables include:
+#   workdir     the directory where test input files have been copied,
+#               and where test output files should end up.
+#   source      directory where Rosetta lives (Rosetta/main/source) (was minidir in older integration.py script, for example)
+#   database    where the Rosetta database lives (Rosetta/main/database)
+#   bin         where the Rosetta binaries live (Rosetta/main/source/bin)
+#   binext      the extension on binary files, like ".linuxgccrelease"
+#
+# The most important thing is that the test execute in the right directory.
+# This is especially true when we're using SSH to execute on other hosts.
+# All command files should start with this line:
+#
+
+cd %(workdir)s
+
+#prepare protein by adding hydrogens
+echo "Now preparing protein"
+[ -x %(bin)s/score.%(binext)s ] || exit 1
+%(bin)s/score.%(binext)s  -run:constant_seed -nodelay -in:file:s input/4ERF.pdb -out:output -no_optH false 2>&1 \
+    | egrep -vf ../../ignore_list \
+    > log
+
+#make ray file and resized electrostatic potential grid file
+echo "Now making RAY file"
+[ -x %(bin)s/score.%(binext)s ] || exit 1
+%(bin)s/make_ray_files.%(binext)s  -run:constant_seed -nodelay -pocket_static_grid -protein input/4ERF_0001.pdb -central_relax_pdb_num 61,54 -espGrid_file input/4ERF.agd 2>&1 \
+    | egrep -vf ../../ignore_list \
+    > log
+
+#dock ligand with multiple conformers using PSO on-the-fly sampling
+echo "Now running DARC"
+[ -x %(bin)s/score.%(binext)s ] || exit 1
+%(bin)s/DARC.%(binext)s -run:constant_seed -nodelay -protein input/4ERF_0001.pdb -ligand input/000_conformers.pdb -extra_res_fa input/000.params -ray_file input/ray_4ERF_0001_61,54.txt -espGrid_file input/DARC_4ERF.agd -num_particles 100 -num_runs 100 -search_conformers true 2>&1 \
+    | egrep -vf ../../ignore_list \
+    > log
+
+test "${PIPESTATUS[0]}" != '0' && exit 1 || true  # Check if the first executable in pipe line return error and exit with error code if so
+
+#
+# After that, do whatever you want.
+# Files will be diffed verbatim, so if you want to log output and compare it,
+# you'll need to filter out lines that change randomly (e.g. timings).
+# Prefixing your tests with "nice" is probably good form as well.
+# Don't forget to use -constant_seed -nodelay  so results are reproducible.
+# Here's a typical test for a Mini binary, assuming there's a "flags" file
+# in this directory too:
+#
+## %(bin)s/MY_MINI_PROGRAM.%(binext)s @flags -database %(database)s -run:constant_seed -nodelay  2>&1 \
+##     | egrep -v 'Finished.+in [0-9]+ seconds.' \
+##     | egrep -v 'Dunbrack library took .+ seconds to load' \
+##     > log
+#
+# Or if you don't care whether the logging output changes:
+#
+## %(bin)s/MY_MINI_PROGRAM.%(binext)s @flags -database %(database)s -run:constant_seed -nodelay  2>&1 \
+##     > /dev/null
+#

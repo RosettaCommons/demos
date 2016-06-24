@@ -1,6 +1,8 @@
 Backrub Sequence Tolerance
 ==========================
 
+KEYWORDS: DESIGN GENERAL
+
 Author: Colin A. Smith  
 Protocol backrub_seqtol
 

@@ -1,0 +1,664 @@
+core.init: Rosetta version exported  from http://www.rosettacommons.org
+core.init: command: /dors/meilerlab/apps/rosetta/rosetta_2015.31.58019/main/source/bin/rosetta_scripts.default.linuxgccrelease @repack.options -s 3gbm_HA.pdb -parser:protocol repack_HA.xml -database /dors/meilerlab/apps/rosetta/rosetta_2015.31.58019/main/database/ -nstruct 25
+core.init: 'RNG device' seed mode, using '/dev/urandom', seed=-1243199858 seed_offset=0 real_seed=-1243199858
+core.init.random: RandomGenerator:init: Normal mode, seed=-1243199858 RG_type=mt19937
+protocols.jd2.PDBJobInputter: Instantiate PDBJobInputter
+protocols.jd2.PDBJobInputter: PDBJobInputter::fill_jobs
+protocols.jd2.PDBJobInputter: pushed 3gbm_HA.pdb nstruct indices 1 - 25
+protocols.evaluation.ChiWellRmsdEvaluatorCreator: Evaluation Creator active ... 
+protocols.jd2.JobDistributor: Parser is present.  Input mover will be overwritten with whatever the parser creates.
+protocols.jd2.PDBJobInputter: PDBJobInputter::pose_from_job
+protocols.jd2.PDBJobInputter: filling pose from PDB 3gbm_HA.pdb
+core.chemical.ResidueTypeSet: Finished initializing fa_standard residue type set.  Created 801 residue types
+core.chemical.ResidueTypeSet: Total time to initialize 0.16 seconds.
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  CD1 on residue ILE 22
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  NZ  on residue LYS 43
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  CG  on residue LYS 143
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  CD  on residue LYS 143
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  CE  on residue LYS 143
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  NZ  on residue LYS 143
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  CE  on residue LYS 164
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  NZ  on residue LYS 164
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  CZ  on residue ARG 211
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  NH1 on residue ARG 211
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  NH2 on residue ARG 211
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  CG  on residue LYS 280
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  CD  on residue LYS 280
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  CE  on residue LYS 280
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  NZ  on residue LYS 280
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  OXT on residue PRO:CtermProteinFull 324
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  CG  on residue LYS 362
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  CD  on residue LYS 362
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  CE  on residue LYS 362
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  NZ  on residue LYS 362
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  CD  on residue LYS 406
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  CE  on residue LYS 406
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  NZ  on residue LYS 406
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  CG  on residue GLU 471
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  CD  on residue GLU 471
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  OE1 on residue GLU 471
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  OE2 on residue GLU 471
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  CG  on residue GLU 495
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  CD  on residue GLU 495
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  OE1 on residue GLU 495
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  OE2 on residue GLU 495
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  CG  on residue GLU 496
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  CD  on residue GLU 496
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  OE1 on residue GLU 496
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  OE2 on residue GLU 496
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  OXT on residue ARG:CtermProteinFull 501
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  CB  on residue ARG:CtermProteinFull 501
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  CG  on residue ARG:CtermProteinFull 501
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  CD  on residue ARG:CtermProteinFull 501
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  NE  on residue ARG:CtermProteinFull 501
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  CZ  on residue ARG:CtermProteinFull 501
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  NH1 on residue ARG:CtermProteinFull 501
+core.conformation.Conformation: [ WARNING ] missing heavyatom:  NH2 on residue ARG:CtermProteinFull 501
+core.conformation.Conformation: Found disulfide between residues 7 461
+core.conformation.Conformation: current variant for 7 CYS
+core.conformation.Conformation: current variant for 461 CYS
+core.conformation.Conformation: current variant for 7 CYD
+core.conformation.Conformation: current variant for 461 CYD
+core.conformation.Conformation: Found disulfide between residues 45 277
+core.conformation.Conformation: current variant for 45 CYS
+core.conformation.Conformation: current variant for 277 CYS
+core.conformation.Conformation: current variant for 45 CYD
+core.conformation.Conformation: current variant for 277 CYD
+core.conformation.Conformation: Found disulfide between residues 58 70
+core.conformation.Conformation: current variant for 58 CYS
+core.conformation.Conformation: current variant for 70 CYS
+core.conformation.Conformation: current variant for 58 CYD
+core.conformation.Conformation: current variant for 70 CYD
+core.conformation.Conformation: Found disulfide between residues 93 138
+core.conformation.Conformation: current variant for 93 CYS
+core.conformation.Conformation: current variant for 138 CYS
+core.conformation.Conformation: current variant for 93 CYD
+core.conformation.Conformation: current variant for 138 CYD
+core.conformation.Conformation: Found disulfide between residues 281 305
+core.conformation.Conformation: current variant for 281 CYS
+core.conformation.Conformation: current variant for 305 CYS
+core.conformation.Conformation: current variant for 281 CYD
+core.conformation.Conformation: current variant for 305 CYD
+core.conformation.Conformation: Found disulfide between residues 468 472
+core.conformation.Conformation: current variant for 468 CYS
+core.conformation.Conformation: current variant for 472 CYS
+core.conformation.Conformation: current variant for 468 CYD
+core.conformation.Conformation: current variant for 472 CYD
+core.pack.task: Packer task: initialize from command line() 
+core.pack.pack_missing_sidechains: packing residue number 22 because of missing atom number 8 atom name  CD1
+core.pack.pack_missing_sidechains: packing residue number 43 because of missing atom number 9 atom name  NZ 
+core.pack.pack_missing_sidechains: packing residue number 143 because of missing atom number 6 atom name  CG 
+core.pack.pack_missing_sidechains: packing residue number 164 because of missing atom number 8 atom name  CE 
+core.pack.pack_missing_sidechains: packing residue number 211 because of missing atom number 9 atom name  CZ 
+core.pack.pack_missing_sidechains: packing residue number 280 because of missing atom number 6 atom name  CG 
+core.pack.pack_missing_sidechains: packing residue number 362 because of missing atom number 6 atom name  CG 
+core.pack.pack_missing_sidechains: packing residue number 406 because of missing atom number 7 atom name  CD 
+core.pack.pack_missing_sidechains: packing residue number 471 because of missing atom number 6 atom name  CG 
+core.pack.pack_missing_sidechains: packing residue number 495 because of missing atom number 6 atom name  CG 
+core.pack.pack_missing_sidechains: packing residue number 496 because of missing atom number 6 atom name  CG 
+core.pack.pack_missing_sidechains: packing residue number 501 because of missing atom number 6 atom name  CB 
+core.scoring.ScoreFunctionFactory: SCOREFUNCTION: talaris2013.wts
+core.scoring.etable: Starting energy table calculation
+core.scoring.etable: smooth_etable: changing atr/rep split to bottom of energy well
+core.scoring.etable: smooth_etable: spline smoothing lj etables (maxdis = 6)
+core.scoring.etable: smooth_etable: spline smoothing solvation etables (max_dis = 6)
+core.scoring.etable: Finished calculating energy tables.
+basic.io.database: Database file opened: scoring/score_functions/hbonds/sp2_elec_params/HBPoly1D.csv
+basic.io.database: Database file opened: scoring/score_functions/hbonds/sp2_elec_params/HBFadeIntervals.csv
+basic.io.database: Database file opened: scoring/score_functions/hbonds/sp2_elec_params/HBEval.csv
+basic.io.database: Database file opened: scoring/score_functions/rama/Rama_smooth_dyn.dat_ss_6.4
+basic.io.database: Database file opened: scoring/score_functions/P_AA_pp/P_AA
+basic.io.database: Database file opened: scoring/score_functions/P_AA_pp/P_AA_n
+basic.io.database: Database file opened: scoring/score_functions/P_AA_pp/P_AA_pp
+core.pack.dunbrack.RotamerLibrary: Dunbrack 2010 library took 0.11 seconds to load from binary
+core.pack.interaction_graph.interaction_graph_factory: Instantiating LinearMemoryInteractionGraph
+core.pack.pack_rotamers: built 257 rotamers at 12 positions.
+core.pack.pack_rotamers: IG: 40653 bytes
+protocols.rosetta_scripts.RosettaScriptsParser: dock_design_filename=repack_HA.xml
+protocols.rosetta_scripts.RosettaScriptsParser: Parsed script:
+<ROSETTASCRIPTS>
+	<SCOREFXNS/>
+	<TASKOPERATIONS>
+		<InitializeFromCommandline name=ifcl/>
+		<RestrictToRepacking name=rtr/>
+		<PreventResiduesFromRepacking name=prfrp residues=11,41,345/>
+	</TASKOPERATIONS>
+	<FILTERS/>
+	<MOVERS>
+		<PackRotamersMover name=repack scorefxn=talaris2013 task_operations=ifcl,rtr,prfrp/>
+		<MinMover bb=0 chi=1 jump=0 name=minimize_sc scorefxn=talaris2013 tolerance=0.0001 type=dfpmin_armijo_nonmonotone/>
+	</MOVERS>
+	<APPLY_TO_POSE/>
+	<PROTOCOLS>
+		<Add mover=repack/>
+		<Add mover=minimize_sc/>
+	</PROTOCOLS>
+</ROSETTASCRIPTS>
+core.scoring.ScoreFunctionFactory: SCOREFUNCTION: talaris2013.wts
+basic.io.database: Database file opened: scoring/score_functions/PairEPotential/pdb_pair_stats_fine
+core.scoring.etable: Using alternate parameters: LJ_RADIUS_SOFT in Etable construction.
+core.scoring.etable: Starting energy table calculation
+core.scoring.etable: smooth_etable: changing atr/rep split to bottom of energy well
+core.scoring.etable: smooth_etable: spline smoothing lj etables (maxdis = 6)
+core.scoring.etable: smooth_etable: spline smoothing solvation etables (max_dis = 6)
+core.scoring.etable: Finished calculating energy tables.
+basic.io.database: Database file opened: scoring/score_functions/InterchainPotential/interchain_env_log.txt
+basic.io.database: Database file opened: scoring/score_functions/InterchainPotential/interchain_pair_log.txt
+basic.io.database: Database file opened: scoring/score_functions/EnvPairPotential/env_log.txt
+basic.io.database: Database file opened: scoring/score_functions/EnvPairPotential/cbeta_den.txt
+basic.io.database: Database file opened: scoring/score_functions/EnvPairPotential/pair_log.txt
+basic.io.database: Database file opened: scoring/score_functions/EnvPairPotential/cenpack_log.txt
+protocols.jd2.parser.TaskOperationLoader: Defined TaskOperation named "ifcl" of type InitializeFromCommandline
+protocols.jd2.parser.TaskOperationLoader: Defined TaskOperation named "rtr" of type RestrictToRepacking
+protocols.jd2.parser.TaskOperationLoader: Defined TaskOperation named "prfrp" of type PreventResiduesFromRepacking
+protocols.RosettaScripts.util: Object repack reading the following task_operations: Adding the following task operations
+ifcl rtr prfrp 
+protocols.rosetta_scripts.RosettaScriptsParser: Defined mover named "repack" of type PackRotamersMover
+protocols.simple_moves.MinMover: Options chi, bb: 1, 0 omega: 1
+protocols.rosetta_scripts.RosettaScriptsParser: Defined mover named "minimize_sc" of type MinMover
+protocols.rosetta_scripts.ParsedProtocol: ParsedProtocol mover with the following movers and filters
+protocols.rosetta_scripts.ParsedProtocol: added mover "repack" with filter "true_filter"
+protocols.rosetta_scripts.ParsedProtocol: added mover "minimize_sc" with filter "true_filter"
+protocols.jd2.PDBJobInputter: PDBJobInputter::pose_from_job
+protocols.jd2.PDBJobInputter: filling pose from saved copy 3gbm_HA.pdb
+protocols.rosetta_scripts.ParsedProtocol: =======================BEGIN MOVER PackRotamersMover - repack=======================
+core.pack.task: Packer task: initialize from command line() 
+core.pack.interaction_graph.interaction_graph_factory: Instantiating LinearMemoryInteractionGraph
+core.pack.pack_rotamers: built 22127 rotamers at 498 positions.
+core.pack.pack_rotamers: IG: 19641212 bytes
+protocols.rosetta_scripts.ParsedProtocol: =======================BEGIN FILTER =======================
+protocols.rosetta_scripts.ParsedProtocol: =======================END FILTER =======================
+protocols.rosetta_scripts.ParsedProtocol: =======================BEGIN MOVER MinMover - minimize_sc=======================
+protocols.rosetta_scripts.ParsedProtocol: =======================BEGIN FILTER =======================
+protocols.rosetta_scripts.ParsedProtocol: =======================END FILTER =======================
+protocols.rosetta_scripts.ParsedProtocol: setting status to success
+protocols.rosetta_scripts.ParsedProtocol.REPORT: ============Begin report for ==================
+protocols.rosetta_scripts.ParsedProtocol.REPORT: ============End report for ==================
+protocols.rosetta_scripts.ParsedProtocol.REPORT: ============Begin report for ==================
+protocols.rosetta_scripts.ParsedProtocol.REPORT: ============End report for ==================
+protocols.jd2.JobDistributor: 3gbm_HA_0001 reported success in 152 seconds
+protocols.jd2.PDBJobInputter: PDBJobInputter::pose_from_job
+protocols.jd2.PDBJobInputter: filling pose from saved copy 3gbm_HA.pdb
+protocols.jd2.PDBJobInputter: PDBJobInputter::pose_from_job
+protocols.jd2.PDBJobInputter: filling pose from saved copy 3gbm_HA.pdb
+protocols.rosetta_scripts.ParsedProtocol: =======================BEGIN MOVER PackRotamersMover - repack=======================
+core.pack.task: Packer task: initialize from command line() 
+core.pack.interaction_graph.interaction_graph_factory: Instantiating LinearMemoryInteractionGraph
+core.pack.pack_rotamers: built 22127 rotamers at 498 positions.
+core.pack.pack_rotamers: IG: 19641212 bytes
+protocols.rosetta_scripts.ParsedProtocol: =======================BEGIN FILTER =======================
+protocols.rosetta_scripts.ParsedProtocol: =======================END FILTER =======================
+protocols.rosetta_scripts.ParsedProtocol: =======================BEGIN MOVER MinMover - minimize_sc=======================
+protocols.rosetta_scripts.ParsedProtocol: =======================BEGIN FILTER =======================
+protocols.rosetta_scripts.ParsedProtocol: =======================END FILTER =======================
+protocols.rosetta_scripts.ParsedProtocol: setting status to success
+protocols.rosetta_scripts.ParsedProtocol.REPORT: ============Begin report for ==================
+protocols.rosetta_scripts.ParsedProtocol.REPORT: ============End report for ==================
+protocols.rosetta_scripts.ParsedProtocol.REPORT: ============Begin report for ==================
+protocols.rosetta_scripts.ParsedProtocol.REPORT: ============End report for ==================
+protocols.jd2.JobDistributor: 3gbm_HA_0002 reported success in 149 seconds
+protocols.jd2.PDBJobInputter: PDBJobInputter::pose_from_job
+protocols.jd2.PDBJobInputter: filling pose from saved copy 3gbm_HA.pdb
+protocols.jd2.PDBJobInputter: PDBJobInputter::pose_from_job
+protocols.jd2.PDBJobInputter: filling pose from saved copy 3gbm_HA.pdb
+protocols.rosetta_scripts.ParsedProtocol: =======================BEGIN MOVER PackRotamersMover - repack=======================
+core.pack.task: Packer task: initialize from command line() 
+core.pack.interaction_graph.interaction_graph_factory: Instantiating LinearMemoryInteractionGraph
+core.pack.pack_rotamers: built 22127 rotamers at 498 positions.
+core.pack.pack_rotamers: IG: 19641212 bytes
+protocols.rosetta_scripts.ParsedProtocol: =======================BEGIN FILTER =======================
+protocols.rosetta_scripts.ParsedProtocol: =======================END FILTER =======================
+protocols.rosetta_scripts.ParsedProtocol: =======================BEGIN MOVER MinMover - minimize_sc=======================
+protocols.rosetta_scripts.ParsedProtocol: =======================BEGIN FILTER =======================
+protocols.rosetta_scripts.ParsedProtocol: =======================END FILTER =======================
+protocols.rosetta_scripts.ParsedProtocol: setting status to success
+protocols.rosetta_scripts.ParsedProtocol.REPORT: ============Begin report for ==================
+protocols.rosetta_scripts.ParsedProtocol.REPORT: ============End report for ==================
+protocols.rosetta_scripts.ParsedProtocol.REPORT: ============Begin report for ==================
+protocols.rosetta_scripts.ParsedProtocol.REPORT: ============End report for ==================
+protocols.jd2.JobDistributor: 3gbm_HA_0003 reported success in 149 seconds
+protocols.jd2.PDBJobInputter: PDBJobInputter::pose_from_job
+protocols.jd2.PDBJobInputter: filling pose from saved copy 3gbm_HA.pdb
+protocols.jd2.PDBJobInputter: PDBJobInputter::pose_from_job
+protocols.jd2.PDBJobInputter: filling pose from saved copy 3gbm_HA.pdb
+protocols.rosetta_scripts.ParsedProtocol: =======================BEGIN MOVER PackRotamersMover - repack=======================
+core.pack.task: Packer task: initialize from command line() 
+core.pack.interaction_graph.interaction_graph_factory: Instantiating LinearMemoryInteractionGraph
+core.pack.pack_rotamers: built 22127 rotamers at 498 positions.
+core.pack.pack_rotamers: IG: 19641212 bytes
+protocols.rosetta_scripts.ParsedProtocol: =======================BEGIN FILTER =======================
+protocols.rosetta_scripts.ParsedProtocol: =======================END FILTER =======================
+protocols.rosetta_scripts.ParsedProtocol: =======================BEGIN MOVER MinMover - minimize_sc=======================
+protocols.rosetta_scripts.ParsedProtocol: =======================BEGIN FILTER =======================
+protocols.rosetta_scripts.ParsedProtocol: =======================END FILTER =======================
+protocols.rosetta_scripts.ParsedProtocol: setting status to success
+protocols.rosetta_scripts.ParsedProtocol.REPORT: ============Begin report for ==================
+protocols.rosetta_scripts.ParsedProtocol.REPORT: ============End report for ==================
+protocols.rosetta_scripts.ParsedProtocol.REPORT: ============Begin report for ==================
+protocols.rosetta_scripts.ParsedProtocol.REPORT: ============End report for ==================
+protocols.jd2.JobDistributor: 3gbm_HA_0004 reported success in 146 seconds
+protocols.jd2.PDBJobInputter: PDBJobInputter::pose_from_job
+protocols.jd2.PDBJobInputter: filling pose from saved copy 3gbm_HA.pdb
+protocols.jd2.PDBJobInputter: PDBJobInputter::pose_from_job
+protocols.jd2.PDBJobInputter: filling pose from saved copy 3gbm_HA.pdb
+protocols.rosetta_scripts.ParsedProtocol: =======================BEGIN MOVER PackRotamersMover - repack=======================
+core.pack.task: Packer task: initialize from command line() 
+core.pack.interaction_graph.interaction_graph_factory: Instantiating LinearMemoryInteractionGraph
+core.pack.pack_rotamers: built 22127 rotamers at 498 positions.
+core.pack.pack_rotamers: IG: 19641212 bytes
+protocols.rosetta_scripts.ParsedProtocol: =======================BEGIN FILTER =======================
+protocols.rosetta_scripts.ParsedProtocol: =======================END FILTER =======================
+protocols.rosetta_scripts.ParsedProtocol: =======================BEGIN MOVER MinMover - minimize_sc=======================
+protocols.rosetta_scripts.ParsedProtocol: =======================BEGIN FILTER =======================
+protocols.rosetta_scripts.ParsedProtocol: =======================END FILTER =======================
+protocols.rosetta_scripts.ParsedProtocol: setting status to success
+protocols.rosetta_scripts.ParsedProtocol.REPORT: ============Begin report for ==================
+protocols.rosetta_scripts.ParsedProtocol.REPORT: ============End report for ==================
+protocols.rosetta_scripts.ParsedProtocol.REPORT: ============Begin report for ==================
+protocols.rosetta_scripts.ParsedProtocol.REPORT: ============End report for ==================
+protocols.jd2.JobDistributor: 3gbm_HA_0005 reported success in 150 seconds
+protocols.jd2.PDBJobInputter: PDBJobInputter::pose_from_job
+protocols.jd2.PDBJobInputter: filling pose from saved copy 3gbm_HA.pdb
+protocols.jd2.PDBJobInputter: PDBJobInputter::pose_from_job
+protocols.jd2.PDBJobInputter: filling pose from saved copy 3gbm_HA.pdb
+protocols.rosetta_scripts.ParsedProtocol: =======================BEGIN MOVER PackRotamersMover - repack=======================
+core.pack.task: Packer task: initialize from command line() 
+core.pack.interaction_graph.interaction_graph_factory: Instantiating LinearMemoryInteractionGraph
+core.pack.pack_rotamers: built 22127 rotamers at 498 positions.
+core.pack.pack_rotamers: IG: 19641212 bytes
+protocols.rosetta_scripts.ParsedProtocol: =======================BEGIN FILTER =======================
+protocols.rosetta_scripts.ParsedProtocol: =======================END FILTER =======================
+protocols.rosetta_scripts.ParsedProtocol: =======================BEGIN MOVER MinMover - minimize_sc=======================
+protocols.rosetta_scripts.ParsedProtocol: =======================BEGIN FILTER =======================
+protocols.rosetta_scripts.ParsedProtocol: =======================END FILTER =======================
+protocols.rosetta_scripts.ParsedProtocol: setting status to success
+protocols.rosetta_scripts.ParsedProtocol.REPORT: ============Begin report for ==================
+protocols.rosetta_scripts.ParsedProtocol.REPORT: ============End report for ==================
+protocols.rosetta_scripts.ParsedProtocol.REPORT: ============Begin report for ==================
+protocols.rosetta_scripts.ParsedProtocol.REPORT: ============End report for ==================
+protocols.jd2.JobDistributor: 3gbm_HA_0006 reported success in 140 seconds
+protocols.jd2.PDBJobInputter: PDBJobInputter::pose_from_job
+protocols.jd2.PDBJobInputter: filling pose from saved copy 3gbm_HA.pdb
+protocols.jd2.PDBJobInputter: PDBJobInputter::pose_from_job
+protocols.jd2.PDBJobInputter: filling pose from saved copy 3gbm_HA.pdb
+protocols.rosetta_scripts.ParsedProtocol: =======================BEGIN MOVER PackRotamersMover - repack=======================
+core.pack.task: Packer task: initialize from command line() 
+core.pack.interaction_graph.interaction_graph_factory: Instantiating LinearMemoryInteractionGraph
+core.pack.pack_rotamers: built 22127 rotamers at 498 positions.
+core.pack.pack_rotamers: IG: 19641212 bytes
+protocols.rosetta_scripts.ParsedProtocol: =======================BEGIN FILTER =======================
+protocols.rosetta_scripts.ParsedProtocol: =======================END FILTER =======================
+protocols.rosetta_scripts.ParsedProtocol: =======================BEGIN MOVER MinMover - minimize_sc=======================
+protocols.rosetta_scripts.ParsedProtocol: =======================BEGIN FILTER =======================
+protocols.rosetta_scripts.ParsedProtocol: =======================END FILTER =======================
+protocols.rosetta_scripts.ParsedProtocol: setting status to success
+protocols.rosetta_scripts.ParsedProtocol.REPORT: ============Begin report for ==================
+protocols.rosetta_scripts.ParsedProtocol.REPORT: ============End report for ==================
+protocols.rosetta_scripts.ParsedProtocol.REPORT: ============Begin report for ==================
+protocols.rosetta_scripts.ParsedProtocol.REPORT: ============End report for ==================
+protocols.jd2.JobDistributor: 3gbm_HA_0007 reported success in 150 seconds
+protocols.jd2.PDBJobInputter: PDBJobInputter::pose_from_job
+protocols.jd2.PDBJobInputter: filling pose from saved copy 3gbm_HA.pdb
+protocols.jd2.PDBJobInputter: PDBJobInputter::pose_from_job
+protocols.jd2.PDBJobInputter: filling pose from saved copy 3gbm_HA.pdb
+protocols.rosetta_scripts.ParsedProtocol: =======================BEGIN MOVER PackRotamersMover - repack=======================
+core.pack.task: Packer task: initialize from command line() 
+core.pack.interaction_graph.interaction_graph_factory: Instantiating LinearMemoryInteractionGraph
+core.pack.pack_rotamers: built 22127 rotamers at 498 positions.
+core.pack.pack_rotamers: IG: 19641212 bytes
+protocols.rosetta_scripts.ParsedProtocol: =======================BEGIN FILTER =======================
+protocols.rosetta_scripts.ParsedProtocol: =======================END FILTER =======================
+protocols.rosetta_scripts.ParsedProtocol: =======================BEGIN MOVER MinMover - minimize_sc=======================
+protocols.rosetta_scripts.ParsedProtocol: =======================BEGIN FILTER =======================
+protocols.rosetta_scripts.ParsedProtocol: =======================END FILTER =======================
+protocols.rosetta_scripts.ParsedProtocol: setting status to success
+protocols.rosetta_scripts.ParsedProtocol.REPORT: ============Begin report for ==================
+protocols.rosetta_scripts.ParsedProtocol.REPORT: ============End report for ==================
+protocols.rosetta_scripts.ParsedProtocol.REPORT: ============Begin report for ==================
+protocols.rosetta_scripts.ParsedProtocol.REPORT: ============End report for ==================
+protocols.jd2.JobDistributor: 3gbm_HA_0008 reported success in 147 seconds
+protocols.jd2.PDBJobInputter: PDBJobInputter::pose_from_job
+protocols.jd2.PDBJobInputter: filling pose from saved copy 3gbm_HA.pdb
+protocols.jd2.PDBJobInputter: PDBJobInputter::pose_from_job
+protocols.jd2.PDBJobInputter: filling pose from saved copy 3gbm_HA.pdb
+protocols.rosetta_scripts.ParsedProtocol: =======================BEGIN MOVER PackRotamersMover - repack=======================
+core.pack.task: Packer task: initialize from command line() 
+core.pack.interaction_graph.interaction_graph_factory: Instantiating LinearMemoryInteractionGraph
+core.pack.pack_rotamers: built 22127 rotamers at 498 positions.
+core.pack.pack_rotamers: IG: 19641212 bytes
+protocols.rosetta_scripts.ParsedProtocol: =======================BEGIN FILTER =======================
+protocols.rosetta_scripts.ParsedProtocol: =======================END FILTER =======================
+protocols.rosetta_scripts.ParsedProtocol: =======================BEGIN MOVER MinMover - minimize_sc=======================
+protocols.rosetta_scripts.ParsedProtocol: =======================BEGIN FILTER =======================
+protocols.rosetta_scripts.ParsedProtocol: =======================END FILTER =======================
+protocols.rosetta_scripts.ParsedProtocol: setting status to success
+protocols.rosetta_scripts.ParsedProtocol.REPORT: ============Begin report for ==================
+protocols.rosetta_scripts.ParsedProtocol.REPORT: ============End report for ==================
+protocols.rosetta_scripts.ParsedProtocol.REPORT: ============Begin report for ==================
+protocols.rosetta_scripts.ParsedProtocol.REPORT: ============End report for ==================
+protocols.jd2.JobDistributor: 3gbm_HA_0009 reported success in 152 seconds
+protocols.jd2.PDBJobInputter: PDBJobInputter::pose_from_job
+protocols.jd2.PDBJobInputter: filling pose from saved copy 3gbm_HA.pdb
+protocols.jd2.PDBJobInputter: PDBJobInputter::pose_from_job
+protocols.jd2.PDBJobInputter: filling pose from saved copy 3gbm_HA.pdb
+protocols.rosetta_scripts.ParsedProtocol: =======================BEGIN MOVER PackRotamersMover - repack=======================
+core.pack.task: Packer task: initialize from command line() 
+core.pack.interaction_graph.interaction_graph_factory: Instantiating LinearMemoryInteractionGraph
+core.pack.pack_rotamers: built 22127 rotamers at 498 positions.
+core.pack.pack_rotamers: IG: 19641212 bytes
+protocols.rosetta_scripts.ParsedProtocol: =======================BEGIN FILTER =======================
+protocols.rosetta_scripts.ParsedProtocol: =======================END FILTER =======================
+protocols.rosetta_scripts.ParsedProtocol: =======================BEGIN MOVER MinMover - minimize_sc=======================
+protocols.rosetta_scripts.ParsedProtocol: =======================BEGIN FILTER =======================
+protocols.rosetta_scripts.ParsedProtocol: =======================END FILTER =======================
+protocols.rosetta_scripts.ParsedProtocol: setting status to success
+protocols.rosetta_scripts.ParsedProtocol.REPORT: ============Begin report for ==================
+protocols.rosetta_scripts.ParsedProtocol.REPORT: ============End report for ==================
+protocols.rosetta_scripts.ParsedProtocol.REPORT: ============Begin report for ==================
+protocols.rosetta_scripts.ParsedProtocol.REPORT: ============End report for ==================
+protocols.jd2.JobDistributor: 3gbm_HA_0010 reported success in 152 seconds
+protocols.jd2.PDBJobInputter: PDBJobInputter::pose_from_job
+protocols.jd2.PDBJobInputter: filling pose from saved copy 3gbm_HA.pdb
+protocols.jd2.PDBJobInputter: PDBJobInputter::pose_from_job
+protocols.jd2.PDBJobInputter: filling pose from saved copy 3gbm_HA.pdb
+protocols.rosetta_scripts.ParsedProtocol: =======================BEGIN MOVER PackRotamersMover - repack=======================
+core.pack.task: Packer task: initialize from command line() 
+core.pack.interaction_graph.interaction_graph_factory: Instantiating LinearMemoryInteractionGraph
+core.pack.pack_rotamers: built 22127 rotamers at 498 positions.
+core.pack.pack_rotamers: IG: 19641212 bytes
+protocols.rosetta_scripts.ParsedProtocol: =======================BEGIN FILTER =======================
+protocols.rosetta_scripts.ParsedProtocol: =======================END FILTER =======================
+protocols.rosetta_scripts.ParsedProtocol: =======================BEGIN MOVER MinMover - minimize_sc=======================
+protocols.rosetta_scripts.ParsedProtocol: =======================BEGIN FILTER =======================
+protocols.rosetta_scripts.ParsedProtocol: =======================END FILTER =======================
+protocols.rosetta_scripts.ParsedProtocol: setting status to success
+protocols.rosetta_scripts.ParsedProtocol.REPORT: ============Begin report for ==================
+protocols.rosetta_scripts.ParsedProtocol.REPORT: ============End report for ==================
+protocols.rosetta_scripts.ParsedProtocol.REPORT: ============Begin report for ==================
+protocols.rosetta_scripts.ParsedProtocol.REPORT: ============End report for ==================
+protocols.jd2.JobDistributor: 3gbm_HA_0011 reported success in 149 seconds
+protocols.jd2.PDBJobInputter: PDBJobInputter::pose_from_job
+protocols.jd2.PDBJobInputter: filling pose from saved copy 3gbm_HA.pdb
+protocols.jd2.PDBJobInputter: PDBJobInputter::pose_from_job
+protocols.jd2.PDBJobInputter: filling pose from saved copy 3gbm_HA.pdb
+protocols.rosetta_scripts.ParsedProtocol: =======================BEGIN MOVER PackRotamersMover - repack=======================
+core.pack.task: Packer task: initialize from command line() 
+core.pack.interaction_graph.interaction_graph_factory: Instantiating LinearMemoryInteractionGraph
+core.pack.pack_rotamers: built 22127 rotamers at 498 positions.
+core.pack.pack_rotamers: IG: 19641212 bytes
+protocols.rosetta_scripts.ParsedProtocol: =======================BEGIN FILTER =======================
+protocols.rosetta_scripts.ParsedProtocol: =======================END FILTER =======================
+protocols.rosetta_scripts.ParsedProtocol: =======================BEGIN MOVER MinMover - minimize_sc=======================
+protocols.rosetta_scripts.ParsedProtocol: =======================BEGIN FILTER =======================
+protocols.rosetta_scripts.ParsedProtocol: =======================END FILTER =======================
+protocols.rosetta_scripts.ParsedProtocol: setting status to success
+protocols.rosetta_scripts.ParsedProtocol.REPORT: ============Begin report for ==================
+protocols.rosetta_scripts.ParsedProtocol.REPORT: ============End report for ==================
+protocols.rosetta_scripts.ParsedProtocol.REPORT: ============Begin report for ==================
+protocols.rosetta_scripts.ParsedProtocol.REPORT: ============End report for ==================
+protocols.jd2.JobDistributor: 3gbm_HA_0012 reported success in 143 seconds
+protocols.jd2.PDBJobInputter: PDBJobInputter::pose_from_job
+protocols.jd2.PDBJobInputter: filling pose from saved copy 3gbm_HA.pdb
+protocols.jd2.PDBJobInputter: PDBJobInputter::pose_from_job
+protocols.jd2.PDBJobInputter: filling pose from saved copy 3gbm_HA.pdb
+protocols.rosetta_scripts.ParsedProtocol: =======================BEGIN MOVER PackRotamersMover - repack=======================
+core.pack.task: Packer task: initialize from command line() 
+core.pack.interaction_graph.interaction_graph_factory: Instantiating LinearMemoryInteractionGraph
+core.pack.pack_rotamers: built 22127 rotamers at 498 positions.
+core.pack.pack_rotamers: IG: 19641212 bytes
+protocols.rosetta_scripts.ParsedProtocol: =======================BEGIN FILTER =======================
+protocols.rosetta_scripts.ParsedProtocol: =======================END FILTER =======================
+protocols.rosetta_scripts.ParsedProtocol: =======================BEGIN MOVER MinMover - minimize_sc=======================
+protocols.rosetta_scripts.ParsedProtocol: =======================BEGIN FILTER =======================
+protocols.rosetta_scripts.ParsedProtocol: =======================END FILTER =======================
+protocols.rosetta_scripts.ParsedProtocol: setting status to success
+protocols.rosetta_scripts.ParsedProtocol.REPORT: ============Begin report for ==================
+protocols.rosetta_scripts.ParsedProtocol.REPORT: ============End report for ==================
+protocols.rosetta_scripts.ParsedProtocol.REPORT: ============Begin report for ==================
+protocols.rosetta_scripts.ParsedProtocol.REPORT: ============End report for ==================
+protocols.jd2.JobDistributor: 3gbm_HA_0013 reported success in 147 seconds
+protocols.jd2.PDBJobInputter: PDBJobInputter::pose_from_job
+protocols.jd2.PDBJobInputter: filling pose from saved copy 3gbm_HA.pdb
+protocols.jd2.PDBJobInputter: PDBJobInputter::pose_from_job
+protocols.jd2.PDBJobInputter: filling pose from saved copy 3gbm_HA.pdb
+protocols.rosetta_scripts.ParsedProtocol: =======================BEGIN MOVER PackRotamersMover - repack=======================
+core.pack.task: Packer task: initialize from command line() 
+core.pack.interaction_graph.interaction_graph_factory: Instantiating LinearMemoryInteractionGraph
+core.pack.pack_rotamers: built 22127 rotamers at 498 positions.
+core.pack.pack_rotamers: IG: 19641212 bytes
+protocols.rosetta_scripts.ParsedProtocol: =======================BEGIN FILTER =======================
+protocols.rosetta_scripts.ParsedProtocol: =======================END FILTER =======================
+protocols.rosetta_scripts.ParsedProtocol: =======================BEGIN MOVER MinMover - minimize_sc=======================
+protocols.rosetta_scripts.ParsedProtocol: =======================BEGIN FILTER =======================
+protocols.rosetta_scripts.ParsedProtocol: =======================END FILTER =======================
+protocols.rosetta_scripts.ParsedProtocol: setting status to success
+protocols.rosetta_scripts.ParsedProtocol.REPORT: ============Begin report for ==================
+protocols.rosetta_scripts.ParsedProtocol.REPORT: ============End report for ==================
+protocols.rosetta_scripts.ParsedProtocol.REPORT: ============Begin report for ==================
+protocols.rosetta_scripts.ParsedProtocol.REPORT: ============End report for ==================
+protocols.jd2.JobDistributor: 3gbm_HA_0014 reported success in 147 seconds
+protocols.jd2.PDBJobInputter: PDBJobInputter::pose_from_job
+protocols.jd2.PDBJobInputter: filling pose from saved copy 3gbm_HA.pdb
+protocols.jd2.PDBJobInputter: PDBJobInputter::pose_from_job
+protocols.jd2.PDBJobInputter: filling pose from saved copy 3gbm_HA.pdb
+protocols.rosetta_scripts.ParsedProtocol: =======================BEGIN MOVER PackRotamersMover - repack=======================
+core.pack.task: Packer task: initialize from command line() 
+core.pack.interaction_graph.interaction_graph_factory: Instantiating LinearMemoryInteractionGraph
+core.pack.pack_rotamers: built 22127 rotamers at 498 positions.
+core.pack.pack_rotamers: IG: 19641212 bytes
+protocols.rosetta_scripts.ParsedProtocol: =======================BEGIN FILTER =======================
+protocols.rosetta_scripts.ParsedProtocol: =======================END FILTER =======================
+protocols.rosetta_scripts.ParsedProtocol: =======================BEGIN MOVER MinMover - minimize_sc=======================
+protocols.rosetta_scripts.ParsedProtocol: =======================BEGIN FILTER =======================
+protocols.rosetta_scripts.ParsedProtocol: =======================END FILTER =======================
+protocols.rosetta_scripts.ParsedProtocol: setting status to success
+protocols.rosetta_scripts.ParsedProtocol.REPORT: ============Begin report for ==================
+protocols.rosetta_scripts.ParsedProtocol.REPORT: ============End report for ==================
+protocols.rosetta_scripts.ParsedProtocol.REPORT: ============Begin report for ==================
+protocols.rosetta_scripts.ParsedProtocol.REPORT: ============End report for ==================
+protocols.jd2.JobDistributor: 3gbm_HA_0015 reported success in 147 seconds
+protocols.jd2.PDBJobInputter: PDBJobInputter::pose_from_job
+protocols.jd2.PDBJobInputter: filling pose from saved copy 3gbm_HA.pdb
+protocols.jd2.PDBJobInputter: PDBJobInputter::pose_from_job
+protocols.jd2.PDBJobInputter: filling pose from saved copy 3gbm_HA.pdb
+protocols.rosetta_scripts.ParsedProtocol: =======================BEGIN MOVER PackRotamersMover - repack=======================
+core.pack.task: Packer task: initialize from command line() 
+core.pack.interaction_graph.interaction_graph_factory: Instantiating LinearMemoryInteractionGraph
+core.pack.pack_rotamers: built 22127 rotamers at 498 positions.
+core.pack.pack_rotamers: IG: 19641212 bytes
+protocols.rosetta_scripts.ParsedProtocol: =======================BEGIN FILTER =======================
+protocols.rosetta_scripts.ParsedProtocol: =======================END FILTER =======================
+protocols.rosetta_scripts.ParsedProtocol: =======================BEGIN MOVER MinMover - minimize_sc=======================
+protocols.rosetta_scripts.ParsedProtocol: =======================BEGIN FILTER =======================
+protocols.rosetta_scripts.ParsedProtocol: =======================END FILTER =======================
+protocols.rosetta_scripts.ParsedProtocol: setting status to success
+protocols.rosetta_scripts.ParsedProtocol.REPORT: ============Begin report for ==================
+protocols.rosetta_scripts.ParsedProtocol.REPORT: ============End report for ==================
+protocols.rosetta_scripts.ParsedProtocol.REPORT: ============Begin report for ==================
+protocols.rosetta_scripts.ParsedProtocol.REPORT: ============End report for ==================
+protocols.jd2.JobDistributor: 3gbm_HA_0016 reported success in 147 seconds
+protocols.jd2.PDBJobInputter: PDBJobInputter::pose_from_job
+protocols.jd2.PDBJobInputter: filling pose from saved copy 3gbm_HA.pdb
+protocols.jd2.PDBJobInputter: PDBJobInputter::pose_from_job
+protocols.jd2.PDBJobInputter: filling pose from saved copy 3gbm_HA.pdb
+protocols.rosetta_scripts.ParsedProtocol: =======================BEGIN MOVER PackRotamersMover - repack=======================
+core.pack.task: Packer task: initialize from command line() 
+core.pack.interaction_graph.interaction_graph_factory: Instantiating LinearMemoryInteractionGraph
+core.pack.pack_rotamers: built 22127 rotamers at 498 positions.
+core.pack.pack_rotamers: IG: 19641212 bytes
+protocols.rosetta_scripts.ParsedProtocol: =======================BEGIN FILTER =======================
+protocols.rosetta_scripts.ParsedProtocol: =======================END FILTER =======================
+protocols.rosetta_scripts.ParsedProtocol: =======================BEGIN MOVER MinMover - minimize_sc=======================
+protocols.rosetta_scripts.ParsedProtocol: =======================BEGIN FILTER =======================
+protocols.rosetta_scripts.ParsedProtocol: =======================END FILTER =======================
+protocols.rosetta_scripts.ParsedProtocol: setting status to success
+protocols.rosetta_scripts.ParsedProtocol.REPORT: ============Begin report for ==================
+protocols.rosetta_scripts.ParsedProtocol.REPORT: ============End report for ==================
+protocols.rosetta_scripts.ParsedProtocol.REPORT: ============Begin report for ==================
+protocols.rosetta_scripts.ParsedProtocol.REPORT: ============End report for ==================
+protocols.jd2.JobDistributor: 3gbm_HA_0017 reported success in 144 seconds
+protocols.jd2.PDBJobInputter: PDBJobInputter::pose_from_job
+protocols.jd2.PDBJobInputter: filling pose from saved copy 3gbm_HA.pdb
+protocols.jd2.PDBJobInputter: PDBJobInputter::pose_from_job
+protocols.jd2.PDBJobInputter: filling pose from saved copy 3gbm_HA.pdb
+protocols.rosetta_scripts.ParsedProtocol: =======================BEGIN MOVER PackRotamersMover - repack=======================
+core.pack.task: Packer task: initialize from command line() 
+core.pack.interaction_graph.interaction_graph_factory: Instantiating LinearMemoryInteractionGraph
+core.pack.pack_rotamers: built 22127 rotamers at 498 positions.
+core.pack.pack_rotamers: IG: 19641212 bytes
+protocols.rosetta_scripts.ParsedProtocol: =======================BEGIN FILTER =======================
+protocols.rosetta_scripts.ParsedProtocol: =======================END FILTER =======================
+protocols.rosetta_scripts.ParsedProtocol: =======================BEGIN MOVER MinMover - minimize_sc=======================
+protocols.rosetta_scripts.ParsedProtocol: =======================BEGIN FILTER =======================
+protocols.rosetta_scripts.ParsedProtocol: =======================END FILTER =======================
+protocols.rosetta_scripts.ParsedProtocol: setting status to success
+protocols.rosetta_scripts.ParsedProtocol.REPORT: ============Begin report for ==================
+protocols.rosetta_scripts.ParsedProtocol.REPORT: ============End report for ==================
+protocols.rosetta_scripts.ParsedProtocol.REPORT: ============Begin report for ==================
+protocols.rosetta_scripts.ParsedProtocol.REPORT: ============End report for ==================
+protocols.jd2.JobDistributor: 3gbm_HA_0018 reported success in 132 seconds
+protocols.jd2.PDBJobInputter: PDBJobInputter::pose_from_job
+protocols.jd2.PDBJobInputter: filling pose from saved copy 3gbm_HA.pdb
+protocols.jd2.PDBJobInputter: PDBJobInputter::pose_from_job
+protocols.jd2.PDBJobInputter: filling pose from saved copy 3gbm_HA.pdb
+protocols.rosetta_scripts.ParsedProtocol: =======================BEGIN MOVER PackRotamersMover - repack=======================
+core.pack.task: Packer task: initialize from command line() 
+core.pack.interaction_graph.interaction_graph_factory: Instantiating LinearMemoryInteractionGraph
+core.pack.pack_rotamers: built 22127 rotamers at 498 positions.
+core.pack.pack_rotamers: IG: 19641212 bytes
+protocols.rosetta_scripts.ParsedProtocol: =======================BEGIN FILTER =======================
+protocols.rosetta_scripts.ParsedProtocol: =======================END FILTER =======================
+protocols.rosetta_scripts.ParsedProtocol: =======================BEGIN MOVER MinMover - minimize_sc=======================
+protocols.rosetta_scripts.ParsedProtocol: =======================BEGIN FILTER =======================
+protocols.rosetta_scripts.ParsedProtocol: =======================END FILTER =======================
+protocols.rosetta_scripts.ParsedProtocol: setting status to success
+protocols.rosetta_scripts.ParsedProtocol.REPORT: ============Begin report for ==================
+protocols.rosetta_scripts.ParsedProtocol.REPORT: ============End report for ==================
+protocols.rosetta_scripts.ParsedProtocol.REPORT: ============Begin report for ==================
+protocols.rosetta_scripts.ParsedProtocol.REPORT: ============End report for ==================
+protocols.jd2.JobDistributor: 3gbm_HA_0019 reported success in 146 seconds
+protocols.jd2.PDBJobInputter: PDBJobInputter::pose_from_job
+protocols.jd2.PDBJobInputter: filling pose from saved copy 3gbm_HA.pdb
+protocols.jd2.PDBJobInputter: PDBJobInputter::pose_from_job
+protocols.jd2.PDBJobInputter: filling pose from saved copy 3gbm_HA.pdb
+protocols.rosetta_scripts.ParsedProtocol: =======================BEGIN MOVER PackRotamersMover - repack=======================
+core.pack.task: Packer task: initialize from command line() 
+core.pack.interaction_graph.interaction_graph_factory: Instantiating LinearMemoryInteractionGraph
+core.pack.pack_rotamers: built 22127 rotamers at 498 positions.
+core.pack.pack_rotamers: IG: 19641212 bytes
+protocols.rosetta_scripts.ParsedProtocol: =======================BEGIN FILTER =======================
+protocols.rosetta_scripts.ParsedProtocol: =======================END FILTER =======================
+protocols.rosetta_scripts.ParsedProtocol: =======================BEGIN MOVER MinMover - minimize_sc=======================
+protocols.rosetta_scripts.ParsedProtocol: =======================BEGIN FILTER =======================
+protocols.rosetta_scripts.ParsedProtocol: =======================END FILTER =======================
+protocols.rosetta_scripts.ParsedProtocol: setting status to success
+protocols.rosetta_scripts.ParsedProtocol.REPORT: ============Begin report for ==================
+protocols.rosetta_scripts.ParsedProtocol.REPORT: ============End report for ==================
+protocols.rosetta_scripts.ParsedProtocol.REPORT: ============Begin report for ==================
+protocols.rosetta_scripts.ParsedProtocol.REPORT: ============End report for ==================
+protocols.jd2.JobDistributor: 3gbm_HA_0020 reported success in 150 seconds
+protocols.jd2.PDBJobInputter: PDBJobInputter::pose_from_job
+protocols.jd2.PDBJobInputter: filling pose from saved copy 3gbm_HA.pdb
+protocols.jd2.PDBJobInputter: PDBJobInputter::pose_from_job
+protocols.jd2.PDBJobInputter: filling pose from saved copy 3gbm_HA.pdb
+protocols.rosetta_scripts.ParsedProtocol: =======================BEGIN MOVER PackRotamersMover - repack=======================
+core.pack.task: Packer task: initialize from command line() 
+core.pack.interaction_graph.interaction_graph_factory: Instantiating LinearMemoryInteractionGraph
+core.pack.pack_rotamers: built 22127 rotamers at 498 positions.
+core.pack.pack_rotamers: IG: 19641212 bytes
+protocols.rosetta_scripts.ParsedProtocol: =======================BEGIN FILTER =======================
+protocols.rosetta_scripts.ParsedProtocol: =======================END FILTER =======================
+protocols.rosetta_scripts.ParsedProtocol: =======================BEGIN MOVER MinMover - minimize_sc=======================
+protocols.rosetta_scripts.ParsedProtocol: =======================BEGIN FILTER =======================
+protocols.rosetta_scripts.ParsedProtocol: =======================END FILTER =======================
+protocols.rosetta_scripts.ParsedProtocol: setting status to success
+protocols.rosetta_scripts.ParsedProtocol.REPORT: ============Begin report for ==================
+protocols.rosetta_scripts.ParsedProtocol.REPORT: ============End report for ==================
+protocols.rosetta_scripts.ParsedProtocol.REPORT: ============Begin report for ==================
+protocols.rosetta_scripts.ParsedProtocol.REPORT: ============End report for ==================
+protocols.jd2.JobDistributor: 3gbm_HA_0021 reported success in 142 seconds
+protocols.jd2.PDBJobInputter: PDBJobInputter::pose_from_job
+protocols.jd2.PDBJobInputter: filling pose from saved copy 3gbm_HA.pdb
+protocols.jd2.PDBJobInputter: PDBJobInputter::pose_from_job
+protocols.jd2.PDBJobInputter: filling pose from saved copy 3gbm_HA.pdb
+protocols.rosetta_scripts.ParsedProtocol: =======================BEGIN MOVER PackRotamersMover - repack=======================
+core.pack.task: Packer task: initialize from command line() 
+core.pack.interaction_graph.interaction_graph_factory: Instantiating LinearMemoryInteractionGraph
+core.pack.pack_rotamers: built 22127 rotamers at 498 positions.
+core.pack.pack_rotamers: IG: 19641212 bytes
+protocols.rosetta_scripts.ParsedProtocol: =======================BEGIN FILTER =======================
+protocols.rosetta_scripts.ParsedProtocol: =======================END FILTER =======================
+protocols.rosetta_scripts.ParsedProtocol: =======================BEGIN MOVER MinMover - minimize_sc=======================
+protocols.rosetta_scripts.ParsedProtocol: =======================BEGIN FILTER =======================
+protocols.rosetta_scripts.ParsedProtocol: =======================END FILTER =======================
+protocols.rosetta_scripts.ParsedProtocol: setting status to success
+protocols.rosetta_scripts.ParsedProtocol.REPORT: ============Begin report for ==================
+protocols.rosetta_scripts.ParsedProtocol.REPORT: ============End report for ==================
+protocols.rosetta_scripts.ParsedProtocol.REPORT: ============Begin report for ==================
+protocols.rosetta_scripts.ParsedProtocol.REPORT: ============End report for ==================
+protocols.jd2.JobDistributor: 3gbm_HA_0022 reported success in 147 seconds
+protocols.jd2.PDBJobInputter: PDBJobInputter::pose_from_job
+protocols.jd2.PDBJobInputter: filling pose from saved copy 3gbm_HA.pdb
+protocols.jd2.PDBJobInputter: PDBJobInputter::pose_from_job
+protocols.jd2.PDBJobInputter: filling pose from saved copy 3gbm_HA.pdb
+protocols.rosetta_scripts.ParsedProtocol: =======================BEGIN MOVER PackRotamersMover - repack=======================
+core.pack.task: Packer task: initialize from command line() 
+core.pack.interaction_graph.interaction_graph_factory: Instantiating LinearMemoryInteractionGraph
+core.pack.pack_rotamers: built 22127 rotamers at 498 positions.
+core.pack.pack_rotamers: IG: 19641212 bytes
+protocols.rosetta_scripts.ParsedProtocol: =======================BEGIN FILTER =======================
+protocols.rosetta_scripts.ParsedProtocol: =======================END FILTER =======================
+protocols.rosetta_scripts.ParsedProtocol: =======================BEGIN MOVER MinMover - minimize_sc=======================
+protocols.rosetta_scripts.ParsedProtocol: =======================BEGIN FILTER =======================
+protocols.rosetta_scripts.ParsedProtocol: =======================END FILTER =======================
+protocols.rosetta_scripts.ParsedProtocol: setting status to success
+protocols.rosetta_scripts.ParsedProtocol.REPORT: ============Begin report for ==================
+protocols.rosetta_scripts.ParsedProtocol.REPORT: ============End report for ==================
+protocols.rosetta_scripts.ParsedProtocol.REPORT: ============Begin report for ==================
+protocols.rosetta_scripts.ParsedProtocol.REPORT: ============End report for ==================
+protocols.jd2.JobDistributor: 3gbm_HA_0023 reported success in 144 seconds
+protocols.jd2.PDBJobInputter: PDBJobInputter::pose_from_job
+protocols.jd2.PDBJobInputter: filling pose from saved copy 3gbm_HA.pdb
+protocols.jd2.PDBJobInputter: PDBJobInputter::pose_from_job
+protocols.jd2.PDBJobInputter: filling pose from saved copy 3gbm_HA.pdb
+protocols.rosetta_scripts.ParsedProtocol: =======================BEGIN MOVER PackRotamersMover - repack=======================
+core.pack.task: Packer task: initialize from command line() 
+core.pack.interaction_graph.interaction_graph_factory: Instantiating LinearMemoryInteractionGraph
+core.pack.pack_rotamers: built 22127 rotamers at 498 positions.
+core.pack.pack_rotamers: IG: 19641212 bytes
+protocols.rosetta_scripts.ParsedProtocol: =======================BEGIN FILTER =======================
+protocols.rosetta_scripts.ParsedProtocol: =======================END FILTER =======================
+protocols.rosetta_scripts.ParsedProtocol: =======================BEGIN MOVER MinMover - minimize_sc=======================
+protocols.rosetta_scripts.ParsedProtocol: =======================BEGIN FILTER =======================
+protocols.rosetta_scripts.ParsedProtocol: =======================END FILTER =======================
+protocols.rosetta_scripts.ParsedProtocol: setting status to success
+protocols.rosetta_scripts.ParsedProtocol.REPORT: ============Begin report for ==================
+protocols.rosetta_scripts.ParsedProtocol.REPORT: ============End report for ==================
+protocols.rosetta_scripts.ParsedProtocol.REPORT: ============Begin report for ==================
+protocols.rosetta_scripts.ParsedProtocol.REPORT: ============End report for ==================
+protocols.jd2.JobDistributor: 3gbm_HA_0024 reported success in 148 seconds
+protocols.jd2.PDBJobInputter: PDBJobInputter::pose_from_job
+protocols.jd2.PDBJobInputter: filling pose from saved copy 3gbm_HA.pdb
+protocols.jd2.PDBJobInputter: PDBJobInputter::pose_from_job
+protocols.jd2.PDBJobInputter: filling pose from saved copy 3gbm_HA.pdb
+protocols.rosetta_scripts.ParsedProtocol: =======================BEGIN MOVER PackRotamersMover - repack=======================
+core.pack.task: Packer task: initialize from command line() 
+core.pack.interaction_graph.interaction_graph_factory: Instantiating LinearMemoryInteractionGraph
+core.pack.pack_rotamers: built 22127 rotamers at 498 positions.
+core.pack.pack_rotamers: IG: 19641212 bytes
+protocols.rosetta_scripts.ParsedProtocol: =======================BEGIN FILTER =======================
+protocols.rosetta_scripts.ParsedProtocol: =======================END FILTER =======================
+protocols.rosetta_scripts.ParsedProtocol: =======================BEGIN MOVER MinMover - minimize_sc=======================
+protocols.rosetta_scripts.ParsedProtocol: =======================BEGIN FILTER =======================
+protocols.rosetta_scripts.ParsedProtocol: =======================END FILTER =======================
+protocols.rosetta_scripts.ParsedProtocol: setting status to success
+protocols.rosetta_scripts.ParsedProtocol.REPORT: ============Begin report for ==================
+protocols.rosetta_scripts.ParsedProtocol.REPORT: ============End report for ==================
+protocols.rosetta_scripts.ParsedProtocol.REPORT: ============Begin report for ==================
+protocols.rosetta_scripts.ParsedProtocol.REPORT: ============End report for ==================
+protocols.jd2.JobDistributor: 3gbm_HA_0025 reported success in 145 seconds
+protocols.jd2.JobDistributor: no more batches to process... 
+protocols.jd2.JobDistributor: 25 jobs considered, 25 jobs attempted in 3670 seconds
+protocols.jd2.JobDistributor: WARNING: The following options have been set, but have not yet been used:
+	-out:file:fullatom 
+

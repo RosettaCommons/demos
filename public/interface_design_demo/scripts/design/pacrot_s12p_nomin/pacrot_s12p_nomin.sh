@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -e
 
-rosetta_path=/nas02/home/k/h/khouli/rosetta
+rosetta_path=/home/frank/rosetta
 dbpath=${rosetta_path}/rosetta_database/
 
 basename=`pwd`

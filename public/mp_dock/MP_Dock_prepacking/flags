@@ -1,0 +1,19 @@
+
+-in:file:s input/1AFO_AB.pdb
+
+#input spanfile
+-mp:setup:spanfiles input/1AFO_AB.span	
+
+#name of the output scorefile	
+-out:file:scorefile score_ppk_1AFO.sc
+
+#number of models to build			
+-nstruct 1
+
+-docking:partners A_B
+
+#weights file for scoring							
+-score:weights mpframework_smooth_fa_2012.wts
+
+#don't pack sidechains until membrane is set up
+-packing:pack_missing_sidechains 0

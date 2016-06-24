@@ -1,7 +1,8 @@
-# Relax Around Chemically Bound Ligand
+# Relax Around A Chemically Bound Ligand
 
-# Metadata
-This document was last edited on January 4, 2012 by Ron Jacak.  The document was originally written by Andrew Leaver-Fay, and completed, expanded and modified for Doxygen by Ron Jacak.
+KEYWORDS: LIGANDS INTERFACES STRUCTURE_PREDICTION
+
+This document was originally written by Andrew Leaver-Fay, and completed, expanded and modified for Doxygen by Ron Jacak. It was later modified during documentation XRW 2016 by Parisa Hosseinzadeh and Vikram K. Mulligan (vmullig@uw.edu) to enable automatic testing and to ensure compatibility. 
 
 # Quick Guide
 1. Create parameter files for the ligand, and modified residue (if one doesn't already exist)
@@ -14,16 +15,15 @@ This document was last edited on January 4, 2012 by Ron Jacak.  The document was
 
 # Introduction
 
-The purpose of this demo is to relax a protein with a chemically attached small molecule. Currently, one example on the LOV2 domain is provided. In time, this README will be expanded to include a second example on a glycosylated protein.
+The purpose of this demo is to relax a protein with a chemically attached small molecule. Currently, one example on the LOV2 domain is provided. 
 
-Rosetta requires a "params" file for each of the residue types that are used in a trajectory. These are already available for all of the amino acids, nucleic acids, and most of the metals.  These parameter files live in minirosetta_database/chemical/residue_type_sets/fa_standard/residue_types/. Before relax can be run on a liganded structure, a parameter file for that ligand needs to be created.
+Rosetta requires a "params" file for each of the residue types that are used in a trajectory. These are already available for all of the amino acids, nucleic acids, and most of the metals.  These parameter files live in Rosetta/main/database/chemical/residue_type_sets/fa_standard/residue_types/. Before relax can be run on a liganded structure, a parameter file for that ligand needs to be created.
 
-The "LOV2" domain binds a flavin and, when exposed to blue light, forms a thiol bond at CYS 450 to this flavin.  One question that would be nice to answer is what effect this chemical bond has on the stability of the LOV2 domain, since it is known that after this bond forms, the C-terminal
-"J-alpha" helix unfolds.  To address this with Rosetta, we would like to run relax on the starting structure while preserving this chemical bond.  The crystal structure 2V0W was made by crystalizing the LOV2 domain in the dark, and then exposing the crystals to light.  The thiol bond between CYS 450 and the flavin is visible in the structure. 
+The "LOV2" domain binds a flavin and, when exposed to blue light, forms a thiol bond at CYS 450 to this flavin.  One question that would be nice to answer is what effect this chemical bond has on the stability of the LOV2 domain, since it is known that after this bond forms, the C-terminal "J-alpha" helix unfolds.  To address this with Rosetta, we would like to run relax on the starting structure while preserving this chemical bond.  The crystal structure 2V0W was made by crystalizing the LOV2 domain in the dark, and then exposing the crystals to light.  The thiol bond between CYS 450 and the flavin is visible in the structure. 
 
 # Creating a Ligand Parameter File
 
-We downloaded the .sdf file for the flavin attached to LOV2 from the PDB (http://www.pdb.org/pdb/explore/explore.do?structureId=2V0W), Ligands_noHydrogens_withMissing_1_Instances.sdf (an awful name for this file). Also, the file doesn't contain hydrogens, which we do want. So, first, we need to add hydrogens to this file.  The program REDUCE (which can be obtained from the Richardson lab website) can be used to add hydrogens.  To run REDUCE, you have to put a copy (or symlink) of the reduce_het_dict.txt file in the /usr/local directory.
+We downloaded the .sdf file for the flavin attached to LOV2 from the PDB (http://www.pdb.org/pdb/explore/explore.do?structureId=2V0W), Ligands_noHydrogens_withMissing_1_Instances.sdf (an awful name for this file). Also, the file doesn't contain hydrogens, which we do want. So, first, we need to add hydrogens to this file.  The program REDUCE (which can be obtained from the [Richardson lab website](http://kinemage.biochem.duke.edu/software/reduce.php)) can be used to add hydrogens.  To run REDUCE, you have to put a copy (or symlink) of the reduce_het_dict.txt file in the /usr/local directory. You can also use other programs. For more information please refer to tutorials/prepare_ligand.
 
 ```
 $ cd /usr/local
@@ -43,6 +43,7 @@ HETATM    0  H6  FMN A1547      14.354   1.560   6.108  1.00 12.59           H  
 ```
 
 Now open up the PDB file of the ligand in pymol and have PyMOL write it out as a .mol file.
+
 ```
 $ grep FMN blah.pdb > FMN_w_h.pdb
 $ pymol FMN_w_h.pdb
@@ -55,12 +56,15 @@ $ pymol FMN_w_h.pdb
 
 produces FMN_w_h.mol
 
-We can convert the MOL file to a .params file with a script named molfile_to_params.py (located in ~/rosetta_source/src/python/apps/public/). This script can be run with the "-h" flag to list all the flags that are applicable.
+We can convert the MOL file to a .params file with a script named molfile_to_params.py (located in <path_to_Rosetta_directory>/main/source/scripts/python/public/). This script can be run with the "-h" flag to list all the flags that are applicable.
 ```
-$ ~/rosetta_source/src/python/apps/public/molfile_to_params.py --name=FMN FMN_w_h.mol
+$> cp rosetta_inputs/FMN_w_h.mol .
+$> $ROSETTA3/scripts/python/public/molfile_to_params.py -n FMN -p FMN FMN_w_h.mol
 ```
 
-The --name flag specifies what 3-letter name will used to identify this ligand in PDB files.  We chose "FMN" which stands for flavin mononucleotide.  The python script has the possibility of mis-assigning atom types, so we opened up the FNM.params file to look and see that we got the chemistry right.
+(where `$ROSETTA3`=path-to-Rosetta/main/source)
+
+The -n flag specifies what 3-letter name will used to identify this ligand in PDB files. The -p flags specifies a name for the .params file. We chose "FMN" which stands for flavin mononucleotide.  The python script has the possibility of mis-assigning atom types, so we opened up the FNM.params file to look and see that we got the chemistry right.
 
 Example output from a molfile_to_params.py run:
 ```
@@ -83,7 +87,7 @@ Wrote PDB file FNM_0001.pdb
 ```
 
 The .params file looks good, and the PDB file FMN_0001.pdb looks good. The other thing we have to do is to tell Rosetta that there is a chemical bond between this flavin and some other residue.  A chemical connection must be placed between the flavin atom C8 and SG atom of the modified CYS
-residue. To do this, add a "CONNECT C8" line to the FMN params file (anywhere after the ATOM records is fine).
+residue. To do this, add a "CONNECT C8" line to the FMN params file (anywhere after the ATOM records is fine). 
 
 Finally, we need to add an "ICOOR" line for this connection at the bottom of the file (and to get this, we'll measure the distance to the CYS SG in the 2V0W pdb). The format for this line is:
 ```
@@ -113,18 +117,15 @@ The name "CONN1" says that this is the location for the atom that is covalently 
 
 # Using the Newly Created Ligand and Modified Residue Parameter Files
 
-The next step is to swap the newly generated FMN with the existing FMN residue: the point is to use the newly generated names for the atoms.  Atom names have to agree (perfectly!) between the input PDB file and the .params file.  Careful: the .params file has a strange format. The
-atom names given on the ATOM lines are column formatted, so don't add extra whitespace. The rest of the line (not the names) is whitespace delimited.  Paste the contents of the FMN_0001.pdb file to the bottom of the original 2V0W file, and remove the HETATM lines using the original
-flavin molecule atom names. To add the newly created ligand residue to the database of residue types Rosetta uses, use the flag -extra_res_fa on the command line:
+The next step is to swap the newly generated FMN with the existing FMN residue: the point is to use the newly generated names for the atoms.  Atom names have to agree (perfectly!) between the input PDB file and the .params file.  Careful: the .params file has a strange format. 
+The atom names given on the ATOM lines are column formatted, so don't add extra whitespace. The rest of the line (not the names) is whitespace delimited.  Paste the contents of the FMN_0001.pdb file to the bottom of the original 2V0W file, and remove the HETATM lines using the original flavin molecule atom names. To add the newly created ligand residue to the database of residue types Rosetta uses, use the flag -extra_res_fa on the command line:
 ```
 -extra_res_fa FMN_modded.params
 ```
 
-It is also necessary to change the CYS which is forming the chemical bond with the flavin in the 2V0W pdb file to a modified CYS conformation. The version of CYS in Rosetta which forms a chemical bond to something else is named CYX. So rename residue 450 to CYX from CYS. This residue
-type is defined in rosetta_database/chemical/residue_type_sets/fa_standard/residue_types/sidechain_conjugation/CYX.params. It is not automatically read in when Rosetta loads: its entry in the rosetta_database/chemical/residue_type_sets/fa_standard/residue_types.txt file is commented
-out, so we also have to uncomment this line. ALTERNATIVELY: we can explicitly add this file to the list of files that Rosetta loads by including it on the command line as we did above. The flag for this would be:
+It is also necessary to change the CYS which is forming the chemical bond with the flavin in the 2V0W pdb file to a modified CYS conformation. The version of CYS in Rosetta which forms a chemical bond to something else is named CYX. So rename residue 450 to CYX from CYS. This residue-type is defined in database/chemical/residue_type_sets/fa_standard/residue_types/sidechain_conjugation/CYX.params. It is not automatically read in when Rosetta loads: its entry in the rosetta_database/chemical/residue_type_sets/fa_standard/residue_types.txt file is commented out, so we also have to uncomment this line. ALTERNATIVELY: we can explicitly add this file to the list of files that Rosetta loads by including it on the command line as we did above. The flag for this would be:
 ```
--extra_res_fa /path/to/rosetta_database/chemical/residue_type_sets/fa_standard/residue_types/sidechain_conjugation/CYX.params
+-extra_res_fa sidechain_conjugation/CYX.params
 ```
 
 # Making a constraints file
@@ -142,15 +143,27 @@ Angle CB 50 SG 50 C8 147 HARMONIC 1.94080613 0.034906585
 
 where for the first constraint, 1.93207948 represents the ideal angle (x0) of 110.7 degrees, given in radians, and 0.034906585 represents a standard deviation of 2 degrees, given in radians.
 
-** From google: 110.7 * pi / 180 = 1.93207948<br>
-** From google:   2.0 * pi / 180 = 0.034906585<br>
+```
+From Google:
+110.7 * pi / 180 = 1.93207948
+2.0 * pi / 180 = 0.034906585
+```
+
+For more information about the constraints, you can check the [constraints tutorial](../../tutorials/Tutorial_8_Constraints/Tutorial_8_Constraints.md).
 
 # Running the relax protocol
 
-To run the relax protocol, we need to pass in a PDB with the correct FMN and CYX lines, the parameter files for the modified CYS and the FMN, and the constraint file.  We also need to activate constraints during scorefunction evaluation, which can be done using the score:weights flag
-on the command line.  A complete command line for the protocol would be as follows:
+To run the relax protocol, we need to pass in a PDB with the correct FMN and CYX lines, the parameter files for the modified CYS and the FMN, and the constraint file.  We also need to activate constraints during scorefunction evaluation, which can be done using the score:weights flag on the command line.  
+You can copy the necessary files that are pre-generated from rosetta_inputs directory:
 ```
-~/rosettabin/relax.linuxgccrelease -database ~/rosettadb/ -s 2V0W.pdb -in:file:fullatom -extra_res_fa FMN_modded.params -extra_res_fa ~/rosettadb/chemical/residue_type_sets/fa_standard/residue_types/sidechain_conjugation/CYX.params -overwrite -cst_fa_file chemical_bond.cst -score:weights score12+constraints.wts -mute basic core.init core.scoring
+$> cp rosetta_inputs/2V0W.pdb .
+$> cp rosetta_inputs/FMN_modded.params .
+```
+
+A complete command line for the protocol would be as follows:
+
+```
+$> $ROSETTA3/bin/relax.default.linuxgccrelease -s 2V0W.pdb -in:file:fullatom -extra_res_fa rosetta_inputs/FMN_modded.params -extra_res_fa sidechain_conjugation/CYX.params -overwrite -cst_fa_file chemical_bond.cst -score:weights talaris2014_cst.wts -mute basic core.init core.scoring
 ```
 
 Truncated output from the command:

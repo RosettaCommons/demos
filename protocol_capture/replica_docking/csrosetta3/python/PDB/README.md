@@ -20,6 +20,7 @@
 ### along with this program.  If not, see <http://www.gnu.org/licenses/>.
 ###
 ###
+KEYWORDS: GENERAL GENERAL
 This module is copied from biopython-1.57 and has been cleaned up in a hack and slash fashion to reduce external dependencies. This means that probably many parts of the API 
 are now broken. We only use this for PDB import/export and could probably reduce the number of files here drastically or use a different PDB reader/write entirely.
 

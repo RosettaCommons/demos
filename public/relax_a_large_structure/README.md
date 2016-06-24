@@ -1,5 +1,7 @@
 # Relax a Large Structure
 
+KEYWORDS: STRUCTURE_PREDICTION GENERAL
+
 The FastRelax protocol minimizes the input structure according to Rosetta's force field.
 The attached XML file (demo.xml) is an example rosetta script that specifies how to relax a part of a large protein.
 The script defines one mover (FastRelax) with a MoveMap, which specified the residues to relax.
@@ -27,10 +29,10 @@ If not explicitly specified, the following parameter values are used for FastRel
 	- task_operations: InitializeFromCommandline, IncludeCurrent, and RestrictToRepacking
 ```
 
-Command line arguments to run this script:
+Command line arguments to run this script: (where `$ROSETTA3`=path-to-Rosetta/main/source)
 
 ```
-	./rosetta_scripts.linuxgccrelease -database ~/minirosetta_database/ -s starting_files/3E0C.pdb -parser:protocol demo.xml -ignore_unrecognized_res
+	$> $ROSETTA3/bin/rosetta_scripts.default.linuxgccrelease -s starting_files/3E0C.pdb -parser:protocol demo.xml -ignore_unrecognized_res
 ```
 
 The flag ignore_unrecognized_res asks Rosetta to ignore any residue types it doesn't recognize (HOH in this example).

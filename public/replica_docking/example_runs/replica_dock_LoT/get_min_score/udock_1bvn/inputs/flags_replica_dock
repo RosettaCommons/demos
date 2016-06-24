@@ -1,0 +1,8 @@
+#this flag-file is automatically generated
+
+-nstruct 2
+-in:file:native $CM_NATIVE_PDB
+@$CM_PARTNERS
+-in:file:s $CM_INPUT_PDB
+-score:weights interchain_cen
+-n_replica 3

@@ -1,6 +1,6 @@
 Foldit Standalone Protocol Capture
 ==================================
-
+KEYWORDS: UTILITIES GENERAL
 Authors: Seth Cooper, David Kim, Firas Khatib, Adrien Treuille (PI), Janos 
 Barbero, Jeehyung Lee, Michael Beenen, Andrew Leaver-Fay, Matthew Smith 
 (Speaker), David Baker (PI), Zoran Popovic (PI)

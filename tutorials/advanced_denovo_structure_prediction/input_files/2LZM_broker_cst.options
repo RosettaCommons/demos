@@ -1,0 +1,39 @@
+#make sure all variable names have been replaced with absolute path and that no line begins with a $ or ~s
+-in
+	-file
+		-native 2LZMA.pdb 	# native PDB file (optional)
+		-fasta 2LZMA.fasta 	# protein sequence in fasta format
+		-frag3 aa2LZMA03_05.200_v1_3 	# protein 3-residue fragments file
+		-frag9 aa2LZMA09_05.200_v1_3	# protein 9-residue fragments file
+-abinitio
+	-increase_cycles 10	# Increase the number of cycles at each stage in AbinitioRelax by this factor
+	-rg_reweight 0.5	# Reweight contribution of radius of gyration to total score by this scale factor
+	-rsd_wt_helix 0.5	# Reweight env, pair, and cb scores for helix residues by this factor
+	-rsd_wt_loop 0.5	# Reweight env, pair, and cb scores for loop residues by this factor
+-relax
+	-fast	# At the end of the de novo protein_folding, do a relax step of type "FastRelax".  This has been shown to be the best deal for speed and robustness.
+-broker
+	-setup topology_broker_cst.tpb
+-run
+	-protocol broker
+	-reinitialize_mover_for_each_job # jd generate fresh copy of its mover before each apply (once per job)
+-score
+	-find_neighbors_3dgrid	# Use a 3D lookup table for doing neighbor calculations. For spherical, well-distributed conformations
+-evaluation
+	-rmsd NATIVE _core 2LZMA_core.txt	# compute CA-RMSD for model comparing to native structure, name of column you want info under, and name of file defining over which residues you want RMSD computed
+-out
+	-nstruct 1	# how many structures do you want to generate?  Usually want to fold at least 1,000.
+	-file
+		-silent 2LZM_broker_cst.out	# full path to silent file output
+		-silent_struct_type binary	# we want binary silent files
+		-scorefile 2LZM_broker_cst.fsc
+-overwrite	# overwrite any existing output with the same name you may have generated
+-fold_cst
+	-force_minimize	# minimize the structure after making a move, even if no restraints given
+-constraints
+	-cst_file 2LZM_dist_w1.cst	# full path to your restraints file
+	-cst_weight 4	# The factor by which the cst score is multiplied.  A weight of 4 is suggested for protein_folding T4-lysozyme.
+	-cst_fa_file 2LZM_dist_w1.cst
+	-cst_fa_weight 4
+	-epr_distance
+

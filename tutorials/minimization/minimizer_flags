@@ -1,0 +1,3 @@
+-s 3hon.pdb
+-run:min_type lbfgs_armijo_nonmonotone
+-run:min_tolerance 0.001

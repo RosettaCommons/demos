@@ -1,3 +1,8 @@
+This is the title of the demo
+=============================
+
+KEYWORDS: GENERAL GENERAL
+
 The entire workflow for this demo should be described in a file
 named README.dox.  It should describe an entire work flow, with
 command lines, tested if possible.

@@ -14,4 +14,3 @@
 -run:no_prof_info_in_silentout \
 -mute core.io.database \
 -mute core.scoring.MembranePotential \
--database /Users/vyarovyarovoy/minirosetta_database

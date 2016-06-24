@@ -1,0 +1,16 @@
+#this flag-file is automatically generated
+
+-nstruct 1000
+-in:file:native ../../../../dock_targetlib/udock_1bvn/native/protAB.pdb
+-out:file:silent relax_native.out
+-score:weights docking
+-use_input_sc
+-unboundrot ../../../../dock_targetlib/udock_1bvn/native/protAB.pdb
+
+-detect_disulf true
+-rebuild_disulf true
+-fix_disulf ../../../../dock_targetlib/udock_1bvn/disulf/disulf_file
+
+-in:file:s ../../../../dock_targetlib/udock_1bvn/native/protAB.pdb
+@partners
+

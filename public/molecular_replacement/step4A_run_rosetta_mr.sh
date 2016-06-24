@@ -3,8 +3,7 @@
 mkdir -p outputs
 cd outputs
 
-$ROSETTA3_SRC/bin/mr_protocols.default.macosgccrelease \
-	-database $ROSETTA3_DB \
+../../../../main/source/bin/mr_protocols.default.linuxclangrelease\
 	-in::file::fasta ../inputs/1crb.fasta \
 	-in::file::alignment ../templates/2qo4.ali \
 	-in::file::template_pdb ../phaser/2qo4_mr.PHASER.1.pdb \

@@ -1,0 +1,33 @@
+<ROSETTASCRIPTS>
+	<SCOREFXNS>
+		<t14 weights="talaris2014" />
+	</SCOREFXNS>
+	<RESIDUE_SELECTORS>
+		<Layer name="corelayer" select_core="true" select_boundary="false" select_surface="false" core_cutoff="4.0" />
+		<Layer name="boundarylayer" select_core="false" select_boundary="true" select_surface="false" core_cutoff="4.0" />
+		<Layer name="surfacelayer" select_core="false" select_boundary="false" select_surface="true" core_cutoff="4.0" />
+	</RESIDUE_SELECTORS>
+	<TASKOPERATIONS>
+		<ReadResfile name="core_resfile" filename="core_resfile.txt" selector="corelayer" />
+		<OperateOnResidueSubset name="restrict_boundary_to_repack" selector="boundarylayer" >
+			<RestrictToRepackingRLT />
+		</OpearateOnResidueSubset>
+		<OperateOnResidueSubset name="prevent_surface_from_repacking" selector="surfacelayer" >
+			<PreventRepackingRLT />
+		</OpearateOnResidueSubset>
+		<ExtraRotamersGeneric name="extrachi" ex1="1" ex2="1" ex1_sample_level="1" ex2_sample_level="1" />
+		<ReadResfile name="core_resfile2" filename="core_resfile2.txt" />
+	</TASKOPERATIONS>
+	<FILTERS>
+	</FILTERS>
+	<MOVERS>
+		<PackRotamersMover name="pack1" scorefxn="t14" task_operations="core_resfile,prevent_surface_from_repacking,restrict_boundary_to_repack,extrachi,core_resfile2" />
+	</MOVERS>
+	<APPLY_TO_POSE>
+	</APPLY_TO_POSE>
+	<PROTOCOLS>
+		<Add mover="pack1" />
+	</PROTOCOLS>
+	<OUTPUT scorefxn="t14" />
+</ROSETTASCRIPTS>
+

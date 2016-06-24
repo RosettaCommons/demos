@@ -1,0 +1,26 @@
+<ROSETTASCRIPTS>
+    <SCOREFXNS>
+    </SCOREFXNS>
+
+This is a comment
+
+    <RESIDUE_SELECTORS>
+    </RESIDUE_SELECTORS>
+    <TASKOPERATIONS>
+                          So is this
+    </TASKOPERATIONS>
+    <FILTERS>
+    </FILTERS>
+    <MOVERS>
+
+  Anything not in angle brackets is a comment.
+
+    </MOVERS>
+    <APPLY_TO_POSE>
+    </APPLY_TO_POSE>
+    <PROTOCOLS>
+    </PROTOCOLS>
+    <OUTPUT />
+</ROSETTASCRIPTS>
+
+*(Angle brackets are the greater than/less than signs)

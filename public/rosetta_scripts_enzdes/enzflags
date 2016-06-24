@@ -1,0 +1,12 @@
+-run::preserve_header
+-extra_res_fa inputs/D2N_aX.params
+-unboundrot inputs/enzdes_test.pdb 
+-enzdes::detect_design_interface
+-enzdes::cut1 6.0
+-enzdes::cut2 8.0
+-enzdes::cut3 10.0
+-enzdes::cut4 12.0
+#enzdes::lig_packer_weight 1.5
+-enzdes::cstfile inputs/Est_ha_d2n.cst
+-mute core.io.database
+-jd2::enzdes_out

@@ -1,5 +1,7 @@
 # RNA threading/mutation
 
+KEYWORDS: NUCLEIC_ACIDS STRUCTURE_PREDICTION RNA
+
 # Author
 Rhiju Das, rhiju@stanford.edu
 
@@ -15,8 +17,10 @@ RNA homology modeling often involves taking a template coordinate file and threa
 # Running
 
 ```
-rna_thread -in:file:fasta rosetta_inputs/3bo3_REARRANGE_to_GIR1.fasta -s rosetta_inputs/3bo3_REARRANGE.pdb  -o 3bo3_REARRANGE_to_GIR1_thread.pdb -seq_offset 63
+$> $ROSETTA3/bin/rna_thread.default.linuxgccrelease -in:file:fasta rosetta_inputs/3bo3_REARRANGE_to_GIR1.fasta -s rosetta_inputs/3bo3_REARRANGE.pdb  -o 3bo3_REARRANGE_to_GIR1_thread.pdb -seq_offset 63
 ```
+
+(where `$ROSETTA3`=path-to-Rosetta/main/source)
 
 Note that insertions will *not* be modeled -- there will just be a chainbreak at those residues, and the residue numbering will skip.
 

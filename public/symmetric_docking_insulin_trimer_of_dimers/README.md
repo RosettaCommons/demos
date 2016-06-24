@@ -1,4 +1,8 @@
-# Symmetric Docking of Insulin Trimer of Dimers
+# Symmetric Docking of Insulin Trimer of Dimers - Demo
+
+KEYWORDS: DOCKING SYMMETRY
+
+## Needed input files
 
 Input files:
 
@@ -9,14 +13,14 @@ Input files:
 
 (2) The symmetry definition file informs Rosetta about the symmetry type, number of monomers to dock, how to calculate the score and some more things.
 
-# Example 1: Docking of an Insulin Dimer (chains A, B, C, D in 1ZEH) into a Trimer of Dimers (C3 symmetry)
+## Example 1: Docking of an Insulin Dimer (chains A, B, C, D in 1ZEH) into a Trimer of Dimers (C3 symmetry)
 
-## Clean Up the PDB File
+### Clean Up the PDB File
 
 IF the pdb file is multi-chain we must normalize it to a pseudo single chain with the following convenience script "addChain.pl". You can find that script in the scripts directory of this tutorial. This step is only required when the pdb is multi-chain!
 
 ```
-	> ./scripts/addChain.pl 1ZEH.pdb A | grep '^ATOM'  >  rosetta_inputs/1ZEH_monomer_c3.pdb
+	$> ./scripts/addChain.pl 1ZEH.pdb A | grep '^ATOM'  >  rosetta_inputs/1ZEH_monomer_c3.pdb
 ```
 
 where 1ZEH.pdb is the pdb file input and A is the the dummy new chain ID.
@@ -24,16 +28,16 @@ This simple script only normalizes the ATOM records; it removes the TER chain se
 
 In the example here, 1ZEH.pdb, contains 4 chains, and the 1ZEH_monomer.pdb has a single chain joining all the ATOM records of these into one chain called A. Now we have the pdb input consisting of only our chosen monomer entity.
 
-## Generating the Symmetry File
+### Generating the Symmetry File
 
 To generate a de novo symmetry file use script: `make_symmdef_file_denovo.py` that comes with the Rosetta code.
 The minimal inputs of this script are (1) the symmetry: cn (circular symmetry) or dn (dihedral symmetry) and (2) the number of "monomers" (i.e. subunits).
 
 ```
-	> src/apps/public/symmetry/make_symmdef_file_denovo.py -symm_type cn -nsub 3  > rosetta_inputs/1ZEH.c3.symm
+	$ python $ROSETTA3/src/apps/public/symmetry/make_symmdef_file_denovo.py -symm_type cn -nsub 3  > rosetta_inputs/1ZEH.c3.symm
 ```
 
-where "cn" is cyclic symmetry and "3" is the number of "monomers" (that gives a 3 fold single axis rotational symmetry). This produces the symmetry definition file for Rosetta.
+where "cn" is cyclic symmetry and "3" is the number of "monomers" (that gives a 3 fold single axis rotational symmetry). This produces the symmetry definition file for Rosetta. The anchor point in the symmetry def is set to center of mass (COM). This can cause problems. If it SymDock fails, this can normally be replaced by a residue numer.
 
 **Note:** Pay no attention to the fact that 1ZEH has it's own internal symmetries. It is just considered a monomer subunit.
 
@@ -55,10 +59,10 @@ The output file 1ZEH.c3.symm contains the following:
 	set_dof BASEJUMP x(50) angle_x(0:360) angle_y(0:360) angle_z(0:360)
 ```
 
-## Run Rosetta
+### Run Rosetta
 
 ```
-	> source/bin/SymDock.linuxgccrelease @flags.c3
+	$> $ROSETTA3/bin/SymDock.default.macosclangrelease @flags.c3
 ```
 
 where the provided flags file (flags.c3) looks like this:
@@ -76,36 +80,38 @@ where the provided flags file (flags.c3) looks like this:
  	-ignore_unrecognized_res
 ```
 
-## Results
+### Results
 
 The Rosetta run generated 1ZEH_monomer_c3_0001.pdb and score.fasc. The pdb file has the trimer decoy of the monomer docked in C3 symmetry.  The 3 monomers are entered as chains A,B and C in the trimer. The score.fasc is a standard score file as one would get for any normal docking run. The score is the score of the complete trimer. (See the PLOS one paper "Modeling Symmetric Macromolecular Structures in Rosetta3" or the symmetrical docking documentation to understand how this is computed. Conceptually you may think of it as the internal score of the monomer plus the score of it's interface; all multiplied by 3.)
 
 Now for a nominally trickier example.
 
-# Example 2: Docking of Six Monomers (chains A, B in 1ZEH) into a Trime of Dimers (D3 symmetry)
+## Example 2: Docking of Six Monomers (chains A, B in 1ZEH) into a Trime of Dimers (D3 symmetry)
 
-# Clean Up the PDB File
+### Clean Up the PDB File
 
 If you had taken a peek at the file 1ZEH.pdb beforehand you might have noticed that it already had an internal dimer symmetry.  The four chains were arranged so that chain A and B were in C2 symmetry to C and D.  So the above example just computed a trimer of dimers.  The program did not know anything about the c2 symmetry because it just considered the file 1ZEH_monomer.pdb to be the subunit for the trimer.
 
 Now we are going to run this again but first removing chains C and D from the 1ZEH.pdb file.
 
 ```
-	> perl -wane 'print if m/^ATOM/ and ($F[4] eq "A" or $F[4] eq "B")'  1ZEH.pdb  > 1ZEH_monomer_d3.pdb (can re removed after the next step)
+	$> perl -wane 'print if m/^ATOM/ and ($F[4] eq "A" or $F[4] eq "B")'  1ZEH.pdb  > 1ZEH_monomer_d3.pdb 
 ```
+
+>1ZEH_monomer_d3.pdb can be removed after the next step!  
 
 And re-chain it to a single pseudo chain.
 
 ```
-	> ./scripts/addChain.pl /tmp/1ZEH_monomer_d3.pdb A > rosetta_inputs/1ZEH_monomer_d3.pdb
+	$> ./scripts/addChain.pl 1ZEH_monomer_d3.pdb A > rosetta_inputs/1ZEH_monomer_d3.pdb
 ```
 
-## Generating the Symmetry File
+### Generating the Symmetry File
 
 Then we will use d3 symmetry for docking.  As you know, d3 symmetry is c3 symmetry with a mirror plane. In other words this has a total of 6 subunits.
 
 ```
-	> src/apps/public/symmetry/make_symmdef_file_denovo.py -symm_type dn -nsub 6  > rosetta_inputs/1ZEH.d3.symm
+	$> $ROSETTA3/src/apps/public/symmetry/make_symmdef_file_denovo.py -symm_type dn -nsub 6  > rosetta_inputs/1ZEH.d3.symm
 ```
 
 **Note:** the number of subunits in d3 symmetry is 6.
@@ -136,27 +142,27 @@ set_dof BASEJUMP x(50) angle_x(0:360) angle_y(0:360) angle_z(0:360)
 set_dof JUMP3 z(50) angle_z(0:60.0)
 ```
 
-## Run Rosetta
+### Run Rosetta
 
 ```
-	> source/bin/SymDock.linuxgccrelease @flags.c3
+	$> $ROSETTA3/bin/SymDock.macosclangrelease @flags.d3
 ```
 
 The result is again a pdbfile 1ZEH_haptomer_00001.pdb which has 6 monomers in d3 symmetry.   Note, again, the monomer in this second example had half as many atoms as the first example but since we used 6 of these instead of 3 the final structure has the same number of total atoms.  The score is appended into score.fasc
 
-# Remarks
+## Remarks
 
 Not shown in this example is the optional but recommended practice of "pre-packing".  The docking protocol packs the rotamers of all residues in the interfaces.  However it does not pack any residues that are not in the interface.  Therefore a recommended practice is the pack the monomer ahead of time.  This is simply running the packer on the monomer file with any desired packing options.  Then follow the above protocol as written to the symmetric docking.  A possible point of confusion here is that there is a flag for docking named "prepack" however this does not pack the interior as desired here.  Instead use the Docking_prepack application (see below).
 
 
 There are other flags associated with both "docking" and "symmetry" available beyond the ones show in this tutorial.  These flags are documented in their respective formal documentation section.
 
-# Links
+## Links
 
-- https://www.rosettacommons.org/docs/latest/symmetry.html
-- https://www.rosettacommons.org/docs/latest/sym-dock.html
-- https://www.rosettacommons.org/docs/latest/docking-protocol.html
-- https://www.rosettacommons.org/docs/latest/docking-prepack-protocol.html
+- https://www.rosettacommons.org/docs/latest/rosetta_basics/structural_concepts/symmetry
+- https://www.rosettacommons.org/docs/latest/application_documentation/utilities/make-symmdef-file
+- https://www.rosettacommons.org/docs/latest/application_documentation/docking/sym-dock
+- https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/Movers/movers_pages/SymDofMover
 
 # Appendix
 

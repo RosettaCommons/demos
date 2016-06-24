@@ -1,5 +1,5 @@
 This is an optional step in the protocol where we optimize the protein-metal interaction in a polyAla context (i.e. everything in the pocket except the TS model and metal-chelating residues are trimmed back to Ala, and the constraints energy is optimized by minimization. See enzdes documentation for more details.)
-
+KEYWORDS: METALS DESIGN
 Input files:
 
 1. rosetta_cst.pdb: contains remark lines to specify catalytic residues, co-ordinates of the TS model
@@ -14,7 +14,11 @@ Input files:
 
 Usage:
 
-./min.sh 
+```bash
+<path_to_Rosetta_directory>/main/source/bin/enzyme_design.default.linuxgccrelease @optcst.flags -linmem_ig 10 -in:file::s rosetta_cst.pdb
+``` 
+
+Note that ".default.linuxgccrelease", in the above, may need to be replaced with whatever is appropriate for your build, operating system, and compiler.
 
 Output files:
 PDB file for minimized interface:
