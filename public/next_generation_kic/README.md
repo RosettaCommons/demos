@@ -59,7 +59,7 @@ Packing flags:
 
 Example Rosetta Command Line: (where `$ROSETTA3`=path-to-Rosetta/main/source)
 
-    $> $ROSETTA3/bin/loopmodel.default.linixgccrelease @input_files/local_remodeling_input/flags
+    $> $ROSETTA3/bin/loopmodel.default.linuxgccrelease @input_files/local_remodeling_input/flags
 
 Overall protocol execution (demo):
 
