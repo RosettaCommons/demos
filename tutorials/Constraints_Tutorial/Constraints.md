@@ -52,7 +52,7 @@ HARMONIC constraints square the distance between the ideal and actual value, and
 * Ambigous constraints
 * Density constraints
 
-To learn more about the other constraint types and function types that Rosetta can impose, click [here]().
+To learn more about the other constraint types and function types that Rosetta can impose, click [here](https://www.rosettacommons.org/docs/latest/rosetta_basics/file_types/constraint-file).
 
 ## How to Use Constraints
 
