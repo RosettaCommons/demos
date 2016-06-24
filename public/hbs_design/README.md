@@ -20,7 +20,7 @@ Algorithm
 Command
 -------
 
-    hbs_design<.exe> -database <path to your database> @input/flags
+    $> <path/to/Rosetta/>main/source/bin/hbs_design.default.linuxgccrelease @inputs/flags
 
 Input Files
 -----------

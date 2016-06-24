@@ -26,23 +26,24 @@ for line in keywords:
 
 for root, directories, filenames in os.walk(args.working_directory):
 	for filename in filenames:
-		if filename.endswith(".md") and not (root == args.working_directory):
+		if filename.endswith(".md") and not (root == args.working_directory) and not(filename.startswith("_")):
 			demos.append(os.path.join(root, filename))
-
-for demoname in demos:
-	has_keywords = False
-	current_demo = open(demoname, 'r')
-	for line in current_demo:
-		if ("KEYWORDS:" in line):
-			tokens = line.split()
-			if(len(tokens)>2):
-				has_keywords = True
-				for keyword in tokens:
-					if keyword not in approved_keywords:
-						print str(demoname) + " has unapproved keyword "+ keyword
-						all_demos_are_keyworded = False
-	if not(has_keywords):
-		print str(demoname)  +" has no keywords!"
-		all_demos_are_keyworded = False
-if not(all_demos_are_keyworded):
-	os._exit(1)
+print demos
+#
+#for demoname in demos:
+#	has_keywords = False
+#	current_demo = open(demoname, 'r')
+#	for line in current_demo:
+#		if ("KEYWORDS:" in line):
+#			tokens = line.split()
+#			if(len(tokens)>2):
+#				has_keywords = True
+#				for keyword in tokens:
+#					if keyword not in approved_keywords:
+#						print str(demoname) + " has unapproved keyword "+ keyword
+#						all_demos_are_keyworded = False
+#	if not(has_keywords):
+#		print str(demoname)  +" has no keywords!"
+#		all_demos_are_keyworded = False
+#if not(all_demos_are_keyworded):
+#	os._exit(1)

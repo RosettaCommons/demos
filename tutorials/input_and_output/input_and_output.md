@@ -46,7 +46,7 @@ In the example above, Rosetta recognizes that the `ATOM` record represents one o
 
 >**Rosetta only loads in the first conformation if a residue has multiple conformations.**
 
-To pass in a single PDB use the `in:file:s` option. For example, the following can be used to [calculate the energy](https://www.rosettacommons.org/demos/latest/tutorials/scoring/README) of a refined PDB 1QYS. The input PDB is present in the `input_files` folder. (`$ROSETTA3`=path-to-Rosetta/main/source anytime you see it)
+To pass in a single PDB use the `in:file:s` option. For example, the following can be used to [[calculate the energy|scoring]] of a refined PDB 1QYS. The input PDB is present in the `input_files` folder. (`$ROSETTA3`=path-to-Rosetta/main/source anytime you see it)
 
     $> $ROSETTA3/bin/score_jd2.default.linuxgccrelease -in:file:s input_files/1qys.pdb
     

@@ -75,15 +75,7 @@ and running
 
 ##Running Rosetta via RosettaScripts
 
-Running RosettaScripts is similar to running an executable directly from the command line: execute `rosetta_scripts` and pass in the relevant options. The key difference is that the executable run is always rosetta_scripts, which requires the option `-parser:protocol` indicating the XML script that it is to run. RosettaScripts is covered in more detail [here](). Try creating a file named `fixbb_script.xml` containing the following:
-
-	<ROSETTASCRIPTS>
-	script goes here
-	</ROSETTASCRIPTS>
-
-saving it, and running it with 
-
-	> $ROSETTA3/bin/rosetta_scripts.default.linuxgccrelease -parser:protocol fixbb_script.xml. You should see output similar to the command run at the start of this tutorial.
+Running RosettaScripts is similar to running an executable directly from the command line: execute `rosetta_scripts` and pass in the relevant options. The key difference is that the executable run is always rosetta_scripts, which requires the option `-parser:protocol` indicating the XML script that it is to run. RosettaScripts is covered in more detail [here](../rosetta_scripting/README.md). 
 
 ##Running Rosetta via PyRosetta
 

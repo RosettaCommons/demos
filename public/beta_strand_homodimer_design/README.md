@@ -63,7 +63,7 @@ Running the Demo
     If you are only doing it for one structure is is easy just to use this command line:(where `$ROSETTA3`=path-to-Rosetta/main/source)
 
     ```
-    $> $ROSETTA3/bin/homodimer_maker.default.linuxgccrelease -s 2a7b_mpm.pdb.gz  @finder_options > maker_tracers
+    $> $ROSETTA3/bin/homodimer_maker.default.linuxgccrelease -s 2a7b_mpm.pdb.gz  @maker_options > maker_tracers
     ```
     ```
     -run::chain A

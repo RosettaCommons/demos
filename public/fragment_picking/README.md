@@ -62,7 +62,6 @@ The various subdirectories of this demo serve as repository for examples:
 ./NullFragments  
 ./fragment_picking_for_flexible_loop_design
 ./fragment_picking_torsion_class_score
-./fragment_picking_with_psi_jufo_sam_L1_quota
 ./fragment_picking_with_quota
 ./fragment_picking_with_quota_and_restraints  
 ```
@@ -71,9 +70,8 @@ You can test them:
 
 ```
 $> $ROSETTA3/bin/fragment_picker.linuxgccrelease @NullFragments/flags -in::file::vall $ROSETTA3_DB/sampling/small.vall.gz
-$ $ROSETTA3/bin/fragment_picker.linuxgccrelease @fragment_picking_for_flexible_loop_design/flags -in::file::vall $ROSETTA3_DB/sampling/small.vall.gz
+$> $ROSETTA3/bin/fragment_picker.linuxgccrelease @fragment_picking_for_flexible_loop_design/flags -in::file::vall $ROSETTA3_DB/sampling/small.vall.gz
 $> $ROSETTA3/bin/fragment_picker.linuxgccrelease @fragment_picking_torsion_class_score/flags -in::file::vall $ROSETTA3_DB/sampling/small.vall.gz
-$> $ROSETTA3/bin/fragment_picker.linuxgccrelease @fragment_picking_with_psi_jufo_sam_L1_quota/flags -in::file::vall $ROSETTA3_DB/sampling/small.vall.gz
 $> $ROSETTA3/bin/fragment_picker.linuxgccrelease @fragment_picking_with_quota/flags -in::file::vall $ROSETTA3_DB/sampling/small.vall.gz
 $> $ROSETTA3/bin/fragment_picker.linuxgccrelease @fragment_picking_with_quota_and_restraints/flags -in::file::vall $ROSETTA3_DB/sampling/small.vall.gz
 ```` 

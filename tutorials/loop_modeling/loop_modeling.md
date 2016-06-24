@@ -48,7 +48,7 @@ Sometimes you have chain breaks in your protein, perhaps when threading from a h
 
     LOOP 125 130 0 0 1
     
-This 2<sup>nd</sup> and the 3<sup>rd</sup> columns in this file correspond the the loop start and end residues. The 4<sup>th</sup> column indicates the cut point in the [foldtree](fold_tree) to allow motions in the loop without propagating them through the rest of the protein. It must be between the start and end residues (both included). 0 is the default option which allows Rosetta to pick a cut point. Note that **the residue numbering in the loop file is not based on PDB numbering but on Rosetta internal numbering.**. The 4th column represents the skip rate, which we have set to 0. Setting the last column to 1 makes Rosetta start building from an extended structure.
+This 2<sup>nd</sup> and the 3<sup>rd</sup> columns in this file correspond the the loop start and end residues. The 4<sup>th</sup> column indicates the cut point in the [[foldtree|fold_tree]] to allow motions in the loop without propagating them through the rest of the protein. It must be between the start and end residues (both included). 0 is the default option which allows Rosetta to pick a cut point. Note that **the residue numbering in the loop file is not based on PDB numbering but on Rosetta internal numbering.**. The 4th column represents the skip rate, which we have set to 0. Setting the last column to 1 makes Rosetta start building from an extended structure.
 
 To close the loop, run:
 
@@ -194,7 +194,7 @@ As this protocol is typically used for advanced use cases, it often requires a c
 
 >**Generalized KIC is not available as an executable; it needs to be used through RosettaScripts.**
 
-A tutorial on RosettaScripts can here found [here](rosetta_scripting) and detailed documentation can be found [here](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/RosettaScripts) which lists all the protocols and filters that can be used.
+A tutorial on RosettaScripts can here found [[here|rosetta_scripting]] and detailed documentation can be found [here](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/RosettaScripts) which lists all the protocols and filters that can be used.
 
 Tips
 ----

@@ -1,5 +1,4 @@
 #basic rosetta needs
--database /work/buildbot/builds/release/master/stable/database #CHANGE ME
 
 #specific options for InterfaceAnalyzer
 -compute_packstat true #this will actually run rosetta's packstat calculation (slow)
@@ -16,6 +15,3 @@
 
 #options to help rosetta pack the input interfaces
 -use_input_sc # will include the input rotamer in packing
--ex1 #expand rotamer library around chi1 rotamers
--ex2 #expand rotamer library around chi2 rotamers
--extrachi_cutoff 1 #this will build extra rotamers at all positions and not just core
