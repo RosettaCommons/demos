@@ -82,7 +82,9 @@ To run AnchoredPDBCreator, use its executeable (of the same name):
 
     export $ROSETTA3=<path/to/Rosetta/source>
     $> cd rosetta_inputs/AnchoredPDBCreator
-    $> $ROSETTA3/AnchoredPDBCreator.macosclangrelease @options
+    $> <path/to/ROSETTA3/>bin/AnchoredPDBCreator.macosclangrelease @options
+
+Replace `macosclangrelease` with your system settings.
 
 This command will create two new files in that directory.  The output structure 
 will be named `S_0001.pdb`; there will also be a scorefile `score.sc`.
@@ -147,7 +149,9 @@ To run AnchoredDesign, use its executable (of the same name):
 or if you are still in the AnchoredPDBCreator directory,
 
     $> cd ../AnchoredDesign
-    $> <path/to/rosetta>/bin/AnchoredDesign.<yoursystemsettings> @options
+    $> $ROSETTA3/bin/AnchoredDesign.macosclangrelease @options
+    
+Again, replace `macosclangrelease` with your system settings.
 
 AnchoredDesign will remodel the loop containing the insertion and sample the 
 pseudo-rigid-body degree of freedom between the SH2 and GFP, while leaving the 
