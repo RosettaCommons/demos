@@ -18,7 +18,7 @@ Ab initio and comparative modeling of biopolymers (RNA, protein, protein/RNA) of
 ### Example Rosetta Command Line
 
 ```
-$> $ROSETTA3/stepwise.default.linuxgccrelease -fasta rosetta_inputs/2jof.fasta -native rosetta_inputs/2jof.pdb -score:weights stepwise/protein/protein_res_level_energy.wts -silent swm_rebuild.out -cycles 2 -nstruct 5
+$> $ROSETTA3/bin/stepwise.default.linuxgccrelease -fasta rosetta_inputs/2jof.fasta -native rosetta_inputs/2jof.pdb -score:weights stepwise/protein/protein_res_level_energy.wts -silent swm_rebuild.out -cycles 2 -nstruct 5
 ```
 
 Most of the simulation may be spent flickering bits of secondary structure -- in the future, we will probably setup some precomputation of these bits so that computation can be focused on build up of the complete mini-protein structure.
