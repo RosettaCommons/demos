@@ -16,7 +16,7 @@ Many pdbs have features, such as non-canonical amino acids, which will cause ros
 ```
 rosetta/rosetta_source/src/apps/public/relax_w_allatom_cst/clean_pdb_keep_ligand.py
 
-python rosetta/rosetta_source/src/apps/public/relax_w_allatom_cst/clean_pdb_keep_ligand.py your_structure_original.pdb -ignorechain
+python rosetta/rosetta_source/srsrc/apps/public/relax_w_allatom_cst/clean_pdb_keep_ligand.py your_structure_original.pdb -ignorechain
 ```
 
 ### Relax with all-heavy-atom constraints: Short protocol (recommended)
@@ -26,8 +26,10 @@ Relax with all-heavy-atom constraints is built into the relax application itself
 ```
 mkdir test; cp starting_inputs/1A99_1A99.pdb test/; cd test/
 
-../../../../rosetta_source/bin/relax.default.linuxgccrelease -database ../../../../rosetta_database/ -s 1A99_1A99.pdb @../starting_inputs/flags2 > log2.txt
+$> $ROSETTA3/bin/relax.default.linuxgccrelease -database ../../../../rosetta_database/ -s 1A99_1A99.pdb @../starting_inputs/flags2 > log2.txt
 ```
+(where `$ROSETTA3`=path-to-Rosetta/main/source)
+
 These flags are required: 
 ```
 -relax:constrain_relax_to_start_coords
@@ -55,16 +57,16 @@ In general the short protocol is preferred for most applications, since this ver
 
 (a) Generate sidechain coordinate constraints on your pdb using sidechain_cst_3.py:
 ```
-mkdir test2; cp starting_inputs/1A99_1A99.pdb test2/; cd test2/
-python ../../../../rosetta_source/src/apps/public/relax_w_allatom_cst/sidechain_cst_3.py 1A99_1A99.pdb 0.1 0.5
+
+$> cp starting_inputs/1A99_1A99.pdb .
+$> $ROSETTA3/src/apps/public/relax_w_allatom_cst/sidechain_cst_3.py 1A99_1A99.pdb 0.1 0.5
 [output:1A99_1A99_sc.cst]
 ```
 
 (b) Run relax using these constraints and with a custom relax script to force constraints to stay on during the entire run. 
 Note that these flags will not preserve any ligands in the structure unless the ligand params file is added. If you want to keep the ligand, simply copy it over from the input pdb. 
 ```
-cd test2/
-../../../../rosetta_source/bin/relax.default.linuxgccrelease -database ../../../../rosetta_database/ -s 1A99_1A99.pdb -constraints:cst_fa_file 1A99_1A99_sc.cst @../starting_inputs/flags > log.txt
+$> $ROSETTA3/bin/relax.default.linuxgccrelease -s 1A99_1A99.pdb -constraints:cst_fa_file 1A99_1A99_sc.cst @starting_inputs/flags > log.txt
 ```
 flags file:
 ```
