@@ -121,7 +121,7 @@ Input Files
         ...
 
 5.  Run membrane *ab initio* application with the following flags (see an 
-    example in scripts/membrane-abinitio.cmd. To run the example script, make sure your ROSETTA3 environment variable is set to Rosetta/main/source):
+    example in scripts/membrane-abinitio.cmd).:
 
         ./bin/membrane_abinitio2.linuxgccrelease
         -in:file:native BRD4.pdb                  Native structure (optional)
@@ -165,7 +165,7 @@ Input Files
 
     To run the example script, type
     ```bash
-    $> ./scripts/membrane-abinitio.cmd
+    $> $ROSETTA3/bin/membrane_abinitio2.default.linuxgccrelease @scripts/flags
     ```
 
 6.  Expected Outputs
