@@ -19,7 +19,7 @@ Various loop modeling protocols can be used in Rosetta for various purposes. By 
 * How to remove peptide segments from a protein (and still get a closed conformation)
 * How to combine loop modeling with other protocols
 
->This tutorial will not cover the algorithmic details of the loop modeling methods. You will be directed the documentation explaining the algorithms.
+>This tutorial will not cover the algorithmic details of the loop modeling methods. You will be directed to the documentation explaining the algorithms.
 
 Loop Modeling Methods
 ---------------------
