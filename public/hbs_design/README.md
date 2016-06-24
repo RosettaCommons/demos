@@ -20,7 +20,7 @@ Algorithm
 Command
 -------
 
-    $> <path/to/Rosetta/>main/source/bin/hbs_design.default.linuxgccrelease @input/flags
+    $> <path/to/Rosetta/>main/source/bin/hbs_design.default.linuxgccrelease @inputs/flags
 
 Input Files
 -----------
