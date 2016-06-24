@@ -12,7 +12,7 @@ It can either be run on a single processor using the
    (where `$ROSETTA3`=path-to-Rosetta/main/source
 
 ```
-   $> $ROSETTA3/bin/mpi_msd.linuxgccrelease @flags.txt
+   $> $ROSETTA3/bin/mpi_msd.linuxgccrelease @flags
 ```
 
 or by distributing those states over multiple processors using the
