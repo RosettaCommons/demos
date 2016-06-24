@@ -13,7 +13,9 @@ The following command is a good place to start:
 	
     $> tar -xvzf rosetta_inputs/clustering_rosetta_inputs_demo.tgz -C rosetta_inputs
 
-    $> cluster.default.linuxgccrelease -database /path/to/database -in:file:s rosetta_inputs/complex1*.pdb -in:file:fullatom -cluster:gdtmm -cluster:radius -1 -cluster:population_weight 0.0 -sort_groups_by_energy 
+    $> $ROSETTA3/bin/cluster.default.linuxgccrelease  -in:file:s rosetta_inputs/complex1*.pdb -in:file:fullatom -cluster:gdtmm -cluster:radius -1 -cluster:population_weight 0.0 -sort_groups_by_energy 
+
+where `$ROSETTA3`=path-to-Rosetta/main/source
 
 These flags may be also be useful:
 
@@ -30,7 +32,7 @@ If you have thousands of structures it may be best to first do an energy cut to 
 The pdb's should be first scored and stored in an out file.
 Try using the following app
 
-    $> score_jd2.default.linuxgccrelease -in:file:s rosetta_inputs/complex1*.pdb -out:file:silent scored_silent.out -out:file:silent_struct_type binary -in:file:fullatom
+    $> $ROSETTA3/bin/score_jd2.default.linuxgccrelease -in:file:s rosetta_inputs/complex1*.pdb -out:file:silent scored_silent.out -out:file:silent_struct_type binary -in:file:fullatom
 
 After the pdbs have been scored use the included script to do an energy cut (This script can also be found in ```main/source/scripts/public/python```).
 
