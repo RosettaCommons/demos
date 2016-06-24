@@ -407,7 +407,7 @@ $> $ROSETTA3/bin/rosetta_scripts.default.linuxgccrelease -write_all_connect_info
 
 Examining the output, you'll see that each successive PDB file in the 36 produced has the pose in a slightly different conformation, regularly sampling different twists and radii of the bundle.
 
-TODO -- add illustration here.
+![Output conformations from BundleGridSampler](grid_sampling_example/images/grid.gif)
 
 Practically speaking, how would we use this in the context of a useful task, like protein design?  Well, let's modify the script to design each sampled conformation in the grid.  An important consideration here, though, is the fact that, while the initial geometry generation is extremely fast (a small fraction of a second), full design (packing) and side-chain minimization could be quite slow.  We therefore want to throw away any non-productive conformations, such as those that have clashes prior to design, with a poly-alanine sequence, immediately.  So we'll want to filter first to throw away the non-productive conformations, then design those samples that pass the filter.
 
@@ -506,7 +506,7 @@ Take a look at the output.  You'll notice that there are now far fewer PDB files
 
 To summarize, this sub-section has demonstrated how to use grid-sampling movers in conjunction with RosettaScripts to distribute samples over RosettaScripts jobs.  It has also demonstrated how one might use a grid sampler in conjunction with filters and with movers that invoke the packer and the minimizer in order to handle a sampling-and-design problem efficiently.
 
-TODO -- add illustration here.
+![Output conformations from BundleGridSampler with design](grid_sampling_example/images/grid_with_design.gif)
 
 ## Conclusion
 
