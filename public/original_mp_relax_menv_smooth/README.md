@@ -44,9 +44,11 @@ Membrane normal and membrane center search options:
     -membrane:normal_mag 15
     -membrane:center_mag 2
 
-Example Rosetta Command Line:
+Example Rosetta Command Line: 
 
-    ./bin/relax.linuxiccrelease \
+(where `$ROSETTA3`=path-to-Rosetta/main/source)
+
+    $> $ROSETTA3/bin/relax.linuxiccrelease \
         -relax:fast \
         -relax:constrain_relax_to_start_coords \
         -relax:default_repeats 2 \

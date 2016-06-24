@@ -35,7 +35,8 @@ The executables that comprise Rosetta can be run directly by calling them throug
 
 As an example, consider the command 
 
-	$> $ROSETTA3/bin/fixbb.default.linuxgccrelease -s 1ubq.pdb -out:suffix _my_first_rosetta_output @general_fixbb_flags
+	> $ROSETTA3/bin/fixbb.default.linuxgccrelease -s 1ubq.pdb -out:suffix _my_first_rosetta_output @general_fixbb_flags
+
 
 The first part of this command is the path to and name of the executable we want to run; here, we want to run the executable `fixbb`, located in `$ROSETTA3/bin`, which will attempt to design residues onto a peptide backbone provided to it. On your platform, the executable may not be named `fixbb.linuxgccrelease`; to find the version of the executable that will run, navigate to `$ROSETTA3/bin` and run `ls fixbb*` to display the versions of `fixbb` that have been compiled on your system. This works for any other executable as well.
 
@@ -51,17 +52,15 @@ The third part of this command is an options file, or *flags file*, which is sim
 
 In order to demonstrate how Rosetta executables may be run and how their execution controlled via options, create a folder named `tutorials` or something similar, and put the files `1ubq.pdb` and `1qys.pdb` there. 
 
-Now run 
-
 	$> $ROSETTA3/bin/fixbb.default.linuxgccrelease -s 1ubq.pdb -out:suffix _my_second_rosetta_output @general_fixbb_flags
 
 from within the tutorials directory you just created and observe that the program generates an output pdb file(`1ubq_0001.pdb`), a score file (`score.sc`) and a log file (`output`).
 
 Try running the following commands:
 
-	$> $ROSETTA3/bin/fixbb.default.linuxgccrelease -s 1ubq.pdb -nstruct 10 -out:suffix _my_third_rosetta_output @general_fixbb_flags
+	> $ROSETTA3/bin/fixbb.default.linuxgccrelease -s 1ubq.pdb -nstruct 10 -out:suffix _my_third_rosetta_output @general_fixbb_flags
 	
-	$> $ROSETTA3/bin/fixbb.default.linuxgccrelease -s 1ubq.pdb -out:suffix _my_fourth_rosetta_output -ignore_unrecognized_residue @general_fixbb_flags
+	> $ROSETTA3/bin/fixbb.default.linuxgccrelease -s 1ubq.pdb -out:suffix _my_fourth_rosetta_output -ignore_unrecognized_residue @general_fixbb_flags
 
 The first command should produce ten output files; the second should run similarly, albeit not identically, to the command provided at the start of this tutorial.
 
@@ -72,7 +71,7 @@ Also, try making a file named `pdblist` containing a list of PDBs including 1ubq
 	
 and running
 
-	$> $ROSETTA3/bin/fixbb.default.linuxgccrelease -l pdblist
+	> $ROSETTA3/bin/fixbb.default.linuxgccrelease -l pdblist
 
 ##Running Rosetta via RosettaScripts
 
@@ -84,7 +83,7 @@ Running RosettaScripts is similar to running an executable directly from the com
 
 saving it, and running it with 
 
-	$> $ROSETTA3/bin/rosetta_scripts.default.linuxgccrelease -parser:protocol fixbb_script.xml. You should see output similar to the command run at the start of this tutorial.
+	> $ROSETTA3/bin/rosetta_scripts.default.linuxgccrelease -parser:protocol fixbb_script.xml. You should see output similar to the command run at the start of this tutorial.
 
 ##Running Rosetta via PyRosetta
 
@@ -111,4 +110,5 @@ The tools directory, Rosetta/tools, contains a number of useful tools for manipu
 Example RosettaScripts XMLs and useful python scripts may be found in Rosetta/main/source/scripts
 
 ##Troubleshooting
-Rosetta will occasionally throw an informative error message rather than successfully completing a job; these may be indicative of errors in the input or options provided and are not necessarily bugs. Segmentation faults certainly indicate a bug in Rosetta itself, and should be reported to the [Rosetta forums](https://www.rosettacommons.org/forum)
+Rosetta will occaisionally throw an informative error message rather than successfully completing a job; these may be indicative of errors in the input or options provided and are not necessarily bugs. Segmentation faults certainly indicate a bug in Rosetta itself, and should be reported.
+

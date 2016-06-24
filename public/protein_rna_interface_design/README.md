@@ -36,9 +36,9 @@ If you don't have the prepared pdb, copy it to your directory:
 $> cp starting_files/1a9n_RNA.pdb .
 ```
 
-Now run the script:
+Now run the script: (where `$ROSETTA3`=path-to-Rosetta/main/source)
 ```
-$> <path-to-Rosetta>/main/source/bin/rosetta_scripts.default.linuxgccrelease -parser:protocol scripts/protein_rna_interface_design.xml -in:file:s 1a9n_RNA.pdb -ex1 -ex2
+$> $ROSETTA3/bin/rosetta_scripts.default.linuxgccrelease -parser:protocol scripts/protein_rna_interface_design.xml -in:file:s 1a9n_RNA.pdb -ex1 -ex2
 ```
 You should see a file named 1a9n_RNA_0001.pdb and score.sc. Take a look. You can compare them to the ones pre-generated in the output directory.
 

@@ -42,14 +42,15 @@ The given starting structure was called starting_files/1CSE.pdb.
 
 We started by:
 1. removed the chain we didn't want to do ddG calculations on. the command for doing so is:
+
     ```
-	./scripts/extract_chains.pl starting_files/1CSE.pdb I  > starting_files/1CSEi.pdb
+	$> ./scripts/extract_chains.pl starting_files/1CSE.pdb I  > 1CSEi.pdb
     ```
-    this outputs chain I to the file starting_files/1CSEi.pdb
+this outputs chain I to the file starting_files/1CSEi.pdb
 
 2. renumbered the crystal structure starting from 1.
     ```
-   ./scripts/sequentialPdbResSeq.pl  -pdbfile 1CSEi.pdb -res1 1 > 1CSEi.ren.pdb
+   $> ./scripts/sequentialPdbResSeq.pl  -pdbfile 1CSEi.pdb -res1 1 > 1CSEi.ren.pdb
     ```
     this script takes chain I of 1CSE and renumbers starting from 1, then outputs to 1CSEi.ren.pdb
     **WARNING:** if your pdb has a chainbreak (missing part of the poly-peptide chain), then your numbering will be inconsistent. For example, if you have a chain-break between 12 and 23, it will be renumbered as : 12 13 and so on..
@@ -58,16 +59,17 @@ We started by:
    this must be run from the directory which contains the pdb-file, otherwise you might get an error. 
 he minimization protocol only takes in lists of files, so you need to do the following:
     ```
-    cd starting_files/
-    ls 1CSEi.ren.pdb > lst
-    /rosetta_release_3/rosetta-3.3/rosetta_source/bin/minimize_with_cst.default.macosgccrelease -in:file:l lst -database ~/minirosetta_database/ -in:file:fullatom -ddg::out_pdb_prefix minimize_with_cst        
+    $> ls 1CSEi.ren.pdb > lst
+    $> $ROSETTA3/bin/minimize_with_cst.default.macosgccrelease -in:file:l lst -in:file:fullatom -ddg::out_pdb_prefix minimize_with_cst        
     ```
+
+(where `$ROSETTA3`=path-to-Rosetta/main/source)
 
 4. if you want to double-check that the minimization worked, you can score the structures as follows:
     ```
-    ls 1CSEi.ren.pdb > test.lst 
-    ls minimize_with_cst.1CSEi.ren_0001.pdb >> test.lst
-    ~/rosetta_release_3/rosetta-3.3/rosetta_source/bin/score.default.macosgccrelease -in:file:l test.lst -database ~/minirosetta_database/ -in:file:fullatom -out:file:scorefile score.chk.fsc 
+    $> ls 1CSEi.ren.pdb > test.lst 
+    $> ls minimize_with_cst.1CSEi.ren_0001.pdb >> test.lst
+    $> $ROSETTA3/bin/score.default.macosgccrelease -in:file:l test.lst -in:file:fullatom -out:file:scorefile score.chk.fsc 
     ```
     and the score for minimize_with_cst.1CSEi.ren_0001.pdb should be lower than 1CSEi.ren.pdb.
     In this case, 1CSEi.ren.pdb has a score of 35.294 and minimize_with_cst.1CSEi.ren_0001.pdb has a score of -64.426. And for a given input structure you should always converge on a score (you should get the same score for each minimized-input structure).
@@ -117,7 +119,7 @@ he minimization protocol only takes in lists of files, so you need to do the fol
 
 6. run the ddg prediction application as follows: 
     ```
-    $>~/../../../main/source/bin/ddg_monomer.default.linuxclangrelease -in:file:s minimize_with_cst.1CSEi.ren_0001.pdb -ddg::weight_file soft_rep -ddg::iterations 1 -ddg::dump_pdbs true -ddg::mut_file mutations.multiples.txt -ddg::local_opt_only false -ddg::min_cst false -ddg::mean true -ddg::min -ignore_unrecognized_res 
+    $> ../../../main/source/bin/ddg_monomer.default.linuxclangrelease -in:file:s minimize_with_cst.1CSEi.ren_0001.pdb -ddg::weight_file soft_rep -ddg::iterations 1 -ddg::dump_pdbs true -ddg::mut_file mutations.multiples.txt -ddg::local_opt_only false -ddg::min_cst false -ddg::mean true -ddg::min -ignore_unrecognized_res 
     ```
     This repacks the wild-type and the mutant structures 5 times, and in order to compute the ddG (which is Emutant - Ewt ) it averages the scores of the mutant and wild-type ensembles of structures.  It uses the soft_rep_design scoring function and it is a fixed backbone protocol. Normally I would run this protocol for 20 iterations , but for the demo purposes I'm only testing with 5 iterations.
     The full explanation of all options is here:

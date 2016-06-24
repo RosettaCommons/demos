@@ -107,7 +107,7 @@ The prepared alignment can be found in `~/rosetta_workshop/tutorials/rosetta_cm/
 
 5. 	Copy the adjusted alignment file **1u19_2rh1_3eml_3odu_adjusted.aln** to your directory. Don't forget to include the "." at the end of the line:
 ```
-$> cp <path-to-Rosetta>/Rosetta/demos/tutorials/rosetta_cm/2_threading/1u19_2rh1_3eml_3odu_adjusted.aln .
+$> cp ./2_threading/1u19_2rh1_3eml_3odu_adjusted.aln .
 ```
 
 **It is recommended that you skip the following step during this tutorial and use the prepared "adjusted alignment" file that you just copied and return to this step while either the hybridize or relax processes are running.**
@@ -190,9 +190,9 @@ The prepared Grishin alignment files (**1u19_2rh1.grishin, 1u19_3eml.grishin, 1u
     <path-to-Rosetta>/Rosetta/demos/tutorials/rosetta_cm/2_threading/
 ```
 ```
- $> cp  <path-to-Rosetta>/Rosetta/demos/tutorials/rosetta_cm/2_threading/1u19_2rh1.grishin .
- $> cp  <path-to-Rosetta>/Rosetta/demos/tutorials/rosetta_cm/2_threading/1u19_3eml.grishin .
- $> cp  <path-to-Rosetta>/Rosetta/demos/tutorials/rosetta_cm/2_threading/1u19_3odu.grishin .
+ $> cp  ./2_threading/1u19_2rh1.grishin .
+ $> cp  ./2_threading/1u19_3eml.grishin .
+ $> cp  ./2_threading/1u19_3odu.grishin .
 ```
 
 
@@ -215,23 +215,23 @@ Rosetta's partial thread application will generate .pdb files for each target-te
 
 If you skipped the preparation step, run these commands from the rosetta_cm directory:
 ```
-$>  cp  <path-to-Rosetta>/Rosetta/demos/tutorials/rosetta_cm/2_threading/2rh1.pdb .
-$>  cp  <path-to-Rosetta>/Rosetta/demos/tutorials/rosetta_cm/2_threading/3eml.pdb .
-$>  cp  <path-to-Rosetta>/Rosetta/demos/tutorials/rosetta_cm/2_threading/3odu.pdb .
+$>  cp ./2_threading/2rh1.pdb .
+$>  cp ./2_threading/3eml.pdb .
+$>  cp ./2_threading/3odu.pdb .
 ```
 
 1.	Run the following commands:
 
 ```
-$>  <path-to-Rosetta>/Rosetta/main/source/bin/partial_thread.default.linuxgccrelease -in:file:fasta 1u19.fasta -in:file:alignment 1u19_2rh1.grishin -in:file:template_pdb 2rh1.pdb
-$>  <path-to-Rosetta>/Rosetta/main/source/bin/partial_thread.default.linuxgccrelease -in:file:fasta 1u19.fasta -in:file:alignment 1u19_3eml.grishin -in:file:template_pdb 3eml.pdb
-$>  <path-to-Rosetta>/Rosetta/main/source/bin/partial_thread.default.linuxgccrelease -in:file:fasta 1u19.fasta -in:file:alignment 1u19_3odu.grishin -in:file:template_pdb 3odu.pdb
+$>  $ROSETTA3/bin/partial_thread.default.linuxgccrelease -in:file:fasta 2_threading/1u19.fasta -in:file:alignment 1u19_2rh1.grishin -in:file:template_pdb 2rh1.pdb
+$>  $ROSETTA3/bin/partial_thread.default.linuxgccrelease -in:file:fasta 2_threading/1u19.fasta -in:file:alignment 1u19_3eml.grishin -in:file:template_pdb 3eml.pdb
+$>  ROSETTA3/bin/partial_thread.default.linuxgccrelease -in:file:fasta 2_threading/1u19.fasta -in:file:alignment 1u19_3odu.grishin -in:file:template_pdb 3odu.pdb
 ```
 
 2.	After running these commands, you should have three new pdbs: **2rh1.pdb.pdb, 3eml.pdb.pdb**, and **3odu.pdb.pdb**. For clarity, rename these files appropriately:
 
 ```
-$>  mv 2rh1.pdb.pdb 1u19_on_2rh1.pdb
+$> mv 2rh1.pdb.pdb 1u19_on_2rh1.pdb
 $> mv 3eml.pdb.pdb 1u19_on_3eml.pdb
 $> mv 3odu.pdb.pdb 1u19_on_3odu.pdb
 ```
@@ -264,10 +264,10 @@ This step requires the following files to be in the same directory:
 
 If you skipped the set_up, run these commands:
 ```
-$> cp <path-to-Rosetta>/Rosetta/demos/tutorials/rosetta_cm/1_setup/1u19.fasta .
-$> cp <path-to-Rosetta>/Rosetta/demos/tutorials/rosetta_cm/1_setup/1u19_3.frags .
-$> cp <path-to-Rosetta>/Rosetta/demos/tutorials/rosetta_cm/1_setup/1u19_9.frags .
-$> cp <path-to-Rosetta>/Rosetta/demos/tutorials/rosetta_cm/1_setup/1u19.span .
+$> cp ./1_setup/1u19.fasta .
+$> cp ./1_setup/1u19_3.frags .
+$> cp ./1_setup/1u19_9.frags .
+$> cp ./1_setup/1u19.span .
 ```
 
 ## a. Generate the weights files ##
@@ -275,9 +275,9 @@ RosettaCM uses individual scoring weights for each stage. Since this is a membra
 
 Note that non-membrane versions of these weight files are also included in this directory in case you wish to try RosettaCM with non-membrane proteins. For now, just copy the _membrane.wts files to your working directory. 
 ```
-$> cp <path-to-Rosetta>/Rosetta/demos/tutorials/rosetta_cm/3_hybridize/stage1_membrane.wts .
-$> cp <path-to-Rosetta>/Rosetta/demos/tutorials/rosetta_cm/3_hybridize/stage2_membrane.wts .
-$> cp <path-to-Rosetta>/Rosetta/demos/tutorials/rosetta_cm/3_hybridize/stage3_rlx_membrane.wts .
+$> cp ./3_hybridize/stage1_membrane.wts .
+$> cp ./3_hybridize/stage2_membrane.wts .
+$> cp ./3_hybridize/stage3_rlx_membrane.wts .
 ```
 
 
@@ -286,16 +286,15 @@ $> cp <path-to-Rosetta>/Rosetta/demos/tutorials/rosetta_cm/3_hybridize/stage3_rl
 RosettaCM hybridize is run as a [Rosetta scripts mover]. Therefore, **rosetta_cm.xml** will define the hybridize mover, assign the different weight files to each stage, and list all threaded pdbs. In this example, all threaded files are given identical weights. However, one can adjust individual weights for each threaded pdb, increasing or decreasing the likelihood that fragments from that particular template-threading will appear in the hybrid model.
 Copy the Rosetta scripts file **rosetta_cm.xml** can be copied into your working directory :
 ```
-$> cp <path-to-Rosetta>/Rosetta/demos/tutorials/rosetta_cm/3_hybridize/rosetta_cm.xml .
+$> cp ./3_hybridize/rosetta_cm.xml .
 ```
 
 
 
 ## c. Define options: rosetta_cm.options ##
-
 You can copy the prepared rosetta_cm.options into your working directory:
 ```
-$> cp <path-to-Rosetta>/Rosetta/demos/tutorials/rosetta_cm/3_hybridize/rosetta_cm.options .
+$> cp ./3_hybridize/rosetta_cm.options .
 ```
 
 
@@ -304,7 +303,7 @@ $> cp <path-to-Rosetta>/Rosetta/demos/tutorials/rosetta_cm/3_hybridize/rosetta_c
 
 Run the RosettaCM hybridize protocol using Rosetta Scripts. As mentioned before, make sure all of the appropriate files are in the same directory. For production runs, at least 10000-15000 models should be created. However, note that the number of templates used, the length of the protein, the type of protein etc. all affect sampling size. For the purposes of this tutorial, you will only create three models. 
 ```
-$>  <path-to-Rosetta>/Rosetta/main/source/bin/rosetta_scripts.default.linuxgccrelease @rosetta_cm.options
+>  $ROSETTA3/bin/rosetta_scripts.default.linuxgccrelease @rosetta_cm.options
 ```
 
 This will generate 3 models: **S_0001.pdb, S_0002.pdb, S_0003.pdb**.
@@ -332,7 +331,7 @@ Disulfide [constraint files] contain one disulfide bond per line and include onl
 
 The prepared 1u19.disulfide file can be copied into your working directory:
 ```
-$> cp <path-to-Rosetta>/Rosetta/demos/tutorials/rosetta_cm/4_relax/1u19.disulfide .
+$> cp ./4_relax/1u19.disulfide .
 ```
 
 
@@ -342,7 +341,7 @@ This options file will cause Rosetta to set up a membrane environment based on *
 
 The prepared options file **relax.options** can be copied into your working directory:
 ```
-$> cp <path-to-Rosetta>/Rosetta/demos/tutorials/rosetta_cm/4_relax/relax.options .
+$> cp ./4_relax/relax.options .
 ```
 
 
@@ -350,9 +349,9 @@ $> cp <path-to-Rosetta>/Rosetta/demos/tutorials/rosetta_cm/4_relax/relax.options
 ## c. Run  relax ##
 Perform this step once per each of the three models generated from hybridize (**S_0001.pdb** through **S_0003.pdb**): Note that for the purpose of this tutorial, the "nstruct" value has been placed at one. Additional relax runs may be necessary for individual cases. 
 ```
-$>  <path-to-Rosetta>/Rosetta/main/source/bin/relax.default.linuxgccrelease @relax.options -s S_0001.pdb -out:prefix S_0001_relax_ -nstruct 1
->  <path-to-Rosetta>/Rosetta/main/source/bin/relax.default.linuxgccrelease @relax.options -s S_0002.pdb -out:prefix S_0002_relax_ -nstruct 1
->  <path-to-Rosetta>/Rosetta/main/source/bin/relax.default.linuxgccrelease @relax.options -s S_0003.pdb -out:prefix S_0003_relax_ -nstruct 1
+> $ROSETTA3/bin/relax.default.linuxgccrelease @relax.options -s S_0001.pdb -out:prefix S_0001_relax_ -nstruct 1
+> $ROSETTA3/bin/relax.default.linuxgccrelease @relax.options -s S_0002.pdb -out:prefix S_0002_relax_ -nstruct 1
+> $ROSETTA3/bin/relax.default.linuxgccrelease @relax.options -s S_0003.pdb -out:prefix S_0003_relax_ -nstruct 1
 ```
 
 Final models relax can be found in:
