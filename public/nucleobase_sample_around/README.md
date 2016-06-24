@@ -1,7 +1,11 @@
 # Nucleobase Sample Around
 
+KEYWORDS: NUCLEIC_ACIDS UTILITIES
+
 ## Author
 Rhiju Das, rhiju@stanford.edu
+
+Edited by Parisa Hosseinzadeh (parisah@uw.edu) during XRW documentation 2016 to enable automatic testing of demos.
 
 ## Brief Description
 
@@ -18,24 +22,25 @@ Extended to include phosphate by Rhiju Das in Dec. 2014.
 ## Running
 To sample a 'carbon' probe atom:
 ```
- nucleobase_sample_around   [-s a_RNA.pdb]
+ $> $ROSETTA3/bin/nucleobase_sample_around.default.linuxgccrelease  -s rosetta_inputs/a_RNA.pdb
 ```
+where `$ROSETTA3`=path-to-Rosetta/main/source
 
 To sample a water (sampling all possible orientations and outputting Boltzmann summed free energies)
 ```
- nucleobase_sample_around   [-s a_RNA.pdb]  -sample_water  [ -extra_res ~/rosetta_database/chemical/residue_type_sets/fa_standard/residue_types/water/TP3.params ]
+ $> $ROSETTA3/bin/nucleobase_sample_around.default.linuxgccrelease  -s rosetta_inputs/a_RNA.pdb  -sample_water 
 ```
 To sample a nucleobase
 ```
- nucleobase_sample_around   [-s a_RNA.pdb]  -sample_another_nucleobase   -copy_nucleobase_nucleobase_file double_A_ready_set.pdb
+ $> $ROSETTA3/bin/nucleobase_sample_around.default.linuxgccrelease  -s rosetta_inputs/a_RNA.pdb  -sample_another_nucleobase   -copy_nucleobase_nucleobase_file rosetta_inputs/double_A_ready_set.pdb
 ```
 To sample an nucleobase, reading in a starting nucleobase-nucleobase pairing conformation.
 ```
- nucleobase_sample_around   [-s a_RNA.pdb]  -sample_another_nucleobase   -copy_nucleobase_nucleobase_file double_A_ready_set.pdb
+ $> $ROSETTA3/bin/nucleobase_sample_around.default.linuxgccrelease  -s rosetta_inputs/a_RNA.pdb  -sample_another_nucleobase   -copy_nucleobase_nucleobase_file rosetta_inputs/double_A_ready_set.pdb
 ```
 Can now sample phosphates with the flags
 ```
- nucleobase_sample_around -sample_phosphate [-center_on_OP2]
+ $> $ROSETTA3/bin/nucleobase_sample_around.default.linuxgccrelease -sample_phosphate -center_on_OP2
 ```
 The phosphate center is on the phosphorus atom, unless user specifies -center_on_OP2 . 
 Note that due to some silliness in available variant types and the desire to use a phosphate from an actual nucleotide residue_type, the probe phosphate also has a floating C1'.

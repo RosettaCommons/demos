@@ -1,6 +1,8 @@
 Membrane Homology Modeling
 ==========================
 
+KEYWORDS: MEMBRANES STRUCTURE_PREDICTION
+
 This demo shows how to generate a homology model of a membrane protein.  It 
 only works for helical membrane proteins.  In the example, a dopamine receptor 
 structure is used as the template for a homologous dopamine receptor.  This is 
@@ -54,7 +56,7 @@ running a homology modeling task in Rosetta.
 
 4.  Identify the regions of the protein that must be rebuilt by Rosetta.
 
-    Now we need to tell Rosetta the regions that must be rebuild by Rosetta. 
+    Now we need to tell Rosetta the regions that must be rebuilt by Rosetta. 
     These are the regions that are poorly defined.  This is defined in 
     DXDR.loopfile.  The format is:  first line, a comment, other lines are 
     `LOOP start-res end-res cutpoint skip-rate extend` for each flexible region 
@@ -98,7 +100,7 @@ executable (minirosetta.(os)(options)(mode), for example:
     minirosetta.linuxgccrelease
     minirosetta.macosclangrelease
 
-Provide the path to your own rosetta database:
+Provide the path to your own rosetta database (not necessary if you would like to use the database located in the same Rosetta/main/ directory as the executable):
 
     -database /Users/patrickbarth/RosettaCon2011/tutorial/trunk_r43621/minirosetta_database
 
@@ -109,7 +111,7 @@ Membrane proteins use the same protocol as regular proteins:
 Information for fragments files:
 
     -loops:frag_sizes 9 3 1
-    -loops:frag_files ./frags/aaDXDR_09_05.200_v1_3 ./frags/aaDXDR_03_05.200_v1_3 none
+    -loops:frag_files ./rosetta_inputs/frags/aaDXDR_09_05.200_v1_3 ./rosetta_inputs/frags/aaDXDR_03_05.200_v1_3
 
 Some input information.  For benchmark purposes, replace the following PDB by 
 the experimentally-determined native structure:
@@ -162,3 +164,6 @@ the name of the file is:
 
     DXDR_lprlxmb.out.
 
+For example, your full commandline could look like this:
+
+	$> $ROSETTA3/bin/minirosetta.default.linuxgccrelease -run:protocol looprelax -loops:frag_sizes 9 3 -loops:frag_files ./rosetta_inputs/frags/aaDXDR_09_05.200_v1_3 ./rosetta_inputs/frags/aaDXDR_03_05.200_v1_3 -in:file:native ./rosetta_inputs/DXDR_D3DR.pdb -in:file:fullatom -s ./rosetta_inputs/DXDR_D3DR.pdb -loops:input_pdb ./rosetta_inputs/DXDR_D3DR.pdb -loops:loop_file ./rosetta_inputs/DXDR.loopfile -score:weights ./rosetta_inputs/membrane_highres_t1.wts -in:file:spanfile ./rosetta_inputs/DXDR.span -out:file:fullatom -out:file:silent_struct_type binary -out:file:silent DXDR_lprlxmb.out -nstruct 1 -loops:remodel quick_ccd -loops:random_order -loops:idealize_before_loop_close -fail_on_bad_hbond false

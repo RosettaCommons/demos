@@ -1,0 +1,22 @@
+<dock_design>
+	<SCOREFXNS>
+               <SFXN1 weights=score12_w_corrections>
+                   <Reweight scoretype=atom_pair_constraint weight=1.0/>
+               </SFXN1>
+	</SCOREFXNS>
+        <TASKOPERATIONS>
+            <LayerDesign name=layer layer=core_boundary_surface/>
+        </TASKOPERATIONS>
+        <FILTERS>
+              <PackStat name=pstat threshold=0.60/>
+        </FILTERS>
+	<MOVERS>
+              <FlxbbDesign name=flxbb ncycles=3 constraints_sheet=100.0 sfxn_design=SFXN1 sfxn_relax=SFXN1 clear_all_residues=1 task_operations=layer/>
+	</MOVERS>
+	<APPLY_TO_POSE>
+	</APPLY_TO_POSE>
+	<PROTOCOLS>
+                <Add mover_name=flxbb/>
+                <Add filter_name=pstat/>
+ 	</PROTOCOLS>
+</dock_design>

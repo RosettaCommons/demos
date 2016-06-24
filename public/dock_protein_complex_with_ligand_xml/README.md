@@ -1,6 +1,8 @@
 Dock protein complex with ligand
 ================================
 
+KEYWORDS: LIGANDS DOCKING INTERFACES
+
 We are predicting the conformation of the complex of FKBP12, FRAP, and 
 rapamycin.  Rapamycin is a dimerizer that allows FK506-binding-protein (FKBP12) 
 to form an interface with FKBP-rapamycin-associated protein (FRAP). The first 

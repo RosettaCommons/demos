@@ -8,17 +8,10 @@
 -lj_hbond_OH_donor_dis 2.6
 -linmem_ig 10
 -nblist_autoupdate true
--dun08 false
 -no_optH false
 -flip_HNQ
--chemical:exclude_patches LowerDNA  UpperDNA Cterm_amidation SpecialRotamer
- VirtualBB ShoveBB VirtualDNAPhosphate VirtualNTerm CTermConnect sc_orbitals
-pro_hydroxylated_case1 pro_hydroxylated_case2 ser_phosphorylated
-thr_phosphorylated  tyr_phosphorylated tyr_sulfated lys_dimethylated
-lys_monomethylated  lys_trimethylated lys_acetylated glu_carboxylated
-cys_acetylated tyr_diiodinated N_acetylated C_methylamidated
-MethylatedProteinCterm
+-chemical:exclude_patches LowerDNA  UpperDNA Cterm_amidation SpecialRotamer VirtualBB ShoveBB VirtualDNAPhosphate VirtualNTerm CTermConnect sc_orbitals pro_hydroxylated_case1 pro_hydroxylated_case2 ser_phosphorylated thr_phosphorylated  tyr_phosphorylated tyr_sulfated lys_dimethylated lys_monomethylated  lys_trimethylated lys_acetylated glu_carboxylated cys_acetylated tyr_diiodinated N_acetylated C_methylamidated MethylatedProteinCterm
 -constrain_relax_to_start_coords
--relax:script ../../../rosetta_source/src/apps/public/relax_w_allatom_cst/always_constrained_relax_script
+-relax:script ../../../main/source/src/apps/public/relax_w_allatom_cst/always_constrained_relax_script
 -ignore_unrecognized_res
 -preserve_header

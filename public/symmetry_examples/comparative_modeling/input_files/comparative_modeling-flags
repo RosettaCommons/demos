@@ -1,0 +1,26 @@
+-run:protocol threading
+
+-in:file:alignment comparative_modeling/input_files/2qs7A.ali
+-in:file:template_pdb comparative_modeling/input_files/2qs7A_INPUT.pdb
+-symmetry_definition comparative_modeling/input_files/symm_def_trimer.dat # This is the location of the symmetry definition file
+
+-nstruct 1
+-in:file:extended_pose 1
+-in:file:fasta comparative_modeling/input_files/t000_.fasta
+-in:file:fullatom
+-in:file:psipred_ss2 comparative_modeling/input_files/t000_.psipred_ss2
+-loops:frag_sizes 9 3 1
+-loops:frag_files comparative_modeling/input_files/frags.200.9mers comparative_modeling/input_files/frags.200.3mers none
+-loops:random_order
+-loops:random_grow_loops_by 4
+-loops:remodel quick_ccd
+-loops:relax relax
+-relax:default_repeats 1
+-relax:jump_move true
+-loops:constrain_rigid_segments 0.3
+-relax:coord_cst_width 2.0
+-relax:coord_cst_stdev 1.0
+-cm:loop_rebuild_filter 500
+-cm:aln_format grishin
+-cm:max_loop_rebuild 10
+-cm:min_loop_size 4

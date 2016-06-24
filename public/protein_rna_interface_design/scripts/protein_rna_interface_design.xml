@@ -1,8 +1,17 @@
 <ROSETTASCRIPTS>
     <SCOREFXNS>
     </SCOREFXNS>
+    <RESIDUE_SELECTORS>
+	<Index name="rna_p_res" resnums=1,4,7,10,13,16,19/>
+	<Chain name="rna_chain" chains="Q"/>
+	<And name="rna_res_only" selectors=rna_p_res,rna_chain/>
+	<Neighborhood name="RNA_neighbors" distance=10.0 selector=rna_res_only/>
+    </RESIDUE_SELECTORS>
     <TASKOPERATIONS>
-        <DesignAround name="iface" design_shell="10.0" resnums="257,260,263,266,269,272,275" repack_on="1"/> This sets the residues to design.  In this implementation we are mutating protein chain in a 10 angstrom shell around the residues specified by "resnums".  If you want to implement this xml on your own RNA-protein you need to identify the resnums for your RNA molecule.
+  	<OperateOnResidueSubset name="iface">
+		<Not selector=RNA_neighbors/>	
+		<RestrictToRepackingRLT/>
+	</OperateOnResidueSubset>
     </TASKOPERATIONS>
     <FILTERS>
     </FILTERS>
@@ -10,9 +19,9 @@
         <Prepack name="ppk" jump_number="0"/>
         Prepack does a sc repacking and pseudo-minimization step before implementation of design.  This is used to "rosettafy" the starting pdb structure.  jump_number=0 means that the RNA and protein chain will not be separated before repacking.
         <PackRotamersMover name="prm" scorefxn="soft_rep" task_operations="iface"/>
-        <PackRotamersMover name="prm2" scorefxn="score12" task_operations="iface"/>
+        <PackRotamersMover name="prm2" task_operations="iface"/>
         <MinMover name="min" scorefxn="soft_rep" chi="1" bb="0" jump="0" type="dfpmin_armijo_nonmonotone" tolerance="0.01"/>
-        <MinMover name="min2" scorefxn="score12" chi="1" bb="1" jump="0" type="dfpmin_armijo_nonmonotone" tolerance="0.01"/>
+        <MinMover name="min2" chi="1" bb="1" jump="0" type="dfpmin_armijo_nonmonotone" tolerance="0.01"/>
         <ParsedProtocol name="packer">
             <Add mover_name="prm"/>
             <Add mover_name="min"/>

@@ -1,4 +1,6 @@
-# RNA mutation
+# RNA mutation: Change RNA sequence
+
+KEYWORDS: NUCLEIC_ACIDS UTILITIES RNA
 
 # Author
 Rhiju Das, rhiju@stanford.edu
@@ -14,7 +16,7 @@ Easy preparation of mutated versions of an RNA. Not optimized currently to remem
 # Running
 
 ```
-rna_thread -s rosetta_inputs/1zih_RNA.pdb  -seq gggcgcgagccu -o 1zih_A7G.pdb 
+$> $ROSETTA3/bin/rna_thread.default.linuxgccrelease -s rosetta_inputs/1zih_RNA.pdb -seq gggcgcgagccu -o 1zih_A7G.pdb 
 ```
 
 Changes the seventh residue to g. (Original sequence was gggcgcaagccu.)

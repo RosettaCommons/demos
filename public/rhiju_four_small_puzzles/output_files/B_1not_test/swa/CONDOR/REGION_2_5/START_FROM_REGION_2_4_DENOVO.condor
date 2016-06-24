@@ -1,0 +1,9 @@
++TGProject = TG-MCB090153
+universe = vanilla
+executable = /home/rhiju/src/mini/bin/stepwise_protein_test.linuxgccrelease
+arguments =  -database /home/rhiju/minirosetta_database  -rebuild -out:file:silent_struct_type binary  -fasta 1not.fasta -n_sample 18 -nstruct 100 -cluster:radius    0.100 -extrachi_cutoff 0 -ex1 -ex2 -score:weights score12.wts -pack_weights pack_no_hb_env_dep.wts -add_peptide_plane -cst_file 1not_native_disulf.cst -native 1not.pdb -mute all  -silent1 region_2_4_sample.cluster.out -tags1 S_$(Process) -input_res1  2 3 4 -sample_res  4 5 -out:file:silent REGION_2_5/START_FROM_REGION_2_4_DENOVO_S_$(Process)/region_2_5_sample.out 
+output = CONDOR/REGION_2_5/START_FROM_REGION_2_4_DENOVO/$(Process).out
+log = CONDOR/REGION_2_5/START_FROM_REGION_2_4_DENOVO.log
+error = CONDOR/REGION_2_5/START_FROM_REGION_2_4_DENOVO/$(Process).err
+notification = never
+Queue 1

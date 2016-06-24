@@ -1,9 +1,12 @@
-AbInitio Demo
-=============
+#AbInitio: Predict structure from sequence 
 
-Run on linux
+KEYWORDS: STRUCTURE_PREDICTION GENERAL
+
+Run on linux 
 ------------
-    Rosetta/main/source/bin/AbinitioRelax.linuxgccrelease @flags
+(where `$ROSETTA3`=path-to-Rosetta/main/source)
+
+    $> $ROSETTA3/bin/AbinitioRelax.default.linuxgccrelease @flags
 
 Run on macs
 -----------

@@ -33,11 +33,11 @@ CST::BEGIN
   TEMPLATE::   ATOM_MAP: 2 residue1:  H 
  
   CONSTRAINT:: distanceAB:   2.72  0.20 100.  0    0
-  CONSTRAINT::    angle_A:  111.2 10.0  50.0  360. 0
-  CONSTRAINT::    angle_B:  120.3 15.0  50.0  360. 0
-  CONSTRAINT::  torsion_A:   0.0  10.0  50.0  360. 0
-  CONSTRAINT:: torsion_AB:   0.0  30.0  0.00  360. 0 
-  CONSTRAINT::  torsion_B:  180.0 15.0  0.00  360. 0
+  CONSTRAINT::    angle_A:  111.2 10.0  50.0  360. 1
+  CONSTRAINT::    angle_B:  120.3 15.0  50.0  360. 1
+  CONSTRAINT::  torsion_A:   0.0  10.0  50.0  360. 1
+  CONSTRAINT:: torsion_AB:   0.0  30.0  0.00  360. 2 
+  CONSTRAINT::  torsion_B:  180.0 15.0  0.00  360. 1
 CST::END
 
 

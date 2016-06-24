@@ -1,5 +1,7 @@
 #Relax with all-heavy-atom constraints
 
+KEYWORDS: UTILITIES GENERAL
+
 ##Introduction
 
 We looked for a way to simultaneously minimize rosetta energy and keep all heavy atoms in a crystal structure as close as possible to their starting positions. As hard-won experience has shown, simply running relax on a structure will often move the backbone a few Angstroms. The best way we have found to perform the simultaneous optimization is to run relax with constraints always turned on (typically constraints ramp down in the late cycles of a relax run) and to constrain not just backbone but also sidechain atoms. This protocol has been tested on a benchmark set of 51 proteins and found to increase sequence recovery in enzyme design by 5% as compared with design in raw pdb structures. It accomplishes this with only .077 Angstrom RMSD over the set of proteins (C-alpha RMSD) from raw pdb to relaxed-with-csts pdb. A more complete description of the data leading to this protocol is below.
@@ -14,7 +16,7 @@ Many pdbs have features, such as non-canonical amino acids, which will cause ros
 ```
 rosetta/rosetta_source/src/apps/public/relax_w_allatom_cst/clean_pdb_keep_ligand.py
 
-python rosetta/rosetta_source/src/apps/public/relax_w_allatom_cst/clean_pdb_keep_ligand.py your_structure_original.pdb -ignorechain
+python rosetta/rosetta_source/srsrc/apps/public/relax_w_allatom_cst/clean_pdb_keep_ligand.py your_structure_original.pdb -ignorechain
 ```
 
 ### Relax with all-heavy-atom constraints: Short protocol (recommended)
@@ -22,10 +24,12 @@ python rosetta/rosetta_source/src/apps/public/relax_w_allatom_cst/clean_pdb_keep
 Relax with all-heavy-atom constraints is built into the relax application itself. If this is a new structure you may want to first clean it up using the above script. Relax proceeds as follows:
 (Note that these flags will not preserve any ligands in the structure unless the ligand params file is added.)
 ```
-mkdir test; cp starting_inputs/1A99_1A99.pdb test/; cd test/
+$> cp starting_inputs/1A99_1A99.pdb .
 
-../../../../rosetta_source/bin/relax.default.linuxgccrelease -database ../../../../rosetta_database/ -s 1A99_1A99.pdb @../starting_inputs/flags2 > log2.txt
+$> $ROSETTA3/bin/relax.default.linuxgccrelease -s 1A99_1A99.pdb @starting_inputs/flags2 > log2.txt
 ```
+(where `$ROSETTA3`=path-to-Rosetta/main/source)
+
 These flags are required: 
 ```
 -relax:constrain_relax_to_start_coords
@@ -53,16 +57,16 @@ In general the short protocol is preferred for most applications, since this ver
 
 (a) Generate sidechain coordinate constraints on your pdb using sidechain_cst_3.py:
 ```
-mkdir test2; cp starting_inputs/1A99_1A99.pdb test2/; cd test2/
-python ../../../../rosetta_source/src/apps/public/relax_w_allatom_cst/sidechain_cst_3.py 1A99_1A99.pdb 0.1 0.5
+
+$> cp starting_inputs/1A99_1A99.pdb .
+$> $ROSETTA3/src/apps/public/relax_w_allatom_cst/sidechain_cst_3.py 1A99_1A99.pdb 0.1 0.5
 [output:1A99_1A99_sc.cst]
 ```
 
 (b) Run relax using these constraints and with a custom relax script to force constraints to stay on during the entire run. 
 Note that these flags will not preserve any ligands in the structure unless the ligand params file is added. If you want to keep the ligand, simply copy it over from the input pdb. 
 ```
-cd test2/
-../../../../rosetta_source/bin/relax.default.linuxgccrelease -database ../../../../rosetta_database/ -s 1A99_1A99.pdb -constraints:cst_fa_file 1A99_1A99_sc.cst @../starting_inputs/flags > log.txt
+$> $ROSETTA3/bin/relax.default.linuxgccrelease -s 1A99_1A99.pdb -constraints:cst_fa_file 1A99_1A99_sc.cst @starting_inputs/flags > log.txt
 ```
 flags file:
 ```

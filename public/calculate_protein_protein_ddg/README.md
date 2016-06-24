@@ -1,6 +1,8 @@
 Calculate Protein Protein ΔΔG
 =============================
 
+KEYWORDS: ANALYSIS INTERFACES
+
 A common computational problem involves finding the binding energy of a
 protein-protein complex. In this tutorial, we will calculate the change in 
 binding energy caused by point mutations in the complex. 

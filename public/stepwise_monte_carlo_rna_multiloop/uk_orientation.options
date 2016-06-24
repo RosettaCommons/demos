@@ -1,0 +1,9 @@
+-in:file:fasta rosetta_inputs/1lnt.fasta 
+-s rosetta_inputs/gu_gc_helix.pdb  rosetta_inputs/uc_ga_helix.pdb 
+-out:file:silent swm_rebuild_uk.out 
+-extra_min_res 2 15 7 10 
+-terminal_res 1 8 9 16 
+-nstruct 1  
+-cycles 100  
+-score:rna_torsion_potential RNA11_based_new  
+-native rosetta_inputs/native_1lnt_RNA.pdb

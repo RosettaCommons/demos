@@ -1,0 +1,4 @@
+#!/bin/bash
+
+#rosetta command line
+~/Rosetta/main/source/bin/relax.linuxclangrelease @Menv_smooth.flags

@@ -1,6 +1,6 @@
 Capturing Conformational States in Proteins Using Pseudocontact Shifts (PCS)
 ============================================================================
-
+KEYWORDS: STRUCTURE_PREDICTION EXPERIMENTAL_DATA
 Author: Kala Bharath Pilla (kalabharath at gmail dot com)  
 Protocol Validated by: : JKLeman (julia dot koehler1982 at gmail dot com)  
 PIs: Gottfied Otting, Thomas Huber (t dot huber at anu dot edu dot au)  

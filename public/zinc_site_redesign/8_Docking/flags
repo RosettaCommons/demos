@@ -1,13 +1,11 @@
 -run
- -constant_seed
- -rng mt19937
 -in
  -file
   -s dock_design.pdb
   -native dock_design.pdb
   -extra_res_fa LG.params ZN1.params
 -out
- -nstruct 80
+ -nstruct 10 #Typically, one would want thousands of samples.  This is set to 10 for purposes of letting this demo complete reasonably quickly.
  -file
 #  -renumber_pdb
  -pdb

@@ -1,6 +1,8 @@
 DARC Demo
 =========
 
+KEYWORDS: DOCKING LIGANDS 
+
 Docking Approach using Ray Casting (DARC) is structure-based computational method for carrying out virtual screening by docking small-molecules into protein surface pockets.
 In this demo, DARC is used to dock a small molecule in a pocket centered around residue 61 of the protein, E3 ubiquitin-protein ligase Mdm2 (PDB: 4ERF).
 
@@ -14,16 +16,22 @@ Generating input files
   Rosetta will build any missing atoms including hydrogens in input protein PDB 
   files on the fly defore it uses them, we need to prepare the protein to 
   generate the electrostatic potential grid. This is one way to dump the 
-  protein after building missing atom and added hydrogens:
-
-      $ Rosetta/main/source/bin/score.linuxgccrelease -in:file:s 4ERF.pdb -out:output -no_optH false
-
+  protein after building missing atom and added hydrogens. You can use the PDB provided in the input file to continue:
+  
+  **NOTE** (`$ROSETTA3`= path-to-Rosetta/main/source)
+  
+```
+      $> cp input/4ERF.pdb .
+      $> $ROSETTA3/bin/score.default.linuxgccrelease -in:file:s 4ERF.pdb -out:output -no_optH false
+```
   which gives the output protein 4ERF_0001.pdb
 
 * Ligand files:
 
-  Input files are included in the folder inputs, but the following explains how 
-  they were obtained or generated. 4ERF.pdb was downloaded from The Protein 
+  Input files are included in the folder input, but the following explains how 
+  they were obtained or generated. For more information, you can check the [prepare ligand tutorial](prepare_ligand) for more information. 
+  
+  4ERF.pdb was downloaded from The Protein 
   Databank. The small molecule used for docking was found in ZINC, the database 
   of commercially available compounds at http://zinc.docking.org/. We download 
   ZINC13989607 in mol2 format. The file name is `zinc_13989607.mol2`.
@@ -41,63 +49,77 @@ Generating input files
       $ OpenEye/bin/omega2 -in zinc_13989607_charged.mol2 -out zinc_13989607_conformers.mol2 -maxconfs 100
 
   then we need to generate parameter files for the compound to use in Rosetta.
-  save the names of the compounds in a text file for generating parameters. Next, parameter files for the compounds are generated using batch_molfile_to_params.py which is a python app in rosetta. This command is used:For Ex:
+  save the names of the compounds in a text file for generating parameters. You can use other softwares to perform this steps.
+  
+  Next, parameter files for the compounds are generated using batch_molfile_to_params.py which is a python app in rosetta. This command is used:
 
       $ echo zinc_13989607_conformers.mol2 > molfile_list.txt
 
-      $ Rosetta/main/source/src/python/apps/public/batch_molfile_to_params.py -d Rosetta/main/database --script_path=Rosetta/main/source/src/python/apps/public/molfile_to_params.py molfile_list.txt
+      $ ROSETTA3/scripts/python/public/batch_molfile_to_params.py --script_path=<path-to-Rosetta>/main/source/scripts/python/public/molfile_to_params.py molfile_list.txt
 
   The expected output files are:
 
       params/zinc_13989607_conformers/000_conformers.pdb
       params/zinc_13989607_conformers/000.params
 
+  You can copy them to your directory:
+  ```
+    $> cp input/000_conformers.pdb .
+    $> cp input/000.params
+  ```
+
 * Other input files:
 
   To run DARC we need to generate a RAY file for the input protein. To generate 
   this ray-file we need to input the protein in PDB format and specify a target 
-  residue at the interface. We can specify more than one residue at the 
-  interface. The command to run DARC is as follows:
+  residue at the interface to generate the vectors. For more information about the ray file and how DARC works please refer to the provided citations. We can specify more than one residue at the 
+  interface. The command to run DARC is based on shape only is as follows:
+  **NOTE** For your special purposes, you will need to change the residue numbers and also provide params file for your ligands.
 
-      $ Rosetta/main/source/bin/make_ray_files.linuxgccrelease -database Rosetta/main/database/ -pocket_static_grid -protein 4ERF_0001.pdb -central_relax_pdb_num 61 -darc_shape_only 
+      $> $ROSETTA3/bin/make_ray_files.default.linuxgccrelease -pocket_static_grid -protein 4ERF_0001.pdb -central_relax_pdb_num 61 -darc_shape_only 
 
   Expected output from this command will be a ray-file named 
   `ray_4ERF_0001_61.txt`.
 
   To use a center of mass of any residue as origin points for casting rays:
-
-      $ Rosetta/main/source/bin/make_ray_files.linuxgccrelease -database Rosetta/main/database/ -pocket_static_grid -protein 4ERF_0001.pdb -central_relax_pdb_num 61 -darc_shape_only -set_origin 5 -origin_res_num 85:A
-
+```
+      $> $ROSETTA3/bin/make_ray_files.default.linuxgccrelease -pocket_static_grid -protein 4ERF_0001.pdb -central_relax_pdb_num 61 -darc_shape_only -set_origin 5 -origin_res_num 85:A
+```
   Expected output: `ray_4ERF_0001_61.txt`
 
   To use multiple origin points for casting rays:
-
-      $ Rosetta/main/source/bin/make_ray_files.linuxgccrelease -database Rosetta/main/database/ -pocket_static_grid -protein 4ERF_0001.pdb -central_relax_pdb_num 61 -darc_shape_only -set_origin 5 -origin_res_num 85:A -multiple_origin
-
+```
+      $> $ROSETTA3/bin/make_ray_files.default.linuxgccrelease -pocket_static_grid -protein 4ERF_0001.pdb -central_relax_pdb_num 61,54 -darc_shape_only -set_origin 5 -origin_res_num 85:A -multiple_origin
+```
   Expected output: `ray_4ERF_0001_61,54.txt`
 
   To use a bound ligand to center the grid:
-
-      $ Rosetta/main/source/bin/make_ray_files.linuxgccrelease -database Rosetta/main/database/ -pocket_static_grid -protein 4ERF_0001.pdb -central_relax_pdb_num 61 -darc_shape_only -set_origin 5 -origin_res_num 85:A -bound_ligand 4ERF_XTL_0001.pdb -extra_res_fa 4ERF_XTL.params -lig_grid
-
+```
+      $> $ROSETTA3/bin/make_ray_files.default.linuxgccrelease -pocket_static_grid -protein 4ERF_0001.pdb -central_relax_pdb_num 61 -darc_shape_only -set_origin 5 -origin_res_num 85:A -bound_ligand 4ERF_XTL_0001.pdb -extra_res_fa 4ERF_XTL.params -lig_grid
+```
   Expected output: `ray_4ERF_0001_61.txt`
 
   To include electrostatics calculations:
 
-  For electrostatics calculations, first we need to resize the electrostatic 
-  potential grid (generated from openeye '4ERF.agd') to match the size of the 
-  interface pocket grid. This step can be carried out while generating the ray 
-  file.
-
-  To generate the electrostatic potential grid, we can use the examples 
+  For electrostatics calculations, we first need to generate the electrostatic potential grids. To generate the electrostatic potential grid, we can use the examples 
   Listings provided in the zap toolkit manual.
 
       $ OpenEye/bin/Listing_2 -in 4ERF_0001.pdb -out 4ERF.agd -buffer 2 -grid_spacing 0.5 -epsout 80 -epsin 1
 
   Expected output: `4ERF.agd`
-
-      $ Rosetta/main/source/bin/make_ray_files.linuxgccrelease -database Rosetta/main/database/ -pocket_static_grid -protein 4ERF_0001.pdb -central_relax_pdb_num 61,54 -set_origin 5 -origin_res_num 85:A -multiple_origin -bound_ligand 4ERF_XTL_0001.pdb -extra_res_fa 4ERF_XTL.params -lig_grid -espGrid_file 4ERF.agd
-
+  
+  You can also copy this file from the input directory:
+  ```
+      $> cp input/4ERF.agd .
+  ```
+  
+  Now we need to resize the electrostatic 
+  potential grid (generated from openeye '4ERF.agd') to match the size of the 
+  interface pocket grid. This step can be carried out while generating the ray 
+  file.
+```
+      $> $ROSETTA3/bin/make_ray_files.linuxgccrelease -database Rosetta/main/database/ -pocket_static_grid -protein 4ERF_0001.pdb -central_relax_pdb_num 61,54 -set_origin 5 -origin_res_num 85:A -multiple_origin -bound_ligand 4ERF_XTL_0001.pdb -extra_res_fa 4ERF_XTL.params -lig_grid -espGrid_file 4ERF.agd
+```
   The output from this command will be a ray-file named 
   `ray_4ERF_0001_61,54.txt` and an electrostatic potential grid file named 
   `DARC_4ERF.agd` which we use as input for running docking using DARC. 
@@ -112,30 +134,31 @@ the flag -num_particles to increase or decrease the sampling. high number of
 particles will take a longer time to finish. For best results, We suggest 
 alleast 100 particles and 100 runs for docking single conformer or iterative 
 docking (one-by-one) of ligand conformers. For on-the-fly sampling of ligand 
-conformers we suggest at least 500 particles and 500 runs. Here we give the 
-input ligands for screening against the ray-file, as follows: 
+conformers we suggest at least 500 particles and 500 runs. 
+
+Here we give theinput ligands for screening against the ray-file, as follows. Note that the options.short files are provided for faster test runs in case needed. 
 
 Docking single ligand conformer:
-
-    $  Rosetta/main/source/bin/DARC.linuxgccrelease -protein 4ERF_0001.pdb -ligand 4ERF_XTL_0001.pdb -extra_res_fa 4ERF_XTL.params -ray_file ray_4ERF_0001_61.txt -espGrid_file DARC_4ERF.agd 
-
+```
+    $>  $ROSETTA3/bin/DARC.default.linuxgccrelease @darc_single.options  
+```
 Expected output: `DARC_4ERF_0001_LG1.pdb`
 
 Docking multiple ligand conformers:
-
-    $  Rosetta/main/source/bin/DARC.linuxgccrelease -protein 4ERF_0001.pdb -ligand 000_conformers.pdb -extra_res_fa 000.params -ray_file ray_4ERF_0001_61.txt -espGrid_file DARC_4ERF.agd 
-
+```
+    $>  $ROSETTA3/bin/DARC.linuxgccrelease @darc_conformers.options 
+```
 Expected output: `DARC_4ERF_0001_000.pdb`
 
 To run DARC with shape only (without including electrostatics score):
 
-    $  Rosetta/main/source/bin/DARC.linuxgccrelease -protein 4ERF_0001.pdb -ligand 000_conformers.pdb -extra_res_fa 000.params -ray_file ray_4ERF_0001_61.txt -espGrid_file -darc_shape_only
+    $>  $ROSETTA3/bin/DARC.linuxgccrelease @darc_shape.options
 
 Expected output: `DARC_4ERF_0001_000.pdb`
 
 To search conformers on-the-fly:
 
-    $  Rosetta/main/source/bin/DARC.linuxgccrelease -protein 4ERF_0001.pdb -ligand 000_conformers.pdb -extra_res_fa 000.params -ray_file ray_4ERF_0001_61.txt -espGrid_file DARC_4ERF.agd -search_conformers true
+    $>  $ROSETTA3/bin/DARC.linuxgccrelease @darc_fly.options -protein 4ERF_0001.pdb -ligand 000_conformers.pdb -extra_res_fa 000.params -ray_file ray_4ERF_0001_61.txt -espGrid_file DARC_4ERF.agd -search_conformers true
 
 Expected output: `DARC_4ERF_0001_000.pdb`
 
@@ -145,7 +168,7 @@ fullatom minimization of the DARC models separately in Rosetta or as an
 additional option while running DARC itself. To minimize the DARC models 
 immediately after docking we add the flag `-minimize_output_complex`:
 
-    $  Rosetta/main/source/bin/DARC.linuxgccrelease -protein 4ERF_0001.pdb -ligand 000_conformers.pdb -extra_res_fa 000.params -ray_file ray_4ERF_0001_61.txt -espGrid_file DARC_4ERF.agd -minimize_output_complex
+    $>  $ROSETTA3/bin/DARC.linuxgccrelease @darc_shape.options -minimize_output_complex
 
 Expected output files are:
 
@@ -162,21 +185,6 @@ Other options for DARC:
 * `-extra_point_weight`:    weight for ligand moves away from the pocket
 * `-esp_weight`:            electrostatics weight
 * `-pocket_static_grid`:    no autoexpansion of the pocket grid (set ON for DARC)
-
-Building Rosetta
-----------------
-Build Rosetta from the source directory
-
-    $ cd /Rosetta/main/source/
-    $ ./scons.py mode=release bin
-
-To build with GPU enabled:
-
-    $ ./scons.py mode=release extras=opencl bin
-
-Note: Building with opencl results in different binary extension (eg: 
-DARC.opencl.linuxgccrelease) run on gpu systems, we need to use the 
-'opencl.linuxgccrelease' binary extension.
 
 Example: Commands for sample DARC run for protein MDM2 [PDB:4ERF]
 -----------------------------------------------------------------
@@ -215,7 +223,6 @@ Run DARC with the following command:
 
 Running DARC in GPU systems
 ---------------------------
-
 DARC is adapted to run on GPU systems. On average, Running DARC on GPU system 
 is 190 fold faster than running on CPU. The results from DARC that runs on CPU 
 and GPU systems should be same (with same input and constant seed).
@@ -226,7 +233,9 @@ systems
     $ cd Rosetta/main/source
     $ ./scons.py mode=release extras=opencl bin
 
-Then use the opencl executables instead of default executables with the flag '-gpu 1', i.e call DARC.opencl.linuxgccrelease 
+
+Then use the opencl executables (eg: 
+DARC.opencl.linuxgccrelease) instead of default executables with the flag '-gpu 1', i.e call DARC.opencl.linuxgccrelease 
 instead of DARC.linuxgccrelease. All other options are same as CPU.
 Here is an example for GPU command:
 

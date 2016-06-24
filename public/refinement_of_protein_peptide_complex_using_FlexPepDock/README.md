@@ -1,5 +1,8 @@
 Refinement of peptide-protein complexes using FlexPepDock refinement
 --------------------------------------------------------------------
+
+KEYWORDS: STRUCTURE_PREDICTION PEPTIDES INTERFACES DOCKING
+
 This demo illustrates how to run FlexPepDock refinement of a peptide-protein complex. The FlexPepDock Refinement protocol is designed to create high-resolution models of complexes between a flexible peptide and a globular protein, with side chains of binding motifs modeled at nearly atomic accuracy. It is intended for cases where an approximate, coarse model of the interaction is available.
 
 Protocol Overview
@@ -13,22 +16,24 @@ Running the FlexPepDock refinement protocol:
 
 2. Prepack the input model: This step involves the packing of the side-chains in each monomer to remove internal clashes that are not related to inter-molecular interactions. The prepacking guarantees a uniform conformational background in non-interface regions, prior to refinement. The prepack_flags file contains the flags for running the prepacking job. The run_prepack script will run prepacking of the input structure 1AWR.ex.pdb located in the input directory.
 
-You need to change the paths of the Rosetta executables and database directories in the run_prepack script (also for run_refine; see below).
-
- ROSETTA_BIN="rosetta/main/source/bin"
- ROSETTA_DB="rosetta/main/database/"
-
-After changing the paths run the run_prepack script as:
- $./run_prepack
+Run the prepack as follows: (`$ROSETTA3`= path-to-Rosetta/main/source)
+```
+$> $ROSETTA3/bin/FlexPepDocking.default.linuxgccrelease @prepack_flags >output/ppk.log
+$> mv input/1AWR.ex_0001.pdb input/1AWR.ex.ppk.pdb
+```
 
 The output will be a prepacked structure, 1AWR.ex.ppk.pdb located in the input directory; a scorefile named ppk.score.sc and a log file named prepack.log file located in the output directory. This prepacked structure will be used as the input for the refinement step.
 
 3. Refine the prepacked model: This is the main part of the protocol. In this step, the peptide backbone and its rigid-body orientation are optimized relative to the receptor protein using the Monte-Carlo with Minimization approach, including periodic on-the-fly side-chain optimization. An optional low-resolution (centroid) pre-optimization will increase the sampling range and may improve performance further. The file refine_flags contains flags for running the refinement job. The run_refine script will run refinement of the prepacked structure generated in the prepacking step located in the input directory.
 
-After changing the Rosetta related paths run the run_refine script as:
- $./run_refine
+Run the refine using the following commands:
 
-The output will be a refined structure (1AWR.ex.ppk_0001.pdb) located in the output directory; a scorefile named refine.score.sc and a log file named refine.log file located in the output directory. This script has to be modified to run on a cluster during a production run.
+```
+$> $ROSETTA3/bin/FlexPepDocking.default.linuxgccrelease  @refine_flags >refine.log
+echo "FlexPepDock refinement done!"
+```
+
+The output will be a refined structure (1AWR.ex.ppk_0001.pdb) located in the output directory; a scorefile named refine.score.sc and a log file named refine.log file located in the output directory. This script has to be modified to run on a cluster during a production run. You may see an warning in the tracer saying "Inaccurate G! step= 3.8147e-06 Deriv= -0.0101137 Finite Diff= 0.00449653". No worries, that is a known Rosetta bug.
 
 Further information
 -------------------

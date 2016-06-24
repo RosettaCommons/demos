@@ -1,0 +1,1 @@
+Rosetta/main/source/bin/minirosetta.default.linuxgccrelease -database Rosetta/main/database @BRD4_mem_broker_cst.options

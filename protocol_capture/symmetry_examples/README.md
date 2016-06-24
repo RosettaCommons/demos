@@ -1,4 +1,7 @@
 # Symmetry Examples
+
+KEYWORDS: STRUCTURE_PREDICTION SYMMETRY
+
 ## Authors
 Frank Dimaio and Ingemar André
 

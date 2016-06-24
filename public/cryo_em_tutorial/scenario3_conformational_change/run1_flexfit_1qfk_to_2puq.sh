@@ -1,8 +1,7 @@
 #!/bin/bash
 
-$ROSETTA3_SRC/bin/relax.default.linuxgccrelease \
- -database $ROSETTA3_DB/ \
- -in::file::s 1QFK_L.pdb \
+~/Rosetta/main/source/bin/relax.default.linuxclangrelease \
+ -s 1QFK_L.pdb \
  -relax::default_repeats 1 \
  -relax::jump_move true \
  -edensity::mapfile 2PUQ.5A.mrc \

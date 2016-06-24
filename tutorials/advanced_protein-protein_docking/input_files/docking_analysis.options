@@ -1,0 +1,5 @@
+-parser:protocol docking_analysis.xml
+-use_input_sc
+-out:file:scorefile docking_analysis.csv
+-native 3gbm_native.pdb
+-out:no_nstruct_label

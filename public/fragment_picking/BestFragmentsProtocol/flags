@@ -1,0 +1,23 @@
+# Input databases
+#-in::file::vall <Path to vall database>
+
+# Query-related input files
+#-in::file::checkpoint		input_files/2jsvX.checkpoint
+-in::file::fasta		BestFragmentsProtocol/input_files/2jsvX.fasta
+-in::file::s                    BestFragmentsProtocol/input_files/2jsvX.pdb
+-frags::ss_pred			BestFragmentsProtocol/input_files/2jsvX.psipred.ss2 predA
+
+# Weights file
+-frags::scoring::config		BestFragmentsProtocol/input_files/simple.wghts
+
+# What should we do?
+-frags::bounded_protocol	
+
+# three-mers only, please
+-frags::frag_sizes 		3
+-frags::n_candidates		200
+-frags::n_frags			200
+
+# Output 
+-out::file::frag_prefix		BestFragmentsProtocol/output_files/frags
+-frags::describe_fragments 	BestFragmentsProtocol/output_files/frags.fsc

@@ -1,0 +1,34 @@
+# Important Flags, other flags that can be used, required flag, brief description of each flag or option:
+#io flags:
+-s input_files/local_remodeling_input/1a8d_MinPacked.pdb
+-loops:loop_file input_files/local_remodeling_input/1a8d.loop
+-out:pdb_gz
+-in:file:native input_files/local_remodeling_input/1a8d_MinPacked.pdb
+
+#number of structures to produce                        
+#for demo:
+-nstruct 1
+#for production runs, generate at least 500 structures
+
+#general kinematic closure loop modeling flags:
+-in:file:fullatom
+-loops:remodel perturb_kic
+#-loops:refine refine_kic
+#-run:test_cycles  
+#-loops:outer_cycles 5	
+-kic_bump_overlap_factor 0.36
+-legacy_kic false
+#-kic_min_after_repack
+-kic_min_after_repack true
+-corrections:score:use_bicubic_interpolation false
+
+#next-generation KIC flags
+-loops:kic_rama2b
+-loops:kic_omega_sampling
+-allow_omega_move
+-loops:ramp_fa_rep
+-loops:ramp_rama
+
+#packing flags
+-extrachi_cutoff 0
+

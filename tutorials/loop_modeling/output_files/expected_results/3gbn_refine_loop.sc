@@ -1,0 +1,3 @@
+SEQUENCE: 
+SCORE: total_score bref_irms  cen_irms chainbreak  dslf_fa13    fa_atr    fa_dun   fa_elec fa_intra_rep       fa_rep       fa_sol final_chainbreak final_looprelax_score hbond_bb_sc hbond_lr_bb    hbond_sc hbond_sr_bb        irms loop_cenrms  loop_rms      omega   p_aa_pp pro_close      rama       ref total_energy  yhh_planarity description 
+SCORE:    -200.295     0.685     0.685       0.015    -1.152  -989.740   285.213  -113.691        2.176      138.292      555.053            0.015              -200.295     -24.087     -78.820     -24.134     -12.002       0.715        0.000     0.000    68.433   -29.701    17.065    -7.288    13.983      -200.295         0.105 3gbn_refine_loop_0001

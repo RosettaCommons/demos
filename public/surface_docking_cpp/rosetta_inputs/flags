@@ -1,0 +1,9 @@
+-s rosetta_inputs/lk_alpha_calcite.pdb
+-include_surfaces
+-mute all
+-unmute protocols.SurfaceDocking
+-nstruct 1
+-in:file:frag9 rosetta_inputs/lk_alpha_9mers
+-in:file:frag3 rosetta_inputs/lk_alpha_3mers
+-in:file:surface_vectors rosetta_inputs/calcite.surf
+-run:test_cycles True

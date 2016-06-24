@@ -1,0 +1,15 @@
+-in:fix_disulf 1u19.disulfide #read disulfide connectivity information
+-in:file:spanfile 1u19.span #read predicted transmembrane regions
+
+-membrane:no_interpolate_Mpair # membrane scoring specification
+-membrane:Menv_penalties # turn on membrane penalty scores
+
+-score:weights membrane_highres_Menv_smooth.wts
+
+-relax:dualspace #use dualspace relax protocol
+-relax:minimize_bond_angles #dualspace relax protocol setting
+-set_weights cart_bonded .5 pro_close 0 #score proline ring closure using energy term for all bond lengths (pro_close uses virtual atom NV for proline ring scores)
+-default_max_cycles 2
+
+-out:file:fullatom
+-out:pdb

@@ -1,0 +1,19 @@
+symmetry_name ../2akf_INPUT_0001__3
+E = 3*VRT0_base + 3*(VRT0_base:VRT2_base)
+anchor_residue COM
+virtual_coordinates_start
+xyz VRT0_base  -0.9899730,0.1412566,0.0000188  -0.1412566,-0.9899730,0.0000077  15.5798125,-2.2230000,-0.6374062
+xyz VRT1_base  0.3726547,-0.9279701,-0.0000027  0.9279701,0.3726547,-0.0000201  -5.8647187,14.6040938,-0.6370690
+xyz VRT2_base  0.6173183,0.7867135,-0.0000161  -0.7867135,0.6173183,0.0000124  -9.7151438,-12.3809620,-0.6368580
+xyz VRT  0.0000000,-1.0000000,0.0000050  1.0000000,-0.0000000,-0.0000197  -0.0000167,-0.9999561,-0.6371061
+virtual_coordinates_stop
+connect_virtual JUMP0_to_subunit VRT0_base SUBUNIT
+connect_virtual JUMP1_to_subunit VRT1_base SUBUNIT
+connect_virtual JUMP2_to_subunit VRT2_base SUBUNIT
+connect_virtual JUMP0 VRT VRT0_base
+connect_virtual JUMP1 VRT VRT1_base
+connect_virtual JUMP2 VRT VRT2_base
+set_dof JUMP0 x(15.7376301105531)
+set_dof JUMP0_to_subunit angle_x angle_y angle_z
+set_jump_group JUMPGROUP2 JUMP0 JUMP1 JUMP2
+set_jump_group JUMPGROUP3 JUMP0_to_subunit JUMP2_to_subunit JUMP1_to_subunit

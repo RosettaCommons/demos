@@ -1,6 +1,8 @@
 Doug's DockDesignMinimize Demo
 ==============================
 
+KEYWORDS: DOCKING DESIGN
+
 This demo was written by P. Douglas Renfrew (renfrew at nyu dot edu)
 
 This demo illustrates the DougsDockDesignMinimizeInterface protocol. It was 

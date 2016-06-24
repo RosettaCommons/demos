@@ -1,0 +1,7 @@
+-in:file:l input_files/pdblist
+
+-score:weights docking
+-score:patch docking
+-score:set_weights fa_atr 1
+
+-out:file:scorefile output_files/score_docking_patch.sc

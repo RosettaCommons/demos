@@ -1,5 +1,5 @@
 Author: Barak Raveh
-
+KEYWORDS: PEPTIDES DOCKING
 Overview:
 =========
 This demo demonstrates ab-initio folding and docking of the peptide ssrA (chain D) to the receptor protein sspB (chain B) at a specified binding sites. The user supplies Rosetta with a model of the sspB receptor protein (bound model, for the purpose of this demo), the sequence of the ssrA peptide, and a list of atoms on the surface of sspB that are known to bind the peptide.

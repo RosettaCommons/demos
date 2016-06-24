@@ -1,0 +1,4 @@
+-in:file:s example_inputs/1c3w_tr.pdb
+-mp:setup:spanfiles example_inputs/1c3w_tr.span
+-show_simulation_in_pymol 0
+-keep_pymol_simulation_history 1

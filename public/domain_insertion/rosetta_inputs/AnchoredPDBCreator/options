@@ -1,5 +1,3 @@
-# In your run, you'll want to correct this path to point to your copy of minirosetta_database
--database /Users/cmiles/minirosetta_database
 
 # Number of output structures. In realistic usage, you'll probably want to generate several hundred models.
 -nstruct 1

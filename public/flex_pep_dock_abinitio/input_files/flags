@@ -1,0 +1,35 @@
+#io flags:
+-s input_files/2b1z.start.pdb
+-native input_files/2b1z.native.pdb
+#If using multiple processes and no silent file:
+#-multiple_processes_writing_to_one_directory
+
+#number of structures to produce
+#for demo:
+-nstruct 1
+#for production run:
+#-nstruct 50000
+
+#flexpepdock flags:
+-flexPepDocking:lowres_abinitio
+-flexPepDocking:pep_refine
+-flexPepDocking:flexpep_score_only
+
+#packing flags
+
+#fragment picker flags:
+-frag3 input_files/frags/frags.3mers.offset
+-frag9 input_files/frags/frags.9mers.offset
+-flexPepDocking:frag5 input_files/frags/frags.5mers.offset
+-flexPepDocking:frag5_weight 0.25
+-flexPepDocking:frag9_weight 0.1
+
+#mute logging:
+-mute protocols.moves.RigidBodyMover
+-mute core.chemical
+-mute core.scoring.etable
+-mute protocols.evalution
+-mute core.pack.rotamer_trials
+-mute protocols.abinitio.FragmentMover
+-mute core.fragment
+-mute protocols.jd2.PDBJobInputter

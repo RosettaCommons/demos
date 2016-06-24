@@ -1,0 +1,21 @@
+# Input databases
+#-in::file::vall <Path to vall database>
+
+# Query-related input files
+-in::file::fasta		NullFragments/input_files/2jsvX.fasta
+-in::file::s                    NullFragments/input_files/2jsvX.pdb
+
+# Weights file
+-frags::scoring::config		NullFragments/input_files/null.wghts
+
+# What should we do?
+-frags::bounded_protocol	
+
+# three-mers only, please
+-frags::frag_sizes 		3
+-frags::n_candidates		200
+-frags::n_frags			200
+
+# Output 
+-out::file::frag_prefix		NullFragments/output_files/frags
+-frags::describe_fragments 	NullFragments/output_files/frags.fsc

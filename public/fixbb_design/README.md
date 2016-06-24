@@ -1,17 +1,18 @@
-This is a very simple design on a fixed backbone demo. If you have never run 
-Rosetta before this is a good first demo to run, because it is very simple and 
-has few options.
+# Demo for the fixbb application with design
 
-Use the files from the integration test, for example copying them to a new 
-working directory:
+KEYWORDS: DESIGN GENERAL
 
-    rosetta/rosetta_tests/integration/tests/fixbb
+Demo last modified by Vikram K. Mulligan, Ph.D. (vmullig@uw.edu) during the 2016 Documentation eXtreme Rosetta Workshop (XRW).
 
-* Run like this:
+This is a demo of a very simple design protocol run on a fixed backbone. If you
+have never run Rosetta before, then this is a good first demo to run, because it
+is very simple and has few options.
 
-        rosetta/rosetta_source/bin/fixbb.linuxgccrelease @flags_fullatom_dun10 -database ~/rosetta/rosetta_database/ > log.txt &
+* The demo can be run like this:
 
-  The following files should be produced:
+        <path_to_Rosetta_directory>/main/source/bin/fixbb.default.linuxgccrelease -in:file:s 1l2y.pdb >log.txt &
+
+  The above should take on the order of ten seconds to run.  During that time, you will be able to use the command prompt.  The following files should be produced:
 
         1l2y_0001.pdb
         log.txt
@@ -23,14 +24,18 @@ working directory:
 * Systematically list sequence changes in the form of a sequence profile:
 
         ls 1l2y_0001.pdb > list.txt  # this would typically be many designed structures all in a list
-        python rosetta/rosetta/tools/protein_tools/scripts/SequenceProfile.py -l list.txt -t 1l2y.pdb
+        python $ROSETTA_TOOLS/protein_tools/scripts/SequenceProfile.py -l list.txt -t 1l2y.pdb
+
+  In the above, the ROSETTA_TOOLS environment variable must be set to point to your Rosetta/tools directory.  Alternatively, you may manually type the location of the Rosetta/tools directory.
 
 * To control which residues are allowed at each sequence position you would add 
-  a resfile (included in this demo) like so:
+  a resfile (included in this demo) like so.  (Note that we're also changing appending
+  the suffix "_resout" to the output PDB files so as not to overwrite the files produced
+  previously.):
 
-        rosetta/rosetta_source/bin/fixbb.linuxgccrelease @flags_fullatom_dun10 -database ~/rosetta/rosetta_database/ -resfile resfile.txt -out:suffix _resout > log_resout.txt &
+        rosetta/rosetta_source/bin/fixbb.default.linuxgccrelease -in:file:s 1l2y.pdb -resfile resfile.txt -out:suffix _resout > log_resout.txt &
 
-  Open up the resfile.txt file to see its format. Briefly, NATRO leaves the 
+* Open up the resfile.txt file to see its format. Briefly, NATRO leaves the 
   natural rotamer (and amino acid). NATAA leaves the amino acid at a position 
   but allows rotamer to change. ALLAA allows full design with any amino acid. 
   PIKAA followed by a list of single-letter-code amino acids restricts design 

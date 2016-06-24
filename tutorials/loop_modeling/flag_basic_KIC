@@ -1,0 +1,19 @@
+-in:file:s input_files/3gbn_Ab.pdb
+-in:file:fullatom
+-loops:loop_file input_files/chainbreak_fix.loops
+
+-nstruct 1
+
+-loops:fast
+-loops:max_kic_build_attempts 200
+-loops:remodel perturb_kic
+-loops:refine refine_kic
+
+-ex1
+-ex2
+-use_input_sc
+
+-out:file:fullatom
+-out:path:all output_files
+-out:file:scorefile chainbreak_fix.fasc
+

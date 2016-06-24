@@ -1,9 +1,20 @@
 # Multistate Design of Antibodies
+
+KEYWORDS: DESIGN GENERAL
+
 This demo includes input files for running multistate design using 10 states.
 It can either be run on a single processor using the
 ```
    mpi_msd.default.linuxgccrelease (or, more generally the mpi_msd.default.{os}{compiler}{release/debug} executable)
 ```
+   using the provided input, you can test this:
+   
+   (where `$ROSETTA3`=path-to-Rosetta/main/source
+
+```
+   $> $ROSETTA3/bin/mpi_msd.linuxgccrelease @flags
+```
+
 or by distributing those states over multiple processors using the
 ```
    mpi_msd.mpi.linuxgccrelease (or, more generally the mpi_msd.mpi.{os}{compiler}{release/debug} executable)
@@ -13,8 +24,6 @@ on each processor.
 
 Files to look at first:
 ```
-command :         contains an example command line which you will have to modify for your system
-command_mpi:      contains an example command line for running the mpi executable which you will have to modify for your system
 1USM_het.flags:   contains the set of flags read by the command line in the command/command_mpi files.
 fitness.daf:      the file which declares the set of states included in this design task, and the fitness function itself
 entity.resfile:   the resfile which declares the accessible regions of sequence space

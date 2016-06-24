@@ -1,0 +1,19 @@
+#!/bin/bash -x
+#SBATCH -J csrosetta
+
+NSLOTS=$SLURM_NTASKS
+
+module load openmpi/gcc
+
+LOGS=logs_`echo $SLURM_JOB_ID | awk -v FS="." '{print $1}'`
+mkdir -p $LOGS
+
+## have NSLOTS - 3 worker processes -- determines number of structures per generation...
+NSTRUCT=`echo $NSLOTS | awk '{print $1-3}'`
+
+echo "running on $NSLOTS cpus ..."
+EXE=$ROSETTA3_BIN/docking_protocol.mpi.linuxgccrelease
+CMDLINE="-out:level 300 -mute all_high_mpi_rank_filebuf -out:mpi_tracer_to_file $LOGS/log -database $ROSETTA3_DB  @flags_docking_refine @flags_rosetta_dock"
+CYCLES=
+$MPI_RUN -n $NSLOTS $EXE $CMDLINE $CYCLES
+

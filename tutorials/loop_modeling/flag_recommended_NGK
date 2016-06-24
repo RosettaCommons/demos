@@ -1,0 +1,11 @@
+-loops:remodel perturb_kic
+-loops:refine refine_kic
+-kic_rama2b
+-loops:ramp_fa_rep
+-loops:ramp_rama
+-kic_omega_sampling
+-allow_omega_move true
+-loops:outer_cycles 5
+-ex1
+-ex2
+-nstruc 500 #can be more

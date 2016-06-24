@@ -1,6 +1,6 @@
 Next Generation KIC
 ===================
-
+KEYWORDS: LOOPS STRUCTURE_PREDICTION
 Setting up the demo
 -------------------
 

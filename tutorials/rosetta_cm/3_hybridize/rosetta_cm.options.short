@@ -1,0 +1,24 @@
+# i/o
+-in:file:fasta 1u19.fasta
+-parser:protocol rosetta_cm.xml
+-nstruct 1 
+ 
+# relax options
+-relax:minimize_bond_angles
+-relax:minimize_bond_lengths
+-relax:jump_move true
+-default_max_cycles 5 
+-relax:min_type lbfgs_armijo_nonmonotone
+-relax:jump_move true
+-score:weights stage3_rlx_membrane.wts
+-use_bicubic_interpolation
+-hybridize:stage1_probability 1.0
+ 
+# reduce memory footprint
+-chemical:exclude_patches LowerDNA  UpperDNA Cterm_amidation SpecialRotamer VirtualBB ShoveBB VirtualDNAPhosphate VirtualNTerm CTermConnect sc_orbitals pro_hydroxylated_case1 pro_hydroxylated_case2 ser_phosphorylated thr_phosphorylated  tyr_phosphorylated tyr_sulfated lys_dimethylated lys_monomethylated  lys_trimethylated lys_acetylated glu_carboxylated cys_acetylated tyr_diiodinated N_acetylated C_methylamidated MethylatedProteinCterm
+
+#Initialize membrane
+-membrane
+-in:file:spanfile 1u19.span
+-membrane:no_interpolate_Mpair
+-membrane:Menv_penalties

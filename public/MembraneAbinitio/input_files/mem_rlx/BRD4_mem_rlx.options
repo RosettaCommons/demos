@@ -1,0 +1,19 @@
+-in:file:native 1PY6A.pdb
+-in:file:spanfile BRD4A.span # newly created spanfile
+-in:file:s 1PY6A.pdb
+-relax:fast
+-relax:membrane
+-membrane:no_interpolate_Mpair # membrane scoring specification
+-membrane:Menv_penalties # turn on membrane penalty scores
+-score:find_neighbors_3dgrid
+-score:weights membrane_highres_Menv_smooth.wts
+-run:reinitialize_mover_for_each_job
+-evaluation:gdtmm # output global distance test info
+-evaluation:rmsd NATIVE _TM BRD4A_TM_rms.txt
+-out:output
+-out:nstruct 10
+-out:sf BRD4A_native_mem_rlx.fsc
+-out:file:silent RD4A_native_mem_rlx.out
+-out:file:silent_struct_type binary
+-out:file:fullatom
+-overwrite

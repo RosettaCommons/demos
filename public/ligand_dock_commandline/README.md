@@ -1,6 +1,8 @@
 Ligand Dock Demo
 ================
 
+KEYWORDS: LIGANDS DOCKING
+
 To run:
 
     [path]/rosetta/rosetta_source/bin/ligand_dock.linuxgccrelease -database ~/rosetta/rosetta_database/ @flags

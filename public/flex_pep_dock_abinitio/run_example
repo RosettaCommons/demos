@@ -1,0 +1,10 @@
+#!/bin/csh
+
+set PATH_TO_EXE=/vol/ek/liorz06/miniRosettaWorkspace/mini/bin/
+set PATH_TO_DB=/vol/ek/liorz06/miniRosettaWorkspace/rosetta_database
+
+#rosetta command line
+../../../main/source/bin/FlexPepDocking.linuxclangrelease @input_files/flags
+
+echo "FlexPepDock Ab-initio done!"
+echo

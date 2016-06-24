@@ -1,0 +1,6 @@
+rm -rf STEP* *~ CONDOR core.* SLAVE*  
+grinder_dagman.py -native 2jof.pdb -fasta 2jof.fasta -cluster_radius 0.25 -final_number 1000   -denovo 1  -weights score12.wts
+
+# To include native constraints
+#grinder_dagman.py -native 2jof.pdb -fasta 2jof.fasta -cluster_radius 0.25 -final_number 1000   -denovo 1  -weights score12.wts -cst_file 2jof_native_CA_CA_trp.cst
+
