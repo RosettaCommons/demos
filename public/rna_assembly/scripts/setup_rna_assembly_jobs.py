@@ -19,11 +19,12 @@ scripts_path = dirname( abspath( argv[0] ) ) + '/'
 if os.environ.has_key("ROSETTA3"):
 	EXE_DIR = os.environ.get("ROSETTA3")+"/bin/"
 else:
-	EXE_DIR =  scripts_path +'/../../../../rosetta_source/bin/'
+	EXE_DIR =  scripts_path +'/../../../main/source/bin/'
+print EXE_DIR
 EXE_DIR = abspath( EXE_DIR )
 
 # for pdbslice.py
-if os.environ.has_key("ROSETTA_TOOLS"): 
+if os.environ.has_key("ROSETTA_TOOLS"):
 	tools_scripts_path = os.environ.get("ROSETTA_TOOLS")+"/rna_tools/bin"
 else:
 	tools_scripts_path = abspath( dirname( abspath( argv[0] ) ) + '/../../../../tools/rna_tools/bin' )
@@ -519,13 +520,13 @@ for i in range( motif_count ):
 
     command += ' -input_res '
     command += ' '+make_tag_with_dashes( stem_chunk_res )
-    
+
     short_command = command.replace('-nstruct 100', '-nstruct 1')
     short_command = short_command.replace('-cycles 5000', '-cycles 1')
     short_commands.append(short_command)
 
     fid_README_MOTIFS.write( command+'\n' )
-	
+
 
 fid_README_MOTIFS.close()
 
