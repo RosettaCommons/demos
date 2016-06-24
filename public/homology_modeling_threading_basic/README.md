@@ -137,7 +137,7 @@ Detailed steps
 
 6.  Execute Rosetta
 
-        ./rosetta-3.3/rosetta_source/bin/minirosetta.macosgccrelease @flags >& test.log &
+        $> <path/to/Rosetta>/main/source/bin/minirosetta.macosgccrelease @flags >& test.log &
 
 7.  Analyze results
 
