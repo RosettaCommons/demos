@@ -30,14 +30,14 @@ Step 2: relax_mtssl_mutant
 
 The standard relax protocols can be used. The mtssl parameter file must be provided. The command line below will relax the t4-lysozyme double mutant provided in the input directory.
 ```
-$> $ROSETTA3/bin/relax.default.linuxgccrelease -in:file:s relax_mtssl_mutant/input/lysozyme_start_mtssl_mutant.pdb -out:file:fullatom  -out:prefix relax_ -nstruct 1 >& relax.log 
+$> $ROSETTA3/bin/relax.default.linuxgccrelease -in:file:s relax_mtssl_mutant/input/lysozyme_start_mtssl_mutant.pdb -extra_res_fa input/R1A.params -out:file:fullatom  -out:prefix relax_ -nstruct 1 >& relax.log 
 ```
 
 Step3: relax_mtssl_mutant_membrane
 
 The standard relaxation protocols with membrane flags can be used. The mtssl parameter file needs to be provided. The command line below will relax the double mutant MSBA structure provided in the inputs directory.
 ```
-$> $ROSETTA3/bin/relax.default.linuxgccrelease -in:file:s relax_mtssl_mutant_membrane/input/msba_mtssl_mutant_start_structure.pdb -out:file:fullatom -out:prefix mem_relax_  -nstruct 1 -relax:membrane -membrane:normal_cycles 100 -membrane:normal_mag 15 -membrane:center_mag 2 -file:spanfile relax_mtssl_mutant_membrane/input/msba.span > & mem_relax.log 
+$> $ROSETTA3/bin/relax.default.linuxgccrelease -in:file:s relax_mtssl_mutant_membrane/input/msba_mtssl_mutant_start_structure.pdb -out:file:fullatom -out:prefix mem_relax_ -extra_res_fa input/R1A.params -nstruct 1 -relax:membrane -membrane:normal_cycles 100 -membrane:normal_mag 15 -membrane:center_mag 2 -file:spanfile relax_mtssl_mutant_membrane/input/msba.span > & mem_relax.log 
 ```
 Step 4: rotamer_conformation_recovery
 
