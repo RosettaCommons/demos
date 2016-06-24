@@ -21,7 +21,7 @@ specifies that only the non-cannonical residue type R1A is allowed at
 positions 59 and 159. The command below will generate the 59/159 double mtssl
 mutant of the t4-lysozyme protein given in the input directory.
 ```
-$> $ROSETTA3/bin/fixbb.default.linuxgccrelease -in:file:s create_mtssl_mutant/input/lysozyme_pseudo_wildtype.pdb -out:file:fullatom -in:file:extra_res_fa input/R1A.params  -resfile create_mtssl_mutant/config/resfile.pack -out:prefix mtssl_mutant_ >& make_mutant.log &
+$> $ROSETTA3/bin/fixbb.default.linuxgccrelease -in:file:s create_mtssl_mutant/input/lysozyme_pseudo_wildtype.pdb -out:file:fullatom -in:file:extra_res_fa input/R1A.params  -resfile create_mtssl_mutant/config/resfile.pack -out:prefix mtssl_mutant_ >& make_mutant.log 
 ```
 where (`$ROSETTA3`=path-to-Rosetta/main/source)
 
@@ -36,7 +36,7 @@ Step3: relax_mtssl_mutant_membrane
 
 The standard relaxation protocols with membrane flags can be used. The mtssl parameter file needs to be provided. The command line below will relax the double mutant MSBA structure provided in the inputs directory.
 ```
-$> $ROSETTA3/bin/relax.default.linuxgccrelease -in:file:s relax_mtssl_mutant_membrane/input/msba_mtssl_mutant_start_structure.pdb -out:file:fullatom -in:file:extra_res_fa input/R1A.params -out:prefix mem_relax_  -nstruct 1 -relax:membrane -membrane:normal_cycles 100 -membrane:normal_mag 15 -membrane:center_mag 2 -file:spanfile relax_mtssl_mutant_membrane/input/msba.span > & mem_relax.log &
+$> $ROSETTA3/bin/relax.default.linuxgccrelease -in:file:s relax_mtssl_mutant_membrane/input/msba_mtssl_mutant_start_structure.pdb -out:file:fullatom -in:file:extra_res_fa input/R1A.params -out:prefix mem_relax_  -nstruct 1 -relax:membrane -membrane:normal_cycles 100 -membrane:normal_mag 15 -membrane:center_mag 2 -file:spanfile relax_mtssl_mutant_membrane/input/msba.span > & mem_relax.log 
 ```
 Step 4: rotamer_conformation_recovery
 
