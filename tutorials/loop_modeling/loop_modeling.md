@@ -27,7 +27,7 @@ Loop Modeling Methods
 
 There are several loop modeling methods present in Rosetta and more are being actively developed. The goal of all loop modeling methods is to sample conformational space of the peptide segment in such a manner that the endpoints of the peptide termini are connected. Here, we will present examples from the following protocols:
 
-* _CCD (Cyclic coordinate descent)_ 
+* _CCD (Cyclic coordinate descent)_    
 This generates loops by fragment insertion from a pre-generated fragment library, and favorably scores conformations which close the loop.
 * _KIC (Kinematic closure)_  
 This generates loops by analytically calculating possible conformations subject to constraints of the anchored endpoints.
