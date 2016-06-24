@@ -81,7 +81,7 @@ structure which we will refine later.
 To run AnchoredPDBCreator, use its executeable (of the same name):
 
     $> cd rosetta_inputs/AnchoredPDBCreator
-    $> <path/to/Rosetta>main/source/bin/AnchoredPDBCreator.<yoursystemsettings> @options
+    $> <path/to/Rosetta/main/source/bin/>AnchoredPDBCreator.<exe_settings> @options
 
 This command will create two new files in that directory.  The output structure 
 will be named `S_0001.pdb`; there will also be a scorefile `score.sc`.
