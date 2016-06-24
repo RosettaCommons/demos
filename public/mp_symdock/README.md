@@ -76,7 +76,7 @@ use a C4 Symmetric Potassium Channel (PDB ID: 1bl8)
 
 (where `$ROSETTA3`=path-to-Rosetta/main/source)
 
-        $> $ROSETTA3/bin/rosetta_scripts.linuxgccrelease -parser:protocol membrane_relax.xml @relax_flags
+        $> $ROSETTA3/bin/rosetta_scripts.default.linuxgccrelease -parser:protocol membrane_relax.xml @relax_flags
 
    The following output files will be generated: 
    * `1bl8_tr_<0001-0010>.pdb`    : 10 refined models of 1bl8
