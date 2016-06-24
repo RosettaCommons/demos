@@ -43,7 +43,7 @@ The given starting structure was called starting_files/1CSE.pdb.
 We started by:
 1. removed the chain we didn't want to do ddG calculations on. the command for doing so is:
     ```
-	$> ./scripts/extract_chains.pl starting_files/1CSE.pdb I  > starting_files/1CSEi.pdb
+	$> ./scripts/extract_chains.pl starting_files/1CSE.pdb I  > 1CSEi.pdb
     ```
     this outputs chain I to the file starting_files/1CSEi.pdb
 
@@ -58,9 +58,8 @@ We started by:
    this must be run from the directory which contains the pdb-file, otherwise you might get an error. 
 he minimization protocol only takes in lists of files, so you need to do the following:
     ```
-    $> cd starting_files/
     $> ls 1CSEi.ren.pdb > lst
-    $> $ROSETTA3/bin/minimize_with_cst.default.macosgccrelease -in:file:l lst -database ~/minirosetta_database/ -in:file:fullatom -ddg::out_pdb_prefix minimize_with_cst        
+    $> $ROSETTA3/bin/minimize_with_cst.default.macosgccrelease -in:file:l lst -in:file:fullatom -ddg::out_pdb_prefix minimize_with_cst        
     ```
 
 (where `$ROSETTA3`=path-to-Rosetta/main/source)
@@ -69,7 +68,7 @@ he minimization protocol only takes in lists of files, so you need to do the fol
     ```
     $> ls 1CSEi.ren.pdb > test.lst 
     $> ls minimize_with_cst.1CSEi.ren_0001.pdb >> test.lst
-    $> $ROSETTA3/bin/score.default.macosgccrelease -in:file:l test.lst -database ~/minirosetta_database/ -in:file:fullatom -out:file:scorefile score.chk.fsc 
+    $> $ROSETTA3/bin/score.default.macosgccrelease -in:file:l test.lst -in:file:fullatom -out:file:scorefile score.chk.fsc 
     ```
     and the score for minimize_with_cst.1CSEi.ren_0001.pdb should be lower than 1CSEi.ren.pdb.
     In this case, 1CSEi.ren.pdb has a score of 35.294 and minimize_with_cst.1CSEi.ren_0001.pdb has a score of -64.426. And for a given input structure you should always converge on a score (you should get the same score for each minimized-input structure).
