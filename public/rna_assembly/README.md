@@ -60,7 +60,7 @@ You can see examples of these files and their output in example_output/. Please 
 
 The final 'outfile' is  add_assemble.out. If you don't have the file ready, you can copy:
 ```
-$> cp ./example_output/add_assemble.out
+$> cp ./example_output/add_assemble.out .
 ```
 
 We can extract models from it using:(where `$ROSETTA3`=path-to-Rosetta/main/source)
