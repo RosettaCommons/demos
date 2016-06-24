@@ -112,7 +112,7 @@ core.fragment.picking_old.vall.vall_io: Reading Vall library from <path_to_Roset
 
 This indicates that it is reading in a database of pre-generated fragments from the database to bound the loops. The simulation should take ~1 minute to run and produce a score file and a PDB with a loop of the missing residues in the directory `output_files`. (It will also produce a file called `1.pdb` in the current working directory with the same structure as the output structure, but with different meta information.) Your output PDB will have chains renumbered _A, B_ etc.
 
-This loop will likely not match the loop of the native `3gbn_Ab.pdb` in just one simulation. You need to run this multiple times by changing the `nstruc` flag to `500` or more.
+This loop will likely not match the loop of the native `3gbn_Ab.pdb` in just one simulation. You need to run this multiple times by changing the `nstruc` option to `500` or more.
 
 
 `remodel` can a multitude of applications, including design, which you can read about [here](https://www.rosettacommons.org/docs/latest/application_documentation/design/rosettaremodel#algorithm_basic-remodelling-tasks_extension).
@@ -128,7 +128,7 @@ Now run:
 
     $> $ROSETTA3/main/source/bin/loopmodel.linuxgccrelease @flag_refine_loop
     
-This takes ~2 minutes and produces an output PDB and a score file. The output PDB should be closer to the native `3gbn_Ab.pdb` as demonstrated in the PDB `output_files/expected_results/3gbn_refine_loop_0001.pdb`.
+This takes ~2 minutes and produces an output PDB and a score file. The output PDB should be closer to the native `3gbn_Ab.pdb` as demonstrated in the PDB `output_files/expected_results/3gbn_refine_loop_0001.pdb`. You need to run this multiple times by changing the `nstruc` option to `500` or more.
 
 Extending the Termini
 ---------------------
@@ -157,7 +157,7 @@ Now with this modified blueprint file, run:
 
 The simulation should take ~1 minute to run and produce a score file and a PDB with a C-terminus in the directory `output_files`. _This file may be missing the L-chain (a bug in the code for multiple chains), so you may have to manually go an enter it._
 
-This segment will likely not match the C-terminus of the native `3gbn_Ab.pdb` in just one simulation. You need to run this multiple times by changing the `nstruc` flag to `500` or more.
+This segment will likely not match the C-terminus of the native `3gbn_Ab.pdb` in just one simulation. You need to run this multiple times by changing the `nstruc` option to `500` or more.
 
 Removing a Loop from the Protein
 --------------------------------
