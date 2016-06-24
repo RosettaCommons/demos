@@ -109,7 +109,7 @@ RosettaLigand protocols are built in the RosettaScripts framework, a modular arc
 
 The Rosetta ligand docking command should be run as follows: (where `$ROSETTA3`=path-to-rosetta/main/source
 
-    $> $ROSETTA3/bin/rosetta_scripts.default.linuxgccrelease @rosetta_inputs/flags.txt -in:file:screening_job_file rosetta_inputs/job_01.js -parser:protocol rosetta_inputs/tr_repack.xml -out:file:silent results.out
+    $> $ROSETTA3/bin/rosetta_scripts.default.linuxgccrelease @rosetta_inputs/flags.txt -in:file:screening_job_file rosetta_inputs/job_01.js -parser:protocol rosetta_inputs/xml/tr_repack.xml -out:file:silent results.out
 
 rosetta_inputs/flags.txt contains flags that are always the same regardless of the input file.
 
