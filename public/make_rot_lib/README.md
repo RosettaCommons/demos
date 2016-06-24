@@ -130,8 +130,8 @@ Field definitions:
 To generate the 1296 input files we use a provided script that simply replace 
 the XXX and YYY with the phi and psi values. The script is run as shown bellow.
 
-    $ cd inputs
-    $ ../scripts/make_inputs C40_rot_lib_options_XXX_YYY.in
+    $> cd inputs
+    $> ../scripts/make_inputs C40_rot_lib_options_XXX_YYY.in
 
 The number of chi angles and the CHI_RANGE sampling interval are the primary 
 determinants of the run time as they determine the number of rotamers that will 
@@ -149,8 +149,8 @@ should probably be done on a cluster. As cluster setups vary, an example for a
 single MakeRotLib options file is provided. The other 1295 should be run 
 identically.
 
-    $ cd outputs
-    $ PATH/TO/ROSETTA/bin/make_rot_lib.macosgccrelease -database PATH/TO/rosetta_database -rot_lib_options_file ../inputs/C40_rot_lib_options_-60_-40.in >& C40_rot_lib_options_-60_-40.log &
+    $> cd outputs
+    $> PATH/TO/ROSETTA/bin/make_rot_lib.macosgccrelease -database PATH/TO/rosetta_database -rot_lib_options_file ../inputs/C40_rot_lib_options_-60_-40.in >& C40_rot_lib_options_-60_-40.log &
 
 NOTE: The extension on your executable maybe different.
 
@@ -180,13 +180,13 @@ files the individual rotamer libraries for each phi psi bin need to be
 assembled in to a single file. This is accomplished with a provided script as 
 shown bellow. 
 
-    $ cd outputs
-    $ ../scripts/make_final_from_phi_psi.pl C40
+    $> cd outputs
+    $> ../scripts/make_final_from_phi_psi.pl C40
 
 The single file rotamer library should be called C40.rotlib. The file should be 
 placed in the ncaa_rotlibs directory in the database. 
 
-    $ cp C40.rotlibs PATH/TO/DATABASE/rosetta_database/ncaa_rotlibs/
+    $> cp C40.rotlibs PATH/TO/DATABASE/rosetta_database/ncaa_rotlibs/
 
 Step 4: Modifying the residue type PARAMS file
 -----------------------------------------------
@@ -199,6 +199,6 @@ C40.rotlib and the rotamer library describes 3 chi angles and each of those 3
 chi angle has 3 rotamer numbers. So we would use the following commands to add 
 that information to the file we created in HowToMakeResidueTypeParamFiles.
 
-    $ echo "NCAA_ROTLIB_PATH C40.rotlib" >> PATH/TO/rosetta_database/chemical/residue_type_sets/fa_standard/residue_types/l-ncaa/ornithine.params
-    $ echo "NCAA_ROTLIB_NUM_ROTAMER_BINS 3 3 3 3" >> PATH/TO/rosetta_database/chemical/residue_type_sets/fa_standard/residue_types/l-ncaa/ornithine.params
+    $> echo "NCAA_ROTLIB_PATH C40.rotlib" >> PATH/TO/rosetta_database/chemical/residue_type_sets/fa_standard/residue_types/l-ncaa/ornithine.params
+    $> echo "NCAA_ROTLIB_NUM_ROTAMER_BINS 3 3 3 3" >> PATH/TO/rosetta_database/chemical/residue_type_sets/fa_standard/residue_types/l-ncaa/ornithine.params
 

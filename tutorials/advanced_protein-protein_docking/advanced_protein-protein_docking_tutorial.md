@@ -30,20 +30,20 @@ This tutorial presents a cross-docking benchmark experiment. Antibody CR6261 bin
 
         1. We want the hemagglutinin (chains A and B) from 3GBM
 
-                > <path-to-Rosetta>/tools/protein_tools/scripts/clean_pdb.py 3GBM AB
+                $> <path-to-Rosetta>/tools/protein_tools/scripts/clean_pdb.py 3GBM AB
 
-                > <path-to-Rosetta>/tools/protein_tools/scripts/pdb_renumber.py \
+                $> <path-to-Rosetta>/tools/protein_tools/scripts/pdb_renumber.py \
                 --norestart 3GBM_AB.pdb 3gbm_HA.pdb
 
         1. We want the antibody (chains H and L) from 3GBN. (Note that chains A and B are not the antibody "Ab"). We only need the variable domain which is actually involved with binding HA. The crystal structure also contains a partially resolved portion of the constant domain. You should manually edit the PDB file with a text editor to remove the unnecessary portions. You should be able to see them in a structure viewer. It should be residues 121-160 of the heavy chain (chain H) and residues 268-311 of the light chain (chain L) in the cleaned structure.
 
-                > <path-to-Rosetta>/tools/protein_tools/scripts/clean_pdb.py 3GBN HL
+                $> <path-to-Rosetta>/tools/protein_tools/scripts/clean_pdb.py 3GBN HL
 
                 cp 3GBN_HL.pdb 3GBN_trim.pdb
                 pymol 3GBN_trim.pdb
                 gedit 3GBN_trim.pdb
 
-                > <path-to-Rosetta>/tools/protein_tools/scripts/pdb_renumber.py \
+                $> <path-to-Rosetta>/tools/protein_tools/scripts/pdb_renumber.py \
                 --norestart 3GBN_trim.pdb 3gbn_Ab.pdb
 
    -> Note: you may not have gedit in your computer. Try using other text editors.
@@ -74,7 +74,7 @@ This tutorial presents a cross-docking benchmark experiment. Antibody CR6261 bin
             ```
         1. Run the Rosetta loopmodel application to close the loop.
 
-                > <path-to-Rosetta>/main/source/bin/loopmodel.default.linuxgccrelease \
+                $> <path-to-Rosetta>/main/source/bin/loopmodel.default.linuxgccrelease \
                 @chainbreak_fix.options >& chainbreak_fix.log &
 
                 pymol 3gbn_Ab*pdb &
@@ -107,8 +107,8 @@ This tutorial presents a cross-docking benchmark experiment. Antibody CR6261 bin
 
         1. When the repacking runs are done (in about 3-4 minutes), copy the best scoring HA model to 3gbm_HA_repack.pdb and the best scoring antibody model to 3gbn_Ab_repack.pdb. (For brevity, we only generated a single structure. For actual production runs, we recommend generating a number of output structures, by adding something like "-nstruct 25" to the commandline. -- For the example outputs in the output_files/ directory, the lowest energy structures are 3gbm_HA_0011.pdb and 3gbn_Ab_fixed_0005.pdb.)
         
-                 cp input_files/3gbm_HA_repacked.pdb .
-                 cp input_files/3gbn_Ab_repacked.pdb .
+                 $> cp input_files/3gbm_HA_repacked.pdb .
+                 $> cp input_files/3gbn_Ab_repacked.pdb .
     
         It can also be useful to pre-generate backbone conformational diversity prior to docking particularly when the partners are crystallized separately. The Rosetta FastRelax algorithm can be accessed through RosettaScripts. XML scripts, input files, options files and a command are available in the input_files directory. Backbone conformational diversity will not be explored in this tutorial due to time constraints.
         
@@ -118,7 +118,7 @@ This tutorial presents a cross-docking benchmark experiment. Antibody CR6261 bin
         
         1. Align the structures with pymol. (Note that you need to have your environment parameters set correctly in order to access pymol from terminal. You may need to open pymol manuall)
         
-                cp ../input_files/3gbm_native.pdb .
+                $> cp ../input_files/3gbm_native.pdb .
                 pymol 3gbm_native.pdb 3gbm_HA_repacked.pdb 3gbn_Ab_repacked.pdb
 
             1. Type 'align 3gbn_Ab_repacked, 3gbm_native'
