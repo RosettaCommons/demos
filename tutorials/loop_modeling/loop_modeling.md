@@ -25,18 +25,18 @@ Loop Modeling Methods
 ---------------------
 >Loop Modeling in not restricted to segments with a blank DSSP secondary structure assignment. It is more generally applicable to any fragment joining larger segments.
 
-There are several loop modeling methods present in Rosetta and more which are being actively developed. The goal of all loop modeling methods is to sample conformational space of the peptide segment in such a manner that the fixed _anchor_ points at the peptide termini are connected. Here, we will present examples from the following protocols:
+There are several loop modeling methods present in Rosetta and more are being actively developed. The goal of all loop modeling methods is to sample conformational space of the peptide segment in such a manner that the endpoints of the peptide termini are connected. Here, we will present examples from the following protocols:
 
 * _CCD (Cyclic coordinate descent)_ 
 This generates loops by fragment insertion from a pre-generated fragment library, and favorably scores conformations which close the loop.
 * _KIC (Kinematic closure)_  
-This generates loops by analytically calculating possible conformation subject to constraints of the anchor points.
-* _Generalized KIC_
-This uses the same algorithm as KIC, but can be used for a variety of biomolecules and arbitrary backbones.
+This generates loops by analytically calculating possible conformations subject to constraints of the anchored endpoints.
 * _Remodel_  
 This is not an algorithm in itself but an alternative, user-friendly executable to utilize CCD and KIC
+* _Generalized KIC_
+This uses the same algorithm as KIC, but can be used for arbitrary backbones, loops through sidechains and other biomolecules. (Links to detailed examples will be provided.)
 * _Loop Hash_   
-This rapidly searches for peptide conformations using a pre-generated hash map. Since this is currently under development, we will not be discussing this.
+This rapidly searches for peptide conformations using a pre-generated hash map. (Since this is currently under development, we will not be discussing this.)
 
 Navigating to the Demos
 -----------------------
@@ -44,11 +44,11 @@ The demos are available at `<path_to_Rosetta_directory>/demos/tutorials/loop_mod
 
 <a name="chainbreak_close"></a>Closing Breaks in Protein Chains
 --------------------------------
-Sometimes you have chain breaks in your protein, perhaps when threading from a homolog. In this case, there are no missing residues, just that the backbone itself is not closed. An example input PDB is provided at `<path_to_Rosetta_directory>/demos/tutorials/loop_modeling/input_files/3gbn_Ab.pdb` where the connection between residue numbers 127 and 128 is severed. To fix this, we will use the kinematic closure protocol (KIC) explained [here](https://www.rosettacommons.org/docs/latest/application_documentation/structure_prediction/loop_modeling/loopmodel-kinematic#purpose). First, we need to write a short _loop file_, detailing which residues as to be modeled as loops and where the cutpoint is.
+Sometimes you have chain breaks in your protein, perhaps when threading from a homolog. In this case, there are no missing residues, just that the backbone itself is not closed. An example input PDB is provided at `<path_to_Rosetta_directory>/demos/tutorials/loop_modeling/input_files/3gbn_Ab.pdb` where the connection between residue numbers 127 and 128 is severed. To fix this, we will use the kinematic closure protocol (KIC) explained [here](https://www.rosettacommons.org/docs/latest/application_documentation/structure_prediction/loop_modeling/loopmodel-kinematic#purpose). First, we need to write a short _loop file_, detailing which residues are to be modeled as loops and where the cutpoint is.
 
     LOOP 125 130 0 0 1
     
-This 2<sup>nd</sup> and the 3<sup>rd</sup> columns in this file correspond the the loop start and end residues. The 4<sup>th</sup> column indicates the cut point where the chain is broken. It must be between (including) the start and end residues. 0 is the default option which allows Rosetta to pick a cut point. Note that **the residue numbering in the loop file is not based on PDB numbering but on Rosetta internal numbering.**. The 4th column represents the skip rate, which we have set to 0. Setting the last column to 1 makes Rosetta start building from an extended structure.
+This 2<sup>nd</sup> and the 3<sup>rd</sup> columns in this file correspond the the loop start and end residues. The 4<sup>th</sup> column indicates the cut point in the [foldtree](fold_tree) to allow motions in the loop without propagating them through the rest of the protein. It must be between the start and end residues (both included). 0 is the default option which allows Rosetta to pick a cut point. Note that **the residue numbering in the loop file is not based on PDB numbering but on Rosetta internal numbering.**. The 4th column represents the skip rate, which we have set to 0. Setting the last column to 1 makes Rosetta start building from an extended structure.
 
 To close the loop, run:
 
