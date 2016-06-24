@@ -1,0 +1,2 @@
+		<MutateResidue name="mutate" target="%%position%%" new_res="%%res%%" />  
+

@@ -524,9 +524,58 @@ $> $ROSETTA3/bin/rosetta_scripts.default.linuxgccrelease -s 1ubq.pdb -parser:pro
 $> $ROSETTA3/bin/rosetta_scripts.default.linuxgccrelease -s 1ubq.pdb -parser:protocol var_subs.xml -out:prefix L67W_ -nstruct 1 -parser:script_vars position=67A res=TRP
 ```
 
-These commands should produce a tryptophan scan of a selection of residues in the core of the protein. (Open up the structures in PyMol or the equivalent and compare).  Of course, in practice we would most likely want to include additional movers to repack and minimize the mutated residue and its environment.
+These commands should produce a tryptophan scan of a selection of residues in the core of the protein. (Open up the structures in PyMol or the equivalent and compare).  Of course, in practice we would most likely want to include additional movers to repack and minimize the mutated residue and its environment -- in its present form, this script leaves the new, mutated side-chains in conformations that clash horribly with the rest of the structure.
 
-If you wish to do a more thorough scan, either of more positions or of more residue identities, you can easily automate running of the scan by using shell scripting.
+If you wish to do a more thorough scan, either of more positions or of more residue identities, you can easily automate running of the scan by using shell scripting.  Note, though, that there is a cost do doing things this way: every step requires reinitialization of Rosetta, including a fresh load of the Rosetta database.
+
+> **If it is possible to do a series of jobs entirely within the context of Rosetta, this will save clock cycles and disk i/o.  If necessary, though, multiple jobs can be run by bash scripting with variable substitution.**
+
+### File inclusion
+
+* *Create a RosettaScript that includes things defined in another RosettaScript.*
+
+Scripts can easily become large and unweildy.  Fortunately, RosettaScripts supports *inclusion*, which means that a script can be divided over several separate files.  This is particularly useful if you find that there are certain modules that you set up over and over.  The setup for these can be relegated to another file that is included by many different scripts.  To demonstrate this, let's modify the script that we created in the previous section, and move the MutateResidue mover definition to another file.
+
+Create a new file (we'll call it var\_subs\_2b.xml), and add ONLY the following line:
+
+```xml
+		<MutateResidue name="mutate" target="%%position%%" new_res="%%res%%" />  
+```
+
+Note that we're still substituting variables in the included file.
+
+> **File inclusion and variable substitution are compatible.**
+
+Now modify the original script, replacing the MutateResidue line as shown:
+
+```xml
+<ROSETTASCRIPTS>
+	<SCOREFXNS>
+		<tala weights="talaris2014.wts" />
+	</SCOREFXNS>
+	<RESIDUE_SELECTORS>
+	</RESIDUE_SELECTORS>
+	<TASKOPERATIONS>
+	</TASKOPERATIONS>
+	<FILTERS>
+	</FILTERS>
+	<MOVERS>
+		<xi:include href="var_subs_2b.xml" /> #This includes the other file.
+	</MOVERS>
+	<APPLY_TO_POSE>
+	</APPLY_TO_POSE>
+	<PROTOCOLS>
+		<Add mover="mutate" />
+	</PROTOCOLS>
+	<OUTPUT scorefxn="tala" />
+</ROSETTASCRIPTS>
+```
+
+Let's run this, as before:
+```bash
+$> cp var_subs/var_subs_2a.xml var_subs/var_subs_2b.xml var_subs/1ubq.pdb .
+$> $ROSETTA3/bin/rosetta_scripts.default.linuxgccrelease -s 1ubq.pdb -parser:protocol var_subs_2a.xml -out:prefix V5Q_  -nstruct 1 -parser:script_vars position=5A  res=GLN
+```
 
 ## RosettaScripts jobs, grid sampling movers, and parallel sampling
 
