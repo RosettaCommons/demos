@@ -30,7 +30,7 @@
 
     <MOVERS>
 
-		<Small name=small_mover scorefxn=myscore temperature=0.5 nmoves=1 angle_max=6.0 preserve_detailed_balance=0 residue_selector=interface />
+		<Small name=small_mover scorefxn=myscore temperature=0.5 nmoves=1 angle_max=10.0 preserve_detailed_balance=0 residue_selector=interface />
 
 		<PackRotamersMover name=repack_mover scorefxn=myscore task_operations=init,repackonly_pdz,fix_notinterface />
 
