@@ -19,7 +19,7 @@ oop_design<.exe> @input/flags
 ```
 for example, you can run (where `$ROSETTA3`=path-to-Rosetta/main/source)
 ```
-$> $ROSETTA3/bin/oops_design.default.linuxgccrelease @input/flags
+$> $ROSETTA3/bin/oop_design.default.linuxgccrelease @input/flags
 ```
 
 ## Input files
