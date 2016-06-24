@@ -38,22 +38,24 @@ There is a more detailed tutorial in `demos/public`, called **symmetric_docking_
 Defininately, take a look at that to understand how to do symmeric modeling in Rosetta. 
 ###1. Comparative modeling
 
+(where `ROSETTA3`=path-to-Rosetta/main/source)
+
 ```
-    $> $Rosetta3/main/source/bin/minirosetta.default.linuxgccrelease @comparative_modeling/input_files/comparative_modeling-flags
+    $> $ROSETTA3/bin/minirosetta.default.linuxgccrelease @comparative_modeling/input_files/comparative_modeling-flags
 ```
 
 ###2. Fixed Backbone Design
 
 ```
-$> $ROSETTA3/main/source/bin/fixbb.default.linuxgccrelease @fixbb/input_files/fixbb-symmetry-flags
+$> $ROSETTA3/bin/fixbb.default.linuxgccrelease @fixbb/input_files/fixbb-symmetry-flags
 ```
 
 ###3. Fold-and-Dock
 ```
-$> $ROSETTA3/main/source/bin/minirosetta.default.linuxgccrelease @fold-and-dock/input_files/fold-and-dock-flags
+$> $ROSETTA3/bin/minirosetta.default.linuxgccrelease @fold-and-dock/input_files/fold-and-dock-flags
 ```
 
 ###4. Symmetric Docking
 ```
-$> $ROSETTA3/main/source/bin/SymDock.default.linuxgccrelease  @symmetric_docking/input_files/symmetric-docking-flags
+$> $ROSETTA3/bin/SymDock.default.linuxgccrelease  @symmetric_docking/input_files/symmetric-docking-flags
 ```
