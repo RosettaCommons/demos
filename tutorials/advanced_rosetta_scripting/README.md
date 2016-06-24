@@ -502,7 +502,11 @@ $> $ROSETTA3/bin/rosetta_scripts.default.linuxgccrelease -write_all_connect_info
 
 ```
 
-TODO -- CONTINUE HERE.
+Take a look at the output.  You'll notice that there are now far fewer PDB files, since only jobs 13 through 18 passed filters.  If you open these PDB files, you'll see that they've all been designed, and that at least some of them seem to have nice hydrophobic packing.  The task of adding additional filters to accept only those designs with well-packed, cavity-free cores is left as an exercise to the reader.
+
+To summarize, this sub-section has demonstrated how to use grid-sampling movers in conjunction with RosettaScripts to distribute samples over RosettaScripts jobs.  It has also demonstrated how one might use a grid sampler in conjunction with filters and with movers that invoke the packer and the minimizer in order to handle a sampling-and-design problem efficiently.
+
+TODO -- add illustration here.
 
 ## Conclusion
 
