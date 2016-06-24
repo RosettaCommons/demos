@@ -163,6 +163,10 @@ Input Files
         -membrane:normal_delta_angle (default= 10 degrees) - magnitude of angle deviation during membrane normal search (degrees).
         -membrane:normal_max_angle (default= 40 degrees) - magnitude of maximum angle deviation during membrane normal search (degrees).
 
+    To run the example script, type
+    ```bash
+    $> ./scripts/membrane-abinitio.cmd
+    ```
 
 6.  Expected Outputs
 
