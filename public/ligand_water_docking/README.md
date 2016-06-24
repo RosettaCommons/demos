@@ -70,9 +70,9 @@ Tools and Input Files
 The three XML files, standard.xml, protein_centric.xml and ligand_centric.xml, demonstrate how to dock waters using
 RosettaLigand. Simply run the following command from the directory where this readme is found:
 
-    $> <path to rosetta_source>/bin/rosetta_scripts.linuxgccrelease @rosetta_inputs/flags.txt -parser:protocol ./rosetta_inputs/standard.xml
-    $> <path to rosetta_source>/bin/rosetta_scripts.linuxgccrelease @rosetta_inputs/flags.txt -parser:protocol ./rosetta_inputs/protein_centric.xml
-    $> <path to rosetta_source>/bin/rosetta_scripts.linuxgccrelease @rosetta_inputs/flags.txt -parser:protocol ./rosetta_inputs/ligand_centric.xml
+    $> <path/to/rosetta_source>/bin/rosetta_scripts.linuxgccrelease @rosetta_inputs/flags.txt -parser:protocol ./rosetta_inputs/standard.xml
+    $> <path/to/rosetta_source>/bin/rosetta_scripts.linuxgccrelease @rosetta_inputs/flags.txt -parser:protocol ./rosetta_inputs/protein_centric.xml
+    $> <path/to/rosetta_source>/bin/rosetta_scripts.linuxgccrelease @rosetta_inputs/flags.txt -parser:protocol ./rosetta_inputs/ligand_centric.xml
     
 
 Expected Outputs
