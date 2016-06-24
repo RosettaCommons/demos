@@ -57,9 +57,9 @@ Packing flags:
     -ex2
     -extrachi_cutoff 0
 
-Example Rosetta Command Line:
+Example Rosetta Command Line: (where `$ROSETTA3`=path-to-Rosetta/main/source)
 
-    $PATH_TO_EXE/loopmodel.$ROSETTA_BINARY -database $PATH_TO_DB @flags
+    $> $ROSETTA3/bin/loopmodel.default.linixgccrelease @input_files/local_remodeling_input/flags
 
 Overall protocol execution (demo):
 
