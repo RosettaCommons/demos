@@ -1,5 +1,5 @@
-* *Iteratively test backbone and sidechain movements*
-* *Record the trajectory of a protocol in a multimodel PDB file*
+* *Iteratively test backbone and sidechain movements.*
+* *Record the trajectory of a protocol in a multimodel PDB file.*
 
 For this protocol, we will be using the [GenericMonteCarlo](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/Movers/movers_pages/GenericMonteCarloMover) 
 mover, which is another type of "meta mover" that performs iterative trials of a given Mover and evaluates whether that move was *good* or *bad* based on a user-defined scoring metric.
