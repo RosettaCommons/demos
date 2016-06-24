@@ -65,7 +65,7 @@ Generating input files
   You can copy them to your directory:
   ```
     $> cp input/000_conformers.pdb .
-    $> cp input/000.params
+    $> cp input/000.params .
   ```
 
 * Other input files:
