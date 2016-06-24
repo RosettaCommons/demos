@@ -236,25 +236,25 @@ You should notice that this file shows two homo-dimers. We will focus on the dim
 
     3. Analysis of Designs. Now that we have a few design structures, we want to examine one of the regions we designed. First, we must sort the top five structures by score. There are many ways to do this.  Here we will use command-line programs such as grep and awk. You should still be in the Step3_design folder.  
 
-            $> cd Step2_design/output/resfile_design
+            > cd Step2_design/output/resfile_design
             ls
 
             grep pose resfile_design*.pdb | sort -nk 23 | head
  
         This shows you the top 10 structures by best score. We can use awk to store the list of the top 10. 
 
-            $> grep pose resfile_design*.pdb | sort -nk 23 | head | awk '{print(substr($1,1,length($1)-5))}' > best.list
+            > grep pose resfile_design*.pdb | sort -nk 23 | head | awk '{print(substr($1,1,length($1)-5))}' > best.list
 
 
         Next, we will use awk to automate generating fastas for each of our top models. In order to run this command, the PDB tools must be installed.  Go to $ROSETTA_TOOLS/protein_tools and follow the instructions to install the python module.
 
-            $> cat best.list | awk '{system( "$ROSETTA_TOOLS/protein_tools/scripts/get_fasta_from_pdb.py "$1" A "substr($1,1,length($1)-3)"fasta")}' 
+            > cat best.list | awk '{system( "$ROSETTA_TOOLS/protein_tools/scripts/get_fasta_from_pdb.py "$1" A "substr($1,1,length($1)-3)"fasta")}' 
 
         Now we can cat all of the fastas and use WebLogo to generate a figure to show our designed residues.
 
-            $> cat *.fasta > all_fasta.txt 
+            > cat *.fasta > all_fasta.txt 
 
-            $> cat all_fasta.txt
+           > cat all_fasta.txt
 
         (If you are running out of time, you can cd into ../Step4_analysis where the fastas of the top 10 models for each design experiment are included) 
         
@@ -274,7 +274,7 @@ You should notice that this file shows two homo-dimers. We will focus on the dim
 
 1a. This is the explanation for the minimization of our starting structure (which we skipped in the tutorial session to reduce run-time). Please make sure you are in the Step0_relax folder. You can create relaxed structures, that are embedded into a membrane, in a similar way that we set up symmetry, using RosettaScripts. CD into the directory
     
-    $> cd ../Step0_relax
+    > cd /Step0_relax
 
 View this by opening symm_relax.xml:
 
@@ -302,7 +302,7 @@ View this by opening symm_relax.xml:
     
 Then, run using the command-line:
 
-            rosetta_scripts.default.linuxgccrelease @flags
+          >  rosetta_scripts.default.linuxgccrelease @flags
   
 
 1b. Analyze the output. There are a few ways of going about this. Some may look at just the best scoring models. Others calculate the RMSD of the relaxed models to the input structure and plot the Score vs. RMSD to find the best (lowest) scoring model that is most similar to the input structure.
@@ -350,6 +350,6 @@ Then open the file mpf_design.xml
 
 To run, use the following command-line:
 
-        $> rosetta_scripts.default.linuxgccrelease @flags
+        > rosetta_scripts.default.linuxgccrelease @flags
 
 2b. The ./output/ directory will have 25 design structures. You can do a similar analysis as we did above on these to look at the sequence variability. 

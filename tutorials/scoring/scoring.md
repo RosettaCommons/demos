@@ -24,7 +24,7 @@ Rosetta calculates the energy of a biomolecule using energy functions based on p
 Scoring in Rosetta
 ------------------
 
-In Rosetta, the energy of a biomolecule is calculated by _scoring_ it. Rosetta has an optimized energy function or _score function_ called _talaris2014_ for calculating the energy of all atomic interactions in a globular protein made of L-amino acids. There are also several all-atom score functions for specialized applications on other biomolecules, as well as score functions for the reduced [_centroid representation_](fullatom_centroid). Additionally, you can create a custom score function to suit your requirements.
+In Rosetta, the energy of a biomolecule is calculated by _scoring_ it. Rosetta has an optimized energy function or _score function_ called _talaris2014_ for calculating the energy of all atomic interactions in a globular protein made of L-amino acids. There are also several all-atom score functions for specialized applications on other biomolecules, as well as score functions for the reduced [_centroid representation_](../full_atom_vs_centroid/fullatom_centroid.md). Additionally, you can create a custom score function to suit your requirements.
 
 Score Function
 --------------
@@ -215,7 +215,7 @@ We can also see that `dslf_fa13` energy term from the previous example is missin
 
 ####Patch Files and Changing Term Weights
 
-Now, say we want to modify the weights of some of the terms in the _docking_ score function. We may, for example, wish to downweight a more general score term in favor of a more specific set of them, or to add score terms for [constraints](Constraints). There are three ways to do this:
+Now, say we want to modify the weights of some of the terms in the _docking_ score function. We may, for example, wish to downweight a more general score term in favor of a more specific set of them, or to add score terms for [constraints](../Constraints_Tutorial/Constraints.md). There are three ways to do this:
 
 * Make a custom weights file, and pass the path to -score:weights
 * Add a patch file to modify existing weights
