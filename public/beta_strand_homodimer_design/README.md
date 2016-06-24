@@ -25,7 +25,7 @@ Running the Demo
 
 1.  Find exposed beta-strands:
     ```
-    rosetta/rosetta_source/bin/exposed_strand_finder.linuxgccrelease -s 2a7b_mpm.pdb.gz -database rosetta/rosetta_database @finder_options > exposed_strands.txt
+    $> $ROSETTA3/bin/exposed_strand_finder.default.linuxgccrelease -s 2a7b_mpm.pdb.gz @finder_options > exposed_strands.txt
     ```
 
     The contents of `finder_options` are:
@@ -60,10 +60,10 @@ Running the Demo
 
 2.  Make the potential homodimers:  
     There are two ways to do this.
-    If you are only doing it for one structure is is easy just to use this command line:
+    If you are only doing it for one structure is is easy just to use this command line:(where `$ROSETTA3`=path-to-Rosetta/main/source)
 
     ```
-    rosetta/rosetta_source/bin/homodimer_maker.linuxgccrelease -s 2a7b_mpm.pdb.gz -database rosetta/rosetta_database @finder_options > maker_tracers
+    $> $ROSETTA3/bin/homodimer_maker.default.linuxgccrelease -s 2a7b_mpm.pdb.gz  @finder_options > maker_tracers
     ```
     ```
     -run::chain A
@@ -103,7 +103,7 @@ Running the Demo
     The next step is to take the output from above and make the files you need for symmetry.
     To do this you will need to use the symmetry script as so:
     ```
-    perl rosetta/rosetta_source/src/apps/public/symmetry/make_symmdef_file.pl -m NCS -a A -i B -p 2a7b_mpm_A806_anti_wind_1_step_1.pdb > symmdef
+    $> perl $ROSETTA3/src/apps/public/symmetry/make_symmdef_file.pl -m NCS -a A -i B -p 2a7b_mpm_A806_anti_wind_1_step_1.pdb > symmdef
     ```
 
     This makes a bunch of files:
@@ -119,7 +119,7 @@ Running the Demo
     Now you are ready for the full design runs. I suggest using mpi compiled executables but the command line below is general. 
     Run this command:
     ```
-    rosetta/rosetta_source/bin/homodimer_design.linuxgccrelease -s 2a7b_mpm_A806_anti_wind_1_step_1_INPUT.pdb.gz -database rosetta/rosetta_database -symmetry:symmetry_definition symmdef @design_options
+    $> $ROSETTA3/bin/homodimer_design.default.linuxgccrelease -s 2a7b_mpm_A806_anti_wind_1_step_1_INPUT.pdb.gz -database rosetta/rosetta_database -symmetry:symmetry_definition symmdef @design_options
     ```
     See the comments in the design_options file for descriptions of what does what.
 

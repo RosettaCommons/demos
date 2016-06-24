@@ -121,7 +121,7 @@ Input Files
         ...
 
 5.  Run membrane *ab initio* application with the following flags (see an 
-    example in scripts/membrane-abinitio.cmd. To run the example script, make sure your ROSETTA3 environment variable is set to Rosetta/main/source):
+    example in scripts/membrane-abinitio.cmd).:
 
         ./bin/membrane_abinitio2.linuxgccrelease
         -in:file:native BRD4.pdb                  Native structure (optional)
@@ -163,9 +163,9 @@ Input Files
         -membrane:normal_delta_angle (default= 10 degrees) - magnitude of angle deviation during membrane normal search (degrees).
         -membrane:normal_max_angle (default= 40 degrees) - magnitude of maximum angle deviation during membrane normal search (degrees).
 
-    To run the example script, type
+    To run the example script, set your ROSETTA3 environment variable to your <path/to/Rosetta/main/source> directory and type,
     ```bash
-    $> ./scripts/membrane-abinitio.cmd
+    $> $ROSETTA3/bin/membrane_abinitio2.default.linuxgccrelease @scripts/flags
     ```
 
 6.  Expected Outputs
@@ -188,6 +188,11 @@ Input Files
         -database /Users/vyarovyarovoy/minirosetta_database \
         -out:output \
         -nstruct 1
+
+    To run this example, type
+    ```bash
+    $> $ROSETTA3/bin/score_jd2.macosclangrelease @scripts/score_flags
+    ```
 
     Membrane ab initio application specific score outputs in the output score file are:
 

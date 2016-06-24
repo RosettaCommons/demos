@@ -1,0 +1,45 @@
+\/source\/bin\/
+\/database\/
+read.*from
+Reading\ in.*lib
+Basic\ usage\:
+Reading.*library
+Read.*lines.*from.*file
+Reading.*file
+INSERT\ INTO.*database
+Finished.+in [0-9]+ seconds.
+time
+Time
+seconds
+library took .+ seconds to load
+core.init: command
+protocols.jd2.JobDistributor: .+ reported success in [0-9]+ seconds
+protocols.jd2.JobDistributor: [0-9]+ jobs considered, [0-9]+ jobs attempted in [0-9]+ seconds
+core.init: 'RNG device' seed mode, using
+TIMING
+core.init.random: RandomGenerator:init: Normal mode, seed=
+Rosetta version
+svn_version
+TIME_STAMP
+Warning: Unable to locate database file .*Dunbrack[0-9]+.lib.bin
+core.pack.dunbrack.RotamerLibrary: Opening file .* for output.
+core.pack.dunbrack.RotamerLibrary: Moving temporary file to .*Dunbrack[0-9]+.lib.bin
+core.pack.dunbrack.RotamerLibrary: Reading .*
+core.pack.dunbrack.RotamerLibrary: Finished reading Dunbrack Libraries
+core.pack.dunbrack.RotamerLibrary: Memory usage:
+core.pack.dunbrack.RotamerLibrary: ... with [0-9]+ bytes
+core.pack.dunbrack.RotamerLibrary: Total memory on Dunbrack Libraries: [0-9]+ bytes.
+core.pack.dunbrack.RotamerLibrary: dunbrack library is out-dated
+core.pack.dunbrack.RotamerLibrary: cannot find binary dunbrack library under name
+core.pack.dunbrack.RotamerLibrary: Random tempname will be:
+current_directory=
+reating tricubic splines
+core.chemical.ResidueTypeSet: Finished initializing fa_standard residue type set.  Created [0-9]+ residue types
+core.chemical.ResidueTypeSet: Finished initializing centroid residue type set.  Created [0-9]+ residue types
+core.mm.MMTorsionLibrary: MM torsion sets added fully assigned: [0-9]+; wildcard: [0-9]+ and [0-9]+ virtual parameter
+core.scoring.mm.MMLJEnergyTable: Initializing MM LJ Energy Tables with [0-9]+ atom types
+core.mm.MMLJLibrary: MM lj sets added: [0-9]+
+core.mm.MMBondAngleLibrary: MM bond angle sets added fully assigned: [0-9]+; wildcard: [0-9]+ and [0-9]+ virtual parameter
+Processed a total of .+ significant \(.+ raw\) lines in .+ files
+Processing time: .+sec
+Found .+ duplicate lines in .+ blocks in .+ files
