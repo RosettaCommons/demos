@@ -42,10 +42,11 @@ The given starting structure was called starting_files/1CSE.pdb.
 
 We started by:
 1. removed the chain we didn't want to do ddG calculations on. the command for doing so is:
+
     ```
 	$> ./scripts/extract_chains.pl starting_files/1CSE.pdb I  > 1CSEi.pdb
     ```
-    this outputs chain I to the file starting_files/1CSEi.pdb
+this outputs chain I to the file starting_files/1CSEi.pdb
 
 2. renumbered the crystal structure starting from 1.
     ```
