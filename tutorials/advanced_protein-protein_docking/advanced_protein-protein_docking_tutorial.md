@@ -6,7 +6,7 @@ KEYWORDS: DOCKING INTERFACES
 
 *Italicized text means that this material will NOT be conducted during the workshop*
 
-    fixed with text means you should type the command into your terminal
+    fixed width text means you should type the command into your terminal
 
 If you want to try making files that already exist (e.g., input files), write them to a different directory! (mkdir my_dir)
 
