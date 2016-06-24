@@ -5,7 +5,7 @@ KEYWORDS: MEMBRANES DOCKING
 
 Author: Rebecca F. Alford (rfalford12@gmail.com)  
 Corresponding PI: Jeffrey J. Gray (jgray@jhu.edu)  
-Last Updated: January 2015  
+Last Updated: June 2016 by parisah@uw.edu to enable automatic demo testing. 
 Rosetta Revision #58069 
 
 ---
@@ -74,7 +74,9 @@ use a C4 Symmetric Potassium Channel (PDB ID: 1bl8)
    a protocol capture in Rosetta/demos/protocol_capture/2015/MP_relax. Run the following
    commandline with the given flags file: 
 
-        Rosetta/main/source/bin/rosetta_scripts.linuxgccrelease -parser:protocol membrane_relax.xml @relax_flags
+(where `$ROSETTA3`=path-to-Rosetta/main/source)
+
+        $> $ROSETTA3/bin/rosetta_scripts.default.linuxgccrelease -parser:protocol membrane_relax.xml @relax_flags
 
    The following output files will be generated: 
    * `1bl8_tr_<0001-0010>.pdb`    : 10 refined models of 1bl8
@@ -98,7 +100,7 @@ use a C4 Symmetric Potassium Channel (PDB ID: 1bl8)
    First, create the asymmetric input structure and symmetry definition file from the refined symmetric
    complex using the make_symmdef_file.pl script. An example commandline is provided below: 
 
-        Rosetta/main/source/src/apps/public/symmetry/make_symmdef_file.pl -p 1bl8_refined.pdb -a A -i B:4 > 1bl8.c4.symm
+        $> $ROSETTA3/src/apps/public/symmetry/make_symmdef_file.pl -p 1bl8_refined.pdb -a A -i B:4 > 1bl8.c4.symm
 
    In this command-line: 
    * `-p` specifies the input PDB file

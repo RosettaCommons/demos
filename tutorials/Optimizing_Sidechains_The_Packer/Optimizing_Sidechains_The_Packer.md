@@ -10,6 +10,7 @@ Created 20 June 2016.
 ## Summary
 
 Rosetta's primary algorithm for optimizing side-chains is called the *packer*.  By the end of this tutorial, you should understand:
+
 - The types of problems that the packer solves.
 - How to invoke the packer using the *fixbb* application.
 - How to control the packer's behaviour.
@@ -17,6 +18,7 @@ Rosetta's primary algorithm for optimizing side-chains is called the *packer*.  
 - What applications and algorithms invoke the packer.
 
 The tutorial also introduces:
+
 - Common ways of invoking the packer from the RosettaScripts scripting language.
 - Common ways of controlling the packer from the RosettaScripts scripting language.
 - A brief overview of how the packing algorithm works.
@@ -25,7 +27,7 @@ The tutorial also introduces:
 
 A common task in Rosetta is the optimization of side-chains.  We might think about the problem as follows: let's suppose that we have a structure (which we will call the *pose*) with a fixed backbone conformation.  At each position in the structure, we have a list of discrete possibilities for the side-chain, which we call *rotamers*, where a rotamer is a particular conformation of a particular residue type's side-chain.  We would like to select one rotamer for each position such that the combination of rotamers represents the lowest-energy solution.  This is the problem solved by the packer.
 
-This problem is actually quite a difficult one: given N possibilities at each position in an M-residue protein, there are N to the power of M possibilities.  This rapidly becomes an astronomical number of possibilities -- for example, 3 rotamers at each of 100 positions would be about 5x10<sup>47</sup> possible combinations.  This makes exhastive enumeration impossible.  To solve this problem, the packer uses Monte Carlo methods (discussed in detail further on).  This means that the packer is stochastic, that it never comes close to exhaustively exploring the search space in any but the smallest of packer problems, and that the solution returned, while likely to be a *good* solution, is not guaranteed to be the *best* solution.
+This problem is actually quite a difficult one: given N possibilities at each position in an M-residue protein, there are N to the power of M possibilities.  This rapidly becomes an astronomical number of possibilities -- for example, 3 rotamers at each of 100 positions would be about 5x10<sup>47</sup> possible combinations.  This makes exhaustive enumeration impossible.  To solve this problem, the packer uses Monte Carlo methods (discussed in detail further on).  This means that the packer is stochastic, that it never comes close to exhaustively exploring the search space in any but the smallest of packer problems, and that the solution returned, while likely to be a *good* solution, is not guaranteed to be the *best* solution.
 
 > **Repeated packer runs are likely to yield a variety of similar solutions near the global optimum; none of these will necessarily *be* the best possible solution.**
 
@@ -41,7 +43,7 @@ You may need to change "linuxgccrelease", in the above, to whatever is appropria
 
 This application packs the side-chains of the input structure (the trp cage mini-protein, 1l2y.pdb).  Five output structures, from five separate runs, are produced.  If you compare these structures to the input structure, you'll find that Rosetta chooses slightly different rotamers for the side-chains, as compared to the input.  This is to be expected, particularly given the discrete nature of rotamers: the truly "best" rotamer might lie between two rotamers tested, and may never be sampled.
 
-Work through the [rest of the demo](../../public/fixbb/README.md).  This teaches about how the packer can be tweaked, both at the commandline and with configuration files called *resfiles*, to control the amount of sampling, the time taken for a run, and the likelihood of converging to the optimal solution.
+Work through the [rest of the demo](/public/fixbb/README).  This teaches about how the packer can be tweaked, both at the commandline and with configuration files called *resfiles*, to control the amount of sampling, the time taken for a run, and the likelihood of converging to the optimal solution.
 
 ## The sequence design problem
 
@@ -81,7 +83,7 @@ Design, without enabling extra rotamers (which is what we did initially in the s
 core.pack.pack_rotamers: built 4737 rotamers at 20 positions
 ```
 
-However, we greatly simplify the problem and speed things up by restricting the packer to at most only a few choices at each position with a resfile, as we did in the second part of the second demo:
+There are various setting which can change how the packer behaves, making working with large numbers of rotamers more efficient. (For example, the option `-linmem_ig 10` will change packer settings to be more efficient when using a large number of rotamers per position, though it's less efficient for smaller number of rotamers per position.) However, we can greatly simplify the problem and speed things up by restricting the packer to at most only a few choices at each position with a resfile, as we did in the second part of the second demo:
 
 ```
 core.pack.pack_rotamers: built 410 rotamers at 16 positions.
@@ -99,7 +101,7 @@ One important property of TaskOperations is **commutativity**:
 
 In order to achieve this, certain TaskOperation-controlled packer behaviours obey *AND* commutativity: if TaskOperation A *and* TaskOperation B *and* TaskOperation C allow the behaviour, then the behaviour will be allowed when A, B, and C are all applied together.  If *any* of A, B, or C prohibits the behaviour, then the behaviour is prohibited when all three are applied.  Allowed canonical amino acid identities at each position obey *AND* commutativity: given TaskOperations A, B, and C, the packer will only design with tyrosine if TaskOperation A *and* B *and* C allow tyrosine at that position.  An easy way to remember this is, "You can only turn canonical residues *off*, and once off, they stay off".  Other TaskOperation functionality obeys *OR* commutativity.  Turning on extra rotamers, for example, occurs if TaskOperation A turns them on *or* TaskOperation B turns them on *or* TaskOperation C turns them on.  (Noncanonical residue identities also obey *OR* commutativity: where design with a particular canonical residue type at a particular position is on by default and can only be turned *off*, design with a particular noncanonical residue type at a particular position is off by default and can only be turned *on*.  Once a noncanonical is on, it stays on.)
 
-As a final note, it's worth being aware that the commutativity of TaskOperations does *not* apply to the MoveMaps that are used to control the minimizer (see the [minimizer tutorial](../minimization/minimization.md).  In a MoveMap, later commands overrride earlier commands; in a list of TaskOperations, the effects of the TaskOperations combine commutatively.
+As a final note, it's worth being aware that the commutativity of TaskOperations does *not* apply to the MoveMaps that are used to control the minimizer (see the [minimizer tutorial](minimization).  In a MoveMap, later commands overrride earlier commands; in a list of TaskOperations, the effects of the TaskOperations combine commutatively.
 
 ## Protocols that use the packer
 
@@ -121,8 +123,8 @@ With this understanding of general Monte Carlo and simulated annealing approache
 
 1.  TaskOperations are evaluated, and the packer makes a list of possible rotamers at each position.
 2.  The packer carries out a precomputation in which all possible pairs of interacting rotamers are enumerated and their pairwise interaction energies are calculated and stored.
-3.  The packer carries out a simulated annealing-based search of rotamer combinations, in which moves consist of randomly selecting a position and replacing the current rotamer at that position with a randomly-selected rotamer from the allowed rotamers for that position.  Simulated annealing requires rapid computation of the change in energy resulting from the move.  Because all pairwise interaction energies are precomputed, determining the change in energy of the structure following such a substitution is extremely fast, since it depends only on the internal energies of the old and new rotamers and on their pairwise interaction eneriges with their neighbours in the pose.  This allows the packer to evaluate hundreds of thousands or millions of moves in seconds, permitting very long trajectories to be carried out very quickly.
+3.  The packer carries out a simulated annealing-based search of rotamer combinations, in which moves consist of randomly selecting a position and replacing the current rotamer at that position with a randomly-selected rotamer from the allowed rotamers for that position.  Simulated annealing requires rapid computation of the change in energy resulting from the move.  Because all pairwise interaction energies are precomputed, determining the change in energy of the structure following such a substitution is extremely fast, since it depends only on the internal energies of the old and new rotamers and on their pairwise interaction energies with their neighbours in the pose.  This allows the packer to evaluate hundreds of thousands or millions of moves in seconds, permitting very long trajectories to be carried out very quickly.
 
-There are variants on the above behaviour in which only parts of the interaction network are precomputed and other parts are computed on the fly, but this general scheme is fairly representative.  Note that the above depends heavily on being able to rapidly update the energy as moves are considered:
+There are variants on the above behaviour in which only parts of the interaction network are precomputed and other parts are computed on the fly (what `-linmem_ig` does), but this general scheme is fairly representative.  Note that the above depends heavily on being able to rapidly update the energy as moves are considered:
 
-> **In order to be compatible with the packer, an energy term must either be residue-level pairwise-decomposible, or must otherwise be very fast to compute and update as rotamer subsitutions are considered.**
+> **In order to be compatible with the packer, an energy term must either be residue-level pairwise-decomposable, or must otherwise be very fast to compute and update as rotamer substitutions are considered.**

@@ -15,6 +15,7 @@ At the end of this tutorial, you will understand:
 - How to assemble more complicated protocols from simpler building-blocks
 - How to use variable substitution and file inclusion in a script
 - How specialized grid sampling movers interact with RosettaScripts
+- How RosettaScripts distributes its jobs over many processors in MPI mode
 
 We recommend completing the [introductory RosettaScripting tutorial](../rosetta_scripting/README.md) to familiarize yourself with general RosettaScripts concepts before moving on to this tutorial.
 
@@ -22,7 +23,7 @@ We recommend completing the [introductory RosettaScripting tutorial](../rosetta_
 
 In the [FoldTree tutorial](../fold_tree/fold_tree.md), we learnt how the fold tree controls what parts of a structure move when degrees of freedom change by establishing a clear hierarchy of residues.  It is often necessary to modify the FoldTree manually in order to optimize a protocol.  We're about to see how we do this in RosettaScripts.  Let's use the following example, which has two helices, which are not connected to one another, that are a bit too close together:
 
-![These two helices are too close together.  This calls for minimization.](foldtree_example_1.png)
+![These two helices are too close together.  This calls for minimization.](foldtree_example/foldtree_example_1.png)
 
 We'd like to minimize the structure, allowing *jumps* (rigid-body transforms between chains) to move.  Let's try this naïvely, first.  The following script simply creates and calls a MinMover for the task:
 
@@ -61,7 +62,7 @@ In the above, $ROSETTA3 is your Rosetta/main/source directory. You may need to c
 
 Running the script above, we find that something has gone wrong.  Comparing to the original pose (in grey), the minimized pose (in colours) has the second helix rotated by nearly 180 degrees.  The overall structure has exploded:
 
-![Naïvely minimizing the structure results in an explosion.](foldtree_example_2.png)
+![Naïvely minimizing the structure results in an explosion.](foldtree_example/foldtree_example_2.png)
 
 This is an extreme case of the lever-arm effect, caused by an unsuitable fold tree.  Since the default fold tree has residue 1 as the anchor, with all of helix 1 downstream of residue 1, and a jump to the first residue of the second helix, with all of helix 2 downstream of that first residue, the repulsion between the two helices causes the second one to rotate and swing away instead of moving linearly.  This is clearly not what we want.
 
@@ -108,7 +109,7 @@ $> $ROSETTA3/bin/rosetta_scripts.default.linuxgccrelease -in:file:s foldtree_exa
 
 This time, the minimzation has worked as expected: the chains move apart a bit, but don't rotate much.  (The original position is shown in grey in the image below):
 
-![Proper minimization after properly setting up the fold tree.](foldtree_example_3.png)
+![Proper minimization after properly setting up the fold tree.](foldtree_example/foldtree_example_3.png)
 
 ## Symmetry within RosettaScripts
 
@@ -350,16 +351,163 @@ These commands should produce a tryptophan scan of a selection of residues in th
 
 If you wish to do a more thorough scan, either of more positions or of more residue identities, you can easily automate running of the scan by using shell scripting.
 
-## RosettaScripts jobs and grid sampling movers
+## RosettaScripts jobs, grid sampling movers, and parallel sampling
 
-TODO -- CONTINUE HERE.
+We have already seen that the number of jobs that RosettaScripts attempts can be controlled with the "-nstruct" (number of structures to generate per input) and "-jd2:ntrials" (number of attempts to make for each structure before giving up on that structure), and with the number of input structures.  There are certain special "grid-sampling" movers in Rosetta that can interface with the RosettaScripts job distribution system in a special way: given some sort of parameter space that one might want to sample, a grid sampler can assign each of a regular grid of points to sample in that space to a series of RosettaScripts jobs.  This is a departure from the usual Rosetta paradigm, which is to carry out a large number of stochastic trajectories.  Here, we are performing a large number of regular, *deterministic* samples.
+
+A concrete example is the [BundleGridSampler mover](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/Movers/movers_pages/BundleGridSamplerMover).  This is a parametric design tool that generates helical bundle geometry based on a series of parameter values -- for example, bundle radius, bundle twist, helix offset along the bundle axis, helix rotation about the bundle axis, *etc.*  (Like any mover, it takes a single pose as input and generates a single pose as ouput; unlike most movers, though, it throws away its input pose and generates new geometry for output.)  While the details of the parameters used to generate geometry are unimportant here, the point is that there is a large, multi-variable parameter space that one might want to explore.  Let's say, for example, that one wanted to sample three parameters, considering 10 regularly-spaced values for each.  This is 1000 combinations of parameter values.  The default behaviour of the BundleGridSampler is to perform all 1000 samples, then to choose the lowest-energy one and to return that as the input for the next mover in the script.  However, there's another option: by setting the option "nstruct_mode" to "true", the BundleGridSampler will consider only *one* of those thousand combinations of parameter values per job, moving to the the next combination on the next job.  Whatever movers and filters are applied subsequently can therefore be applied to *every* sample.
+
+This is particularly advantageous when using the MPI (*M*essage *P*assing *I*nterface) compilation of the rosetta\_scripts application (see the [building tutorial](../install_build/install_build.md) for details on compiling the MPI version), many parallel rosetta\_scripts processes can distribute jobs amongst themselves over many parallel processors, automatically balancing their workload.  This is a very efficent way in which to sample a grid of parameter values in parallel, particularly on large, high-performance computing (HPC) clusters.
+
+Let's set up a small sample BundleGridSampler run in nstruct mode to illustrate how grid samplers interface with RosettaScripts.  First, let's create a basic RosettaScript and add a BundleGridSampler mover:
+
+```xml
+<ROSETTASCRIPTS>
+	<SCOREFXNS>
+		<tala weights="talaris2014.wts" />
+	</SCOREFXNS>
+	<RESIDUE_SELECTORS>
+	</RESIDUE_SELECTORS>
+	<TASKOPERATIONS>
+	</TASKOPERATIONS>
+	<FILTERS>
+	</FILTERS>
+	<MOVERS>
+		<BundleGridSampler name="bgs" scorefxn="tala" nstruct_mode="true" use_degrees="true" helix_length="25" >
+		</BundleGridSampler>
+	</MOVERS>
+	<APPLY_TO_POSE>
+	</APPLY_TO_POSE>
+	<PROTOCOLS>
+		<Add mover="bgs" />
+	</PROTOCOLS>
+	<OUTPUT scorefxn="tala" />
+</ROSETTASCRIPTS>
+```
+
+You'll note that we've already set "nstruct\_mode" to "true", indicating that the mover should sample subsequent grid-points in subsequent jobs.  (We've also set a few other mover-specific options that are not important for this tutorial.)
+
+Next, let's tell the mover what it will be sampling over.  This is done with some mover-specific syntax that is detailed on the [help page for the mover](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/Movers/movers_pages/BundleGridSamplerMover).  The details aren't important for our purposes here; suffice it to say that we're telling the mover to generate a two-helix bundle, and to do 6 samples for a radius parameter, r0, and 6 samples for a twist parameter, omega0, for a total of 36 samples.  Note that we've added an option, "max\_samples", to the first BundleGridSampler tag, and set it to 36.  This is for our convenience: this grid sampling mover, recognizing that it's quite possible to accidentally specify unrealistically high numbers of samples, provides a means by which a user can set a number above which the mover throws an error when you run the script.  So if, for example, I thought I was setting up ten thousand samples, and the combinatorics meant that I actually had set up ten million, with "max\_samples" set to "10000", I would be warned immediately that I had made a mistake; without it, I might erroneously start a job that would only carry out a tiny bit of sampling in a very small sub-region of the region that I had actually specified.
+
+> **It's best to be mindful of the amount of sampling a grid sampling mover is expected to do.  Use the tools available to warn you if the samples exceed the number that you think that you've set up.**
+
+```xml
+		<BundleGridSampler name="bgs" scorefxn="tala" nstruct_mode="true" use_degrees="true" helix_length="25" max_samples="36" >
+			<Helix r0_min="4.0" r0_max="7.0" r0_samples="6" omega0_min="-3.0" omega0_max="3.0" omega0_samples="6" delta_omega0="0.0" />
+			<Helix r0_copies_helix="1" pitch_from_helix="1" delta_omega0="180.0" />
+		</BundleGridSampler>
+```
+
+Let's run the script at the present stage.  (We provide it as grid\_sampling\_example/grid_sampling.xml.)  Note that all movers require some sort of pose as an input -- without this, RosettaScripts will throw an error and abort.  We're going to use the 1ubq (ubiquitin) strucutre as our input, but note that the BundleGridSampler will discard the ubiquitin geometry and substitute parametrically-generated geometry.  Since some conformations that we're sampling have clashing geometry, we're also using the "-write\_all\_connect\_info" flag so that explicit bonds are written in the PDB file.  Without this, PyMOL draws aberrant bonds in the clashing regions when the PDB file is opened in that program.  Also, since 36 samples will be performed and will be distributed over different jobs, we need to attempt 36 jobs, so we pass the "-nstruct 36" option.
+
+```bash
+$> cp grid_sampling_example/1ubq.pdb grid_sampling_example/grid_sampling.xml .
+$> $ROSETTA3/bin/rosetta_scripts.default.linuxgccrelease -write_all_connect_info -in:file:s 1ubq.pdb -parser:protocol grid_sampling.xml -out:prefix grid1_ -nstruct 36
+```
+
+Examining the output, you'll see that each successive PDB file in the 36 produced has the pose in a slightly different conformation, regularly sampling different twists and radii of the bundle.
+
+![Output conformations from BundleGridSampler](grid_sampling_example/images/grid.gif)
+
+Practically speaking, how would we use this in the context of a useful task, like protein design?  Well, let's modify the script to design each sampled conformation in the grid.  An important consideration here, though, is the fact that, while the initial geometry generation is extremely fast (a small fraction of a second), full design (packing) and side-chain minimization could be quite slow.  We therefore want to throw away any non-productive conformations, such as those that have clashes prior to design, with a poly-alanine sequence, immediately.  So we'll want to filter first to throw away the non-productive conformations, then design those samples that pass the filter.
+
+We can use the [ScoreType filter](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/Filters/filter_pages/ScoreTypeFilter) to filter out clashing conformations, using the *fa_rep* score term (the repulsive part of the Lennard-Jones potential) as our criterion for acceptance or rejection.  The filter should be added to the PROTOCOLS section immediately after the BundleGridSampler mover, so that we immediately throw away bad, clashing geometry as soon as it is generated.  In practice, you would have to determine the cutoff by trial-and-error; in this case, we're using a cutoff of 15 Rosetta energy units.
+
+```xml
+...
+	<FILTERS>
+		<ScoreType name="filter_clashes" scorefxn="tala" score_type="fa_rep" threshold="15.0" />
+	</FILTERS>
+...
+	<PROTOCOLS>
+		<Add mover="bgs" />
+		<Add filter="filter_clashes" />
+	</PROTOCOLS>
+...
+```
+
+In addition, a conformation is likely to be non-productive if the helices are too far apart.  For this, we can filter using the *fa_atr* (attractive part of the Lennard-Jones potential) score term.
+
+```xml
+...
+	<FILTERS>
+		<ScoreType name="filter_clashes" scorefxn="tala" score_type="fa_rep" threshold="15.0" />
+		<ScoreType name="filter_excessive_separation" scorefxn="tala" score_type="fa_atr" threshold="-149.0" />
+	</FILTERS>
+...
+	<PROTOCOLS>
+		<Add mover="bgs" />
+		<Add filter="filter_clashes" />
+		<Add filter="filter_excessive_separation" />
+	</PROTOCOLS>
+...
+```
+
+Now let's set up some design steps.  To keep this simple, we'll design just the core using hydrophobic amino acid residues.  Therefore, we'll need a residue selector for the core, and a residue selector for the inverse selection:
+
+```xml
+...
+	<RESIDUE_SELECTORS>
+		<Layer name="select_core" select_core="true" select_boundary="false" select_surface="false" core_cutoff="2.5" surface_cutoff="0.5" />
+		<Not name="select_not_core" selector="select_core" />
+	</RESIDUE_SELECTORS>
+...
+```
+
+We'll pass these to a couple of task operations -- one to load a resfile for the core, the other to prevent design outside of the core.  We'll also set up a task operation for extra rotamers:
+
+```xml
+...
+	<TASKOPERATIONS>
+		<ReadResfile name="core_resfile" filename="core_resfile.txt" />
+		<OperateOnResidueSubset name="only_design_core" selector="select_not_core" >
+			<PreventRepackingRLT />
+		</OperateOnResidueSubset>
+		<ExtraRotamersGeneric name="extrachi" ex1="1" ex2="1" ex1_sample_level="1" ex2_sample_level="1" extrachi_cutoff="5" />
+	</TASKOPERATIONS>
+...
+```
+
+The resfile specifies design only with hydrophobic amino acid residues.  (We omit methionine for this example to reduce the number of rotamers that we're considering):
+
+```
+PIKAA FILYVW
+```
+
+Now we set up a [FastDesign mover](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/Movers/movers_pages/FastDesignMover), passing all of the above task operations to control packing steps, and a move map that disables backbone and rigid-body motions (but allows side-chains to minimize) to control minimizations steps:
+
+```xml
+...
+		<FastDesign name="design_core" repeats="1" scorefxn="tala" task_operations="core_resfile,only_design_core,extrachi">
+			<MoveMap name="design_core_mm">
+				<Span begin="1" end="999" bb="false" chi="true" />
+				<Jump number="1" setting="false" />
+			</MoveMap>
+		</FastDesign>
+...
+	<PROTOCOLS>
+		<Add mover="bgs" />
+		<Add filter="filter_clashes" />
+		<Add filter="filter_excessive_separation" />
+		<Add mover="design_core" />
+	</PROTOCOLS>
+...
+```
+
+And that's it!  Let's try running this.  The complete script is provided as grid\_sampling\_example/grid\_sampling\_with\_design.xml.  This time, the jobs that carry out design will take a bit longer -- perhaps two minutes or so to run through all jobs.  (It's for this reason that we added the filters!)  As in the [introductory RosettaScripting tutorial](../rosetta_scripting/README.md), we use the "-jd2:failed_job_exception false" option to prevent Rosetta from exiting with error status at the end due to the jobs that we expect will fail filters.
+
+```bash
+$> cp grid_sampling_example/1ubq.pdb grid_sampling_example/grid_sampling_with_design.xml grid_sampling_example/core_resfile.txt .
+$> $ROSETTA3/bin/rosetta_scripts.default.linuxgccrelease -write_all_connect_info -in:file:s 1ubq.pdb -parser:protocol grid_sampling_with_design.xml -out:prefix grid2_ -nstruct 36 -jd2:failed_job_exception false
+
+```
+
+Take a look at the output.  You'll notice that there are now far fewer PDB files, since only jobs 13 through 18 passed filters.  If you open these PDB files, you'll see that they've all been designed, and that at least some of them seem to have nice hydrophobic packing.  The task of adding additional filters to accept only those designs with well-packed, cavity-free cores is left as an exercise to the reader.
+
+To summarize, this sub-section has demonstrated how to use grid-sampling movers in conjunction with RosettaScripts to distribute samples over RosettaScripts jobs.  It has also demonstrated how one might use a grid sampler in conjunction with filters and with movers that invoke the packer and the minimizer in order to handle a sampling-and-design problem efficiently.
+
+![Output conformations from BundleGridSampler with design](grid_sampling_example/images/grid_with_design.gif)
 
 ## Conclusion
 
-This tutorial was intended to give you a brief introduction in creating an XML protocol. The process we went through is similar to how most RosettaScripts developers write an XML file from scratch: Build up a protocol iteratively, starting with a simple protocol and progressively adding different and more complex stages. For each stage, have an idea about the effect you wish to accomplish, and then scan the documentation for existing movers/filters/task operations/etc. which will accomplish it. This may involve multiple RosettaScripts objects, due to movers which need as parameters other movers which need filters which need task operations (which need ...)
-
-There are, of course, many more RosettaScripts objects than we have discussed, most of which should be covered in the RosettaScripts documentation. There are also additional sections of the XML, which are used for more specialized applications. (For example, ligand docking.) 
-
-A final note - even if you can create an XML from scratch, it may be easier not to. If you already have an example XML that does something close to what you want to do, it's probably easier to start with that XML, and alter it to add in the functionality you want.
-
-The hard part is not necessarily in putting together the XML, but in determining the optimal protocol (the logical steps) you should use to accomplish your modeling goals, and then in benchmarking that protocol to make sure it does what you hoped.
+TODO -- WRITE THIS

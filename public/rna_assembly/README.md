@@ -18,7 +18,7 @@ It is being published in a (primarily experimental) paper "A two-dimensional mut
 The example input files are in rosetta_input; you may wish to copy them locally with the command:
 
 ```
-   $> cp rosetta_inputs/* .
+$> cp rosetta_inputs/* .
 ```
 
 Before running the command to set up the rna assembly job, make sure you have the correct paths to the rna_tool/bin directory in your environment variables. This can be done by running,

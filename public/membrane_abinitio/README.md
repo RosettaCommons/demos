@@ -36,7 +36,7 @@ Input Files
     Note: use only SAM secondary structure prediction file (\*.rdb). jufo and 
     psipred predict transmembrane helical regions poorly.
 
-2.  Genarate transmembrane regions (OCTOPUS) file:
+2.  Generate transmembrane regions (OCTOPUS) file:
 
     Input OCTOPUS topology file is generated at http://octopus.cbr.su.se/ using 
     protein sequence as input.
@@ -121,7 +121,7 @@ Input Files
         ...
 
 5.  Run membrane *ab initio* application with the following flags (see an 
-    example in scripts/membrane-abinitio.cmd):
+    example in scripts/membrane-abinitio.cmd. To run the example script, make sure your ROSETTA3 environment variable is set to Rosetta/main/source):
 
         ./bin/membrane_abinitio2.linuxgccrelease
         -in:file:native BRD4.pdb                  Native structure (optional)
@@ -163,6 +163,7 @@ Input Files
         -membrane:normal_delta_angle (default= 10 degrees) - magnitude of angle deviation during membrane normal search (degrees).
         -membrane:normal_max_angle (default= 40 degrees) - magnitude of maximum angle deviation during membrane normal search (degrees).
 
+
 6.  Expected Outputs
 
     Convert output silent file into pdb file using score application as follows 
@@ -197,7 +198,7 @@ Input Files
 Post Processing
 ---------------
 
-Generate at least 10,000 models and then use rosetta Cluster application to 
+Generate at least 10,000 models and then use a clustering application to 
 identify most frequently sampled conformations.  In general case, at least one 
 of top 5-10 clusters will have models with the lowest rmsd to the native 
 structure.

@@ -15,7 +15,11 @@ This demo shows how to run the oop\_design application.  An oligooxopiperazine (
 
 ## Command
 ```
-oop_design<.exe> -database <path to your database> @input/flags
+oop_design<.exe> @input/flags
+```
+for example, you can run (where `$ROSETTA3`=path-to-Rosetta/main/source)
+```
+$> $ROSETTA3/bin/oop_design.default.linuxgccrelease @inputs/flags
 ```
 
 ## Input files

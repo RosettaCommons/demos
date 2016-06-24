@@ -65,7 +65,8 @@ Running the demo
     open your shell and change the directory to the one where the demo files 
     are stored.
 
-        loopmodel.linuxgccrelease -database /pathtoyourdb/ -loops:input_pdb 1TR2_manually_added_dummy_residues_renumbered.pdb -loops:loop_file 1TR2.loop -loops:remodel perturb_kic -loops:refine refine_kic -ex1 -ex2 -nstruct 1 -loops:max_kic_build_attempts 100 -in:file:fullatom
+		$> cp rosetta_inputs/* .  
+    	$> $ROSETTA3/bin/loopmodel.linuxgccrelease -s 1TR2_manually_added_dummy_residues_renumbered.pdb -loops:loop_file 1TR2.loop -loops:remodel perturb_kic -loops:refine refine_kic -ex1 -ex2 -nstruct 1 -loops:max_kic_build_attempts 100 -in:file:fullatom
 
     Brief descriptions for all the components of this command-line:
 

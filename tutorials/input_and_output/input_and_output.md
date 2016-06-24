@@ -21,7 +21,7 @@ There are multiple ways to control how Rosetta protocols read the nput and produ
 * How to visualize the changes to the structure in PyMOL
 * How to overwrite existing output
 
->This chapter will cover many executables, whose function will not be explained in much detail. Please refer the the corresponding chapter in the tutorials for a proper explanation of what that particular program does.
+>**This chapter will cover many executables, whose function will not be explained in much detail. Please refer the the corresponding chapter in the tutorials for a proper explanation of what that particular program does.**
 
 Navigating to the Demos
 -----------------------
@@ -44,7 +44,7 @@ HETATM 1479  O   HOH A 107      10.027  -4.206  14.093  1.00  0.00           O
 ```
 In the example above, Rosetta recognizes that the `ATOM` record represents one of the H<sub>δ</sub> atoms of Leucine-94 in the A chain with coordinates (10.910, -5.038, 7.227), which has an occupancy of 1 and a temperature factor of 0. Rosetta ignores the atom numbering (`1477`) in the second column and the element symbol in the last column (`H`). The `TER` record indicates a chain break. Similarly the `HETATM` record represents the oxygen atom of a water molecule associated with the A chain with coordinates (10.027, -4.206, 14.093) an occupancy 1 and a temperature factor of 0. Rosetta ignores the atom numbering and the element symbol in this record too. Rosetta stores the temperature factors, but **assumes all non-zero occupancies to be 1.**
 
->Rosetta only loads in the first conformation if a residue has multiple conformations.
+>**Rosetta only loads in the first conformation if a residue has multiple conformations.**
 
 To pass in a single PDB use the `in:file:s` option. For example, the following can be used to [calculate the energy](https://www.rosettacommons.org/demos/latest/tutorials/scoring/README) of a refined PDB 1QYS. The input PDB is present in the `input_files` folder. (`$ROSETTA3`=path-to-Rosetta/main/source anytime you see it)
 
@@ -122,7 +122,7 @@ This PDB contains a phosphate ion that Rosetta is unable to process without addi
 
 Now the PDB will be scored and the score will be displayed in a file `score.sc`.
 
->`ignore_unrecognized_res` option also ignores the water molecules in the structure. This may change the energy scores of your structure.
+>**`ignore_unrecognized_res` option also ignores the water molecules in the structure. This may change the energy scores of your structure.**
 
 <!---
 ####Waters
@@ -195,11 +195,11 @@ Setting a higher `nstruct`, say `nstruct 10`, will increase the number of refine
     
 This will produce three files: `1qys_0001.pdb`, `1qys_0002.pdb` and `score.sc`. Use the PDB with the lower `total_score` in the score file as the input PDB for your protocol.
 
->These options can also be supplemented by `ignore_unrecognized_res` and `ignore_zero_occupany false` if required.
+>**These options can also be supplemented by `ignore_unrecognized_res` and `ignore_zero_occupany false` if required.**
 
 Using a flag like `ignore_unrecognized_res` may remove ligands and waters you want to consider.
 
->Ensure that all residues you want to model are present in the refined PDB. 
+>**Ensure that all residues you want to model are present in the refined PDB.**
 
 ###Setting the Input Search Path
 If we have multiple input files, having one path location from where to search for inputs may be helpful. For example, while running the `relax` protocol on the homodimer PDB 4EQ1, we might want to constrain the protein-protein interface distances and prevent them from moving. (A detailed tutorial on constraints can be found [here](https://www.rosettacommons.org/demos/latest/tutorials/Tutorial_8_Constraints/Tutorial_8_Constraints.md).) To do this we need a constraint file `constrained_atompairs.cst` which too is located in the directory `input_files`. Running with the `in:path` with the input_directory specified helps when we have multiple such files as shown here:
@@ -214,7 +214,7 @@ Rosetta uses two structure representations - a finer _full atom_ representation 
 ###Input a Known Structure For Comparison
 Often, it is useful to compare how close Rosetta gets to a known, _native_ structure. This is especially useful for benchmarking. It can also be used to check how far Rosetta moved an input PDB. To do this, we use the `-in:file:native` option.
 
->The native PDB must contain the same number of residues, the same residue ordering and the same chain ordering as the structures that Rosetta will output after the protocol. Rosetta will give an error if the number of residues is different between the two, or calculate incorrect metrics if the residue numbering does not match.
+>**The native PDB must contain the same number of residues, the same residue ordering and the same chain ordering as the structures that Rosetta will output after the protocol. Rosetta will give an error if the number of residues is different between the two, or calculate incorrect metrics if the residue numbering does not match.**
 
 In the following example, we will run an older scoring application, _score_ to check how different the refined 1QYS is from the original PDB QYS.  
 
@@ -229,7 +229,7 @@ SCORE:  -167.539   -414.834     48.380    225.004           1.040    -45.212    
 ```
 In this score file, the column `allatom_rms` represents the all-atom RMSD to the native and it is `1.050`. This is because Rosetta packed the sidechains to relieve clashes and optimize interactions while refining. The `rms` column, which represents the C<sub>α</sub> RMSD to native is much lower at `0.135` showing that Rosetta did not move the backbone much. There are other global distance metrics given as well.
 
->Rosetta rebuilds the sidechains of residues in the native structure too if it finds too many heavy atoms missing, so the metrics might be slightly different for every run.
+>**Rosetta rebuilds the sidechains of residues in the native structure too if it finds too many heavy atoms missing, so the metrics might be slightly different for every run.**
 
 ###List of Other Options
 A full list of other, specific options is given [here](https://www.rosettacommons.org/docs/latest/full-options-list#in).
@@ -371,7 +371,7 @@ core.pose.util: new fold tree FOLD_TREE  EDGE 1 92 -1  EDGE 1 93 1  EDGE 1 94 2 
 Now you see a bunch of information that previously did not appear. In the snippet above, we see, the residue types and element types that Rosetta recognizes (C associated with aromatic rings and Platinum), all the patches it can apply (patch to make a residue the C-terminal) and the revised [fold tree](../minimization/minimization.md#a-note-about-the-foldtree).
 
 ###Replicating Output in Rosetta Protocols
-Most protocols in Rosetta use [Monte Carlo sampling](../Optimizing_Sidechains_The_Packer/Optimizing_Sidechains_The_Packer.md#how-the-packer-algorithm-works-under-the-hood-for-advanced-users). While this stochastic method of sampling speeds up the search for an energy minimum, it produces different trajectories in every run. Rosetta uses a random number _seed_ supplied by the `/dev/urandom` device of your system to generate the pseudo-random numbers it uses for an application. This seed can be any non-negative integer that a C++ _int_ datatype can hold, and the suggested range is 10<sup>6</sup> - 10<sup>9</sup>. It is displayed in the log at the start of every run as follows:
+Most protocols in Rosetta use [Monte Carlo sampling](../Optimizing_Sidechains_The_Packer/Optimizing_Sidechains_The_Packer.md#how-the-packer-algorithm-works-under-the-hood-for-advanced-users). While this stochastic method of sampling speeds up the search for an energy minimum, it produces different trajectories in every run. Rosetta uses a random number _seed_ supplied by the `/dev/urandom` device of your system to generate the pseudo-random numbers it uses for an application. This seed can be any integer that a C++ _int_ datatype can hold, and the suggested range is ±seed10<sup>6</sup> - 10<sup>9</sup>. It is displayed in the log at the start of every run as follows:
 
 ```
 ...
@@ -380,7 +380,7 @@ core.init: 'RNG device' seed mode, using '/dev/urandom', seed=340573764 seed_off
 ```
 The seed in this snippet is 340573764.
 
->All other things being equal, every run of a Rosetta protocol running on the same system with the same seed should have the same trajectory. If you want to replicate a run later, you should store the seed from your run and use it later.
+>**All other things being equal, every run of a Rosetta protocol running on the same system with the same seed should have the same trajectory. If you want to replicate a run later, you should store the seed from your run and use it later.**
 
 In this example, we will produce the same output using the `relax` application suggested above by specifying a constant seed. To do this, we need the flag `-run:constant_seed` which makes sure that the seed is constant. The default constant seed is 1111111, which we will change to 12345678 using the `-run:jran` option. Every run of the following command should produce the same set of structures and score files when run from the same system.
 
@@ -412,7 +412,7 @@ Assuming you have established the link between PyMOL and Rosetta, run the follow
     
 You will observe different parts of the structure undergoing small motions. This is what `relax` (with constraints) does to the structure till it arrives at a satisfactory structure.
 
->The states displayed in PyMOL represent the states tried by the protocol every _n_ seconds. They may or may not have been accepted during the simulation.
+>**The states displayed in PyMOL represent the states tried by the protocol every _n_ seconds. They may or may not have been accepted during the simulation.**
 
 There are other, specific option like changing the state in PyMOL only if the energy score of the structure has changed, or changing the state only if the conformation has changed. For those, you can pass the flags, `-update_pymol_on_energy_changes_only` and `-update_pymol_on_conformation_changes_only`, respectively.
 
@@ -431,7 +431,7 @@ Now say you completed the `relax` simulation in the previous section and then re
     
 You will see the you still have two output structure files, `1qys_0001.pdb` and `1qys_0002.pdb`, but they will be more recently written, which you can check using `ls -l 1qys_000*.pdb`.
 
->The `-overwrite` option does overwrite the score file. Entries will still be appended to the exsiting score file. Score files must be manually moved or deleted before every run.
+>**The `-overwrite` option does overwrite the score file. Entries will still be appended to the exsiting score file. Score files must be manually moved or deleted before every run.**
 
 ###List of Other Options
 A full list of other, specific options is given [here](https://www.rosettacommons.org/docs/latest/full-options-list#out).

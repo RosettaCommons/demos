@@ -52,11 +52,16 @@ This optimizes proton chis on the ligand while also repacking sidechains:
 ```
 path/to/EnzdesFixBB.[platform][compiler][mode] -s rosetta_inputs/cel5A_input.pdb -extra_res_fa cel.params -database path/to/minirosetta_database/ -out:file:o cel5A_score.out -nstruct 1 -detect_design_interface -cut1 0.0 -cut2 0.0 -cut3 10.0 -cut4 12.0 -minimize_ligand true
 ```
-This optimizes proton chis on the ligand without repacking sidechains:
+for example, using the provided inputs you can run: (where `$ROSETTA3`=path-to-Rosetta/main/source)
 ```
-path/to/EnzdesFixBB.[platform][compiler][mode] -s rosetta_inputs/cel5A_input.pdb -extra_res_fa cel.params -database path/to/minirosetta_database/ -out:file:o cel5A_score.out -nstruct 1 -detect_design_interface -cut1 0.0 -cut2 0.0 -cut3 0 -cut4 0 -minimize_ligand true
+$> $ROSETTA3/bin/EnzdesFixBB.default.linuxgccrelease -s rosetta_inputs/cel5A_input.pdb -extra_res_fa rosetta_inputs/cel.params -out:file:o cel5A_score1.out -nstruct 1 -detect_design_interface -cut1 0.0 -cut2 0.0 -cut3 10.0 -cut4 12.0 -minimize_ligand true
 ```
-Both runs should produce the PDB file cel5A_input__DE_1.pdb and the score file cel5A_score.out, which can be placed into the output directory under different names, e.g. cel5A_output_nopack.pdb or cel5A_output_w_repack.pdb
+
+Or, this optimizes proton chis on the ligand without repacking sidechains:
+```
+$> $ROSETTA3/bin/EnzdesFixBB.default.linuxgccrelease -s rosetta_inputs/cel5A_input.pdb -extra_res_fa rosetta_inputs/cel.params -out:file:o cel5A_score2.out -nstruct 1 -detect_design_interface -cut1 0.0 -cut2 0.0 -cut3 0 -cut4 0 -minimize_ligand true
+```
+Both runs should produce the PDB file cel5A_input__DE_1.pdb and the score file cel5A_score1.out or cel5A_score2.out, which can be placed into the output directory under different names, e.g. cel5A_output_nopack.pdb or cel5A_output_w_repack.pdb
 
 Flag descriptions:
 ```
