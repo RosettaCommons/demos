@@ -40,7 +40,7 @@ Full input files for the tutorials are located in the `demos/tutorials/` directo
 * [[The Fold Tree|fold_tree]]: Propagating Changes in the Structure
 * [[Symmetry|Symmetry]]: Modeling Symmetric Proteins
 * [[Scripting with RosettaScripts|scripting_with_rosettascripts]]
-* [[Advanced Scripting with RosettaScripts|advanced_rosetta_scripting]]
+    * [[Advanced Scripting with RosettaScripts|advanced_scripting_with_rosettascripts]]
 * [[Commonly Used Options|commonly_used_options]]
 * [[Tips]]
 
