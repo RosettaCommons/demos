@@ -2,9 +2,9 @@
 -relax:constrain_relax_to_start_coords
 -relax:default_repeats 2 
 -in:file:fullatom
--in:file:native input/BRD4.pdb 
--in:file:spanfile input/BRD4.span
--s input/BRD4.pdb
+-in:file:native input_files/BRD4.pdb 
+-in:file:spanfile input_files/BRD4.span
+-s input_files/BRD4.pdb
 -score:weights membrane_highres_Menv_smooth.wts
 -membrane:normal_cycles 40 
 -membrane:normal_mag 15
