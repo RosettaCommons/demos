@@ -4,4 +4,4 @@
 -window_size 5 
 -ignore_unrecognized_res true
 -mute core protocols.moves.RigidBodyMover basic.io.database
--score:analytic_etable_evalution 0
+-analytic_etable_evaluation false
