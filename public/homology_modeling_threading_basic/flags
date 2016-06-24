@@ -15,7 +15,6 @@
 -loops:build_initial # Precede loop-modeling with an initial round of just removing the missing densities and building simple loops
 -loops:remodel quick_ccd # closing loops by quick_ccd
 -loops:refine refine_ccd # small movements to remodel loop
--silent_decoytime 1 # Add time since the last structure was written to score line
 -random_grow_loops_by 4 # randomly grow loops by up to this number of residues on either side.
 -select_best_loop_from 1 # Keep building loops until N and choose best (by score)
 -out:file:fullatom # output in fullatom mode
