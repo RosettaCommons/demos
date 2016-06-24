@@ -38,6 +38,7 @@ Full input files for the tutorials are located in the `demos/tutorials/` directo
 * [[Constraints]]: Biasing Towards a Structure
 * [[Analyzing Rosetta Output|Analysis]]
 * [[The Fold Tree|fold_tree]]: Propagating Changes in the Structure
+* [[Symmetry|Symmetry]]: Modeling Symmetric Proteins
 * [[Scripting with RosettaScripts|scripting_with_rosettascripts]]
     * [[Advanced Scripting with RosettaScripts|advanced_scripting_with_rosettascripts]]
 * [[Commonly Used Options|commonly_used_options]]
@@ -45,8 +46,8 @@ Full input files for the tutorials are located in the `demos/tutorials/` directo
 
 ### Commonly Used Rosetta Protocols
 
-* [*de novo* (*ab initio*) Structure Prediction](Denovo_structure_prediction)
-    * [Advanced *de novo* Structure Prediction](folding_tutorial)
+* [[*de novo* (*ab initio*) Structure Prediction|Denovo_structure_prediction]]
+    * [[Advanced *de novo* Structure Prediction|folding_tutorial]]
 * [[Comparative Modeling|rosetta_cm_tutorial]]: Modeling based on Homologs
 * [[Loop Modeling and Rebuilding|loop_modeling]]: Modeling Short Fragments
 * [[Protein Design|protein_design_tutorial]]
