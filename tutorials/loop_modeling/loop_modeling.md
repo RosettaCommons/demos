@@ -97,6 +97,8 @@ Now, we add the missing three residues (KPG) in this manner shown below, assigni
 ...
 ```
 
+>You can build multiple loops in the same simulation by altering the _blueprint file_ to indicate where these loops are.
+
 Now with this modified blueprint file, run:
     $> $ROSETTA3/bin/remodel.linuxgccrelease @flax_missing_loops
 
