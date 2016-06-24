@@ -35,9 +35,9 @@ Full input files for the tutorials are located in the `demos/tutorials/` directo
 * [[The Packer|Optimizing_Sidechains_The_Packer]]: Optimizing Sidechains
 * [[Minimization]]: Finding Deeper Energy Wells
 * [[Relax|Relax]]: Refining Structures
-* [[Constraints]]: 
+* [[Constraints]]: Biasing Towards a Structure
 * [[Analyzing Rosetta Output|Analysis]]
-* [[The Fold Tree|fold_tree]] 
+* [[The Fold Tree|fold_tree]]: Propagating Changes in the Structure
 * [[Scripting with RosettaScripts|scripting_with_rosettascripts]]
     * [[Advanced Scripting with RosettaScripts|advanced_scripting_with_rosettascripts]]
 * [[Commonly Used Options|commonly_used_options]]
