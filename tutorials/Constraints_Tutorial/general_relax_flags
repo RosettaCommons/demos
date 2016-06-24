@@ -1,4 +1,3 @@
 -nstruct 1
 -default_repeats 1
--out:path:pdb ./tutorial_output
 
