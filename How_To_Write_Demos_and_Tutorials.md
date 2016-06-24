@@ -2,8 +2,7 @@
 
 KEYWORDS: UTILITIES GENERAL
 
-Authors:  Kale Kundert
-Edited by: Frank David Teets(teetsf@gmail.com), Jared Adolf-Bryfogle
+Authors: Frank David Teets(teetsf@gmail.com), Jared Adolf-Bryfogle, Kale Kundert
 Adding new demos
 ================
 
@@ -57,12 +56,12 @@ Demos and tutorials are now tested on a pass/fail basis on the test server with 
 Each demo/tutorial will start the test in the respective demo/tutorial just like integration tests. 
 
 #### Testing from Documentation MD File
-The command should start with a dollar sign and greater than sign, which will be used to create the demo test for your demo. This will be parsed out of your demo's .md file using '$>' at the beginning of a line. Extra white space and markdown syntax will be striped from the line.
+__The command you want to test should start with a dollar sign and greater than sign__, which will be used to create the demo test for your demo. This will be parsed out of your demo's .md file using __'$>'__ at the beginning of a line. Extra white space and markdown syntax will be striped from the line.
 
  Using greater than signs (>) alone will not cause these commands to run, and can be used to indicate optional or supplementary commands to users of your demo. For example,
 
- > echo "This command will not be tested"
-$> echo "This command will be tested."
+ 	> echo "This command will not be tested"
+	$> echo "This command will be tested."
 
 ##### Substitutions
 If you require certain paths, you may use substititions which will be replaced with the full path when the test is run through the integration test script
@@ -100,6 +99,8 @@ If you don't have many files, maybe just put everything in one directory.
 If you have lots of files, maybe organize them into subdirectories.
 Whatever makes the most sense for your demo.
 __However, only .md files at the root of YOUR demo directory will be tested__; include cd commands to have the test navigate around to any subdirectories you may have if you wish..
+
+__Please only use 1 command per line in your MD file or command for testing!__
 
 ###Keywords and Organization
 Demos __MUST__ be keyworded.
