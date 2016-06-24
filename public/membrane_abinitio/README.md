@@ -191,7 +191,7 @@ Input Files
 
     To run this example, type
     ```bash
-    $> $ROSETTA3/bin/score.default.linuxgccrelease @scripts/score_flags
+    $> $ROSETTA3/bin/score_jd2.<exe> @scripts/score_flags
     ```
 
     Membrane ab initio application specific score outputs in the output score file are:
