@@ -3,7 +3,7 @@
 -score:weights dna 
 -run:output_hbond_info 
 -score:output_residue_energies 
-jd2:dd_parser 
+-jd2:dd_parser 
 -parser:protocol multistate.script 
 -overwrite 
 -out:prefix multistate_ 
