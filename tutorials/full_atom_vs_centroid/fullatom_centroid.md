@@ -12,6 +12,7 @@ The demos are available at `<path_to_Rosetta_directory>/demos/tutorials/full_ato
 
 Summary
 -------
+
 Rosetta uses two primary representations while working with protein structures — full atom and centroid. By the end of this tutorial, you should understand:
 
 * The need for the centroid representation   
