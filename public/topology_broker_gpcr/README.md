@@ -63,7 +63,9 @@ The Topology Broker application in Rosetta can be used to build loops and flexib
 #-nstruct 1
 ```
 
-### Example Rosetta Command Line (`$ROSETTA3`= path-to-Rosetta/main/source)
+### Example Rosetta Command Line 
+
+(`$ROSETTA3`= path-to-Rosetta/main/source)
 ```
 $> $ROSETTA3/bin/r_broker.default.linuxgccrelease -out:file:residue_type_set centroid -out:file:silent rbroker_run1.out -nstruct 1 @input_files/flags.txt
 ```
