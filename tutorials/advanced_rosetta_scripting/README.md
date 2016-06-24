@@ -387,10 +387,12 @@ Let's set up a small sample BundleGridSampler run in nstruct mode to illustrate 
 
 You'll note that we've already set "nstruct\_mode" to "true", indicating that the mover should sample subsequent grid-points in subsequent jobs.  (We've also set a few other mover-specific options that are not important for this tutorial.)
 
-Next, let's tell the mover what it will be sampling over.  This is done with some mover-specific syntax that is detailed on the [help page for the mover](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/Movers/movers_pages/BundleGridSamplerMover).  The details aren't important for our purposes here; suffice it to say that we're telling the mover to generate a two-helix bundle, and to do 6 samples for a radius parameter, r0, and 6 samples for a twist parameter, omega0, for a total of 36 samples.
+Next, let's tell the mover what it will be sampling over.  This is done with some mover-specific syntax that is detailed on the [help page for the mover](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/Movers/movers_pages/BundleGridSamplerMover).  The details aren't important for our purposes here; suffice it to say that we're telling the mover to generate a two-helix bundle, and to do 6 samples for a radius parameter, r0, and 6 samples for a twist parameter, omega0, for a total of 36 samples.  Note that we've added an option, "max\_samples", to the first BundleGridSampler tag, and set it to 36.  This is for our convenience: this grid sampling mover, recognizing that it's quite possible to accidentally specify unrealistically high numbers of samples, provides a means by which a user can set a number above which the mover throws an error when you run the script.  So if, for example, I thought I was setting up ten thousand samples, and the combinatorics meant that I actually had set up ten million, with "max\_samples" set to "10000", I would be warned immediately that I had made a mistake; without it, I might erroneously start a job that would only carry out a tiny bit of sampling in a very small sub-region of the region that I had actually specified.
+
+> **It's best to be mindful of the amount of sampling a grid sampling mover is expected to do.  Use the tools available to warn you if the samples exceed the number that you think that you've set up.**
 
 ```xml
-		<BundleGridSampler name="bgs" scorefxn="tala" nstruct_mode="true" use_degrees="true" helix_length="25" >
+		<BundleGridSampler name="bgs" scorefxn="tala" nstruct_mode="true" use_degrees="true" helix_length="25" max_samples="36" >
 			<Helix r0_min="4.0" r0_max="7.0" r0_samples="6" omega0_min="-3.0" omega0_max="3.0" omega0_samples="6" delta_omega0="0.0" />
 			<Helix r0_copies_helix="1" pitch_from_helix="1" delta_omega0="180.0" />
 		</BundleGridSampler>
@@ -403,7 +405,102 @@ $> cp grid_sampling_example/1ubq.pdb grid_sampling_example/grid_sampling.xml .
 $> $ROSETTA3/bin/rosetta_scripts.default.linuxgccrelease -write_all_connect_info -in:file:s 1ubq.pdb -parser:protocol grid_sampling.xml -out:prefix grid1_ -nstruct 36
 ```
 
+Examining the output, you'll see that each successive PDB file in the 36 produced has the pose in a slightly different conformation, regularly sampling different twists and radii of the bundle.
 
+TODO -- add illustration here.
+
+Practically speaking, how would we use this in the context of a useful task, like protein design?  Well, let's modify the script to design each sampled conformation in the grid.  An important consideration here, though, is the fact that, while the initial geometry generation is extremely fast (a small fraction of a second), full design (packing) and side-chain minimization could be quite slow.  We therefore want to throw away any non-productive conformations, such as those that have clashes prior to design, with a poly-alanine sequence, immediately.  So we'll want to filter first to throw away the non-productive conformations, then design those samples that pass the filter.
+
+We can use the [ScoreType filter](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/Filters/filter_pages/ScoreTypeFilter) to filter out clashing conformations, using the *fa_rep* score term (the repulsive part of the Lennard-Jones potential) as our criterion for acceptance or rejection.  The filter should be added to the PROTOCOLS section immediately after the BundleGridSampler mover, so that we immediately throw away bad, clashing geometry as soon as it is generated.  In practice, you would have to determine the cutoff by trial-and-error; in this case, we're using a cutoff of 15 Rosetta energy units.
+
+```xml
+...
+	<FILTERS>
+		<ScoreType name="filter_clashes" scorefxn="tala" score_type="fa_rep" threshold="15.0" />
+	</FILTERS>
+...
+	<PROTOCOLS>
+		<Add mover="bgs" />
+		<Add filter="filter_clashes" />
+	</PROTOCOLS>
+...
+```
+
+In addition, a conformation is likely to be non-productive if the helices are too far apart.  For this, we can filter using the *fa_atr* (attractive part of the Lennard-Jones potential) score term.
+
+```xml
+...
+	<FILTERS>
+		<ScoreType name="filter_clashes" scorefxn="tala" score_type="fa_rep" threshold="15.0" />
+		<ScoreType name="filter_excessive_separation" scorefxn="tala" score_type="fa_atr" threshold="-149.0" />
+	</FILTERS>
+...
+	<PROTOCOLS>
+		<Add mover="bgs" />
+		<Add filter="filter_clashes" />
+		<Add filter="filter_excessive_separation" />
+	</PROTOCOLS>
+...
+```
+
+Now let's set up some design steps.  To keep this simple, we'll design just the core using hydrophobic amino acid residues.  Therefore, we'll need a residue selector for the core, and a residue selector for the inverse selection:
+
+```xml
+...
+	<RESIDUE_SELECTORS>
+		<Layer name="select_core" select_core="true" select_boundary="false" select_surface="false" core_cutoff="2.5" surface_cutoff="0.5" />
+		<Not name="select_not_core" selector="select_core" />
+	</RESIDUE_SELECTORS>
+...
+```
+
+We'll pass these to a couple of task operations -- one to load a resfile for the core, the other to prevent design outside of the core.  We'll also set up a task operation for extra rotamers:
+
+```xml
+...
+	<TASKOPERATIONS>
+		<ReadResfile name="core_resfile" filename="core_resfile.txt" />
+		<OperateOnResidueSubset name="only_design_core" selector="select_not_core" >
+			<PreventRepackingRLT />
+		</OperateOnResidueSubset>
+		<ExtraRotamersGeneric name="extrachi" ex1="1" ex2="1" ex1_sample_level="1" ex2_sample_level="1" extrachi_cutoff="2" />
+	</TASKOPERATIONS>
+...
+```
+
+The resfile specifies design only with hydrophobic amino acid residues:
+
+```
+PIKAA FMILYVW
+```
+
+Now we set up a [FastDesign mover](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/Movers/movers_pages/FastDesignMover), passing all of the above task operations to control packing steps, and a move map that disables backbone and rigid-body motions (but allows side-chains to minimize) to control minimizations steps:
+
+```xml
+...
+		<FastDesign name="design_core" repeats="1" scorefxn="tala" task_operations="core_resfile,only_design_core,extrachi">
+			<MoveMap name="design_core_mm">
+				<Span begin="1" end="999" bb="false" chi="true" />
+				<Jump number="1" setting="false" />
+			</MoveMap>
+		</FastDesign>
+...
+	<PROTOCOLS>
+		<Add mover="bgs" />
+		<Add filter="filter_clashes" />
+		<Add filter="filter_excessive_separation" />
+		<Add mover="design_core" />
+	</PROTOCOLS>
+...
+```
+
+And that's it!  Let's try running this.  The complete script is provided as grid\_sampling\_example/grid\_sampling\_with\_design.xml.  As in the [introductory RosettaScripting tutorial](../rosetta_scripting/README.md), we use the "-jd2:failed_job_exception false" option to prevent Rosetta from exiting with error status at the end due to the jobs that we expect will fail filters.
+
+```bash
+$> cp grid_sampling_example/1ubq.pdb grid_sampling_example/grid_sampling_with_design.xml grid_sampling_example/core_resfile.txt .
+$> $ROSETTA3/bin/rosetta_scripts.default.linuxgccrelease -write_all_connect_info -in:file:s 1ubq.pdb -parser:protocol grid_sampling_with_design.xml -out:prefix grid2_ -nstruct 36 -jd2:failed_job_exception false
+
+```
 
 TODO -- CONTINUE HERE.
 
