@@ -185,7 +185,7 @@ Combining Loop Modeling with other Protocols
 --------------------------------------------
 Using the KIC algorithm through the `loopmodel` and `remodel` applications limits the use of the protocol to linear protein backbones. To make covalent bonds in artitrary backbones, sidechains, non-canonicals etc., we use the Generalized KIC protocol. A complete documentation of this protocol is available [here](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/composite_protocols/generalized_kic/GeneralizedKIC).
 
-As this protocol is typically used for advanced use cases, it often requires a combination with other Rosetta protocols. A details list of usage cases and examples are provided in the documentation linked above.
+As this protocol is typically used for advanced use cases, it often requires a combination with other Rosetta protocols. We will not cover examples of using Generalized KIC in this tutorial. A detailed list of usage cases and examples are provided in the documentation linked above. 
 
 >Generalized KIC is not available as an executable; it needs to be used through RosettaScripts.
 
