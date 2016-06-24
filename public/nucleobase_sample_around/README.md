@@ -28,7 +28,7 @@ where `$ROSETTA3`=path-to-Rosetta/main/source
 
 To sample a water (sampling all possible orientations and outputting Boltzmann summed free energies)
 ```
- $> $ROSETTA3/bin/nucleobase_sample_around.default.linuxgccrelease  -s rosetta_inputs/a_RNA.pdb  -sample_water  -extra_res $ROSETTA_DB/chemical/residue_type_sets/fa_standard/residue_types/water/TP3.params
+ $> $ROSETTA3/bin/nucleobase_sample_around.default.linuxgccrelease  -s rosetta_inputs/a_RNA.pdb  -sample_water 
 ```
 To sample a nucleobase
 ```
