@@ -47,6 +47,7 @@
     </MOVERS>
 
     <PROTOCOLS>
+		<Add mover=pdb_traj_recorder />
 		<Add mover=gmc_mover />
     </PROTOCOLS>
 </ROSETTASCRIPTS>
