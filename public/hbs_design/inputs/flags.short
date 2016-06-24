@@ -1,0 +1,21 @@
+# turn on patches
+#-include_patches patches/hbs_pre.txt patches/hbs_post.txt 
+
+# first chain is target, second chain is hbs
+-s ./inputs/mdm2_hbs.pdb
+
+# production
+-nstruct 1
+
+-in:file:fullatom 
+-packing:linmem_ig 10
+
+# which residues on hbs to design
+-hbs_design_positions 4 5 6 7
+
+# number of perturbations during pertubations phase, default is 10
+#-pert_num 100
+
+# number of pertubation + design cycles
+-design_loop_num 1
+
