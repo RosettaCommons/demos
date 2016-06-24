@@ -10,6 +10,7 @@ Created 20 June 2016.
 ## Summary
 
 Rosetta's primary algorithm for optimizing side-chains is called the *packer*.  By the end of this tutorial, you should understand:
+
 - The types of problems that the packer solves.
 - How to invoke the packer using the *fixbb* application.
 - How to control the packer's behaviour.
@@ -17,6 +18,7 @@ Rosetta's primary algorithm for optimizing side-chains is called the *packer*.  
 - What applications and algorithms invoke the packer.
 
 The tutorial also introduces:
+
 - Common ways of invoking the packer from the RosettaScripts scripting language.
 - Common ways of controlling the packer from the RosettaScripts scripting language.
 - A brief overview of how the packing algorithm works.
@@ -25,7 +27,7 @@ The tutorial also introduces:
 
 A common task in Rosetta is the optimization of side-chains.  We might think about the problem as follows: let's suppose that we have a structure (which we will call the *pose*) with a fixed backbone conformation.  At each position in the structure, we have a list of discrete possibilities for the side-chain, which we call *rotamers*, where a rotamer is a particular conformation of a particular residue type's side-chain.  We would like to select one rotamer for each position such that the combination of rotamers represents the lowest-energy solution.  This is the problem solved by the packer.
 
-This problem is actually quite a difficult one: given N possibilities at each position in an M-residue protein, there are N to the power of M possibilities.  This rapidly becomes an astronomical number of possibilities -- for example, 3 rotamers at each of 100 positions would be about 5x10<sup>47</sup> possible combinations.  This makes exhastive enumeration impossible.  To solve this problem, the packer uses Monte Carlo methods (discussed in detail further on).  This means that the packer is stochastic, that it never comes close to exhaustively exploring the search space in any but the smallest of packer problems, and that the solution returned, while likely to be a *good* solution, is not guaranteed to be the *best* solution.
+This problem is actually quite a difficult one: given N possibilities at each position in an M-residue protein, there are N to the power of M possibilities.  This rapidly becomes an astronomical number of possibilities -- for example, 3 rotamers at each of 100 positions would be about 5x10<sup>47</sup> possible combinations.  This makes exhaustive enumeration impossible.  To solve this problem, the packer uses Monte Carlo methods (discussed in detail further on).  This means that the packer is stochastic, that it never comes close to exhaustively exploring the search space in any but the smallest of packer problems, and that the solution returned, while likely to be a *good* solution, is not guaranteed to be the *best* solution.
 
 > **Repeated packer runs are likely to yield a variety of similar solutions near the global optimum; none of these will necessarily *be* the best possible solution.**
 
@@ -41,7 +43,7 @@ You may need to change "linuxgccrelease", in the above, to whatever is appropria
 
 This application packs the side-chains of the input structure (the trp cage mini-protein, 1l2y.pdb).  Five output structures, from five separate runs, are produced.  If you compare these structures to the input structure, you'll find that Rosetta chooses slightly different rotamers for the side-chains, as compared to the input.  This is to be expected, particularly given the discrete nature of rotamers: the truly "best" rotamer might lie between two rotamers tested, and may never be sampled.
 
-Work through the [rest of the demo](../../public/fixbb/README.md).  This teaches about how the packer can be tweaked, both at the commandline and with configuration files called *resfiles*, to control the amount of sampling, the time taken for a run, and the likelihood of converging to the optimal solution.
+Work through the [rest of the demo](/public/fixbb/README).  This teaches about how the packer can be tweaked, both at the commandline and with configuration files called *resfiles*, to control the amount of sampling, the time taken for a run, and the likelihood of converging to the optimal solution.
 
 ## The sequence design problem
 
