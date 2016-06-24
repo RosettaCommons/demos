@@ -62,7 +62,7 @@ Rosetta developers are working constantly to update the settings so that it work
 
 ##### Fragments and Rosetta
 
-Rosetta relies heavily on data derived from experimental structures - both for statistical potentials and for sampling through fragment picking and rotamer libraries. This means that Rosetta results are biased toward structural motifs seen in existing experimental structures. So if you are designing or modeling a topology or structure that has never or only very rarely been observed in the PDB, you are at risk of not being able to model it accurately. This also means that chemical entities which are found only rarely in the PDB, like noncanonical amino acid, may not be sampled or scored properly (see [below](#Soemthing_old_something_new:noncanonicals).
+Rosetta relies heavily on data derived from experimental structures - both for statistical potentials and for sampling through fragment picking and rotamer libraries. This means that Rosetta results are biased toward structural motifs seen in existing experimental structures. So if you are designing or modeling a topology or structure that has never or only very rarely been observed in the PDB, you are at risk of not being able to model it accurately. This also means that chemical entities which are found only rarely in the PDB, like noncanonical amino acid, may not be sampled or scored properly (see [below](#limitations-of-rosetta-and-things-that-can-go-wrong_something-old-something-new-noncanonicals).
 
 *What You Can Do:*
 
