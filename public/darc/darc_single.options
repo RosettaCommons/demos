@@ -1,5 +1,5 @@
 -protein 4ERF_0001.pdb 
 -ligand 4ERF_XTL_0001.pdb 
--extra_res_fa 4ERF_XTL.params 
+-extra_res_fa input/4ERF_XTL.params 
 -ray_file ray_4ERF_0001_61.txt 
 -espGrid_file DARC_4ERF.agd
