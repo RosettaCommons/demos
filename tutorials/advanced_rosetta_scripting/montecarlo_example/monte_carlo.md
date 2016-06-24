@@ -4,11 +4,12 @@ For this protocol, we will be using the [GenericMonteCarlo](https://www.rosettac
 mover, which is another type of "meta mover" that performs iterative trials of a given Mover and evaluates whether that move was *good* or *bad* based on a user-defined scoring metric.
 If a move is *good*, the GenericMonteCarlo mover accepts or rejects that move based on the evaluation of a Boltzmann criterion.
 
-Before we can use the GenericMonteCarloMover, we need to create a Mover that we can pass the GenericMonteCarloMover. Let's create a ParsedProtocol Mover that
-first applies the SmallMover and then applies the PackRotamersMover. 
+Let's consider the example of re-designing and refining a peptide that is bound to a protein structure in order to find a peptide with possibly higher binding affinity. We will allow the Packer to choose different identities and rotamers for the current peptide in its bound state, while also allowing the backbone torsion angles of the residues at the protein-peptide interface be sampled by a small number of degrees over many iterations. 
 
-The SmallMover will make small-move style backbone torsion movements that do not minimize downstream propagation. 
-The PackRotamersMover will alter the residue identities and/or sidechain rotamers of specific residues.
+Before we can use the GenericMonteCarloMover for this tasks, we need to create a Mover that we can pass the GenericMonteCarloMover. Let's create a ParsedProtocol Mover that first applies the SmallMover and then applies the PackRotamersMover. 
+
+  * The SmallMover will make small-move style backbone torsion movements that do not minimize downstream propagation. 
+  * The PackRotamersMover will alter the residue identities and/or sidechain rotamers of specific residues.
 
 We would like to focus the SmallMover and PackRotamersMovers on a small subset of residues in the protein structure. To do so, let's add ResidueSelectors that will create four subsets of residues:
  * All residues in chain A (we will call this the "pdz" domain)
@@ -18,13 +19,16 @@ We would like to focus the SmallMover and PackRotamersMovers on a small subset o
 
 In the RESIDUE_SELECTORS section of the script, add
 ```xml
+...
   <RESIDUE_SELECTORS>
     <Chain name=pdz chains=A />  
     <Chain name=peptide chains=B />
-    <Neighborhood name=interface selector=peptide distance=6 />
+    <Neighborhood name=interface selector=peptide distance=6.0 />
     <Not name=not_interface selector=interface/>  
   </RESIDUE_SELECTORS>
+...
 ```
+The `Chain` residue selectors select all residues of a given chain. The `Neighborhood` selector will select all residues that are a certain distance away from the residues in the `selector` selection, and will include the target residues as well. The `Not` selector reverses the selection specified in the `selection` tag and selects all resides that **not** in that selector.
 
 Now that we have grouped residues using the ResidueSelectors, we can turn the design off for the residues in the PDZ domain (chain A), and then turn off repacking as well for the residues in the PDZ domain that are not
 in the interface between the PDZ domain and the peptide (chain B). In the TASKOPERATIONS section of the script, we can add
@@ -44,7 +48,7 @@ in the interface between the PDZ domain and the peptide (chain B). In the TASKOP
 </TASKOPERATIONS>
 ```
 
-The first task operation, InitializeFromCommandline, allows us to use the options `-ex1 -ex1 -use_input_sc` to influence the number of rotamers available to the Packer.
+The first task operation, InitializeFromCommandline, allows us to use the options `-ex1 -ex1 -use_input_sc` commandline flags to influence the number of rotamers available to the Packer.
 
 The second and third task operations both use the OperateOnResidueSubset task operation to apply Residue Level TaskOperations (RLTs) to the ResidueSelector named in the `selector` field.
 The second task operation turns the design function of the Packer OFF for the residues selected in the `pdz` ResidueSelector.
