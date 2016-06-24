@@ -474,11 +474,15 @@ $> cp montecarlo_example/scripts/generic_monte_carlo_example.xml montecarlo_exam
 $> $ROSETTA3/bin/rosetta_scripts.default.linuxgccrelease -s 2drk.pdb -parser:protocol generic_monte_carlo_example.xml -out:prefix montecarlo_
 ```
 
+Take a look at the output trajectory.  The traj.pdb file will contain the structures that result from every move (at left, below), while the traj_accepted.pdb file will contain the results of only those moves that were accepted by the GenericMonteCarlo mover (at right, below).  If all moves are being accepted or all moves are being rejected, it's probably a sign that something is wrong.
+
+![2drk_post](montecarlo_example/figures/MonteCarloTraj.gif)
+
 The final output structure should be similar to this (though it won't be identical, due to the inherently stochastic nature of a Monte Carlo search):
 
-![2drk_post](https://github.com/RosettaCommons/demos/blob/XRW2016_kmb/tutorials/advanced_rosetta_scripting/montecarlo_example/figures/2drk_post.png)
+![2drk_post](montecarlo_example/figures/2drk_post.png)
 
-Notice the changes in the peptide sequence from gray (input) to magenta, and also the small backbone and rotamer changes to the protein domain.
+Notice the changes in the peptide sequence from gray (input) to magenta, and also the small backbone and rotamer changes to the protein domain.  (Understandably, Rosetta doesn't drastically redesign the peptide, since this was a native structre of an SH3 domain binding the peptide that it recognizes.)
 
 
 ## Variable substition: adding variables to scripts
