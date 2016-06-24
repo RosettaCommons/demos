@@ -21,14 +21,16 @@ The material discussed in tutorials should be of interest to a majority of Roset
 
 * `demos/public`:  
   For demos that are meant to show the best way to solve a particular problem. 
-The majority of protocols will have their demos here.
+The majority of protocols will have their demos here. 
 These demos may be updated by the community as new ways to solve these problems are developed.
 
 * `demos/protocol_capture`:  
   For demos that are associated with published papers and that demonstrate the specific algorithm described in that paper.
 These demos are static, may only work with previous old of Rosetta, and meant to serve more as a historical records.
+They WILL NOT be tested on the test server.
+
 NOTE: If you add a protocol capture to the protocol_capture directory, you should add a copy to the public/ directory,
-to serve as a version which can be updated to reflect best practices as Rosetta changes. 
+to serve as a version which can be updated to reflect best practices as Rosetta changes. See below for how to test this version of the protocol capture.
 
 * `demos/pilot`:  
   For demos that aren't meant to be included in the weekly releases yet.
@@ -45,23 +47,59 @@ The only file that absolutely has to be in this directory is `README.md`.
 A link to this file will automatically be added to the list of demos on this page.
 Your readme should contain your name and email address, any relevant citations, a description of the problem your demo solves, links to all the scripts and input data your demo uses, and step-by-step instructions on how to run your demo.
 
-In particular, it should have at least one line detailing the command that is to be executed to run your demo, starting with a dollar sign and greater than sign, which will be used to create the demo test for your demo. This will be parsed out of your demo's .md file and executed with the following substitutions:
+### Demo and Tutorial Testing
+Demos and tutorials are now tested on a pass/fail basis on the test server with each merge of Rosetta main into master.  In order to get your demo or tutorial tested on the server, you can do either of these:
 
+ * 1) Edit your .md file to add testing hooks that indicate to test that particular command (described below) 
+ 
+ * 2) Include a file called ```command``` in your demo or tutorial directory in the [exact] style of an integration script. 
 
+Each demo/tutorial will start the test in the respective demo/tutorial just like integration tests. 
 
-Also, your flags files should be accompanied by a flags file of the same name with a ".short" suffix; this flags file will be used for the test preferentially over your actual flags file, and so may be used to minimize runtime at the expense of comprehensive demonstrativity.
+#### Testing from Documentation MD File
+The command should start with a dollar sign and greater than sign, which will be used to create the demo test for your demo. This will be parsed out of your demo's .md file using '$>' at the beginning of a line. Extra white space and markdown syntax will be striped from the line.
 
  Using greater than signs (>) alone will not cause these commands to run, and can be used to indicate optional or supplementary commands to users of your demo. For example,
 
  > echo "This command will not be tested"
 $> echo "This command will be tested."
 
+##### Substitutions
+If you require certain paths, you may use substititions which will be replaced with the full path when the test is run through the integration test script
+The following substitutions will occur:
+  (add these to your shell profile or export them for easy testing of command):
+	
+	$ROSETTA3 -> Rosetta/main/source
+	$ROSETTA3_DB -> Rosetta/main/database
+	$ROSETTA_TOOLS -> Rosetta/tools
+	$ROSETTA_DEMOS -> Rosetta/demos
+
+##### Rosetta Executables
+Please use app.default.linuxgccrelease as your path to the app.  Any extension with both the platform and compiler will be parsed.  The default -should- be present.  
+
+This will be parsed correctly:
+
+	my_app.default.linuxgccrelease @flags
+
+This WILL NOT be parsed: 
+
+	my_app.default.[platform][compiler]release
+
+
+##### Shortening your run
+__Your run should go no longer than ~15 minutes__.  In order to aid in this, your flags files can be accompanied by a flags file of the same name with a ".short" suffix that will be used to minimize runtime during testing   This [or these] flags files will added to the end of your command-line (enabling overrides from the short file).   
+
+This short file should NOT be a copy of the flags file and should only be used to shorten the run.  This is so that two flags files will not have to be maintained.  Here is a simple example, consider an nstruct of 25 to demonstrate someting in your demo.  The short file can be a one-line file that overrides nstruct to 1.  The command in your md file would reference ```@flags```, while the test server would look for the .short file and if found will add it to your command: ```@flags @flags.short```
+	
+
+##### Etc. 
+
 Scripts and input files should of course be included in the directory as well; anything that Rosetta cannot generate should go into a folder specific to the inputs to the Rosetta job.
 How you organize these is up to you.
 If you don't have many files, maybe just put everything in one directory.
 If you have lots of files, maybe organize them into subdirectories.
 Whatever makes the most sense for your demo.
-However, only .md files at the root of your demo directory will be tested; include cd commands to have the test navigate around to any subdirectories you may have..
+__However, only .md files at the root of YOUR demo directory will be tested; include cd commands to have the test navigate around to any subdirectories you may have..
 
 ###Keywords
 Demos must be keyworded; that is, every MD file in your demo needs a line that reads something like
