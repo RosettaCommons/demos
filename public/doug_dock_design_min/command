@@ -32,7 +32,7 @@ mkdir pos_610_HLU
 
 cd pos_610_HLU
 
-%(bin)s/doug_dock_design_min_mod2_cal_cal.%(binext)s -database %(database)s -s ../../inputs/1NX1_clean_repack_min_all.pdb -resfile ../resfile_pos_610_HLU -nstruct 255 -inner_num 45 -pert_num 25 -ia_ener 100 -use_input_sc -pdb_gz  -run:constant_seed -nodelay  2>&1 \
+%(bin)s/doug_dock_design_min_mod2_cal_cal.%(binext)s -database %(database)s -s ../../inputs/1NX1_clean_repack_min_all.pdb -resfile ../resfile_pos_610_HLU -nstruct 1 -inner_num 1 -pert_num 1 -ia_ener 100 -use_input_sc -pdb_gz  -run:constant_seed -nodelay  2>&1 \
     | egrep -vf ../../../../ignore_list \
     >> log
 
