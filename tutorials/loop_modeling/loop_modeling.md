@@ -40,11 +40,11 @@ This rapidly searches for peptide conformations using a pre-generated hash map. 
 
 Navigating to the Demos
 -----------------------
-The demos are available at `<path_to_Rosetta_directory>/demos/tutorials/loop_modeling`. All demo commands listed in this tutorial should be executed when in this directory. All the demos here use the `linuxgccrelease` binary. You may be required to change it to whatever is appropriate given your operating system and compiler.
+The demos are available at `$ROSETTA3/demos/tutorials/loop_modeling`. All demo commands listed in this tutorial should be executed when in this directory. All the demos here use the `linuxgccrelease` binary. You may be required to change it to whatever is appropriate given your operating system and compiler.
 
 <a name="chainbreak_close"></a>Closing Breaks in Protein Chains
 --------------------------------
-Sometimes you have chain breaks in your protein, perhaps when threading from a homolog. In this case, there are no missing residues, just that the backbone itself is not closed. An example input PDB is provided at `<path_to_Rosetta_directory>/demos/tutorials/loop_modeling/input_files/3gbn_Ab.pdb` where the connection between residue numbers 127 and 128 is severed. To fix this, we will use the kinematic closure protocol (KIC) explained [here](https://www.rosettacommons.org/docs/latest/application_documentation/structure_prediction/loop_modeling/loopmodel-kinematic#purpose). First, we need to write a short _loop file_, detailing which residues are to be modeled as loops and where the cutpoint is.
+Sometimes you have chain breaks in your protein, perhaps when threading from a homolog. In this case, there are no missing residues, just that the backbone itself is not closed. An example input PDB is provided at `$ROSETTA3/demos/tutorials/loop_modeling/input_files/3gbn_Ab.pdb` where the connection between residue numbers 127 and 128 is severed. To fix this, we will use the kinematic closure protocol (KIC) explained [here](https://www.rosettacommons.org/docs/latest/application_documentation/structure_prediction/loop_modeling/loopmodel-kinematic#purpose). First, we need to write a short _loop file_, detailing which residues are to be modeled as loops and where the cutpoint is.
 
     LOOP 125 130 0 0 1
     
@@ -77,9 +77,9 @@ You should see a file `3gbn_missing_loops.remodel` in `input_files` which looks 
 14 S .
 ...
 ```
-The file will contain a file of all residues in the H chain with the corresponding Rosetta internal residue number, which is continuous unlike the PDB numbering. The `.` at the end of each line means do nothing to this residue.
+The file will contain a file of all residues in the H chain with the corresponding Rosetta internal residue number, which is continuous unlike the PDB numbering. The `.` at the end of each line means do nothing to the backbone of this residue.
 
-Now, we add the missing three residues (KPG) in this manner shown below, assigning them residue number 0, identity X and the preferred secondary structure (H: Helix, L: Loops, E: Extended). Next, we ask it to pick the amino acid (PIKAA) K to fill in the first spot, and so on. 
+Now, we add the missing three residues (KPG) in the manner shown below, assigning them residue number 0, identity X and the preferred secondary structure (H: Helix, L: Loops, E: Extended). Next, we ask it to pick the amino acid (PIKAA) K to fill in the first spot, and so on. 
 
 >You must also specify the preferred secondary structure of the flanking residues and the identity of the residue to replace them with (i.e. themselves). This is crucial to provide backbone flexibility in these residues to close the loop.
 
@@ -126,7 +126,7 @@ Say you are not happy with the conformation of a peptide segment in your protein
 
 Now run:
 
-    $> <path_to_Rosetta_directory>/main/source/bin/loopmodel.linuxgccrelease @flag_refine_loop
+    $> $ROSETTA3/main/source/bin/loopmodel.linuxgccrelease @flag_refine_loop
     
 This outputs an output PDB and a score file. The output PDB should be closer to the native `3gbn_Ab.pdb` as demonstrated in the PDB `output_files/expected_results/3gbn_refine_loop_0001.pdb`.
 
@@ -134,7 +134,7 @@ Extending the Termini
 ---------------------
 Once again we will use CCD using `remodel` to model the missing C-terminus strand in the H chain of 3GBN. The residues 115-120 of chain H are missing in `input_files/3gbn_missing_cterm.pdb`. In a fashion similar to the example above, we will generate a _blueprint_ file using:
 
-    $> <path_to_Rosetta_directory>/tools/remodel/getBluePrintFromCoords.pl -pdbfile input_files/3gbn_missing_cterm.pdb -chain H > input_files/3gbn_missing_cterm.remodel
+    $> $ROSETTA3/tools/remodel/getBluePrintFromCoords.pl -pdbfile input_files/3gbn_missing_cterm.pdb -chain H > input_files/3gbn_missing_cterm.remodel
 
 and the modify the bottom of the file to get:
 
@@ -153,7 +153,7 @@ Since we know from prior knowledge that the expected secondary structure is a st
 
 Now with this modified blueprint file, run:
 
-    $> <path_to_Rosetta_directory>/main/source/bin/remodel.linuxgccrelease @flag_missing_cterm
+    $> $ROSETTA3/main/source/bin/remodel.linuxgccrelease @flag_missing_cterm
 
 The simulation should take ~1 minute to run and produce a score file and a PDB with a C-terminus in the directory `output_files`. _This file may be missing the L-chain (a bug in the code for multiple chains), so you may have to manually go an enter it._
 
@@ -163,7 +163,7 @@ Removing a Loop from the Protein
 --------------------------------
 Removing an existing loop from a protein is a rather tricky thing. Depending on how far the end points of the segment to be deleted were in 3-D space, you may have to make a large portion of the flanking section just to make the gap close. This may distort the fold in some cases. In this example, we will delete residues 101-108 of chain H of the native `3gbn_Ab.pdb` and close the gap. These residues were specifically chosen as the termini of this segment are close in space, thus increasing the chance of gap closure. To use CCD using `remodel`, we will generate the blueprint file using:
 
-    $> <path_to_Rosetta_directory>/tools/remodel/getBluePrintFromCoords.pl -pdbfile input_files/3gbn_Ab.pdb -chain H > input_files/3gbn_Ab_deletion.remodel
+    $> $ROSETTA3/tools/remodel/getBluePrintFromCoords.pl -pdbfile input_files/3gbn_Ab.pdb -chain H > input_files/3gbn_Ab_deletion.remodel
     
 and simply delete the lines for residues 101-108 to get:
 ```
@@ -177,7 +177,7 @@ and simply delete the lines for residues 101-108 to get:
 ```
 The residues flanking the deletions on both sides (residue numbers 99,100,109,110) must be made mobile so that the backbone can rearrange and close the gap. For your case, you may need to change the number of flanking residues whose backbone is mobile. Now run
 
-    $> <path_to_Rosetta_directory>/main/source/bin/remodel.linuxgccrelease @flag_deletion
+    $> $ROSETTA3/main/source/bin/remodel.linuxgccrelease @flag_deletion
 
 The simulation should take ~1 minute to run and produce a score file and a PDB with the loop deleted in the directory `output_files`. 
 
