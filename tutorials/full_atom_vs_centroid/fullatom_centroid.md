@@ -30,7 +30,7 @@ The first problem is that having all atoms is expensive, because calculating int
 Centroid representation
 -----------------------
 
-To get around this problem, poses are often converted into centroid mode for portions of a protocol that require extensive backbone sampling (for example, the initial stages of [de novo structure prediction](Denovo_structure_prediction)). In centroid mode, the backbone remains fully atomic, but the representation of each sidechain is simplified to a single _pseudo-atom_ of varying size. For protein backbones, this representation preserves five backbone atoms for each amino acid: nitrogen (N), the alpha carbon (CA), the carbonyl carbon (C), the carbonyl oxygen (O), and the polar hydrogen on nitrogen. The sidechain is replaced by the beta carbon (CB) and a `CEN` atom whose radius and properties (polarity, charge, etc.) are determined by the residue's identity.
+To get around this problem, poses are often converted into centroid mode for portions of a protocol that require extensive backbone sampling (for example, the initial stages of [[de novo structure prediction|Denovo_structure_prediction]]. In centroid mode, the backbone remains fully atomic, but the representation of each sidechain is simplified to a single _pseudo-atom_ of varying size. For protein backbones, this representation preserves five backbone atoms for each amino acid: nitrogen (N), the alpha carbon (CA), the carbonyl carbon (C), the carbonyl oxygen (O), and the polar hydrogen on nitrogen. The sidechain is replaced by the beta carbon (CB) and a `CEN` atom whose radius and properties (polarity, charge, etc.) are determined by the residue's identity.
 
 Centroid score function
 ------------------------
@@ -136,7 +136,7 @@ core.pack.pack_missing_sidechains: packing residue number 2 because of missing a
 
 ###Full atom input when protocol expects centroid
 
-The following demo runs the [scoring protocol](https://www.rosettacommons.org/demos/latest/tutorials/scoring/README) with an option to score the structure assuming it to be in centroid, but the input PDB supplied is full atom:  
+The following demo runs the [[scoring protocol|https://www.rosettacommons.org/demos/latest/tutorials/scoring/README]] with an option to score the structure assuming it to be in centroid, but the input PDB supplied is full atom:  
 
 ``` 
 -in:file:centroid
@@ -178,11 +178,11 @@ There is not a dedicated executable to switch one representation to the other. I
 
 There are at least two ways to convert the representation. One is shown above: by using scoring application. To obtain a pdb file, you need to add the output option `-out:output`
 
-A second option that is good to know about is using [RosettaScripts](https://www.rosettacommons.org/demos/latest/tutorials/rosetta_scripting/README). This way, converting representations can be part of a larger Rosetta Script. The following section will demonstrate how to do that.
+A second option that is good to know about is using [[RosettaScripts|https://www.rosettacommons.org/demos/latest/tutorials/rosetta_scripting/README]]. This way, converting representations can be part of a larger Rosetta Script. The following section will demonstrate how to do that.
 
 ###Converting from centroid to full atom
 
-To convert a full atom PDB to centroid, we need to interface with Rosetta at a level deeper than any executable will allow us to do. The simplest way to do this is to write a script using [RosettaScripts](https://www.rosettacommons.org/demos/latest/tutorials/rosetta_scripting/README). The following short XML script calls a *mover* (_SwitchResidueTypeSetMover_) and asks it to convert the centroid structure to full atom: 
+To convert a full atom PDB to centroid, we need to interface with Rosetta at a level deeper than any executable will allow us to do. The simplest way to do this is to write a script using [[RosettaScripts|https://www.rosettacommons.org/demos/latest/tutorials/rosetta_scripting/README]]. The following short XML script calls a *mover* (_SwitchResidueTypeSetMover_) and asks it to convert the centroid structure to full atom: 
 
 ```
 <ROSETTASCRIPTS>

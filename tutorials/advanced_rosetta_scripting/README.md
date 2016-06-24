@@ -17,11 +17,11 @@ At the end of this tutorial, you will understand:
 - How specialized grid sampling movers interact with RosettaScripts
 - How RosettaScripts distributes its jobs over many processors in MPI mode
 
-We recommend completing the [introductory RosettaScripting tutorial](../rosetta_scripting/README.md) to familiarize yourself with general RosettaScripts concepts before moving on to this tutorial.
+We recommend completing the [[introductory RosettaScripting tutorial|../rosetta_scripting/README.md]] to familiarize yourself with general RosettaScripts concepts before moving on to this tutorial.
 
 ## Controlling the FoldTree within RosettaScripts
 
-In the [FoldTree tutorial](../fold_tree/fold_tree.md), we learnt how the fold tree controls what parts of a structure move when degrees of freedom change by establishing a clear hierarchy of residues.  It is often necessary to modify the FoldTree manually in order to optimize a protocol.  We're about to see how we do this in RosettaScripts.  Let's use the following example, which has two helices, which are not connected to one another, that are a bit too close together:
+In the [[FoldTree tutorial|../fold_tree/fold_tree.md]], we learnt how the fold tree controls what parts of a structure move when degrees of freedom change by establishing a clear hierarchy of residues.  It is often necessary to modify the FoldTree manually in order to optimize a protocol.  We're about to see how we do this in RosettaScripts.  Let's use the following example, which has two helices, which are not connected to one another, that are a bit too close together:
 
 ![These two helices are too close together.  This calls for minimization.](foldtree_example/foldtree_example_1.png)
 

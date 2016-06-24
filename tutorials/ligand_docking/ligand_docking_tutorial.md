@@ -51,7 +51,7 @@ cd  <path-to-Rosetta>/demos/tutorials/ligand_docking
 ```
         Note: This structure has a T4-lysozyme domain instead of the third cytoplasmic loop as a stabilizing feature for crystallography. Normally, we would truncate this lysozyme segment and perform loop modeling as discussed in the comparative modeling tutorial to regenerate the intracellular loop. However in the interest of time, we will use the lysozyme containing structure as the eticlopride binding site is far from the intracellular domain. 
 
-3.Next, we will prepare the ligand files by generating params using a eticlopride conformational library.  For more information about the ligand preparation, check [ligand preparation tutroial](prepare_ligand).
+3.Next, we will prepare the ligand files by generating params using a eticlopride conformational library.  For more information about the ligand preparation, check [[ligand preparation tutroial|prepare_ligand]].
 
 3.1. cd into the directory named ligand\_prep 
 ```
@@ -127,7 +127,7 @@ Since this is a rudimentary exercise, we will start with the ligand in the prote
 4.4.4. ETQ_conformers.pdb: A pdb file containing all conformers generated from the eticlopride library
 4.4.5. ETQ.params: a Rosetta parameter file that provides the necessary properties for Rosetta to treat eticlopride 
 
-5.Next we need to make sure we have the proper [RosettaScripts](Rosetta Scripts) XML file, input options file, and crystal complex (correct answer). These files are provided to you as dock.xml, options.txt, and crystal_complex.pdb. Copy these to your ligand_docking directory:
+5.Next we need to make sure we have the proper [[RosettaScripts|rosetta_scripting]] XML file, input options file, and crystal complex (correct answer). These files are provided to you as dock.xml, options.txt, and crystal_complex.pdb. Copy these to your ligand_docking directory:
 ```
 $> cp docking/dock.xml .
 $> cp docking/options .
