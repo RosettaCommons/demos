@@ -24,9 +24,9 @@ python rosetta/rosetta_source/srsrc/apps/public/relax_w_allatom_cst/clean_pdb_ke
 Relax with all-heavy-atom constraints is built into the relax application itself. If this is a new structure you may want to first clean it up using the above script. Relax proceeds as follows:
 (Note that these flags will not preserve any ligands in the structure unless the ligand params file is added.)
 ```
-mkdir test; cp starting_inputs/1A99_1A99.pdb test/; cd test/
+$> cp starting_inputs/1A99_1A99.pdb .
 
-$> $ROSETTA3/bin/relax.default.linuxgccrelease -s 1A99_1A99.pdb @../starting_inputs/flags2 > log2.txt
+$> $ROSETTA3/bin/relax.default.linuxgccrelease -s 1A99_1A99.pdb @starting_inputs/flags2 > log2.txt
 ```
 (where `$ROSETTA3`=path-to-Rosetta/main/source)
 
