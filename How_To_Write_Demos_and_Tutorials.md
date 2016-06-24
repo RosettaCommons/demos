@@ -99,14 +99,18 @@ How you organize these is up to you.
 If you don't have many files, maybe just put everything in one directory.
 If you have lots of files, maybe organize them into subdirectories.
 Whatever makes the most sense for your demo.
-__However, only .md files at the root of YOUR demo directory will be tested; include cd commands to have the test navigate around to any subdirectories you may have..
+__However, only .md files at the root of YOUR demo directory will be tested__; include cd commands to have the test navigate around to any subdirectories you may have if you wish..
 
-###Keywords
-Demos must be keyworded; that is, every MD file in your demo needs a line that reads something like
-KEYWORDS: UTILITIES GENERAL
-with at least two keywords drawn from the keywords.txt located in the demos directory. Omitting this line, omitting the keywords, or using unapproved keywords will cause the demo test to error out.
+###Keywords and Organization
+Demos __MUST__ be keyworded.
+That is, each tutorial and demo MD should have keyword list as follows:
 
+	KEYWORDS: STRUCTURE_PREDICTION LOOPS GENERAL DESIGN MEMBRANES
 
+Keywords one and two denote organizational levels.  If an item does not have a level2, use GENERAL.  Any extra keywords are used for keyword search.
+The approved keywords can be found in keywords.txt in the demo root directory.  Keywords are present in order to have one approved name for something, such as SYMMETRY vs SYMMETRIC or DOCK vs DOCKING.  Omitting this line, omitting the keywords, or using unapproved keywords will cause the demo test to error out.
+
+###Documentation Wiki
 Once you have finished writing your demo and have made sure that it runs properly, commit your changes and push them like usual: `git commit && git push`.
 At this point, you can now edit your readme using the online Gollum interface available at the [[internal documentation site]].
 However, only your readme can be maintained in this way.
