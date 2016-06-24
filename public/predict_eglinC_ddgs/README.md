@@ -68,7 +68,7 @@ he minimization protocol only takes in lists of files, so you need to do the fol
 4. if you want to double-check that the minimization worked, you can score the structures as follows:
     ```
     $> ls 1CSEi.ren.pdb > test.lst 
-    $> sc
+    $> ls minimize_with_cst.1CSEi_0001.pdb >> test.lst
     $> $ROSETTA3/bin/score.default.macosgccrelease -in:file:l test.lst -in:file:fullatom -out:file:scorefile score.chk.fsc 
     ```
     and the score for minimize_with_cst.1CSEi.ren_0001.pdb should be lower than 1CSEi.ren.pdb.
