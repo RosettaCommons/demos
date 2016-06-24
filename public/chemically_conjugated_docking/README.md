@@ -12,7 +12,7 @@ Step 1. UBQ_E2_thioester:
 This demo contains the starting structures for the original published use of UBQ_E2_thioester, and is a copy of UBQ_E2_thioester's integration test. To run the demo (in the inputs subfolder):
 
 ```
-$> cp chemically_conjugated_docking/inputs .
+$> cp UBQ_E2_thioester/inputs .
 $> $ROSETTA3/bin/UBQ_E2_thioester.default.linuxgccrelease @options
 ```
 
