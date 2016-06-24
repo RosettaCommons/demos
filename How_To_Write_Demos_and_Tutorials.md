@@ -49,9 +49,9 @@ Your readme should contain your name and email address, any relevant citations, 
 ### Demo and Tutorial Testing
 Demos and tutorials are now tested on a pass/fail basis on the test server with each merge of Rosetta main into master.  In order to get your demo or tutorial tested on the server, you can do either of these:
 
- * 1) Edit your .md file to add testing hooks that indicate to test that particular command (described below) 
+ * 1) Edit your .md file to add testing hooks that indicate to test that particular command (described below) (Recommended)
  
- * 2) Include a file called ```command``` in your demo or tutorial directory in the [exact] style of an integration script. 
+ * 2) Include a file called ```command``` in your demo or tutorial directory in the [exact] style of an integration script. Note that for log output of each command, all log redirection should start with 'log'.  I is recommended to number your logs so that they are not overridden.
 
 Each demo/tutorial will start the test in the respective demo/tutorial just like integration tests. 
 
