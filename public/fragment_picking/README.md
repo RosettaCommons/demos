@@ -28,6 +28,9 @@ should have a header with the string "VFORMAT"
 $> $ROSETTA3/bin/fragment_picker.linuxgccrelease @BestFragmentsProtocol/flags -in::file::vall $ROSETTA3_DB/sampling/small.vall.gz
 ```
 
+**IMPORTANT**
+The *small.vall.gz* used here for fragment picking is only used to speed up the demo. You have to change this to the vall database on your system!
+
   Output:  
   
   * `frags.200.3mers`: for use with `-in:file:frag3`
@@ -77,4 +80,7 @@ $> $ROSETTA3/bin/fragment_picker.linuxgccrelease @fragment_picking_with_quota_an
 ```` 
 
 The fragment files can be found in <whatever version you ran>/output_files. There are example outputs already. The newly generated ones will contains ".200". So, you can check whether it worked.
+
+**IMPORTANT**
+The *small.vall.gz* used here for fragment picking is only used to speed up the demo. You have to change this to the vall database on your system!
 

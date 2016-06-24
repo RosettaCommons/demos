@@ -1,5 +1,6 @@
 Fragment Picking for CS-Rosetta
 ===============================
+KEYWORDS: STRUCTURE_PREDICTION UTILITIES
 
 Presenting author: Dominik Gront (dgront at chem dot uw dot edu dot pl)  
 Protocol name: fragment picker : CS-Rosetta style  
@@ -22,13 +23,17 @@ The required inout files are in `./input_files`.
 2. Run the picker:
 
    ```
-   $> <path-to-Rosetta>/main/source/bin/fragment_picker.default.linuxgccrelease @cs-rosetta.flags -in::file::vall 
-    $ROSETTA3/main/database/sampling/small.vall.gz
+   $> $ROSETTA3/bin/fragment_picker.default.linuxgccrelease @cs-rosetta.flags -in::file::vall $ROSETTA3_DB/sampling/small.vall.gz
 ```
+
+**IMPORTANT**
+The *small.vall.gz* used here for fragment picking is only used to speed up the demo. You have to change this to the vall database on your system!
 
 ### 2. CS Rosetta with TALOS L1 rama
 ```
-   $> <path-to-Rosetta>/main/source/bin/fragment_picker.default.linuxgccrelease @cs-rosetta_TALOS_rama.flags -in::file::vall
-    $ROSETTA3/main/database/sampling/small.vall.gz
+   $> $ROSETTA3/bin/fragment_picker.default.linuxgccrelease @cs-rosetta_TALOS_rama.flags -in::file::vall $ROSETTA3_DB/sampling/small.vall.gz
 ```
+**IMPORTANT**
+The *small.vall.gz* used here for fragment picking is only used to speed up the demo. You have to change this to the vall database on your system!
+
 
