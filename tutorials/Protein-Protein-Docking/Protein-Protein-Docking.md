@@ -1,30 +1,57 @@
-#Protein-Protein-Docking
-
+Protein-Protein Docking
+=======================
 KEYWORDS: DOCKING GENERAL STRUCTURE_PREDICTION    
-Written by by Sebastian Rämisch (raemisch@scripps.edu)   
-Created Jun 21 2016   
+Written by by Sebastian Rämisch (raemisch@scripps.edu). Edited by Shourya S. Roy Burman (ssrb@jhu.edu)   
+Edited Jun 24 2016   
 
 [[_TOC_]]
 
-This tutorial will introduce you the main steps required for predicting how two proteins interact.
+Summary
+-------
+Rosetta can be used to predict the bound structure of two proteins starting from unbound structures. By the end of this tutorial, you should be able to understand:
 
-######Input files
+* How to prepare structures for docking
+* How to locally dock two proteins
+* Hoe to refine an already docked structure
+* How to dock two proteins whose interface region is unknown
+* How to dock flexible proteins
+* How to dock a flexible peptide to a protein
+* How to dock symmetric proteins
+* How to analyse the best docked model
 
-* COL_D.pdb
-* IMM_D.pdb
+Navigating to the Demos
+-----------------------
+The demos are available at `$ROSETTA3/demos/tutorials/Protein-Protein-Docking`. All demo commands listed in this tutorial should be executed when in this directory. All the demos here use the `linuxgccrelease` binary. You may be required to change it to whatever is appropriate given your operating system and compiler.
 
-##1. Preparation
+Compare your output files to the ones present in `output_files/expected_output`.
 
-1. First, you have to check that there are no missing residues in any of the structures. If a protein chain is interrupted, the docking protocol might start moving around two parts of the same chain, instead of moving the two chains to be docked.
+Preparing Structures for Docking
+--------------------------------
+This tutorial will introduce you the main steps required for predicting the bound structure of two interacting proteins starting from the unbound structures. For this example, we will dock Colicin-D with its inhibitor, IMM. You are provided with the two refined input files `COL_D.pdb` and `IMM_D.pdb`, and a native file `1v74.pdb` in the folder `input_files`.
 
- If chain breaks are present, you can use loop modeling to close the gaps, before proceeding with docking.
+To prepare structures for docking, be sure to refine them as described in [[preparing inputs tutorial|input_and_output#controlling-input_preparing-a-structure-by-refinement]].
 
-2. Then, you have to combine the protein structures into a single file. 
+Local Docking
+-------------
+Rosetta is most accurate when docking locally. **In local docking, we assume that we have some information about the binding pockets of the two proteins.** First, we must manually place the two proteins (within ~10 Å) with the binding pockets roughly facing each other as shown in this figure:
+![unbound](images/COL_IMM_unbound.png)
 
-        $> cp COL_D.pdb combined.pdb
-        $> cat IMM_D.pdb >> combined.pdb
-      
- You can open the new pdb file in Pymol to see, whether both proteins are present.
+We will pass the following options to indicate that i) chain B is being docked to chain A, ii) we want to randomly perturb the ligand of the input strucure (chain B) by 3 Å translation and 8° rotation before the start of every individual simulation, and iii) we want to spin the ligand around the receptor (chain A).
+
+```
+-partners A_B
+-dock_pert 3 8
+-spin
+```
+
+We will also compare the input with the bound structure 1v74.pdb by passing it as native. Now to start docking, run:
+
+    $>$ROSETTA3/main/source/bin/docking_protocol.linuxgccrelease @flag_local_docking
+    
+This should take ~30 seconds to run and produce a structure file and a score file in `output_files`. The structure file might not dock well with just one attempt (as the `-dock_pert` flag will move the ligand away more often than towards). Make sure you use `-nstruct 500` or more in production runs.
+
+Local Refinement of Docked Structures
+-------------------------------------
 
 3. During a docking simulation, side chains conformations will be optimized. This optimization can improve the energy, even if the two proteins hardly interact and they make it harder to indentify the best-docked model by comparing energies.
 
