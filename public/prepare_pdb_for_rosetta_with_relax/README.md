@@ -26,7 +26,7 @@ Relax with all-heavy-atom constraints is built into the relax application itself
 ```
 mkdir test; cp starting_inputs/1A99_1A99.pdb test/; cd test/
 
-$> $ROSETTA3/bin/relax.default.linuxgccrelease -database ../../../../rosetta_database/ -s 1A99_1A99.pdb @../starting_inputs/flags2 > log2.txt
+$> $ROSETTA3/bin/relax.default.linuxgccrelease -s 1A99_1A99.pdb @../starting_inputs/flags2 > log2.txt
 ```
 (where `$ROSETTA3`=path-to-Rosetta/main/source)
 
