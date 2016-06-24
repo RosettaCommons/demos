@@ -100,10 +100,10 @@ Now, we add the missing three residues (KPG) in the manner shown below, assignin
 >You can build multiple loops in the same simulation by altering the _blueprint file_ to indicate where these loops are.
 
 Now with this modified blueprint file, run:
+
     $> $ROSETTA3/bin/remodel.linuxgccrelease @flax_missing_loops
 
 
-    
 You should see something similar appearing in the log file:
     
 ```
@@ -128,7 +128,7 @@ Now run:
 
     $> $ROSETTA3/main/source/bin/loopmodel.linuxgccrelease @flag_refine_loop
     
-This outputs an output PDB and a score file. The output PDB should be closer to the native `3gbn_Ab.pdb` as demonstrated in the PDB `output_files/expected_results/3gbn_refine_loop_0001.pdb`.
+This takes ~2 minutes and produces an output PDB and a score file. The output PDB should be closer to the native `3gbn_Ab.pdb` as demonstrated in the PDB `output_files/expected_results/3gbn_refine_loop_0001.pdb`.
 
 Extending the Termini
 ---------------------
