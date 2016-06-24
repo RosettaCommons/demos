@@ -1,6 +1,10 @@
 #Protein-Protein-Docking
 
-KEYWORDS: DOCKING GENERAL STRUCTURE_PREDICTION 
+KEYWORDS: DOCKING GENERAL STRUCTURE_PREDICTION    
+Written by by Sebastian Rämisch (raemisch@scripps.edu)   
+Created Jun 21 2016   
+
+[[_TOC_]]
 
 This tutorial will introduce you the main steps required for predicting how two proteins interact.
 
@@ -43,7 +47,7 @@ Here is a minimal commandline to start a docking simulation (here we include als
      
 1. Run the docking protocol  
      
- Rosetta will internally connect the centers of the two chains with a so-called jump (see [Fold Tree]()). Along this jump the chains are being pulled together (slide into contact). The [Monte Carlo]() moves, which are selected randomly, are:   
+ Rosetta will internally connect the centers of the two chains with a so-called jump (see [[Fold Tree|fold_tree]]). Along this jump the chains are being pulled together (slide into contact). The [[Monte Carlo|Core_Concepts#monte-carlo-sampling]] moves, which are selected randomly, are:   
  
  * Translations (in x,y or z direction)
  * Rotations (around x,y, z axis)  
@@ -87,6 +91,6 @@ Homomeric protein complexes are often symmetric. Rosetta provides the opportunit
 You can repeat the run with e.g. *-nstruct 20000* and outputting silent files. Then you could extract the best model and create a score vs. rmsd plot.
 
 
-Look at [Analysis](Analysis) for informationon how to analyze your results.
+Look at [[Analysis|Analysis]] for informationon how to analyze your results.
 
 

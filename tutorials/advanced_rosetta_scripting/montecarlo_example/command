@@ -1,1 +1,0 @@
-$ROSETTA3/bin/rosetta_scripts.default.linuxgccrelease -parser:protocol scripts/generic_monte_carlo_example.xml -in:file:s inputs/2drk.pdb -ex1 -ex2 -use_input_sc

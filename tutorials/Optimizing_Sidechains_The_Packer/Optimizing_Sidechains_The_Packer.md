@@ -43,7 +43,7 @@ You may need to change "linuxgccrelease", in the above, to whatever is appropria
 
 This application packs the side-chains of the input structure (the trp cage mini-protein, 1l2y.pdb).  Five output structures, from five separate runs, are produced.  If you compare these structures to the input structure, you'll find that Rosetta chooses slightly different rotamers for the side-chains, as compared to the input.  This is to be expected, particularly given the discrete nature of rotamers: the truly "best" rotamer might lie between two rotamers tested, and may never be sampled.
 
-Work through the [rest of the demo](/public/fixbb/README).  This teaches about how the packer can be tweaked, both at the commandline and with configuration files called *resfiles*, to control the amount of sampling, the time taken for a run, and the likelihood of converging to the optimal solution.
+Work through the [rest of the demo](../../public/fixbb_design/README).  This teaches about how the packer can be tweaked, both at the commandline and with configuration files called *resfiles*, to control the amount of sampling, the time taken for a run, and the likelihood of converging to the optimal solution.
 
 ## The sequence design problem
 
@@ -101,7 +101,7 @@ One important property of TaskOperations is **commutativity**:
 
 In order to achieve this, certain TaskOperation-controlled packer behaviours obey *AND* commutativity: if TaskOperation A *and* TaskOperation B *and* TaskOperation C allow the behaviour, then the behaviour will be allowed when A, B, and C are all applied together.  If *any* of A, B, or C prohibits the behaviour, then the behaviour is prohibited when all three are applied.  Allowed canonical amino acid identities at each position obey *AND* commutativity: given TaskOperations A, B, and C, the packer will only design with tyrosine if TaskOperation A *and* B *and* C allow tyrosine at that position.  An easy way to remember this is, "You can only turn canonical residues *off*, and once off, they stay off".  Other TaskOperation functionality obeys *OR* commutativity.  Turning on extra rotamers, for example, occurs if TaskOperation A turns them on *or* TaskOperation B turns them on *or* TaskOperation C turns them on.  (Noncanonical residue identities also obey *OR* commutativity: where design with a particular canonical residue type at a particular position is on by default and can only be turned *off*, design with a particular noncanonical residue type at a particular position is off by default and can only be turned *on*.  Once a noncanonical is on, it stays on.)
 
-As a final note, it's worth being aware that the commutativity of TaskOperations does *not* apply to the MoveMaps that are used to control the minimizer (see the [minimizer tutorial](minimization).  In a MoveMap, later commands overrride earlier commands; in a list of TaskOperations, the effects of the TaskOperations combine commutatively.
+As a final note, it's worth being aware that the commutativity of TaskOperations does *not* apply to the MoveMaps that are used to control the minimizer (see the [[minimizer tutorial|minimization]].  In a MoveMap, later commands overrride earlier commands; in a list of TaskOperations, the effects of the TaskOperations combine commutatively.
 
 ## Protocols that use the packer
 

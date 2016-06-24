@@ -62,8 +62,8 @@ the closest CA on chain D to the ScoreFunction.
 
 To run these examples, use
 ```bash
-$> <path/to/Rosetta>/main/source/bin/docking_protocol.<exe> @rosetta_inputs/options
-$> <path/to/Rosetta>/main/source/bin/docking_protocol.<exe> @rosetta_inputs/options.constraint_ambiguous
-$> <path/to/Rosetta>/main/source/bin/docking_protocol.<exe> @rosetta_inputs/options_wo_constraints
+$> <path/to/Rosetta/main/source/bin/>/docking_protocol.default.linuxgccrelease @rosetta_inputs/options
+$> <path/to/Rosetta/main/source/bin/>/docking_protocol.default.linuxgccrelease @rosetta_inputs/options.constraint_ambiguous
+$> <path/to/Rosetta/main/source/bin/>/docking_protocol.default.linuxgccrelease @rosetta_inputs/options_wo_constraints
 ```
 
