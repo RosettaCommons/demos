@@ -38,14 +38,14 @@ You should notice that this file shows two homo-dimers. We will focus on the dim
 
     1. Rosetta Symmetry. In this step, we will create the proper symmetry definition file for this particular protein structure. We will need the input structure from the preparation step. 
 
-            $> cd Step1_symm
+            > cd Step1_symm
 
-            $> cp ../3UKM.pdb .
+            > cp ../3UKM.pdb .
         (this copies the pdb file to the Step1 directory)
 
         Next, we will use a perl script in Rosetta to generate a symmetry file from the input crystal structure. First, if you'd like to display the available options for this script, simply enter:
 
-            $> $ROSETTA3/src/apps/public/symmetry/make_symmdef_file.pl
+            > $ROSETTA3/src/apps/public/symmetry/make_symmdef_file.pl
 
             $> $ROSETTA3/src/apps/public/symmetry/make_symmdef_file.pl -m NCS -a A -i B -p 3UKM.pdb > 3UKM.symm
 
@@ -97,7 +97,7 @@ You should notice that this file shows two homo-dimers. We will focus on the dim
 
         Next, run this protocol using RosettaScripts. We will apply the setup for the protocol to the input structure, 3UKM_A.pdb.
 
-            $> rosetta_scripts.default.linuxgccrelease -parser:protocol setup_symm.xml -s 3UKM_A.pdb -out:prefix setupsymm_ 
+            $> rosetta_scripts.default.linuxgccrelease -parser:protocol ./Step1_symm/setup_symm.xml -s 3UKM_A.pdb -out:prefix setupsymm_ 
 
         When Rosetta is finished, examine the output structure using pymol:
 
@@ -133,7 +133,7 @@ You should notice that this file shows two homo-dimers. We will focus on the dim
 
     1. With an energy minimized input structure (relaxed version of the 3UKM_A pdb), we are almost ready to design our protein! In this step, we will first combine SetupForSymmetry and SymPackRotamers movers in another RosettaScripts protocol.
 
-            $> cd ../Step2_design
+            $> cd ./Step2_design
             ls
 
         You should see several input files ready for you to use. Here you will find the symmetry definition file, an energy minimized input structure named `Best_rlx_3UKM_A.pdb`, and an XML file. 
@@ -165,7 +165,7 @@ You should notice that this file shows two homo-dimers. We will focus on the dim
 
         Notice under SCOREFXN, the membrane high-resolution weights are specified. Read the XML and see if you understand the different sections. Reference the lecture slides if you need to. Exit out of the file when you are done. Then run full design. This step should take about 30 minutes. 
 
-            $> rosetta_scripts.default.linuxgccrelease @flags
+            $> rosetta_scripts.default.linuxgccrelease @Step2_design/flags
         
         In the interest of time, we will only do one full design of the protein. In the output folder, 20 output structures are provided. 
         
@@ -230,7 +230,7 @@ You should notice that this file shows two homo-dimers. We will focus on the dim
 
     1. Design the protein at user-specified residues. We have a relaxed input structure, a symmetry definition file, a resfile to direct design, and an XML protocol to setup symmetry, and design according to a resfile. We are now ready to move forward with design! Run this command:
 
-            $> rosetta_scripts.default.linuxgccrelease @flags2
+            $> rosetta_scripts.default.linuxgccrelease @Step2_design/flags2
 
         Again, many, many more structures than just 2 should be made for production runs. In the interest of time, we will just run 2 for today. This should take about 2 minutes. This step will simply ensure that you can successfully run Rosetta Symmetry and Design. Use the output structures provided in the Step3_design/output folder for the analysis step. Note that this folder contains only 20 models. In your own experiments, you will likely want to make more than just 20 models.
 

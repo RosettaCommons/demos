@@ -1,7 +1,5 @@
 -parser:protocol docking_analysis.xml
 -use_input_sc
--ex1
--ex2
 -out:file:scorefile docking_analysis.csv
 -native 3gbm_native.pdb
 -out:no_nstruct_label

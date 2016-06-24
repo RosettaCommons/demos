@@ -101,11 +101,9 @@ This tutorial presents a cross-docking benchmark experiment. Antibody CR6261 bin
         1. Familiarize yourself with repack.xml and repack_HA.xml. Notice that repack_HA.xml is a modified version of repack.xml, representative of the versatility of RosettaScripts.
         1. Run the XML script with the rosetta_scripts application.
         
-                $> <path-to-Rosetta>/main/source/bin/rosetta_scripts.default.linuxgccrelease \
-                @repack.options -s 3gbm_HA.pdb -parser:protocol repack_HA.xml >& repack_HA.log &
+                $> <path-to-Rosetta>/main/source/bin/rosetta_scripts.default.linuxgccrelease @repack.options -s 3gbm_HA.pdb -parser:protocol repack_HA.xml
                 
-                $> <path-to-Rosetta>/main/source/bin/rosetta_scripts.default.linuxgccrelease \
-                @repack.options -s 3gbn_Ab_fixed.pdb -parser:protocol repack.xml >& repack_Ab.log &
+                $> <path-to-Rosetta>/main/source/bin/rosetta_scripts.default.linuxgccrelease@repack.options -s 3gbn_Ab_fixed.pdb -parser:protocol repack.xml >& repack_Ab.log &
 
         1. When the repacking runs are done (in about 3-4 minutes), copy the best scoring HA model to 3gbm_HA_repack.pdb and the best scoring antibody model to 3gbn_Ab_repack.pdb. (For brevity, we only generated a single structure. For actual production runs, we recommend generating a number of output structures, by adding something like "-nstruct 25" to the commandline. -- For the example outputs in the output_files/ directory, the lowest energy structures are 3gbm_HA_0011.pdb and 3gbn_Ab_fixed_0005.pdb.)
         
@@ -130,7 +128,7 @@ This tutorial presents a cross-docking benchmark experiment. Antibody CR6261 bin
                 > <path-to-Rosetta>/tools/protein_tools/scripts/pdb_renumber.py \
                 --norestart 3gbm_HA_3gbn_Ab.pdb 3gbm_HA_3gbn_Ab.pdb
                 or
-                $> cp input_files/3gbm_HA_3gbn_Ab.pdb
+                $> cp input_files/3gbm_HA_3gbn_Ab.pdb .
 
 1. Perform docking utilizing the RosettaScripts application.
     1. Prepare a RosettaScripts XML file for docking. This file outlines a protocol that performs docking. It then further minimizes the interface. Familiarize yourself with the contents of the script.
@@ -148,8 +146,7 @@ This tutorial presents a cross-docking benchmark experiment. Antibody CR6261 bin
 
         1. Generate fifty models using the full docking algorithm. (This will likely take a while - move on to the next steps while this is running.)
 
-                $> <path-to-Rosetta>/main/source/bin/rosetta_scripts.default.linuxgccrelease \
-                @docking_full.options >& docking_full.log &
+                $> <path-to-Rosetta>/main/source/bin/rosetta_scripts.default.linuxgccrelease @docking_full.options 
 
         1. To have a good comparison for the native structure, we want to minimize the experimental structure into the Rosetta energy function. To do this, we run a similar protocol, but skipping the coarse and fine resolution search stages, keeping only the minimization stage. This provides us with a like-to-like comparison of the native structure.
 
@@ -162,8 +159,7 @@ This tutorial presents a cross-docking benchmark experiment. Antibody CR6261 bin
 
             1. Generate ten models using only the minimization refinement stage of docking.
 
-                    $> <path-to-Rosetta>/main/source/bin/rosetta_scripts.default.linuxgccrelease \
-                    @docking_minimze.options >& docking_minimize.log &
+                    $> <path-to-Rosetta>/main/source/bin/rosetta_scripts.default.linuxgccrelease @docking_minimze.options 
 
 1. Characterize the models and analyze the data for docking funnels.
 
@@ -180,8 +176,7 @@ This tutorial presents a cross-docking benchmark experiment. Antibody CR6261 bin
             $> cp input_files/docking_analysis.xml .
             $> cp input_files/docking_analysis.options . 
             $> cp input_files/3gbm_native.pdb .
-            $> <path-to-Rosetta>/main/source/bin/rosetta_scripts.default.linuxgccrelease \
-            @docking_analysis.options -in:file:s *full*pdb *minimize*pdb >& docking_analysis.log &
+            $> <path-to-Rosetta>/main/source/bin/rosetta_scripts.default.linuxgccrelease @docking_analysis.options -in:file:s *full*pdb *minimize*pdb 
 
             sort -nk 7 docking_analysis.csv
             pymol 3gbm_native.pdb 3gbm_HA_3gbn_Ab_full_0001.pdb

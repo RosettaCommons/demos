@@ -266,14 +266,15 @@ This tutorial presents a protein folding benchmark experiment. Bacteriophage T4 
                 $> cp input_files/2LZM_broker_cst.options .
 
     1. Copy the remaining files needed for protein folding from the input_files directory.
-
-            cp input_files/2LZMA.pdb .
-            cp input_files/2LZMA.fasta .
-            cp input_files/aa2LZMA03_05.200_v1_3 .
-            cp input_files/aa2LZMA09_05.200_v1_3 .
-            cp input_files/2LZMA.psipred_ss2 .
-            cp input_files/topology_broker_cst.tpb .
-            cp input_files/2LZMA_core.txt .
+	
+	    $> cp input_files/2LZM_dist_w1.cst .
+            $> cp input_files/2LZMA.pdb .
+            $> cp input_files/2LZMA.fasta .
+            $> cp input_files/aa2LZMA03_05.200_v1_3 .
+            $> cp input_files/aa2LZMA09_05.200_v1_3 .
+            $> cp input_files/2LZMA.psipred_ss2 .
+            $> cp input_files/topology_broker_cst.tpb .
+            $> cp input_files/2LZMA_core.txt .
 
 1. Run the topology broker to *de novo* fold the input protein guided by experimental restraints.
 
@@ -281,8 +282,7 @@ This tutorial presents a protein folding benchmark experiment. Bacteriophage T4 
     1. Make sure you are in your working directory for the constraints run.
     1. Type the following command line:
     
-            $> <path-to-Rosetta>/main/source/bin/minirosetta.default.linuxgccrelease \
-            @2LZM_broker_cst.options > 2LZM_broker_cst.log &
+            $> <path-to-Rosetta>/main/source/bin/minirosetta.default.linuxgccrelease @2LZM_broker_cst.options
         
         - NOTE: This will take 15-20 minutes per structure.
 

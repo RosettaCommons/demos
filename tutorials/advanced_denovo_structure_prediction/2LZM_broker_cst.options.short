@@ -13,7 +13,7 @@
 -relax
 	-fast	# At the end of the de novo protein_folding, do a relax step of type "FastRelax".  This has been shown to be the best deal for speed and robustness.
 -broker
-	-setup topology_broker_cst.tpb
+	-setup input_files/topology_broker_cst.tpb
 -run
 	-protocol broker
 	-reinitialize_mover_for_each_job # jd generate fresh copy of its mover before each apply (once per job)
@@ -31,9 +31,9 @@
 -fold_cst
 	-force_minimize	# minimize the structure after making a move, even if no restraints given
 -constraints
-	-cst_file 2LZM_dist_w1.cst	# full path to your restraints file
+	-cst_file input_files/2LZM_dist_w1.cst	# full path to your restraints file
 	-cst_weight 4	# The factor by which the cst score is multiplied.  A weight of 4 is suggested for protein_folding T4-lysozyme.
-	-cst_fa_file 2LZM_dist_w1.cst
+	-cst_fa_file input_files/2LZM_dist_w1.cst
 	-cst_fa_weight 4
 	-epr_distance
 

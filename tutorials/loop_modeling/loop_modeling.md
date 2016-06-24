@@ -66,7 +66,7 @@ Modeling missing loops is a difficult problem. We will use cyclic coordinate des
 
 In the folder `input_files` you will find the file `3gbn_missing_loops.pdb` which had residues 13-15 of chain H missing. To model this loop, we first need to generate and modify a _blueprint_ file. To generate the file use:
 
-    $> $ROSETTA3_TOOLS/remodel/getBluePrintFromCoords.pl -pdbfile input_files/3gbn_missing_loops.pdb -chain H > input_files/3gbn_missing_loops.remodel
+    $> $ROSETTA_TOOLS/remodel/getBluePrintFromCoords.pl -pdbfile input_files/3gbn_missing_loops.pdb -chain H > input_files/3gbn_missing_loops.remodel
     
 You should see a file `3gbn_missing_loops.remodel` in `input_files` which looks like:
     
@@ -99,7 +99,7 @@ Mak sure that there is no empty line at the end of the bluprint file as the ofte
 ```
 
 Now with this modified blueprint file, run:
-    $> $ROSETTA3/bin/remodel.linuxgccrelease @flax_missing_loops
+    $> $ROSETTA3/bin/remodel.linuxgccrelease @flag_missing_loops
 
 
     
@@ -119,7 +119,7 @@ Extending the Termini
 ---------------------
 Once again we will use CCD using `remodel` to model the missing C-terminus strand in the H chain of 3GBN. The residues 115-120 of chain H are missing in `input_files/3gbn_missing_cterm.pdb`. In a fashion similar to the example above, we will generate a _blueprint_ file using:
 
-    $> <path_to_Rosetta_directory>/tools/remodel/getBluePrintFromCoords.pl -pdbfile input_files/3gbn_missing_cterm.pdb -chain H > input_files/3gbn_missing_cterm.remodel
+    $> $ROSETTA_TOOLS/remodel/getBluePrintFromCoords.pl -pdbfile input_files/3gbn_missing_cterm.pdb -chain H > input_files/3gbn_missing_cterm.remodel
 
 and the modify the bottom of the file to get:
 
@@ -138,7 +138,7 @@ Since we know from prior knowledge that the expected secondary structure is a st
 
 Now with this modified blueprint file, run:
 
-    $> <path_to_Rosetta_directory>/main/source/bin/remodel.linuxgccrelease @flag_missing_cterm
+    $> $ROSETTA3/bin/remodel.linuxgccrelease @flag_missing_cterm
 
 The simulation should take ~1 minute to run and produce a score file and a PDB with a C-terminus in the directory `output_files`. _This file may be missing the L-chain (a bug in the code for multiple chains), so you may have to manually go an enter it._
 
@@ -148,7 +148,7 @@ Removing a Loop from the Protein
 --------------------------------
 Removing an existing loop from a protein is a rather tricky thing. Depending on how far the end points of the segment to be deleted were in 3-D space, you may have to make a large portion of the flanking section just to make the gap close. This may distort the fold in some cases. In this example, we will delete residues 101-108 of chain H of the native `3gbn_Ab.pdb` and close the gap. These residues were specifically chosen as the termini of this segment are close in space, thus increasing the chance of gap closure. To use CCD using `remodel`, we will generate the blueprint file using:
 
-    $> <path_to_Rosetta_directory>/tools/remodel/getBluePrintFromCoords.pl -pdbfile input_files/3gbn_Ab.pdb -chain H > input_files/3gbn_Ab_deletion.remodel
+    $> $ROSETTA_TOOLS/remodel/getBluePrintFromCoords.pl -pdbfile input_files/3gbn_Ab.pdb -chain H > input_files/3gbn_Ab_deletion.remodel
     
 and simply delete the lines for residues 101-108 to get:
 ```
@@ -162,7 +162,7 @@ and simply delete the lines for residues 101-108 to get:
 ```
 The residues flanking the deletions on both sides (residue numbers 99,100,109,110) must be made mobile so that the backbone can rearrange and close the gap. For your case, you may need to change the Now run
 
-    $> <path_to_Rosetta_directory>/main/source/bin/remodel.linuxgccrelease @flag_deletion
+    $> $ROSETTA3/bin/remodel.linuxgccrelease @flag_deletion
 
 The simulation should take ~1 minute to run and produce a score file and a PDB with the loop deleted in the directory `output_files`. 
 
