@@ -61,7 +61,7 @@ into a tryptophan.  The contents of this resfile are:
 Running the demo
 ----------------
 
-    rosetta_scripts.operatingsystem.release -parser:protocol mutation_script.xml -s ../starting_files/1C4Z.pdb -ignore_unrecognized_res -database /path/to/database -out:path:pdb ../output_files -out:path:score ../output_files -nstruct 1
+    $> $ROSETTA3/bin/rosetta_scripts.default.linuxgccrelease -parser:protocol mutation_script.xml -s starting_files/1C4Z.pdb -ignore_unrecognized_res -out:path:pdb output_files -out:path:score output_files -nstruct 1
 
 The command line arguments are explained below. 
 
