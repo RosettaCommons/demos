@@ -12,7 +12,6 @@
 	</RESIDUE_SELECTORS>
 
 	<TASKOPERATIONS>
-		<InitializeFromCommandline name=init />
 		<OperateOnResidueSubset name=repackonly_pdz selector=pdz >
 			<RestrictToRepackingRLT />
 		</OperateOnResidueSubset>
@@ -27,13 +26,14 @@
 	<MOVERS>
 		<AtomTree name=set_up_foldtree fold_tree_file="mc_foldtree.txt" />
 		
-		<RigidBodyPerturbNoCenter name="shift_peptide_a_tiny_bit" rot_mag=0 trans_mag=0.1 />
-		<Small name=small_mover scorefxn=myscore temperature=0.5 nmoves=500 angle_max=5.0 preserve_detailed_balance=0 residue_selector=peptide />
-		<PackRotamersMover name=repack_mover scorefxn=myscore task_operations=init,repackonly_pdz,fix_notinterface />
-		<MinMover name=sidechain_min scorefxn=myscore tolerance=0.001 bb=false chi=true jump=0 />
+		<RigidBodyPerturbNoCenter name=shift_peptide_a_tiny_bit rot_mag=0 trans_mag=0.2 />
+		<Small name=small_mover scorefxn=myscore temperature=0.5 nmoves=500 angle_max=10.0 preserve_detailed_balance=0 residue_selector=peptide />
+		<PackRotamersMover name=repack_mover scorefxn=myscore task_operations=repackonly_pdz,fix_notinterface />
+		<MinMover name=sidechain_min scorefxn=myscore tolerance=0.01 bb=false chi=true jump=0 />
 		<PDBTrajectoryRecorder name=pdb_traj_recorder stride=1 filename=traj.pdb cumulate_jobs=0 cumulate_replicas=0 />
 		<PDBTrajectoryRecorder name=pdb_traj_recorder_accepted stride=1 filename=traj_accepted.pdb cumulate_jobs=0 cumulate_replicas=0 />
-		<ParsedProtocol name=small_repack mode=sequence >
+		
+		<ParsedProtocol name=monte_carlo_move mode=sequence >
 			<Add mover_name=pdb_traj_recorder_accepted />
 			<Add mover=shift_peptide_a_tiny_bit />
 			<Add mover_name=small_mover />
@@ -42,7 +42,7 @@
 			<Add mover_name=pdb_traj_recorder />
 		</ParsedProtocol>
 		
-		<GenericMonteCarlo name=gmc_mover mover_name=small_repack scorefxn_name=myscore sample_type=low temperature=0.8 trials=100 drift=1 preapply=false recover_low=1 />
+		<GenericMonteCarlo name=gmc_mover mover_name=monte_carlo_move scorefxn_name=myscore sample_type=low temperature=0.8 trials=100 drift=1 preapply=false recover_low=1 />
 	</MOVERS>
 
 	<PROTOCOLS>
