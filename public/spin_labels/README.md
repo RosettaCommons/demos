@@ -17,7 +17,7 @@ Step1: create_mtssl_mutant
 
 Go to the directory:
 ```
-$> cd create_mtssl_mutant
+$> cp create_mtssl_mutant/* .
 ```
 
 The standard fixed backbone design protocol can be used. The mtssl parameter
@@ -34,7 +34,7 @@ Step 2: relax_mtssl_mutant
 
 Go to the directory:
 ```
-$> cp ../relax_mtssl_mutant
+$> cp ../relax_mtssl_mutant/* .
 ```
 The standard relax protocols can be used. The mtssl parameter file must be provided. The command line below will relax the t4-lysozyme double mutant provided in the input directory.
 ```
@@ -45,7 +45,7 @@ Step3: relax_mtssl_mutant_membrane
 
 Go to the directory:
 ```
-$> cp ../relax_mtssl_mutant_membrane
+$> cp ../relax_mtssl_mutant_membrane/* .
 ```
 The standard relaxation protocols with membrane flags can be used. The mtssl parameter file needs to be provided. The command line below will relax the double mutant MSBA structure provided in the inputs directory.
 ```
