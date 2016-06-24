@@ -47,7 +47,7 @@ Full input files for the tutorials are located in the `demos/tutorials/` directo
 
 * [*de novo* (*ab initio*) Structure Prediction](Denovo_structure_prediction)
     * [Advanced *de novo* Structure Prediction](folding_tutorial)
-* [[Comparative Modeling (Homology Modeling)|rosetta_cm_tutorial]]
+* [[Comparative Modeling|rosetta_cm_tutorial]]: Modeling based on Homologs
 * [[Loop Modeling and Rebuilding|loop_modeling]]: Modeling Short Fragments
 * [[Protein Design|protein_design_tutorial]]
 * [[Protein-Protein Docking|Protein-Protein-Docking]]: Modeling Protein-Protein Binding
