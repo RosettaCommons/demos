@@ -68,7 +68,7 @@ he minimization protocol only takes in lists of files, so you need to do the fol
 4. if you want to double-check that the minimization worked, you can score the structures as follows:
     ```
     $> ls 1CSEi.ren.pdb > test.lst 
-    $> ls minimize_with_cst.1CSEi.ren_0001.pdb >> test.lst
+    $> sc
     $> $ROSETTA3/bin/score.default.macosgccrelease -in:file:l test.lst -in:file:fullatom -out:file:scorefile score.chk.fsc 
     ```
     and the score for minimize_with_cst.1CSEi.ren_0001.pdb should be lower than 1CSEi.ren.pdb.
@@ -119,7 +119,7 @@ he minimization protocol only takes in lists of files, so you need to do the fol
 
 6. run the ddg prediction application as follows: 
     ```
-    $> ../../../main/source/bin/ddg_monomer.default.linuxclangrelease -in:file:s minimize_with_cst.1CSEi.ren_0001.pdb -ddg::weight_file soft_rep -ddg::iterations 1 -ddg::dump_pdbs true -ddg::mut_file mutations.multiples.txt -ddg::local_opt_only false -ddg::min_cst false -ddg::mean true -ddg::min -ignore_unrecognized_res 
+    $> $ROSETTA3/bin/ddg_monomer.default.linuxclangrelease -in:file:s minimize_with_cst.1CSEi_0001.pdb -ddg::weight_file soft_rep -ddg::iterations 1 -ddg::dump_pdbs true -ddg::mut_file mutations.multiples.txt -ddg::local_opt_only false -ddg::min_cst false -ddg::mean true -ddg::min -ignore_unrecognized_res 
     ```
     This repacks the wild-type and the mutant structures 5 times, and in order to compute the ddG (which is Emutant - Ewt ) it averages the scores of the mutant and wild-type ensembles of structures.  It uses the soft_rep_design scoring function and it is a fixed backbone protocol. Normally I would run this protocol for 20 iterations , but for the demo purposes I'm only testing with 5 iterations.
     The full explanation of all options is here:
