@@ -59,17 +59,17 @@ of the motif from the crystallographic database. In this directory you will find
 
 Slice out the motif of interest:
 ```
->$ pdbslice.py  1f7y.pdb  -subset B:31-38 uucg_
+$> pdbslice.py  1f7y.pdb  -subset B:31-38 uucg_
 ```
 
 Thread it into our actual sequence:
 ```
->$ </path/to/Rosetta3/main/source/bin>/rna_thread.$ROSETTA_BINEXT -s uucg_1f7y.pdb  -seq ccuucggg -o uucg_1f7y_thread.pdb
+$> /path/to/Rosetta3/main/source/bin/rna_thread.$ROSETTA_BINEXT -s uucg_1f7y.pdb  -seq ccuucggg -o uucg_1f7y_thread.pdb
 ```
 
 Let's get the numbering to match our actual test case:
 ```
->$ renumber_pdb_in_place.py uucg_1f7y_thread.pdb 24-31
+$> renumber_pdb_in_place.py uucg_1f7y_thread.pdb 24-31
 ```
 
 Done!
