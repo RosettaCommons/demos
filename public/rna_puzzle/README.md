@@ -64,7 +64,7 @@ $> pdbslice.py  1f7y.pdb  -subset B:31-38 uucg_
 
 Thread it into our actual sequence:
 ```
-$> /path/to/Rosetta3/main/source/bin/rna_thread.$ROSETTA_BINEXT -s uucg_1f7y.pdb  -seq ccuucggg -o uucg_1f7y_thread.pdb
+$> $ROSETTA3/bin/rna_thread.$ROSETTA_BINEXT -s uucg_1f7y.pdb  -seq ccuucggg -o uucg_1f7y_thread.pdb
 ```
 
 Let's get the numbering to match our actual test case:
@@ -95,6 +95,8 @@ rna_denovo_setup.py -fasta RNAPZ11.fasta \
     -fixed_stems \
     -tag H2H3H4_run1b_openH3_SOLUTION1 \
     -native example1.pdb 
+    -rosetta_folder $ROSETTA_TOOLS/../
+    -extension $ROSETTA_BINEXT
 ```
 
 You don't need to supply a native if you don't have it -- just useful
@@ -103,7 +105,12 @@ to compute RMSDs as a reference.
 You can run the command by typing:
 
 ```
- $> source README_SETUP
+  source README_SETUP
+```
+or run
+
+```bash
+$> rna_denovo_setup.py -fasta RNAPZ11.fasta -secstruct_file RNAPZ11_OPEN.secstruct -working_res 14-25 30-40 -s H2.pdb H4.pdb -fixed_stems -tag H2H3H4_run1b_openH3_SOLUTION1 -native example1.pdb -rosetta_folder $ROSETTA_TOOLS/../ -extension $ROSETTA_BINEXT
 ```
 
 Then try this:
