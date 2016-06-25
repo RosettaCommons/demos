@@ -82,7 +82,7 @@ Save/copy pred.tab and predSS.tab to rosetta_inputs/talos_output
 5. Generate fragment/profile from RobettaServer http://www.robetta.org/fragmentqueue.jsp using starting_inputs/t000_.fasta
 Save/copy t000_.checkpoint to rosetta_inputs/
 
-6. Pick fragments using secondary structure profile and chemical shift data
+6. Pick fragments using secondary structure profile and chemical shift data (where `$ROSETTA3`=path-to-Rosetta/main/source and `$ROSETTA3_DB`=path-to-database)
     ```
     $> $ROSETTA3/bin/fragment_picker.default.linuxgccrelease -in::file::vall $ROSETTA3_DB/sampling/small.vall.gz -frags::n_frags 200 -frags::frag_sizes 3 9 -frags::sigmoid_cs_A 2 -frags::sigmoid_cs_B 4 -out::file::frag_prefix rosetta_inputs/pick_cs_fragments/frags.score -frags::describe_fragments rosetta_inputs/pick_cs_fragments/frags.fsc.score -frags::scoring::config scripts/scores.score.cfg -in:file:fasta starting_inputs/t000_.fasta -in:file:checkpoint rosetta_inputs/t000_.checkpoint -in:file:talos_cs rosetta_inputs/cs.talos -frags::ss_pred rosetta_inputs/talos_output/predSS.tab talos -in::file::talos_phi_psi rosetta_inputs/talos_output/pred.tab
     ```
@@ -91,8 +91,7 @@ The *small.vall.gz* used here for fragment picking is only used to speed up the 
 
 7. Run Rosetta with the fragments made above and use NOEs to guide search in both centroid sampling and full-atom optimization
 ```
-$> $ROSETTA3/bin/minirosetta.default.linuxgccrelease -in:file:rdc rosetta_inputs/nh.rdc -cst_fa_file rosetta_inputs/NOE.cst -cst_file rosetta_inputs/NOE.centroid.cst -abinitio:stage1_patch scripts/patch_atom_pair_constraint_rdc -abinitio:stage2_patch scripts/patch_atom_pair_constraint_rdc -abinitio:stage3a_patch scripts/patch_atom_pair_constraint_rdc -abinitio:stage3b_patch scripts/patch_atom_pair_constraint_rdc -abinitio:stage4_patch scripts/patch_atom_pair_constraint_rdc -score:patch scripts/patch_atom_pair_constraint_rdc -in:file:fasta starting_inputs/t000_.fasta -file:frag3 rosetta_inputs/pick_cs_fragments/frags.score.200.3mers -file:frag9 rosetta_inputs/pick_cs_fragments/frags.score.200.9mers -nstruct 1 -out:file:silent csrosetta_noe_rdc.out -run:protocol abrelax -abinitio::increase_cycles 0.1
--abinitio::relax -overwrite
+$> $ROSETTA3/bin/minirosetta.default.linuxgccrelease -in:file:rdc rosetta_inputs/nh.rdc -cst_fa_file rosetta_inputs/NOE.cst -cst_file rosetta_inputs/NOE.centroid.cst -abinitio:stage1_patch scripts/patch_atom_pair_constraint_rdc -abinitio:stage2_patch scripts/patch_atom_pair_constraint_rdc -abinitio:stage3a_patch scripts/patch_atom_pair_constraint_rdc -abinitio:stage3b_patch scripts/patch_atom_pair_constraint_rdc -abinitio:stage4_patch scripts/patch_atom_pair_constraint_rdc -score:patch scripts/patch_atom_pair_constraint_rdc -in:file:fasta starting_inputs/t000_.fasta -file:frag3 rosetta_inputs/pick_cs_fragments/frags.score.200.3mers -file:frag9 rosetta_inputs/pick_cs_fragments/frags.score.200.9mers -nstruct 1 -out:file:silent csrosetta_noe_rdc.out -run:protocol abrelax -abinitio::increase_cycles 0.1 -abinitio::relax -overwrite
 ```
 
 **IMPORTANT**
@@ -137,7 +136,8 @@ will produce csrosetta.select.silent which contains the lowest total energy 10 m
 
 3. extract pdbs from silent files for a given tag in the silent file
     ```
-    Rosetta/main/source/bin/extract_pdbs -database Rosetta/main/database/ -in::file::silent csrosetta_noe_rdc.out -in::file:tags S_00000001  
+    $> $ROSETTA3/bin/extract_pdbs -in::file::silent csrosetta_noe_rdc.out -in::file:tags S_00000001 
+    $> mv S_00000001.pdb lowscore_1.pdb
     ```
 
 4. Check convergence by superimposing the ten low energy models in pymol or your favorite molecular graphics
@@ -146,9 +146,9 @@ will produce csrosetta.select.silent which contains the lowest total energy 10 m
 
 6. To see how NOE constraints are satisfied by a model:
     ```
-    Rosetta/main/source/bin/r_cst_tool.linuxgccrelease -database Rosetta/main/database/ -in:file:s lowscore_1.pdb -cst_file rosetta_inputs/NOE.cst
-    r_cst_tool is a pilot program by Oliver Lange in Rosetta/main/source/src/apps/pilot/olli/
-    ```
+    $> $ROSETTA3/bin/r_cst_tool.default.linuxgccrelease -in:file:s lowscore_1.pdb -cst_file rosetta_inputs/NOE.cst
+   ```
+r_cst_tool is a pilot program by Oliver Lange in Rosetta/main/source/src/apps/pilot/olli/m
 
 7. To see how NOE constraints are satisfied by a model:
 Rosetta/main/source/bin/r_cst_tool.linuxgccrelease -database Rosetta/main/database/ -in:file:s lowscore_1.pdb -cst_file rosetta_inputs/NOE.cst
