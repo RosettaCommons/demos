@@ -24,7 +24,7 @@ https://www.rosettacommons.org/docs/latest/rna-denovo-setup.html
 
 ```bash
    export ROSETTA_TOOLS=<path/to/Rosetta/tools>
->$ source $ROSETTA_TOOLS/rna_tools/INSTALL
+$> source $ROSETTA_TOOLS/rna_tools/INSTALL
 ```
 
 ## Make helices
@@ -39,7 +39,7 @@ and run
 
 ```
 $> rna_helix.py  -o H2.pdb -seq cc gg -resnum 14-15 39-40
->$ replace_chain_inplace.py  H2.pdb 
+$> replace_chain_inplace.py  H2.pdb 
 ```
 
 ## Use threading to build sub-pieces
