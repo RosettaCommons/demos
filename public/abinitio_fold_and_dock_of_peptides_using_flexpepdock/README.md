@@ -20,15 +20,13 @@ Running the FlexPepDock ab-initio protocol
 ------------------------------------------
 1. Generate an initial complex structure: An initial model can be built by placing the peptide in close promity to the binding site in an arbitary conformation. In this demo we have provided a starting structure with a peptide in extended conformation (2A3I.ex.pdb). Our goal is to optimize this structure using ab-initio FlexPepDock, towards a near-native model with a helical peptide conformation. Both the native structure (2A3I.pdb), as well as the starting structure (2A3I.ex.pdb) are provided in the input directory.
 
-2. Prepack the input model: This step involves the packing of the side-chains in each monomer to remove internal clashes that are not related to inter-molecular interactions. The prepacking guarantees a uniform conformational background in non-interface regions prior to refinement. The prepack_flags file contains the flags for running the prepacking job. The run_prepack script will run prepacking of the input structure 2A3I.ex.pdb located in the input directory.
+2. Prepack the input model: This step involves the packing of the side-chains in each monomer to remove internal clashes that are not related to inter-molecular interactions. The prepacking guarantees a uniform conformational background in non-interface regions prior to refinement.
 
-You need to change the paths of the Rosetta executables and database directories in the run_prepack script (also for run_refine; see below).
+Run this eample as:
 
-  ROSETTA_BIN="rosetta/main/source/bin"
-  ROSETTA_DB="rosetta/main/database/"
-
-After changing the paths, run the run_prepack script as:
-   $./run_prepack
+```bash
+$> $ROSETTA3/bin/FlexPepDocking.default.linuxgccrelease @prepack_flags
+```
 
 The output will be a prepacked structure, 2A3I.ex.ppk.pdb, located in the input directory; a scorefile named ppk.score.sc and a log file named prepack.log file located in the output directory. This prepacked structure will be used as the input for the ab-initio modeling step.
 
