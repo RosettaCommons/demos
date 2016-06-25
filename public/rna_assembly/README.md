@@ -24,7 +24,14 @@ $> cp rosetta_inputs/* .
 Before running the command to set up the rna assembly job, make sure you have the correct paths to the rna_tool/bin directory in your environment variables. This can be done by running,
 ```bash
    export ROSETTA_TOOLS=<path/to/Rosetta/tools>
-$> source $ROSETTA_TOOLS/rna_tools/INSTALL
+   source $ROSETTA_TOOLS/rna_tools/INSTALL
+```
+```bash
+export ROSETTA_TOOLS=/path/to/Rosetta/tools
+$> export RNA_TOOLS=$ROSETTA_TOOLS/rna_tools
+$> $RNA_TOOLS/sym_link.py
+$> export PATH=$PATH:$RNA_TOOLS/bin/
+$> export PYTHONPATH=$PYTHONPATH:$RNA_TOOLS/bin/
 ```
 
 Everything needed to run the job is created by the command:
