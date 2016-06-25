@@ -27,7 +27,7 @@ It will also report the binding energy (ddg) and buried-surface area (sasa) in t
 	single movers		
 		<Translate name=translate chain=X distribution=uniform angstroms=5.0 cycles=50/>
 		<Rotate name=rotate chain=X distribution=uniform degrees=360 cycles=1000/>
-		<SlideTogether name=slide_together chain="X" />
+		<SlideTogether name=slide_together chains=X />
 		<HighResDocker name=high_res_docker cycles=6 repack_every_Nth=3 scorefxn=ligand_soft_rep movemap_builder=docking/>
 		<FinalMinimizer name=final scorefxn=hard_rep movemap_builder=final/>
 		<InterfaceScoreCalculator name=add_scores chains=X scorefxn=hard_rep native="FKBP+RAP.pdb"/>
