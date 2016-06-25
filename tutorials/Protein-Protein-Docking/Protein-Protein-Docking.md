@@ -168,9 +168,19 @@ Homomeric protein complexes are often symmetric. Rosetta provides the a means to
 
 Analyzing Docked Structures
 ---------------------------
-Analyzing docked structures can be tricky. The total scores in You can repeat the run with  *-nstruct 20000* and outputting silent files. Then you could extract the best model and create a score vs. rmsd plot.
+Analyzing docked structures can be tricky. Let's look at a score file generated from ensemble docking:
+```
+SEQUENCE: 
+SCORE: total_score         rms        Fnat        I_sc        Irms cen_dock_ens_conf           cen_rms conf_num1 conf_num2 conf_score dock_ens_conf1 dock_ens_conf2 dslf_ca_dih dslf_cs_ang dslf_ss_dih dslf_ss_dst      fa_atr      fa_dun     fa_elec     fa_pair      fa_rep      fa_sol hbond_bb_sc hbond_lr_bb    hbond_sc hbond_sr_bb interchain_contact interchain_env interchain_pair interchain_vdw        st_rmsd description 
+SCORE:    -202.141      13.143       0.061      -3.086       5.015            -1.004            14.583     1.000     1.000    -25.732        -93.359        -83.050       0.000       0.000       0.000       0.000    -326.487      12.899      -3.158      -8.467       8.982     139.078      -3.968      -4.390      -2.692     -13.937            -20.000        -23.791          -2.002          0.357          7.729 col_complex_ensemble_dock_0001
 
+```
+The `total_score` may not indicate the best docked model as the primary contribution comes from the folding energies of the monomers. You should rely more on the interface score `I_sc` which represents the energy of the interactions across the interface. `I_sc` scores are typically much smaller than total scores (typically in the range of -2 to -10 REU). Of course they depend on the size and geometry of the interface; so they are difficult to compare across different proteins.
 
-Look at [[Analysis|Analysis]] for informationon how to analyze your results.
+If you provide a native structure, you get comparative data like the fraction of native contacts (`Fnat`), the C<sup>α</sup> RMSD of the ligand (`rms`) and the RMSD of the interface atoms (`Irms`). If you run ensemble docking, you will also get to know which of the conformers was finally selected for protein 1(`conf1`) and protein 2(`conf2`).
+
+You can repeat the run with  *-nstruct 20000* and outputting silent files. Then you could extract the best model and create a score vs. rmsd plot.
+
+Look at [[Analysis|Analysis]] for further information on how to analyze your results.
 
 
