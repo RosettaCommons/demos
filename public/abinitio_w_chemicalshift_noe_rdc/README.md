@@ -136,7 +136,7 @@ will produce csrosetta.select.silent which contains the lowest total energy 10 m
 
 3. extract pdbs from silent files for a given tag in the silent file
     ```
-    $> $ROSETTA3/bin/extract_pdbs -in::file::silent csrosetta_noe_rdc.out -in::file:tags S_00000001
+    $> $ROSETTA3/bin/extract_pdbs.default.linuxgccrelease -in::file::silent csrosetta_noe_rdc.out -in::file:tags S_00000001
     $> mv S_00000001.pdb lowscore_1.pdb
     ```
 
