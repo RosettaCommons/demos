@@ -4,6 +4,8 @@ KEYWORDS: CORE_CONCEPTS GENERAL
 
 *See also the Rosetta build/install documentation [here](https://www.rosettacommons.org/docs/latest/build_documentation/Build-Documentation).*
 
+[[_TOC_]]
+
 # Downloading Rosetta
 
 For any academic or commercial use, you need to [request a license](https://els.comotion.uw.edu/express_license_technologies/rosetta). Obtaining a license is free for academic users. After you obtained the license, you can [download Rosetta](https://www.rosettacommons.org/software/license-and-download). Make sure you download the version corresponding to the license you have. When you click, you can see the latest numbered release as well as several weekly releases. Numbered releases (since Rosetta3.6) are simply weekly releases that have been specially labeled - all weekly releases pass the same suite of tests that the numbered releases do.

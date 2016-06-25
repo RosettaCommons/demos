@@ -8,7 +8,7 @@ large strctures:
 
    * Minimize a specific set of residues while keeping the rest fixed
      - Use the FastRelax mover in Rosetta scripts to minize a portion of 3E0C.pdb (in the starting_files directory). You can use the MoveMap xml subtag syntax.
-     - https://wiki.rosettacommons.org/index.php/Movers_%28RosettaScripts%29#FastRelax
+     - https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/Movers/movers_pages/FastRelaxMover
 
    * It will be important to identify flags etc. that are important for handling large structures.  For example, use of the linmem integration graph to keep memory usage down.
 

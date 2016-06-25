@@ -1,5 +1,7 @@
 # Symmetry Tutorial
+
 KEYWORDS: SYMMETRY GENERAL   
+
 Complaints and suggestions can be send to:   
 Sebastian Rämisch (raemisch@scripps.edu)
 
@@ -13,14 +15,15 @@ It explains the underlying concepts and how to run simulations using symmetry.
 This tutorial will be a hands-on exercise. It is focussed on how get the correct symmetry definitions because starting a Rosetta protocol once a symmetry definition is available, is relatively simple. 
 
 ## What is a symmetry definition?
-In order for a protocol to use symmetry, the information on how many subunits are related by what symmetry. The way to pass that information is by providing a **symmetry definition file**. The [Symmetry User Guide](https://www.rosettacommons.org/docs/latest/rosetta_basics/structural_concepts/symmetry#symmetry-definitions) covers this topic as well. You may want to take a look at it, if you have not done so, yet.
+In order for a protocol to use symmetry, the information on how many subunits are related by what symmetry. The way to pass that information is by providing a **symmetry definition file**. The [Symmetry User Guide](https://www.rosettacommons.org/docs/latest/rosetta_basics/structural_concepts/symmetry#symmetry-definitions) covers this topic as well. You may want to take a look at it, if you have not already done so.
 
 ### Simple geometries
 The Symmetry User Guide lists what type of symmetries can be represented using basic symmetry operations. For those, there is a script to generate those simple symmetry definition files. Try it yourself! Generate a sym def file for 10-fold cyclic symmetry:
 
- ```  
- $> $ROSETTA3/src/apps/public/symmetry/make_symmdef_file_denovo.py -symm_type cn -nsub 10 > C10_denovo.sym
- ```
+```  
+$> $ROSETTA3/src/apps/public/symmetry/make_symmdef_file_denovo.py -symm_type cn -nsub 10 > C10_denovo.sym
+```
+
 Most information in the C10_denovo.sym will be covered within this tutorial. For now, just focus on the part that actually contains symmetry information:
 
 ```
@@ -28,31 +31,31 @@ start -1,0,0 0,1,0 0,0,0
 rot Rz 10
 ``` 
 
-"start" represents the *internal coordinate system* for the fist subunit: x-axis=-1,0,0, yaxis=0,1,0 and the origin=0,0,0. The z-axis is simply the vector that is orthogonal to *x* and *y*. By default, the *z* axis is the rotation axis and the *x* axis is the connection from the subunit to (0,0,0). The symmetry relation is encoded by `rot Rz 10` . That means: divide 360 degrees by *10* and rotate this much around *z* for placing the next subunit.
+"start" represents the *internal coordinate system* for the first subunit: x-axis=-1,0,0, yaxis=0,1,0 and the origin=0,0,0. The z-axis is simply the vector that is orthogonal to *x* and *y*. By default, the *z* axis is the rotation axis and the *x* axis is the connection from the subunit to (0,0,0). The symmetry relation is encoded by `rot Rz 10` . That means: divide 360 degrees by *10* and rotate this much around *z* for placing the next subunit.
 
 You can use this to dock a simple helix into a 10-meric ring:
 
 ```
 $> $ROSETTA3/bin/SymDock.deault.linuxgccrelease @input_files/options -symmetry:symmetry_definition C10_denovo.sym
 ```
-> **NOTE:** The input structure for a symmetric protocol has to be the monomeric unit of whatever you want to simulate. If you give Rosetta a 10mer and then run SymDock, it will prodce a 100-mer from it (which will btw. take quite long).
 
-This may take up to a few minutes. If you look at the output, you see some kind of ring, where subunits properly packed against each other.
+> **NOTE: The input structure for a symmetric protocol has to be the monomeric unit of whatever you want to simulate. If you give Rosetta a 10mer and then run SymDock, it will produce a 100-mer from it (which will take quite a while).**
+
+This may take up to a few minutes. If you look at the output, you will see some kind of ring, where subunits properly packed against each other.
 
 ![](.images/imageF.png)
 
-Unfortunately, the use of simple symmetty operations in Rosetta is rather limitted. If you, for instance, try to dock trimers and pentamers into some symmetric array, there is no single symmetry axis that relates every single subunit to each other. 
+Unfortunately, the use of simple symmetry operations in Rosetta is rather limited. If you, for instance, try to dock trimers and pentamers into some symmetric array, there is no single symmetry axis that relates every single subunit to each other. 
 
 Fortunately, there is another way to make Rosetta aware of more complicated arrangements. For the sake of simplicity, you will learn about the components you need with a simple trimer as an example.
 
 ## Basic symmetry definition for complex systems
 
 ### The use of virtual residues
-For Rosetta to move multiple proteins around, those have to be connected in some way all the time. Converting internal coordinates (torsion angle-based) to 3D-coordinates works by 'walking' along the connection and calculating the 3D-coordinates of residue 2 relative to residue 1. Analogously, the coordinate of chain B is calculated by walking from chain A to chain B ( see [[Fold Tree Tutorial|fold_tree]] ).
+For Rosetta to move multiple proteins around, they have to be connected in some way all the time. Converting internal coordinates (torsion angle-based) to 3D-coordinates works by 'walking' along the connection and calculating the 3D-coordinates of residue 2 relative to residue 1. Analogously, the coordinate of chain B is calculated by walking from chain A to chain B (see the [[Fold Tree Tutorial|fold_tree]]).
 
-In symmetry mode, related chains have to perform equivalent moves,  relative to something, e.g. the coordinate system origin (0,0,0) or the midpoint between three subunits. For that to work, all subunits have to be connected to that point. The only way to achieve that is by placing a **Virtual Residue** (VRT) - a *connecting hub* somewhere in space. All subunits are then connected to that virtual residue by Rosetta's immaginary bonds (i.e **jumps**, see [[Fold Tree Tutorial|fold_tree]] ). The trick when running Rosetta with symmetry is to apply all changes to one jump (VRT --> SU\_1) to the other subunits (VRT --> SU\_2 and VRT --> SU\_3). The more complex your symmetry is, the more VRTs you will need.   
+In symmetry mode, related chains have to perform equivalent moves relative to something, e.g. the coordinate system origin (0,0,0) or the midpoint between three subunits. For that to work, all subunits have to be connected to that point. The only way to achieve that is by placing a **Virtual Residue** (VRT) - a *connecting hub* - somewhere in space. All subunits are then connected to that virtual residue by Rosetta's imaginary bonds (i.e. **jumps**, see the [[Fold Tree Tutorial|fold_tree]]). The trick when running Rosetta with symmetry is to apply all changes to one jump (VRT --> SU\_1) to the other subunits (VRT --> SU\_2 and VRT --> SU\_3). The more complex your symmetry is, the more VRTs you will need.   
 
--
 ### VRTs and JUMPs - Symmetric Fold Trees
 
 To illustrate what the effect of connected VRTs is, run the scoring application to just make the monomeric 2akf_INPUT.pdb into a trimer using the provided C3_good.symdef:  

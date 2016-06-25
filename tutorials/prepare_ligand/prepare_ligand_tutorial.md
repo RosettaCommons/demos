@@ -4,6 +4,8 @@ KEYWORDS: CORE_CONCEPTS LIGANDS
 
 Tutorial by Parisa Hosseinzadeh (parisah@uw.edu), prepared in June 2016.
 
+[[_TOC_]]
+
 Rosetta is residue-based. That is, Rosetta doesn't treat atoms individually, but rather as a complete chemical entity. For this to work, bond lengths, bond angles, and other properties of the residue must be known to Rosetta. This is true for both the standard amino acid residues as well as other small molecules and residues it models. Rosetta encodes the properties of a residue in **params files**. The Rosetta database contains params files for the common amino acids, as well as for a selection of other small molecules. In order to add a new ligand - one Rosetta does not recognize - you will need to generate a new params file.
 
 #### What is a Params File
@@ -129,3 +131,6 @@ Often times, you need to generate conformers for a ligand (i.e. different confor
 -   [Avogadro](http://manual.avogadro.cc/content/7-optimizing-geometry/2-conformers.html)
 -   [CSD Mercury](https://www.ccdc.cam.ac.uk/solutions/csd-system/components/mercury/): CSD_Discovery -> Conformer Generation
 -   [Omega OpenEye](https://docs.eyesopen.com/omega/usage.html)
+
+#### Other Residue Types
+Rosetta can also be used with D-amino acids, non-canonical amino acids, non-canonical backbones, RNA and metal ions. [Here](https://www.rosettacommons.org/docs/latest/rosetta_basics/non_protein_residues/non-protein-residues) is documentation describing how to prepare them.
