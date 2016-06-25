@@ -24,6 +24,7 @@ https://www.rosettacommons.org/docs/latest/rna-denovo-setup.html
 
 ```bash
    export ROSETTA_TOOLS=<path/to/Rosetta/tools>
+   export BIN_EXT=[executable extension, example: .default.linuxgccrelease]
 $> source $ROSETTA_TOOLS/rna_tools/INSTALL
 ```
 
@@ -38,7 +39,7 @@ $> cd step1_helix/
 and run
 
 ```
-$> rna_helix.py  -o H2.pdb -seq cc gg -resnum 14-15 39-40
+$> rna_helix.py  -o H2.pdb -seq cc gg -resnum 14-15 39-40 -rosetta_folder=$ROSETTA_TOOLS/../ -extension=$ROSETTA_BINEXT
 $> replace_chain_inplace.py  H2.pdb 
 ```
 
@@ -63,7 +64,7 @@ Slice out the motif of interest:
 
 Thread it into our actual sequence:
 ```
->$ rna_thread -s uucg_1f7y.pdb  -seq ccuucggg -o uucg_1f7y_thread.pdb
+>$ </path/to/Rosetta3/main/source/bin>/rna_thread.$BIN_EXT -s uucg_1f7y.pdb  -seq ccuucggg -o uucg_1f7y_thread.pdb
 ```
 
 Let's get the numbering to match our actual test case:
@@ -124,7 +125,7 @@ Extract 10 lowest energy models:
 
 ```
 $> cd ../example_output
-$> extract_lowenergy_decoys.py H2H3H4_run1b_openH3_SOLUTION1.out 10
+$> extract_lowscore_decoys.py H2H3H4_run1b_openH3_SOLUTION1.out 10 -rosetta_folder $ROSETTA_TOOLS/../
 ```
 
 Inspect in pymol.
@@ -134,13 +135,13 @@ Inspect in pymol.
 
 Change into the `step4_graft/` directory:
 ```bash
-$> cd ../../step4_graft
+$> cd ../../step4_graft/rosetta_inputs/
 ```
 
 These were threading and FARFAR solutions that we liked for each submotif -- now we can graft:
 
 ```
-$> <path/to/Rosetta/>main/source/bin/rna_graft.default.linuxgccrelease -s H2H3H4_run1b_openH3_SOLUTION1.pdb  uucg_1f7y_thread.pdb  H1H2_run2_SOLUTION1.pdb -o full_graft.pdb
+$> <path/to/Rosetta/>main/source/bin/>rna_graft.default.linuxgccrelease -s H2H3H4_run1b_openH3_SOLUTION1.pdb  uucg_1f7y_thread.pdb  H1H2_run2_SOLUTION1.pdb -o full_graft.pdb
 ```
 
 Done! 
