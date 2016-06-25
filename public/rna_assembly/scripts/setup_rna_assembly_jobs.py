@@ -16,23 +16,6 @@ if len( argv ) < 2:
 #EXE_DIR =  expanduser('~')+'/src/rosetta_TRUNK/rosetta_source/bin/'
 scripts_path = dirname( abspath( argv[0] ) ) + '/'
 
-if os.environ.has_key("ROSETTA3"):
-	EXE_DIR = os.environ.get("ROSETTA3")+"/bin/"
-else:
-	EXE_DIR =  scripts_path +'/../../../main/source/bin/'
-print EXE_DIR
-EXE_DIR = abspath( EXE_DIR )
-
-# for pdbslice.py
-if os.environ.has_key("ROSETTA_TOOLS"):
-	tools_scripts_path = os.environ.get("ROSETTA_TOOLS")+"/rna_tools/bin"
-else:
-	tools_scripts_path = abspath( dirname( abspath( argv[0] ) ) + '/../../../../tools/rna_tools/bin' )
-
-if not exists( EXE_DIR ):
-    print 'Need to set EXE_DIR in '+argv[0]+' to match an existing directory'
-    exit( 0 )
-
 fasta_file = argv[1]
 params_file = argv[2]
 
@@ -41,6 +24,9 @@ data_exists = 0
 cst_exists = 0
 torsions_exists = 0
 EXE_extension = ""
+EXE_DIR = ""
+rosetta_bin_folder = ""
+tools_scripts_path = ""
 for i in range( 3, len( argv )):
 	if argv[i][-4:] == '.pdb':
 		native_pdb_file = argv[i]
@@ -54,9 +40,28 @@ for i in range( 3, len( argv )):
 	if argv[i][-9:] == '.torsions':
 		torsions_file = argv[i]
 		torsions_exists = 1
+	if argv[i][:19] == 'rosetta_bin_folder=':
+		EXE_DIR = argv[i][19:]
 	if argv[i][:14] == 'exe_extension=':
 		EXE_extension = argv[i][14:]
+		if EXE_extension[0] != '.':
+			EXE_extension = '.' + EXE_extension
 		rna_helix_exe = EXE_DIR + '/rna_helix'+EXE_extension
+	if argv[i][:13] == 'rosetta_tools=':
+		tools_scripts_path = argv[i][13:]
+
+if EXE_DIR == "":
+	EXE_DIR =  scripts_path +'/../../../main/source/bin/'
+
+# for pdbslice.py
+if tools_scripts_path != "":
+	tools_scripts_path = tools_scripts_path + "/rna_tools/bin"
+else:
+	tools_scripts_path = abspath( dirname( abspath( argv[0] ) ) + '/../../../../tools/rna_tools/bin' )
+
+if not exists( EXE_DIR ):
+    print 'Need to set EXE_DIR in '+argv[0]+' to match an existing directory'
+    exit( 0 )
 
 if EXE_extension == '':
 	EXE_extension = '.linuxgccrelease'
@@ -64,6 +69,10 @@ if EXE_extension == '':
 	if not exists( rna_helix_exe ):
 		EXE_extension = '.macosgccrelease'
 		rna_helix_exe = EXE_DIR + '/rna_helix'+EXE_extension
+
+print EXE_DIR
+print tools_scripts_path
+print EXE_extension
 
 if not exists( rna_helix_exe ):
 	print 'Cannot find '+rna_helix_exe+'.  Different extension than .linuxgccrelease or macosgccrelease?'

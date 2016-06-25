@@ -1,0 +1,39 @@
+# This is a test script of the demo, created by parsing testable commands given in the demo's README.md file.
+# Commands that need to be tested should start with '$<'  to indicate that the line will be written to this file and tested.
+# - Documentation XRW 2016 Team - 
+
+cd %(workdir)s
+
+[ -x %(bin)s/extract_pdbs.%(binext)s ] || exit 1
+[ -x %(bin)s/rna_denovo.%(binext)s ] || exit 1
+
+# rna_assembly
+
+
+( cp rosetta_inputs/* . ) 2>&1 | egrep -vf /home/kmb413/Rosetta/main/tests/integration/ignore_list > log1
+test "${PIPESTATUS[0]}" != '0' && exit 1 || true  # Check if the first executable in pipe line return error and exit with error code if so
+
+echo "SETUP_RNA_ASSEMBLY"
+./scripts/setup_rna_assembly_jobs.py  add.fasta add_secstruct.txt 1y26_RNA.pdb add_mutate_map_threetertiarycontacts.cst rosetta_bin_folder=%(bin)s exe_extension=%(binext)s rosetta_tools=%(bin)s/../../../tools/ 2>&1 | egrep -vf /home/kmb413/Rosetta/main/tests/integration/ignore_list > log2
+test "${PIPESTATUS[0]}" != '0' && exit 1 || true  # Check if the first executable in pipe line return error and exit with error code if so
+
+echo "SOURCING README_STEMS"
+
+( ./README_STEMS ) 2>&1 | egrep -vf /home/kmb413/Rosetta/main/tests/integration/ignore_list > log7
+test "${PIPESTATUS[0]}" != '0' && exit 1 || true  # Check if the first executable in pipe line return error and exit with error code if so
+
+echo "SOURCING README_MOTIF"
+
+( ./README_MOTIFS.short ) 2>&1 | egrep -vf /home/kmb413/Rosetta/main/tests/integration/ignore_list > log8
+test "${PIPESTATUS[0]}" != '0' && exit 1 || true  # Check if the first executable in pipe line return error and exit with error code if so
+
+( ./README_ASSEMBLE.short ) 2>&1 | egrep -vf /home/kmb413/Rosetta/main/tests/integration/ignore_list > log9
+test "${PIPESTATUS[0]}" != '0' && exit 1 || true  # Check if the first executable in pipe line return error and exit with error code if so
+
+( cp ./example_output/add_assemble.out . ) 2>&1 | egrep -vf /home/kmb413/Rosetta/main/tests/integration/ignore_list > log10
+test "${PIPESTATUS[0]}" != '0' && exit 1 || true  # Check if the first executable in pipe line return error and exit with error code if so
+
+ %(bin)s/extract_pdbs.%(binext)s -in:file:silent add_assemble.out -tags S_000001  -database %(database)s -run:constant_seed -nodelay 2>&1 | egrep -vf /home/kmb413/Rosetta/main/tests/integration/ignore_list > log11
+test "${PIPESTATUS[0]}" != '0' && exit 1 || true  # Check if the first executable in pipe line return error and exit with error code if so
+
+
