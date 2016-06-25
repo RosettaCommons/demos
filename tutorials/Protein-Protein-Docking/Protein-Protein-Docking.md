@@ -66,7 +66,7 @@ This should take ~1 minute to run and produce a structure file and a score file 
 
 Local Refinement of Docked Structures
 -------------------------------------
-Sometimes docked proteins score very high in Rosetta owing to small clashes. Before refining with [[`relax`|Relax]], we need to fix the interface. Since the protein is already docked, we want to avoid large movements of the protein, so we skip the first, centroid mode stage completely and only run the high-resolution full atom mode which does not move the backbone of the docked proteins. We also want to add the rotamers of the input sidechains to our library of rotamers. We replace the flags used for [local docking](Local-Docking) by:
+Sometimes docked proteins score very high in Rosetta owing to small clashes. Before refining with [[`relax`|Relax]], we need to fix the interface. Since the protein is already docked, we want to avoid large movements of the protein, so we skip the first, centroid mode stage completely and only run the high-resolution full atom mode which does not move the backbone of the docked proteins. We also want to add the rotamers of the input sidechains to our library of rotamers. We replace the flags used for [local docking](#local-docking) by:
 
 ```
 -docking_local_refine
@@ -92,7 +92,7 @@ To do global docking, we add the following three options to the options already 
 -randomize1
 -randomize2
 ```
-We will use the same input PDB as in [local docking](#Local-Docking) to demostrate the differences in the output. Run:
+We will use the same input PDB as in [local docking](#local-docking) to demostrate the differences in the output. Run:
 
     $>$ROSETTA3/main/source/bin/docking_protocol.linuxgccrelease @flag_global_docking
 
@@ -113,7 +113,7 @@ input_files/COL_D_ensemble/COL_D_0002.pdb
 input_files/COL_D_ensemble/COL_D_0003.pdb
 ```
 
-A similar file is made for IMM_D ensembles. These files are then passed on to docking by adding the following options to the [local docking](#Local-Docking):
+A similar file is made for IMM_D ensembles. These files are then passed on to docking by adding the following options to the [local docking](#local-docking):
 
 ```
 -ensemble1 COL_D_ensemblelist
