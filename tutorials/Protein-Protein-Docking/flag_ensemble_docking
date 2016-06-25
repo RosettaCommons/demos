@@ -7,9 +7,12 @@
 -partners A_B
 -dock_pert 3 8
 
+-ensemble1 COL_D_ensemblelist
+-ensemble2 IMM_D_ensemblelist
+
 -ex1
 -ex2aro
 
 -out:path:all output_files
--out:suffix _local_dock
+-out:suffix _ensemble_dock
 
