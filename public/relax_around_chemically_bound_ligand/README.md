@@ -129,12 +129,6 @@ The atom names given on the ATOM lines are column formatted, so don't add extra 
 -extra_res_fa FMN_modded.params
 ```
 
-It is also necessary to change the CYS which is forming the chemical bond with the flavin in the 2V0W pdb file to a modified CYS conformation. The version of CYS in Rosetta which forms a chemical bond to something else is named CYX. So rename residue 450 to CYX from CYS. This residue-type is defined in database/chemical/residue_type_sets/fa_standard/residue_types/sidechain_conjugation/CYX.params. It is not automatically read in when Rosetta loads: its entry in the rosetta_database/chemical/residue_type_sets/fa_standard/residue_types.txt file is commented out, so we also have to uncomment this line. ALTERNATIVELY: we can explicitly add this file to the list of files that Rosetta loads by including it on the command line as we did above. The flag for this would be:
-
-```
--extra_res_fa sidechain_conjugation/CYX.params
-```
-
 # Making a constraints file
 
 Now we need to generate a set of constraints to make Rosetta preserve the bond geometry between the CYS and C8.  Constraint files rely on Rosetta numbering which starts at 1 and does not use the PDB numbering. The first residue in this PDB is 401, so CYS 450 will be Rosetta-residue 50. The last residue in the protein is 546, so the ligand (i.e. last) will be Rosetta-residue 147. The distance constraint is given by this line:
@@ -160,18 +154,19 @@ For more information about the constraints, you can check the [constraints tutor
 
 # Running the relax protocol
 
-To run the relax protocol, we need to pass in a PDB with the correct FMN and CYX lines, the parameter files for the modified CYS and the FMN, and the constraint file.  We also need to activate constraints during scorefunction evaluation, which can be done using the score:weights flag on the command line.  
+To run the relax protocol, we need to pass in a PDB with the correct FMN lines, the parameter files for the modified CYS and the FMN, and the constraint file.  We also need to activate constraints during scorefunction evaluation, which can be done using the score:weights flag on the command line.  
 You can copy the necessary files that are pre-generated from rosetta_inputs directory:
 
 ```bash
 $> cp rosetta_inputs/2V0W.pdb .
 $> cp rosetta_inputs/FMN_modded.params .
+$> cp rosetta_inputs/chemical_bond.cst .
 ```
 
 A complete command line for the protocol would be as follows:
 
 ```bash
-$> $ROSETTA3/bin/relax.default.linuxgccrelease -s 2V0W.pdb -in:file:fullatom -extra_res_fa rosetta_inputs/FMN_modded.params -extra_res_fa sidechain_conjugation/CYX.params -overwrite -cst_fa_file chemical_bond.cst -score:weights talaris2014_cst.wts -mute basic core.init core.scoring
+$> $ROSETTA3/bin/relax.default.linuxgccrelease -s 2V0W.pdb -in:file:fullatom -extra_res_fa rosetta_inputs/FMN_modded.params -extra_res_fa -overwrite -cst_fa_file chemical_bond.cst -score:weights talaris2014_cst.wts -mute basic core.init core.scoring
 ```
 
 Truncated output from the command:
@@ -182,7 +177,7 @@ protocols.jd2.PDBJobInputter: PDBJobInputter::fill_jobs
 protocols.jd2.PDBJobInputter: pushing 2V0W.pdb nstruct index 1
 protocols.jd2.PDBJobInputter: PDBJobInputter::pose_from_job
 core.chemical.ResidueTypeSet: Finished initializing fa_standard residue type set.  Created 6480 residue types
-core.conformation.Conformation: Connecting residues: 50 ( CYX ) and 147 ( FMN ) at atoms  SG  and  C8 
+core.conformation.Conformation: Connecting residues: 50 ( CYS ) and 147 ( FMN ) at atoms  SG  and  C8 
 core.conformation.Conformation:  with mututal distances: 2.63043 and 2.09338
 core.import_pose.import_pose: Can't find a chemical connection for residue 147 FMN
 core.pack.task: Packer task: initialize from command line() 
