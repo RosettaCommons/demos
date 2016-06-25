@@ -9,7 +9,7 @@ Nikolas Sgourakis drafted the previous version
 
 ---
 
-We will use the chemical shifts to improve the fragments from which Rosetta builds up structures, and the NOEs+RDCs to guide the Rosetta calculations towards the native structure. 
+We will use the chemical shifts to improve the fragments from which Rosetta builds up structures, and the NOEs+RDCs to guide the Rosetta calculations towards the native structure.
 
 Please see references at:
 * rosetta abinitio: Bradley, P et al Science 2005
@@ -38,7 +38,7 @@ Running the demo
     mkdir rosetta_inputs/pick_cs_fragments
     ```
 
-2. Download protein fasta and experimental data.  
+2. Download protein fasta and experimental data.
 Download fasta from http://www.pdb.org/pdb/explore/explore.do?structureId=2JY7
     ```
     wget http://www.pdb.org/pdb/files/fasta.txt?structureIdList=2JY7 -O starting_inputs/t000_.fasta
@@ -58,7 +58,7 @@ Download RDC data (used for a different demo) from http://restraintsgrid.bmrb.wi
     echo "save file as starting_inputs/nh_xplor.rdc"
     ```
 
-3. Format data for Rosetta use:  
+3. Format data for Rosetta use:
 Formatting NOE: Note only residues separated by more than 3 are kept in constraint.
 This script `scripts/upl2mini.csh` only works with cyana format NOE.
     ```
@@ -108,10 +108,10 @@ You can provide either `-rdc:fixDa`, `-rdc:fixR` or both of them
 Change nstruct to generate desired number of models. Larger is better depending on your available computer time, etc.
 Note that the demo in abinitio_w_chemicalshift_only, you can add flags such as:
 ```
-    -abinitio::rg_reweight 0.5 
-    -abinitio::rsd_wt_helix 0.5 
-    -abinitio::rsd_wt_loop 0.5 
-    -disable_co_filter true 
+    -abinitio::rg_reweight 0.5
+    -abinitio::rsd_wt_helix 0.5
+    -abinitio::rsd_wt_loop 0.5
+    -disable_co_filter true
     -abinitio::increase_cycles 10
 ```
 to help sampling in centroid stage.
@@ -136,7 +136,7 @@ will produce csrosetta.select.silent which contains the lowest total energy 10 m
 
 3. extract pdbs from silent files for a given tag in the silent file
     ```
-    $> $ROSETTA3/bin/extract_pdbs -in::file::silent csrosetta_noe_rdc.out -in::file:tags S_00000001 
+    $> $ROSETTA3/bin/extract_pdbs -in::file::silent csrosetta_noe_rdc.out -in::file:tags S_00000001
     $> mv S_00000001.pdb lowscore_1.pdb
     ```
 
