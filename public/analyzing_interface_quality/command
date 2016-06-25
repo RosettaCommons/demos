@@ -1,10 +1,10 @@
 cd %(workdir)s
 
-%(bin)s/score_jd2.%(binext)s -s %(workdir)s/starting_files/*.pdb.gz -no_optH false -database %(database)s -ignore_unrecognized_res -out:pdb
+%(bin)s/score_jd2.%(binext)s -s %(workdir)s/starting_files/*.pdb.gz -no_optH false -database %(database)s -ignore_unrecognized_res -out:pdb &> log1
 
 mv 1u6e_0001.pdb 1u6e_scored.pdb
 mv 3r2x_0001.pdb 3r2x_scored.pdb
 
-%(bin)s/InterfaceAnalyzer.%(binext)s -s %(workdir)s/rosetta_inputs/3r2x_scored.pdb -fixedchains A B @%(workdir)s/rosetta_inputs/no_pack_input_options.txt
+%(bin)s/InterfaceAnalyzer.%(binext)s -s %(workdir)s/rosetta_inputs/3r2x_scored.pdb -fixedchains A B @%(workdir)s/rosetta_inputs/no_pack_input_options.txt &> log2
 
-%(bin)s/InterfaceAnalyzer.%(binext)s -s %(workdir)s/rosetta_inputs/3r2x_scored.pdb -fixedchains A B @%(workdir)s/rosetta_inputs/pack_input_options.txt
+%(bin)s/InterfaceAnalyzer.%(binext)s -s %(workdir)s/rosetta_inputs/3r2x_scored.pdb -fixedchains A B @%(workdir)s/rosetta_inputs/pack_input_options.txt &> log3
