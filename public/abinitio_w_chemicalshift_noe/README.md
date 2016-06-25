@@ -127,7 +127,7 @@ will produce csrosetta.select.silent which contains the lowest energy 10 models.
 
 5. Check convergence by clustering the lowest energy models (see clustering demo for instructions).
 
-6. To see how NOE constraints are satisfied by a model:
+6. To see how NOE constraints are satisfied by a model: (lowscore_1.pdb is just an example and you can replace it with your best output)
     ```
     $> $ROSETTA3/bin/r_cst_tool.linuxgccrelease -in:file:s rosetta_inputs/lowscore_1.pdb -cst_file rosetta_inputs/NOE.cst
     ```
