@@ -33,3 +33,4 @@
 # -out:pdb
 -out:file:silent output_files/2akf.out
 -out:file:scorefile output_files/score.sc
+-overwrite
