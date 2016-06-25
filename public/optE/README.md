@@ -26,3 +26,5 @@ find_best_weight_set.py, in the
   scripts/
 directory, to determine which of the iterations was
 optimal.
+
+$> $ROSETTA3/bin/optE_parallel.default.linuxgccrelease @optE_seqprof.flags.short

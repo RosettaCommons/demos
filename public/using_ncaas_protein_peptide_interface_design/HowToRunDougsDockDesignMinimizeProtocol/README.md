@@ -1,7 +1,8 @@
--------------------------------------------------------------------
-   INSTRUCTIONS FOR RUNNING THE DOUGSDOCKDESIGNMINIMIZE PROTOCOL
--------------------------------------------------------------------
+## Part IV    INSTRUCTIONS FOR RUNNING THE DOUGSDOCKDESIGNMINIMIZE PROTOCOL
+
+
 KEYWORDS: DOCKING INTERFACES STRUCTURE_PREDICTION
+
 The DougsDockDesignMinimize (DDDM) protocol was used in the accompanying manuscript to redesign the protein/peptide interface of Calpain and a fragment of its inhibitory peptide calpastatin. The protocol was written for this specific protein/peptide interaction and modifications to the code will be necessary to run the protocol on a different system. A modified form was used as the example protocol in the advanced section of the Rosetta 3.0 release manual.
 
 Minor modifications to the protocol have been made from the version used to produce the designs in the accompanying publication. The interfaces of the Rosetta libraries have changed since the initial implementation of the protocol and these modifications were necessary to allow the protocol to work with the current release. 
@@ -22,26 +23,33 @@ The Protein Databank code for the Calpain/Calpastatin structure used in the desi
 
 Each of the NCAAs added in the accompanying publication was tried at each position in the peptide. To do this and to keep all of the output pdb organized a script is provided that creates folders and generates resfiles based on templates for each sequence. To generate the resfiles and folders run the following commands...
 
-$ cd run_dir
-$ ../scripts/make_folders_resfiles.tcsh
+```
+$> ln -s HowToRunDougsDockDesignMinimizeProtocol/scripts .
+$> ln -s HowToRunDougsDockDesignMinimizeProtocol/run_dir/* .
+$> scripts/make_folders_resfiles.tcsh
+```
 
 NOTE: To save space, the script has been modified to only produce resfiles and folders for position 610 in the peptide and residue type MPA (4-methyl-phenylalanine). To modify the script to produce folders and resfiles for each position simply uncomment the lines that read "#foreach i ( 601 602 603 604 605 606 607 608 609 610 611 )" and "#foreach j ( ABA APA HLU ..... C92 C93 C94 )" comment out the line that reads "foreach i ( 610 )" and "foreach j ( MPA )".
 
 Using the templates in the run_dir the make_folders_resfiles.tcsh script makes folders and resfiles to preform all of the DDDMI runs.
 
 
--------------------------------------------------------
-   RUNNING DOUGSDOCKDESIGNMINIMIZEINTERFACE PROTOCOL
--------------------------------------------------------
+
+###   RUNNING DOUGSDOCKDESIGNMINIMIZEINTERFACE PROTOCOL
+
 
 To run the protocol modifications need to made to files in the database. In the file rosetta_database/chemical/residue_type_sets/fa_standard/residue_types.txt all of the paths to the residue type parameter files under the L-NCAA heading need to be uncommented by removing the "#" from the front of the line. Additionally the rotamer libraries for the NCAA are not provided in the default Rosetta database because they are more than 400MB. The rotamer libraries for the NCAAs added in the accompanying publication are provided as supplemental information. 
 
 NOTE: Turning on all of the additional residue types dramatically increases the number of residue types and the memory footprint of Rosetta. The memory foot print can be reduced by commenting out unnecessary patches in the rosetta_database/chemical/residue_type_sets/fa_standard/patches.txt file. For the DougsDockDesignMinimizeProtocol all but the NtermProteinFull.txt and CtermProteinFull.txt can be safely commented out by placing "#" symbols at the beginning of each line of the patches.txt except for the lines that say "NtermProteinFull.txt" and "CtermProteinFull.txt".
 
 To run the protocol as in the accompanying publication preform the following commands starting at the HowToRunDougsDockDesignMinimizeProtocol directory.
-$ cd run_dir
-$ cd pos_610_MPA
-$ /PATH/TO/ROSETTA/bin/doug_dock_design_min_mod2_cal_cal.macosgccrelease -database /PATH/TO/rosetta_database -s ../../inputs/1NX1_clean_repack_min_all.pdb -resfile ../resfile_pos_603_MPA -nstruct 255 -inner_num 45 -pert_num 25 -ia_ener 100 -use_input_sc -pdb_gz
+
+```
+$> ln -s pos_610_MPA/* .
+$> $ROSETTA/bin/doug_dock_design_min_mod2_cal_cal.linuxgccrelease -database /PATH/TO/rosetta_database -s inputs/1NX1_clean_repack_min_all.pdb -resfile resfile_pos_603_MPA -nstruct 1 -inner_num 45 -pert_num 25 -ia_ener 100 -use_input_sc -pdb_gz
+```
+
+>**change nstruct to 255!**
 
 The above command generates 255 structures and will take approximately 5 minutes per structure depending on your hardware.
 
@@ -49,8 +57,14 @@ NOTE: The extension of your executable maybe different than the above. Also in t
 
 A script is provided that will preform the above command for each folder created by the make_folders_resfiles.tcsh script.
 
-$ cd run_dir
-$ ../scripts/run_script.bash
+```
+$> for i in pos_*; do cd $i $ROSETTA3/doug_dock_design_min_mod2_cal_cal.linuxgccrelease ../inputs/ \  
+1NX1_clean_repack_min_all.pdb -resfile ../resfile_$i \  
+-nstruct 1 -inner_num 45 -pert_num 25 -ia_ener 100 \  
+-use_input_sc -pdb_gz >& $i.log; \ 
+ echo "Finished $i"; cd ../; done
+          
+```
 
 NOTE: You will need to set the path to your database and executable in the run_script.bash.
 
@@ -90,6 +104,7 @@ For the most part the defaults should suffice and are what was used in the paper
 
 Each of the output pdb files contains information about the protein peptide complex that can used to evaluate the designs.  For example at the end of the 1NX1_clean_repack_min_all_0004.pdb is shown bellow. For each filter the value is calculated for the protein and peptide together (COMPLEX) and separated by 1000 angstroms (SEPARATE) and the difference between the two (DIFF). ENERGY is the Rosetta energy. The ENERGY_COMPLEX is the primary determinant to how good a design is and the ENERGY_DIFF can give an estimate for the binding energy. SASA is the solvent accessible surface area. SASA_DIFF is indicative of sequences that make a more protein-peptide contacts and can be used for screening designs for example placing a very large side chain at a constrained interface position can cause the peptide to be pushed out of the binding pocket which would be reflected in a smaller magnitude SASA_DIFF. HB_ENER is the hydrogen bonding component of the Rosetta energy. Larger HB_ENER_DIFF values indicate that the design is making more or better hydrogen bonds across the protein peptide interface. PACK is the RosettaHoles score and is a measurement of how well the protein is packed. A PACK_COMPLEX that is larger than the PACK_SEPARATE is favorable and suggests that the complex is better packed than the protein alone. Additionally the RosettaHoles score penalizes holes that cannot be occupied by solvent so larger PACK_DIFF score indicate that the designed peptide is capable of filling cavities in the protein that are inaccessible to solvent.
 
+```
 ENERGY_COMPLEX:	   -63.3501
 ENERGY_SEPERATE:   -48.599
 ENERGY_DIFF:	   -14.7512
@@ -102,11 +117,12 @@ HB_ENER_DIFF:	   -1.69085
 PACK_COMPLEX:	   0.515277
 PACK_SEPERATE:	   0.466995
 PACK_DIFF:	   0.0482824
+```
 
 A script is provided that pulls the information out of a set of pdb files and sorts it based on the ENERGY_COMPLEX metric. 
 
-$ cd run_dir
+```
 $ cd pos_610_MPA
-$ ../../scripts/get_interface_data.tcsh
+$ ../scripts/get_interface_data.tcsh
+```
 
-The script produces a file call out.ALL that contains a single line for each pdb file with the metrics in the above order.

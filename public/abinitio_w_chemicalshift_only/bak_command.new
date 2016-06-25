@@ -1,0 +1,14 @@
+# This is a test script of the demo, created by parsing testable commands given in the demo's README.md file.
+# Commands that need to be tested should start with '$<'  to indicate that the line will be written to this file and tested.
+# - Documentation XRW 2016 Team - 
+
+cd %(workdir)s
+
+
+# abinitio_w_chemicalshift_only
+
+
+ ROSETTA3/bin/fragment_picker -in::file::vall $ROSETTA_DB/main/database/sampling/small.vall.gz -frags::n_frags 200 -frags::frag_sizes 3 9 -frags::sigmoid_cs_A 2 -frags::sigmoid_cs_B 4 -out::file::frag_prefix rosetta_inputs/pick_cs_fragments/frags.score -frags::describe_fragments rosetta_inputs/pick_cs_fragments/frags.fsc.score -frags::scoring::config scripts/scores.score.cfg -in:file:fasta starting_inputs/t000_.fasta -in:file:checkpoint rosetta_inputs/t000_.checkpoint -in:file:talos_cs rosetta_inputs/cs.talos -frags::ss_pred rosetta_inputs/talos_output/predSS.tab talos -in::file::talos_phi_psi rosetta_inputs/talos_output/pred.tab 2>&1 | egrep -vf /Users/raemisch/Rosetta/main/tests/integration/ignore_list > log1
+test "${PIPESTATUS[0]}" != '0' && exit 1 || true  # Check if the first executable in pipe line return error and exit with error code if so
+
+
