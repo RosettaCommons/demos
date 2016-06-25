@@ -145,7 +145,7 @@ $> cd ../../step4_graft/rosetta_inputs/
 These were threading and FARFAR solutions that we liked for each submotif -- now we can graft:
 
 ```
-$> <path/to/Rosetta/main/source/bin>rna_graft.default.linuxgccrelease -s H2H3H4_run1b_openH3_SOLUTION1.pdb  uucg_1f7y_thread.pdb  H1H2_run2_SOLUTION1.pdb -o full_graft.pdb
+$> <path/to/Rosetta/main/source>/bin/rna_graft.default.linuxgccrelease -s H2H3H4_run1b_openH3_SOLUTION1.pdb  uucg_1f7y_thread.pdb  H1H2_run2_SOLUTION1.pdb -o full_graft.pdb
 ```
 
 Done! 
