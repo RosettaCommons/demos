@@ -1,0 +1,3 @@
+SEQUENCE: 
+SCORE: total_score         rms        Fnat        I_sc        Irms dslf_ca_dih dslf_cs_ang dslf_ss_dih dslf_ss_dst      fa_atr      fa_dun     fa_elec     fa_pair      fa_rep      fa_sol hbond_bb_sc hbond_lr_bb    hbond_sc hbond_sr_bb description 
+SCORE:    -179.106       0.225       0.909     -10.178       0.075       0.000       0.000       0.000       0.000    -333.623      20.023      -2.731      -8.411      19.258     151.331      -4.283      -3.670      -3.465     -13.534 1v74_local_refine_0001

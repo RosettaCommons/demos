@@ -57,9 +57,9 @@ Save/copy `pred.tab` and `predSS.tab` to `rosetta_inputs/talos_output`
 5. Generate fragment/profile from RobettaServer http://www.robetta.org/fragmentqueue.jsp using `starting_inputs/t000_.fasta`.
 Save/copy `t000_.checkpoint` to `rosetta_inputs/`
 
-6. Pick fragments using secondary structure profile and chemical shift data:
+6. Pick fragments using secondary structure profile and chemical shift data: (where `$ROSETTA3`=path-to-Rosetta/main/source and `$ROSETTA3_DB`=path-to-database)
     ```
-    $> ROSETTA3/bin/fragment_picker.default.linuxgccrelease -in::file::vall $ROSETTA3_DB/sampling/small.vall.gz -frags::n_frags 200 -frags::frag_sizes 3 9 -frags::sigmoid_cs_A 2 -frags::sigmoid_cs_B 4 -out::file::frag_prefix rosetta_inputs/pick_cs_fragments/frags.score -frags::describe_fragments rosetta_inputs/pick_cs_fragments/frags.fsc.score -frags::scoring::config scripts/scores.score.cfg -in:file:fasta starting_inputs/t000_.fasta -in:file:checkpoint rosetta_inputs/t000_.checkpoint -in:file:talos_cs rosetta_inputs/cs.talos -frags::ss_pred rosetta_inputs/talos_output/predSS.tab talos -in::file::talos_phi_psi rosetta_inputs/talos_output/pred.tab
+    $> $ROSETTA3/bin/fragment_picker.default.linuxgccrelease -in::file::vall $ROSETTA3_DB/sampling/small.vall.gz -frags::n_frags 200 -frags::frag_sizes 3 9 -frags::sigmoid_cs_A 2 -frags::sigmoid_cs_B 4 -out::file::frag_prefix rosetta_inputs/pick_cs_fragments/frags.score -frags::describe_fragments rosetta_inputs/pick_cs_fragments/frags.fsc.score -frags::scoring::config scripts/scores.score.cfg -in:file:fasta starting_inputs/t000_.fasta -in:file:checkpoint rosetta_inputs/t000_.checkpoint -in:file:talos_cs rosetta_inputs/cs.talos -frags::ss_pred rosetta_inputs/talos_output/predSS.tab talos -in::file::talos_phi_psi rosetta_inputs/talos_output/pred.tab
     ```
 **IMPORTANT**  
 The *small.vall.gz* used here for fragment picking is only used to speed up the demo. You have to change this to the vall database on your system!  
@@ -91,7 +91,7 @@ will produce `csrosetta.select.silent` which contains the lowest models below cu
   
 3. Extract pdbs from selected silent file
     ```
-    Rosetta/main/source/bin/extract_pdbs -in::file::silent csrosetta.select.silent
+    $> $ROSETTA3/bin/extract_pdbs.default.linuxgccrelease -in::file::silent csrosetta.select.silent
     ```
 
 4. Check convergence by superimposing the ten low energy models in pymol or your favorite molecular graphics
