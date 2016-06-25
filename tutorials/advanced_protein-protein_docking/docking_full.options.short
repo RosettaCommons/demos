@@ -1,9 +1,4 @@
 -parser:protocol docking_full.xml			# which rosetta scripts to use
--docking						# the docking option group
-	-partners AB_HL					# set rigid body docking partners
-	-dock_pert 3 8					# set coarse perturbation parameters (degrees and angstroms)
-	-dock_mcm_trans_magnitude 0.1			# refinement translational perturbation
-	-dock_mcm_rot_magnitude 5.0			# refinement rotational perturbation
 -s 3gbm_HA_3gbn_Ab.pdb					# input model
 -run:max_retry_job 5					# if the mover fails, retry 50 times
 -use_input_sc						# add the side chains from the input pdb to the rotamer library

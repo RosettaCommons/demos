@@ -2,6 +2,11 @@
 
 KEYWORDS: STRUCTURE_PREDICTION GENERAL
 
+Written by:  
+Sebastian Rämisch  
+raemisch@scripps.edu  
+
+
 This tutorial will teach you how to predict protein structures starting with an amino acid sequence. You will predict the structure of bacteriophage T4 lysozyme using *ab initio* protein folding. At the end of the tutorial, the results will be compared to the native structure, which is available from the PDB.
 
 

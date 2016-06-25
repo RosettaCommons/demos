@@ -31,19 +31,21 @@ Reference:
    transformed into PDB coordinates (z-axis is membrane normal). This can be done 
    either by downloading the transformed PDB directly from the PDBTM website 
    (http://pdbtm.enzim.hu/) or by downloading a PDB file from the PDB and running
-   it through the PPM server (http://opm.phar.umich.edu/server.php).
+   it through the PPM server (http://opm.phar.umich.edu/server.php). If you don't have it, you can copy the provided file:
 
-2. Clean the PDB file by using clean_pdb.pl in the folder 
+        $> cp input/1AFO_tr.pdb .
+
+2. Clean the PDB file by using clean_pdb.py in the folder 
    Rosetta/tools/protein_tools/scripts/:
 
-        $ clean_pdb.pl 1AFO_tr.pdb ignorechain
+        $> $ROSETTA_TOOLS/protein_tools/scripts/clean_pdb.py 1AFO_tr.pdb ignorechain
 
-3. An example input is provided in the input folder: 1AFO_AB.pdb
+3. An example input is provided in the input folder: 1AFO_AB.pdb (your file will be named 1AFO_tr_ignorechain.pdb that you can rename).
 
 ## Running the Application
-Run the command.sh script provided in this folder:
+Run the command.sh script provided in this folder: (where `$ROSETTA3`=path-to-Rosetta/main/source)
 
-    $ ./command.sh
+    $> $ROSETTA3/bin/spanfile_from_pdb.default.linuxclangrelease -in:file:s input/1AFO_AB.pdb
 
 ## Example Outputs
 This generates three spanfiles in the input (! unfortunately) folder. For this 

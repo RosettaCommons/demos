@@ -1,0 +1,3 @@
+SEQUENCE: 
+SCORE: total_score         rms        Fnat        I_sc        Irms     cen_rms dslf_ca_dih dslf_cs_ang dslf_ss_dih dslf_ss_dst      fa_atr      fa_dun     fa_elec     fa_pair      fa_rep      fa_sol hbond_bb_sc hbond_lr_bb    hbond_sc hbond_sr_bb interchain_contact interchain_env interchain_pair interchain_vdw        st_rmsd description 
+SCORE:    -197.167      11.144       0.848      -7.281       0.550      12.134       0.000       0.000       0.000       0.000    -322.458      12.882      -3.093      -7.606       8.364     139.831      -4.289      -3.922      -2.772     -14.104            -20.000        -21.990          -2.365          0.063          7.397 col_complex_local_dock_0001
