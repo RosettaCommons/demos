@@ -9,9 +9,11 @@ Last Modified Jun 21 2016
 
 To productively use Rosetta, a number of additional programs are need:
 
-1. A text editor capable of outputting plain text files; most people use [Emacs](https://www.gnu.org/software/emacs/manual/html_node/emacs/index.html), [Vim](https://www.washington.edu/computing/unix/vi.html), [Nano](https://www.nano-editor.org/dist/v2.0/nano.html), or similar. Note that *word processors* like Microsoft Word and Libre/Open Office are unsatisfactory, as the additional formating they introduce will confuse Rosetta. 
-2. A molecular viewing tool. Rosetta does not include a way to actually visualize the output files it creates; a tool such as [PyMOL](https://www.pymol.org/) or [Chimera](https://www.cgl.ucsf.edu/chimera/) is necessary to examine the output PDBs. Rosetta does include a PyMOLObserver for directly viewing its output in PyMOL; instructions for setting up PyMOLObserver are found [here](https://www.rosettacommons.org/docs/latest/rosetta_basics/graphics-and-guis).
-3. A terminal. Unix and Apple users have suitable terminals installed by default. Windows users attempting to run Rosetta remotely on a Mac or Unix machine will require a tool like PuTTY to provide the necessary interface.
+  * 1. A text editor capable of outputting plain text files; For cmd-line tools, most people use [Emacs](https://www.gnu.org/software/emacs/manual/html_node/emacs/index.html), [Vim](https://www.washington.edu/computing/unix/vi.html), [Nano](https://www.nano-editor.org/dist/v2.0/nano.html), or similar. For GUI-based tools, [Sublime Text](https://www.sublimetext.com) and [TextMate](https://macromates.com), are very good on mac and Gedit is included with Ubuntu Linux. Note that *word processors* like Microsoft Word and Libre/Open Office are unsatisfactory, as the additional formating they introduce will confuse Rosetta. 
+
+ * 2. A molecular viewing tool. Rosetta does not include a way to actually visualize the output files it creates; a tool such as [PyMOL](https://www.pymol.org/) or [Chimera](https://www.cgl.ucsf.edu/chimera/) is necessary to examine the output PDBs. Rosetta does include a PyMOLObserver for directly viewing its output in PyMOL; instructions for setting up PyMOLObserver are found [here](https://www.rosettacommons.org/docs/latest/rosetta_basics/graphics-and-guis).
+
+ * 3. A terminal. Unix and Apple users have suitable terminals installed by default. Windows users attempting to run Rosetta remotely on a Mac or Unix machine will require a tool like PuTTY to provide the necessary interface.
 
 It may also help to familiarize yourself with the basics of [command line interfaces](https://bash.cyberciti.biz/guide/Main_Page). Particularly useful commands include:
 
@@ -38,7 +40,7 @@ As an example, consider the command
 	> $ROSETTA3/bin/fixbb.default.linuxgccrelease -s 1ubq.pdb -out:suffix _my_first_rosetta_output @general_fixbb_flags
 
 
-The first part of this command is the path to and name of the executable we want to run; here, we want to run the executable `fixbb`, located in `$ROSETTA3/bin`, which will attempt to design residues onto a peptide backbone provided to it. On your platform, the executable may not be named `fixbb.linuxgccrelease`; to find the version of the executable that will run, navigate to `$ROSETTA3/bin` and run `ls fixbb*` to display the versions of `fixbb` that have been compiled on your system. This works for any other executable as well.
+The first part of this command is the path to and name of the executable we want to run; here, we want to run the executable `fixbb`, located in `$ROSETTA3/bin`, which will attempt to design residues onto a peptide backbone provided to it. On your platform, the executable may not be named `fixbb.linuxgccrelease`; to find the version of the executable that will run, navigate to `$ROSETTA3/bin` and run `ls fixbb*` to display the versions of `fixbb` that have been compiled on your system. This works for any other executable as well.  A nice way to run these is by adding the bin path to your shell profile.  This is covered below.
 
 The second part, `-s 1ubq.pdb`, is an option, or _flag_, that modifies the execution of the program. In this case, the `-s` option indicates that we want to run `fixbb` on one or more structures listed on the command line; the `1ubq.pdb` is the argument to the `-s` option, and indicates the filename of the structure to use. An alternative to the `-s` option is `-l`, which takes as its argument the name of a file containing a newline-delimited list of input files and is broadly conceptually equivalent to running multiple `-s` commands in sequence. Other common options include:
 
@@ -46,7 +48,7 @@ The second part, `-s 1ubq.pdb`, is an option, or _flag_, that modifies the execu
 	-database			The location of the [Rosetta database](https://www.rosettacommons.org/docs/latest/rosetta_basics/database). On most installations this can be automatically detected, so this option should not be required.
 	-ignore_unrecognized_residue	A Boolean (true/false) option which doesn't require an argument, this option tells Rosetta to ignore any residue (like small molecule ligands and crystallization adducts) which it doesn't recognize.
 
-The third part of this command is an options file, or *flags file*, which is simply a newline-delimited list of options. It is functionally equivalent to writing each option individually.
+The third part of this command is an options file, or *flags file*, which is simply a newline-delimited list of options. It is functionally equivalent to writing each option individually. Multiple flags files can be passed to Rosetta. 
 
 #### Example Run
 
@@ -79,7 +81,7 @@ Running RosettaScripts is similar to running an executable directly from the com
 
 ##Running Rosetta via PyRosetta
 
-PyRosetta functions are run within Python scripts. Detailed PyRosetta tutorials can be found [here](http://www.pyrosetta.org/tutorials).
+PyRosetta functions are run within Python scripts and require a separate license and a separate download.  Detailed PyRosetta tutorials can be found [here](http://www.pyrosetta.org/tutorials).
 
 ##Where to Find Things In Rosetta
 
