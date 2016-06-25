@@ -1,0 +1,104 @@
+core.init: Rosetta version unknown:7134f0bafb1e5c1a41896ef14a0348a1c68f22f6 2016-06-16 16:46:30 -0700 from git@github.com:RosettaCommons/main.git
+core.init: command: ../../../main/source/bin/rosetta_scripts.default.macosclangrelease -parser:protocol scripts/symmetry.xml -in:file:s inputs/symm_test.pdb -per_chain_renumbering -mute core.conformation.symmetry.SymmData core.conformation.SymmetryInfo -overwrite
+core.init: 'RNG device' seed mode, using '/dev/urandom', seed=-704366099 seed_offset=0 real_seed=-704366099
+core.init.random: RandomGenerator:init: Normal mode, seed=-704366099 RG_type=mt19937
+core.init: Resolved executable path: /Users/parisahosseinzadeh/Documents/rosetta_XRW/Rosetta/demos/tutorials/symmetry/../../../main/source/bin/rosetta_scripts.default.macosclangrelease
+core.init: Looking for database based on location of executable: /Users/parisahosseinzadeh/Documents/rosetta_XRW/Rosetta/demos/tutorials/symmetry/../../../main/database/
+protocols.jd2.PDBJobInputter: Instantiate PDBJobInputter
+protocols.jd2.PDBJobInputter: PDBJobInputter::fill_jobs
+protocols.jd2.PDBJobInputter: pushed inputs/symm_test.pdb nstruct index 1
+protocols.evaluation.ChiWellRmsdEvaluatorCreator: Evaluation Creator active ... 
+protocols.jd2.JobDistributor: Parser is present.  Input mover will be overwritten with whatever the parser creates.
+protocols.jd2.PDBJobInputter: PDBJobInputter::pose_from_job
+protocols.jd2.PDBJobInputter: filling pose from PDB inputs/symm_test.pdb
+core.chemical.ResidueTypeSet: Finished initializing fa_standard residue type set.  Created 387 residue types
+core.chemical.ResidueTypeSet: Total time to initialize 0.430541 seconds.
+protocols.rosetta_scripts.RosettaScriptsParser: dock_design_filename=scripts/symmetry.xml
+protocols.rosetta_scripts.RosettaScriptsParser: Parsed script:
+<ROSETTASCRIPTS>
+	<SCOREFXNS>
+		<sfx_symm symmetric=1 weights=talaris2014/>
+	</SCOREFXNS>
+	<RESIDUE_SELECTORS/>
+	<TASKOPERATIONS/>
+	<FILTERS/>
+	<MOVERS>
+		<SetupForSymmetry definition=inputs/C3.symm name=add_symm/>
+		<SymPackRotamersMover name=symm_pack scorefxn=sfx_symm/>
+		<SymMinMover bb=0 chi=1 jump=ALL name=symm_min scorefxn=sfx_symm/>
+	</MOVERS>
+	<APPLY_TO_POSE/>
+	<PROTOCOLS>
+		<Add mover=add_symm/>
+		<Add mover=symm_pack/>
+		<Add mover=symm_min/>
+	</PROTOCOLS>
+</ROSETTASCRIPTS>
+core.scoring.ScoreFunctionFactory: SCOREFUNCTION: talaris2014
+core.scoring.etable: Starting energy table calculation
+core.scoring.etable: smooth_etable: changing atr/rep split to bottom of energy well
+core.scoring.etable: smooth_etable: spline smoothing lj etables (maxdis = 6)
+core.scoring.etable: smooth_etable: spline smoothing solvation etables (max_dis = 6)
+core.scoring.etable: Finished calculating energy tables.
+basic.io.database: Database file opened: scoring/score_functions/hbonds/sp2_elec_params/HBPoly1D.csv
+basic.io.database: Database file opened: scoring/score_functions/hbonds/sp2_elec_params/HBFadeIntervals.csv
+basic.io.database: Database file opened: scoring/score_functions/hbonds/sp2_elec_params/HBEval.csv
+basic.io.database: Database file opened: scoring/score_functions/rama/Rama_smooth_dyn.dat_ss_6.4
+basic.io.database: Database file opened: scoring/score_functions/P_AA_pp/P_AA
+basic.io.database: Database file opened: scoring/score_functions/P_AA_pp/P_AA_n
+basic.io.database: Database file opened: scoring/score_functions/P_AA_pp/P_AA_pp
+basic.io.database: Database file opened: scoring/score_functions/PairEPotential/pdb_pair_stats_fine
+core.scoring.etable: Using alternate parameters: LJ_RADIUS_SOFT in Etable construction.
+core.scoring.etable: Starting energy table calculation
+core.scoring.etable: smooth_etable: changing atr/rep split to bottom of energy well
+core.scoring.etable: smooth_etable: spline smoothing lj etables (maxdis = 6)
+core.scoring.etable: smooth_etable: spline smoothing solvation etables (max_dis = 6)
+core.scoring.etable: Finished calculating energy tables.
+basic.io.database: Database file opened: scoring/score_functions/InterchainPotential/interchain_env_log.txt
+basic.io.database: Database file opened: scoring/score_functions/InterchainPotential/interchain_pair_log.txt
+basic.io.database: Database file opened: scoring/score_functions/EnvPairPotential/env_log.txt
+basic.io.database: Database file opened: scoring/score_functions/EnvPairPotential/cbeta_den.txt
+basic.io.database: Database file opened: scoring/score_functions/EnvPairPotential/pair_log.txt
+basic.io.database: Database file opened: scoring/score_functions/EnvPairPotential/cenpack_log.txt
+protocols.jd2.parser.ScoreFunctionLoader: defined score function "sfx_symm" with weights "talaris2014"
+symmetrizing sfx_symm
+protocols.rosetta_scripts.RosettaScriptsParser: Defined mover named "add_symm" of type SetupForSymmetry
+protocols.rosetta_scripts.RosettaScriptsParser: Defined mover named "symm_pack" of type SymPackRotamersMover
+protocols.simple_moves.MinMover: Options chi, bb: 1, 0 omega: 1
+protocols.rosetta_scripts.RosettaScriptsParser: Defined mover named "symm_min" of type SymMinMover
+protocols.rosetta_scripts.ParsedProtocol: ParsedProtocol mover with the following movers and filters
+protocols.rosetta_scripts.ParsedProtocol: added mover "add_symm" with filter "true_filter"
+protocols.rosetta_scripts.ParsedProtocol: added mover "symm_pack" with filter "true_filter"
+protocols.rosetta_scripts.ParsedProtocol: added mover "symm_min" with filter "true_filter"
+protocols.jd2.PDBJobInputter: PDBJobInputter::pose_from_job
+protocols.jd2.PDBJobInputter: filling pose from saved copy inputs/symm_test.pdb
+protocols.rosetta_scripts.ParsedProtocol: =======================BEGIN MOVER SetupForSymmetry - add_symm=======================
+core.conformation.symmetry.util: =================== SYM FOLD TREE, jump notation: =symfixed= *indep* #symdof# jump[=follows] ========================
+S1(229)
+|----#j1#------>4:Sub1A(1-76)
+|----=j4=---->S2(230)----j2=1----->80:Sub2A(77-152)
+\----=j5=---->S3(231)----j3=1---->156:Sub3A(153-228)
+protocols.simple_moves_symmetry.SymDockingInitialPerturbation: Reading options...
+protocols.rosetta_scripts.ParsedProtocol: =======================BEGIN FILTER =======================
+protocols.rosetta_scripts.ParsedProtocol: =======================END FILTER =======================
+protocols.rosetta_scripts.ParsedProtocol: =======================BEGIN MOVER SymPackRotamersMover - symm_pack=======================
+core.pack.dunbrack.RotamerLibrary: Using Dunbrack library binary file '/Users/parisahosseinzadeh/Documents/rosetta_XRW/Rosetta/demos/tutorials/symmetry/../../../main/database/rotamer/ExtendedOpt1-5/Dunbrack10.lib.bin'.
+core.pack.dunbrack.RotamerLibrary: Dunbrack 2010 library took 0.644204 seconds to load from binary
+core.pack.pack_rotamers: built 18483 rotamers at 76 positions.
+core.pack.interaction_graph.interaction_graph_factory: Instantiating PDInteractionGraph
+core.pack.interaction_graph.interaction_graph_factory: IG: 193870736 bytes
+protocols.rosetta_scripts.ParsedProtocol: =======================BEGIN FILTER =======================
+protocols.rosetta_scripts.ParsedProtocol: =======================END FILTER =======================
+protocols.rosetta_scripts.ParsedProtocol: =======================BEGIN MOVER SymMinMover - symm_min=======================
+protocols.rosetta_scripts.ParsedProtocol: =======================BEGIN FILTER =======================
+protocols.rosetta_scripts.ParsedProtocol: =======================END FILTER =======================
+protocols.rosetta_scripts.ParsedProtocol: setting status to success
+protocols.rosetta_scripts.ParsedProtocol.REPORT: ============Begin report for ==================
+protocols.rosetta_scripts.ParsedProtocol.REPORT: ============End report for ==================
+protocols.rosetta_scripts.ParsedProtocol.REPORT: ============Begin report for ==================
+protocols.rosetta_scripts.ParsedProtocol.REPORT: ============End report for ==================
+protocols.rosetta_scripts.ParsedProtocol.REPORT: ============Begin report for ==================
+protocols.rosetta_scripts.ParsedProtocol.REPORT: ============End report for ==================
+protocols.jd2.JobDistributor: symm_test_0001 reported success in 59 seconds
+protocols.jd2.JobDistributor: no more batches to process... 
+protocols.jd2.JobDistributor: 1 jobs considered, 1 jobs attempted in 59 seconds

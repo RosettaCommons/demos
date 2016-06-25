@@ -60,3 +60,10 @@ This will add a FLAT_HARMONIC potential with the parameters 0 1 5 (recommended)
 around the distance between the CA of residue 4 (PDB numbering) on chain A and 
 the closest CA on chain D to the ScoreFunction. 
 
+To run these examples, use
+```bash
+$> <path/to/Rosetta/main/source/bin/>/docking_protocol.default.linuxgccrelease @rosetta_inputs/options
+$> <path/to/Rosetta/main/source/bin/>/docking_protocol.default.linuxgccrelease @rosetta_inputs/options.constraint_ambiguous
+$> <path/to/Rosetta/main/source/bin/>/docking_protocol.default.linuxgccrelease @rosetta_inputs/options_wo_constraints
+```
+

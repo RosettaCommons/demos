@@ -1,0 +1,5 @@
+-extra_res_fa inputs/CP1.params
+-extra_res_fa inputs/ZN1.params
+-s silent.out
+#-tags 7cpa_no_ligand_CP1_0_0012 
+#you can use this to extract only certain PDBs from silent file

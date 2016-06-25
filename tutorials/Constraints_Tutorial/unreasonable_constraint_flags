@@ -1,3 +1,2 @@
 -constraints:cst_fa_file unreasonably_constrained_atompairs.cst
 -constraints:cst_fa_weight 100
--out:path:pdb ./tutorial_output

@@ -1,4 +1,0 @@
--parser:protocol scripts/symmetry.xml 
--in:file:s inputs/symm_test.pdb 
--per_chain_renumbering 
--mute core.conformation.symmetry.SymmData core.conformation.SymmetryInfo

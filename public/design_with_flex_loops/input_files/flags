@@ -8,5 +8,5 @@
 -loops:random_loop
 -ccd:max_cycles 5
 -out:prefix 3k2m_
--mut core.io.database
+-mute core.io.database
 -nstruct 1

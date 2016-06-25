@@ -1,12 +1,11 @@
 # Symmetry Tutorial
-KEYWORDS: SYMMETRY GENERAL
-
+KEYWORDS: SYMMETRY GENERAL   
 Complaints and suggestions can be send to:   
-Sebastian Rämisch  
-raemisch@scripps.edu
+Sebastian Rämisch (raemisch@scripps.edu)
 
--
+[[_TOC_]]
 
+## Symmetry in Rosetta
 There is a very comprehensive documentation of how symmetry is dealt with in Rosetta: The  
 [Symmetry User Guide](https://www.rosettacommons.org/docs/latest/rosetta_basics/structural_concepts/symmetry#symmetry-definitions).  
 It explains the underlying concepts and how to run simulations using symmetry.
@@ -49,9 +48,9 @@ Fortunately, there is another way to make Rosetta aware of more complicated arra
 ## Basic symmetry definition for complex systems
 
 ### The use of virtual residues
-For Rosetta to move multiple proteins around, those have to be connected in some way all the time. Converting internal coordinates (torsion angle-based) to 3D-coordinates works by 'walking' along the connection and calculating the 3D-coordinates of residue 2 relative to residue 1. Analogously, the coordinate of chain B is calculated by walking from chain A to chain B ( see [Fold Tree Tutorial]() ).
+For Rosetta to move multiple proteins around, those have to be connected in some way all the time. Converting internal coordinates (torsion angle-based) to 3D-coordinates works by 'walking' along the connection and calculating the 3D-coordinates of residue 2 relative to residue 1. Analogously, the coordinate of chain B is calculated by walking from chain A to chain B ( see [[Fold Tree Tutorial|fold_tree]] ).
 
-In symmetry mode, related chains have to perform equivalent moves,  relative to something, e.g. the coordinate system origin (0,0,0) or the midpoint between three subunits. For that to work, all subunits have to be connected to that point. The only way to achieve that is by placing a **Virtual Residue** (VRT) - a *connecting hub* somewhere in space. All subunits are then connected to that virtual residue by Rosetta's immaginary bonds (i.e **jumps**, see [Fold Tree Tutorial]() ). The trick when running Rosetta with symmetry is to apply all changes to one jump (VRT --> SU\_1) to the other subunits (VRT --> SU\_2 and VRT --> SU\_3). The more complex your symmetry is, the more VRTs you will need.   
+In symmetry mode, related chains have to perform equivalent moves,  relative to something, e.g. the coordinate system origin (0,0,0) or the midpoint between three subunits. For that to work, all subunits have to be connected to that point. The only way to achieve that is by placing a **Virtual Residue** (VRT) - a *connecting hub* somewhere in space. All subunits are then connected to that virtual residue by Rosetta's immaginary bonds (i.e **jumps**, see [[Fold Tree Tutorial|fold_tree]] ). The trick when running Rosetta with symmetry is to apply all changes to one jump (VRT --> SU\_1) to the other subunits (VRT --> SU\_2 and VRT --> SU\_3). The more complex your symmetry is, the more VRTs you will need.   
 
 -
 ### VRTs and JUMPs - Symmetric Fold Trees

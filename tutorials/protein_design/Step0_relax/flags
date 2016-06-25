@@ -1,4 +1,4 @@
--parser:protocol symm_relax.xml
+-parser:protocol Step0_relax/symm_relax.xml
 -s 3UKM_A.pdb
 -in:file:spanfile 3UKM.span
 -membrane:no_interpolate_Mpair

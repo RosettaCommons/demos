@@ -2,6 +2,8 @@
 
 KEYWORDS: STRUCTURE_PREDICTION GENERAL
 
+[[_TOC_]]
+
 **Bold text means that these files and/or this information is provided.**
 
 *Italicized text means that this material will NOT be conducted during the workshop.*
@@ -233,7 +235,7 @@ This tutorial presents a protein folding benchmark experiment. Bacteriophage T4 
 
                 cp input_files/2LZM_dist_w1.cst .
 
-        1. Review the cst file by opening it in a text editor. For more information, check the [constraint tutorial](Tutorial_8_Constraints).
+        1. Review the cst file by opening it in a text editor. For more information, check the [[constraint tutorial|Constraints]].
 
         1. The cst file has the basic format: 
 
@@ -384,10 +386,10 @@ This tutorial presents a protein folding benchmark experiment. Bacteriophage T4 
 ##Appendix: Additional Techniques
 
 1. Using make_fragments.pl - (NOTE: The workshop machines are not configured for making fragments.)
-    1. For more information on the fragment picker, please go to [https://www.rosettacommons.org/docs/latest/app-fragment-picker.html](https://www.rosettacommons.org/docs/latest/app-fragment-picker.html) and see Gront, et al., PLoS ONE, 2011.
+    1. For more information on the fragment picker, please go to [https://www.rosettacommons.org/docs/latest/application_documentation/utilities/app-fragment-picker](https://www.rosettacommons.org/docs/latest/application_documentation/utilities/app-fragment-picker) and see Gront, et al., PLoS ONE, 2011.
     1. The make_fragments.pl script is in <path-to-Rosetta>/tools/fragment_tools/
     1. Please read the fragments.README file in the above directory for more information concerning using the script
-    1. In order to use make_fragments.pl, you will first need to install PSI-BLAST ([ftp://ftp.ncbi.nih.gov/blast/executables/release/2.2.17/](ftp://ftp.ncbi.nih.gov/blast/executables/release/2.2.17/); Requires non-blast+ NCBI version), the non-redundant (NR) database ([ftp://ftp.ncbi.nih.gov/blast/db/](ftp://ftp.ncbi.nih.gov/blast/db/)), and perhaps PSI-PRED ([http://bioinf.cs.ucl.ac.uk/psipred/](http://bioinf.cs.ucl.ac.uk/psipred/)).
+    1. In order to use make_fragments.pl, you will first need to install PSI-BLAST ([ftp://ftp.ncbi.nih.gov/blast/executables/blast+/LATEST](ftp://ftp.ncbi.nih.gov/blast/executables/blast+/LATEST); Requires non-blast+ NCBI version), the non-redundant (NR) database ([ftp://ftp.ncbi.nih.gov/blast/db/](ftp://ftp.ncbi.nih.gov/blast/db/)), and perhaps PSI-PRED ([http://bioinf.cs.ucl.ac.uk/psipred/](http://bioinf.cs.ucl.ac.uk/psipred/)).
     1. You will also need a Vall database, which is in the above directory (vall.jul19.2011.gz)
     1. You will need to modify make_fragments.pl in order to reflect the paths specific to your case (we will not do this during the workshop). The comments in the scripts should tell you how to modify paths.*
     1. For a usage statement, run the script without arguments:
@@ -398,7 +400,7 @@ This tutorial presents a protein folding benchmark experiment. Bacteriophage T4 
     
             <path-to-Rosetta>/tools/fragment_tools/make_fragments.pl 2LZMA.fasta >& make_fragments.log &
 
-    1. OPTIONAL: You can use any other secondary structure prediction method, such as JUFO ([http://www.meilerlab.org/index.php/servers/show?s_id=5](http://www.meilerlab.org/index.php/servers/show?s_id=5)) or Porter ([http://distill.ucd.ie/porter/](http://distill.ucd.ie/porter/)), but it must be in PSI-PRED ss2 vertical format.  This can be done by running:
+    1. OPTIONAL: You can use any other secondary structure prediction method, such as JUFO ([http://www.meilerlab.org/index.php/servers/show?s_id=5](http://www.meilerlab.org/index.php/servers/show?s_id=5)) or Porter ([http://distillf.ucd.ie/porterpaleale/](http://distill.ucd.ie/porter/)), but it must be in PSI-PRED ss2 vertical format.  This can be done by running:
     
             <path-to-Rosetta>/tools/fragment_tools/ss_pred_converter.py \
             -j 2LZMA.jufo_ss > 2LZMA.jufo_ss2
