@@ -8,20 +8,29 @@ PDB file (1l2y) including two non-canonical amino acids (NVL and HLU).
 In the second part of this tutorial we show how to incorporate novel 
 non-canonical amino acid side-chains into rosetta for design.
 
+Updated in June 2016 during documentation XRW to enable automated testing (parisah@uw.edu).
+
 Designing with NCAA
 ===================
 
 Below are two command-lines for making point-mutations including the possibility 
 of incorporating non-canonical amino acids. In this procedure the backbone is 
-kept fixed and the Trp6 residue is allowed to be altered.
+kept fixed and the Trp6 residue is allowed to be altered. *Note: this example
+makes use of PyRosetta scripts, and requires that PyRosetta is installed.*
 
 * Trp6 → Canonical amino acids plus NVL and HLU
 
-        ~/svn/mini/bin/fixbb.linuxiccrelease -s 1l2y.pdb -use_input_sc -nstruct 1 -database ~/minirosetta_database/ -ex1 -ex2 -overwrite -minimize_sidechains -resfile ncaa_resfile_pluscanon
+```bash
+> $ROSETTA3/bin/fixbb.default.linuxgccrelease -s starting_files/1l2y.pdb -use_input_sc -nstruct 1 -ex1 -ex2 -overwrite -minimize_sidechains -resfile rosetta_inputs/ncaa_resfile_pluscanon
+```
+
+where `$ROSETTA3`=path-to-Rosetta/main/source
 
 * Trp6 → NVL or HLU
 
-        ~/svn/mini/bin/fixbb.linuxiccrelease -s 1l2y.pdb -use_input_sc -nstruct 1 -database ~/minirosetta_database/ -ex1 -ex2 -overwrite -minimize_sidechains -resfile ncaa_resfile
+```bash``
+$> $ROSETTA3/bin/fixbb.default.linuxgccrelease -s starting_files/1l2y.pdb -use_input_sc -nstruct 1 -ex1 -ex2 -overwrite -minimize_sidechains -resfile rosetta_inputs/ncaa_resfile
+```
 
 Adding new sidechains to Rosetta
 ================================
@@ -321,8 +330,10 @@ Running molfile2params.py
 Finally, the `molfile2params_polymer.py` script will convert the modified molfile 
 to a params file. The commands bellow work for the example files:
 
-    $ python molfile_to_params_polymer.py --clobber --polymer --no-pdb --name C40 -k ornithine.kin stage_05_modified_molfile/ornithine.mol
-    $ python molfile_to_params_polymer.py --clobber --polymer --peptoid --no-pdb --name P01 -k amino2.kin stage_05_modified_molfile/amino2.mol
+```bash
+$> ./molfile_to_params_polymer.py --clobber --polymer --no-pdb --name C40 -k ornithine.kin stage_05_modified_molfile/ornithine.mol
+$> ./molfile_to_params_polymer.py --clobber --polymer --peptoid --no-pdb --name P01 -k amino2.kin stage_05_modified_molfile/amino2.mol
+```
 
 There is additional tweaking that needs to happen to the params files to make 
 them work. Compare these to the ones in the database for reference. 

@@ -25,12 +25,12 @@ The "LOV2" domain binds a flavin and, when exposed to blue light, forms a thiol 
 
 We downloaded the .sdf file for the flavin attached to LOV2 from the PDB (http://www.pdb.org/pdb/explore/explore.do?structureId=2V0W), Ligands_noHydrogens_withMissing_1_Instances.sdf (an awful name for this file). Also, the file doesn't contain hydrogens, which we do want. So, first, we need to add hydrogens to this file.  The program REDUCE (which can be obtained from the [Richardson lab website](http://kinemage.biochem.duke.edu/software/reduce.php)) can be used to add hydrogens.  To run REDUCE, you have to put a copy (or symlink) of the reduce_het_dict.txt file in the /usr/local directory. You can also use other programs. For more information please refer to tutorials/prepare_ligand.
 
-```
-$ cd /usr/local
-$ sudo ln -s /Users/andrew/reduce/reduce_het_dict.txt
-$ ~/reduce/reduce.3.03.061020.macosx.i386 2V0W.pdb > blah.pdb
+```bash
+> cd /usr/local
+> sudo ln -s /Users/andrew/reduce/reduce_het_dict.txt
+> ~/reduce/reduce.3.03.061020.macosx.i386 2V0W.pdb > blah.pdb
 
-$ grep FMN blah.pdb | tail -n 9
+> grep FMN blah.pdb | tail -n 9
 HETATM    0 3HM8 FMN A1547      15.201   6.333   6.801  1.00 11.04           H   new
 HETATM    0 3HM7 FMN A1547      13.095   4.009   5.709  1.00 11.55           H   new
 HETATM    0 2HM8 FMN A1547      14.999   5.775   8.496  1.00 11.04           H   new
@@ -44,9 +44,9 @@ HETATM    0  H6  FMN A1547      14.354   1.560   6.108  1.00 12.59           H  
 
 Now open up the PDB file of the ligand in pymol and have PyMOL write it out as a .mol file.
 
-```
-$ grep FMN blah.pdb > FMN_w_h.pdb
-$ pymol FMN_w_h.pdb
+```bash
+> grep FMN blah.pdb > FMN_w_h.pdb
+> pymol FMN_w_h.pdb
 ```
 --> save molecule
 
@@ -57,7 +57,8 @@ $ pymol FMN_w_h.pdb
 produces FMN_w_h.mol
 
 We can convert the MOL file to a .params file with a script named molfile_to_params.py (located in <path_to_Rosetta_directory>/main/source/scripts/python/public/). This script can be run with the "-h" flag to list all the flags that are applicable.
-```
+
+```bash
 $> cp rosetta_inputs/FMN_w_h.mol .
 $> $ROSETTA3/scripts/python/public/molfile_to_params.py -n FMN -p FMN FMN_w_h.mol
 ```
@@ -90,16 +91,19 @@ The .params file looks good, and the PDB file FMN_0001.pdb looks good. The other
 residue. To do this, add a "CONNECT C8" line to the FMN params file (anywhere after the ATOM records is fine). 
 
 Finally, we need to add an "ICOOR" line for this connection at the bottom of the file (and to get this, we'll measure the distance to the CYS SG in the 2V0W pdb). The format for this line is:
+
 ```
 ICOOR_INTERNAL CONN1 <torsion> <180 - N3:C8:SG angle> <C8:SG distance> <parent atom name> <grandparent name> <great-grandparent name>
 ```
 
 The dihedral isn't particularly useful, but we do need to know the C8-SG distance, C8-SG-CB angle, and the last angle from the "parent atom" of C8 to C8 to SG. we can find the parent atom in the "ICOOR" line for C8 in the .params file.
+
 ```
 ICOOR_INTERNAL C8 27.068913 64.302080 1.415450 N3 C9 C16
 ```
 
 This says "N3" is the parent, C9 is the grandparent, and C16 is the great-grandparent.  So we need the N3-C8-SG angle.
+
 ```
 C8-SG: 1.9 A
 C8-SG-CB: 111.2 degrees
@@ -109,6 +113,7 @@ N3-C8-SG: 110.7 degrees
 We'll need some of these parameters for the ICOOR, and some of them later for the constraints we'll use to enforce good geometry for this chemical bond (Rosetta does not do that for you!).
 
 Thus, the line to be added should be the following:<br>
+
 ```
 ICOOR_INTERNAL  CONN1  180.000000   69.300000    1.900000   C8    N3    C9
 ```
@@ -119,13 +124,9 @@ The name "CONN1" says that this is the location for the atom that is covalently 
 
 The next step is to swap the newly generated FMN with the existing FMN residue: the point is to use the newly generated names for the atoms.  Atom names have to agree (perfectly!) between the input PDB file and the .params file.  Careful: the .params file has a strange format. 
 The atom names given on the ATOM lines are column formatted, so don't add extra whitespace. The rest of the line (not the names) is whitespace delimited.  Paste the contents of the FMN_0001.pdb file to the bottom of the original 2V0W file, and remove the HETATM lines using the original flavin molecule atom names. To add the newly created ligand residue to the database of residue types Rosetta uses, use the flag -extra_res_fa on the command line:
+
 ```
 -extra_res_fa FMN_modded.params
-```
-
-It is also necessary to change the CYS which is forming the chemical bond with the flavin in the 2V0W pdb file to a modified CYS conformation. The version of CYS in Rosetta which forms a chemical bond to something else is named CYX. So rename residue 450 to CYX from CYS. This residue-type is defined in database/chemical/residue_type_sets/fa_standard/residue_types/sidechain_conjugation/CYX.params. It is not automatically read in when Rosetta loads: its entry in the rosetta_database/chemical/residue_type_sets/fa_standard/residue_types.txt file is commented out, so we also have to uncomment this line. ALTERNATIVELY: we can explicitly add this file to the list of files that Rosetta loads by including it on the command line as we did above. The flag for this would be:
-```
--extra_res_fa sidechain_conjugation/CYX.params
 ```
 
 # Making a constraints file
@@ -153,17 +154,19 @@ For more information about the constraints, you can check the [constraints tutor
 
 # Running the relax protocol
 
-To run the relax protocol, we need to pass in a PDB with the correct FMN and CYX lines, the parameter files for the modified CYS and the FMN, and the constraint file.  We also need to activate constraints during scorefunction evaluation, which can be done using the score:weights flag on the command line.  
+To run the relax protocol, we need to pass in a PDB with the correct FMN lines, the parameter files for the modified CYS and the FMN, and the constraint file.  We also need to activate constraints during scorefunction evaluation, which can be done using the score:weights flag on the command line.  
 You can copy the necessary files that are pre-generated from rosetta_inputs directory:
-```
+
+```bash
 $> cp rosetta_inputs/2V0W.pdb .
 $> cp rosetta_inputs/FMN_modded.params .
+$> cp rosetta_inputs/chemical_bond.cst .
 ```
 
 A complete command line for the protocol would be as follows:
 
-```
-$> $ROSETTA3/bin/relax.default.linuxgccrelease -s 2V0W.pdb -in:file:fullatom -extra_res_fa rosetta_inputs/FMN_modded.params -extra_res_fa sidechain_conjugation/CYX.params -overwrite -cst_fa_file chemical_bond.cst -score:weights talaris2014_cst.wts -mute basic core.init core.scoring
+```bash
+$> $ROSETTA3/bin/relax.default.linuxgccrelease -s 2V0W.pdb -in:file:fullatom -extra_res_fa rosetta_inputs/FMN_modded.params -overwrite -cst_fa_file chemical_bond.cst -score:weights talaris2014_cst.wts -mute basic core.init core.scoring
 ```
 
 Truncated output from the command:
@@ -174,7 +177,7 @@ protocols.jd2.PDBJobInputter: PDBJobInputter::fill_jobs
 protocols.jd2.PDBJobInputter: pushing 2V0W.pdb nstruct index 1
 protocols.jd2.PDBJobInputter: PDBJobInputter::pose_from_job
 core.chemical.ResidueTypeSet: Finished initializing fa_standard residue type set.  Created 6480 residue types
-core.conformation.Conformation: Connecting residues: 50 ( CYX ) and 147 ( FMN ) at atoms  SG  and  C8 
+core.conformation.Conformation: Connecting residues: 50 ( CYS ) and 147 ( FMN ) at atoms  SG  and  C8 
 core.conformation.Conformation:  with mututal distances: 2.63043 and 2.09338
 core.import_pose.import_pose: Can't find a chemical connection for residue 147 FMN
 core.pack.task: Packer task: initialize from command line() 

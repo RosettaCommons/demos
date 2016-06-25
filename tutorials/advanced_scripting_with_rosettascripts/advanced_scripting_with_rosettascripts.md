@@ -4,6 +4,8 @@ KEYWORDS: SCRIPTING_INTERFACES CORE_CONCEPTS
 
 Tutorial by Vikram K. Mulligan (vmullig@uw.edu), Rocco Moretti (rmorettiase@gmail.com), Parisa Hosseinzadeh (parisah@uw.edu), and Kristen Blacklock (kristin.blacklock@rutgers.edu).  Created on 23 June 2016 as part of the 2016 Documentation XRW.
 
+[[_TOC_]]
+
 ## Goals
 
 At the end of this tutorial, you will understand:

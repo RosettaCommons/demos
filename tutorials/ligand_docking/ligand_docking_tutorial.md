@@ -80,7 +80,7 @@ to learn more about the script for generating the params file.
 
 Type:
 ```
-$> $ROSETTA3/scripts/python/public/molfile_to_params.py -n ETQ -p ETQ --conformers-in-one-file eticlopride_conformers.sdf  
+$> $ROSETTA3/scripts/python/public/molfile_to_params.py -n ETQ -p ETQ --conformers-in-one-file ligand_prep/eticlopride_conformers.sdf
 ```
 Note: You may encounter a warning about the number of atoms in the residue. This is okay as Rosetta is merely telling you that the ligand has more atoms than an amino acid.      
 
@@ -141,7 +141,7 @@ $> cp docking/crystal_complex.pdb .
 6.Run the docking study (This should take a few minutes at most, as we're using a reduced number of output structures):   
 
 ```
-$> <path-to-Rosetta>/main/source/bin/rosetta_scripts.linuxgccrelease @options
+$> $ROSETTA3/bin/rosetta_scripts.linuxgccrelease @options
 
 ```
 7.The Rosetta models are saved with the prefix 3PBL\_ETQ\_ followed by a four digit identifier. Each model PDB contains the coordinates and Rosetta score corresponding to that model. In addition, the model scores are summarized in table format in the score.sc file. The two main scoring terms to consider are:

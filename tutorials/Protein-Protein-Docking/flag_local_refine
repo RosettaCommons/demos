@@ -1,0 +1,13 @@
+-in:file:s input_files/1v74.pdb
+
+-nstruct 1
+
+-docking_local_refine
+-use_input_sc
+
+-ex1
+-ex2aro
+
+-out:file:fullatom
+-out:path:all output_files
+-out:suffix _local_refine
