@@ -25,7 +25,7 @@ Command-lines
 1. Redesigning
 
 ```bash
-$> $ROSETTA3/bin/beta_peptide_modeling.default.linuxgccrelease -force_field beta_peptide -native redesign/acdy_LLLL_LLLL.pdb -algorithm redesign -ex1 -ex2 -packing::pack_missing_sidechains false -packing::extrachi_cutoff 0 -repack_res 2 5 8 11 14 17 20 23 -n_repeat 4 -repeat_size 24
+$> $ROSETTA3/bin/beta_peptide_modeling.default.linuxgccrelease -force_field beta_peptide -native rosetta_inputs/redesign/acdy_LLLL_LLLL.pdb -algorithm redesign -ex1 -ex2 -packing::pack_missing_sidechains false -packing::extrachi_cutoff 0 -repack_res 2 5 8 11 14 17 20 23 -n_repeat 4 -repeat_size 24
 ```
 
    `-native` gives the starting model.
@@ -37,14 +37,14 @@ $> $ROSETTA3/bin/beta_peptide_modeling.default.linuxgccrelease -force_field beta
 2. Repacking
 
 ```bash
-$> $ROSETTA3/bin/beta_peptide_modeling.default.linuxgccrelease -database ../../../../rosetta_database -force_field beta_peptide_soft_rep_design -native repack_and_minimize/acdy_LFFL_LFFL.pdb -algorithm repack -ex1 -ex2 -packing::pack_missing_sidechains false -packing::extrachi_cutoff 0 -repack_res 2 5 8 11 14 17 20 23 -n_repeat 4 -repeat_size 24
+$> $ROSETTA3/bin/beta_peptide_modeling.default.linuxgccrelease -database ../../../../rosetta_database -force_field beta_peptide_soft_rep_design -native rosetta_inputs/repack_and_minimize/acdy_LFFL_LFFL.pdb -algorithm repack -ex1 -ex2 -packing::pack_missing_sidechains false -packing::extrachi_cutoff 0 -repack_res 2 5 8 11 14 17 20 23 -n_repeat 4 -repeat_size 24
 ```
    Similar to above, but only repack the original residues.
 
 3. Minimization
 
 ```bash
-$> $ROSETTA3/bin/beta_peptide_modeling.default.linuxgccrelease -database  ../../../../rosetta_database -force_field beta_peptide -native repack_and_minimize/acdy_LFFL_LFFL_repack.pdb -algorithm minimize -ex1 -ex2 -packing::pack_missing_sidechains false -packing::extrachi_cutoff 0 
+$> $ROSETTA3/bin/beta_peptide_modeling.default.linuxgccrelease -database  ../../../../rosetta_database -force_field beta_peptide -native rosetta_inputs/repack_and_minimize/acdy_LFFL_LFFL_repack.pdb -algorithm minimize -ex1 -ex2 -packing::pack_missing_sidechains false -packing::extrachi_cutoff 0 
 ```
 
    Minimize a given pdb, return the final model and Rosetta energies.
