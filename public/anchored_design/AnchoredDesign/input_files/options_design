@@ -67,4 +67,4 @@
 #sample-size command
 -AnchoredDesign::perturb_cycles 50
 -AnchoredDesign::refine_cycles 100
--nstruct 4
+-nstruct 1

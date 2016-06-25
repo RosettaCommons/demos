@@ -245,7 +245,8 @@ The input files for AnchoredDesign provide an example with 1zr0 for running Anch
 * loopsfile_native tells AnchoredDesign NOT to forget the starting loop conformation – this is probably what you would use for design, although there is no reason you can't reject the starting loop conformation for design.  (This is cheating for benchmarking, but useful for making relaxed natives)
 * options is the command line options file.  The active options are for a simple “does it run” test; parameters for a longer running “real” test are included.
 * A resfile is necessary if you wish to design, and is only active in that option set.  
-
+ $> cd AnchoredDesign/input_files
+ $> $ROSETTA3/bin/AnchoredDesign.default.linuxclangrelease @options_design -overwrite
 Interpreting AnchorDesign — Benchmarking
 ----------------------------------------
 (This section applies to the benchmarking case only)

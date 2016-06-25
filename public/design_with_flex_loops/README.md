@@ -8,22 +8,20 @@ Method 1: RosettaRemodel
 
 Documentation: <https://www.rosettacommons.org/docs/latest/application_documentation/design/rosettaremodel>
 
-Requirement:
-
-    svn co https://svn.rosettacommons.org/source/trunk/rosetta_scripts/remodel
 
 1.  Preparing the PDB
 
     Take the PDB 3k2m.pdb. Select chain B and C. Get rid of HETATM. Do fast 
-    relax.
+    relax. (where `$ROSETTA3`=path-to-Rosetta/main/source)
 
-        ~/mini/bin/relax.macosgccrelease -database /Users/rjha/minirosetta_database -s 3k2m_bc.pdb -ignore_unrecognized_res -use_input_sc -constrain_relax_to_start_coords -relax:fast -out:file:renumber_pdb
+        $> $ROSETTA3/bin/relax.default.linuxgccrelease -s input_files/3k2m_bc.pdb -ignore_unrecognized_res -use_input_sc -constrain_relax_to_start_coords -relax:fast -out:file:renumber_pdb
 
     Let's say the PDB is `3k2m_bc_relax.pdb`. Delete the Chain ID column.
 
 2.  Generating BluePrint
 
-        ./getBluePrintFromCoords.pl -pdbfile 3k2m_bc_relax.pdb > test.blueprint
+        $> cp scripts/getBluePrintFromCoords.pl .
+        $> ./getBluePrintFromCoords.pl -pdbfile input_files/3k2m_bc_relax.pdb > test.blueprint
 
     The blueprint file has the information to direct the protocol on which 
     residue to design and remodel.
@@ -59,9 +57,9 @@ Requirement:
     * Column 2 is the residue identity
     * Column 3 is the backbone behavior 
 
-4.  Running the remodel application
+4.  Running the remodel application (you should replace input_files/* with your files)
 
-        /mini/bin/remodel.macosgccrelease -s 3k2m_bc_relax.pdb -remodel:blueprint test.blueprint -extrachi_cutoff 1 -ex1 -ex2 -use_input_sc -num_trajectory 3 -save_top 1 -use_clusters false -database ~/minirosetta_database -find_neighbors
+        > $ROSETTA3/bin/remodel.default.linuxgccrelease -s input_files/3k2m_bc_relax.pdb -remodel:blueprint input_files/test.blueprint -extrachi_cutoff 1 -ex1 -ex2 -use_input_sc -num_trajectory 3 -save_top 1 -use_clusters false -find_neighbors
 
 
 Method 2: Loopmodel and Fixbb
@@ -77,7 +75,7 @@ the monobody part of interface.
 2.  Creating fragment libraries
 
     Take the fasta file of 3k2m_bc_relax.pdb. Create  fragment libraries of 
-    sizes 9 and 3 locally or through Robetta Server.
+    sizes 9 and 3 locally or through [Robetta Server](robetta.bakerlab.org).
 
 3.  Other input files
 
@@ -98,15 +96,15 @@ the monobody part of interface.
         column5  "float":    Skip rate. default - never skip
         column6  "boolean":  Extend loop. Default false.
 
-4.  Running the loopmodel application:
+4.  Running the loopmodel application. For this run, you need to have your fragments ready in the input directory).
 
-        ~/mini/bin/loopmodel.macosgccrelease  @flags
+        > $ROSETTA3/bin/loopmodel.default.linuxgccrelease  @input_files/flags
 
     where the flags file consist of following options (edit path to database!):
 
-        -database ~/minirosetta_database
+        
         -in:file:fullatom
-        -loops:input_pdb 3k2m_bc_relax.pdb
+        -loops:input_pdb input_files/3k2m_bc_relax.pdb
         -loops:loop_file 3k2m.loop_file
         -loops:frag_sizes 9 3 1
         -loops:frag_files aat000_09_05.200_v1_3 aat000_03_05.200_v1_3 none
@@ -123,7 +121,7 @@ the monobody part of interface.
 
     Create a list of the output PDBs from loop modeling.
 
-        ~/mini/bin/fixbb.macosgccrelease -database ~/minirosetta_database  -l list -resfile resfile -extrachi_cutoff 1 -ex1 -ex2 -nstruct 5
+        > $ROSETTA3/bin/fixbb.default.linuxgccrelease -l list -resfile resfile -extrachi_cutoff 1 -ex1 -ex2 -nstruct 5
 
     Resfile format:
 

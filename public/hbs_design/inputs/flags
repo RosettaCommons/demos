@@ -1,8 +1,8 @@
 # turn on patches
--include_patches patches/hbs_pre.txt patches/hbs_post.txt 
+#-include_patches patches/hbs_pre.txt patches/hbs_post.txt 
 
 # first chain is target, second chain is hbs
--s ../inputs/mdm2_hbs.pdb
+-s ./inputs/mdm2_hbs.pdb
 
 # production
 #-nstruct 1000

@@ -48,11 +48,11 @@ Running the Demo
 2. Run dock/design protocol using rosetta_scripts.
     * Change working directory to the output directory.
       ```
-      cd output_files
+      $> cd output_files
       ```
     * Run design_script.xml using rosetta_scripts executable.
       ```
-      ~/mini/bin/rosetta_scripts.macosgccrelease -s ../rosetta_inputs/raf-rac.pdb -database ~/minirosetta_database/ -parser:protocol ../rosetta_inputs/design_script.xml -in:file:native ../rosetta_inputs/raf-rac.pdb -ex1 -ex2 -ignore_unrecognized_res -nstruct 1 -overwrite
+      $> $ROSETTA3/bin/rosetta_scripts.macosgccrelease -s ../rosetta_inputs/raf-rac.pdb -parser:protocol ../rosetta_inputs/design_script.xml -in:file:native ../rosetta_inputs/raf-rac.pdb -ex1 -ex2 -ignore_unrecognized_res -nstruct 1 -overwrite
       ```
     * Options:
       * `-ex1 -ex2`: expand rotamer library for chi1 and chi2 angles used in repacking/design

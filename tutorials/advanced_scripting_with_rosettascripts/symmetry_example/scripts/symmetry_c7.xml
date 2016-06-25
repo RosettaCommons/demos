@@ -1,0 +1,24 @@
+<ROSETTASCRIPTS>
+	<SCOREFXNS>
+		<sfx_symm weights="talaris2014" symmetric="true" />
+	</SCOREFXNS>
+	<RESIDUE_SELECTORS>
+	</RESIDUE_SELECTORS>
+	<TASKOPERATIONS>
+		<RestrictToRepacking name="nodesign" />
+	</TASKOPERATIONS>
+	<FILTERS>
+	</FILTERS>
+	<MOVERS>
+		<SetupForSymmetry name="add_symm" definition="C7.symm" />
+		<SymPackRotamersMover name="symm_pack" scorefxn="sfx_symm" task_operations="nodesign" />
+		<SymMinMover name="symm_min" scorefxn="sfx_symm" bb="false" chi="true" jump="ALL" tolerance="0.0000001" />
+	</MOVERS>
+	<APPLY_TO_POSE>
+	</APPLY_TO_POSE>
+	<PROTOCOLS>
+		<Add mover="add_symm" />
+		<Add mover="symm_pack" />
+		<Add mover="symm_min" />
+	</PROTOCOLS>
+</ROSETTASCRIPTS>

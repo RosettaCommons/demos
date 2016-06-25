@@ -184,7 +184,7 @@ A second option that is good to know about is using [[RosettaScripts|https://www
 
 To convert a full atom PDB to centroid, we need to interface with Rosetta at a level deeper than any executable will allow us to do. The simplest way to do this is to write a script using [[RosettaScripts|https://www.rosettacommons.org/demos/latest/tutorials/rosetta_scripting/README]]. The following short XML script calls a *mover* (_SwitchResidueTypeSetMover_) and asks it to convert the centroid structure to full atom: 
 
-```
+```xml
 <ROSETTASCRIPTS>
 	<SCOREFXNS>
 	</SCOREFXNS>
@@ -216,7 +216,7 @@ Compare this to the PDB `<path_to_Rosetta_directory>/demos/tutorials/full_atom_v
 
 Almost the same script can do the reverse operation:
 
-```
+```xml
 <ROSETTASCRIPTS>
 	<SCOREFXNS>
 	</SCOREFXNS>

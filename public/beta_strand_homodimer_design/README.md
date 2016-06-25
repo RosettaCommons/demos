@@ -119,7 +119,7 @@ Running the Demo
     Now you are ready for the full design runs. I suggest using mpi compiled executables but the command line below is general. 
     Run this command:
     ```
-    $> $ROSETTA3/bin/homodimer_design.default.linuxgccrelease -s 2a7b_mpm_A806_anti_wind_1_step_1_INPUT.pdb.gz -database rosetta/rosetta_database -symmetry:symmetry_definition symmdef @design_options
+    $> $ROSETTA3/bin/homodimer_design.default.linuxgccrelease -s 2a7b_mpm_A806_anti_wind_1_step_1_INPUT.pdb.gz  -symmetry:symmetry_definition symmdef @design_options
     ```
     See the comments in the design_options file for descriptions of what does what.
 
