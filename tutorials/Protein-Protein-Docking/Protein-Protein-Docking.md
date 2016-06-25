@@ -139,6 +139,7 @@ input_files/COL_D_ensemble/COL_D_0003.pdb.ppk
 -94.2715
 -93.9065
 ```
+**Remember that `COL_D_ensemblelist` and `IMM_D_ensemblelist` need to be regenerated if you run docking prepack again, otherwise you will get uninformative error meaasges.**
 
 The docking protocol expects these prepacked conformations. This will also produce a score file and an output, but you can ignore both. Now run the docking protocol.
 
