@@ -36,9 +36,8 @@ cd %(workdir)s
 
 cd %(workdir)s/Part2/
 
-%(bin)s/rosetta_scripts.%(binext)s -parser:protocol ligand_dock.xml @flags_part2 -database %(database)s -out:output >&1 \
-    | egrep -vf ../../../ignore_list \
-    > log
+%(bin)s/rosetta_scripts.%(binext)s -parser:protocol ligand_dock.xml @flags_part2 -database %(database)s -out:output >&1 | egrep -vf ../../../ignore_list > log
+test "${PIPESTATUS[0]}" != '0' && exit 1 || true
 
 #grep the output to new file
 grep '^ATOM\|^HETATM\|^TER' 1FAP_B.pdb > combined.pdb

@@ -136,7 +136,7 @@ core.pack.pack_missing_sidechains: packing residue number 2 because of missing a
 
 ###Full atom input when protocol expects centroid
 
-The following demo runs the [[scoring protocol|https://www.rosettacommons.org/demos/latest/tutorials/scoring/README]] with an option to score the structure assuming it to be in centroid, but the input PDB supplied is full atom:  
+The following demo runs the [[scoring protocol|scoring]] with an option to score the structure assuming it to be in centroid, but the input PDB supplied is full atom:  
 
 ``` 
 -in:file:centroid
@@ -172,17 +172,17 @@ Finally, Rosetta builds the missing centroid pseudo-atoms. Since the pseudo-atom
 Converting from one representation to the other
 -----------------------------------------------
 
-There is not a dedicated executable to switch one representation to the other. Instead, the conversion is normally a function of Rosetta's structure input mechanism. In this section, we will exploit the automatic residue building functionality of the scoring protocol to convert from centroid to full atom. To convert full atom to centroid, we will write a short XML script using [RosettaScripts](https://www.rosettacommons.org/demos/latest/tutorials/rosetta_scripting/README).
+There is not a dedicated executable to switch one representation to the other. Instead, the conversion is normally a function of Rosetta's structure input mechanism. In this section, we will exploit the automatic residue building functionality of the scoring protocol to convert from centroid to full atom. To convert full atom to centroid, we will write a short XML script using [[RosettaScripts|scripting_with_rosettascripts]].
 
 >**Converting from full atom to centroid and back will not give you back the same structure, as sidechain building in Rosetta is not deterministic. However, centroid->fullatom->centroid should return the original structure.**
 
 There are at least two ways to convert the representation. One is shown above: by using scoring application. To obtain a pdb file, you need to add the output option `-out:output`
 
-A second option that is good to know about is using [[RosettaScripts|https://www.rosettacommons.org/demos/latest/tutorials/rosetta_scripting/README]]. This way, converting representations can be part of a larger Rosetta Script. The following section will demonstrate how to do that.
+A second option that is good to know about is using [[RosettaScripts|scripting_with_rosettascripts]]. This way, converting representations can be part of a larger Rosetta Script. The following section will demonstrate how to do that.
 
 ###Converting from centroid to full atom
 
-To convert a full atom PDB to centroid, we need to interface with Rosetta at a level deeper than any executable will allow us to do. The simplest way to do this is to write a script using [[RosettaScripts|https://www.rosettacommons.org/demos/latest/tutorials/rosetta_scripting/README]]. The following short XML script calls a *mover* (_SwitchResidueTypeSetMover_) and asks it to convert the centroid structure to full atom: 
+To convert a full atom PDB to centroid, we need to interface with Rosetta at a level deeper than any executable will allow us to do. The simplest way to do this is to write a script using [[RosettaScripts|scripting_with_rosettascripts]]. The following short XML script calls a *mover* (_SwitchResidueTypeSetMover_) and asks it to convert the centroid structure to full atom: 
 
 ```xml
 <ROSETTASCRIPTS>

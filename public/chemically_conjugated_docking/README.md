@@ -36,7 +36,7 @@ $> $ROSETTA3/bin/UBQ_Gp_CYD-CYD.default.linuxgccrelease @options2
  Step 3: UBQ_Gp_LYX-Cterm
 
 ```bash 
- $> $ROSETTA3/bin/UBQ_Gp_LYX-Cterm.default.linuxgccrelease @options2
+$> $ROSETTA3/bin/UBQ_Gp_LYX-Cterm.default.linuxgccrelease @options3
 ```
 Please refer to the documentation, online or at rosetta_source/doc/apps/public/scenarios/UBQ_conjugated.dox, and also the publication, Baker R, Lewis SM, Wilkerson EM, Sasaki AT, Cantley LC, Kuhlman B, Dohlman HG, Campbell SL. Site-Specific Monoubiquitination Activates Ras by Impeding GTPase Activating Protein Function. Submitted.
 

@@ -24,7 +24,8 @@ https://www.rosettacommons.org/docs/latest/rna-denovo-setup.html
 
 ```bash
    export ROSETTA_TOOLS=<path/to/Rosetta/tools>
->$ source $ROSETTA_TOOLS/rna_tools/INSTALL
+   export ROSETTA_BINEXT=[executable extension, example: .default.linuxgccrelease]
+$> source $ROSETTA_TOOLS/rna_tools/INSTALL
 ```
 
 ## Make helices
@@ -38,8 +39,8 @@ $> cd step1_helix/
 and run
 
 ```
-$> rna_helix.py  -o H2.pdb -seq cc gg -resnum 14-15 39-40
->$ replace_chain_inplace.py  H2.pdb 
+$> rna_helix.py  -o H2.pdb -seq cc gg -resnum 14-15 39-40 -rosetta_folder=$ROSETTA_TOOLS/../ -extension=$ROSETTA_BINEXT
+$> replace_chain_inplace.py  H2.pdb 
 ```
 
 ## Use threading to build sub-pieces
@@ -58,17 +59,17 @@ of the motif from the crystallographic database. In this directory you will find
 
 Slice out the motif of interest:
 ```
->$ pdbslice.py  1f7y.pdb  -subset B:31-38 uucg_
+$> pdbslice.py  1f7y.pdb  -subset B:31-38 uucg_
 ```
 
 Thread it into our actual sequence:
 ```
->$ rna_thread -s uucg_1f7y.pdb  -seq ccuucggg -o uucg_1f7y_thread.pdb
+$> $ROSETTA3/bin/rna_thread.$ROSETTA_BINEXT -s uucg_1f7y.pdb  -seq ccuucggg -o uucg_1f7y_thread.pdb
 ```
 
 Let's get the numbering to match our actual test case:
 ```
->$ renumber_pdb_in_place.py uucg_1f7y_thread.pdb 24-31
+$> renumber_pdb_in_place.py uucg_1f7y_thread.pdb 24-31
 ```
 
 Done!
@@ -94,6 +95,8 @@ rna_denovo_setup.py -fasta RNAPZ11.fasta \
     -fixed_stems \
     -tag H2H3H4_run1b_openH3_SOLUTION1 \
     -native example1.pdb 
+    -rosetta_folder $ROSETTA_TOOLS/../
+    -extension $ROSETTA_BINEXT
 ```
 
 You don't need to supply a native if you don't have it -- just useful
@@ -102,13 +105,22 @@ to compute RMSDs as a reference.
 You can run the command by typing:
 
 ```
- $> source README_SETUP
+  source README_SETUP
+```
+or run
+
+```bash
+$> rna_denovo_setup.py -fasta RNAPZ11.fasta -secstruct_file RNAPZ11_OPEN.secstruct -working_res 14-25 30-40 -s H2.pdb H4.pdb -fixed_stems -tag H2H3H4_run1b_openH3_SOLUTION1 -native example1.pdb -rosetta_folder $ROSETTA_TOOLS/../ -extension $ROSETTA_BINEXT
 ```
 
 Then try this:
 
 ```
-$> source README_FARFAR
+ source README_FARFAR
+```
+To run a short version of this script, for testing purposes, run:
+```bash
+$> source README_FARFAR.short
 ```
 
 Example output after a couple of structures is in example_output/.
@@ -124,7 +136,7 @@ Extract 10 lowest energy models:
 
 ```
 $> cd ../example_output
-$> extract_lowenergy_decoys.py H2H3H4_run1b_openH3_SOLUTION1.out 10
+$> extract_lowscore_decoys.py H2H3H4_run1b_openH3_SOLUTION1.out 10 -rosetta_folder $ROSETTA_TOOLS/../
 ```
 
 Inspect in pymol.
@@ -134,13 +146,13 @@ Inspect in pymol.
 
 Change into the `step4_graft/` directory:
 ```bash
-$> cd ../../step4_graft
+$> cd ../../step4_graft/rosetta_inputs/
 ```
 
 These were threading and FARFAR solutions that we liked for each submotif -- now we can graft:
 
 ```
-$> <path/to/Rosetta/>main/source/bin/rna_graft.default.linuxgccrelease -s H2H3H4_run1b_openH3_SOLUTION1.pdb  uucg_1f7y_thread.pdb  H1H2_run2_SOLUTION1.pdb -o full_graft.pdb
+$> <path/to/Rosetta/main/source>/bin/rna_graft.default.linuxgccrelease -s H2H3H4_run1b_openH3_SOLUTION1.pdb  uucg_1f7y_thread.pdb  H1H2_run2_SOLUTION1.pdb -o full_graft.pdb
 ```
 
 Done! 

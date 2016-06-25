@@ -1,22 +1,22 @@
 #you will define your own database path of course
-#-database /ifs1/home/smlewis/minirosetta_database/
+#-database /scratch/smlewis/minirosetta_database/
 
 #extra_res_fa for CYX residue critical, or else CYX residue type will not be present and cysteine linkage is impossible.  This is needed for UBQ_E2_thioester and UBQ_Gp_CYX-Cterm.  The LYX residue is needed for UBQ_Gp_LYX-Cterm.  Of course the actual paths here will vary based on where your database is...  
 #-extra_res_fa /scratch/smlewis/minirosetta_database/chemical/residue_type_sets/fa_standard/residue_types/sidechain_conjugation/CYX.params /scratch/smlewis/minirosetta_database/chemical/residue_type_sets/fa_standard/residue_types/sidechain_conjugation/LYX.params
 
--extra_res_fa sidechain_conjugation/CYX.params
+-extra_res_fa sidechain_conjugation/LYX.params
 
 #this is the structure whose C-terminus (or C-terminal cysteine) will be attached to the other structure; this is the one that moves
 -UBQpdb 1UBQ.pdb.gz
 #this is the structrue which will have the other structure attached to it mid-chain via a sidechain
--E2pdb 2OB4_trimmed.pdb.gz
+-GTPasepdb 5P21_repacked.pdb.gz
 #this is the resid (rosetta numbering from 1, not PDB numbering) of the position which gets altered to accept a bond from the added second protein
--E2_residue 85
+-GTPase_residue 147
 
 -nstruct 1
 
 #in production runs, set GOOD values.  Here, it is set to bad values, because it won't find a good conformation in a reasonable amount of time for the integration test.
--scorefilter 5000
+-scorefilter 50000
 -SASAfilter 0
 
 #plausible good values.  Ideally run a test of 100 structures and set these equal to the best of those 100
@@ -45,7 +45,7 @@
 #-extrachi_cutoff 10
 
 #name output pdbs something useful
--generic_job_name UBQ_E2
+-generic_job_name UBQ_Gp
 
 #used in production-scale runs
 #-nstruct 9999
@@ -58,11 +58,8 @@
 #gzipped pdb output if desired
 #-pdb_gz
 
+#give output a different name than last job
+-out:prefix job3_
+
 #muted tracers - ignore if you please
 -mute core.pack.task protocols.toolbox.PoseMetricCalculators.NeighborsByDistanceCalculator core.util.prof
-
--cst_fa_file publication.cst
--cst_fa_weight 50
-
-#activate only for the publication case
-#-publication true

@@ -1,7 +1,6 @@
 -parser:protocol docking_minimize.xml 			#what protocol to use
 -docking						# the docking option group
 	-partners AB_HL					# set rigid body docking partners
-	-dock_pert 3 8					# set coarse perturbation parameters (degrees and angstroms)
 	-dock_mcm_trans_magnitude 0.1			# refinement translational perturbation
 	-dock_mcm_rot_magnitude 5.0			# refinement rotational perturbation
 -s 3gbm_HA_3gbn_Ab.pdb					# input model

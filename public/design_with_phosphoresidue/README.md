@@ -34,16 +34,12 @@ We create the parameter file for the phosphoresidue as follows:
 3.  Create a Rosetta PARAMS file PTR
 
     Copy the "PTR.mdl" file (molfile format) into your working directory.  Then 
-    run:
-
-        mini/src/python/apps/public/molfile_to_params.py PT1.mdl -n PT1
-        mini/src/python/apps/public/molfile_to_params.py PT2.mdl -n PT2
-
-    This script creates PT1.params and PT1_0001.pdb. You'll need to delete the 
-    older PTR residues in 3lct.pdb and replace them with the co-ordinates for 
-    generated new residues PT1_0001.pdb and PT2_0001.pdb (4lct.pdb refers to 
-    3lct.pdb with new phoshoresidues). Also, change the "HETATM" tags for 
-    phoshoresidues in the PDB file to "ATOM".
+    run: (where `$ROSETTA3`=path-to-Rosetta/main/source)
+```
+        $ROSETTA3/scripts/python/public/molfile_to_params.py PT1.mdl -n PT1
+        $ROSETTA3/scripts/python/public/molfile_to_params.py PT2.mdl -n PT2
+```
+This script creates PT1.params and PT1_0001.pdb. You'll need to delete the older PTR residues in 3lct.pdb and replace them with the co-ordinates for generated new residues PT1_0001.pdb and PT2_0001.pdb (4lct.pdb refers to 3lct.pdb with new phoshoresidues). Also, change the "HETATM" tags for phoshoresidues in the PDB file to "ATOM". We have provided example files for you in the rosetta_inputs directory.
 
 Design around the phosphoresidue
 --------------------------------
@@ -52,17 +48,13 @@ Design around the phosphoresidue
     (5 A in our case, PRT.resfile)
 
 2.  Write the resfile. Use the option ALLAA next to the sequence position to 
-    design the selected residue to all of posibble amino acids.
+    design the selected residue to all of posibble amino acids. We prepared a sample resfile for you that includes all residues.
 
 3.  Run the following command-line:
-
-        ~/mini/bin/fixbb.default.macosgccrelease -s 4lct.pdb -database ~/minirosetta_database -extra_res_fa PT1.params PT2.params -resfile PTR.resfile
-
-    This will generate a single pdb file with designed residues around the 
-    phosphoresidues. The sample outputs have been copied to /outputs. If you 
-    are using this protocol for a real design application, use the flag 
-    `-nstruct 1000` or `-nstruct 10,000` to generate enough designs to give 
-    meaningful results.
+```
+        $> $ROSETTA3/bin/fixbb.default.macosgccrelease -s rosetta_inputs/4lct.pdb  -extra_res_fa rosetta_inputs/PT1.params rosetta_inputs/PT2.params -resfile rosetta_inputs/PTR.resfile
+```
+This will generate a single pdb file with designed residues around the phosphoresidues. The sample outputs have been copied to /outputs. If you are using this protocol for a real design application, use the flag `-nstruct 1000` or `-nstruct 10,000` to generate enough designs to give meaningful results.
 
 
 

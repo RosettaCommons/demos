@@ -170,7 +170,7 @@ To fix this, we need to use an option class `-ignore_zero_occupancy` that is set
 The score file, `score.sc` produced by this run should match the one with the first example in this chapter.
 
 ###Preparing a Structure by Refinement
-The recommended way to prepare input structures for most Rosetta protocols is to run the refinement protocol, _relax_ on your structure prior to running the Rosetta application you want. A detailed tutorial on _relax_ can be found [here](https://www.rosettacommons.org/demos/latest/tutorials/Tutorial_4_Relax/Tutorial_4_Relax.md).
+The recommended way to prepare input structures for most Rosetta protocols is to run the refinement protocol, _relax_ on your structure prior to running the Rosetta application you want. A detailed tutorial on _relax_ can be found [[here|Relax]].
 
 While we want to relieve clashes in the input structure and ensure meeting all of Rosetta's specifications, we do not want our backbone to move much. A set of general options have been specified in `<path_to_Rosetta_directory>/demos/tutorials/input_and_output/flag_input_relax`. 
 
@@ -202,14 +202,14 @@ Using a flag like `ignore_unrecognized_res` may remove ligands and waters you wa
 >**Ensure that all residues you want to model are present in the refined PDB.**
 
 ###Setting the Input Search Path
-If we have multiple input files, having one path location from where to search for inputs may be helpful. For example, while running the `relax` protocol on the homodimer PDB 4EQ1, we might want to constrain the protein-protein interface distances and prevent them from moving. (A detailed tutorial on constraints can be found [here](https://www.rosettacommons.org/demos/latest/tutorials/Tutorial_8_Constraints/Tutorial_8_Constraints.md).) To do this we need a constraint file `constrained_atompairs.cst` which too is located in the directory `input_files`. Running with the `in:path` with the input_directory specified helps when we have multiple such files as shown here:
+If we have multiple input files, having one path location from where to search for inputs may be helpful. For example, while running the `relax` protocol on the homodimer PDB 4EQ1, we might want to constrain the protein-protein interface distances and prevent them from moving. (A detailed tutorial on constraints can be found [[here|Constraints]].) To do this we need a constraint file `constrained_atompairs.cst` which too is located in the directory `input_files`. Running with the `in:path` with the input_directory specified helps when we have multiple such files as shown here:
 
     $>  $ROSETTA3/bin/relax.default.linuxgccrelease -in:path input_files -in:file:s 4eq1.pdb -constraints:cst_fa_file constrained_atompairs.cst -ignore_unrecognized_res @flag_input_relax
     
 This will take 15+ minutes to run and produce the files `4eq1_0001.pdb`, `4eq1_0002.pdb` and `score.sc`.
 
 ###Changing Input Representation - Centroid or Full Atom
-Rosetta uses two structure representations - a finer _full atom_ representation and a coarser _centroid_ representation. A detailed tutorial on the differences and uses of the two can be found [here](https://www.rosettacommons.org/demos/latest/tutorials/full_atom_vs_centroid/README). To ensure that Rosetta understands which representation your input file is in, we use the `in:file:centroid` or the `in:file:fullatom` options. Example runs can be found in the tutorial linked above.
+Rosetta uses two structure representations - a finer _full atom_ representation and a coarser _centroid_ representation. A detailed tutorial on the differences and uses of the two can be found [[here|fullatom_centroid]]. To ensure that Rosetta understands which representation your input file is in, we use the `in:file:centroid` or the `in:file:fullatom` options. Example runs can be found in the tutorial linked above.
 
 ###Input a Known Structure For Comparison
 Often, it is useful to compare how close Rosetta gets to a known, _native_ structure. This is especially useful for benchmarking. It can also be used to check how far Rosetta moved an input PDB. To do this, we use the `-in:file:native` option.
@@ -240,7 +240,7 @@ Controlling Output
 ###Common Stucture Output Files
 Rosetta primarily uses two formats to output structures - PDB files and Silent Files. Both these files have been described in [section above](#input_format).
 ####<a name="out_pdb"></a>PDB File
-This is the default output format of Rosetta. For applications that do not output a structure by default, like the scoring application, the option `-out:pdb` forces Rosetta to output the PDB. This is demonstrated in the [scoring tutorial]( https://www.rosettacommons.org/demos/latest/tutorials/scoring/README.md#output_struc).
+This is the default output format of Rosetta. For applications that do not output a structure by default, like the scoring application, the option `-out:pdb` forces Rosetta to output the PDB. This is demonstrated in the [[scoring tutorial|scoring]].
 
 ####Silent File
 To change output file format to silent file, we will use the flag `out:file:silent <filename>`. As silent files are capable of storing multiple structures in one file, there will be only one output structure file whose name we need to specify. We will run the [structure preparation example above](#prep_struc) to produce a _binary silent struct file_.

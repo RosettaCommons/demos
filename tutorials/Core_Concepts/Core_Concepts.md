@@ -4,6 +4,8 @@ KEYWORDS: CORE_CONCEPTS GENERAL
 
 Author: Frank Teets(teetsf@gmail.com), Parisa Hosseinzadeh (parisah@uw.edu)
 
+[[_TOC_]]
+
 ##Rosetta Numbering
 
 Rosetta numbering of residues in a protein structure, sometimes called Pose numbering, is distinct from the residue numbering in the input PDB files ("PDB numbering"). Rosetta numbering always begins at 1 for the first residue and increases by one for each residue, ignoring chain designation. This has some implications for residue identification. Heuristically, when Rosetta reads in or outputs residue numbers, the presence of a chain identifier indicates PDB numbering, whereas the absence of a chain letter normally indicates Rosetta numbering. If Rosetta complains about residues that do not exist in the PDB, it may be using the other numbering scheme.

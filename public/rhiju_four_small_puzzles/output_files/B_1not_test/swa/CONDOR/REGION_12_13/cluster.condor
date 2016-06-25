@@ -1,9 +1,0 @@
-+TGProject = TG-MCB090153
-universe = scheduler
-executable = /home/rhiju/src/mini/bin/stepwise_protein_test.linuxgccrelease
-arguments =  -cluster_test -silent_read_through_errors -in:file:silent REGION_12_13/start_from_scratch_sample.low4000.out  -in:file:silent_struct_type binary  -database /home/rhiju/minirosetta_database   -cluster:radius 0.25  -out:file:silent region_12_13_sample.cluster.out -nstruct 1000  -score_diff_cut   10.000 -working_res 12 13
-output = CONDOR/REGION_12_13/cluster/$(Process).out
-log = CONDOR/REGION_12_13/cluster.log
-error = CONDOR/REGION_12_13/cluster/$(Process).err
-notification = never
-Queue 1

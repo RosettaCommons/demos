@@ -2,6 +2,8 @@
 
 KEYWORDS: CORE_CONCEPTS GENERAL
 
+[[_TOC_]]
+
 There are a hand full of options, that are useful most of the time you run Rosetta. Here, we will briefly go through those.
 
 #### 1. Controlling input
