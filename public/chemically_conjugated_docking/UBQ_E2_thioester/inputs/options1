@@ -4,6 +4,8 @@
 #extra_res_fa for CYX residue critical, or else CYX residue type will not be present and cysteine linkage is impossible.  This is needed for UBQ_E2_thioester and UBQ_Gp_CYX-Cterm.  The LYX residue is needed for UBQ_Gp_LYX-Cterm.  Of course the actual paths here will vary based on where your database is...  
 #-extra_res_fa /scratch/smlewis/minirosetta_database/chemical/residue_type_sets/fa_standard/residue_types/sidechain_conjugation/CYX.params /scratch/smlewis/minirosetta_database/chemical/residue_type_sets/fa_standard/residue_types/sidechain_conjugation/LYX.params
 
+-extra_res_fa sidechain_conjugation/CYX.params
+
 #this is the structure whose C-terminus (or C-terminal cysteine) will be attached to the other structure; this is the one that moves
 -UBQpdb 1UBQ.pdb.gz
 #this is the structrue which will have the other structure attached to it mid-chain via a sidechain
