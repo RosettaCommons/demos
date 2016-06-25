@@ -13,6 +13,7 @@
 command.new
 /ref
 /new
+/runtime_diffs.txt
 
 public.run
 tests.run
