@@ -18,24 +18,27 @@ It is being published in a (primarily experimental) paper "A two-dimensional mut
 The example input files are in rosetta_input; you may wish to copy them locally with the command:
 
 ```
-$> cp rosetta_inputs/* .
+cp rosetta_inputs/* .
 ```
 
 Before running the command to set up the rna assembly job, make sure you have the correct paths to the rna_tool/bin directory in your environment variables. This can be done by running,
 ```bash
    export ROSETTA_TOOLS=<path/to/Rosetta/tools>
    source $ROSETTA_TOOLS/rna_tools/INSTALL
-$> export RNA_TOOLS=$ROSETTA_TOOLS/rna_tools
-$> python $RNA_TOOLS/sym_link.py
-$> export PATH=$PATH:$RNA_TOOLS/bin/
-$> export PYTHONPATH=$PYTHONPATH:$RNA_TOOLS/bin/
 ```
 
 Everything needed to run the job is created by the command:
 
 ```
-    $> ./scripts/setup_rna_assembly_jobs.py  add.fasta add_secstruct.txt 1y26_RNA.pdb add_mutate_map_threetertiarycontacts.cst exe_extension=".default.linuxgccrelease"
+./scripts/setup_rna_assembly_jobs.py  add.fasta add_secstruct.txt 1y26_RNA.pdb add_mutate_map_threetertiarycontacts.cst "
 ```
+Optional flags include:
+```bash
+rosetta_bin_folder=/path/to/Rosetta/main/source/bin
+exe_extension=.default.linuxgccrelease  # replace with your correct binary extension
+rosetta_tools=/path/to/Rosetta/tools/
+```
+
 
 The first two arguments are required -- the sequence_file and the secondary structure file [either in dot/bracket notation, or specifying Watson/Crick base pairs as pairs of numbers]. 
 
@@ -55,22 +58,22 @@ Then run the Rosetta commands in :
 
 To run the extremely short version of this tutorial (mostly for testing purposes), run
 ```bash
-$> ./README_STEMS
-$> ./README_MOTIFS.short
-$> ./README_ASSEMBLE.short
+./README_STEMS
+./README_MOTIFS.short
+./README_ASSEMBLE.short
 ```
 
 You can see examples of these files and their output in example_output/. Please note that for these files I changed the 'nstruct' commands to create 100 models per motif. In reality you will want to make 2000-4000 MOTIF models, and then several thousand ASSEMBLE models. [You can just use one STEM model per helix, as that is supposed to be an ideal helix.] For some scripts to generate lots of models on a computer cluster, see note below.
 
 The final 'outfile' is  add_assemble.out. If you don't have the file ready, you can copy:
 ```
-$> cp ./example_output/add_assemble.out .
+cp ./example_output/add_assemble.out .
 ```
 
-We can extract models from it using:(where `$ROSETTA3`=path-to-Rosetta/main/source)
+We can extract models from it using:
 
 ```
-$> $ROSETTA3/bin/extract_pdbs.default.linuxgccrelease -in:file:silent add_assemble.out -tags S_000001
+path/to/Rosetta/main/source/bin/extract_pdbs.default.linuxgccrelease -in:file:silent add_assemble.out -tags S_000001
 ```
 
 or using scripts like my `extract_lowscore_decoys.py`.
