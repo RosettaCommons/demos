@@ -325,8 +325,8 @@ Running molfile2params.py
 Finally, the `molfile2params_polymer.py` script will convert the modified molfile 
 to a params file. The commands bellow work for the example files:
 
-    $> ./scripts/python/apps/public/molfile_to_params_polymer.py --clobber --polymer --no-pdb --name C40 -k ornithine.kin stage_05_modified_molfile/ornithine.mol
-    $> ./scripts/python/apps/public/molfile_to_params_polymer.py --clobber --polymer --peptoid --no-pdb --name P01 -k amino2.kin stage_05_modified_molfile/amino2.mol
+    $> ./molfile_to_params_polymer.py --clobber --polymer --no-pdb --name C40 -k ornithine.kin stage_05_modified_molfile/ornithine.mol
+    $> ./molfile_to_params_polymer.py --clobber --polymer --peptoid --no-pdb --name P01 -k amino2.kin stage_05_modified_molfile/amino2.mol
 
 There is additional tweaking that needs to happen to the params files to make 
 them work. Compare these to the ones in the database for reference. 
