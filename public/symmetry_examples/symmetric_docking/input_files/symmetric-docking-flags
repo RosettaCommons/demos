@@ -11,3 +11,4 @@
 # output options
 -out:nstruct 1
 -out:file:fullatom
+-overwrite
