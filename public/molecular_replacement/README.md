@@ -32,7 +32,7 @@ the folder:
    the best template/orientation should be clear (if the correct solution was
    among the starting models).
 
-Step 1: prepare_template_for_MR.sh
+Step 1: prepare\_template\_for\_MR.sh
 ----------------------------------
 
 This command-line illustrates the use of my script for preparing templates for
@@ -76,7 +76,7 @@ $> $ROSETTA3/src/apps/public/electron_density/prepare_template_for_MR.pl inputs/
 ```
 where `$ROSETTA3`=path-to-Rosetta/main/source
 
-Steps 2 & 3: run_phaser.sh and make_maps.sh
+Steps 2 & 3: run\_phaser.sh and make\_maps.sh
 -------------------------------------------
 
 This command line shows the use of Phaser to generate initial molecular
@@ -99,7 +99,7 @@ also help in some cases.
 Finally, for each template/orientation, we generate the 2mfo-dfc map for input
 to Rosetta in the next step.
 
-Steps 4A & 4B: run_rosetta_mr.sh
+Steps 4A & 4B: run\_rosetta\_mr.sh
 --------------------------------
 
 The final step illustrate the use of rosetta's comparative modeling into
@@ -117,6 +117,7 @@ main difference is that a non-zero value is given for
 `-MR::max_gaplength_to_model`; additionally, some flags must be given that
 describe how rosetta should rebuild gaps.
 
+<<<<<<< HEAD
 Several additional input files must be provided as well.  Rebuilding of gaps is
 done by fragment insertion (as in Rosetta ab initio); thus two backbone
 fragment files (3-mers and 9-mers) must be given.  The application for building
@@ -124,39 +125,58 @@ these is included with rosetta but requires a bunch of external
 tools/databases.  The easiest way to generate fragments is to use the Robetta
 server (http://robetta.bakerlab.org/fragmentsubmit.jsp).  The fragment files
 should be built with the full-length sequence; rosetta handles remapping the
+=======
+Several additional input files must be provided as well.  Rebuilding of gaps is 
+done by fragment insertion (as in Rosetta ab initio); thus two backbone 
+fragment files (3-mers and 9-mers) must be given.  The application for building 
+these is included with rosetta but requires a bunch of external 
+tools/databases.  The easiest way to generate fragments is to use the Robetta 
+server [[http://robetta.bakerlab.org/fragmentsubmit.jsp](http://robetta.bakerlab.org/fragmentsubmit.jsp).  The fragment files 
+should be built with the full-length sequence; rosetta handles remapping the 
+>>>>>>> cbbf46a34eabb7ee1743531183eb99e185343849
 fragments if not all gaps are rebuilt.
 
 A brief overview of flags is given below:
 
+```
     -in::file::fasta inputs/1crb.fasta
     -in::file::alignment inputs/1crb_2qo4.ali
     -in::file::template_pdb inputs/2qo4.PHASER.1.pdb
-        The fasta, alignment and template PDBs.  See section 1 for the input file format if it needs to be hand-edited.
+```
+The fasta, alignment and template PDBs.  See section 1 for the input file format if it needs to be hand-edited.
 
+```
     -edensity:mapfile inputs/sculpt_2QO4_A.PHASER.1.map
     -edensity:mapreso 3.0
     -edensity:grid_spacing 1.5
-        This is how the density map and scorefunction parameters are given to Rosetta.  The input map (-edensity:mapfile) is CCP4 format.  The flags 'mapreso' defines the resolution of the calculated density; If the data is high-resolution it is often good to limit this to 2.5 or 3.  The grid spacing should be no more than 1/2 the map resolution; if -MR::fast is used (see below), then the grid_spacing flag may be omitted (since more finely sampled grids will have much less of a speed penalty).
 
+```
+
+This is how the density map and scorefunction parameters are given to Rosetta.  The input map (-edensity:mapfile) is CCP4 format.  The flags 'mapreso' defines the resolution of the calculated density; If the data is high-resolution it is often good to limit this to 2.5 or 3.  The grid spacing should be no more than 1/2 the map resolution; if -MR::fast is used (see below), then the grid_spacing flag may be omitted (since more finely sampled grids will have much less of a speed penalty).
+
+```
     -MR::cen_dens_wt 4.0
     -MR::fa_dens_wt 1.0
-        This controls the weight on the experimental density data furing the two stages of refinement.  The second flag (fa_dens_wt) has the greatest impact on the final models.  If, after model generation and visual inspection, models don't seem to be fitting the density well (or overfitting to the density), this may be adusted accordingly.  If omitted, the values shown abve are the defaults that are used; generally, these defaults are sufficient for many cases.
+```
 
-    -MR::fast
+This controls the weight on the experimental density data furing the two stages of refinement.  The second flag (fa_dens_wt) has the greatest impact on the final models.  If, after model generation and visual inspection, models don't seem to be fitting the density well (or overfitting to the density), this may be adusted accordingly.  If omitted, the values shown abve are the defaults that are used; generally, these defaults are sufficient for many cases.
+
+   ` -MR::fast`   
         A special faster density scoring formulation is used.  Off by default, but it is recommended.
 
-    -MR::max_gaplength_to_model 8
+   ` -MR::max_gaplength_to_model 8`  
         Rosetta will close gaps up to this width; the larger this value is, the more sampling is required.  Values higher than 10 will often return incorrect loop conformations, although for very restrained segments, or largely helical segments, large insertions may be successfully modeled.
 
-    -nstruct 20
-        The number of output structures.  Generally 10-20 is sufficient, unless a large 'max_gaplength_to_model' is given.
+    -nstruct 20   
+   The number of output structures.  Generally 10-20 is sufficient, unless a large 'max_gaplength_to_model' is given.
 
-    -ignore_unrecognized_res
-        If the template contains nonstandard residues/ligands/waters, this tells Rosetta to ignore them.  This flag is recommended.
+    -ignore_unrecognized_res   
+   If the template contains nonstandard residues/ligands/waters, this tells Rosetta to ignore them.  This flag is recommended.
 
-    -loops::frag_files inputs/aa1crb_09_05.200_v1_3.gz inputs/aa1crb_03_05.200_v1_3.gz none
-        (Optional) 	Fragment files from Robetta.  If omitted, MR-Rosetta will automatically generate fragments for the input structure; this may slightly reduce final model accuracy.  (The two separate command lines illustrate using and omitting this flag).
+    -loops::frag_files inputs/aa1crb_09_05.200_v1_3.gz inputs/aa1crb_03_05.200_v1_3.gz none   
+   (Optional) 	Fragment files from Robetta.  If omitted, MR-Rosetta will automatically generate fragments for the input structure; this may slightly reduce final model accuracy.  (The two separate command lines illustrate using and omitting this flag).
 
+-
 
 Since each model is independently generated, multiple processes may be used to
 produce all the necessary models.  To manage the output, either each process
@@ -168,10 +188,11 @@ For a short test of these, you can run these commands for steps 4 and 5, respect
 ```
 $> $ROSETTA/bin/mr_protocols.default.linuxclangrelease -in::file::fasta inputs/1crb.fasta -in::file::alignment templates/2qo4.ali -in::file::template_pdb phaser/2qo4_mr.PHASER.1.pdb -loops::frag_files inputs/frags.200.3mers inputs/frags.200.3mers none -edensity:mapreso 3.0 -edensity:grid_spacing 1.5 -edensity:mapfile phaser/2qo4_mr.PHASER.1_2mFo-DFc.ccp4 -MR::max_gaplength_to_model 8 -MR::fast -nstruct 1 -ignore_unrecognized_res -overwrite
 
-$> $ROSETTA/bin/mr_protocols.default.linuxclangrelease -in::file::fasta inputs/1crb.fasta -in::file::alignment templates/2qo4.ali -in::file::template_pdb phaser/2qo4_mr.PHASER.1.pdb -edensity:mapreso 3.0 -edensity:grid_spacing 1.5 -edensity:mapfile phaser/2qo4_mr.PHASER.1_2mFo-DFc.ccp4 -MR::max_gaplength_to_model 8 -MR::fast -nstruct 1 -ignore_unrecognized_res -overwrite
+```
+$> $ROSETTA/bin/mr\_protocols.default.linuxclangrelease -in::file::fasta inputs/1crb.fasta -in::file::alignment templates/2qo4.ali -in::file::template\_pdb phaser/2qo4\_mr.PHASER.1.pdb -edensity:mapreso 3.0 -edensity:grid\_spacing 1.5 -edensity:mapfile phaser/2qo4\_mr.PHASER.1\_2mFo-DFc.ccp4 -MR::max\_gaplength\_to\_model 8 -MR::fast -nstruct 1 -ignore\_unrecognized\_res -overwrite
 ```
 
-Alternatively, there is a compact output format, 'silent files' that can be used to dump structures to.  Simply add the flags '-out:file:silent <silent_filename> -out:file:silent_struct_type binary' and all structures from one process will be written to this compact file.  Then the rosetta program 'extract_pdb' can be used to extract:
+Alternatively, there is a compact output format, 'silent files' (see [[Controlling Input and Output in Rosetta]]) that can be used to dump structures to.  Simply add the flags '-out:file:silent <silent_filename> -out:file:silent_struct_type binary' and all structures from one process will be written to this compact file.  Then the rosetta program 'extract_pdb' can be used to extract:
 
     $ bin/extract_pdbs.default.linuxgccrelease -database $DB -in:file:silent <silent_filename> -silent_struct_type binary
 
