@@ -3,52 +3,53 @@ Molecular Replacement Demo
 
 KEYWORDS: EXPERIMENTAL_DATA STRUCTURE_PREDICTION
 
-Written October 26, 2010  
+Written October 26, 2010
 Modified August 27, 2013
+Modified June 24, 2016
 
 ---
 
-This document briefly walks through the use of Rosetta to solve difficult 
-molecular replacement problems.  These tools assume that the user has access to 
-the Phenix suite of crystallographic software (in particular, phaser and the 
-mapbuilding script mtz2map); however, all intermediate files are included so 
+This document briefly walks through the use of Rosetta to solve difficult
+molecular replacement problems.  These tools assume that the user has access to
+the Phenix suite of crystallographic software (in particular, phaser and the
+mapbuilding script mtz2map); however, all intermediate files are included so
 that if the user does not, most of the demo may still be run.
 
-The basic protocol is done in 5 steps; each step has a corresponding script in 
+The basic protocol is done in 5 steps; each step has a corresponding script in
 the folder:
 
-1. Using HHSearch, find potential homology to the target sequence.  Use a 
-   Rosetta "helper script" to prepare templates (and Rosetta inputs for 
+1. Using HHSearch, find potential homology to the target sequence.  Use a
+   Rosetta "helper script" to prepare templates (and Rosetta inputs for
    subsequent computations).
 
-2. Use PHASER to search for placement of the trimmed templates within the unit 
+2. Use PHASER to search for placement of the trimmed templates within the unit
    cell.
 
 3. Generate a map correspoding to each putative MR solution.
 
-4. Using Rosetta, rebuild gaps and refine each template/orientation in Rosetta, 
-   constrained by the density of each solution.  After rescoring with PHASER, 
-   the best template/orientation should be clear (if the correct solution was 
+4. Using Rosetta, rebuild gaps and refine each template/orientation in Rosetta,
+   constrained by the density of each solution.  After rescoring with PHASER,
+   the best template/orientation should be clear (if the correct solution was
    among the starting models).
 
 Step 1: prepare_template_for_MR.sh
 ----------------------------------
 
-This command-line illustrates the use of my script for preparing templates for 
-an initial phaser run.  Functionally, it's doing the same thing as the 
-crystallographic software 'Sculptor' but it doesn't remap the residues as 
-sculptor does (and makes it easier to run with different alignments).  The 
+This command-line illustrates the use of my script for preparing templates for
+an initial phaser run.  Functionally, it's doing the same thing as the
+crystallographic software 'Sculptor' but it doesn't remap the residues as
+sculptor does (and makes it easier to run with different alignments).  The
 script takes just one arguments: an HHR format alignment file.
 
-Alignments generally come from HHsearch's web interface 
-(http://toolkit.tuebingen.mpg.de/hhpred).  After submitting the sequence 
-through their website, export the results to a .hhr file.  Results may be 
-trimmed so only alignments with a reasonable e-value and sequence coverage are 
+Alignments generally come from HHsearch's web interface
+(http://toolkit.tuebingen.mpg.de/hhpred).  After submitting the sequence
+through their website, export the results to a .hhr file.  Results may be
+trimmed so only alignments with a reasonable e-value and sequence coverage are
 included.
 
-The script parses the .hhr file, downloads each template PDB, and trims the PDB 
-to the aligned residues.  In addition, the script produces a 'rosetta-style' 
-alignment file; the format is briefly introduced below.  These alignment files 
+The script parses the .hhr file, downloads each template PDB, and trims the PDB
+to the aligned residues.  In addition, the script produces a 'rosetta-style'
+alignment file; the format is briefly introduced below.  These alignment files
 are used in Rosetta model-building.
 
     ## 1CRB_ 2qo4b
@@ -58,14 +59,14 @@ are used in Rosetta model-building.
     0 AFSGTWQVYAQENYEEFLRAISLPEEVIKLAKDVKPVTEIQQNGSDFTITSKTPGKTVTNSFTIGKEAEIT--TMDGKKLKCIVKLDGGKLVCRTD----RFSHIQEIKAGEMVETLTVGGTTMIRKSKKI
     --
 
-The first line is '##' followed by a code for the target and one for the 
-template.  The second line identifies the source of the alignment; the third 
-just keep as it is.  The fourth line is the target sequence and the fifth is 
-the template ... the number is an 'offset', identifying where the sequence 
-starts.  However, the number doesn't use the PDB resid but just counds residues 
+The first line is '##' followed by a code for the target and one for the
+template.  The second line identifies the source of the alignment; the third
+just keep as it is.  The fourth line is the target sequence and the fifth is
+the template ... the number is an 'offset', identifying where the sequence
+starts.  However, the number doesn't use the PDB resid but just counds residues
 _starting at 0_.  The sixth line is '--'.
 
-The results for this demo appear in the folder 'templates'.  For each 
+The results for this demo appear in the folder 'templates'.  For each
 alignement in the starting .hhr file, 3 files are produced.
 
 You can run the file either by running the provided .sh file or:
@@ -78,51 +79,51 @@ where `$ROSETTA3`=path-to-Rosetta/main/source
 Steps 2 & 3: run_phaser.sh and make_maps.sh
 -------------------------------------------
 
-This command line shows the use of Phaser to generate initial molecular 
-replacement solutions.  For each template we run phaser to find potential 
-placements of each template in the unit cell. 
+This command line shows the use of Phaser to generate initial molecular
+replacement solutions.  For each template we run phaser to find potential
+placements of each template in the unit cell.
 
 *NOTES* these steps require havin [PHENIX](https://www.phenix-online.org/) installed.
 
-The example scripts here only generate a single model from a single template, 
-but for a real-world case, one will often want to use many different templates 
-and may want to generate more than one possible solution using 'TOPFILES n'.  
-In general, though, we have found it is better to use fewer potential solutions 
+The example scripts here only generate a single model from a single template,
+but for a real-world case, one will often want to use many different templates
+and may want to generate more than one possible solution using 'TOPFILES n'.
+In general, though, we have found it is better to use fewer potential solutions
 from more templates than many solutions from few templates.
 
-Sometimes weak hits may be found by lowering the rotation function cutoff in 
-phaser by adding the line 'SELECT ROT FINAL PERCENT 0.65' (or even 0.5) to the 
-phaser script.  Increasing the packing function threshold (with PACK 10) may 
+Sometimes weak hits may be found by lowering the rotation function cutoff in
+phaser by adding the line 'SELECT ROT FINAL PERCENT 0.65' (or even 0.5) to the
+phaser script.  Increasing the packing function threshold (with PACK 10) may
 also help in some cases.
 
-Finally, for each template/orientation, we generate the 2mfo-dfc map for input 
+Finally, for each template/orientation, we generate the 2mfo-dfc map for input
 to Rosetta in the next step.
 
 Steps 4A & 4B: run_rosetta_mr.sh
 --------------------------------
 
-The final step illustrate the use of rosetta's comparative modeling into 
-density.  After running the script and an initial phaser run, density maps are 
-generated from each phaser hit, and cm-into-density is done.  The flag 
--MR::mode cm is used to run this mode.  This first application does not try to 
-rebuild gaps in the alignment, it just performs the threading and runs relax 
-into density.  Thus, the only inputs needed are: the target fasta file, the 
-rosetta-style ali file, and the template pdb.  Because there is no rebuilding, 
-not many models are needed to adequately cover conformational space, generally 
+The final step illustrate the use of rosetta's comparative modeling into
+density.  After running the script and an initial phaser run, density maps are
+generated from each phaser hit, and cm-into-density is done.  The flag
+-MR::mode cm is used to run this mode.  This first application does not try to
+rebuild gaps in the alignment, it just performs the threading and runs relax
+into density.  Thus, the only inputs needed are: the target fasta file, the
+rosetta-style ali file, and the template pdb.  Because there is no rebuilding,
+not many models are needed to adequately cover conformational space, generally
 10-20 is sufficient.
 
-This script is the same as above, but also rebuilds gaps in the alignment.  The 
-main difference is that a non-zero value is given for 
-`-MR::max_gaplength_to_model`; additionally, some flags must be given that 
+This script is the same as above, but also rebuilds gaps in the alignment.  The
+main difference is that a non-zero value is given for
+`-MR::max_gaplength_to_model`; additionally, some flags must be given that
 describe how rosetta should rebuild gaps.
 
-Several additional input files must be provided as well.  Rebuilding of gaps is 
-done by fragment insertion (as in Rosetta ab initio); thus two backbone 
-fragment files (3-mers and 9-mers) must be given.  The application for building 
-these is included with rosetta but requires a bunch of external 
-tools/databases.  The easiest way to generate fragments is to use the Robetta 
-server (http://robetta.bakerlab.org/fragmentsubmit.jsp).  The fragment files 
-should be built with the full-length sequence; rosetta handles remapping the 
+Several additional input files must be provided as well.  Rebuilding of gaps is
+done by fragment insertion (as in Rosetta ab initio); thus two backbone
+fragment files (3-mers and 9-mers) must be given.  The application for building
+these is included with rosetta but requires a bunch of external
+tools/databases.  The easiest way to generate fragments is to use the Robetta
+server (http://robetta.bakerlab.org/fragmentsubmit.jsp).  The fragment files
+should be built with the full-length sequence; rosetta handles remapping the
 fragments if not all gaps are rebuilt.
 
 A brief overview of flags is given below:
@@ -157,15 +158,15 @@ A brief overview of flags is given below:
         (Optional) 	Fragment files from Robetta.  If omitted, MR-Rosetta will automatically generate fragments for the input structure; this may slightly reduce final model accuracy.  (The two separate command lines illustrate using and omitting this flag).
 
 
-Since each model is independently generated, multiple processes may be used to 
-produce all the necessary models.  To manage the output, either each process 
-can be run from a separate directory, or '-out:prefix <prefix>' can be used to 
-keep jobs from overwriting each other's structures.  Rosetta workloads may also 
+Since each model is independently generated, multiple processes may be used to
+produce all the necessary models.  To manage the output, either each process
+can be run from a separate directory, or '-out:prefix <prefix>' can be used to
+keep jobs from overwriting each other's structures.  Rosetta workloads may also
 be split using MPI; see the rosetta documentation for more details.
 
 For a short test of these, you can run these commands for steps 4 and 5, respectively, using provided inputs. Please note that for Step 4 you need to generate fragments (by submitting your pdb to http://robetta.bakerlab.org/).
 ```
-> $ROSETTA/bin/mr_protocols.default.linuxclangrelease -in::file::fasta inputs/1crb.fasta -in::file::alignment templates/2qo4.ali -in::file::template_pdb phaser/2qo4_mr.PHASER.1.pdb -loops::frag_files inputs/xx1crb_09_05.200_v1_3.gz inputs/xx1crb_03_05.200_v1_3.gz none -edensity:mapreso 3.0 -edensity:grid_spacing 1.5 -edensity:mapfile phaser/2qo4_mr.PHASER.1_2mFo-DFc.ccp4 -MR::max_gaplength_to_model 8 -MR::fast -nstruct 1 -ignore_unrecognized_res -overwrite
+$> $ROSETTA/bin/mr_protocols.default.linuxclangrelease -in::file::fasta inputs/1crb.fasta -in::file::alignment templates/2qo4.ali -in::file::template_pdb phaser/2qo4_mr.PHASER.1.pdb -loops::frag_files inputs/frags.200.3mers inputs/frags.200.3mers none -edensity:mapreso 3.0 -edensity:grid_spacing 1.5 -edensity:mapfile phaser/2qo4_mr.PHASER.1_2mFo-DFc.ccp4 -MR::max_gaplength_to_model 8 -MR::fast -nstruct 1 -ignore_unrecognized_res -overwrite
 
 $> $ROSETTA/bin/mr_protocols.default.linuxclangrelease -in::file::fasta inputs/1crb.fasta -in::file::alignment templates/2qo4.ali -in::file::template_pdb phaser/2qo4_mr.PHASER.1.pdb -edensity:mapreso 3.0 -edensity:grid_spacing 1.5 -edensity:mapfile phaser/2qo4_mr.PHASER.1_2mFo-DFc.ccp4 -MR::max_gaplength_to_model 8 -MR::fast -nstruct 1 -ignore_unrecognized_res -overwrite
 ```
