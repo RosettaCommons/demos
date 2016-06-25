@@ -24,7 +24,7 @@ https://www.rosettacommons.org/docs/latest/rna-denovo-setup.html
 
 ```bash
    export ROSETTA_TOOLS=<path/to/Rosetta/tools>
-   export BIN_EXT=[executable extension, example: .default.linuxgccrelease]
+   export ROSETTA_BINEXT=[executable extension, example: .default.linuxgccrelease]
 $> source $ROSETTA_TOOLS/rna_tools/INSTALL
 ```
 
