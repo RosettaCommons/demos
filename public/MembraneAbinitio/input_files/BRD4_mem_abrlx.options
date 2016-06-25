@@ -15,7 +15,7 @@
 -score:find_neighbors_3dgrid
 -run:reinitialize_mover_for_each_job
 -evaluation:gdtmm # output global distance test info
--evaluation:rmsd BRD4A_TM_rms.txt
+-evaluation:rmsd 1PY6A.pdb _native_rmsd BRD4A_TM_rms.txt
 -out:output
 -out:nstruct 1
 -out:sf BRD4A_mem_abrlx.fsc
