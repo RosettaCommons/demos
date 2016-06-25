@@ -52,7 +52,7 @@ Design around the phosphoresidue
 
 3.  Run the following command-line:
 ```
-        $ROSETTA3/bin/fixbb.default.macosgccrelease -s rosetta_inputs/4lct.pdb  -extra_res_fa rosetta_inputs/PT1.params rosetta_inputs/PT2.params -resfile rosetta_inputs/PTR.resfile
+        $> $ROSETTA3/bin/fixbb.default.macosgccrelease -s rosetta_inputs/4lct.pdb  -extra_res_fa rosetta_inputs/PT1.params rosetta_inputs/PT2.params -resfile rosetta_inputs/PTR.resfile
 ```
 This will generate a single pdb file with designed residues around the phosphoresidues. The sample outputs have been copied to /outputs. If you are using this protocol for a real design application, use the flag `-nstruct 1000` or `-nstruct 10,000` to generate enough designs to give meaningful results.
 
