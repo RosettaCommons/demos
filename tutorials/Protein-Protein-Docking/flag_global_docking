@@ -1,0 +1,18 @@
+-in:file:s input_files/col_complex.pdb
+-in:file:native input_files/1v74.pdb
+-unboundrot input_files/col_complex.pdb
+
+-nstruct 1
+
+-partners A_B
+-dock_pert 3 8
+-spin
+-randomize1
+-randomize2
+
+-ex1
+-ex2aro
+
+-out:path:all output_files
+-out:suffix _global_dock
+

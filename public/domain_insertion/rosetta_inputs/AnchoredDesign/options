@@ -2,7 +2,7 @@
 -database /Users/cmiles/minirosetta_database
 
 # Input structure
--s S_0001.pdb
+-s ../AnchoredPDBCreator/S_0001.pdb
 
 # Defines the regions to remodel
 -loops:loop_file loopsfile

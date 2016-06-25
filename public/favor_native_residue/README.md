@@ -17,7 +17,9 @@ completed, so there is no chance to load the constraints into fixbb.
 
 To run the demo:
 
-    /path/to/rosetta_scripts.default.<OS><compiler><mode> @options -database /path/to/rosetta_database/
+    $> $ROSETTA3/bin/rosetta_scripts.default.linuxgccrelease @inputs/options 
+    
+where `$ROSETTA3`=path-to-Rosetta/main/source
 
 The options file is annotated.
 

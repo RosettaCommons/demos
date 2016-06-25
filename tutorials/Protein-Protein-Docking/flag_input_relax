@@ -1,0 +1,11 @@
+-nstruct 3
+
+#-relax:constrain_relax_to_start_coords
+#-relax:ramp_constraints false
+
+-ex1
+-ex2
+
+-use_input_sc
+-flip_HNQ
+-no_optH false
