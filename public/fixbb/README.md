@@ -59,5 +59,5 @@ You'll notice that this time, the app takes much longer to run.  Examining the o
 The same behaviour shown above can also be accomplished by altering the resfile.  If compare resfile2.txt to resfile.txt, you'll notice that the first line is different.  The additional text ("EX 1 EX 2 EX 3 EX 4 EX_CUTOFF 0") accomplishes much the same thing as the extra options that we passed at the commandline earlier.  Deleting the output and running the following shoulkd produce the same behaviour:
 
 ```
-$> $ROSETTA3/bin/fixbb.default.linuxgccrelease -in:file:s 1l2y.pdb -in:file:fullatom -resfile resfile2.txt -nstruct 1 -out:prefix run3_ -out:file:scorefile run3.sc >log3.txt &
+$> $ROSETTA3/bin/fixbb.default.linuxgccrelease -in:file:s 1l2y.pdb -in:file:fullatom -resfile resfile2.txt -nstruct 1 -out:prefix run3_ -out:file:scorefile run3.sc >log3.txt 
 ```
