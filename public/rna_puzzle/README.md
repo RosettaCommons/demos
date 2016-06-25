@@ -109,7 +109,11 @@ You can run the command by typing:
 Then try this:
 
 ```
-$> source README_FARFAR
+ source README_FARFAR
+```
+To run a short version of this script, for testing purposes, run:
+```bash
+$> source README_FARFAR.short
 ```
 
 Example output after a couple of structures is in example_output/.
