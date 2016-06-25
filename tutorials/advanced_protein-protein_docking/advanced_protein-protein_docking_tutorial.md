@@ -155,7 +155,7 @@ This tutorial presents a cross-docking benchmark experiment. Antibody CR6261 bin
 
             1. Generate ten models using only the minimization refinement stage of docking.
 
-                    $> $ROSETTA3/bin/rosetta_scripts.default.linuxgccrelease @input_files/docking_minimze.options 
+                    $> $ROSETTA3/bin/rosetta_scripts.default.linuxgccrelease @input_files/docking_minimize.options 
 
 1. Characterize the models and analyze the data for docking funnels.
 
