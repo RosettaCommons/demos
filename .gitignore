@@ -8,6 +8,11 @@
 ._*
 *~
 \#*\#
+.DS_Store
+
+command.new
+/ref
+/new
 
 public.run
 tests.run
