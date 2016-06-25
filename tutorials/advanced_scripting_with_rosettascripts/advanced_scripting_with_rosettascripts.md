@@ -329,7 +329,7 @@ mover, which is another type of "meta mover" that performs iterative trials of a
 
 Let's consider the example of re-designing and refining a peptide that is bound to a protein structure in order to find a peptide with possibly higher binding affinity. In the figure below, the peptide is depicted in magenta sticks, whereas the protein domain is in rainbow cartoon with green sidechain sticks.
 
-![2drk](https://github.com/RosettaCommons/demos/blob/XRW2016_kmb/tutorials/advanced_rosetta_scripting/montecarlo_example/figures/2drk.png)
+[[montecarlo_example/figures/2drk.png]]
 
 We will allow the Packer to choose different identities and rotamers for the current peptide in its bound state, while also perturbing the peptide backbone by small amounts over many iterations of the Monte Carlo search.  We'll keep the protein backbone fixed. 
 
