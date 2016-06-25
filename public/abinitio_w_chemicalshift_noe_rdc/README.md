@@ -73,7 +73,7 @@ Formmatting chemical shift data for TALOS. The required bmrb2talos script is par
 Formmatting RDC data for Rosetta:
 Note that rename HN to H in the rdc file:
     ```
-    $> awk '{print $4,$7,$11,$14,$16}' starting_inputs/nh_xplor.rdc > rosetta_inputs/nh.rdc
+    $ awk '{print $4,$7,$11,$14,$16}' starting_inputs/nh_xplor.rdc > rosetta_inputs/nh.rdc
     ```
 
 4. Generating talos predictions using http://spin.niddk.nih.gov/bax/nmrserver/talosn/ using rosetta_inputs/cs.talos
