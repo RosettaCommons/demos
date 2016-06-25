@@ -95,6 +95,8 @@ rna_denovo_setup.py -fasta RNAPZ11.fasta \
     -fixed_stems \
     -tag H2H3H4_run1b_openH3_SOLUTION1 \
     -native example1.pdb 
+    -rosetta_folder $ROSETTA_TOOLS/../
+    -extension $BIN_EXT
 ```
 
 You don't need to supply a native if you don't have it -- just useful
@@ -103,7 +105,12 @@ to compute RMSDs as a reference.
 You can run the command by typing:
 
 ```
- $> source README_SETUP
+  source README_SETUP
+```
+or run
+
+```bash
+$> rna_denovo_setup.py -fasta RNAPZ11.fasta -secstruct_file RNAPZ11_OPEN.secstruct -working_res 14-25 30-40 -s H2.pdb H4.pdb -fixed_stems -tag H2H3H4_run1b_openH3_SOLUTION1 -native example1.pdb -rosetta_folder $ROSETTA_TOOLS/../ -extension $BIN_EXT
 ```
 
 Then try this:
