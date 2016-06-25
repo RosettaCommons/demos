@@ -6,7 +6,6 @@
 -in
 	-file
 		-s ./answers/docking/3PBL_ETQ.pdb
-		-extra_res_fa ./answers/docking/ETQ.params
 
 #the packing options allow Rosetta to sample additional rotamers for
 #protein sidechain angles chi 1 (ex1) and chi 2 (ex2) 
