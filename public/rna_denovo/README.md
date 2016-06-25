@@ -9,6 +9,6 @@ This code is intended to give three-dimensional de novo models of single-strande
 See the [documentation for RNA 3D structure modeling](https://www.rosettacommons.org/manuals/archive/rosetta3.4_user_guide/d2/d82/rna_denovo.html) for more information. 
 
 ```
-$> $ROSETTA3/bin/rna_denovo.default.linuxgccrelease @flags
+$> path/to/Rosetta/main/source/bin/rna_denovo.default.linuxgccrelease @flags
 ```
-where `$ROSETTA3`=path-to-Rosetta/main/source
+where `$ROSETTA3`=path/to/Rosetta/main/source
