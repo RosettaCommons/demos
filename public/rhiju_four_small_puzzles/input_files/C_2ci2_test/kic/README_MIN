@@ -1,1 +1,0 @@
-stepwise_protein_test.linuxgccrelease  -s1 2ci2.pdb  -global_optimize -fixed_res `seq 1 62` -input_res1 `seq 1 62` -fixed_res `seq 1 62` -database ~/minirosetta_database -out:file:silent 2ci2_min.out -fasta 2ci2.fasta
