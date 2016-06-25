@@ -24,25 +24,25 @@ Full input files for the tutorials are located in the `demos/tutorials/` directo
 
 ### Introduction to Rosetta
 
-* [[How To Read These Tutorials|Tutorial_Setup]]
-* [[Installing and Building Rosetta|install_build]]
-* [[Working With Rosetta|working_with_rosetta]]
-* [[Controlling Input and Output|input_and_output]]
-* [[Core Rosetta Concepts|Core_Concepts]]
-* [[Working with Non-protein Residues|prepare_ligand_tutorial]] 
-* [[Scoring|scoring]]: Calculating the Energy of a Structure
-* [[Full-Atom vs. Centroid Representations|fullatom_centroid]]
-* [[The Packer|Optimizing_Sidechains_The_Packer]]: Optimizing Sidechains
-* [[Minimization]]: Finding Deeper Energy Wells
-* [[Relax|Relax]]: Refining Structures
-* [[Constraints]]: Biasing Towards a Structure
-* [[Analyzing Rosetta Output|Analysis]]
-* [[The Fold Tree|fold_tree]]: Propagating Changes in the Structure
-* [[Symmetry|Symmetry]]: Modeling Symmetric Proteins
-* [[Scripting with RosettaScripts|scripting_with_rosettascripts]]
-    * [[Advanced Scripting with RosettaScripts|advanced_scripting_with_rosettascripts]]
-* [[Commonly Used Options|commonly_used_options]]
-* [[Tips]]
+1. [[How To Read These Tutorials|Tutorial_Setup]]
+2. [[Installing and Building Rosetta|install_build]]
+3. [[Working With Rosetta|working_with_rosetta]]
+4. [[Controlling Input and Output|input_and_output]]
+5. [[Core Rosetta Concepts|Core_Concepts]]
+6. [[Working with Non-protein Residues|prepare_ligand_tutorial]] 
+7. [[Scoring|scoring]]: Calculating the Energy of a Structure
+8. [[Full-Atom vs. Centroid Representations|fullatom_centroid]]
+9. [[The Packer|Optimizing_Sidechains_The_Packer]]: Optimizing Sidechains
+10. [[Minimization]]: Finding Deeper Energy Wells
+11. [[Relax|Relax]]: Refining Structures
+12. [[Constraints]]: Biasing Towards a Structure
+13. [[Analyzing Rosetta Output|Analysis]]
+14. [[The Fold Tree|fold_tree]]: Propagating Changes in the Structure
+15. [[Symmetry|Symmetry]]: Modeling Symmetric Proteins
+16. [[Scripting with RosettaScripts|scripting_with_rosettascripts]]
+17. [[Advanced Scripting with RosettaScripts|advanced_scripting_with_rosettascripts]]
+18. [[Commonly Used Options|commonly_used_options]]
+19. [[Tips]]
 
 ### Commonly Used Rosetta Protocols
 

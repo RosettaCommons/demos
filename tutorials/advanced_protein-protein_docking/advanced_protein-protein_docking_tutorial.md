@@ -16,9 +16,7 @@ If you want to try making files that already exist (e.g., input files), write th
 
 This tutorial presents a cross-docking benchmark experiment. Antibody CR6261 binds to multiple sub- types of influenza antigen hemagglutinin (HA). It has been crystallized with H1 and H5 HA sub-types. Antibody from one crystal structure will be docked to the antigen from the other crystal structure. This type of experiment is useful for protocol optimization and development.
 
-1. Navigate to protein-protein_docking tutorial:
             
-        > cd <path-to-Rosetta>/demos/tutorials/proptein-protein_docking
 
 1. Prepare the input template for docking
     1. Download the PDB files. **The 3GBN.pdb and 3GBM.pdb files are provided in the input_files directory.**
@@ -32,21 +30,19 @@ This tutorial presents a cross-docking benchmark experiment. Antibody CR6261 bin
 
         1. We want the hemagglutinin (chains A and B) from 3GBM
 
-                $> <path-to-Rosetta>/tools/protein_tools/scripts/clean_pdb.py 3GBM AB
+                $> $ROSETTA_TOOLS/protein_tools/scripts/clean_pdb.py input_files/3GBM AB
 
-                $> <path-to-Rosetta>/tools/protein_tools/scripts/pdb_renumber.py \
-                --norestart 3GBM_AB.pdb 3gbm_HA.pdb
+                $> $ROSETTA_TOOLS/protein_tools/scripts/pdb_renumber.py --norestart input_files/3GBM_AB.pdb input_files/3gbm_HA.pdb
 
         1. We want the antibody (chains H and L) from 3GBN. (Note that chains A and B are not the antibody "Ab"). We only need the variable domain which is actually involved with binding HA. The crystal structure also contains a partially resolved portion of the constant domain. You should manually edit the PDB file with a text editor to remove the unnecessary portions. You should be able to see them in a structure viewer. It should be residues 121-160 of the heavy chain (chain H) and residues 268-311 of the light chain (chain L) in the cleaned structure.
 
-                $> <path-to-Rosetta>/tools/protein_tools/scripts/clean_pdb.py 3GBN HL
+                $> $ROSETTA_TOOLS/protein_tools/scripts/clean_pdb.py 3GBN HL
 
                 cp 3GBN_HL.pdb 3GBN_trim.pdb
                 pymol 3GBN_trim.pdb
                 gedit 3GBN_trim.pdb
 
-                $> <path-to-Rosetta>/tools/protein_tools/scripts/pdb_renumber.py \
-                --norestart 3GBN_trim.pdb 3gbn_Ab.pdb
+                $> $ROSETTA_TOOLS/protein_tools/scripts/pdb_renumber.py --norestart input_files/3GBN_trim.pdb input_files/3gbn_Ab.pdb
 
    -> Note: you may not have gedit in your computer. Try using other text editors.
     
@@ -76,8 +72,7 @@ This tutorial presents a cross-docking benchmark experiment. Antibody CR6261 bin
             ```
         1. Run the Rosetta loopmodel application to close the loop.
 
-                $> <path-to-Rosetta>/main/source/bin/loopmodel.default.linuxgccrelease \
-                @chainbreak_fix.options >& chainbreak_fix.log &
+                $> $ROSETTA3/bin/loopmodel.default.linuxgccrelease @chainbreak_fix.options 
 
                 pymol 3gbn_Ab*pdb &
                 > sort -nk 2 chainbreak_fix.fasc
@@ -103,9 +98,9 @@ This tutorial presents a cross-docking benchmark experiment. Antibody CR6261 bin
         1. Familiarize yourself with repack.xml and repack_HA.xml. Notice that repack_HA.xml is a modified version of repack.xml, representative of the versatility of RosettaScripts.
         1. Run the XML script with the rosetta_scripts application.
         
-                $> <path-to-Rosetta>/main/source/bin/rosetta_scripts.default.linuxgccrelease @repack.options -s 3gbm_HA.pdb -parser:protocol repack_HA.xml
+                $> $ROSETTA3/bin/rosetta_scripts.default.linuxgccrelease @repack.options -s 3gbm_HA.pdb -parser:protocol repack_HA.xml
                 
-                $> <path-to-Rosetta>/main/source/bin/rosetta_scripts.default.linuxgccrelease@repack.options -s 3gbn_Ab_fixed.pdb -parser:protocol repack.xml >& repack_Ab.log &
+                $> $ROSETTA3/bin/rosetta_scripts.default.linuxgccrelease @repack.options -s 3gbn_Ab_fixed.pdb -parser:protocol repack.xml 
 
         1. When the repacking runs are done (in about 3-4 minutes), copy the best scoring HA model to 3gbm_HA_repack.pdb and the best scoring antibody model to 3gbn_Ab_repack.pdb. (For brevity, we only generated a single structure. For actual production runs, we recommend generating a number of output structures, by adding something like "-nstruct 25" to the commandline. -- For the example outputs in the output_files/ directory, the lowest energy structures are 3gbm_HA_0011.pdb and 3gbn_Ab_fixed_0005.pdb.)
         
@@ -120,15 +115,14 @@ This tutorial presents a cross-docking benchmark experiment. Antibody CR6261 bin
         
         1. Align the structures with pymol. (Note that you need to have your environment parameters set correctly in order to access pymol from terminal. You may need to open pymol manuall)
         
-                $> cp ../input_files/3gbm_native.pdb .
+                > cp ../input_files/3gbm_native.pdb .
                 pymol 3gbm_native.pdb 3gbm_HA_repacked.pdb 3gbn_Ab_repacked.pdb
 
             1. Type 'align 3gbn_Ab_repacked, 3gbm_native'
             1.  Type 'save 3gbm_HA_3gbn_Ab.pdb, 3gbm_HA_repacked + 3gbn_Ab_repacked'
         1. Renumber the pdb from 1 to the end without restarting. You can also copy a renumbered_version that is pre-generated for you:
         
-                > <path-to-Rosetta>/tools/protein_tools/scripts/pdb_renumber.py \
-                --norestart 3gbm_HA_3gbn_Ab.pdb 3gbm_HA_3gbn_Ab.pdb
+                > $ROSETTA_TOOLS/protein_tools/scripts/pdb_renumber.py --norestart 3gbm_HA_3gbn_Ab.pdb 3gbm_HA_3gbn_Ab.pdb
                 or
                 $> cp input_files/3gbm_HA_3gbn_Ab.pdb .
 
@@ -148,7 +142,7 @@ This tutorial presents a cross-docking benchmark experiment. Antibody CR6261 bin
 
         1. Generate fifty models using the full docking algorithm. (This will likely take a while - move on to the next steps while this is running.)
 
-                $> <path-to-Rosetta>/main/source/bin/rosetta_scripts.default.linuxgccrelease @docking_full.options 
+                $> $ROSETTA3/bin/rosetta_scripts.default.linuxgccrelease @docking_full.options 
 
         1. To have a good comparison for the native structure, we want to minimize the experimental structure into the Rosetta energy function. To do this, we run a similar protocol, but skipping the coarse and fine resolution search stages, keeping only the minimization stage. This provides us with a like-to-like comparison of the native structure.
 
@@ -161,7 +155,7 @@ This tutorial presents a cross-docking benchmark experiment. Antibody CR6261 bin
 
             1. Generate ten models using only the minimization refinement stage of docking.
 
-                    $> <path-to-Rosetta>/main/source/bin/rosetta_scripts.default.linuxgccrelease @docking_minimze.options 
+                    $> $ROSETTA3/bin/rosetta_scripts.default.linuxgccrelease @input_files/docking_minimze.options 
 
 1. Characterize the models and analyze the data for docking funnels.
 
@@ -171,14 +165,14 @@ This tutorial presents a cross-docking benchmark experiment. Antibody CR6261 bin
     
     **If your docking run is not finished yet, you can try out this step with pre-generated results. Make a new directory and copy the file docking.silent from the  output_files/ directory into this new directory.** You can also simply copy a smaller set of extracted files using:
     
-            $> cp output_files/*full*pdb output_files/*minimize*pdb .
+            > cp output_files/*full*pdb output_files/*minimize*pdb .
 
     1.  Characterize your models using the InterfaceAnalyzer mover in RosettaScripts and calculate the RMSD to the native crystal structure with the RMSD filter.
 
-            $> cp input_files/docking_analysis.xml .
-            $> cp input_files/docking_analysis.options . 
-            $> cp input_files/3gbm_native.pdb .
-            $> <path-to-Rosetta>/main/source/bin/rosetta_scripts.default.linuxgccrelease @docking_analysis.options -in:file:s *full*pdb *minimize*pdb 
+            > cp input_files/docking_analysis.xml .
+            > cp input_files/docking_analysis.options . 
+            > cp input_files/3gbm_native.pdb .
+            > $ROSETTA3/bin/rosetta_scripts.default.linuxgccrelease @docking_analysis.options -in:file:s *full*pdb *minimize*pdb 
 
             sort -nk 7 docking_analysis.csv
             pymol 3gbm_native.pdb 3gbm_HA_3gbn_Ab_full_0001.pdb
