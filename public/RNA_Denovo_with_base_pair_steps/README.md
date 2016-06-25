@@ -11,13 +11,7 @@ Make sure you have rna_tools set up (https://www.rosettacommons.org/docs/latest/
 this uses rna_denovo_setup.py.
 ```bash
 export ROSETTA_TOOLS=<path/to/Rosetta/tools>
-source $ROSETTA_TOOLS/rna_tools/INSTALL
-```
-```bash
-$> export RNA_TOOLS=$ROSETTA_TOOLS/rna_tools
-$> $RNA_TOOLS/sym_link.py
-$> export PATH=$PATH:$RNA_TOOLS/bin/
-$> export PYTHONPATH=$PYTHONPATH:$RNA_TOOLS/bin/
+$> source $ROSETTA_TOOLS/rna_tools/INSTALL
 ```
 
 Go into input_files/ 
