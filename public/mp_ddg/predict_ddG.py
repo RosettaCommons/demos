@@ -31,7 +31,7 @@ from rosetta import aa_from_oneletter_code
 from rosetta import PackRotamersMover
 from rosetta.core.pose import PDBInfo
 from rosetta.core.chemical import VariantType
-from rosetta.core.import_pose import pose_from_file
+from rosetta.core.import_pose import pose_from_pdb
 
 ###############################################################################
 
@@ -88,13 +88,8 @@ def main( args ):
     rosetta_options = "-mp:setup:spanfiles " + Options.in_span +  " -run:constant_seed -in:ignore_unrecognized_res"
     rosetta.init( extra_options=rosetta_options )
 
-    # Process output pdb option
-    out_pdb = "false"
-    if ( Options.output_pdb ): 
-        out_pdb = "true"
-	
     # Load Pose, & turn on the membrane
-    pose = pose_from_file( Options.in_pdb )
+    pose = pose_from_pdb( Options.in_pdb )
 
     # Add Membrane to Pose
     add_memb = rosetta.protocols.membrane.AddMembraneMover()
@@ -121,14 +116,14 @@ def main( args ):
     # Compute mutations
     if ( Options.mut ):
         with file( Options.out, 'a' ) as f:
-            ddGs = compute_ddG( repacked_native, sfxn, int( Options.res ), Options.mut, Options.repack_radius, Options.output_breakdown, out_pdb )
+            ddGs = compute_ddG( repacked_native, sfxn, int( Options.res ), Options.mut, Options.repack_radius, Options.output_breakdown, Options.output_pdb )
             f.write( Options.in_pdb + " " + Options.res + " " + str(ddGs[0]) + " " + str(ddGs[1]) + " " + str(ddGs[2]) + " " + str(ddGs[3]) + "\n" )
 	    f.close
     else:
         AAs = ['A', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'K', 'L', 'M', 'N', 'P', 'Q', 'R', 'S', 'T', 'V', 'W', 'Y']
         for aa in AAs:
             with file( Options.out, 'a' ) as f:
-                ddGs = compute_ddG( repacked_native, sfxn, int( Options.res ), aa, Options.repack_radius, Options.output_breakdown, out_pdb )
+                ddGs = compute_ddG( repacked_native, sfxn, int( Options.res ), aa, Options.repack_radius, Options.output_breakdown, Options.output_pdb )
                 f.write( str(ddGs[0]) + " " + str(ddGs[1]) + " " + str(ddGs[2]) + " " + str(ddGs[3]) + "\n" )
             f.close
 
@@ -147,8 +142,7 @@ def compute_ddG( pose, sfxn, resnum, aa, repack_radius, sc_file, out_pdb ):
     mutant_score = sfxn( mutated_pose )
 
     if ( out_pdb == "true" ): 
-        pdbname = mutated_pose.pdb_info().name()st[:-4]
-        mutated_pose.dump_pdb( pdbname + "_" + str(resnum) + "_" + str(aa) ".pdb" )
+        mutated_pose.dump_pdb( "model_" + str(resnum) + "_" + str(aa) + ".pdb" )
 
     # If specified the user, print the breakdown of ddG values into a file  
     print_ddG_breakdown( pose, mutated_pose, sfxn, resnum, aa, sc_file )
