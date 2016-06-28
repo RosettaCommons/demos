@@ -70,6 +70,11 @@ def main( args ):
         action="store", default="scores.sc", 
         help="Output mutant and native score breakdown by weighted energy term into a scorefile", )
 
+    parser.add_option('--output_pdb', '-k', 
+        action="store", 
+        help="Boolean option - should I output the pdb structures?")
+
+
     #parse options
     (options, args) = parser.parse_args(args=args[1:])
     global Options
@@ -82,6 +87,11 @@ def main( args ):
     # Initialize Rosetta options from user options. 
     rosetta_options = "-mp:setup:spanfiles " + Options.in_span +  " -run:constant_seed -in:ignore_unrecognized_res"
     rosetta.init( extra_options=rosetta_options )
+
+    # Process output pdb option
+    out_pdb = "false"
+    if ( Options.output_pdb ): 
+        out_pdb = "true"
 	
     # Load Pose, & turn on the membrane
     pose = pose_from_file( Options.in_pdb )
@@ -111,21 +121,21 @@ def main( args ):
     # Compute mutations
     if ( Options.mut ):
         with file( Options.out, 'a' ) as f:
-            ddGs = compute_ddG( repacked_native, sfxn, int( Options.res ), Options.mut, Options.repack_radius, Options.output_breakdown )
+            ddGs = compute_ddG( repacked_native, sfxn, int( Options.res ), Options.mut, Options.repack_radius, Options.output_breakdown, out_pdb )
             f.write( Options.in_pdb + " " + Options.res + " " + str(ddGs[0]) + " " + str(ddGs[1]) + " " + str(ddGs[2]) + " " + str(ddGs[3]) + "\n" )
 	    f.close
     else:
         AAs = ['A', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'K', 'L', 'M', 'N', 'P', 'Q', 'R', 'S', 'T', 'V', 'W', 'Y']
         for aa in AAs:
             with file( Options.out, 'a' ) as f:
-                ddGs = compute_ddG( repacked_native, sfxn, int( Options.res ), aa, Options.repack_radius, Options.output_breakdown )
+                ddGs = compute_ddG( repacked_native, sfxn, int( Options.res ), aa, Options.repack_radius, Options.output_breakdown, out_pdb )
                 f.write( str(ddGs[0]) + " " + str(ddGs[1]) + " " + str(ddGs[2]) + " " + str(ddGs[3]) + "\n" )
             f.close
 
 ###############################################################################
 
 ## @brief Compute ddG of mutation in a protein at specified residue and AA position
-def compute_ddG( pose, sfxn, resnum, aa, repack_radius, sc_file ): 
+def compute_ddG( pose, sfxn, resnum, aa, repack_radius, sc_file, out_pdb ): 
 
     # Score Native Pose
     native_score = sfxn( pose )
@@ -135,6 +145,10 @@ def compute_ddG( pose, sfxn, resnum, aa, repack_radius, sc_file ):
 
     # Score Mutated Pose
     mutant_score = sfxn( mutated_pose )
+
+    if ( out_pdb == "true" ): 
+        pdbname = mutated_pose.pdb_info().name()st[:-4]
+        mutated_pose.dump_pdb( pdbname + "_" + str(resnum) + "_" + str(aa) ".pdb" )
 
     # If specified the user, print the breakdown of ddG values into a file  
     print_ddG_breakdown( pose, mutated_pose, sfxn, resnum, aa, sc_file )
