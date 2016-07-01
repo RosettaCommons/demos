@@ -13,7 +13,6 @@
 ## a membrane protein in Rosetta (uses packer, mutate.py from Evan Baugh)
 ##
 ## @author: Rebecca F. Alford (rfalford12@gmail.com)
-## @author: JKLeman (julia.koehler1982@gmail.com)
 
 # Tools
 import sys, os
@@ -32,6 +31,7 @@ from rosetta import aa_from_oneletter_code
 from rosetta import PackRotamersMover
 from rosetta.core.pose import PDBInfo
 from rosetta.core.chemical import VariantType
+from rosetta.core.import_pose import pose_from_pdb
 
 ###############################################################################
 
@@ -70,13 +70,10 @@ def main( args ):
         action="store", default="scores.sc", 
         help="Output mutant and native score breakdown by weighted energy term into a scorefile", )
 
-    parser.add_option('--include_pH', '-t', 
-        action="store", default=0,
-        help="Include pH energy terms: pH_energy and fa_elec. Default false.", )
+    parser.add_option('--output_pdb', '-k', 
+        action="store", 
+        help="Boolean option - should I output the pdb structures?")
 
-    parser.add_option('--pH_value', '-q', 
-        action="store", default=7,
-        help="Predict ddG and specified pH value. Default 7. Will not work if include pH is not passed", )
 
     #parse options
     (options, args) = parser.parse_args(args=args[1:])
@@ -87,22 +84,10 @@ def main( args ):
     if ( not Options.in_pdb or not Options.in_span or not Options.res ):
 	    sys.exit( "Must provide flags '-in_pdb', '-in_span', and '-res'! Exiting..." )
 
-    # Initialize Rosetta options from user options. Enable pH mode if applicable
-    rosetta_options = ""
-    standard_options = "-membrane_new:setup:spanfiles " + Options.in_span +  " -run:constant_seed -in:ignore_unrecognized_res"
-    if ( Options.include_pH ): 
-        print Options.pH_value
-        if ( float( Options.pH_value ) < 0 or float(Options.pH_value) > 14 ): 
-            sys.exit( "Specified pH value must be between 0-14: Exiting..." )
-        else: 
-            pH_options = " -pH_mode -value_pH " + str(Options.pH_value)
-            rosetta_options = standard_options + pH_options
-    else: 
-        rosetta_options = standard_options
-
-    # Initialize Rosetta based on user inputs
+    # Initialize Rosetta options from user options. 
+    rosetta_options = "-mp:setup:spanfiles " + Options.in_span +  " -run:constant_seed -in:ignore_unrecognized_res"
     rosetta.init( extra_options=rosetta_options )
-	
+
     # Load Pose, & turn on the membrane
     pose = pose_from_pdb( Options.in_pdb )
 
@@ -116,17 +101,9 @@ def main( args ):
 
     # check the user has specified a reasonable value for the pH
     sfxn = rosetta.core.scoring.ScoreFunction()
-    if ( Options.include_pH ):
 
-        # Create a membrane energy function enabled by pH mode
-        # Includes two terms not standard in the smoothed energy function: pH energy
-        # and fa_elec
-        sfxn = create_score_function( "mpframework_pHmode_fa_2014")
-
-    else: 
-
-        # Create a smoothed membrane full atom energy function (pH 7 calculations)
-        sfxn = create_score_function( "mpframework_smooth_fa_2014")
+    # Create a smoothed membrane full atom energy function (pH 7 calculations)
+    sfxn = create_score_function( "mpframework_smooth_fa_2012")
 
     # Repack the native rotamer and residues within the repack radius 
     native_res = pose.residue( int( Options.res ) ).name1()
@@ -139,21 +116,21 @@ def main( args ):
     # Compute mutations
     if ( Options.mut ):
         with file( Options.out, 'a' ) as f:
-            ddGs = compute_ddG( repacked_native, sfxn, int( Options.res ), Options.mut, Options.repack_radius, Options.output_breakdown )
+            ddGs = compute_ddG( repacked_native, sfxn, int( Options.res ), Options.mut, Options.repack_radius, Options.output_breakdown, Options.output_pdb )
             f.write( Options.in_pdb + " " + Options.res + " " + str(ddGs[0]) + " " + str(ddGs[1]) + " " + str(ddGs[2]) + " " + str(ddGs[3]) + "\n" )
 	    f.close
     else:
         AAs = ['A', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'K', 'L', 'M', 'N', 'P', 'Q', 'R', 'S', 'T', 'V', 'W', 'Y']
         for aa in AAs:
             with file( Options.out, 'a' ) as f:
-                ddGs = compute_ddG( repacked_native, sfxn, int( Options.res ), aa, Options.repack_radius, Options.output_breakdown )
+                ddGs = compute_ddG( repacked_native, sfxn, int( Options.res ), aa, Options.repack_radius, Options.output_breakdown, Options.output_pdb )
                 f.write( str(ddGs[0]) + " " + str(ddGs[1]) + " " + str(ddGs[2]) + " " + str(ddGs[3]) + "\n" )
             f.close
 
 ###############################################################################
 
 ## @brief Compute ddG of mutation in a protein at specified residue and AA position
-def compute_ddG( pose, sfxn, resnum, aa, repack_radius, sc_file ): 
+def compute_ddG( pose, sfxn, resnum, aa, repack_radius, sc_file, out_pdb ): 
 
     # Score Native Pose
     native_score = sfxn( pose )
@@ -163,6 +140,9 @@ def compute_ddG( pose, sfxn, resnum, aa, repack_radius, sc_file ):
 
     # Score Mutated Pose
     mutant_score = sfxn( mutated_pose )
+
+    if ( out_pdb == "true" ): 
+        mutated_pose.dump_pdb( "model_" + str(resnum) + "_" + str(aa) + ".pdb" )
 
     # If specified the user, print the breakdown of ddG values into a file  
     print_ddG_breakdown( pose, mutated_pose, sfxn, resnum, aa, sc_file )
