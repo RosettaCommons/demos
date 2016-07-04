@@ -1,6 +1,6 @@
 # RECCES (Reweighting of Energy-function Collection with Conformational Ensemble Sampling)
 
-KEYWORDS: STRUCTURE_PREDICTION UTILITIES
+KEYWORDS: RNA
 
 ## Author
 This README was written in May 2015, by Fang-Chieh Chou (fcchou@stanford.edu).
