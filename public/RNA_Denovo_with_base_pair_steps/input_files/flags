@@ -1,0 +1,14 @@
+-fasta  1q9a.fasta
+-native 1q9a_RNA.pdb
+-nstruct 1
+-cycles 5000 
+-tag farfar
+-filter_lores_base_pairs_early 
+-bps_moves
+-fixed_stems
+-output_filters 
+-output_lores_silent_file
+-score:rna_torsion_potential RNA11_based_new
+-working_res 2-26
+-obligate_pair 1 27  2 26  3 25  4 24  5 23  6 22  7 21  8 20  10 19  11 18  12 17  13 16 
+-minimize_rna
