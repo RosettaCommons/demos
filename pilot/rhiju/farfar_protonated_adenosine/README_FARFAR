@@ -1,2 +1,4 @@
-rna_denovo -fasta test_protonation.fasta -params_file test.params -dump -minimize_rna  -out:file:silent test_protonation.out
-rna_denovo -fasta test_no_protonation.fasta -params_file test.params -dump -minimize_rna  -out:file:silent test_no_protonation.out
+#rna_denovo -fasta test_protonation.fasta -params_file test.params -minimize_rna  -out:file:silent test_protonation.out
+#rna_denovo -fasta test_no_protonation.fasta -params_file test.params -minimize_rna  -out:file:silent test_no_protonation.out
+rna_denovo -sequence "u,a[RAD:Protonated_H1_Adenosine]" -secstruct "(,)"  -minimize_rna  -out:file:silent test_protonation_NEW.out
+
