@@ -1,0 +1,5 @@
+(....()....)
+ucagguaagcag
+# Everything after dot-parens line is ignored by secstruct reader
+# In above, space, comma, '+' are valid spacers between strands.
+
