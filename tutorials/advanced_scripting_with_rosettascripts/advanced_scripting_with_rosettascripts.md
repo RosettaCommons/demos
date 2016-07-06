@@ -581,7 +581,7 @@ $> $ROSETTA3/bin/rosetta_scripts.default.linuxgccrelease -s 1ubq.pdb -parser:pro
 
 ## RosettaScripts jobs, grid sampling movers, and parallel sampling
 
-* **Use a grid-sampling mover, distributing sampling over RosettaScripts jobs.**
+* *Use a grid-sampling mover, distributing sampling over RosettaScripts jobs.*
 
 We have already seen that the number of jobs that RosettaScripts attempts can be controlled with the "-nstruct" (number of structures to generate per input) and "-jd2:ntrials" (number of attempts to make for each structure before giving up on that structure), and with the number of input structures.  There are certain special "grid-sampling" movers in Rosetta that can interface with the RosettaScripts job distribution system in a special way: given some sort of parameter space that one might want to sample, a grid sampler can assign each of a regular grid of points to sample in that space to a series of RosettaScripts jobs.  This is a departure from the usual Rosetta paradigm, which is to carry out a large number of stochastic trajectories.  Here, we are performing a large number of regular, *deterministic* samples.
 
