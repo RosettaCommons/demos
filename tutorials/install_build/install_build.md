@@ -39,16 +39,16 @@ Rosetta uses [SCons](http://www.scons.org/) as a build system. While Scons is av
 Now you can build Rosetta using this general command line (make sure you are in the source folder)
 
 ```
-> ./scons.py -j <number_of_processors_to_use> mode=release bin
+> ./scons.py -j <number_of_cores_to_use> mode=release bin
 ```
 
-`-j` is indicating how many processors you want to use. This number depends on your computer. For example the command below uses 20 processors to build:
+`-j` is indicating how many cores you want to use. This number depends on your computer. For example the command below uses 20 cores to build:
 
 ```
 > ./scons.py -j 20 mode=release bin
 ```
 
-Expect a long time for the compilation to finish, several hours on one processor.
+Expect a long time for the compilation to finish, several hours on one core.
 
 Now look at your source folder. There are several new folders in it, including bin. You can now run Rosetta!
 
@@ -71,7 +71,7 @@ As you noticed, the command you ran had a "mode" option and that you mentioned "
     - "extras=opencl": enables GPU usage for those apps that support it
     - "extras=mpi" compiles Rosetta in MPI [**M**assage **P**assing **I**nterface](https://computing.llnl.gov/tutorials/mpi/#What) format (for those executables that support MPI runs). Running Rosetta in MPI mode requires (potentially non-trivial) edits to the site.settings files.
 
-For example the code below compiles only the rosetta_scripts application in MPI format and release mode using 5 processors:
+For example the code below compiles only the rosetta_scripts application in MPI format and release mode using 5 cores:
 
 ```
 > ./scons.py -j 5 mode=release bin/rosetta_scripts.mpi.linuxgccrelease extras=mpi
@@ -80,7 +80,7 @@ For example the code below compiles only the rosetta_scripts application in MPI 
 **NOTE** when you build with different extras, the extension will change. For example if you use extras=mpi, you use rosetta_scripts.mpi.linuxgccrelease instead of rosetta_scripts.default.linuxgccrelease
 
 - Compiler specification
-    - by default scons builds Rosetta using the GCC compiler. However you can specify what compiler and version you wish to use by using "__cxx__". For example the command below builds Rosetta completely in release mode using clang compiler version 4.5 using 10 processors:
+    - by default scons builds Rosetta using the GCC compiler. However you can specify what compiler and version you wish to use by using "__cxx__". For example the command below builds Rosetta completely in release mode using clang compiler version 4.5 using 10 cores:
 
 ```
 > ./scons.py -j 10 mode=release bin cxx=clang cxx_ver=4.5
