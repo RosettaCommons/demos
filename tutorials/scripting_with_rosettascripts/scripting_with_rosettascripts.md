@@ -572,7 +572,7 @@ Let's do an additional thing with the script that we have to illustrate one fina
 
 ```
 start
-1 - 76 A PIKAA FWDERK
+1 - 76 A PIKAA FYDERK
 ```
 
 The new ReadResfile TaskOperation, in the TASKOPERATIONS section, would look like this:
