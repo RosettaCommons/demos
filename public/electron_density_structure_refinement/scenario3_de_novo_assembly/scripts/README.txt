@@ -1,10 +1,10 @@
 //////////////////////////////////////////////////////////////////////////////////////////
 // (c) Copyright Rosetta Commons Member Institutions.
-// (c) All the files in this directory and sub-directories are part of the Rosetta
-// (c) software suite and are made available under license.  The Rosetta software is
-// (c) developed by the contributing members of the Rosetta Commons. For more information,
-// (c) see http://www.rosettacommons.org. Questions about this can be addressed to
-// (c) University of Washington UW TechTransfer, email: license@u.washington.edu.
+// (c) All the files in this directory and sub-directories are part of the
+// (c) Rosetta software suite and is made available under license.
+// (c) The Rosetta software is developed by the contributing members of the Rosetta Commons.
+// (c) For more information, see http://www.rosettacommons.org. Questions about this can be
+// (c) addressed to University of Washington CoMotion, email: license@uw.edu.
 //
 //  @brief
 //  This is a tutorial set for a de novo model building method described in Wang et. al.,

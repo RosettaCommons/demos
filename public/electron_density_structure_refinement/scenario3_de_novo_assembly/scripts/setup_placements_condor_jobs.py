@@ -1,17 +1,16 @@
 #!/usr/bin/env python2.7
 #
 # (c) Copyright Rosetta Commons Member Institutions.
-# (c) All the files in this directory and sub-directories are part of the Rosetta software
-# (c) suite and are made available under license.  The Rosetta software is developed by the
-# (c) contributing members of the Rosetta Commons. For more information, see
-# (c) http://www.rosettacommons.org. Questions about this can be addressed to University of
-# (c) Washington UW TechTransfer, email: license@u.washington.edu.
+# (c) This file is part of the Rosetta software suite and is made available under license.
+# (c) The Rosetta software is developed by the contributing members of the Rosetta Commons.
+# (c) For more information, see http://www.rosettacommons.org. Questions about this can be
+# (c) addressed to University of Washington CoMotion, email: license@uw.edu.
 #
 #  @author Ray Yu-Ruei Wang, wangyr@u.washington.edu
 #
 from argparse import ArgumentParser
 import os
-import shutil 
+import shutil
 import sys
 
 import denovo_model_building_util
@@ -19,7 +18,7 @@ import denovo_model_building_util
 def write_condor_job( args, dir ):
     config = denovo_model_building_util.read_config_file( args.config_file )
     PATH = config.get("path", "demo_dir")
-    exe = PATH + "/rosetta/place_fragment_into_density.static.linuxgccrelease" 
+    exe = PATH + "/rosetta/place_fragment_into_density.static.linuxgccrelease"
     db  = PATH + "/rosetta/rosetta_database"
 
     assert os.path.exists( exe ), exe
@@ -69,7 +68,7 @@ def prepare_syd_job( args ):
         os.chdir("%s/" % curr_dir )
 
     submit.close()
-    print "finished at %s/%s" %( i, args.condor_job_fn ) 
+    print "finished at %s/%s" %( i, args.condor_job_fn )
     print "to execute condor_jobs, run 'sh %s'" % args.submit_script_fn
 
 
@@ -122,15 +121,15 @@ if __name__=="__main__":
     parser.add_argument("--no_density_score", default=3.0 )
     parser.add_argument("--flags_fn", default="placements_flags" )
     parser.add_argument("--input_folder", default="input_files" )
-    """ for condor_jobs """ 
+    """ for condor_jobs """
     parser.add_argument("--youremail", default="youremail@uw.edu" )
-    parser.add_argument("--starting_num", default=1, type=int ) 
+    parser.add_argument("--starting_num", default=1, type=int )
     parser.add_argument("--condor_job_fn", default="condor_job" )
     parser.add_argument("--submit_script_fn", default="submit.sh" )
     args = parser.parse_args()
 
-    assert ("mrc" in args.mapfile) and ("mers" in args.fragfile ) 
-    assert os.path.exists( args.mapfile) and os.path.exists( args.fragfile ) 
+    assert ("mrc" in args.mapfile) and ("mers" in args.fragfile )
+    assert os.path.exists( args.mapfile) and os.path.exists( args.fragfile )
 
     if args.native:
         assert ("pdb" in args.native ) and os.path.exists( args.native )

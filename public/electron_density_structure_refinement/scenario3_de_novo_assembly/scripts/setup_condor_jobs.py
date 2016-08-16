@@ -1,17 +1,16 @@
 #!/usr/bin/env python2.7
 #
 # (c) Copyright Rosetta Commons Member Institutions.
-# (c) All the files in this directory and sub-directories are part of the Rosetta software
-# (c) suite and are made available under license.  The Rosetta software is developed by the
-# (c) contributing members of the Rosetta Commons. For more information, see
-# (c) http://www.rosettacommons.org. Questions about this can be addressed to University of
-# (c) Washington UW TechTransfer, email: license@u.washington.edu.
+# (c) This file is part of the Rosetta software suite and is made available under license.
+# (c) The Rosetta software is developed by the contributing members of the Rosetta Commons.
+# (c) For more information, see http://www.rosettacommons.org. Questions about this can be
+# (c) addressed to University of Washington CoMotion, email: license@uw.edu.
 #
 #  @author Ray Yu-Ruei Wang, wangyr@u.washington.edu
 #
 from argparse import ArgumentParser
 import os
-import shutil 
+import shutil
 import sys
 
 import denovo_model_building_util
@@ -63,7 +62,7 @@ def prepare_syd_job( args ):
         os.chdir("%s/" % curr_dir )
 
     submit.close()
-    print "finished at %s/%s" %( i, args.condor_job_fn ) 
+    print "finished at %s/%s" %( i, args.condor_job_fn )
     print "to execute condor_jobs, run 'sh %s'" % args.submit_script_fn
 
 
@@ -73,14 +72,14 @@ if __name__=="__main__":
     parser.add_argument("-t", "--target_list", help="mainly designed for 2nd run when the unassigned regions are defined")
     parser.add_argument("-g", "--fragfile", required=True )
     parser.add_argument("-r", "--run_script", required=True )
-    """ for condor_jobs """ 
+    """ for condor_jobs """
     parser.add_argument("--youremail", default="youremail@uw.edu" )
-    parser.add_argument("--starting_num", default=1, type=int ) 
+    parser.add_argument("--starting_num", default=1, type=int )
     parser.add_argument("--condor_job_fn", default="condor_job" )
     parser.add_argument("--submit_script_fn", default="submit.sh" )
     args = parser.parse_args()
 
-    assert ("mers" in args.fragfile ) 
-    assert os.path.exists( args.fragfile ) 
+    assert ("mers" in args.fragfile )
+    assert os.path.exists( args.fragfile )
 
     prepare_syd_job( args )

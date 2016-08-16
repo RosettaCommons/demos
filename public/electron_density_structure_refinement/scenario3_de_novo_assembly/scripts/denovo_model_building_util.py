@@ -1,10 +1,9 @@
 #
 # (c) Copyright Rosetta Commons Member Institutions.
-# (c) All the files in this directory and sub-directories are part of the Rosetta software
-# (c) suite and are made available under license.  The Rosetta software is developed by the
-# (c) contributing members of the Rosetta Commons. For more information, see
-# (c) http://www.rosettacommons.org. Questions about this can be addressed to University of
-# (c) Washington UW TechTransfer, email: license@u.washington.edu.
+# (c) This file is part of the Rosetta software suite and is made available under license.
+# (c) The Rosetta software is developed by the contributing members of the Rosetta Commons.
+# (c) For more information, see http://www.rosettacommons.org. Questions about this can be
+# (c) addressed to University of Washington CoMotion, email: license@uw.edu.
 #
 #  @author Ray Yu-Ruei Wang, wangyr@u.washington.edu
 #
@@ -77,7 +76,7 @@ def create_xyzDict( pdb ):
         for pdbline in f:
             if pdbline.startswith("ATOM"):
                 rsn      = int( pdbline[22:26]) # res number
-                res      = pdbline[17:20].strip() # res name 
+                res      = pdbline[17:20].strip() # res name
                 atom     = pdbline[12:16].strip() # atom name
                 chain_id = pdbline[21] # chain id
                 xyz      = map(float, [ pdbline[30:38], pdbline[38:46], pdbline[46:54] ])
@@ -87,9 +86,9 @@ def create_xyzDict( pdb ):
                     pdblineDict[ rsn ] = pdbline
                     resDict[ rsn ]     = res
                 else:
-                    xyzDict_[ rsn ][ atom ]  = xyz 
+                    xyzDict_[ rsn ][ atom ]  = xyz
                     pdblineDict[ rsn ] += pdbline
-            
+
     return ( xyzDict_, chainDict_, pdblineDict, resDict )
 
 

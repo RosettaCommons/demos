@@ -1,11 +1,10 @@
 #!/usr/bin/env python2.7
 #
 # (c) Copyright Rosetta Commons Member Institutions.
-# (c) All the files in this directory and sub-directories are part of the Rosetta software
-# (c) suite and are made available under license.  The Rosetta software is developed by the
-# (c) contributing members of the Rosetta Commons. For more information, see
-# (c) http://www.rosettacommons.org. Questions about this can be addressed to University of
-# (c) Washington UW TechTransfer, email: license@u.washington.edu.
+# (c) This file is part of the Rosetta software suite and is made available under license.
+# (c) The Rosetta software is developed by the contributing members of the Rosetta Commons.
+# (c) For more information, see http://www.rosettacommons.org. Questions about this can be
+# (c) addressed to University of Washington CoMotion, email: license@uw.edu.
 #
 #  @author Ray Yu-Ruei Wang, wangyr@u.washington.edu
 #
@@ -27,11 +26,11 @@ class PrepareRound2:
         self.opts_ = options
 
         self.r1_mc_picked_frags_dict_   = self.get_fragfiles_from_a_dir( self.opts_.round1_mc_picked_frags_dir )
-        self.r1_picked_pos_             = self.r1_mc_picked_frags_dict_.keys() 
+        self.r1_picked_pos_             = self.r1_mc_picked_frags_dict_.keys()
 
         self.r1_frags_dict_             = self.get_fragfiles_from_a_dir( self.opts_.round1_frags_dir )
         self.r1_placement_results_dict_ = self.parse_placement_results_file( self.opts_.round1_clustering_selected_results_file )
-        self.r1_placed_pos_             = self.r1_frags_dict_.keys() 
+        self.r1_placed_pos_             = self.r1_frags_dict_.keys()
 
         self.r2_frags_dict_             = self.get_fragfiles_from_a_dir( self.opts_.round2_frags_dir )
         self.r2_placement_results_dict_ = self.parse_placement_results_file( self.opts_.round2_clustering_selected_results_file )
@@ -54,7 +53,7 @@ class PrepareRound2:
 
 
     def get_fragfiles_from_a_dir( self, dir ):
-        ''' store frag filename from a dir 
+        ''' store frag filename from a dir
             dict[ position ] = [ fragfile1, fragfile2, ... ] '''
 
         dict = {}
@@ -74,17 +73,17 @@ class PrepareRound2:
                 dict[ pos ] = [ fragfile ]
 
         return dict
-    
+
 
     def parse_placement_results_file( self, results_file ):
-        ''' store placement results file as 
+        ''' store placement results file as
             dict[ position ] = lines '''
 
         dict = {}
         with open( results_file, "r" ) as f:
             for l in f:
                 if l.startswith("#"): continue
-                ls = l.strip().split() 
+                ls = l.strip().split()
                 pos = int(ls[0])
                 if dict.has_key( pos ):
                     dict[ pos ] += l
@@ -94,9 +93,9 @@ class PrepareRound2:
 
 
     def round1_postions_needed_for_round2( self ):
-        ''' some positions from r1 have no fragments being assigned 
+        ''' some positions from r1 have no fragments being assigned
             even though they have some other frags covered that region
-            > total_pos - r1_assigned_pos - r2_placed_pos ''' 
+            > total_pos - r1_assigned_pos - r2_placed_pos '''
 
         # make sure they don't have any residues in common
         common_rsds = list( set(self.r1_picked_pos_) & set(self.r2_placed_pos_) )
@@ -114,10 +113,10 @@ class PrepareRound2:
         else:
             system("rm -rf %s" % self.opts_.dest_dir )
             mkdir( self.opts_.dest_dir )
-        
+
         # copy unassigned frags from round1
         for pos in self.round1_positions_needed_for_round2_:
-            try: 
+            try:
                 fragfiles = self.r1_frags_dict_[ pos ]
             except:
                 stderr.write("WARNING: position %s has no placements from round1. Something is wrong.\n" % pos )
@@ -131,19 +130,19 @@ class PrepareRound2:
 
         # copy assigned frags from round1
         system("cp %s/* %s" %( self.opts_.round1_mc_picked_frags_dir, self.opts_.dest_dir ))
-    
+
         # copy frags from round2
         system("cp %s/* %s" %( self.opts_.round2_frags_dir, self.opts_.dest_dir ))
 
 
     def dump_all_clustering_selected_file( self ):
-        '''parsed position that havent assigned from r1_mc_picked and r2_run from round1_clustering_selected_file 
+        '''parsed position that havent assigned from r1_mc_picked and r2_run from round1_clustering_selected_file
         '''
         outlines = ""
         for pos in self.total_rsd_positions_:
 
             if pos in self.round1_positions_needed_for_round2_:
-                try: 
+                try:
                     outlines += self.r1_placement_results_dict_[ pos ]
                     continue
                 except:
@@ -151,7 +150,7 @@ class PrepareRound2:
                     continue
 
             elif pos in self.r2_placed_pos_:
-                try: 
+                try:
                     outlines += self.r2_placement_results_dict_[ pos ]
                     continue
                 except:
