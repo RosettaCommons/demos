@@ -47,23 +47,26 @@ an XML produced by someone else.
 
 * *Run the simplest possible RosettaScript*
 
-The simplest RosettaScript XML is one which does nothing.  You can obtain a skeleton XML file, which does nothing, in one of two ways.  You go to [the RosettaScripts documentation page](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/RosettaScripts) and find the skeleton XML file there, then copy and paste it into a new file (`nothing.xml`).  You can also generate a skeleton XML file using the rosetta_scripts application:
+The simplest RosettaScript XML is one which does nothing.  You can obtain a skeleton XML file, which does nothing, in one of two ways.  You go to [the RosettaScripts documentation page](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/RosettaScripts) and find the skeleton XML file there, then copy and paste it into a new file (`nothing.xml`).  You can also generate a skeleton XML file by running the rosetta_scripts application without any parameters:
 
 ```bash
-$> $ROSETTA3/bin/rosetta_scripts.default.linuxgccrelease -print_template_script >nothing.xml
+$> $ROSETTA3/bin/rosetta_scripts.default.linuxgccrelease > nothing.xml
 ```
 
-In the above, the ".default.linuxgccrelease" may need to be changed for your build, operating system, and compiler (*e.g.* ".static.macosclangrelease" for the static build using the clang compiler on the Macintosh operating system).  If you run the above, it will produce the following output:
+In the above, the ".default.linuxgccrelease" may need to be changed for your build, operating system, and compiler (*e.g.* ".static.macosclangrelease" for the static build using the clang compiler on the Macintosh operating system).  If you run the above, it will produce output similar to the following:
 
 ```
-core.init: Rosetta version unknown:979495e360c4960e2a6f41fe9e8bfd5b217e31eb 2016-06-16 21:33:49 -0700 from git@github.com:RosettaCommons/main.git
-core.init: command: /home/vikram/rosetta_git/Rosetta/main/source/bin/rosetta_scripts.default.linuxclangrelease -print_template_script
-core.init: 'RNG device' seed mode, using '/dev/urandom', seed=34564556 seed_offset=0 real_seed=34564556
-core.init.random: RandomGenerator:init: Normal mode, seed=34564556 RG_type=mt19937
-core.init: Resolved executable path: /home/vikram/rosetta_git/Rosetta/main/source/build/src/release/linux/3.13/64/x86/clang/3.4-1ubuntu3/default/rosetta_scripts.default.linuxclangrelease
-core.init: Looking for database based on location of executable: /home/vikram/rosetta_git/Rosetta/main/database/
-apps.public.rosetta_scripts.rosetta_scripts: The -"parser:print_template_script" option was specified.  The app will print a template script and then exit.
-apps.public.rosetta_scripts.rosetta_scripts: RosettaScripts script template:
+core.init: Rosetta version unknown:8c0acaa002dc2aeea2b97370cad3a5c9e1f6b2fe 2016-09-22 12:17:48 -0500 from git@github.com:RosettaCommons/main.git
+core.init: command: /ssd1/morettr/Rosetta6/main/source/bin/rosetta_scripts.default.linuxgccrelease
+core.init: 'RNG device' seed mode, using '/dev/urandom', seed=964549876 seed_offset=0 real_seed=964549876
+core.init.random: RandomGenerator:init: Normal mode, seed=964549876 RG_type=mt19937
+core.init: Resolved executable path: /ssd1/morettr/Rosetta6/main/source/build/src/release/linux/2.6/64/x86/gcc/5.2/default/rosetta_scripts.default.linuxgccrelease
+core.init: Looking for database based on location of executable: /ssd1/morettr/Rosetta6/main/database/
+core.init: 
+core.init: USEFUL TIP: Type -help to get the options for this Rosetta executable.
+core.init: 
+apps.public.rosetta_scripts.rosetta_scripts: No XML file was specified with the "-parser:protocol <filename>" commandline option.  In order for RosettaScripts to do something, it must be provided with a script.
+apps.public.rosetta_scripts.rosetta_scripts: The following is an empty (template) RosettaScripts XML file:
 
 <ROSETTASCRIPTS>
 	<SCOREFXNS>
@@ -87,10 +90,10 @@ At any point in a script, you can include text from another file using <xi:inclu
 apps.public.rosetta_scripts.rosetta_scripts: Variable substituion is possible from the commandline using the -"parser:script_vars varname=value" flag.  Any string of the pattern "%%varname%%" will be replaced with "value" in the script.
 apps.public.rosetta_scripts.rosetta_scripts: 
 apps.public.rosetta_scripts.rosetta_scripts: The rosetta_scripts application will now exit.
-
 ```
 
-This will be written to output.log.  You can delete all lines preceding ```<ROSETTASCRIPTS>``` and following ```</ROSETTASCRIPTS>``` to obtain a minimal template.
+This will be written to the standard output, which has been redirected to the file nothing.xml.  
+You can delete all lines preceding ```<ROSETTASCRIPTS>``` and following ```</ROSETTASCRIPTS>``` to obtain a minimal template.
 
 Before running this script, let's edit it slightly to add comments:
 
