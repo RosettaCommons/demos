@@ -18,13 +18,13 @@ We first do a quick a prerun. First create a separate folder:
 ```
 Now run the following commands:
 ```
-    recces_turner -score:weights stepwise/rna/turner -n_cycle 300000 -seq1 gu -seq2 ac -temps 0.8 -out_prefix prerun
-    recces_turner -score:weights stepwise/rna/turner -n_cycle 300000 -seq1 gu -seq2 ac -temps 1.0 -out_prefix prerun
-    recces_turner -score:weights stepwise/rna/turner -n_cycle 300000 -seq1 gu -seq2 ac -temps 1.4 -out_prefix prerun
-    recces_turner -score:weights stepwise/rna/turner -n_cycle 300000 -seq1 gu -seq2 ac -temps 1.8 -out_prefix prerun
-    recces_turner -score:weights stepwise/rna/turner -n_cycle 300000 -seq1 gu -seq2 ac -temps 3.0 -out_prefix prerun
-    recces_turner -score:weights stepwise/rna/turner -n_cycle 300000 -seq1 gu -seq2 ac -temps 7.0 -out_prefix prerun
-    recces_turner -score:weights stepwise/rna/turner -n_cycle 300000 -seq1 gu -seq2 ac -temps 30  -out_prefix prerun
+    recces_turner -score:weights stepwise/rna/turner -rna:farna:thermal_sampling:n_cycle 300000 -seq1 gu -seq2 ac -rna:farna:thermal_sampling:temps 0.8 -rna:farna:thermal_sampling:out_prefix prerun
+    recces_turner -score:weights stepwise/rna/turner -rna:farna:thermal_sampling:n_cycle 300000 -seq1 gu -seq2 ac -rna:farna:thermal_sampling:temps 1.0 -rna:farna:thermal_sampling:out_prefix prerun
+    recces_turner -score:weights stepwise/rna/turner -rna:farna:thermal_sampling:n_cycle 300000 -seq1 gu -seq2 ac -rna:farna:thermal_sampling:temps 1.4 -rna:farna:thermal_sampling:out_prefix prerun
+    recces_turner -score:weights stepwise/rna/turner -rna:farna:thermal_sampling:n_cycle 300000 -seq1 gu -seq2 ac -rna:farna:thermal_sampling:temps 1.8 -rna:farna:thermal_sampling:out_prefix prerun
+    recces_turner -score:weights stepwise/rna/turner -rna:farna:thermal_sampling:n_cycle 300000 -seq1 gu -seq2 ac -rna:farna:thermal_sampling:temps 3.0 -rna:farna:thermal_sampling:out_prefix prerun
+    recces_turner -score:weights stepwise/rna/turner -rna:farna:thermal_sampling:n_cycle 300000 -seq1 gu -seq2 ac -rna:farna:thermal_sampling:temps 7.0 -rna:farna:thermal_sampling:out_prefix prerun
+    recces_turner -score:weights stepwise/rna/turner -rna:farna:thermal_sampling:n_cycle 300000 -seq1 gu -seq2 ac -rna:farna:thermal_sampling:temps 30  -rna:farna:thermal_sampling:out_prefix prerun
 ```
 These preruns generate data for computing the ST weights in the following run. They may each take about 1 hour.
 
@@ -38,11 +38,11 @@ Here it outputs a list of temperatures and the corresponding ST weights.
 Now we create a new folder `ST` and run simulated tempering:
 ```
     mkdir ST
-    recces_turner -score:weights stepwise/rna/turner -seq1 gu -seq2 ac -n_cycle 9000000 -temps 0.8 1 1.4 1.8 3 7 30 -st_weights 0 7.33 14.6 17.32 18.87 18.34 17.09 -out_prefix ST -save_score_terms
+    recces_turner -score:weights stepwise/rna/turner -seq1 gu -seq2 ac -rna:farna:thermal_sampling:n_cycle 9000000 -rna:farna:thermal_sampling:temps 0.8 1 1.4 1.8 3 7 30 -st_weights 0 7.33 14.6 17.32 18.87 18.34 17.09 -rna:farna:thermal_sampling:out_prefix ST -save_score_terms
 ```
 We also need to run a simulation at infinite temperature:
 ```
-    recces_turner -score:weights stepwise/rna/turner -seq1 gu -seq2 ac -n_cycle 300000 -temps -1 -out_prefix kT_inf -save_score_terms
+    recces_turner -score:weights stepwise/rna/turner -seq1 gu -seq2 ac -rna:farna:thermal_sampling:n_cycle 300000 -rna:farna:thermal_sampling:temps -1 -rna:farna:thermal_sampling:out_prefix kT_inf -save_score_terms
 ```
 Note that here we use the "-save_score_terms" option to cache the contributions of each score term, so we may easily reweight the score function.
 
