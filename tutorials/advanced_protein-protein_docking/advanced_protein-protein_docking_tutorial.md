@@ -140,9 +140,9 @@ This tutorial presents a cross-docking benchmark experiment. Antibody CR6261 bin
                     $> cp input_files/docking_minimize.options .
                     cat docking.options
 
-        1. Generate fifty models using the full docking algorithm. (This will likely take a while - move on to the next steps while this is running.)
+        1. Generate fifty models using the full docking algorithm. (The command below only generates one structure, as fifty will likely take a while - adjust the command and move on to the next steps while this is running.)
 
-                $> $ROSETTA3/bin/rosetta_scripts.default.linuxgccrelease @docking_full.options 
+                $> $ROSETTA3/bin/rosetta_scripts.default.linuxgccrelease @docking_full.options -nstruct 1
 
         1. To have a good comparison for the native structure, we want to minimize the experimental structure into the Rosetta energy function. To do this, we run a similar protocol, but skipping the coarse and fine resolution search stages, keeping only the minimization stage. This provides us with a like-to-like comparison of the native structure.
 
@@ -150,12 +150,12 @@ This tutorial presents a cross-docking benchmark experiment. Antibody CR6261 bin
 
                 The docking_minimize.xml file differs from docking_full.xml only in the PROTOCOL section. The movers dock_low, srsc, and dock_high have been turned off by deleting the angle bracket at the beginning of these lines.
 
-                    $> cp input_files/docking_minimize.xml . 
+                    > cp input_files/docking_minimize.xml . 
                     > cat docking_minimize.xml
 
             1. Generate ten models using only the minimization refinement stage of docking.
 
-                    $> $ROSETTA3/bin/rosetta_scripts.default.linuxgccrelease @input_files/docking_minimize.options 
+                    > $ROSETTA3/bin/rosetta_scripts.default.linuxgccrelease @input_files/docking_minimize.options -nstruct 10
 
 1. Characterize the models and analyze the data for docking funnels.
 

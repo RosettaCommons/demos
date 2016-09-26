@@ -14,4 +14,3 @@
 		-scorefile docking.fasc			# the name of the model score file
 -out
 	-suffix _minimize    				#Adds a suffix "_full" to the end of outputs
--nstruct 1						#how many structures to output
