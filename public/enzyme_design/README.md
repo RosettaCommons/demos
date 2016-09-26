@@ -92,11 +92,11 @@ Step 1: Defining a theozyme in Rosetta format
     Now that we have dreamed up our theozyme, it needs to be expressed in a 
     format that Rosetta can read. In general, the most unambiguous or precisely 
     defined interaction should come first in the .cst file. We use the Rosetta 
-    executable CstfileToTheozymePDB.<extension> to generate .pdb format models 
+    executable CstfileToTheozymePDB.linuxgccrelease to generate .pdb format models 
     from our .cst file so that we can visually check that it defines our 
     theozyme correctly. The command:
 
-        $> <path/to/Rosetta>/main/source/bin/CstfileToTheozymePDB.<extension> -extra_res_fa rosetta_inputs/1n1.params -match:geometric_constraint_file rosetta_inputs/mocktim_first_2interactions_example.cst
+        $> $ROSETTA3/main/source/bin/CstfileToTheozymePDB.linuxgccrelease -extra_res_fa rosetta_inputs/1n1.params -match:geometric_constraint_file rosetta_inputs/mocktim_first_2interactions_example.cst
 
     produces a file called 
     `PDB_Model_mocktim_first_2interactions_example.cst.pdb` in the working 
@@ -150,7 +150,7 @@ Step 2: Matching
 
     The command line
 
-        $> <path/to/Rosetta>/main/source/bin/match.<extension> @rosetta_inputs/general_match.flags @rosetta_inputs/1tml_sys.flags
+        $> $ROSETTA3/main/source/bin/match.linuxgccrelease @rosetta_inputs/general_match.flags @rosetta_inputs/1tml_sys.flags
 
     finds a bunch of matches (~11 in this tutorial) and writes them to the 
     working directory. In a real-life enzdes project, one should look at a few 
@@ -191,7 +191,7 @@ Step 3: Design
     matches (rosetta_inputs/UM_1_D41H116K189_1tml_11_mocktim_1.pdb). The 
     command line:
 
-        $> <path/to/Rosetta>/main/source/bin/enzyme_design.<extension> @rosetta_inputs/general_design.flags -s rosetta_inputs/UM_1_D41H116K189_1tml_11_mocktim_1.pdb -out:file:o scorefile.txt
+        $> $ROSETTA3/main/source/bin/enzyme_design.linuxgccrelease @rosetta_inputs/general_design.flags -s rosetta_inputs/UM_1_D41H116K189_1tml_11_mocktim_1.pdb -out:file:o scorefile.txt
 
     generates a designed protein in .pdb format and a score file that has one 
     line of values for several score terms and other metrics. In a real life 
@@ -223,7 +223,7 @@ output scorefile, as well as a file that specifies required values for certain
 columns, and will then output only those designs in the scorefile that satisfy 
 all required values:
 
-    $> $Rosetta3/src/apps/public/enzdes/DesignSelect.pl -d rosetta_inputs/mocktim_all_design_scores.out -c rosetta_inputs/mocktim_design_selectreqs.txt > selected_designs.txt
+    $> $ROSETTA3/src/apps/public/enzdes/DesignSelect.pl -d rosetta_inputs/mocktim_all_design_scores.out -c rosetta_inputs/mocktim_design_selectreqs.txt > selected_designs.txt
 
 These commands will output 44 designs from the 3720 produced for the PLoS ONE 
 paper. These 44 would then be visually examined for whether any of them look 
