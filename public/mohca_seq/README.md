@@ -74,7 +74,7 @@ Step-by-step instructions for running the demo:
         helix_preassemble_setup.py -secstruct [secondary structure file] -fasta [FASTA file]
         
         ```bash
-        $> helix_preassemble_setup.py -secstruct 1_helix_preassembly/1_generate_commands/rosetta_inputs/secstruct -fasta 1_helix_preassembly/1_generate_commands/rosetta_inputs/fasta
+        $> $ROSETTA_TOOLS/rna_tools/bin/helix_preassemble_setup.py -secstruct 1_helix_preassembly/1_generate_commands/rosetta_inputs/secstruct -fasta 1_helix_preassembly/1_generate_commands/rosetta_inputs/fasta
         ```
 
 4.  Example command line for helix pre-assembly:
