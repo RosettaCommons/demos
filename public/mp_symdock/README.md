@@ -100,7 +100,7 @@ use a C4 Symmetric Potassium Channel (PDB ID: 1bl8)
    First, create the asymmetric input structure and symmetry definition file from the refined symmetric
    complex using the make_symmdef_file.pl script. An example commandline is provided below: 
 
-        $> $ROSETTA3/src/apps/public/symmetry/make_symmdef_file.pl -p 1bl8_refined.pdb -a A -i B:4 > 1bl8.c4.symm
+        $> $ROSETTA3/src/apps/public/symmetry/make_symmdef_file.pl -p example_symmetry_inputs/1bl8_refined.pdb -a A -i B:4 > 1bl8.c4.symm
 
    In this command-line: 
    * `-p` specifies the input PDB file
