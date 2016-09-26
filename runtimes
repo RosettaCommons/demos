@@ -1,0 +1,374 @@
+# This is a file for the Rosetta automated testing system, indicating how long each test runs on the test server.
+# The intent of which is to allow the testing system to appropriately order the tests.
+
+
+## demos/tutorials tests. 
+
+Finished prepare_ligand                           in   0 seconds	 [~  21 test (100%) started,    0 in queue,   20 running]
+Finished test_keywords                            in   0 seconds	 [~  21 test (100%) started,    0 in queue,   19 running]
+Finished analysis                                 in   9 seconds	 [~  21 test (100%) started,    0 in queue,   18 running]
+Finished full_atom_vs_centroid                    in  16 seconds	 [~  21 test (100%) started,    0 in queue,   17 running]
+Finished minimization                             in  23 seconds	 [~  21 test (100%) started,    0 in queue,   16 running]
+Finished scoring                                  in  29 seconds	 [~  21 test (100%) started,    0 in queue,   15 running]
+Finished ligand_docking                           in  38 seconds	 [~  21 test (100%) started,    0 in queue,   14 running]
+Finished rosetta_cm                               in  43 seconds	 [~  21 test (100%) started,    0 in queue,   13 running]
+Finished Relax_Tutorial                           in  47 seconds	 [~  21 test (100%) started,    0 in queue,   12 running]
+Finished denovo_structure_prediction              in  57 seconds	 [~  21 test (100%) started,    0 in queue,   11 running]
+Finished Constraints_Tutorial                     in 122 seconds	 [~  21 test (100%) started,    0 in queue,   10 running]
+Finished loop_modeling                            in 128 seconds	 [~  21 test (100%) started,    0 in queue,    9 running]
+Finished Protein-Protein-Docking                  in 157 seconds	 [~  21 test (100%) started,    0 in queue,    8 running]
+Finished input_and_output                         in 174 seconds	 [~  21 test (100%) started,    0 in queue,    7 running]
+Finished fold_tree                                in 240 seconds	 [~  21 test (100%) started,    0 in queue,    6 running]
+Finished Symmetry                                 in 261 seconds	 [~  21 test (100%) started,    0 in queue,    5 running]
+Finished protein_design                           in 317 seconds	 [~  21 test (100%) started,    0 in queue,    4 running]
+Finished scripting_with_rosettascripts            in 351 seconds	 [~  21 test (100%) started,    0 in queue,    3 running]
+Finished advanced_scripting_with_rosettascripts   in 448 seconds	 [~  21 test (100%) started,    0 in queue,    2 running]
+Finished advanced_denovo_structure_prediction     in 582 seconds	 [~  21 test (100%) started,    0 in queue,    1 running]
+Finished advanced_protein-protein_docking         in 2350 seconds	 [~  21 test (100%) started,    0 in queue,    0 running]
+
+
+## demos/public tests
+
+
+*** Test backrub_seqtol did not run!  Check your --mode flag and paths.
+*** Error in command file replacement: not enough arguments for format string
+
+No correct command.sh file found for backrub_seqtol.  Skipping.
+Running Test enzyme_design
+ulimit -t 1800 && bash /scratch/local-benchmark/T/rosetta.Takeshi/master/demos/new/enzyme_design/command.sh
+
+Encounter error while executing: ulimit -t 1800 && bash /scratch/local-benchmark/T/rosetta.Takeshi/master/demos/new/enzyme_design/command.sh
+*** Test enzyme_design did not run!  Check your --mode flag and paths. [2016-08-09 23:52:00.441088]
+Running Test rna_assembly
+ulimit -t 1800 && bash /scratch/local-benchmark/T/rosetta.Takeshi/master/demos/new/rna_assembly/command.sh
+
+Encounter error while executing: ulimit -t 1800 && bash /scratch/local-benchmark/T/rosetta.Takeshi/master/demos/new/rna_assembly/command.sh
+*** Test rna_assembly did not run!  Check your --mode flag and paths. [2016-08-09 23:52:00.476954]
+Finished rna_assembly                             in   0 seconds	 [~  26 test (28%) started,   66 in queue,   25 running]
+Finished enzyme_design                            in   0 seconds	 [~  26 test (28%) started,   66 in queue,   24 running]
+Running Test mp_span_from_pdb
+ulimit -t 1800 && bash /scratch/local-benchmark/T/rosetta.Takeshi/master/demos/new/mp_span_from_pdb/command.sh
+Finished mp_span_from_pdb                         in   7 seconds	 [~  28 test (30%) started,   64 in queue,   25 running]
+Running Test rna_thread
+ulimit -t 1800 && bash /scratch/local-benchmark/T/rosetta.Takeshi/master/demos/new/rna_thread/command.sh
+Finished rna_thread                               in   9 seconds	 [~  29 test (31%) started,   63 in queue,   25 running]
+Running Test rna_mutate
+ulimit -t 1800 && bash /scratch/local-benchmark/T/rosetta.Takeshi/master/demos/new/rna_mutate/command.sh
+Finished rna_mutate                               in   1 seconds	 [~  30 test (32%) started,   62 in queue,   25 running]
+Running Test using_ncaas_protein_peptide_interface_design
+ulimit -t 1800 && bash /scratch/local-benchmark/T/rosetta.Takeshi/master/demos/new/using_ncaas_protein_peptide_interface_design/command.sh
+
+Encounter error while executing: ulimit -t 1800 && bash /scratch/local-benchmark/T/rosetta.Takeshi/master/demos/new/using_ncaas_protein_peptide_interface_design/command.sh
+*** Test using_ncaas_protein_peptide_interface_design did not run!  Check your --mode flag and paths. [2016-08-09 23:52:11.948774]
+Finished using_ncaas_protein_peptide_interface_design in  11 seconds	 [~  31 test (33%) started,   61 in queue,   25 running]
+Running Test mp_pymol_viewer
+ulimit -t 1800 && bash /scratch/local-benchmark/T/rosetta.Takeshi/master/demos/new/mp_pymol_viewer/command.sh
+Finished mp_pymol_viewer                          in  12 seconds	 [~  32 test (34%) started,   60 in queue,   25 running]
+Running Test rna_puzzle
+ulimit -t 1800 && bash /scratch/local-benchmark/T/rosetta.Takeshi/master/demos/new/rna_puzzle/command.sh
+
+Encounter error while executing: ulimit -t 1800 && bash /scratch/local-benchmark/T/rosetta.Takeshi/master/demos/new/rna_puzzle/command.sh
+*** Test rna_puzzle did not run!  Check your --mode flag and paths. [2016-08-09 23:52:12.755735]
+Finished rna_puzzle                               in   0 seconds	 [~  33 test (35%) started,   59 in queue,   25 running]
+Running Test stepwise_monte_carlo_mini_protein
+ulimit -t 1800 && bash /scratch/local-benchmark/T/rosetta.Takeshi/master/demos/new/stepwise_monte_carlo_mini_protein/command.sh
+
+Encounter error while executing: ulimit -t 1800 && bash /scratch/local-benchmark/T/rosetta.Takeshi/master/demos/new/stepwise_monte_carlo_mini_protein/command.sh
+*** Test stepwise_monte_carlo_mini_protein did not run!  Check your --mode flag and paths. [2016-08-09 23:52:13.422512]
+Finished stepwise_monte_carlo_mini_protein        in  13 seconds	 [~  34 test (36%) started,   58 in queue,   25 running]
+Running Test refinement_of_protein_peptide_complex_using_FlexPepDock
+ulimit -t 1800 && bash /scratch/local-benchmark/T/rosetta.Takeshi/master/demos/new/refinement_of_protein_peptide_complex_using_FlexPepDock/command.sh
+/scratch/local-benchmark/T/rosetta.Takeshi/master/demos/new/refinement_of_protein_peptide_complex_using_FlexPepDock/command.sh: line 13: output/ppk.log: No such file or directory
+
+Encounter error while executing: ulimit -t 1800 && bash /scratch/local-benchmark/T/rosetta.Takeshi/master/demos/new/refinement_of_protein_peptide_complex_using_FlexPepDock/command.sh
+*** Test refinement_of_protein_peptide_complex_using_FlexPepDock did not run!  Check your --mode flag and paths. [2016-08-09 23:52:13.536595]
+Finished refinement_of_protein_peptide_complex_using_FlexPepDock in   0 seconds	 [~  35 test (38%) started,   57 in queue,   25 running]
+Running Test patched_residue_types_in_centroid-fullatom_protocols
+ulimit -t 1800 && bash /scratch/local-benchmark/T/rosetta.Takeshi/master/demos/new/patched_residue_types_in_centroid-fullatom_protocols/command.sh
+Finished patched_residue_types_in_centroid-fullatom_protocols in  16 seconds	 [~  36 test (39%) started,   56 in queue,   25 running]
+Running Test surface_docking_cpp
+ulimit -t 1800 && bash /scratch/local-benchmark/T/rosetta.Takeshi/master/demos/new/surface_docking_cpp/command.sh
+Finished surface_docking_cpp                      in  23 seconds	 [~  37 test (40%) started,   55 in queue,   25 running]
+Running Test beta_peptide_modeling
+ulimit -t 1800 && bash /scratch/local-benchmark/T/rosetta.Takeshi/master/demos/new/beta_peptide_modeling/command.sh
+
+Encounter error while executing: ulimit -t 1800 && bash /scratch/local-benchmark/T/rosetta.Takeshi/master/demos/new/beta_peptide_modeling/command.sh
+*** Test beta_peptide_modeling did not run!  Check your --mode flag and paths. [2016-08-09 23:52:24.345857]
+Finished beta_peptide_modeling                    in  23 seconds	 [~  38 test (41%) started,   54 in queue,   25 running]
+Running Test design_with_ncaa
+ulimit -t 1800 && bash /scratch/local-benchmark/T/rosetta.Takeshi/master/demos/new/design_with_ncaa/command.sh
+Finished design_with_ncaa                         in  17 seconds	 [~  39 test (42%) started,   53 in queue,   25 running]
+Running Test optimize_ligand_hydroxyl_hydrogens
+ulimit -t 1800 && bash /scratch/local-benchmark/T/rosetta.Takeshi/master/demos/new/optimize_ligand_hydroxyl_hydrogens/command.sh
+Finished optimize_ligand_hydroxyl_hydrogens       in  45 seconds	 [~  40 test (43%) started,   52 in queue,   25 running]
+Running Test original_mp_relax_menv_smooth
+ulimit -t 1800 && bash /scratch/local-benchmark/T/rosetta.Takeshi/master/demos/new/original_mp_relax_menv_smooth/command.sh
+Finished original_mp_relax_menv_smooth            in  71 seconds	 [~  41 test (44%) started,   51 in queue,   25 running]
+Running Test ligand_water_docking
+ulimit -t 1800 && bash /scratch/local-benchmark/T/rosetta.Takeshi/master/demos/new/ligand_water_docking/command.sh
+Finished ligand_water_docking                     in  97 seconds	 [~  42 test (45%) started,   50 in queue,   25 running]
+Running Test oop_design
+ulimit -t 1800 && bash /scratch/local-benchmark/T/rosetta.Takeshi/master/demos/new/oop_design/command.sh
+Finished oop_design                               in  99 seconds	 [~  43 test (46%) started,   49 in queue,   25 running]
+Running Test chemically_conjugated_docking
+ulimit -t 1800 && bash /scratch/local-benchmark/T/rosetta.Takeshi/master/demos/new/chemically_conjugated_docking/command.sh
+Finished chemically_conjugated_docking            in 100 seconds	 [~  44 test (47%) started,   48 in queue,   25 running]
+Running Test doug_dock_design_min
+ulimit -t 1800 && bash /scratch/local-benchmark/T/rosetta.Takeshi/master/demos/new/doug_dock_design_min/command.sh
+Finished doug_dock_design_min                     in  35 seconds	 [~  45 test (48%) started,   47 in queue,   25 running]
+Running Test fixbb
+ulimit -t 1800 && bash /scratch/local-benchmark/T/rosetta.Takeshi/master/demos/new/fixbb/command.sh
+Finished fixbb                                    in  31 seconds	 [~  46 test (50%) started,   46 in queue,   25 running]
+Running Test multi_state_desing_of_antibodies
+ulimit -t 1800 && bash /scratch/local-benchmark/T/rosetta.Takeshi/master/demos/new/multi_state_desing_of_antibodies/command.sh
+Finished multi_state_desing_of_antibodies         in 108 seconds	 [~  47 test (51%) started,   45 in queue,   25 running]
+Running Test RNA_Denovo_with_base_pair_steps
+ulimit -t 1800 && bash /scratch/local-benchmark/T/rosetta.Takeshi/master/demos/new/RNA_Denovo_with_base_pair_steps/command.sh
+Finished RNA_Denovo_with_base_pair_steps          in 136 seconds	 [~  48 test (52%) started,   44 in queue,   25 running]
+Running Test rna_design
+ulimit -t 1800 && bash /scratch/local-benchmark/T/rosetta.Takeshi/master/demos/new/rna_design/command.sh
+Finished rna_design                               in  31 seconds	 [~  49 test (53%) started,   43 in queue,   25 running]
+Running Test calculate_protein_protein_ddg
+ulimit -t 1800 && bash /scratch/local-benchmark/T/rosetta.Takeshi/master/demos/new/calculate_protein_protein_ddg/command.sh
+Finished calculate_protein_protein_ddg            in 149 seconds	 [~  50 test (54%) started,   42 in queue,   25 running]
+Running Test rosetta_scripts_RosettaDNA
+ulimit -t 1800 && bash /scratch/local-benchmark/T/rosetta.Takeshi/master/demos/new/rosetta_scripts_RosettaDNA/command.sh
+Finished rosetta_scripts_RosettaDNA               in 165 seconds	 [~  51 test (55%) started,   41 in queue,   25 running]
+Running Test rosetta_scripts_flxbb_design
+ulimit -t 1800 && bash /scratch/local-benchmark/T/rosetta.Takeshi/master/demos/new/rosetta_scripts_flxbb_design/command.sh
+
+Encounter error while executing: ulimit -t 1800 && bash /scratch/local-benchmark/T/rosetta.Takeshi/master/demos/new/rosetta_scripts_flxbb_design/command.sh
+*** Test rosetta_scripts_flxbb_design did not run!  Check your --mode flag and paths. [2016-08-09 23:54:58.846126]
+Finished rosetta_scripts_flxbb_design             in   0 seconds	 [~  52 test (56%) started,   40 in queue,   25 running]
+Running Test darc
+ulimit -t 1800 && bash /scratch/local-benchmark/T/rosetta.Takeshi/master/demos/new/darc/command.sh
+
+Encounter error while executing: ulimit -t 1800 && bash /scratch/local-benchmark/T/rosetta.Takeshi/master/demos/new/darc/command.sh
+*** Test darc did not run!  Check your --mode flag and paths. [2016-08-09 23:55:21.578139]
+Finished darc                                     in  62 seconds	 [~  53 test (57%) started,   39 in queue,   25 running]
+Running Test fragment_picking
+ulimit -t 1800 && bash /scratch/local-benchmark/T/rosetta.Takeshi/master/demos/new/fragment_picking/command.sh
+Finished fragment_picking                         in  77 seconds	 [~  54 test (58%) started,   38 in queue,   25 running]
+Running Test stepwise_monte_carlo_protein_loop
+ulimit -t 1800 && bash /scratch/local-benchmark/T/rosetta.Takeshi/master/demos/new/stepwise_monte_carlo_protein_loop/command.sh
+Finished stepwise_monte_carlo_protein_loop        in  31 seconds	 [~  55 test (59%) started,   37 in queue,   25 running]
+Running Test zinc_site_redesign
+ulimit -t 1800 && bash /scratch/local-benchmark/T/rosetta.Takeshi/master/demos/new/zinc_site_redesign/command.sh
+
+Encounter error while executing: ulimit -t 1800 && bash /scratch/local-benchmark/T/rosetta.Takeshi/master/demos/new/zinc_site_redesign/command.sh
+*** Test zinc_site_redesign did not run!  Check your --mode flag and paths. [2016-08-09 23:55:31.182653]
+Finished zinc_site_redesign                       in   1 seconds	 [~  56 test (60%) started,   36 in queue,   25 running]
+Running Test unfolded_state_energy_calculator
+ulimit -t 1800 && bash /scratch/local-benchmark/T/rosetta.Takeshi/master/demos/new/unfolded_state_energy_calculator/command.sh
+Finished unfolded_state_energy_calculator         in 212 seconds	 [~  57 test (61%) started,   35 in queue,   25 running]
+Running Test fragment_picking_for_cs_rosetta
+ulimit -t 1800 && bash /scratch/local-benchmark/T/rosetta.Takeshi/master/demos/new/fragment_picking_for_cs_rosetta/command.sh
+Finished fragment_picking_for_cs_rosetta          in  23 seconds	 [~  58 test (63%) started,   34 in queue,   25 running]
+Running Test supercharge
+ulimit -t 1800 && bash /scratch/local-benchmark/T/rosetta.Takeshi/master/demos/new/supercharge/command.sh
+Finished supercharge                              in 205 seconds	 [~  59 test (64%) started,   33 in queue,   25 running]
+Running Test mp_relax
+ulimit -t 1800 && bash /scratch/local-benchmark/T/rosetta.Takeshi/master/demos/new/mp_relax/command.sh
+Finished mp_relax                                 in 258 seconds	 [~  60 test (65%) started,   32 in queue,   25 running]
+Running Test hbs_design
+ulimit -t 1800 && bash /scratch/local-benchmark/T/rosetta.Takeshi/master/demos/new/hbs_design/command.sh
+Finished hbs_design                               in  60 seconds	 [~  61 test (66%) started,   31 in queue,   25 running]
+Running Test local_dock_ssrA_peptide_against_sspB
+ulimit -t 1800 && bash /scratch/local-benchmark/T/rosetta.Takeshi/master/demos/new/local_dock_ssrA_peptide_against_sspB/command.sh
+Removed crystallographic waters and redundant chains.
+Chains B and D written to input_files/1OU8_BD.clean.pdb
+Prepacked starting structure written to input_files/1OU8_BD.clean_0001.pdb
+Testing minimal movement example...
+Done!
+Testing moderate movement example...
+Done!
+Testing extreme movement example...
+Done!
+Finished local_dock_ssrA_peptide_against_sspB     in 273 seconds	 [~  62 test (67%) started,   30 in queue,   25 running]
+Running Test test_keywords
+ulimit -t 1800 && bash /scratch/local-benchmark/T/rosetta.Takeshi/master/demos/new/test_keywords/command.sh
+Finished test_keywords                            in   0 seconds	 [~  63 test (68%) started,   29 in queue,   25 running]
+Running Test abinitio_w_chemicalshift_only
+ulimit -t 1800 && bash /scratch/local-benchmark/T/rosetta.Takeshi/master/demos/new/abinitio_w_chemicalshift_only/command.sh
+Finished abinitio_w_chemicalshift_only            in  50 seconds	 [~  64 test (69%) started,   28 in queue,   25 running]
+Running Test relax_a_large_structure
+ulimit -t 1800 && bash /scratch/local-benchmark/T/rosetta.Takeshi/master/demos/new/relax_a_large_structure/command.sh
+Finished relax_a_large_structure                  in  82 seconds	 [~  65 test (70%) started,   27 in queue,   25 running]
+Running Test rna_denovo
+ulimit -t 1800 && bash /scratch/local-benchmark/T/rosetta.Takeshi/master/demos/new/rna_denovo/command.sh
+Finished rna_denovo                               in  21 seconds	 [~  66 test (71%) started,   26 in queue,   25 running]
+Running Test clustering
+ulimit -t 1800 && bash /scratch/local-benchmark/T/rosetta.Takeshi/master/demos/new/clustering/command.sh
+Finished clustering                               in 182 seconds	 [~  67 test (72%) started,   25 in queue,   25 running]
+Running Test dock_with_user_defined_constraints
+ulimit -t 1800 && bash /scratch/local-benchmark/T/rosetta.Takeshi/master/demos/new/dock_with_user_defined_constraints/command.sh
+Finished dock_with_user_defined_constraints       in 267 seconds	 [~  68 test (73%) started,   24 in queue,   25 running]
+Running Test design_with_phosphoresidue
+ulimit -t 1800 && bash /scratch/local-benchmark/T/rosetta.Takeshi/master/demos/new/design_with_phosphoresidue/command.sh
+Finished design_with_phosphoresidue               in 125 seconds	 [~  69 test (75%) started,   23 in queue,   25 running]
+Running Test prepare_pdbs_for_rosetta
+ulimit -t 1800 && bash /scratch/local-benchmark/T/rosetta.Takeshi/master/demos/new/prepare_pdbs_for_rosetta/command.sh
+Finished prepare_pdbs_for_rosetta                 in   8 seconds	 [~  70 test (76%) started,   22 in queue,   25 running]
+Running Test domain_insertion
+ulimit -t 1800 && bash /scratch/local-benchmark/T/rosetta.Takeshi/master/demos/new/domain_insertion/command.sh
+Finished domain_insertion                         in 311 seconds	 [~  71 test (77%) started,   21 in queue,   25 running]
+Running Test dock_protein_complex_with_ligand_xml
+ulimit -t 1800 && bash /scratch/local-benchmark/T/rosetta.Takeshi/master/demos/new/dock_protein_complex_with_ligand_xml/command.sh
+Finished dock_protein_complex_with_ligand_xml     in 118 seconds	 [~  72 test (78%) started,   20 in queue,   25 running]
+Running Test membrane_abinitio
+ulimit -t 1800 && bash /scratch/local-benchmark/T/rosetta.Takeshi/master/demos/new/membrane_abinitio/command.sh
+Finished membrane_abinitio                        in  37 seconds	 [~  73 test (79%) started,   19 in queue,   25 running]
+Running Test floppy_tail
+ulimit -t 1800 && bash /scratch/local-benchmark/T/rosetta.Takeshi/master/demos/new/floppy_tail/command.sh
+Finished floppy_tail                              in  32 seconds	 [~  74 test (80%) started,   18 in queue,   25 running]
+Running Test symmetric_docking_insulin_trimer_of_dimers
+ulimit -t 1800 && bash /scratch/local-benchmark/T/rosetta.Takeshi/master/demos/new/symmetric_docking_insulin_trimer_of_dimers/command.sh
+Finished symmetric_docking_insulin_trimer_of_dimers in  52 seconds	 [~  75 test (81%) started,   17 in queue,   25 running]
+Running Test fixbb_design
+ulimit -t 1800 && bash /scratch/local-benchmark/T/rosetta.Takeshi/master/demos/new/fixbb_design/command.sh
+Finished fixbb_design                             in  21 seconds	 [~  76 test (82%) started,   16 in queue,   25 running]
+Running Test shortening_loops
+ulimit -t 1800 && bash /scratch/local-benchmark/T/rosetta.Takeshi/master/demos/new/shortening_loops/command.sh
+Finished shortening_loops                         in 486 seconds	 [~  77 test (83%) started,   15 in queue,   25 running]
+Running Test mp_dock
+ulimit -t 1800 && bash /scratch/local-benchmark/T/rosetta.Takeshi/master/demos/new/mp_dock/command.sh
+Finished mp_dock                                  in  44 seconds	 [~  78 test (84%) started,   14 in queue,   25 running]
+Running Test favor_native_residue
+ulimit -t 1800 && bash /scratch/local-benchmark/T/rosetta.Takeshi/master/demos/new/favor_native_residue/command.sh
+Finished favor_native_residue                     in  13 seconds	 [~  79 test (85%) started,   13 in queue,   25 running]
+Running Test homology_modeling_threading_basic
+ulimit -t 1800 && bash /scratch/local-benchmark/T/rosetta.Takeshi/master/demos/new/homology_modeling_threading_basic/command.sh
+Finished homology_modeling_threading_basic        in 526 seconds	 [~  80 test (86%) started,   12 in queue,   25 running]
+Running Test abinitio_fold_and_dock_of_peptides_using_flexpepdock
+ulimit -t 1800 && bash /scratch/local-benchmark/T/rosetta.Takeshi/master/demos/new/abinitio_fold_and_dock_of_peptides_using_flexpepdock/command.sh
+Finished abinitio_fold_and_dock_of_peptides_using_flexpepdock in  91 seconds	 [~  81 test (88%) started,   11 in queue,   25 running]
+Running Test next_generation_kic
+ulimit -t 1800 && bash /scratch/local-benchmark/T/rosetta.Takeshi/master/demos/new/next_generation_kic/command.sh
+Finished next_generation_kic                      in 626 seconds	 [~  82 test (89%) started,   10 in queue,   25 running]
+Running Test stepwise_monte_carlo_rna_loop
+ulimit -t 1800 && bash /scratch/local-benchmark/T/rosetta.Takeshi/master/demos/new/stepwise_monte_carlo_rna_loop/command.sh
+Finished stepwise_monte_carlo_rna_loop            in 634 seconds	 [~  83 test (90%) started,    9 in queue,   25 running]
+Running Test mohca_seq
+ulimit -t 1800 && bash /scratch/local-benchmark/T/rosetta.Takeshi/master/demos/new/mohca_seq/command.sh
+
+Encounter error while executing: ulimit -t 1800 && bash /scratch/local-benchmark/T/rosetta.Takeshi/master/demos/new/mohca_seq/command.sh
+*** Test mohca_seq did not run!  Check your --mode flag and paths. [2016-08-10 00:02:34.643315]
+Finished mohca_seq                                in   0 seconds	 [~  84 test (91%) started,    8 in queue,   25 running]
+Running Test MembraneAbinitio
+ulimit -t 1800 && bash /scratch/local-benchmark/T/rosetta.Takeshi/master/demos/new/MembraneAbinitio/command.sh
+
+Encounter error while executing: ulimit -t 1800 && bash /scratch/local-benchmark/T/rosetta.Takeshi/master/demos/new/MembraneAbinitio/command.sh
+*** Test MembraneAbinitio did not run!  Check your --mode flag and paths. [2016-08-10 00:02:37.584351]
+Finished MembraneAbinitio                         in 637 seconds	 [~  85 test (92%) started,    7 in queue,   25 running]
+Running Test abinitio_w_chemicalshift_noe_rdc
+ulimit -t 1800 && bash /scratch/local-benchmark/T/rosetta.Takeshi/master/demos/new/abinitio_w_chemicalshift_noe_rdc/command.sh
+Finished abinitio_w_chemicalshift_noe_rdc         in 163 seconds	 [~  86 test (93%) started,    6 in queue,   25 running]
+Running Test anchored_design
+ulimit -t 1800 && bash /scratch/local-benchmark/T/rosetta.Takeshi/master/demos/new/anchored_design/command.sh
+Finished anchored_design                          in 389 seconds	 [~  87 test (94%) started,    5 in queue,   25 running]
+Running Test make_rot_lib
+ulimit -t 1800 && bash /scratch/local-benchmark/T/rosetta.Takeshi/master/demos/new/make_rot_lib/command.sh
+
+Encounter error while executing: ulimit -t 1800 && bash /scratch/local-benchmark/T/rosetta.Takeshi/master/demos/new/make_rot_lib/command.sh
+*** Test make_rot_lib did not run!  Check your --mode flag and paths. [2016-08-10 00:03:02.058884]
+Finished make_rot_lib                             in   0 seconds	 [~  88 test (95%) started,    4 in queue,   25 running]
+Running Test predict_eglinC_ddgs
+ulimit -t 1800 && bash /scratch/local-benchmark/T/rosetta.Takeshi/master/demos/new/predict_eglinC_ddgs/command.sh
+
+Encounter error while executing: ulimit -t 1800 && bash /scratch/local-benchmark/T/rosetta.Takeshi/master/demos/new/predict_eglinC_ddgs/command.sh
+*** Test predict_eglinC_ddgs did not run!  Check your --mode flag and paths. [2016-08-10 00:03:05.513438]
+Finished predict_eglinC_ddgs                      in  30 seconds	 [~  89 test (96%) started,    3 in queue,   25 running]
+Running Test relax_around_chemically_bound_ligand
+ulimit -t 1800 && bash /scratch/local-benchmark/T/rosetta.Takeshi/master/demos/new/relax_around_chemically_bound_ligand/command.sh
+Finished relax_around_chemically_bound_ligand     in 165 seconds	 [~  90 test (97%) started,    2 in queue,   25 running]
+Running Test abinitio_w_chemicalshift_noe
+ulimit -t 1800 && bash /scratch/local-benchmark/T/rosetta.Takeshi/master/demos/new/abinitio_w_chemicalshift_noe/command.sh
+Finished abinitio_w_chemicalshift_noe             in  57 seconds	 [~  91 test (98%) started,    1 in queue,   25 running]
+Running Test rosetta_scripts_enzdes
+ulimit -t 1800 && bash /scratch/local-benchmark/T/rosetta.Takeshi/master/demos/new/rosetta_scripts_enzdes/command.sh
+Finished rosetta_scripts_enzdes                   in  39 seconds	 [~  92 test (100%) started,    0 in queue,   25 running]
+Running Test ligand_dock_commandline
+ulimit -t 1800 && bash /scratch/local-benchmark/T/rosetta.Takeshi/master/demos/new/ligand_dock_commandline/command.sh
+
+Encounter error while executing: ulimit -t 1800 && bash /scratch/local-benchmark/T/rosetta.Takeshi/master/demos/new/ligand_dock_commandline/command.sh
+*** Test ligand_dock_commandline did not run!  Check your --mode flag and paths. [2016-08-10 00:03:57.735706]
+Running Test analyzing_interface_quality
+ulimit -t 1800 && bash /scratch/local-benchmark/T/rosetta.Takeshi/master/demos/new/analyzing_interface_quality/command.sh
+Running Test model_missing_loop
+ulimit -t 1800 && bash /scratch/local-benchmark/T/rosetta.Takeshi/master/demos/new/model_missing_loop/command.sh
+Running Test protein_rna_interface_design
+ulimit -t 1800 && bash /scratch/local-benchmark/T/rosetta.Takeshi/master/demos/new/protein_rna_interface_design/command.sh
+Running Test rosetta_scripts_LoopRemodel
+ulimit -t 1800 && bash /scratch/local-benchmark/T/rosetta.Takeshi/master/demos/new/rosetta_scripts_LoopRemodel/command.sh
+Running Test symmetry_examples
+ulimit -t 1800 && bash /scratch/local-benchmark/T/rosetta.Takeshi/master/demos/new/symmetry_examples/command.sh
+Running Test design_with_flex_loops
+ulimit -t 1800 && bash /scratch/local-benchmark/T/rosetta.Takeshi/master/demos/new/design_with_flex_loops/command.sh
+Running Test design_raf_rac_interface
+ulimit -t 1800 && bash /scratch/local-benchmark/T/rosetta.Takeshi/master/demos/new/design_raf_rac_interface/command.sh
+Running Test rosettaligand_transform
+ulimit -t 1800 && bash /scratch/local-benchmark/T/rosetta.Takeshi/master/demos/new/rosettaligand_transform/command.sh
+Running Test rosetta_scripts_pp-interfaceredesign
+ulimit -t 1800 && bash /scratch/local-benchmark/T/rosetta.Takeshi/master/demos/new/rosetta_scripts_pp-interfaceredesign/command.sh
+Running Test vip
+ulimit -t 1800 && bash /scratch/local-benchmark/T/rosetta.Takeshi/master/demos/new/vip/command.sh
+
+Encounter error while executing: ulimit -t 1800 && bash /scratch/local-benchmark/T/rosetta.Takeshi/master/demos/new/vip/command.sh
+*** Test vip did not run!  Check your --mode flag and paths. [2016-08-10 00:08:31.599932]
+Running Test molecular_replacement
+ulimit -t 1800 && bash /scratch/local-benchmark/T/rosetta.Takeshi/master/demos/new/molecular_replacement/command.sh
+Running Test topology_broker_gpcr
+ulimit -t 1800 && bash /scratch/local-benchmark/T/rosetta.Takeshi/master/demos/new/topology_broker_gpcr/command.sh
+Running Test protein_dna_interface_design
+ulimit -t 1800 && bash /scratch/local-benchmark/T/rosetta.Takeshi/master/demos/new/protein_dna_interface_design/command.sh
+Running Test abinitio
+ulimit -t 1800 && bash /scratch/local-benchmark/T/rosetta.Takeshi/master/demos/new/abinitio/command.sh
+Running Test mp_symdock
+ulimit -t 1800 && bash /scratch/local-benchmark/T/rosetta.Takeshi/master/demos/new/mp_symdock/command.sh
+
+Encounter error while executing: ulimit -t 1800 && bash /scratch/local-benchmark/T/rosetta.Takeshi/master/demos/new/mp_symdock/command.sh
+*** Test mp_symdock did not run!  Check your --mode flag and paths. [2016-08-10 00:15:14.066435]
+Running Test nucleobase_sample_around
+ulimit -t 1800 && bash /scratch/local-benchmark/T/rosetta.Takeshi/master/demos/new/nucleobase_sample_around/command.sh
+
+Encounter error while executing: ulimit -t 1800 && bash /scratch/local-benchmark/T/rosetta.Takeshi/master/demos/new/nucleobase_sample_around/command.sh
+*** Test nucleobase_sample_around did not run!  Check your --mode flag and paths. [2016-08-10 00:16:19.097932]
+Running Test stepwise_monte_carlo_rna_multiloop
+ulimit -t 1800 && bash /scratch/local-benchmark/T/rosetta.Takeshi/master/demos/new/stepwise_monte_carlo_rna_multiloop/command.sh
+Running Test membrane_homology_modeling
+ulimit -t 1800 && bash /scratch/local-benchmark/T/rosetta.Takeshi/master/demos/new/membrane_homology_modeling/command.sh
+Running Test ideal_proteins
+ulimit -t 1800 && bash /scratch/local-benchmark/T/rosetta.Takeshi/master/demos/new/ideal_proteins/command.sh
+
+Encounter error while executing: ulimit -t 1800 && bash /scratch/local-benchmark/T/rosetta.Takeshi/master/demos/new/ideal_proteins/command.sh
+*** Test ideal_proteins did not run!  Check your --mode flag and paths. [2016-08-10 00:17:39.956715]
+Running Test prepare_pdb_for_rosetta_with_relax
+ulimit -t 1800 && bash /scratch/local-benchmark/T/rosetta.Takeshi/master/demos/new/prepare_pdb_for_rosetta_with_relax/command.sh
+Finished ligand_dock_commandline                  in  52 seconds	 [~  92 test (100%) started,    0 in queue,   24 running]
+Finished analyzing_interface_quality              in  34 seconds	 [~  92 test (100%) started,    0 in queue,   23 running]
+Finished model_missing_loop                       in 537 seconds	 [~  92 test (100%) started,    0 in queue,   22 running]
+Finished protein_rna_interface_design             in  54 seconds	 [~  92 test (100%) started,    0 in queue,   21 running]
+Finished rosetta_scripts_LoopRemodel              in 755 seconds	 [~  92 test (100%) started,    0 in queue,   20 running]
+Finished symmetry_examples                        in 763 seconds	 [~  92 test (100%) started,    0 in queue,   19 running]
+Finished design_with_flex_loops                   in 250 seconds	 [~  92 test (100%) started,    0 in queue,   18 running]
+Finished design_raf_rac_interface                 in 178 seconds	 [~  92 test (100%) started,    0 in queue,   17 running]
+Finished rosettaligand_transform                  in 938 seconds	 [~  92 test (100%) started,    0 in queue,   16 running]
+Finished rosetta_scripts_pp-interfaceredesign     in 744 seconds	 [~  92 test (100%) started,    0 in queue,   15 running]
+Finished vip                                      in 617 seconds	 [~  92 test (100%) started,    0 in queue,   14 running]
+Finished molecular_replacement                    in 873 seconds	 [~  92 test (100%) started,    0 in queue,   13 running]
+Finished topology_broker_gpcr                     in 1067 seconds	 [~  92 test (100%) started,    0 in queue,   12 running]
+Finished protein_dna_interface_design             in 504 seconds	 [~  92 test (100%) started,    0 in queue,   11 running]
+Finished abinitio                                 in 620 seconds	 [~  92 test (100%) started,    0 in queue,   10 running]
+Finished mp_symdock                               in 1393 seconds	 [~  92 test (100%) started,    0 in queue,    9 running]
+Finished nucleobase_sample_around                 in 808 seconds	 [~  92 test (100%) started,    0 in queue,    8 running]
+Finished stepwise_monte_carlo_rna_multiloop       in 1063 seconds	 [~  92 test (100%) started,    0 in queue,    7 running]
+Finished membrane_homology_modeling               in 1102 seconds	 [~  92 test (100%) started,    0 in queue,    6 running]
+Finished ideal_proteins                           in 1439 seconds	 [~  92 test (100%) started,    0 in queue,    5 running]
+Finished prepare_pdb_for_rosetta_with_relax       in 1491 seconds	 [~  92 test (100%) started,    0 in queue,    4 running]
+*** Test optE exceeded the timeout=1800  and will be killed! [2016-08-10 00:22:00.565859]
+Finished optE                                     in 1800 seconds	 [~  92 test (100%) started,    0 in queue,    3 running]
+*** Test beta_strand_homodimer_design exceeded the timeout=1800  and will be killed! [2016-08-10 00:22:34.348912]
+Finished beta_strand_homodimer_design             in 1800 seconds	 [~  92 test (100%) started,    0 in queue,    2 running]
+*** Test spin_labels exceeded the timeout=1800  and will be killed! [2016-08-10 00:28:52.191807]
+Finished spin_labels                              in 1800 seconds	 [~  92 test (100%) started,    0 in queue,    1 running]
+
