@@ -17,7 +17,7 @@ To generate the output in the example output directory, the app can be run as fo
 
 ```bash```
 $> cp rosetta_inputs/* .
-$> $ROSETTA3/bin/vip.default.linuxgccrelease @flags >out.log & 
+$> $ROSETTA3/bin/vip.default.linuxgccrelease @flags 
 ```
 
 In the above, ".default.linuxgccrelease" may need to be replaced with your build, operating system, and compiler.  For example, for a static, debug-mode build on the Macintosh operating system with the clang compiler, you would use, ".static.macosclangdebug".
