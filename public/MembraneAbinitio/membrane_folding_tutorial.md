@@ -136,7 +136,7 @@ If you want to try making files that already exist (e.g., input files), write th
     
     1.  Generate score vs. RMSD plots etc. The scripts to make an XY-scatter plot for membrane proteins are called score_vs_rmsTM.R and score_vs_rmsTM_low.R. These scripts are found in the ~/rosetta_workshop/tutorials/protein_folding/scripts directory.  If you want to rescore your models and compute the RMSD against the lowest-scoring model, repeat the previous step with the following changes: 
                                 
-            $> $ROSETTA/bin/score_jd2.default.linuxgccrelease -in:file:native S_00000044_1_0001_0001.pdb -in:file:silent BRD4A_mem_abrlx_all.out -in:file:silent_struct_type binary -in:file:residue_type_set centroid -in:file:spanfile BRD4A.span -score:weights score_membrane -out:file:residue_type_set centroid -out:file:silent BRD4A_mem_abrlx_all_rescore.out -out:file:silent_struct_type binary -evaluation:rmsd NATIVE TM_low BRD4A_TM_rms.txt
+            $> $ROSETTA/bin/score_jd2.default.linuxgccrelease -in:file:native S_00000044_1_0001_0001.pdb -in:file:silent BRD4A_mem_abrlx_all.out -in:file:silent_struct_type binary -in:file:residue_type_set centroid -in:file:spanfile BRD4A.span -score:weights score_membrane -out:file:residue_type_set centroid -out:file:silent BRD4A_mem_abrlx_all_rescore.out -out:file:silent_struct_type binary -evaluation:rmsd NATIVE TM_low ../input_files/BRD4A_TM_rms.txt
 
     1. *OPTIONAL:  Relaxing Membrane Proteins in Rosetta (will not be covered in tutorial)*
          1. *The options and command line for performing full atom refinement of a membrane protein in ROSETTA is provided in the MembraneAbinitio/input_files/mem_rlx directory. The example output can be found in*  
