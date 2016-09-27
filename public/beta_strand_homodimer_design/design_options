@@ -1,5 +1,5 @@
 #general options
--nstruct 5000 #try 5000 or so for production runs
+-nstruct 10 #try 5000 or so for production runs
 -out::pdb_gz true #do this for production runs
 -pack_min_runs 5 # number of times to do design/packing.
 -make_ala_interface true # makes the interface alanine during docking
