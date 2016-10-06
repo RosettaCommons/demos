@@ -1,6 +1,6 @@
 MP Mutate Relax Protocol Capture
 ================================
-KEYWORDS: MEMBRANES, STRUCTURE PREDICTION, STABILITY IMPROVEMENT
+KEYWORDS: MEMBRANES STRUCTURE_PREDICTION STABILITY_IMPROVEMENT
 
 
 Follow the steps below. Example inputs and outputs are provided in the respective folders. 
