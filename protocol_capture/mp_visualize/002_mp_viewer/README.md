@@ -1,3 +1,7 @@
+MP Viewer Protocol Capture
+==========================
+KEYWORDS: MEMBRANES, ANALYSIS
+
 Visualization with the mp_viwer application: Adjust the path to the executable and the Rosetta
 database in the cmd_mpviewer.sh file. Open PyMOL and then run the cmd file in a regular terminal outside of PyMOL:
         

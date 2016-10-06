@@ -1,3 +1,7 @@
+Helix from sequence Protocol Capture
+====================================
+KEYWORDS: MEMBRANES, STRUCTURE PREDICTION
+
 Follow the steps below. Example inputs and outputs are provided in the respective folders. 
 
 1) Adjust the paths for the Rosetta executable and database in the cmd_model_tmhelix.sh script

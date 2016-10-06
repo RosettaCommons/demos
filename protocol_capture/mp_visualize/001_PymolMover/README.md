@@ -1,3 +1,7 @@
+PymolMover Protocol Capture
+===========================
+KEYWORDS: MEMBRANES, ANALYSIS
+
 Visualization with the PyMOLMover in any type of protocol. In this example, we use the mutate_relax 
 application. To run this, adjust the paths in 
 

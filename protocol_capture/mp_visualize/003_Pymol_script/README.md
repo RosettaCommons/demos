@@ -1,3 +1,7 @@
+Pymol script visualization Protocol Capture
+===========================================
+KEYWORDS: MEMBRANES, ANALYSIS
+
 Visualizing the membrane protein with a PyMOL script. Simply run PyMOL and the script with
 
    > pymol input/4P79_opm_A.pdb visualize_membrane.pml
