@@ -1,0 +1,6 @@
+This protocol capture has been described in the Supplemental Material to the paper below. 
+Please cite:
+
+"Expanding the toolkit for membrane protein modeling in Rosetta"
+Julia Koehler Leman, Benjamin K. Mueller, Jeffrey J. Gray
+Bioinformatics, 2016

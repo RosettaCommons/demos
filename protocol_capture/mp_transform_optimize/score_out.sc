@@ -1,0 +1,4 @@
+SEQUENCE: 
+SCORE: total_score dslf_ca_dih dslf_cs_ang dslf_ss_dih dslf_ss_dst      fa_atr      fa_dun fa_intra_rep     fa_mpenv fa_mpenv_smooth fa_mpsolv   fa_pair    fa_rep hbond_bb_sc hbond_lr_bb    hbond_sc hbond_sr_bb       omega     p_aa_pp pro_close      rama       ref description 
+SCORE:    -303.946       0.099       0.600       1.469      -1.808    -671.872     220.477        1.512       38.905          -8.275   136.565    -5.727    92.446     -12.815     -12.469      -2.890     -78.552      13.542      -3.476     3.264    -9.073    -5.870 4P79_A_0001_trf
+SCORE:    -305.499       0.099       0.600       1.469      -1.808    -671.872     220.477        1.512       45.520         -12.021   132.514    -5.727    92.446     -13.165     -12.469      -2.910     -78.552      13.542      -3.476     3.264    -9.073    -5.870 4P79_A_0001_opt

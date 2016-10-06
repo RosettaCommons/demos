@@ -1,0 +1,11 @@
+~/Rosetta/main/source/bin/mp_mutate_relax.macosclangrelease \
+-database ~/Rosetta/main/database \
+-in:file:s input/helix.pdb \
+-in:file:native input/helix.pdb \
+-mp:setup:spanfiles input/helix.span \
+-mp:mutate_relax:mutation F15C \
+-mp:mutate_relax:relax true \
+-relax:range:angle_max 0.3 \
+-relax:range:nmoves nres \
+-mp:transform:optimize_embedding false \
+-mp:mutate_relax:nmodels 2 \

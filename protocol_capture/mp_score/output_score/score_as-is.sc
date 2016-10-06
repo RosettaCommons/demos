@@ -1,0 +1,3 @@
+SEQUENCE: 
+SCORE: total_score       score dslf_ca_dih dslf_cs_ang dslf_ss_dih dslf_ss_dst      fa_atr      fa_dun fa_intra_rep     fa_mpenv fa_mpenv_smooth fa_mpsolv   fa_pair    fa_rep hbond_bb_sc hbond_lr_bb    hbond_sc hbond_sr_bb linear_chainbreak             omega overlap_chainbreak            p_aa_pp pro_close      rama       ref      time description 
+SCORE:    2522.134    2522.134       0.099       0.601       1.469      -1.810    -689.931     426.748       62.549       42.289          -6.810   142.411    -5.258  2657.831     -13.005     -12.470      -2.405     -78.557             0.000            13.525              0.000             -3.466     3.268    -9.075    -5.870     0.000 4P79_tr_A_0001
