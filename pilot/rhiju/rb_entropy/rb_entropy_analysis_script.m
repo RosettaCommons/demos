@@ -18,7 +18,7 @@ pred_curve1 = ones(1,length(x)) * sqrt(N) /pi / sqrt( sum( Ixyz ) );
 % full expression
 pred_curve2 = (N*x)/(pi*sum(Ixyz) ) ./ sqrt( 1 - (1 - N*x.^2/(2*sum(Ixyz))).^2);
 plot( x, pred_curve1, 'k' ); 
-plot( x, pred_curve2, 'r' ); hold off
+plot( x, real( pred_curve2 ), 'r' ); hold off
 ylim([0.05 2]);
 set(gca,'fontweight','bold','xgrid','on','ygrid','on');
 xlabel( 'RMSD (Angstroms)');
@@ -70,4 +70,4 @@ ylim([1e-8 2]);
 set(gca,'fontweight','bold','xgrid','on','ygrid','on');
 xlabel( 'RMSD (Angstroms)');
 ylabel( 'Probability distribution per Molar (dP/dRMSD/C)');
-title( '6D rotations' ); legend( 'simulated 1.0A', 'simulated 2.0A', 'low RMSD analytical',2 );
+title( '6D rotations' ); legend( 'simulated \pm1.0A', 'simulated \pm2.0A', 'simulated \pm3.0A box', 'low RMSD analytical',2 );
