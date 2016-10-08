@@ -1,6 +1,6 @@
 MP Visualize Protocol Capture
 =============================
-KEYWORDS: MEMBRANES, ANALYSIS
+KEYWORDS: MEMBRANES ANALYSIS
 
 This protocol capture consists of three protocol captures:
 
