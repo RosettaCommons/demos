@@ -6,6 +6,7 @@ gem 'json'
 gem 'mustache'
 gem 'rack'
 gem 'gollum'
+gem 'gollum-lib', :github => "orielg/gollum-lib"
 gem 'thin'
 gem 'omniauth-github-team-member', :github => "tjacobs2/omniauth-github-team-member"
 gem 'gollum-site', :github => "tjacobs2/gollum-site"
