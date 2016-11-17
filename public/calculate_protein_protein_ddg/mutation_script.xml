@@ -2,7 +2,7 @@
 	<SCOREFXNS>
 	</SCOREFXNS>
 	<FILTERS>
-		Here we specify a delta G filtersto calculate the delta G of binding before and after mutations are made.
+		Here we specify a delta G filter to calculate the delta G of binding before and after mutations are made.
 		We specify a jump number of 3 because want to calculate the delta G of binding the ligand, which is chain D
 		in the given PDB file.
 		<Ddg name=ddg_filter threshold=1000 repeats=3 jump=3/>
