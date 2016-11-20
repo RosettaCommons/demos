@@ -2,15 +2,17 @@
    <SCOREFXNS>
    </SCOREFXNS>
    <MOVERS>
-       <SetupForSymmetry name=setupsymm definition="./TRPV1_edit.symm"/>
-       <BfactorFitting name=fit_bs max_iter=50 wt_adp=0.0005 init=1 exact=1/>
-       <ReportFSC name=reportFSC res_low=10 res_high=3.4 nresbins=20 testmap="TRPV1_half2.mrc"/>
-       <LoadDensityMap name=loaddens mapfile="./trpv1_half1.mrc"/>
+       <SetupForSymmetry name="setupsymm" definition="./TRPV1_edit.symm"/>
+       <BfactorFitting name="fit_bs" max_iter="50" wt_adp="0.0005" init="1" exact="1"/>
+       <ReportFSC name="reportFSC" res_low="10" res_high="3.4" nresbins="20" testmap="TRPV1_half2.mrc"/>
+       <LoadDensityMap name="loaddens" mapfile="./trpv1_half1.mrc"/>
     </MOVERS>
     <PROTOCOLS>
-        <Add mover=loaddens/>
-        <Add mover=setupsymm/>
-        <Add mover=fit_bs/>
-        <Add mover=reportFSC/>
+        <Add mover="loaddens"/>
+        <Add mover="setupsymm"/>
+        <Add mover="fit_bs"/>
+        <Add mover="reportFSC"/>
     </PROTOCOLS>
 </ROSETTASCRIPTS>
+
+
