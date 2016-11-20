@@ -2,25 +2,25 @@
 	<SCOREFXNS>
 	</SCOREFXNS>
 	<TASKOPERATIONS>
-		<InitializeFromCommandline name=ifcl/>
-		<RestrictToRepacking name=rtr />
+		<InitializeFromCommandline name="ifcl"/>
+		<RestrictToRepacking name="rtr" />
 		Restrict to residues within a distance and vector cutoff of the protein-protein interface
-		<RestrictToInterfaceVector name=rtiv chain1_num=1,2 chain2_num=3,4 CB_dist_cutoff=10.0 nearby_atom_cutoff=5.5 vector_angle_cutoff=75 vector_dist_cutoff=9.0 />
+		<RestrictToInterfaceVector name="rtiv" chain1_num="1,2" chain2_num="3,4" CB_dist_cutoff="10.0" nearby_atom_cutoff="5.5" vector_angle_cutoff="75" vector_dist_cutoff="9.0" />
 		Fix residues known experimentally to be critical in interaction
-		<PreventResiduesFromRepacking name=prfrp residues=11,41,345 />
+		<PreventResiduesFromRepacking name="prfrp" residues="11,41,345" />
 	</TASKOPERATIONS>
 	<FILTERS>
 	</FILTERS>
 	<MOVERS>
 		MINIMIZATION MOVERS
 		Single cycle of FastRelax to minimize backbone of docking partners
-		<FastRelax name=minimize_interface scorefxn=talaris2013 repeats=1 task_operations=ifcl,rtr,rtiv,prfrp />
+		<FastRelax name="minimize_interface" scorefxn="talaris2013" repeats="1" task_operations="ifcl,rtr,rtiv,prfrp" />
 	
 		DOCKING MOVERS
-		<Docking name=dock_low score_low=score_docking_low score_high=talaris2013 fullatom=0 local_refine=0 optimize_fold_tree=1 conserve_foldtree=0 ignore_default_docking_task=0 design=0 task_operations=ifcl,prfrp jumps=1/>
-		<Docking name=dock_high score_low=score_docking_low score_high=talaris2013 fullatom=1 local_refine=1 optimize_fold_tree=1 conserve_foldtree=0 design=0 task_operations=ifcl,prfrp jumps=1/>
+		<Docking name="dock_low" score_low="score_docking_low" score_high="talaris2013" fullatom="0" local_refine="0" optimize_fold_tree="1" conserve_foldtree="0" ignore_default_docking_task="0" design="0" task_operations="ifcl,prfrp" jumps="1"/>
+		<Docking name="dock_high" score_low="score_docking_low" score_high="talaris2013" fullatom="1" local_refine="1" optimize_fold_tree="1" conserve_foldtree="0" design="0" task_operations="ifcl,prfrp" jumps="1"/>
 		
-		<SaveAndRetrieveSidechains name=srsc allsc=0 /> Speeds the move from centroid to full atom mode
+		<SaveAndRetrieveSidechains name="srsc" allsc="0" /> Speeds the move from centroid to full atom mode
 	</MOVERS>
 	<APPLY_TO_POSE>
 	</APPLY_TO_POSE>
@@ -28,7 +28,9 @@
 		Add mover=dock_low/>
 		Add mover=srsc />
 		Add mover=dock_high />
-		<Add mover=minimize_interface />
+		<Add mover="minimize_interface" />
 	</PROTOCOLS>
-	<OUTPUT scorefxn=talaris2013 />
+	<OUTPUT scorefxn="talaris2013" />
 </ROSETTASCRIPTS>
+
+

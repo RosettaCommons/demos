@@ -1,6 +1,6 @@
 <ROSETTASCRIPTS>
 	<SCOREFXNS>
-          <mem_highres weights="membrane_highres_Menv_smooth.wts" symmetric="1" />
+          <ScoreFunction name="mem_highres" weights="membrane_highres_Menv_smooth.wts" symmetric="1" />
 	</SCOREFXNS>
 	<RESIDUE_SELECTORS>
 			<Not name="not_random_20">
@@ -23,3 +23,5 @@
           <Add mover_name="sym_pack" />
 	</PROTOCOLS>
 </ROSETTASCRIPTS>
+
+

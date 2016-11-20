@@ -9,21 +9,23 @@
     </FILTERS>
     <MOVERS>
 	<AtomTree name="tree" fold_tree_file="inputs/ubq_tree2.ft"/>
-    	<FastRelax name="relax" repeats=7>
+    	<FastRelax name="relax" repeats="7">
         	<MoveMap name="chains">
-            		<Span begin=1 end=73 bb=0 chi=1/>
-			<Span begin=74 end=76 bb=1 chi=1/>
-            		<Span begin=77 end=149 bb=0 chi=1/>
-			<Span begin=150 end=152 bb=1 chi=1/>
-            		<Jump number=1 setting=1 />
+            		<Span begin="1" end="73" bb="0" chi="1"/>
+			<Span begin="74" end="76" bb="1" chi="1"/>
+            		<Span begin="77" end="149" bb="0" chi="1"/>
+			<Span begin="150" end="152" bb="1" chi="1"/>
+            		<Jump number="1" setting="1" />
         	</MoveMap>
     	</FastRelax>
     </MOVERS>
     <APPLY_TO_POSE>
     </APPLY_TO_POSE>
     <PROTOCOLS>
-	<Add mover=tree/>
-	<Add mover=relax/>
+	<Add mover="tree"/>
+	<Add mover="relax"/>
     </PROTOCOLS>
     <OUTPUT />
 </ROSETTASCRIPTS>
+
+
