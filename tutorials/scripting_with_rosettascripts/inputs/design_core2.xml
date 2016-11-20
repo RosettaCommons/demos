@@ -11,10 +11,10 @@
 		<ReadResfile name="core_resfile" filename="core_resfile.txt" selector="corelayer" />
 		<OperateOnResidueSubset name="restrict_boundary_to_repack" selector="boundarylayer" >
 			<RestrictToRepackingRLT />
-		</OpearateOnResidueSubset>
+		</OperateOnResidueSubset>
 		<OperateOnResidueSubset name="prevent_surface_from_repacking" selector="surfacelayer" >
 			<PreventRepackingRLT />
-		</OpearateOnResidueSubset>
+		</OperateOnResidueSubset>
 		<ExtraRotamersGeneric name="extrachi" ex1="1" ex2="1" ex1_sample_level="1" ex2_sample_level="1" />
 		<ReadResfile name="core_resfile2" filename="core_resfile2.txt" />
 	</TASKOPERATIONS>
@@ -30,4 +30,3 @@
 	</PROTOCOLS>
 	<OUTPUT scorefxn="t14" />
 </ROSETTASCRIPTS>
-
