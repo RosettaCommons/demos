@@ -1,10 +1,10 @@
 <ROSETTASCRIPTS>
     <SCOREFXNS>
-        <t13 weights="talaris2013" />
-        <t14_cart weights="talaris2014" >
+        <ScoreFunction name="t13" weights="talaris2013" />
+        <ScoreFunction name="t14_cart" weights="talaris2014" >
             <Reweight scoretype="pro_close" weight="0.0" />
             <Reweight scoretype="cart_bonded" weight="0.625" />
-        </t14_cart>
+        </ScoreFunction>
     </SCOREFXNS>
     <RESIDUE_SELECTORS>
         <And name="F45_Y59" >
@@ -47,4 +47,6 @@
     </PROTOCOLS>
     <OUTPUT scorefxn="t14_cart" />
 </ROSETTASCRIPTS>
+
+
 

@@ -1,18 +1,20 @@
 <ROSETTASCRIPTS>
 	<SCOREFXNS>
-		<memb_hires weights=mpframework_smooth_fa_2012.wts />
+		<ScoreFunction name="memb_hires" weights="mpframework_smooth_fa_2012.wts" />
 	</SCOREFXNS>
 	<TASKOPERATIONS>
-		<InitializeFromCommandline name=ifcl/>
+		<InitializeFromCommandline name="ifcl"/>
   	</TASKOPERATIONS>
 	<MOVERS>
-		<AddMembraneMover name=add_memb />
-		<MembranePositionFromTopologyMover name=init_pose />
-		<PackRotamersMover name=pack scorefxn=memb_hires task_operations=ifcl />
+		<AddMembraneMover name="add_memb" />
+		<MembranePositionFromTopologyMover name="init_pose" />
+		<PackRotamersMover name="pack" scorefxn="memb_hires" task_operations="ifcl" />
 	</MOVERS>
 	<PROTOCOLS>
-		<Add mover=add_memb />
-		<Add mover=init_pose />
-		<Add mover=pack />
+		<Add mover="add_memb" />
+		<Add mover="init_pose" />
+		<Add mover="pack" />
 	</PROTOCOLS>
 </ROSETTASCRIPTS>
+
+

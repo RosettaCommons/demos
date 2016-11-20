@@ -1,28 +1,30 @@
-<dock_design>
+<ROSETTASCRIPTS>
     <TASKOPERATIONS>
     </TASKOPERATIONS>
     <SCOREFXNS>
-        <stage1 weights=stage1 symmetric=0>
-            <Reweight scoretype=atom_pair_constraint weight=0.5/>
-        </stage1>
-        <stage2 weights=stage2 symmetric=0>
-            <Reweight scoretype=atom_pair_constraint weight=0.3/>
-        </stage2>
-        <fullatom weights=stage3_rlx symmetric=0>
-            <Reweight scoretype=atom_pair_constraint weight=0.3/>
-        </fullatom>
+        <ScoreFunction name="stage1" weights="stage1" symmetric="0">
+            <Reweight scoretype="atom_pair_constraint" weight="0.5"/>
+        </ScoreFunction>
+        <ScoreFunction name="stage2" weights="stage2" symmetric="0">
+            <Reweight scoretype="atom_pair_constraint" weight="0.3"/>
+        </ScoreFunction>
+        <ScoreFunction name="fullatom" weights="stage3_rlx" symmetric="0">
+            <Reweight scoretype="atom_pair_constraint" weight="0.3"/>
+        </ScoreFunction>
     </SCOREFXNS>
     <FILTERS>
     </FILTERS>
     <MOVERS>
-        <Hybridize name=hybridize stage1_scorefxn=stage1 stage2_scorefxn=stage2 fa_scorefxn=fullatom batch=1 stage1_increase_cycles=2 stage2_increase_cycles=1 linmin_only=0>
-            <Fragments 3mers="./t001_.200.3mers" 9mers="./t001_.200.9mers"/>
-            <Template pdb="average.pdb" cst_file="" weight=1.00 />
+        <Hybridize name="hybridize" stage1_scorefxn="stage1" stage2_scorefxn="stage2" fa_scorefxn="fullatom" batch="1" stage1_increase_cycles="2" stage2_increase_cycles="1" linmin_only="0">
+            <Fragments three_mers="./t001_.200.3mers" nine_mers="./t001_.200.9mers"/>
+            <Template pdb="average.pdb" cst_file="" weight="1.00" />
         </Hybridize>
     </MOVERS>
     <APPLY_TO_POSE>
     </APPLY_TO_POSE>
     <PROTOCOLS>
-        <Add mover=hybridize/>
+        <Add mover="hybridize"/>
     </PROTOCOLS>
-</dock_design>
+</ROSETTASCRIPTS>
+
+

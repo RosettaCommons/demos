@@ -1,6 +1,6 @@
 <ROSETTASCRIPTS>
 	<SCOREFXNS>
-		<t14 weights="talaris2014" />
+		<ScoreFunction name="t14" weights="talaris2014" />
 	</SCOREFXNS>
 	<RESIDUE_SELECTORS>
 		<Layer name="corelayer" select_core="true" select_boundary="false" select_surface="false" core_cutoff="4.0" />
@@ -14,10 +14,10 @@
 		<ReadResfile name="core_resfile" filename="core_resfile.txt" selector="corelayer" />
 		<OperateOnResidueSubset name="restrict_boundary_to_repack" selector="boundarylayer" >
 			<RestrictToRepackingRLT />
-		</OpearateOnResidueSubset>
+		</OperateOnResidueSubset>
 		<OperateOnResidueSubset name="prevent_surface_from_repacking" selector="surface_or_buried_polar" >
 			<PreventRepackingRLT />
-		</OpearateOnResidueSubset>
+		</OperateOnResidueSubset>
 		<ExtraRotamersGeneric name="extrachi" ex1="1" ex2="1" ex1_sample_level="1" ex2_sample_level="1" />
 	</TASKOPERATIONS>
 	<FILTERS>
@@ -32,4 +32,5 @@
 	</PROTOCOLS>
 	<OUTPUT scorefxn="t14" />
 </ROSETTASCRIPTS>
+
 

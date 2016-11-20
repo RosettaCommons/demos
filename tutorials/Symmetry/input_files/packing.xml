@@ -1,9 +1,9 @@
 <ROSETTASCRIPTS>
     <SCOREFXNS>
-        <t14_cart weights="talaris2014" >
+        <ScoreFunction name="t14_cart" weights="talaris2014" >
             <Reweight scoretype="pro_close" weight="0.0" />
             <Reweight scoretype="cart_bonded" weight="0.625" />
-        </t14_cart>
+        </ScoreFunction>
     </SCOREFXNS>
     <TASKOPERATIONS>
 		<RestrictToRepacking name="repackonly" />
@@ -19,4 +19,6 @@
     </PROTOCOLS>
     <OUTPUT scorefxn="t14_cart" />
 </ROSETTASCRIPTS>
+
+
 

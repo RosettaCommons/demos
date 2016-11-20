@@ -1,33 +1,35 @@
-<dock_design>
+<ROSETTASCRIPTS>
 	<SCOREFXNS>
 	</SCOREFXNS>
 	<FILTERS>
 		Here we add two delta G filters to calculate the delta G of binding before and after mutations are made.
 		We specify a jump number of 3 because want to calculate the delta G of binding the ligand, which is chain D
 		in the given PDB file.
-    <Ddg name=dg_wt threshold=1000 repeats=3 jump=3/>
-    <Ddg name=dg_mut threshold=1000 repeats=3 jump=3/>
+    <Ddg name="dg_wt" threshold="1000" repeats="3" jump="3"/>
+    <Ddg name="dg_mut" threshold="1000" repeats="3" jump="3"/>
   </FILTERS>
 	<TASKOPERATIONS>
 			Here we add a task operation used to specify that we want only to repack residues without design
-			<RestrictToRepacking name=repack_only />
+			<RestrictToRepacking name="repack_only" />
 			Here we specify the location of the resfile to use for design.
-			<ReadResfile name=resfile filename=UbcH7-A98W.resfile/>
+			<ReadResfile name="resfile" filename="UbcH7-A98W.resfile"/>
 	</TASKOPERATIONS>
 	<MOVERS>
 		Here is a mover to relax the crystal structure
 		FastRelax name=relax/>
 		Here we pack the rotamers without any design
-		<PackRotamersMover name=pack task_operations=repack_only/>
+		<PackRotamersMover name="pack" task_operations="repack_only"/>
 		Here we pack the rotamers with design. We specify to read the resfile containing the mutation we want to design
-		<PackRotamersMover name=mut_and_pack task_operations=resfile/>
+		<PackRotamersMover name="mut_and_pack" task_operations="resfile"/>
 	</MOVERS>
 	<PROTOCOLS>
 		Here we include the movers and filters in the order we want them to run
 		Add mover_name=relax/>
-		<Add mover_name=pack/>
-		<Add filter_name=dg_wt/>
-		<Add mover_name=mut_and_pack/>
-		<Add filter_name=dg_mut/>
+		<Add mover_name="pack"/>
+		<Add filter_name="dg_wt"/>
+		<Add mover_name="mut_and_pack"/>
+		<Add filter_name="dg_mut"/>
 	</PROTOCOLS>
-</dock_design>
+</ROSETTASCRIPTS>
+
+

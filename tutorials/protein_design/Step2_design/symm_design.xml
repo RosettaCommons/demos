@@ -1,6 +1,6 @@
 <ROSETTASCRIPTS>
         <SCOREFXNS>
-          <mem_highres weights="membrane_highres_Menv_smooth.wts" symmetric="1" />
+          <ScoreFunction name="mem_highres" weights="membrane_highres_Menv_smooth.wts" symmetric="1" />
 	</SCOREFXNS>
 	<TASKOPERATIONS>
 	  <InitializeFromCommandline name="ifcl"/>
@@ -18,3 +18,5 @@
           <Add mover_name="sym_pack" />
         </PROTOCOLS>
 </ROSETTASCRIPTS>
+
+
