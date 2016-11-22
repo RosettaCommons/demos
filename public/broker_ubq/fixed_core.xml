@@ -19,7 +19,7 @@
       <Stage ids="I-IVb" >
         <Mover name="jumps" />
       </Stage>
-    </Abscriptmover>
+    </AbscriptMover>
 
     <!-- Make the environment, and add the abinitio mover, followed by a loop closer. The loop closer obviously -->
     <!-- Only gets run once at the end, so it's not inside the Abscript mover. -->
