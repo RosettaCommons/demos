@@ -1,56 +1,57 @@
 <ROSETTASCRIPTS>
    <SCOREFXNS>
-      <cen weights="score4_smooth_cart">
-         <Reweight scoretype=elec_dens_fast weight=20/>
-      </cen>
+      <ScoreFunction name="cen" weights="score4_smooth_cart">
+         <Reweight scoretype="elec_dens_fast" weight="20"/>
+      </ScoreFunction>
 
-      <dens_soft weights="soft_rep">
-         <Reweight scoretype=cart_bonded weight=0.5/>
-         <Reweight scoretype=pro_close weight=0.0/>
-         <Reweight scoretype=fa_sol weight=0.0/> #membrane protein
-         <Reweight scoretype=elec_dens_fast weight=25/>
-      </dens_soft>
+      <ScoreFunction name="dens_soft" weights="soft_rep">
+         <Reweight scoretype="cart_bonded" weight="0.5"/>
+         <Reweight scoretype="pro_close" weight="0.0"/>
+         <Reweight scoretype="fa_sol" weight="0.0"/> #membrane protein
+         <Reweight scoretype="elec_dens_fast" weight="25"/>
+      </ScoreFunction>
 
-      <dens weights=talaris2013_cart>
-         <Reweight scoretype=elec_dens_fast weight=25/>
-         <Reweight scoretype=fa_sol weight=0.0/> #membrane protein
+      <ScoreFunction name="dens" weights="talaris2013_cart">
+         <Reweight scoretype="elec_dens_fast" weight="25"/>
+         <Reweight scoretype="fa_sol" weight="0.0"/> #membrane protein
          <Set scale_sc_dens_byres="R:0.76,K:0.76,E:0.76,D:0.76,M:0.76, C:0.81,Q:0.81,H:0.81,N:0.81,T:0.81,S:0.81,Y:0.88,W:0.88, A:0.88,F:0.88,P:0.88,I:0.88,L:0.88,V:0.88"/>
-      </dens>
+      </ScoreFunction>
    </SCOREFXNS>
    <MOVERS>
-       <SetupForDensityScoring name=setupdens/>
-       <LoadDensityMap name=loaddens mapfile="./trpv1_half1.mrc"/>
+       <SetupForDensityScoring name="setupdens"/>
+       <LoadDensityMap name="loaddens" mapfile="./trpv1_half1.mrc"/>
 
-       <MinMover name=cenmin scorefxn=cen type=lbfgs_armijo_nonmonotone max_iter=200 tolerance=0.00001 bb=1 chi=1 jump=ALL/>
+       <MinMover name="cenmin" scorefxn="cen" type="lbfgs_armijo_nonmonotone" max_iter="200" tolerance="0.00001" bb="1" chi="1" jump="ALL"/>
 
-       <CartesianSampler name=cen5_50 automode_scorecut=-0.5 scorefxn=cen mcscorefxn=cen fascorefxn=dens_soft strategy="auto" fragbias="density" rms=2.0 ncycles=200 fullatom=0 bbmove=1 nminsteps=25 temp=4 fraglens=5 nfrags=25>
+       <CartesianSampler name="cen5_50" automode_scorecut="-0.5" scorefxn="cen" mcscorefxn="cen" fascorefxn="dens_soft" strategy="auto" fragbias="density" rms="2.0" ncycles="200" fullatom="0" bbmove="1" nminsteps="25" temp="4" fraglens="5" nfrags="25">
        </CartesianSampler>
 
-	<CartesianSampler name=cen5_60 automode_scorecut=-0.3 scorefxn=cen mcscorefxn=cen fascorefxn=dens_soft strategy="auto" fragbias="density" rms=1.5 ncycles=200 fullatom=0 bbmove=1 nminsteps=25 temp=4 fraglens=5 nfrags=25>
+	<CartesianSampler name="cen5_60" automode_scorecut="-0.3" scorefxn="cen" mcscorefxn="cen" fascorefxn="dens_soft" strategy="auto" fragbias="density" rms="1.5" ncycles="200" fullatom="0" bbmove="1" nminsteps="25" temp="4" fraglens="5" nfrags="25">
 	</CartesianSampler>
 
-	<CartesianSampler name=cen5_70 automode_scorecut=-0.1 scorefxn=cen mcscorefxn=cen fascorefxn=dens_soft strategy="auto" fragbias="density" rms=1.5 ncycles=200 fullatom=0 bbmove=1 nminsteps=25 temp=4 fraglens=5 nfrags=25>
+	<CartesianSampler name="cen5_70" automode_scorecut="-0.1" scorefxn="cen" mcscorefxn="cen" fascorefxn="dens_soft" strategy="auto" fragbias="density" rms="1.5" ncycles="200" fullatom="0" bbmove="1" nminsteps="25" temp="4" fraglens="5" nfrags="25">
        </CartesianSampler>
 
-	<CartesianSampler name=cen5_80 automode_scorecut=0.0 scorefxn=cen mcscorefxn=cen fascorefxn=dens_soft strategy="auto" fragbias="density" rms=1.0 ncycles=200 fullatom=0 bbmove=1 nminsteps=25 temp=4 fraglens=5 nfrags=25>
+	<CartesianSampler name="cen5_80" automode_scorecut="0.0" scorefxn="cen" mcscorefxn="cen" fascorefxn="dens_soft" strategy="auto" fragbias="density" rms="1.0" ncycles="200" fullatom="0" bbmove="1" nminsteps="25" temp="4" fraglens="5" nfrags="25">
 	</CartesianSampler>
 
-       <FastRelax name=relaxcart scorefxn=dens repeats=1 cartesian=1/>
+       <FastRelax name="relaxcart" scorefxn="dens" repeats="1" cartesian="1"/>
     </MOVERS>
     <PROTOCOLS>
-        <Add mover=setupdens/>
-        <Add mover=loaddens/>
-        <Add mover=cenmin/>
-        <Add mover=relaxcart/>
-        <Add mover=cen5_50/>
-        <Add mover=relaxcart/>
-        <Add mover=cen5_60/>
-        <Add mover=relaxcart/>
-        <Add mover=cen5_70/>
-        <Add mover=relaxcart/>
-        <Add mover=cen5_80/>
-        <Add mover=relaxcart/>
-        <Add mover=relaxcart/>
+        <Add mover="setupdens"/>
+        <Add mover="loaddens"/>
+        <Add mover="cenmin"/>
+        <Add mover="relaxcart"/>
+        <Add mover="cen5_50"/>
+        <Add mover="relaxcart"/>
+        <Add mover="cen5_60"/>
+        <Add mover="relaxcart"/>
+        <Add mover="cen5_70"/>
+        <Add mover="relaxcart"/>
+        <Add mover="cen5_80"/>
+        <Add mover="relaxcart"/>
+        <Add mover="relaxcart"/>
     </PROTOCOLS>
-    <OUTPUT scorefxn=dens/>
+    <OUTPUT scorefxn="dens"/>
+
 </ROSETTASCRIPTS>
