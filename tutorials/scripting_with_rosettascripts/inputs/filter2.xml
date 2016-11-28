@@ -1,6 +1,6 @@
 <ROSETTASCRIPTS>
 	<SCOREFXNS>
-		<t14 weights="talaris2014" />
+		<ScoreFunction name="t14" weights="talaris2014" />
 	</SCOREFXNS>
 	<RESIDUE_SELECTORS>
 	</RESIDUE_SELECTORS>
@@ -27,5 +27,6 @@
 		<Add filter="Y59_rmsd" />
 	</PROTOCOLS>
 	<OUTPUT scorefxn="t14" />
-</ROSETTASCRIPTS>
 
+
+</ROSETTASCRIPTS>
