@@ -17,7 +17,7 @@
 
     <FragmentJumpCM name="jumps" topol_file="1uufA.top" />
 
-    <AbscriptMover name="abinitio" cycles=2 >
+    <AbscriptMover name="abinitio" cycles="2" >
       <Fragments large_frags="1uufA.frag9" small_frags="1uufA.frag3" />
       <Stage ids="I-IVb" >
         <Mover name="jumps" />
@@ -35,7 +35,7 @@
 
     <AbscriptLoopCloserCM name="closer" fragments="1uufA.frag3" />
     
-    <Environment name="env" auto_cut=1 >
+    <Environment name="env" auto_cut="1" >
       <Register mover="chunk" />
       <Apply mover="abinitio" />
       <Apply mover="closer" />
@@ -43,15 +43,16 @@
 
     <SwitchResidueTypeSetMover name="fullatom" set="fa_standard" />
 
-    <FastRelax name="relax" repeats=5 />
+    <FastRelax name="relax" repeats="5" />
     
   </MOVERS>
   <FILTERS>
   </FILTERS>
   <PROTOCOLS>
-    <Add mover=centroid />
-    <Add mover=env />
-    <Add mover=fullatom />
-    <Add mover=relax />
+    <Add mover="centroid" />
+    <Add mover="env" />
+    <Add mover="fullatom" />
+    <Add mover="relax" />
   </PROTOCOLS>
+
 </ROSETTASCRIPTS>

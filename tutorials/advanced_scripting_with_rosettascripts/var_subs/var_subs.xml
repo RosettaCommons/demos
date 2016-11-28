@@ -1,6 +1,6 @@
 <ROSETTASCRIPTS>
 	<SCOREFXNS>
-		<tala weights="talaris2014.wts" />
+		<ScoreFunction name="tala" weights="talaris2014.wts" />
 	</SCOREFXNS>
 	<RESIDUE_SELECTORS>
 	</RESIDUE_SELECTORS>
@@ -17,4 +17,5 @@
 		<Add mover="mutate" />
 	</PROTOCOLS>
 	<OUTPUT scorefxn="tala" />
+
 </ROSETTASCRIPTS>

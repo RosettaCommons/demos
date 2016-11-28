@@ -1,6 +1,6 @@
 <ROSETTASCRIPTS>
 	<SCOREFXNS>
-		<t14 weights="talaris2014" />
+		<ScoreFunction name="t14" weights="talaris2014" />
 	</SCOREFXNS>
 	<RESIDUE_SELECTORS>
 		<Layer name="corelayer" select_core="true" select_boundary="false" select_surface="false" core_cutoff="4.0" />
@@ -28,4 +28,5 @@
 		<Add mover="pack1" />
 	</PROTOCOLS>
 	<OUTPUT scorefxn="t14" />
+
 </ROSETTASCRIPTS>
