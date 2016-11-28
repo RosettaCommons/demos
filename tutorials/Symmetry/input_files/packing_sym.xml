@@ -13,7 +13,7 @@
     <MOVERS>
 		<SetupForSymmetry name="setup_symm" definition="C10_denovo.sym" />
 		<SymPackRotamersMover name="repack" scorefxn="t14_cart" task_operations="init,repackonly,extrachi"/>
-		<SymMinMover name="min_cart" scorefxn="t14_cart" chi="true" bb="1"  type="lbfgs_armijo_nonmonotone" tolerance="0.0001" bb="1" chi="1" cartesian="1" jump="ALL"/>
+		<SymMinMover name="min_cart" scorefxn="t14_cart" type="lbfgs_armijo_nonmonotone" tolerance="0.0001" bb="1" chi="1" cartesian="1" jump="ALL"/>
     </MOVERS>
     <PROTOCOLS>
 		<Add mover="setup_symm"/>
