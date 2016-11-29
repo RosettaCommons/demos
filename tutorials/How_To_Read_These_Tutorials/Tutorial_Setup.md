@@ -14,8 +14,10 @@ should take you through the process, if it is not already installed. Please veri
 
 The tutorials and demos provided with Rosetta are written to assume that the following environment variables are set:
 
-> env $ROSSETA3=the path to your Rosetta/source directory
+> env $ROSETTA3=the path to your Rosetta/source directory
+
 > env $ROSETTA3_DB=the path to your Rosetta/database directory
+
 > env $ROSETTA_TOOLS=the path to your Rosetta/tools directory
 
 ##Do The Following for Each Tutorial
