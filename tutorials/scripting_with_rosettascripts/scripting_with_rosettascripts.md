@@ -185,8 +185,8 @@ Additionally, whitespace is largely ignored in RosettaScripts.  The following th
 Conventionally, tags are indented in proportion to their level of nesting, but this is for human readability, not for machine parsing; the rosetta\_scripts application disregards tabs entirely.  The one case in which whitespace matters is when setting options within a tag.  When a tag contains an option that accepts a comma-separated list, these must *not* have whitespace within them:
 
 ```xml
-<PackRotamers name=pack1 task_operations=task1,task2,task3 /> #This is allowed
-<PackRotamers name=pack2 task_operations=task2, task2, task3 /> #This will be misinterpreted
+<PackRotamers name="pack1" task_operations="task1,task2,task3" /> #This is allowed
+<PackRotamers name="pack2" task_operations="task2, task2, task3" /> #This will be misinterpreted
 ```
 
 This brings up another RosettaScripts syntax convention: generally, we have blocks that define *types* of objects, and within these blocks, we define individual *instances* of objects of the type, giving each one a unique name.  For example, the ```<MOVERS> ... </MOVERS>``` block is the place to define movers.  Within this, we define specific instances of specific types of movers, and we set options for these movers, including a unique name by which each mover will be addressed at later points in the script.  For example:
