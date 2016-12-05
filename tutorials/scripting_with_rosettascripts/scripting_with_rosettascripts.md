@@ -416,7 +416,7 @@ In the movers section, let's create a PackRotamersMover.  You can cut-and-paste 
 ```xml
 ...
 	<MOVERS>
-		<PackRotamersMover name="pack1" scorefxn=t14 task_operations= />
+		<PackRotamersMover name="pack1" scorefxn="t14" task_operations="" />
 	</MOVERS>
 ..
 	<PROTOCOLS>
