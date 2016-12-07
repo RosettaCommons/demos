@@ -37,11 +37,11 @@ protocol can then be run repeatedly to generate large ensembles of output struct
 process large ensembles of input structures.  Even more broadly, RosettaScripts lets a user link
 individual Rosetta modules together in a linear sequence.
 
-This tutorial is intended to take you through the process of creating a new protocol 
-with RosettaScripts. It should also give you a good grounding in how you can modify 
+This tutorial is intended to take you through the process of creating a new protocol
+with RosettaScripts. It should also give you a good grounding in how you can modify
 existing RosettaScripts protocols. Note that you can certainly run RosettaScripts without
-modifying the XML - the most common use case of RosettaScripts is probably re-using 
-an XML produced by someone else. 
+modifying the XML - the most common use case of RosettaScripts is probably re-using
+an XML produced by someone else.
 
 ## Your first RosettaScript
 
@@ -62,9 +62,9 @@ core.init: 'RNG device' seed mode, using '/dev/urandom', seed=964549876 seed_off
 core.init.random: RandomGenerator:init: Normal mode, seed=964549876 RG_type=mt19937
 core.init: Resolved executable path: /ssd1/morettr/Rosetta6/main/source/build/src/release/linux/2.6/64/x86/gcc/5.2/default/rosetta_scripts.default.linuxgccrelease
 core.init: Looking for database based on location of executable: /ssd1/morettr/Rosetta6/main/database/
-core.init: 
+core.init:
 core.init: USEFUL TIP: Type -help to get the options for this Rosetta executable.
-core.init: 
+core.init:
 apps.public.rosetta_scripts.rosetta_scripts: No XML file was specified with the "-parser:protocol <filename>" commandline option.  In order for RosettaScripts to do something, it must be provided with a script.
 apps.public.rosetta_scripts.rosetta_scripts: The following is an empty (template) RosettaScripts XML file:
 
@@ -88,11 +88,11 @@ apps.public.rosetta_scripts.rosetta_scripts: The following is an empty (template
 
 At any point in a script, you can include text from another file using <xi:include href="filename.xml" />.
 apps.public.rosetta_scripts.rosetta_scripts: Variable substituion is possible from the commandline using the -"parser:script_vars varname=value" flag.  Any string of the pattern "%%varname%%" will be replaced with "value" in the script.
-apps.public.rosetta_scripts.rosetta_scripts: 
+apps.public.rosetta_scripts.rosetta_scripts:
 apps.public.rosetta_scripts.rosetta_scripts: The rosetta_scripts application will now exit.
 ```
 
-This will be written to the standard output, which has been redirected to the file nothing.xml.  
+This will be written to the standard output, which has been redirected to the file nothing.xml.
 You can delete all lines preceding ```<ROSETTASCRIPTS>``` and following ```</ROSETTASCRIPTS>``` to obtain a minimal template.
 
 Before running this script, let's edit it slightly to add comments:
@@ -113,7 +113,7 @@ Before running this script, let's edit it slightly to add comments:
 	</FILTERS>
 	<MOVERS>
 
-	  Anything not in angle brackets is a comment.
+	  Anything not in angle brackets* is a comment.
 	  This makes it easy to temporarily disable things by deleting just the first angle bracket.
 
 	  MyMover name=mover1 option1="false" option2="23" /> Here is a mover that is commented out and ignored by RosettaScripts.  If I add back an angle bracket before "MyMover", it will be parsed.
@@ -123,10 +123,11 @@ Before running this script, let's edit it slightly to add comments:
 	</APPLY_TO_POSE>
 	<PROTOCOLS>
 	</PROTOCOLS>
-<OUTPUT />
-</ROSETTASCRIPTS>
+	<OUTPUT />
 
 *(Angle brackets are the greater than/less than signs)
+
+</ROSETTASCRIPTS>
 ```
 
 The nothing.xml file is also provided in the inputs directory:
@@ -141,7 +142,7 @@ As you haven't further defined any protocol, this XML does nothing to the struct
 $> $ROSETTA3/bin/rosetta_scripts.default.linuxgccrelease -s 1ubq.pdb -parser:protocol nothing.xml
 ```
 
-In the tracer output, Rosetta should print its interpretation of the XML input. 
+In the tracer output, Rosetta should print its interpretation of the XML input.
 
 ```xml
 <ROSETTASCRIPTS>
@@ -198,14 +199,16 @@ This brings up another RosettaScripts syntax convention: generally, we have bloc
 		  #TaskOperation objects (a type of object that will be introduced later in this
 		  #tutorial).  We assume that task1, task2, and task3 were defined and given these
 		  #unique names prior to this point in the script.
-		<PackRotamers name=pack1 task_operations=task1,task2,task3 />
+
+		  <PackRotamers name="pack1" task_operations="task1,task2,task3" />
+
 		  #From now on, we can refer to the mover defined above using the unique name "pack1".
 	</MOVERS>
 ```
 
 Looking at the output PDB, the output structure (1ubq\_0001.pdb) should be nearly identical to the input structure. The major difference should be the presence of hydrogens which were not in the input structure. This is *not* something that is specific to RosettaScripts - in general Rosetta will add missing hydrogens and repack sidechain atoms missing in the input PDB.
 
-Additionally, you should see the standard Rosetta score table at the end of the PDB. By default, the structure will be rescored with the default Rosetta score function (talaris2014, as of this writing). This can be controlled by the ```-score:weights``` command line option. 
+Additionally, you should see the standard Rosetta score table at the end of the PDB. By default, the structure will be rescored with the default Rosetta score function (talaris2014, as of this writing). This can be controlled by the ```-score:weights``` command line option.
 
 ## Controlling RosettaScripts File Output
 
@@ -225,11 +228,11 @@ Each custom scorefunction is defined by different sub-tags in the SCOREFXNS sect
 ```
 <ROSETTASCRIPTS>
     <SCOREFXNS>
-        <t13 weights="talaris2013" />
-        <t14_cart weights="talaris2014" >
+        <ScoreFunction name="t13" weights="talaris2013" />
+        <ScoreFunction name="t14_cart" weights="talaris2014" >
             <Reweight scoretype="pro_close" weight="0.0" />
             <Reweight scoretype="cart_bonded" weight="0.625" />
-        </t14_cart>
+        </ScoreFunction>
     </SCOREFXNS>
     <RESIDUE_SELECTORS>
     </RESIDUE_SELECTORS>
@@ -245,11 +248,11 @@ Each custom scorefunction is defined by different sub-tags in the SCOREFXNS sect
     </PROTOCOLS>
     <OUTPUT scorefxn="t14_cart" />
 </ROSETTASCRIPTS>
-``` 
+```
 
 The script scorefxn.xml gives and example of defining different scorefunctions. It defines two scorefunctions.  The first one (t13) is simply the talaris2013 weights used as-is, and the second is the talaris2014 weights modified by changing the weights (coefficients) for certain score terms. (One can also use patch files, or locally-specified weights file; additionally, other scorefunction options can be set, such as soft Lennard-Jones potentials or whatnot.  See the documentation on the ```Set``` tag in the [RosettaScripts documentation](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/RosettaScripts) for more on this.)
 
-The t13 scorefunction is never used in this script, which is not a problem -- RosettaScripts does not object to objects that are defined but never used (though the unnecessary allocation of these objects in memory is probably best avoided if one can help it).  The t14\_cart score function *is* used, however, in the OUTPUT tag. This tells RosettaScripts to rescore the output structures with the custom t14\_cart score function, rather than with the default (command line) scorefunction. Run 1ubq.pdb through the script: 
+The t13 scorefunction is never used in this script, which is not a problem -- RosettaScripts does not object to objects that are defined but never used (though the unnecessary allocation of these objects in memory is probably best avoided if one can help it).  The t14\_cart score function *is* used, however, in the OUTPUT tag. This tells RosettaScripts to rescore the output structures with the custom t14\_cart score function, rather than with the default (command line) scorefunction. Run 1ubq.pdb through the script:
 
 ```bash
 $> cp inputs/scoring.xml .
@@ -292,7 +295,7 @@ Note: Boolean options in the XML can take the same representations of true and f
 
 For our example script, we'll make two MinMovers. One we'll call "min\_torsion", which will have the cartesian option set to false (so it will use the default torsional minimization) and will use the t13 scorefunction. The other we'll call "min\_cart", and it will have the cartesian option set to true and use the t14\_cart scorefunction. Both will have bb and chi set to true.
 
-Declaring the movers in the MOVERS section only tells Rosetta that the movers exist and configures their options; however, it doesn't tell Rosetta that they should be applied to the pose (or in what order, or the number of times). The PROTOCOLS section is used to define the sequence of steps that the rosetta\_scripts application will carry out. When RosettaScripts runs on a structure, it will run sequentially through all the entries in the PROTOCOLS section, executing each in order, the output of the previous mover (or filter, as we will see later) becoming the input to the next. In our protocols section we'll add the "min\_cart" mover. Since this is the only mover in the PROTOCOLS section, this is the only mover which will be run. The min\_torsions mover will be defined, but will not be applied to the pose. (The mover can be specified with either the "mover" or "mover\_name" option.) 
+Declaring the movers in the MOVERS section only tells Rosetta that the movers exist and configures their options; however, it doesn't tell Rosetta that they should be applied to the pose (or in what order, or the number of times). The PROTOCOLS section is used to define the sequence of steps that the rosetta\_scripts application will carry out. When RosettaScripts runs on a structure, it will run sequentially through all the entries in the PROTOCOLS section, executing each in order, the output of the previous mover (or filter, as we will see later) becoming the input to the next. In our protocols section we'll add the "min\_cart" mover. Since this is the only mover in the PROTOCOLS section, this is the only mover which will be run. The min\_torsions mover will be defined, but will not be applied to the pose. (The mover can be specified with either the "mover" or "mover\_name" option.)
 
 ```
 ...
@@ -393,7 +396,7 @@ Let's create a new skeleton XML, and define the talaris2014 scorefunction in it:
 ```xml
 <ROSETTASCRIPTS>
 	<SCOREFXNS>
-		<t14 weights="talaris2014" />
+		<ScoreFunction name="t14" weights="talaris2014" />
 	</SCOREFXNS>
 	<RESIDUE_SELECTORS>
 	</RESIDUE_SELECTORS>
@@ -482,7 +485,7 @@ Let's start by defining three ResidueSelectors to select residues based on buria
 ```xml
 <ROSETTASCRIPTS>
 	<SCOREFXNS>
-		<t14 weights="talaris2014" />
+		<ScoreFunction name="t14" weights="talaris2014" />
 	</SCOREFXNS>
 	<RESIDUE_SELECTORS>
 		<Layer name="corelayer" select_core="true" select_boundary="false" select_surface="false" core_cutoff="4.0" />
@@ -527,10 +530,10 @@ Passing "corelayer" with the "selector=" option indicates that, rather than bein
 		<ReadResfile name="core_resfile" filename="core_resfile.txt" selector="corelayer" />
 		<OperateOnResidueSubset name="restrict_boundary_to_repack" selector="boundarylayer" >
 			<RestrictToRepackingRLT />
-		</OpearateOnResidueSubset>
+		</OperateOnResidueSubset>
 		<OperateOnResidueSubset name="prevent_surface_from_repackin" selector="surfacelayer" >
 			<PreventRepackingRLT />
-		</OpearateOnResidueSubset>
+		</OperateOnResidueSubset>
 		<ExtraRotamersGeneric name="extrachi" ex1="1" ex2="1" ex1_sample_level="1" ex2_sample_level="1" />
 	</TASKOPERATIONS>
 ```
@@ -635,7 +638,7 @@ Now, we can pass this selector to the "prevent\_surface\_from\_repacking" TaskOp
 ```xml
 		<OperateOnResidueSubset name="prevent_surface_from_repacking" selector="surface_or_buried_polar" >
 			<PreventRepackingRLT />
-		</OpearateOnResidueSubset>		
+		</OperateOnResidueSubset>
 ```
 
 The full script is design_core3.xml.  Run it as follows:
@@ -667,7 +670,7 @@ Let's consider the case, now, of repacking just the *surface* (*i.e.* solvent-ex
 ```xml
 <ROSETTASCRIPTS>
 	<SCOREFXNS>
-		<t14 weights="talaris2014" />
+		<ScoreFunction name="t14" weights="talaris2014" />
 	</SCOREFXNS>
 	<RESIDUE_SELECTORS>
 	</RESIDUE_SELECTORS>
@@ -705,7 +708,7 @@ To enforce the salt bridge in this case, we will filter based off the distance b
 
 As before, copy and paste the example tag from the documentation into the FILTERS section of the XML. As mentioned in the documentation for the filter, you can specify either the specific atom name, or you can specify a Rosetta atom type. If an atom type is specified, then the closest distance for any atom of the relevant type is used. This latter behavior is what we want; we don't care which of the carboxylate oxygens are paired with the lysine side-chain nitrogen. Therefore we can specify the atom types: the "OOC" oxygens from E34 pairing with the "Nlys" nitrogen from K11.
 
-Most filters work by computing some structural metric, and then comparing it to a threshold value to determine if the filter passes or fails. The AtomicDistance filter uses the "distance" options to set the threshold: distances below this pass, distances above fail. 
+Most filters work by computing some structural metric, and then comparing it to a threshold value to determine if the filter passes or fails. The AtomicDistance filter uses the "distance" options to set the threshold: distances below this pass, distances above fail.
 
 We want to set the distance threshold large enough such that it will pass all the structures which have the salt bridge, but also narrow enough that it will fail the structures which don't have it. (Normally you should err on the side of including too much, as the minimizer may take structures which are slightly outside of the acceptable range and possibly bring them in. However, for this tutorial will use a possibly too narrow distance of 3.0 Ang.)
 
@@ -781,7 +784,7 @@ In addition to printing the results of the metric evaluation to the tracer (outp
 
 This tutorial was intended to give you a brief introduction to creating an XML protocol. The process we went through is similar to that used by most RosettaScripts developers when writing an XML file from scratch: protocols are built iteratively, starting with a simple protocol and progressively adding different and more complex stages. For each stage, it's important to have an idea about the effect you wish to accomplish, and then to skim the documentation for existing movers/filters/task operations/*etc.* which will accomplish it. This may involve multiple RosettaScripts objects, Rosetta modules that require other Rosetta modules as inputs (*e.g.* movers that require task operations that require residue selectors).
 
-There are, of course, many more RosettaScripts objects than we have discussed, most of which should be covered in the RosettaScripts documentation. There are also additional sections of the XML, which are used for more specialized applications. (For example, ligand docking.) 
+There are, of course, many more RosettaScripts objects than we have discussed, most of which should be covered in the RosettaScripts documentation. There are also additional sections of the XML, which are used for more specialized applications. (For example, ligand docking.)
 
 A final note - even if you can create an XML from scratch, it may be easier not to. If you already have an example XML that does something close to what you want to do, it's probably easier to start with that XML, and alter it to add in the functionality you want.
 
