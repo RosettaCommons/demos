@@ -40,8 +40,8 @@ These energy terms may be provided to Rosetta in three ways. First, it may be pl
 
 This is passed to Rosetta with the option `-score:patch patchfile`. Secondly, it may be provided in a RosettaScript XML file as input (see the RosettaScript documentation or Scenarios 1 & 2 for examples of this):
 
-    <Reweight scoretype=elec_dens_fast weight=20.0/>
-    <Reweight scoretype=elec_dens_window weight=2.0/>
+    <Reweight scoretype="elec_dens_fast" weight="20.0"/>
+    <Reweight scoretype="elec_dens_window" weight="2.0"/>
 
 Finally, the following options may control the two scoring functions, respectively:
 
@@ -68,7 +68,7 @@ In addition to the score terms above, there are also several flags that control 
 
 Or from XML:
 
-    <LoadDensityMap name=loaddens mapfile=mapfile.mrc/>
+    <LoadDensityMap name="loaddens" mapfile="mapfile.mrc"/>
 
 Maps may be in either CCP4 or MRC format (the map type is automatically detected from the header info).
 
@@ -143,23 +143,22 @@ It will take about a minute to run and a score.sc output file will be generated.
 
 In this section we introduce RosettaScripts by way of a very simple refinement-into-density example. RosettaScripts provides an XML scripting interface to Rosetta that allows fine-grained control of protocols. The syntax is fully described in the documentation; however, a very brief introduction is provided here. The basic syntax for the XML is illustrated here (`scenario0_rosetta_basics/ex_B1_relax_density.xml`)
 
-    <ROSETTASCRIPTS> 
-        <SCOREFXNS>
-            <dens weights=talaris2013_cart>
-                <Reweight scoretype=elec_dens_fast weight=20.0/>
-            </dens> 
+<ROSETTASCRIPTS>        <SCOREFXNS>
+            <ScoreFunction name="dens" weights="talaris2013_cart">
+                <Reweight scoretype="elec_dens_fast" weight="20.0"/>
+            </ScoreFunction> 
         </SCOREFXNS>
         <MOVERS>
-            <SetupForDensityScoring name=setupdens/>
-            <LoadDensityMap name=loaddens mapfile="1issA_6A.mrc"/> 
-            <FastRelax name=relaxcart scorefxn=dens repeats=1 cartesian=1/>
+            <SetupForDensityScoring name="setupdens"/>
+            <LoadDensityMap name="loaddens" mapfile="1issA_6A.mrc"/> 
+            <FastRelax name="relaxcart" scorefxn="dens" repeats="1" cartesian="1"/>
         </MOVERS>
         <PROTOCOLS>
-            <Add mover=setupdens/> 
-            <Add mover=loaddens/> 
-            <Add mover=relaxcart/>
+            <Add mover="setupdens"/> 
+            <Add mover="loaddens"/> 
+            <Add mover="relaxcart"/>
         </PROTOCOLS>
-        <OUTPUT scorefxn=dens/> 
+        <OUTPUT scorefxn="dens"/> 
     </ROSETTASCRIPTS>
 
 In this particular example, we declare a single scorefunction, *dens*, which is set to use the weights *talaris2013_cart* (a default score function, don't need to worry about it), and also turns on *elec_dens_fast*, with a weight of 20. We then declare three movers, *SetupForDensityScoring, LoadDensityMap*, and *FastRelax*, which sets up the loaded structure for density scoring, loads a map into memory, and then refines the structure using the FastRelax protocol. The declared scorefunction, *dens*, is used as an input to the *FastRelax* mover.
@@ -213,54 +212,53 @@ Change to directory *scenario1_cryoem_refinement* using the following command:
 
 A summary of the XML used for refinement (`scenario1_cryoem_refinement/ ex_A1_asymm_1cycle.xml`) is shown below. Following, a brief description of the movers and options available is provided. 
 
-    <ROSETTASCRIPTS> 
-      <SCOREFXNS>
-         <cen weights="score4_smooth_cart">
-            <Reweight scoretype=elec_dens_fast weight=20/>
-         </cen>
-
-         <dens_soft weights="soft_rep">
-            <Reweight scoretype=cart_bonded weight=0.5/>       
-            <Reweight scoretype=pro_close weight=0.0/> 
-            <Reweight scoretype=fa_sol weight=0.0/> # membrane protein 
-            <Reweight scoretype=elec_dens_fast weight=25/>
-         </dens_soft>
-
-         <dens weights=talaris2013_cart>
-            <Reweight scoretype=elec_dens_fast weight=25/>
-            <Reweight scoretype=fa_sol weight=0.0/> # membrane protein 
+<ROSETTASCRIPTS>      <SCOREFXNS>
+         <ScoreFunction name="cen" weights="score4_smooth_cart">
+            <Reweight scoretype="elec_dens_fast" weight="20"/>
+         </ScoreFunction>
+   
+         <ScoreFunction name="dens_soft" weights="soft_rep">
+            <Reweight scoretype="cart_bonded" weight="0.5"/>       
+            <Reweight scoretype="pro_close" weight="0.0"/> 
+            <Reweight scoretype="fa_sol" weight="0.0"/> # membrane protein 
+            <Reweight scoretype="elec_dens_fast" weight="25"/>
+         </ScoreFunction>
+   
+         <ScoreFunction name="dens" weights="talaris2013_cart">
+            <Reweight scoretype="elec_dens_fast" weight="25"/>
+            <Reweight scoretype="fa_sol" weight="0.0"/> # membrane protein 
             <Set scale_sc_dens_byres="R:0.76,K:0.76,E:0.76,
                  D:0.76,M:0.76,C:0.81,Q:0.81,H:0.81,N:0.81,
                  T:0.81,S:0.81,Y:0.88,W:0.88,A:0.88,F:0.88,
                  P:0.88,I:0.88,L:0.88,V:0.88"/> 
-         </dens>
+         </ScoreFunction>
       </SCOREFXNS> 
       <MOVERS>
-        <SetupForDensityScoring name=setupdens/>
-        <LoadDensityMap name=loaddensmapfile="./trpv1_half1.mrc"/>
-
-        <MinMover name=cenmin scorefxn=cen      
-             type=lbfgs_armijo_nonmonotone max_iter=200    
-             tolerance=0.00001 bb=1 chi=1 jump=ALL/>
-        <CartesianSampler name=cen5_50 automode_scorecut=-0.5   
-             scorefxn=cen mcscorefxn=cen fascorefxn=dens_soft    
-             strategy="auto" fragbias="density" rms=2.0 
-             ncycles=200 fullatom=0 bbmove=1 nminsteps=25  
-             temp=4 fraglens=3 nfrags=25/>
-        <FastRelax name=relaxcart scorefxn=dens repeats=1    
-             cartesian=1/> 
+        <SetupForDensityScoring name="setupdens"/>
+        <LoadDensityMap name="loaddensmapfile"="./trpv1_half1.mrc"/>
+   
+        <MinMover name="cenmin" scorefxn="cen"      
+             type="lbfgs_armijo_nonmonotone" max_iter="200"    
+             tolerance="0.00001" bb="1" chi="1" jump="ALL"/>
+        <CartesianSampler name="cen5_50" automode_scorecut="-0.5"   
+             scorefxn="cen" mcscorefxn="cen" fascorefxn="dens_soft"    
+             strategy="auto" fragbias="density" rms="2.0" 
+             ncycles="200" fullatom="0" bbmove="1" nminsteps="25"  
+             temp="4" fraglens="3" nfrags="25"/>
+        <FastRelax name="relaxcart" scorefxn="dens" repeats="1"    
+             cartesian="1"/> 
       </MOVERS>
-
+   
       <PROTOCOLS>
-         <Add mover=setupdens/> 
-         <Add mover=loaddens/> 
-         <Add mover=cenmin/> 
-         <Add mover=relaxcart/> 
-         <Add mover=cen5_50/> 
-         <Add mover=relaxcart/> 
-         <Add mover=relaxcart/>
+         <Add mover="setupdens"/> 
+         <Add mover="loaddens"/> 
+         <Add mover="cenmin"/> 
+         <Add mover="relaxcart"/> 
+         <Add mover="cen5_50"/> 
+         <Add mover="relaxcart"/> 
+         <Add mover="relaxcart"/>
       </PROTOCOLS>
-      <OUTPUT scorefxn=dens/> 
+      <OUTPUT scorefxn="dens"/> 
     </ROSETTASCRIPTS>
 
 The protocol is somewhat similar to the relax protocol of Scenario 0B, and in fact, calls the relax mover three times. However, there are a few new additions, as well as a few scorefunction changes, highlighted in bold.
@@ -275,28 +273,28 @@ Finally, the MinMover first minimizes the structure using a low-resolution energ
 
 **Note: Older versions of Rosetta do not support some of these options.** For these versions, remove the `<Set scale_sc_dens_byres=.../>` and replace the `<CartesianSampler .../>` tag with (`scenario1_cryoem_refinement/ex_A1_asymm_1cycle_legacy.xml`):
 
-    <CartesianSampler name=cen5_50 scorefxn=cen mcscorefxn=cen fascorefxn=dens_soft 
-       strategy="density" fragbias="density" rms=2.0 ncycles=200 fullatom=0 bbmove=1 
-       nminsteps=25 temp=4 fraglens=3 nfrags=25/>
+    <CartesianSampler name="cen5_50" scorefxn="cen" mcscorefxn="cen" fascorefxn="dens_soft" 
+       strategy="density" fragbias="density" rms="2.0" ncycles="200" fullatom="0" bbmove="1" 
+       nminsteps="25" temp="4" fraglens="3" nfrags="25"/>
 
 While this script shows one cycle of rebuilding, in practice, we have found that multiple cycles, with increasing strictness on the Z score cutoff (*automode_scorecut*) works much better in practice, as we fix the regions with worst local strain and local density fit, and then fit the more borderline cases. Thus, in practice, we will use an XML like the following (*scenario1_cryoem_refinement/ ex_A2_asymm_multicycle.xml*):
 
-      <CartesianSampler name=cen5_50 automode_scorecut=-0.5    
-         scorefxn=cen mcscorefxn=cen fascorefxn=dens_soft 
-         strategy="auto" fragbias=density rms=2.0 ncycles=200 
-         fullatom=0 bbmove=1 nminsteps=25 temp=4 />
-      <CartesianSampler name=cen5_60 automode_scorecut=-0.3 
-         scorefxn=cen mcscorefxn=cen fascorefxn=dens_soft 
-         strategy="auto" fragbias=density rms=1.5 ncycles=200 
-         fullatom=0 bbmove=1 nminsteps=25 temp=4 />
-      <CartesianSampler name=cen5_70 automode_scorecut=-0.1 
-         scorefxn=cen mcscorefxn=cen fascorefxn=dens_soft 
-         strategy="auto" fragbias=density rms=1.5 ncycles=200 
-         fullatom=0 bbmove=1 nminsteps=25 temp=4 />
-      <CartesianSampler name=cen5_80 automode_scorecut=0.0 
-         scorefxn=cen mcscorefxn=cen fascorefxn=dens_soft 
-         strategy="auto" fragbias=density rms=1.0 ncycles=200 
-         fullatom=0 bbmove=1 nminsteps=25 temp=4 />
+      <CartesianSampler name="cen5_50" automode_scorecut="-0.5"    
+         scorefxn="cen" mcscorefxn="cen" fascorefxn="dens_soft" 
+         strategy="auto" fragbias="density" rms="2.0" ncycles="200" 
+         fullatom="0" bbmove="1" nminsteps="25" temp="4" />
+      <CartesianSampler name="cen5_60" automode_scorecut="-0.3" 
+         scorefxn="cen" mcscorefxn="cen" fascorefxn="dens_soft" 
+         strategy="auto" fragbias="density" rms="1.5" ncycles="200" 
+         fullatom="0" bbmove="1" nminsteps="25" temp="4" />
+      <CartesianSampler name="cen5_70" automode_scorecut="-0.1" 
+         scorefxn="cen" mcscorefxn="cen" fascorefxn="dens_soft" 
+         strategy="auto" fragbias="density" rms="1.5" ncycles="200" 
+         fullatom="0" bbmove="1" nminsteps="25" temp="4" />
+      <CartesianSampler name="cen5_80" automode_scorecut="0.0" 
+         scorefxn="cen" mcscorefxn="cen" fascorefxn="dens_soft" 
+         strategy="auto" fragbias="density" rms="1.0" ncycles="200" 
+         fullatom="0" bbmove="1" nminsteps="25" temp="4" />
 
 With a protocols section:
 
@@ -403,8 +401,8 @@ Generally, depending on the quality of the initial models and the quality of the
 
 Thus, to evaluate each of these models, we have provided XML-parsable movers to perform each of these two steps. These are illustrated in the following XML file (from `scenario1_cryoem_refinement/ex_C1_bfact_FSC.xml`):
 
-    <BfactorFitting name=fit_bs max_iter=50 wt_adp=0.0005 init=1 exact=1/> 
-    <ReportFSC name=reportFSC res_low=10 res_high=3.4 nresbins=20 testmap="TRPV1_half2.mrc"/>
+    <BfactorFitting name="fit_bs" max_iter="50" wt_adp="0.0005" init="1" exact="1"/> 
+    <ReportFSC name="reportFSC" res_low="10" res_high="3.4" nresbins="20" testmap="TRPV1_half2.mrc"/>
 
 The first mover will fit atomic B factors to maximize model-map correlation. A constraint enforcing nearby atoms to take the same B factors is also employed, and the weight on this term is controlled with the *wt_adp* term (0.0005 is generally well-behaved). Finally, init=1 means to do a quick scan of overall B factors before beginning refinement; if there is more than one call to this mover in a single trajectory, then only the first needs to have *init=1*. *Exact=1* should almost always be used (there is a fast, approximate version, but it occasionally is poorly behaved, and uses significant amounts of memory).
 
@@ -525,28 +523,27 @@ As we have already performed the above mentioned steps in either Scenario1 or in
 
 Like the methods introduced in Scenario 1, RosettaCM is controlled through an XML script using RosettaScripts. The XML is as follows (`scenario2_model_rebuilding/ex_B1_rosettaCM_singletarget.xml`):
 
-    <ROSETTASCRIPTS> 
-      <SCOREFXNS>
-        <stage1 weights="score3" symmetric=1>
-          <Reweight scoretype=atom_pair_constraint weight=0.25/>
-        </stage1>
-        <stage2 weights="score4_smooth_cart" symmetric=1>
-          <Reweight scoretype=atom_pair_constraint weight=0.25/> 
-        </stage2>
-        <fullatom weights="talaris2013_cart" symmetric=1>         
-          <Reweight scoretype=atom_pair_constraint weight=0.25/>
-        </fullatom> 
+<ROSETTASCRIPTS>      <SCOREFXNS>
+        <ScoreFunction name="stage1" weights="score3" symmetric="1">
+          <Reweight scoretype="atom_pair_constraint" weight="0.25"/>
+        </ScoreFunction>
+        <ScoreFunction name="stage2" weights="score4_smooth_cart" symmetric="1">
+          <Reweight scoretype="atom_pair_constraint" weight="0.25"/> 
+        </ScoreFunction>
+        <ScoreFunction name="fullatom" weights="talaris2013_cart" symmetric="1">         
+          <Reweight scoretype="atom_pair_constraint" weight="0.25"/>
+        </ScoreFunction> 
       </SCOREFXNS>
       <MOVERS>
-        <Hybridize name=hybridize stage1_scorefxn=stage1   
-            stage2_scorefxn=stage2 fa_scorefxn=fullatom  
-            batch=1>
-          <Template pdb="1iruA_thread.pdb" weight=1.0  
+        <Hybridize name="hybridize" stage1_scorefxn="stage1"   
+            stage2_scorefxn="stage2" fa_scorefxn="fullatom"  
+            batch="1">
+          <Template pdb="1iruA_thread.pdb" weight="1.0"  
             cst_file="auto" symm_file="D7_edit.symm"/>
         </Hybridize> 
       </MOVERS>
       <PROTOCOLS>
-        <Add mover=hybridize/>
+        <Add mover="hybridize"/>
       </PROTOCOLS> 
     </ROSETTASCRIPTS>
 
@@ -690,40 +687,40 @@ Crystal symmetry may be setup using the *make_symmdef_file* script
 
 There are also a number of movers to specifically deal with unphased crystal data. First, to setup for crystal refinement and pass in a few options, including refinement target and twin laws: 
 
-    <SetRefinementOptions name=setup_opts res_high=0 res_low=0 twin_law="" 
+    <SetRefinementOptions name="setup_opts" res_high="0" res_low="0" twin_law="" 
         target="ml" map_type="2mFo-DFc"/>
 
 All the options given here are the default, but one can specify other refinement options.
 
 To rephrase the data using the current model (the density map overwrites the current map, and can be accessed through the density scoring of the previous sections): 
 
-    <RecomputeDensityMap name=recompute_dens/> 
+    <RecomputeDensityMap name="recompute_dens"/> 
 
 To fit atomic B factors against the reciprocal space data: 
 
-    <FitBfactors name=fit_bs adp_strategy="individual"/> 
+    <FitBfactors name="fit_bs" adp_strategy="individual"/> 
     
 To automatically set the weight on *xtal_ml* to a reasonable value (by normalizing gradients of the experimental and energetic terms):
 
-    <SetCrystWeight name=set_cryst_wt weight_scale=0.5 scorefxn=xtal scorefxn_ref=xtal 
-        cartesian=1 bb=1 chi=1/>
+    <SetCrystWeight name="set_cryst_wt" weight_scale="0.5" scorefxn="xtal" scorefxn_ref="xtal" 
+        cartesian="1" bb="1" chi="1"/>
 
 Notice that *cartesian=1* specifies that subsequent movement will be done in Cartesian space; change this to 0 if the movement is instead in torsional space.
 
 To tag the output PDB with a line reporting R/Rfree:
 
-    <TagPoseWithRefinementStats name=tag tag=cycle/>
+    <TagPoseWithRefinementStats name="tag" tag="cycle"/>
 
 Additionally, refinement commonly uses two additional movers for conformational sampling. The first, *SymPackRotamersMover* performs rotamer optimization against *phased* crystal data:
 
-    <SymPackRotamersMover name=screpack scorefxn=dens   
-       task_operations=extra,restrict,keep_curr />
+    <SymPackRotamersMover name="screpack" scorefxn="dens"   
+       task_operations="extra,restrict,keep_curr" />
 
 The second, *SymMinMover*, performs all-atom minimization against the unphased reflection data:
 
-    <SymMinMover name=min_cart_xtal cartesian=1 scorefxn=xtal   
-      type=lbfgs_armijco_rescored tolerance=0.0001    
-      max_iters=100 bb=1 chi=1 />
+    <SymMinMover name="min_cart_xtal" cartesian="1" scorefxn="xtal"   
+      type="lbfgs_armijco_rescored" tolerance="0.0001"    
+      max_iters="100" bb="1" chi="1" />
 
 Again, *cartesian=1* specifies that movement will be done in Cartesian space; change this to 0 if the movement is desired in torsional space (better-suited for low resolution and domain motions).
 
