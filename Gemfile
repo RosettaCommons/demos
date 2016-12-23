@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 gem 'omnigollum', :github => "tjacobs2/omnigollum"
 gem 'nokogiri'
+gem 'mini_portile2'
 gem 'json'
 gem 'mustache'
 gem 'rack'
