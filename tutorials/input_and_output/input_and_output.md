@@ -237,7 +237,7 @@ A full list of other, specific options is given [here](https://www.rosettacommon
 
 Controlling Output
 ------------------
-###Common Stucture Output Files
+###Common Structure Output Files
 Rosetta primarily uses two formats to output structures - PDB files and Silent Files. Both these files have been described in [section above](#input_format).
 ####<a name="out_pdb"></a>PDB File
 This is the default output format of Rosetta. For applications that do not output a structure by default, like the scoring application, the option `-out:pdb` forces Rosetta to output the PDB. This is demonstrated in the [[scoring tutorial|scoring]].
