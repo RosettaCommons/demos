@@ -1,0 +1,14 @@
+Protocol Capture:
+
+The files in demo directory ____
+
+Starting Files:
+
+The raw starting files are a single protein structure to be docked into for PDB format, and SDF files for the ligand series to be docked.
+
+The BioChemicalLibrary (BCL) http://www.meilerlab.org/servers/bcl-academic-license is a suite of software tools readily available to Academic users. Other softwares for conformer generation
+and ligand alignment may be used as well. 
+
+To generate conformers with the BCL:
+
+BCL comamnd 

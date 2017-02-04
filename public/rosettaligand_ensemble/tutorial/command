@@ -1,0 +1,3 @@
+#!/bin/bash
+
+/net/rhodium/hd0/work_rosetta/Rosetta/main/source/bin/rosetta_scripts.linuxgccrelease @options -parser:protocol dock.xml -in:file:s "./inputs/protein.pdb ./inputs/congeneric.pdb" -in:file:extra_res_path "./inputs/" -docking:ligand:ligand_ensemble 0 

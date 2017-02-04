@@ -1,0 +1,16 @@
+-packing
+ -ignore_ligand_chi
+ -ex1
+ -ex2
+ -flip_HNQ
+ -no_optH false
+
+-no_his_his_pairE
+-overwrite
+-database /net/rhodium/hd0/work_rosetta/Rosetta/main/database
+-mistakes
+ -restore_pre_talaris_2013_behavior true 
+-out
+ -pdb_gz true
+-score
+ -weights "./ligand.wts"

@@ -1,0 +1,14 @@
+# -ex1 and -ex2 expand then sampling of rotamers in the first 2 chi angles of protein sidechains to improve the quality of packing
+-ex1 
+-ex2 
+
+# The RosettaLigand scoring functions do not use the new functionality of the talaris_2013 scoring function. This flag is required to turn off those functions
+-restore_pre_talaris_2013_behavior true
+
+# The benchmarking study in the manuscript used 2000 models for each protein-ligand complex.
+# -nstruct is set to 200 because in the example each ligand is docked into an ensemble of 10 models, so 2000 total models will be generated
+# in practice, 150-200 total models should be generated for each ligand, rather than 2000.
+-nstruct 2
+
+# output PDB files for viewing in pymol
+-out:pdb
