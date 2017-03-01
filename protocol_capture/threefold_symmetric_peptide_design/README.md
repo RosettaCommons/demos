@@ -20,7 +20,7 @@ This protocol uses RosettaScripts to design a peptide in a single script.  The s
 
 The **design.xml** file included in the **xml/** sub-directory contains extensive comments describing each Rosetta module used and why it was invoked.
 
-![Design workflow](Design_approach.png)
+![Design workflow](images/Design_approach.png)
 **(A)**  Overall design workflow.  The script included here fully describes this workflow.  **(B)**  An example of a designed C3-symmetric 60-mer cross-linked with TBMB (orange), with hydrophobic core residues shown in grey.  **(C)** _Ab initio_ energy landscape of the peptide shown in B.  Points from _ab initio_ are shown in orange and points from relaxation of the design structure are shown in blue.  Note that Rosetta's _ab initio_ algorithm can neither model the cyclic geometry nor the cross-linker, so this is a deceptively shallow folding funnel.
 
 ## Running
