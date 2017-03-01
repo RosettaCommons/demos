@@ -18,12 +18,22 @@ This protocol uses RosettaScripts to design a peptide in a single script.  The s
 4.  Use GenKIC to close loops, filtering for similarity to 4mer fragments from the Protein Data Bank and attempting design and side-chain minimization on each loop conformation sampled.  Choose the lowest-energy loop conformation for subsequent steps of the protocol.
 5.  Carry out more computationally-expensive sequence design and structure refrinement with the FastDesign protocol, allowing both side-chains and the backbone to relax.
 
+The **design.xml** file included in the **xml/** sub-directory contains extensive comments describing each Rosetta module used and why it was invoked.
+
 ![Design workflow](Design_approach.png)
-A.  Overall design workflow.  B.  An example of a designed C3-symmetric 60-mer cross-linked with TBMB.  C. Ab initio energy landscape of the peptide shown in B.  Note that Rosetta's ab initio algorithm can neither capture the cyclic geometry nor the cross-linker, so this is a deceptively shallow folding funnel.
+**(A)**  Overall design workflow.  The script included here fully describes this workflow.  **(B)**  An example of a designed C3-symmetric 60-mer cross-linked with TBMB (orange), with hydrophobic core residues shown in grey.  **(C)** _Ab initio_ energy landscape of the peptide shown in B.  Points from _ab initio_ are shown in orange and points from relaxation of the design structure are shown in blue.  Note that Rosetta's _ab initio_ algorithm can neither model the cyclic geometry nor the cross-linker, so this is a deceptively shallow folding funnel.
 
 ## Running
 
-**TODO**
+All commandline flags needed are included in **xml/rosetta.flags**.  To run this script, one therefore uses the following command:
+```bash
+$> $ROSETTA3/bin/rosetta_scripts.default.linuxgccrelease @xml/rosetta.flags
+```
+
+Note that, in the above, the string "default.linuxgccrelease" may need to be modified for your build type, operating system, and compiler.  For example, for a static build using the Clang compiler on a Mac, the executable's name would be rosetta_scripts.static.macosclangrelease.
+
+## Running with the Message Passing Interface (MPI) for parallel processing
+
 
 
 ## Versions
