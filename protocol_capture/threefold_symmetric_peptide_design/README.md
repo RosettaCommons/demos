@@ -46,4 +46,4 @@ This is particularly recommended for this design protocol, since many hundreds o
 This script was implemented with, and has been tested with, Rosetta 3.8 on 1 March 2017.  The GIT sha was 99781a84f0b6fa3adb1bf8ecaf1abe9fb248088f.
 
 ## See also
-[[Scripting with RosettaScripst|scripting_with_rosettascripts]]
+[[Introductory RosettaScripting tutorial|scripting_with_rosettascripts]]
