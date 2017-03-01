@@ -1,6 +1,5 @@
 -in:file:fasta xml/dummy.fasta
--parser:protocol xml/design2_linker.xml
-#-dump_connect_info
+-parser:protocol xml/design.xml
 -write_all_connect_info
 -connect_info_cutoff 0
 -ex1
