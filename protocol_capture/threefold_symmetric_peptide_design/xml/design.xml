@@ -163,16 +163,21 @@
 		# Generate the initial backbone geometry using the Crick parameterization.
 		# Note that since the “nstruct_mode” option is used, each repeated iteration through
 		# the RosettaScripts protocol will sample a different grid-point in the set of
-		# parameter value combinations to be sampled:
+		# parameter value combinations to be sampled.
+		# Note that this has been modified from the original to
+		# shorten the runtime.  The number of samples has been
+		# reduced from 311,600 to 81, and the grid to be sampled
+		# has been narrowed to a known "designable" region of
+		# the Crick parameter space.
 		<BundleGridSampler name="bgs1" helix_length="20" scorefxn="tala"
 			set_bondlengths="true" set_bondangles="true" set_dihedrals="true"
-			nstruct_mode="true" nstruct_repeats="1" use_degrees="true" max_samples="311600"
-			r0_min="4.5" r0_max="9" r0_samples="19"
-			omega0_min="-10" omega0_max="10" omega0_samples="41"
+			nstruct_mode="true" nstruct_repeats="1" use_degrees="true" max_samples="81"
+			r0_min="7.15" r0_max="7.35" r0_samples="3"
+			omega0_min="-7.5" omega0_max="-6.5" omega0_samples="3"
 			delta_omega0="0"
-			delta_omega1_min="0" delta_omega1_max="337.5" delta_omega1_samples="16"
+			delta_omega1_min="110" delta_omega1_max="130" delta_omega1_samples="3"
 			delta_t="0"
-			z1_offset_min="-3" z1_offset_max="3" z1_offset_samples="25"
+			z1_offset_min="-2.2" z1_offset_max="-2.0" z1_offset_samples="3"
 		>
 			<Helix />
 		</BundleGridSampler>
@@ -298,7 +303,11 @@
 		# For every loop conformation considered, it applies the “quickpackmin” protocol,
 		# defined above, to discard loops with bad geometry and to carry out a rapid round
 		# of sequence design and side-chain energy minimization.
+		# Note that this has been modified from the original to shorten
+		# the runtime.  The stop_when_n_solutions_found line has
+		# been added.
 		<GeneralizedKIC name="genkic1"
+			stop_when_n_solutions_found="20"
 			closure_attempts="100"
 			selector="lowest_energy_selector"
 			selector_scorefunction="tala_symm"

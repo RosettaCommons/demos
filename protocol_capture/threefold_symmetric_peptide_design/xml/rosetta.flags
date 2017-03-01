@@ -5,5 +5,8 @@
 -ex1
 -ex2
 -jd2:failed_job_exception false
--nstruct 311600
+# Note that the original had nstruct 311600.  This has been modified
+# to shorten the runtime for demo purposes.
+-nstruct 81
+#-nstruct 311600
 -extra_res_fa sidechain_conjugation/CYX.params crosslinker/1.3.5_trisbromomethylbenzene_symm.params 
