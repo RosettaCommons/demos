@@ -30,13 +30,20 @@ All commandline flags needed are included in **xml/rosetta.flags**.  To run this
 $> $ROSETTA3/bin/rosetta_scripts.default.linuxgccrelease @xml/rosetta.flags
 ```
 
-Note that, in the above, the string "default.linuxgccrelease" may need to be modified for your build type, operating system, and compiler.  For example, for a static build using the Clang compiler on a Mac, the executable's name would be rosetta_scripts.static.macosclangrelease.
+Note that, in the above, the string "default.linuxgccrelease" may need to be modified for your build type, operating system, and compiler.  For example, for a static build using the Clang compiler on a Mac, the executable's name would be **rosetta\_scripts.static.macosclangrelease**.
 
 ## Running with the Message Passing Interface (MPI) for parallel processing
 
+The RosettaScripts executable may be compiled with support for parallelization using the Message Passing Interface (MPI).  This allows multiple RosettaScripts trajectories to be split over many processors, and in this case, this allows the sampling of Crick parameter space during the first step to be divided over many processors.  In order to run with MPI-based parallelization, after compiling with MPI support, one simply types:
+```bash
+$> mpirun -np <number_of_processes> $ROSETTA3/bin/rosetta_scripts.mpi.linuxgccrelease @xml/rosetta.flags
+```
 
+This is particularly recommended for this design protocol, since many hundreds of thousands of parameter value combinations must be sampled, which is best done in parallel.
 
 ## Versions
 
+This script was implemented with, and has been tested with, Rosetta 3.8 on 1 March 2017.  The GIT sha was 99781a84f0b6fa3adb1bf8ecaf1abe9fb248088f.
 
 ## See also
+[[Scripting with RosettaScripst|scripting_with_rosettascripts]]
