@@ -18,6 +18,9 @@ This protocol uses RosettaScripts to design a peptide in a single script.  The s
 4.  Use GenKIC to close loops, filtering for similarity to 4mer fragments from the Protein Data Bank and attempting design and side-chain minimization on each loop conformation sampled.  Choose the lowest-energy loop conformation for subsequent steps of the protocol.
 5.  Carry out more computationally-expensive sequence design and structure refrinement with the FastDesign protocol, allowing both side-chains and the backbone to relax.
 
+![Design workflow](Design_approach.png)
+A.  Overall design workflow.  B.  An example of a designed C3-symmetric 60-mer cross-linked with TBMB.  C. Ab initio energy landscape of the peptide shown in B.  Note that Rosetta's ab initio algorithm can neither capture the cyclic geometry nor the cross-linker, so this is a deceptively shallow folding funnel.
+
 ## Running
 
 **TODO**
