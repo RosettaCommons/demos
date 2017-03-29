@@ -28,10 +28,7 @@
 	<FILTERS>
 		<ScoreType name="scorefilter" score_type="total_score" threshold="10.0" scorefxn="bnv_cst" />
 	</FILTERS>
-	<MOVERS>
-		<MutateResidue name="mut1" target="28" new_res="ALA" />
-		<MutateResidue name="mut2" target="29" new_res="ALA" />
-	
+	<MOVERS>	
 		<PeptideStubMover name="add_loop_residues" >
 			<Insert anchor_rsd="28" resname="ALA" />
 			<Insert anchor_rsd="29" resname="GLY" />
@@ -41,6 +38,9 @@
 		</PeptideStubMover>
 		
 		<DeclareBond name="new_bond" atom1="C" atom2="N" res1="31" res2="32" />
+
+		<MutateResidue name="mut1" target="28" new_res="ALA" />
+		<MutateResidue name="mut2" target="34" new_res="ALA" />
 
 		<AtomTree name="foldtree1" fold_tree_file="inputs/foldtree1.txt" />
 
@@ -120,10 +120,10 @@
 	<APPLY_TO_POSE>
 	</APPLY_TO_POSE>
 	<PROTOCOLS>
-		<Add mover="mut1" />
-		<Add mover="mut2" />
 		<Add mover="add_loop_residues" />
 		<Add mover="new_bond" />
+		<Add mover="mut1" />
+		<Add mover="mut2" />
 		<Add mover="foldtree1" />
 		<Add mover="pepdistcst" />
 		<Add mover="pepanglecst" />
