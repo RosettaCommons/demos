@@ -423,6 +423,7 @@ In the above, `$ROSETTA3` is the path to your Rosetta directory.  You may need t
 When tested with Rosetta 3.8 SHA 3cad483ccac973741499159e12989a7143bf79de (nightly build from Tuesday, March 28th, 2017), the script produced various loop conformations and sequences, some of which packed well or had favourable interactions between the loop and the rest of the protein.  Because of the stringent filtering used, some replicates failed to return a result.  Note that this tutorial has not been optimized to yield _good_ designs.  Such optimization is likely to yeild better results, but a much longer-running script.
 
 **An example designed structure**
+
 ![An example designed structure](images/Tutorial3_example_output.png)
 
 ## Conclusion
