@@ -412,10 +412,12 @@ And that's it!  The finished script should look like this:
 
 ## Running the example script
 
-The above script is provided in the `demos/tutorials/GeneralizedKIC/exercise1/xml/` directory.  To run this, navigate to the `demos/tutorials/GeneralizedKIC/exercise1` directory and type the following:
+The above script is provided in the `demos/tutorials/GeneralizedKIC/exercise1/xml/` directory.  To run this, navigate to the `demos/tutorials/GeneralizedKIC` directory and type the following:
 
 ```bash
+$> cd exercise1
 $> $ROSETTA3/bin/rosetta_scripts.default.linuxgccrelease @inputs/rosetta.flags
+$> cd ..
 ```
 
 In the above, `$ROSETTA3` is the path to your Rosetta directory.  You may need to replace `linuxgccrelease` for your operating system and compilation (_e.g._ `macosclangrelease` on a Mac).
@@ -445,3 +447,6 @@ Coutsias EA, Seok C, Jacobson MP, Dill KA.  (2004).  A kinematic view of loop cl
 
 [GeneralizedKIC documentation](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/composite_protocols/generalized_kic/GeneralizedKIC)
 
+[GeneralizedKIC Tutorial 2](generalized_kinematic_closure_2.md)
+[GeneralizedKIC Tutorial 3](generalized_kinematic_closure_3.md)
+[GeneralizedKIC Tutorial 4](generalized_kinematic_closure_4.md)
