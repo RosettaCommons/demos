@@ -17,10 +17,7 @@
 	</TASKOPERATIONS>
 	<FILTERS>
 	</FILTERS>
-	<MOVERS>
-		<MutateResidue name="mut1" target="28" new_res="ALA" />
-		<MutateResidue name="mut2" target="29" new_res="ALA" />
-	
+	<MOVERS>	
 		<PeptideStubMover name="add_loop_residues" >
 			<Insert anchor_rsd="28" resname="ALA" />
 			<Insert anchor_rsd="29" resname="GLY" />
@@ -30,6 +27,9 @@
 		</PeptideStubMover>
 		
 		<DeclareBond name="new_bond" atom1="C" atom2="N" res1="31" res2="32" />
+
+		<MutateResidue name="mut1" target="28" new_res="ALA" />
+		<MutateResidue name="mut2" target="34" new_res="ALA" />
 
 		<GeneralizedKIC name="genkic" selector="lowest_energy_selector" selector_scorefunction="bb_only"
 			closure_attempts="5000" stop_when_n_solutions_found="5" >
