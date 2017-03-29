@@ -20,13 +20,6 @@
 	<FILTERS>
 	</FILTERS>
 	<MOVERS>
-		<MutateResidue name="mut1" target="28" new_res="ALA" />
-		<MutateResidue name="mut2" target="29" new_res="ALA" />
-	
-		<MutateResidue name="mut3" target="15" new_res="CYS:disulfide" />
-		<MutateResidue name="mut4" target="42" new_res="CYS:disulfide" />
-		<DeclareBond name="make_disulfide" atom1="SG" atom2="SG" res1="15" res2="42" />
-
 		<PeptideStubMover name="add_loop_residues" >
 			<Insert anchor_rsd="28" resname="ALA" />
 			<Insert anchor_rsd="29" resname="GLY" />
@@ -36,6 +29,13 @@
 		</PeptideStubMover>
 		
 		<DeclareBond name="new_bond" atom1="C" atom2="N" res1="31" res2="32" />
+
+		<MutateResidue name="mut1" target="28" new_res="ALA" />
+		<MutateResidue name="mut2" target="34" new_res="ALA" />
+	
+		<MutateResidue name="mut3" target="15" new_res="CYS:disulfide" />
+		<MutateResidue name="mut4" target="42" new_res="CYS:disulfide" />
+		<DeclareBond name="make_disulfide" atom1="SG" atom2="SG" res1="15" res2="42" />
 
 		<GeneralizedKIC name="genkic" selector="lowest_energy_selector" selector_scorefunction="bb_only"
 			closure_attempts="5000" stop_when_n_solutions_found="1" >
