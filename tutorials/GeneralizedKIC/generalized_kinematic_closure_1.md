@@ -58,7 +58,7 @@ Additionally, we will use the following Rosetta flags file.  Briefly, this instr
 
 ### Step 1: Building loop geometry
 
-The GeneralizedKIC mover is only capable of sampling conformations of existing geometry.  It can neither add amino acid residues to a pose, nor create new bonds between residues.  For this reason, we must use the [[PeptideStubMover|https://www.rosettacommons.org/docs/latest/PeptideStubMover]] to build the new loop, and the [[DeclareBond mover|https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/Movers/movers_pages/DeclareBond]] to add a chemical bond across the loop cutpoint.
+The GeneralizedKIC mover is only capable of sampling conformations of existing geometry.  It can neither add amino acid residues to a pose, nor create new bonds between residues.  For this reason, we must use the [PeptideStubMover](https://www.rosettacommons.org/docs/latest/PeptideStubMover) to build the new loop, and the [DeclareBond mover](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/Movers/movers_pages/DeclareBond) to add a chemical bond across the loop cutpoint.
 
 Run the `rosetta_scripts` application with no commandline options to create a template script, or copy and paste the example below:
 
@@ -82,7 +82,7 @@ Run the `rosetta_scripts` application with no commandline options to create a te
 </ROSETTASCRIPTS>
 ```
 
-Now let's add a [[PeptideStubMover|https://www.rosettacommons.org/docs/latest/PeptideStubMover]] in the ```<MOVERS``` section.  We will append three residues to the end of the second helix (residue 28), and prepend two residues to the start of the third helix (which was residue 29, but which becomes residue 32 after appending three residues).  Note that the `Insert` command is used instead of the `Append` command because the added residues are in the middle of the sequence.  We'll use a poly-alanine sequence for sampling, but will cheat a little bit just for the purposes of this tutorial by keeping a glycine at the second loop position, since this is present in the original structure.
+Now let's add a [PeptideStubMover](https://www.rosettacommons.org/docs/latest/PeptideStubMover) in the `<MOVERS>` section.  We will append three residues to the end of the second helix (residue 28), and prepend two residues to the start of the third helix (which was residue 29, but which becomes residue 32 after appending three residues).  Note that the `Insert` command is used instead of the `Append` command because the added residues are in the middle of the sequence.  We'll use a poly-alanine sequence for sampling, but will cheat a little bit just for the purposes of this tutorial by keeping a glycine at the second loop position, since this is present in the original structure.
 
 ```xml
 <PeptideStubMover name="add_loop_residues" >
@@ -95,8 +95,82 @@ Now let's add a [[PeptideStubMover|https://www.rosettacommons.org/docs/latest/Pe
 
 ```
 
+Be sure to add the above mover to the `<PROTOCOLS>` section as well (`<Add mover="add_loop_residues" />`).
+
+We now have a five-residue loop, albeit one with several problems.  First, there is no bond between residues 30 and 31.  Second, these residues are too far apart in space to form a bond.  And third, all dihedral angles in the new loop are set to 0 degrees, including omega angles (_i.e._ all peptide bonds are _cis_ instead of _trans_).  To solve the first problem, we will add a [DeclareBond mover](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/Movers/movers_pages/DeclareBond) to the `<MOVERS>` section of the script, telling Rosetta that there ought to be a chemical bond between the C atom of residue 30 and the N atom of residue 31.  Note that this does not move any geometry, but it does mean that the bond is present in the output PDB file if we run the script at this point.
+
+```xml
+<DeclareBond name="new_bond" atom1="C" atom2="N" res1="31" res2="32" />
+```
+
+As before, this must also be added to the `<PROTOCOLS>` section (`<Add mover="new_bond" />`);
+
+### Step 2: Preparing for sampling
+
+We will create a GeneralizedKIC mover for sampling in a moment.  Before we do so, though, we want to mutate two flanking residues, which will also be sampled as part of the loop, to alanine.  We do this because the sampling that we will use is biased by the Ramachandran preferences of the amino acid type.  Alanine is a good residue to use to represent the generic L-alpha amino acid, but glycine (which is currently present) is not because it has as much preference for the positive-phi region of Ramachandran space as for the negative.  (Indeed, our glycine Ramachandran tables are biased to _favour_ the positive-phi region, since glycine is disproportionately found in the positive-phi region in the PDB structures used to train our scorefunction.)  Let us add two [MutateResidue movers](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/Movers/movers_pages/MutateResidueMover) to change the residue identities at this position.  In the `<MOVERS>` section add:
+
+```xml
+<MutateResidue name="mut1" target="28" new_res="ALA" />
+<MutateResidue name="mut2" target="34" new_res="ALA" />
+```
+
+As before, add these two movers to the `<PROTOCOLS>` section after the movers already added.  At this point, the `<PROTOCOLS>` section should look like this:
+
+```xml
+<PROTOCOLS>
+	<Add mover="add_loop_residues" />
+	<Add mover="new_bond" />
+	<Add mover="mut1" />
+	<Add mover="mut2" />
+</PROTOCOLS>
+```
+
+### Step 3: Initial GeneralizedKIC setup
+
+We're now ready to add the GeneralizedKIC mover that will close the gap in the loop and sample loop conformations.  In the movers section, add the following.
+
+```xml
+<GeneralizedKIC name="genkic" />
+```
+
+Add this mover to the end of the `<PROTOCOLS`> section, too, as before.
+
+GeneralizedKIC gives the user many, many options to control loop sampling, filtering, and solution selection.  Typically, the first option that one wants to set is the number of attempts that the mover will make to find a closed solution.  Each attempt consists of perturbing loop degrees of freedom (in a manner that we will define), solving for closed solutions, and applying GeneralizedKIC filters.  Because the KIC algorithm is so fast, one can easily attempt hundreds of solutions per second.  For our purposes, let's set the number of attempts to 5000 by modifying our GeneralizedKIC block as follows:
+
+```xml
+<GeneralizedKIC name="genkic" closure_attempts="5000" />
+```
+
+Each attempt could yield anywhere from 0 to 16 solutions.  By default, every solution found will be stored until we've made the specified number of attempts (in our case 5000).  This could be far too many solutions, though.  It makes more sense to stop looking for solutions after we've found a small number.  That number could be as low as 1 (_i.e._ GeneralizedKIC stops as soon as a solution is found), but for our purposes, let's set that number at 5:
 
 
+```xml
+<GeneralizedKIC name="genkic" closure_attempts="5000" stop_when_n_solutions_found="5" />
+```
+
+Even if we had set this numer at 1, a single attempt might have yielded up to 16 solutions.  We always need to tell GeneralizedKIC how to pick a single solution from among the solutions.  Here, we'll choose our solution by energy -- but there is an important caveat.  Since we are sampling backbone conformations, with no consideration of side-chains, we should use a scoring function that consists primarily of backbone-only terms to pick the best solution.  (Later we will see how we can apply an arbitrary mover -- _e.g._ a full repack and minimization -- to every solution, in which case it might make sense to use the full Rosetta scoring function to pick the best solution).  Let's set up a backbone-only scoring function using weights from the `beta_nov15` scoring function.  In the `<SCOREFXNS>` section of your script, add the following:
+
+```xml
+<ScoreFunction name="bnv" weights="beta_nov15.wts" />
+<ScoreFunction name="bb_only" weights="empty.wts" >
+	<Reweight scoretype="fa_rep" weight="0.1" />
+	<Reweight scoretype="fa_atr" weight="0.2" />
+	<Reweight scoretype="hbond_sr_bb" weight="2.0" />
+	<Reweight scoretype="hbond_lr_bb" weight="2.0" />
+	<Reweight scoretype="rama_prepro" weight="0.45" />
+	<Reweight scoretype="omega" weight="0.4" />
+	<Reweight scoretype="p_aa_pp" weight="0.6" />
+</ScoreFunction>
+
+```
+
+The "bnv" scoring function is now the full `beta_nov15` scoring function, which may be useful if we later add sidechain refinement to our protocol (which we will do in the third GeneralizedKIC tutorial).  For now, we will use the "bb_only" scoring function, adding two more options to our already-declared GeneralizedKIC mover to tell it how to pick a solution:
+
+```xml
+<GeneralizedKIC name="genkic" closure_attempts="5000" stop_when_n_solutions_found="5"
+	selector="lowest_energy_selector" selector_scorefunction="bb_only"
+/>
+```
 
 ## Conclusion
 
@@ -109,4 +183,6 @@ Bhardwaj G, Mulligan VK, Bahl CD, Gilmore JM, Harvey PJ, Cheneval O, Buchko GW, 
 Mandell DJ, Coutsias EA, Kortemme T. (2009).  Sub-angstrom accuracy in protein loop reconstruction by robotics-inspired conformational sampling.  _Nat. Methods_ 6(8):551-2.
 
 Coutsias EA, Seok C, Jacobson MP, Dill KA.  (2004).  A kinematic view of loop closure.  _J. Comput. Chem._ 25(4):510-28.
+
+[GeneralizedKIC documentation](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/composite_protocols/generalized_kic/GeneralizedKIC)
 
