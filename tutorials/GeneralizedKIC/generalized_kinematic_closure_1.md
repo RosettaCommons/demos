@@ -421,10 +421,10 @@ $> $ROSETTA3/bin/rosetta_scripts.default.linuxgccrelease @inputs/rosetta.flags
 
 	When tested with Rosetta 3.8 SHA 3cad483ccac973741499159e12989a7143bf79de (nightly build from Tuesday, March 28th, 2017), the script produced many loop conformations, including some closely resembling the native conformation:
 	
-**A solution closely matching the native conformation**
+**A solution closely matching the native conformation (cyan -- native, orange -- GeneralizedKIC solution)**
 ![A solution closely matching the native conformation](images/Example1_top_solution.png)
 
-**A solution more distinct from the native conformation**
+**A solution more distinct from the native conformation (cyan -- native, orange -- GeneralizedKIC solution)**
 ![A solution more distinct from the native conformation](images/Example1_not_quite_right_solution.png)
 
 
