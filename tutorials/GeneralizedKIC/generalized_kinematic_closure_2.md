@@ -15,11 +15,11 @@ At the end of this tutorial, you will understand:
 - How to use the GeneralizedKIC mover to sample small perturbations of an existing loop.
 - How to use the GeneralizedKIC mover with the GenericMonteCarlo mover to perform a Monte Carlo search of loop conformations.
 
-It is highly recommended that you complete the [first tutorial](generalized_kinematic_closure_1.md) before proceeding.
+It is highly recommended that you complete the [[first tutorial|generalized_kinematic_closure_1]] before proceeding.
 
 ## Perturbing loops with GeneralizedKIC
 
-In the [first tutorial](generalized_kinematic_closure_1.md), we saw how one can construct an entirely new loop using the [PeptideStubMover](https://www.rosettacommons.org/docs/latest/PeptideStubMover), the [DeclareBond mover](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/Movers/movers_pages/DeclareBond), and GeneralizedKIC.  The GeneralizedKIC mover was used to sample entirely new conformations of the loop.  However, there are many situations in which one may wish to perturb a loop slightly from a starting conformation without randomizing its conformation completely.  This is particularly true when using GeneralizedKIC to explore variant conformations of a starting structure, or when one has used fragment insertion to build a loop crudely and wishes to refine the starting model.  In this tutorial, we will learn how to perturb loops with GeneralizedKIC.  We will do this in the context of a Monte Carlo search of loop conformational space, in which the moves are small perturbations of the loop conformation (using GeneralizedKIC), and the acceptance criterion is the effect on a backbone-only score function.
+In the [[first tutorial|generalized_kinematic_closure_1]], we saw how one can construct an entirely new loop using the [PeptideStubMover](https://www.rosettacommons.org/docs/latest/PeptideStubMover), the [DeclareBond mover](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/Movers/movers_pages/DeclareBond), and GeneralizedKIC.  The GeneralizedKIC mover was used to sample entirely new conformations of the loop.  However, there are many situations in which one may wish to perturb a loop slightly from a starting conformation without randomizing its conformation completely.  This is particularly true when using GeneralizedKIC to explore variant conformations of a starting structure, or when one has used fragment insertion to build a loop crudely and wishes to refine the starting model.  In this tutorial, we will learn how to perturb loops with GeneralizedKIC.  We will do this in the context of a Monte Carlo search of loop conformational space, in which the moves are small perturbations of the loop conformation (using GeneralizedKIC), and the acceptance criterion is the effect on a backbone-only score function.
 
 ## Exercise 2:  A RosettaScripts-Scripted Monte Carlo Search of Loop Conformational Space
 
@@ -354,8 +354,8 @@ Coutsias EA, Seok C, Jacobson MP, Dill KA.  (2004).  A kinematic view of loop cl
 
 [GeneralizedKIC documentation](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/composite_protocols/generalized_kic/GeneralizedKIC)
 
-[GeneralizedKIC Tutorial 1](generalized_kinematic_closure_1.md)
+[[GeneralizedKIC Tutorial 1|generalized_kinematic_closure_1]]
 
-[GeneralizedKIC Tutorial 3](generalized_kinematic_closure_3.md)
+[[GeneralizedKIC Tutorial 3|generalized_kinematic_closure_3]]
 
-[GeneralizedKIC Tutorial 4](generalized_kinematic_closure_4.md)
+[[GeneralizedKIC Tutorial 4|generalized_kinematic_closure_4]]

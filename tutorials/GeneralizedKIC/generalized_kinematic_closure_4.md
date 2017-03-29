@@ -17,7 +17,7 @@ At the end of this tutorial, you will understand:
 - How to close a loop that passes through connections other than mainchain peptide bonds (in this case, through a sidechain disulfide linkage)
 - How to keep segments rigid during GeneralizedKIC sampling
 
-It is highly recommended that you complete the [first](generalized_kinematic_closure_1.md), [second](generalized_kinematic_closure_2.md), and [third](generalized_kinematic_closure_3.md) tutorials before proceeding.
+It is highly recommended that you complete the [[first|generalized_kinematic_closure_1]], [[second|generalized_kinematic_closure_2]], and [[third|generalized_kinematic_closure_3]] tutorials before proceeding.
 
 ## Using GeneralizedKIC to close through non-backbone connections
 
@@ -381,8 +381,8 @@ Coutsias EA, Seok C, Jacobson MP, Dill KA.  (2004).  A kinematic view of loop cl
 
 [GeneralizedKIC documentation](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/composite_protocols/generalized_kic/GeneralizedKIC)
 
-[GeneralizedKIC Tutorial 1](generalized_kinematic_closure_1.md)
+[[GeneralizedKIC Tutorial 1|generalized_kinematic_closure_1]]
 
-[GeneralizedKIC Tutorial 2](generalized_kinematic_closure_2.md)
+[[GeneralizedKIC Tutorial 2|generalized_kinematic_closure_2]]
 
-[GeneralizedKIC Tutorial 3](generalized_kinematic_closure_3.md)
+[[GeneralizedKIC Tutorial 4|generalized_kinematic_closure_4]]
