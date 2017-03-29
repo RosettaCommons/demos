@@ -7,4 +7,3 @@
 -jd2:failed_job_exception false
 -mute all
 -unmute protocols.simple_moves.GenericMonteCarloMover
-#-mute protocols.generalized_kinematic_closure.filter.GeneralizedKICfilter core.chemical.AtomICoor core.conformation.Residue
