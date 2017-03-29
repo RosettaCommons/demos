@@ -132,16 +132,49 @@ Here is the script from the first tutorial for reference.  We will modify it to 
 </ROSETTASCRIPTS>
 ```
 
-Since we will be carrying out design in this tutorial, we will need a resfile defining the amino acids with which we can design.  We will not discuss the details of design here; instead, please refer to the [[Protein Design Tutorial|protein_design_tutorial]].  Here is the resfile that we will use, defining a limited palette of amino acids:
+Since we will be carrying out design in this tutorial, we will need a resfile defining the amino acids with which we can design.  We will not discuss the details of design here; instead, please refer to the [[Protein Design Tutorial|protein_design_tutorial]].  Here is the resfile (`inputs/resfile.txt`) that we will use, defining a limited palette of amino acids:
 
 ```
 PIKAA AGPILYVEKR
 start
 ```
 
-Finally, we need to define a suitable FoldTree to allow loop relaxation without distorting the structure as a whole.  Again, we will not discuss the details of FoldTrees here; instead, refer to the [[FoldTree tutorial|fold_tree]].
+Finally, we need to define a suitable FoldTree to allow loop relaxation without distorting the structure as a whole.  Again, we will not discuss the details of FoldTrees here; instead, refer to the [[FoldTree tutorial|fold_tree]].  The FoldTree file that we will use (`inputs/foldtree1.txt`) is listed here:
 
-### Step 1:
+```
+FOLD_TREE EDGE 27 1 -1 EDGE 27 31 -1 EDGE 27 35 1 EDGE 35 32 -1 EDGE 35 44 -1
+```
+
+### Step 1: Preparing the Pose for flexible-backbone design
+
+Since we are going to allow backbone relaxation in loop residues during design, we need a suitable FoldTree defining the kinematic relationships between residues.  We will root the FoldTree in the second helix, with a jump to the third helix.  Loop residues up to 31 will be children of the second helix, while loop residues from 32 onward will be children of the third (_i.e._ there will be a break between residues 31 and 32).  The choice of placing the break here is arbitrary, and is unrelated to the fact that this is also the point at which GeneralizedKIC closed the loop.  We will define an [AtomTree mover](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/Movers/movers_pages/AtomTreeMover) in our `<MOVERS>` section to load and apply the new FoldTree, adding it to the `<PROTOCOLS>` section prior to the GeneralizedKIC mover as well:
+
+```xml
+<AtomTree name="foldtree1" fold_tree_file="inputs/foldtree1.txt" />
+```
+
+Because of the break in the loop, we need constraints to maintain the peptide bond geometry _after_ GeneralizedKIC closure, during relaxation.  (Note that GeneralizedKIC itself has no need for constraints; it imposes ideal geometry mathematically.)  We'll use [CreateDistanceConstraint](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/Movers/movers_pages/CreateDistanceConstraintMover), [CreateAngleConstraint](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/Movers/movers_pages/CreateAngleConstraintMover), and [CreateTorsionConstraint](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/Movers/movers_pages/CreateTorsionConstraintMover) movers for this purpose, again defining them in the `<MOVERS>` section and invoking them in the `<PROTOCOLS>` section prior to calling GeneralizedKIC.  (Note that there exist other movers that we could also have used for this purpose.)
+
+```xml
+		<CreateDistanceConstraint name="pepdistcst" >
+			<Add res1="31" atom1="C" res2="32" atom2="N" cst_func="HARMONIC 1.328685 0.01" />
+		</CreateDistanceConstraint>
+
+		<CreateAngleConstraint name="pepanglecst" >
+			<Add res1="31" atom1="CA" res_center="31" atom_center="C" res2="32" atom2="N" cst_func="CIRCULARHARMONIC 2.124065647312 0.005" />
+			<Add res1="31" atom1="C" res_center="32" atom_center="N" res2="32" atom2="CA" cst_func="CIRCULARHARMONIC 2.028072468639 0.005" />
+		</CreateAngleConstraint>
+
+		<CreateTorsionConstraint name="pepdihedcst" >
+			<Add res1="31" atom1="CA" res2="31" atom2="C" res3="32" atom3="N" res4="32" atom4="CA" cst_func="CIRCULARHARMONIC 3.141592654 0.005" />
+		</CreateTorsionConstraint>
+```
+
+In our `<SCOREFXNS>` section, we will need a new scorefunction that enables the constraint terms.  We can use the already-defined `beta_nov15_cst.wts` file that exists in the Rosetta database for this:
+
+```xml
+<ScoreFunction name="bnv_cst" weights="beta_nov15_cst.wts" />
+```
 
 **TODO**
 
