@@ -49,7 +49,11 @@ Full input files for the tutorials are located in the `demos/tutorials/` directo
 * [[de novo (ab initio) Structure Prediction|Denovo_structure_prediction]]
     * [[Advanced de novo Structure Prediction|folding_tutorial]]
 * [[Comparative Modeling|rosetta_cm_tutorial]]: Modeling based on Homologs
-* Generalized Kinematic Closure (GenKIC): [[Tutorial 1|generalized_kinematic_closure_1]] | [[Tutorial 2|generalized_kinematic_closure_2]] | [[Tutorial 3|generalized_kinematic_closure_3]] | [[Tutorial 4|generalized_kinematic_closure_4]]
+* Generalized Kinematic Closure (GenKIC): Rapid, versatile loop closure without fragments
+    * [[Tutorial 1|generalized_kinematic_closure_1]]: Building and closing new loops
+    * [[Tutorial 2|generalized_kinematic_closure_2]]: Perturbing existing loops
+    * [[Tutorial 3|generalized_kinematic_closure_3]]: Using pre-selection movers within GenKIC
+    * [[Tutorial 4|generalized_kinematic_closure_4]]: Closing through disulfides
 * [[Loop Modeling and Rebuilding|loop_modeling]]: Modeling Short Fragments
 * [[Protein Design|protein_design_tutorial]]
 * [[Protein-Protein Docking|Protein-Protein-Docking]]: Modeling Protein-Protein Binding
