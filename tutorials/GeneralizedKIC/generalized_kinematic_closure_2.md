@@ -338,7 +338,7 @@ In the above, `$ROSETTA3` is the path to your Rosetta directory.  You may need t
 When tested with Rosetta 3.8 SHA 3cad483ccac973741499159e12989a7143bf79de (nightly build from Tuesday, March 28th, 2017), the script produced a `last_accepted.pdb` file containing a trajectory that properly sampled the native conformation.  The problem of selecting the native conformation as the lowest-energy conformation is a scoring problem, not a sampling problem.  It is not surprising that we do not pick it out in the absence of any sequence.
 
 **The Monte Carlo trajectory samples the native conformation (cyan -- native, orange -- GeneralizedKIC solution)**
-![The Monte Carlo trajectory samples the native conformation](Tutorial2_MC_search.gif)
+![The Monte Carlo trajectory samples the native conformation](images/Tutorial2_MC_search.gif)
 
 ## Conclusion
 
