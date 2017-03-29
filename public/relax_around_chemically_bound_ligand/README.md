@@ -2,7 +2,7 @@
 
 KEYWORDS: LIGANDS INTERFACES STRUCTURE_PREDICTION
 
-This document was originally written by Andrew Leaver-Fay, and completed, expanded and modified for Doxygen by Ron Jacak. It was later modified during documentation XRW 2016 by Parisa Hosseinzadeh and Vikram K. Mulligan (vmullig@uw.edu) to enable automatic testing and to ensure compatibility. 
+This document was originally written by Andrew Leaver-Fay, and completed, expanded and modified for Doxygen by Ron Jacak. It was later modified during documentation XRW 2016 by Parisa Hosseinzadeh and Vikram K. Mulligan (vmullig@u.washington.edu) to enable automatic testing and to ensure compatibility. 
 
 # Quick Guide
 1. Create parameter files for the ligand, and modified residue (if one doesn't already exist)
