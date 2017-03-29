@@ -35,9 +35,68 @@ A loop that is open may be thought of as a continuous loop containing a bond tha
 
 ## Exercise 1: Building and Closing a Polypeptide Loop Using RosettaScripts
 
-### The Input Structure
+### Inputs
 
-For this exercise, we will 
+For this exercise, we will be using an NMR structure of an artificial mini-protein designed by Dr. Chris Bahl (PDB ID 2ND2).  This mini-protein is a 44-residue 3-helix bundle.  For the purposes of this tutorial, the structure has been stripped of its amino acid sequence (_i.e._ it has been mutated to poly-glycine), and the loop connecting the second and third helices has been deleted.  This is meant to simulate many common design cases, in which one might arrange secondary structure elements first and build loops later (_e.g._ in the case of parametric design approaches), as well as certain structure prediction cases, in which one might wish to model loops that are missing in crystal structures.  We will rebuild this loop and sample its possible conformations.
+
+**The input structure, an edited version of PDB structure 2ND2 (`2ND2_state1_glyonly_loop_removed.pdb`):**
+![The input structure](images/Example1_input_structure.png)
+
+Additionally, we will use the following Rosetta flags file.  Briefly, this instructs Rosetta to run the input script 10 times to produce 10 sampled loop conformations, to use the `beta_nov15` score function, and to include all chemical bonds in the output PDB files (which can be convenient when debugging bad geometry, since bonds are drawn even if bonded atoms are too far apart).
+
+**File `rosetta.flags`:**
+```
+-nstruct 10
+-beta_nov15
+-in:file:s inputs/2ND2_state1_glyonly_loop_removed.pdb
+-in:file:fullatom
+-write_all_connect_info
+-parser:protocol xml/exercise1.xml
+-jd2:failed_job_exception false
+-mute protocols.generalized_kinematic_closure.filter.GeneralizedKICfilter core.chemical.AtomICoor core.conformation.Residue
+```
+
+### Step 1: Building loop geometry
+
+The GeneralizedKIC mover is only capable of sampling conformations of existing geometry.  It can neither add amino acid residues to a pose, nor create new bonds between residues.  For this reason, we must use the [[PeptideStubMover|https://www.rosettacommons.org/docs/latest/PeptideStubMover]] to build the new loop, and the [[DeclareBond mover|https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/Movers/movers_pages/DeclareBond]] to add a chemical bond across the loop cutpoint.
+
+Run the `rosetta_scripts` application with no commandline options to create a template script, or copy and paste the example below:
+
+```xml
+<ROSETTASCRIPTS>
+	<SCOREFXNS>
+	</SCOREFXNS>
+	<RESIDUE_SELECTORS>
+	</RESIDUE_SELECTORS>
+	<TASKOPERATIONS>
+	</TASKOPERATIONS>
+	<FILTERS>
+	</FILTERS>
+	<MOVERS>
+	</MOVERS>
+	<APPLY_TO_POSE>
+	</APPLY_TO_POSE>
+	<PROTOCOLS>
+	</PROTOCOLS>
+	<OUTPUT />
+</ROSETTASCRIPTS>
+```
+
+Now let's add a [[PeptideStubMover|https://www.rosettacommons.org/docs/latest/PeptideStubMover]] in the ```<MOVERS``` section.  We will append three residues to the end of the second helix (residue 28), and prepend two residues to the start of the third helix (which was residue 29, but which becomes residue 32 after appending three residues).  Note that the `Insert` command is used instead of the `Append` command because the added residues are in the middle of the sequence.  We'll use a poly-alanine sequence for sampling, but will cheat a little bit just for the purposes of this tutorial by keeping a glycine at the second loop position, since this is present in the original structure.
+
+```xml
+<PeptideStubMover name="add_loop_residues" >
+	<Insert anchor_rsd="28" resname="ALA" />
+	<Insert anchor_rsd="29" resname="GLY" />
+	<Insert anchor_rsd="30" resname="ALA" />
+	<Prepend anchor_rsd="32" resname="ALA" />
+	<Prepend anchor_rsd="32" resname="ALA" />
+</PeptideStubMover>
+
+```
+
+
+
 
 ## Conclusion
 
