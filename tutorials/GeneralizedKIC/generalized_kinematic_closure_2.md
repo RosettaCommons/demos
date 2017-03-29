@@ -211,11 +211,138 @@ The GeneralizedKIC mover setup should now look like this:
 
 ```
 
+### Step 3: Setting up a Monte Carlo search
 
+We will now script a Monte Carlo search, using the GeneralizedKIC mover configured above as our move in the search.  Create a [GenericMonteCarlo mover](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/Movers/movers_pages/GenericMonteCarloMover), setting the number of trials to 1000, the temperature to 1.0, the pre-apply option to "false", and the scorefunction to the "bb_only" scorefunction defined previously.  The mover will use the scorefunction to evaluate the effect of the move.  It still needs a mover that it will use as its move.  Rather than passing GeneralizedKIC directly, we will couple it with some other movers -- so let's give the GenericMonteCarlo mover a mover called "mc_moves" as the mover that it will use.  We will define "mc_moves" momentarily.
+
+```xml
+<GenericMonteCarlo name="mc_mover" mover_name="mc_moves" trials="10000" temperature="1.0" preapply="false" scorefxn_name="bb_only" />
+```
+
+Let's create a [ParsedProtocol mover](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/Movers/movers_pages/ParsedProtocolMover) above the GeneralizedKIC mover to encapsulate the GeneralizedKIC mover and a few additional reporter movers that we will use to monitor the trajectory.  Call it "mc_moves", and add three movers to it, called "last_accepted", "genkic", and "current_attempt".  We have already defined "genkic".  The other two will be [PDBTrajectoryRecorder](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/Movers/movers_pages/PDBTrajectoryRecorderMover) movers that will allow us to visualize the progress of our Monte Carlo search.  We will create these in a moment:
+
+```xml
+<ParsedProtocol name="mc_moves" >
+	<Add mover="last_accepted" />
+	<Add mover="genkic" />
+	<Add mover="current_attempt" />
+</ParsedProtocol>
+```
+
+Thus, the move made by the GenericMonteCarlo mover at each step in its trajectory is: (1) record a snapshot of the pose before doing anything to it (corresponding to the last accepted state), (2) perturb the loop with GeneralizedKIC, and (3) record a snapshot of the current, perturbed state (prior to accepting or rejecting it).  The last two ingredients are the two [PDBTrajectoryRecorder](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/Movers/movers_pages/PDBTrajectoryRecorderMover) movers that will record the last accepted state and the current attempted move.  These must be defined above the ParsedProtocol mover:
+
+```xml
+<PDBTrajectoryRecorder name="last_accepted" filename="last_accepted.pdb" stride="20" />
+<PDBTrajectoryRecorder name="current_attempt" filename="current_attempt.pdb" stride="20" />
+```
+
+### Step 4: Updating the `<PROTOCOLS>` section
+
+As a final step, we must update the `<PROTOCOLS>` section of our script.  Since the GenericMonteCarlo mover calls the ParsedProtcol mover, which calls the PDBTrajectoryRecorders and GeneralizedKIC, all we need to include here is the GenericMonteCarlo mover:
+
+```xml
+<PROTOCOLS>
+	<Add mover="mc_mover" />
+</PROTOCOLS>
+```
+
+So the final script should look like this:
+
+```xml
+<ROSETTASCRIPTS>
+	<SCOREFXNS>
+		<ScoreFunction name="bnv" weights="beta_nov15.wts" />
+		<ScoreFunction name="bb_only" weights="empty.wts" >
+			<Reweight scoretype="fa_rep" weight="0.1" />
+			<Reweight scoretype="fa_atr" weight="0.2" />
+			<Reweight scoretype="hbond_sr_bb" weight="2.0" />
+			<Reweight scoretype="hbond_lr_bb" weight="2.0" />
+			<Reweight scoretype="rama_prepro" weight="0.45" />
+			<Reweight scoretype="omega" weight="0.4" />
+			<Reweight scoretype="p_aa_pp" weight="0.6" />
+		</ScoreFunction>
+	</SCOREFXNS>
+	<RESIDUE_SELECTORS>
+	</RESIDUE_SELECTORS>
+	<TASKOPERATIONS>
+	</TASKOPERATIONS>
+	<FILTERS>
+	</FILTERS>
+	<MOVERS>
+
+		<GeneralizedKIC name="genkic" selector="lowest_delta_torsion_selector" selector_scorefunction="bb_only"
+			closure_attempts="100" stop_when_n_solutions_found="1" >
+			<AddResidue res_index="28" />
+			<AddResidue res_index="29" />
+			<AddResidue res_index="30" />
+			<AddResidue res_index="31" />
+			<AddResidue res_index="32" />
+			<AddResidue res_index="33" />
+			<AddResidue res_index="34" />
+			<SetPivots res1="28" res2="31" res3="34" atom1="CA" atom2="CA" atom3="CA" />
+			<AddPerturber effect="perturb_dihedral" >
+				<AddAtoms res1="28" atom1="N" res2="28" atom2="CA" />
+				<AddAtoms res1="29" atom1="N" res2="29" atom2="CA" />
+				<AddAtoms res1="30" atom1="N" res2="30" atom2="CA" />
+				<AddAtoms res1="31" atom1="N" res2="31" atom2="CA" />
+				<AddAtoms res1="32" atom1="N" res2="32" atom2="CA" />
+				<AddAtoms res1="33" atom1="N" res2="33" atom2="CA" />
+				<AddAtoms res1="34" atom1="N" res2="34" atom2="CA" />
+				<AddAtoms res1="28" atom1="CA" res2="28" atom2="C" />
+				<AddAtoms res1="29" atom1="CA" res2="29" atom2="C" />
+				<AddAtoms res1="30" atom1="CA" res2="30" atom2="C" />
+				<AddAtoms res1="31" atom1="CA" res2="31" atom2="C" />
+				<AddAtoms res1="32" atom1="CA" res2="32" atom2="C" />
+				<AddAtoms res1="33" atom1="CA" res2="33" atom2="C" />
+				<AddAtoms res1="34" atom1="CA" res2="34" atom2="C" />
+				<AddValue value="10.0" />
+			</AddPerturber>
+			<AddFilter type="loop_bump_check" />
+		</GeneralizedKIC>
+		
+		<PDBTrajectoryRecorder name="last_accepted" filename="last_accepted.pdb" stride="20" />
+		<PDBTrajectoryRecorder name="current_attempt" filename="current_attempt.pdb" stride="20" />
+		
+		<ParsedProtocol name="mc_moves" >
+			<Add mover="last_accepted" />
+			<Add mover="genkic" />
+			<Add mover="current_attempt" />
+		</ParsedProtocol>
+		
+		<GenericMonteCarlo name="mc_mover" mover_name="mc_moves" trials="10000" temperature="1.0" preapply="false" scorefxn_name="bb_only" />
+		
+	</MOVERS>
+	<APPLY_TO_POSE>
+	</APPLY_TO_POSE>
+	<PROTOCOLS>
+		<Add mover="mc_mover" />
+	</PROTOCOLS>
+	<OUTPUT />
+</ROSETTASCRIPTS>
+```
+
+## Running the example script
+
+The above script is provided in the `demos/tutorials/GeneralizedKIC/exercise2/xml/` directory.  To run this, navigate to the `demos/tutorials/GeneralizedKIC` directory and type the following:
+
+```bash
+$> cd exercise2
+$> $ROSETTA3/bin/rosetta_scripts.default.linuxgccrelease @inputs/rosetta.flags
+$> cd ..
+```
+
+In the above, `$ROSETTA3` is the path to your Rosetta directory.  You may need to replace `linuxgccrelease` for your operating system and compilation (_e.g._ `macosclangrelease` on a Mac).
+
+## Expected output
+
+When tested with Rosetta 3.8 SHA 3cad483ccac973741499159e12989a7143bf79de (nightly build from Tuesday, March 28th, 2017), the script produced a `last_accepted.pdb` file containing a trajectory that properly sampled the native conformation.  The problem of selecting the native conformation as the lowest-energy conformation is a scoring problem, not a sampling problem.  It is not surprising that we do not pick it out in the absence of any sequence.
+
+**The Monte Carlo trajectory samples the native conformation (cyan -- native, orange -- GeneralizedKIC solution)**
+![The Monte Carlo trajectory samples the native conformation](Tutorial2_MC_search.gif)
 
 ## Conclusion
 
-**TODO**
+In this tutorial, we have covered loop conformational perturbation and Monte Carlo searches using GeneralizedKIC.  The reader should experiment with settings to learn how different perturbation magnitudes and Monte Carlo temperatures affect the trajectory.
 
 ## Further Reading
 
@@ -227,3 +354,6 @@ Coutsias EA, Seok C, Jacobson MP, Dill KA.  (2004).  A kinematic view of loop cl
 
 [GeneralizedKIC documentation](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/composite_protocols/generalized_kic/GeneralizedKIC)
 
+[GeneralizedKIC Tutorial 1](generalized_kinematic_closure_1.md)
+[GeneralizedKIC Tutorial 3](generalized_kinematic_closure_3.md)
+[GeneralizedKIC Tutorial 4](generalized_kinematic_closure_4.md)
