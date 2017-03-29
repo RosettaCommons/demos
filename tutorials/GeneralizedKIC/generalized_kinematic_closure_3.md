@@ -45,7 +45,7 @@ The following `rosetta.flags` file will be used for this tutorial:
 -mute protocols.generalized_kinematic_closure.filter.GeneralizedKICfilter core.chemical.AtomICoor core.conformation.Residue core.kinematics.AtomTree
 ```
 
-Here is the script from the first tutorial for reference.  We will modify it to our needs:
+Here is the script from the first tutorial for reference.  We will modify it to fit our needs:
 
 ```xml
 <ROSETTASCRIPTS>
@@ -156,24 +156,95 @@ Since we are going to allow backbone relaxation in loop residues during design, 
 Because of the break in the loop, we need constraints to maintain the peptide bond geometry _after_ GeneralizedKIC closure, during relaxation.  (Note that GeneralizedKIC itself has no need for constraints; it imposes ideal geometry mathematically.)  We'll use [CreateDistanceConstraint](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/Movers/movers_pages/CreateDistanceConstraintMover), [CreateAngleConstraint](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/Movers/movers_pages/CreateAngleConstraintMover), and [CreateTorsionConstraint](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/Movers/movers_pages/CreateTorsionConstraintMover) movers for this purpose, again defining them in the `<MOVERS>` section and invoking them in the `<PROTOCOLS>` section prior to calling GeneralizedKIC.  (Note that there exist other movers that we could also have used for this purpose.)
 
 ```xml
-		<CreateDistanceConstraint name="pepdistcst" >
-			<Add res1="31" atom1="C" res2="32" atom2="N" cst_func="HARMONIC 1.328685 0.01" />
-		</CreateDistanceConstraint>
+<CreateDistanceConstraint name="pepdistcst" >
+	<Add res1="31" atom1="C" res2="32" atom2="N" cst_func="HARMONIC 1.328685 0.01" />
+</CreateDistanceConstraint>
 
-		<CreateAngleConstraint name="pepanglecst" >
-			<Add res1="31" atom1="CA" res_center="31" atom_center="C" res2="32" atom2="N" cst_func="CIRCULARHARMONIC 2.124065647312 0.005" />
-			<Add res1="31" atom1="C" res_center="32" atom_center="N" res2="32" atom2="CA" cst_func="CIRCULARHARMONIC 2.028072468639 0.005" />
-		</CreateAngleConstraint>
+<CreateAngleConstraint name="pepanglecst" >
+	<Add res1="31" atom1="CA" res_center="31" atom_center="C" res2="32" atom2="N" cst_func="CIRCULARHARMONIC 2.124065647312 0.005" />
+	<Add res1="31" atom1="C" res_center="32" atom_center="N" res2="32" atom2="CA" cst_func="CIRCULARHARMONIC 2.028072468639 0.005" />
+</CreateAngleConstraint>
 
-		<CreateTorsionConstraint name="pepdihedcst" >
-			<Add res1="31" atom1="CA" res2="31" atom2="C" res3="32" atom3="N" res4="32" atom4="CA" cst_func="CIRCULARHARMONIC 3.141592654 0.005" />
-		</CreateTorsionConstraint>
+<CreateTorsionConstraint name="pepdihedcst" >
+	<Add res1="31" atom1="CA" res2="31" atom2="C" res3="32" atom3="N" res4="32" atom4="CA" cst_func="CIRCULARHARMONIC 3.141592654 0.005" />
+</CreateTorsionConstraint>
 ```
 
 In our `<SCOREFXNS>` section, we will need a new scorefunction that enables the constraint terms.  We can use the already-defined `beta_nov15_cst.wts` file that exists in the Rosetta database for this:
 
 ```xml
 <ScoreFunction name="bnv_cst" weights="beta_nov15_cst.wts" />
+```
+
+### Step 2: Modifying the GeneralizedKIC mover
+
+We are now ready to modify the GeneralizedKIC mover.  First, we'll make some minor tweaks to allow the design protocol to run faster: change the number of attempts to 1000 (from 5000), and set the mover to stop when 1 solution has been found (instead of 5).  Next, because we're performing design prior to selecting a solution, let's change the selector scorefunction from "bb_only" to "bnv" (the full `beta_nov15` scorefunction).  Finally, we want to add a preselection mover, which we will define in the next step.  The preselection mover is the set of moves that will be carried out on each solution prior to applying the GeneralizedKIC selector to pick a final solution.  We will call our preselection mover "design\_protocol".
+
+_**WARNING**: Although GenKIC offers guarantees that only loop residues and tail residues will move, that covalent connectivity will be unchanged, and that the FoldTree will not be altered, these guarantees no longer remain in effect if an arbitrary mover is called by GenKIC prior to selection._
+
+```xml
+<GeneralizedKIC name="genkic" selector="lowest_energy_selector" selector_scorefunction="bnv"
+	closure_attempts="1000" stop_when_n_solutions_found="1"
+	pre_selection_mover="design_protocol"
+>
+	...
+</GeneralizedKIC>
+```
+
+### Step 3: Defining the preselection mover
+
+Now we must create the "design\_protocol" mover.  Make a [ParsedProtocol mover](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/Movers/movers_pages/ParsedProtocolMover) above the declaration of the GeneralizedKIC mover, and give it the name "design\_protocol":
+
+```xml
+<ParsedProtocol name="design_protocol" >
+</ParsedProtocol>
+```
+
+We want this protocol to do three things: (1) carry out several rounds of design, designing only positions that are in the core or on the boundary and near to, or part of, the loop (2) correct the positions of the carbonyl oxygen and amide proton at the loop cutpoint (for these atoms can drift during minimization), and (3) filter designs based on energy, discarding those that are not below a certain threshold.
+
+Let's create the design mover first.  We'll use [FastDesign](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/Movers/movers_pages/FastDesignMover), which carries out flexible-backbone design.  Configure a FastDesign mover (prior to the ParsedProtocol that we just defined) with the following options: 1 round of design, the "bnv_cst" scorefunction that we defined earlier, two TaskOperations (called "design\_core\_near\_loop" and "no\_design\_otherwise", both of which we will define), and a movemap that allows no jumps to move, all side-chains to move, and only backbone between residues 28 and 34 to move.  The mover definition should look like this:
+
+```xml
+<FastDesign name="fdes1" repeats="1" task_operations="design_core_near_loop,no_design_otherwise" scorefxn="bnv_cst">
+	<MoveMap name="fdes1_mm" >
+		<Span begin="1" end="27" bb="false" chi="true" />
+		<Span begin="28" end="34" bb="true" chi="true" />
+		<Span begin="35" end="999" bb="false" chi="true" />
+		<Jump number="1" setting="false" />
+	</MoveMap>
+</FastDesign>
+```
+
+We need to define the two TaskOperations next, in the `<TASKOPERATIONS>` section of the script.  The first, "design\_core\_near\_loop", should be a [ReadResfile TaskOperation](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/TaskOperations/taskoperations_pages/ReadResfileOperation) that takes a selection (let's call it "designable\_region") and reads the `inputs/resfile.txt` resfile.  The second, "no\_design\_otherwise", should be an [OperateOnResidueSubset](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/TaskOperations/taskoperations_pages/OperateOnResidueSubsetOperation) TaskOperation that takes a selection called "not\_designable\_region" and applies a [RestrictToRepackingRLT residue-level TaskOperation](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/TaskOperations/taskoperations_pages/Residue-Level-TaskOperations).  We won't get into the details of these TaskOperations here, but the short summary is that they tell the FastDesign mover to design with a limited palette of amino acids in core and boundary positions near or on the loop, and to prevent design elsewhere.
+
+```xml
+<ReadResfile name="design_core_near_loop" selector="designable_region" filename="inputs/resfile.txt" />
+<OperateOnResidueSubset name="no_design_otherwise" selector="not_designable_region" >
+	<RestrictToRepackingRLT />
+</OperateOnResidueSubset>
+```
+
+In the `<RESIDUE_SELECTORS>` section of the script, we need to define the selectors that these TaskOperations take.  We need to (1) select core and boundary positions, (2) select loop and near-loop positions, (3) select the intersection of the two sets (AND operation), and (4) select the inverse of the third set (NOT operation).  The following ResidueSelectors accomplish this:
+
+```xml
+<Layer name="select_core" select_core="true" select_boundary="true" select_surface="false" />
+<Index name="select_loop" resnums="27-34" />
+<Neighborhood name="select_around_loop" selector="select_loop" include_focus_in_subset="true" distance="7" />
+<And name="designable_region" selectors="select_around_loop,select_core" />
+<Not name="not_designable_region" selector="designable_region" />
+```
+
+The design mover should now be complete.  We can add it to the ParsedProtocol, three times, followed by the already-defined DeclareBond mover each time.  This may seem odd, but we do it this way as a kludge because the DeclareBond mover, by declaring an already-existing bond adjacent to a carbonyl oxygen and an amide proton that are likely to be distorted during minimization, corrects the positions of these atoms.  (Normally, we would just set the FastDesign repeats to 3, but this allows us to insert a correction step between each FastDesign round.)
+
+```xml
+<ParsedProtocol name="design_protocol" >
+	<Add mover="fdes1" />
+	<Add mover="new_bond" />
+	<Add mover="fdes1" />
+	<Add mover="new_bond" />
+	<Add mover="fdes1" />
+	<Add mover="new_bond" />
+</ParsedProtocol>
 ```
 
 **TODO**
