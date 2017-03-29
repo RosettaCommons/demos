@@ -247,7 +247,164 @@ The design mover should now be complete.  We can add it to the ParsedProtocol, t
 </ParsedProtocol>
 ```
 
-**TODO**
+Let's add one more tihng to the ParsedProtocol: a filter to throw away bad, high-scoring designs.  Ordinarily, we'd want to make this fairly stringent, but for the purposes of this tutorial, we'll set the filter threshold to 10 to ensure that we get a few designs in a reasonable amount of time.  In the `<FILTERS>` section of your script, add the following:
+
+```xml
+<ScoreType name="scorefilter" score_type="total_score" threshold="10.0" scorefxn="bnv_cst" />
+```
+
+And add it also to the ParsedProtocol mover:
+
+```xml
+<ParsedProtocol name="design_protocol" >
+	<Add mover="fdes1" />
+	<Add mover="new_bond" />
+	<Add mover="fdes1" />
+	<Add mover="new_bond" />
+	<Add mover="fdes1" />
+	<Add mover="new_bond" />
+	<Add filter="scorefilter" />
+</ParsedProtocol>
+```
+
+At this point, your script should be finished and ready to run.  It should look like this:
+
+```xml
+<ROSETTASCRIPTS>
+	<SCOREFXNS>
+		<ScoreFunction name="bnv" weights="beta_nov15.wts" />
+		<ScoreFunction name="bnv_cst" weights="beta_nov15_cst.wts" />
+		<ScoreFunction name="bb_only" weights="empty.wts" >
+			<Reweight scoretype="fa_rep" weight="0.1" />
+			<Reweight scoretype="fa_atr" weight="0.2" />
+			<Reweight scoretype="hbond_sr_bb" weight="2.0" />
+			<Reweight scoretype="hbond_lr_bb" weight="2.0" />
+			<Reweight scoretype="rama_prepro" weight="0.45" />
+			<Reweight scoretype="omega" weight="0.4" />
+			<Reweight scoretype="p_aa_pp" weight="0.6" />
+		</ScoreFunction>
+	</SCOREFXNS>
+	<RESIDUE_SELECTORS>
+		<Layer name="select_core" select_core="true" select_boundary="true" select_surface="false" />
+		<Index name="select_loop" resnums="27-34" />
+		<Neighborhood name="select_around_loop" selector="select_loop" include_focus_in_subset="true" distance="7" />
+		<And name="designable_region" selectors="select_around_loop,select_core" />
+		<Not name="not_designable_region" selector="designable_region" />
+	</RESIDUE_SELECTORS>
+	<TASKOPERATIONS>
+		<ReadResfile name="design_core_near_loop" selector="designable_region" filename="inputs/resfile.txt" />
+		<OperateOnResidueSubset name="no_design_otherwise" selector="not_designable_region" >
+			<RestrictToRepackingRLT />
+		</OperateOnResidueSubset>
+	</TASKOPERATIONS>
+	<FILTERS>
+		<ScoreType name="scorefilter" score_type="total_score" threshold="10.0" scorefxn="bnv_cst" />
+	</FILTERS>
+	<MOVERS>	
+		<PeptideStubMover name="add_loop_residues" >
+			<Insert anchor_rsd="28" resname="ALA" />
+			<Insert anchor_rsd="29" resname="GLY" />
+			<Insert anchor_rsd="30" resname="ALA" />
+			<Prepend anchor_rsd="32" resname="ALA" />
+			<Prepend anchor_rsd="32" resname="ALA" />
+		</PeptideStubMover>
+		
+		<DeclareBond name="new_bond" atom1="C" atom2="N" res1="31" res2="32" />
+
+		<MutateResidue name="mut1" target="28" new_res="ALA" />
+		<MutateResidue name="mut2" target="34" new_res="ALA" />
+
+		<AtomTree name="foldtree1" fold_tree_file="inputs/foldtree1.txt" />
+
+		<CreateDistanceConstraint name="pepdistcst" >
+			<Add res1="31" atom1="C" res2="32" atom2="N" cst_func="HARMONIC 1.328685 0.01" />
+		</CreateDistanceConstraint>
+
+		<CreateAngleConstraint name="pepanglecst" >
+			<Add res1="31" atom1="CA" res_center="31" atom_center="C" res2="32" atom2="N" cst_func="CIRCULARHARMONIC 2.124065647312 0.005" />
+			<Add res1="31" atom1="C" res_center="32" atom_center="N" res2="32" atom2="CA" cst_func="CIRCULARHARMONIC 2.028072468639 0.005" />
+		</CreateAngleConstraint>
+
+		<CreateTorsionConstraint name="pepdihedcst" >
+			<Add res1="31" atom1="CA" res2="31" atom2="C" res3="32" atom3="N" res4="32" atom4="CA" cst_func="CIRCULARHARMONIC 3.141592654 0.005" />
+		</CreateTorsionConstraint>
+
+
+		<FastDesign name="fdes1" repeats="1" task_operations="design_core_near_loop,no_design_otherwise" scorefxn="bnv_cst">
+			<MoveMap name="fdes1_mm" >
+				<Span begin="1" end="27" bb="false" chi="true" />
+				<Span begin="28" end="34" bb="true" chi="true" />
+				<Span begin="35" end="999" bb="false" chi="true" />
+				<Jump number="1" setting="false" />
+			</MoveMap>
+		</FastDesign>
+
+		<ParsedProtocol name="design_protocol" >
+			<Add mover="fdes1" />
+			<Add mover="new_bond" />
+			<Add mover="fdes1" />
+			<Add mover="new_bond" />
+			<Add mover="fdes1" />
+			<Add mover="new_bond" />
+			<Add filter="scorefilter" />
+		</ParsedProtocol>
+
+		<GeneralizedKIC name="genkic" selector="lowest_energy_selector" selector_scorefunction="bnv"
+			closure_attempts="1000" stop_when_n_solutions_found="1"
+			pre_selection_mover="design_protocol"
+		>
+			<AddResidue res_index="28" />
+			<AddResidue res_index="29" />
+			<AddResidue res_index="30" />
+			<AddResidue res_index="31" />
+			<AddResidue res_index="32" />
+			<AddResidue res_index="33" />
+			<AddResidue res_index="34" />
+			<SetPivots res1="28" res2="31" res3="34" atom1="CA" atom2="CA" atom3="CA" />
+			<AddPerturber effect="set_dihedral" >
+				<AddAtoms res1="28" atom1="C" res2="29" atom2="N" />
+				<AddAtoms res1="29" atom1="C" res2="30" atom2="N" />
+				<AddAtoms res1="30" atom1="C" res2="31" atom2="N" />
+				<AddAtoms res1="31" atom1="C" res2="32" atom2="N" />
+				<AddAtoms res1="32" atom1="C" res2="33" atom2="N" />
+				<AddAtoms res1="33" atom1="C" res2="34" atom2="N" />
+				<AddValue value="180.0" />
+			</AddPerturber>
+			<CloseBond res1="31" res2="32" atom1="C" atom2="N" bondlength="1.328685" angle1="121.699997" angle2="116.199993" torsion="180.0" />
+			<AddPerturber effect="randomize_backbone_by_rama_prepro" >
+				<AddResidue index="28" />
+				<AddResidue index="29" />
+				<AddResidue index="30" />
+				<AddResidue index="31" />
+				<AddResidue index="32" />
+				<AddResidue index="33" />
+				<AddResidue index="34" />
+			</AddPerturber>
+			<AddFilter type="backbone_bin" residue="28" bin_params_file="ABBA" bin="A" />
+			<AddFilter type="backbone_bin" residue="34" bin_params_file="ABBA" bin="A" />
+			<AddFilter type="loop_bump_check" />
+			<AddFilter type="rama_prepro_check" residue="28" rama_cutoff_energy="0.5" />
+			<AddFilter type="rama_prepro_check" residue="31" rama_cutoff_energy="0.5" />
+			<AddFilter type="rama_prepro_check" residue="34" rama_cutoff_energy="0.5" />
+		</GeneralizedKIC>
+		
+	</MOVERS>
+	<APPLY_TO_POSE>
+	</APPLY_TO_POSE>
+	<PROTOCOLS>
+		<Add mover="add_loop_residues" />
+		<Add mover="new_bond" />
+		<Add mover="mut1" />
+		<Add mover="mut2" />
+		<Add mover="foldtree1" />
+		<Add mover="pepdistcst" />
+		<Add mover="pepanglecst" />
+		<Add mover="pepdihedcst" />
+		<Add mover="genkic" />
+	</PROTOCOLS>
+	<OUTPUT />
+</ROSETTASCRIPTS>
+```
 
 ## Running the example script
 
@@ -263,14 +420,18 @@ In the above, `$ROSETTA3` is the path to your Rosetta directory.  You may need t
 
 ## Expected output
 
-When tested with Rosetta 3.8 SHA 3cad483ccac973741499159e12989a7143bf79de (nightly build from Tuesday, March 28th, 2017), the script produced various loop conformations and sequences, some of which packed well or had favourable interactions between the loop and the rest of the protein.  Because of the stringent filtering used, some replicates failed to return a result.  Note that this tutorial has not been optimized to yield _good_ designs.
+When tested with Rosetta 3.8 SHA 3cad483ccac973741499159e12989a7143bf79de (nightly build from Tuesday, March 28th, 2017), the script produced various loop conformations and sequences, some of which packed well or had favourable interactions between the loop and the rest of the protein.  Because of the stringent filtering used, some replicates failed to return a result.  Note that this tutorial has not been optimized to yield _good_ designs.  Such optimization is likely to yeild better results, but a much longer-running script.
 
 **An example designed structure**
 ![An example designed structure](images/Tutorial3_example_output.png)
 
 ## Conclusion
 
-In this tutorial, we have covered loop conformational perturbation and Monte Carlo searches using GeneralizedKIC.  The reader should experiment with settings to learn how different perturbation magnitudes and Monte Carlo temperatures affect the trajectory.
+In this tutorial, we learnt how an abitrary protocol may be applied to every KIC solution prior to selecting the "best" solution.  This greatly increases the power and versatility of GeneralizedKIC.
+
+One final caveat regarding preselection movers: because these are applied to _every_ solution returned by KIC, they can add considerably to the computational cost of a protocol.  It is in one's best interest to structure a preselection protocol so that computationally inexpensive steps are performed first, and computationally expensive steps are preceded by filtering steps that discard most samples.
+
+Memory can also be a consideration if one is storing a large number of candidate solutions.  By default, GeneralizedKIC stores full poses for every candidate solution.  There exists a low-memory mode (`low_memory_mode="true"` option) in which only loop degrees of freedom are stored for each solution, greatly reducing the memory per solution and allowing more solutions to be stored.  The danger, however, is that when this is used with preselection movers, the preselection mover must be _re_applied post-selection to regenerate the pose.  This can be problematic with stochastic preselection movers: there is no guarantee, for example, that the energy of the pose after the reapplication will be the same as the energy that was selected.  For this reason, stochastic preselection movers are only recommended if the default memory behaviour (`low_memory_mode="false"`) is used.
 
 ## Further Reading
 
