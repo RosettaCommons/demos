@@ -355,5 +355,7 @@ Coutsias EA, Seok C, Jacobson MP, Dill KA.  (2004).  A kinematic view of loop cl
 [GeneralizedKIC documentation](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/composite_protocols/generalized_kic/GeneralizedKIC)
 
 [GeneralizedKIC Tutorial 1](generalized_kinematic_closure_1.md)
+
 [GeneralizedKIC Tutorial 3](generalized_kinematic_closure_3.md)
+
 [GeneralizedKIC Tutorial 4](generalized_kinematic_closure_4.md)
