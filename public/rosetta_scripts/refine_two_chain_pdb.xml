@@ -1,0 +1,28 @@
+a script for prepacking, redocking and minimizing a pdb structure. The idea is to
+relieve minor clashes that are often observed in PDBs.
+Recommended command-line:
+rostta_scripts -s  PDB  -parser:protocol refine_two_chain_pdb.xml -ex1 -ex2 -use_input_sc -database ~/minirosetta_database -docking:fake_native
+<dock_design>
+	<SCOREFXNS>
+	</SCOREFXNS>
+	<FILTERS>
+		<Ddg name=ddg confidence=0/>
+		<Sasa name=sasa confidence=0/>
+		<Rmsd name=rms confidence=0/>
+	</FILTERS>
+	<MOVERS>
+		<Prepack name=prepack jump=0/>
+		<Docking name=dock1 fullatom=1 local_refine=1 score_high=score12/>
+		<MinMover name=min bb=0 chi=1 jump=1/>
+	</MOVERS>
+	<APPLY_TO_POSE>
+	</APPLY_TO_POSE>
+	<PROTOCOLS>
+		<Add mover_name=prepack/>
+		<Add mover_name=dock1/>
+		<Add mover_name=min/>
+		<Add filter_name=ddg/>
+		<Add filter_name=sasa/>
+		<Add filter_name=rms/>
+	</PROTOCOLS>
+</dock_design>

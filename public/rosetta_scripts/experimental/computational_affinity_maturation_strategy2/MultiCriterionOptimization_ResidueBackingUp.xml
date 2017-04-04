@@ -1,0 +1,47 @@
+<dock_design>
+	<TASKOPERATIONS>
+		<ProteinInterfaceDesign name=pido interface_distance_cutoff=10/>
+		<RestrictResidueToRepacking name=restrict289 resnum=289/>
+		<RestrictResidueToRepacking name=restrict285 resnum=285/>
+		<RestrictResidueToRepacking name=restrict304 resnum=304/>
+		<DesignAround name=design_around_tyr design_shell=6.0 resnums=304,290,300/>
+		<DesignAround name=tyr_only design_shell=1.0 resnums=304 repack_on=0/>
+		<RestrictAbsentCanonicalAAS name=nohis keep_aas="ACDEFGIKLMNPQRSTVWY"/>
+	</TASKOPERATIONS>
+	<SCOREFXNS>
+	</SCOREFXNS>
+	<FILTERS>
+		<RotamerBoltzmannWeight name=boltz task_operations=tyr_only skip_ala_scan=1 energy_reduction_factor=1/>
+		<Sasa name=hydrophobic_sasa hydrophobic=1 confidence=0/>
+		<Sasa name=sasa confidence=0/>
+		<ScoreType name=total_score score_type="total_score" threshold=0/> threshold doesn't matter, this is used only in MC
+		<Ddg name=ddg confidence=0 repeats=3/>
+	</FILTERS>
+	<MOVERS>
+		<AtomTree name=docking_tree docking_ft=1/>
+		<RandomMutation name=random_mutation task_operations=pido,restrict289,restrict285,restrict304,nohis,design_around_tyr/>
+		<MinMover name=min bb=1 chi=1 jump=1>
+			<MoveMap>
+				<Chain number=1 chi=1 bb=0/>
+			</MoveMap>
+		</MinMover>
+		<ParsedProtocol name=agg_mover>
+			<Add mover=random_mutation/>
+			<Add mover=min/>
+		</ParsedProtocol>
+		<GenericMonteCarlo name=genericMC mover_name=agg_mover filter_name=total_score temperature=1 trials=1000>
+			<Filters>
+				<AND filter_name=boltz temperature=1.2/>
+			</Filters>
+		</GenericMonteCarlo>
+	</MOVERS>
+	<APPLY_TO_POSE>
+	</APPLY_TO_POSE>
+	<PROTOCOLS>
+		<Add mover=docking_tree/>
+		<Add mover=genericMC/>
+		<Add filter=ddg/>
+		<Add filter=sasa/>
+		<Add filter=boltz/>
+	</PROTOCOLS>
+</dock_design>

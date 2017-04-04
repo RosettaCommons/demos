@@ -1,0 +1,60 @@
+This script relies on a fragment library of params files to be provided.
+<dock_design>
+	<SCOREFXNS>
+		<ligand_soft_rep weights=ligand_soft_rep>
+			<Reweight scoretype=hack_elec weight=0.42/>
+		</ligand_soft_rep>
+		<hard_rep weights=ligand>
+			<Reweight scoretype=hack_elec weight=0.42/>
+		</hard_rep>
+	</SCOREFXNS>
+	<FILTERS>
+		<HeavyAtom name=heavy chain=X heavy_atom_limit=50/>
+		<CompleteConnections name=complete chain=X/>
+		<CompoundStatement name=both>
+			<NOT filter_name=heavy/>
+			<ANDNOT filter_name=complete/>
+		</CompoundStatement>
+	</FILTERS>
+	<INTERFACE_BUILDERS>
+		<side_chain chains=X cutoff=6.0 add_nbr_radius=true all_atom_mode=true/>
+		<backbone chains=X cutoff=7.0 add_nbr_radius=false all_atom_mode=true extension_window=3/>
+	</INTERFACE_BUILDERS>
+	<MOVEMAP_BUILDERS>
+		<docking chains=X sc_interface=side_chain minimize_water=true minimize_bb=false/>
+		<final chains=X sc_interface=side_chain bb_interface=backbone minimize_water=true minimize_bb=true/>
+	</MOVEMAP_BUILDERS>
+	<MOVERS>
+	single movers		
+	<GrowLigand name=grow chain=X/>
+	<AddHydrogens name=add_h chain=X/>
+	<Translate name=translate chain=X distribution=uniform angstroms=5.0 cycles=5/>
+		<Rotate name=rotate chain=X distribution=uniform degrees=360 cycles=10/>
+		<SlideTogether name=slide_together chain=X/>
+		<HighResDocker name=high_res_docker chains=X protocol=custom cycles=1 repack_every_Nth=1 scorefxn=ligand_soft_rep movemap_builder=docking>
+			<MinimizeLigand name=minimize_ligand chain=X degrees=10/>
+		</HighResDocker>	
+		<FinalMinimizer name=final chain=X scorefxn=hard_rep movemap_builder=final minimize_backbone=minimize_backbone>
+			<MinimizeBackbone name=minimize_backbone interface=backbone>
+				<LigandArea name=ligand_area chain=X angstroms=0.3/>
+			</MinimizeBackbone>
+		</FinalMinimizer>
+	compound movers
+		<DockDesign name=low_res_dock>
+			<Add mover_name=translate/>
+			<Add mover_name=rotate/>
+			<Add mover_name=slide_together/>
+		</DockDesign>
+		<DockDesign name=high_res_dock>
+			<Add mover_name=high_res_docker/>
+			<Add mover_name=final/>
+		</DockDesign>
+		<LoopOver name=grow_loop mover_name=grow filter_name=both/>
+	</MOVERS>	
+	<PROTOCOLS>
+		<Add mover_name=grow_loop/>
+		<Add mover_name=low_res_dock/>
+		<Add mover_name=high_res_dock/>
+		<Add mover_name=add_h/>
+	</PROTOCOLS>
+</dock_design>
