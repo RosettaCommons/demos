@@ -1,19 +1,19 @@
 <ROSETTASCRIPTS>
     <SCOREFXNS>
-        <empty weights=empty />
+        <ScoreFunction name="empty" weights="empty" />
     </SCOREFXNS>
     <FILTERS>
-        <AtomicDistance name="asp_tyr_dist" residue1="152A" atomname1="OD2" residue2="191A" atomname2="OH" confidence=0 />
-        <PackStat name="packstat" confidence=0 />
-        <Rmsd name="transmembrane_rmsd" confidence=0 >
-            <span begin_pdb_num=29A end_pdb_num=39A/>
-            <span begin_pdb_num=47A end_pdb_num=72A/>
-            <span begin_pdb_num=100A end_pdb_num=120A/>
-            <span begin_pdb_num=123A end_pdb_num=140A/>
-            <span begin_pdb_num=177A end_pdb_num=197A/>
-            <span begin_pdb_num=216A end_pdb_num=240A/>
-            <span begin_pdb_num=244A end_pdb_num=266A/>
-            <span begin_pdb_num=277A end_pdb_num=300A/>
+        <AtomicDistance name="asp_tyr_dist" residue1="152A" atomname1="OD2" residue2="191A" atomname2="OH" confidence="0" />
+        <PackStat name="packstat" confidence="0" />
+        <Rmsd name="transmembrane_rmsd" confidence="0" >
+            <span begin_pdb_num="29A" end_pdb_num="39A"/>
+            <span begin_pdb_num="47A" end_pdb_num="72A"/>
+            <span begin_pdb_num="100A" end_pdb_num="120A"/>
+            <span begin_pdb_num="123A" end_pdb_num="140A"/>
+            <span begin_pdb_num="177A" end_pdb_num="197A"/>
+            <span begin_pdb_num="216A" end_pdb_num="240A"/>
+            <span begin_pdb_num="244A" end_pdb_num="266A"/>
+            <span begin_pdb_num="277A" end_pdb_num="300A"/>
         </Rmsd>
     </FILTERS>
     <MOVERS>
@@ -23,6 +23,7 @@
         <Add filter="packstat" />
         <Add filter="transmembrane_rmsd" />
     </PROTOCOLS>
-    <OUTPUT scorefxn=empty /> Don't output any of the standard scores.
-</ROSETTASCRIPTS>
+    <OUTPUT scorefxn="empty" /> Don't output any of the standard scores.
 
+
+</ROSETTASCRIPTS>

@@ -11,7 +11,7 @@
     <AbscriptLoopCloserCM name="closer" fragments="frags/frag3.txt" />
 
     <!-- Define the abinitio mover that will do torsion and beta-straind pairing insertions -->
-    <AbscriptMover name="abinitio" cycles=2 >
+    <AbscriptMover name="abinitio" cycles="2" >
       <!-- Abscript mover has special macros for defining the usual ab initio fragment movers, since there's three -->
       <!-- and they're very stereotyped. You could use the <Stage> tag syntax to do it, but it's a pain. -->
       <Fragments large_frags="frags/frag9.txt" small_frags="frags/frag3.txt" />
@@ -19,11 +19,11 @@
       <Stage ids="I-IVb" >
         <Mover name="jumps" />
       </Stage>
-    </Abscriptmover>
+    </AbscriptMover>
 
     <!-- Make the environment, and add the abinitio mover, followed by a loop closer. The loop closer obviously -->
     <!-- Only gets run once at the end, so it's not inside the Abscript mover. -->
-    <Environment name="env" auto_cut=1 allow_pure_movers=1 >
+    <Environment name="env" auto_cut="1" allow_pure_movers="1" >
       <Register mover="chunk" />
       <Apply mover="abinitio" />
       <Apply mover="closer" />
@@ -35,7 +35,7 @@
 
     <!-- Switch to full atom and relax. Abrelax actually only uses 5 FastRelax repetitions, but the RosettaScripts default is 8-->
     <SwitchResidueTypeSetMover name="fullatom" set="fa_standard" />
-    <FastRelax name="relax" repeats=5 />
+    <FastRelax name="relax" repeats="5" />
   </MOVERS>
   <FILTERS>
   </FILTERS>
@@ -46,4 +46,5 @@
     <Add mover="fullatom" />
     <Add mover="relax" />
   </PROTOCOLS>
+
 </ROSETTASCRIPTS>

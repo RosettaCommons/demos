@@ -1,0 +1,55 @@
+<ROSETTASCRIPTS>
+	<TASKOPERATIONS>
+	</TASKOPERATIONS>
+	<SCOREFXNS>
+		<score0 weights="score0" symmetric=1/>
+		<score1 weights="score1" symmetric=1/>
+		<score2 weights="score2" symmetric=1/>
+		<score5 weights="score5" symmetric=1/>
+		<score3 weights="score3" symmetric=1/>
+		<fullatom weights="talaris2013" symmetric=1/>
+	</SCOREFXNS>
+	<MOVERS>
+		<SetupForSymmetry name=symm definition="C2.symm"/>
+
+		Fragment movers
+    	<SingleFragmentMover name="frag9" fragments="frags.9mers.gz" policy="uniform"/>
+    	<SingleFragmentMover name="frag3" fragments="frags.3mers.gz" policy="smooth"/>
+
+		Fold-and-dock specific movers
+		<SymFoldandDockRbTrialMover    name="rbtrial" rot_mag=8.0 trans_mag=3.0 rotate_anchor_to_x=1/>
+		<SymFoldandDockRbTrialMover    name="rbtrial_smooth" rot_mag=1.0 trans_mag=0.1 rotate_anchor_to_x=1/>
+		<SymFoldandDockMoveRbJumpMover name="rbjump"/>
+		<SymFoldandDockSlideTrialMover name="slidetrial"/>
+
+		Random movers
+		<RandomMover name=early_stage_moveset movers="frag9,rbtrial,rbjump,slidetrial" weights="1.0,0.2,1.0,0.1" repeats=1/>
+		<RandomMover name=final_stage_moveset movers="frag3,rbtrial_smooth,rbjump,slidetrial" weights="1.0,0.2,1.0,0.1" repeats=1/>
+
+		Monte Carlo Movers
+		<GenericMonteCarlo name="stage1"  scorefxn_name="score0" mover_name="early_stage_moveset" temperature=2.0 trials=200 recover_low=1/>
+		<GenericMonteCarlo name="stage2"  scorefxn_name="score1" mover_name="early_stage_moveset" temperature=2.0 trials=200 recover_low=1/>
+		<GenericMonteCarlo name="stage3a" scorefxn_name="score2" mover_name="early_stage_moveset" temperature=2.0 trials=20 recover_low=1/>
+		<GenericMonteCarlo name="stage3b" scorefxn_name="score5" mover_name="early_stage_moveset" temperature=2.0 trials=20 recover_low=1/>
+	    <GenericMonteCarlo name="stage4"  scorefxn_name="score3" mover_name="final_stage_moveset" temperature=2.0 trials=400 recover_low=1/>
+
+		Special stage 3 logic
+		<ParsedProtocol name="stage3_cyc">
+			<Add mover=stage3a/>
+			<Add mover=stage3b/>
+		</ParsedProtocol>
+		<LoopOver name=stage3 mover_name=stage3_cyc iterations=5 drift=1/>
+
+		Converts the centroid-level pose to fullatom for scoring
+	    <SwitchResidueTypeSetMover name=fullatom set=fa_standard/>
+	</MOVERS>
+
+	<PROTOCOLS>
+		<Add mover=symm/>
+		<Add mover=stage1/>
+		<Add mover=stage2/>
+		<Add mover=stage3/>
+		<Add mover=stage4/>
+	    <Add mover=fullatom/>
+	</PROTOCOLS>
+</ROSETTASCRIPTS>

@@ -1,6 +1,6 @@
 Helix from sequence Protocol Capture
 ====================================
-KEYWORDS: MEMBRANES, STRUCTURE PREDICTION
+KEYWORDS: MEMBRANES STRUCTURE PREDICTION
 
 Follow the steps below. Example inputs and outputs are provided in the respective folders. 
 

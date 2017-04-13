@@ -1,20 +1,21 @@
 <ROSETTASCRIPTS>
    <SCOREFXNS>
-      <dens weights=talaris2013_cart>
-         <Reweight scoretype=elec_dens_fast weight=20.0/>
-      </dens>
+      <ScoreFunction name="dens" weights="talaris2013_cart">
+         <Reweight scoretype="elec_dens_fast" weight="20.0"/>
+      </ScoreFunction>
    </SCOREFXNS>
 
    <MOVERS>
-       <SetupForDensityScoring name=setupdens/>
-       <LoadDensityMap name=loaddens mapfile="1issA_6A.mrc"/>
-       <FastRelax name=relaxcart scorefxn=dens repeats=1 cartesian=1/>
+       <SetupForDensityScoring name="setupdens"/>
+       <LoadDensityMap name="loaddens" mapfile="1issA_6A.mrc"/>
+       <FastRelax name="relaxcart" scorefxn="dens" repeats="1" cartesian="1"/>
    </MOVERS>
 
    <PROTOCOLS>
-      <Add mover=setupdens/>
-      <Add mover=loaddens/>
-      <Add mover=relaxcart/>
+      <Add mover="setupdens"/>
+      <Add mover="loaddens"/>
+      <Add mover="relaxcart"/>
    </PROTOCOLS>
-   <OUTPUT scorefxn=dens/>
+   <OUTPUT scorefxn="dens"/>
+
 </ROSETTASCRIPTS>

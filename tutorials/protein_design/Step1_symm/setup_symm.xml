@@ -6,11 +6,12 @@
         <FILTERS>
 	</FILTERS>
         <MOVERS>
-          <SetupForSymmetry name=setup_symm definition=3UKM.symm />
+          <SetupForSymmetry name="setup_symm" definition="3UKM.symm" />
         </MOVERS>
         <APPLY_TO_POSE>
         </APPLY_TO_POSE>
         <PROTOCOLS>
-          <Add mover_name=setup_symm />
+          <Add mover_name="setup_symm" />
         </PROTOCOLS>
+
 </ROSETTASCRIPTS>

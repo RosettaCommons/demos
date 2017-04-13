@@ -32,7 +32,7 @@ We'd like to minimize the structure, allowing *jumps* (rigid-body transforms bet
 ```xml
 <ROSETTASCRIPTS>
 	<SCOREFXNS>
-		<tala weights="talaris2014.wts" />
+		<ScoreFunction name="tala" weights="talaris2014.wts" />
 	</SCOREFXNS>
 	<RESIDUE_SELECTORS>
 	</RESIDUE_SELECTORS>
@@ -238,7 +238,7 @@ One of the more powerful parts of RosettaScripts is the ability to combine indiv
 ```xml
 <ROSETTASCRIPTS>
 	<SCOREFXNS>
-		<t14 weights="talaris2014" />
+		<ScoreFunction name="t14" weights="talaris2014" />
 	</SCOREFXNS>
 	<RESIDUE_SELECTORS>
 	</RESIDUE_SELECTORS>
@@ -354,7 +354,7 @@ Have we addressed the second point?  Probably well enough, for our purposes: the
 ```xml
 <ROSETTASCRIPTS>
 	<SCOREFXNS>
-		<myscore weights=talaris2014 />
+		<ScoreFunction name="myscore" weights="talaris2014" />
 	</SCOREFXNS>
 	<RESIDUE_SELECTORS>
 	</RESIDUE_SELECTORS>
@@ -363,18 +363,18 @@ Have we addressed the second point?  Probably well enough, for our purposes: the
 	<FILTERS>
 	</FILTERS>
 	<MOVERS>
-		<RigidBodyPerturbNoCenter name=shift_peptide_a_tiny_bit rot_mag=0 trans_mag=0.2 />
-		<Small name=small_mover scorefxn=myscore temperature=0.5 nmoves=500 angle_max=10.0 preserve_detailed_balance=0 />
-		<PackRotamersMover name=repack_mover scorefxn=myscore />
-		<MinMover name=sidechain_min scorefxn=myscore tolerance=0.01 bb=false chi=true jump=0 />		
+		<RigidBodyPerturbNoCenter name="shift_peptide_a_tiny_bit" rot_mag="0" trans_mag="0.2" />
+		<Small name="small_mover" scorefxn="myscore" temperature="0.5" nmoves="500" angle_max="10.0" preserve_detailed_balance="0" />
+		<PackRotamersMover name="repack_mover" scorefxn="myscore" />
+		<MinMover name="sidechain_min" scorefxn="myscore" tolerance="0.01" bb="false" chi="true" jump="0" />		
 		
-		<ParsedProtocol name=monte_carlo_move mode=sequence >
-			<Add mover_name=pdb_traj_recorder_accepted />
-			<Add mover=shift_peptide_a_tiny_bit />
-			<Add mover_name=small_mover />
-			<Add mover_name=repack_mover />
-			<Add mover_name=sidechain_min />
-			<Add mover_name=pdb_traj_recorder />
+		<ParsedProtocol name="monte_carlo_move" mode="sequence" >
+			<Add mover_name="pdb_traj_recorder_accepted" />
+			<Add mover="shift_peptide_a_tiny_bit" />
+			<Add mover_name="small_mover" />
+			<Add mover_name="repack_mover" />
+			<Add mover_name="sidechain_min" />
+			<Add mover_name="pdb_traj_recorder" />
 		</ParsedProtocol>
 	</MOVERS>
 	<PROTOCOLS>
@@ -553,7 +553,7 @@ Now modify the original script, replacing the MutateResidue line as shown:
 ```xml
 <ROSETTASCRIPTS>
 	<SCOREFXNS>
-		<tala weights="talaris2014.wts" />
+		<ScoreFunction name="tala" weights="talaris2014.wts" />
 	</SCOREFXNS>
 	<RESIDUE_SELECTORS>
 	</RESIDUE_SELECTORS>
@@ -594,7 +594,7 @@ Let's set up a small sample BundleGridSampler run in nstruct mode to illustrate 
 ```xml
 <ROSETTASCRIPTS>
 	<SCOREFXNS>
-		<tala weights="talaris2014.wts" />
+		<ScoreFunction name="tala" weights="talaris2014.wts" />
 	</SCOREFXNS>
 	<RESIDUE_SELECTORS>
 	</RESIDUE_SELECTORS>

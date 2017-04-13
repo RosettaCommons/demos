@@ -1,31 +1,32 @@
-<dock_design>
+<ROSETTASCRIPTS>
     <TASKOPERATIONS>
     </TASKOPERATIONS>
     <SCOREFXNS>
-        <stage1 weights=score3 symmetric=1>
-            <Reweight scoretype=atom_pair_constraint weight=0.25/>
-            <Reweight scoretype=elec_dens_fast weight=10/>
-        </stage1>
-        <stage2 weights=score4_smooth_cart symmetric=1>
-            <Reweight scoretype=atom_pair_constraint weight=0.25/>
-            <Reweight scoretype=elec_dens_fast weight=10/>
-        </stage2>
-        <fullatom weights=talaris2013_cart symmetric=1>
-            <Reweight scoretype=atom_pair_constraint weight=0.25/>
-            <Reweight scoretype=elec_dens_fast weight=20/>
-        </fullatom>
+        <ScoreFunction name="stage1" weights="score3" symmetric="1">
+            <Reweight scoretype="atom_pair_constraint" weight="0.25"/>
+            <Reweight scoretype="elec_dens_fast" weight="10"/>
+        </ScoreFunction>
+        <ScoreFunction name="stage2" weights="score4_smooth_cart" symmetric="1">
+            <Reweight scoretype="atom_pair_constraint" weight="0.25"/>
+            <Reweight scoretype="elec_dens_fast" weight="10"/>
+        </ScoreFunction>
+        <ScoreFunction name="fullatom" weights="talaris2013_cart" symmetric="1">
+            <Reweight scoretype="atom_pair_constraint" weight="0.25"/>
+            <Reweight scoretype="elec_dens_fast" weight="20"/>
+        </ScoreFunction>
     </SCOREFXNS>
     <FILTERS>
     </FILTERS>
     <MOVERS>
-        <Hybridize name=hybridize stage1_scorefxn=stage1 stage2_scorefxn=stage2 fa_scorefxn=fullatom  batch=1 stage1_increase_cycles=1.0 stage2_increase_cycles=1.0 linmin_only=0 realign_domains=0>
-            <Template pdb="1iruA_thread.pdb" weight=1.0 cst_file="ex_D1_constraints.cst" symmdef="D7_edit.symm"/>
-            <Template pdb="1rypA_thread.pdb" weight=1.0 cst_file="ex_D1_constraints.cst" symmdef="D7_edit.symm"/>
+        <Hybridize name="hybridize" stage1_scorefxn="stage1" stage2_scorefxn="stage2" fa_scorefxn="fullatom"  batch="1" stage1_increase_cycles="1.0" stage2_increase_cycles="1.0" linmin_only="0" realign_domains="0">
+            <Template pdb="1iruA_thread.pdb" weight="1.0" cst_file="ex_D1_constraints.cst" symmdef="D7_edit.symm"/>
+            <Template pdb="1rypA_thread.pdb" weight="1.0" cst_file="ex_D1_constraints.cst" symmdef="D7_edit.symm"/>
         </Hybridize>
     </MOVERS>
     <APPLY_TO_POSE>
     </APPLY_TO_POSE>
     <PROTOCOLS>
-        <Add mover=hybridize/>
+        <Add mover="hybridize"/>
     </PROTOCOLS>
-</dock_design>
+
+</ROSETTASCRIPTS>

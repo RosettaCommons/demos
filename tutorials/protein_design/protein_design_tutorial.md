@@ -141,9 +141,8 @@ You should notice that this file shows two homo-dimers. We will focus on the dim
 
             The file should look like this:
 
-            <ROSETTASCRIPTS>
-                <SCOREFXNS>
-                  <mem_highres weights="membrane_highres_Menv_smooth.wts" symmetric="1" />
+<ROSETTASCRIPTS>                <SCOREFXNS>
+                  <ScoreFunction name="mem_highres" weights="membrane_highres_Menv_smooth.wts" symmetric="1" />
                 </SCOREFXNS>
                 <TASKOPERATIONS>
                   <InitializeFromCommandline name="ifcl"/>
@@ -275,25 +274,24 @@ You should notice that this file shows two homo-dimers. We will focus on the dim
 
 View this by opening Step0_relax/symm_relax.xml:
 
-     <ROSETTASCRIPTS>
-     <SCOREFXNS>
-       <mem_highres weights="membrane_highres_Menv_smooth.wts" symmetric=1 />
+<ROSETTASCRIPTS>     <SCOREFXNS>
+       <ScoreFunction name="mem_highres" weights="membrane_highres_Menv_smooth.wts" symmetric="1" />
      </SCOREFXNS>
      <TASKOPERATIONS>
-       <InitializeFromCommandline name=ifcl/>
-       <RestrictToRepacking name=rtr />
+       <InitializeFromCommandline name="ifcl"/>
+       <RestrictToRepacking name="rtr" />
      </TASKOPERATIONS>
      <FILTERS>
      </FILTERS>
      <MOVERS>
-       <SetupForSymmetry name=setup_symm definition=3UKM.symm />
-       <FastRelax name=fast_rlx scorefxn=mem_highres repeats=8 task_operations=ifcl,rtr />
+       <SetupForSymmetry name="setup_symm" definition="3UKM.symm" />
+       <FastRelax name="fast_rlx" scorefxn="mem_highres" repeats="8" task_operations="ifcl,rtr" />
      </MOVERS>
      <APPLY_TO_POSE>
      </APPLY_TO_POSE>
      <PROTOCOLS>
-       <Add mover_name=setup_symm />
-       <Add mover_name=fast_rlx />
+       <Add mover_name="setup_symm" />
+       <Add mover_name="fast_rlx" />
      </PROTOCOLS>
      </ROSETTASCRIPTS>
     

@@ -1,49 +1,50 @@
 <ROSETTASCRIPTS>
     <SCOREFXNS>
-        <optE_s12 weights=optE_inf_premin />
+        <ScoreFunction name="optE_s12" weights="optE_inf_premin" />
     </SCOREFXNS>
     <TASKOPERATIONS>
-        <RestrictToRepacking name=repack />
-        <InitializeFromCommandline name=cmd_line />
-        <IncludeCurrent name=use_input_sc />
-        <RestrictToInterfaceVector name=vector jump=1 CB_dist_cutoff=10.0 nearby_atom_cutoff=5.5  vector_angle_cutoff=75.0 vector_dist_cutoff=9.0 />
+        <RestrictToRepacking name="repack" />
+        <InitializeFromCommandline name="cmd_line" />
+        <IncludeCurrent name="use_input_sc" />
+        <RestrictToInterfaceVector name="vector" jump="1" CB_dist_cutoff="10.0" nearby_atom_cutoff="5.5"  vector_angle_cutoff="75.0" vector_dist_cutoff="9.0" />
     </TASKOPERATIONS>
     <FILTERS>
-        <ScoreType name=score_filter scorefxn=optE_s12 score_type=total_score threshold=-1 />
-        <Ddg name=ddg_filter scorefxn=optE_s12 threshold=-15 jump=1 repeats=3 repack=1 />
-        <Sasa name=sasa_filter threshold=800 jump=1 />
-        <InterfaceBindingEnergyDensityFilter name=bindingenergydensity sasa_filter=sasa_filter ddG_filter=ddg_filter threshold=-0.015 />
-        <BuriedUnsatHbonds name=unsats_filter jump_number=1 cutoff=20 scorefxn=optE_s12 />
-        <Rmsd name=rms threshold=5.0 />
+        <ScoreType name="score_filter" scorefxn="optE_s12" score_type="total_score" threshold="-1" />
+        <Ddg name="ddg_filter" scorefxn="optE_s12" threshold="-15" jump="1" repeats="3" repack="1" />
+        <Sasa name="sasa_filter" threshold="800" jump="1" />
+        <InterfaceBindingEnergyDensityFilter name="bindingenergydensity" sasa_filter="sasa_filter" ddG_filter="ddg_filter" threshold="-0.015" />
+        <BuriedUnsatHbonds name="unsats_filter" jump_number="1" cutoff="20" scorefxn="optE_s12" />
+        <Rmsd name="rms" threshold="5.0" />
     </FILTERS>
     <MOVERS>
-        <MinMover name=minSC scorefxn=optE_s12 chi=1 bb=0 jump=0 type="dfpmin_armijo_nonmonotone" tolerance=0.01 />
-        <MinMover name=minALL scorefxn=optE_s12 chi=1 bb=1 jump=1 type="dfpmin_armijo_nonmonotone" tolerance=0.001 />
-        <PackRotamersMover name=pack scorefxn=optE_s12 task_operations=use_input_sc,repack,cmd_line />
-        <ParsedProtocol name=min_pack_min>
-            <Add mover_name=minSC />
-            <Add mover_name=pack />
-            <Add mover_name=minALL />
+        <MinMover name="minSC" scorefxn="optE_s12" chi="1" bb="0" jump="0" type="dfpmin_armijo_nonmonotone" tolerance="0.01" />
+        <MinMover name="minALL" scorefxn="optE_s12" chi="1" bb="1" jump="1" type="dfpmin_armijo_nonmonotone" tolerance="0.001" />
+        <PackRotamersMover name="pack" scorefxn="optE_s12" task_operations="use_input_sc,repack,cmd_line" />
+        <ParsedProtocol name="min_pack_min">
+            <Add mover_name="minSC" />
+            <Add mover_name="pack" />
+            <Add mover_name="minALL" />
         </ParsedProtocol>
-        <MinMover name=minMov scorefxn=optE_s12 chi=1 bb=1 jump=1 type=dfpmin_armijo_nonmonotone tolerance=0.001 />
-        <MinPackMover name=minPacMov scorefxn=optE_s12 task_operations=cmd_line,vector />
-        <InterfaceAnalyzerMover name=fullanalyze scorefxn=optE_s12 packstat=1 pack_input=0 jump=1 tracer=0 use_jobname=1 resfile=0 />
+        <MinMover name="minMov" scorefxn="optE_s12" chi="1" bb="1" jump="1" type="dfpmin_armijo_nonmonotone" tolerance="0.001" />
+        <MinPackMover name="minPacMov" scorefxn="optE_s12" task_operations="cmd_line,vector" />
+        <InterfaceAnalyzerMover name="fullanalyze" scorefxn="optE_s12" packstat="1" pack_input="0" jump="1" tracer="0" use_jobname="1" resfile="0" />
     </MOVERS>
     <APPLY_TO_POSE>
     </APPLY_TO_POSE>
     <PROTOCOLS>
-        <Add mover_name=min_pack_min />
-        <Add mover_name=minPacMov />
-        <Add mover_name=minMov />
+        <Add mover_name="min_pack_min" />
+        <Add mover_name="minPacMov" />
+        <Add mover_name="minMov" />
 
-        <Add filter_name=score_filter />
-        <Add filter_name=ddg_filter />
-        <Add filter_name=sasa_filter />
-        <Add filter_name=bindingenergydensity />
-        <Add filter_name=unsats_filter />
-        <Add filter_name=rms />
+        <Add filter_name="score_filter" />
+        <Add filter_name="ddg_filter" />
+        <Add filter_name="sasa_filter" />
+        <Add filter_name="bindingenergydensity" />
+        <Add filter_name="unsats_filter" />
+        <Add filter_name="rms" />
 
-        <Add mover_name=fullanalyze />
+        <Add mover_name="fullanalyze" />
     </PROTOCOLS>
-</ROSETTASCRIPTS>
 
+
+</ROSETTASCRIPTS>

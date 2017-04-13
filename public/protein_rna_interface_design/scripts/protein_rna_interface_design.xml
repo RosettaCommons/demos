@@ -2,14 +2,14 @@
     <SCOREFXNS>
     </SCOREFXNS>
     <RESIDUE_SELECTORS>
-	<Index name="rna_p_res" resnums=1,4,7,10,13,16,19/>
+	<Index name="rna_p_res" resnums="1,4,7,10,13,16,19"/>
 	<Chain name="rna_chain" chains="Q"/>
-	<And name="rna_res_only" selectors=rna_p_res,rna_chain/>
-	<Neighborhood name="RNA_neighbors" distance=10.0 selector=rna_res_only/>
+	<And name="rna_res_only" selectors="rna_p_res,rna_chain"/>
+	<Neighborhood name="RNA_neighbors" distance="10.0" selector="rna_res_only"/>
     </RESIDUE_SELECTORS>
     <TASKOPERATIONS>
   	<OperateOnResidueSubset name="iface">
-		<Not selector=RNA_neighbors/>	
+		<Not selector="RNA_neighbors"/>	
 		<RestrictToRepackingRLT/>
 	</OperateOnResidueSubset>
     </TASKOPERATIONS>
@@ -36,5 +36,6 @@
         <Add mover_name="ppk"/>
         <Add mover_name="packer"/>
     </PROTOCOLS>
-</ROSETTASCRIPTS>
 
+
+</ROSETTASCRIPTS>

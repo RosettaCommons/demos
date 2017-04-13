@@ -1,6 +1,6 @@
 <ROSETTASCRIPTS>
 	<SCOREFXNS>
-		<tala weights="talaris2014.wts" />
+		<ScoreFunction name="tala" weights="talaris2014.wts" />
 	</SCOREFXNS>
 	<RESIDUE_SELECTORS>
 		<Layer name="select_core" select_core="true" select_boundary="false" select_surface="false" core_cutoff="2.5" surface_cutoff="0.5" />
@@ -38,4 +38,5 @@
 		<Add mover="design_core" />
 	</PROTOCOLS>
 	<OUTPUT scorefxn="tala" />
+
 </ROSETTASCRIPTS>

@@ -2,21 +2,22 @@
 	<SCOREFXNS>
 	</SCOREFXNS>
 	<TASKOPERATIONS>
-		<InitializeFromCommandline name=ifcl />
-		<RestrictToRepacking name=rtr />
+		<InitializeFromCommandline name="ifcl" />
+		<RestrictToRepacking name="rtr" />
 		Fix residues known experimentally to be critical in interaction
-		<PreventResiduesFromRepacking name=prfrp residues=11,41,345 />
+		<PreventResiduesFromRepacking name="prfrp" residues="11,41,345" />
 	</TASKOPERATIONS>
 	<FILTERS>
 	</FILTERS>
 	<MOVERS>
-		<PackRotamersMover name=repack scorefxn=talaris2013 task_operations=ifcl,rtr,prfrp />
-		<MinMover name=minimize_sc scorefxn=talaris2013 chi=1 bb=0 jump=0 type=dfpmin_armijo_nonmonotone tolerance=0.0001 />
+		<PackRotamersMover name="repack" scorefxn="talaris2013" task_operations="ifcl,rtr,prfrp" />
+		<MinMover name="minimize_sc" scorefxn="talaris2013" chi="1" bb="0" jump="0" type="dfpmin_armijo_nonmonotone" tolerance="0.0001" />
 	</MOVERS>
 	<APPLY_TO_POSE>
 	</APPLY_TO_POSE>
 	<PROTOCOLS>
-		<Add mover=repack />
-		<Add mover=minimize_sc />
+		<Add mover="repack" />
+		<Add mover="minimize_sc" />
 	</PROTOCOLS>
+
 </ROSETTASCRIPTS>

@@ -1,6 +1,6 @@
 MP Score Protocol Capture
 =========================
-KEYWORDS: MEMBRANES, ANALYSIS
+KEYWORDS: MEMBRANES ANALYSIS
 
 Follow the steps below. Example inputs and outputs are provided in the respective folders. 
 Three different options are provided:

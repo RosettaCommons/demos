@@ -1,13 +1,14 @@
 <ROSETTASCRIPTS>
 	<MOVERS>
-		<FastRelax name=demo scorefxn=talaris2014 repeats=1>
+		<FastRelax name="demo" scorefxn="talaris2014" repeats="1">
 			<MoveMap>
-				<Span begin=1 end=800 chi=0 bb=0 />
-				<Span begin=1000 end=1200 chi=0 bb=0/>
+				<Span begin="1" end="800" chi="0" bb="0" />
+				<Span begin="1000" end="1200" chi="0" bb="0"/>
 			</MoveMap>
 		</FastRelax>
 	</MOVERS>
 	<PROTOCOLS>
-   		<Add mover=demo/>
+   		<Add mover="demo"/>
 	</PROTOCOLS>
+
 </ROSETTASCRIPTS>

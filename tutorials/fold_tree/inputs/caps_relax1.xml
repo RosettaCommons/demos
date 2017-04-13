@@ -9,17 +9,18 @@
     </FILTERS>
     <MOVERS>
 	<AtomTree name="tree" fold_tree_file="inputs/caps_tree1.ft"/>
-	<FastRelax name="relax" repeats=7>
+	<FastRelax name="relax" repeats="7">
 		<MoveMap name="part">
-			<Span begin=1 end=20 bb=1 chi=1/>
+			<Span begin="1" end="20" bb="1" chi="1"/>
 		</MoveMap>
 	</FastRelax>
     </MOVERS>
     <APPLY_TO_POSE>
     </APPLY_TO_POSE>
     <PROTOCOLS>
-	<Add mover=tree/>
-	<Add mover=relax/>
+	<Add mover="tree"/>
+	<Add mover="relax"/>
     </PROTOCOLS>
     <OUTPUT />
+
 </ROSETTASCRIPTS>

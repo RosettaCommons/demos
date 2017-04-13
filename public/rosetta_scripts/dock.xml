@@ -1,0 +1,19 @@
+This protocol will simply do low-resolution followed by high-resolution docking. It will also report the binding energy (ddg) and buried-surface area (sasa) in the score file.
+<dock_design>
+	<SCOREFXNS>
+	</SCOREFXNS>
+	<FILTERS>
+		<Sasa name=sasa confidence=0/> change confidence to 1, if you want low-sasa structures to be suppressed.
+		<Ddg name=ddg confidence=0/>
+	</FILTERS>
+	<MOVERS>
+		<Docking name=dock1 fullatom=1 local_refine=0 score_high=score12/> make fullatom=0 to do low-resolution only docking. Change local_refine=1 to do only high-resolution docking.
+	</MOVERS>
+	<APPLY_TO_POSE>
+	</APPLY_TO_POSE>
+	<PROTOCOLS>
+		<Add mover_name=dock1/>
+		<Add filter_name=sasa/>
+		<Add filter_name=ddg/>
+	</PROTOCOLS>
+</dock_design>

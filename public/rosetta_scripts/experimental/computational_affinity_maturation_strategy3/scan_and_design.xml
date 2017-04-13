@@ -1,0 +1,113 @@
+Scan all interface residues on chain B (designed chain) and report all substitutions 
+that do not destabilize the monomer (in the unbound state) as well as do not reduce 
+binding affinity or add strain. Use bb/rb/sc minimization before evaluating these energetic parameters.
+
+Run this script on input structures that have been prepacked with bb minimization on chain B. 
+It is crucial to have a proper reference state for all of the energetic calculations here!
+
+More generally, this script can be used to scan across a set of residues with a filter. 
+It will create a detailed list of the consequences of mutations in each allowed position 
+as well as output a resfile containing all allowable residues according to the filter. 
+After each mutation a user-defined relax mover is called.
+
+Potential uses: scan all positions in a set of scaffolds to identify mutations 
+that won't destabilize the protein too much; residue scans (ala, trp, etc.) on a large set of proteins.
+
+Running: rosetta_scripts -database  -s  -parser:protocol  -ex1 -ex2 -include_input_sc
+
+Run each input file in a separate directory to ensure that the resfiles that are 
+output do not override one another.
+
+<dock_design>
+        <TASKOPERATIONS>
+                <InitializeFromCommandline name=init/>
+                <ProteinInterfaceDesign name=pido allow_all_aas=1 design_all_aas=1/>
+                <ProteinInterfaceDesign name=repack_interface design_chain1=0 design_chain2=0/>
+		The two resfiles below will be written out as intermediate files by the ScanFilter functions, below.
+		<ReadResfile name=stabilizing_mutations filename="stabilize.resfile"/>
+		<ReadResfile name=binding_mutations filename="binding.resfile"/>
+		<ReadResfile name=strain_reducing_mutations filename="strain_reduction.resfile"/>
+		Histidines are a source of trouble for Rosetta energetics at the interface. Better to avoid them completely
+		<RestrictAbsentCanonicalAAS name=nohis keep_aas="ACDEFGIKLMNPQRSTVWY"/>
+        </TASKOPERATIONS>
+	<MOVERS>
+		connect chains by their geometric centres. Good for minimization
+                <AtomTree name=docking_tree docking_ft=1/>
+		minimize sc, rb, and bb (of chain 2 only)
+                <MinMover name=min_all bb=0 chi=1 jump=1> 
+			<MoveMap>
+				<Chain number=1 bb=0 chi=1/>
+			</MoveMap>
+		</MinMover>
+		<PackRotamersMover name=pack_interface task_operations=init,repack_interface/>
+		before running the baseline calculation in filter scan, you need to relax the ppk'ed structure
+		<ParsedProtocol name=relax_before_baseline> 
+			<Add mover=docking_tree/>
+			<Add mover=pack_interface/>
+			<Add mover=min_all/>
+		</ParsedProtocol>
+	</MOVERS>
+        <FILTERS>
+		The difference in energy between the bound conformation in the unbound form and the unbound and relaxed form
+                <BindingStrain name=strain task_operations=repack_interface confidence=0/> 
+                <Delta name=delta_strain filter=strain upper=1 lower=0 range=0.2 relax_mover=relax_before_baseline/>
+                <FilterScan name=scan_strain_removal relax_mover=relax_before_baseline task_operations=pido,init,nohis,stabilizing_mutations filter=delta_strain triage_filter=delta_strain resfile_name="strain_reduction.resfile"/>
+                <ScoreType name=total_score score_type=total_score threshold=0.0/>
+		I think that 1 repeat should suffice as the calculations on minimized designs are actually rather stable.
+		<Ddg name=ddg confidence=0.0 repeats=1/>
+		Delta filter measures a filter's value with respect to a baseline that is computed on the input structure. 
+		Here, we're measuring the difference in monomer stability (of chain 2 in the unbound state) wrt the input structure. 
+		range - how much slack do you allow. If you only want true stabilizing mutations, 
+		still use something a notch above 0, b/c numerical inaccuracies will otherwise sometimes preclude the native residue.
+		<Delta name=delta_score filter=total_score upper=1 lower=0 range=0.2 unbound=1 jump=1 relax_mover=relax_before_baseline/> 
+		Here, measuring the binding energy gain
+		<Delta name=delta_ddg filter=ddg upper=1 lower=0 range=0.2 relax_mover=relax_before_baseline/> 
+        </FILTERS>
+        <MOVERS>
+		Introduce random mutations according to the binding_mutations resfile
+		<RandomMutation name=mut task_operations=init,pido,binding_mutations,nohis/>
+		<ParsedProtocol name=mut_min>
+			<Add mover=mut/>
+			<Add mover=min_all/>
+		</ParsedProtocol>
+		multicriterion MC optimization of binding energy & monomer stability
+		<GenericMonteCarlo name=MC mover_name=mut_min filter_name=delta_score trials=200 temperature=1.0 preapply=0> 
+			<Filters>
+				strict
+				<AND filter_name=delta_ddg temperature=0.5 rank=1/> 
+				be relatively lenient here
+				<AND filter_name=delta_strain temperature=2/> 
+			</Filters>
+		</GenericMonteCarlo>
+        </MOVERS>
+	<FILTERS>
+		This is where most of the time and effort is spent. Produces a resfile showing which residue substitutions do not destabilize chain 2 in the unbound state
+		<FilterScan name=scan_stabilizing relax_mover=min_all task_operations=pido,init,nohis filter=delta_score triage_filter=delta_score resfile_name="stabilize.resfile"/> 
+		produces a resfile showing shiwch subset of the non-destabilizing mutations (from the above step) do not harm binding affinity
+		<FilterScan name=scan_binding relax_mover=min_all task_operations=pido,init,strain_reducing_mutations,nohis filter=delta_ddg triage_filter=delta_ddg resfile_name="binding.resfile"/> 
+		<Time name=scan_stabilizing_timer/>
+		<Time name=scan_strain_removal_timer/>
+		<Time name=scan_binding_timer/>
+		<Time name=MC_timer/>
+	</FILTERS>
+        <PROTOCOLS>
+		<Add mover=docking_tree/>
+		<Add filter=scan_stabilizing_timer/>
+		<Add filter=scan_stabilizing/> fastest goes first (no repacks here)
+		<Add filter=scan_stabilizing_timer/>
+		<Add filter=scan_strain_removal_timer/>
+		<Add filter=scan_strain_removal/> slower (one repack)
+		<Add filter=scan_strain_removal_timer/>
+		<Add filter=scan_binding_timer/>
+		<Add filter=scan_binding/> slowest (two repacks x repeats)
+		<Add filter=scan_binding_timer/>
+		starting structure is prepacked, and is a poor starting point for MC
+		<Add mover=pack_interface/> 
+		<Add filter=MC_timer/>
+		<Add mover=MC/>
+		<Add filter=MC_timer/>
+		<Add filter=ddg/>
+		<Add filter=total_score/>
+		<Add filter=strain/>
+        </PROTOCOLS>
+</dock_design>

@@ -1,0 +1,43 @@
+<dock_design>
+        <TASKOPERATIONS>
+                <InitializeFromCommandline name=init/>
+                <ProteinInterfaceDesign name=pido/>
+                <RestrictResidueToRepacking name=restrict314 resnum=314/>
+                <RestrictResidueToRepacking name=restrict318 resnum=318/>
+                <RestrictAbsentCanonicalAAS name=nohis keep_aas="ACDEFGIKLMNPQRSTVWY"/>
+        </TASKOPERATIONS>
+        <SCOREFXNS>
+        </SCOREFXNS>
+        <FILTERS>
+                <Sasa name=hydrophobic_sasa hydrophobic=1 confidence=0/>
+                <Sasa name=sasa confidence=0/>
+                <Ddg name=ddg confidence=0 repeats=3/>
+                <ScoreType name=total_score score_type=total_score threshold=0/>
+        </FILTERS>
+        <MOVERS>
+                <AtomTree name=docking_tree docking_ft=1/>
+                <RandomMutation name=random_mutation task_operations=init,pido,restrict314,restrict318,nohis/>
+                <MinMover name=min bb=1 chi=1 jump=1>
+                        <MoveMap>
+                                <Chain number=1 chi=1 bb=0/>
+                        </MoveMap>
+                </MinMover>
+                <ParsedProtocol name=agg_mover>
+                        <Add mover=random_mutation/>
+                        <Add mover=min/>
+                </ParsedProtocol>
+                <GenericMonteCarlo name=genericMC mover_name=agg_mover filter_name=ddg temperature=0.1 trials=1000>
+                        <Filters>
+                                <AND filter_name=total_score temperature=1/>
+                        </Filters>
+                </GenericMonteCarlo>
+        </MOVERS>
+        <APPLY_TO_POSE>
+        </APPLY_TO_POSE>
+        <PROTOCOLS>
+                <Add mover=docking_tree/>
+                <Add mover=genericMC/>
+                <Add filter=ddg/>
+                <Add filter=sasa/>
+        </PROTOCOLS>
+</dock_design>

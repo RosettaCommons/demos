@@ -1,0 +1,26 @@
+A script for generating a bunch of loophash decoys, then batch relaxing them.  The loophash relax mover will generate 4 output structures; if -nstruct 4 is used this code will only get called once yet all 4 structures will be output.
+Recommended command-line:
+rostta_scripts -s  PDB  -parser:protocol loophash_batchrelax.xml -database ~/minirosetta_database -nstruct 4
+<dock_design>
+        <TASKOPERATIONS>
+            <RestrictToRepacking name=restrict/>
+            <IncludeCurrent name=keep_curr/>
+        </TASKOPERATIONS>
+        <SCOREFXNS>
+			<fa_score weights=score12_full/>
+			<cen_score weights=score3/>
+        </SCOREFXNS>
+        <FILTERS>
+			<ScoreType name=fa_filter scorefxn=fa_score score_type=total_score threshold=100000/>
+			<ScoreType name=cen_filter scorefxn=cen_score score_type=total_score threshold=100000/>
+        </FILTERS>
+        <MOVERS>
+			<FastRelax name=relax scorefxn=score12 batch=1 task_operations=restrict,keep_curr/>
+			<LoopHash name=loophash_relax start_res_num=10 stop_res_num=50 loop_sizes=7 centroid_filter=cen_filter ncentroid=32 db_path="/work/dimaio/LoopHash/" relax_mover=relax batch_size=8 fullatom_filter=fa_filter/>
+        </MOVERS>
+        <APPLY_TO_POSE>
+        </APPLY_TO_POSE>
+        <PROTOCOLS>
+           <Add mover=loophash_relax/>
+       </PROTOCOLS>
+</dock_design>

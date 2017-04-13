@@ -1,22 +1,23 @@
-<dock_design>
+<ROSETTASCRIPTS>
 	<TASKOPERATIONS>
-		<InitializeFromCommandline name=IFC/>
-		<IncludeCurrent name=IC/>
-		<RestrictDesignToProteinDNAInterface name=DnaInt base_only=1 z_cutoff=3.0 dna_defs=X.208.CYT,X.209.ADE/>
-		<OperateOnCertainResidues name=AUTOprot>
-			<AddBehaviorRLT behavior=AUTO/>
-			<ResidueHasProperty property=PROTEIN/>
+		<InitializeFromCommandline name="IFC"/>
+		<IncludeCurrent name="IC"/>
+		<RestrictDesignToProteinDNAInterface name="DnaInt" base_only="1" z_cutoff="3.0" dna_defs="X.208.CYT,X.209.ADE"/>
+		<OperateOnCertainResidues name="AUTOprot">
+			<ResidueHasProperty property="PROTEIN"/>
+			<AddBehaviorRLT behavior="AUTO"/>
 		</OperateOnCertainResidues>
 	</TASKOPERATIONS>
 	<SCOREFXNS>
-		<DNA weights=dna/>
+		<ScoreFunction name="DNA" weights="dna"/>
 	</SCOREFXNS>
 	<FILTERS>
 	</FILTERS>
 	<MOVERS>
-		<DnaInterfaceMultiStateDesign name=msd scorefxn=DNA task_operations=IFC,IC,AUTOprot,DnaInt pop_size=20 num_packs=2 numresults=10 boltz_temp=2 anchor_offset=15 mutate_rate=0.8 generations=10/>
+		<DnaInterfaceMultiStateDesign name="msd" scorefxn="DNA" task_operations="IFC,IC,AUTOprot,DnaInt" pop_size="20" num_packs="2" numresults="10" boltz_temp="2" anchor_offset="15" mutate_rate="0.8" generations="10"/>
 	</MOVERS>
 	<PROTOCOLS>
-		<Add mover_name=msd/>
+		<Add mover_name="msd"/>
 	</PROTOCOLS>
-</dock_design>
+
+</ROSETTASCRIPTS>
