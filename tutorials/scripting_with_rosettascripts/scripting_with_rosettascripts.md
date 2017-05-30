@@ -208,7 +208,7 @@ This brings up another RosettaScripts syntax convention: generally, we have bloc
 
 Looking at the output PDB, the output structure (1ubq\_0001.pdb) should be nearly identical to the input structure. The major difference should be the presence of hydrogens which were not in the input structure. This is *not* something that is specific to RosettaScripts - in general Rosetta will add missing hydrogens and repack sidechain atoms missing in the input PDB.
 
-Additionally, you should see the standard Rosetta score table at the end of the PDB. By default, the structure will be rescored with the default Rosetta score function (talaris2014, as of this writing). This can be controlled by the ```-score:weights``` command line option.
+Additionally, you should see the standard Rosetta score table at the end of the PDB. By default, the structure will be rescored with the default Rosetta score function (ref2015, as of this writing). This can be controlled by the ```-score:weights``` command line option.
 
 ## Controlling RosettaScripts File Output
 
@@ -228,8 +228,8 @@ Each custom scorefunction is defined by different sub-tags in the SCOREFXNS sect
 ```
 <ROSETTASCRIPTS>
     <SCOREFXNS>
-        <ScoreFunction name="t13" weights="talaris2013" />
-        <ScoreFunction name="t14_cart" weights="talaris2014" >
+        <ScoreFunction name="molmech" weights="mm_std_fa_elec_dslf_fa13" />
+        <ScoreFunction name="r15_cart" weights="ref2015" >
             <Reweight scoretype="pro_close" weight="0.0" />
             <Reweight scoretype="cart_bonded" weight="0.625" />
         </ScoreFunction>
@@ -246,13 +246,13 @@ Each custom scorefunction is defined by different sub-tags in the SCOREFXNS sect
     </APPLY_TO_POSE>
     <PROTOCOLS>
     </PROTOCOLS>
-    <OUTPUT scorefxn="t14_cart" />
+    <OUTPUT scorefxn="r15_cart" />
 </ROSETTASCRIPTS>
 ```
 
-The script scorefxn.xml gives and example of defining different scorefunctions. It defines two scorefunctions.  The first one (t13) is simply the talaris2013 weights used as-is, and the second is the talaris2014 weights modified by changing the weights (coefficients) for certain score terms. (One can also use patch files, or locally-specified weights file; additionally, other scorefunction options can be set, such as soft Lennard-Jones potentials or whatnot.  See the documentation on the ```Set``` tag in the [RosettaScripts documentation](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/RosettaScripts) for more on this.)
+The script scorefxn.xml gives and example of defining different scorefunctions. It defines two scorefunctions.  The first one (molmech) is a molecular mechanics scorefunction that is included in the Rosetta database, used as-is, and the second (r15\_cart) is the ref2015 scorefunction modified by changing the weights (coefficients) for certain score terms. (One can also use patch files, or locally-specified weights files; additionally, other scorefunction options can be set, such as soft Lennard-Jones potentials or whatnot.  See the documentation on the ```Set``` tag in the [RosettaScripts documentation](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/RosettaScripts) for more on this.)
 
-The t13 scorefunction is never used in this script, which is not a problem -- RosettaScripts does not object to objects that are defined but never used (though the unnecessary allocation of these objects in memory is probably best avoided if one can help it).  The t14\_cart score function *is* used, however, in the OUTPUT tag. This tells RosettaScripts to rescore the output structures with the custom t14\_cart score function, rather than with the default (command line) scorefunction. Run 1ubq.pdb through the script:
+The molmech scorefunction is never used in this script, which is not a problem -- RosettaScripts does not object to objects that are defined but never used (though the unnecessary allocation of these objects in memory is probably best avoided if one can help it).  The r15\_cart score function *is* used, however, in the OUTPUT tag. This tells RosettaScripts to rescore the output structures with the custom r15\_cart scorefunction, rather than with the default (command line) scorefunction. Run 1ubq.pdb through the script:
 
 ```bash
 $> cp inputs/scoring.xml .
