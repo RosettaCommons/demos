@@ -1,6 +1,6 @@
 <ROSETTASCRIPTS>
 	<SCOREFXNS>
-		<ScoreFunction name="t14" weights="talaris2014" />
+		<ScoreFunction name="r15" weights="ref2015" />
 	</SCOREFXNS>
 	<RESIDUE_SELECTORS>
 	</RESIDUE_SELECTORS>
@@ -11,14 +11,14 @@
 	<FILTERS>
 	</FILTERS>
 	<MOVERS>
-		<PackRotamersMover name="pack1" scorefxn="t14" task_operations="no_design,extrachi" />
+		<PackRotamersMover name="pack1" scorefxn="r15" task_operations="no_design,extrachi" />
 	</MOVERS>
 	<APPLY_TO_POSE>
 	</APPLY_TO_POSE>
 	<PROTOCOLS>
 		<Add mover="pack1" />
 	</PROTOCOLS>
-	<OUTPUT scorefxn="t14" />
+	<OUTPUT scorefxn="r15" />
 
 
 </ROSETTASCRIPTS>

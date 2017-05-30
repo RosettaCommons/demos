@@ -1,6 +1,6 @@
 <ROSETTASCRIPTS>
 	<SCOREFXNS>
-		<ScoreFunction name="t14" weights="talaris2014" />
+		<ScoreFunction name="r15" weights="ref2015" />
 	</SCOREFXNS>
 	<RESIDUE_SELECTORS>
 	</RESIDUE_SELECTORS>
@@ -14,8 +14,8 @@
 		<SidechainRmsd name="Y59_rmsd" res1_pdb_num="59A" res2_pdb_num="59A" include_backbone="1" confidence="0.0" />
 	</FILTERS>
 	<MOVERS>
-		<MinMover name="min" scorefxn="t14" chi="true" bb="true" cartesian="false" />
-		<PackRotamersMover name="pack" scorefxn="t14" task_operations="repackonly,extrachi"/>
+		<MinMover name="min" scorefxn="r15" chi="true" bb="true" cartesian="false" />
+		<PackRotamersMover name="pack" scorefxn="r15" task_operations="repackonly,extrachi"/>
 	</MOVERS>
 	<APPLY_TO_POSE>
 	</APPLY_TO_POSE>
@@ -26,7 +26,7 @@
 		<Add filter="F45_rmsd" />
 		<Add filter="Y59_rmsd" />
 	</PROTOCOLS>
-	<OUTPUT scorefxn="t14" />
+	<OUTPUT scorefxn="r15" />
 
 
 </ROSETTASCRIPTS>
