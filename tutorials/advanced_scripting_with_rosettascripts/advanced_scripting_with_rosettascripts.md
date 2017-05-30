@@ -32,7 +32,7 @@ We'd like to minimize the structure, allowing *jumps* (rigid-body transforms bet
 ```xml
 <ROSETTASCRIPTS>
 	<SCOREFXNS>
-		<ScoreFunction name="tala" weights="talaris2014.wts" />
+		<ScoreFunction name="ref15sfxn" weights="ref2015.wts" />
 	</SCOREFXNS>
 	<RESIDUE_SELECTORS>
 	</RESIDUE_SELECTORS>
@@ -48,7 +48,7 @@ We'd like to minimize the structure, allowing *jumps* (rigid-body transforms bet
 	<PROTOCOLS>
 		<Add mover="minimize1" />
 	</PROTOCOLS>
-	<OUTPUT scorefxn="tala" />
+	<OUTPUT scorefxn="ref15sfxn" />
 </ROSETTASCRIPTS>
 ```
 
@@ -133,7 +133,7 @@ You can see that on top in the ```<SCOREFXNS>``` part, we have added a new line:
 ```xml
 ...
 	<SCOREFXNS>
-	    <sfx_symm weights="talaris2014" symmetric="true" />
+	    <sfx_symm weights="ref2015" symmetric="true" />
 	</SCOREFXNS>
 ...
 ```
@@ -238,7 +238,7 @@ One of the more powerful parts of RosettaScripts is the ability to combine indiv
 ```xml
 <ROSETTASCRIPTS>
 	<SCOREFXNS>
-		<ScoreFunction name="t14" weights="talaris2014" />
+		<ScoreFunction name="r15" weights="ref2015" />
 	</SCOREFXNS>
 	<RESIDUE_SELECTORS>
 	</RESIDUE_SELECTORS>
@@ -252,7 +252,7 @@ One of the more powerful parts of RosettaScripts is the ability to combine indiv
 	</APPLY_TO_POSE>
 	<PROTOCOLS>
 	</PROTOCOLS>
-	<OUTPUT scorefxn="t14" />
+	<OUTPUT scorefxn="r15" />
 </ROSETTASCRIPTS>
 
 ```
@@ -262,7 +262,7 @@ For our example protocol, we'll add the [RotamerTrialsMinMover](https://www.rose
 ```xml
 ...
 	<MOVERS>
-		<RotamerTrialsMinMover name="rtmm" scorefxn="t14" task_operations="repackonly,extrachi" />
+		<RotamerTrialsMinMover name="rtmm" scorefxn="r15" task_operations="repackonly,extrachi" />
 	</MOVERS>
 ...
 ```
@@ -272,7 +272,7 @@ To make sure we get the best score we possibly can, we're going to repeat the Ro
 ```xml
 ...
 	<MOVERS>
-		<RotamerTrialsMinMover name="rtmm" scorefxn="t14" task_operations="repackonly,extrachi" />
+		<RotamerTrialsMinMover name="rtmm" scorefxn="r15" task_operations="repackonly,extrachi" />
 		<IteratedConvergence name="rotopt" mover="rtmm" delta="0.1" cycles="1" />
 	</MOVERS>
 ...
@@ -283,7 +283,7 @@ For the filter that the IteratedConvergence mover takes, we'll use the [ScoreTyp
 ```xml
 ...
 	<FILTERS>
-		<ScoreType name="total_score" scorefxn="t14" score_type="total_score" threshold="0" />
+		<ScoreType name="total_score" scorefxn="r15" score_type="total_score" threshold="0" />
 	</FILTERS>
 ...
 	<MOVERS>
@@ -354,7 +354,7 @@ Have we addressed the second point?  Probably well enough, for our purposes: the
 ```xml
 <ROSETTASCRIPTS>
 	<SCOREFXNS>
-		<ScoreFunction name="myscore" weights="talaris2014" />
+		<ScoreFunction name="myscore" weights="ref2015" />
 	</SCOREFXNS>
 	<RESIDUE_SELECTORS>
 	</RESIDUE_SELECTORS>
@@ -553,7 +553,7 @@ Now modify the original script, replacing the MutateResidue line as shown:
 ```xml
 <ROSETTASCRIPTS>
 	<SCOREFXNS>
-		<ScoreFunction name="tala" weights="talaris2014.wts" />
+		<ScoreFunction name="ref15sfxn" weights="ref2015.wts" />
 	</SCOREFXNS>
 	<RESIDUE_SELECTORS>
 	</RESIDUE_SELECTORS>
@@ -569,7 +569,7 @@ Now modify the original script, replacing the MutateResidue line as shown:
 	<PROTOCOLS>
 		<Add mover="mutate" />
 	</PROTOCOLS>
-	<OUTPUT scorefxn="tala" />
+	<OUTPUT scorefxn="ref15sfxn" />
 </ROSETTASCRIPTS>
 ```
 
@@ -594,7 +594,7 @@ Let's set up a small sample BundleGridSampler run in nstruct mode to illustrate 
 ```xml
 <ROSETTASCRIPTS>
 	<SCOREFXNS>
-		<ScoreFunction name="tala" weights="talaris2014.wts" />
+		<ScoreFunction name="ref15sfxn" weights="ref2015.wts" />
 	</SCOREFXNS>
 	<RESIDUE_SELECTORS>
 	</RESIDUE_SELECTORS>
@@ -603,7 +603,7 @@ Let's set up a small sample BundleGridSampler run in nstruct mode to illustrate 
 	<FILTERS>
 	</FILTERS>
 	<MOVERS>
-		<BundleGridSampler name="bgs" scorefxn="tala" nstruct_mode="true" use_degrees="true" helix_length="25" >
+		<BundleGridSampler name="bgs" scorefxn="ref15sfxn" nstruct_mode="true" use_degrees="true" helix_length="25" >
 		</BundleGridSampler>
 	</MOVERS>
 	<APPLY_TO_POSE>
@@ -611,7 +611,7 @@ Let's set up a small sample BundleGridSampler run in nstruct mode to illustrate 
 	<PROTOCOLS>
 		<Add mover="bgs" />
 	</PROTOCOLS>
-	<OUTPUT scorefxn="tala" />
+	<OUTPUT scorefxn="ref15sfxn" />
 </ROSETTASCRIPTS>
 ```
 
@@ -622,7 +622,7 @@ Next, let's tell the mover what it will be sampling over.  This is done with som
 > **It's best to be mindful of the amount of sampling a grid sampling mover is expected to do.  Use the tools available to warn you if the samples exceed the number that you think that you've set up.**
 
 ```xml
-		<BundleGridSampler name="bgs" scorefxn="tala" nstruct_mode="true" use_degrees="true" helix_length="25" max_samples="36" >
+		<BundleGridSampler name="bgs" scorefxn="ref15sfxn" nstruct_mode="true" use_degrees="true" helix_length="25" max_samples="36" >
 			<Helix r0_min="4.0" r0_max="7.0" r0_samples="6" omega0_min="-3.0" omega0_max="3.0" omega0_samples="6" delta_omega0="0.0" />
 			<Helix r0_copies_helix="1" pitch_from_helix="1" delta_omega0="180.0" />
 		</BundleGridSampler>
@@ -646,7 +646,7 @@ We can use the [ScoreType filter](https://www.rosettacommons.org/docs/latest/scr
 ```xml
 ...
 	<FILTERS>
-		<ScoreType name="filter_clashes" scorefxn="tala" score_type="fa_rep" threshold="15.0" />
+		<ScoreType name="filter_clashes" scorefxn="ref15sfxn" score_type="fa_rep" threshold="15.0" />
 	</FILTERS>
 ...
 	<PROTOCOLS>
@@ -661,8 +661,8 @@ In addition, a conformation is likely to be non-productive if the helices are to
 ```xml
 ...
 	<FILTERS>
-		<ScoreType name="filter_clashes" scorefxn="tala" score_type="fa_rep" threshold="15.0" />
-		<ScoreType name="filter_excessive_separation" scorefxn="tala" score_type="fa_atr" threshold="-149.0" />
+		<ScoreType name="filter_clashes" scorefxn="ref15sfxn" score_type="fa_rep" threshold="15.0" />
+		<ScoreType name="filter_excessive_separation" scorefxn="ref15sfxn" score_type="fa_atr" threshold="-149.0" />
 	</FILTERS>
 ...
 	<PROTOCOLS>
@@ -708,7 +708,7 @@ Now we set up a [FastDesign mover](https://www.rosettacommons.org/docs/latest/sc
 
 ```xml
 ...
-		<FastDesign name="design_core" repeats="1" scorefxn="tala" task_operations="core_resfile,only_design_core,extrachi">
+		<FastDesign name="design_core" repeats="1" scorefxn="ref15sfxn" task_operations="core_resfile,only_design_core,extrachi">
 			<MoveMap name="design_core_mm">
 				<Span begin="1" end="999" bb="false" chi="true" />
 				<Jump number="1" setting="false" />

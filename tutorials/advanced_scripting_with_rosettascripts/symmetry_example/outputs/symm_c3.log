@@ -17,7 +17,7 @@ protocols.rosetta_scripts.RosettaScriptsParser: dock_design_filename=scripts/sym
 protocols.rosetta_scripts.RosettaScriptsParser: Parsed script:
 <ROSETTASCRIPTS>
 	<SCOREFXNS>
-		<sfx_symm symmetric=1 weights=talaris2014/>
+		<sfx_symm symmetric=1 weights=ref2015/>
 	</SCOREFXNS>
 	<RESIDUE_SELECTORS/>
 	<TASKOPERATIONS/>
@@ -34,7 +34,7 @@ protocols.rosetta_scripts.RosettaScriptsParser: Parsed script:
 		<Add mover=symm_min/>
 	</PROTOCOLS>
 </ROSETTASCRIPTS>
-core.scoring.ScoreFunctionFactory: SCOREFUNCTION: talaris2014
+core.scoring.ScoreFunctionFactory: SCOREFUNCTION: ref2015
 core.scoring.etable: Starting energy table calculation
 core.scoring.etable: smooth_etable: changing atr/rep split to bottom of energy well
 core.scoring.etable: smooth_etable: spline smoothing lj etables (maxdis = 6)
@@ -60,7 +60,7 @@ basic.io.database: Database file opened: scoring/score_functions/EnvPairPotentia
 basic.io.database: Database file opened: scoring/score_functions/EnvPairPotential/cbeta_den.txt
 basic.io.database: Database file opened: scoring/score_functions/EnvPairPotential/pair_log.txt
 basic.io.database: Database file opened: scoring/score_functions/EnvPairPotential/cenpack_log.txt
-protocols.jd2.parser.ScoreFunctionLoader: defined score function "sfx_symm" with weights "talaris2014"
+protocols.jd2.parser.ScoreFunctionLoader: defined score function "sfx_symm" with weights "ref2015"
 symmetrizing sfx_symm
 protocols.rosetta_scripts.RosettaScriptsParser: Defined mover named "add_symm" of type SetupForSymmetry
 protocols.rosetta_scripts.RosettaScriptsParser: Defined mover named "symm_pack" of type SymPackRotamersMover
