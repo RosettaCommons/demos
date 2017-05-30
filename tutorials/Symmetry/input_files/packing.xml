@@ -1,6 +1,6 @@
 <ROSETTASCRIPTS>
     <SCOREFXNS>
-        <ScoreFunction name="r15_cart" weights="ref2015" >
+        <ScoreFunction name="t14_cart" weights="talaris2014" >
             <Reweight scoretype="pro_close" weight="0.0" />
             <Reweight scoretype="cart_bonded" weight="0.625" />
         </ScoreFunction>
@@ -10,14 +10,14 @@
 		<ExtraRotamersGeneric name="extrachi" ex1="1" ex2="1" ex1_sample_level="1" ex2_sample_level="1" />
     </TASKOPERATIONS>
     <MOVERS>
-        <MinMover name="min_cart" scorefxn="r15_cart" chi="true" bb="1" cartesian="T" />
-		<PackRotamersMover name="pack" scorefxn="r15_cart" task_operations="repackonly,extrachi"/> 
+        <MinMover name="min_cart" scorefxn="t14_cart" chi="true" bb="1" cartesian="T" />
+		<PackRotamersMover name="pack" scorefxn="t14_cart" task_operations="repackonly,extrachi"/> 
 	</MOVERS>
     <PROTOCOLS>
 		<Add mover="pack" />
 		<Add mover="min_cart" />
     </PROTOCOLS>
-    <OUTPUT scorefxn="r15_cart" />
+    <OUTPUT scorefxn="t14_cart" />
 
 
 </ROSETTASCRIPTS>
