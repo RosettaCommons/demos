@@ -293,16 +293,16 @@ The other options in the tag control the mover's behaviour. Most of the options 
 
 Note: Boolean options in the XML can take the same representations of true and false which can be used on the commandline: 1/0, T/F, Y/N, true/false, on/off, etc.
 
-For our example script, we'll make two MinMovers. One we'll call "min\_torsion", which will have the cartesian option set to false (so it will use the default torsional minimization) and will use the t13 scorefunction. The other we'll call "min\_cart", and it will have the cartesian option set to true and use the t14\_cart scorefunction. Both will have bb and chi set to true.
+For our example script, we'll make two MinMovers. One we'll call "min\_torsion", which will have the cartesian option set to false (so it will use the default torsional minimization) and will use the molmech scorefunction. The other we'll call "min\_cart", and it will have the cartesian option set to true and use the r15\_cart scorefunction. Both will have bb and chi set to true.
 
 Declaring the movers in the MOVERS section only tells Rosetta that the movers exist and configures their options; however, it doesn't tell Rosetta that they should be applied to the pose (or in what order, or the number of times). The PROTOCOLS section is used to define the sequence of steps that the rosetta\_scripts application will carry out. When RosettaScripts runs on a structure, it will run sequentially through all the entries in the PROTOCOLS section, executing each in order, the output of the previous mover (or filter, as we will see later) becoming the input to the next. In our protocols section we'll add the "min\_cart" mover. Since this is the only mover in the PROTOCOLS section, this is the only mover which will be run. The min\_torsions mover will be defined, but will not be applied to the pose. (The mover can be specified with either the "mover" or "mover\_name" option.)
 
 ```
 ...
     <MOVERS>
-        <MinMover name="min_torsion" scorefxn="t13" chi="true" bb="1" cartesian="F" >
+        <MinMover name="min_torsion" scorefxn="molmech" chi="true" bb="1" cartesian="F" >
         </MinMover>
-        <MinMover name="min_cart" scorefxn="t14_cart" chi="true" bb="1" cartesian="T" >
+        <MinMover name="min_cart" scorefxn="r15_cart" chi="true" bb="1" cartesian="T" >
         </MinMover>
     </MOVERS>
     <APPLY_TO_POSE>
@@ -318,7 +318,7 @@ $> cp inputs/minimize.xml .
 $> $ROSETTA3/bin/rosetta_scripts.default.linuxgccrelease -s 1ubq.pdb -parser:protocol minimize.xml -out:prefix minimize_
 ```
 
-Within the tracer output you should see indications that your movers are being used (e.g. "BEGIN MOVER MinMover - min_cart"). Also, if you look at the total scores from the output PDB, you should get much better scores for the minimized 1ubq than the one just rescored with t14_cart. (about -155 versus +460).
+Within the tracer output you should see indications that your movers are being used (e.g. "BEGIN MOVER MinMover - min_cart"). Also, if you look at the total scores from the output PDB, you should get much better scores for the minimized 1ubq than the one just rescored with r15\_cart. (about -155 versus +460).
 
 Now let's add the other minimization mover, to demonstrate how movers can be placed in series.  Add the marked line shown below to your script (or use the inputs/minimize2.xml file):
 
@@ -336,7 +336,7 @@ $> cp inputs/minimize2.xml .
 $> $ROSETTA3/bin/rosetta_scripts.default.linuxgccrelease -s 1ubq.pdb -parser:protocol minimize2.xml -out:prefix minimize2_
 ```
 
-This time, when you run the application, you'll find that the torsion-space minimization is carried out first (using the talaris\_2013 scorefunction), and the Cartesian-space minimization is carried out on the output structure from the torsion-space minimization (using the talaris\_2014 scorefunction, modified with the cart\_bonded term turned on and the pro\_close term turned off).  Note that Rosetta does not write out any structures until the end of the protocol.
+This time, when you run the application, you'll find that the torsion-space minimization is carried out first (using the molecular mechanics scorefunction), and the Cartesian-space minimization is carried out on the output structure from the torsion-space minimization (using the ref2015 scorefunction, modified with the cart\_bonded term turned on and the pro\_close term turned off).  Note that Rosetta does not write out any structures until the end of the protocol.
 
 #### More Advanced Minimization
 
@@ -351,7 +351,7 @@ Let's modify the current script to demonstrate how a MoveMap can be set up and u
 ```xml
 ...
     <MOVERS>
-        <MinMover name="min_torsion" scorefxn="t13" chi="true" bb="1" cartesian="F" >
+        <MinMover name="min_torsion" scorefxn="molmech" chi="true" bb="1" cartesian="F" >
             <MoveMap name="min_torsion_mm">                         # Add this
                 <Span begin="1" end="999" chi="false" bb="false" /> # And this
                 <Span begin="1" end="50" chi="true" bb="true" />    # And this
@@ -391,12 +391,12 @@ The PackRotamersMover is another commonly-used Rosetta mover.  Because it calls 
 
 > **Just as MoveMaps control the minimizer, TaskOperations control the packer, and movers that invoke the packer will typically accept lists of TaskOperations as inputs.**
 
-Let's create a new skeleton XML, and define the talaris2014 scorefunction in it:
+Let's create a new skeleton XML, and define the ref2015 scorefunction in it:
 
 ```xml
 <ROSETTASCRIPTS>
 	<SCOREFXNS>
-		<ScoreFunction name="t14" weights="talaris2014" />
+		<ScoreFunction name="r15" weights="ref2015" />
 	</SCOREFXNS>
 	<RESIDUE_SELECTORS>
 	</RESIDUE_SELECTORS>
@@ -410,7 +410,7 @@ Let's create a new skeleton XML, and define the talaris2014 scorefunction in it:
 	</APPLY_TO_POSE>
 	<PROTOCOLS>
 	</PROTOCOLS>
-	<OUTPUT scorefxn="t14" />
+	<OUTPUT scorefxn="r15" />
 </ROSETTASCRIPTS>
 ```
 
@@ -419,7 +419,7 @@ In the movers section, let's create a PackRotamersMover.  You can cut-and-paste 
 ```xml
 ...
 	<MOVERS>
-		<PackRotamersMover name="pack1" scorefxn="t14" task_operations="" />
+		<PackRotamersMover name="pack1" scorefxn="r15" task_operations="" />
 	</MOVERS>
 ..
 	<PROTOCOLS>
@@ -452,7 +452,7 @@ Down below, in the MOVERS section, let's tell the PackRotamersMover that we crea
 ```xml
 ...
 	<MOVERS>
-		<PackRotamersMover name="pack1" scorefxn="t14" task_operations="no_design,extrachi" />
+		<PackRotamersMover name="pack1" scorefxn="r15" task_operations="no_design,extrachi" />
 	</MOVERS>
 ...
 ```
@@ -485,7 +485,7 @@ Let's start by defining three ResidueSelectors to select residues based on buria
 ```xml
 <ROSETTASCRIPTS>
 	<SCOREFXNS>
-		<ScoreFunction name="t14" weights="talaris2014" />
+		<ScoreFunction name="r15" weights="ref2015" />
 	</SCOREFXNS>
 	<RESIDUE_SELECTORS>
 		<Layer name="corelayer" select_core="true" select_boundary="false" select_surface="false" core_cutoff="4.0" />
@@ -502,7 +502,7 @@ Let's start by defining three ResidueSelectors to select residues based on buria
 	</APPLY_TO_POSE>
 	<PROTOCOLS>
 	</PROTOCOLS>
-	<OUTPUT scorefxn="t14" />
+	<OUTPUT scorefxn="r15" />
 </ROSETTASCRIPTS>
 ```
 
@@ -543,7 +543,7 @@ The rest is as before: set up a PackRotamersMover, passing the four TaskOperatio
 ```xml
 ...
 	<MOVERS>
-		<PackRotamersMover name="pack1" scorefxn="t14" task_operations="core_resfile,prevent_surface_from_repacking,restrict_boundary_to_repack,extrachi" />
+		<PackRotamersMover name="pack1" scorefxn="r15" task_operations="core_resfile,prevent_surface_from_repacking,restrict_boundary_to_repack,extrachi" />
 	</MOVERS>
 ...
 	<PROTOCOLS>
@@ -590,7 +590,7 @@ The new ReadResfile TaskOperation, in the TASKOPERATIONS section, would look lik
 It should be appended to the list of TaskOperations passed to the PackRotamersMover, like so:
 
 ```xml
-		<PackRotamersMover name="pack1" scorefxn="t14" task_operations="core_resfile,prevent_surface_from_repacking,restrict_boundary_to_repack,extrachi,core_resfile2" />
+		<PackRotamersMover name="pack1" scorefxn="r15" task_operations="core_resfile,prevent_surface_from_repacking,restrict_boundary_to_repack,extrachi,core_resfile2" />
 ```
 
 Run the modified script (or use inputs/design_core2.xml):
@@ -670,7 +670,7 @@ Let's consider the case, now, of repacking just the *surface* (*i.e.* solvent-ex
 ```xml
 <ROSETTASCRIPTS>
 	<SCOREFXNS>
-		<ScoreFunction name="t14" weights="talaris2014" />
+		<ScoreFunction name="r15" weights="ref2015" />
 	</SCOREFXNS>
 	<RESIDUE_SELECTORS>
 	</RESIDUE_SELECTORS>
@@ -682,8 +682,8 @@ Let's consider the case, now, of repacking just the *surface* (*i.e.* solvent-ex
 		<AtomicDistance name="salt_bridge" residue1="11A" atomtype1="Nlys" residue2="34A" atomtype2="OOC" distance="3.0" />
 	</FILTERS>
 	<MOVERS>
-		<MinMover name="min" scorefxn="t14" chi="true" bb="true" cartesian="false" />
-		<PackRotamersMover name="pack" scorefxn="t14" task_operations="repackonly,extrachi"/>
+		<MinMover name="min" scorefxn="r15" chi="true" bb="true" cartesian="false" />
+		<PackRotamersMover name="pack" scorefxn="r15" task_operations="repackonly,extrachi"/>
 	</MOVERS>
 	<APPLY_TO_POSE>
 	</APPLY_TO_POSE>
@@ -692,7 +692,7 @@ Let's consider the case, now, of repacking just the *surface* (*i.e.* solvent-ex
 		<Add filter="salt_bridge" />
 		<Add mover="min" />
 	</PROTOCOLS>
-	<OUTPUT scorefxn="t14" />
+	<OUTPUT scorefxn="r15" />
 </ROSETTASCRIPTS>
 
 
