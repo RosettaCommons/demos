@@ -1,7 +1,7 @@
 <ROSETTASCRIPTS>
 	<SCOREFXNS>
-		<ScoreFunction name="bnv" weights="beta_nov15.wts" />
-		<ScoreFunction name="bnv_cst" weights="beta_nov15_cst.wts" />
+		<ScoreFunction name="ref15sfxn" weights="ref2015.wts" />
+		<ScoreFunction name="ref15sfxn_cst" weights="ref2015_cst.wts" />
 		<ScoreFunction name="bb_only" weights="empty.wts" >
 			<Reweight scoretype="fa_rep" weight="0.1" />
 			<Reweight scoretype="fa_atr" weight="0.2" />
@@ -26,7 +26,7 @@
 		</OperateOnResidueSubset>
 	</TASKOPERATIONS>
 	<FILTERS>
-		<ScoreType name="scorefilter" score_type="total_score" threshold="10.0" scorefxn="bnv_cst" />
+		<ScoreType name="scorefilter" score_type="total_score" threshold="10.0" scorefxn="ref15sfxn_cst" />
 	</FILTERS>
 	<MOVERS>	
 		<PeptideStubMover name="add_loop_residues" >
@@ -58,7 +58,7 @@
 		</CreateTorsionConstraint>
 
 
-		<FastDesign name="fdes1" repeats="1" task_operations="design_core_near_loop,no_design_otherwise" scorefxn="bnv_cst">
+		<FastDesign name="fdes1" repeats="1" task_operations="design_core_near_loop,no_design_otherwise" scorefxn="ref15sfxn_cst">
 			<MoveMap name="fdes1_mm" >
 				<Span begin="1" end="27" bb="false" chi="true" />
 				<Span begin="28" end="34" bb="true" chi="true" />
@@ -77,7 +77,7 @@
 			<Add filter="scorefilter" />
 		</ParsedProtocol>
 
-		<GeneralizedKIC name="genkic" selector="lowest_energy_selector" selector_scorefunction="bnv"
+		<GeneralizedKIC name="genkic" selector="lowest_energy_selector" selector_scorefunction="ref15sfxn"
 			closure_attempts="1000" stop_when_n_solutions_found="1"
 			pre_selection_mover="design_protocol"
 		>

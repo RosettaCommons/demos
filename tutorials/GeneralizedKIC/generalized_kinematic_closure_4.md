@@ -36,7 +36,6 @@ The following `rosetta.flags` file will be used for this tutorial:
 
 ```
 -nstruct 10
--beta_nov15
 -in:file:s inputs/2ND2_state1_glyonly_loop_removed.pdb
 -in:file:fullatom
 -write_all_connect_info
@@ -50,7 +49,7 @@ Here is the script from the first tutorial for reference.  We will modify it to 
 ```xml
 <ROSETTASCRIPTS>
 	<SCOREFXNS>
-		<ScoreFunction name="bnv" weights="beta_nov15.wts" />
+		<ScoreFunction name="ref15sfxn" weights="ref2015.wts" />
 		<ScoreFunction name="bb_only" weights="empty.wts" >
 			<Reweight scoretype="fa_rep" weight="0.1" />
 			<Reweight scoretype="fa_atr" weight="0.2" />
@@ -238,7 +237,7 @@ Finally we omit the third pivot's `rama_prepro_check` filter, and relax the stri
 ```xml
 <ROSETTASCRIPTS>
 	<SCOREFXNS>
-		<ScoreFunction name="bnv" weights="beta_nov15.wts" />
+		<ScoreFunction name="ref15sfxn" weights="ref2015.wts" />
 		<ScoreFunction name="bb_only" weights="empty.wts" >
 			<Reweight scoretype="fa_rep" weight="0.1" />
 			<Reweight scoretype="fa_atr" weight="0.2" />

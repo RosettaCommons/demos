@@ -1,6 +1,6 @@
 <ROSETTASCRIPTS>
 	<SCOREFXNS>
-		<ScoreFunction name="bnv" weights="beta_nov15.wts" />
+		<ScoreFunction name="ref15sfxn" weights="ref2015.wts" />
 		<ScoreFunction name="bb_only" weights="empty.wts" >
 			<Reweight scoretype="fa_rep" weight="0.1" />
 			<Reweight scoretype="fa_atr" weight="0.2" />

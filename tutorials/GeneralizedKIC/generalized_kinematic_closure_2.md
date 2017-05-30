@@ -34,7 +34,6 @@ The following `rosetta.flags` file will be used for this tutorial:
 
 ```
 -nstruct 1
--beta_nov15
 -in:file:s inputs/2ND2_exercise1_solution4.pdb
 -in:file:fullatom
 -write_all_connect_info
@@ -49,7 +48,7 @@ We will also start with the script from the previous tutorial, and modify it to 
 ```xml
 <ROSETTASCRIPTS>
 	<SCOREFXNS>
-		<ScoreFunction name="bnv" weights="beta_nov15.wts" />
+		<ScoreFunction name="ref15sfxn" weights="ref2015.wts" />
 		<ScoreFunction name="bb_only" weights="empty.wts" >
 			<Reweight scoretype="fa_rep" weight="0.1" />
 			<Reweight scoretype="fa_atr" weight="0.2" />
@@ -251,7 +250,7 @@ So the final script should look like this:
 ```xml
 <ROSETTASCRIPTS>
 	<SCOREFXNS>
-		<ScoreFunction name="bnv" weights="beta_nov15.wts" />
+		<ScoreFunction name="ref15sfxn" weights="ref2015.wts" />
 		<ScoreFunction name="bb_only" weights="empty.wts" >
 			<Reweight scoretype="fa_rep" weight="0.1" />
 			<Reweight scoretype="fa_atr" weight="0.2" />
