@@ -2,6 +2,8 @@
 
 KEYWORDS: ANALYSIS UTILITIES
 
+This tutorial was updated on 29 May 2017 by Vikram K. Mulligan (vmullig@uw.edu) to make it compatible with the new default Rosetta energy function, ref2015.
+
 **Bold text means that these files and/or this information is provided.**
 
 *Italicized text means that this material will NOT be conducted during the workshop.*
@@ -119,22 +121,26 @@ One of the simplest tasks in Rosetta is scoring a given protein structure. The p
 
             grep SCORE 4TQ5_silent.out > 4TQ5_silent.scorelines
 
-        The numbers in 4TQ5_silent.sc should be the same as for 4TQ5_silent.scorelines, as when the silent file was generated it was with the default talaris2013 scorefunction.
+        The exact numbers in 4TQ5_silent.sc will likely be different than in 4TQ5_silent.scorelines, as when the latter was generated, it was with the then-default talaris2013 scorefunction.  Since that time, the scorefunction has been updated to the now-default (at the time of this writing) ref2015 scorefunction.
 
-    5. There are different scorefunctions in Rosetta depending on the application and protocol. The talaris2013 scorefunction is the current default and works well for most cases, but you may need to specify a different scorefunction for different applications. For example, 4TQ5 is a membrane protein, so would be better scored using a membrane scorefunction. Here we use the "membrane_highres_Menv_smooth" scorefunction. This scorefunction requires additional information - a "spanfile" which specifies where the membrane is. The **4TQ5.span** file is provided for you in the inputs directory.
+    5. There are different scorefunctions in Rosetta depending on the application and protocol. The ref2015 scorefunction is the current default and works well for most cases, but you may need to specify a different scorefunction for different applications. For example, 4TQ5 is a membrane protein, so would be better scored using a membrane scorefunction. Here we use the "membrane_highres_Menv_smooth" scorefunction. This scorefunction requires additional information - a "spanfile" which specifies where the membrane is. The **4TQ5.span** file is provided for you in the inputs directory.
 
             ~/rosetta_workshop/rosetta/main/source/bin/score_jd2.linuxgccrelease \
             -in:file:silent 4TQ5_silent.out -score:weights membrane_highres_Menv_smooth \
+            -restore_pre_talaris_behavior true \
             -in:file:spanfile 4TQ5.span -out:file:scorefile 4TQ5_membrane.sc
 
-        * Note that the scores are different for the membrane scoring versus the default talaris2013 scoring.
+        * Note that the scores are different for the membrane scoring versus the default ref2015 scoring.
 
         * Most protocols can take alternative scorefunctions, although some may not have been adequately tested for use with membrane proteins, symmetric proteins, etc. 
+
+	* The membrane scorefunction currently relies on scoring functionality that has changed as the scorefunction has been updated.  To use this particular scorefunction, it is necessary to include the "restore\_pre\_talaris\_behavior" flag.
 
     6. The score_jd2 application can be used to convert silent files to PDBs. We'll specifically be extracting the four best scoring (lowest total_score) structures. We can do so with the -in:file:tags, which takes the names (tags) of the structures we want to extract. Keep in mind that rescoring added a "_0001" to the structure name, so the input tag should be without it
 
             ~/rosetta_workshop/rosetta/main/source/bin/score_jd2.linuxgccrelease \
             -in:file:silent 4TQ5_silent.out -score:weights membrane_highres_Menv_smooth \
+            -restore_pre_talaris_behavior true \
             -in:file:spanfile 4TQ5.span -in:file:tags 4TQ5_0002 4TQ5_0007 4TQ5_0009 4TQ5_0019 \
             -out:pdb
 
