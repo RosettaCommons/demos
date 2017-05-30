@@ -11,5 +11,5 @@
 # output options
 -out:nstruct 1
 -out:file:fullatom
--score:weights talaris2014.wts
+-score:weights ref2015.wts
 -restore_talaris_behavior
