@@ -1,11 +1,12 @@
 <ROSETTASCRIPTS>
 	<SCOREFXNS>
+		<ScoreFunction name="r15" weights="ref2015" />
 	</SCOREFXNS>
 	<TASKOPERATIONS>
 		<RestrictToInterfaceVector name="rtiv" chain1_num="1,2" chain2_num="3,4" CB_dist_cutoff="10.0" nearby_atom_cutoff="5.5" vector_angle_cutoff="75" vector_dist_cutoff="9.0" />
 	</TASKOPERATIONS>
 	<MOVERS>
-		<InterfaceAnalyzerMover name="iface_analyzer" scorefxn="talaris2013" packstat="0" pack_input="0" pack_separated="1" fixedchains="A,B" tracer="0" />
+		<InterfaceAnalyzerMover name="iface_analyzer" scorefxn="r15" packstat="0" pack_input="0" pack_separated="1" fixedchains="A,B" tracer="0" />
 	</MOVERS>
 	<FILTERS>
 		<AverageDegree name="avg_degree" threshold="0" distance_threshold="10" task_operations="rtiv" />
@@ -29,6 +30,6 @@
 		<Add filter="avg_degree" />
 		<Add filter="rmsd" />
 	</PROTOCOLS>
-	<OUTPUT scorefxn="talaris2013" />
+	<OUTPUT scorefxn="r15" />
 
 </ROSETTASCRIPTS>
