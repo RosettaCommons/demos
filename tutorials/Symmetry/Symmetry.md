@@ -5,6 +5,8 @@ KEYWORDS: SYMMETRY GENERAL
 Complaints and suggestions can be send to:   
 Sebastian Rämisch (raemisch@scripps.edu)
 
+Updated 29 May 2017 by Vikram K. Mulligan (vmullig@uw.edu) for new ref2015 scorefunction.
+
 [[_TOC_]]
 
 ## Symmetry in Rosetta

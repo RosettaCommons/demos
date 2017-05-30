@@ -4,7 +4,7 @@
 
 KEYWORDS: LOOPS SCRIPTING_INTERFACES
 
-Tutorial by Vikram K. Mulligan (vmullig@uw.edu).  Created on 28 March 2017 for the Baker lab Rosetta Tutorial Series.
+Tutorial by Vikram K. Mulligan (vmullig@uw.edu).  Created on 28 March 2017 for the Baker lab Rosetta Tutorial Series.  Updated 29 may 2017 for the new ref2015 default scorefunction.
 
 [[_TOC_]]
 

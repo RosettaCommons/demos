@@ -5,6 +5,8 @@ KEYWORDS: SCRIPTING_INTERFACES CORE_CONCEPTS
 
 Tutorial by Rocco Moretti (rmorettiase@gmail.com) and Vikram K. Mulligan (vmullig@uw.edu).  Created on 21 June 2016 as part of the 2016 Documentation XRW.
 
+Updated 29 May 2017 by Vikram K. Mulligan (vmullig@uw.edu) for new ref2015 scorefunction.
+
 [[_TOC_]]
 
 ## Goals
