@@ -4,7 +4,7 @@
 
 KEYWORDS: LOOPS SCRIPTING_INTERFACES
 
-Tutorial by Vikram K. Mulligan (vmullig@uw.edu).  Created on 28 March 2017 for the Baker lab Rosetta Tutorial Series.
+Tutorial by Vikram K. Mulligan (vmullig@uw.edu).  Created on 28 March 2017 for the Baker lab Rosetta Tutorial Series.  Updated 29 May 2017 for the new ref2015 default scorefunction.
 
 [[_TOC_]]
 
@@ -45,12 +45,11 @@ For this exercise, we will be using an NMR structure of an artificial mini-prote
 **The input structure, an edited version of PDB structure 2ND2 (`2ND2_state1_glyonly_loop_removed.pdb`):**
 ![The input structure](images/Example1_input_structure.png)
 
-Additionally, we will use the following Rosetta flags file.  Briefly, this instructs Rosetta to run the input script 10 times to produce 10 sampled loop conformations, to use the `beta_nov15` score function, and to include all chemical bonds in the output PDB files (which can be convenient when debugging bad geometry, since bonds are drawn even if bonded atoms are too far apart).
+Additionally, we will use the following Rosetta flags file.  Briefly, this instructs Rosetta to run the input script 10 times to produce 10 sampled loop conformations, to use the `ref2015` score function, and to include all chemical bonds in the output PDB files (which can be convenient when debugging bad geometry, since bonds are drawn even if bonded atoms are too far apart).
 
 **File `rosetta.flags`:**
 ```
 -nstruct 10
--beta_nov15
 -in:file:s inputs/2ND2_state1_glyonly_loop_removed.pdb
 -in:file:fullatom
 -write_all_connect_info
@@ -151,10 +150,10 @@ Each attempt could yield anywhere from 0 to 16 solutions.  By default, every sol
 <GeneralizedKIC name="genkic" closure_attempts="5000" stop_when_n_solutions_found="5" />
 ```
 
-Even if we had set this numer at 1, a single attempt might have yielded up to 16 solutions.  We always need to tell GeneralizedKIC how to pick a single solution from among the solutions.  Here, we'll choose our solution by energy -- but there is an important caveat.  Since we are sampling backbone conformations, with no consideration of side-chains, we should use a scoring function that consists primarily of backbone-only terms to pick the best solution.  (Later we will see how we can apply an arbitrary mover -- _e.g._ a full repack and minimization -- to every solution, in which case it might make sense to use the full Rosetta scoring function to pick the best solution).  Let's set up a backbone-only scoring function using weights from the `beta_nov15` scoring function.  In the `<SCOREFXNS>` section of your script, add the following:
+Even if we had set this numer at 1, a single attempt might have yielded up to 16 solutions.  We always need to tell GeneralizedKIC how to pick a single solution from among the solutions.  Here, we'll choose our solution by energy -- but there is an important caveat.  Since we are sampling backbone conformations, with no consideration of side-chains, we should use a scoring function that consists primarily of backbone-only terms to pick the best solution.  (Later we will see how we can apply an arbitrary mover -- _e.g._ a full repack and minimization -- to every solution, in which case it might make sense to use the full Rosetta scoring function to pick the best solution).  Let's set up a backbone-only scoring function using weights from the `ref2015` scoring function.  In the `<SCOREFXNS>` section of your script, add the following:
 
 ```xml
-<ScoreFunction name="bnv" weights="beta_nov15.wts" />
+<ScoreFunction name="ref15sfxn" weights="ref2015.wts" />
 <ScoreFunction name="bb_only" weights="empty.wts" >
 	<Reweight scoretype="fa_rep" weight="0.1" />
 	<Reweight scoretype="fa_atr" weight="0.2" />
@@ -167,7 +166,7 @@ Even if we had set this numer at 1, a single attempt might have yielded up to 16
 
 ```
 
-The "bnv" scoring function is now the full `beta_nov15` scoring function, which may be useful if we later add sidechain refinement to our protocol (which we will do in the third GeneralizedKIC tutorial).  For now, we will use the "bb_only" scoring function, in which we've cherry-picked relevant backbone terms (plus weakened versions of the Lennard-Jones terms).  Let's tell GeneralizedKIC to use this scoring function to pick a solution by adding two more options to our already-declared GeneralizedKIC mover:
+The "ref15sfxn" scoring function is now the full `ref2015` scoring function, which may be useful if we later add sidechain refinement to our protocol (which we will do in the third GeneralizedKIC tutorial).  For now, we will use the "bb_only" scoring function, in which we've cherry-picked relevant backbone terms (plus weakened versions of the Lennard-Jones terms).  Let's tell GeneralizedKIC to use this scoring function to pick a solution by adding two more options to our already-declared GeneralizedKIC mover:
 
 ```xml
 <GeneralizedKIC name="genkic" closure_attempts="5000" stop_when_n_solutions_found="5"
@@ -328,7 +327,7 @@ And that's it!  The finished script should look like this:
 ```xml
 <ROSETTASCRIPTS>
 	<SCOREFXNS>
-		<ScoreFunction name="bnv" weights="beta_nov15.wts" />
+		<ScoreFunction name="ref15sfxn" weights="ref2015.wts" />
 		<ScoreFunction name="bb_only" weights="empty.wts" >
 			<Reweight scoretype="fa_rep" weight="0.1" />
 			<Reweight scoretype="fa_atr" weight="0.2" />

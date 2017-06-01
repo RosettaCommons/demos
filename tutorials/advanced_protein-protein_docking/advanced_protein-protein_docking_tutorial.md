@@ -16,7 +16,7 @@ If you want to try making files that already exist (e.g., input files), write th
 
 This tutorial presents a cross-docking benchmark experiment. Antibody CR6261 binds to multiple sub- types of influenza antigen hemagglutinin (HA). It has been crystallized with H1 and H5 HA sub-types. Antibody from one crystal structure will be docked to the antigen from the other crystal structure. This type of experiment is useful for protocol optimization and development.
 
-            
+This tutorial was updated on 29 May 2017 by Vikram K. Mulligan (vmullig@uw.edu) to make it compatible with Rosetta's new ref2015 energy function.            
 
 1. Prepare the input template for docking
     1. Download the PDB files. **The 3GBN.pdb and 3GBM.pdb files are provided in the input_files directory.**

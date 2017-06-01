@@ -37,7 +37,7 @@ Rosetta is a powerful tool that has been shown to be successful in many applicat
 
 ##### Scoring and scoring-dependent biases
 
-The current Rosetta score, talaris2014, has certain known limitations (see the list below). While these are not major, they can occasionally result in certain behaviors that can affect the quality of the final output. 
+The current Rosetta score, ref2015, has certain known limitations (see the list below). While these are not major, they can occasionally result in certain behaviors that can affect the quality of the final output. 
 
 - preference for aromatics (over aliphatic or sulfur-containing (=MET))
 - preference for hydrogen bonding over other electrostatic interactions

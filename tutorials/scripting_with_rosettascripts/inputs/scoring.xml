@@ -1,7 +1,7 @@
 <ROSETTASCRIPTS>
     <SCOREFXNS>
-        <ScoreFunction name="t13" weights="talaris2013" />
-        <ScoreFunction name="t14_cart" weights="talaris2014" >
+        <ScoreFunction name="molmech" weights="mm_std_fa_elec_dslf_fa13" />
+        <ScoreFunction name="r15_cart" weights="ref2015" >
             <Reweight scoretype="pro_close" weight="0.0" />
             <Reweight scoretype="cart_bonded" weight="0.625" />
         </ScoreFunction>
@@ -18,7 +18,7 @@
     </APPLY_TO_POSE>
     <PROTOCOLS>
     </PROTOCOLS>
-    <OUTPUT scorefxn="t14_cart" />
+    <OUTPUT scorefxn="r15_cart" />
 
 
 </ROSETTASCRIPTS>

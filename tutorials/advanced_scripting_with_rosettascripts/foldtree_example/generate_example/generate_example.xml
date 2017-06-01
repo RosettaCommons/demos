@@ -1,6 +1,6 @@
 <ROSETTASCRIPTS>
 	<SCOREFXNS>
-		<ScoreFunction name="tala" weights="talaris2014.wts" />
+		<ScoreFunction name="ref15sfxn" weights="ref2015.wts" />
 	</SCOREFXNS>
 	<RESIDUE_SELECTORS>
 		<Layer name="core" select_core="1" select_boundary="0" select_surface="0" core_cutoff="4" />
@@ -20,7 +20,7 @@
 		
 		<DeclareBond name="termini" res1="1" res2="2" atom1="C" atom2="N" add_termini="true" />
 		
-		<FastDesign name="fdes1" repeats="3" scorefxn="tala" task_operations="core_resfile,not_core_resfile" >
+		<FastDesign name="fdes1" repeats="3" scorefxn="ref15sfxn" task_operations="core_resfile,not_core_resfile" >
 			<MoveMap name="fdes1_mm">
 				<Span begin="1" end="999" bb="0" chi="1" />
 				<Jump number="1" setting="0" />

@@ -1,5 +1,4 @@
 -nstruct 10
--beta_nov15
 -in:file:s inputs/2ND2_state1_glyonly_loop_removed.pdb
 -in:file:fullatom
 -write_all_connect_info

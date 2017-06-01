@@ -6,6 +6,8 @@ Tutorial by Kristen Blacklock (kristin.blacklock@rutgers.edu).
 Edited by Vikram K. Mulligan (vmullig@uw.edu).
 Created 20 June 2016.
 
+Updated 29 May 2017 by Vikram K. Mulligan (vmullig@uw.edu) to reflect changes to the default scorefunction.
+
 [[_TOC_]]
 
 ## Introduction
@@ -16,7 +18,7 @@ Each snapshot of a protein in its repertoire of conformations can be associated 
 
 > **Minimization is a technique for finding the nearest local minimum in the energy function given a starting structure's conformation and energy.**
 
-Rosetta has a core algorithm, called the *minimizer*, which solves the problem of moving a structure to its nearest local energy minimum.  This carries out one of several variations on _gradient-descent minimization_ to find the nearest local minimum in the energy function. There are many different flavours to the [minimization algorithm](https://www.rosettacommons.org/docs/latest/rosetta_basics/structural_concepts/minimization-overview#flavors-of-minimization-in-rosetta) that the minimizer can use, but essentially, all minimization flavours choose a vector as the descent direction, march along that vector until the energy ceases to decrease (a "line search"), then choose a new direction and repeat. In this tutorial, we will use the `lbfgs_armijo_nonmonotone` flavour, which is a multi-step algorithm that needs to only be called once to reach the local mimimum of a function (rather than invoking repeated iterations to reach convergence).
+Rosetta has a core algorithm, called the *minimizer*, which solves the problem of moving a structure to its nearest local energy minimum.  This carries out one of several variations on _gradient-descent minimization_ to find the nearest local minimum in the energy function. There are many different flavours to the [minimization algorithm](https://www.rosettacommons.org/docs/latest/rosetta_basics/structural_concepts/minimization-overview#flavors-of-minimization-in-rosetta) that the minimizer can use, but essentially, all minimization flavours choose a vector as the descent direction, march along that vector until the energy ceases to decrease (a "line search"), then choose a new direction and repeat. In this tutorial, we will use the `lbfgs\_armijo\_nonmonotone` flavour, which is a multi-step algorithm that needs to only be called once to reach the local mimimum of a function (rather than invoking repeated iterations to reach convergence).
 
 > **In general, minimization is deterministic, unlike methods that depend on Monte Carlo searches.  There is generally little advantage to repeating a minimization trajectory many times; there should be no diversity to the ensemble produced.**
 
@@ -51,13 +53,13 @@ This command will output a `default.sc` file, which contains the Rosetta score f
 
 The first line of this file is the header line that tells us which columns correspond to which score terms.
 
-On the second line of this file, we see that the crystal conformation has a total Rosetta score of 240.074, and that it has a particularly high repulsive score, _fa_rep_, which means there are clashes between atoms in the structure, and a high dunbrack score, _fa_dun_, which means many of the rotamers in this structure are of low probability.
+On the second line of this file, we see that the crystal conformation has a total Rosetta score of 240.074, and that it has a particularly high repulsive score, _fa\_rep_, which means there are clashes between atoms in the structure, and a high dunbrack score, _fa\_dun_, which means many of the rotamers in this structure are of low probability.
 
 Let's try and fix these issues using the minimizer.
 
 ### Setting up the flags file
 
-First, we will need to specify how to run the minimizer. Open the `minimizer_flags` file and analyze its contents:
+First, we will need to specify how to run the minimizer. Open the `minimizer\_flags` file and analyze its contents:
 
 ```
  -s 3hon.pdb
@@ -67,9 +69,9 @@ First, we will need to specify how to run the minimizer. Open the `minimizer_fla
 
 The first flag, `s`, specifies our input file, in this case, the crystal structure of 3hon.
 
-The second flag, `run:min_type`, specifies the type of minimization algorithm to use, in this case, lbfgs_armijo_nonmonotone. (The value used here - `lbfgs_armijo_nonmonotone` - is the current default algorithm, so this line can technically be omitted.)
+The second flag, `run:min_type`, specifies the type of minimization algorithm to use, in this case, lbfgs\_armijo\_nonmonotone. (The value used here - `lbfgs_armijo_nonmonotone` - is the current default algorithm, so this line can technically be omitted.)
 
-The third flag, `run:min_tolerance`, specifies the convergence tolerance for the minimization algorithm. Rosetta has at least two kinds of "tolerance" for function minimization, "regular" (for lack of a better name) tolerance and absolute tolerance. "Regular" tolerance is _fractional_ tolerance for the _value_ of the function being minimized; i.e. a tolerance of 0.01 means the minimum function value found will likely be within 1% of the true local minimum value. Absolute tolerance is specified without regard to the current function value; i.e. an absolute tolerance of 0.01 means that the minimum function value found will be at most 0.01 REU from the true local minimum value, period. Minimizers use "regular" fractional tolerance by default. (Click [here](https://www.rosettacommons.org/docs/latest/rosetta_basics/structural_concepts/minimization-overview#the-meaning-of-tolerance) for more information on absolute tolerance). In general, setting the fractional tolerance to 0.01 is very loose, and so it is recommended to specify a tolerance setting of something less than 0.01. Therefore, for this tutorial we have set the tolerance to 0.001.
+The third flag, `run:min\_tolerance`, specifies the convergence tolerance for the minimization algorithm. Rosetta has at least two kinds of "tolerance" for function minimization, "regular" (for lack of a better name) tolerance and absolute tolerance. "Regular" tolerance is _fractional_ tolerance for the _value_ of the function being minimized; i.e. a tolerance of 0.01 means the minimum function value found will likely be within 1% of the true local minimum value. Absolute tolerance is specified without regard to the current function value; i.e. an absolute tolerance of 0.01 means that the minimum function value found will be at most 0.01 REU from the true local minimum value, period. Minimizers use "regular" fractional tolerance by default. (Click [here](https://www.rosettacommons.org/docs/latest/rosetta_basics/structural_concepts/minimization-overview#the-meaning-of-tolerance) for more information on absolute tolerance). In general, setting the fractional tolerance to 0.01 is very loose, and so it is recommended to specify a tolerance setting of something less than 0.01. Therefore, for this tutorial we have set the tolerance to 0.001.
 
 ### Running the minimization command
 
@@ -91,22 +93,22 @@ The `score.sc` file contains the new scores for the minimized structure. Open th
 
 | Score Term    | Xtal Scores  | Minimized Scores |
 | ------------- | -----------: |  -----------:    |
-| total_score   | 240.074      | -40.93           |
-| fa_atr        | -213.265     | -213.025         |
-| fa_rep        | 131.638      | 22.807           |
-| fa_sol        | 111.304      | 105.466          |
-| fa_intra_rep  | 0.82         | 0.649            |
-| fa_elec       | -9.08        | -11.103          |
-| pro_close     | 15.694       | 0.434            |
-| hbond_sr_bb   | -2.736       | -7.094           |
-| hbond_lr_bb   | -7.547       | -13.808          |
-| hbond_sc      | -0.757       | -1.842           |
+| total\_score   | 240.074      | -40.93           |
+| fa\_atr        | -213.265     | -213.025         |
+| fa\_rep        | 131.638      | 22.807           |
+| fa\_sol        | 111.304      | 105.466          |
+| fa\_intra\_rep  | 0.82         | 0.649            |
+| fa\_elec       | -9.08        | -11.103          |
+| pro\_close     | 15.694       | 0.434            |
+| hbond\_sr\_bb   | -2.736       | -7.094           |
+| hbond\_lr\_bb   | -7.547       | -13.808          |
+| hbond\_sc      | -0.757       | -1.842           |
 | rama          | 4.53         | -2.326           |
 | omega         | 0.404        | 3.677            |
-| fa_dun        | 215.208      | 91.005           |
-| p_aa_pp       | -3.773       | -12.833          |
+| fa\_dun        | 215.208      | 91.005           |
+| p\_aa\_pp       | -3.773       | -12.833          |
 
-Note that the exact values that you obtain might be slightly different (+/- 0.5 energy units) from what's listed above: tiny numerical precision differences from platform to platform can accumulate over the trajectory to produce noticeable (but still small) differences in the final output.  What's important is that most of the score terms have gone down in value (which is good!). But how has the minimization affected the structure? Open the `3hon_0001.pdb` to see what has changed.
+Note that the exact values that you obtain might be slightly different (+/- 0.5 energy units) from what's listed above: tiny numerical precision differences from platform to platform can accumulate over the trajectory to produce noticeable (but still small) differences in the final output.  There may also be some additional score terms, since the scorefunction may be more modern than what existed when this tutorial was written.  What's important is that most of the score terms have gone down in value (which is good!). But how has the minimization affected the structure? Open the `3hon_0001.pdb` to see what has changed.
 
 ![3hon minimized](images/3hon_min_on_xtal.png)
 
@@ -133,13 +135,13 @@ We will need to add extra options to our flags file in order to tell Rosetta to 
 -run:min_type lbfgs_armijo_nonmonotone
 -run:min_toleranace 0.001
 -constraints:cst_file cstfile
--score:weights talaris2014_cst
+-score:weights ref2015_cst
 -out:suffix _minwithcsts
 ```
 
 The flag `constraints:cst_file` specifies the name of the constraints file to use.
 
-The flag `score:weights` specifies which set of weights to use for the energy function. In this case, we have specified the talaris2014_cst weights file, a pre-defined weights file in the Rosetta database that is identical to talaris2014 except for the addition of the constraint terms _chainbreak_, _coordinate_constraint_, _atom_pair_constraint_, _angle_constraint_, _dihedral_constraint_, and _res_type_constraint_, each with a weight of 1.0. 
+The flag `score:weights` specifies which set of weights to use for the energy function. In this case, we have specified the ref2015\_cst weights file, a pre-defined weights file in the Rosetta database that is identical to ref2015 (the default scorefunction) except for the addition of the constraint terms _chainbreak_, _coordinate\_constraint_, _atom\_pair\_constraint_, _angle\_constraint_, _dihedral\_constraint_, and _res\_type\_constraint_, each with a weight of 1.0. 
 
 The option `-out:suffix` will prevent us from overwriting our previous output by appending the suffix "_minwithcsts" to the end of our new output file names.
 
@@ -163,25 +165,25 @@ As before, the `score_minwithcsts.sc` file contains the score of the minimized s
 
 | Score Term      | Xtal Scores | Minimized Scores | Minimized With CST Scores |
 | -----------     | ----------: |  --------------: | ------------------------: |
-| total_score     | 240.074     | -40.93           | -28.538                   |
-| fa_atr          | -213.265    | -213.025         | -207.931 |
-| fa_rep          | 131.638     | 22.807           | 21.68    |
-| fa_sol          | 111.304     | 105.466          | 104.359  |
-| fa_intra_rep    | 0.82        | 0.649            | 0.714    |
-| fa_elec         | -9.08       | -11.103          | -12.245  |
-| pro_close       | 15.694      | 0.434            | 0.781    |
-| hbond_sr_bb     | -2.736      | -7.094           | -5.19    |
-| hbond_lr_bb     | -7.547      | -13.808          | -13.425  |
-| hbond_sc        | -0.757      | -1.842           | -1.239   |
+| total\_score     | 240.074     | -40.93           | -28.538                   |
+| fa\_atr          | -213.265    | -213.025         | -207.931 |
+| fa\_rep          | 131.638     | 22.807           | 21.68    |
+| fa\_sol          | 111.304     | 105.466          | 104.359  |
+| fa\_intra\_rep    | 0.82        | 0.649            | 0.714    |
+| fa\_elec         | -9.08       | -11.103          | -12.245  |
+| pro\_close       | 15.694      | 0.434            | 0.781    |
+| hbond\_sr\_bb     | -2.736      | -7.094           | -5.19    |
+| hbond\_lr\_bb     | -7.547      | -13.808          | -13.425  |
+| hbond\_sc        | -0.757      | -1.842           | -1.239   |
 | rama            | 4.53        | -2.326           | -3.515   |
 | omega           | 0.404       | 3.677            | 3.989    | 
-| fa_dun          | 215.208     | 91.005           | 96.731   |
-| p_aa_pp         | -3.773      | -12.833          | -10.393  |
-| coordinate_constraint |       |                  | 0.727    |
+| fa\_dun          | 215.208     | 91.005           | 96.731   |
+| p\_aa\_pp         | -3.773      | -12.833          | -10.393  |
+| coordinate\_constraint |       |                  | 0.727    |
 
 Again, most of the new scores from the minimized-with-constraints structure are lower than those in the crystal structure. Notice also the addition of the coordinate constraint term to the list of energy terms for the newly minimized structure. 
 
-Comparing the minimized structure to the minimized-with-csts structure, we see an increase in total energy caused predominantly by differences in the fa_atr and fa_dun terms. This comes from two sources.  First, we see that the coordinate constraint term itself adds a small positive value to the score, since mainchain heavyatoms have moved slightly from their starting coordinates.  Second, because the structure has not been allowed to move as far this time, minor clashes and imperfections do not resolve themselves as completely, resulting in a slightly higher score than before.  So there is a trade-off between keeping the structure close to the crystal structure and tunnelling down deeply to the nearest local energy minimum. 
+Comparing the minimized structure to the minimized-with-csts structure, we see an increase in total energy caused predominantly by differences in the fa\_atr and fa\_dun terms. This comes from two sources.  First, we see that the coordinate constraint term itself adds a small positive value to the score, since mainchain heavyatoms have moved slightly from their starting coordinates.  Second, because the structure has not been allowed to move as far this time, minor clashes and imperfections do not resolve themselves as completely, resulting in a slightly higher score than before.  So there is a trade-off between keeping the structure close to the crystal structure and tunnelling down deeply to the nearest local energy minimum. 
 
 Now let's take a look at the minimized-with-csts structure to see how it compares to our previous structures.
 
@@ -205,7 +207,7 @@ In the context of the minimizer, a movemap allows the user to specify whether th
 
 #### A note about the FoldTree
 
-The [foldtree](https://www.rosettacommons.org/docs/latest/rosetta_basics/structural_concepts/foldtree-overview) is another important concept relevant to minimization.  Although manipulation of the foldtree will be covered in greater detail in [another tutorial](fold_tree), we will give a brief overview of the concept here.  When minimizing, degrees of freedom change, and that can have ambiguous consequences for the structure.  For example, if I were to change the phi torsion of residue 5 from -60 to -50, several things could happen: residues 1 through 4 could stay fixed and all residues from 5 onwards could move; residues 1 through 4 could move and 5 onwards could stay fixed; atoms in residue 5 could move, but the rest of the atoms in the protein stay fixed, meaning the bonding geometry of the protein would become severely distorted; or some combination of the three. The foldtree establishes a hierarchical relationship between residues in a pose so that the effects of changing degrees of freedom are well-defined.  Each residue has one unique parent (with the exception of a single root residue), and each residue can have one or more children.  (Cyclic dependencies are prohibited -- for example, residue 4 cannot be the parent of residue 3 if residue 3 is the parent of residue 4.)  Changes in a residue's degrees of freedom propagate to all of the children of a residue, but do not affect parents.  While most residues in a typical pose are related by through-bond connections, two residues can instead be related by a through-space rigid body transform, called a *jump*.  If two separate chains exist (with no bonds linking them), it is necessary to have at least one jump relating residues in the first with residues in the second.
+The [foldtree](https://www.rosettacommons.org/docs/latest/rosetta_basics/structural_concepts/foldtree-overview) is another important concept relevant to minimization.  Although manipulation of the foldtree will be covered in greater detail in [another tutorial](fold\_tree), we will give a brief overview of the concept here.  When minimizing, degrees of freedom change, and that can have ambiguous consequences for the structure.  For example, if I were to change the phi torsion of residue 5 from -60 to -50, several things could happen: residues 1 through 4 could stay fixed and all residues from 5 onwards could move; residues 1 through 4 could move and 5 onwards could stay fixed; atoms in residue 5 could move, but the rest of the atoms in the protein stay fixed, meaning the bonding geometry of the protein would become severely distorted; or some combination of the three. The foldtree establishes a hierarchical relationship between residues in a pose so that the effects of changing degrees of freedom are well-defined.  Each residue has one unique parent (with the exception of a single root residue), and each residue can have one or more children.  (Cyclic dependencies are prohibited -- for example, residue 4 cannot be the parent of residue 3 if residue 3 is the parent of residue 4.)  Changes in a residue's degrees of freedom propagate to all of the children of a residue, but do not affect parents.  While most residues in a typical pose are related by through-bond connections, two residues can instead be related by a through-space rigid body transform, called a *jump*.  If two separate chains exist (with no bonds linking them), it is necessary to have at least one jump relating residues in the first with residues in the second.
 
 As mentioned in the caveat above, a user invoking the minimizer, particularly with a MoveMap, should be mindful of the foldtree.  The default foldtree has residue 1 of chain A as the root, with residue 2 as a child of 1, residue 3 as a child of 2, *etc.*, and with jumps to the first residue of any additional chain or chains.  Any moveable degree of freedom affects every residue downstream of it in the foldtree, even if that residue's degrees of freedom are fixed by the MoveMap.  As a concrete example, let's consider the case of a 20-residue pose with a default foldtree, with a MoveMap that prevents movement of backbone DoFs for residues 8 through 20.  Energy-minimization would change backbone degrees of freedom for residues 1 through 7, swinging residues 8 through 20 through space in the process (though residues 8 through 20 could not move *relative to one another*, in this case).
 

@@ -4,7 +4,7 @@
 
 KEYWORDS: LOOPS SCRIPTING_INTERFACES
 
-Tutorial by Vikram K. Mulligan (vmullig@uw.edu).  Created on 28 March 2017 for the Baker lab Rosetta Tutorial Series.
+Tutorial by Vikram K. Mulligan (vmullig@uw.edu).  Created on 28 March 2017 for the Baker lab Rosetta Tutorial Series.  Updated 29 may 2017 for the new ref2015 default scorefunction.
 
 [[_TOC_]]
 
@@ -36,7 +36,6 @@ The following `rosetta.flags` file will be used for this tutorial:
 
 ```
 -nstruct 10
--beta_nov15
 -in:file:s inputs/2ND2_state1_glyonly_loop_removed.pdb
 -in:file:fullatom
 -write_all_connect_info
@@ -50,7 +49,7 @@ Here is the script from the first tutorial for reference.  We will modify it to 
 ```xml
 <ROSETTASCRIPTS>
 	<SCOREFXNS>
-		<ScoreFunction name="bnv" weights="beta_nov15.wts" />
+		<ScoreFunction name="ref15sfxn" weights="ref2015.wts" />
 		<ScoreFunction name="bb_only" weights="empty.wts" >
 			<Reweight scoretype="fa_rep" weight="0.1" />
 			<Reweight scoretype="fa_atr" weight="0.2" />
@@ -170,20 +169,20 @@ Because of the break in the loop, we need constraints to maintain the peptide bo
 </CreateTorsionConstraint>
 ```
 
-In our `<SCOREFXNS>` section, we will need a new scorefunction that enables the constraint terms.  We can use the already-defined `beta_nov15_cst.wts` file that exists in the Rosetta database for this:
+In our `<SCOREFXNS>` section, we will need a new scorefunction that enables the constraint terms.  We can use the already-defined `ref2015_cst.wts` file that exists in the Rosetta database for this:
 
 ```xml
-<ScoreFunction name="bnv_cst" weights="beta_nov15_cst.wts" />
+<ScoreFunction name="ref15sfxn_cst" weights="ref2015_cst.wts" />
 ```
 
 ### Step 2: Modifying the GeneralizedKIC mover
 
-We are now ready to modify the GeneralizedKIC mover.  First, we'll make some minor tweaks to allow the design protocol to run faster: change the number of attempts to 1000 (from 5000), and set the mover to stop when 1 solution has been found (instead of 5).  Next, because we're performing design prior to selecting a solution, let's change the selector scorefunction from "bb_only" to "bnv" (the full `beta_nov15` scorefunction).  Finally, we want to add a preselection mover, which we will define in the next step.  The preselection mover is the set of moves that will be carried out on each solution prior to applying the GeneralizedKIC selector to pick a final solution.  We will call our preselection mover "design\_protocol".
+We are now ready to modify the GeneralizedKIC mover.  First, we'll make some minor tweaks to allow the design protocol to run faster: change the number of attempts to 1000 (from 5000), and set the mover to stop when 1 solution has been found (instead of 5).  Next, because we're performing design prior to selecting a solution, let's change the selector scorefunction from "bb_only" to "ref15sfxn" (the full `ref2015` scorefunction).  Finally, we want to add a preselection mover, which we will define in the next step.  The preselection mover is the set of moves that will be carried out on each solution prior to applying the GeneralizedKIC selector to pick a final solution.  We will call our preselection mover "design\_protocol".
 
 _**WARNING**: Although GenKIC offers guarantees that only loop residues and tail residues will move, that covalent connectivity will be unchanged, and that the FoldTree will not be altered, these guarantees no longer remain in effect if an arbitrary mover is called by GenKIC prior to selection._
 
 ```xml
-<GeneralizedKIC name="genkic" selector="lowest_energy_selector" selector_scorefunction="bnv"
+<GeneralizedKIC name="genkic" selector="lowest_energy_selector" selector_scorefunction="ref15sfxn"
 	closure_attempts="1000" stop_when_n_solutions_found="1"
 	pre_selection_mover="design_protocol"
 >
@@ -202,10 +201,10 @@ Now we must create the "design\_protocol" mover.  Make a [ParsedProtocol mover](
 
 We want this protocol to do three things: (1) carry out several rounds of design, designing only positions that are in the core or on the boundary and near to, or part of, the loop (2) correct the positions of the carbonyl oxygen and amide proton at the loop cutpoint (for these atoms can drift during minimization), and (3) filter designs based on energy, discarding those that are not below a certain threshold.
 
-Let's create the design mover first.  We'll use [FastDesign](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/Movers/movers_pages/FastDesignMover), which carries out flexible-backbone design.  Configure a FastDesign mover (prior to the ParsedProtocol that we just defined) with the following options: 1 round of design, the "bnv_cst" scorefunction that we defined earlier, two TaskOperations (called "design\_core\_near\_loop" and "no\_design\_otherwise", both of which we will define), and a movemap that allows no jumps to move, all side-chains to move, and only backbone between residues 28 and 34 to move.  The mover definition should look like this:
+Let's create the design mover first.  We'll use [FastDesign](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/Movers/movers_pages/FastDesignMover), which carries out flexible-backbone design.  Configure a FastDesign mover (prior to the ParsedProtocol that we just defined) with the following options: 1 round of design, the "ref15sfxn_cst" scorefunction that we defined earlier, two TaskOperations (called "design\_core\_near\_loop" and "no\_design\_otherwise", both of which we will define), and a movemap that allows no jumps to move, all side-chains to move, and only backbone between residues 28 and 34 to move.  The mover definition should look like this:
 
 ```xml
-<FastDesign name="fdes1" repeats="1" task_operations="design_core_near_loop,no_design_otherwise" scorefxn="bnv_cst">
+<FastDesign name="fdes1" repeats="1" task_operations="design_core_near_loop,no_design_otherwise" scorefxn="ref15sfxn_cst">
 	<MoveMap name="fdes1_mm" >
 		<Span begin="1" end="27" bb="false" chi="true" />
 		<Span begin="28" end="34" bb="true" chi="true" />
@@ -250,7 +249,7 @@ The design mover should now be complete.  We can add it to the ParsedProtocol, t
 Let's add one more tihng to the ParsedProtocol: a filter to throw away bad, high-scoring designs.  Ordinarily, we'd want to make this fairly stringent, but for the purposes of this tutorial, we'll set the filter threshold to 10 to ensure that we get a few designs in a reasonable amount of time.  In the `<FILTERS>` section of your script, add the following:
 
 ```xml
-<ScoreType name="scorefilter" score_type="total_score" threshold="10.0" scorefxn="bnv_cst" />
+<ScoreType name="scorefilter" score_type="total_score" threshold="10.0" scorefxn="ref15sfxn_cst" />
 ```
 
 And add it also to the ParsedProtocol mover:
@@ -272,8 +271,8 @@ At this point, your script should be finished and ready to run.  It should look 
 ```xml
 <ROSETTASCRIPTS>
 	<SCOREFXNS>
-		<ScoreFunction name="bnv" weights="beta_nov15.wts" />
-		<ScoreFunction name="bnv_cst" weights="beta_nov15_cst.wts" />
+		<ScoreFunction name="ref15sfxn" weights="ref2015.wts" />
+		<ScoreFunction name="ref15sfxn_cst" weights="ref2015_cst.wts" />
 		<ScoreFunction name="bb_only" weights="empty.wts" >
 			<Reweight scoretype="fa_rep" weight="0.1" />
 			<Reweight scoretype="fa_atr" weight="0.2" />
@@ -298,7 +297,7 @@ At this point, your script should be finished and ready to run.  It should look 
 		</OperateOnResidueSubset>
 	</TASKOPERATIONS>
 	<FILTERS>
-		<ScoreType name="scorefilter" score_type="total_score" threshold="10.0" scorefxn="bnv_cst" />
+		<ScoreType name="scorefilter" score_type="total_score" threshold="10.0" scorefxn="ref15sfxn_cst" />
 	</FILTERS>
 	<MOVERS>	
 		<PeptideStubMover name="add_loop_residues" >
@@ -330,7 +329,7 @@ At this point, your script should be finished and ready to run.  It should look 
 		</CreateTorsionConstraint>
 
 
-		<FastDesign name="fdes1" repeats="1" task_operations="design_core_near_loop,no_design_otherwise" scorefxn="bnv_cst">
+		<FastDesign name="fdes1" repeats="1" task_operations="design_core_near_loop,no_design_otherwise" scorefxn="ref15sfxn_cst">
 			<MoveMap name="fdes1_mm" >
 				<Span begin="1" end="27" bb="false" chi="true" />
 				<Span begin="28" end="34" bb="true" chi="true" />
@@ -349,7 +348,7 @@ At this point, your script should be finished and ready to run.  It should look 
 			<Add filter="scorefilter" />
 		</ParsedProtocol>
 
-		<GeneralizedKIC name="genkic" selector="lowest_energy_selector" selector_scorefunction="bnv"
+		<GeneralizedKIC name="genkic" selector="lowest_energy_selector" selector_scorefunction="ref15sfxn"
 			closure_attempts="1000" stop_when_n_solutions_found="1"
 			pre_selection_mover="design_protocol"
 		>
