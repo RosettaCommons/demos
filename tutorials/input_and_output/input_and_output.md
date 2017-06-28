@@ -314,7 +314,7 @@ Will produce the files `pre_1qys_suf_0001.pdb` and `pre_score_suf.sc`in your cur
 ###Setting Output Paths
 Throughout this tutorial, we have been outputting the score files and the output structures in the current working directory. To change this behaviour we use `-out:path:all` option. Let us once again run scoring while saving the PDB and the score file in the folder `output_files`.
 
-    $> $ROSETTA3/bin/score_jd2.default.linuxgccrelease -in:file:s input_files/1qys.pdb -out:pdb -out:path output_files
+    $> $ROSETTA3/bin/score_jd2.default.linuxgccrelease -in:file:s input_files/1qys.pdb -out:pdb -out:path:all output_files
     
 You should find `1qys_0001.pdb` and `score.sc` in the directory `output_files`.
 
