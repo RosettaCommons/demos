@@ -1,6 +1,6 @@
 <ROSETTASCRIPTS>
 	<SCOREFXNS>
-		<ScoreFunction name="t14" weights="talaris2014" />
+		<ScoreFunction name="r15" weights="ref2015" />
 	</SCOREFXNS>
 	<RESIDUE_SELECTORS>
 		<Layer name="corelayer" select_core="true" select_boundary="false" select_surface="false" core_cutoff="4.0" />
@@ -23,13 +23,13 @@
 	<FILTERS>
 	</FILTERS>
 	<MOVERS>
-		<PackRotamersMover name="pack1" scorefxn="t14" task_operations="core_resfile,prevent_surface_from_repacking,restrict_boundary_to_repack,extrachi" />
+		<PackRotamersMover name="pack1" scorefxn="r15" task_operations="core_resfile,prevent_surface_from_repacking,restrict_boundary_to_repack,extrachi" />
 	</MOVERS>
 	<APPLY_TO_POSE>
 	</APPLY_TO_POSE>
 	<PROTOCOLS>
 		<Add mover="pack1" />
 	</PROTOCOLS>
-	<OUTPUT scorefxn="t14" />
+	<OUTPUT scorefxn="r15" />
 
 </ROSETTASCRIPTS>

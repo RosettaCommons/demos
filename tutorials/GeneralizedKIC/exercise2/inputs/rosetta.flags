@@ -1,0 +1,8 @@
+-nstruct 1
+-in:file:s inputs/2ND2_exercise1_solution4.pdb
+-in:file:fullatom
+-write_all_connect_info
+-parser:protocol xml/exercise2.xml
+-jd2:failed_job_exception false
+-mute all
+-unmute protocols.simple_moves.GenericMonteCarloMover

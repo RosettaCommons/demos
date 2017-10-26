@@ -1,0 +1,7 @@
+-nstruct 10
+-in:file:s inputs/2ND2_state1_glyonly_loop_removed.pdb
+-in:file:fullatom
+-write_all_connect_info
+-parser:protocol xml/exercise3.xml
+-jd2:failed_job_exception false
+-mute protocols.generalized_kinematic_closure.filter.GeneralizedKICfilter core.chemical.AtomICoor core.conformation.Residue core.kinematics.AtomTree

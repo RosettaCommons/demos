@@ -1,6 +1,6 @@
 <ROSETTASCRIPTS>
 	<SCOREFXNS>
-		<ScoreFunction name="sfx_symm" weights="talaris2014" symmetric="true" />
+		<ScoreFunction name="sfx_symm" weights="ref2015" symmetric="true" />
 	</SCOREFXNS>
 	<RESIDUE_SELECTORS>
 	</RESIDUE_SELECTORS>

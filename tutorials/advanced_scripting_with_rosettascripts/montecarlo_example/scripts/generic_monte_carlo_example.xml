@@ -1,7 +1,7 @@
 <ROSETTASCRIPTS>
 
 	<SCOREFXNS>
-		<ScoreFunction name="myscore" weights="talaris2014" />
+		<ScoreFunction name="myscore" weights="ref2015" />
 	</SCOREFXNS>
 
 	<RESIDUE_SELECTORS>

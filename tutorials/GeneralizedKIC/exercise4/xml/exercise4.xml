@@ -1,0 +1,109 @@
+<ROSETTASCRIPTS>
+	<SCOREFXNS>
+		<ScoreFunction name="ref15sfxn" weights="ref2015.wts" />
+		<ScoreFunction name="bb_only" weights="empty.wts" >
+			<Reweight scoretype="fa_rep" weight="0.1" />
+			<Reweight scoretype="fa_atr" weight="0.2" />
+			<Reweight scoretype="hbond_sr_bb" weight="2.0" />
+			<Reweight scoretype="hbond_lr_bb" weight="2.0" />
+			<Reweight scoretype="rama_prepro" weight="0.45" />
+			<Reweight scoretype="omega" weight="0.4" />
+			<Reweight scoretype="p_aa_pp" weight="0.6" />
+			<Reweight scoretype="dslf_fa13" weight="1.25" />
+			<Reweight scoretype="fa_dun" weight="0.7" />
+		</ScoreFunction>
+	</SCOREFXNS>
+	<RESIDUE_SELECTORS>
+	</RESIDUE_SELECTORS>
+	<TASKOPERATIONS>
+	</TASKOPERATIONS>
+	<FILTERS>
+	</FILTERS>
+	<MOVERS>
+		<PeptideStubMover name="add_loop_residues" >
+			<Insert anchor_rsd="28" resname="ALA" />
+			<Insert anchor_rsd="29" resname="GLY" />
+			<Insert anchor_rsd="30" resname="ALA" />
+			<Prepend anchor_rsd="32" resname="ALA" />
+			<Prepend anchor_rsd="32" resname="ALA" />
+		</PeptideStubMover>
+		
+		<DeclareBond name="new_bond" atom1="C" atom2="N" res1="31" res2="32" />
+
+		<MutateResidue name="mut1" target="28" new_res="ALA" />
+		<MutateResidue name="mut2" target="34" new_res="ALA" />
+	
+		<MutateResidue name="mut3" target="15" new_res="CYS:disulfide" />
+		<MutateResidue name="mut4" target="42" new_res="CYS:disulfide" />
+		<DeclareBond name="make_disulfide" atom1="SG" atom2="SG" res1="15" res2="42" />
+
+		<GeneralizedKIC name="genkic" selector="lowest_energy_selector" selector_scorefunction="bb_only"
+			closure_attempts="5000" stop_when_n_solutions_found="1" >
+			<AddResidue res_index="28" />
+			<AddResidue res_index="29" />
+			<AddResidue res_index="30" />
+			<AddResidue res_index="31" />
+			<AddResidue res_index="32" />
+			<AddResidue res_index="33" />
+			<AddResidue res_index="34" />
+			<AddResidue res_index="35" />
+			<AddResidue res_index="36" />
+			<AddResidue res_index="37" />
+			<AddResidue res_index="38" />
+			<AddResidue res_index="39" />
+			<AddResidue res_index="40" />
+			<AddResidue res_index="41" />
+			<AddResidue res_index="42" />
+			<AddResidue res_index="15" />
+			<AddTailResidue res_index="43" />
+			<AddTailResidue res_index="44" />
+			<SetPivots res1="28" res2="33" res3="15" atom1="CA" atom2="CA" atom3="CB" />
+			<AddPerturber effect="set_dihedral" >
+				<AddAtoms res1="28" atom1="C" res2="29" atom2="N" />
+				<AddAtoms res1="29" atom1="C" res2="30" atom2="N" />
+				<AddAtoms res1="30" atom1="C" res2="31" atom2="N" />
+				<AddAtoms res1="31" atom1="C" res2="32" atom2="N" />
+				<AddAtoms res1="32" atom1="C" res2="33" atom2="N" />
+				<AddAtoms res1="33" atom1="C" res2="34" atom2="N" />
+				<AddValue value="180.0" />
+			</AddPerturber>
+			<CloseBond res1="31" res2="32" atom1="C" atom2="N" bondlength="1.328685" angle1="121.699997" angle2="116.199993" torsion="180.0" />
+			<CloseBond res1="42" res2="15" atom1="SG" atom2="SG" bondlength="1.793" angle1="105.0" angle2="105.0" />
+			<AddPerturber effect="randomize_backbone_by_rama_prepro" >
+				<AddResidue index="28" />
+				<AddResidue index="29" />
+				<AddResidue index="30" />
+				<AddResidue index="31" />
+				<AddResidue index="32" />
+				<AddResidue index="33" />
+				<AddResidue index="34" />
+			</AddPerturber>
+			<AddPerturber effect="randomize_dihedral" >
+				<AddAtoms res1="42" res2="15" atom1="SG" atom2="SG" />
+				<AddAtoms res1="42" res2="42" atom1="CB" atom2="SG" />
+				<AddAtoms res1="42" res2="42" atom1="CA" atom2="CB" />
+				<AddAtoms res1="15" res2="15" atom1="CB" atom2="SG" />
+				<AddAtoms res1="15" res2="15" atom1="CA" atom2="CB" />
+			</AddPerturber>
+			<AddFilter type="backbone_bin" residue="28" bin_params_file="ABBA" bin="A" />
+			<AddFilter type="backbone_bin" residue="34" bin_params_file="ABBA" bin="A" />
+			<AddFilter type="loop_bump_check" />
+			<AddFilter type="rama_prepro_check" residue="28" rama_cutoff_energy="1.5" />
+			<AddFilter type="rama_prepro_check" residue="33" rama_cutoff_energy="1.5" />
+		</GeneralizedKIC>
+		
+	</MOVERS>
+	<APPLY_TO_POSE>
+	</APPLY_TO_POSE>
+	<PROTOCOLS>
+		<Add mover="add_loop_residues" />
+		<Add mover="new_bond" />
+		<Add mover="mut1" />
+		<Add mover="mut2" />
+		<Add mover="mut3" />
+		<Add mover="mut4" />
+		<Add mover="make_disulfide" />
+		<Add mover="genkic" />
+	</PROTOCOLS>
+	<OUTPUT />
+</ROSETTASCRIPTS>

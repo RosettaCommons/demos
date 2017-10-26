@@ -1,5 +1,6 @@
 <ROSETTASCRIPTS>
 	<SCOREFXNS>
+		<ScoreFunction name="r15" weights="ref2015" />
 	</SCOREFXNS>
 	<TASKOPERATIONS>
 		<InitializeFromCommandline name="ifcl"/>
@@ -14,11 +15,11 @@
 	<MOVERS>
 		MINIMIZATION MOVERS
 		Single cycle of FastRelax to minimize backbone of docking partners
-		<FastRelax name="minimize_interface" scorefxn="talaris2013" repeats="1" task_operations="ifcl,rtr,rtiv,prfrp" />
+		<FastRelax name="minimize_interface" scorefxn="r15" repeats="1" task_operations="ifcl,rtr,rtiv,prfrp" />
 	
 		DOCKING MOVERS
-		<Docking name="dock_low" score_low="score_docking_low" score_high="talaris2013" fullatom="0" local_refine="0" optimize_fold_tree="1" conserve_foldtree="0" ignore_default_docking_task="0" design="0" task_operations="ifcl,prfrp" jumps="1"/>
-		<Docking name="dock_high" score_low="score_docking_low" score_high="talaris2013" fullatom="1" local_refine="1" optimize_fold_tree="1" conserve_foldtree="0" design="0" task_operations="ifcl,prfrp" jumps="1"/>
+		<Docking name="dock_low" score_low="score_docking_low" score_high="r15" fullatom="0" local_refine="0" optimize_fold_tree="1" conserve_foldtree="0" ignore_default_docking_task="0" design="0" task_operations="ifcl,prfrp" jumps="1"/>
+		<Docking name="dock_high" score_low="score_docking_low" score_high="r15" fullatom="1" local_refine="1" optimize_fold_tree="1" conserve_foldtree="0" design="0" task_operations="ifcl,prfrp" jumps="1"/>
 		
 		<SaveAndRetrieveSidechains name="srsc" allsc="0" /> Speeds the move from centroid to full atom mode
 	
@@ -34,6 +35,6 @@
 		Minimize interface
 		<Add mover="minimize_interface" />
 	</PROTOCOLS>
-	<OUTPUT scorefxn="talaris2013" />
+	<OUTPUT scorefxn="r15" />
 
 </ROSETTASCRIPTS>

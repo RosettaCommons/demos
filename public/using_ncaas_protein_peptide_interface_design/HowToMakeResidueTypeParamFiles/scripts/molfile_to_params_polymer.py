@@ -1650,9 +1650,9 @@ def polymer_assign_ignored_atoms_bonds(m):
 
 def polymer_assign_pdb_like_atom_names_to_sidechain(atoms, bonds, peptoid):
     ''' Assign PDB like names to atoms. PDB names are based on the path distance from the alpha carbon
-    Greek Alphabet: Alpha, Beta, Gamma, Delta, Epsilon, Zeta, Eta, Theta, Iota, Kappa, Lambda, Mu, Nu, Xi, Omicron, Pi, Rho, Sigma, Tau, Upsilon, Phi, Chi, Psi, Omega'''
+    Greek Alphabet (it has been extended to lower-case letters for large non-canonical AAs like lanthanide-binding tags): Alpha, Beta, Gamma, Delta, Epsilon, Zeta, Eta, Theta, Iota, Kappa, Lambda, Mu, Nu, Xi, Omicron, Pi, Rho, Sigma, Tau, Upsilon, Phi, Chi, Psi, Omega, alpha, beta, gamma, delta, epsilon, zeta, eta, theta, iota, kappa, lambda, mu, nu, xi, omicron, pi, rho, sigma, tau, upsilon, phi, chi, psi, omega'''
     # greek alphabet eta, tao and omega are skipped because they are the same as previous letters
-    greek_alphabet = ['A', 'B', 'G', 'D', 'E', 'Z', 'T', 'I', 'K', 'L', 'M', 'N', 'X', 'O', 'P', 'R', 'S', 'U', 'P', 'C']
+    greek_alphabet = ['A', 'B', 'G', 'D', 'E', 'Z', 'T', 'I', 'K', 'L', 'M', 'N', 'X', 'O', 'P', 'R', 'S', 'U', 'P', 'C', 'a', 'b', 'g', 'd', 'e', 'z', 't', 'i', 'k', 'l', 'm', 'n', 'x', 'o', 'p', 'r', 's', 'u', 'p', 'c']
     elem_atom_num = {'C': 6, 'N': 7, 'O': 8, 'F': 9, 'NA': 11, 'MG': 12, 'P':15, 'S':16, 'CL':17, 'K':19, 'CA':20, 'FE':26, 'ZN':30, 'BR':35, 'I':53}
     # find alpha carbon or the ""alpha nitrogen" for peptoids (still called ca_index below)
     print "PEPTOID" , peptoid
@@ -1694,6 +1694,7 @@ def polymer_assign_pdb_like_atom_names_to_sidechain(atoms, bonds, peptoid):
                 a.pdb_greek_dist = greek_alphabet[all_all_dist[ca_index][i]-1]
         else:
             if not a.is_H and not a.poly_ignore and not a.poly_backbone:
+                print i, a
                 a.pdb_greek_dist = greek_alphabet[all_all_dist[ca_index][i]]
     debug = [a.pdb_greek_dist for a in atoms if not a.is_H ] #DEBUG
     print debug #DEBUG
@@ -1748,10 +1749,10 @@ def polymer_assign_pdb_like_atom_names_to_sidechain(atoms, bonds, peptoid):
                 print "DEBUG: ", b.a2.pdb_name
 
 def polymer_reorder_atoms(molfile):
-    ''' Reorders the atoms acording to the pdb ordering so that the order of the internal cords is correct '''
+    ''' Reorders the atoms acording to the pdb ordering so that the order of the internal coords is correct '''
     def poly_atom_cmp(atom1, atom2):
         ''' Sorts based on special polymer backbone type, greek letter distance, postfix num, prefix num '''
-        greek_alphabet = { ' ':0, 'A':1, 'B':2, 'G':3, 'D':4, 'E':5, 'Z':6, 'T':7, 'I':8, 'K':9, 'L':10, 'M':11, 'N':12, 'X':13, 'O':14, 'P':15, 'R':16, 'S':17, 'U':18, 'P':19, 'C':20, 'W':21, 'W':22, 'W':23, 'W':24, 'W':25, 'W':26, 'W':27, 'W':28, 'W':29, 'W':30, 'W':31 }
+        greek_alphabet = { ' ':0, 'A':1, 'B':2, 'G':3, 'D':4, 'E':5, 'Z':6, 'T':7, 'I':8, 'K':9, 'L':10, 'M':11, 'N':12, 'X':13, 'O':14, 'P':15, 'R':16, 'S':17, 'U':18, 'P':19, 'C':20, 'W':21, 'W':22, 'W':23, 'W':24, 'W':25, 'W':26, 'W':27, 'W':28, 'W':29, 'W':30, 'W':31, 'a':32, 'b':33, 'g':34, 'd':35, 'e':36, 'z':37, 't':38, 'i':39, 'k':40, 'l':41, 'm':42, 'n':43, 'x':44, 'o':45, 'p':46, 'r':47, 's':48, 'u':49, 'p':50, 'c':51 }
         # ignore
         if atom1.poly_ignore == True and atom2.poly_ignore == True: return 0
         elif atom1.poly_ignore == True and atom2.poly_ignore == False: return 1

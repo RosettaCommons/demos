@@ -6,6 +6,8 @@ KEYWORDS: CORE_CONCEPTS ANALYSIS UTILITIES GENERAL
 Tutorial by Shourya S. Roy Burman (ssrb@jhu.edu) 
 Created 20 June 2016
 
+Updated 29 May 2017 by Vikram K. Mulligan (vmullig@uw.edu) for the ref2015 energy function.
+
 [[_TOC_]]
 
 Summary
@@ -24,16 +26,18 @@ Rosetta calculates the energy of a biomolecule using energy functions based on p
 Scoring in Rosetta
 ------------------
 
-In Rosetta, the energy of a biomolecule is calculated by _scoring_ it. Rosetta has an optimized energy function or _score function_ called _talaris2014_ for calculating the energy of all atomic interactions in a globular protein made of L-amino acids. There are also several all-atom score functions for specialized applications on other biomolecules, as well as score functions for the reduced [[_centroid representation_../full_atom_vs_centroid/fullatom_centroid.md]]. Additionally, you can create a custom score function to suit your requirements.
+In Rosetta, the energy of a biomolecule is calculated by _scoring_ it. Rosetta has an optimized energy function or _score function_ called _ref2015_ for calculating the energy of all atomic interactions in a globular protein made of L-amino acids. There are also several all-atom score functions for specialized applications on other biomolecules, as well as score functions for the reduced [[_centroid representation_../full_atom_vs_centroid/fullatom_centroid.md]]. Additionally, you can create a custom score function to suit your requirements.
 
 Score Function
 --------------
 
-Score functions in Rosetta are weighted sums of energy terms, some of which represent physical forces like electrostatics and van der Waals' interactions, while others represent statistical terms like the probability of finding the torsion angles in Ramachandran space. Below is a list of the energy terms used in the _talaris2014_ score function:
+Score functions in Rosetta are weighted sums of energy terms, some of which represent physical forces like electrostatics and van der Waals' interactions, while others represent statistical terms like the probability of finding the torsion angles in Ramachandran space. Below is a list of the energy terms used in the _ref2015_ score function:
 
     fa_atr                 Lennard-Jones attractive between atoms in different residues
     fa_rep                 Lennard-Jones repulsive between atoms in different residues
     fa_sol                 Lazaridis-Karplus solvation energy
+    fa_intra_sol_xover4    Intra-residue Lazaridis-Karplus solvation energy
+    lk_ball_wtd            Asymmetric solvation energy
     fa_intra_rep           Lennard-Jones repulsive between atoms in the same residue
     fa_elec                Coulombic electrostatic potential with a distance-dependent dielectric   
     pro_close              Proline ring closure energy and energy of psi angle of preceding residue
@@ -42,17 +46,18 @@ Score functions in Rosetta are weighted sums of energy terms, some of which repr
     hbond_bb_sc            Sidechain-backbone hydrogen bond energy
     hbond_sc               Sidechain-sidechain hydrogen bond energy
     dslf_fa13              Disulfide geometry potential
-    rama                   Ramachandran preferences
+    rama_prepro            Ramachandran preferences (with separate lookup tables for pre-proline positions and other positions)
     omega                  Omega dihedral in the backbone. A Harmonic constraint on planarity with standard deviation of ~6 deg.
+    p_aa_pp                Probability of amino acid, given torsion values for phi and psi
     fa_dun                 Internal energy of sidechain rotamers as derived from Dunbrack's statistics
-    p_aa_pp                Probability of amino acid at Φ/Ψ
+    yhh_planarity          A special torsional potential to keep the tyrosine hydroxyl in the plane of the aromatic ring
     ref                    Reference energy for each amino acid. Balances internal energy of amino acid terms.  Plays role in design.
     METHOD_WEIGHTS         Not an energy term itself, but the parameters for each amino acid used by the ref energy term. 
 
 
 Further description of energy terms can be found [here](https://www.rosettacommons.org/docs/latest/rosetta_basics/scoring/score-types).
 
-The weights associated with the _talaris2014_ score function are:
+The weights associated with the _ref2015_ score function are:
 
 ```
 METHOD_WEIGHTS ref 0.773742 0.443793 -1.63002 -1.96094 0.61937 0.173326 0.388298 1.0806 -0.358574 0.761128 0.249477 -1.19118 -0.250485 -1.51717 -0.32436 0.165383 0.20134 0.979644 1.23413 0.162496 
@@ -142,7 +147,7 @@ To avoid these issues, it is recommended that you always refine the PDB with the
 
 ###Basic Scoring
 
-In this section, we are going to score the PDB 1QYS (a refined version is provided in `<path_to_Rosetta_directory>/demos/tutorials/scoring/input_files`). First, we will use the default score function, i.e. _talaris2014_. Instead of passing a whitespace separated list of options, we will start using flags files as we start using more options. For now, the only options that we will pass in the flags file is the input PDB and the output score file name:
+In this section, we are going to score the PDB 1QYS (a refined version is provided in `<path_to_Rosetta_directory>/demos/tutorials/scoring/input_files`). First, we will use the default score function, i.e. _ref2015_. Instead of passing a whitespace separated list of options, we will start using flags files as we start using more options. For now, the only options that we will pass in the flags file is the input PDB and the output score file name:
 
     -in:file:s input_files/1qys.pdb
     
@@ -166,7 +171,7 @@ SCORE:    -163.023    -163.023     0.000  -423.638   109.662   -46.146        1.
 
 The first column called `total_score` represents the total weighted score for the structure 1QYS. Notice how much lower the `total_score` is when compared to the unrefined structure in the previous section. For a refined structure of this size, a score of -100 REU to -300 REU is typical. The lower the score, the more stable the structure is likely to be for a given protein.
 
->**A rule of thumb: -1 to -3 REU per residue is typical while scoring a refined structure with _talaris2014_ score function.**
+>**A rule of thumb: -1 to -3 REU per residue is typical while scoring a refined structure with _ref2015_ score function.**
 
 Other columns represent the individual components which go into the total score. For example, the column `fa_atr` represents the weighted score of the Lennard-Jones attractive potential between atoms in different residues. This breakdown can be helpful in determining which energy terms are contributing more than others, i.e. what kind of interactions occur in the protein. In this particular example, Rosetta predicts that the inter-residue van der Waals' forces have the largest stabilizing contribution (`-423.638`), whereas solvation (represented by `fa_sol`) has the highest destabilizing contribution (`241.309`).
 
@@ -269,7 +274,7 @@ SCORE:    -404.591    -404.591       0.000       0.000       0.000       0.000  
 SCORE:    -332.020    -332.020       0.000       0.000       0.000       0.000    -353.263       0.293      -1.412       1.023      24.590      -0.747      -0.931      -0.823      -0.750             0.000              0.000              0.000 1ubq_0001
 ```
 
-Note that we have set the weight of `fa_pair` to zero in the patch file. This eliminates the any contribution from that term, and the score file is thus missing the `fa_pair` column. Also, the weighted scores of `fa_rep`, `fa_dun` and others have changed as defined by the patch file. The increase in weighted score of `fa_atr` is a result of the increased weight we fed in through the command line via the flag file. (This, incidentally, is the same weight as the _talaris2014_ score function, and hence `fa_atr` has the same weighted score as in the basic scoring example.)
+Note that we have set the weight of `fa_pair` to zero in the patch file. This eliminates the any contribution from that term, and the score file is thus missing the `fa_pair` column. Also, the weighted scores of `fa_rep`, `fa_dun` and others have changed as defined by the patch file. The increase in weighted score of `fa_atr` is a result of the increased weight we fed in through the command line via the flag file. (This, incidentally, is the same weight as the _ref2015_ score function, and hence `fa_atr` has the same weighted score as in the basic scoring example.)
 
 ####Advanced Options
 
@@ -352,7 +357,15 @@ Tips
 References
 ----------
 
-The default score function in Rosetta, _talaris2014_ and its corrections were tested in the paper
+A good summary of scoring in Rosetta may be found here:
+
+[Alford et al. (2017) J. Chem. Theory Comput. In press.](https://www.ncbi.nlm.nih.gov/pubmed/28430426)
+
+The default score function in Rosetta, _ref2015_ and its corrections were tested in the paper:
+
+[Park et al. (2016). J. Chem. Theory Comput. 12(12):6201-12](https://www.ncbi.nlm.nih.gov/pubmed/27766851)
+
+The previous default score function, _talaris2014_ was tested in the paper:
 
 [O’Meara et al., J. Chem. Theory Comput. 2015](https://dx.doi.org/10.1021/ct500864r)  
 

@@ -1,0 +1,70 @@
+<ROSETTASCRIPTS>
+	<SCOREFXNS>
+		<ScoreFunction name="ref15sfxn" weights="ref2015.wts" />
+		<ScoreFunction name="bb_only" weights="empty.wts" >
+			<Reweight scoretype="fa_rep" weight="0.1" />
+			<Reweight scoretype="fa_atr" weight="0.2" />
+			<Reweight scoretype="hbond_sr_bb" weight="2.0" />
+			<Reweight scoretype="hbond_lr_bb" weight="2.0" />
+			<Reweight scoretype="rama_prepro" weight="0.45" />
+			<Reweight scoretype="omega" weight="0.4" />
+			<Reweight scoretype="p_aa_pp" weight="0.6" />
+		</ScoreFunction>
+	</SCOREFXNS>
+	<RESIDUE_SELECTORS>
+	</RESIDUE_SELECTORS>
+	<TASKOPERATIONS>
+	</TASKOPERATIONS>
+	<FILTERS>
+	</FILTERS>
+	<MOVERS>
+
+		<GeneralizedKIC name="genkic" selector="lowest_delta_torsion_selector" selector_scorefunction="bb_only"
+			closure_attempts="100" stop_when_n_solutions_found="1" >
+			<AddResidue res_index="28" />
+			<AddResidue res_index="29" />
+			<AddResidue res_index="30" />
+			<AddResidue res_index="31" />
+			<AddResidue res_index="32" />
+			<AddResidue res_index="33" />
+			<AddResidue res_index="34" />
+			<SetPivots res1="28" res2="31" res3="34" atom1="CA" atom2="CA" atom3="CA" />
+			<AddPerturber effect="perturb_dihedral" >
+				<AddAtoms res1="28" atom1="N" res2="28" atom2="CA" />
+				<AddAtoms res1="29" atom1="N" res2="29" atom2="CA" />
+				<AddAtoms res1="30" atom1="N" res2="30" atom2="CA" />
+				<AddAtoms res1="31" atom1="N" res2="31" atom2="CA" />
+				<AddAtoms res1="32" atom1="N" res2="32" atom2="CA" />
+				<AddAtoms res1="33" atom1="N" res2="33" atom2="CA" />
+				<AddAtoms res1="34" atom1="N" res2="34" atom2="CA" />
+				<AddAtoms res1="28" atom1="CA" res2="28" atom2="C" />
+				<AddAtoms res1="29" atom1="CA" res2="29" atom2="C" />
+				<AddAtoms res1="30" atom1="CA" res2="30" atom2="C" />
+				<AddAtoms res1="31" atom1="CA" res2="31" atom2="C" />
+				<AddAtoms res1="32" atom1="CA" res2="32" atom2="C" />
+				<AddAtoms res1="33" atom1="CA" res2="33" atom2="C" />
+				<AddAtoms res1="34" atom1="CA" res2="34" atom2="C" />
+				<AddValue value="10.0" />
+			</AddPerturber>
+			<AddFilter type="loop_bump_check" />
+		</GeneralizedKIC>
+		
+		<PDBTrajectoryRecorder name="last_accepted" filename="last_accepted.pdb" stride="20" />
+		<PDBTrajectoryRecorder name="current_attempt" filename="current_attempt.pdb" stride="20" />
+		
+		<ParsedProtocol name="mc_moves" >
+			<Add mover="last_accepted" />
+			<Add mover="genkic" />
+			<Add mover="current_attempt" />
+		</ParsedProtocol>
+		
+		<GenericMonteCarlo name="mc_mover" mover_name="mc_moves" trials="10000" temperature="1.0" preapply="false" scorefxn_name="bb_only" />
+		
+	</MOVERS>
+	<APPLY_TO_POSE>
+	</APPLY_TO_POSE>
+	<PROTOCOLS>
+		<Add mover="mc_mover" />
+	</PROTOCOLS>
+	<OUTPUT />
+</ROSETTASCRIPTS>

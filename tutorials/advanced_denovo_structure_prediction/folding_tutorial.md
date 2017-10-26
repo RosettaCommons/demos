@@ -16,6 +16,8 @@ If you want to try making files that already exist (e.g., input files), write th
 
 This tutorial presents a protein folding benchmark experiment. Bacteriophage T4 lysozyme is a soluble protein that hydrolyzes peptidoglycan and releases the virus from its bacterial host. The protein was crystallized at a resolution of 1.7 angstroms and the resulting structure was submitted to the Protein Data Bank (PDB) under accession number 2LZM. In this tutorial, you will reconstruct the structure of bacteriophage T4 lysozyme using *ab initio* protein folding. At the end of the tutorial, the results from this benchmark experiment will be compared to the native structure available from the PDB.
 
+This tutorial was updated on 29 May 2017 by Vikram K. Mulligan (vmullig@uw.edu) to reflect changes due to the new default Rosetta scoring function, called ref2015.
+
 1. Navigate to this tutorial directory. You will work in this directory for the rest of the tutorial.
 
             
@@ -333,7 +335,7 @@ This tutorial presents a protein folding benchmark experiment. Bacteriophage T4 
             S_0023 S_0359_1 S_0420_1
 
     1. Re-score the models in order to take the atom_pair_constraint score into account.
-        1. The default talaris2013 weights file doesn't add constraint scores. You have to use a version with the constraints enabled (talaris2013_cst).
+        1. The default ref2015 weights file doesn't add constraint scores. You have to use a version with the constraints enabled (ref2015_cst).
 
         1. Score your models using these scoring weights.
 
@@ -343,7 +345,7 @@ This tutorial presents a protein folding benchmark experiment. Bacteriophage T4 
                 -out:file:silent_struct_type binary -out:file:fullatom \
                 -evaluation:rmsd S_0331_1_0001.pdb _core_low 2LZMA_core.txt \
                 -constraints:cst_fa_file 2LZM_dist_w1.cst -constraints:cst_fa_weight 4 \
-                -constraints:epr_distance -score:weights talaris2013_cst -overwrite
+                -constraints:epr_distance -score:weights ref2015_cst -overwrite
                 
     1. Analyze how well the models satisfy the restraints.
         

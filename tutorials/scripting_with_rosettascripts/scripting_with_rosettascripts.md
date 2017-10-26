@@ -5,6 +5,8 @@ KEYWORDS: SCRIPTING_INTERFACES CORE_CONCEPTS
 
 Tutorial by Rocco Moretti (rmorettiase@gmail.com) and Vikram K. Mulligan (vmullig@uw.edu).  Created on 21 June 2016 as part of the 2016 Documentation XRW.
 
+Updated 29 May 2017 by Vikram K. Mulligan (vmullig@uw.edu) for new ref2015 scorefunction.
+
 [[_TOC_]]
 
 ## Goals
@@ -208,7 +210,7 @@ This brings up another RosettaScripts syntax convention: generally, we have bloc
 
 Looking at the output PDB, the output structure (1ubq\_0001.pdb) should be nearly identical to the input structure. The major difference should be the presence of hydrogens which were not in the input structure. This is *not* something that is specific to RosettaScripts - in general Rosetta will add missing hydrogens and repack sidechain atoms missing in the input PDB.
 
-Additionally, you should see the standard Rosetta score table at the end of the PDB. By default, the structure will be rescored with the default Rosetta score function (talaris2014, as of this writing). This can be controlled by the ```-score:weights``` command line option.
+Additionally, you should see the standard Rosetta score table at the end of the PDB. By default, the structure will be rescored with the default Rosetta score function (ref2015, as of this writing). This can be controlled by the ```-score:weights``` command line option.
 
 ## Controlling RosettaScripts File Output
 
@@ -228,8 +230,8 @@ Each custom scorefunction is defined by different sub-tags in the SCOREFXNS sect
 ```
 <ROSETTASCRIPTS>
     <SCOREFXNS>
-        <ScoreFunction name="t13" weights="talaris2013" />
-        <ScoreFunction name="t14_cart" weights="talaris2014" >
+        <ScoreFunction name="molmech" weights="mm_std_fa_elec_dslf_fa13" />
+        <ScoreFunction name="r15_cart" weights="ref2015" >
             <Reweight scoretype="pro_close" weight="0.0" />
             <Reweight scoretype="cart_bonded" weight="0.625" />
         </ScoreFunction>
@@ -246,13 +248,13 @@ Each custom scorefunction is defined by different sub-tags in the SCOREFXNS sect
     </APPLY_TO_POSE>
     <PROTOCOLS>
     </PROTOCOLS>
-    <OUTPUT scorefxn="t14_cart" />
+    <OUTPUT scorefxn="r15_cart" />
 </ROSETTASCRIPTS>
 ```
 
-The script scorefxn.xml gives and example of defining different scorefunctions. It defines two scorefunctions.  The first one (t13) is simply the talaris2013 weights used as-is, and the second is the talaris2014 weights modified by changing the weights (coefficients) for certain score terms. (One can also use patch files, or locally-specified weights file; additionally, other scorefunction options can be set, such as soft Lennard-Jones potentials or whatnot.  See the documentation on the ```Set``` tag in the [RosettaScripts documentation](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/RosettaScripts) for more on this.)
+The script scorefxn.xml gives and example of defining different scorefunctions. It defines two scorefunctions.  The first one (molmech) is a molecular mechanics scorefunction that is included in the Rosetta database, used as-is, and the second (r15\_cart) is the ref2015 scorefunction modified by changing the weights (coefficients) for certain score terms. (One can also use patch files, or locally-specified weights files; additionally, other scorefunction options can be set, such as soft Lennard-Jones potentials or whatnot.  See the documentation on the ```Set``` tag in the [RosettaScripts documentation](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/RosettaScripts) for more on this.)
 
-The t13 scorefunction is never used in this script, which is not a problem -- RosettaScripts does not object to objects that are defined but never used (though the unnecessary allocation of these objects in memory is probably best avoided if one can help it).  The t14\_cart score function *is* used, however, in the OUTPUT tag. This tells RosettaScripts to rescore the output structures with the custom t14\_cart score function, rather than with the default (command line) scorefunction. Run 1ubq.pdb through the script:
+The molmech scorefunction is never used in this script, which is not a problem -- RosettaScripts does not object to objects that are defined but never used (though the unnecessary allocation of these objects in memory is probably best avoided if one can help it).  The r15\_cart score function *is* used, however, in the OUTPUT tag. This tells RosettaScripts to rescore the output structures with the custom r15\_cart scorefunction, rather than with the default (command line) scorefunction. Run 1ubq.pdb through the script:
 
 ```bash
 $> cp inputs/scoring.xml .
@@ -293,16 +295,16 @@ The other options in the tag control the mover's behaviour. Most of the options 
 
 Note: Boolean options in the XML can take the same representations of true and false which can be used on the commandline: 1/0, T/F, Y/N, true/false, on/off, etc.
 
-For our example script, we'll make two MinMovers. One we'll call "min\_torsion", which will have the cartesian option set to false (so it will use the default torsional minimization) and will use the t13 scorefunction. The other we'll call "min\_cart", and it will have the cartesian option set to true and use the t14\_cart scorefunction. Both will have bb and chi set to true.
+For our example script, we'll make two MinMovers. One we'll call "min\_torsion", which will have the cartesian option set to false (so it will use the default torsional minimization) and will use the molmech scorefunction. The other we'll call "min\_cart", and it will have the cartesian option set to true and use the r15\_cart scorefunction. Both will have bb and chi set to true.
 
 Declaring the movers in the MOVERS section only tells Rosetta that the movers exist and configures their options; however, it doesn't tell Rosetta that they should be applied to the pose (or in what order, or the number of times). The PROTOCOLS section is used to define the sequence of steps that the rosetta\_scripts application will carry out. When RosettaScripts runs on a structure, it will run sequentially through all the entries in the PROTOCOLS section, executing each in order, the output of the previous mover (or filter, as we will see later) becoming the input to the next. In our protocols section we'll add the "min\_cart" mover. Since this is the only mover in the PROTOCOLS section, this is the only mover which will be run. The min\_torsions mover will be defined, but will not be applied to the pose. (The mover can be specified with either the "mover" or "mover\_name" option.)
 
 ```
 ...
     <MOVERS>
-        <MinMover name="min_torsion" scorefxn="t13" chi="true" bb="1" cartesian="F" >
+        <MinMover name="min_torsion" scorefxn="molmech" chi="true" bb="1" cartesian="F" >
         </MinMover>
-        <MinMover name="min_cart" scorefxn="t14_cart" chi="true" bb="1" cartesian="T" >
+        <MinMover name="min_cart" scorefxn="r15_cart" chi="true" bb="1" cartesian="T" >
         </MinMover>
     </MOVERS>
     <APPLY_TO_POSE>
@@ -318,7 +320,7 @@ $> cp inputs/minimize.xml .
 $> $ROSETTA3/bin/rosetta_scripts.default.linuxgccrelease -s 1ubq.pdb -parser:protocol minimize.xml -out:prefix minimize_
 ```
 
-Within the tracer output you should see indications that your movers are being used (e.g. "BEGIN MOVER MinMover - min_cart"). Also, if you look at the total scores from the output PDB, you should get much better scores for the minimized 1ubq than the one just rescored with t14_cart. (about -155 versus +460).
+Within the tracer output you should see indications that your movers are being used (e.g. "BEGIN MOVER MinMover - min_cart"). Also, if you look at the total scores from the output PDB, you should get much better scores for the minimized 1ubq than the one just rescored with r15\_cart. (about -155 versus +460).
 
 Now let's add the other minimization mover, to demonstrate how movers can be placed in series.  Add the marked line shown below to your script (or use the inputs/minimize2.xml file):
 
@@ -336,7 +338,7 @@ $> cp inputs/minimize2.xml .
 $> $ROSETTA3/bin/rosetta_scripts.default.linuxgccrelease -s 1ubq.pdb -parser:protocol minimize2.xml -out:prefix minimize2_
 ```
 
-This time, when you run the application, you'll find that the torsion-space minimization is carried out first (using the talaris\_2013 scorefunction), and the Cartesian-space minimization is carried out on the output structure from the torsion-space minimization (using the talaris\_2014 scorefunction, modified with the cart\_bonded term turned on and the pro\_close term turned off).  Note that Rosetta does not write out any structures until the end of the protocol.
+This time, when you run the application, you'll find that the torsion-space minimization is carried out first (using the molecular mechanics scorefunction), and the Cartesian-space minimization is carried out on the output structure from the torsion-space minimization (using the ref2015 scorefunction, modified with the cart\_bonded term turned on and the pro\_close term turned off).  Note that Rosetta does not write out any structures until the end of the protocol.
 
 #### More Advanced Minimization
 
@@ -351,7 +353,7 @@ Let's modify the current script to demonstrate how a MoveMap can be set up and u
 ```xml
 ...
     <MOVERS>
-        <MinMover name="min_torsion" scorefxn="t13" chi="true" bb="1" cartesian="F" >
+        <MinMover name="min_torsion" scorefxn="molmech" chi="true" bb="1" cartesian="F" >
             <MoveMap name="min_torsion_mm">                         # Add this
                 <Span begin="1" end="999" chi="false" bb="false" /> # And this
                 <Span begin="1" end="50" chi="true" bb="true" />    # And this
@@ -391,12 +393,12 @@ The PackRotamersMover is another commonly-used Rosetta mover.  Because it calls 
 
 > **Just as MoveMaps control the minimizer, TaskOperations control the packer, and movers that invoke the packer will typically accept lists of TaskOperations as inputs.**
 
-Let's create a new skeleton XML, and define the talaris2014 scorefunction in it:
+Let's create a new skeleton XML, and define the ref2015 scorefunction in it:
 
 ```xml
 <ROSETTASCRIPTS>
 	<SCOREFXNS>
-		<ScoreFunction name="t14" weights="talaris2014" />
+		<ScoreFunction name="r15" weights="ref2015" />
 	</SCOREFXNS>
 	<RESIDUE_SELECTORS>
 	</RESIDUE_SELECTORS>
@@ -410,7 +412,7 @@ Let's create a new skeleton XML, and define the talaris2014 scorefunction in it:
 	</APPLY_TO_POSE>
 	<PROTOCOLS>
 	</PROTOCOLS>
-	<OUTPUT scorefxn="t14" />
+	<OUTPUT scorefxn="r15" />
 </ROSETTASCRIPTS>
 ```
 
@@ -419,7 +421,7 @@ In the movers section, let's create a PackRotamersMover.  You can cut-and-paste 
 ```xml
 ...
 	<MOVERS>
-		<PackRotamersMover name="pack1" scorefxn="t14" task_operations="" />
+		<PackRotamersMover name="pack1" scorefxn="r15" task_operations="" />
 	</MOVERS>
 ..
 	<PROTOCOLS>
@@ -452,7 +454,7 @@ Down below, in the MOVERS section, let's tell the PackRotamersMover that we crea
 ```xml
 ...
 	<MOVERS>
-		<PackRotamersMover name="pack1" scorefxn="t14" task_operations="no_design,extrachi" />
+		<PackRotamersMover name="pack1" scorefxn="r15" task_operations="no_design,extrachi" />
 	</MOVERS>
 ...
 ```
@@ -472,7 +474,7 @@ If you look at the output, you'll see that the sidechains have been repacked, th
 * *Use ResidueSelectors in conjuction with TaskOperations and the PackRotamersMover.*
 * *Understand TaskOperation commutativity.*
 
-Let's consider a more complicated (and more realistic) usage case -- one that demonstrates how we can single out subsets of residues in a structure and do different things to different parts of a pose.  Let's find a new sequence for the buried core residues in ubiquitin, while permitting boundary (semi-buried) residues to repack and prohibiting surface residues from moving at all.  We'll also restrict the core to hydrophobic amino acid types.  To do this, we need a way of selecting these layers.  Some of the general TaskOperations are able to select certain residues, but a more flexible choice for selecting certain residues is [ResidueSelectors](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/TaskOperations/taskoperations_pages/ResidueSelectors). ResidueSelectors, like their name suggests, are able to specify (select) a particular subset of residues, which can then be used with TaskOperations or other RosettaScripts objects. Unlike TaskOperations, which are strictly one way (you can turn off design, but you can't turn it back on), ResidueSelectors can be combined in various ways to select the particular residue you want.  It's worth taking a moment to comment on the differences between TaskOperations and ResidueSelectors:
+Let's consider a more complicated (and more realistic) usage case -- one that demonstrates how we can single out subsets of residues in a structure and do different things to different parts of a pose.  Let's find a new sequence for the buried core residues in ubiquitin, while permitting boundary (semi-buried) residues to repack and prohibiting surface residues from moving at all.  We'll also restrict the core to hydrophobic amino acid types.  To do this, we need a way of selecting these layers.  Some of the general TaskOperations are able to select certain residues, but a more flexible choice for selecting certain residues is [ResidueSelectors](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/ResidueSelectors/ResidueSelectors). ResidueSelectors, like their name suggests, are able to specify (select) a particular subset of residues, which can then be used with TaskOperations or other RosettaScripts objects. Unlike TaskOperations, which are strictly one way (you can turn off design, but you can't turn it back on), ResidueSelectors can be combined in various ways to select the particular residue you want.  It's worth taking a moment to comment on the differences between TaskOperations and ResidueSelectors:
 
 | |TaskOperations | ResidueSelectors |
 |---|---|---|
@@ -485,7 +487,7 @@ Let's start by defining three ResidueSelectors to select residues based on buria
 ```xml
 <ROSETTASCRIPTS>
 	<SCOREFXNS>
-		<ScoreFunction name="t14" weights="talaris2014" />
+		<ScoreFunction name="r15" weights="ref2015" />
 	</SCOREFXNS>
 	<RESIDUE_SELECTORS>
 		<Layer name="corelayer" select_core="true" select_boundary="false" select_surface="false" core_cutoff="4.0" />
@@ -502,7 +504,7 @@ Let's start by defining three ResidueSelectors to select residues based on buria
 	</APPLY_TO_POSE>
 	<PROTOCOLS>
 	</PROTOCOLS>
-	<OUTPUT scorefxn="t14" />
+	<OUTPUT scorefxn="r15" />
 </ROSETTASCRIPTS>
 ```
 
@@ -543,7 +545,7 @@ The rest is as before: set up a PackRotamersMover, passing the four TaskOperatio
 ```xml
 ...
 	<MOVERS>
-		<PackRotamersMover name="pack1" scorefxn="t14" task_operations="core_resfile,prevent_surface_from_repacking,restrict_boundary_to_repack,extrachi" />
+		<PackRotamersMover name="pack1" scorefxn="r15" task_operations="core_resfile,prevent_surface_from_repacking,restrict_boundary_to_repack,extrachi" />
 	</MOVERS>
 ...
 	<PROTOCOLS>
@@ -590,7 +592,7 @@ The new ReadResfile TaskOperation, in the TASKOPERATIONS section, would look lik
 It should be appended to the list of TaskOperations passed to the PackRotamersMover, like so:
 
 ```xml
-		<PackRotamersMover name="pack1" scorefxn="t14" task_operations="core_resfile,prevent_surface_from_repacking,restrict_boundary_to_repack,extrachi,core_resfile2" />
+		<PackRotamersMover name="pack1" scorefxn="r15" task_operations="core_resfile,prevent_surface_from_repacking,restrict_boundary_to_repack,extrachi,core_resfile2" />
 ```
 
 Run the modified script (or use inputs/design_core2.xml):
@@ -670,7 +672,7 @@ Let's consider the case, now, of repacking just the *surface* (*i.e.* solvent-ex
 ```xml
 <ROSETTASCRIPTS>
 	<SCOREFXNS>
-		<ScoreFunction name="t14" weights="talaris2014" />
+		<ScoreFunction name="r15" weights="ref2015" />
 	</SCOREFXNS>
 	<RESIDUE_SELECTORS>
 	</RESIDUE_SELECTORS>
@@ -682,8 +684,8 @@ Let's consider the case, now, of repacking just the *surface* (*i.e.* solvent-ex
 		<AtomicDistance name="salt_bridge" residue1="11A" atomtype1="Nlys" residue2="34A" atomtype2="OOC" distance="3.0" />
 	</FILTERS>
 	<MOVERS>
-		<MinMover name="min" scorefxn="t14" chi="true" bb="true" cartesian="false" />
-		<PackRotamersMover name="pack" scorefxn="t14" task_operations="repackonly,extrachi"/>
+		<MinMover name="min" scorefxn="r15" chi="true" bb="true" cartesian="false" />
+		<PackRotamersMover name="pack" scorefxn="r15" task_operations="repackonly,extrachi"/>
 	</MOVERS>
 	<APPLY_TO_POSE>
 	</APPLY_TO_POSE>
@@ -692,7 +694,7 @@ Let's consider the case, now, of repacking just the *surface* (*i.e.* solvent-ex
 		<Add filter="salt_bridge" />
 		<Add mover="min" />
 	</PROTOCOLS>
-	<OUTPUT scorefxn="t14" />
+	<OUTPUT scorefxn="r15" />
 </ROSETTASCRIPTS>
 
 

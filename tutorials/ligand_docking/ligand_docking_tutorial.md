@@ -229,5 +229,17 @@ Don't forget the ligand site preset mode for visualizing interfaces or use the v
 
         pymol 3PBL_A_ETQ_0033.pdb ../crystal_complex.pdb
 
+### Some notes on binding pockets and adjusting the sampling space of the ligand
+
+Q: My protein has a quite large cavity and a small ligand (not bigger than a Leucine). In the XML file these are the standard parameters: `<Transform name="transform" chain="X" box_size="7.0" move_distance="0.2" angle="20" cycles="500" repeats="1" temperature="5"/>`. Why is the `move_distance` and the angle so small? Would it make sense to increase the box\_size to 12, the move\_distance to 5 and the angle to 360 to sample more space the ligand is allowed to move in? 
+
+A: The Transform algorithm is a Monte Carlo proceedure, and the `move_distance` and angle are the size for the individual steps in the MC protocol, not the maximum extent of the movement. They're also the sd of a gaussian, so you're not necessarily limited to the given amount in any given step. That said, if you're increasing the size of the pocket, it might make sense to bump the move size up in proportion. (So for a box size of 12, a move\_distance of 0.25 to 0.5 or so might be appropriate.)
+
+If you're exploring the pocket, I'd also suggest setting the `initial_perturb` option. By default Transform will always start with the input position. If you add the `initial_perturb=X.X` option, then it will first randomize the starting location of the ligand within an X.X Angstrom sphere from the starting position, as well as randomizing the orientation. -- And a new random position/orientation will be taken for each nstruct, so you can sample the pocket even if your MC moves aren't sufficient to wander across it. Also, if you're increasing the size of the pocket, you're likely going to need to increase the size of the Grid such that it will cover the maximal extent of ligand travel. If it doesn't, Transform will reject any ligand which accidentally falls outside the grid.
+
+Q: Does the `initial_perturb` option also randomize the angles? Because there is another option `initial_angle_perturb` in the TransformMover.
+
+A: Yes, by default setting `initial_perturb` will completely randomize the angles (ligand orientation) - the `initial_angle_perturb` is there if you want to reduce the angle perturbation. (e.g. if you're refining the orientation) 
+
 *Congratulations, you have performed RosettaLigand docking study! Now use your docked models to generate hypotheses and test them in the wet lab!*
 

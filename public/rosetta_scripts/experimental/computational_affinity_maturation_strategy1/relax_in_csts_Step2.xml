@@ -1,0 +1,77 @@
+<dock_design>
+	<TASKOPERATIONS>
+		<ProteinInterfaceDesign name=pido interface_distance_cutoff=15.0 repack_chain1=0/>
+		<RestrictResidueToRepacking name=restrict_to_repacking_277 resnum=277/>
+		<RestrictResidueToRepacking name=restrict_to_repacking_281 resnum=281/>
+		<RestrictResidueToRepacking name=restrict_to_repacking_285 resnum=285/>
+		<RestrictResidueToRepacking name=restrict_to_repacking_289 resnum=289/>
+		<RestrictResidueToRepacking name=restrict_to_repacking_304 resnum=304/>
+	</TASKOPERATIONS>
+	<SCOREFXNS>
+		<coord_cst_high weights=standard patch=score12>
+			<Reweight scoretype=coordinate_constraint weight=3.0/>
+		</coord_cst_high>
+		<coord_cst_medium weights=standard patch=score12>
+			<Reweight scoretype=coordinate_constraint weight=1.0/>
+		</coord_cst_medium>
+		<coord_cst_low weights=standard patch=score12>
+			<Reweight scoretype=coordinate_constraint weight=0.5/>
+		</coord_cst_low>
+	</SCOREFXNS>
+	<FILTERS>
+		<Sasa name=hydrophobic_sasa hydrophobic=1 confidence=0/>
+		<Sasa name=sasa confidence=0/>
+		<Ddg name=ddg confidence=0 repeats=3/>
+	</FILTERS>
+	<MOVERS>
+		<AtomTree name=docking_tree docking_ft=1/>
+		<FastRelax name=relax_high scorefxn=coord_cst_high>
+			<MoveMap>
+				<Chain number=1 bb=0 chi=0/>
+				<Chain number=2 bb=1 chi=1/>
+				<Jump number=1 setting=1/>
+			</MoveMap>
+		</FastRelax>
+		<FastRelax name=relax_medium scorefxn=coord_cst_medium>
+			<MoveMap>
+				<Chain number=1 bb=0 chi=0/>
+				<Chain number=2 bb=1 chi=1/>
+				<Jump number=1 setting=1/>
+			</MoveMap>
+		</FastRelax>
+		<FastRelax name=relax_low scorefxn=coord_cst_low>
+			<MoveMap>
+				<Chain number=1 bb=0 chi=0/>
+				<Chain number=2 bb=1 chi=1/>
+				<Jump number=1 setting=1/>
+			</MoveMap>
+		</FastRelax>
+		<FastRelax name=relax>
+			<MoveMap>
+				<Chain number=1 bb=0 chi=0/>
+				<Chain number=2 bb=1 chi=1/>
+				<Jump number=1 setting=1/>
+			</MoveMap>
+
+		</FastRelax>
+		<ConstraintSetMover name=cst cst_file="cst/HA77B_double_mut.cst"/>
+		<PackRotamersMover name=prm_high scorefxn=coord_cst_high task_operations=pido,restrict_to_repacking_277,restrict_to_repacking_281,restrict_to_repacking_285,restrict_to_repacking_289,restrict_to_repacking_304/>
+		<PackRotamersMover name=prm_medium scorefxn=coord_cst_medium task_operations=pido,restrict_to_repacking_277,restrict_to_repacking_281,restrict_to_repacking_285,restrict_to_repacking_289,restrict_to_repacking_304/>
+		<PackRotamersMover name=prm_low scorefxn=coord_cst_low task_operations=pido,restrict_to_repacking_277,restrict_to_repacking_281,restrict_to_repacking_285,restrict_to_repacking_289,restrict_to_repacking_304/>
+		<PackRotamersMover name=prm task_operations=pido,restrict_to_repacking_277,restrict_to_repacking_281,restrict_to_repacking_285,restrict_to_repacking_289,restrict_to_repacking_304/>
+	</MOVERS>
+	<APPLY_TO_POSE>
+	</APPLY_TO_POSE>
+	<PROTOCOLS>
+		<Add mover_name=cst/>
+				<Add mover_name=relax_high/>
+		<Add mover=prm_high/>
+	<Add mover_name=relax_medium/>
+		<Add mover=prm_medium/>
+	<Add mover_name=relax_low/>
+		<Add mover=prm_low/>
+		<Add mover=relax/>
+		<Add filter=ddg/>
+		<Add filter=sasa/>
+	</PROTOCOLS>
+</dock_design>

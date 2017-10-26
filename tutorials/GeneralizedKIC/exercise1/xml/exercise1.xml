@@ -1,0 +1,82 @@
+<ROSETTASCRIPTS>
+	<SCOREFXNS>
+		<ScoreFunction name="ref15sfxn" weights="ref2015.wts" />
+		<ScoreFunction name="bb_only" weights="empty.wts" >
+			<Reweight scoretype="fa_rep" weight="0.1" />
+			<Reweight scoretype="fa_atr" weight="0.2" />
+			<Reweight scoretype="hbond_sr_bb" weight="2.0" />
+			<Reweight scoretype="hbond_lr_bb" weight="2.0" />
+			<Reweight scoretype="rama_prepro" weight="0.45" />
+			<Reweight scoretype="omega" weight="0.4" />
+			<Reweight scoretype="p_aa_pp" weight="0.6" />
+		</ScoreFunction>
+	</SCOREFXNS>
+	<RESIDUE_SELECTORS>
+	</RESIDUE_SELECTORS>
+	<TASKOPERATIONS>
+	</TASKOPERATIONS>
+	<FILTERS>
+	</FILTERS>
+	<MOVERS>	
+		<PeptideStubMover name="add_loop_residues" >
+			<Insert anchor_rsd="28" resname="ALA" />
+			<Insert anchor_rsd="29" resname="GLY" />
+			<Insert anchor_rsd="30" resname="ALA" />
+			<Prepend anchor_rsd="32" resname="ALA" />
+			<Prepend anchor_rsd="32" resname="ALA" />
+		</PeptideStubMover>
+		
+		<DeclareBond name="new_bond" atom1="C" atom2="N" res1="31" res2="32" />
+
+		<MutateResidue name="mut1" target="28" new_res="ALA" />
+		<MutateResidue name="mut2" target="34" new_res="ALA" />
+
+		<GeneralizedKIC name="genkic" selector="lowest_energy_selector" selector_scorefunction="bb_only"
+			closure_attempts="5000" stop_when_n_solutions_found="5" >
+			<AddResidue res_index="28" />
+			<AddResidue res_index="29" />
+			<AddResidue res_index="30" />
+			<AddResidue res_index="31" />
+			<AddResidue res_index="32" />
+			<AddResidue res_index="33" />
+			<AddResidue res_index="34" />
+			<SetPivots res1="28" res2="31" res3="34" atom1="CA" atom2="CA" atom3="CA" />
+			<AddPerturber effect="set_dihedral" >
+				<AddAtoms res1="28" atom1="C" res2="29" atom2="N" />
+				<AddAtoms res1="29" atom1="C" res2="30" atom2="N" />
+				<AddAtoms res1="30" atom1="C" res2="31" atom2="N" />
+				<AddAtoms res1="31" atom1="C" res2="32" atom2="N" />
+				<AddAtoms res1="32" atom1="C" res2="33" atom2="N" />
+				<AddAtoms res1="33" atom1="C" res2="34" atom2="N" />
+				<AddValue value="180.0" />
+			</AddPerturber>
+			<CloseBond res1="31" res2="32" atom1="C" atom2="N" bondlength="1.328685" angle1="121.699997" angle2="116.199993" torsion="180.0" />
+			<AddPerturber effect="randomize_backbone_by_rama_prepro" >
+				<AddResidue index="28" />
+				<AddResidue index="29" />
+				<AddResidue index="30" />
+				<AddResidue index="31" />
+				<AddResidue index="32" />
+				<AddResidue index="33" />
+				<AddResidue index="34" />
+			</AddPerturber>
+			<AddFilter type="backbone_bin" residue="28" bin_params_file="ABBA" bin="A" />
+			<AddFilter type="backbone_bin" residue="34" bin_params_file="ABBA" bin="A" />
+			<AddFilter type="loop_bump_check" />
+			<AddFilter type="rama_prepro_check" residue="28" rama_cutoff_energy="0.5" />
+			<AddFilter type="rama_prepro_check" residue="31" rama_cutoff_energy="0.5" />
+			<AddFilter type="rama_prepro_check" residue="34" rama_cutoff_energy="0.5" />
+		</GeneralizedKIC>
+		
+	</MOVERS>
+	<APPLY_TO_POSE>
+	</APPLY_TO_POSE>
+	<PROTOCOLS>
+		<Add mover="add_loop_residues" />
+		<Add mover="new_bond" />
+		<Add mover="mut1" />
+		<Add mover="mut2" />
+		<Add mover="genkic" />
+	</PROTOCOLS>
+	<OUTPUT />
+</ROSETTASCRIPTS>

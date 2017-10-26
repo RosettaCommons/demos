@@ -1,0 +1,134 @@
+<ROSETTASCRIPTS>
+	<SCOREFXNS>
+		<ScoreFunction name="ref15sfxn" weights="ref2015.wts" />
+		<ScoreFunction name="ref15sfxn_cst" weights="ref2015_cst.wts" />
+		<ScoreFunction name="bb_only" weights="empty.wts" >
+			<Reweight scoretype="fa_rep" weight="0.1" />
+			<Reweight scoretype="fa_atr" weight="0.2" />
+			<Reweight scoretype="hbond_sr_bb" weight="2.0" />
+			<Reweight scoretype="hbond_lr_bb" weight="2.0" />
+			<Reweight scoretype="rama_prepro" weight="0.45" />
+			<Reweight scoretype="omega" weight="0.4" />
+			<Reweight scoretype="p_aa_pp" weight="0.6" />
+		</ScoreFunction>
+	</SCOREFXNS>
+	<RESIDUE_SELECTORS>
+		<Layer name="select_core" select_core="true" select_boundary="true" select_surface="false" />
+		<Index name="select_loop" resnums="27-34" />
+		<Neighborhood name="select_around_loop" selector="select_loop" include_focus_in_subset="true" distance="7" />
+		<And name="designable_region" selectors="select_around_loop,select_core" />
+		<Not name="not_designable_region" selector="designable_region" />
+	</RESIDUE_SELECTORS>
+	<TASKOPERATIONS>
+		<ReadResfile name="design_core_near_loop" selector="designable_region" filename="inputs/resfile.txt" />
+		<OperateOnResidueSubset name="no_design_otherwise" selector="not_designable_region" >
+			<RestrictToRepackingRLT />
+		</OperateOnResidueSubset>
+	</TASKOPERATIONS>
+	<FILTERS>
+		<ScoreType name="scorefilter" score_type="total_score" threshold="10.0" scorefxn="ref15sfxn_cst" />
+	</FILTERS>
+	<MOVERS>	
+		<PeptideStubMover name="add_loop_residues" >
+			<Insert anchor_rsd="28" resname="ALA" />
+			<Insert anchor_rsd="29" resname="GLY" />
+			<Insert anchor_rsd="30" resname="ALA" />
+			<Prepend anchor_rsd="32" resname="ALA" />
+			<Prepend anchor_rsd="32" resname="ALA" />
+		</PeptideStubMover>
+		
+		<DeclareBond name="new_bond" atom1="C" atom2="N" res1="31" res2="32" />
+
+		<MutateResidue name="mut1" target="28" new_res="ALA" />
+		<MutateResidue name="mut2" target="34" new_res="ALA" />
+
+		<AtomTree name="foldtree1" fold_tree_file="inputs/foldtree1.txt" />
+
+		<CreateDistanceConstraint name="pepdistcst" >
+			<Add res1="31" atom1="C" res2="32" atom2="N" cst_func="HARMONIC 1.328685 0.01" />
+		</CreateDistanceConstraint>
+
+		<CreateAngleConstraint name="pepanglecst" >
+			<Add res1="31" atom1="CA" res_center="31" atom_center="C" res2="32" atom2="N" cst_func="CIRCULARHARMONIC 2.124065647312 0.005" />
+			<Add res1="31" atom1="C" res_center="32" atom_center="N" res2="32" atom2="CA" cst_func="CIRCULARHARMONIC 2.028072468639 0.005" />
+		</CreateAngleConstraint>
+
+		<CreateTorsionConstraint name="pepdihedcst" >
+			<Add res1="31" atom1="CA" res2="31" atom2="C" res3="32" atom3="N" res4="32" atom4="CA" cst_func="CIRCULARHARMONIC 3.141592654 0.005" />
+		</CreateTorsionConstraint>
+
+
+		<FastDesign name="fdes1" repeats="1" task_operations="design_core_near_loop,no_design_otherwise" scorefxn="ref15sfxn_cst">
+			<MoveMap name="fdes1_mm" >
+				<Span begin="1" end="27" bb="false" chi="true" />
+				<Span begin="28" end="34" bb="true" chi="true" />
+				<Span begin="35" end="999" bb="false" chi="true" />
+				<Jump number="1" setting="false" />
+			</MoveMap>
+		</FastDesign>
+
+		<ParsedProtocol name="design_protocol" >
+			<Add mover="fdes1" />
+			<Add mover="new_bond" />
+			<Add mover="fdes1" />
+			<Add mover="new_bond" />
+			<Add mover="fdes1" />
+			<Add mover="new_bond" />
+			<Add filter="scorefilter" />
+		</ParsedProtocol>
+
+		<GeneralizedKIC name="genkic" selector="lowest_energy_selector" selector_scorefunction="ref15sfxn"
+			closure_attempts="1000" stop_when_n_solutions_found="1"
+			pre_selection_mover="design_protocol"
+		>
+			<AddResidue res_index="28" />
+			<AddResidue res_index="29" />
+			<AddResidue res_index="30" />
+			<AddResidue res_index="31" />
+			<AddResidue res_index="32" />
+			<AddResidue res_index="33" />
+			<AddResidue res_index="34" />
+			<SetPivots res1="28" res2="31" res3="34" atom1="CA" atom2="CA" atom3="CA" />
+			<AddPerturber effect="set_dihedral" >
+				<AddAtoms res1="28" atom1="C" res2="29" atom2="N" />
+				<AddAtoms res1="29" atom1="C" res2="30" atom2="N" />
+				<AddAtoms res1="30" atom1="C" res2="31" atom2="N" />
+				<AddAtoms res1="31" atom1="C" res2="32" atom2="N" />
+				<AddAtoms res1="32" atom1="C" res2="33" atom2="N" />
+				<AddAtoms res1="33" atom1="C" res2="34" atom2="N" />
+				<AddValue value="180.0" />
+			</AddPerturber>
+			<CloseBond res1="31" res2="32" atom1="C" atom2="N" bondlength="1.328685" angle1="121.699997" angle2="116.199993" torsion="180.0" />
+			<AddPerturber effect="randomize_backbone_by_rama_prepro" >
+				<AddResidue index="28" />
+				<AddResidue index="29" />
+				<AddResidue index="30" />
+				<AddResidue index="31" />
+				<AddResidue index="32" />
+				<AddResidue index="33" />
+				<AddResidue index="34" />
+			</AddPerturber>
+			<AddFilter type="backbone_bin" residue="28" bin_params_file="ABBA" bin="A" />
+			<AddFilter type="backbone_bin" residue="34" bin_params_file="ABBA" bin="A" />
+			<AddFilter type="loop_bump_check" />
+			<AddFilter type="rama_prepro_check" residue="28" rama_cutoff_energy="0.5" />
+			<AddFilter type="rama_prepro_check" residue="31" rama_cutoff_energy="0.5" />
+			<AddFilter type="rama_prepro_check" residue="34" rama_cutoff_energy="0.5" />
+		</GeneralizedKIC>
+		
+	</MOVERS>
+	<APPLY_TO_POSE>
+	</APPLY_TO_POSE>
+	<PROTOCOLS>
+		<Add mover="add_loop_residues" />
+		<Add mover="new_bond" />
+		<Add mover="mut1" />
+		<Add mover="mut2" />
+		<Add mover="foldtree1" />
+		<Add mover="pepdistcst" />
+		<Add mover="pepanglecst" />
+		<Add mover="pepdihedcst" />
+		<Add mover="genkic" />
+	</PROTOCOLS>
+	<OUTPUT />
+</ROSETTASCRIPTS>

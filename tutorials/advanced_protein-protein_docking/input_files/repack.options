@@ -4,5 +4,5 @@
 -ex1
 -ex2
 -use_input_sc
--score:weights talaris2013.wts
+-score:weights ref2015.wts
 -out:file:scorefile repack.fasc

@@ -1,5 +1,6 @@
 <ROSETTASCRIPTS>
 	<SCOREFXNS>
+		<ScoreFunction name="r15" weights="ref2015" />
 	</SCOREFXNS>
 	<TASKOPERATIONS>
 		<InitializeFromCommandline name="ifcl" />
@@ -10,8 +11,8 @@
 	<FILTERS>
 	</FILTERS>
 	<MOVERS>
-		<PackRotamersMover name="repack" scorefxn="talaris2013" task_operations="ifcl,rtr,prfrp" />
-		<MinMover name="minimize_sc" scorefxn="talaris2013" chi="1" bb="0" jump="0" type="dfpmin_armijo_nonmonotone" tolerance="0.0001" />
+		<PackRotamersMover name="repack" scorefxn="r15" task_operations="ifcl,rtr,prfrp" />
+		<MinMover name="minimize_sc" scorefxn="r15" chi="1" bb="0" jump="0" type="dfpmin_armijo_nonmonotone" tolerance="0.0001" />
 	</MOVERS>
 	<APPLY_TO_POSE>
 	</APPLY_TO_POSE>
