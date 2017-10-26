@@ -56,7 +56,7 @@ Here, a fasta file is provided for you.
 - score.sc (shows the total score and individual terms)
 
 > * **For an actual production run, 50,000 to 100,000 models need to be generated.**
-> * **You probably want to use the** [silent file options](demos/tutorials/Tips)  
+> * **You probably want to use the** [[silent file options|Tips]]  
 
 ##3. Analyze your results
 Details of how to analyze data and how to select which of the 50,000 models would be your prediction are explained in the [[Analysis|analysis]] tutorial.
@@ -88,7 +88,7 @@ The left plot shows that the lowest energy models also have the lowest rmsd - th
 
 5 Angstrom does not quite sound like Rosetta really solved the problem. The only way to find out is by looking at the best structure(s)
 
-> **More instructions and helpful scripts are part of the Analysis tutorial ([../analysis](demos/tutorials/analysis/)).**
+> **More instructions and helpful scripts are part of the Analysis tutorial ([[Analysis|analysis]]).**
 
  * In the example_outputs directory, you will find a binary silent file from a full AbinitioRelax run (AbRelax.out) and score file (score.sc).  
  Run:
@@ -116,6 +116,6 @@ The left plot shows that the lowest energy models also have the lowest rmsd - th
 
 
 ####3.3. Clustering analysis  
-This sorts the structures by similarity. (See [Analysis](demos/tutorials/analysis/))
+This sorts the structures by similarity. (See [[Analysis|analysis]])
 
 
