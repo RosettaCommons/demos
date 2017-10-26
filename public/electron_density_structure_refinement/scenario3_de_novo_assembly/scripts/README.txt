@@ -17,11 +17,7 @@
 //
 //////////////////////////////////////////////////////////////////////////////////////////
 
-This tutorial includes four folders:
-@rosetta/
-    Executable files used for model building and refinement. Source code will be available
-    in the next Rosetta release or upon request.
-
+This tutorial includes three folders:
 @scripts/
     Wrappers for calling rosetta executables, setting up jobs, and results processing.
 
