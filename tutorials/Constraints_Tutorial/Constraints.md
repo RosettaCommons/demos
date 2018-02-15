@@ -68,7 +68,7 @@ As mentioned above, constraints are a way to make Rosetta's scores reflect some 
 
 To demonstrate this, run
 
-	$> $ROETTA3/bin/relax.default.linuxclangrelease -s 4eq1.pdb -out:suffix _unconstrained -ignore_unrecognized_res @general_relax_flags
+	$> $ROSETTA3/bin/relax.default.linuxclangrelease -s 4eq1.pdb -out:suffix _unconstrained -ignore_unrecognized_res @general_relax_flags
 
 and 
 
