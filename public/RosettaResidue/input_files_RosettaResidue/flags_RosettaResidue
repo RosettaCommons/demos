@@ -1,0 +1,3 @@
+-database path_to/database/
+-in:file:l list.txt
+-restore_talaris_behavior

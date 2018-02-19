@@ -1,0 +1,2 @@
+#CA RMSD only
+RIGID 53  153
