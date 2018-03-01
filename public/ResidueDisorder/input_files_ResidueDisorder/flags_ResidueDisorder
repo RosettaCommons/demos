@@ -1,0 +1,4 @@
+-database path_to/database/
+-in:file:l list.txt
+-restore_talaris_behavior
+-out:file:o 1aj3_disorder_prediction.out

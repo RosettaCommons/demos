@@ -1,0 +1,8 @@
+Start in ./input_files_abibitio/
+	1. Generate folded structures using RUN_THIS_COMMAND_abibitio
+	2. Copy structures to input_files_ResidueDisorder (5 example folded structures in sample_output_files)
+Go to ./input_files_ResidueDisorder/
+	3. Create a text file (list.txt) that is a list of filenames of the folded structures separated by new lines
+	4. Use folded structures to run ResidueDisorder to predict order/disorder (see sample_ouptput_files for sample output) using RUN_THIS_COMMAND_ResidueDisorder
+
+Note: sample output is for the 5 folded structures in ./sample_output_files/. However, it is reccomended to generate 100 folded structures.
