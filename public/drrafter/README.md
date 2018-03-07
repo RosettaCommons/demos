@@ -11,7 +11,7 @@ This demo shows how to use DRRAFTER to build a structure of an RNA-protein compl
 ## Setting up the demo:  
 
 1. Make sure that you have python (v2.7) installed.
-2. Install Rosetta RNA tools. See instructions and documentation here: https://www.rosettacommons.org/docs/latest/application_documentation/rna/RNA-tools
+2. Install Rosetta RNA tools. See instructions and documentation [here](https://www.rosettacommons.org/docs/latest/application_documentation/rna/RNA-tools).
 3. Add the path to the DRRAFTER script to your $PATH (alternatively, you can type the full path to the DRRAFTER.py script each time that you use it). An example for bash:
 ```
 PATH=$PATH:YOUR_ROSETTA_PATH/main/source/src/apps/public/DRRAFTER/
@@ -25,7 +25,7 @@ secstruct.txt: A file containing the secondary structure of the complex in dot-b
 
 1wsu_simulated_7A.mrc: The density map file in mrc format (ccp4 is also acceptable). For this demo, this map has been simulated from PDB ID 1WSU at 7Å.   
 
-RNA_helix.pdb: This is an ideal RNA helix corresponding to residues E:1-4 and E:20-23. Ideal RNA helices can be generated using `rna_helix.py` (documentation on the RNA tools page).  
+RNA_helix.pdb: This is an ideal RNA helix corresponding to residues E:1-4 and E:20-23. Ideal RNA helices can be generated using `rna_helix.py` (documentation on the [RNA tools page](https://www.rosettacommons.org/docs/latest/application_documentation/rna/RNA-tools)).  
 
 protein_fit_into_density.pdb: The protein structure that has been fit into the density map. For this demo, this is a crystal structure of the unbound protein (PDB ID 1LVA). The sequence of this protein structure should exactly match the sequence in the fasta file.  
 
