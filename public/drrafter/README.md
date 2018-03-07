@@ -1,4 +1,4 @@
-DRRAFTER 
+DRRAFTER: De novo RNP modeling in Real-space through Assembly of Fragments Together with Electron density in Rosetta 
 =====================================================================================
 
 KEYWORDS: NUCLEIC_ACIDS EXPERIMENTAL_DATA RNA DENOVO STRUCTURE_PREDICTION  
@@ -12,7 +12,7 @@ This demo shows how to use DRRAFTER to build a structure of an RNA-protein compl
 
 1. Make sure that you have python (v2.7) installed.
 2. Install Rosetta RNA tools. See instructions and documentation [here](https://www.rosettacommons.org/docs/latest/application_documentation/rna/RNA-tools).
-3. Add the path to the DRRAFTER script to your $PATH (alternatively, you can type the full path to the DRRAFTER.py script each time that you use it). An example for bash:
+3. Add the path to the DRRAFTER script to your $PATH (alternatively, you can type the full path to the DRRAFTER.py script each time that you use it). It is found in `main/source/src/apps/public/DRRAFTER/` in your Rosetta directory. An example for bash:
 ```
 PATH=$PATH:YOUR_ROSETTA_PATH/main/source/src/apps/public/DRRAFTER/
 ```
@@ -39,7 +39,7 @@ PATH=$PATH:YOUR_ROSETTA_PATH/main/source/src/apps/public/DRRAFTER/
 DRRAFTER.py -fasta fasta.txt -secstruct secstruct.txt -start_struct protein_and_RNA_helix_fit_into_density.pdb -map_file 1wsu_simulated_7A.mrc -map_reso 7.0 -residues_to_model E:1-23 -include_as_rigid_body_structures protein_fit_into_density.pdb RNA_helix.pdb -absolute_coordinates_rigid_body_structure protein_fit_into_density.pdb -job_name demo_run -dock_into_density -demo_settings -rosetta_directory /your/path/to/rosetta/executables
 ```
 
-**Note** that `/your/path/to/rosetta/executables` needs to be replaced with the actual path to your Rosetta executables. Note also the -demo_settings flag: this flag is designed to make the DRRAFTER run finish quickly, and should not be used for normal runs.  
+**Note** that `/your/path/to/rosetta/executables` needs to be replaced with the actual path to your Rosetta executables. Note also the `-demo_settings` flag: this flag is designed to make the DRRAFTER run finish quickly, and should not be used for normal runs.  
 
 This will create the following files:  
 
@@ -97,7 +97,7 @@ apps.public.DRRAFTER.drrafter_error_estimation: Median structure: demo_run.out.1
 apps.public.DRRAFTER.drrafter_error_estimation: #############################################
 ```
 
-All numbers have units of Å. The mean pairwise RMSD describes the “convergence” of the run, i.e. how similar the final structures are to each other. The estimated RMSD (root mean square deviation) values to the “true” coordinates are based on this convergence value. The estimated minimum RMSD predicts the best accuracy of the final structures. The estimated mean RMSD predicts the average RMSD accuracy of the final structures. The median structure is determined to be the final structure with the lowest average pairwise RMSD to the other final structures. The accuracy estimate of this model is also printed to the screen.  
+All numbers have units of Å. The mean pairwise RMSD describes the "convergence" of the run, i.e. how similar the final structures are to each other. The estimated RMSD (root mean square deviation) values to the "true" coordinates are based on this convergence value. The estimated minimum RMSD predicts the best accuracy of the final structures. The estimated mean RMSD predicts the average RMSD accuracy of the final structures. The median structure is determined to be the final structure with the lowest average pairwise RMSD to the other final structures. The accuracy estimate of this model is also printed to the screen.  
 
-For reference, example output is provided in the example_output directory.   
+For reference, example output is provided in the `example_output` directory.   
 
