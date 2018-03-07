@@ -19,27 +19,27 @@ PATH=$PATH:YOUR_ROSETTA_PATH/main/source/src/apps/public/DRRAFTER/
 
 ## Brief explanation of input files:  
 
-fasta.txt: The FASTA file listing the full sequence of the complex being modeled. It should contain at least one line that starts with '>' and lists chains and residue numbers for the sequence, e.g. A:136-258 E:1-23. Here we are modeling chain A residues 136-258 and chain E residues 1-23. The subsequent lines should list the full sequence of the complex. Protein residues are specified by uppercase one-letter codes. RNA residues are specified with lowercase one-letter codes ('a', 'u', 'g', and 'c').  
+`fasta.txt`: The FASTA file listing the full sequence of the complex being modeled. It should contain at least one line that starts with '>' and lists chains and residue numbers for the sequence, e.g. A:136-258 E:1-23. Here we are modeling chain A residues 136-258 and chain E residues 1-23. The subsequent lines should list the full sequence of the complex. Protein residues are specified by uppercase one-letter codes. RNA residues are specified with lowercase one-letter codes ('a', 'u', 'g', and 'c').  
 
-secstruct.txt: A file containing the secondary structure of the complex in dot-bracket notation. Secondary structure for the protein should be specified by dots. The secondary structure should be the same length as the sequence found in the fasta file. For RNA residues, this secondary structure will be enforced during the DRRAFTER run.  
+`secstruct.txt`: A file containing the secondary structure of the complex in dot-bracket notation. Secondary structure for the protein should be specified by dots. The secondary structure should be the same length as the sequence found in the fasta file. For RNA residues, this secondary structure will be enforced during the DRRAFTER run.  
 
-1wsu_simulated_7A.mrc: The density map file in mrc format (ccp4 is also acceptable). For this demo, this map has been simulated from PDB ID 1WSU at 7Å.   
+`1wsu_simulated_7A.mrc`: The density map file in mrc format (ccp4 is also acceptable). For this demo, this map has been simulated from PDB ID 1WSU at 7Å.   
 
-RNA_helix.pdb: This is an ideal RNA helix corresponding to residues E:1-4 and E:20-23. Ideal RNA helices can be generated using `rna_helix.py` (documentation on the [RNA tools page](https://www.rosettacommons.org/docs/latest/application_documentation/rna/RNA-tools)).  
+`RNA_helix.pdb`: This is an ideal RNA helix corresponding to residues E:1-4 and E:20-23. Ideal RNA helices can be generated using `rna_helix.py` (documentation on the [RNA tools page](https://www.rosettacommons.org/docs/latest/application_documentation/rna/RNA-tools)).  
 
-protein_fit_into_density.pdb: The protein structure that has been fit into the density map. For this demo, this is a crystal structure of the unbound protein (PDB ID 1LVA). The sequence of this protein structure should exactly match the sequence in the fasta file.  
+`protein_fit_into_density.pdb`: The protein structure that has been fit into the density map. For this demo, this is a crystal structure of the unbound protein (PDB ID 1LVA). The sequence of this protein structure should exactly match the sequence in the fasta file.  
 
-protein_and_RNA_helix_fit_into_density.pdb: Coordinates of both the protein structure and the RNA helix (from RNA_helix.pdb) fit into the density map. This will be the starting conformation for the DRRAFTER run. (The relative positions of the protein and RNA helix will be allowed to change though.)  
+`protein_and_RNA_helix_fit_into_density.pdb`: Coordinates of both the protein structure and the RNA helix (from `RNA_helix.pdb`) fit into the density map. This will be the starting conformation for the DRRAFTER run. (The relative positions of the protein and RNA helix will be allowed to change though.)  
 
 
 ## To run DRRAFTER:
 
-1. Use the DRRAFTER.py script to set up the run. Type:  
+1. Use `DRRAFTER.py` to set up the run. Type:  
 ```
 DRRAFTER.py -fasta fasta.txt -secstruct secstruct.txt -start_struct protein_and_RNA_helix_fit_into_density.pdb -map_file 1wsu_simulated_7A.mrc -map_reso 7.0 -residues_to_model E:1-23 -include_as_rigid_body_structures protein_fit_into_density.pdb RNA_helix.pdb -absolute_coordinates_rigid_body_structure protein_fit_into_density.pdb -job_name demo_run -dock_into_density -demo_settings -rosetta_directory /your/path/to/rosetta/executables
 ```
 
-*Note* that `/your/path/to/rosetta/executables` needs to be replaced with the actual path to your Rosetta executables. Note also the -demo_settings flag: this flag is designed to make the DRRAFTER run finish quickly, and should not be used for normal runs.  
+**Note** that `/your/path/to/rosetta/executables` needs to be replaced with the actual path to your Rosetta executables. Note also the -demo_settings flag: this flag is designed to make the DRRAFTER run finish quickly, and should not be used for normal runs.  
 
 This will create the following files:  
 
@@ -51,7 +51,7 @@ coord_csts_demo_run.txt: A file describing coordinate restraints that will be ap
 
 flags_demo_run: A file listing all of the Rosetta options for the run.  
 
-init_struct_demo_run.pdb: The starting structure for the DRRAFTER run. In this case, this structure is identical to protein_and_RNA_helix_fit_into_density.pdb.  
+init_struct_demo_run.pdb: The starting structure for the DRRAFTER run. In this case, this structure is identical to `protein_and_RNA_helix_fit_into_density.pdb`.  
 
 DRRAFTER_command: This file contains the command to run the DRRAFTER job.  
 
