@@ -43,31 +43,31 @@ DRRAFTER.py -fasta fasta.txt -secstruct secstruct.txt -start_struct protein_and_
 
 This will create the following files:  
 
-fasta_demo_run.txt: The FASTA file for the region that will be included in the DRRAFTER run.   
+`fasta_demo_run.txt`: The FASTA file for the region that will be included in the DRRAFTER run.   
 
-secstruct_demo_run.txt: The file specifying the secondary structure for the region that will be included in the DRRAFTER run.  
+`secstruct_demo_run.txt`: The file specifying the secondary structure for the region that will be included in the DRRAFTER run.  
 
-coord_csts_demo_run.txt: A file describing coordinate restraints that will be applied during the DRRAFTER run. By default, residues in the starting structure will be restrained to be within 10 Å of their initial coordinates. This can be turned off with -no_csts and the distance at which the restraints will be activated (default 10 Å) can be controlled with -cst_dist.   
+`coord_csts_demo_run.txt`: A file describing coordinate restraints that will be applied during the DRRAFTER run. By default, residues in the starting structure will be restrained to be within 10 Å of their initial coordinates. This can be turned off with -no_csts and the distance at which the restraints will be activated (default 10 Å) can be controlled with -cst_dist.   
 
-flags_demo_run: A file listing all of the Rosetta options for the run.  
+`flags_demo_run`: A file listing all of the Rosetta options for the run.  
 
-init_struct_demo_run.pdb: The starting structure for the DRRAFTER run. In this case, this structure is identical to `protein_and_RNA_helix_fit_into_density.pdb`.  
+`init_struct_demo_run.pdb`: The starting structure for the DRRAFTER run. In this case, this structure is identical to `protein_and_RNA_helix_fit_into_density.pdb`.  
 
-DRRAFTER_command: This file contains the command to run the DRRAFTER job.  
+`DRRAFTER_command`: This file contains the command to run the DRRAFTER job.  
 
-2. Run the DRRAFTER_command. This can be done either by typing:  
+2. Run the `DRRAFTER_command`. This can be done either by typing:  
 
 ```
 source ./DRRAFTER_command
 ```
 
-OR by copying the line in the DRRAFTER_command file to the command line:
+OR by copying the line in the `DRRAFTER_command` file to the command line:
 
 ```
 /your/path/to/rosetta/executables/rna_denovo @flags_demo_run
 ```
 
-This will take several minutes to run and it should create a file called demo_run.out, which contains all of the structures from the run.
+This will take several minutes to run and it should create a file called `demo_run.out`, which contains all of the structures from the run.
 
 3. Extract PDB files from the compressed output file created in the previous step. Type:  
 
@@ -75,11 +75,11 @@ This will take several minutes to run and it should create a file called demo_ru
 extract_lowscore_decoys.py demo_run.out 10
 ```
 
-This extracts the 10 best scoring structures from the run and will create 10 PDB files named demo_run.out.1.pdb, demo_run.out.2.pdb, etc. Note that in this case we only generated 10 structures total, but for a real run it is recommended that you build at least 2000-3000 structures.  
+This extracts the 10 best scoring structures from the run and will create 10 PDB files named `demo_run.out.1.pdb`, `demo_run.out.2.pdb`, etc. Note that in this case we only generated 10 structures total, but for a real run it is recommended that you build at least 2000-3000 structures.  
 
 4. Look at the structures! Open them in pymol or Chimera. You will see that all of the missing RNA residues have been built. The protein and RNA helix have also moved slightly from their initial positions.  
 
-5. Estimate the error in the DRRAFTER models. Again, use the DRRAFTER.py script to do this. Type:  
+5. Estimate the error in the DRRAFTER models. Again, use the `DRRAFTER.py` script to do this. Type:  
 
 ```
 DRRAFTER.py -final_structures demo_run.out.1.pdb demo_run.out.2.pdb demo_run.out.3.pdb demo_run.out.4.pdb demo_run.out.5.pdb demo_run.out.6.pdb demo_run.out.7.pdb demo_run.out.8.pdb demo_run.out.9.pdb demo_run.out.10.pdb -estimate_error -rosetta_directory /your/path/to/rosetta/executables
