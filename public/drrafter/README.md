@@ -8,7 +8,7 @@ Written in March 2018 by Kalli Kappel (kappel at stanford dot edu).
 This demo shows how to use DRRAFTER to build a structure of an RNA-protein complex into a cryoEM density map and how to estimate the error in the resulting models.  
 
 
-##Setting up the demo:  
+## Setting up the demo:  
 
 1. Make sure that you have python (v2.7) installed.
 2. Install Rosetta RNA tools. See instructions and documentation here: https://www.rosettacommons.org/docs/latest/application_documentation/rna/RNA-tools
@@ -17,7 +17,7 @@ This demo shows how to use DRRAFTER to build a structure of an RNA-protein compl
 PATH=$PATH:YOUR_ROSETTA_PATH/main/source/src/apps/public/DRRAFTER/
 ```
 
-##Brief explanation of input files:  
+## Brief explanation of input files:  
 
 fasta.txt: The FASTA file listing the full sequence of the complex being modeled. It should contain at least one line that starts with '>' and lists chains and residue numbers for the sequence, e.g. A:136-258 E:1-23. Here we are modeling chain A residues 136-258 and chain E residues 1-23. The subsequent lines should list the full sequence of the complex. Protein residues are specified by uppercase one-letter codes. RNA residues are specified with lowercase one-letter codes ('a', 'u', 'g', and 'c').  
 
@@ -32,7 +32,7 @@ protein_fit_into_density.pdb: The protein structure that has been fit into the d
 protein_and_RNA_helix_fit_into_density.pdb: Coordinates of both the protein structure and the RNA helix (from RNA_helix.pdb) fit into the density map. This will be the starting conformation for the DRRAFTER run. (The relative positions of the protein and RNA helix will be allowed to change though.)  
 
 
-##To run DRRAFTER:
+## To run DRRAFTER:
 
 1. Use the DRRAFTER.py script to set up the run. Type:  
 ```
