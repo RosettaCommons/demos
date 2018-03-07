@@ -101,3 +101,7 @@ All numbers have units of Å. The mean pairwise RMSD describes the "convergence"
 
 For reference, example output is provided in the `example_output` directory.   
 
+
+## Additional information
+
+See the DRRAFTER documentation [here](https://www.rosettacommons.org/docs/latest/application_documentation/rna/drrafter).
