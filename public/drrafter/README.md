@@ -32,7 +32,7 @@ PATH=$PATH:YOUR_ROSETTA_PATH/main/source/src/apps/public/DRRAFTER/
 `protein_and_RNA_helix_fit_into_density.pdb`: Coordinates of both the protein structure and the RNA helix (from `RNA_helix.pdb`) fit into the density map. This will be the starting conformation for the DRRAFTER run. (The relative positions of the protein and RNA helix will be allowed to change though.)  
 
 
-## To run DRRAFTER:
+## Running DRRAFTER:
 
 1. Use `DRRAFTER.py` to set up the run. Type:  
 ```
