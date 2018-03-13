@@ -39,7 +39,8 @@ export PATH=$PATH:YOUR_ROSETTA_PATH/main/source/src/apps/public/DRRAFTER/
 DRRAFTER.py -fasta fasta.txt -secstruct secstruct.txt -start_struct protein_and_RNA_helix_fit_into_density.pdb -map_file 1wsu_simulated_7A.mrc -map_reso 7.0 -residues_to_model E:1-23 -include_as_rigid_body_structures protein_fit_into_density.pdb RNA_helix.pdb -absolute_coordinates_rigid_body_structure protein_fit_into_density.pdb -job_name demo_run -dock_into_density -demo_settings -rosetta_directory /your/path/to/rosetta/executables
 ```
 
-**Note** that `/your/path/to/rosetta/executables` needs to be replaced with the actual path to your Rosetta executables. Note also the `-demo_settings` flag: this flag is designed to make the DRRAFTER run finish quickly, and should not be used for normal runs.  
+**Note** that `/your/path/to/rosetta/executables` needs to be replaced with the actual path to your Rosetta executables. Or if the path to the Rosetta executables is already in your system PATH, then you can omit the `-rosetta_directory` flag.   
+**Note** also the `-demo_settings` flag: this flag is designed to make the DRRAFTER run finish quickly, and should not be used for normal runs.  
 
 This will create the following files:  
 
