@@ -43,7 +43,7 @@ Here, a fasta file is provided for you.
 ###2. Run the Rosetta AbinitioRelax application.
 
     $> ../../../main/source/bin/AbinitioRelax.default.linuxclangrelease @input_files/options
-    # For a production run on a cluster, run AbinitioRelax.**mpi**.linuxclangrelease
+    # For a production run on a cluster, run AbinitioRelax.mpi.linuxclangrelease
 
 *Alternatively*, run in the background:
 
