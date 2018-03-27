@@ -43,6 +43,7 @@ Here, a fasta file is provided for you.
 ###2. Run the Rosetta AbinitioRelax application.
 
     $> ../../../main/source/bin/AbinitioRelax.default.linuxclangrelease @input_files/options
+    > * For a production run on a cluster, run AbinitioRelax.**mpi**.linuxclangrelease
 
 *Alternatively*, run in the background:
 
@@ -57,7 +58,7 @@ Here, a fasta file is provided for you.
 
 > * **For an actual production run, 50,000 to 100,000 models need to be generated.**
 > * **You probably want to use the** [silent file options](../Tips/Tips.md)  
-> * For a production run on a cluster, run AbinitioRelax.**mpi**.linuxclangrelease
+
 
 ##3. Analyze your results
 Details of how to analyze data and how to select which of the 50,000 models would be your prediction are explained in the [[Analysis|analysis]] tutorial.
