@@ -14,9 +14,13 @@ This demo shows how to use the Rosetta-Vienna ddG method to calculate relative b
 
 ## Step 1: Relax the starting structure.
 
-`python PATH_TO_ROSETTA/main/source/src/apps/public/rnp_ddg/relax_starting_structure.py --start_struct 1ZDH_chainA_B_R.pdb --nstructs 1 --rosetta_prefix PATH_TO_ROSETTA/main/source/bin/`
+```
+python PATH_TO_ROSETTA/main/source/src/apps/public/rnp_ddg/relax_starting_structure.py --start_struct 1ZDH_chainA_B_R.pdb --nstructs 1 --rosetta_prefix PATH_TO_ROSETTA/main/source/bin/
+```
 
-`source ALL_RELAX_COMMANDS`
+```
+source ALL_RELAX_COMMANDS
+```
 
 ## Step 2: Perform ddG calculations.
 
