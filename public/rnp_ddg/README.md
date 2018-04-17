@@ -112,7 +112,7 @@ ddG dG complex_score protein_score rna_score
 ####################################
 ```
 
-For reference, example output is provided in the `example_output` directory.   
+For reference, example output for this demo is provided in the `example_output` directory.   
 
 ## Additional information
 

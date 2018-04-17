@@ -1,0 +1,8 @@
+METHOD: low-res
+TAG: demo_run
+OVERWRITE?: False
+START_STRUCT: FULL_PATH/full_demo_run/relax_start_structure/1/min_again_start_structure_wildtype_bound.pdb
+WT_SECSTRUCT (user specified): 
+WT_SECSTRUCT: .............
+SEQ_FILE: mutant_list.txt
+Extra command line options: -score:weights rnp_ddg -relax_cutoff_dist 20.0 -Nreps 1 -min_jumps true -move_backbone false -restore_talaris_behavior 
