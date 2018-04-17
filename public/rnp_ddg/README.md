@@ -21,7 +21,7 @@ First, we need to "relax" the starting structure into the Rosetta score function
 ```
 python PATH_TO_ROSETTA/main/source/src/apps/public/rnp_ddg/relax_starting_structure.py --start_struct start_structure.pdb --nstructs 1 --rosetta_prefix PATH_TO_ROSETTA/main/source/bin/
 ```
-*Note* that you need to replace PATH_TO_ROSETTA with your path to the Rosetta code.
+**Note** that you need to replace PATH_TO_ROSETTA with your path to the Rosetta code.
 
 This will create a directory named `relax_start_structure` and command files `ALL_RELAX_COMMANDS` and `RELAX_COMMAND_1`. `relax_start_structure` contains sub-directories for each relaxation run. There should be `nstructs` numbered sub-directories (here `nstructs` = 1, so there is only 1 numbered sub-directory).
 
@@ -31,7 +31,7 @@ This will create a directory named `relax_start_structure` and command files `AL
 source ALL_RELAX_COMMANDS
 ```
 
-The final relaxed structure is in `relax_start_structure/1/min_again_start_structure_wildtype_bound.pdb`. If we had specified `nstructs` > 1, then there would be a file named `min_again_start_structure_wildtype_bound.pdb` in each of the numbered directories in `relax_start_structure`.
+This will take a few minutes to run. The final relaxed structure is in `relax_start_structure/1/min_again_start_structure_wildtype_bound.pdb`. If we had specified `nstructs` > 1, then there would be a file named `min_again_start_structure_wildtype_bound.pdb` in each of the numbered directories in `relax_start_structure`.
 
 3. To get a ranked list of the lowest scoring relaxed structures, type:
 
@@ -49,6 +49,34 @@ Rank 0, Score -999.996: relax_start_structure//1/min_again_start_structure_wildt
 (Here, this wasn't completely necessary since the relaxation was only performed once.)
 
 ## Step 2: Perform ddG calculations.
+
+1. Set up the ddG calculations. This will create a directory and all the necessary files for the ddG calculation runs. Type:
+
+```
+python PATH_TO_ROSETTA/main/source/src/apps/public/rnp_ddg/general_RNP_setup_script.py --low_res --tag demo_run --start_struct relax_start_structure//1/min_again_start_structure_wildtype_bound.pdb --seq_file mutant_list.txt --rosetta_prefix PATH_TO_ROSETTA/main/source/bin/ --Nreps 1 --protein_pack_reps 1
+```
+
+**Note:** you need to replace PATH_TO_ROSETTA with your path to the Rosetta code.
+
+Let's walk through each of the options:  
+
+`--low-res`: Use the low-res method of calculating RNA-protein relative binding affinities. This is recommended. Alternatively, you can specify `--med-res`, which will use `rna_denovo` to build mutant structures when they introduce a non-canonical RNA base pair (i.e. if the WT structure contains a G-C base pair and you specify a mutation to G-G).  
+
+`--tag`: Here we can specify a string that will be used to create the name of the output directory.  
+
+`--start_struct`: This is the relaxed starting structure that will be used to calculate energies of mutants. This will be considered the wildtype sequence. This should be one of the lowest-scoring structures that was printed to the screen by `get_lowest_scoring_relaxed_models.py`.  
+
+`--seq_file`: This is a text file specifying the sequences for which we want to calculate relative binding affinities. One sequences should be specified per line. These can either be the full sequence of the complex (RNA and protein), or just the RNA sequence. If the protein sequence is not specified, then no mutations to the protein will be made.  
+
+`--rosetta_prefix`: The path to the Rosetta executables. 
+
+`--Nreps`: The number of times the mutation and subsequent relaxation of surrounding residues should be performed. **For actual runs, it is recommended that this is set to 10.**
+
+`--protein_pack_reps`: The number of times the "unbound" protein structure should be repacked, to calculate the energy of the unbound protein. **For actual runs, it is recommended that this is set to 10.**  
+
+   
+This setup command will create a directory named `ddG_demo_run_low-res`. In this directory, there is a numbered subdirectory corresponding to each of the mutant sequences that were specified in the `mutant_list.txt` file. `0` corresponds to the wildtype, `1` corresponds to the first sequence listed in `mutant_list.txt`, `2` corresponds to the second sequence listed in `mutant_list.txt`, etc.
+
 
 For reference, example output is provided in the `example_output` directory.   
 
