@@ -75,8 +75,42 @@ Let's walk through each of the options:
 `--protein_pack_reps`: The number of times the "unbound" protein structure should be repacked, to calculate the energy of the unbound protein. **For actual runs, it is recommended that this is set to 10.**  
 
    
-This setup command will create a directory named `ddG_demo_run_low-res`. In this directory, there is a numbered subdirectory corresponding to each of the mutant sequences that were specified in the `mutant_list.txt` file. `0` corresponds to the wildtype, `1` corresponds to the first sequence listed in `mutant_list.txt`, `2` corresponds to the second sequence listed in `mutant_list.txt`, etc.
+This setup command will create a directory named `ddG_demo_run_low-res`. In this directory, there is a numbered subdirectory corresponding to each of the mutant sequences that were specified in the `mutant_list.txt` file. `0/` corresponds to the wildtype, `1/` corresponds to the first sequence listed in `mutant_list.txt`, `2/` corresponds to the second sequence listed in `mutant_list.txt`, etc. `ddG_demo_run_low/general_setup_settings.txt` lists the options that will be used for the run. `ddG_demo_run_low/ALL_COMMANDS` contains the actual command lines to run all of the ddG calculations. `ddG_demo_run_low/COMMAND_0`, `ddG_demo_run_low/COMMAND_1`, and `ddG_demo_run_low/COMMAND_2` contain the commands to run the ddG calculations for the wildtype, first, and second mutations, respectively. All of these commands are contained within `ddG_demo_run_low/ALL_COMMANDS`; these individual files are just useful if you're running a lot of mutants on a cluster -- each command can be run simultaneously on a different core.  
 
+
+2. Run the ddG calculations. Type:
+
+```
+source ddG_demo_run_low-res/ALL_COMMANDS
+```
+
+This will take several minutes to run.
+
+3. Get the ddG results. Type:
+
+```
+python PATH_TO_ROSETTA/main/source/src/apps/public/rnp_ddg/get_final_ddG_scores.py --run_dir ddG_demo_run_low-res/ --seq_file mutant_list.txt
+```
+
+`--run_dir` should specify the directory that the ddG calculations were run in (the one that was created by `general_RNP_setup_script.py`). `--seq_file` should list the same `seq_file` that was provided to `general_RNP_setup_script.py`.  
+ 
+This will print the following to the screen:  
+
+```
+####################################
+RESULTS:
+
+WT ddG: 0.00 kcal/mol
+ugaggcucaccca ddG: 2.39 kcal/mol
+ugaggagcaccca ddG: 0.62 kcal/mol
+
+####################################
+Results are also written to the ddG_score.txt files in 
+each mutant directory in ddG_demo_run_low-res/
+The format is:
+ddG dG complex_score protein_score rna_score
+####################################
+```
 
 For reference, example output is provided in the `example_output` directory.   
 
