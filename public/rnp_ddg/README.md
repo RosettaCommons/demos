@@ -1,16 +1,30 @@
 Calculate relative binding affinities for a RNA-protein complex
 =====================================================================================
 
-KEYWORDS: NUCLEIC_ACIDS RNA 
+KEYWORDS: NUCLEIC_ACIDS RNA INTERFACES
 
 Written in April 2018 by Kalli Kappel (kappel at stanford dot edu).  
 
 This demo shows how to use the Rosetta-Vienna ddG method to calculate relative binding affinites for an RNA-protein complex.  
 
 
-## Setting up the demo:  
+## Setting up the demo: 
 
-## Brief explanation of input files:  
+1. Make sure that you have python (v2.7) installed.
+2. Install Rosetta RNA tools. See instructions and documentation [here](https://www.rosettacommons.org/docs/latest/application_documentation/rna/RNA-tools).
+3. Install the ViennaRNA package. See instructions [here](https://www.tbi.univie.ac.at/RNA/).
+
+## Brief explanation of required input files: 
+
+1. A structure of a RNA-protein complex, here `start_structure.pdb`. This is the MS2 coat protein-RNA hairpint complex. 
+2. A list of sequences for which to calculate binding affinities relative to the sequence found in the starting structure, here `mutant_list.txt`. This is a text file specifying the sequences for which we want to calculate relative binding affinities. One sequence should be specified per line. These can either be the full sequence of the complex (RNA and protein), or just the RNA sequence. If the protein sequence is not specified, then no mutations to the protein will be made. Here, `mutant_list.txt` contains:
+
+```
+ugaggcucaccca
+ugaggagcaccca
+```
+
+So, we will be calculating relative binding affinities for two sequences specifying mutations in the RNA.  
 
 ## Step 1: Relax the starting structure.
 
@@ -66,7 +80,7 @@ Let's walk through each of the options:
 
 `--start_struct`: This is the relaxed starting structure that will be used to calculate energies of mutants. This will be considered the wildtype sequence. This should be one of the lowest-scoring structures that was printed to the screen by `get_lowest_scoring_relaxed_models.py`.  
 
-`--seq_file`: This is a text file specifying the sequences for which we want to calculate relative binding affinities. One sequences should be specified per line. These can either be the full sequence of the complex (RNA and protein), or just the RNA sequence. If the protein sequence is not specified, then no mutations to the protein will be made.  
+`--seq_file`: This is a text file specifying the sequences for which we want to calculate relative binding affinities. One sequence should be specified per line. These can either be the full sequence of the complex (RNA and protein), or just the RNA sequence. If the protein sequence is not specified, then no mutations to the protein will be made.  
 
 `--rosetta_prefix`: The path to the Rosetta executables. 
 
@@ -111,6 +125,8 @@ The format is:
 ddG dG complex_score protein_score rna_score
 ####################################
 ```
+
+These calculations are not deterministic, so the actual numbers might differ slightly. **Normally, these calculations should be performed on the top 20 relaxed structures, then the final ddG values should be averaged over the 20 results.**
 
 For reference, example output for this demo is provided in the `example_output` directory.   
 
