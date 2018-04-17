@@ -53,6 +53,7 @@ This will take a few minutes to run. The final relaxed structure is in `relax_st
 python PATH_TO_ROSETTA/main/source/src/apps/public/rnp_ddg/get_lowest_scoring_relaxed_models.py --relax_dir relax_start_structure/
 ```
 
+**Note:** you need to replace PATH_TO_ROSETTA with your path to the Rosetta code.  
 This will print the following message to the screen:  
 
 ```
@@ -105,6 +106,7 @@ This will take several minutes to run.
 ```
 python PATH_TO_ROSETTA/main/source/src/apps/public/rnp_ddg/get_final_ddG_scores.py --run_dir ddG_demo_run_low-res/ --seq_file mutant_list.txt
 ```
+**Note:** you need to replace PATH_TO_ROSETTA with your path to the Rosetta code.
 
 `--run_dir` should specify the directory that the ddG calculations were run in (the one that was created by `general_RNP_setup_script.py`). `--seq_file` should list the same `seq_file` that was provided to `general_RNP_setup_script.py`.  
  
@@ -126,7 +128,8 @@ ddG dG complex_score protein_score rna_score
 ####################################
 ```
 
-These calculations are not deterministic, so the actual numbers might differ slightly. **Normally, these calculations should be performed on the top 20 relaxed structures, then the final ddG values should be averaged over the 20 results.**
+These calculations are not deterministic, so the actual numbers might differ slightly. **Normally, these calculations should be performed on the top 20 relaxed structures, then the final ddG values should be averaged over the 20 results.**  
+As noted in the message above, the ddG results are also listed in the `ddG_score.txt` files in each of the run directories. The first column in a `ddG_score.txt` specifies the calculated ddG value in kcal/mol.
 
 For reference, example output for this demo is provided in the `example_output` directory.   
 
