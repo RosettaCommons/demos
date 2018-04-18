@@ -135,4 +135,4 @@ For reference, example output for this demo is provided in the `example_output` 
 
 ## Additional information
 
-See the Rosetta-Vienna ddG documentation [here]().
+See the Rosetta-Vienna ddG documentation [here](https://www.rosettacommons.org/docs/latest/application_documentation/rna/rnp-ddg).
