@@ -5,7 +5,7 @@ KEYWORDS: NUCLEIC_ACIDS RNA INTERFACES
 
 Written in April 2018 by Kalli Kappel (kappel at stanford dot edu).  
 
-This demo shows how to use the Rosetta-Vienna ddG method to calculate relative binding affinites for an RNA-protein complex.  
+This demo shows how to use the Rosetta-Vienna ddG method to calculate relative binding affinites for a RNA-protein complex.  
 
 
 ## Setting up the demo: 
