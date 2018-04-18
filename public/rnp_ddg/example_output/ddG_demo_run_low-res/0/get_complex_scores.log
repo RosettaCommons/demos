@@ -1,0 +1,63 @@
+core.chemical.GlobalResidueTypeSet: Finished initializing fa_standard residue type set.  Created 544 residue types
+core.chemical.GlobalResidueTypeSet: Total time to initialize 0.774926 seconds.
+core.import_pose.import_pose: There appears to be a strand boundary at 129 so adding to cutpoint_in_full_model.
+core.import_pose.import_pose: There appears to be a strand boundary at 258 so adding to cutpoint_in_full_model.
+core.scoring.ScoreFunctionFactory: SCOREFUNCTION: rnp_ddg
+core.scoring.etable: Starting energy table calculation
+core.scoring.etable: smooth_etable: changing atr/rep split to bottom of energy well
+core.scoring.etable: smooth_etable: spline smoothing lj etables (maxdis = 6)
+core.scoring.etable: smooth_etable: spline smoothing solvation etables (max_dis = 6)
+core.scoring.etable: Finished calculating energy tables.
+basic.io.database: Database file opened: scoring/score_functions/hbonds/sp2_elec_params/HBPoly1D.csv
+basic.io.database: Database file opened: scoring/score_functions/hbonds/sp2_elec_params/HBFadeIntervals.csv
+basic.io.database: Database file opened: scoring/score_functions/hbonds/sp2_elec_params/HBEval.csv
+basic.io.database: Database file opened: scoring/score_functions/rama/Rama_smooth_dyn.dat_ss_6.4
+basic.io.database: Database file opened: scoring/score_functions/P_AA_pp/P_AA
+basic.io.database: Database file opened: scoring/score_functions/P_AA_pp/P_AA_n
+basic.io.database: Database file opened: scoring/score_functions/P_AA_pp/P_AA_pp
+core.pack.dunbrack.RotamerLibrary: Dunbrack 2010 library took 0.403425 seconds to load from binary
+core.scoring: 
+------------------------------------------------------------
+ Scores                       Weight   Raw Score Wghtd.Score
+------------------------------------------------------------
+ fa_atr                       1.000   -1457.904   -1457.904
+ fa_rep                       0.550     337.920     185.856
+ fa_intra_rep                 0.005     846.557       4.233
+ lk_nonpolar                  0.275    -151.757     -41.733
+ fa_elec                      0.875    -176.573    -154.501
+ fa_elec_rna_phos_phos        1.870       0.697       1.304
+ pro_close                    1.250       1.188       1.485
+ rna_torsion                  1.100       9.328      10.261
+ suiteness_bonus              1.100      -8.236      -9.060
+ rna_sugar_close              0.902       1.675       1.511
+ fa_stack                     0.143    -160.603     -22.966
+ fa_stack_rna_protein         0.100     -24.085      -2.409
+ stack_elec                   0.836      -2.784      -2.327
+ geom_sol_fast                0.500     426.894     213.447
+ hbond_sr_bb                  1.170     -35.222     -41.209
+ hbond_lr_bb                  1.170     -56.975     -66.660
+ hbond_bb_sc                  1.170     -42.961     -50.265
+ hbond_sc                     1.100     -42.210     -46.431
+ dslf_fa13                    1.250       0.000       0.000
+ rama                         0.250     -87.005     -21.751
+ omega                        0.625      36.692      22.933
+ fa_dun                       0.700     393.004     275.103
+ p_aa_pp                      0.400    -123.551     -49.420
+ yhh_planarity                0.625       0.276       0.173
+ ref                          1.000     250.340     250.340
+ linear_chainbreak            5.500       0.000       0.000
+---------------------------------------------------
+ Total weighted score:                     -999.992
+apps.public.rnp_ddg.rnp_ddg: Score of the complex: -999.992
+apps.public.rnp_ddg.rnp_ddg: Average of top 1 poses: -999.992
+apps.public.rnp_ddg.rnp_ddg: Doing minimization...
+apps.public.rnp_ddg.rnp_ddg: Finished minimization!
+apps.public.rnp_ddg.rnp_ddg: Doing packing...
+core.pack.pack_rotamers: built 10767 rotamers at 258 positions.
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.pack.interaction_graph.interaction_graph_factory: IG: 18728692 bytes
+apps.public.rnp_ddg.rnp_ddg: Finished packing!
+apps.public.rnp_ddg.rnp_ddg: Doing minimization...
+apps.public.rnp_ddg.rnp_ddg: Finished minimization!
+apps.public.rnp_ddg.rnp_ddg: Unbound protein score: -831.848
+apps.public.rnp_ddg.rnp_ddg: Average unbound protein score: -831.848

@@ -1,0 +1,6 @@
+cd FULL_PATH/full_demo_run/ddG_demo_run_low-res/0
+
+cd FULL_PATH/full_demo_run/ddG_demo_run_low-res/0
+PATH_TO_ROSETTA/main/source/bin/rnp_ddg -ignore_zero_occupancy false -s FULL_PATH/full_demo_run/relax_start_structure/1/min_again_start_structure_wildtype_bound_reorder.pdb -mutfile mutfile -out_prefix ddG_ -protein_pack_reps 1 -score:weights rnp_ddg -relax_cutoff_dist 20.0 -Nreps 1 -min_jumps true -move_backbone false -restore_talaris_behavior  > get_complex_scores.log
+
+cd FULL_PATH/full_demo_run

@@ -1,0 +1,1 @@
+apps.public.rnp_ddg.rnp_ddg: Average of top 1 poses: -998.348
