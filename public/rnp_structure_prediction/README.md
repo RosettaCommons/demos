@@ -22,6 +22,7 @@ This demo shows how to model the 3D structure of an RNA-protein complex starting
 6. `flags` contains all the flags for the run (or alternatively `flags_no_dock` for the run where the RNA helix is fixed relative to the protein). The options in this flags file are:  
 `-fasta fasta.txt`: specifies the fasta file to use (`fasta.txt`).  
 `-secstruct_file secstruct.txt`: specifies the file containing the secondary structure to use (`secstruct.txt`).  
+`-s unbound_protein.pdb RNA_helix.pdb`: the input structures for the run. These will be treated as rigid bodies.
 `-new_fold_tree_initializer true`: sets up the kinematics for the problem (this flag is **strongly** recommended for RNA-protein modeling).  
 `-minimize_rna false`: do low-resolution modeling only.
 `-nstruct 5`: the number of structures to build. Typically, you will want to build a total of several thousand structures.
