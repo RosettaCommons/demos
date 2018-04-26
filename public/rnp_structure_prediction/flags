@@ -13,6 +13,5 @@
 -FA_low_res_rnp_scoring true
 -ramp_rnp_vdw true
 -docking_move_size 1.0
--dock_each_chunk_per_chain true
 -mute protocols.moves.RigidBodyMover
 -no_filters
