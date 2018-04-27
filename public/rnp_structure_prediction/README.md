@@ -1,7 +1,7 @@
 Structure prediction of an RNA-protein complex
 =====================================================================================
 
-KEYWORDS: NUCLEIC_ACIDS RNA INTERFACES
+KEYWORDS: STRUCTURE_PREDICTION DENOVO NUCLEIC_ACIDS RNA INTERFACES
 
 Written in April 2018 by Kalli Kappel (kappel at stanford dot edu).  
 
