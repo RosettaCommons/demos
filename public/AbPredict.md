@@ -1,6 +1,6 @@
 # AbPredict
 
-KEYWORDS: STRUCTURE_PREDICTION Antibodies
+KEYWORDS: STRUCTURE_PREDICTION ANTIBODIES
 
 **Summary**: Methods for antibody structure prediction rely on sequence homology to experimentally determined structures. Resulting models may be accurate, but they are often stereochemically strained, limiting their usefulness in modeling and design workflows. We present the AbPredict 2 webserver, which instead of using sequence homology, conducts a Monte Carlo based search for low-energy combinations of backbone conformations to yield accurate and unstrained antibody structures.  
 **Availability & implementation**: We introduce several important improvements over the previous AbPredict implementation: (1) backbones and sidechains are now modeled using ideal bond lengths and angles, reducing stereochemical strain to levels observed in high-resolution experimental structures; (2) sampling of the rigid-body orientation at the light-heavy chain interface is improved, increasing model accuracy; and (3) runtime is reduced 20-fold without compromising accuracy, enabling the implementation of AbPredict 2 as a fully automated webserver (http://abpredict.weizmann.ac.il). Accurate and unstrained antibody model structures may in some cases obviate the need for experimental structures in antibody optimization workflows.
