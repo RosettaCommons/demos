@@ -1,0 +1,267 @@
+<ROSETTASCRIPTS>
+	<SCOREFXNS>
+      		<ScoreFunction name="PSSMscorefxn">
+		   	<Reweight scoretype="res_type_constraint" weight="0.2"/>
+		</ScoreFunction>
+
+		<ScoreFunction name="soft_rep_res_type_cst" weights="soft_rep">
+        		<Reweight scoretype="res_type_constraint" weight="0.2"/>
+        	</ScoreFunction>        
+		<ScoreFunction name="talaris_cal" weights="ref2015">
+			<Reweight scoretype="coordinate_constraint" weight="0.5"/>
+			<Reweight scoretype="dihedral_constraint" weight="1"/>
+			<Reweight scoretype="res_type_constraint" weight="0.5"/>
+			<Reweight scoretype="chainbreak" weight="10"/>
+		</ScoreFunction>
+
+		<ScoreFunction name="TalarisCal_coordcst" weights="ref2015">
+                        <Reweight scoretype="res_type_constraint" weight="0.3"/> 
+                </ScoreFunction>
+        
+    		<ScoreFunction name="soft_rep_coordcst" weights="soft_rep">
+      			<Reweight scoretype="coordinate_constraint" weight="0.06"/>
+    		</ScoreFunction>
+
+		<ScoreFunction name="ref15_seq_const" weights="ref2015">
+			<Reweight scoretype="res_type_constraint" weight="0.5"/>
+    		</ScoreFunction>
+	
+		<ScoreFunction name="sc12_atr_rep">
+                        <Reweight scoretype="fa_atr" weight="0.8"/>
+                        <Reweight scoretype="fa_rep" weight="0.44"/>
+        	</ScoreFunction>
+
+		<ScoreFunction name="talaris_full" weights="ref2015">
+			<Reweight scoretype="coordinate_constraint" weight="5"/>
+		</ScoreFunction>
+
+		<ScoreFunction name="soft_rep_full" weights="soft_rep">
+			<Reweight scoretype="coordinate_constraint" weight="5"/>
+		</ScoreFunction>
+
+
+
+		<ScoreFunction name="tal_no_pssm" weights="ref2015">
+			<Reweight scoretype="coordinate_constraint" weight="5"/>
+		</ScoreFunction>	
+
+		<ScoreFunction name="talaris_pure" weights="ref2015"/>
+
+		<ScoreFunction name="light_coor_const" weights="ref2015">
+			<Reweight scoretype="coordinate_constraint" weight="0.1"/>
+		</ScoreFunction>
+
+		<ScoreFunction name="light_coor_const_soft" weights="soft_rep">
+			<Reweight scoretype="coordinate_constraint" weight="0.1"/>
+		</ScoreFunction>
+  	</SCOREFXNS>
+
+	<TASKOPERATIONS>
+    		<ThreadSequence name="thread_original" allow_design_around="0" target_sequence="%%sequence%%"/>
+		<InitializeFromCommandline name="init"/>
+		<NoRepackDisulfides name="noRepackDisulfs"/>
+		<RestrictToRepacking name="rtr"/>
+	</TASKOPERATIONS>
+
+
+	
+	#-----------------------------------------------------------------
+	# General BB-Clash checker
+	#-----------------------------------------------------------------
+	<TASKOPERATIONS>
+		<ProteinInterfaceDesign name="design_chain1_only" design_chain1="1" design_chain2="0" repack_chain1="1" repack_chain2="0" modify_before_jump="1" modify_after_jump="0" interface_distance_cutoff="100"/>
+		<RestrictAbsentCanonicalAAS name="design_only_Ala" keep_aas="A"/>
+		<ProteinInterfaceDesign name="repack_chain2_only" design_chain1="0" design_chain2="0" repack_chain1="0" repack_chain2="1" interface_distance_cutoff="10" modify_after_jump="1" modify_before_jump="0"/>
+	</TASKOPERATIONS>
+	<MOVERS> 
+		<PackRotamersMover name="quick_repack" scorefxn="soft_rep_coordcst" task_operations="init,thread_original"/>
+	</MOVERS>
+	<FILTERS>
+		<ScoreType name="total_score" score_type="total_score" scorefxn="TalarisCal_coordcst" threshold="1000000"/>
+		ScoreType name="clash_score" score_type="total_score" scorefxn="soft_rep_coordcst" threshold="100000" confidence="0"/> 
+		MoveBeforeFilter name="bb_clash_check" mover="design_softrep" filter="clash_score"/>
+		<Time name="refine_time"/>
+		<Time name="build_time"/>
+
+	</FILTERS>
+
+
+	<MOVERS> build starting structure
+	
+		
+		<SpliceInAntibody name="H1_H2_build" torsion_database="%%H1_H2.db%%"  scorefxn="talaris_cal" repack_shell="0.1" design_shell="0.1" template_file="%%template_pdb%%" task_operations="init,rtr,noRepackDisulfs" debug="0"  min_seg="1" delta_lengths="0" database_pdb_entry="%%entry_H1_H2%%" segment="H1_H2" use_sequence_profile="0"/>
+
+		<SpliceInAntibody name="H3_build" torsion_database="%%H3.db%%"  scorefxn="talaris_cal" repack_shell="0.1" design_shell="0.1" template_file="%%template_pdb%%" task_operations="init,rtr,noRepackDisulfs" debug="0"  min_seg="1" delta_lengths="0" database_pdb_entry="%%entry_H3%%" segment="H3" use_sequence_profile="0"/> 
+		
+		<SpliceInAntibody name="L1_L2_build" torsion_database="%%L1_L2.db%%"  scorefxn="talaris_cal" repack_shell="0.1" design_shell="0.1" template_file="%%template_pdb%%" task_operations="init,rtr,noRepackDisulfs" debug="0"  min_seg="1" delta_lengths="0" database_pdb_entry="%%entry_L1_L2%%" segment="L1_L2" use_sequence_profile="0"/>
+
+		<SpliceInAntibody name="L3_build" torsion_database="%%L3.db%%"  scorefxn="talaris_cal" repack_shell="0.1" design_shell="0.1" template_file="%%template_pdb%%" task_operations="init,rtr,noRepackDisulfs" debug="0"  min_seg="1" delta_lengths="0" database_pdb_entry="%%entry_L3%%" segment="L3" use_sequence_profile="0"/>
+
+
+</MOVERS>
+
+
+	
+	<MOVERS> refinement
+	<DumpPdb name="After_rb" fname="After_rb.pdb"/>
+		After_rb
+		<SpliceInAntibody name="H1_H2" torsion_database="%%H1_H2.db%%"  scorefxn="talaris_cal" repack_shell="6" design_shell="6" template_file="%%template_pdb%%" task_operations="init,noRepackDisulfs,thread_original" debug="0"  min_seg="1" delta_lengths="0" dbase_iterate="1" segment="H1_H2" use_sequence_profile="0"/>
+
+		<SpliceInAntibody name="H3" torsion_database="%%H3.db%%"  scorefxn="talaris_cal" repack_shell="6" design_shell="6" template_file="%%template_pdb%%" task_operations="init,thread_original,noRepackDisulfs" debug="0"  min_seg="1" delta_lengths="0" dbase_iterate="1" segment="H3" use_sequence_profile="0"/> 
+		
+		<SpliceInAntibody name="L1_L2" torsion_database="%%L1_L2.db%%"  scorefxn="talaris_cal" repack_shell="6" design_shell="6" template_file="%%template_pdb%%" task_operations="init,thread_original,noRepackDisulfs" debug="0"  min_seg="1" delta_lengths="0" dbase_iterate="1" segment="L1_L2" use_sequence_profile="0"/>
+
+		<SpliceInAntibody name="L3" torsion_database="%%L3.db%%"  scorefxn="talaris_cal" repack_shell="6" design_shell="6" template_file="%%template_pdb%%" task_operations="init,thread_original,noRepackDisulfs" debug="0"  min_seg="1" delta_lengths="0" dbase_iterate="1" segment="L3" use_sequence_profile="0"/>
+
+       <PackRotamersMover name="soft_design" scorefxn="soft_rep_full" task_operations="thread_original,init,noRepackDisulfs"/>
+		
+        <PackRotamersMover name="hard_design" scorefxn="talaris_full" task_operations="init,rtr,noRepackDisulfs"/>
+		
+        <RotamerTrialsMinMover name="RTmin" scorefxn="talaris_full" task_operations="init,rtr,noRepackDisulfs"/>
+        
+        <TaskAwareMinMover name="soft_min" scorefxn="soft_rep_full" chi="1" bb="0" jump="0" task_operations="init,noRepackDisulfs"/>
+        <TaskAwareMinMover name="soft_min_all" scorefxn="light_coor_const_soft" chi="1" bb="1" jump="1" task_operations="init,noRepackDisulfs"/>
+		
+        <TaskAwareMinMover name="hard_min" scorefxn="talaris_full" chi="1" bb="0" jump="1" task_operations="init,noRepackDisulfs"/>
+        <TaskAwareMinMover name="hard_min_all" scorefxn="light_coor_const" chi="1" bb="1" jump="1" task_operations="init,noRepackDisulfs"/>
+	<AddConstraintsToCurrentConformationMover name="addCAconst" />
+	<ClearConstraintsMover name="clc" />
+
+
+		<AtomTree name="docking_ft" docking_ft="1"/>
+		<AtomTree name="two_parts_chain1" two_parts_chain1="1"/>
+		<AtomTree name="AB_atom_tree" ab_fold_tree="1"/>
+		<AtomTree name="simple_ft" simple_ft="1"/>
+		<PackRotamersMover name="thread_ori_sequence" scorefxn="soft_rep_coordcst" task_operations="init,thread_original,noRepackDisulfs"/>
+		<ParsedProtocol name="post_splice_refine">
+			<Add mover_name="addCAconst"/>
+			<Add mover="AB_atom_tree"/>
+			<Add mover_name="soft_design"/>
+			<Add mover_name="soft_min"/>
+			<Add mover_name="soft_design"/>
+			<Add mover_name="hard_min"/>
+			<Add mover_name="hard_design"/>
+			<Add mover_name="hard_min"/>
+			<Add mover_name="hard_design"/>
+			Add mover_name="RTmin"/>
+			Add mover_name="RTmin"/>
+			Add mover_name="RTmin"/>
+
+			<Add mover_name="hard_min"/>
+			<Add mover_name="simple_ft"/>
+			<Add mover_name="clc"/>
+		</ParsedProtocol>
+			
+
+		<ParsedProtocol name="splice_refine_L1_L2">
+			<Add mover="L1_L2"/>
+			<Add mover="post_splice_refine"/>
+		</ParsedProtocol>
+		<ParsedProtocol name="splice_refine_L3">
+			<Add mover="L3"/>
+			<Add mover="post_splice_refine"/>
+		</ParsedProtocol>
+		<ParsedProtocol name="splice_refine_H1_H2">
+			<Add mover="H1_H2"/>
+			<Add mover="post_splice_refine"/>
+		</ParsedProtocol>
+		<ParsedProtocol name="splice_refine_H3">
+			<Add mover="H3"/>
+			<Add mover="post_splice_refine"/>
+		</ParsedProtocol>
+
+		<LoadPDB name="load_from_checkpoint" filename="%%prefix%%.checkpoint.pdb"/>
+
+	</MOVERS>
+
+	<FILTERS> checkpointing stuff
+		<FileExist name="recover" filename="%%prefix%%.checkpoint.pdb" ignore_zero_byte="1"/>
+		<FileRemove name="remove_checkpointing_files" delete_content_only="1" filenames="%%prefix%%.stability.checkpoint,%%prefix%%.ddg.checkpoint,%%prefix%%.checkpoint.pdb,%%prefix%%.mc1.checkpoint,%%prefix%%.mc2.checkpoint,%%prefix%%.mc3.checkpoint,%%prefix%%.mc4.checkpoint"/>
+		<PoseInfo name="getPoseInfoBeforeSwap"/>
+	</FILTERS>
+
+	<MOVERS>
+		<If name="if_checkpoint_load" filter_name="recover" true_mover_name="load_from_checkpoint"/>
+		
+		<ClearConstraintsMover name="clear_constraints"/>
+		<RBIn name="rb_transform" rigid_body_dbase="/home/labs/fleishman/gideonla/RBOut/rb.db" from_entry="1" to_entry="1340" randomize="true"/> 
+		<PackRotamersMover name="design_softrep_rb" scorefxn="soft_rep_coordcst" task_operations="init,thread_original,noRepackDisulfs"/>
+	   	<PackRotamersMover name="design_talarisCal_rb" scorefxn="TalarisCal_coordcst" task_operations="init,thread_original,noRepackDisulfs"/>
+		<RotamerTrialsMinMover name="rtmin_rb" task_operations="init,thread_original,noRepackDisulfs" scorefxn="TalarisCal_coordcst"/>
+	
+		<ParsedProtocol name="RBMove">
+			Add mover=dumpme9/>
+			<Add mover="clear_constraints"/>
+			<Add mover="addCAconst"/>
+			<Add mover="rb_transform"/>
+			Add mover="After_rb"/>
+			<Add mover="AB_atom_tree"/>
+			<Add mover="design_softrep_rb"/>
+			<Add mover="soft_min"/>
+			<Add mover="hard_min"/>
+			<Add mover="design_talarisCal_rb"/>
+			Add mover="rtmin_rb"/>
+
+			<Add mover="hard_min"/>
+			<Add mover_name="simple_ft"/>
+                        <Add mover="clear_constraints"/>
+
+
+		</ParsedProtocol>
+		
+		<ParsedProtocol name="splice_rbmin_menu" mode="single_random"> Probabilities for optimal splice/rbmove guestimated by norn/sarel. 
+			<Add mover="splice_refine_H3" apply_probability="0.40"/> est. accept p = 0.13  
+			<Add mover="splice_refine_L3" apply_probability="0.1"/> est. accept p = 0.27
+			<Add mover="splice_refine_L1_L2" apply_probability="0.1"/>  est. accept p = 0.28
+			<Add mover="splice_refine_H1_H2" apply_probability="0.15"/> 0.25/> 0.25 est. accept p = 0.20
+			<Add mover="RBMove" apply_probability="0.25"/> est. accept p = 0.42
+		</ParsedProtocol>
+
+	Splice name="splice_seqconstraints" protein_family="antibodies" segment="L3" scorefxn="TalarisCal_coordcst" add_sequence_constraints_only="1"/>	
+		<GenericSimulatedAnnealer name="annealer" mover_name="splice_rbmin_menu" filter_name="total_score" trials="50" preapply="0" /> Instead of using Chris's multiple MC moves I am doing one 150 step SA-MC
+
+	
+			<ParsedProtocol name="post_run_refine">
+			<Add mover_name="addCAconst"/>
+			<Add mover="AB_atom_tree"/>
+			<Add mover_name="soft_design"/>
+			<Add mover_name="soft_min_all"/>
+			<Add mover_name="soft_design"/>
+			<Add mover_name="hard_min_all"/>
+			<Add mover_name="hard_design"/>
+			<Add mover_name="hard_min_all"/>
+			<Add mover_name="hard_design"/>
+			<Add mover_name="hard_design"/>
+
+			<Add mover_name="RTmin"/>
+			<Add mover_name="RTmin"/>
+			<Add mover_name="RTmin"/>
+
+			<Add mover_name="hard_min_all"/>
+			<Add mover_name="simple_ft"/>
+			<Add mover_name="clc"/>
+		</ParsedProtocol>
+	</MOVERS>
+
+	<PROTOCOLS>
+		<Add filter="build_time"/>	
+		<Add mover="H1_H2_build"/>
+		<Add mover="L1_L2_build"/>
+		<Add mover="L3_build"/>
+		<Add mover="H3_build"/>
+		<Add mover="RBMove"/>
+		<Add mover="thread_ori_sequence"/>
+		Add filter="build_time"/>	
+		<Add mover="post_splice_refine"/>
+		Add mover="splice_refine_H1_H2"/>
+		<Add mover="annealer"/>
+                <Add mover="post_run_refine"/>
+
+	</PROTOCOLS>
+
+<OUTPUT scorefxn="TalarisCal_coordcst"/>
+
+
+
+
+</ROSETTASCRIPTS>

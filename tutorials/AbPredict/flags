@@ -1,0 +1,17 @@
+-nodelay
+-use_input_sc
+-ignore_unrecognized_res
+-overwrite
+-out:file:fullatom
+-s 2BRR.ppk_ideal.pdb
+-parser:protocol AbPredict_xsd.xml
+-parser:script_vars template_pdb=2BRR.ppk_ideal.pdb 
+-pdb_comments true
+
+-parser:script_vars H1_H2.db=AB_db_files/H1_H2.db H3.db=AB_db_files/H3.db L3.db=AB_db_files/L3.db L1_L2.db=AB_db_files/L1_L2.db
+-out:path:pdb pdb/
+
+
+
+
+
