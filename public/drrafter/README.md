@@ -11,6 +11,7 @@ This demo shows how to use DRRAFTER to build a structure of an RNA-protein compl
 DRRAFTER is available in the Rosetta weekly releases starting with 2018.12. **DRRAFTER is NOT available in Rosetta 3.9.** 
   
 1. Rosetta is available [here](https://www.rosettacommons.org/software/license-and-download). You will need to get a license before downloading Rosetta (free for academic users).  
+2. Install Rosetta following the instructions available [here](https://www.rosettacommons.org/docs/latest/build_documentation/Build-Documentation).
 
 ## Setting up the demo:  
 
