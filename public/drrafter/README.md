@@ -7,10 +7,8 @@ Written in March 2018 by Kalli Kappel (kappel at stanford dot edu). Updated May 
 
 This demo shows how to use DRRAFTER to build a structure of an RNA-protein complex into a cryoEM density map and how to estimate the error in the resulting models.  
 
-## Installing DRRAFTER:
-DRRAFTER is available in the Rosetta weekly releases starting with 2018.12. **DRRAFTER is NOT available in Rosetta 3.9.** 
-  
-1. Rosetta is available [here](https://www.rosettacommons.org/software/license-and-download). You will need to get a license before downloading Rosetta (free for academic users).  
+## Installing DRRAFTER:  
+1. Download Rosetta [here](https://www.rosettacommons.org/software/license-and-download). You will need to get a license before downloading Rosetta (free for academic users). DRRAFTER is available in the Rosetta weekly releases starting with 2018.12. **DRRAFTER is NOT available in Rosetta 3.9.** 
 2. Install Rosetta following the instructions available [here](https://www.rosettacommons.org/docs/latest/build_documentation/Build-Documentation).  
 3. All of the necessary files for this demo are available in `ROSETTA_HOME/demos/public/drrafter/`, where `ROSETTA_HOME` is the path to your Rosetta installation.
 
