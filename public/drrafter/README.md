@@ -3,10 +3,12 @@ DRRAFTER: De novo RNP modeling in Real-space through Assembly of Fragments Toget
 
 KEYWORDS: NUCLEIC_ACIDS EXPERIMENTAL_DATA RNA DENOVO STRUCTURE_PREDICTION  
 
-Written in March 2018 by Kalli Kappel (kappel at stanford dot edu).  
+Written in March 2018 by Kalli Kappel (kappel at stanford dot edu). Updated May 2018.    
 
 This demo shows how to use DRRAFTER to build a structure of an RNA-protein complex into a cryoEM density map and how to estimate the error in the resulting models.  
 
+## Installing DRRAFTER:
+DRRAFTER is available in the Rosetta weekly releases starting with 2018.12. **DRRAFTER is NOT available in Rosetta 3.9.**  
 
 ## Setting up the demo:  
 
