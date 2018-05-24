@@ -1,0 +1,14 @@
+-abinitio
+ -relax
+-in
+ -file
+  -fasta 1dwr_A.fasta
+  -frag3 frags_1dwr_3
+  -frag9 frags_1dwr_9
+  -native 1dwr_A.pdb
+-out
+ -pdb
+ -file
+  -silent 1dwr_abinitio_silent.out
+  -scorefile 1dwr_abinitio_score.sc
+-nstruct 10
