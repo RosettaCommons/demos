@@ -47,10 +47,10 @@ All of the necessary files for this demo are available in `$ROSETTA/demos/public
 
 1. Use `DRRAFTER.py` to set up the run. Type:  
 ```
-DRRAFTER.py -fasta fasta.txt -secstruct secstruct.txt -start_struct protein_and_RNA_helix_fit_into_density.pdb -map_file 1wsu_simulated_7A.mrc -map_reso 7.0 -residues_to_model E:1-23 -include_as_rigid_body_structures protein_fit_into_density.pdb RNA_helix.pdb -absolute_coordinates_rigid_body_structure protein_fit_into_density.pdb -job_name demo_run -dock_into_density -demo_settings -rosetta_directory /your/path/to/rosetta/executables
+DRRAFTER.py -fasta fasta.txt -secstruct secstruct.txt -start_struct protein_and_RNA_helix_fit_into_density.pdb -map_file 1wsu_simulated_7A.mrc -map_reso 7.0 -residues_to_model E:1-23 -include_as_rigid_body_structures protein_fit_into_density.pdb RNA_helix.pdb -absolute_coordinates_rigid_body_structure protein_fit_into_density.pdb -job_name demo_run -dock_into_density -demo_settings -rosetta_directory $ROSETTA/main/source/bin/
 ```
 
-**Note** that `/your/path/to/rosetta/executables` needs to be replaced with the actual path to your Rosetta executables. Or if the path to the Rosetta executables is already in your system PATH, then you can omit the `-rosetta_directory` flag.   
+**Note** that `-rosetta_directory` needs to provide the path to your Rosetta executables (if you installed DRRAFTER following the instructions above, then `$ROSETTA/main/source/bin/` should be fine). If the path to the Rosetta executables is already in your system PATH, then you can omit the `-rosetta_directory` flag.   
 **Note** also the `-demo_settings` flag: this flag is designed to make the DRRAFTER run finish quickly, and should not be used for normal runs.  
 
 This will create the following files:  
