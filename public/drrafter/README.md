@@ -10,18 +10,25 @@ This demo shows how to use DRRAFTER to build a structure of an RNA-protein compl
 ## Installing DRRAFTER:  
 1. Download Rosetta [here](https://www.rosettacommons.org/software/license-and-download). You will need to get a license before downloading Rosetta (free for academic users). DRRAFTER is available in the Rosetta weekly releases starting with 2018.12. **DRRAFTER is NOT available in Rosetta 3.9.** 
 2. Install Rosetta following the instructions available [here](https://www.rosettacommons.org/docs/latest/build_documentation/Build-Documentation).  
-3. All of the necessary files for this demo are available in `ROSETTA_HOME/demos/public/drrafter/`, where `ROSETTA_HOME` is the path to your Rosetta installation.
-
-## Setting up the demo:  
-
-1. Make sure that you have python (v2.7) installed.
-2. Install Rosetta RNA tools. See instructions and documentation [here](https://www.rosettacommons.org/docs/latest/application_documentation/rna/RNA-tools).
-3. Add the path to the DRRAFTER script to your $PATH (alternatively, you can type the full path to the DRRAFTER.py script each time that you use it). It is found in `main/source/src/apps/public/DRRAFTER/` in your Rosetta directory. An example for bash:
+3. Make sure that you have python (v2.7) installed.
+4. Install Rosetta RNA tools. See instructions and documentation [here](https://www.rosettacommons.org/docs/latest/application_documentation/rna/RNA-tools).
+5. Check that the ROSETTA environmental variable is set (you should have set this up during RNA tools installation). Type `echo $ROSETTA`. This should return the path to your Rosetta directory. If it does not return anything, go back to step 4 and make sure that you follow the steps for RNA tools setup.  
+6. Set up the executables for DRRAFTER. Type:
 ```
-export PATH=$PATH:YOUR_ROSETTA_PATH/main/source/src/apps/public/DRRAFTER/
+ln -s $(ls $ROSETTA/main/source/bin/rna_denovo* | head -1 ) $ROSETTA/main/source/bin/rna_denovo
+```
+Then type: 
+```
+ln -s $(ls $ROSETTA/main/source/bin/drrafter_error_estimation* | head -1 ) $ROSETTA/main/source/bin/drrafter_error_estimation
+``` 
+7. Add the path to the DRRAFTER script to your $PATH (alternatively, you can type the full path to the DRRAFTER.py script each time that you use it). It is found in `main/source/src/apps/public/DRRAFTER/` in your Rosetta directory. An example for bash:
+```
+export PATH=$PATH:$ROSETTA/main/source/src/apps/public/DRRAFTER/
 ```
 
 ## Brief explanation of input files:  
+
+All of the necessary files for this demo are available in `$ROSETTA/demos/public/drrafter/`, where `$ROSETTA` is the path to your Rosetta installation.   
 
 `fasta.txt`: The FASTA file listing the full sequence of the complex being modeled. It should contain at least one line that starts with '>' and lists chains and residue numbers for the sequence, e.g. A:136-258 E:1-23. Here we are modeling chain A residues 136-258 and chain E residues 1-23. The subsequent lines should list the full sequence of the complex. Protein residues are specified by uppercase one-letter codes. RNA residues are specified with lowercase one-letter codes ('a', 'u', 'g', and 'c').  
 
