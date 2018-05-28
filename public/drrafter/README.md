@@ -111,7 +111,7 @@ apps.public.DRRAFTER.drrafter_error_estimation: ################################
 
 All numbers have units of Å. The mean pairwise RMSD describes the "convergence" of the run, i.e. how similar the final structures are to each other. The estimated RMSD (root mean square deviation) values to the "true" coordinates are based on this convergence value. The estimated minimum RMSD predicts the best accuracy of the final structures. The estimated mean RMSD predicts the average RMSD accuracy of the final structures. The median structure is determined to be the final structure with the lowest average pairwise RMSD to the other final structures. The accuracy estimate of this model is also printed to the screen.  
 
-For reference, example output is provided in the `example_output` directory.   
+For reference, example output is provided in the `example_output/` directory.   
 
 
 ## Additional information
