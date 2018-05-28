@@ -45,7 +45,12 @@ All of the necessary files for this demo are available in `$ROSETTA/demos/public
 
 ## Running DRRAFTER:
 
-1. Use `DRRAFTER.py` to set up the run. Type:  
+1. Go to the DRRAFTER demo directory. Type:
+```
+cd $ROSETTA/demos/public/drrafter/
+```
+
+2. Use `DRRAFTER.py` to set up the run. Type:  
 ```
 DRRAFTER.py -fasta fasta.txt -secstruct secstruct.txt -start_struct protein_and_RNA_helix_fit_into_density.pdb -map_file 1wsu_simulated_7A.mrc -map_reso 7.0 -residues_to_model E:1-23 -include_as_rigid_body_structures protein_fit_into_density.pdb RNA_helix.pdb -absolute_coordinates_rigid_body_structure protein_fit_into_density.pdb -job_name demo_run -dock_into_density -demo_settings -rosetta_directory $ROSETTA/main/source/bin/
 ```
@@ -67,7 +72,7 @@ This will create the following files:
 
 `DRRAFTER_command`: This file contains the command to run the DRRAFTER job.  
 
-2. Run the `DRRAFTER_command`. This can be done either by typing:  
+3. Run the `DRRAFTER_command`. This can be done either by typing:  
 
 ```
 source ./DRRAFTER_command
@@ -81,7 +86,7 @@ OR by copying the line in the `DRRAFTER_command` file to the command line:
 
 This will take several minutes to run and it should create a file called `demo_run.out`, which contains all of the structures from the run.
 
-3. Extract PDB files from the compressed output file created in the previous step. Type:  
+4. Extract PDB files from the compressed output file created in the previous step. Type:  
 
 ```
 extract_lowscore_decoys.py demo_run.out 10
@@ -89,9 +94,9 @@ extract_lowscore_decoys.py demo_run.out 10
 
 This extracts the 10 best scoring structures from the run and will create 10 PDB files named `demo_run.out.1.pdb`, `demo_run.out.2.pdb`, etc. Note that in this case we only generated 10 structures total, but for a real run it is recommended that you build at least 2000-3000 structures.  
 
-4. Look at the structures! Open them in pymol or Chimera. You will see that all of the missing RNA residues have been built. The protein and RNA helix have also moved slightly from their initial positions.  
+5. Look at the structures! Open them in pymol or Chimera. You will see that all of the missing RNA residues have been built. The protein and RNA helix have also moved slightly from their initial positions.  
 
-5. Estimate the error in the DRRAFTER models. Again, use the `DRRAFTER.py` script to do this. Type:  
+6. Estimate the error in the DRRAFTER models. Again, use the `DRRAFTER.py` script to do this. Type:  
 
 ```
 DRRAFTER.py -final_structures demo_run.out.1.pdb demo_run.out.2.pdb demo_run.out.3.pdb demo_run.out.4.pdb demo_run.out.5.pdb demo_run.out.6.pdb demo_run.out.7.pdb demo_run.out.8.pdb demo_run.out.9.pdb demo_run.out.10.pdb -estimate_error -rosetta_directory /your/path/to/rosetta/executables
