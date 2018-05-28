@@ -21,6 +21,10 @@ Then type:
 ```
 ln -s $(ls $ROSETTA/main/source/bin/drrafter_error_estimation* | head -1 ) $ROSETTA/main/source/bin/drrafter_error_estimation
 ``` 
+Finally, type:
+```
+ln -s $(ls $ROSETTA/main/source/bin/extract_pdbs* | head -1 ) $ROSETTA/main/source/bin/extract_pdbs
+```
 7. Add the path to the DRRAFTER script to your $PATH (alternatively, you can type the full path to the DRRAFTER.py script each time that you use it). It is found in `main/source/src/apps/public/DRRAFTER/` in your Rosetta directory. An example for bash:
 ```
 export PATH=$PATH:$ROSETTA/main/source/src/apps/public/DRRAFTER/
