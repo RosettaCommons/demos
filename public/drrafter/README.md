@@ -9,7 +9,7 @@ This demo shows how to use DRRAFTER to build a structure of an RNA-protein compl
 
 ## Installing DRRAFTER:  
 1. Download Rosetta [here](https://www.rosettacommons.org/software/license-and-download). You will need to get a license before downloading Rosetta (free for academic users). DRRAFTER is available in the Rosetta weekly releases starting with 2018.12. **DRRAFTER is NOT available in Rosetta 3.9.** 
-2. If you're not using the precompiled binaries (available for Mac and Linux, download source+binaries in Step 1), install Rosetta following the instructions available [here](https://www.rosettacommons.org/docs/latest/build_documentation/Build-Documentation).  
+2. If you're not using the precompiled binaries (these are available for Mac and Linux, you can access them by downloading source+binaries in Step 1), install Rosetta following the instructions available [here](https://www.rosettacommons.org/docs/latest/build_documentation/Build-Documentation).  
 3. Make sure that you have python (v2.7) installed.
 4. Install Rosetta RNA tools. See instructions and documentation [here](https://www.rosettacommons.org/docs/latest/application_documentation/rna/RNA-tools).
 5. Check that the ROSETTA environmental variable is set (you should have set this up during RNA tools installation). Type `echo $ROSETTA`. This should return the path to your Rosetta directory. If it does not return anything, go back to step 4 and make sure that you follow the steps for RNA tools setup.  
