@@ -1,0 +1,21 @@
+1. Generate conformers with the BCL
+
+bcl.exe molecule:ConformerGenerator -ensemble_filenames INPUT.sdf -conformers_single_file OUTPUT.sdf
+
+2. For the options menu of the BCL conformer generator
+
+bcl.exe molecule:ConformerGenerator -help
+
+3. Generate Rosetta params file from SDF input
+
+/PATH-TO-ROSETTA/main/source/scripts/python/public/molfile_to_params.py INPUT.sdf --name=THREELETTERCODE --chain=ONELETTERCODE --conformers-in-one-file
+
+4. Generate a single set of Rosetta models
+
+/PATH-TO-ROSETTA/main/source/bin/rosetta_scripts.linuxgccrelease @inputs/options -docking:ligand:ligand_ensemble 0 -nstruct 1
+
+
+
+
+
+
