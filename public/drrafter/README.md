@@ -13,7 +13,7 @@ This demo shows how to use DRRAFTER to build a structure of an RNA-protein compl
 3. Make sure that you have python (v2.7) installed.
 4. Install Rosetta RNA tools. See instructions and documentation [here](https://www.rosettacommons.org/docs/latest/application_documentation/rna/RNA-tools).
 5. Check that the ROSETTA environmental variable is set (you should have set this up during RNA tools installation). Type `echo $ROSETTA`. This should return the path to your Rosetta directory. If it does not return anything, go back to step 4 and make sure that you follow the steps for RNA tools setup.  
-6. Set up the executables for DRRAFTER (don't worry about "File exists" warnings from these commands). **Note: the following commands are for bash, if you are using a different shell, you will need to modify these commands accordingly.** Type:
+6. Set up the executables for DRRAFTER (don't worry about "File exists" warnings from these commands). **Note: the following commands are for bash, if you are using a different shell, you will need to modify these commands accordingly. Check which shell you're using by typing `echo $0`.** If you're using bash, type:
 ```
 ln -s $(ls $ROSETTA/main/source/bin/rna_denovo* | head -1 ) $ROSETTA/main/source/bin/rna_denovo
 ```
