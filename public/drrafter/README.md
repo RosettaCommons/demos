@@ -44,7 +44,7 @@ All of the necessary files for this demo are available in `$ROSETTA/demos/public
 
 `protein_fit_into_density.pdb`: The protein structure that has been fit into the density map. For this demo, this is a crystal structure of the unbound protein (PDB ID 1LVA). The sequence of this protein structure should exactly match the sequence in the fasta file.  
 
-`protein_and_RNA_helix_fit_into_density.pdb`: Coordinates of both the protein structure and the RNA helix (from `RNA_helix.pdb`) fit into the density map. This will be the starting conformation for the DRRAFTER run. (The relative positions of the protein and RNA helix will be allowed to change though.)  
+`protein_and_RNA_helix_fit_into_density.pdb`: Coordinates of both the protein structure and the RNA helix (from `RNA_helix.pdb`) fit into the density map. This will be the starting conformation for the DRRAFTER run. (The relative positions of the protein and RNA helix will be allowed to change though.) The order of the residues in this PDB file should match the order of the residues in the fasta file.  
 
 
 ## Running DRRAFTER:
