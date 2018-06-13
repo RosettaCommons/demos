@@ -106,7 +106,7 @@ This extracts the 10 best scoring structures from the run and will create 10 PDB
 DRRAFTER.py -final_structures demo_run.out.1.pdb demo_run.out.2.pdb demo_run.out.3.pdb demo_run.out.4.pdb demo_run.out.5.pdb demo_run.out.6.pdb demo_run.out.7.pdb demo_run.out.8.pdb demo_run.out.9.pdb demo_run.out.10.pdb -estimate_error -rosetta_directory $ROSETTA/main/source/bin/
 ```
 
-This will print out information about the error estimation to your screen. For example:  
+This will print out information about the error estimation to your screen. For example (the actual numbers may vary!):  
 
 ```
 apps.public.DRRAFTER.drrafter_error_estimation: #############################################
