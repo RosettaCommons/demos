@@ -1,4 +1,4 @@
-DRRAFTER: De novo RNP modeling in Real-space through Assembly of Fragments Together with Electron density in Rosetta 
+DRRAFTER: De novo RNP modeling in Real-space through Assembly of Fragments Together with Experimental density in Rosetta 
 =====================================================================================
 
 KEYWORDS: NUCLEIC_ACIDS EXPERIMENTAL_DATA RNA DENOVO STRUCTURE_PREDICTION  
