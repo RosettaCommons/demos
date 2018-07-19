@@ -44,7 +44,7 @@ All of the necessary files for this demo are available in `$ROSETTA/demos/public
 ```
 rna_helix.py -seq ggcg cgcc -o RNA_helix.pdb -resnum E:1-4 E:20-23 -extension static.linuxgccrelease
 ```
-*Note* that you may need to change the extension in the above command (see instructions in the [RNA tools documentation](https://www.rosettacommons.org/docs/latest/application_documentation/rna/RNA-tools#some-useful-tools_rna-modeling-utilities)).
+*Note* that you may need to change the extension in the above command (see instructions in the [RNA tools documentation](https://www.rosettacommons.org/docs/latest/application_documentation/rna/RNA-tools#some-useful-tools_rna-modeling-utilities)). **PDBs used in DRRAFTER must have chain IDs (i.e. you cannot provide `-resnum 1-4 20-23` to `rna_helix.py` to generate an RNA helix).**
 
 `protein_fit_into_density.pdb`: The protein structure that has been fit into the density map. For this demo, this is a crystal structure of the unbound protein (PDB ID 1LVA). The sequence of this protein structure should exactly match the sequence in the fasta file.  
 
