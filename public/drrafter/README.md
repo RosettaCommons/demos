@@ -40,7 +40,11 @@ All of the necessary files for this demo are available in `$ROSETTA/demos/public
 
 `1wsu_simulated_7A.mrc`: The density map file in mrc format (ccp4 is also acceptable). For this demo, this map has been simulated from PDB ID 1WSU at 7Å.   
 
-`RNA_helix.pdb`: This is an ideal RNA helix corresponding to residues E:1-4 and E:20-23. Ideal RNA helices can be generated using `rna_helix.py` (documentation on the [RNA tools page](https://www.rosettacommons.org/docs/latest/application_documentation/rna/RNA-tools)).  
+`RNA_helix.pdb`: This is an ideal RNA helix corresponding to residues E:1-4 and E:20-23. Ideal RNA helices can be generated using `rna_helix.py` (documentation on the [RNA tools page](https://www.rosettacommons.org/docs/latest/application_documentation/rna/RNA-tools)). This PDB was generated with the following command:
+```
+rna_helix.py -seq ggcg cgcc -o RNA_helix.pdb -resnum E:1-4 E:20-23 -extension static.linuxgccrelease
+```
+*Note* that you may need to change the extension in the above command (see instructions in the [RNA tools documentation](https://www.rosettacommons.org/docs/latest/application_documentation/rna/RNA-tools#some-useful-tools_rna-modeling-utilities)).
 
 `protein_fit_into_density.pdb`: The protein structure that has been fit into the density map. For this demo, this is a crystal structure of the unbound protein (PDB ID 1LVA). The sequence of this protein structure should exactly match the sequence in the fasta file.  
 
