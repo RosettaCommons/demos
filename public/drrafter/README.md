@@ -97,7 +97,7 @@ This will take several minutes to run and it should create a file called `demo_r
 extract_lowscore_decoys.py demo_run.out 10
 ```
 
-This extracts the 10 best scoring structures from the run and will create 10 PDB files named `demo_run.out.1.pdb`, `demo_run.out.2.pdb`, etc. Note that in this case we only generated 10 structures total, but for a real run it is recommended that you build at least 2000-3000 structures.  
+This extracts the 10 best scoring structures from the run and will create 10 PDB files named `demo_run.out.1.pdb`, `demo_run.out.2.pdb`, etc. Note that in this case we only generated 10 structures total, but for a real run it is recommended that you build at least 2000-3000 structures. This can be done by setting the number of structures built per DRRAFTER run with `-extra_flags 'nstruct 2000'` (if this option isn't provided and the `-demo_settings` option isn't supplied, then default=500).   
 
 **5.** Look at the structures! Open them in pymol or Chimera. You will see that all of the missing RNA residues have been built. The protein and RNA helix have also moved slightly from their initial positions.  
 
