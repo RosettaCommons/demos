@@ -60,7 +60,8 @@ DRRAFTER.py -fasta fasta.txt -secstruct secstruct.txt -start_struct protein_and_
 ```
 
 **Note** that `-rosetta_directory` needs to provide the path to your Rosetta executables (if you installed DRRAFTER following the instructions above, then `$ROSETTA/main/source/bin/` should be fine). If the path to the Rosetta executables is already in your system PATH, then you can omit the `-rosetta_directory` flag.   
-**Note** also the `-demo_settings` flag: this flag is designed to make the DRRAFTER run finish quickly, and should not be used for normal runs.  
+**Note** also the `-demo_settings` flag: this flag is designed to make the DRRAFTER run finish quickly, and should not be used for normal runs. Specifically, `-demo_settings` is equivalent to the following options: `-cycles 500 -extra_flags 'rnp_high_res_cycles 0' 'minimize_rounds 1' 'no_filters' 'nstruct 10'`.  
+**For normal runs:** the number of structures built per DRRAFTER job can be set with e.g. `-extra_flags 'nstruct 2000'`.
 
 This will create the following files:  
 
