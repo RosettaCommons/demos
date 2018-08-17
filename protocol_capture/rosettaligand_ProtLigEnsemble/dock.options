@@ -1,0 +1,21 @@
+-in:file:s "../inputs/protein.pdb ../inputs/ligands.pdb"
+-in:file:extra_res_fa ../inputs/00B.params
+-in:file:extra_res_fa ../inputs/00C.params
+-in:file:extra_res_fa ../inputs/00D.params
+-in:file:extra_res_fa ../inputs/00E.params
+
+-packing
+ -ignore_ligand_chi
+ -ex1
+ -ex2
+ -flip_HNQ
+ -no_optH false
+
+-overwrite
+-mistakes
+ -restore_pre_talaris_2013_behavior true 
+-parser
+ -protocol "../dock.xml"
+-docking
+ -ligand
+  -ligand_ensemble 1000
