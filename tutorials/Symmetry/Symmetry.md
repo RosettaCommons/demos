@@ -133,7 +133,7 @@ xyz VRT  0.0000000,-1.0000000,0.0000050  1.0000000,-0.0000000,-0.0000197  -0.000
 ```
 These lines describe the position of all **VRTs** like:  
 `xyz \<some name\> (x,y,z) (x,y,z) (x,y,z)`  
-The three (x,y,z) are two vectors (*x-vector* & *y-vector*) and the 3D position. The vectors are used as an interal coordinate system for rotations and translations. Note, that **VRTs can be given any name** (e.g. "anchor0" or "orgin" or "COM\_0" ...) The figure below illustrates only the VRTx_base lines:
+The three (x,y,z) are two vectors (*x-vector* & *y-vector*) and the 3D position. The vectors are used as an internal coordinate system for rotations and translations. Note, that **VRTs can be given any name** (e.g. "anchor0" or "orgin" or "COM\_0" ...) The figure below illustrates only the VRTx_base lines:
 
 ![](.images/imageB.png)
 
@@ -189,7 +189,7 @@ Here, jump4 (5,6) would serve for sliding SUs away from the center and j1 (2,3) 
 $> cp input_files/C3_good.symdef C3_simple.symdef
 ``` 
 
-Now modify the the `C3_simple.symdef` file, so that the VRT0 e.t.c are gone:
+Now modify the `C3_simple.symdef` file, so that the VRT0 e.t.c are gone:
 
 1. Remove the three lines starting with `xyz VRT0`, `xyz VRT1`, and `xyz VRT2`
 2. Remove the tree lines starting with `connect_virtual JUMP?_to_com`
@@ -245,7 +245,7 @@ You have two new files. Open them as well. You can see that chain C is placed co
 -
 
 ### Symmetric Energy
-The primary reason for running a simulation while enforcing symmetry is to seep up the calculation by reducing the number of DOFs. If Rosetta would calculate the energies for all three subunits, it would take longer than when exploiting the symmtry relation. This speed-up is even more drastic, when you perform docking or *de novo* structure prediction. So, is it enough to compute the energy for one SU and multiply it by 3?
+The primary reason for running a simulation while enforcing symmetry is to speed up the calculation by reducing the number of DOFs. If Rosetta would calculate the energies for all three subunits, it would take longer than when exploiting the symmtry relation. This speed-up is even more drastic, when you perform docking or *de novo* structure prediction. So, is it enough to compute the energy for one SU and multiply it by 3?
 
 The anser in NO. It is not, because the interaction energies between SUs must be included, too. Here, we consider the interface between A and C, which is the same as between A and B as well as beween B and C. What to include, is specified in the beginning of a sym def file:
 
