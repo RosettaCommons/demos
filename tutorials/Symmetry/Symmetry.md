@@ -238,24 +238,33 @@ Then add to the same line (`set_dof JUMP2_to_com x(30)`) a specific angle: `angl
 ```
 $> $ROSETTA3/bin/score.default.linuxgccrelease @input_files/options -symmetry:symmetry_definition input_files/C3_bad.symdef -output -out:suffix _worse_rot
 ```
-You have two new files. Open them as well. You can see that chain C is placed completely independently and translation and rotion can be controlled by the `set dof` instructions.
+You have two new files. Open them as well. You can see that chain C is placed completely independently and translation and rotation can be controlled by the `set dof` instructions.
 
 ![](.images/imageC.png)
 
 -
 
 ### Symmetric Energy
-The primary reason for running a simulation while enforcing symmetry is to speed up the calculation by reducing the number of DOFs. If Rosetta would calculate the energies for all three subunits, it would take longer than when exploiting the symmtry relation. This speed-up is even more drastic, when you perform docking or *de novo* structure prediction. So, is it enough to compute the energy for one SU and multiply it by 3?
+The primary reason for running a simulation while enforcing symmetry is to speed up the calculation by reducing the number of DOFs. If Rosetta would calculate the energies for all three subunits, it would take longer than when exploiting the symmetry relation. This speed-up is even more drastic, when you perform docking or *de novo* structure prediction. So, is it enough to compute the energy for one SU and multiply it by 3?
 
-The anser in NO. It is not, because the interaction energies between SUs must be included, too. Here, we consider the interface between A and C, which is the same as between A and B as well as beween B and C. What to include, is specified in the beginning of a sym def file:
+The answer in NO. It is not, because the interaction energies between SUs must be included, too. Here, we consider the interface between A and C, which is the same as between A and B as well as between B and C. What to include, is specified in the beginning of a sym def file:
 
 ```
 E = 3*VRT0_base + 3*(VRT0_base:VRT2_base)
 ```
-3x energy of SU 0 + 3 x the interaction energy bewteen SU 0 and SU 2. This can get quite complicated for larger systems.
+3x energy of SU 0 + 3 x the interaction energy bet3ween SU 0 and SU 2. This can get quite complicated for larger systems.
+
+### Default Rosetta Symmetry Definition Files
+* The default Rosetta symmetry definition files can be found in: database/symmetry/Cyclic/C*_Z.sym
+
+Default formula:
+
+E = 2\*VRT0_base + 1\*VRT0_base:VRT1_base + 1\*VRT0_base:VRT2_base + ... + 1\*1\*VRT0_base:VRT\*_base
+
+* When using the default Rosetta symmetry definition files, the calculated energies will be twice the asymmetric unit energies ( 2/7 the energies calculated in this tutorial) 
 
 ### Final Remarks
-* In order to get the coordinates and axis directions (as unit vectors!), it can be helpful to write a python script (or whatever you prefer) that generates those numbers. It probably should also output the approprite connections.
+* In order to get the coordinates and axis directions (as unit vectors!), it can be helpful to write a python script (or whatever you prefer) that generates those numbers. It probably should also output the appropriate connections.
 
 -
 ## Time Reduction using Symmetry
