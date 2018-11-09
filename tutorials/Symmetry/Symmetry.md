@@ -261,7 +261,7 @@ Default formula:
 
 E = 2\*VRT0_base + 1\*VRT0_base:VRT1_base + 1\*VRT0_base:VRT2_base + ... + 1\*1\*VRT0_base:VRT\*_base
 
-* When using the default Rosetta symmetry definition files, the calculated energies will be twice the asymmetric unit energies ( 2/7 the energies calculated in this tutorial) 
+* When using the default Rosetta symmetry definition files, the calculated energies will be twice the asymmetric unit energies ( 2/n_subunits the energies calculated in this tutorial) 
 
 ### Final Remarks
 * In order to get the coordinates and axis directions (as unit vectors!), it can be helpful to write a python script (or whatever you prefer) that generates those numbers. It probably should also output the appropriate connections.
