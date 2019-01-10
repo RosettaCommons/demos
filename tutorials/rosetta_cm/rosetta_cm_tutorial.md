@@ -237,7 +237,7 @@ $> mv 3odu.pdb.pdb 1u19_on_3odu.pdb
 ```
 
 Prepared threaded pdbs can be found in
- ```
+```
         ~/rosetta_workshop/tutorials/rosetta_cm/2_threading/
 ```
 
