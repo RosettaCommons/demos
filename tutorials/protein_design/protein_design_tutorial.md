@@ -93,7 +93,7 @@ You should notice that this file shows two homo-dimers. We will focus on the dim
                 </PROTOCOLS>
             </ROSETTASCRIPTS>
 
-        Next, run this protocol using RosettaScripts. We will apply the setup for the protocol to the input structure, 3UKM_A.pdb.
+     Next, run this protocol using RosettaScripts. We will apply the setup for the protocol to the input structure, 3UKM_A.pdb.
 
             $> rosetta_scripts.default.linuxgccrelease -parser:protocol ./Step1_symm/setup_symm.xml -s 3UKM_A.pdb -out:prefix setupsymm_ 
 
@@ -209,45 +209,45 @@ You should notice that this file shows two homo-dimers. We will focus on the dim
             99 A PIKAA HNYD
             100 A ALLAA
 			
-        Based on sequence alignments from homologous proteins, we know that these positions prefer a certain type of amino acid. We are going to use a resfile to guide Rosetta during design. Look at your lecture slides and understand which amino acid rotamers will be allowed at each position. When you are comfortable with the format, exit the file. If you have questions about what you would expect-ASK!
+Based on sequence alignments from homologous proteins, we know that these positions prefer a certain type of amino acid. We are going to use a resfile to guide Rosetta during design. Look at your lecture slides and understand which amino acid rotamers will be allowed at each position. When you are comfortable with the format, exit the file. If you have questions about what you would expect-ASK!
 
         
-        Now, we will create an XML file that will read in the resfile. First, copy the current XML file and rename it symm_res_design.xml, then open the file
+Now, we will create an XML file that will read in the resfile. First, copy the current XML file and rename it symm_res_design.xml, then open the file
         
             cp Step2_design/symm_design.xml Step2_design/symm_res_design.xml
             open Step2_design/symm_res_design.xml
 
-        Next, find the section labeled TASKOPERATIONS. Insert this task operation underneath the `<TASKOPERATION>` line and before the `</TASKOPERATIONS>` line so that it is in line with the <InitializeFromCommandline>: 
+Next, find the section labeled TASKOPERATIONS. Insert this task operation underneath the `<TASKOPERATION>` line and before the `</TASKOPERATIONS>` line so that it is in line with the <InitializeFromCommandline>: 
             
              <ReadResfile name="rrf" filename= "3UKM.resfile" />
 
-        Notice, we gave this task the name "rrf". Find the SymPackRotamersMover under <MOVERS> and add "rrf" after the task operations tag so it resembles this:
+Notice, we gave this task the name "rrf". Find the SymPackRotamersMover under <MOVERS> and add "rrf" after the task operations tag so it resembles this:
 
             <SymPackRotamersMover name="sym_pack" scorefxn="mem_highres" task_operations="ifcl,rrf"/>
            
 
-    1. Design the protein at user-specified residues. We have a relaxed input structure, a symmetry definition file, a resfile to direct design, and an XML protocol to setup symmetry, and design according to a resfile. We are now ready to move forward with design! Run this command:
+1. Design the protein at user-specified residues. We have a relaxed input structure, a symmetry definition file, a resfile to direct design, and an XML protocol to setup symmetry, and design according to a resfile. We are now ready to move forward with design! Run this command:
 
             $> rosetta_scripts.default.linuxgccrelease @Step2_design/flags2
 
-        Again, many, many more structures than just 2 should be made for production runs. In the interest of time, we will just run 2 for today. This should take about 2 minutes. This step will simply ensure that you can successfully run Rosetta Symmetry and Design. Use the output structures provided in the Step3_design/output folder for the analysis step. Note that this folder contains only 20 models. In your own experiments, you will likely want to make more than just 20 models.
+Again, many, many more structures than just 2 should be made for production runs. In the interest of time, we will just run 2 for today. This should take about 2 minutes. This step will simply ensure that you can successfully run Rosetta Symmetry and Design. Use the output structures provided in the Step3_design/output folder for the analysis step. Note that this folder contains only 20 models. In your own experiments, you will likely want to make more than just 20 models.
 
-    3. Analysis of Designs. Now that we have a few design structures, we want to examine one of the regions we designed. First, we must sort the top five structures by score. There are many ways to do this.  Here we will use command-line programs such as grep and awk. You should still be in the Step3_design folder.  
+3. Analysis of Designs. Now that we have a few design structures, we want to examine one of the regions we designed. First, we must sort the top five structures by score. There are many ways to do this.  Here we will use command-line programs such as grep and awk. You should still be in the Step3_design folder.  
 
 
             grep pose Step2_design/resfile_design*.pdb | sort -nk 23 | head
  
-        This shows you the top 10 structures by best score. We can use awk to store the list of the top 10. 
+This shows you the top 10 structures by best score. We can use awk to store the list of the top 10. 
 
             $> grep pose Step2_design/resfile_design*.pdb | sort -nk 23 | head | awk '{print(substr($1,1,length($1)-5))}' > best.list
 
 
 
-        Next, we will use awk to automate generating fastas for each of our top models. In order to run this command, the PDB tools must be installed.  Go to $ROSETTA_TOOLS/protein_tools and follow the instructions to install the python module.
+Next, we will use awk to automate generating fastas for each of our top models. In order to run this command, the PDB tools must be installed.  Go to $ROSETTA_TOOLS/protein_tools and follow the instructions to install the python module.
 
             > cat best.list | awk '{system( "$ROSETTA_TOOLS/protein_tools/scripts/get_fasta_from_pdb.py "$1" A "substr($1,1,length($1)-3)"fasta")}' 
 
-        Now we can cat all of the fastas and use WebLogo to generate a figure to show our designed residues.
+Now we can cat all of the fastas and use WebLogo to generate a figure to show our designed residues.
 
             > cat *.fasta > all_fasta.txt 
 
@@ -255,17 +255,17 @@ You should notice that this file shows two homo-dimers. We will focus on the dim
 
         (If you are running out of time, you can cd into ../Step4_analysis where the fastas of the top 10 models for each design experiment are included) 
         
-        Now, copy and paste the text into the WebLogo server [weblogo.berkeley.edu/logo.cgi](http://weblogo.berkeley.edu/logo.cgi)
+Now, copy and paste the text into the WebLogo server [weblogo.berkeley.edu/logo.cgi](http://weblogo.berkeley.edu/logo.cgi)
 
-        Under advanced logo options, choose Logo Range to be 80-100. Now Click Create Logo at the Bottom. 
+Under advanced logo options, choose Logo Range to be 80-100. Now Click Create Logo at the Bottom. 
 
-        If you need to, you can re-open the resfile you used in the design step to see if Rosetta Design did what you expected. 
+If you need to, you can re-open the resfile you used in the design step to see if Rosetta Design did what you expected. 
 
-        For example: Residue 94 should be T, I, or V, and residue 86 could be any apolar residue. 
+For example: Residue 94 should be T, I, or V, and residue 86 could be any apolar residue. 
 
-        Since we have restricted design a lot, we expect to see single identities for these positions in this sequence logo.
+Since we have restricted design a lot, we expect to see single identities for these positions in this sequence logo.
 
-		If you have enough time, you can go back and make a sequence logo over this same range for the full design output. Compare the logos. You should see quite a bit more variation in the full design sequence logo.
+If you have enough time, you can go back and make a sequence logo over this same range for the full design output. Compare the logos. You should see quite a bit more variation in the full design sequence logo.
 
 ## APPENDIX ##
 
