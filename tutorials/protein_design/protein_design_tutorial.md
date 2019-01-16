@@ -141,7 +141,8 @@ You should notice that this file shows two homo-dimers. We will focus on the dim
 
             The file should look like this:
 
-<ROSETTASCRIPTS>                <SCOREFXNS>
+            <ROSETTASCRIPTS>               
+                <SCOREFXNS>
                   <ScoreFunction name="mem_highres" weights="membrane_highres_Menv_smooth.wts" symmetric="1" />
                 </SCOREFXNS>
                 <TASKOPERATIONS>
