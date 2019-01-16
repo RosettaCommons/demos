@@ -18,7 +18,7 @@ If you want to try making files that already exist (e.g., input files), write th
 ##Introduction
 ![top7](tutorial_figures/top7.png)
 
-**Objective:** In this exercise, we will examine the Rosetta design features by mutating user-specified residues. To make it even more interesting, we will use a membrane protein which is a homodimer, so we will employ RosettaMembrane and RosettaSymmetry to model the dimer during design. RosettaScripts will be used to combine the two applications. Note that 
+**Objective:** In this exercise, we will examine the Rosetta design features by mutating user-specified residues. To make it even more interesting, we will use a membrane protein which is a homodimer, so we will employ RosettaMembrane and RosettaSymmetry to model the dimer during design. RosettaScripts will be used to combine the two applications. 
 
 **Rosetta Applications:** RosettaDesign, RosettaMembrane, RosettaSymmetry, RosettaScripts
 
