@@ -1,0 +1,5 @@
+-in:file:s ../input/2xy8.pdb
+-out:suffix _prepack
+-out:nstruct 1
+-docking:partners A_B
+-docking:sc_min

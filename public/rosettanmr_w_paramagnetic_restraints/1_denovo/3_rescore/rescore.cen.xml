@@ -1,0 +1,24 @@
+<ROSETTASCRIPTS>
+    <SCOREFXNS>
+        <ScoreFunction name="cen" weights="%%sfxn%%" >
+            <Reweight scoretype="%%nmr_sc_type%%" weight="%%nmr_sc_wt%%"/>
+        </ScoreFunction>
+    </SCOREFXNS>
+    <RESIDUE_SELECTORS>
+    </RESIDUE_SELECTORS>
+    <TASKOPERATIONS>
+    </TASKOPERATIONS>
+    <FILTERS>
+    </FILTERS>
+    <MOVERS>
+        <ScoreMover name="scorer" scorefxn="cen"/> 
+        <SwitchResidueTypeSetMover name="srtm" set="centroid"/> 
+    </MOVERS>
+    <APPLY_TO_POSE>
+    </APPLY_TO_POSE>
+    <PROTOCOLS>
+    	<Add mover="srtm"/> 
+        <Add mover="scorer"/>
+    </PROTOCOLS>
+    <OUTPUT scorefxn="cen"/> 
+</ROSETTASCRIPTS>

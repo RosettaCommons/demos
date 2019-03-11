@@ -1,0 +1,6 @@
+# score name priority wght max_allowed extras
+CSScore 400 1 -
+ProfileScoreL1 300 1.5 -
+TalosSSSimilarity 200 0.25 - talos
+RamaScore 100 1 - talos
+PhiPsiSquareWell 50 5.0 -

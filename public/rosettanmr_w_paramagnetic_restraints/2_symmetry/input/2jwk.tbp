@@ -1,0 +1,6 @@
+CLAIMER SequenceClaimer
+FILE ../input/2jwk.fasta
+END_CLAIMER
+
+CLAIMER FoldandDockClaimer
+END_CLAIMER

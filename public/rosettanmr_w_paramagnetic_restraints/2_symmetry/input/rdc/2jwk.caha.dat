@@ -1,0 +1,78 @@
+###########################################################################
+#                                                                         #
+# The RDC datafile format is as follows:                                  #
+#                                                                         #
+# ( ResidueID_Spin1 AtomName_Spin1 ChainID_Spin1 ) \                      #
+# ( ResidueID_Spin2 AtomName_Spin2 ChainID_Spin2 ) RDCValue RDCError      #
+#                                                                         #
+# Each line should contain only one experimental RDC value (in Hz),       #
+# together with its measurement error (in Hz) and the pair of spins to    #
+# which it is assigned. A spin is specified by its atom name and the ID   #
+# of the protein residue and chain it belongs to. ResidueID, AtomName and #
+# protein ChainID of each of the two spins must be enclosed by            #
+# parentheses and separated by one or more whitespaces.                   #
+# Ambiguous assignments of one RDC value to multiple atoms can be made    #
+# by placing more than one triplet of ResidueID, AtomName and ChainID     #
+# into parentheses and separating them by "or" keywords. For example:     #
+#                                                                         #
+# ( 10 1HA A or 10 2HA A ) ( 10 CA A or 10 CA A )  10.000  2.500          #
+#                                                                         #
+###########################################################################
+(  2 HA A ) (  2 CA A )   -1.319  0.918
+(  4 HA A ) (  4 CA A )    9.288  1.615
+(  6 HA A ) (  6 CA A )    2.487  3.169
+(  7 HA A ) (  7 CA A )   -1.532  2.287
+(  8 HA A ) (  8 CA A )  -11.485  1.963
+(  9 HA A ) (  9 CA A )  -12.798  2.448
+( 10 HA A ) ( 10 CA A )   -9.991  1.477
+( 12 HA A ) ( 12 CA A )    7.975  2.299
+( 14 HA A ) ( 14 CA A )  -14.413  2.066
+( 15 HA A ) ( 15 CA A )  -16.900  1.815
+( 16 HA A ) ( 16 CA A )   -9.221  1.276
+( 18 HA A ) ( 18 CA A )   -0.877  1.934
+( 19 HA A ) ( 19 CA A )    5.851  1.988
+( 22 HA A ) ( 22 CA A )    4.242  1.535
+( 23 HA A ) ( 23 CA A )    6.506  1.532
+( 24 HA A ) ( 24 CA A )    6.874  1.053
+( 25 HA A ) ( 25 CA A )   -1.168  1.649
+( 27 HA A ) ( 27 CA A )  -15.731  2.137
+( 28 HA A ) ( 28 CA A )   -0.150  1.633
+( 29 HA A ) ( 29 CA A )   -4.901  2.529
+( 30 HA A ) ( 30 CA A )    8.775  1.028
+( 31 HA A ) ( 31 CA A )   -6.806  1.802
+( 32 HA A ) ( 32 CA A )    5.628  1.179
+( 34 HA A ) ( 34 CA A )    0.659  1.282
+( 35 HA A ) ( 35 CA A )   -2.778  1.703
+( 36 HA A ) ( 36 CA A )   -1.386  3.314
+( 37 HA A ) ( 37 CA A )   -1.100  1.047
+( 38 HA A ) ( 38 CA A )   -1.905  2.056
+( 39 HA A ) ( 39 CA A )    1.532  1.668
+( 40 HA A ) ( 40 CA A )   -6.515  2.145
+( 41 HA A ) ( 41 CA A )    5.047  1.345
+( 42 HA A ) ( 42 CA A )   -5.119  1.327
+( 44 HA A ) ( 44 CA A )    8.556  1.679
+( 45 HA A ) ( 45 CA A )    5.706  1.459
+( 46 HA A ) ( 46 CA A )    8.707  2.571
+( 47 HA A ) ( 47 CA A )    7.383  1.975
+( 48 HA A ) ( 48 CA A )    4.751  2.558
+( 49 HA A ) ( 49 CA A )   -1.386  3.419
+( 50 HA A ) ( 50 CA A )   -5.047  1.640
+( 53 HA A ) ( 53 CA A )    2.928  1.672
+( 54 HA A ) ( 54 CA A )    2.783  1.166
+( 55 HA A ) ( 55 CA A )   -3.437  1.010
+( 57 HA A ) ( 57 CA A )  -11.635  1.896
+( 58 HA A ) ( 58 CA A )    5.051  1.609
+( 59 HA A ) ( 59 CA A )    6.074  1.701
+( 60 HA A ) ( 60 CA A )   -3.224  2.134
+( 61 HA A ) ( 61 CA A )   -2.710  1.974
+( 62 HA A ) ( 62 CA A )    5.779  1.632
+( 63 HA A ) ( 63 CA A )    3.510  1.318
+( 64 HA A ) ( 64 CA A )  -14.563  1.276
+( 65 HA A ) ( 65 CA A )    7.534  1.151
+( 66 HA A ) ( 66 CA A )    6.292  2.153
+( 67 HA A ) ( 67 CA A )   -0.150  2.456
+( 68 HA A ) ( 68 CA A )   -9.880  1.999
+( 69 HA A ) ( 69 CA A )    9.434  1.468
+( 70 HA A ) ( 70 CA A )   12.076  1.192
+( 71 HA A ) ( 71 CA A )  -10.975  2.443
+( 73 HA A ) ( 73 CA A )    3.806  1.701

@@ -1,0 +1,10 @@
+-in:file:s ../input/GRB2.pdb			# Input model is only the SH2 domain of GRB2
+-score:weights ref2015
+-score:set_weights nmr_pcs 1.0			# Set nmr_pcs score weight
+
+-nmr:pcs:input_file ../input/grb2_pcs.inp	# PCS data input file
+-nmr:pcs:optimize_tensor true			# Optimize PCS tensor after grid search
+
+-nmr:score:verbose				# Write scores and Q-factors for each lanthanide ion separately
+-nmr:score:output_exp_calc			# Write out table with experimental and calculated PCS values for input model
+-nmr:score:output_tensor_info			# Write file with calculated delta-chi tensor for input model

@@ -1,0 +1,110 @@
+###########################################################################
+#                                                                         #
+# The PCS datafile format is as follows:                                  #
+#                                                                         #
+# ( ResidueID AtomName ChainID ) PCSValue PCSError                        #
+#                                                                         #
+# Each line should contain only one experimental PCS value (in ppm),      #
+# together with its measurement error (in ppm) and the atom to which it   #
+# refers to. The atom is specified by its name and the ID of the protein  #
+# residue and chain it belongs to. ResidueID, AtomName and protein        #
+# ChainID must be enclosed by parentheses and separated by one or more    #
+# whitespaces.                                                            #
+# Ambiguous assignments of one PCS value to multiple atoms can be made    #
+# by placing more than one triplet of ResidueID, AtomName and ChainID     #
+# into parentheses and separating them by "or" keywords. For example:     #
+#                                                                         #
+# ( 1 1H A or 1 2H A or 1 3H A )  0.250  0.050                            #
+#                                                                         #
+###########################################################################
+(  4 H A )  -0.409  0.02
+(  5 H A )  -0.268  0.02
+(  6 H A )  -0.192  0.02
+(  7 H A )  -0.122  0.02
+(  8 H A )  -0.091  0.02
+(  9 H A )  -0.070  0.02
+( 10 H A )  -0.073  0.02
+( 11 H A )  -0.085  0.02
+( 12 H A )  -0.093  0.02
+( 13 H A )  -0.179  0.02
+( 14 H A )  -0.206  0.02
+( 26 H A )   0.010  0.02
+( 27 H A )  -0.070  0.02
+( 28 H A )  -0.015  0.02
+( 29 H A )  -0.198  0.02
+( 30 H A )  -0.245  0.02
+( 31 H A )  -0.154  0.02
+( 32 H A )  -0.174  0.02
+( 33 H A )  -0.208  0.02
+( 34 H A )  -0.092  0.02
+( 35 H A )  -0.165  0.02
+( 36 H A )  -0.078  0.02
+( 39 H A )  -0.133  0.02
+( 40 H A )  -0.043  0.02
+( 41 H A )  -0.026  0.02
+( 42 H A )  -0.002  0.02
+( 43 H A )  -0.104  0.02
+( 44 H A )  -0.132  0.02
+( 45 H A )  -0.188  0.02
+( 46 H A )  -0.171  0.02
+( 47 H A )  -0.231  0.02
+( 48 H A )  -0.120  0.02
+( 49 H A )  -0.020  0.02
+( 50 H A )  -0.092  0.02
+( 52 H A )   0.088  0.02
+( 59 H A )  -0.820  0.02
+( 60 H A )  -1.259  0.02
+( 66 H A )  -0.280  0.02
+( 67 H A )  -0.319  0.02
+( 68 H A )  -0.208  0.02
+( 69 H A )  -0.147  0.02
+( 70 H A )  -0.105  0.02
+( 71 H A )  -0.076  0.02
+( 72 H A )  -0.056  0.02
+( 73 H A )  -0.036  0.02
+
+(  4 N A )  -0.442  0.10
+(  5 N A )  -0.299  0.10
+(  6 N A )  -0.195  0.10
+(  7 N A )  -0.115  0.10
+(  8 N A )  -0.092  0.10
+(  9 N A )  -0.065  0.10
+( 10 N A )  -0.052  0.10
+( 11 N A )  -0.078  0.10
+( 12 N A )  -0.095  0.10
+( 13 N A )  -0.196  0.10
+( 14 N A )  -0.263  0.10
+( 26 N A )  -0.059  0.10
+( 27 N A )  -0.164  0.10
+( 28 N A )  -0.073  0.10
+( 29 N A )  -0.222  0.10
+( 30 N A )  -0.240  0.10
+( 31 N A )  -0.188  0.10
+( 32 N A )  -0.166  0.10
+( 33 N A )  -0.217  0.10
+( 34 N A )  -0.064  0.10
+( 35 N A )  -0.182  0.10
+( 36 N A )  -0.050  0.10
+( 39 N A )  -0.130  0.10
+( 40 N A )  -0.040  0.10
+( 41 N A )  -0.037  0.10
+( 42 N A )  -0.041  0.10
+( 43 N A )  -0.081  0.10
+( 44 N A )  -0.124  0.10
+( 45 N A )  -0.204  0.10
+( 46 N A )  -0.162  0.10
+( 47 N A )  -0.231  0.10
+( 48 N A )  -0.067  0.10
+( 49 N A )  -0.073  0.10
+( 50 N A )  -0.102  0.10
+( 52 N A )   0.119  0.10
+( 59 N A )  -0.807  0.10
+( 60 N A )  -1.192  0.10
+( 66 N A )  -0.344  0.10
+( 67 N A )  -0.335  0.10
+( 68 N A )  -0.252  0.10
+( 69 N A )  -0.121  0.10
+( 70 N A )  -0.130  0.10
+( 71 N A )  -0.065  0.10
+( 72 N A )  -0.072  0.10
+( 73 N A )  -0.055  0.10

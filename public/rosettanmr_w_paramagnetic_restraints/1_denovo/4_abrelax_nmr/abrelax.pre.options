@@ -1,0 +1,40 @@
+# I/O
+-in:file:native ../input/1d3z.pdb		# Native PDB for benchmarking
+-in:file:fasta ../input/1d3z.fasta		# Fasta sequence
+-in:file:frag3 ../input/1d3z.200.3mers		# Fragment files
+-in:file:frag9 ../input/1d3z.200.9mers
+-out:file:silent 1d3z_abrelax_pre.out		# Structure output file
+-out:file:silent_struct_type binary
+-out:file:scorefile 1d3z_abrelax_pre.sc		# Structure score file
+-out:prefix 1d3z_abrelax_pre_
+-out:nstruct 1					# Create <nstruct> models
+
+# Abinitio
+-abinitio:rg_reweight 0.5
+-abinitio:rsd_wt_helix 0.5
+-abinitio:rsd_wt_loop 0.5
+-abinitio:stage1_patch ../input/pre.wts_patch	# Patch score function with PRE score term
+-abinitio:stage2_patch ../input/pre.wts_patch	# using the respective weight
+-abinitio:stage3a_patch ../input/pre.wts_patch
+-abinitio:stage3b_patch ../input/pre.wts_patch
+-abinitio:stage4_patch ../input/pre.wts_patch
+-relax:fast					# Finish with fast relax
+-broker:setup ../input/1d3z.tbp			# Topology broker setup file
+-run:protocol broker
+-run:reinitialize_mover_for_each_job
+-score:find_neighbors_3dgrid
+
+# Rmsd calculation
+-evaluation:rmsd NATIVE _full FULL		# Calculate Rmsd vs. native PDB
+
+# PRE
+-nmr:pre:input_file ../input/1d3z.pre.inp	 	 # PRE data input file
+-nmr:pre:normalize_data true				 # Normalize PRE values by dataset standard deviation (default: false).
+							 # This is recommended, especially when R1 and R2 data are used at the same time.
+-nmr:spinlabel:highres_conformer_filter_type BUMP_ENERGY # Filter clashing spinlabel conformations in full-atom mode by computing their bump energy (default).
+-nmr:spinlabel:elaborate_rotamer_clash_check true	 # Count all spin label clashes with neighboring residues (default: false).
+-nmr:spinlabel:max_ensemble_size 10			 # Limit spin label rotamers to this number (default: 20).
+
+-out:mute core.scoring.nmr.pre.PRESingle
+
+-overwrite

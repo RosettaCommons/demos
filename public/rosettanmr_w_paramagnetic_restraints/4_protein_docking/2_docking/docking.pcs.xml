@@ -1,0 +1,48 @@
+<ROSETTASCRIPTS>
+	<SCOREFXNS>
+	<ScoreFunction name="score_dock_lowres" weights="interchain_cen">
+        	<Reweight scoretype="nmr_pcs" weight="0.65"/>
+	</ScoreFunction>
+	<ScoreFunction name="score_dock_highres" weights="ref2015">
+		<Reweight scoretype="nmr_pcs" weight="0.65"/>
+	</ScoreFunction>
+	<ScoreFunction name="score_fa" weights="ref2015">
+	</ScoreFunction>
+	<ScoreFunction name="score_fa_pcs_low" weights="ref2015">
+		<Reweight scoretype="nmr_pcs" weight="0.13"/>
+	</ScoreFunction>
+	<ScoreFunction name="score_fa_pcs_high" weights="ref2015">
+		<Reweight scoretype="nmr_pcs" weight="0.65"/>
+	</ScoreFunction>
+	</SCOREFXNS>
+	<TASKOPERATIONS>
+		<InitializeFromCommandline name="ifcl"/>
+		<RestrictToRepacking name="rtr" />
+		<RestrictToInterfaceVector name="rtiv" chain1_num="1" chain2_num="2" CB_dist_cutoff="10.0" nearby_atom_cutoff="5.5" vector_angle_cutoff="75" vector_dist_cutoff="9.0" />
+	</TASKOPERATIONS>
+	<FILTERS>
+		<IRmsd name="Irmsd" jump="1" threshold="9999"/>
+	</FILTERS>
+	<MOVERS>
+		<FastRelax name="minimize_interface" scorefxn="score_fa_pcs_low" repeats="1" task_operations="ifcl,rtr,rtiv" />
+		<Docking name="dock_low" score_low="score_dock_lowres" score_high="score_dock_highres" fullatom="0" local_refine="0"
+		optimize_fold_tree="1" conserve_foldtree="0" ignore_default_docking_task="0" design="0" task_operations="ifcl" jumps="1"/>
+		<Docking name="dock_high" score_low="score_dock_lowres" score_high="score_dock_highres" fullatom="1" local_refine="1"
+		optimize_fold_tree="1" conserve_foldtree="0" design="0" task_operations="ifcl" jumps="1"/>
+		<SaveAndRetrieveSidechains name="srsc" allsc="0"/>
+		<InterfaceAnalyzerMover name="analyze_interface" scorefxn="score_fa" packstat="0" interface_sc="1" pack_input="0" pack_separated="1" jump="1" tracer="0"/>
+		<ddG name="ddg" per_residue_ddg="0" repack_unbound="1" repack_bound="1" scorefxn="score_fa" jump="1"/>
+	</MOVERS>
+	<APPLY_TO_POSE>
+	</APPLY_TO_POSE>
+	<PROTOCOLS>
+		<Add mover="dock_low"/>
+		<Add mover="srsc"/>
+		<Add mover="dock_high"/>
+		<Add mover="minimize_interface"/>
+		<Add mover="analyze_interface"/>
+		<Add mover="ddg"/>
+		<Add filter="Irmsd"/>
+	</PROTOCOLS>
+	<OUTPUT scorefxn="score_fa_pcs_high"/>
+</ROSETTASCRIPTS>

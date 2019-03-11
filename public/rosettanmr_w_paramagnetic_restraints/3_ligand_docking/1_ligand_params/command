@@ -1,0 +1,1 @@
+~/Rosetta/main/source/scripts/python/public/molfile_to_params.py -n YTN -p YTN --recharge=-1 --extra_torsion_output --conformers-in-one-file ../input/YTN_confs.sdf

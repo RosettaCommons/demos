@@ -1,0 +1,50 @@
+<ROSETTASCRIPTS>
+	<SCOREFXNS>
+		<ScoreFunction name="ligand_soft_rep_pcs" weights="ligand_soft_rep">
+			<Reweight scoretype="fa_elec" weight="0.42"/>
+			<Reweight scoretype="nmr_pcs" weight="2.00"/>
+		</ScoreFunction>
+		<ScoreFunction name="ligand_hard_rep_pcs" weights="ligand">
+			<Reweight scoretype="fa_elec" weight="0.42"/>
+			<Reweight scoretype="nmr_pcs" weight="2.00"/>
+		</ScoreFunction>
+		<ScoreFunction name="ligand_hard_rep" weights="ligand">
+			<Reweight scoretype="fa_elec" weight="0.42"/>
+		</ScoreFunction>
+	</SCOREFXNS>
+	<LIGAND_AREAS>
+		<LigandArea name="dock_sc"  chain="X" cutoff="6.0" add_nbr_radius="true" all_atom_mode="false"/>
+		<LigandArea name="final_sc" chain="X" cutoff="6.0" add_nbr_radius="true" all_atom_mode="false"/>
+		<LigandArea name="final_bb" chain="X" cutoff="7.0" add_nbr_radius="false" all_atom_mode="true" Calpha_restraints="0.3"/>
+	</LIGAND_AREAS>
+	<INTERFACE_BUILDERS>
+		<InterfaceBuilder name="side_chain_for_docking" ligand_areas="dock_sc"/>
+		<InterfaceBuilder name="side_chain_for_final" ligand_areas="final_sc"/>
+		<InterfaceBuilder name="backbone" ligand_areas="final_bb" extension_window="3"/>
+	</INTERFACE_BUILDERS>
+	<MOVEMAP_BUILDERS>
+		<MoveMapBuilder name="docking" sc_interface="side_chain_for_docking" minimize_water="false"/>
+		<MoveMapBuilder name="final"   sc_interface="side_chain_for_final" bb_interface="backbone" minimize_water="false"/>
+	</MOVEMAP_BUILDERS>
+	<SCORINGGRIDS ligand_chain="X" width="30">
+		<ClassicGrid grid_name="classic" weight="1.0"/>
+		<PCSMultiGrid grid_name="pcs_grid" weight="1.0" pcs_weight="20.0" pcs_input_file="../input/ytn_pcs.inp"/>
+	</SCORINGGRIDS>
+	<MOVERS>
+		<StartFrom name="start" chain="X">
+			<PDB filename="../output/YTN_rbseach_centroids.pdb"/>
+		</StartFrom>
+		<Transform name="transform" chain="X" box_size="5.0" move_distance="0.2" angle="20" cycles="500" repeats="1" temperature="10" initial_perturb="3" />
+		<HighResDocker name="high_res_docker" cycles="6" repack_every_Nth="3" scorefxn="ligand_soft_rep_pcs" movemap_builder="docking"/>
+		<FinalMinimizer name="final_min" scorefxn="ligand_hard_rep_pcs" movemap_builder="final"/>
+		<InterfaceScoreCalculator name="add_scores" chains="X" scorefxn="ligand_hard_rep" native="../input/GRB2_YTN.pdb"/> 
+	</MOVERS>
+	<PROTOCOLS>
+		<Add mover_name="start"/>
+		<Add mover_name="transform"/>
+		<Add mover_name="high_res_docker"/>
+		<Add mover_name="final_min"/>
+		<Add mover_name="add_scores"/>
+	</PROTOCOLS>
+	<OUTPUT scorefxn="ligand_hard_rep_pcs"/>
+</ROSETTASCRIPTS>

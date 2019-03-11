@@ -1,0 +1,87 @@
+###########################################################################
+#                                                                         #
+# The RDC datafile format is as follows:                                  #
+#                                                                         #
+# ( ResidueID_Spin1 AtomName_Spin1 ChainID_Spin1 ) \                      #
+# ( ResidueID_Spin2 AtomName_Spin2 ChainID_Spin2 ) RDCValue RDCError      #
+#                                                                         #
+# Each line should contain only one experimental RDC value (in Hz),       #
+# together with its measurement error (in Hz) and the pair of spins to    #
+# which it is assigned. A spin is specified by its atom name and the ID   #
+# of the protein residue and chain it belongs to. ResidueID, AtomName and #
+# protein ChainID of each of the two spins must be enclosed by            #
+# parentheses and separated by one or more whitespaces.                   #
+# Ambiguous assignments of one RDC value to multiple atoms can be made    #
+# by placing more than one triplet of ResidueID, AtomName and ChainID     #
+# into parentheses and separating them by "or" keywords. For example:     #
+#                                                                         #
+# ( 10 1HA A or 10 2HA A ) ( 10 CA A or 10 CA A )  10.000  2.500          #
+#                                                                         #
+###########################################################################
+(  2 C A ) (  3 N A )    0.306  1.159
+(  4 C A ) (  5 N A )    6.116  1.159
+(  5 C A ) (  6 N A )    7.051  1.159
+(  6 C A ) (  7 N A )    5.785  1.159
+(  7 C A ) (  8 N A )   11.321  1.159
+(  8 C A ) (  9 N A )   -2.499  1.159
+(  9 C A ) ( 10 N A )   -1.531  1.159
+( 10 C A ) ( 11 N A )    4.775  1.159
+( 12 C A ) ( 13 N A )    4.866  1.159
+( 13 C A ) ( 14 N A )   -3.980  1.159
+( 14 C A ) ( 15 N A )   -0.199  1.159
+( 15 C A ) ( 16 N A )   -3.567  1.159
+( 16 C A ) ( 17 N A )   -0.554  1.159
+( 17 C A ) ( 18 N A )   -3.707  1.159
+( 18 C A ) ( 19 N A )   -7.895  1.159
+( 19 C A ) ( 20 N A )    0.141  1.159
+( 20 C A ) ( 21 N A )   -1.349  1.159
+( 21 C A ) ( 22 N A )  -13.323  1.159
+( 22 C A ) ( 23 N A )    9.136  1.159
+( 23 C A ) ( 24 N A )    6.984  1.159
+( 25 C A ) ( 26 N A )    6.008  1.159
+( 26 C A ) ( 27 N A )    7.299  1.159
+( 27 C A ) ( 28 N A )   -8.971  1.159
+( 28 C A ) ( 29 N A )    6.835  1.159
+( 29 C A ) ( 30 N A )  -16.998  1.159
+( 30 C A ) ( 31 N A )    8.714  1.159
+( 31 C A ) ( 32 N A )  -14.747  1.159
+( 32 C A ) ( 33 N A )   -0.306  1.159
+( 33 C A ) ( 34 N A )   -7.812  1.159
+( 34 C A ) ( 35 N A )   -2.276  1.159
+( 35 C A ) ( 36 N A )   -4.229  1.159
+( 36 C A ) ( 37 N A )   -9.508  1.159
+( 37 C A ) ( 38 N A )    5.379  1.159
+( 38 C A ) ( 39 N A )  -13.381  1.159
+( 39 C A ) ( 40 N A )    6.182  1.159
+( 40 C A ) ( 41 N A )  -17.925  1.159
+( 41 C A ) ( 42 N A )    4.485  1.159
+( 42 C A ) ( 43 N A )  -11.925  1.159
+( 44 C A ) ( 45 N A )    1.357  1.159
+( 45 C A ) ( 46 N A )    0.786  1.159
+( 46 C A ) ( 47 N A )  -12.297  1.159
+( 47 C A ) ( 48 N A )    7.258  1.159
+( 48 C A ) ( 49 N A )    8.532  1.159
+( 49 C A ) ( 50 N A )    0.331  1.159
+( 50 C A ) ( 51 N A )   11.610  1.159
+( 51 C A ) ( 52 N A )   -3.467  1.159
+( 52 C A ) ( 53 N A )    8.408  1.159
+( 53 C A ) ( 54 N A )   -5.462  1.159
+( 54 C A ) ( 55 N A )   -6.314  1.159
+( 55 C A ) ( 56 N A )    6.066  1.159
+( 57 C A ) ( 58 N A )   -3.054  1.159
+( 58 C A ) ( 59 N A )    7.075  1.159
+( 59 C A ) ( 60 N A )    9.359  1.159
+( 60 C A ) ( 61 N A )  -14.391  1.159
+( 61 C A ) ( 62 N A )    6.943  1.159
+( 62 C A ) ( 63 N A )    4.494  1.159
+( 63 C A ) ( 64 N A )    5.007  1.159
+( 64 C A ) ( 65 N A )  -12.976  1.159
+( 65 C A ) ( 66 N A )    8.168  1.159
+( 66 C A ) ( 67 N A )    5.470  1.159
+( 67 C A ) ( 68 N A )   -6.902  1.159
+( 68 C A ) ( 69 N A )   -0.554  1.159
+( 69 C A ) ( 70 N A )    4.345  1.159
+( 70 C A ) ( 71 N A )    7.771  1.159
+( 71 C A ) ( 72 N A )   -4.386  1.159
+( 72 C A ) ( 73 N A )   -1.423  1.159
+( 73 C A ) ( 74 N A )    2.929  1.159

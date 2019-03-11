@@ -1,0 +1,17 @@
+-out:file:score_only
+
+# Use the following options for scoring with Rosetta high resolution score function
+#-parser:script_vars sfxn=ref2015 nmr_sc_type=nmr_rdc nmr_sc_wt=1.0
+#-score:weights ref2015.wts			# Rosetta high resolution score function for scoring all atom models
+
+# Use the following options for scoring with Rosetta low resolution score function
+-parser:script_vars sfxn=score3 nmr_sc_type=nmr_rdc nmr_sc_wt=1.0
+-score:weights score3.wts			# Rosetta low resolution score function for scoring centroid decoys
+
+# RDC
+-nmr:rdc:input_file ../input/2jwk.rdc.inp	# RDC data input file
+-nmr:rdc:normalization_type none		# Do not apply scaling of input RDC values (default: none)
+-nmr:rdc:correct_sign false			# Do not correct the sign of the dipolar coupling constants involving 15N (default: false)
+-nmr:rdc:use_symmetry_calc true			# Turn symmetric RDC calculation on
+-chemical:patch_selectors CENTROID_HA		# Apply HA patch to centroid residues for calculation of CA-HA RDCs
+						# (needed for scoring centroid pose with RDCs and score3)

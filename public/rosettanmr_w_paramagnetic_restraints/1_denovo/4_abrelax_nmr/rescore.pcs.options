@@ -1,0 +1,9 @@
+-score:weights ref2015.wts			# Rosetta high resolution score function for scoring all atom models
+-score:set_weights nmr_pcs 1.0			# Set PCS score weight
+
+# PCS
+-nmr:pcs:input_file ../input/1d3z.pcs.inp	# PCS data input file
+-nmr:pcs:optimize_tensor true			# Optimize PCS tensor after grid search
+-nmr:pcs:multiset_weights 1.0 1.0		# Weight PCS scores calculated for each of
+						# the two experimental tagging sites in the order
+						# with which they appear in the input file by these values.

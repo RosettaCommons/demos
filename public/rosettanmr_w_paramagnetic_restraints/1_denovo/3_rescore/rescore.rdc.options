@@ -1,0 +1,20 @@
+-out:file:score_only
+
+# Use the following options for scoring with Rosetta high resolution score function
+#-parser:script_vars sfxn=ref2015 nmr_sc_type=nmr_rdc nmr_sc_wt=1.0
+#-score:weights ref2015.wts			# Rosetta high resolution score function for scoring all atom models
+
+# Use the following options for scoring with Rosetta low resolution score function
+-parser:script_vars sfxn=score3.wts nmr_sc_type=nmr_rdc nmr_sc_wt=1.0
+-score:weights score3.wts			# Rosetta low resolution score function for scoring centroid decoys
+
+#-score:set_weights nmr_rdc 1.0			# Set RDC score weight
+#-score:patch ../input/rdc.wts_patch		# Alternatively, provide a score function patch file
+
+# RDC
+-nmr:rdc:input_file ../input/1d3z.rdc.inp	# RDC data input file
+-nmr:rdc:multiset_weights 1.0 1.0 1.0 1.0	# Weight RDC scores calculated for the four different
+						# lanthanides (i.e. alignment media) in the order with
+						# which they appear in the input file by these values.
+-nmr:rdc:normalization_type none		# Do not apply scaling of input RDC values (default: none)
+-nmr:rdc:correct_sign false			# Do not correct the sign of the dipolar coupling constants involving 15N (default: false)

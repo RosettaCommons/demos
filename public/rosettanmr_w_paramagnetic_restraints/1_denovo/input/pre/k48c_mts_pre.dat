@@ -1,0 +1,84 @@
+###########################################################################
+#                                                                         #
+# The PRE datafile format is as follows:                                  #
+#                                                                         #
+# ( ResidueID AtomName ChainID ) PREValue PREError                        #
+#                                                                         #
+# Each line should contain only one experimental PRE value (in Hz),       #
+# together with its measurement error (in Hz) and the atom to which it    #
+# refers to. The atom is specified by its name and the ID of the protein  #
+# residue and chain it belongs to. ResidueID, AtomName and protein        #
+# ChainID must be enclosed by parentheses and separated by one or more    #
+# whitespaces.                                                            #
+# Ambiguous assignments of one PRE value to multiple atoms can be made    #
+# by placing more than one triplet of ResidueID, AtomName and ChainID     #
+# into parentheses and separating them by "or" keywords. For example:     #
+#                                                                         #
+# ( 1 1H A or 1 2H A or 1 3H A ) 10.250  1.500                            #
+#                                                                         #
+###########################################################################
+(  2 H A )  1.36718  1.00
+(  3 H A )  4.10908  1.00
+(  4 H A )  6.69855  1.00
+(  5 H A )  4.10531  1.00
+(  6 H A )  6.38989  1.00
+(  7 H A )  2.42459  1.00
+(  8 H A ) 10.95920  1.00
+(  9 H A ) 12.78660  4.12
+( 10 H A )  1.96139  1.00
+( 11 H A )  0.43511  1.00
+( 12 H A )  3.48189  1.00
+( 13 H A )  1.04098  1.00
+( 14 H A )  0.42923  1.00
+( 15 H A )  1.03710  1.00
+( 16 H A )  3.93144  1.00
+( 17 H A )  2.25261  1.00
+( 18 H A )  4.38487  1.00
+( 20 H A )  5.75294  1.00
+( 21 H A )  3.00703  1.00
+( 22 H A )  5.29173  1.00
+( 23 H A ) 18.09460  1.00
+( 25 H A )  3.45669  1.00
+( 26 H A )  6.04616  1.00
+( 27 H A )  3.45269  1.00
+( 28 H A )  6.65203  1.00
+( 29 H A )  1.00989  1.00
+( 30 H A )  2.83716  1.00
+( 31 H A )  0.85357  1.00
+( 32 H A )  1.00401  1.00
+( 33 H A )  1.76421  1.00
+( 34 H A )  1.60988  1.00
+( 35 H A )  1.91287  1.00
+( 36 H A )  0.38648  1.00
+( 39 H A )  0.83803  1.00
+( 40 H A )  0.53115  1.00
+( 41 H A )  0.83414  1.00
+( 42 H A )  2.20409  1.00
+( 43 H A ) 13.48270  1.00
+( 44 H A ) 23.84670  1.00
+( 45 H A ) 33.90570  6.94
+( 46 H A ) 54.94030 19.89
+( 47 H A ) 68.81030 13.79
+( 54 H A ) 27.33320  1.00
+( 55 H A ) 54.16060  2.97
+( 56 H A ) 13.91470  1.00
+( 57 H A ) 19.40060  1.00
+( 58 H A ) 23.51450  1.00
+( 59 H A ) 16.95770  2.97
+( 60 H A ) 11.01060  2.67
+( 61 H A ) 14.20990  4.26
+( 62 H A ) 12.68350  1.50
+( 63 H A )  8.41324  1.00
+( 64 H A )  5.21013  1.00
+( 65 H A ) 14.04970  1.00
+( 66 H A ) 20.29780  1.00
+( 67 H A ) 12.97870  1.00
+( 68 H A ) 34.47060  1.50
+( 69 H A )  4.74315  1.00
+( 70 H A )  9.00956  1.00
+( 71 H A )  8.09292  1.00
+( 72 H A )  4.27995  1.00
+( 73 H A )  5.49758  1.00
+( 74 H A )  5.95289  1.00
+( 75 H A ) 14.94490  2.67
+( 76 H A )  1.37584  1.00

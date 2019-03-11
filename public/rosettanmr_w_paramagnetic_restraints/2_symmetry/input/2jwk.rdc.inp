@@ -1,0 +1,25 @@
+MULTISET
+
+# Name of alignment medium
+# (has purely descriptive purpose)
+alignment_medium = phage_pf1
+
+# Type of alignment tensor calculation
+# (SVD, NLS, NLSDA, NLSR, NLSDAR)
+computation_type = SVD
+
+# Alignment tensor values
+# Values will be read from this list if option
+# 'fixed_tensor = true' is used.
+alignment_tensor = [ -8.32, 0.086, 10.0, 10.0, 10.0 ]
+
+# Input parameter that control score calculation for one RDC dataset.
+# There must be exactly 3 elements in the following order:
+# dataset filename, score weight, weighting type for single RDC
+# values (CONST, SIGMA or OBSIG).
+dataset          = [ ../input/rdc/2jwk.nh.dat, 1.0, SIGMA ]
+dataset          = [ ../input/rdc/2jwk.caco.dat, 1.0, SIGMA ]
+dataset          = [ ../input/rdc/2jwk.caha.dat, 1.0, SIGMA ]
+dataset          = [ ../input/rdc/2jwk.nco.dat, 1.0, SIGMA ]
+
+END

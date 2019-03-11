@@ -1,0 +1,33 @@
+# Docking specific options
+-docking:partners A_B			# Set rigid body docking partners
+-docking:randomize1			# Randomize the orientation of the first docking partner
+-docking:randomize2			# Randomize the orientation of the second docking partner
+-docking:dock_pert 3 8			# Set coarse perturbation parameters (angstroms and degrees)
+-docking:dock_mcm_trans_magnitude 0.25	# Refinement translational perturbation (default is 0.7)
+-docking:dock_mcm_rot_magnitude 5.0	# Refinement rotational perturbation (default is 5.0)
+
+# I/O options
+-parser:protocol docking.pcs.xml
+-in:file:s ../1_prepack/2xy8_prepack_0001.pdb
+#-in:file:l ../1_prepack/pdb_list.txt			# Or use multiple models with list file
+-in:file:native ../input/2xy8.pdb			# Native structure
+-out:file:silent_struct_type binary
+-out:file:silent 2xy8_docking.out			# Structure output file
+-out:file:scorefile 2xy8_docking.sc			# Structure score file
+-out:nstruct 3						# Create <nstruct> models
+-out:suffix _dock
+
+# PCS options 
+-nmr:pcs:input_file ../input/2xy8.pcs.inp		# PCS data input file
+-nmr:pcs:optimize_tensor true				# Optimize PCS tensor after grid search
+
+# Other options
+-run:max_retry_job 100					# If the mover fails, retry 100 times
+-jd2:ntrials 1000					# If a structure fails to output, how many times to try again
+-use_input_sc						# Add the side chains from the input pdb to the rotamer library
+-ex1							# Increase rotamer bins to include mean +- 1 standard deviation
+-ex2							# Increase rotamer bins to include mean +- 2 standard deviations
+-flip_HNQ
+-no_optH false
+-overwrite
+-out:mute core.scoring.nmr.pcs.PCSSingle

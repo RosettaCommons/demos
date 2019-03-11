@@ -1,0 +1,22 @@
+<ROSETTASCRIPTS>
+    <SCOREFXNS>
+        <ScoreFunction name="fa" weights="%%sfxn%%" >
+            <Reweight scoretype="%%nmr_sc_type%%" weight="%%nmr_sc_wt%%"/>
+        </ScoreFunction>
+    </SCOREFXNS>
+    <RESIDUE_SELECTORS>
+    </RESIDUE_SELECTORS>
+    <TASKOPERATIONS>
+    </TASKOPERATIONS>
+    <FILTERS>
+    </FILTERS>
+    <MOVERS>
+        <ScoreMover name="scorer" scorefxn="fa"/>
+    </MOVERS>
+    <APPLY_TO_POSE>
+    </APPLY_TO_POSE>
+    <PROTOCOLS>
+        <Add mover="scorer"/>
+    </PROTOCOLS>
+    <OUTPUT scorefxn="fa"/>
+</ROSETTASCRIPTS>

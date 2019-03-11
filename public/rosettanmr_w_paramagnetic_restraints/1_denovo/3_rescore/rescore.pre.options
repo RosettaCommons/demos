@@ -1,0 +1,20 @@
+-out:file:score_only
+
+# Use the following options for scoring with Rosetta high resolution score function
+#-parser:script_vars sfxn=ref2015 nmr_sc_type=nmr_pre nmr_sc_wt=1.0
+#-score:weights ref2015.wts			# Rosetta high resolution score function for scoring all atom models
+
+# Use the following options for scoring with Rosetta low resolution score function
+-parser:script_vars sfxn=score3.wts nmr_sc_type=nmr_pre nmr_sc_wt=1.0
+-score:weights score3.wts			# Rosetta low resolution score function for scoring centroid decoys
+
+#-score:set_weights nmr_pre 1.0			# Set PRE score weight
+#-score:patch ../input/pre.wts_patch		# Alternatively, provide a score function patch file
+
+# PRE
+-nmr:pre:input_file ../input/1d3z.pre.inp		 # PRE data input file
+-nmr:pre:normalize_data true				 # Normalize PRE values by dataset standard deviation (default: false).
+							 # This is recommended, especially when R1 and R2 data are used at the same time.
+-nmr:spinlabel:highres_conformer_filter_type BUMP_ENERGY # Filter clashing spinlabel conformations in full-atom mode by computing their bump energy (default).
+-nmr:spinlabel:elaborate_rotamer_clash_check true	 # Count all spin label clashes with neighboring residues (default: false).
+-nmr:spinlabel:max_ensemble_size 10			 # Limit spin label rotamers to this number (default: 20).

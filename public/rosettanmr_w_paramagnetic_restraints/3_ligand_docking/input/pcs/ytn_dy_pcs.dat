@@ -1,0 +1,25 @@
+###########################################################################
+#                                                                         #
+# The PCS datafile format is as follows:                                  #
+#                                                                         #
+# ( ResidueID AtomName ChainID ) PCSValue PCSError                        #
+#                                                                         #
+# Each line should contain only one experimental PCS value (in ppm),      #
+# together with its measurement error (in ppm) and the atom to which it   #
+# refers to. The atom is specified by its name and the ID of the protein  #
+# residue and chain it belongs to. ResidueID, AtomName and protein        #
+# ChainID must be enclosed by parentheses and separated by one or more    #
+# whitespaces.                                                            #
+# Ambiguous assignments of one PCS value to multiple atoms can be made    #
+# by placing more than one triplet of ResidueID, AtomName and ChainID     #
+# into parentheses and separating them by "or" keywords. For example:     #
+#                                                                         #
+# ( 1 1H A or 1 2H A or 1 3H A )  0.250  0.050                            #
+#                                                                         #
+###########################################################################
+( 1  H5 X or 1  H6 X ) -0.03  0.05
+( 1  H7 X or 1  H8 X )  0.02  0.05
+( 1  H9 X or 1 H10 X )  0.01  0.05
+( 1 H14 X or 1 H15 X or 1 H16 X ) -0.11  0.05
+( 1 H19 X ) -0.05  0.05
+( 1 H20 X or 1 H21 X ) -0.02  0.05

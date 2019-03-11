@@ -1,0 +1,36 @@
+MULTISET
+
+# Residue number of spin-label site
+spinlabel_position = 48
+
+# Chain ID of spin-label site
+chain_id           = A
+
+# 3-letter code of spin-label residue
+# type as stored in Rosetta database.
+# The MTSL residue has code R1A.
+spinlabel_type     = R1A
+
+# Name of radical atom or paramagnetic
+# ion as stored in Rosetta database.
+ion_type           = Nitroxide
+
+# Protein mass in kDa.
+protein_mass       = 8.56
+
+# Temperature under which experiment
+# was performed (in Kelvin).
+temperature        = 298.0 
+
+# Input parameter that control score calculation for one PRE dataset.
+# There must be exactly 5 elements in the following order:
+# dataset filename, score weight, weighting type for single PRE values
+# (CONST, SIGMA or OBSIG), PRE rate type (R1 or R2), magnetic field
+# strength under which experiment was performed (in MHz).
+dataset            = [ ../input/pre/k48c_mts_pre.dat, 1.0, CONST, R2, 600 ]
+
+# Lower and upper bound for tauc
+tauc_min           = 1.0
+tauc_max           = 10.0
+
+END

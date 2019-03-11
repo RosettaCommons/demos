@@ -1,0 +1,19 @@
+-out:file:score_only
+
+# Use the following options for scoring with Rosetta high resolution score function
+#-parser:script_vars sfxn=ref2015 nmr_sc_type=nmr_pcs nmr_sc_wt=1.0
+#-score:weights ref2015.wts			# Rosetta high resolution score function for scoring all atom models
+
+# Use the following options for scoring with Rosetta low resolution score function
+-parser:script_vars sfxn=score3.wts nmr_sc_type=nmr_pcs nmr_sc_wt=1.0
+-score:weights score3.wts			# Rosetta low resolution score function for scoring centroid decoys
+
+#-score:set_weights nmr_pcs 1.0			# Set PCS score weight
+#-score:patch ../input/pcs.wts_patch		# Alternatively, provide a score function patch file
+
+# PCS
+-nmr:pcs:input_file ../input/1d3z.pcs.inp	# PCS data input file
+-nmr:pcs:optimize_tensor true			# Optimize PCS tensor after grid search
+-nmr:pcs:multiset_weights 1.0 1.0		# Weight PCS scores calculated for the two
+						# experimental tagging sites in the order with
+						# which they appear in the input file by these values.

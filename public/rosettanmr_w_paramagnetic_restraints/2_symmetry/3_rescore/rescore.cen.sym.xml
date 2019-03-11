@@ -1,0 +1,26 @@
+<ROSETTASCRIPTS>
+    <SCOREFXNS>
+        <ScoreFunction name="cen" weights="%%sfxn%%" symmetric="1">
+            <Reweight scoretype="%%nmr_sc_type%%" weight="%%nmr_sc_wt%%"/>
+        </ScoreFunction>
+    </SCOREFXNS>
+    <RESIDUE_SELECTORS>
+    </RESIDUE_SELECTORS>
+    <TASKOPERATIONS>
+    </TASKOPERATIONS>
+    <FILTERS>
+    </FILTERS>
+    <MOVERS>
+        <ScoreMover name="scorer" scorefxn="cen"/>
+        <DetectSymmetry name="find_symmetry" subunit_tolerance="0.1" plane_tolerance="0.01"/>
+        <SwitchResidueTypeSetMover name="srtm" set="centroid"/> 
+    </MOVERS>
+    <APPLY_TO_POSE>
+    </APPLY_TO_POSE>
+    <PROTOCOLS>
+    	<Add mover="find_symmetry"/>
+    	<Add mover="srtm"/>
+        <Add mover="scorer"/>
+    </PROTOCOLS>
+    <OUTPUT scorefxn="cen"/> 
+</ROSETTASCRIPTS>

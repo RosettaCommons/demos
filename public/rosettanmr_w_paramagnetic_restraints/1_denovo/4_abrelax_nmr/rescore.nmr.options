@@ -1,0 +1,24 @@
+-score:weights ref2015.wts				# Rosetta high resolution score function for scoring all atom models
+-score:set_weights nmr_pcs 1.0 nmr_rdc 1.0 nmr_pre 1.0	# Set NMR score weights
+
+# PCS
+-nmr:pcs:input_file ../input/1d3z.pcs.inp		# PCS data input file
+-nmr:pcs:optimize_tensor true				# Optimize PCS tensor after grid search
+-nmr:pcs:multiset_weights 1.0 1.0			# Weight PCS scores calculated for each of
+							# the two experimental tagging sites in the order
+							# with which they appear in the input file by these values.
+# RDC
+-nmr:rdc:input_file ../input/1d3z.rdc.inp		# RDC data input file
+-nmr:rdc:multiset_weights 1.0 1.0 1.0 1.0		# Weight RDC scores calculated for the four different
+							# lanthanides (i.e. alignment media) in the order with
+							# which they appear in the input file by these values.
+-nmr:rdc:normalization_type none			# Do not apply scaling of input RDC values (default: none)
+-nmr:rdc:correct_sign false				# Do not correct the sign of the dipolar coupling constants involving 15N (default: false)
+
+# PRE
+-nmr:pre:input_file ../input/1d3z.pre.inp		 # PRE data input file
+-nmr:pre:normalize_data true				 # Normalize PRE values by dataset standard deviation (default: false).
+							 # This is recommended, especially when R1 and R2 data are used at the same time.
+-nmr:spinlabel:highres_conformer_filter_type BUMP_ENERGY # Filter clashing spinlabel conformations in full-atom mode by computing their bump energy (default).
+-nmr:spinlabel:elaborate_rotamer_clash_check true	 # Count all spin label clashes with neighboring residues (default: false).
+-nmr:spinlabel:max_ensemble_size 10			 # Limit spin label rotamers to this number (default: 20).

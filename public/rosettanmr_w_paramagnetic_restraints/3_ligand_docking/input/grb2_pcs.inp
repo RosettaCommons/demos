@@ -1,0 +1,27 @@
+MULTISET
+
+# Residue number of spin-label site
+spinlabel_position = 18
+
+# Chain ID of spin-label site
+chain_id           = A
+
+# Parameter of metal ion grid search:
+# Atoms 1 and 2 that define the grid search center,
+# distance between atom 1 and grid search center,
+# stepsize, and minimal and maximal radius of grid search
+# in Angstrom.
+gridsearch         = [ CA, CB, 10.0, 4.0, 0.0, 20.0 ]
+
+# Input parameter that control score calculation for one PCS dataset.
+# There must be exactly 14 elements in the following order:
+# dataset filename, metal ion label, dataset score weight, weighting type for single
+# PCS values (CONST, SIGMA or OBSIG), averaging type for PCS values
+# (MEAN or SUM), type of PCS tensor calculation (SVD, NLS, NLSXA, NLSXR or NLSXAXR),
+# 8 values of the chi-tensor (xM, yM, zM, Xa, Xr, alpha, beta, gamma)
+dataset            = [ ../input/pcs/grb2_tb_pcs.dat, Tb, 1.0, CONST, MEAN, SVD, 10.0, 10.0, 10.0, 40.0, 4.0, 0.0, 0.0, 0.0 ]
+dataset            = [ ../input/pcs/grb2_tm_pcs.dat, Tm, 1.0, CONST, MEAN, SVD, 10.0, 10.0, 10.0, 40.0, 4.0, 0.0, 0.0, 0.0 ]
+dataset            = [ ../input/pcs/grb2_dy_pcs.dat, Dy, 1.0, CONST, MEAN, SVD, 10.0, 10.0, 10.0, 40.0, 4.0, 0.0, 0.0, 0.0 ]
+dataset            = [ ../input/pcs/grb2_er_pcs.dat, Er, 1.0, CONST, MEAN, SVD, 10.0, 10.0, 10.0, 40.0, 4.0, 0.0, 0.0, 0.0 ]
+
+END

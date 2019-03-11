@@ -1,0 +1,5 @@
+# PCS options 
+-nmr:pcs:input_file ../input/2xy8.pcs.inp		# PCS data input file
+-nmr:pcs:optimize_tensor true				# Optimize PCS tensor after grid search
+-score:weights ref2015
+-score:set_weights nmr_pcs 1.0

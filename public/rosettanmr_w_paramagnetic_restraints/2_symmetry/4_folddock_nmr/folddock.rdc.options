@@ -1,0 +1,62 @@
+# I/O
+-in:file:native ../input/2jwk.AB.pdb		# Native PDB for benchmarking
+-in:file:fasta ../input/2jwk.fasta		# Fasta sequence
+-in:file:frag3 ../input/2jwk.200.3mers		# Fragment files
+-in:file:frag9 ../input/2jwk.200.9mers
+-out:file:silent 2jwk_folddock_rdc.out		# Structure output file
+-out:file:silent_struct_type binary
+-out:file:scorefile 2jwk_folddock_rdc.sc	# Structure score file
+-out:prefix 2jwk_folddock_rdc_
+-out:nstruct 1					# Create <nstruct> models
+
+# Abinitio
+-abinitio:increase_cycles 2			# Incrase fragment insertions trials by this factor
+-abinitio:rg_reweight 0.5
+-abinitio:rsd_wt_helix 0.5
+-abinitio:rsd_wt_loop 0.5
+-abinitio:stage1_patch ../input/rdc.wts_patch	# Patch score function with RDC score term
+-abinitio:stage2_patch ../input/rdc.wts_patch	# using the respective weight
+-abinitio:stage3a_patch ../input/rdc.wts_patch
+-abinitio:stage3b_patch ../input/rdc.wts_patch
+-abinitio:stage4_patch ../input/rdc.wts_patch
+-relax:fast					# Finish with fast relax
+-relax:jump_move
+-broker:setup ../input/2jwk.tbp			# Topology broker setup file
+-run:protocol broker
+-run:reinitialize_mover_for_each_job
+-score:find_neighbors_3dgrid
+-chemical:patch_selectors CENTROID_HA		# Apply HA patch to centroid residues for calculation of CA-HA RDCs 
+
+# Fold-and-Dock
+-fold_and_dock:rigid_body_cycles 1		# Number of rigid body cycles during fold and dock fragment insertion (default: 50)
+						# One rigid body cycle works in conjunction with rigid_body_disable_mc
+#-fold_and_dock:move_anchor_points		# Move the anchor points that define symmetric coordinate system during symmetry fragment insertion (default: false)
+#-fold_and_dock:set_anchor_at_closest_point	# Set the anchor points that define symmetric coordinate system to the nearest point between two consecutive chains during fragment insertion (default: false)
+-fold_and_dock:rotate_anchor_to_x		# Rotate the anchor residue to the x-axis before applying rigid body transformations (default: true)
+-fold_and_dock:trans_mag_smooth 0.1		# Translation perturbation size for smooth refinement (default: 0.1)
+-fold_and_dock:rot_mag_smooth 1.0		# Rotational perturbation size for smooth refinement (default: 1.0)
+-fold_and_dock:rb_rot_magnitude 8.0		# Rotational perturbation size for rigid body perturbations (default: 8.0)
+-fold_and_dock:rb_trans_magnitude 3.0		# Translational perturbation size rigid body perturbations (default: 3.0)
+-fold_and_dock:rigid_body_frequency 5		# The fraction of times rigid body cycles are applied during fragment assembly moves (default: 0.2)
+-fold_and_dock:rigid_body_disable_mc		# Disallow moves to be accepted locally by Monte Carlo criteria within the rigid body mover (default: false)
+						# Setting this to true makes sure that rigid body moves are accepted by the same Monte Carlo process as the fragment sampling.
+						# This prevents overoptimization of low-resolution energy but may not be optimal for all cases.
+-fold_and_dock:slide_contact_frequency 0.1	# The fraction of times subunits are slided together during fragment assembly moves (Default: 0.1)
+
+# Symmetric Rmsd calculation
+-evaluation:rmsd_target ../input/2jwk.AB.pdb
+-evaluation:symmetric_rmsd			# Calculate symmetric Rmsd (i.e. with testing all possible chain orderings) vs. native PDB
+
+# Symmetry definition
+-symmetry:symmetry_definition ../input/2jwk.symm 
+-symmetry:initialize_rigid_body_dofs
+
+# RDC
+-nmr:rdc:input_file ../input/2jwk.rdc.inp	# RDC data input file
+-nmr:rdc:normalization_type none		# Do not apply scaling of input RDC values as they are already normalized (default: none)
+-nmr:rdc:correct_sign false			# Do not correct the sign of the dipolar coupling constants involving 15N (default: false)
+-nmr:rdc:use_symmetry_calc true			# Turn on symmetric RDC calculation
+
+-out:mute core.scoring.nmr.rdc.RDCSingle
+
+-overwrite

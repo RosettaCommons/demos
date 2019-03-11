@@ -1,0 +1,30 @@
+# I/O
+-parser:protocol ligdock.pcs.xml
+-in:file:s ../input/GRB2_YTN.pdb
+-in:file:extra_res_fa ../input/YTN.params		# Ligand params
+-in:file:native ../input/GRB2_YTN.pdb			# Native structure
+-out:file:silent GRB2_YTN_dock_pcs.out
+-out:file:silent_struct_type binary
+-out:file:scorefile GRB2_YTN_dock_pcs.sc
+-out:nstruct 10
+
+# Ligand docking
+-qsar:max_grid_cache_size 80				# Delete old ligand scoring grids if grid cache exceeds this number
+-packing:ex1						# Sample additional rotamers of the protein sidechain angles chi1 and chi2
+-packing:ex2
+-packing:no_optH false					# Optimize hydrogen placements
+-packing:flip_HNQ true					# Consider His, Asn, Gln side chain flips
+-packing:ignore_ligand_chi true				# Prevent adding additional ligand rotamers
+
+# Ligand docking is not yet benchmarked with the updated scoring function
+# This flag restores certain parameters to previously published values
+-mistakes:restore_pre_talaris_2013_behavior true
+-score:analytic_etable_evaluation true
+-corrections:restore_talaris_behavior
+
+# PCS
+-nmr:pcs:input_file ../input/ytn_pcs.inp		# Ligand PCS data input file
+-nmr:pcs:optimize_tensor true				# Optimize PCS tensor after grid search
+
+-out:mute core.scoring.nmr.util
+-overwrite

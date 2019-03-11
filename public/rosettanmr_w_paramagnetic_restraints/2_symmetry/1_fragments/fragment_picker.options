@@ -1,0 +1,30 @@
+# Rosetta database
+-database ~/Rosetta/main/database/
+
+# Fragment databases
+-in:file:vall ~/Rosetta/tools/fragment_tools/vall.jul19.2011.gz
+
+# number and size of fragments, we need 9-mers and 3-mers but could also be 5-mers or whatever you need
+-frags:frag_sizes 9 3
+-frags:n_frags 200
+ 
+# show score components for each selected fragment
+-frags:describe_fragments 2jwk.fsc
+
+# the name root for the output fragment files
+-out:file:frag_prefix 2jwk
+
+# weights
+-frags:scoring:config fragment_picker.wts
+
+# query-related input files
+-in:file:checkpoint ../input/2jwk.checkpoint			# Blast checkpoint file
+-in:file:fasta ../input/2jwk.fasta
+-in:file:talos_cs ../input/cs/2jwk.tab				# chemical sift input file in TALOS format
+-in:file:talos_phi_psi ../input/cs/2jwk.pred.tab		# TALOS+ phi psi prediction file
+-frags:ss_pred ../input/cs/2jwk.predSS.tab talos		# TALOS+ secondary structure prediction file
+-frags:sigmoid_cs_A 2
+-frags:sigmoid_cs_B 4
+
+# list of denied pdbs (e.g. to exclude homologs for benchmarking)
+#-frags:denied_pdb ../input/2jwk.deniedpdbs.txt

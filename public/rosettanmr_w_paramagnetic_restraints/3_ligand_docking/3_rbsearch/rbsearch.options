@@ -1,0 +1,20 @@
+# I/O
+-in:file:s ../input/GRB2_YTN.pdb			# Starting structure with protein and ligand
+-in:file:extra_res_fa ../input/YTN.params		# Ligand params
+-out:nstruct 20						# Do grid search with 20 randomly picked ligand rotamers
+
+# Options for ligand_transform_with_pcs application
+-trans_stepsize 4.0					# Translational stepsize of PCS grid search
+-rot_stepsize 20					# Rotational stepsize of PCS grid search
+-opt_transform						# Further optimize initial ligand position and orientation
+							# after PCS grid search by NLS fitting.
+-final_dock						# Perform one step of local high resolution ligand docking
+							# after initial pose has been found with PCS grid search.
+-ligand_radius_damping 0.3				# Scale ligand neighbour radius down by this factor to allow
+							# a smooth "penetration" of the ligand into the protein and
+							# screening of places closer to the protein surface. The
+							# default value is 0.0 (no down scaling) and reasonable
+							# choices are between 0.2 and 0.5. 
+
+# PCS
+-nmr:pcs:input_file ../input/ytn_pcs.inp		# Ligand PCS data input file
