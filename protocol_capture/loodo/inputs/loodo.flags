@@ -1,0 +1,11 @@
+-loodo:ins_begin 134
+-loodo:cap inputs/1WM1_insert.pdb
+-loodo:bot inputs/1WM1_parent.pdb
+-loodo:fragAlength 4
+-loodo:fragBlength 4
+-loodo:gridligpath inputs/1WM1_bot.pdb_0.gridlig
+-loodo:debug true
+-loodo:ca_ratio 0.0
+-loodo:com_in_grid false
+-loodo:num_frags 500
+-mute protocols.BumpGrid

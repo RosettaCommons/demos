@@ -1,0 +1,1 @@
+./assemble_scaffolds.py -b ../inputs/1WM1_parent.pdb -i 134 -l caphit_list -d ../example_output/ -f ignore_unrecognized_res
