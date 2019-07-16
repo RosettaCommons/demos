@@ -16,7 +16,7 @@ If you want to try making files that already exist (e.g., input files), write th
 
 This tutorial presents a protein folding benchmark experiment. Bacteriophage T4 lysozyme is a soluble protein that hydrolyzes peptidoglycan and releases the virus from its bacterial host. The protein was crystallized at a resolution of 1.7 angstroms and the resulting structure was submitted to the Protein Data Bank (PDB) under accession number 2LZM. In this tutorial, you will reconstruct the structure of bacteriophage T4 lysozyme using *ab initio* protein folding. At the end of the tutorial, the results from this benchmark experiment will be compared to the native structure available from the PDB.
 
-This tutorial was updated on 29 May 2017 by Vikram K. Mulligan (vmullig@uw.edu) to reflect changes due to the new default Rosetta scoring function, called ref2015.
+Page created by Sebastian Rämisch (raemisch@scripps.edu) on 21 June 2016, and edited by Parisa Hosseinzadeh (parisah@uw.edu) and Rocco Moretti (rmorettiase@gmail.com).  This tutorial was updated on 29 May 2017 by Vikram K. Mulligan (vmullig@uw.edu) to reflect changes due to the new default Rosetta scoring function, called ref2015.
 
 1. Navigate to this tutorial directory. You will work in this directory for the rest of the tutorial.
 
