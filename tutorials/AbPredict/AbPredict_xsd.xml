@@ -184,7 +184,7 @@
 		<If name="if_checkpoint_load" filter_name="recover" true_mover_name="load_from_checkpoint"/>
 		
 		<ClearConstraintsMover name="clear_constraints"/>
-		<RBIn name="rb_transform" rigid_body_dbase="/home/labs/fleishman/gideonla/RBOut/rb.db" from_entry="1" to_entry="1340" randomize="true"/> 
+		<RBIn name="rb_transform" rigid_body_dbase="AB_db_files/rb.db" from_entry="1" to_entry="1340" randomize="true"/> 
 		<PackRotamersMover name="design_softrep_rb" scorefxn="soft_rep_coordcst" task_operations="init,thread_original,noRepackDisulfs"/>
 	   	<PackRotamersMover name="design_talarisCal_rb" scorefxn="TalarisCal_coordcst" task_operations="init,thread_original,noRepackDisulfs"/>
 		<RotamerTrialsMinMover name="rtmin_rb" task_operations="init,thread_original,noRepackDisulfs" scorefxn="TalarisCal_coordcst"/>
