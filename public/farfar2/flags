@@ -1,0 +1,11 @@
+-fasta rna_puzzle_8_homology.fasta
+-native rna_puzzle_8_homology_NATIVE_8_0_solution_4L81_rpr.pdb
+-s rna_puzzle_8_homology_START1_8_0_solution_4L81_rpr.pdb
+-working_res A:1-96
+-minimize_rna true
+-cycles 20000
+-nstruct 20
+-save_times
+-secstruct "(((((....((((....))))(((..((((((.[[[[..))).))).)))..(((((....)))))))))).((((....)))).......]]]]."
+-superimpose_over_all
+-out:file:silent farna_rebuild.out
