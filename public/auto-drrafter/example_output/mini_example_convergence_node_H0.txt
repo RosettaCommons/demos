@@ -1,0 +1,7 @@
+apps.public.DRRAFTER.drrafter_error_estimation: #############################################
+apps.public.DRRAFTER.drrafter_error_estimation: Mean pairwise RMSD (convergence): 3.26813
+apps.public.DRRAFTER.drrafter_error_estimation: Estimated minimum RMSD: 2.31905
+apps.public.DRRAFTER.drrafter_error_estimation: Estimated mean RMSD: 3.32351
+apps.public.DRRAFTER.drrafter_error_estimation: Estimated RMSD of median structure: 2.97904
+apps.public.DRRAFTER.drrafter_error_estimation: Median structure: mini_example_all_models_all_fits_FINAL_R2.out.3.pdb
+apps.public.DRRAFTER.drrafter_error_estimation: #############################################
