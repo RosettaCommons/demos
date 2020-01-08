@@ -109,6 +109,7 @@ Making full helix H1
 ```
 
 `auto-DRRAFTER.py` first low-pass filters the map to 20 Å (as in the previous step), then places points throughout the density map. These points are then converted into a graph to identify possible end nodes. These end nodes are printed out to the screen, here nodes 3 and 4. All the points that were placed into the density map are written out in a PDB file that we can visualize in Chimera or PyMOL. Each point has a different residue number, which corresponds to the node number. So we can load the PDB with these points, here mini_example_init_points.pdb into PyMOL (or any other molecular visualization software), and look at residue 3 and 4 to see which nodes auto-DRRAFTER has identified as potential end nodes.   
+
 Let's do that now. Here is what the points look like in PyMOL (create a surface for the density map with the PyMOL command, `isosurface map, surf, 5.0`, and then show the points as spheres with the PyMOL command `show spheres, mini_example_init_points`). Nodes 3 and 4 (the possible end nodes from the output message above) correspond to residues 3 and 4 in this PDB file. 
 So we can visualize those as bigger, differently color spheres with PyMOL commands like `color blue, mini_example_init_points and resi 3+4` and `set sphere_scale 2, mini_example_init_points and resi 3+4`. Now we can see that the end nodes are placed reasonably within the density map (big blue spheres below). We want to see these points in regions of the density map that look like they could be RNA hairpins. If the placement doesn't look good, then we could choose a slightly different `map_thr` and try running the setup again.
 This will sometimes result in better end node detection. Alternatively, if some of the points look good, but others do not, we can run the setup script `auto-DRRAFTER_setup.py` again, but this time explicitly select which of these end nodes to use with e.g. `-use_end_node 3`, which would explicitly force end node 3 to be used as an anchor position for RNA helix placement.    
@@ -230,7 +231,7 @@ This is the same command that we used in steps 5 and 7 except `–curr_round` is
 
 **10.** Set up the next round of modeling. Type:   
 ```
-python $ROSETTA/main/source/src/apps/public/DRRAFTER/submit_jobs.py -out_pref mini_example -curr_round FINAL_R3 -njobs 2 -template_submission_script input_files/job_submission_template.sh -queue_command source
+python $ROSETTA/main/source/src/apps/public/DRRAFTER/auto-DRRAFTER_setup_next_round.py -out_pref mini_example -curr_round FINAL_R3 -nmodels 10 -rosetta_directory $ROSETTA/main/source/bin/ -convergence_threshold 100
 ```
 
 ***`-convergence_threshold 100` should not be used for actual modeling jobs (you should generally just use the default value (10) which is what was used for all modeling in the original Ribosolve paper). It is only used here for this demo to force the run to finish quickly!***   
