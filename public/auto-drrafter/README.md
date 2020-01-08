@@ -3,7 +3,7 @@ auto-DRRAFTER: automatically build RNA coordinates into cryo-EM maps
 
 KEYWORDS: NUCLEIC_ACIDS EXPERIMENTAL_DATA RNA DENOVO STRUCTURE_PREDICTION  
 
-Last updated December 2019 by Kalli Kappel (kappel at stanford dot edu).    
+Last updated January 2020 by Kalli Kappel (kkappel at alumni dot stanford dot edu).    
 
 This demo shows how to use use auto-DRRAFTEr to build RNA coordinates into a cryo-EM map. This is a small toy example designed to run relatively quickly on a laptop.   
 
@@ -74,18 +74,18 @@ What do all of these flags do?
 
 This will create a single file: `mini_example_lp20.mrc`. This is the low-pass filtered density map, which will be used to figure out the initial helix placements.   
 
-**3.** Open the low-pass filtered density map (`mini_example_lp20.mrc`) in Chimera. Change the threshold of the density map (using the sliding bar on the density histogram). You want to find the highest threshold such that you can clearly discern “end nodes” in the density map, but also such that the density map is still fully connected. In this case, we’ll choose 30 as the threshold. Note that this threshold is only used for the initial helix placement and does not have any affect on the later modeling steps.  
+**3.** Open the low-pass filtered density map (`mini_example_lp20.mrc`) in Chimera. Change the threshold of the density map (using the sliding bar on the density histogram). You want to find the highest threshold such that you can clearly discern “end nodes” in the density map, but also such that the density map is still fully connected. Note that this threshold is only used for the initial helix placement and does not have any affect on the later modeling steps. Let's look at the map in Chimera to figure out the best threshold:  
 
 ![Threshold too high](images/threshold_too_high_screenshot.png)
-Here the density threshold is too high – the whole map is no longer connected.  
+Here the density threshold (shown in the "Level" box: 58.5) is too high – the whole map is no longer connected.  
 
 ![Threshold too low](images/threshold_too_low_screenshot.png)
-Here the density threshold is quite low – we can still sort of see where the ends of helices might be located in this map, but we can probably go to a higher threshold where these regions will be easier to discern.   
+Here the density threshold is quite low (8.28) – we can still sort of see where the ends of helices might be located in this map, but we can probably go to a higher threshold where these regions will be easier to discern.   
 
 ![Good threshold](images/threshold_good_screenshot.png)
-This looks pretty good – the map is still completely connected and we can clearly see where the ends of the helices/hairpins would be located.   
+This threshold looks pretty good (30) – the map is still completely connected and we can clearly see where the ends of the helices/hairpins would be located. We will use a threshold of 30.   
 
-**4** Set up the auto-DRRAFTER run by typing: 
+**4.** Set up the auto-DRRAFTER run by typing: 
 ```
 python $ROSETTA/main/source/src/apps/public/DRRAFTER/auto-DRRAFTER_setup.py -map_thr 30 -full_dens_map input_files/map.mrc -full_dens_map_reso 10.0 -fasta input_files/fasta.txt -secstruct input_files/secstruct.txt -out_pref mini_example -rosetta_directory $ROSETTA/main/source/bin/ -shift_center -nstruct_per_job 10 -cycles 1000 -fit_only_one_helix
 ```
@@ -242,7 +242,7 @@ python $ROSETTA/main/source/src/apps/public/DRRAFTER/finalize_models.py -fasta i
 
 This should print `Done finalizing models` to the screen, indicating that the modeling is complete. This creates the final models: `mini_example_all_models_all_fits_FINAL_R3.out.*.pdb`. These models should be carefully inspected in the context of the density map.    
 
-![Final models](images/final_models.png)
+![Final models](images/final_models.png)   
 Final models in the density map.   
 
 For reference, example output is provided in the `example_output/` directory.   
