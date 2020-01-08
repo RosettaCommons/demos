@@ -5,7 +5,7 @@ KEYWORDS: NUCLEIC_ACIDS EXPERIMENTAL_DATA RNA DENOVO STRUCTURE_PREDICTION
 
 Last updated January 2020 by Kalli Kappel (kkappel at alumni dot stanford dot edu).    
 
-This demo shows how to use use auto-DRRAFTEr to build RNA coordinates into a cryo-EM map. This is a small toy example designed to run relatively quickly on a laptop.   
+This demo shows how to use use auto-DRRAFTER to build RNA coordinates into a cryo-EM map. This is a small toy example designed to run relatively quickly on a laptop.   
 
 ## Setting up auto-DRRAFTER:  
 1. Download Rosetta [here](https://www.rosettacommons.org/software/license-and-download). You will need to get a license before downloading Rosetta (free for academic users). auto-DRRAFTER is available in the Rosetta weekly releases after 2019.47 (it is not available in 2019.47). **auto-DRRAFTER is NOT available in Rosetta 3.11.** 
@@ -108,9 +108,23 @@ Making full helix H0
 Making full helix H1
 ```
 
-`auto-DRRAFTER.py` first low-pass filters the map to 20 Å (as in the previous step), then places points throughout the density map. These points are then converted into a graph to identify possible end nodes. These end nodes are printed out to the screen, here nodes 3 and 4. All the points that were placed into the density map are written out in a PDB file that we can visualize in Chimera or PyMOL. Each point has a different residue number, which corresponds to the node number. So we can load the PDB with these points, here mini_example_init_points.pdb into PyMOL (or any other molecular visualization software), and look at residue 3 and 4 to see which nodes auto-DRRAFTER has identified as potential end nodes. Auto-DRRAFTER will randomly select one of these end nodes to use an anchor position for placing RNA helices in the density map. Alternatively, you can select which one of these end nodes you’d like to use. If we wanted to use end node 3, we could add the flag `-use_end_node 3` to the `auto-DRRAFTER_setup.py` command above.   
+`auto-DRRAFTER.py` first low-pass filters the map to 20 Å (as in the previous step), then places points throughout the density map. These points are then converted into a graph to identify possible end nodes. These end nodes are printed out to the screen, here nodes 3 and 4. All the points that were placed into the density map are written out in a PDB file that we can visualize in Chimera or PyMOL. Each point has a different residue number, which corresponds to the node number. So we can load the PDB with these points, here mini_example_init_points.pdb into PyMOL (or any other molecular visualization software), and look at residue 3 and 4 to see which nodes auto-DRRAFTER has identified as potential end nodes.   
+Let's do that now. Here is what the points look like in PyMOL (create a surface for the density map with the PyMOL command, `isosurface map, surf, 5.0`, and then show the points as spheres with the PyMOL command `show spheres, mini_example_init_points`). Nodes 3 and 4 (the possible end nodes from the output message above) correspond to residues 3 and 4 in this PDB file. 
+So we can visualize those as bigger, differently color spheres with PyMOL commands like `color blue, mini_example_init_points and resi 3+4` and `set sphere_scale 2, mini_example_init_points and resi 3+4`. Now we can see that the end nodes are placed reasonably within the density map (big blue spheres below). We want to see these points in regions of the density map that look like they could be RNA hairpins. If the placement doesn't look good, then we could choose a slightly different `map_thr` and try running the setup again.
+This will sometimes result in better end node detection. Alternatively, if some of the points look good, but others do not, we can run the setup script `auto-DRRAFTER_setup.py` again, but this time explicitly select which of these end nodes to use with e.g. `-use_end_node 3`, which would explicitly force end node 3 to be used as an anchor position for RNA helix placement.    
 
-Auto-DRRAFTER then converts the RNA secondary structure (that we specified) to a graph in which helices are represented as edges and junctions and loops are represented as nodes. This secondary structure graph is then mapped onto the graph for the density map. In this case, auto-DRRAFTER will create two possible mappings, with either hairpin 0 or hairpin 1 mapped onto the randomly selected end node in the map.  
+![Nodes in map](images/view_points_in_map.png)
+
+If we don't select a specific end node to use (which we won't do here), auto-DRRAFTER will randomly select one of these end nodes to use an anchor position for placing RNA helices in the density map. 
+
+Auto-DRRAFTER then converts the RNA secondary structure (that we specified) to a graph in which helices are represented as edges and junctions and loops are represented as nodes. This secondary structure graph is then mapped onto the graph for the density map. In this case, auto-DRRAFTER will create two possible mappings, with either hairpin 0 or hairpin 1 mapped onto the randomly selected end node in the map. Let's also make sure that we look at these helix placements in the density map and make sure they look good. In PyMOL (or some other molecular visualization software) open the density map and `all_aligned_mini_example_0.REORDER.pdb` and `all_aligned_mini_example_1.pdb`. This is approximately what it should look like here:   
+
+Here's the first helix in the map:   
+![Helix 1 in map](images/view_align_helix1_in_map.png)   
+Here's the second helix in the map:   
+![Helix 2 in map](images/view_align_helix1_in_map.png)   
+
+These helices look like they fit reasonably well in the density map, and they see to be in a place in the density map where we would expect there to be an RNA helix. It is very important to visualize the fits of the helices at this point before moving on to the next steps. If these fits don't look good, the rest of the run is not going to work well.   
 
 Auto-DRRAFTER then sets up the DRRAFTER runs for each of these mappings. This involves building ideal A-form helices for all helical regions of the secondary structure, adding placeholder coordinates for all the hairpins onto these ideal RNA helices, and creating all the specific input files that DRRAFTER requires.     
 
@@ -118,7 +132,7 @@ Auto-DRRAFTER then sets up the DRRAFTER runs for each of these mappings. This in
 
 `settings_mini_example.txt`: This file lists all of the settings that were used to set up this auto-DRRAFTER run.   
 
-`all_aligned_mini_example_0.REORDER.pdb` and `all_aligned_mini_example_1.REORDER.pdb`: These are two possible hairpin placements in the density map. Each model will be used in a separate DRRAFTER run.   
+`all_aligned_mini_example_0.REORDER.pdb` and `all_aligned_mini_example_1.REORDER.pdb`: These are two possible hairpin placements in the density map (visualized above). Each model will be used in a separate DRRAFTER run.   
 
 `command_mini_example_0_R1` and `command_mini_example_1_R1`: The commands for the two DRRAFTER runs for the two possible alignments of the helices into the density map.   
 
@@ -242,8 +256,8 @@ python $ROSETTA/main/source/src/apps/public/DRRAFTER/finalize_models.py -fasta i
 
 This should print `Done finalizing models` to the screen, indicating that the modeling is complete. This creates the final models: `mini_example_all_models_all_fits_FINAL_R3.out.*.pdb`. These models should be carefully inspected in the context of the density map.    
 
+Here are the final models in the density map:   
 ![Final models](images/final_models.png)   
-Final models in the density map.   
 
 For reference, example output is provided in the `example_output/` directory.   
 
