@@ -192,7 +192,9 @@ This step collects all of the models from the previous step and calculates the c
 
 Several files are written out at this step. The key files that you want to know about are:   
 
-`mini_example_all_models_all_fits_R1.out.*.pdb`: These are the overall best scoring models from all of the different alignments from the first round of modeling.   
+`mini_example_all_models_all_fits_R1.out.*.pdb`: These are the overall best scoring models from all of the different alignments from the first round of modeling. We should look at these models in the density map. This is only the first round of modeling, so the models don't need to look perfect, but they should at least be roughly in the density map. This is what the models might look like:    
+
+![Models after round 1](images/models_after_R1.png)   
 
 `command_mini_example_FINAL_R2`: This is the command file for the next round of modeling. Note that the next round is `FINAL_R2` and not just `R2`. This means that we have entered the `final` stages of modeling. (There are always two `FINAL_` rounds: there will also be a `FINAL_R3` as well.)   
 
@@ -220,7 +222,10 @@ python $ROSETTA/main/source/src/apps/public/DRRAFTER/auto-DRRAFTER_setup_next_ro
 
 ***`-convergence_threshold 100` should not be used for actual modeling jobs (you should generally just use the default value (10) which is what was used for all modeling in the original Ribosolve paper). It is only used here for this demo to force the run to finish quickly!***   
 
-This is basically the same command from step 6 except `–curr_round` has changed to `FINAL_R2`. This creates files very similar to those from step 6. Notably, we can check the `command*` file that was created (`command_mini_example_FINAL_R3`), which tells us that the next round of modeling is `FINAL_R3`.   
+This is basically the same command from step 6 except `–curr_round` has changed to `FINAL_R2`. This creates files very similar to those from step 6. Notably, we can check the `command*` file that was created (`command_mini_example_FINAL_R3`), which tells us that the next round of modeling is `FINAL_R3`. Again, we should check the models that we built (`mini_example_all_models_all_fits_FINAL_R2.*pdb`). This is what the models might look like:      
+
+![Models after round 2](images/models_after_R2.png)    
+
 
 **9.** Submit/run the next round of DRRAFTER jobs. Type:   
 ```
@@ -257,7 +262,7 @@ python $ROSETTA/main/source/src/apps/public/DRRAFTER/finalize_models.py -fasta i
 
 This should print `Done finalizing models` to the screen, indicating that the modeling is complete. This creates the final models: `mini_example_all_models_all_fits_FINAL_R3.out.*.pdb`. These models should be carefully inspected in the context of the density map.    
 
-Here are the final models in the density map:   
+Here are the final models in the density map. The final models should be carefully visually inspected. If there are large regions of the density map that are not filled with coordinates or there are large parts of the model that are not in the density map, then there might be some problems with the models. It is also always important to perform some sort of independent validation of the models (e.g. an additional biochemical or functional experiment testing the model, comparison to an independently solved crystal structure of part of your model (that wasn't used during auto-DRRAFTER modeling), comparison to a homologous structure). The final models below look pretty good:    
 ![Final models](images/final_models.png)   
 
 For reference, example output is provided in the `example_output/` directory.   
