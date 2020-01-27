@@ -1,0 +1,23 @@
+Auto helix setup run at 04:12PM on January 08, 2020
+MAP_THR: 30.000
+DENS_MAP: mini_example_lp20.mrc
+FULL_DENS_MAP: input_files/map.mrc
+FULL_DENS_MAP_RESO: 10.000
+SEQ: gggggggaaaccccccuuugggggggaaacccccc
+SS: ((((((....))))))...((((((....))))))
+NRES: 35
+NSTRUCT_PER_JOB: 10
+CYCLES: 1000
+NINIT_POINTS: 5
+OUT_PREF: mini_example
+DISTANCE_CONNECT: 20.000
+SHIFT_CENTER: True
+PUSH_OUT_FURTHER: False
+NOT_BLIND: False
+REPEATS: 10
+MOVE_IN: False
+USE_ONLY_ONE_END_NODE: True
+END_NODE_ANGLE_CUTOFF: 0.870
+USE_END_NODE: -1
+EXTRA_FLAGS: 
+NATIVE: 
