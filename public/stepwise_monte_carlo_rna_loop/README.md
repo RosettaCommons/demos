@@ -20,7 +20,7 @@ Ab initio and comparative modeling of biopolymers (RNA, protein, protein/RNA) of
 
 ### Example Rosetta Command Line (`$ROSETTA3`= path-to-Rosetta/main/source)
 ```
-$> $ROSETTA3/bin/stepwise.default.linuxgccrelease -in:file:fasta rosetta_inputs/1zih.fasta -s rosetta_inputs/start_helix.pdb  -out:file:silent swm_rebuild.out -extra_min_res 4 9 -score:rna_torsion_potential RNA11_based_new -chemical::enlarge_H_lj
+$> $ROSETTA3/bin/stepwise.default.linuxgccrelease -in:file:fasta rosetta_inputs/1zih.fasta -s rosetta_inputs/start_helix.pdb  -out:file:silent swm_rebuild.out -extra_min_res 4 9 -score:rna_torsion_potential RNA11_based_new -chemical::enlarge_H_lj -score:weights stepwise/rna/rna_res_level_energy4.wts -restore_talaris_behavior
 ```
 Currently, we are mainly using a scorefunction with a more stringent torsional and repulsive potential, enabled by flags `-score:rna_torsion_potential RNA11_based_new -chemical::enlarge_H_lj`. 
 
@@ -36,6 +36,6 @@ $> $ROSETTA3/bin/extract_pdbs.default.linuxgccrelease -silent rosetta_inputs/swm
 Simply use a fasta file that has n's at positions you want to design.
 
 ```
-$> $ROSETTA3/bin/stepwise.default.linuxgccrelease -in:file:fasta rosetta_inputs/NNNN.fasta -s rosetta_inputs/start_helix.pdb  -out:file:silent swm_design.out -extra_min_res 4 9
+$> $ROSETTA3/bin/stepwise.default.linuxgccrelease -in:file:fasta rosetta_inputs/NNNN.fasta -s rosetta_inputs/start_helix.pdb  -out:file:silent swm_design.out -extra_min_res 4 9 -score:weights stepwise/rna/rna_res_level_energy4.wts -restore_talaris_behavior
 ```
 

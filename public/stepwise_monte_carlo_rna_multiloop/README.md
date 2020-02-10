@@ -25,7 +25,7 @@ Following is for an internal loop ('two-way junction') drawn from the most conse
 If you do not know the rigid body orientations of two helices (typical use case), run: (`$ROSETTA3`= path-to-Rosetta/main/source)
 
 ```
-$> $ROSETTA3/bin/stepwise.default.linuxgccrelease @uk_orientation.options
+$> $ROSETTA3/bin/stepwise.default.linuxgccrelease @uk_orientation.options -score:weights stepwise/rna/rna_res_level_energy4.wts -restore_talaris_behavior
 ```
 
 If you have starting coordinates for the two helix endpoints, you can start with that single PDB ('start_native_1lnt_RNA.pdb') instead:
@@ -38,7 +38,7 @@ For the purpose of demo, we have lowered the number of generated structures and 
 To get out models (in this case from the pre-generated file in the rosetta_inputs directory):
 
 ```
-$> $ROSETTA3/bin/extract_pdbs.default.linuxgccrelease -silent rosetta_inputs/swm_rebuild.out 
+$> $ROSETTA3/bin/extract_pdbs.default.linuxgccrelease -silent rosetta_inputs/swm_rebuild.out -score:weights stepwise/rna/rna_res_level_energy4.wts -restore_talaris_behavior
 ```
 
 (Or use extract_lowscore_decoys.py which can be installed via tools/rna_tools/.)
