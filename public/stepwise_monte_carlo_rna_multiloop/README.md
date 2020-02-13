@@ -31,7 +31,7 @@ $> $ROSETTA3/bin/stepwise.default.linuxgccrelease @uk_orientation.options -score
 If you have starting coordinates for the two helix endpoints, you can start with that single PDB ('start_native_1lnt_RNA.pdb') instead:
 
 ```
-$> $ROSETTA3/bin/stepwise.default.linuxgccrelease @known_ends.options 
+$> $ROSETTA3/bin/stepwise.default.linuxgccrelease @known_ends.options -score:weights stepwise/rna/rna_res_level_energy4.wts -restore_talaris_behavior
 ```
 For the purpose of demo, we have lowered the number of generated structures and the cycles, but usually you want to at least run 1000 cycles and generate more structures.
 
