@@ -8,7 +8,7 @@ Last updated January 2020 by Kalli Kappel (kkappel at alumni dot stanford dot ed
 This demo shows how to use use auto-DRRAFTER to build RNA coordinates into a cryo-EM map. This is a small toy example designed to run relatively quickly on a laptop.   
 
 ## Setting up auto-DRRAFTER:  
-1. Download Rosetta [here](https://www.rosettacommons.org/software/license-and-download). You will need to get a license before downloading Rosetta (free for academic users). auto-DRRAFTER is available in the Rosetta weekly releases after 2019.47 (it is not available in 2019.47). **auto-DRRAFTER is NOT available in Rosetta 3.11.** 
+1. Download Rosetta [here](https://www.rosettacommons.org/software/license-and-download). You will need to get a license before downloading Rosetta (free for academic users). auto-DRRAFTER is available in the Rosetta weekly releases after 2019.47 (it is not available in 2019.47) and files for this demo are available in releases after 2020.03. **auto-DRRAFTER is NOT available in Rosetta 3.11.** 
 2. If you're not using the precompiled binaries (these are available for Mac and Linux and you can access them by downloading source+binaries in Step 1), install Rosetta following the instructions available [here](https://www.rosettacommons.org/docs/latest/build_documentation/Build-Documentation).  
 3. Make sure that you have python installed and install **networkx** and **mrcfile**. For example, type: `pip install networkx mrcfile`.   
 4. Install EMAN2 version 2.22 (https://blake.bcm.edu/emanwiki/EMAN2/Install). Confirm that `e2proc3d.py` and `e2segment3d.py` are installed by typing: 
@@ -28,7 +28,7 @@ export PATH=$PATH:$ROSETTA/main/source/src/apps/public/DRRAFTER/
 
 All of the necessary files for this demo are available in `$ROSETTA/main/demos/public/auto-drrafter/input_files/`, where `$ROSETTA` is the path to your Rosetta installation.   
 
-`fasta.txt`: The FASTA file listing the full sequence of your RNA molecule. It should contain one line that starts with '>' and lists the chain and residue numbers for the sequence, e.g. A:1-35. Currently auto-DRRAFTER can only handle single chain RNAs.   
+`fasta.txt`: The FASTA file listing the full sequence of your RNA molecule. It should contain one line that starts with '>' and lists the chain and residue numbers for the sequence, e.g. A:1-35. The RNA sequence should be specified with lower-case letters. Currently auto-DRRAFTER can only handle single chain RNAs.   
 
 `secstruct.txt`: A file containing the secondary structure of the complex in dot-bracket notation. The secondary structure should be the same length as the sequence found in the fasta file. This secondary structure will be enforced during the auto-DRRAFTER modeling. We recommend verifying predicted secondary structures biochemically with [M2-seq](https://doi.org/10.1073/pnas.1619897114).   
 
