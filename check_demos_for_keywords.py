@@ -2,11 +2,12 @@
 # This script takes as its single argument a path to a directory (archetypally Rosetta/demos) and checks every .md file in that directory to see if it has keywords, defined as "a line starting with KEYWORDS: and containing at least two more things." Designed to fail noisily if not, as per a test.
 # author Frank David Teets
 # Written during XRW2016
+
+from __future__ import print_function
 import os
 import sys
 import shutil
 import argparse
-from __future__ import print_function
 
 parser = argparse.ArgumentParser(description='Check all demos of a particular working directory for both having a required keyword \
 	line and that those keywords being part of an approved list')
