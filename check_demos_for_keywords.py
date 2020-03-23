@@ -6,6 +6,7 @@ import os
 import sys
 import shutil
 import argparse
+from __future__ import print_function
 
 parser = argparse.ArgumentParser(description='Check all demos of a particular working directory for both having a required keyword \
 	line and that those keywords being part of an approved list')
