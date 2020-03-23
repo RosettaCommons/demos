@@ -28,7 +28,7 @@ for root, directories, filenames in os.walk(args.working_directory):
 	for filename in filenames:
 		if filename.endswith(".md") and not (root == args.working_directory) and not(filename.startswith("_")):
 			demos.append(os.path.join(root, filename))
-print demos
+print( demos )
 #
 #for demoname in demos:
 #	has_keywords = False
