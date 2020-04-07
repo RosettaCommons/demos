@@ -6,7 +6,7 @@ Rosetta Tutorials, Demos, and Protocol Captures
 Obtaining tutorial materials
 ----------------------------
 
-The demos, tutorials, protocol captures, and all example inputs are provided with the full Rosetta distribution, under the demos/ directory. Rosetta is available for license (which is free of charge to academic users) at <https://www.rosettacommons.org/software>.
+The demos, tutorials, protocol captures, and all example inputs are provided with the full Rosetta distribution, under the demos/ directory. Rosetta is available for license (which is free of charge to academic users) at <https://www.rosettacommons.org/software>. 
 
 <!--- BEGIN_INTERNAL -->
 For RosettaCommons users, the demos repository should be automatically downloaded by the get_rosetta.sh download script. Alternatively, RosettaCommons users can download the demos repository from GitHub. e.g.
