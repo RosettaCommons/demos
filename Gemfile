@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+
+gem 'omniauth-github', '>= 1.4.0'
 gem 'omnigollum', :github => "tjacobs2/omnigollum"
 gem 'nokogiri'
 gem 'mini_portile2'
