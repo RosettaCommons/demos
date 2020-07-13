@@ -1,8 +1,8 @@
 -in:file:s input_files/2akf_INPUT.pdb
--in:file:native input_files/2akf.pdb
+# -in:file:native input_files/2akf.pdb
 -ignore_unrecognized_res
 # symmetry options
--symmetry:symmetry_definition input_files/C3.symm_example  # This is the location of the symmetry definition file
+# -symmetry:symmetry_definition input_files/C3.symm_example  # This is the location of the symmetry definition file
 -symmetry:initialize_rigid_body_dofs # Initialize the rigid body positions of the subunits according to the symmetry definition file
 -symmetry:symmetric_rmsd # Calculate a symmmetric rmsd. # Necessary because we have 3 chains.
 # packing optinos
@@ -11,5 +11,5 @@
 # output options
 -out:nstruct 1
 -out:file:fullatom
--score:weights talaris2014.wts
+# -score:weights talaris2014.wts
 -restore_talaris_behavior
