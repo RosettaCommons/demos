@@ -252,6 +252,7 @@ def assign_rosetta_types(atoms):
         elif "FE" == a.elem: a.ros_type = "Fe3p"
         elif "CA" == a.elem: a.ros_type = "Ca2p"
         elif "ZN" == a.elem: a.ros_type = "Zn2p"
+        elif "B" == a.elem: a.ros_type = "Bsp2"
         else: raise ValueError("Unknown element '%s'" % a.elem)
 
 def assign_mm_types(atoms, peptoid):
@@ -672,7 +673,7 @@ def assign_mm_types(atoms, peptoid):
             elif is_charmm_HF2(a, at): a.mm_type = "HF2"
             else: a.mm_type = "X"
         elif a.elem == "C" :
-            if   is_charmm_CT(a):   a.mm_type = "CT"
+            if   is_charmm_CT(a):   a.mm_type = "CT1"
             elif is_charmm_CT1(a):  a.mm_type = "CT1"
             elif is_charmm_CT2(a):  a.mm_type = "CT2"
             elif is_charmm_CT3(a):  a.mm_type = "CT3"
@@ -780,6 +781,7 @@ def assign_partial_charges(atoms, net_charge=0.0):
         "Ca2p" : 2.000,
         "Na1p" : 1.000,
         "K1p " : 1.000,
+        "Bsp2" : 0.020,
         "VIRT" : 0.000,
     }
     curr_net_charge = 0.0
@@ -1122,12 +1124,15 @@ def dijkstra(start, nodes, nbr, dist):
     # Tmp objects [dist_from_start,node] sort properly
     DIST = 0; NODE = 1
     queue = [ [1e100,node] for node in nodes ] # 1e100  ~  +Inf
+    #print "queue is ",queue #DEBUG
     # Allows lookup of best distance by name
     shortest = dict([ (q[NODE],q) for q in queue ])
+    print "start shortest is ", shortest[start][DIST] #DEBUG
     shortest[start][DIST] = 0 # start
     while len(queue) > 0:
+        # return the index of the smallest element of the queue
         curr_idx = argmin(queue) # on first pass this is start
-        curr = queue.pop(curr_idx)[NODE]
+        curr = queue.pop(curr_idx)[NODE] # pop out the node with smallest  
         curr_shortest = shortest[curr][DIST]
         for n in nbr(curr):
             new_dist = curr_shortest + dist(curr,n)
@@ -1643,8 +1648,10 @@ def polymer_assign_ignored_atoms_bonds(m):
         if i in ignore_list:
             a.poly_ignore = True
     # bonds
+    print("the molecule has %d atoms" % len(m.atoms))
     for bond in m.bonds:
         for i in ignore_list:
+            print("ignore atom: %d" % i)
             if m.atoms[i] == bond.a1 or m.atoms[i] == bond.a2:
                 bond.poly_ignore = True
 
@@ -1694,7 +1701,8 @@ def polymer_assign_pdb_like_atom_names_to_sidechain(atoms, bonds, peptoid):
                 a.pdb_greek_dist = greek_alphabet[all_all_dist[ca_index][i]-1]
         else:
             if not a.is_H and not a.poly_ignore and not a.poly_backbone:
-                print i, a
+                print "ATOM: ", a
+                print "DISTANCE: %d" % all_all_dist[ca_index][i]
                 a.pdb_greek_dist = greek_alphabet[all_all_dist[ca_index][i]]
     debug = [a.pdb_greek_dist for a in atoms if not a.is_H ] #DEBUG
     print debug #DEBUG
