@@ -12,7 +12,7 @@ sys.path.append( os.path.abspath( sys.path[0] ) )
 from python.rosetta_py.io.mdl_molfile import *
 from python.rosetta_py.utility.rankorder import argmin
 from python.rosetta_py.utility import r3
-
+from fragment_functions import *
 # Features from Python 2.5 that we want to use:
 if not hasattr(__builtins__, "any"):
     def any(itr):
@@ -116,7 +116,8 @@ def polymer_assign_pdb_like_atom_names_to_sidechain(atoms, bonds, peptoid):
     Greek Alphabet (it has been extended to lower-case letters for large non-canonical AAs like lanthanide-binding tags): Alpha, Beta, Gamma, Delta, Epsilon, Zeta, Eta, Theta, Iota, Kappa, Lambda, Mu, Nu, Xi, Omicron, Pi, Rho, Sigma, Tau, Upsilon, Phi, Chi, Psi, Omega, alpha, beta, gamma, delta, epsilon, zeta, eta, theta, iota, kappa, lambda, mu, nu, xi, omicron, pi, rho, sigma, tau, upsilon, phi, chi, psi, omega'''
     # greek alphabet eta, tao and omega are skipped because they are the same as previous letters
     greek_alphabet = ['A', 'B', 'G', 'D', 'E', 'Z', 'T', 'I', 'K', 'L', 'M', 'N', 'X', 'O', 'P', 'R', 'S', 'U', 'P', 'C', 'a', 'b', 'g', 'd', 'e', 'z', 't', 'i', 'k', 'l', 'm', 'n', 'x', 'o', 'p', 'r', 's', 'u', 'p', 'c']
-    elem_atom_num = {'C': 6, 'N': 7, 'O': 8, 'F': 9, 'NA': 11, 'MG': 12, 'P':15, 'S':16, 'CL':17, 'K':19, 'CA':20, 'FE':26, 'ZN':30, 'BR':35, 'I':53}
+    elem_atom_num = {'B':5, 'C': 6, 'N': 7, 'O': 8, 'F': 9, 'NA': 11, 'MG': 12, 'P':15, 'S':16, 'CL':17, 'K':19, 'CA':20,
+                     'FE':26, 'ZN':30, 'BR':35, 'I':53, 'SE':34}
     # find alpha carbon or the ""alpha nitrogen" for peptoids (still called ca_index below)
     print "PEPTOID" , peptoid
     if peptoid:
@@ -143,12 +144,12 @@ def polymer_assign_pdb_like_atom_names_to_sidechain(atoms, bonds, peptoid):
         nbrs[a].update([b.a2 for b in a.bonds if b.a2.is_H == False and b.a2.poly_ignore == False and b.a2.poly_n_bb == False and b.a2.poly_c_bb == False and b.a2.poly_o_bb == False and b.a2.poly_upper == False and b.a2.poly_lower == False])
     for i in range(0,na):
         all_all_dist[i] = dijkstra( start = atoms[i], nodes = atoms, nbr = lambda a: nbrs[a], dist = path_dist )
-    print "ALL TO ALL DIST"
+    #print "ALL TO ALL DIST"
     #debug
     for i,a in enumerate(atoms):
         print a, all_all_dist[i]
-    print "ALL TO ALL DIST CA INDEX"
-    print all_all_dist[ca_index] #DEBUG
+    #print "ALL TO ALL DIST CA INDEX"
+    #print all_all_dist[ca_index] #DEBUG
     for i, a in enumerate(atoms):
         if peptoid:
             if not a.is_H and not a.poly_ignore and not a.poly_n_bb and not a.poly_c_bb and not a.poly_o_bb and not a.poly_upper and not a.poly_lower:
@@ -157,11 +158,11 @@ def polymer_assign_pdb_like_atom_names_to_sidechain(atoms, bonds, peptoid):
                 a.pdb_greek_dist = greek_alphabet[all_all_dist[ca_index][i]-1]
         else:
             if not a.is_H and not a.poly_ignore and not a.poly_backbone:
-                print "ATOM: ", a
-                print "DISTANCE: %d" % all_all_dist[ca_index][i]
+                #print "ATOM: ", a
+                #print "DISTANCE: %d" % all_all_dist[ca_index][i]
                 a.pdb_greek_dist = greek_alphabet[all_all_dist[ca_index][i]]
-    debug = [a.pdb_greek_dist for a in atoms if not a.is_H ] #DEBUG
-    print debug #DEBUG
+    #debug = [a.pdb_greek_dist for a in atoms if not a.is_H ] #DEBUG
+    #print debug #DEBUG
     # assign heavy atom pdb_postfix_num (stupidly inefficient)
     def compare_atom_num(x,y):
         if elem_atom_num[atoms[x].elem] > elem_atom_num[atoms[y].elem]:

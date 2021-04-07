@@ -19,6 +19,7 @@ sys.path.append( os.path.abspath( sys.path[0] ) )
 from python.rosetta_py.io.mdl_molfile import *
 from python.rosetta_py.utility.rankorder import argmin
 from python.rosetta_py.utility import r3
+from fragment_functions import *
 
 # Features from Python 2.5 that we want to use:
 if not hasattr(__builtins__, "any"):

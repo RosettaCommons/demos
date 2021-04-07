@@ -1,8 +1,18 @@
+#!/usr/bin/env python
+import os, sys
+if not hasattr(sys, "version_info") or sys.version_info < (2,4):
+    raise ValueError("Script requires Python 2.4 or higher!")
+
+from sets import Set
+
+# Magic spell to make sure Rosetta python libs are on the PYTHONPATH:
+sys.path.append( os.path.abspath( sys.path[0] ) )
 
 from python.rosetta_py.io.mdl_molfile import *
 from python.rosetta_py.utility.rankorder import argmin
 from python.rosetta_py.utility import r3
 
+from bond_functions import *
 def add_fields_to_atoms(atoms):
     '''Adds a bunch of member variable placeholders that we use.'''
     for atom in atoms:
@@ -756,3 +766,76 @@ def assign_partial_charges(atoms, partial_charges, net_charge=0.0):
         curr_net_charge += a.partial_charge
     assert( abs(net_charge - curr_net_charge) < 1e-4, "charge correction failed")
 
+def compare_molfiles(m1, m2):
+    '''
+    Check if two molfiles represent the same molecule.
+    Check if the molecule size and the atom order match
+    '''
+    # TODO: raise exception instead of assert as we can skip the molfile if things go wrong
+    if len(m1.atoms) != len(m2.atoms): 
+        print("Two molecules have different number of atoms %d %d" % (len(m1.atoms), len(m2.atoms)))
+        return False
+    if len(m1.bonds) != len(m2.bonds): 
+        print("Two molecules have different number of bonds")
+        return False
+    for inx, atom in enumerate(m1.atoms):
+        if atom.elem != m2.atoms[inx].elem:
+            print("Two molecules have unmatched atoms %d %s %s" % (inx+1, atom.elem, m2.atoms[inx].elem))
+            return False
+    return True    
+    
+def copy_atom_and_bond_info(original, copy):
+    '''
+    Copies atom and bond information between from original to copy molefiles
+    '''
+    assert compare_molfiles(original, copy), \
+    "Error: 2 molecules are different, expect the same molecule"
+    #add_fields_to_atoms(copy.atoms)
+    for inx, atom in enumerate(original.atoms):
+        catom = copy.atoms[inx]
+        catom.orig_name = atom.orig_name # for kinemage output
+        catom.pdb_name = atom.pdb_name       # PDB style atom name
+        catom.ros_type = atom.ros_type         # Rosetta atom type
+        catom.mm_type =  atom.mm_type        # Molec. mechan. atom type
+        catom.is_virtual = atom.is_virtual   # for atom typing and charge assignment
+        catom.rigid_id = atom.rigid_id          # non-zero id for regions with no rotatable bonds; may span fragments
+        catom.fragment_id = atom.fragment_id       # non-zero id for fragments after bond breaking
+        #catom.conn_bonds = []       # list of cross-fragment bonds to this atom
+        catom.is_root = atom.is_root       # for atom tree
+        #catom.parent =  atom.parent        # for atom tree
+        #catom.children = []         # for atom tree
+        #catom.stub1 = None          # for internal coords, derived from atom tree
+        #catom.stub2 = None          # for internal coords, derived from atom tree
+        #catom.stub3 = None          # for internal coords, derived from atom tree
+        #catom.input_stub1 = None    # for internal coords, derived from atom tree
+        #catom.input_stub2 = None    # for internal coords, derived from atom tree
+        #catom.input_stub3 = None    # for internal coords, derived from atom tree
+        #catom.d = 0.0               # distance to input_stub1
+        #catom.theta = 0.0           # 180 - angle with input_stub2 (degrees)
+        #catom.phi = 0.0             # dihedral from input_stub3 (degrees)
+        catom.poly_upper = atom.poly_upper    # is upper connect atom for polymer residue type
+        catom.poly_lower = atom.poly_lower    # is lower connect atom for polymer residue type
+        catom.poly_n_bb = atom.poly_n_bb     # is backbone nitrogen for polymer residue type
+        catom.poly_ca_bb = atom.poly_ca_bb    # is backbone alpha carbon for polymer residue type
+        catom.poly_c_bb = atom.poly_c_bb     # is backbone carbonyl carbon for polymer residue type
+        catom.poly_o_bb = atom.poly_o_bb     # is backbone carbonyl oxygen for polymer residue type
+        catom.poly_backbone = atom.poly_backbone # convience boolean
+        catom.poly_ignore = atom.poly_ignore   # convience boolean
+        catom.pdb_prefix_num = atom.pdb_prefix_num
+        catom.pdb_elem = catom.elem  # blah
+        catom.pdb_greek_dist = atom.pdb_greek_dist  # bond distance?
+        catom.pdb_postfix_num = atom.pdb_postfix_num
+        # copy bond info over
+        #add_fields_to_bonds(copy.bonds)
+        for inx, bond in enumerate(original.bonds):
+            cbond = copy.bonds[inx]
+            cbond.can_rotate = bond.can_rotate     # true for single bonds not in rings
+            cbond.is_proton_chi = bond.is_proton_chi  # true for bonds that rotate OH hydrogens, etc
+            cbond.connection_id = bond.connection_id      # non-zero id if bond crosses fragments
+            # Remember we have to update mirror too!
+            cbond.mirror.can_rotate      = bond.can_rotate
+            cbond.mirror.is_proton_chi   = bond.is_proton_chi
+            cbond.mirror.connection_id   = bond.connection_id
+            cbond.poly_ignore = bond.poly_ignore  # convience boolean
+        # after atoms and bonds info are copied over, 
+        # we can now reorder the atoms of both original and copy   

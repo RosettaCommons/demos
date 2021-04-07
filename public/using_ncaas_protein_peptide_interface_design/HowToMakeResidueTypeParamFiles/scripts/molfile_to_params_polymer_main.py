@@ -21,6 +21,13 @@ from python.rosetta_py.utility.rankorder import argmin
 from python.rosetta_py.utility import r3
 import argparse
 
+# import helper functions
+from atom_functions import *
+from bond_functions import * 
+from fragment_functions import * 
+from polymer_functions import * 
+from IO_functions import *
+
 # Features from Python 2.5 that we want to use:
 if not hasattr(__builtins__, "any"):
     def any(itr):
@@ -106,6 +113,11 @@ and for visualizing exactly what was done to the ligand.
                         action = "store_true",
                         help = "skip writing .pdb files (for debugging)"
                        )
+    parser.add_argument("--all-in-one-pdb", 
+                        default = False,
+                        action = "store_true",
+                        help = "writing all pdb files into 1 file (for debugging)"
+                       )
     parser.add_argument("--polymer",
                         default = False,
                         action = "store_true",
@@ -190,11 +202,11 @@ and for visualizing exactly what was done to the ligand.
         polymer_assign_ignored_atoms_bonds(m)
         polymer_assign_pdb_like_atom_names_to_sidechain( m.atoms, m.bonds, args.peptoid )
         polymer_assign_backbone_atom_names( m.atoms, m.bonds, args.peptoid )
-        # if write out multiple pdb:
-            # enumerate the molfiles
-            # copy atom info from m to the rest of the molfiles => write a new function 
-            # reorder_atoms for all 
-            # delete all the extra excessive code in the loop at the end of the main() function
+        # if instructed to write out all pdb files
+        if not args.no_pdb :
+            for molfile in molfiles[1:]:
+                copy_atom_and_bond_info(m, molfile)
+                polymer_reorder_atoms(molfile)
         polymer_reorder_atoms(m)
     #uniquify_atom_names(m.atoms)
     if not args.no_param:
@@ -220,40 +232,37 @@ and for visualizing exactly what was done to the ligand.
         else:
             write_ligand_kinemage(args.kinemage, m)
             print "Wrote kinemage file %s" % args.kinemage
+    # write out the pdb files
     if not args.no_pdb:
-        for i, molfile in enumerate(molfiles):
-            pdb_file = "%s_%04i.pdb" % (args.pdb, i+1)
+        # check if the same output pdb already exists for writing to 1 pdb
+        # if yes, then nothing else to do
+        if args.all_in_one_pdb:
+            pdb_file_name = "%s_rotamer.pdb" % (args.pdb)
             if not args.clobber and os.path.exists(pdb_file):
-                print "File %s already exists -- aborting!" % pdb_file
-                print "Use --clobber to overwrite existing files."
-                return 4
+                    print "File %s already exists -- skip!" % pdb_file
+                    print "Use --clobber to overwrite existing files."
+                    return(4)
+        for i, molfile in enumerate(molfiles):
+            # if the molecule's atom order doent matched with that of the first molfile, skip
+            if not compare_molfiles(m, molfile):
+                print("conformer %d is not the same molecule with conformer 1, skip" % i)
+                break
+            #writing out into seperate pdb files
+            if not args.all_in_one_pdb:
+                pdb_file_name = "%s_%04i.pdb" % (args.pdb, i+1)
+                pdb_file = open(pdb_file_name, 'w')
+                if not args.clobber and os.path.exists(pdb_file):
+                    print "File %s already exists -- skip!" % pdb_file
+                    print "Use --clobber to overwrite existing files."
+                    break
             else:
-                if i > -1:
-                    add_fields_to_atoms(molfile.atoms)
-                    add_fields_to_bonds(molfile.bonds)
-                    find_virtual_atoms(molfile.atoms)
-                    uniquify_atom_names(molfile.atoms) # renumber and resname the atoms if there is duplicate atom names
-                    check_bond_count(molfile.atoms)
-                    check_aromaticity(molfile.bonds)
-                    if args.polymer:
-                        polymer_assign_backbone_atom_types(molfile) # assign backbone atoms
-                    assign_rosetta_types(molfile.atoms) # assign rosetta atom names
-                    assign_mm_types(molfile.atoms, args.peptoid) # assign mm atom names
-                    if args.polymer:
-                        print "Preforming polymer modifications"
-                        polymer_assign_ignored_atoms_bonds(molfile)
-                        polymer_assign_pdb_like_atom_names_to_sidechain( molfile.atoms, 
-                                                                        molfile.bonds, 
-                                                                        args.peptoid )
-                        polymer_assign_backbone_atom_names( molfile.atoms, 
-                                                           molfile.bonds, 
-                                                           molfile.peptoid )
-                        polymer_reorder_atoms(molfile)
+                # write into the only 1 pdb file
+                pdb_file_name = "%s_rotamer.pdb" % (args.pdb)
+                pdb_file = open(pdb_file_name, 'a')
 
-
-                # m is used for names, molfile is used for XYZ
-                write_ligand_pdb(pdb_file, m, molfile, args.name, ctr)
-                print "Wrote PDB file %s" % pdb_file
+            # m is used for names, molfile is used for XYZ
+            write_ligand_pdb(pdb_file, m, molfile, args.name, ctr)
+            print "Wrote PDB file %s" % pdb_file
     return 0
 
 if __name__ == "__main__":

@@ -11,7 +11,7 @@ sys.path.append( os.path.abspath( sys.path[0] ) )
 from python.rosetta_py.io.mdl_molfile import *
 from python.rosetta_py.utility.rankorder import argmin
 from python.rosetta_py.utility import r3
-import argparse
+from fragment_functions import *
 
 # Features from Python 2.5 that we want to use:
 if not hasattr(__builtins__, "any"):
@@ -374,6 +374,7 @@ def write_poly_param_file(f, molfile, name, frag_id, peptoid):
         f.write("FIRST_SIDECHAIN_ATOM NONE\n")
 
     # properties
+    properties_list = []
     for line in molfile.footer:
         if line.startswith("M  POLY_PROPERTIES"):
             properties_list = line.split()[2:]
@@ -445,15 +446,17 @@ def write_ligand_pdb(f, molfile_tmpl, molfile_xyz, resname, ctr=None, chain_id='
         ai = index_atoms(molfile_tmpl.atoms) # 1-based index
         atoms = [a for a in molfile_tmpl.atoms if a.fragment_id == frag_id]
         for atom_tmpl in atoms:
+            if atom_tmpl.poly_ignore or atom_tmpl.poly_lower or atom_tmpl.poly_upper:
+                continue
             atom_xyz = molfile_xyz.atoms[ ai[atom_tmpl]-1 ]
             xyz = r3.add(atom_xyz, ctr)
             atom_num += 1
-            if len(frag_ids) == 1 and len(resname) > 2:
+            if len(frag_ids) == 1 and len(resname) > 2 and atom_tmpl.poly_ignore == False:
                 f.write("HETATM%5i %-4.4s %3.3s %1s%4i    %8.3f%8.3f%8.3f%6.2f%6.2f          %2.2s  \n"
-                    % (atom_num, atom_tmpl.name, resname,          chain_id, frag_id, xyz.x, xyz.y, xyz.z, 1.0, 20.0, atom_tmpl.elem))
+                    % (atom_num, atom_tmpl.pdb_name, resname,          chain_id, frag_id, xyz.x, xyz.y, xyz.z, 1.0, 20.0, atom_tmpl.elem))
             else:
                 f.write("HETATM%5i %-4.4s %2.2s%1i %1s%4i    %8.3f%8.3f%8.3f%6.2f%6.2f          %2.2s  \n"
-                    % (atom_num, atom_tmpl.name, resname, frag_id, chain_id, frag_id, xyz.x, xyz.y, xyz.z, 1.0, 20.0, atom_tmpl.elem))
+                    % (atom_num, atom_tmpl.pdb_name, resname, frag_id, chain_id, frag_id, xyz.x, xyz.y, xyz.z, 1.0, 20.0, atom_tmpl.elem))
     f.write("TER"+(" "*77)+"\n")
     f.close()
 
