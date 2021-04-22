@@ -119,7 +119,7 @@ and for visualizing exactly what was done to the ligand.
                         help = "writing all pdb files into 1 file (for debugging)"
                        )
     parser.add_argument("--polymer",
-                        default = False,
+                        default = True,
                         action = "store_true",
                         help = "write a polymer style param file instead of a ligand param file"
                        )
@@ -136,7 +136,7 @@ and for visualizing exactly what was done to the ligand.
     
     args = parser.parse_args()
 
-    if args.pdb is None: args.pdb = args.name
+    if args.pdb == 'LG': args.pdb = args.name
 
 
     # There's a very strong order dependence to these function calls:
@@ -238,10 +238,13 @@ and for visualizing exactly what was done to the ligand.
         # if yes, then nothing else to do
         if args.all_in_one_pdb:
             pdb_file_name = "%s_rotamer.pdb" % (args.pdb)
-            if not args.clobber and os.path.exists(pdb_file):
-                    print "File %s already exists -- skip!" % pdb_file
-                    print "Use --clobber to overwrite existing files."
-                    return(4)
+            if not args.clobber and os.path.exists(pdb_file_name):
+                print "File %s already exists -- skip!" % pdb_file_name
+                print "Use --clobber to overwrite existing files."
+                return(4)
+            if args.clobber and os.path.exists(pdb_file_name):
+                print "File %s already exists -- empty file now" % pdb_file_name
+                open(pdb_file_name, 'w').close()
         for i, molfile in enumerate(molfiles):
             # if the molecule's atom order doent matched with that of the first molfile, skip
             if not compare_molfiles(m, molfile):

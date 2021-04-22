@@ -446,6 +446,7 @@ def write_ligand_pdb(f, molfile_tmpl, molfile_xyz, resname, ctr=None, chain_id='
         ai = index_atoms(molfile_tmpl.atoms) # 1-based index
         atoms = [a for a in molfile_tmpl.atoms if a.fragment_id == frag_id]
         for atom_tmpl in atoms:
+            # skip this atom if it is ignored in polymer residue case
             if atom_tmpl.poly_ignore or atom_tmpl.poly_lower or atom_tmpl.poly_upper:
                 continue
             atom_xyz = molfile_xyz.atoms[ ai[atom_tmpl]-1 ]

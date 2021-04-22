@@ -117,7 +117,7 @@ def polymer_assign_pdb_like_atom_names_to_sidechain(atoms, bonds, peptoid):
     # greek alphabet eta, tao and omega are skipped because they are the same as previous letters
     greek_alphabet = ['A', 'B', 'G', 'D', 'E', 'Z', 'T', 'I', 'K', 'L', 'M', 'N', 'X', 'O', 'P', 'R', 'S', 'U', 'P', 'C', 'a', 'b', 'g', 'd', 'e', 'z', 't', 'i', 'k', 'l', 'm', 'n', 'x', 'o', 'p', 'r', 's', 'u', 'p', 'c']
     elem_atom_num = {'B':5, 'C': 6, 'N': 7, 'O': 8, 'F': 9, 'NA': 11, 'MG': 12, 'P':15, 'S':16, 'CL':17, 'K':19, 'CA':20,
-                     'FE':26, 'ZN':30, 'BR':35, 'I':53, 'SE':34}
+                     'FE':26, 'ZN':30, 'BR':35, 'I':53, 'SE':34, 'X':-1}
     # find alpha carbon or the ""alpha nitrogen" for peptoids (still called ca_index below)
     print "PEPTOID" , peptoid
     if peptoid:
