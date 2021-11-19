@@ -74,15 +74,30 @@ def polymer_assign_backbone_atom_names(atoms, bonds, peptoid):
             atom.ros_type = "X"
             atom.pdb_name = "LOWER"
     # alpha carbon hydrogen(s)
+    ca_h_bonds = []
+    index = 0;
     for bond in bonds:
         if bond.a1.poly_ca_bb and bond.a2.is_H :
             bond.a2.ros_type = "Hapo"
+            ca_h_bonds.append( index)
             if not peptoid:
                 bond.a2.pdb_name = " HA "
         elif bond.a1.is_H and bond.a2.poly_ca_bb :
             bond.a1.ros_type = "Hapo"
+            ca_h_bonds.append( index)
             if not peptoid:
                 bond.a1.pdb_name = " HA "
+        index = index + 1
+    # for the special case of Glycine or peptoid
+    if len(ca_h_bonds) > 1:
+        bond_id = 0
+        for index in ca_h_bonds :
+            if bonds[ index].a1.is_H:
+                bonds[ index].a1.pdb_name = "%dHA " % (bond_id + 1)
+            else :
+                bonds[ index].a2.pdb_name = "%dHA " % (bond_id + 1)
+            bond_id = bond_id + 1
+            
     # backbone nitrogen hydrogen(s)
     for bond in bonds:
         if bond.a1.poly_n_bb and bond.a2.is_H :

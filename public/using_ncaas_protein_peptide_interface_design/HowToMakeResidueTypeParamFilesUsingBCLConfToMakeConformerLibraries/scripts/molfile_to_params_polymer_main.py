@@ -182,7 +182,7 @@ and for visualizing exactly what was done to the ligand.
         elif line.startswith("M  CHG"):
             charge_fields = line.split()[3:]
             net_charge = sum(int(c) for i,c in enumerate(charge_fields) if i%2 == 1)
-        elif line.startswith("M  POLY_CHG"): net_charge = float(line.split()[2])
+        elif line.startswith("M  POLY_CHG"): net_charge = float(line.split()[-1]) 
     # If the partial charge info file is provided, then assign those charge values to atoms
     if args.partial_charges != None:
         assign_partial_charges_from_values(m, 
@@ -224,6 +224,12 @@ and for visualizing exactly what was done to the ligand.
                 else:
                     write_param_file(param_file, m, args.name, i+1, len(molfiles), args.max_confs)
                     print "Wrote params file %s" % param_file
+                # If output pdb rotamer file, put the link to the pdb rotamer file at the end of params file
+                if args.all_in_one_pdb:
+                    pdb_file_name = "%s_rotamer.pdb" % (args.name)
+                    params = open(param_file, 'a')
+                    params.write("PDB_ROTAMERS %s\n" % pdb_file_name)
+                    params.close()
     if args.kinemage is not None:
         if not args.clobber and os.path.exists(args.kinemage):
             print "File %s already exists -- aborting!" % args.kinemage

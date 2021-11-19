@@ -686,7 +686,8 @@ def assign_partial_charges_from_values(molfile, partial_charges, net_charge=0):
     current_net_charge = 0.0
     for charge in partial_charges:
         current_net_charge += float(charge[2])
-    assert abs(net_charge - current_net_charge) < 1e-4, "Error: sum of partial charges %1.3f is not equal to the net charge %1.3f " % (net_charge, current_net_charge)
+        #print "charge is %s" % current_net_charge
+    assert abs(net_charge - current_net_charge) < 1e-4, "Error: sum of partial charges %1.3f is not equal to the net charge %1.3f " % (current_net_charge, net_charge)
     for i in range(len(atoms)):
         assert atoms[i].elem == partial_charges[i][1].upper(),"Error: the elements %s in the sdf file and %s the partial charge file doesn't match" % (atoms[i].elem, partial_charges[i][1].upper())  
         atoms[i].partial_charge = float(partial_charges[i][2])
