@@ -1,0 +1,41 @@
+<ROSETTASCRIPTS>
+    <TASKOPERATIONS>
+        <RestrictToRepacking name="repackonly" />
+    </TASKOPERATIONS>
+    <SCOREFXNS>
+        <ScoreFunction name="stage1" weights="stage2_membrane.wts" symmetric="0">
+            <Reweight scoretype="dihedral_constraint" weight="1" />
+            <Reweight scoretype="epr_deer_score" weight="1" />
+        </ScoreFunction>
+        <ScoreFunction name="stage2" weights="stage2_membrane.wts" symmetric="0">
+            <Reweight scoretype="cart_bonded" weight="0.5" />
+	    <Reweight scoretype="dihedral_constraint" weight="0.1" />	
+	    <Reweight scoretype="epr_deer_score" weight="0.1" />
+        </ScoreFunction>
+    </SCOREFXNS>
+    <RESIDUE_SELECTORS>
+		<Index name="nodihed" resnums="224-244"/>
+		<SecondaryStructure name="sse" minH="6" ss="HE"/>
+		<Index name="h1" resnums="198-236,239-275,283-306" /> 
+        <Index name="loops" resnums="189-198,224-244,275-282,306-309" />
+        <Or name="h2" selectors="h1,loops"/>
+        <And name="sse_fixed">
+            <Not selector="h2"/>
+            <SecondaryStructure minH="6" ss="H"/>
+        </And>
+    </RESIDUE_SELECTORS> 
+    <SIMPLE_METRICS>
+        <RMSDMetric name="rmsd_h1" rmsd_type="rmsd_protein_bb_ca" super="true" residue_selector="h1" residue_selector_super="sse_fixed" use_native="1"/>
+        <RMSDMetric name="rmsd_h2" rmsd_type="rmsd_protein_bb_ca" super="true" residue_selector="h2" residue_selector_super="sse_fixed" use_native="1"/>
+	</SIMPLE_METRICS>
+        <MOVERS>
+            <ConfChangeMover name="ccm" modify_segments="9-283-306" stage2_residues_no_dihedral_csts="nodihed" stage1_residues="h1" stage1_twist_freq="0.2" translation_stdev="1.0" rotation_stdev="10" stage1_moves="10000" stage1_multi_sse_freq="0.5" stage1_frag_freq="0.1" frags3="%%frag3%%" frags9="%%frag9%%" stage2_moves="4000" stage1_scorefunction="stage1" stage2_scorefunction="stage2"   stage2_segment_freq="0.5"  stage2_targgaps_freq="0.1"  stage2_residues="loops"  /> 
+            <RunSimpleMetrics name="run_metrics1" metrics="rmsd_h1" suffix="_H" />
+            <RunSimpleMetrics name="run_metrics2" metrics="rmsd_h2" suffix="_HL" />
+    	</MOVERS>
+    	<PROTOCOLS>
+		    <Add mover="ccm" />
+            <Add mover="run_metrics1"/>
+            <Add mover="run_metrics2"/>
+    	</PROTOCOLS>
+</ROSETTASCRIPTS>
