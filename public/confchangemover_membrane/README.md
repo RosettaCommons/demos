@@ -1,6 +1,6 @@
 Author: Davide Sala
 
-KEYWORDS: STRUCTURE_PREDICTION EXPERIMENTAL_DATA MEMBRANES
+KEYWORDS: STRUCTURE_PREDICTION GENERAL
 
 --------------------------------------------------------------------------------------------------
 "Modeling of Rhodopsin active-to-inactive conformational change with simulated DEER distances"
