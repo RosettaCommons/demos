@@ -1,0 +1,159 @@
+##############################################################################################################
+#
+# Rosetta crash log. Please submit the contents of this file to http://crash.rosettacommons.org/
+# or use the script Rosetta/main/source/scripts/python/public/report_crashes.py
+#
+
+[START_CRASH_REPORT]
+[ROSETTA_VERSION]: 2022.14.post.dev+3.master.dc9147dbfa8
+[COMMIT_DATE]: 2022-04-07T11:40:10
+[APPLICATION]: rosetta_scripts.macosclangrelease
+[MODE]: Release
+[EXTRAS]: default
+[OS]: Apple Mac OS X
+[COMPILER]: Clang version "12.0.0 (clang-1200.0.32.21)"
+[STDLIB]: libc++ version 10000
+[START_OPTIONS]
+ -in:file:s=1cbu.pdb -in:file:native=1c9k.pdb -out:nstruct=3 -out:mute=core.optimization.Minimize -out:path:pdb=./ -parser:protocol=scripts/ccm.xml -parser:script_vars=frag3=aat000_03_05.200_v1_3.txt frag9=aat000_09_05.200_v1_3.txt cstfile=1c9k.cst
+
+[END_OPTIONS]
+
+[START_BACKTRACE]: RAW_LIBC
+0   libutility.dylib                    0x00000001105df3a0 backtrace_string(int) + 80
+1   libutility.dylib                    0x000000011054008e utility::excn::Exception::Exception(char const*, int, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&) + 190
+2   libutility.dylib                    0x00000001105e3010 utility::UtilityExitException::UtilityExitException(char const*, int, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&) + 112
+3   libutility.dylib                    0x00000001105e2f07 utility::exit(char const*, int, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, int) + 55
+4   libcore.6.dylib                     0x000000010cdc4a02 core::import_pose::pose_from_file(core::pose::Pose&, core::chemical::ResidueTypeSet const&, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, core::import_pose::ImportPoseOptions const&, bool, core::import_pose::FileType) + 3490
+5   libcore.6.dylib                     0x000000010cdc31c1 core::import_pose::pose_from_file(core::pose::Pose&, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, core::import_pose::ImportPoseOptions const&, bool, core::import_pose::FileType) + 97
+6   libcore.6.dylib                     0x000000010cdc1893 core::import_pose::pose_from_file(core::pose::Pose&, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, bool, core::import_pose::FileType) + 67
+7   libprotocols.3.dylib                0x000000010b913da4 protocols::simple_filters::NativeEvaluatorCreator::add_evaluators(protocols::evaluation::MetaPoseEvaluator&) const + 612
+8   libprotocols.1.dylib                0x000000010c94bb4d protocols::evaluation::EvaluatorFactory::add_all_evaluators(protocols::evaluation::MetaPoseEvaluator&) + 45
+9   libprotocols.1.dylib                0x000000010c90e4a9 protocols::jd2::JobOutputter::JobOutputter() + 169
+10  libprotocols.1.dylib                0x000000010c8f75d2 protocols::jd2::FileJobOutputter::FileJobOutputter() + 18
+11  libprotocols.1.dylib                0x000000010c947ea9 protocols::jd2::wwPDBJobOutputter::wwPDBJobOutputter() + 25
+12  libprotocols.1.dylib                0x000000010c9239c7 protocols::jd2::PDBJobOutputter::PDBJobOutputter() + 23
+13  libprotocols.1.dylib                0x000000010c923fb0 protocols::jd2::PDBJobOutputterCreator::create_JobOutputter() const + 64
+14  libprotocols.1.dylib                0x000000010c9109cc protocols::jd2::JobOutputterFactory::get_JobOutputter_from_string(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&) + 76
+15  libprotocols.1.dylib                0x000000010c911714 protocols::jd2::JobOutputterFactory::get_new_JobOutputter(std::__1::shared_ptr<protocols::jd2::JobOutputter>) + 2548
+16  libprotocols.1.dylib                0x000000010c910cc0 protocols::jd2::JobOutputterFactory::get_new_JobOutputter() + 32
+17  libprotocols.1.dylib                0x000000010c90b635 protocols::jd2::JobDistributorFactory::create_job_outputter() + 37
+18  libprotocols.1.dylib                0x000000010c901079 protocols::jd2::JobDistributor::init_jd() + 345
+19  libprotocols.1.dylib                0x000000010c900e0c protocols::jd2::JobDistributor::JobDistributor() + 124
+20  libprotocols.1.dylib                0x000000010c8fa379 protocols::jd2::FileSystemJobDistributor::FileSystemJobDistributor() + 25
+21  libprotocols.1.dylib                0x000000010c90b3f0 protocols::jd2::JobDistributorFactory::create_job_distributor() + 464
+22  libprotocols.1.dylib                0x000000010c900cf4 protocols::jd2::JobDistributor::get_instance() + 148
+23  rosetta_scripts.macosclangrelease   0x00000001069d9ab9 main + 1545
+24  libdyld.dylib                       0x00007fff70ffacc9 start + 1
+
+[END_BACKTRACE]
+
+[FILE]: src/core/import_pose/import_pose.cc
+[LINE]: 361
+[START_MESSAGE]
+[ ERROR ] UtilityExitException
+ERROR: Cannot open file "1c9k.pdb"
+
+
+
+[END_MESSAGE]
+[END_CRASH_REPORT]
+
+##############################################################################################################
+#
+# Rosetta crash log. Please submit the contents of this file to http://crash.rosettacommons.org/
+# or use the script Rosetta/main/source/scripts/python/public/report_crashes.py
+#
+
+[START_CRASH_REPORT]
+[ROSETTA_VERSION]: 2022.14.post.dev+3.master.dc9147dbfa8
+[COMMIT_DATE]: 2022-04-07T11:40:10
+[APPLICATION]: UNKNOWN APPLICATION
+[MODE]: Release
+[EXTRAS]: default
+[OS]: Apple Mac OS X
+[COMPILER]: Clang version "12.0.0 (clang-1200.0.32.21)"
+[STDLIB]: libc++ version 10000
+[START_OPTIONS]
+NO OPTIONS SPECIFIED
+
+[END_OPTIONS]
+
+[START_BACKTRACE]: RAW_LIBC
+0   libutility.dylib                    0x0000000114e413a0 backtrace_string(int) + 80
+1   libutility.dylib                    0x0000000114da208e utility::excn::Exception::Exception(char const*, int, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&) + 190
+2   libutility.dylib                    0x0000000114d189a5 utility::options::OptionCollection::load(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::list<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, std::__1::allocator<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > > >&, bool) + 2453
+3   libutility.dylib                    0x0000000114d1923c utility::options::OptionCollection::load(int, char* const*, bool) + 556
+4   libcore.6.dylib                     0x00000001114073c0 core::init::init(int, char**) + 48
+5   rosetta_scripts.macosclangrelease   0x000000010af5c4d5 main + 37
+6   libdyld.dylib                       0x00007fff70ffacc9 start + 1
+
+[END_BACKTRACE]
+
+[FILE]: src/utility/options/OptionCollection.cc
+[LINE]: 347
+[START_MESSAGE]
+ERROR: Unused "free" argument specified: input_files/@flags.options
+
+[END_MESSAGE]
+[END_CRASH_REPORT]
+
+##############################################################################################################
+#
+# Rosetta crash log. Please submit the contents of this file to http://crash.rosettacommons.org/
+# or use the script Rosetta/main/source/scripts/python/public/report_crashes.py
+#
+
+[START_CRASH_REPORT]
+[ROSETTA_VERSION]: 2022.14.post.dev+3.master.dc9147dbfa8
+[COMMIT_DATE]: 2022-04-07T11:40:10
+[APPLICATION]: rosetta_scripts.macosclangrelease
+[MODE]: Release
+[EXTRAS]: default
+[OS]: Apple Mac OS X
+[COMPILER]: Clang version "12.0.0 (clang-1200.0.32.21)"
+[STDLIB]: libc++ version 10000
+[START_OPTIONS]
+ -in:file:s=input_files/1cbu.pdb -in:file:native=input_file/1c9k.pdb -out:nstruct=3 -out:mute=core.optimization.Minimize -out:path:pdb=./ -parser:protocol=scripts/ccm.xml -parser:script_vars=frag3=aat000_03_05.200_v1_3.txt frag9=aat000_09_05.200_v1_3.txt cstfile=1c9k.cst
+
+[END_OPTIONS]
+
+[START_BACKTRACE]: RAW_LIBC
+0   libutility.dylib                    0x000000010f9643a0 backtrace_string(int) + 80
+1   libutility.dylib                    0x000000010f8c508e utility::excn::Exception::Exception(char const*, int, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&) + 190
+2   libutility.dylib                    0x000000010f968010 utility::UtilityExitException::UtilityExitException(char const*, int, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&) + 112
+3   libutility.dylib                    0x000000010f967f07 utility::exit(char const*, int, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, int) + 55
+4   libcore.6.dylib                     0x000000010c162a02 core::import_pose::pose_from_file(core::pose::Pose&, core::chemical::ResidueTypeSet const&, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, core::import_pose::ImportPoseOptions const&, bool, core::import_pose::FileType) + 3490
+5   libcore.6.dylib                     0x000000010c1611c1 core::import_pose::pose_from_file(core::pose::Pose&, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, core::import_pose::ImportPoseOptions const&, bool, core::import_pose::FileType) + 97
+6   libcore.6.dylib                     0x000000010c15f893 core::import_pose::pose_from_file(core::pose::Pose&, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, bool, core::import_pose::FileType) + 67
+7   libprotocols.3.dylib                0x000000010acc6da4 protocols::simple_filters::NativeEvaluatorCreator::add_evaluators(protocols::evaluation::MetaPoseEvaluator&) const + 612
+8   libprotocols.1.dylib                0x000000010bcefb4d protocols::evaluation::EvaluatorFactory::add_all_evaluators(protocols::evaluation::MetaPoseEvaluator&) + 45
+9   libprotocols.1.dylib                0x000000010bcb24a9 protocols::jd2::JobOutputter::JobOutputter() + 169
+10  libprotocols.1.dylib                0x000000010bc9b5d2 protocols::jd2::FileJobOutputter::FileJobOutputter() + 18
+11  libprotocols.1.dylib                0x000000010bcebea9 protocols::jd2::wwPDBJobOutputter::wwPDBJobOutputter() + 25
+12  libprotocols.1.dylib                0x000000010bcc79c7 protocols::jd2::PDBJobOutputter::PDBJobOutputter() + 23
+13  libprotocols.1.dylib                0x000000010bcc7fb0 protocols::jd2::PDBJobOutputterCreator::create_JobOutputter() const + 64
+14  libprotocols.1.dylib                0x000000010bcb49cc protocols::jd2::JobOutputterFactory::get_JobOutputter_from_string(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&) + 76
+15  libprotocols.1.dylib                0x000000010bcb5714 protocols::jd2::JobOutputterFactory::get_new_JobOutputter(std::__1::shared_ptr<protocols::jd2::JobOutputter>) + 2548
+16  libprotocols.1.dylib                0x000000010bcb4cc0 protocols::jd2::JobOutputterFactory::get_new_JobOutputter() + 32
+17  libprotocols.1.dylib                0x000000010bcaf635 protocols::jd2::JobDistributorFactory::create_job_outputter() + 37
+18  libprotocols.1.dylib                0x000000010bca5079 protocols::jd2::JobDistributor::init_jd() + 345
+19  libprotocols.1.dylib                0x000000010bca4e0c protocols::jd2::JobDistributor::JobDistributor() + 124
+20  libprotocols.1.dylib                0x000000010bc9e379 protocols::jd2::FileSystemJobDistributor::FileSystemJobDistributor() + 25
+21  libprotocols.1.dylib                0x000000010bcaf3f0 protocols::jd2::JobDistributorFactory::create_job_distributor() + 464
+22  libprotocols.1.dylib                0x000000010bca4cf4 protocols::jd2::JobDistributor::get_instance() + 148
+23  rosetta_scripts.macosclangrelease   0x0000000105caeab9 main + 1545
+24  libdyld.dylib                       0x00007fff70ffacc9 start + 1
+
+[END_BACKTRACE]
+
+[FILE]: src/core/import_pose/import_pose.cc
+[LINE]: 361
+[START_MESSAGE]
+[ ERROR ] UtilityExitException
+ERROR: Cannot open file "input_file/1c9k.pdb"
+
+
+
+[END_MESSAGE]
+[END_CRASH_REPORT]
+

@@ -1,0 +1,8 @@
+-in:file:s input_files/2x72.pdb 
+-in:file:native input_files/1gzm.pdb 
+-in:file:spanfile input_files/rhodopsin.span 
+-parser:script_vars frag3=input_files/aat000_03_05.200_v1_3.txt frag9=input_files/aat000_09_05.200_v1_3.txt 
+-epr_deer:input_files input_files/1gzm_simulated.cst 
+-out:nstruct 5 
+-out:path:pdb ./  
+-mute core.optimization.Minimizer core.scoring.MembranePotential core.pose.util
