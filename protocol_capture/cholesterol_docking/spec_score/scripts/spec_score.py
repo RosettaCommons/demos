@@ -61,6 +61,6 @@ for q in querys:
 
 
 spec_score2 = spec_score[['query','roe','res_int', 'hydro', 'bulk', 'volume', 'specifcity_score']]
+spec_score2 = spec_score2.round(2)
 spec_score2.to_csv("specificity.csv",sep=",",index=False)
-
 

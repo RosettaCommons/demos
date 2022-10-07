@@ -27,9 +27,9 @@ pd.set_option('display.max_columns', None)
 pd.set_option('display.max_rows', None)
 
 
-def smd(x,y):
+def sme(x,y):
     ## takes two arrays
-    out = (np.median(x)-np.median(y))/np.sqrt((np.std(x)**2 + np.std(y)**2)/2)
+    out = (np.mean(x)-np.mean(y))/np.sqrt((np.std(x)**2 + np.std(y)**2)/2)
     return out
 
 
@@ -133,8 +133,8 @@ def conserv_calc(pdbss,querys,lipss,nets,consvs=None,evors=None):
         surf = dcln[~dcln["resid"].isin(ilist)]
         surfL = surf[(surf["class"] == "E") & (surf["lips"] == 50.00)].norm.to_numpy() ## NOTE: sometimes mp_lipid_acc gives you 50.0 instead of 50.00 
 
-        w,p = ranksums(surfL,interL,equal_var="False",alternative="greater")
-        roes.append((key,smd(interL,surfL),w,p))
+        w,p = ranksums(surfL,interL,alternative="greater")
+        roes.append((key,sme(interL,surfL),w,p))
 
     roe = pd.DataFrame(roes,columns=["query","roe","statistic","pvalue"])  
 
