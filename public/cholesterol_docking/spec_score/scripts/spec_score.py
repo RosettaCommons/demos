@@ -56,7 +56,7 @@ for q in querys:
     pc2["roe"] = re1["roe"].values[0]
     pc2["pvalue"] = re1["pvalue"].values[0]
     pc2["volume"] = psv1["scaled_volume"].values[0]
-    pc2["specifcity_score"] = 1-np.abs((((pc2["roe"])*a)+(((pc2["res_int"]*b)+(pc2["hydro"]*c)+(pc2["bulk"]*d)+(pc2["volume"]*e))*f)))
+    pc2["specifcity_score"] = 1-np.abs(((pc2["roe"]*a)+(((pc2["res_int"]*b)+(pc2["hydro"]*c)+(pc2["bulk"]*d)+(pc2["volume"]*e))*f)))
     spec_score = spec_score.append(pc2,ignore_index=True)
 
 
