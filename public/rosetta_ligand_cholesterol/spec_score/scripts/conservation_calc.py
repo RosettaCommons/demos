@@ -34,7 +34,7 @@ def sme(x,y):
 
 
 
-def conserv_calc(pdbss,querys,lipss,nets,consvs=None,evors=None):
+def conserv_calc(pdbss,querys,lipss,nets,consvs):
     # Determine interaction site
     pdbs = sorted(glob2.glob(pdbss+"/*"))
     querynames = [x.split(',')[0] for x in open(querys).readlines()]
@@ -80,12 +80,6 @@ def conserv_calc(pdbss,querys,lipss,nets,consvs=None,evors=None):
         ## consurf
         c_names = ["resid","SEQ","3LATOM","SCORE","COLOR","CONFIDENCE INTERVAL","CONFIDENCE INTERVAL COLORS","MSA DATA","RESIDUE VARIETY"]
         cf = pd.read_csv(consvs,header=None,skiprows=15,sep="\s+",skipfooter=4,engine="python",index_col=False,names=c_names)
-    elif evors:
-        ## evorator
-        cf = pd.read_csv(evors,sep=",")
-        cf["pdb"] = cf["pdb_position"].str.split("_",expand=True)[1]
-        cf["Unnamed: 0"] = cf["Unnamed: 0"] + 1
-        cf = cf.rename(columns={"Unnamed: 0":"resid","Score":"SCORE"})
     else:
         print ("ERROR: No conservation file provided")
 

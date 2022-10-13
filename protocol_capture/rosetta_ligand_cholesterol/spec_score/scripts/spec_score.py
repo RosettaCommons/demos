@@ -24,8 +24,7 @@ import physicochemical_calc
 parser = argparse.ArgumentParser()
 parser.add_argument('-q', '--query', required=True, help="query pdbs with their respective buried areas")
 parser.add_argument('-p', '--pdbs', required=True, help="path to docked pdbs")
-parser.add_argument('-c', '--consv', required=False, help="path to consurf file")
-parser.add_argument('-e','--evor',required=False,help="path to evoRator file")
+parser.add_argument('-c', '--consv', required=True, help="path to consurf file")
 parser.add_argument('-l', '--lips', required=True, help="lipid accessible pdb file")
 parser.add_argument('-n', '--net', required=True, help="path netsurfp file")
 args = parser.parse_args()
@@ -34,7 +33,7 @@ args = parser.parse_args()
 sv = pd.read_csv("../reference_files/volume_scale.csv")
 
 pc = physicochemical_calc.physico_chemical_calc(args.pdbs,args.query)
-re = conservation_calc.conserv_calc(args.pdbs,args.query,args.lips,args.net,args.consv,args.evor)
+re = conservation_calc.conserv_calc(args.pdbs,args.query,args.lips,args.net,args.consv)
 pv = pd.read_csv(args.query,header=None,names=["pdb","buried_area"])
 
 psv = pd.concat([pv,sv[["pdb","buried_area"]]],axis=0,ignore_index=True)
