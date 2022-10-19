@@ -45,17 +45,19 @@ spec_score = pd.DataFrame()
 
 
 for q in querys:
-    pc1 = pc[pc["query"] == q]
+    pc1 = pc.loc[pc["query"] == q]
     pc1["Rank"] = pc1[["res_int","hydro","bulk"]].apply(tuple,axis=1)\
              .rank(method='average',ascending=False).astype(int)
-    pc2 = pc1[pc1["Rank"] == 2]
-    re1 = re[re["query"] == q]
-    psv1 = psv[psv["pdb"] == q]
+    pc2 = pc1.loc[pc1["Rank"] == 2]
+    re1 = re.loc[re["query"] == q]
+    psv1 = psv.loc[psv["pdb"] == q]
     
     pc2["roe"] = re1["roe"].values[0]
     pc2["pvalue"] = re1["pvalue"].values[0]
     pc2["volume"] = psv1["scaled_volume"].values[0]
-    pc2["specifcity_score"] = 1-np.abs(((pc2["roe"]*a)+(((pc2["res_int"]*b)+(pc2["hydro"]*c)+(pc2["bulk"]*d)+(pc2["volume"]*e))*f)))
+    pc2["ph-ch"] = (pc2["res_int"]*b)+(pc2["hydro"]*c)+(pc2["bulk"]*d)+(pc2["volume"]*e)
+    pc2["specifcity_score"] = (1/(1+np.exp(pc2["roe"])))*a +(pc2["ph-ch"]*f)    
+
     spec_score = spec_score.append(pc2,ignore_index=True)
 
 
