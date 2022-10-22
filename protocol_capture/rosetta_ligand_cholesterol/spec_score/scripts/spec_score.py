@@ -52,16 +52,16 @@ for q in querys:
     re1 = re.loc[re["query"] == q]
     psv1 = psv.loc[psv["pdb"] == q]
     
-    pc2["roe"] = re1["roe"].values[0]
+    pc2["Escore"] = re1["roe"].values[0]
     pc2["pvalue"] = re1["pvalue"].values[0]
     pc2["volume"] = psv1["scaled_volume"].values[0]
-    pc2["ph-ch"] = (pc2["res_int"]*b)+(pc2["hydro"]*c)+(pc2["bulk"]*d)+(pc2["volume"]*e)
-    pc2["specifcity_score"] = (1/(1+np.exp(pc2["roe"])))*a +(pc2["ph-ch"]*f)    
+    pc2["Pscore"] = (pc2["res_int"]*b)+(pc2["hydro"]*c)+(pc2["bulk"]*d)+(pc2["volume"]*e)
+    pc2["specifcity_score"] = (1/(1+np.exp(pc2["Escore"])))*a +(pc2["Pscore"]*f)    
 
     spec_score = spec_score.append(pc2,ignore_index=True)
 
 
-spec_score2 = spec_score[['query','roe','res_int', 'hydro', 'bulk', 'volume', 'specifcity_score']]
+spec_score2 = spec_score[['query','Escore','Pscore', 'specifcity_score']]
 spec_score2 = spec_score2.round(2)
 spec_score2.to_csv("specificity.csv",sep=",",index=False)
 
