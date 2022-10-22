@@ -45,10 +45,10 @@ spec_score = pd.DataFrame()
 
 
 for q in querys:
-    pc1 = pc.loc[pc["query"] == q]
+    pc1 = pc.loc[pc["query"] == q].copy()
     pc1["Rank"] = pc1[["res_int","hydro","bulk"]].apply(tuple,axis=1)\
              .rank(method='average',ascending=False).astype(int)
-    pc2 = pc1.loc[pc1["Rank"] == 2]
+    pc2 = pc1.loc[pc1["Rank"] == 2].copy()
     re1 = re.loc[re["query"] == q]
     psv1 = psv.loc[psv["pdb"] == q]
     
