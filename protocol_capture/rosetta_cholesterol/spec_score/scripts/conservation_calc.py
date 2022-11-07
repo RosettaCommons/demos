@@ -78,8 +78,8 @@ def conserv_calc(pdbss,querys,lipss,nets,consvs):
     cf = pd.DataFrame()
     if consvs:
         ## consurf
-        c_names = ["resid","SEQ","3LATOM","SCORE","COLOR","CONFIDENCE INTERVAL","CONFIDENCE INTERVAL COLORS","MSA DATA","RESIDUE VARIETY"]
-        cf = pd.read_csv(consvs,header=None,skiprows=15,sep="\s+",skipfooter=4,engine="python",index_col=False,names=c_names)
+        c_names = ["resid","SEQ","3LATOM","SCORE"]
+        cf = pd.read_csv(consvs,header=None,skiprows=15,sep="\s+",skipfooter=5,engine="python",index_col=False,names=c_names,usecols=[0,1,2,3])
     else:
         print ("ERROR: No conservation file provided")
 
@@ -111,7 +111,7 @@ def conserv_calc(pdbss,querys,lipss,nets,consvs):
     dcl = cf.merge(lf1, on="resid")    
     dcln = dcl.merge(nf,on="resid")
     dcln["resid"] = dcln["resid"].astype(str)
-    dcln["norm"] = scaler1.fit_transform(dcln.SCORE.values.reshape(-1,1))
+   
     
 
 
@@ -122,10 +122,10 @@ def conserv_calc(pdbss,querys,lipss,nets,consvs):
 
         inter = isite_df1.merge(dcln,on="resid",how="left")
         ilist = inter.resid.tolist()
-        interL = inter.norm.to_numpy()
+        interL = inter.SCORE.to_numpy()
 
         surf = dcln[~dcln["resid"].isin(ilist)]
-        surfL = surf[(surf["class"] == "E") & (surf["lips"] == 50.00)].norm.to_numpy() ## NOTE: sometimes mp_lipid_acc gives you 50.0 instead of 50.00 
+        surfL = surf[(surf["class"] == "E") & (surf["lips"] == 50.00)].SCORE.to_numpy() ## NOTE: sometimes mp_lipid_acc gives you 50.0 instead of 50.00 
 
         w,p = ranksums(surfL,interL,alternative="greater")
         roes.append((key,sme(interL,surfL),w,p))
