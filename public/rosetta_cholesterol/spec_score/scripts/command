@@ -1,0 +1,1 @@
+python spec_score.py -q ../inputs/buried_area.csv -p ../inputs/4ib4_A_pdbs/ -c ../inputs/4ib4_A_consurf.txt -l ../inputs/4ib4_A_lips.pdb -n ../inputs/4ib4_A_netsurfp.txt
