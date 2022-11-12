@@ -39,7 +39,9 @@ pv = pd.read_csv(args.query,header=None,names=["pdb","buried_area"])
 psv = pd.concat([pv,sv[["pdb","buried_area"]]],axis=0,ignore_index=True)
 psv["scaled_volume"] = scaler1.fit_transform(psv["buried_area"].values.reshape(-1,1))
 
-a,b,c,d,e,f = 0.55,0.4,0.2,0.2,0.2,0.45
+
+
+a,f = 0.55,0.45
 querys = pv["pdb"].unique().tolist()
 spec_score = pd.DataFrame()
 
@@ -55,7 +57,7 @@ for q in querys:
     pc2["Escore"] = re1["roe"].values[0]
     pc2["pvalue"] = re1["pvalue"].values[0]
     pc2["volume"] = psv1["scaled_volume"].values[0]
-    pc2["Pscore"] = (pc2["res_int"]*b)+(pc2["hydro"]*c)+(pc2["bulk"]*d)+(pc2["volume"]*e)
+    pc2["Pscore"] = ((pc2["res_int"])+(pc2["hydro"])+(pc2["bulk"])+(pc2["volume"]))/4
     pc2["specifcity_score"] = (1/(1+np.exp(pc2["Escore"])))*a +(pc2["Pscore"]*f)    
 
     spec_score = spec_score.append(pc2,ignore_index=True)
