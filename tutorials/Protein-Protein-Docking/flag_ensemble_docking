@@ -7,8 +7,8 @@
 -partners A_B
 -dock_pert 3 8
 
--ensemble1 COL_D_ensemblelist
--ensemble2 IMM_D_ensemblelist
+-ensemble1 COL_D_ensemblelist.ensemble
+-ensemble2 IMM_D_ensemblelist.ensemble
 
 -ex1
 -ex2aro
