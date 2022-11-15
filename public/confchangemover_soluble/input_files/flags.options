@@ -1,0 +1,6 @@
+-in:file:s input_files/1cbu.pdb 
+-in:file:native input_files/1c9k.pdb 
+-parser:script_vars frag3=input_files/aat000_03_05.200_v1_3.txt frag9=input_files/aat000_09_05.200_v1_3.txt cstfile=input_files/1c9k.cst 
+-out:nstruct 3 
+-out:path:pdb ./  
+-mute core.optimization.Minimize

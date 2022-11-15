@@ -1,0 +1,60 @@
+<ROSETTASCRIPTS>
+	<TASKOPERATIONS>
+		<RestrictToRepacking name="repackonly" />
+	</TASKOPERATIONS>
+	<SCOREFXNS>
+		<ScoreFunction name="stage1" weights="score3" symmetric="0">
+			<Reweight scoretype="dihedral_constraint" weight="1.0" />
+			<Reweight scoretype="atom_pair_constraint" weight="10" />
+			<Reweight scoretype="cen_hb" weight="1.0" />
+		</ScoreFunction>
+		<ScoreFunction name="stage2" weights="score4_smooth_cart" symmetric="0">
+			<Reweight scoretype="cart_bonded" weight="0.5" />
+			<Reweight scoretype="dihedral_constraint" weight="0.1" />
+			<Reweight scoretype="atom_pair_constraint" weight="1" />
+			<Reweight scoretype="cen_hb" weight="1.0" />
+		</ScoreFunction>
+	</SCOREFXNS>
+	<RESIDUE_SELECTORS>
+		<Index name="h1" resnums="31-52" />
+	 	<SecondaryStructure name="loops" overlap="0" ss="L" use_dssp="0" />
+		<SecondaryStructure name="helices" minH="5" ss="HE" use_dssp="0" />
+		<And name="stage1" selectors="helices,h1"/>
+		<And name="stage2" selectors="loops,h1"/>
+	</RESIDUE_SELECTORS>
+	<SIMPLE_METRICS>
+	</SIMPLE_METRICS>
+	<MOVERS>
+		<ConstraintSetMover name="csts" add_constraints="true" cst_file="%%cstfile%%" />
+        <ConfChangeMover name="ccm" stage1_residues="stage1" stage1_twist_freq="0.2" translation_stdev="1" rotation_stdev="10.0" stage1_moves="20000" stage1_frag_freq="0.1" frags3="%%frag3%%" frags9="%%frag9%%" stage2_moves="4000" stage1_scorefunction="stage1" stage2_models="3" stage2_scorefunction="stage2"  stage2_segment_freq="0.1"  stage2_targgaps_freq="0.1" stage2_residues="stage2" />
+        <MultiplePoseMover name="poses">
+            <ROSETTASCRIPTS>
+                <RESIDUE_SELECTORS>
+                	<Index name="h1" resnums="31-52" />
+                 	<SecondaryStructure name="loops" overlap="0" ss="L"/>
+                	<SecondaryStructure name="helices" minH="5" ss="HE"/>
+                	<And name="stage1" selectors="helices,h1"/>
+                	<And name="stage2" selectors="loops,h1"/>
+                	<Not name="super" selector="h1"/>	
+                </RESIDUE_SELECTORS>
+                <SIMPLE_METRICS>
+                    <RMSDMetric name="rmsd_H" rmsd_type="rmsd_protein_bb_ca" super="true" residue_selector="stage1"                  residue_selector_super="super" use_native="1"/>
+                    <RMSDMetric name="rmsd_HL" rmsd_type="rmsd_protein_bb_ca" super="true" residue_selector="h1"                     residue_selector_super="super" use_native="1"/>
+                </SIMPLE_METRICS>
+                <MOVERS>
+                    <RunSimpleMetrics name="run_metrics1" metrics="rmsd_H" suffix="_H" />
+                    <RunSimpleMetrics name="run_metrics2" metrics="rmsd_HL" suffix="_HL" />
+                </MOVERS>
+                <PROTOCOLS>
+                    <Add mover="run_metrics1"/>
+                    <Add mover="run_metrics2"/>
+                </PROTOCOLS>
+            </ROSETTASCRIPTS>
+        </MultiplePoseMover>
+	</MOVERS>
+	<PROTOCOLS>
+		<Add mover="csts" />
+        <Add mover="ccm" />
+        <Add mover="poses"/>
+	</PROTOCOLS>
+</ROSETTASCRIPTS>
