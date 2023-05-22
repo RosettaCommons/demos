@@ -79,7 +79,7 @@ def conserv_calc(pdbss,querys,lipss,nets,consvs):
     if consvs:
         ## consurf
         c_names = ["resid","SEQ","3LATOM","SCORE"]
-        cf = pd.read_csv(consvs,header=None,skiprows=15,sep="\s+",skipfooter=5,engine="python",index_col=False,names=c_names,usecols=[0,1,2,3])
+        cf = pd.read_csv(consvs,header=None,skiprows=28,sep="\s+",skipfooter=5,engine="python",index_col=False,names=c_names,usecols=[0,1,2,3])
     else:
         print ("ERROR: No conservation file provided")
 
