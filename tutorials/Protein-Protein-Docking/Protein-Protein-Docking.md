@@ -126,7 +126,7 @@ However, before we can dock the ensembles, we need to perform an additional step
 
     $>$ROSETTA3/main/source/bin/docking_prepack_protocol.linuxgccrelease @flag_ensemble_prepack
     
-This should run in ~30 seconds and produce prepacked PDBs in the same location as the original ensemble. It will also modify the ensemble lists with the location of the prepacked PDBs, normalized centroid scores and full atom scores.
+This should run in ~30 seconds and produce prepacked PDBs in the same location as the original ensemble. It will also write out new ensemble list files (with an added `.ensemble` extension) with the location of the prepacked PDBs, normalized centroid scores and full atom scores.
 
 ```
 input_files/COL_D_ensemble/COL_D_0001.pdb.ppk
@@ -139,7 +139,6 @@ input_files/COL_D_ensemble/COL_D_0003.pdb.ppk
 -94.2715
 -93.9065
 ```
-**Remember that `COL_D_ensemblelist` and `IMM_D_ensemblelist` need to be regenerated if you run docking prepack again, otherwise you will get uninformative error meaasges.**
 
 The docking protocol expects these prepacked conformations. This will also produce a score file and an output, but you can ignore both. Now run the docking protocol.
 
