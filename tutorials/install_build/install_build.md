@@ -8,7 +8,7 @@ KEYWORDS: CORE_CONCEPTS GENERAL
 
 # Downloading Rosetta
 
-For any academic or commercial use, you need to [request a license](https://els.comotion.uw.edu/express_license_technologies/rosetta). Obtaining a license is free for academic users. After you obtained the license, you can [download Rosetta](https://www.rosettacommons.org/software/license-and-download). Make sure you download the version corresponding to the license you have. When you click, you can see the latest numbered release as well as several weekly releases. Numbered releases (since Rosetta3.6) are simply weekly releases that have been specially labeled - all weekly releases pass the same suite of tests that the numbered releases do.
+Rosetta can be downloaded from the [RosettaCommons webpage](https://rosettacommons.org/software/download/). Rosetta is availible for free for non-commecial use, for commercial use you will need to obtain a license. When you click, you can see the latest numbered release as well as several weekly releases. Numbered releases (since Rosetta 3.6) are simply weekly releases that have been specially labeled - all weekly releases pass the same suite of tests that the numbered releases do.
 
 For many version, we offer both a source and a binary version. The binary version may allow you to skip the compilation stage, but are more limited in the platforms on which they work. The "__source__" distribution should be useful on all platforms on which Rosetta can run. (If you're interested in noncanonical amino acids, download the NCAA rotamer libraries as well.)
 
@@ -20,7 +20,7 @@ The downloaded file is in form of [tar archive](https://en.wikipedia.org/wiki/Ta
 > tar -xvzf rosetta[releasenumber].tar.gz
 ```
 
-Unfortunately, currently there is no support for the whole Rosetta on Windows.  [Dual booting](https://en.wikipedia.org/wiki/Multi-booting) or [virtual machines](https://en.wikipedia.org/wiki/Virtual_machine) running Linux/MacOS are options. 
+Unfortunately, currently there is no support for the whole Rosetta on Windows.  [Dual booting](https://en.wikipedia.org/wiki/Multi-booting) or [virtual machines](https://en.wikipedia.org/wiki/Virtual_machine) running Linux/MacOS are options. Using [Windows Subsystem for Linux](https://learn.microsoft.com/en-us/windows/wsl/about) is also a possibility.
 
 # Compiling Rosetta
 
