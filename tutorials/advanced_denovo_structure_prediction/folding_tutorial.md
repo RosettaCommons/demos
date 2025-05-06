@@ -402,7 +402,7 @@ Page created by Sebastian Rämisch (raemisch@scripps.edu) on 21 June 2016, and e
     
             <path-to-Rosetta>/tools/fragment_tools/make_fragments.pl 2LZMA.fasta >& make_fragments.log &
 
-    1. OPTIONAL: You can use any other secondary structure prediction method, such as JUFO ([http://www.meilerlab.org/index.php/servers/show?s_id=5](http://www.meilerlab.org/index.php/servers/show?s_id=5)) or Porter ([http://distillf.ucd.ie/porterpaleale/](http://distill.ucd.ie/porter/)), but it must be in PSI-PRED ss2 vertical format.  This can be done by running:
+    1. OPTIONAL: You can use any other secondary structure prediction method, such as JUFO ([http://www.meilerlab.org/index.php/servers/show?s_id=5](http://www.meilerlab.org/index.php/servers/show?s_id=5)) or Porter (<http://distilldeep.ucd.ie/>), but it must be in PSI-PRED ss2 vertical format.  This can be done by running:
     
             <path-to-Rosetta>/tools/fragment_tools/ss_pred_converter.py \
             -j 2LZMA.jufo_ss > 2LZMA.jufo_ss2

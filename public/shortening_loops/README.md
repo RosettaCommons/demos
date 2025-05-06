@@ -23,7 +23,7 @@ Preparing fragments and loop files
 1FNA_del.pdb is the primary Rosetta input. 
 
 We also need a fragments file and a loop file.  The fragments file is best 
-created via the [[Robetta server|http://robetta.bakerlab.org/fragmentqueue.jsp]] 
+created via the [Robetta server](http://old.robetta.org) 
 or using the fragment insertion tutorial.  You'll need a FASTA file of your 
 protein to generate fragments; don't forget to delete the deleted-residue from 
 your FASTA file and also note that their is shift in the amino acid number 

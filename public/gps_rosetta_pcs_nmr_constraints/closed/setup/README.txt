@@ -19,7 +19,7 @@ All the files should be changed for your target accordingly.
 
 Rosetta Fragment files:
 ----------------------
-Typically generated with Robetta fragment server (http://www.robetta.org/fragmentsubmit.jsp) using sequence and backbone chemical shift information of the target protein as input.
+Typically generated with Robetta fragment server (http://old.robetta.org) using sequence and backbone chemical shift information of the target protein as input.
 The frag9 and frag3 files are present in this folder as (frag9_dvp.tab) and (frag3_dvp.tab). These files should  be replaced for your target accordingly.
 
 Pseudocontact Shift (PCS) input files:

@@ -30,13 +30,13 @@ We have already provided you with the same file. You can open them and compare t
 > mv <file_name>.sdf serotonin.sdf
 ```
 
-Now, at this step, we need to add hydrogens to this molecule. There are multiple ways to achieve this goal. If installed on your computer, you can use [babel](http://openbabel.org/wiki/Main_Page) to add hydrogens with the GUI interface or using command line:
+Now, at this step, we need to add hydrogens to this molecule. There are multiple ways to achieve this goal. If installed on your computer, you can use [OpenBabel](http://openbabel.org) to add hydrogens with the GUI interface or using command line:
 
 ```
 > babel -h serotonin.sdf serotonin_withH.sdf
 ```
 
-You can also use [Avogadro](http://avogadro.cc/wiki/Main_Page) and use it to add hydrogens and minimize the PDB.
+You can also use [Avogadro](http://avogadro.cc) and use it to add hydrogens and minimize the PDB.
 
 The above mentioned software is free, but other software such as [mercury](https://www.ccdc.cam.ac.uk/solutions/csd-system/components/mercury/) or [omega](http://www.eyesopen.com/omega) can also be used, if you have them available.
 
@@ -128,7 +128,7 @@ Now that you generated the params file, you should inform Rosetta where it is. T
 Often times, you need to generate conformers for a ligand (i.e. different conformations a ligand can take that are energetically favorable). Rosetta cannot do this, but there are different software packages that can perform this function. After the conformers are generated, the rest of the process is the same and you can continue from [Generating the Params File](#Generating-the-Params-File).
 
 -   [babel](http://open-babel.readthedocs.io/en/latest/3DStructureGen/multipleconformers.html)
--   [Avogadro](http://manual.avogadro.cc/content/7-optimizing-geometry/2-conformers.html)
+-   [Avogadro](https://avogadro.cc/docs/optimizing-geometry/conformers/)
 -   [CSD Mercury](https://www.ccdc.cam.ac.uk/solutions/csd-system/components/mercury/): CSD_Discovery -> Conformer Generation
 -   [Omega OpenEye](https://docs.eyesopen.com/omega/usage.html)
 

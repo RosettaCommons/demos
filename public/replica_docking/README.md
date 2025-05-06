@@ -31,7 +31,7 @@ To run these demos:
 
 3. input pdbs preparation
 
-   	all the targets are from Dockground benchmark3.0 (http://dockground.bioinformatics.ku.edu/UNBOUND/request\_new.php), in which unbound docking partners have been superimposed over its corresponding complex.
+   	all the targets are from Dockground benchmark3.0 (<https://dockground.compbio.ku.edu/>), in which unbound docking partners have been superimposed over its corresponding complex.
     ```
 	get_pdb.py 1bvn_u1.pdb A	# this should output a file with only atom records from chain A, 1bvn_u1.pdbA.pdb
 	replace_chain.py 1bvn_u2.pdb B > 1bvn_u2_B.pdb	# overwrite its chainID to B, 1bvn_u2_B.pdb

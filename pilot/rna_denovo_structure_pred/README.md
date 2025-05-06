@@ -9,7 +9,7 @@ R-RNA (PDB 430D). The PDB and it's fasta file are included in the
 starting_files directory. 
 
 A good starting point would be the manual:
-http://www.rosettacommons.org/manuals/archive/rosetta3.1_user_guide/app_RNA_denovo.html
+https://docs.rosettacommons.org/docs/latest/application_documentation/rna/rna-denovo
 There are also prep scripts in mini/demo/rna/ which help make the
 structure Rosetta friendly. They should probably be included again
 here. Other good references are the integration and scientific tests:

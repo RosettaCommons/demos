@@ -342,7 +342,7 @@ The `molfile2params.py` script can produce a kinemage file. This is super handy
 as it lets you check how Rosetta will build the atom tree, and the atom type 
 assignments, and other stuff. You can open kinemage files using the KiNG 
 program from the Richardson lab at Duke 
-(http://kinemage.biochem.duke.edu/software/king.php).
+(http://kinemage.biochem.duke.edu/software/king/).
 
 Using your shiny new params file
 ================================

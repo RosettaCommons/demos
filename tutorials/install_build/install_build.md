@@ -92,7 +92,7 @@ If you are interested in working with Rosetta code, you can build Rosetta using 
 
 # PyRosetta Download and Installation
 
-[PyRosetta](http://www.pyrosetta.org/) is an interactive Python-based interface to Rosetta, allowing users to create custom molecular modeling algorithms with Rosetta sampling and scoring functions using Python scripting. PyRosetta was written for Python 2.6. You can follow instructions to download and install PyRosetta [here](https://www.rosettacommons.org/docs/latest/scripting_documentation/PyRosetta/PyRosetta) and [here](http://www.pyrosetta.org/dow).
+[PyRosetta](http://www.pyrosetta.org/) is an interactive Python-based interface to Rosetta, allowing users to create custom molecular modeling algorithms with Rosetta sampling and scoring functions using Python scripting. PyRosetta was written for Python 2.6. You can follow instructions to download and install PyRosetta [here](https://www.rosettacommons.org/docs/latest/scripting_documentation/PyRosetta/PyRosetta) and [here](https://www.pyrosetta.org/downloads).
 
 # Public Clusters with Rosetta
 

@@ -9,7 +9,7 @@ procedure and some analysis of your results. If you use silent
 files make sure you mention how to extract them.
 
 A good starting point for this would be the manual:
-http://www.rosettacommons.org/manuals/archive/rosetta3.1_user_guide/app_RNA_design.html 
+https://docs.rosettacommons.org/docs/latest/application_documentation/rna/rna-design
 There is also a scientific test which could prove useful:
 mini/test/scientific/tests/rna_design/
 There are also a few prep scripts in demo which could help make everything rosetta friendly.

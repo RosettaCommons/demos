@@ -89,7 +89,7 @@ The following must all be installed and available on your PATH:
 
 sed and awk
 
-Probe 2.12 or better: http://kinemage.biochem.duke.edu/software/probe.php
+Probe 2.12 or better: http://kinemage.biochem.duke.edu/software/probe/
 
 PyMOL 1.2 or better: http://www.pymol.org/ (some Linux distros make this available as a package)
 

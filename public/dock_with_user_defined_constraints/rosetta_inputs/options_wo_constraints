@@ -1,7 +1,5 @@
 # Full documentation for the options is available at:
-# http://www.rosettacommons.org/manuals/archive/rosetta3.1_user_guide/app_dock.html
-# However, a more complete and indepth write-up is available in the non-released
-# version: http://graylab.jhu.edu/Rosetta.Developer.Documentation/all_else/d0/de4/docking_protocol.html
+# https://docs.rosettacommons.org/docs/latest/application_documentation/docking/docking-protocol
 
 
 #### BEGIN OPTIONS

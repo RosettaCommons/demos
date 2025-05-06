@@ -32,7 +32,7 @@ or
 @section refs References
 Das, R., Karanicolas, J., and Baker, D. (2010), "Atomic accuracy in predicting and designing noncanonical RNA structure". Nature Methods 7:291-294.
 
-(Reprint available at http://daslab.stanford.edu/pubs.html).
+(Reprint available at https://daslab.stanford.edu/publications/).
 
 @section purpose Purpose
 This code is intended to carry out fixed backbone design of RNA sequences given an input backbone.

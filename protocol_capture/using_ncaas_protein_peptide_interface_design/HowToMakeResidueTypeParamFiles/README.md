@@ -270,7 +270,7 @@ ICOOR_INTERNAL   2HG   116.869954   70.361318    1.082495   CG    CB   1HG
 
 Since the gamma hydrogens are defined relative to the CG they will move when the chi1 is rotated.
 
-Pro Tip: The molfile2params.py script can produce a kinemage file. This is handy as it lets you check how rosetta will build the atom tree, and the atom type assignments, and other parameters. You can open kinemage files using the KiNG program from the Richardson lab at Duke (http://kinemage.biochem.duke.edu/software/king.php).
+Pro Tip: The molfile2params.py script can produce a kinemage file. This is handy as it lets you check how rosetta will build the atom tree, and the atom type assignments, and other parameters. You can open kinemage files using the KiNG program from the Richardson lab at Duke (http://kinemage.biochem.duke.edu/software/king/).
 
 ----------------------------------------------------------------
    STEP 06 ADDING THE RESIDUE TYPE PARAM FILE TO THE DATABASE
