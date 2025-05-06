@@ -48,7 +48,7 @@ pep_refine: Run the high-resolution refinement mode of FlexPepDock.
 nstruct: The number of decoys to generate.  It is common to generate O(10^5) decoys for best results.
 
 Output:
-The above commandline produces 3 candidate models (decoys) that will be named output_files/1OU8_BD.clean_0001_000x.pdb and a scorefile named output_files/refinement.sc. For explanation of the score terms used by FlexPepDock, visit http://www.rosettacommons.org/manuals/archive/rosetta[version]_user_guide/app_flexpep_docking.html  
+The above commandline produces 3 candidate models (decoys) that will be named output_files/1OU8_BD.clean_0001_000x.pdb and a scorefile named output_files/refinement.sc. For explanation of the score terms used by FlexPepDock, visit <https://docs.rosettacommons.org/docs/latest/application_documentation/docking/flex-pep-dock>  
 
 Remarks:
 We have included a PyMOL session of 5 superimposed decoys from a test run.  You can see there is very little movement of the peptide.  This type of simulation may be particularly useful for generating starting structures for design.
@@ -67,7 +67,7 @@ As opposed to 3a, this may be a better approach for detecting a docking funnel.
 
 3c) Refinement: So much movement it's hardly refinement anymore
 
-To add additional flexibility, one can supply "expert" flags that change the step size of the perturbations of the peptide backbone.  These flags are enumerated and explained in the FlexPepDock documentation (http://www.rosettacommons.org/manuals/archive/rosetta[version]_user_guide/app_flexpep_docking.html)
+To add additional flexibility, one can supply "expert" flags that change the step size of the perturbations of the peptide backbone.  These flags are enumerated and explained in the FlexPepDock documentation (<https://docs.rosettacommons.org/docs/latest/application_documentation/docking/flex-pep-dock>)
 
 Commandline:
 path/to/FlexPepDocking.[platform][compiler][mode] -database path/to/rosetta_database -lowres_preoptimize -pep_refine -smove_angle_range 12

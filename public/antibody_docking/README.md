@@ -47,7 +47,7 @@ Running the demo
 2.  Obviously, you need structures of both antibody and antigen in order 
     to do antibody-antigen docking. If you don't have antibody structures, 
     but have antibody sequences, you can use Gray lab antibody homology 
-    modeling server (http://antibody.graylab.jhu.edu/) and input the sequence 
+    modeling server (https://rosie.rosettacommons.org/antibody) and input the sequence 
     of the light and heavy chain. You will get best 10 structures.
 
     If you want to manually run the scripts yourself, you can download 
@@ -73,7 +73,7 @@ Running the demo
     * Besides the original example shown above, we made a new example in the current directory.
       Please be careful with different flags used in the command line.
       The documentations of SnugDock options can be found at:
-      http://www.rosettacommons.org/guide/SnugDock.
+      <https://docs.rosettacommons.org/docs/latest/application_documentation/antibody/snugdock>.
       Please also be careful with each "paths.txt" file.
     * Do Ensemble Prepack:
       ```

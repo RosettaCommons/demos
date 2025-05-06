@@ -23,7 +23,7 @@ High level overview:
 
 1. Docking Prepack
     - Useful to optimize all of the sidechains on both partners
-    - http://graylab.jhu.edu/Rosetta.Developer.Documentation/all_else/de/d69/docking_prepack_protocol.html
+    - https://docs.rosettacommons.org/docs/latest/application_documentation/docking/docking-prepack-protocol
 
 2. Docking with constraints. In general, constraints are typically defined for CA atoms of the partner sidechains.
     - Docking will honor AtomPairContraint, AmbiguousConstraint, SiteContraint. 

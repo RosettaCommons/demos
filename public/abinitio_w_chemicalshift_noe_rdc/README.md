@@ -41,7 +41,7 @@ Running the demo
 2. Download protein fasta and experimental data.
 Download fasta from http://www.pdb.org/pdb/explore/explore.do?structureId=2JY7
     ```
-    wget http://www.pdb.org/pdb/files/fasta.txt?structureIdList=2JY7 -O starting_inputs/t000_.fasta
+    wget https://www.rcsb.org/fasta/entry/2JY7 -O starting_inputs/t000_.fasta
     ```
 Download chemical shift data from http://www.bmrb.wisc.edu/data_library/summary/index.php?bmrbId=15591
     ```
@@ -79,7 +79,7 @@ Note that rename HN to H in the rdc file:
 4. Generating talos predictions using http://spin.niddk.nih.gov/bax/nmrserver/talosn/ using rosetta_inputs/cs.talos
 Save/copy pred.tab and predSS.tab to rosetta_inputs/talos_output
 
-5. Generate fragment/profile from RobettaServer http://www.robetta.org/fragmentqueue.jsp using starting_inputs/t000_.fasta
+5. Generate fragment/profile from RobettaServer http://old.robetta.org using starting_inputs/t000_.fasta
 Save/copy t000_.checkpoint to rosetta_inputs/
 
 6. Pick fragments using secondary structure profile and chemical shift data (where `$ROSETTA3`=path-to-Rosetta/main/source and `$ROSETTA3_DB`=path-to-database)

@@ -54,7 +54,7 @@ fi
 x=$(which probe)
 if [ $? -ne 0 ]; then
     echo "probe is either not installed or not on your PATH" > /dev/stderr
-    echo "probe can be found at http://kinemage.biochem.duke.edu/software/probe.php" > /dev/stderr
+    echo "probe can be found at http://kinemage.biochem.duke.edu/software/probe/" > /dev/stderr
     exit 1
 fi
 

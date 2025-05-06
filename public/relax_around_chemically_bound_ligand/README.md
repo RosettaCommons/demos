@@ -23,7 +23,7 @@ The "LOV2" domain binds a flavin and, when exposed to blue light, forms a thiol 
 
 # Creating a Ligand Parameter File
 
-We downloaded the .sdf file for the flavin attached to LOV2 from the PDB (http://www.pdb.org/pdb/explore/explore.do?structureId=2V0W), Ligands_noHydrogens_withMissing_1_Instances.sdf (an awful name for this file). Also, the file doesn't contain hydrogens, which we do want. So, first, we need to add hydrogens to this file.  The program REDUCE (which can be obtained from the [Richardson lab website](http://kinemage.biochem.duke.edu/software/reduce.php)) can be used to add hydrogens.  To run REDUCE, you have to put a copy (or symlink) of the reduce_het_dict.txt file in the /usr/local directory. You can also use other programs. For more information please refer to tutorials/prepare_ligand.
+We downloaded the .sdf file for the flavin attached to LOV2 from the PDB (http://www.pdb.org/pdb/explore/explore.do?structureId=2V0W), Ligands_noHydrogens_withMissing_1_Instances.sdf (an awful name for this file). Also, the file doesn't contain hydrogens, which we do want. So, first, we need to add hydrogens to this file.  The program REDUCE (which can be obtained from the [Richardson lab website](http://kinemage.biochem.duke.edu/software/reduce/)) can be used to add hydrogens.  To run REDUCE, you have to put a copy (or symlink) of the reduce_het_dict.txt file in the /usr/local directory. You can also use other programs. For more information please refer to tutorials/prepare_ligand.
 
 ```bash
 > cd /usr/local
