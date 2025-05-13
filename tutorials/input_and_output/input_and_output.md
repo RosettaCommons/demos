@@ -135,7 +135,7 @@ To remove water molecules, we use the option `-ignore_waters`
 -->
 
 ####Zero Occupancy
-Occupancy denotes the fraction of cases where a particular conformation is observed. While most atoms will have an occupancy of 1 (they appear in every conformation), if a residue was observed in only some conformations, the occupancy will be lower than 1. An occupancy of 0 indicates that the atom was never observed in the crystal, but is estimated to be present at that location. Rosetta ignores these atom records. If it is a non-backbone heavy atom, it might build the sidechain for you. If it is a backbone heavy atom like N or CA (the alpha-carbon of a residue), it will delete the entire residue.
+Occupancy denotes the fraction of cases where the atom has a particular set of coordinates. While most atoms will have an occupancy of 1 (they appear in the same location for every copy of the protein in the given crystal), if a residue was observed in multiple locations across multiple protein copies in the crystal, the occupancy will be lower than 1. An occupancy of 0 indicates that the atom was never observed in the crystal, but is estimated to be present at that set of coordinates. Rosetta ignores these atom records. If it is a non-backbone heavy atom, it might build the sidechain for you. If it is a backbone heavy atom like N or CA (the alpha-carbon of a residue), it will delete the entire residue.
 
 We have modified the occupancies of 1QYS to get the file `<path_to_Rosetta_directory>/demos/tutorials/input_and_output/input_files/1qys_zero_occ.pdb`. It has zero occupancies for the first few atoms
 ```
@@ -372,10 +372,10 @@ core.pose.util: new fold tree FOLD_TREE  EDGE 1 92 -1
 ...
 ```
 
-Now you see a bunch of information that previously did not appear. In the snippet above, we see, the residue types and element types that Rosetta recognizes (C associated with aromatic rings and Platinum), all the patches it can apply (patch to make a residue the C-terminal, this may be slightly different as it depends on the file paths on your machine) and the revised [fold tree](https://docs.rosettacommons.org/demos/latest/tutorials/minimization/minimization).
+Now you see a bunch of information that previously did not appear. In the snippet above, we see, the residue types and element types that Rosetta recognizes (C associated with aromatic rings and Platinum), all the patches it can apply (patch to make a residue the C-terminal, this may be slightly different as it depends on the file paths on your machine) and the revised [[fold tree|tutorials/minimization/minimization]].
 
 ###Replicating Output in Rosetta Protocols
-Most protocols in Rosetta use [Monte Carlo sampling](https://docs.rosettacommons.org/demos/latest/tutorials/Optimizing_Sidechains_The_Packer/Optimizing_Sidechains_The_Packer). While this stochastic method of sampling speeds up the search for an energy minimum, it produces different trajectories in every run. Rosetta uses a random number _seed_ supplied by the `/dev/urandom` device of your system to generate the pseudo-random numbers it uses for an application. This seed can be any integer that a C++ _int_ datatype can hold, and the suggested range is ±seed10<sup>6</sup> - 10<sup>9</sup>. It is displayed in the log at the start of every run as follows:
+Most protocols in Rosetta use [[Monte Carlo sampling|tutorials/Optimizing_Sidechains_The_Packer/Optimizing_Sidechains_The_Packer]]. While this stochastic method of sampling speeds up the search for an energy minimum, it produces different trajectories in every run. Rosetta uses a random number _seed_ supplied by the `/dev/urandom` device of your system to generate the pseudo-random numbers it uses for an application. This seed can be any integer that a C++ _int_ datatype can hold, and the suggested range is ±seed10<sup>6</sup> - 10<sup>9</sup>. It is displayed in the log at the start of every run as follows:
 
 ```
 ...
