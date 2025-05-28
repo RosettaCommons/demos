@@ -1,0 +1,92 @@
+<ROSETTASCRIPTS>
+        <SCOREFXNS>
+		<ScoreFunction name="ligand_soft_rep" weights="ligand_soft_rep">
+     			<Reweight scoretype="fa_elec" weight="0.42"/>
+     			<Reweight scoretype="hbond_bb_sc" weight="1.3"/>
+     			<Reweight scoretype="hbond_sc" weight="1.3"/>
+     			<Reweight scoretype="rama" weight="0.2"/>
+		</ScoreFunction>
+		<ScoreFunction name="hard_rep" weights="ligand">
+     			<Reweight scoretype="fa_intra_rep" weight="0.004"/>
+     			<Reweight scoretype="fa_elec" weight="0.42"/>
+     			<Reweight scoretype="hbond_bb_sc" weight="1.3"/>
+     			<Reweight scoretype="hbond_sc" weight="1.3"/>
+     			<Reweight scoretype="rama" weight="0.2"/>
+		</ScoreFunction>
+        </SCOREFXNS>
+	<LIGAND_AREAS>
+		<LigandArea name="docking_sidechain_X" chain="X" cutoff="6.0" add_nbr_radius="true" all_atom_mode="true" minimize_ligand="10"/>
+		<LigandArea name="final_sidechain_X" chain="X" cutoff="6.0" add_nbr_radius="true" all_atom_mode="true"/>
+		<LigandArea name="final_backbone_X" chain="X" cutoff="7.0" add_nbr_radius="false" all_atom_mode="true" Calpha_restraints="0.3"/>
+	</LIGAND_AREAS>
+	<INTERFACE_BUILDERS>
+		<InterfaceBuilder name="side_chain_for_docking" ligand_areas="docking_sidechain_X"/>
+		<InterfaceBuilder name="side_chain_for_final" ligand_areas="final_sidechain_X"/>
+		<InterfaceBuilder name="backbone" ligand_areas="final_backbone_X" extension_window="3"/>
+	</INTERFACE_BUILDERS>
+	<MOVEMAP_BUILDERS>
+		<MoveMapBuilder name="docking" sc_interface="side_chain_for_docking" minimize_water="true"/>
+		<MoveMapBuilder name="final" sc_interface="side_chain_for_final" bb_interface="backbone" minimize_water="true"/>
+	</MOVEMAP_BUILDERS>
+        <TASKOPERATIONS>
+        </TASKOPERATIONS>
+        <CHEMISTRY>
+        	<ReactionBasedAnalogSampler name="ana_sampler" reactions="reactions.txt" reagents="reagents.txt" sampling_ratio="0.01" minCandidates="50" >
+			<DynamicSampling min="0.01" max="0.2" step="0.002" OFF_after_n_step="1000" />
+		</ReactionBasedAnalogSampler>
+        	<RDKitRotamers name="rotamers" />
+        </CHEMISTRY>
+        <FILTERS>
+        	<ScoreType name="score" scorefxn="hard_rep" score_type="total_score" threshold="999999999999"/>
+        	<ScoreType name="intra_rep" scorefxn="hard_rep" score_type="fa_intra_rep_xover4" threshold="100"/>
+        	<LigInterfaceEnergy name="interface" include_cstE="1" scorefxn="hard_rep" energy_cutoff="0"/>
+		<LigandLocationFilter name="lig_loc" chain="X" radius="7.5">
+			<center x="-3.132" y="-7.605" z="29.165" />	#CAL of 4EK4 1CK
+		</LigandLocationFilter>
+        	<RDKitMetric name="clogp" metric="MolLogP" lower_threshold="0" upper_threshold="5" residue="1X" />
+        	<RDKitMetric name="nchi" metric="NumRotatableBonds" lower_threshold="-1" upper_threshold="19.5" residue="1X" />
+		<RDKitMetric name="nheavy" metric="HeavyAtomCount" lower_threshold="-1" upper_threshold="50" residue="1X" />
+               	<SAScore name="sascore" residue="1X" threshold="6" /> #6 encompases most of the bioactive/catalog molecules, and the peak of the natural products
+        	<CalculatorFilter name="CLP_Sigmoid" equation="sinpass(clp,0,5,1,3)" threshold="0" confidence="0">
+        		<Var name="clp" filter="clogp" />
+        	</CalculatorFilter>
+        	<CalculatorFilter name="nHeavy_sqrt" equation="sqrt(nHA)" threshold="0" confidence="0">
+        		<Var name="nHA" filter="nheavy" />
+        	</CalculatorFilter>
+        	<CalculatorFilter name="ligE" equation="sig*E/sqrt" threshold="0" > #equation= ["sig*E" (LE OFF) | "sig*E/sqrt" (LE ON)]
+        	      <Var name="sqrt" filter="nHeavy_sqrt" />
+        	      <Var name="E" filter="interface" />
+        	      <Var name="sig" filter="CLP_Sigmoid" />
+        	</CalculatorFilter>
+        	<CompoundStatement name="prefilter" invert="false">
+        	    <AND filter_name="sascore"/>
+        	    <AND filter_name="nchi"/>
+        	</CompoundStatement>
+        	<CompoundStatement name="postfilter" invert="false">
+        	    <AND filter_name="intra_rep"/>
+		    <AND filter_name="lig_loc" />
+        	</CompoundStatement>
+        </FILTERS>
+        <MOVERS>
+		<HighResDocker name="high_res_docker" cycles="1" repack_every_Nth="1" scorefxn="ligand_soft_rep" movemap_builder="docking"/>
+		<FinalMinimizer name="final" scorefxn="hard_rep" movemap_builder="final" remove_constraints="1"/>
+		<ParsedProtocol name="high_res_dock">
+			<Add mover_name="high_res_docker"/>
+			<Add mover_name="final"/>
+		</ParsedProtocol>
+		<DrugDesignMover name="drug_design" chain="X" scorer="ligE" redocker="high_res_dock" prefilter="prefilter" postfilter="postfilter" trials="2000" temperature="0.1" lig_efficy="true"> 
+			<Add chemistry="ana_sampler" weight="6.0" />
+			<After chemistry="rotamers" />
+		</DrugDesignMover>
+		<InterfaceScoreCalculator name="interface_score" chains="X" scorefxn="hard_rep" />
+		<RDKitMetricsMover name="rdkit_metrics" chains="X" /> 
+        </MOVERS>
+        <APPLY_TO_POSE>
+        </APPLY_TO_POSE>
+        <PROTOCOLS>
+        	<Add mover="drug_design" />
+        	<Add mover="interface_score" />
+        	<Add mover="rdkit_metrics" />
+        </PROTOCOLS>
+        <OUTPUT scorefxn="hard_rep"/>
+</ROSETTASCRIPTS>

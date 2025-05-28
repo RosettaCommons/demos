@@ -1,0 +1,15 @@
+# -ex1 and -ex2 expand then sampling of rotamers in the first 2 chi angles of protein sidechains to improve the quality of packing
+-ex1 
+-ex2
+
+#overwrite allows Rosetta to write over previous structures and scores
+
+-overwrite
+
+#Ligand docking is not yet benchmarked with the updated scoring function
+#This flag restores certain parameters to previously published values
+
+-mistakes
+	-restore_pre_talaris_2013_behavior true 
+
+-score:analytic_etable_evaluation true
