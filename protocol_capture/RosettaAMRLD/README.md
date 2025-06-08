@@ -11,20 +11,20 @@ This protocol capture together with all input files and example outputs can be f
 
 This protocol capture and the provided scripts follows the directory structure below:
 ```
-<Workspace> 
+<RosettaAMRLD> 
 	<inputs> 
 	<production> 
 	<scripts>
 	<slurm>         # (optional) for running on cluster
-</Workspace>
+</RosettaAMRLD>
 ```
 
 ## Protein and ligand files
 
 The required structural files are as follows:
-1. **A protein-ligand complex in PDB format.** This is the target structure with the starting ligand inside the pocket. It is highly recommended to dock the starting ligand first before running this protocol. The previously documented RosettaLigand docking protocol can be performed to get a reliable starting complex for this protocol.
+1. **A protein-ligand complex in PDB format.** This is the target structure with the starting ligand inside the pocket. It is highly recommended to dock the starting ligand first before running this protocol. The previously documented RosettaLigand docking protocol (Lemmon, G., & Meiler, J. (2012). Rosetta ligand docking with flexible XML protocols. _Methods in Molecular Biology_, _819_, 143–155. https://doi.org/10.1007/978-1-61779-465-0_10)) can be performed to get a reliable starting complex for this protocol. A tutorial for RosettaLigand can be found here: https://docs.rosettacommons.org/demos/latest/tutorials/ligand_docking/ligand_docking_tutorial
 2. **The starting ligand in SDF format**. The name of this ligand in the first line of the SDF file should match the ligand's three-letter code in the complex PDB file.
-3. **The target protein in PDB format.** This is only required for the cascaded sampling workflow.  This can be the input target structure for the RosettaLigand docking protocol, or can be the after-docking protein structure extracted from the above input complex. Other non-Rosetta structures are highly recommended to follow the relax protocol before running RosettaAMRLD.
+3. **(optional) The target protein in PDB format.** This is only required for the cascaded sampling workflow.  This can be the input target structure for the RosettaLigand docking protocol, or can be the after-docking protein structure extracted from the above input complex. If the input structure was not generated using Rosetta (e.g., from experimental data or other modeling software), it is recommended to first run Rosetta’s relax protocol (https://docs.rosettacommons.org/docs/latest/application_documentation/structure_prediction/relax) before running RosettaAMRLD.
 
 The target structure used in this example is cyclin-dependent kinase 2 (CDK2) with PDB ID 4EK4. The co-crystalized ligand was removed and the chain A of the protein model was obtained. 
 ```
@@ -57,14 +57,15 @@ In RosettaAMRLD, the reaction file defines the chemical reactions that can occur
 
 The reported results used the Enamine REAL space (2023-01 version) which contains more than 36 billion compounds. However, due to the non-disclosure agreement, we cannot distribute the particular library for this protocol capture. The user may consider accessing the Enamine library through BioSolveIT (https://www.biosolveit.de/infiniSee_xREAL). 
 
-Here, we composed a small library from ChEMBL (https://www.ebi.ac.uk/chembl/) for proof of concept. We downloaded all synton-size (100-300 Da) and neutral small molecules. From this set of molecules, we selected 74.5k molecules in total as reagents that can undergo one of four reactions: amide formation, arylation, ether formation, and reduction amination. The reaction and reagent files for this small library can be found under `/Workspace/` as `reactions.txt` and `reagents.txt`.
+Here, we composed a small library from ChEMBL (https://www.ebi.ac.uk/chembl/) for proof of concept. We downloaded all synton-size (100-300 Da) and neutral small molecules. From this set of molecules, we selected 74.5k molecules in total as reagents that can undergo one of four reactions: amide formation, arylation, ether formation, and reduction amination. The reaction and reagent files for this small library can be found under the RosettaAMRLD directory as `reactions.txt` and `reagents.txt`.
 
 ## RosettaScripts XML file
 
-The XML file describes the specific protocol to be performed by Rosetta and allows the user to customize its components. We provide the settings for the reported results in `drug_design.xml` under `/Workspace/`. A large part of the XML tags are based on the RosettaLigand standard docking protocol and the introduction to these tags can be found in its published article (Lemmon, G., & Meiler, J. (2012). Rosetta ligand docking with flexible XML protocols. _Methods in Molecular Biology_, _819_, 143–155. https://doi.org/10.1007/978-1-61779-465-0_10). We used the RosettaLigand scoring function to generate the reported results, but the user may substitute with any Rosetta scoring function.
+The XML file describes the specific protocol to be performed by Rosetta and allows the user to customize its components. We provide the settings for the reported results in `drug_design.xml` under the RosettaAMRLD directory. A large part of the XML tags are based on the RosettaLigand standard docking protocol and the introduction to these tags can be found in its published article (Lemmon, G., & Meiler, J. (2012). Rosetta ligand docking with flexible XML protocols. _Methods in Molecular Biology_, _819_, 143–155. https://doi.org/10.1007/978-1-61779-465-0_10). We used the RosettaLigand scoring function to generate the reported results, but the user may substitute with any Rosetta scoring function.
 
 There are some new XML tags specific to this protocol:
 1. **ReactionBasedAnalogSampler**
+	(https://docs.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/xsd/chemistry_ReactionBasedAnalogSampler_type)
 	This is the proposal generation step where a reaction product is sampled from a given chemical library by similarity to a reference molecule (for the first Monte Carlo iteration, this is the input ligand; for later iterations, the reference is the prior accepted molecule). The path to the chemical library (relative to this XML script) is required. 
 	
 	The sampling ratio, a value between 0 and 1, controls how the sampling weights are distributed along the similarity rank (the top *x* proportion of all molecules accounts for *1-x* of the total weight). A low sampling ratio concentrates the weights on top-ranking entities, favoring the selection of more similar molecules, while a higher sampling ratio places more weight on lower-ranking entities, promoting the selection of less similar molecules. When incorporated into Monte Carlo iterations, the sampling ratio directly influences the step size and scope of exploration in the chemical space. A higher sampling ratio allows broader exploration, while a lower ratio focuses on local refinement. Typically, it is adjusted by orders of magnitude (e.g., 0.1, 0.01, 0.001) during parameter tuning. However, we recommend selecting values no higher than 0.25 to maintain the theoretical validity within a two-decimal place approximation. The `sampling_ratio` defines a constant ratio unless dynamic sampling is enabled, in which case it defines the ratio only for the first Monte Carlo iteration.
@@ -73,11 +74,14 @@ There are some new XML tags specific to this protocol:
 	
 	In the second sampling stage, where the final product is sampled from a set of candidates, a minimum number of candidates must be generated before selection. This minimum threshold can be adjusted using the `minCandidates` parameter. Setting a higher threshold reduces the likelihood of duplicate scaffolds appearing in the same molecule, which can occur when the library contains an uneven distribution of fragments favoring one scaffold over others. However, a higher threshold will also increase the sampling time. In practice, we recommend setting the threshold between 20 and 100.
 	```
-	<ReactionBasedAnalogSampler name=(string) reactions=(string) reagents=(string) sampling_ratio=(float) minCandidates=(int) >
-		<DynamicSampling min=(float) max=(float) step=(float) OFF_after_n_step=(int) base=(float) />
+	<ReactionBasedAnalogSampler name=(string) reactions=(string) reagents=(string) 
+		sampling_ratio=(float) minCandidates=(int) >
+		<DynamicSampling min=(float) max=(float) step=(float) OFF_after_n_step=(int) 
+			base=(float) />
 	</ReactionBasedAnalogSampler>
 	```
 2. **LigandLocationFilter**
+	(https://docs.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/xsd/filter_LigandLocationFilter_type)
 	This filter checks if the ligand's centroid is within a specified distance from the center of the pocket. A set of xyz coordinates is required for the particular input biological target. For this example, the center is set to the coordinates of atom CAL in the co-crystalized ligand 1CK of CDK2 structure 4EK4.
 	```
 	<LigandLocationFilter name=(string) chain=(char) radius=(float)> 
@@ -85,12 +89,15 @@ There are some new XML tags specific to this protocol:
 	</LigandLocationFilter>
 	```
 3. **RDKitMetric**
+	(https://docs.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/xsd/filter_RDKitMetric_type)
 	This is a filter that uses RDKit (https://www.rdkit.org/docs/GettingStartedInPython.html#list-of-available-descriptors) to calculate the specified metric for the ligand. The lower and upper thresholds are required for the filter to remove unwanted ligands.
 	```
-	<RDKitMetric name=(string) metric=(string) lower_threshold=(float) upper_threshold=(float) residue=(string) />
+	<RDKitMetric name=(string) metric=(string) lower_threshold=(float) 
+		upper_threshold=(float) residue=(string) />
 	```
 4. **DrugDesignMover**
-	This is the Monte Carlo Metropolis framework that performs iterations of chemistry operations to generate new ligands and score them inside the pocket. The framework requires a redocker and a scorer to emplace the new ligands and calculate an interface score. While the user may use any suitable setting as for a docking protocol, in our reported results, we set the redocker to be a single-cycle high-resolution docking followed by a final minimizer, a one-shot docker. As for the scorer, the interface energy is normalized by the number of heavy atoms in the ligand and paired with a cLogP bandpass filter to penalize undesired nonpolar molecules. Examples and details of these scoring settings can be found in the filters section of the XML script. The energy for the metropolis criterion by default considers ligand efficiency. If the user wish to turn this off, besides setting `lig_efficy` to `false`, the scorer also needs the normalization part removed. In the provided XML script, set `equation="sig*E"` to turn off ligand efficiency consideration. Similarly, the cLogP bandpass filter can also be removed by setting `equation="E"`, in which case the raw interface energy is used for the metropolis criterion.
+	(https://docs.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/xsd/mover_DrugDesignMover_type)
+	This is the Monte Carlo Metropolis framework that performs iterations of chemistry operations to generate new ligands and score them inside the pocket. The framework requires a redocker and a scorer to emplace the new ligands and calculate an interface score. While the user may use any suitable setting as for a docking protocol, in our reported results, we set the redocker to be a single-cycle high-resolution docking followed by a final minimizer, a one-shot docker. As for the scorer, the interface energy is normalized by the number of heavy atoms in the ligand and paired with a cLogP bandpass filter to penalize undesired nonpolar molecules. Examples and details of these scoring settings can be found in the filters section of the XML script (https://docs.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/xsd/filter_CalculatorFilter_type). The energy for the metropolis criterion by default considers ligand efficiency. If the user wish to turn this off, besides setting `lig_efficy` to `false`, the scorer also needs the normalization part removed. In the provided XML script, set `equation="sig*E"` to turn off ligand efficiency consideration. Similarly, the cLogP bandpass filter can also be removed by setting `equation="E"`, in which case the raw interface energy is used for the metropolis criterion.
 	```
 	<CalculatorFilter name="ligE" equation="sig*E/sqrt" threshold="0" >
 		<Var name="sqrt" filter="nHeavy_sqrt" /> 
@@ -104,7 +111,8 @@ There are some new XML tags specific to this protocol:
 	
 	The chemistry operations performed in each iteration have three types: major, before, and after. A major chemistry operation modifies the ligand into a new ligand, and a list of such operations may exist, where a random operation is selected by the assigned weights every iteration. For the current RosettaAMRLD, `ReactionBasedAnalogSampler` is the only major chemistry operation. The "before" and "after" chemistry operations are always performed before and after the major operation, respectively. For example, a rotamer generation step can be an "after" chemistry operation to generate conformations for the new ligand.
 	```
-	<DrugDesignMover name=(string) chain=(char) scorer=(string) redocker=(string) prefilter=(string) postfilter=(string) trials=(int) temperature=(float) lig_efficy=[true|false]> 
+	<DrugDesignMover name=(string) chain=(char) scorer=(string) redocker=(string) 
+		prefilter=(string) postfilter=(string) trials=(int) temperature=(float) lig_efficy=[true|false]> 
 		<Add chemistry=(string) weight=(float) /> 
 		<Before chemistry=(string) /> 
 		<After chemistry=(string) /> 
@@ -113,7 +121,7 @@ There are some new XML tags specific to this protocol:
 	
 ## Rosetta options file
 
-The provided options file `drug_design_options.txt` under `/Workspace/` contains some standard docking options. A full available options list can be found on the Rosetta documentation website.
+The provided options file `drug_design_options.txt` under the RosettaAMRLD directory contains some standard docking options. A full available options list can be found on the Rosetta documentation website.
 
 ## Running RosettaAMRLD
 
@@ -121,7 +129,7 @@ The provided options file `drug_design_options.txt` under `/Workspace/` contains
 	```
 	mkdir -p production/rand39
 	```
-2. Run RosettaAMRLD under `/Workspace/`. Here as an example, we collect 1 design only (`nstruct 1`). In practice, the protocol is usually run on a cluster so that tens or hundreds of designs can run in parallel. Since the process is stochastic, this single design the user get in this example may or may not be a decent one, but the user should be able to observe some optimization in energy in the result files. 
+2. Run the following command under the RosettaAMRLD directory. Here as an example, we collect 1 design only (`nstruct 1`). In practice, the protocol is usually run on a cluster so that tens or hundreds of designs can run in parallel. Since the process is stochastic, the single design the user gets in this example may or may not be a decent one, but the user should be able to observe some optimization in energy in the result files. 
 	```
 	path/to/Rosetta/main/source/bin/rosetta_scripts.linuxgccrelease @drug_design_options.txt \
 	-parser:protocol drug_design.xml \
@@ -140,10 +148,10 @@ The provided options file `drug_design_options.txt` under `/Workspace/` contains
     Fragment1: <SMILES>
 	```
 #### Running on a cluster
-An example SLURM script `run.slurm` for running on a cluster can be found under `/Workspace/`. Replace the `<protein>` and `<ligand>` with the corresponding protein and ligand filenames (excluding file extensions). The script is set to run 100 designs in parallel by default. To adjust the number of designs, modify the job array parameter (`--array=1-[x]`) to the desired count. Each output file will be prefixed with the corresponding job array number. If the user increases `-nstruct` to generate more designs per job, the runtime must be adjusted proportionally.
+An example SLURM script `run.slurm` for running on a cluster can be found under the RosettaAMRLD directory. Replace the `<protein>` and `<ligand>` with the corresponding protein and ligand filenames (excluding file extensions). The script is set to run 100 designs in parallel by default. To adjust the number of designs, modify the job array parameter (`--array=1-[x]`) to the desired count. Each output file will be prefixed with the corresponding job array number. If the user increases `-nstruct` to generate more designs per job, the runtime must be adjusted proportionally.
 
 ## Analysis
-The provided scripts for post-processing and analysis require the following packages: RDKit, OpenBabel,  Pandas, and Matplotlib. Here we assume the user has these packages installed.
+The provided scripts for post-processing and analysis require the following packages: RDKit, OpenBabel,  Pandas, Matplotlib, and Seaborn. Here we assume the user has these packages installed.
 
 Navigate to the `/production/` folder. Generate a summarized and ranked score file for the designs.
 
@@ -169,7 +177,7 @@ By default, the script generates separate images for each design. To plot all de
 
 ## Cascaded Sampling Workflow
 
-This workflow extends the promising design routes to explore a wider scope on those directions, discovering better molecules in distant subspaces. This is essentially running multiple rounds of RosettaAMRLD with top-scoring designs from each round chosen as new starting ligands in the next round of optimization. 
+This workflow extends the design routes generated by RosettaAMRLD in the previous steps to explore a wider scope in the chemical space and discover better molecules . This is essentially running multiple rounds of RosettaAMRLD with top-scoring designs from each round chosen as new starting ligands in the next round of optimization. 
 
 After a round of RosettaAMRLD, visually inspect the top-scoring ligands and select a set of 1-5 ligands with diverse scaffolds for cascaded sampling in the next round. Run the following script under the `/production/` directory to prepare these ligands for the next round input. Make sure a cleaned protein PDB file is in the `/inputs/` directory.
 ```

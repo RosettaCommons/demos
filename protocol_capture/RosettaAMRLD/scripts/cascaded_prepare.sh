@@ -7,7 +7,7 @@ nTOP=$2
 protein=$3
 
 cd $currLIG/
-mapfile -t Top < <( tail -n +2 design_scores.sc | head -n $nTOP | awk '{print $1}' )
+Top=($( tail -n +2 design_scores.sc | head -n $nTOP | awk '{print $1}' ))
 INDEX=1
 now=$(date)
 echo "=====$now=====" >> ../Cascaded_README
